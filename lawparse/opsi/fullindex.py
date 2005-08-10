@@ -10,28 +10,90 @@ actdir = "C:/pwhip/parldata/acts"
 iurl = "http://www.opsi.gov.uk/acts.htm"
 
 
+# set of heading matches, broken down to make it easier to
+# discover where the failure is
+headlines = [ ('first',  '<table(?:cellpadding=2|width=95%|\s)*>\s+(?i)'),
+			  ('middle', '<tr>\s*<td\s*align=center\s*valign=bottom>\s*(?i)'),
+			  ('middle', '<img\s*src="/img/royalarm.gif"\s*alt="Royal\ Arms">\s*</td>\s+(?i)'),
+			  ('middle', '<td\s*valign="?bottom"?>(?:&nbsp;<br>)?\s+(?i)'),
+			  ('name',   '<font\s*size="?\+3"?><b>([\s\S]{1,250}?)</b></font>\s+(?i)'),
+			  ('chapt',  '<p>(?:</p>)?<font\s*size="?\+1"?>(?:<b>)?([^<]*)(?:</b>)?</font>\s+(?i)'),
+			  ('middle', '</td>\s*</tr>\s+(?i)'),
+			  ('middle', '<tr(?:\s*xml\S*)*>\s*<td\s*colspan="?2"?>\s*<hr></td>\s*</tr>\s+(?i)'),
+			  ('middle', '<tr>\s*<td\s*valign="?top"?>&nbsp;</td>\s+(?i)'),
+			  ('middle', '<td\s*valign="?top"?>\s+(?i)'),
+			  ('cright', '<p>&copy;\ Crown\ Copyright\ (\d+<?)</p>\s+(?i)'),
+			  ('middle', "<P>\s*Acts of Parliament printed from this website are printed under the superintendence and authority of the Controller of HMSO being the Queen's Printer of Acts of Parliament.\s*"),
+			  ('middle', '<P>\s*The legislation contained on this web site is subject to Crown Copyright protection. It may be reproduced free of charge provided that it is reproduced accurately and that the source and copyright status of the material is made evident to users.\s*'),
+			  ('middle', "<P>\s*It should be noted that the right to reproduce the text of Acts of Parliament does not extend to the Queen's Printer imprints which should be removed from any copies of the Act which are issued or made available to the public. This includes reproduction of the Act on the Internet and on intranet sites. The Royal Arms may be reproduced only where they are an integral part of the original document.\s*"),
+			  ('middle', '<p>The text of this Internet version of the Act is published by the Queen\'s Printer of Acts of Parliament and has been prepared to reflect the text as it received Royal Assent.\s*'),
+			  ('name2',  'A print version is also available and is published by The Stationery Office Limited as the <b>(.{0,100}?)\s*</b>,\s*'),
+			  ('isbn',   'ISBN 0(?:&nbsp;|\s+)(\d\d)(?:&nbsp;|\s+)(\d{6})(?:&nbsp;|\s+)(\d|X)\.\s*'),
+			  ('middle', 'The print version may be purchased by clicking\s*'),
+			  ('middle', '<A HREF="/bookstore.htm\?AF=A10075&FO=38383&ACTION=AddItem&'),
+			  ('prodid', 'ProductID=(\d{9}(?:\d|X))\.?">\s*here</A>.\s*'),
+			  ('middle', 'Braille copies of this Act can also be purchased at the same price as the print edition by contacting\s*'),
+			  ('middle', 'TSO Customer Services on 0870 600 5522 or '),
+			  ('middle', 'e-mail:\s*<A HREF="mailto:customer.services?@tso.co.uk">customer.services?@tso.co.uk</A>.</p>\s*'),
+			  ('middle', '<P>\s*Further information about the publication of legislation on this website can be found by referring to the <A HREF="http://www.hmso.gov.uk/faqs.htm">Frequently Asked Questions</a>.\s*<P>\s*'),
+			  ('middle', 'To ensure fast access over slow connections, large documents have been segmented into "chunks". Where you see a "continue" button at the bottom of the page of text, this indicates that there is another chunk of text available.\s*'),
+			  ('middle', '</td>\s*</tr>\s*(?i)'),
+]
+
+'''
+(next set of lines, which has repeated info that's worth cross-checking)
+
+<TR><TD colspan=2><HR></TD></TR>
+
+<TR><TD valign=top>&nbsp;</TD>
+<TD align=center>&nbsp;<BR><A name="aofs"></a><font size=+2><b>Appropriation Act 2005</b></font>
+<p><b>2005 Chapter 3</b>
+</TD></TR>
+
+<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col.gif"></TD><TD valign=top>&nbsp;</TD></TR>
+
+
+<TR valign=top><TD valign=top>&nbsp;</TD><TD valign=top><TABLE width=100%>
+'''
+
 def ScrapeAct(aurl):
 	tpg = urllib.urlopen(aurl).read()
 	print aurl
 
-	mtpg = re.search('''(?ix)#<table(?:cellpadding=2|width=95%|\s)*>\s*
-						#<tr>\s*<td\s*align=center\s*valign=bottom>\s*
-						<img\s*src="/img/royalarm.gif"\s*alt="Royal\ Arms">\s*</td>\s*
-						<td\s*valign="?bottom"?>(?:&nbsp;<br>)?\s*
-						<font\s*size="?\+3"?><b>([\s\S]{1,250}?)</b></font>\s*
-						<p>(?:</p>)?<font\s*size="?\+1"?>(?:<b>)?([^<]*)(?:</b>)?</font>\s*
-						</td>\s*</tr>\s*
-						<tr(?:\s*xml\S*)*>\s*<td\s*colspan="?2"?>\s*<hr></td>\s*</tr>\s*
-						<tr>\s*<td\s*valign="?top"?>&nbsp;</td>\s*
-						<td\s*valign="?top"?>\s*
-						<p>&copy;\ Crown\ Copyright\ (\d+<?)</p>''',
-						tpg)
+	for hline in headlines:
+		if hline[0] == 'first':
+			mline = re.search(hline[1], tpg)
+		else:
+			mline = re.match(hline[1], tpg)
+		if not mline:
+			print 'failed at:', hline
+			print 'on:'
+			print tpg[:1000]
+			# drop through to create exit error
 
-#	mtpg = re.search("<p>&copy; Crown Copyright (\d+)</p>", tpg)
-	if not mtpg:
-		print tpg[:2000]
-	print mtpg.group(2), mtpg.group(1)
-	return (mtpg.group(3), mtpg.group(2), mtpg.group(1), aurl)
+		# extract any strings
+		# (perhaps make a class that has all these fields in it)
+		if hline[0] == 'name':
+			name = mline.group(1)
+		elif hline[0] == 'chapt':
+			chapt = mline.group(1)
+			# decode the chapter number here
+		elif hline[0] == 'cright':
+			cright = mline.group(1)
+		elif hline[0] == 'name2':
+			name2 = mline.group(1)
+		elif hline[0] == 'isbn':
+			isbn = "%s %s %s" % (mline.group(1), mline.group(2), mline.group(3))
+		elif hline[0] == 'prodid':
+			prodid = mline.group(1)
+
+		# move on
+		tpg = tpg[mline.end(0):]
+
+	if name != name2:
+		print "--------------------mismatching names, /%s/ <> /%s/" % (name, name2)
+	print chapt, name, prodid
+	return (cright, chapt, name, aurl)
 
 
 def GetActsFromYear(iyurl):
@@ -68,17 +130,18 @@ def GetYearIndexes(iurl):
 # then extracts name and chapter from the page itself
 yiurl = GetYearIndexes(iurl)
 allacts = [ ]
-#yiurl = yiurl[-1:]
-#yiurl = yiurl[15:]
+#yiurl = yiurl[2:8]
 for yiur in yiurl:
 	allacts.extend(GetActsFromYear(yiur))
 print "lenlen", len(allacts)
 fout = open("listacts1.xml", "w")
-for aurl in allacts:
+i = 0    # numbering helps work out where to restart for error examining
+for aurl in allacts[0:]:  # start in middle when chasing an error
 	res = ScrapeAct(aurl)
-	print res
+	print i, res
 	fout.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
 	fout.flush()
+	i += 1
 fout.close()
 
 
