@@ -62,8 +62,10 @@ headlines1 = [ ('first',  '<table(?:cellpadding="?2"?|width="?95%"?|\s)*>\s*<tr>
 '''
 
 headlines2=[ ('middle','<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom)>(?i)'),
-			('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>)?\s*</td>(?i)'),
-			('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*<td(?: valign=top)?>(?i)'),
+			('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
+			('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
+			('middle', '(\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
+			('middle', '<td(?: valign=top)?>(?i)'),
 			('middle','\s*(?:<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</td></tr>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)(?i)'),
 			('preamble','(?:(An Act to [a-zA-Z- \.;,&\(\)0-9\']*)</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td |\s*<p>(An Act to [a-zA-Z- \.;,&\(\)0-9\']*)\s*<p)(?i)'),
 			('date','\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]\s*(?:<br><br>)?(?i)'),
@@ -75,30 +77,36 @@ headlines2=[ ('middle','<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 a
 
 sorts='(SECTIONS|PARTS|CLAUSES)'
 
-headlines3=[ ('contentsheading', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">[1]</a></sup>)?<br><a name="aofr"></a>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<center>\s*<font size="\+1">\s*<br><br>(ARRANGEMENT OF '+sorts+')</font>\s*</center>\s*(?i)')]
+headlines3=[ ('contentsheading', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">[1]</a></sup>)?<br><a name="aofr"></a>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<center>\s*<font size="\+1">\s*<br><br>(ARRANGEMENT OF '+sorts+')</font>\s*</center>\s*(?i)'),
+	('middle','\s*<br>\s*<center>\s*(?=<table)')]
 
 singleendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
 
-multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
+#multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(a href=\S*></a>)?(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
+
+multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*>\s*<img src="/img/nav-conu\.gif"(?i)'
 
 multimidendmatch='<td valign="2">\s*<a href="\S*"><img src="/img/nav-conu\.gif" align="top" alt="continue" border="0"></a>'
 #<a href="\S*"><img align="top" alt="previous section" border="0" src="/img/navprev2\.gif"></a><a href="\S*"><img align="top" alt="contents" border="0" src="/img/nav-cont\.gif"></a><a name="end"></a>(?i)'
+
+finalendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href="\S*">\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)'
 
 def GrabRest(aurl,nexturl):
 	urlbase=re.search('(.*/)[^/]*$',aurl).group(1)
 	
 	singlepage=False
 	pageacc=''
-	print "(nexturl=(%s) of type (%s))" % (nexturl, type(nexturl))
+	#print "(nexturl=(%s) of type (%s))" % (nexturl, type(nexturl))
 
-	scrapelist=[('first','<tr>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>'),
-			('backbutton','\s*<tr>\s*<td colspan="2" align="right">\s*<a href=\S*>back to previous page</a>'),
-			('middle','\s*</td>\s*</tr>(<tr valign="top">\s*<td width="10%">|<tr>\s*<td width="20%" valign="top">)(<br>|&nbsp;|\s)*</td>')]
+	scrapelist=[('first','<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>'),
+			('backbutton','\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href=\S*>back to previous page</a>'),
+			('middle','\s*</td>\s*</tr>\\s*(<p>)?'),
+			('middle','(?=<tr( valign="top")?>\s*(<td width="10%">|<td width="20%"( valign="top")?>)(<br>|&nbsp;|\s)*</td>)')]
 
 	while not singlepage:
 		page=urllib.urlopen(urlbase+nexturl).read()	
 		print nexturl
-		page=ScrapeTool(scrapelist,page,False)
+		(page,values)=ScrapeTool(scrapelist,page)
 		contbutton=re.search('<a href="(\S*.htm)"(?:\s*xml\S*)*>\s*<img (?:\s*(?:border="?0"?|align="?top"?|src="/img/nav-conu.gif"|alt="continue")){4}(?i)',page)
 		if contbutton:
 			singlepage=False
@@ -112,11 +120,11 @@ def GrabRest(aurl,nexturl):
 				sys.exit()
 		else:
 			singlepage=True
-			m=re.search(singleendmatch, page)
+			m=re.search(finalendmatch, page)
 			if m:
 				pageacc=pageacc+page[:m.start()]
 			else:
-				print "Failed to find endmatch=(%s) at:" % singleendmatch
+				print "Failed to find endmatch=(%s) at:" % finalendmatch
 				print page[-128:]
 				sys.exit()
 			
@@ -124,29 +132,43 @@ def GrabRest(aurl,nexturl):
 						
 
 def TableBalance(tablestring):
-	t=1
 	s=tablestring
 	pos=0
 	total=0
+	m=re.match('<table(?i)',s)
+	if not m:
+		print "failed to find first table in:"
+		print tablestring
+		sys.exit()
+	t=1
+	total=m.end()
 
 	while t>0:
-		print t, pos
+		if total>=len(tablestring):
+			print "error balancing table (t=%s):" % t
+			print tablestring
+			sys.exit()
 		s=tablestring[total:]
-		m=re.search('(<table|</table>)',s)
+		m=re.search('(<table|</table>)(?i)',s)
 		if m:
-			print m.groups(1)[0]
-			if m.groups(1)[0]=='<table':
+			#print m.group(1),pos,t,total
+			if re.match('<table(?i)',m.groups(1)[0]):
 				t=t+1
 			else:
 				t=t-1
 			pos=m.end()
 			
-		print t,pos
+		#print t,pos
 		total=total+pos
-		
+	#print "****tablestring ending with:"
+	#print tablestring[total-16:total]
+	#print "****next begins with:"
+	#print tablestring[total:total+32]
+	#print
 	return total		
 
-def ScrapeTool(lines,tpg,header):
+def ScrapeTool(lines,tpg,forward=True):
+	values=dict([])
 	for hline in lines:
 #		print "1 hline=(%s)" % hline[1]
 		if hline[0] == 'first':
@@ -161,14 +183,19 @@ def ScrapeTool(lines,tpg,header):
 #		print "2"
 
 		#these really ought not to be here
-		preamble=''
-		date=''
+		#preamble=''
+		#date=''
+
+
+		if hline[0] != 'middle':
+			if len(mline.groups(0)) > 0:
+				values[hline[0]]=mline.group(1)
 
 		# extract any strings
 		# (perhaps make a class that has all these fields in it)
-		if hline[0] == 'name':
-			name = mline.group(1)
-		elif hline[0] == 'chapt':
+#		if hline[0] == 'name':
+#			name = mline.group(1)
+		if hline[0] == 'chapt':
 			chapt = mline.group(1)
 			m=re.match('(\d{4})\s*(?:c\s*\.|chapter)\s*(\d+)(?i)',chapt)
 			if m:
@@ -178,29 +205,33 @@ def ScrapeTool(lines,tpg,header):
 				print "error decoding chapter (%s), at:\n" % chapt
 				print tpg[:64]
 				sys.exit()
-			# decode the chapter number here
-		elif hline[0] == 'cright':
-			cright = mline.group(1)
-		elif hline[0] == 'name2':
-			name2 = mline.group(1)
+			values['year']=year
+			values['chapter']=chapter
+#		elif hline[0] == 'cright':
+#			cright = mline.group(1)
+#		elif hline[0] == 'name2':
+#			name2 = mline.group(1)
 		elif hline[0] == 'isbn':
 			if len(mline.group(1)) == 0:
 				isbn="XXXXXXXXXXX"
 			else:
 				isbn = "%s %s %s" % (mline.group(2), mline.group(3), mline.group(4))
-		elif hline[0] == 'prodid':
-			prodid = mline.group(1)
-		elif hline[0] == 'preamble':
-			preamble = mline.group(1)
-		elif hline[0] == 'date':
-			date = mline.group(1)
+			values['isbn']=isbn
+#		elif hline[0] == 'prodid':
+#			prodid = mline.group(1)
+#		elif hline[0] == 'preamble':
+#			preamble = mline.group(1)
+#		elif hline[0] == 'date':
+#			date = mline.group(1)
+		
 
 		# move on
-		tpg = tpg[mline.end(0):]
-	if header:
-		return (tpg,name,chapt,year,chapter,preamble,date,cright,name2,isbn,prodid)
-	else:
-		return tpg
+		if forward:
+			tpg = tpg[mline.end(0):]
+		else:
+			tpg = tpg[:mline.start()]
+
+	return (tpg,values)
 
 def ScrapeAct(aurl):
 	tpg = urllib.urlopen(aurl).read()
@@ -215,7 +246,7 @@ def ScrapeAct(aurl):
 		headlines=headlines1+headlines3
 	else:
 		istoc=False
-		headlines=headlines1+headlines2
+		headlines=headlines1
 		
 	if contbutton:
 		singlepage=False
@@ -232,31 +263,42 @@ def ScrapeAct(aurl):
 			print "***multiple pages, no table of contents"
 
 
-	#	bottomline=re.search('<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>\s*<tr>\s*<td valign="top">&nbsp;</td>\s*<td valign="2">\s*<a name="end"></a>\s*<hr>',tpg)
+	(tpg,values)=ScrapeTool(headlines,tpg)
 
-	(tpg,name,chapt,year,chapter,preamble,date,cright,name2,isbn,prodid)=ScrapeTool(headlines,tpg,True)
+	name=values['name']
+	name2=values['name2']
+	isbn=values['isbn']
+	chapt=values['chapt']
+	prodid=values['prodid']
+	cright=values['cright']
 
 	if name != name2:
 		print "--------------------mismatching names, /%s/ <> /%s/" % (name, name2)
 	if isbn=="XXXXXXXXXXX":
 		print "--------------------missing ISBN"
 
+	# chop out the table of contents if its there
+	if istoc:
+		endtable=TableBalance(tpg)
+		#print endtable
+		#print "chopping, before:"
+		#print tpg[:64]
+		tpg=tpg[endtable:]
+		#print "chopping, after:"
+		#print tpg[:64]
+		(tpg,discard1)=ScrapeTool([('middle','\s*</center>')],tpg)
+
+	m=re.match('\s*<center>\s*(?=<table)',tpg)
+	if m:
+		print "*****additional tables of contents"
+		tpg=tpg[m.end():]
+		endtable=TableBalance(tpg)
+		tpg=tpg[endtable:]
+		(tpg,discard2)=ScrapeTool([('middle','\s*</center>\s*'),
+			('middle','<br><br><br><br>\s*</td>\s*</tr>\s*')],tpg)
+
 	print chapt, name, prodid 
-	if istoc==False:
-		print preamble, date
 
-	if not os.path.exists(actdir):
-		os.mkdir(actdir)
-	if not os.path.exists(actdir + "/" + year):
-		os.mkdir(actdir + "/" + year)
-
-	actfile=file(actdir + "/" + year + "/" + chapter + ".xml", "w")
-	OutputHeader(actfile, [("title",name),
-		("url",aurl),
-		("year",year),
-		("chapter number",chapter),
-		("preamble",preamble),("isbn",isbn)])
-	
 	if singlepage:
 			m=re.search(singleendmatch, tpg)
 			if m:
@@ -266,8 +308,45 @@ def ScrapeAct(aurl):
 				print tpg[-128:]
 				sys.exit()
 	else:
+			m=re.search(multiendmatch, tpg)
+			if m:
+				tpg=(tpg[:m.start()])
+			else:
+				print "Failed to find multiendmatch=(%s) at:" % multiendmatch
+				print tpg[:180]
+				sys.exit()
 			page=GrabRest(aurl,nextpage)
 			tpg=tpg+page
+
+	logfile=file("log","w")
+	logfile.write(tpg)
+	(tpg,values2)=ScrapeTool(headlines2,tpg)
+	preamble=values2['preamble']
+	enact=values2['enact']
+	date=values2['date']
+	print preamble, date
+
+	if not os.path.exists(actdir):
+		os.mkdir(actdir)
+
+	year=values['year']
+	chapter=values['chapter']
+	#title=values['title']
+
+	if not os.path.exists(actdir + "/" + year):
+		os.mkdir(actdir + "/" + year)
+
+	actfile=file(actdir + "/" + year + "/" + chapter + ".xml", "w")
+	OutputHeader(actfile, [("title",name),
+		("url",aurl),
+		("year",year),
+		("chapter_number",chapter),
+		("preamble",preamble),
+		("date",date),
+		("words_of_enactment",enact),
+		("isbn",isbn)])
+	
+	actfile.write(tpg)
 
 	OutputFooter(actfile)
 
@@ -279,6 +358,7 @@ def OutputHeader(actfile, tags):
 	actfile.write("<head>\n<lawpopts>\n")
 	for p in tags:
 		actfile.write("<" + p[0] + ">" + p[1] + "</" + p[0] + ">\n")
+	actfile.write("</lawpopts>\n")
 	actfile.write("</head>\n")
 	actfile.write("<body>\n")
 
