@@ -84,7 +84,7 @@ singleendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"
 
 #multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(a href=\S*></a>)?(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
 
-multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*>\s*<img src="/img/nav-conu\.gif"(?i)'
+multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)'
 
 multimidendmatch='<td valign="2">\s*<a href="\S*"><img src="/img/nav-conu\.gif" align="top" alt="continue" border="0"></a>'
 #<a href="\S*"><img align="top" alt="previous section" border="0" src="/img/navprev2\.gif"></a><a href="\S*"><img align="top" alt="contents" border="0" src="/img/nav-cont\.gif"></a><a name="end"></a>(?i)'
@@ -294,8 +294,10 @@ def ScrapeAct(aurl):
 		tpg=tpg[m.end():]
 		endtable=TableBalance(tpg)
 		tpg=tpg[endtable:]
-		(tpg,discard2)=ScrapeTool([('middle','\s*</center>\s*'),
-			('middle','<br><br><br><br>\s*</td>\s*</tr>\s*')],tpg)
+		(tpg,discard2)=ScrapeTool([('middle','\s*</center>\s*')],tpg)
+
+	if istoc:
+		(tpg,discard3)=ScrapeTool([('middle','\s*<br><br><br><br>\s*</td>\s*</tr>\s*')],tpg)
 
 	print chapt, name, prodid 
 
