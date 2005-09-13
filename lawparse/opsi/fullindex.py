@@ -61,17 +61,19 @@ headlines1 = [ ('first',  '<table(?:cellpadding="?2"?|width="?95%"?|\s)*>\s*<tr>
 <TR valign=top><TD valign=top>&nbsp;</TD><TD valign=top><TABLE width=100%>
 '''
 
-headlines2=[ ('middle','<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom)>(?i)'),
+preamblepattern='((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([a-zA-Z- \.;/,\[\]&\(\)0-9\']|</?i>)*)'
+
+headlines2=[ ('middle','\s*<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom)>(?i)'),
 			('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
 			('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
 			('middle', '(\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
 			('middle', '<td(?: valign=top)?>(?i)'),
 			('middle','\s*(?:<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</td></tr>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)(?i)'),
-			('preamble','(?:(An Act to [a-zA-Z- \.;,&\(\)0-9\']*)</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td |\s*<p>(An Act to [a-zA-Z- \.;,&\(\)0-9\']*)\s*<p)(?i)'),
+			('preamble','(?:' + preamblepattern + '</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td |\s*<p>' + preamblepattern +'\s*<p)(?i)'),
 			('date','\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]\s*(?:<br><br>)?(?i)'),
 			('middle','(?:\s*</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|\s*<p>)(?i)'),
 			('consideration','\s*(Whereas [a-zA-Z ;,&\(\)0-9\']*:)?'),
-			('petition1','(Most Gracious Sovereign,\s*(?:</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?\s*(?:<p>)?WE, Your Majesty\'s most dutiful and loyal subjects,? the Commons of the United Kingdom in Parliament assembled, towards making good the supply which we have cheerfully granted to Your Majesty in this Session of Parliament,? have resolved to grant unto Your Majesty the sums? hereinafter mentioned; and do therefore most humbly beseech Your Majesty that it may be enacted,? and )?\s*(?i)'),
+			('petition1','(Most Gracious Sovereign,\s*(?:</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?\s*(?:<p>)?WE, Your Majesty\'s most dutiful and loyal subjects,? the Commons of the United Kingdom in Parliament assembled, (towards making good the supply which we have cheerfully granted to Your Majesty in this Session of Parliament,? have resolved to grant unto Your Majesty the sums? hereinafter mentioned|towards raising the necessary supplies to defray Your Majesty\'s public expenses, and making an addition to the public revenue, have freely and voluntarily resolved to give and grant unto Your Majesty the several duties hereinafter mentioned); and do therefore most humbly beseech Your Majesty that it may be enacted,? and )?\s*(?i)'),
 			('middle','(</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?(?i)'),
 			('enact','(Be it (?:therefore )?enacted  ?by the Queen\'s most Excellent Majesty,? by and with the advice and consent of the Lords Spiritual and Temporal,? and Commons, in this present Parliament assembled,? and by the authority of the same,? as follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')]
 
@@ -82,14 +84,13 @@ headlines3=[ ('contentsheading', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">[1
 
 singleendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
 
-#multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(a href=\S*></a>)?(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
-
 multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)'
 
-multimidendmatch='<td valign="2">\s*<a href="\S*"><img src="/img/nav-conu\.gif" align="top" alt="continue" border="0"></a>'
+multimidendmatch='(</table>\s*<table width="100%">\s*)?<td valign=("2"|"top")>\s*<a href="\S*"(\s*xml\S*)*><img src="/img/nav-conu\.gif" align="top" alt="continue" border=("0"|"right")( width="25%")?></a>'
+
 #<a href="\S*"><img align="top" alt="previous section" border="0" src="/img/navprev2\.gif"></a><a href="\S*"><img align="top" alt="contents" border="0" src="/img/nav-cont\.gif"></a><a name="end"></a>(?i)'
 
-finalendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href="\S*">\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)'
+finalendmatch='(</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href="\S*"(\s*xml\S*)*>\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)'
 
 def GrabRest(aurl,nexturl):
 	urlbase=re.search('(.*/)[^/]*$',aurl).group(1)
@@ -99,9 +100,8 @@ def GrabRest(aurl,nexturl):
 	#print "(nexturl=(%s) of type (%s))" % (nexturl, type(nexturl))
 
 	scrapelist=[('first','<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>'),
-			('backbutton','\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href=\S*>back to previous page</a>'),
-			('middle','\s*</td>\s*</tr>\\s*(<p>)?'),
-			('middle','(?=<tr( valign="top")?>\s*(<td width="10%">|<td width="20%"( valign="top")?>)(<br>|&nbsp;|\s)*</td>)')]
+			('backbutton','\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href="?(\S*)"?>back to previous page</a>'),
+			('middle','\s*</td>\s*</tr>\\s*(<p>)?')]
 
 	while not singlepage:
 		page=urllib.urlopen(urlbase+nexturl).read()	
@@ -115,7 +115,7 @@ def GrabRest(aurl,nexturl):
 			if m:
 				pageacc=pageacc+page[:m.start()]
 			else:
-				print "Failed to find endmatch=(%s) at:" % multimidendmatch
+				print "Failed to find multimidendmatch=(%s) at:" % multimidendmatch
 				print page[-128:]
 				sys.exit()
 		else:
@@ -124,7 +124,7 @@ def GrabRest(aurl,nexturl):
 			if m:
 				pageacc=pageacc+page[:m.start()]
 			else:
-				print "Failed to find endmatch=(%s) at:" % finalendmatch
+				print "Failed to find finalendmatch=(%s) at:" % finalendmatch
 				print page[-128:]
 				sys.exit()
 			
@@ -190,6 +190,11 @@ def ScrapeTool(lines,tpg,forward=True):
 		if hline[0] != 'middle':
 			if len(mline.groups(0)) > 0:
 				values[hline[0]]=mline.group(1)
+			elif hline[0] != 'first':
+				print "empty match on (%s)" % hline[0]
+				print "failed on:"
+				print tpg[:128]
+				sys.exit()
 
 		# extract any strings
 		# (perhaps make a class that has all these fields in it)
@@ -301,12 +306,25 @@ def ScrapeAct(aurl):
 
 	print chapt, name, prodid 
 
+	# this is for debugging
+	print tpg[:32]
+	if re.search('<i>notes:</i>(?i)',tpg):
+		(x1,x2)=ScrapeTool([('first','<tr>\s*<td WIDTH="20%">&nbsp;</td>(?i)'),
+			('middle','\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*<a name="tcnc1">(?i)'),
+		('middle','\[1\]</a>(<b>)?\[([a-zA-Z\.,;\s]*)](</b>)?\s*<a href="#cnc1">back</a>(?i)'),
+		('middle','\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)')],tpg)
+
+	m=re.search('<tr>\s*<td WIDTH="20%">&nbsp;</td>\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*<a name="tcnc1">\[1\]</a>(<b>)?\[([a-zA-Z\.,;\s]*)](</b>)?\s*<a href="#cnc1">back</a>\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)',tpg)
+	if m:
+		tpg=tpg[:m.start()]+tpg[m.end():]
+		print "****footnote found"
+
 	if singlepage:
 			m=re.search(singleendmatch, tpg)
 			if m:
 				tpg=(tpg[:m.start()])
 			else:
-				print "Failed to find endmatch=(%s) at:" % endmatch
+				print "Failed to find singleendmatch=(%s) at:" % endmatch
 				print tpg[-128:]
 				sys.exit()
 	else:
@@ -357,12 +375,16 @@ def ScrapeAct(aurl):
 
 def OutputHeader(actfile, tags):
 	actfile.write("<html>\n")
-	actfile.write("<head>\n<lawpopts>\n")
+	actfile.write('<head>\n<meta name="lawparseroptions">\n')
 	for p in tags:
-		actfile.write("<" + p[0] + ">" + p[1] + "</" + p[0] + ">\n")
-	actfile.write("</lawpopts>\n")
+		if p:
+			actfile.write("<" + str(p[0]) + ">" + str(p[1]) + "</" + str(p[0]) + ">\n")
+		else:
+			print "*****unable to write",p[0],"or",p[1]
+	actfile.write("</meta>\n")
 	actfile.write("</head>\n")
 	actfile.write("<body>\n")
+	actfile.write('<table width="95%" cellpadding="2">\n')
 
 def OutputFooter(actfile):
 	actfile.write("</body></html>")	
@@ -412,7 +434,7 @@ print "lenlen", len(allacts)
 fout = open("listacts1.xml", "w")
 i = 0    # numbering helps work out where to restart for error examining
 allacts.reverse()
-for aurl in allacts[0:]:  # start in middle when chasing an error
+for aurl in allacts[105:]:  # start in middle when chasing an error
 	res = ScrapeAct(aurl)
 	print i, res
 	fout.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
@@ -421,3 +443,4 @@ for aurl in allacts[0:]:  # start in middle when chasing an error
 fout.close()
 
 
+#115+22
