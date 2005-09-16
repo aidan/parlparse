@@ -434,8 +434,8 @@ for yiur in yiurl:
 print "lenlen", len(allacts)
 fout = open("listacts1.xml", "w")
 i = 0    # numbering helps work out where to restart for error examining
-allacts.reverse()
-for aurl in allacts[130:]:  # start in middle when chasing an error
+allacts.reverse() #I decided to go backwards from 1988
+for aurl in allacts[0:]:  # start in middle when chasing an error
 	res = ScrapeAct(aurl)
 	print i, res
 	fout.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
