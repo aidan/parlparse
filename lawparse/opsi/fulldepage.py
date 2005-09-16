@@ -1,0 +1,151 @@
+#!/usr/bin/python
+
+import urllib
+import urlparse
+import re
+import sys
+import os
+import os.path
+
+# starting point for directories
+actdir = "acts"
+actdirhtml = os.path.join(actdir, "html")
+if not os.path.isdir(actdirhtml):
+	os.mkdir(actdirhtml)
+
+# starting point for scraping
+iurl = "http://www.opsi.gov.uk/acts.htm"
+
+
+# helpful debugging match stuff
+def HeadMatch(exp, txt):
+	m = re.match(exp, txt)
+	if not m:
+		print "failed to match expression:\n\t", exp
+		print "onto:"
+		print txt[:1000]
+		sys.exit(1)
+	return txt[m.end(0):]
+
+# helpful debugging match stuff
+def TailMatch(exp, txt):
+	m = re.search(exp, txt)
+	if not m:
+		print "failed to match expression:\n\t", exp
+		print "ending with:\n"
+		print txt[-1000:]
+		raise Exception
+	return txt[:m.start(0)]
+
+
+# main top and tail of the pages
+def TrimPages(urlpages):
+
+	res = [ ]
+	for i in range(len(urlpages)):
+		(url, page) = urlpages[i]
+		res.append('<pageurl url="%s"/>\n' % url)
+
+		# trim off heading bits
+		if i != 0:
+			# trim off the head in stages
+			page = HeadMatch('(?:[\s\S]*?)<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>', page)
+			page = HeadMatch('\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href="?(?:\S*)"?>back to previous page</a>', page)
+			page = HeadMatch('\s*</td>\s*</tr>\\s*(?:<p>)?', page)
+
+		# trim the tail different cases
+		if len(urlpages) == 1:  # single page
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*(?:<a name="end"(?:\s*xml\S*)*></a>)?\s*<hr(?:\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
+		elif i == 0:		# first page
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)', page)
+		elif i != len(urlpages) - 1:  # middle page
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td valign=(?:"2"|"top")>\s*<a href="\S*"(?:\s*xml\S*)*><img src="/img/nav-conu\.gif" align="top" alt="continue" border=(?:"0"|"right")(?: width="25%")?></a>(?i)', page)
+		else:  # last page
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*<a href="\S*"(?:\s*xml\S*)*>\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)', page)
+
+		res.append(page)
+	return res
+
+
+
+# recurse through all the links and make a set of strings for each url
+def GetAllPages(url):
+	res = [ ]
+	while True:
+		page = urllib.urlopen(url).read()
+		res.append((url, page))
+		contbutton = re.search('<a href="(\S*.htm)"(?:\s*xml\S*)*>\s*<img (?:\s*(?:border="?0"?|align="?top"?|src="/img/nav-conu.gif"|alt="continue")){4}(?i)', page)
+		if not contbutton:
+			break
+		url = urlparse.urljoin(url, contbutton.group(1))
+
+	return res
+
+
+# get all the links to the starts of the page
+def GetYearIndexes(iurl):
+	pg = urllib.urlopen(iurl).read()
+	mpubact = re.search("<h3>Full text Public Acts</h3>([\s\S]*?)<h3>Full text\s*Local Acts</h3>", pg)
+	pubacts = mpubact.group(1)
+	yearacts = re.findall('<a href="(acts/acts\d{4}.htm)">(\d{4})\s*</a>', pubacts)
+
+	res = [ ]
+	for yact in yearacts:
+		assert re.search('\d{4}', yact[0]).group(0) == yact[1]
+		res.append((yact[1], urlparse.urljoin(iurl, yact[0])))
+	return res
+
+def GetActsFromYear(yiurl):
+	pg = urllib.urlopen(yiurl[1]).read()
+	mpubact = re.search("<h4>Alphabetical List</h4>([\s\S]*?)<h4>Numerical List</h4>", pg)
+	alphacts = mpubact.group(1)
+	eachacts = re.findall('<a href="([^"]*)">([^<]*)</a>', alphacts)
+	res = [ ]
+	for eact in eachacts:
+		if re.match("acts\d{4}/[\d\-_\w]*\.htm$", eact[0]):
+			mtitch = re.match("([\w\d\s\.,'\-()]*?)\s*(\d{4})\s*\(?c\.\s*(\d+)\)?$", eact[1])
+			assert mtitch.group(2) == yiurl[0]
+			url = urlparse.urljoin(yiurl[1], eact[0])
+			v = (url, mtitch.group(1), mtitch.group(3))
+			if v not in res:  # 1988 has an act listed twice
+				res.append(v)
+		else:
+			assert re.match("\#num|.*\.pdf", eact[0])
+
+	# check all the numbered chapters are here
+	chnum = [ int(x[2])  for x in res ]
+	chnum.sort()
+	assert chnum == range(1, len(chnum) + 1)
+
+	return res
+
+
+# main running part
+if __name__ == '__main__':
+	# just collects links to all the first pages
+	yiurl = GetYearIndexes(iurl)
+	yiurl = yiurl[-5:-2]  # just two years
+
+	# go through the years
+	for yiur in yiurl:
+		print "---- Year:", yiur[0]
+		yacts = GetActsFromYear(yiur)
+		for url, name, chapter in yacts:
+			# build the name for this
+			fact = os.path.join(actdirhtml, "act-%sc%s.html" % (yiur[0], chapter))
+			if os.path.isfile(fact):
+				#print "  skip ch", chapter, ":", name
+				continue
+
+			print "scraping ch", chapter, ":", name,
+			actpages = GetAllPages(url)  # this ends the contact with the internet.
+			print "pages", len(actpages)
+			trimmedpages = TrimPages(actpages)
+			ftemp = "temp.html"
+			fout = open(ftemp, "w")
+			fout.writelines(trimmedpages)
+			fout.close()
+			os.rename(ftemp, fact)
+
+
+
