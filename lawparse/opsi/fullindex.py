@@ -79,7 +79,7 @@ headlines2=[ ('middle','\s*<tr(?: valign="top")?>\s*<td(?: width="10%"| width=12
 
 sorts='(SECTIONS|PARTS|CLAUSES)'
 
-headlines3=[ ('contentsheading', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">[1]</a></sup>)?<br><a name="aofr"></a>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<center>\s*<font size="\+1">\s*<br><br>(ARRANGEMENT OF '+sorts+')</font>\s*</center>\s*(?i)'),
+headlines3=[ ('contentsheading', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">\[1\]</a></sup>)?<br><a name="aofr"></a>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<center>\s*<font size="\+1">\s*<br><br>(ARRANGEMENT OF '+sorts+')</font>\s*</center>\s*(?i)'),
 	('middle','\s*<br>\s*<center>\s*(?=<table)')]
 
 singleendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*(<a name="end"(\s*xml\S*)*></a>)?\s*<hr(\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)'
@@ -309,12 +309,13 @@ def ScrapeAct(aurl):
 	# this is for debugging
 	print tpg[:32]
 	if re.search('<i>notes:</i>(?i)',tpg):
+		print "****suspected footnote"
 		(x1,x2)=ScrapeTool([('first','<tr>\s*<td WIDTH="20%">&nbsp;</td>(?i)'),
 			('middle','\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*<a name="tcnc1">(?i)'),
-		('middle','\[1\]</a>(<b>)?\[([a-zA-Z\.,;\s]*)](</b>)?\s*<a href="#cnc1">back</a>(?i)'),
+		('middle','\[1\]</a>(<b>)?(\[)?([a-zA-Z\.,;\s]*)(\])?\s*(</b>)?\s*<a href="#cnc1">back</a>(?i)'),
 		('middle','\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)')],tpg)
 
-	m=re.search('<tr>\s*<td WIDTH="20%">&nbsp;</td>\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*<a name="tcnc1">\[1\]</a>(<b>)?\[([a-zA-Z\.,;\s]*)](</b>)?\s*<a href="#cnc1">back</a>\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)',tpg)
+	m=re.search('<tr>\s*<td WIDTH="20%">&nbsp;</td>\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*<a name="tcnc1">\[1\]</a>(<b>)?(\[)?([a-zA-Z\.,;\s]*)(\])?\s*(</b>)?\s*<a href="#cnc1">back</a>\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)',tpg)
 	if m:
 		tpg=tpg[:m.start()]+tpg[m.end():]
 		print "****footnote found"
@@ -434,7 +435,7 @@ print "lenlen", len(allacts)
 fout = open("listacts1.xml", "w")
 i = 0    # numbering helps work out where to restart for error examining
 allacts.reverse()
-for aurl in allacts[105:]:  # start in middle when chasing an error
+for aurl in allacts[130:]:  # start in middle when chasing an error
 	res = ScrapeAct(aurl)
 	print i, res
 	fout.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
@@ -443,4 +444,4 @@ for aurl in allacts[105:]:  # start in middle when chasing an error
 fout.close()
 
 
-#115+22
+#130
