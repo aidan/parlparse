@@ -311,7 +311,7 @@ def ScrapeAct(aurl):
 	if re.search('<i>notes:</i>(?i)',tpg):
 		print "****suspected footnote"
 		(x1,x2)=ScrapeTool([('first','<tr>\s*<td WIDTH="20%">&nbsp;</td>(?i)'),
-			('middle','\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*(?i)'),
+		('middle','\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*(?i)'),
 		('middle','<a name="t(?P<ref>cnc1|fnf1)">\[1\]</a>(<b>)?(\[)?([a-zA-Z\.,;\s]*)(\])?\s*(</b>)?\s*<a href="#(?P=ref)">back</a>(?i)'),
 		('middle','\s*</p>\s*</td>\s*</tr>\s*(<tr>\s*<td width="10%">&nbsp;</td>\s*</tr>)(?i)')],tpg)
 
