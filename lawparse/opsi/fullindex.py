@@ -357,7 +357,7 @@ def ScrapeAct(aurl):
 	if not os.path.exists(actdir + "/" + year):
 		os.mkdir(actdir + "/" + year)
 
-	actfile=file(actdir + "/" + year + "/" + chapter + ".xml", "w")
+	actfile=file(actdir + "/" + year + "/" + chapter + ".html", "w")
 	OutputHeader(actfile, [("title",name),
 		("url",aurl),
 		("year",year),
