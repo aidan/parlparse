@@ -5,13 +5,11 @@ import urlparse
 import re
 import sys
 import os
-import os.path
+
+import miscfun
 
 # starting point for directories
-actdir = "acts"
-actdirhtml = os.path.join(actdir, "html")
-if not os.path.isdir(actdirhtml):
-	os.mkdir(actdirhtml)
+actdirhtml = miscfun.actdirhtml
 
 # starting point for scraping
 iurl = "http://www.opsi.gov.uk/acts.htm"
@@ -24,7 +22,7 @@ def HeadMatch(exp, txt):
 		print "failed to match expression:\n\t", exp
 		print "onto:"
 		print txt[:1000]
-		sys.exit(1)
+		raise Exception
 	return txt[m.end(0):]
 
 # helpful debugging match stuff
@@ -33,7 +31,7 @@ def TailMatch(exp, txt):
 	if not m:
 		print "failed to match expression:\n\t", exp
 		print "ending with:\n"
-		print txt[-1000:]
+		print txt[-2000:]
 		raise Exception
 	return txt[:m.start(0)]
 
@@ -44,24 +42,27 @@ def TrimPages(urlpages):
 	res = [ ]
 	for i in range(len(urlpages)):
 		(url, page) = urlpages[i]
-		res.append('<pageurl url="%s"/>\n' % url)
+		res.append('<pageurl page="%d" url="%s"/>\n' % (i, url))
 
 		# trim off heading bits
 		if i != 0:
 			# trim off the head in stages
-			page = HeadMatch('(?:[\s\S]*?)<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>', page)
-			page = HeadMatch('\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href="?(?:\S*)"?>back to previous page</a>', page)
-			page = HeadMatch('\s*</td>\s*</tr>\\s*(?:<p>)?', page)
+			page = HeadMatch('[\s\S]*?<tr[^>]*>\s*<td colspan="?2"?>\s*<hr>\s*</td>\s*</tr>(?i)', page)
+			if re.match('\s*<TR><TD width=120', page):
+				page = HeadMatch('\s*<tr><td width=120 align=center valign=bottom><img src="/img/ra-col.gif"></td><td valign=top>&nbsp;(?i)', page)
+			else:
+				page = HeadMatch('\s*<tr[^>]*>\s*<td colspan="?2"? align="?right"?>\s*<a href=[^>]*>back to previous (?:page|text)</a>(?i)', page)
+			page = HeadMatch('</td>\s*</tr>\s*(?:<p>)?(?i)', page)
 
 		# trim the tail different cases
 		if len(urlpages) == 1:  # single page
-			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*(?:<a name="end"(?:\s*xml\S*)*></a>)?\s*<hr(?:\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*(?:<a name="end"[^>]*></a>)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
 		elif i == 0:		# first page
-			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)', page)
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
 		elif i != len(urlpages) - 1:  # middle page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td valign=(?:"2"|"top")>\s*<a href="\S*"(?:\s*xml\S*)*><img src="/img/nav-conu\.gif" align="top" alt="continue" border=(?:"0"|"right")(?: width="25%")?></a>(?i)', page)
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
 		else:  # last page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*<a href="\S*"(?:\s*xml\S*)*>\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)', page)
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*<a href=[^>]*>\s*<img(?: align="?top"?| alt="previous section"| border="?0"?| src="/img/navprev2\.gif")+>(?i)', page)
 
 		res.append(page)
 	return res
@@ -103,7 +104,7 @@ def GetActsFromYear(yiurl):
 	res = [ ]
 	for eact in eachacts:
 		if re.match("acts\d{4}/[\d\-_\w]*\.htm$", eact[0]):
-			mtitch = re.match("([\w\d\s\.,'\-()]*?)\s*(\d{4})\s*\(?c\.\s*(\d+)\)?$", eact[1])
+			mtitch = re.match("([\w\d\s\.,'\-()]*?)\s*(\d{4})\s*\(?c\.?\s*(\d+)\)?$", eact[1])
 			assert mtitch.group(2) == yiurl[0]
 			url = urlparse.urljoin(yiurl[1], eact[0])
 			v = (url, mtitch.group(1), mtitch.group(3))
@@ -124,7 +125,7 @@ def GetActsFromYear(yiurl):
 if __name__ == '__main__':
 	# just collects links to all the first pages
 	yiurl = GetYearIndexes(iurl)
-	yiurl = yiurl[-5:-2]  # just two years
+	#yiurl = yiurl[-7:]  # just two years
 
 	# go through the years
 	for yiur in yiurl:
@@ -132,7 +133,7 @@ if __name__ == '__main__':
 		yacts = GetActsFromYear(yiur)
 		for url, name, chapter in yacts:
 			# build the name for this
-			fact = os.path.join(actdirhtml, "act-%sc%s.html" % (yiur[0], chapter))
+			fact = os.path.join(actdirhtml, "ukgpa%sc%s.html" % (yiur[0], chapter))
 			if os.path.isfile(fact):
 				#print "  skip ch", chapter, ":", name
 				continue

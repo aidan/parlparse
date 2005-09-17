@@ -44,12 +44,12 @@ headlines1 = [ ('first',  '<table(?:cellpadding="?2"?|width="?95%"?|\s)*>\s*<tr>
 			  ('middle', '\s*<tr><td colspan="?2"?>\s*<hr></td></tr>\s*(?i)'),
 			  ('middle', '\s*<tr>\s*(?:<a name="tcon"><td width="20%">|<td valign=top>)\&nbsp;</td>(?i)'),
 			  ('middle', '\s*<td align="?center"?>\s*(?i)'),
-		          ('middle', '(?:\&nbsp;<br><a name="aofs"></a>)?(?:<b>\s*|<font size="?\+2"?>){2}(?i)'),
+			  ('middle', '(?:\&nbsp;<br><a name="aofs"></a>)?(?:<b>\s*|<font size="?\+2"?>){2}(?i)'),
 			  ('name3', '([\s\S]{1,250}?)(?:</b>\s*|</font>\s*){2}(?i)'),
 			  ('middle', '(?:</a>|<td>|</td>|</tr>|<tr>|<td width="20%">\&nbsp;</td>|\s)*\s*(?i)'),
 			  ('chapt2', '<p(?: align="center")?>\s*(?:<font size="4">|<b>)([\s\S]{1,250}?)(</font>|</b>)(?i)'),
 			  ('middle', '\s*(?:</p>)?\s*</td>\s*</tr>\s*(?i)')
-			  
+
 ]
 
 '''
@@ -86,50 +86,9 @@ singleendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"
 
 multiendmatch='<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)'
 
-multimidendmatch='(</table>\s*<table width="100%">\s*)?<td valign=("2"|"top")>\s*<a href="\S*"(\s*xml\S*)*><img src="/img/nav-conu\.gif" align="top" alt="continue" border=("0"|"right")( width="25%")?></a>'
 
-#<a href="\S*"><img align="top" alt="previous section" border="0" src="/img/navprev2\.gif"></a><a href="\S*"><img align="top" alt="contents" border="0" src="/img/nav-cont\.gif"></a><a name="end"></a>(?i)'
 
-finalendmatch='(</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href="\S*"(\s*xml\S*)*>\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)'
 
-def GrabRest(aurl,nexturl):
-	urlbase=re.search('(.*/)[^/]*$',aurl).group(1)
-	
-	singlepage=False
-	pageacc=''
-	#print "(nexturl=(%s) of type (%s))" % (nexturl, type(nexturl))
-
-	scrapelist=[('first','<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>'),
-			('backbutton','\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href="?(\S*)"?>back to previous page</a>'),
-			('middle','\s*</td>\s*</tr>\\s*(<p>)?')]
-
-	while not singlepage:
-		page=urllib.urlopen(urlbase+nexturl).read()	
-		print nexturl
-		(page,values)=ScrapeTool(scrapelist,page)
-		contbutton=re.search('<a href="(\S*.htm)"(?:\s*xml\S*)*>\s*<img (?:\s*(?:border="?0"?|align="?top"?|src="/img/nav-conu.gif"|alt="continue")){4}(?i)',page)
-		if contbutton:
-			singlepage=False
-			nexturl=contbutton.group(1)
-			m=re.search(multimidendmatch, page)
-			if m:
-				pageacc=pageacc+page[:m.start()]
-			else:
-				print "Failed to find multimidendmatch=(%s) at:" % multimidendmatch
-				print page[-128:]
-				sys.exit()
-		else:
-			singlepage=True
-			m=re.search(finalendmatch, page)
-			if m:
-				pageacc=pageacc+page[:m.start()]
-			else:
-				print "Failed to find finalendmatch=(%s) at:" % finalendmatch
-				print page[-128:]
-				sys.exit()
-			
-	return pageacc		
-						
 
 def TableBalance(tablestring):
 	s=tablestring
@@ -157,7 +116,7 @@ def TableBalance(tablestring):
 			else:
 				t=t-1
 			pos=m.end()
-			
+
 		#print t,pos
 		total=total+pos
 	#print "****tablestring ending with:"
@@ -165,7 +124,7 @@ def TableBalance(tablestring):
 	#print "****next begins with:"
 	#print tablestring[total:total+32]
 	#print
-	return total		
+	return total
 
 def ScrapeTool(lines,tpg,forward=True):
 	values=dict([])
@@ -228,7 +187,7 @@ def ScrapeTool(lines,tpg,forward=True):
 #			preamble = mline.group(1)
 #		elif hline[0] == 'date':
 #			date = mline.group(1)
-		
+
 
 		# move on
 		if forward:
@@ -237,6 +196,8 @@ def ScrapeTool(lines,tpg,forward=True):
 			tpg = tpg[:mline.start()]
 
 	return (tpg,values)
+
+
 
 def ScrapeAct(aurl):
 	tpg = urllib.urlopen(aurl).read()
@@ -252,7 +213,7 @@ def ScrapeAct(aurl):
 	else:
 		istoc=False
 		headlines=headlines1
-		
+
 	if contbutton:
 		singlepage=False
 		nextpage=contbutton.group(1)
@@ -304,7 +265,7 @@ def ScrapeAct(aurl):
 	if istoc:
 		(tpg,discard3)=ScrapeTool([('middle','\s*<br><br><br><br>\s*</td>\s*</tr>\s*')],tpg)
 
-	print chapt, name, prodid 
+	print chapt, name, prodid
 
 	# this is for debugging
 	print tpg[:42]
@@ -366,7 +327,7 @@ def ScrapeAct(aurl):
 		("date",date),
 		("words_of_enactment",enact),
 		("isbn",isbn)])
-	
+
 	actfile.write(tpg)
 
 	OutputFooter(actfile)
@@ -388,7 +349,103 @@ def OutputHeader(actfile, tags):
 	actfile.write('<table width="95%" cellpadding="2">\n')
 
 def OutputFooter(actfile):
-	actfile.write("</body></html>")	
+	actfile.write("</body></html>")
+
+
+
+
+# helpful debugging match stuff
+def HeadMatch(exp, txt):
+	m = re.match(exp, txt)
+	if not m:
+		print "failed to match expression:\n\t", exp
+		print "onto:"
+		print txt[:1000]
+		sys.exit(1)
+	return txt[m.end(0):]
+
+# helpful debugging match stuff
+def TailMatch(exp, txt):
+	m = re.search(exp, txt)
+	if not m:
+		print "failed to match expression:\n\t", exp
+		print "ending with:\n"
+		print txt[-1000:]
+		raise Exception
+	return txt[:m.start(0)]
+
+
+# main top and tail of the pages
+def TrimPages(urlpages):
+
+	# get the name and chapter out from the first page
+	namch = re.search('"Royal\ Arms">\s*</td>\s+<td\s*valign="?bottom"?>(?:&nbsp;<br>)?\s+<font\s*size="?\+3"?><b>([\s\S]{1,250}?)</b></font>\s+<p>(?:</p>)?<font\s*size="?\+1"?>(?:<b>)?([^<]*)(?:</b>)?</font>\s+(?i)', urlpages[0][1])
+	print namch.group(1), namch.group(2)
+
+	res = [ ]
+	for i in range(len(urlpages)):
+		(url, page) = urlpages[i]
+		res.append('<pageurl url="%s"/>\n' % url)
+
+		# trim off heading bits
+		if i != 0:
+			# trim off the head in stages
+			page = HeadMatch('(?:[\s\S]*?)<tr(?:\s+xml\S*)*>\s*<td colspan="2">\s*<hr>\s*</td>\s*</tr>', page)
+			page = HeadMatch('\s*<tr(?:\s+xml\S*)*>\s*<td colspan="2" align="right">\s*<a href="?(?:\S*)"?>back to previous page</a>', page)
+			page = HeadMatch('\s*</td>\s*</tr>\\s*(?:<p>)?', page)
+
+		# trim the tail different cases
+		if len(urlpages) == 1:  # single page
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*(?:<a name="end"(?:\s*xml\S*)*></a>)?\s*<hr(?:\s*xml\S*)*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
+		elif i == 0:		# first page
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=\S*(\s*xml\S*)*>\s*<img src="/img/nav-conu\.gif"(?i)', page)
+		elif i != len(urlpages) - 1:  # middle page
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td valign=(?:"2"|"top")>\s*<a href="\S*"(?:\s*xml\S*)*><img src="/img/nav-conu\.gif" align="top" alt="continue" border=(?:"0"|"right")(?: width="25%")?></a>(?i)', page)
+		else:  # last page
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*<a href="\S*"(?:\s*xml\S*)*>\s*<img align="top" alt="previous section" border="0" src="/img/navprev2\.gif">(?i)', page)
+
+		res.append(page)
+	return res
+
+
+# Extract the chapter and name from the first part of first page
+def GetNameChapter(url):
+	uin = urllib.urlopen(url)
+	ffirstpage = uin.read(2000)
+	uin.close()
+	namch = re.search('"Royal\ Arms">\s*</td>\s+<td\s*valign="?bottom"?>(?:&nbsp;<br>)?\s+<font\s*size="?\+3"?><b>([\s\S]{1,250}?)</b></font>\s+<p>(?:</p>)?<font\s*size="?\+1"?>(?:<b>)?([^<]*)(?:</b>)?</font>\s+(?i)', ffirstpage)
+	name = namch.group(1)
+	chstring = namch.group(2)
+	chapter = re.search("(\d+)$", chstring).group(1)
+	return (name, chstring, chapter)
+
+# recurse through all the links and make a set of strings for each url
+def GetAllPages(url):
+	res = [ ]
+	while True:
+		page = urllib.urlopen(url).read()
+		res.append((url, page))
+		contbutton = re.search('<a href="(\S*.htm)"(?:\s*xml\S*)*>\s*<img (?:\s*(?:border="?0"?|align="?top"?|src="/img/nav-conu.gif"|alt="continue")){4}(?i)', page)
+		if not contbutton:
+			break
+		url = urlparse.urljoin(url, contbutton.group(1))
+
+	return res
+
+
+
+# get all the links to the starts of the page
+def GetYearIndexes(iurl):
+	pg = urllib.urlopen(iurl).read()
+	mpubact = re.search("<h3>Full text Public Acts</h3>([\s\S]*?)<h3>Full text\s*Local Acts</h3>", pg)
+	pubacts = mpubact.group(1)
+	yearacts = re.findall('<a href="(acts/acts\d{4}.htm)">(\d{4})\s*</a>', pubacts)
+
+	res = [ ]
+	for yact in yearacts:
+		assert re.search('\d{4}', yact[0]).group(0) == yact[1]
+		res.append(urlparse.urljoin(iurl, yact[0]))
+	return res
 
 def GetActsFromYear(iyurl):
 	pg = urllib.urlopen(iyurl).read()
@@ -405,43 +462,33 @@ def GetActsFromYear(iyurl):
 	return res
 
 
-
-def GetYearIndexes(iurl):
-	pg = urllib.urlopen(iurl).read()
-	mpubact = re.search("<h3>Full text Public Acts</h3>([\s\S]*?)<h3>Full text\s*Local Acts</h3>", pg)
-	pubacts = mpubact.group(1)
-	yearacts = re.findall('<a href="(acts/acts\d{4}.htm)">(\d{4})\s*</a>', pubacts)
-
-	res = [ ]
-	for yact in yearacts:
-		assert re.search('\d{4}', yact[0]).group(0) == yact[1]
-		res.append(urlparse.urljoin(iurl, yact[0]))
-	return res
-
-
-#res=ScrapeAct('http://www.opsi.gov.uk/acts/acts1988/Ukpga_19880046_en_1.htm')
-#sys.exit
-
-
 # main running part
-# just collects links to all the first pages
-# then extracts name and chapter from the page itself
-yiurl = GetYearIndexes(iurl)
-allacts = [ ]
-#yiurl = yiurl[2:8]
-for yiur in yiurl:
-	allacts.extend(GetActsFromYear(yiur))
-print "lenlen", len(allacts)
-fout = open("listacts1.xml", "w")
-i = 0    # numbering helps work out where to restart for error examining
-allacts.reverse() #I decided to go backwards from 1988
-for aurl in allacts[0:]:  # start in middle when chasing an error
-	res = ScrapeAct(aurl)
-	print i, res
-	fout.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
-	fout.flush()
-	i += 1
-fout.close()
+if __name__ == '__main__':
+	# just collects links to all the first pages
+	yiurl = GetYearIndexes(iurl)
+	yiurl = yiurl[-2:]  # just two years
+
+	allacts = [ ]
+	for yiur in yiurl:
+		allacts.extend(GetActsFromYear(yiur))
+
+	allacts.reverse() # I decided to go forwards from 1988
+
+	foutindex = open("listacts1.xml", "w") # useful contents of what's loaded
+	i = 0
+	for url in allacts:
+		print GetNameChapter(url)
+		continue
+
+		actpages = GetAllPages(url)  # this ends the contact with the internet.
+		trimmedpages = TrimPages(actpages)
+		fout = open("ghgh%d.html" % i, "w")
+		fout.writelines(trimmedpages)
+		fout.close()
+#		foutindex.write('<act year="%s" chapter="%s"\tname="%s" url="%s">\n' % res)
+		foutindex.flush()
+		i += 1
+
+	fout.close()
 
 
-#130
