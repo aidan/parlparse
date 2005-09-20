@@ -16,17 +16,19 @@ iurl = "http://www.opsi.gov.uk/acts.htm"
 
 
 # helpful debugging match stuff
-def HeadMatch(exp, txt, rtrnMobj=False):
+def HeadMatch(exp, txt):
 	m = re.match(exp, txt)
 	if not m:
 		print "failed to match expression:\n\t", exp
 		print "onto:"
 		print txt[:1000]
+		print re.match('\s*<TR><TD align=center>&nbsp;<br><FONT SIZE=5>ABSTRACT<BR>', txt)
+		print re.match('\s*<TR><TD align=center>&nbsp;<br>', txt)
+		print re.match('\s*<TR><TD', txt)
 		raise Exception
-	if rtrnMobj:
-		return(m, txt[m:end(0)])
-	else:
-		return txt[m.end(0):]
+
+
+	return txt[m.end(0):]
 
 # helpful debugging match stuff
 def TailMatch(exp, txt):
@@ -57,20 +59,36 @@ def TrimPages(urlpages, year, chapter):
 			page = HeadMatch('[\s\S]*?<tr[^>]*>\s*<td colspan="?2"?>\s*<hr>\s*</td>\s*</tr>(?i)', page)
 			if re.match('\s*<TR><TD width=120', page):
 				page = HeadMatch('\s*<tr><td width=120 align=center valign=bottom><img src="/img/ra-col.gif"></td><td valign=top>&nbsp;(?i)', page)
+			elif re.match('\s*<TR><TD align=center>&nbsp;<br><FONT SIZE=5>ABSTRACT<BR>', page):
+				print "Trimming out ABSTRACT OF SCHEDULES"
+				page = HeadMatch('[\s\S]*<HR width=40%>\s*<HR width=40%>\s*', page)
 			else:
 				page = HeadMatch('\s*<tr[^>]*>\s*<td colspan="?2"? align="?right"?>\s*<a href=[^>]*>back to previous (?:page|text)</a>(?i)', page)
+
 			page = HeadMatch('</td>\s*</tr>\s*(?:<p>)?(?i)', page)
 
 		# trim the tail different cases
-		if len(urlpages) == 1:  # single page
+
+		# single page
+		if len(urlpages) == 1:
 			page, mobj = TailMatch('<tr>\s*<td valign="?top"?>(?:&nbsp;|\s*)</td>\s*<td (?:colspan="?2"?|valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?)>\s*(?:(?:<a name="end"[^>]*>)?\s*(?:<A HREF="([\.\den/]+\.htm)"><IMG border=0 align=top src="/img/nav-exnt\.gif" alt="Explanatory Note"></A>)?(?:\s*</a>)?)?(?:\s*<a name="end">)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
 			if mobj.lastgroup:
 				explanation = mobj.lastgroup
 
-		elif i == 0:		# first page
-			page, mobj = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
-		elif i != len(urlpages) - 1:  # middle page
-			page, mobj = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?(?: colspan="?2"?)?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
+		# first page
+		elif i == 0:
+			if (year, chapter) == ("1996", "45"):
+				page, mobj = TailMatch('<TR><TD></TD><TD>\s*<A HREF="96045--a.htm"><IMG border=0 align=top src="/img/nav-conu.gif"(?i)', page)
+			else:
+				page, mobj = TailMatch('<tr>\s*<td[^>]*>(?:&nbsp;)?</td>\s*<td[^>]*>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
+
+		# middle page
+		elif i != len(urlpages) - 1:
+			if (year, chapter) == ("1996", "45"):
+				page, mobj = TailMatch('<TR><TD>(?:</TD><TD>)?\s*<A HREF="[^"]*"><IMG border=0 align=top src="/img/navprev2.gif"(?i)', page)
+			else:
+				page, mobj = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?(?: colspan="?2"?)?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
+
 		# last page
 		else:
 			if (year, chapter) == ("1997", "19"):  # special case
@@ -152,6 +170,9 @@ if __name__ == '__main__':
 			fact = os.path.join(actdirhtml, "ukgpa%sc%s.html" % (yiur[0], chapter))
 			if os.path.isfile(fact):
 				#print "  skip ch", chapter, ":", name
+				continue
+			if (yiur[0], chapter) in (("1996", "45"), ("1996", "23")) or (yiur[0] == "1996"):
+				print "  Skipping too hard %sc%s" % (yiur[0], chapter)
 				continue
 
 			print "scraping ch", chapter, ":", name,
