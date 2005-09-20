@@ -52,6 +52,7 @@ headlinestoc = [('middle', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">\[1\]</a
 			 ]
 
 preamblepattern='((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)'
+
 headlines2 = [  ('middle','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom)>(?i)'),
 				('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
 				('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
@@ -109,7 +110,7 @@ def ActParseHead(act):
 	for headline in headlines1:
 		act.NibbleHead(headline[0], headline[1])
 
-	btocexists = re.search('<center>.*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*</center>(?si)', act.txt)
+	btocexists = re.search('(?:<center>|<td colspan=2 align=center>).*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*(?:</center>|</td>)(?si)', act.txt)
 	if btocexists:
 		print "TOCTOC"
 		for headline in headlinestoc:
@@ -167,7 +168,10 @@ def ActParseHead(act):
 			act.NibbleHead('middle', '\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;\s*(?i)')
 			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):&#151;</td>\s*</tr>(?i)')
 	else:
-		act.NibbleHead('enact',  '((?:Be it (?:therefore )?enacted|WE IT ENACTED)\s+by the Queen\'s most Excellent Majesty[\s\S]*? as\s+follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')
+		if re.match('<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(?i)',act.txt):
+			act.NibbleHead('enact', '<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>( by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
+		else:		
+			act.NibbleHead('enact',  '((?:Be it (?:therefore )?enacted|WE IT ENACTED)\s+by the Queen\'s most Excellent Majesty[\s\S]*? as\s+follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')
 
 
 

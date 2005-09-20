@@ -4,7 +4,9 @@ import sys
 from parsefun import *
 
 
-actname='acts/1988/41p.html'
+#actname='acts/1988/41p.html'
+#actname='acts/1988/1.html'
+actname='acts/1988/15.html'
 actfile=open(actname,'r')
 act=actfile.read()
 
@@ -63,7 +65,7 @@ def parseline(line):
 
 	# extract left and right parts of the line
 
-	m=re.match('\s*<td width="20%">\s*<a name="mdiv(?:[1-9][0-9]*)"></a><br>\s*<font size="2">([ \w\':\-.]*?)</font>\s*<br>\s*</td>\s*<td>((\s|\S)*?)</td>\s*$',line)
+	m=re.match('\s*<td width="20%">\s*<a name="mdiv(?:[1-9][0-9]*)"></a><br>\s*<font size="2">([\s\S]*?)</font>\s*<br>\s*</td>\s*<td>((\s|\S)*?)</td>\s*$',line)
 
 	m2=re.match('\s*<td width="(?:5%|10%|20%)"(?: valign="top")?>(?:<br>|&nbsp;|\s)*</td>\s*<td>([\s\S]*)</td>',line)
 	if m:
@@ -134,6 +136,9 @@ def parseline(line):
 			aftersectionflag=True
 			continue
 
+# Matching various patterns used for numbering
+
+		# section numbers
 
 		#print "****",right[:16]
 		m=re.match('&\#151;(\([1-9][0-9]*\))&nbsp;',right)
@@ -144,6 +149,7 @@ def parseline(line):
 			right=right[m.end():]
 			continue
 		
+		# numbers like this (1), usually subsections		
 
 		m=re.match('\s*(?:<br>)*&nbsp;&nbsp;&nbsp;&nbsp;(\([1-9][0-9]*\))&nbsp;',right)
 		if m:
@@ -152,6 +158,7 @@ def parseline(line):
 			right=right[m.end():]
 			continue
 
+		# usually lover level numbering like (a)
 
 		m=re.match('\s*<ul>&nbsp;(\S*)&nbsp;',right)
 		if m:
@@ -160,20 +167,38 @@ def parseline(line):
 			right=right[m.end():]
 			continue
 
+		# not sure what this is or where it occurs
+
 		m=re.match('\s*<td width="10%" valign="top">&nbsp;</td>\s*<td>(\(\d+\))&nbsp;',right)
 		if m:
 			pathinsert(path,m)
 			leafoptions=path2opt(path)+partoption+divoptions
 			right=right[m.end():]
 			continue
-			
+		
 
-		m=re.match('\s*<center>\s*(<table>[\S\s]*?<table>\s*<tr>)',right)
-#\s*</center>',right)
+# I found this in s.8 ICTA 1988, a bit yucky, but not exactly wrong. It seems 
+# to occur elsewhere in the act.
+
+		m=re.match('\s*<ul>([\s\S]*?)</ul>',right)
+		if m:
+			output('leaf','type="text" format="hanging"',
+				m.group(1))
+			right=right[m.end():]
+			continue
+	
+# This should never match (since I hope all such occurances have alaredy been
+# removed.
+
+		m=re.match('\s*<center>\s*(<table>[\S\s]*?<table>\s*<tr>)',
+			right)
+
 		if m:
 			output('tablespecial','',m.group(1))
 			right=right[m.end():]
 			continue
+
+# Parsing XML entities that have been inserted earlier by me
 
 		m=re.match('<excision n="(\d*)"\s*/>',right)
 		if m:
@@ -187,6 +212,8 @@ def parseline(line):
 			right=right[m.end():]
 			output('leaf','type="quotation"',quotations[int(m.group(1))])			
 			continue
+
+# Remove "whitespace"
 
 		m=re.match('(<br>)+\s*',right)
 		if m:
