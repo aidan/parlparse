@@ -16,28 +16,35 @@ iurl = "http://www.opsi.gov.uk/acts.htm"
 
 
 # helpful debugging match stuff
-def HeadMatch(exp, txt):
+def HeadMatch(exp, txt, rtrnMobj=False):
 	m = re.match(exp, txt)
 	if not m:
 		print "failed to match expression:\n\t", exp
 		print "onto:"
 		print txt[:1000]
 		raise Exception
-	return txt[m.end(0):]
+	if rtrnMobj:
+		return(m, txt[m:end(0)])
+	else:
+		return txt[m.end(0):]
 
 # helpful debugging match stuff
-def TailMatch(exp, txt):
+def TailMatch(exp, txt, rtrnMobj=False):
 	m = re.search(exp, txt)
 	if not m:
 		print "failed to match expression:\n\t", exp
 		print "ending with:\n"
 		print txt[-2000:]
 		raise Exception
-	return txt[:m.start(0)]
-
+	if rtrnMobj:
+		return (m, txt[:m.start(0)])
+	else:
+		return txt[:m.start(0)]
 
 # main top and tail of the pages
 def TrimPages(urlpages):
+
+	explanation = None
 
 	res = [ ]
 	for i in range(len(urlpages)):
@@ -56,15 +63,20 @@ def TrimPages(urlpages):
 
 		# trim the tail different cases
 		if len(urlpages) == 1:  # single page
-			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*(?:<a name="end"[^>]*></a>)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
+			(mobj, page) = TailMatch('<tr>\s*<td valign="?top"?>(?:&nbsp;|\s*)</td>\s*<td (?:colspan="?2"?|valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?)>\s*(?:(?:<a name="end"[^>]*>)?\s*(?:<A HREF="([\.\den/]+\.htm)"><IMG border=0 align=top src="/img/nav-exnt\.gif" alt="Explanatory Note"></A>)?(?:\s*</a>)?)?(?:\s*<a name="end">)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page, True)
+			if mobj.lastgroup:
+				explanation=mobj.lastgroup
+
 		elif i == 0:		# first page
-			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
+			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
 		elif i != len(urlpages) - 1:  # middle page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?(?: colspan="?2"?)?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
 		else:  # last page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)>\s*<a href=[^>]*>\s*<img(?: align="?top"?| alt="previous section"| border="?0"?| src="/img/navprev2\.gif")+>(?i)', page)
+			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: align="?top"?| alt="previous section"| border="?0"?| src="/img/navprev2\.gif")+>(?i)', page)
 
 		res.append(page)
+	if explanation:
+		res.append('<explanation href="%s" />' % explanation)
 	return res
 
 
@@ -104,7 +116,7 @@ def GetActsFromYear(yiurl):
 	res = [ ]
 	for eact in eachacts:
 		if re.match("acts\d{4}/[\d\-_\w]*\.htm$", eact[0]):
-			mtitch = re.match("([\w\d\s\.,'\-()]*?)\s*(\d{4})\s*\(?c\.?\s*(\d+)\)?$", eact[1])
+			mtitch = re.match("([\w\d\s\.,'\-()]*?)\s*(\d{4})\s*\(?c\.?\s*(\d+)\s*\)?$", eact[1])
 			assert mtitch.group(2) == yiurl[0]
 			url = urlparse.urljoin(yiurl[1], eact[0])
 			v = (url, mtitch.group(1), mtitch.group(3))
