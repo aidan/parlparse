@@ -29,20 +29,20 @@ def HeadMatch(exp, txt, rtrnMobj=False):
 		return txt[m.end(0):]
 
 # helpful debugging match stuff
-def TailMatch(exp, txt, rtrnMobj=False):
+def TailMatch(exp, txt):
 	m = re.search(exp, txt)
 	if not m:
 		print "failed to match expression:\n\t", exp
 		print "ending with:\n"
 		print txt[-2000:]
 		raise Exception
-	if rtrnMobj:
-		return (m, txt[:m.start(0)])
-	else:
-		return txt[:m.start(0)]
+
+	assert not re.search(exp, txt[m.start(0) + 1:])  # should not have an early match
+	return txt[:m.start(0)], m
+
 
 # main top and tail of the pages
-def TrimPages(urlpages):
+def TrimPages(urlpages, year, chapter):
 
 	explanation = None
 
@@ -63,16 +63,20 @@ def TrimPages(urlpages):
 
 		# trim the tail different cases
 		if len(urlpages) == 1:  # single page
-			(mobj, page) = TailMatch('<tr>\s*<td valign="?top"?>(?:&nbsp;|\s*)</td>\s*<td (?:colspan="?2"?|valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?)>\s*(?:(?:<a name="end"[^>]*>)?\s*(?:<A HREF="([\.\den/]+\.htm)"><IMG border=0 align=top src="/img/nav-exnt\.gif" alt="Explanatory Note"></A>)?(?:\s*</a>)?)?(?:\s*<a name="end">)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page, True)
+			page, mobj = TailMatch('<tr>\s*<td valign="?top"?>(?:&nbsp;|\s*)</td>\s*<td (?:colspan="?2"?|valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?)>\s*(?:(?:<a name="end"[^>]*>)?\s*(?:<A HREF="([\.\den/]+\.htm)"><IMG border=0 align=top src="/img/nav-exnt\.gif" alt="Explanatory Note"></A>)?(?:\s*</a>)?)?(?:\s*<a name="end">)?\s*<hr[^>]*>\s*</td>\s*</tr>\s*<tr>(?i)', page)
 			if mobj.lastgroup:
-				explanation=mobj.lastgroup
+				explanation = mobj.lastgroup
 
 		elif i == 0:		# first page
-			page = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
+			page, mobj = TailMatch('<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=("?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: border=0 align=top)? src="/img/nav-conu\.gif"(?i)', page)
 		elif i != len(urlpages) - 1:  # middle page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?(?: colspan="?2"?)?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
-		else:  # last page
-			page = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: align="?top"?| alt="previous section"| border="?0"?| src="/img/navprev2\.gif")+>(?i)', page)
+			page, mobj = TailMatch('(?:</table>\s*<table width="100%">\s*)?<td(?: valign=(?:"2"|"?top"?))?(?: colspan="?2"?)?>\s*<a href=[^>]*><img(?: src="/img/nav-conu\.gif"| align="?top"?| alt="continue"| border=(?:0|"0"|"right")| width="25%")+></a>(?i)', page)
+		# last page
+		else:
+			if (year, chapter) == ("1997", "19"):  # special case
+				page, mobj = TailMatch('</TABLE></TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR><TR><TD valign=top>&nbsp;</TD><TD valign=top colspan=2>\s*<A name="end"><HR>(?i)', page)
+			else:
+				page, mobj = TailMatch('(?:</table>\s*<table width="100%">\s*)?<tr>\s*<td valign="?top"?>&nbsp;</td>\s*<td valign=(?:"?2"?|"?top"?)(?: colspan="?2"?)?>\s*<a href=[^>]*>\s*<img(?: align="?top"?| alt="previous section"| border="?0"?| src="/img/navprev2\.gif")+>(?i)', page)
 
 		res.append(page)
 	if explanation:
@@ -153,7 +157,7 @@ if __name__ == '__main__':
 			print "scraping ch", chapter, ":", name,
 			actpages = GetAllPages(url)  # this ends the contact with the internet.
 			print "pages", len(actpages)
-			trimmedpages = TrimPages(actpages)
+			trimmedpages = TrimPages(actpages, yiur[0], chapter)
 			ftemp = "temp.html"
 			fout = open(ftemp, "w")
 			fout.writelines(trimmedpages)
