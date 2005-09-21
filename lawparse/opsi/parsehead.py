@@ -45,26 +45,39 @@ headlines1 = [('middle', '[\s\S]*?<table(?:cellpadding="?2"?|width="?95%"?|\s)*>
 			  ('middle', '\s*(?:</p>)?\s*</td>\s*</tr>\s*(?i)')
 ]
 
-headlinestoc = [('middle', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">\[1\]</a></sup>)?<br><a name="aofr"></a>\s*<tr>(?i)'),
+headlinestoc1 = [('middle', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">\[1\]</a></sup>)?<br><a name="aofr"></a>\s*<tr>(?i)'),
 			  ('middle', '\s*<td width="20%">&nbsp;</td>\s*<td>\s*<center>\s*<font size="\+1">(?i)'),
-			  ('middle', '\s*<br><br>ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES)</font>\s*</center>(?i)'),
+			  ('middle', '\s*<br><br>(ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES))</font>\s*</center>(?i)'),
 			  ('middle','\s*<br>\s*<center>\s*(?=<table)'),
 			 ]
 
-preamblepattern='((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)'
+headlinestoc2 = [('middle', '<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col.gif"></TD><TD valign=top>&nbsp;</TD></TR>\s*'),
+		('middle','<\s*TR valign=top><TD valign=top>&nbsp;</TD><TD valign=top>(?=<TABLE>)(?i)')]
 
-headlines2 = [  ('middle','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom)>(?i)'),
-				('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
-				('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
-				('middle', '(\s*</tr>\s*<pageurl[^>]*>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
-				('middle', '<td(?: valign=top)?>(?i)'),
-				('middle', '\s*(?:<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</td></tr>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)(?i)'),
-				('preamble','(?:' + preamblepattern + '</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td |\s*<p>' + preamblepattern +'\s*<p)(?i)'),
-				('date',   '\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]?\s*(?:<br><br>)?(?i)'),
-				('middle', '(?:\s*</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|\s*<p>)(?i)'),
-				('consideration','\s*(Whereas [a-zA-Z ;,&\(\)0-9\']*:)?'),
-				('petition1','(Most Gracious Sovereign,\s*(?:</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?\s*(?:<p>)?WE, Your Majesty\'s most dutiful and loyal subjects,? the Commons of the United Kingdom in Parliament assembled, (towards making good the supply which we have cheerfully granted to Your Majesty in this Session of Parliament,? have resolved to grant unto Your Majesty the sums? hereinafter mentioned|towards raising the necessary supplies to defray Your Majesty\'s public expenses, and making an addition to the public revenue, have freely and voluntarily resolved to give and grant unto Your Majesty the several duties hereinafter mentioned); and do therefore most humbly beseech Your Majesty that it may be enacted,? and )?\s*(?i)'),
-				('middle', '(</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?(?i)') ]
+
+headlines2 = [  ('middle','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom| valign=top)>(?i)'),
+	('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
+	('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
+	('middle', '(\s*</tr>\s*<pageurl[^>]*>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
+	('middle', '<td(?: valign=top)?>(?i)'),
+	('middle', '\s*(?:<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</td></tr>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)?(?i)')]
+
+
+headlines3 = [ ('middle', '(?:<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col\.gif"></TD><TD\s*valign=top>&nbsp;</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)?(?i)') ]
+
+frontmatter = [
+	('preamble','\s*(?:<p>)?((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)(?:\s*<p|</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td)(?i)'),
+	('date',   '\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]?\s*(?:<br><br>)?(?i)'),
+	('middle', '(?:\s*</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|\s*<p>)(?i)'),
+	('consideration','\s*(Whereas [a-zA-Z ;,&\(\)0-9\']*:)?')]
+#,
+#	('petition1','(Most Gracious Sovereign,\s*(?:</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?\s*(?:<p>)?WE, Your Majesty\'s most dutiful and loyal subjects,? the Commons of the United Kingdom in Parliament assembled, (towards making good the supply which we have cheerfully granted to Your Majesty in this Session of Parliament,? have resolved to grant unto Your Majesty the sums? hereinafter mentioned|towards raising the necessary supplies to defray Your Majesty\'s public expenses, and making an addition to the public revenue, have freely and voluntarily resolved to give and grant unto Your Majesty the several duties hereinafter mentioned); and do therefore most humbly beseech Your Majesty that it may be enacted,? and )?\s*(?i)'),
+#	('middle', '(</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?(?i)') ]
+
+
+consolidated=[('consolidated','(?:<p>)?(Apply a sum out of the Consolidated Fund to the service of the year ending on\s*(\d+(?:st|th|nd|rd)\s*(\w*)\s*(\d+)); to appropriate the supplies granted in this Session of Parliament; and to repeal certain Consolidated Fund and Appropriation Acts\.)(?i)'),
+		('middle','(?:\s*<p align=right>)?(?i)'),
+		('consoldate','\[(.*?)\]\s*(?i)')]
 
 
 
@@ -110,12 +123,12 @@ def ActParseHead(act):
 	for headline in headlines1:
 		act.NibbleHead(headline[0], headline[1])
 
-	btocexists = re.search('(?:<center>|<td colspan=2 align=center>).*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*(?:</center>|</td>)(?si)', act.txt)
-	if btocexists:
-		print "TOCTOC"
-		for headline in headlinestoc:
+	btoc1exists = re.search('<center>.*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*</center>(?si)', act.txt)
+	if btoc1exists:
+		print "***** Table of contents TYPE 1 (external heading)"
+		for headline in headlinestoc1:
 			act.NibbleHead(headline[0], headline[1])
-		act.NibbleHead("checkfront", "<table")
+		act.NibbleHead("checkfront", "<table(?i)")
 
 		# look for last open table on first page
 		print len(act.txt)
@@ -124,13 +137,29 @@ def ActParseHead(act):
 
 		print "ttttt", len(act.txt)
 
+	btoc2exists = re.search('<td colspan="?2"? align="?center"?>.*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*</td>(?si)', act.txt)
+	if btoc2exists:
+		print "***** Table of contents TYPE 2 (internal heading)"
+		for headline in headlinestoc2:
+			act.NibbleHead(headline[0], headline[1])
+		act.NibbleHead("checkfront", "<table(?i)")
+
+		# look for last open table on first page
+		print len(act.txt)
+		act.txt = act.txt[TableBalance(act.txt):]
+		act.NibbleHead("middle", '\s*</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top><BR>\s*<HR width=70% align=left>\s*<BR></TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<BR>&nbsp;<BR>&nbsp;</TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR>|<P>)(?i)')
+
+		print "ttttt", len(act.txt)
+
+
+
 	if re.match('\s*<center>\s*(?=<table)', act.txt):
 		print "*****additional tables of contents"
 		act.NibbleHead("middle", '\s*<center>\s*')
 		act.txt = act.txt[TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</center>')
 
-	if btocexists:
+	if btoc1exists:
 		act.NibbleHead("middle", '\s*<br><br><br><br>\s*</td>\s*</tr>\s*')
 
 	if re.search('<i>notes:</i>(?i)', act.txt):
@@ -145,11 +174,25 @@ def ActParseHead(act):
 		act.txt = act.txt[:m.start()] + act.txt[m.end():]
 		print "****footnote found"
 
+# It turns out to be simpler to treat acts that were a single page differently
+# from the others. Not unreasonable I think.
 
+	if re.search('<pageurl', act.txt):
+		for headline in headlines2:
+			act.NibbleHead(headline[0], headline[1])
+	else:
+		for headline in headlines3:
+			act.NibbleHead(headline[0], headline[1])
 
+	if re.match('(?:<p>)?Apply a sum out of the Consolidated Fund(?i)', act.txt):
+		print "****Consolidated Fund"
+		for headline in consolidated:
+			act.NibbleHead(headline[0], headline[1])
 
-	for headline in headlines2:
-		act.NibbleHead(headline[0], headline[1])
+	else:
+		for headline in frontmatter:
+			act.NibbleHead(headline[0], headline[1])
+	
 
 	if re.match("Whereas the government of the Commonwealth of Australia", act.txt):
 		act.NibbleHead("middle", "Whereas the government of the Commonwealth of Australia has requested that the record copy of the Commonwealth of Australia Constitution Act 1900 which is at present on loan to the Commonwealth should remain permanently in the keeping of the Commonwealth;</td>")
@@ -159,17 +202,20 @@ def ActParseHead(act):
 
 	if re.match("WE", act.txt):
 		print "the WE IT ENACTED misspelling", act.ShortID()
-	if re.match("Most Gracious Sovereign,", act.txt):
-		act.NibbleHead('middle', 'Most Gracious Sovereign,')
-		if re.match("<font", act.txt):
-			act.NibbleHead('enact', '(<font size="-1">We(?:, )?</font>\s*,?\s*Your Majesty\'s most dutiful and loyal subjects.*? as follows):&#151;</td>\s*</tr>\s*(?:<p>)?')
+
+	if re.match("(<p>)?Most Gracious Sovereign,(?i)", act.txt):
+		print "****money act"
+		act.NibbleHead('middle', '(?:<p>)?(Most Gracious Sovereign,)\s*(?:<p>)?(?i)')
+		if re.match("\s*(<P>)?(<font|WE,)(?i)", act.txt):
+			act.NibbleHead('enact', '\s*(?:<P>)?(?P<font><font size="-1">)?We(?:, )?(?(font)</font>|)\s*,?\s*(Your Majesty\'s most dutiful and loyal subjects.*? as follows):(?:&#151;|-)(?i)')
+			act.NibbleHead('middle','(?:<br>|&nbsp;|\s)*</td>\s*</tr>\s*(?:<p>)?(?i)')
 		else:
 			act.NibbleHead('middle', '</td>\s*</tr>\s*<tr valign="top">')
 			act.NibbleHead('middle', '\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;\s*(?i)')
-			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):&#151;</td>\s*</tr>(?i)')
+			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):(?:&#151|-);</td>\s*</tr>(?i)')
 	else:
 		if re.match('<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(?i)',act.txt):
-			act.NibbleHead('enact', '<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>( by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
+			act.NibbleHead('enact', '<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
 		else:		
 			act.NibbleHead('enact',  '((?:Be it (?:therefore )?enacted|WE IT ENACTED)\s+by the Queen\'s most Excellent Majesty[\s\S]*? as\s+follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')
 
