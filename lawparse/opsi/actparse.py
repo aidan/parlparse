@@ -10,6 +10,8 @@ import miscfun
 actdirhtml = miscfun.actdirhtml
 
 from parsehead import ActParseHead
+from analyser import ActParseBody
+import legis
 
 
 # may grow into a class which handles much of this
@@ -20,6 +22,7 @@ class Act:
 		self.chapter = m.group(2)
 		self.txt = txt
 		self.headvalues = { }
+		self.quotations=[]
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
@@ -52,6 +55,12 @@ class Act:
 		# move on
 		self.txt = self.txt[mline.end(0):]
 
+	def Parse(self):
+		ActParseHead(act)
+		
+		parsedact=legis.Act(self.year,0,self.chapter)
+		ActParseBody(act,parsedact)
+		return parsedact
 
 # main running part
 if __name__ == '__main__':
@@ -66,7 +75,7 @@ if __name__ == '__main__':
 		act = Act(ldir[i], txt)
 
 		# the parsing process
-		ActParseHead(act)
-
+		#ActParseHead(act)
+		lexact=act.Parse()
 
 
