@@ -8,6 +8,7 @@ import os
 
 import miscfun
 actdirhtml = miscfun.actdirhtml
+actdirxml = miscfun.actdirxml
 
 from parsehead import ActParseHead
 from analyser import ActParseBody
@@ -78,4 +79,5 @@ if __name__ == '__main__':
 		#ActParseHead(act)
 		lexact=act.Parse()
 
-
+		out = open(os.path.join(actdirxml, lexact.id), "w")
+		out.write(lexact.xml()) 

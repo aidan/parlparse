@@ -1,4 +1,5 @@
 import re
+import copy
 
 class Margin:
 	def __init__(self,t=''):
@@ -22,9 +23,10 @@ class Legis:
 		return self.content[len(self.content)]
 
 	def xml(self):
-		s=''
+		s='<legis\n\tid="%s">\n' % self.id
 		for leaf in self.content:
 			s=s+leaf.xml()
+		s=s+'</legis>\n'
 		return s
 
 class Act(Legis):
@@ -41,16 +43,17 @@ class SI(Legis):
 		self.year=year
 		self.number=number
 		self.content=[]
+		self.id="uksi"+year+"no"+number
 
 class Leaf:
 	def __init__(self, t, locus, margin=Margin()):
 		self.t=t
 		self.content=''
-		self.locus=locus
+		self.locus=copy.deepcopy(locus)
 		self.margin=margin
 
 	def xml(self):
-		return '<leaf type="%s" %s%s>%s</leaf>' % (self.t, 
+		return '<leaf type="%s" %s%s>%s</leaf>\n' % (self.t, 
 				self.locus.xml(), self.margin.xml(),
 				self.content)
 class Heading(Leaf):
@@ -58,7 +61,7 @@ class Heading(Leaf):
 		Leaf.__init__(self,locus,margin)
 		self.t='heading'
 		self.content=''
-		self.locus=locus
+
 
 class Division(Heading):
 	def __init__(self,locus,dheading,dnumber,margin=''):
@@ -77,8 +80,14 @@ class Locus:
 		self.lex=lex
 		self.path=[]
 		self.division='main'
-		self.margin=''
 		self.partitions={}
+
+	def __deepcopy__(self,memo):
+		newlocus=Locus(self.lex)
+		newlocus.path=copy.deepcopy(self.path,memo)
+		newlocus.division=self.division
+		newlocus.partitions=copy.deepcopy(self.partitions,memo)
+		return newlocus
 
 	def xml(self):
 		s='lex="%s" division="%s"%s%s' % (self.lex.id,
