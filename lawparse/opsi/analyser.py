@@ -133,6 +133,10 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			continue
 
 		# number matching
+
+		# These test attempt to match the normal ways in which
+		# section and lower order numbers work
+
 		# main section number
 
 		m=re.match('\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;(?:<b>)?&nbsp;&nbsp;&nbsp;&nbsp;<b>([1-9][0-9]*)(\.)?(?:</b>)?(&nbsp;&nbsp;&nbsp;&nbsp;)?</b>',right)
@@ -160,6 +164,20 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			aftersectionflag=True
 			locus.addenum(m.group(2))
 			locus.addenum(m.group(3))
+			leaf=legis.Leaf('provision',locus)
+			locus.lex.append(leaf)
+			continue
+
+		m=re.match('\s*<B>&nbsp;&nbsp;&nbsp;&nbsp;<a name="(\d+)"></a>(\d+)\.</B>',right)
+		if m:
+			print "***matched section type II - no subsection"
+			section=m.group(2)
+			path=[(section,'numeric','','')]
+			#leafoptions=path2opt(path)+partoption+divoptions+leftoption
+			right=right[m.end():]
+			aftersectionflag=True
+
+			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus)
 			locus.lex.append(leaf)
 			continue
@@ -218,10 +236,29 @@ def parseright(act,right,locus,margin=legis.Margin()):
 
 		# usually lower level numbering like (a)
 
-		m=re.match('\s*<ul>&nbsp;(\S*)&nbsp;',right)
+		m=re.match('\s*<UL>(\([a-z]+\))([\s\S]*?)</UL>(?i)',right)
 		if m:
-			pathinsert(path,m)
-			leafoptions=path2opt(path)+partoption+divoptions
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus)
+			leaf.content=m.group(2)
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
+		m=re.match('\s*<ul>&nbsp;(\(\S*\))&nbsp;',right)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus)
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
+		# unordered lists:
+		m=re.match('\s*<UL>[^(<]([\s\S]*?)</UL>(?i)',right)
+		if m:
+			leaf=legis.Leaf('item',locus)
+			leaf.content=m.group(1)
+			locus.lex.append(leaf)
 			right=right[m.end():]
 			continue
 
@@ -252,7 +289,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			continue
 	
 # This should never match (since I hope all such occurances have alaredy been
-# removed.
+# removed.)
 
 		m=re.match('\s*<center>\s*(<table>[\S\s]*?<table>\s*<tr>)',
 			right)
@@ -275,7 +312,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		if m:
 			#print "****found quotation"
 			right=right[m.end():]
-			output('leaf','type="quotation"',act.quotations[int(m.group(1))])			
+			#output('leaf','type="quotation"',act.quotations[int(m.group(1))])			
 			leaf=legis.Leaf('quotation',locus)
 			leaf.content=act.quotations[int(m.group(1))]
 			locus.lex.append(leaf)
@@ -361,7 +398,7 @@ def ActParseBody(act,pp):
 		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>','full'),
 		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>','heading'),
 		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>','error'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*)</TABLE>(?=</TD></TR>)(?i)','rightquote')]
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>(?=</TD></TR>)(?i)','rightquote')]
 	
 	#rquotepat='<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>'
 	
@@ -400,7 +437,13 @@ def ActParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
-
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD><TD align=center><BR><I>(.*?)</I></TD></TR>(?i)',remain)
+		if m:
+			leaf=legis.Heading(locus)
+			leaf.content=m.group(1)
+			locus.lex.append(leaf)
+			remain=remain[m.end():]
+			continue
 
 		m=re.match('\s*(?:<p>)?\s*<tr(?: valign="top">|>(?=\s*<td width="(?:20%|10%)" valign="top">))([\s\S]*?)</tr>\s*(?:</p>)?',remain)
 		if m:
@@ -422,29 +465,29 @@ def ActParseBody(act,pp):
 					print "++++Warning: no margin note with schedule"
 					output('heading',schedoptions)
 					schedoptions=''
-	
+			
 			#check for centered heading
 			m=re.match('\s*<td width="20%">&nbsp;</td>\s*<td>\s*(<br>)?\s*(<i>)?\s*<center>((?:<a>|</a>|&#160;|[\s0-9a-zA-Z,\(\)\'\-\.: ])*)</center>\s*(</i>)?\s*</td>',line)
 			if m:
 				heading=m.group(3)
 				m1=re.match('P(?:ART|art) \s*([IVXLDCM]+)',heading)
 				if m1:
-					startpart=True
-					part=m1.group(1)
-					partno=part
-					partoption=' part="%s"' % partno
+					#startpart=True
+					#part=m1.group(1)
+					#partno=part
+					#partoption=' part="%s"' % partno
 					
 					locus.addpart('part',partno)
 					leaf=legis.Division(locus,'part',partno)
 					pp.append(leaf)	
 				else:
-					if startpart:
-						output('heading',
-						  'type="part" n="%s"' % partno,
-						  heading)
-						startpart=False
-					else:
-						output('heading', 'type="heading" n="%s"' % heading)
+					#if startpart:
+					#	output('heading',
+					#	  'type="part" n="%s"' % partno,
+					#	  heading)
+					#	startpart=False
+					#else:
+					#	output('heading', 'type="heading" n="%s"' % heading)
 					lastleaf=pp.last()
 					if leastleaf.t=='division':
 						leastleaf.content=heading
@@ -454,14 +497,13 @@ def ActParseBody(act,pp):
 
 				remain=remain[lineend:]
 				continue
-	
-	
+
 			m=re.match('\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">\s*<br><br>\s*<font size="4">SCHEDULES</font>\s*<br>\s*</td>\s*',line)		
 			if m:
 				output('heading', 'type="schedules"')
 				remain=remain[lineend:]
 				continue
-	
+			
 			m=re.match('\s*<td width="20%" valign="top">\s*<br>&nbsp;</td>\s*<td align="center">\s*<br><a name="sdiv(\d+)"></a>SCHEDULE (\d+)</td>\s*',line)	
 			if m:
 				startschedule=True
@@ -475,22 +517,82 @@ def ActParseBody(act,pp):
 				#output('heading', )
 				remain=remain[lineend:]
 				continue
-		
+			
 			m=re.match('\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">([\s\S]*?)</td>',line)
 			if m:
 				heading=m.group(1)
 				output('heading', 'type="heading" n="%s"' % heading)
 				remain=remain[lineend:]
 				continue
-	
+			
 			else:
 				if startpart:
 					output('heading', 'type="part" n="%s"' % partno)
 				parseline(line,locus)
-	
-	
+			
+			
 			remain=remain[lineend:]
 			continue
+
+
+		# Remaining line matches -- mostly headings
+	
+		m=re.match('\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;<BR><BR>&nbsp;\s*</TD>\s*<TD align=center valign=top>&nbsp;<BR>&nbsp;<BR><a name="(sch[^"]*)"></a>SCHEDULE( (\d+))?<BR>&nbsp;</TD></TR>(?i)',remain)
+		if m:
+			if m.lastindex==3:
+				snumber=m.group(3)
+			else:
+				snumber=''
+			print "++++ snumber=%s %s" % (snumber,type(snumber))
+			locus.newdivision('schedule',snumber)
+			leaf=legis.Division(locus,'schedule',snumber)
+			pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+
+		#if re.match('\s*',remain):
+		#	print "****matched"
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>S C H E D U L E S</FONT></TD></TR>(?i)',remain)
+		if m:
+			print "***** schedule marker"
+			leaf=legis.Leaf('schedule marker',locus)
+			leaf.content='schedules'
+			pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+	
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="([^"]*)"></a>P<FONT size=-1>ART </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
+		if m:
+			locus.addpart('part',m.group(2))
+			leaf=legis.Division(locus,'part',m.group(2))
+			pp.append(leaf)	
+			remain=remain[m.end():]
+			continue
+
+	
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center>((([A-Z])<FONT size=-1>([A-Z ]*)</FONT>)+)</TD></TR>(?i)',remain)
+		if m:
+			l=re.findall('(([A-Z])<FONT size=-1>([A-Z ]*))+',m.group(1))
+			#print l, m.group(1),':',m.group(2),':',m.group(3),':',m.group(4)		
+			heading=''
+			for (a,b,c) in l:
+				heading=heading+b+c
+			print heading
+			#sys.exit()
+			lastleaf=pp.last()
+			if lastleaf.t=='division':
+				lastleaf.content=heading
+			else:
+				leaf=legis.Heading(locus)
+				leaf.content=heading
+				pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+
+	
 	
 		m=re.match('\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>([\s\S]*?)</td>\s*</tr>',remain)
 		if m and justhad3table:
@@ -508,7 +610,19 @@ def ActParseBody(act,pp):
 		if m:
 			remain=remain[m.end():]
 			continue
+
+		m=re.match('\s*<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col\.gif"></TD><TD valign=top>&nbsp;</TD></TR>(?i)',remain)
+		if m:
+			remain=remain[m.end():]
+			continue
+
 	
+		# Yuk, the page trimming needs to be improved:
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD><pageurl [^<]*>',remain)
+		if m:
+			remain=remain[m.end():]
+			continue
+
 		m=re.match('<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><br>\s*<table cols="c3" border="1"><tfoot><tr>\s*<td rowspan="1" colspan="1">\s*</td>\s*</tr>\s*</tfoot>\s*<tbody>([\s\S]*?)</tbody>\s*</table>\s*<br><br>\s*</td>\s*</tr>',remain)
 		if m:
 			#print "***** 3table found"

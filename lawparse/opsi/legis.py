@@ -20,7 +20,7 @@ class Legis:
 		print a.xml()[:128]
 
 	def last(self):
-		return self.content[len(self.content)]
+		return self.content[len(self.content)-1]
 
 	def xml(self):
 		s='<legis\n\tid="%s">\n' % self.id
@@ -57,14 +57,14 @@ class Leaf:
 				self.locus.xml(), self.margin.xml(),
 				self.content)
 class Heading(Leaf):
-	def __init__(self,locus,margin=''):
+	def __init__(self,locus,margin=Margin()):
 		Leaf.__init__(self,locus,margin)
 		self.t='heading'
 		self.content=''
 
 
 class Division(Heading):
-	def __init__(self,locus,dheading,dnumber,margin=''):
+	def __init__(self,locus,dheading,dnumber,margin=Margin()):
 		Leaf.__init__(self,locus,margin)
 		self.t="division"
 		self.dheading=dheading
@@ -101,10 +101,16 @@ class Locus:
 
 		for x in range(0,len(self.path)):
 			if self.path[x][1]==t and self.path[x][2]==left and self.path[x][3]==right:
-				self.path[x]=(num,t,left,right)
+				self.path=self.path[:x]
+				self.path.append((num,t,left,right))
 				return x
+
 		self.path.append((num,t,left,right))
-				
+
+	def newdivision(self,t,s):
+		self.partitions={}
+		self.division=t+s						
+
 	def addpart(self, t, s):
 		self.partitions[t]=s
 		if s not in set(['part','chapter']):
