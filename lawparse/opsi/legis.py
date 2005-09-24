@@ -108,6 +108,7 @@ class Locus:
 		self.path.append((num,t,left,right))
 
 	def newdivision(self,t,s):
+		print "***new division:%s%s" % (t,s)
 		self.partitions={}
 		self.division=t+s						
 

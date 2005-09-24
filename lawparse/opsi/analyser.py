@@ -7,21 +7,21 @@ import legis
 
 #actname='acts/1988/41p.html'
 #actname='acts/1988/1.html'
-actname='acts/1988/15.html'
-actfile=open(actname,'r')
-act=actfile.read()
+#actname='acts/1988/15.html'
+#actfile=open(actname,'r')
+#act=actfile.read()
 
-url=re.search('<url>(.*?)</url>',act).group(1)
-chapno=re.search('<chapter_number>([1-9][0-9]*?)</chapter_number>',act).group(1)
-year=re.search('<year>([1-9][0-9]*?)</year>',act).group(1)
+#url=re.search('<url>(.*?)</url>',act).group(1)
+#chapno=re.search('<chapter_number>([1-9][0-9]*?)</chapter_number>',act).group(1)
+#year=re.search('<year>([1-9][0-9]*?)</year>',act).group(1)
 
-def output(s,t, u=''):
+#def output(s,t, u=''):
 #	return ''
-	t=t + ' act="%sc%s"' % (year,chapno)
-	if len(u)==0:
-		print "####<%s %s/>" % (s,t)
-	else:
-		print "####<%s %s>%s</%s>" % (s,t,u,s)
+#	t=t + ' act="%sc%s"' % (year,chapno)
+#	if len(u)==0:
+#		print "####<%s %s/>" % (s,t)
+#	else:
+#		print "####<%s %s>%s</%s>" % (s,t,u,s)
 
 def threetable(t):
 	tcontents=''
@@ -97,6 +97,9 @@ def parseline(line,locus):
 
 	parseright(act,right,locus)
 
+
+# parseright parses the right hand side, where there is a marginal note and something on its right.
+
 def parseright(act,right,locus,margin=legis.Margin()):
 	rpos=0
 	leafoptions=''
@@ -146,8 +149,8 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			locus.addenum(section)
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
-			path=[(section,'numeric','','')]
-			leafoptions=path2opt(path)+partoption+divoptions+leftoption
+			#path=[(section,'numeric','','')]
+			#leafoptions=path2opt(path)+partoption+divoptions+leftoption
 			right=right[m.end():]
 			aftersectionflag=True
 			continue
@@ -158,7 +161,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		if m:
 			print "***matched section type II"
 			section=m.group(2)
-			path=[(section,'numeric','','')]
+			#path=[(section,'numeric','','')]
 			#leafoptions=path2opt(path)+partoption+divoptions+leftoption
 			right=right[m.end():]
 			aftersectionflag=True
@@ -167,6 +170,21 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			leaf=legis.Leaf('provision',locus)
 			locus.lex.append(leaf)
 			continue
+
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;<a name="(\d+)"></a>(\d+)\.\s*-\s*(?=[^\d])',right)
+		if m:
+			print "***matched section type IIB"
+			section=m.group(2)
+			#path=[(section,'numeric','','')]
+			#leafoptions=path2opt(path)+partoption+divoptions+leftoption
+			right=right[m.end():]
+			aftersectionflag=True
+			locus.addenum(m.group(2))
+			leaf=legis.Leaf('provision',locus)
+			locus.lex.append(leaf)
+			continue
+
+
 
 		m=re.match('\s*<B>&nbsp;&nbsp;&nbsp;&nbsp;<a name="(\d+)"></a>(\d+)\.</B>',right)
 		if m:
@@ -245,6 +263,8 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			right=right[m.end():]
 			continue
 
+		# often used for lower level numbering in older acts		
+
 		m=re.match('\s*<ul>&nbsp;(\(\S*\))&nbsp;',right)
 		if m:
 			locus.addenum(m.group(1))
@@ -252,6 +272,18 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			locus.lex.append(leaf)
 			right=right[m.end():]
 			continue
+
+		#lower level, roman numeral like (i) numbers in newer acts
+
+		m=re.match('\s*(?:<UL>)?<UL><UL>(\([ivxlcdm]+\)\s*)([^<]*)</UL></UL>(?:</UL>)?(?i)',right)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus)
+			leaf.content=m.group(2)
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
 
 		# unordered lists:
 		m=re.match('\s*<UL>[^(<]([\s\S]*?)</UL>(?i)',right)
@@ -282,11 +314,22 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		if m:
 			#output('leaf','type="text" format="hanging"',
 			#	m.group(1))
-			right=right[m.end():]
 			leaf=legis.Leaf('text',locus)
 			leaf.content=m.group(1)
 			locus.lex.append(leaf)
+			right=right[m.end():]
 			continue
+
+
+		# Some garbage, it might be necessary to take note of the
+		# presence of this as signalling some kind of amendment
+		# for the momemnt, its better to remove it.
+
+		m=re.match('<a name="unknown"></a></B> <BR>&nbsp;',right)
+		if m:
+			right=right[m.end():]
+			continue
+			
 	
 # This should never match (since I hope all such occurances have alaredy been
 # removed.)
@@ -328,7 +371,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		m=re.match('<',right)
 		if m:
 			print "unrecognised right line element [[[\n%s\n]]]:" % right
-			print right[:128]
+			print right[:256]
 			sys.exit()
 		else:
 			(t,right)=gettext(right)
@@ -392,19 +435,20 @@ def ActParseBody(act,pp):
 	#print "****removing quotations"
 	
 	quotepatterns=[
-		('<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>','simple'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="15%">\s*<br>([\s\S]*?)&quot;</td>\s*</tr>\s*</table>','withmargin'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="5%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>([\s\S]*?)&quot;\s*</td>\s*</tr>\s*</table>','section'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>','full'),
-		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>','heading'),
-		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>','error'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>(?=</TD></TR>)(?i)','rightquote')]
+		('<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>(?i)','simple'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="15%">\s*<br>([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','withmargin'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="5%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>([\s\S]*?)&quot;\s*</td>\s*</tr>\s*</table>(?i)','section'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>(?i)','full'),
+		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>(?i)','heading'),
+		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','error'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable')]
 	
 	#rquotepat='<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>'
 	
 	#mquotepat='<table cellpadding="8">\s*<tr valign="top">\s*<td width="15%">\s*<br>([\s\S]*?)&quot;</td>\s*</tr>\s*</table>'
 	
-	print re.search('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>[\s\S]*</TABLE>(?=</TD></TR>)(?i)',remain)
+	print re.search('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>[\s\S]*</TABLE>\s*(?=</TD>\s*</TR>)(?i)',remain)
 	
 	for (quotepat,pattype) in quotepatterns:
 		while re.search(quotepat,remain):
@@ -417,8 +461,9 @@ def ActParseBody(act,pp):
 			#print n,quotepat,quote,m.start(),m.end(),len(remain),remain[:128]
 			#	sys.exit()
 			remain=re.sub(quotepat,quote,remain)
+		print pattype, n
 	print "****Found %i quotation patterns" % n
-	#print quotations
+	print act.quotations
 	
 	# Main loop
 	
@@ -539,7 +584,7 @@ def ActParseBody(act,pp):
 	
 		m=re.match('\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;<BR><BR>&nbsp;\s*</TD>\s*<TD align=center valign=top>&nbsp;<BR>&nbsp;<BR><a name="(sch[^"]*)"></a>SCHEDULE( (\d+))?<BR>&nbsp;</TD></TR>(?i)',remain)
 		if m:
-			if m.lastindex==3:
+			if m.group(3):
 				snumber=m.group(3)
 			else:
 				snumber=''
@@ -571,11 +616,20 @@ def ActParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top>P<FONT size=-1>ART </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
+		if m:
+			locus.addpart('part',m.group(1))
+			leaf=legis.Division(locus,'part',m.group(1))
+			pp.append(leaf)	
+			remain=remain[m.end():]
+			continue
 	
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center>((([A-Z])<FONT size=-1>([A-Z ]*)</FONT>)+)</TD></TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center(?: valign=top)?>((([A-Z\-]|\d+\s*)<FONT size=-1>([A-Z ]*)</FONT>)+(?:\.)?)</TD></TR>(?i)',remain)
 		if m:
-			l=re.findall('(([A-Z])<FONT size=-1>([A-Z ]*))+',m.group(1))
+			print "****heading"
+			l=re.findall('(([A-Z\-]|\d+\s*)<FONT size=-1>([A-Z ]*))+',m.group(1))
 			#print l, m.group(1),':',m.group(2),':',m.group(3),':',m.group(4)		
 			heading=''
 			for (a,b,c) in l:
