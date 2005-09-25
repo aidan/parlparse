@@ -54,7 +54,14 @@ def pathinsert(path,m):
 def gettext(right):
 	m=re.search('<(?!a|/a)',right)
 	if m:
-		return(right[:m.start()],right[m.start():])
+		s=right[:m.start()]
+		rest=right[m.start():]
+		m2=re.match('<font size=-4>(\S*)</font>',rest)
+		if m2:
+			s=s+'<fraction>'+m2.group(1)+'</fraction>'
+			(one,rest)=gettext(rest[m2.end():])
+			s=s+one
+		return(s,rest)
 	else:
 		return(right,'')	
 

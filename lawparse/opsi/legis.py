@@ -1,7 +1,7 @@
 import re
 import copy
 
-class Margin:
+class Margin:				# represents marginal notes
 	def __init__(self,t=''):
 		self.margintext=t
 
@@ -11,19 +11,27 @@ class Margin:
 		else:
 			return ' margin="%s"' % self.margintext
 
-class Legis:
+class Legis:				# the unit of legislation
 	def __init__(self):
 		self.content=[]
+		self.id='unknown'
+		self.quote=False	# used to indicate whether the legis is
+					# being quoted in another legis
+	def append(self,leaf):
+		self.content.append(leaf)
+		#print "****appending leaf to Legis", leaf
+		xmlofleaf=leaf.xml()
+		#print "**** after append, xml of leaf",xmlofleaf 
+		print leaf.xml()[:128]
 
-	def append(self,a):
-		self.content.append(a)
-		print a.xml()[:128]
+	def extend(self,leaflist):
+		self.content.extend(leaflist)
 
 	def last(self):
 		return self.content[len(self.content)-1]
 
 	def xml(self):
-		s='<legis\n\tid="%s">\n' % self.id
+		s='<?xml version="1.0" encoding="UTF-8"?>\n<legis\n\tid="%s">\n' % self.id
 		for leaf in self.content:
 			s=s+leaf.xml()
 		s=s+'</legis>\n'
@@ -31,18 +39,19 @@ class Legis:
 
 class Act(Legis):
 	def __init__(self, year, session, chapter):
+		Legis.__init__(self)
 		self.year=year
 		self.session=session
 		self.chapter=chapter
-		self.content=[]
 		self.id="ukpga"+year+"c"+chapter
 		print "[Legis.Act] year=%s session=%s chapter=%s" % (year, session, chapter)
 
 class SI(Legis):
 	def __init__(self, year, number):
+		Legis.__init(self)
+		self.quote=False
 		self.year=year
 		self.number=number
-		self.content=[]
 		self.id="uksi"+year+"no"+number
 
 class Leaf:
@@ -53,20 +62,61 @@ class Leaf:
 		self.margin=margin
 
 	def xml(self):
-		return '<leaf type="%s" %s%s>%s</leaf>\n' % (self.t, 
+		#print "****xml of leaf", self.content
+		contents=self.xmlcontent()
+		#print "****xml contents were",contents
+		result= '\n<leaf type="%s" %s%s>%s</leaf>\n' % (self.t, 
 				self.locus.xml(), self.margin.xml(),
-				self.content)
+				contents)
+		#print "****results of xml(self) on leaf were", result
+		return result
+
+	def xmlcontent(self):
+		return self.content
+
+	def relocate(self,newlocus):
+		self.locus=copy.deepcopy(newlocus)
+		# do we need to free up the old locus here?
+
+class Quotation(Legis,Leaf):
+	def __init__(self,parsed,locus, margin=Margin()):
+		Leaf.__init__(self,'quotation',locus,margin)
+		self.parsed=parsed
+		#self.leaves=[]
+		self.quote=True
+		self.content=[]
+		self.id='quotation in(%s)' % locus.lex.id
+
+	def addleaf(self,l):
+		#print "****quote adding leaf %s" % l.xml()
+		self.content.append(l)
+
+	def xmlcontent(self):
+		#print "****xmlcontent called with %s" % self.content
+		if self.content:
+			s=''
+			for i in self.content:#self.leaves:
+				#print "****first leaf: %s" %i
+				s=s+i.xml()
+			return s
+		else:
+			return ''
+
+	def xml(self):
+		#print "****xml of quotation %s" % (type(self)), self, self.parsed,self.quote
+		return Leaf.xml(self)
+
 class Heading(Leaf):
 	def __init__(self,locus,margin=Margin()):
-		Leaf.__init__(self,locus,margin)
-		self.t='heading'
-		self.content=''
+		Leaf.__init__(self,'heading',locus,margin)
+		#self.t='heading'
+		self.content=None
 
 
 class Division(Heading):
 	def __init__(self,locus,dheading,dnumber,margin=Margin()):
-		Leaf.__init__(self,locus,margin)
-		self.t="division"
+		Leaf.__init__(self,'division',locus,margin)
+		#self.t="division"
 		self.dheading=dheading
 		self.dnumber=dnumber
 

@@ -5,6 +5,7 @@ import urlparse
 import re
 import sys
 import os
+import patches
 
 import miscfun
 actdirhtml = miscfun.actdirhtml
@@ -16,7 +17,28 @@ import legis
 
 
 # may grow into a class which handles much of this
-class Act:
+
+class ActFragment:
+	def __init__(self,txt):
+		self.txt=txt
+		self.quotations=[]
+		self.isquotation=False
+
+	def ParseAsQuotation(self):
+		pp=legis.Legis()
+		if re.search('>"',self.txt):
+			ActParseBody(self,pp)
+		else:
+			print "***warning, tried to parse as quotation without quotation marks"
+			#print "***warning, unparseable quotation text", self.txt
+		return pp
+
+class QuotedActFragment(ActFragment):
+	def __init__(self,txt):
+		ActFragment.__init__(self,txt)
+		self.isquotation=True
+
+class Act(ActFragment):
 	def __init__(self, cname, txt):
 		m = re.search("(\d{4})c(\d+).html$", cname)
 		self.year = m.group(1)
@@ -24,6 +46,7 @@ class Act:
 		self.txt = txt
 		self.headvalues = { }
 		self.quotations=[]
+		self.isquotation=False
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
@@ -62,6 +85,11 @@ class Act:
 		parsedact=legis.Act(self.year,0,self.chapter)
 		ActParseBody(act,parsedact)
 		return parsedact
+	
+	def QuotationAsFragment(self,n):
+		qtext=self.quotations[n]
+		fragment=QuotedActFragment(qtext)
+		return fragment
 
 # main running part
 if __name__ == '__main__':
@@ -76,10 +104,11 @@ if __name__ == '__main__':
 		fin.close()
 
 		act = Act(ldir[i], txt)
+		patches.ActApplyPatches(act)
 
 		# the parsing process
 		#ActParseHead(act)
 		lexact=act.Parse()
 
-		out = open(os.path.join(actdirxml, lexact.id), "w")
+		out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
 		out.write(lexact.xml()) 
