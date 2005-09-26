@@ -3,14 +3,11 @@ import re
 import sys
 
 
-patches=[('ukgpa1997c16',
-		[('''<TR><TD valign=top>&nbsp;</TD><TD valign=top><TABLE>\s*<TR><TD valign=top><IMG SRC="/img/amdt-col\.gif"></TD>\s*<TD valign=top><UL>"\(a\) "the higher rate" shall be construed in accordance with section 51 above;"</UL></TD></TR>\s*</TABLE></TD></TR>\s*<TR><TD valign=top><IMG SRC="/img/amdt\-col\.gif"></TD>\s*<TD valign=top><UL>"\(b\) "the standard rate" shall be construed in accordance with section 51 above;"\.</UL></TD></TR>''','''<TR><TD valign=top>&nbsp;</TD><TD valign=top><TABLE>
-<TR><TD valign=top><IMG SRC="/img/amdt-col.gif"></TD>
-<TD valign=top><UL>"(a) "the higher rate" shall be construed in accordance with section 51 above;"</UL></TD></TR>
-
-<TR><TD valign=top><IMG SRC="/img/amdt-col.gif"></TD>
-<TD valign=top><UL>"(b) "the standard rate" shall be construed in accordance with section 51 above;".</UL></TD></TR>
-</TABLE></TD></TR>''')])]
+patches=[('ukgpa1997c16',[('&rsquo;\)',''),
+		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"></a></TD></TR>(?i)',''),
+		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18pt}"></a></TD></TR>(?i)',''),
+		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt in relation to accounting periods beginning after 5th March 1997\."></a></TD></TR>(?i)','')]),
+		]
 
 
 def ActApplyPatches(act):
@@ -26,6 +23,7 @@ def ActApplyPatches(act):
 				print "***applying pattern",pattern 
 				if not re.search(pattern,act.txt):
 					print "***error, failed to find substitution text"
+					print re.search('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"',act.txt)
 					sys.exit()
 				act.txt=re.sub(pattern,replacement,act.txt)
 	

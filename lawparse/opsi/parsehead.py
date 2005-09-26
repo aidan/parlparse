@@ -66,10 +66,10 @@ headlines2 = [  ('middle','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td
 headlines3 = [ ('middle', '(?:<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col\.gif"></TD><TD\s*valign=top>&nbsp;</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)?(?i)') ]
 
 frontmatter = [
-	('preamble','\s*(?:<p>)?((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)(?:\s*<p|</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td)(?i)'),
+	('longtitle','\s*(?:<p>)?((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)(?:\s*<p|</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td)(?i)'),
 	('date',   '\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]?\s*(?:<br><br>)?(?i)'),
 	('middle', '(?:\s*</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|\s*<p>)(?i)'),
-	('consideration','\s*(Whereas [a-zA-Z ;,&\(\)0-9\']*:)?')]
+	('whereas','\s*(Whereas [a-zA-Z ;,&\(\)0-9\']*:)?')]
 #,
 #	('petition1','(Most Gracious Sovereign,\s*(?:</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?\s*(?:<p>)?WE, Your Majesty\'s most dutiful and loyal subjects,? the Commons of the United Kingdom in Parliament assembled, (towards making good the supply which we have cheerfully granted to Your Majesty in this Session of Parliament,? have resolved to grant unto Your Majesty the sums? hereinafter mentioned|towards raising the necessary supplies to defray Your Majesty\'s public expenses, and making an addition to the public revenue, have freely and voluntarily resolved to give and grant unto Your Majesty the several duties hereinafter mentioned); and do therefore most humbly beseech Your Majesty that it may be enacted,? and )?\s*(?i)'),
 #	('middle', '(</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?(?i)') ]
@@ -195,7 +195,7 @@ def ActParseHead(act):
 	
 
 	if re.match("Whereas the government of the Commonwealth of Australia", act.txt):
-		act.NibbleHead("middle", "Whereas the government of the Commonwealth of Australia has requested that the record copy of the Commonwealth of Australia Constitution Act 1900 which is at present on loan to the Commonwealth should remain permanently in the keeping of the Commonwealth;</td>")
+		act.NibbleHead("whereas", "Whereas the government of the Commonwealth of Australia has requested that the record copy of the Commonwealth of Australia Constitution Act 1900 which is at present on loan to the Commonwealth should remain permanently in the keeping of the Commonwealth;</td>")
 		act.NibbleHead("middle", '\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>')
 		act.NibbleHead("middle", '\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;And whereas the government of the United Kingdom is willing to advise Her Majesty to accede to that request subject to the approval by Parliament of legislation releasing that copy from the provisions of the Public Records Act 1958;</td>')
 		act.NibbleHead("middle", '\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;')
@@ -215,7 +215,7 @@ def ActParseHead(act):
 			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):(?:&#151|-);</td>\s*</tr>(?i)')
 	else:
 		if re.match('<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(?i)',act.txt):
-			act.NibbleHead('enact', '<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
+			act.NibbleHead('enact', '<font size=\+3><B>(B</B></font><font size=-1>E IT ENACTED</font>\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
 		else:		
 			act.NibbleHead('enact',  '((?:Be it (?:therefore )?enacted|WE IT ENACTED)\s+by the Queen\'s most Excellent Majesty[\s\S]*? as\s+follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')
 

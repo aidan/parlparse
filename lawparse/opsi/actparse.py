@@ -22,16 +22,19 @@ class ActFragment:
 	def __init__(self,txt):
 		self.txt=txt
 		self.quotations=[]
+		self.tables=[]
 		self.isquotation=False
+		self.id='fragment'
 
 	def ParseAsQuotation(self):
-		pp=legis.Legis()
+		locus=legis.Locus(self)
+		quotation=legis.Quotation(True,locus)
 		if re.search('>"',self.txt):
-			ActParseBody(self,pp)
+			ActParseBody(self,quotation)
 		else:
 			print "***warning, tried to parse as quotation without quotation marks"
 			#print "***warning, unparseable quotation text", self.txt
-		return pp
+		return quotation
 
 class QuotedActFragment(ActFragment):
 	def __init__(self,txt):
@@ -46,6 +49,7 @@ class Act(ActFragment):
 		self.txt = txt
 		self.headvalues = { }
 		self.quotations=[]
+		self.tables=[]
 		self.isquotation=False
 
 	def ShortID(self):
@@ -70,11 +74,11 @@ class Act(ActFragment):
 				isbn = "%s %s %s" % (mline.group(2), mline.group(3), mline.group(4))
 			else:
 				isbn="XXXXXXXXXXX"
-			self.headvalues[hcode] = isbn
+			self.headvalues[hcode] = [isbn]
 
 		# remaining parameter found
 		else:
-			self.headvalues[hcode] = mline.group(1)
+			self.headvalues[hcode] = mline.groups()
 
 		# move on
 		self.txt = self.txt[mline.end(0):]
@@ -82,14 +86,24 @@ class Act(ActFragment):
 	def Parse(self):
 		ActParseHead(act)
 		
-		parsedact=legis.Act(self.year,0,self.chapter)
-		ActParseBody(act,parsedact)
-		return parsedact
+		legisact=legis.Act(self.year,0,self.chapter)
+		self.ActLegisHeader(legisact)
+		legisact.sourceinfo.source='opsi'
+		ActParseBody(act,legisact)
+		return legisact
 	
 	def QuotationAsFragment(self,n):
 		qtext=self.quotations[n]
 		fragment=QuotedActFragment(qtext)
+		fragment.id="fragment of %s" % self.ShortID()
 		return fragment
+
+	def ActLegisHeader(self,legisact):
+		legisact.preamble.longtitle=self.headvalues['longtitle'][0]
+		#print self.headvalues
+		enact=self.headvalues['enact'][0]
+		if enact:
+			legisact.preamble.enactment=re.sub('(<B>|</B>|<FONT[^>]*>|</FONT>)(?i)','',enact)
 
 # main running part
 if __name__ == '__main__':

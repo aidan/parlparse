@@ -17,6 +17,10 @@ class Legis:				# the unit of legislation
 		self.id='unknown'
 		self.quote=False	# used to indicate whether the legis is
 					# being quoted in another legis
+		self.preamble=Preamble()
+		self.sourceinfo=SourceInfo()
+		#self.info={}
+
 	def append(self,leaf):
 		self.content.append(leaf)
 		#print "****appending leaf to Legis", leaf
@@ -31,10 +35,12 @@ class Legis:				# the unit of legislation
 		return self.content[len(self.content)-1]
 
 	def xml(self):
-		s='<?xml version="1.0" encoding="UTF-8"?>\n<legis\n\tid="%s">\n' % self.id
+		s='<?xml version="1.0" encoding="UTF-8"?>\n<legis\n\tid="%s">\n%s%s' % (self.id,self.preamble.xml(),self.sourceinfo.xml())
+		
+		s=s+'\n<content>\n'
 		for leaf in self.content:
 			s=s+leaf.xml()
-		s=s+'</legis>\n'
+		s=s+'</content>\n</legis>\n'
 		return s
 
 class Act(Legis):
@@ -44,6 +50,7 @@ class Act(Legis):
 		self.session=session
 		self.chapter=chapter
 		self.id="ukpga"+year+"c"+chapter
+		self.preamble=ActPreamble()
 		print "[Legis.Act] year=%s session=%s chapter=%s" % (year, session, chapter)
 
 class SI(Legis):
@@ -54,19 +61,60 @@ class SI(Legis):
 		self.number=number
 		self.id="uksi"+year+"no"+number
 
+class SourceInfo:
+	def __init__(self):
+		self.source='unknown'
+
+	def xml(self):
+		return '<sourceinfo source="%s"/>\n' % self.source
+		
+class Preamble:
+		def __init__(self):
+			pass
+
+		def xml(self):
+			return ''
+
+class ActPreamble(Preamble):
+		def __init__(self):
+			Preamble.__init__(self)
+			self.longtitle=''
+			self.date=''
+			self.enactment=''
+			self.whereas=[]
+
+		def xml(self):
+			s='<preamble>\n<longtitle \n\tdate="%s">%s</longtitle>\n<enactment>%s</enactment>\n</preamble>\n' % (self.date,self.longtitle,self.enactment)
+			return s
+	
+class SIPreamble(Preamble):
+		def __init__(self):
+			Preamble.__init__(self)
+
+		def xml(self):
+			return '\n<preamble />\n'
+
 class Leaf:
 	def __init__(self, t, locus, margin=Margin()):
 		self.t=t
 		self.content=''
 		self.locus=copy.deepcopy(locus)
 		self.margin=margin
+		self.attributes=[]
+		self.sourcerule=''
 
 	def xml(self):
 		#print "****xml of leaf", self.content
 		contents=self.xmlcontent()
 		#print "****xml contents were",contents
-		result= '\n<leaf type="%s" %s%s>%s</leaf>\n' % (self.t, 
-				self.locus.xml(), self.margin.xml(),
+		if len(self.sourcerule)>0:
+			sourcerule=' sourcerule="%s"' % self.sourcerule
+		else:
+			sourcerule=''
+		result= '\n<leaf type="%s" %s%s%s>%s</leaf>\n' % (self.t, 
+				self.locus.xml(), 
+				self.margin.xml(), 
+				sourcerule,
 				contents)
 		#print "****results of xml(self) on leaf were", result
 		return result
@@ -86,6 +134,7 @@ class Quotation(Legis,Leaf):
 		self.quote=True
 		self.content=[]
 		self.id='quotation in(%s)' % locus.lex.id
+		self.preamble=Preamble()
 
 	def addleaf(self,l):
 		#print "****quote adding leaf %s" % l.xml()
@@ -112,7 +161,6 @@ class Heading(Leaf):
 		#self.t='heading'
 		self.content=None
 
-
 class Division(Heading):
 	def __init__(self,locus,dheading,dnumber,margin=Margin()):
 		Leaf.__init__(self,'division',locus,margin)
@@ -125,11 +173,33 @@ class Division(Heading):
 		s='%s dheading="%s" dnumber="%s"' % (s,self.dheading,self.dnumber)
 		return s
 
+class Table(Leaf):
+	def __init__(self,locus):
+		Leaf.__init__(self,'table',locus)
+		self.rows=[]
+
+	def xmlcontent(self):
+		s=''
+		for row in self.rows:
+			s=s+row.xml()
+		return s
+
+class TableRow:
+	def __init__(self,cells):
+		self.cells=cells
+		self.content=''
+
+	def xml(self):
+		s=''
+		for i in self.cells:
+			s=s + '<cell>%s</cell>' % i
+		return '<row>%s</row>\n' % s
+
 class Locus:
 	def __init__(self,lex):
 		self.lex=lex
 		self.path=[]
-		self.division='main'
+		self.division=''
 		self.partitions={}
 
 	def __deepcopy__(self,memo):
