@@ -9,7 +9,7 @@ class Margin:				# represents marginal notes
 		if self.margintext=='':
 			return ''
 		else:
-			return ' margin="%s"' % self.margintext
+			return '\n<margin>%s</margin>' % self.margintext
 
 class Legis:				# the unit of legislation
 	def __init__(self):
@@ -103,7 +103,7 @@ class Leaf:
 		self.attributes=[]
 		self.sourcerule=''
 
-	def xml(self):
+	def xml(self,options=''):
 		#print "****xml of leaf", self.content
 		contents=self.xmlcontent()
 		#print "****xml contents were",contents
@@ -111,10 +111,11 @@ class Leaf:
 			sourcerule=' sourcerule="%s"' % self.sourcerule
 		else:
 			sourcerule=''
-		result= '\n<leaf type="%s" %s%s%s>%s</leaf>\n' % (self.t, 
+		result= '\n<leaf type="%s" %s%s%s>%s%s</leaf>\n' % (self.t, 
 				self.locus.xml(), 
-				self.margin.xml(), 
 				sourcerule,
+				options,
+				self.margin.xml(),
 				contents)
 		#print "****results of xml(self) on leaf were", result
 		return result
@@ -168,15 +169,24 @@ class Division(Heading):
 		self.dheading=dheading
 		self.dnumber=dnumber
 
-	def xml(self):
-		s=Leaf.xml(self)
-		s='%s dheading="%s" dnumber="%s"' % (s,self.dheading,self.dnumber)
+	def xml(self,u=''):
+		t=' dheading="%s" dnumber="%s"%s' % (self.dheading,self.dnumber,u)
+		s=Leaf.xml(self,t)
 		return s
 
 class Table(Leaf):
 	def __init__(self,locus):
 		Leaf.__init__(self,'table',locus)
+		self.heading=''
 		self.rows=[]
+
+	def xml(self,u=''):
+		if len(self.heading)>0:
+			t=' heading="%s"%s' % (self.heading, u)
+		else:
+			t=''
+		s=Leaf.xml(self,t)
+		return s
 
 	def xmlcontent(self):
 		s=''

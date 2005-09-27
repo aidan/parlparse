@@ -10,7 +10,11 @@ def deformat(s):
 	for (a,b) in formats:
 		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s)
 		s=re.sub('</%s>(?i)' % a,'</format>',s)
-	s=re.sub('<img[^>]*>'(?i),'',s)
+	s=re.sub('<img[^>]*>(?i)','',s)
+	return s
+
+def defont(s):
+	s=re.sub('<font[^>]*>|</font>(?i)','',s)
 	return s
 
 
@@ -490,29 +494,6 @@ def ActParseBody(act,pp):
 		tablebody=''
 		n=n+1
 		remain=re.sub(tablepat,tablebody,remain)
-
-
-	# remove general kinds of table, which are probably not quotations
-	# that need to be handled carefully
-	
-	tablepatterns=[
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>)&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>\s*<table border width=100%>([\s\S]*?)</table>\s*(?=</td>\s*</tr>)(?i)','taxtable1997c16'),
-		('<TABLE cellpadding=10 border>([\s\S]*?)</table>(?i)','repealtable1'),
-		('<table border>([\s\S]*?)</table>(?i)','repealtable2'),
-		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
-	
-	n=0
-	for (tablepat,pattype) in tablepatterns:
-		while re.search(tablepat,remain):
-			m=re.search(tablepat,remain)
-			act.tables.append(m.group(1))
-			tableref='<tableref n="%i" pattype="%s"/>' % (n,pattype)
-			n=n+1
-			
-			remain=re.sub(tablepat,tableref,remain)
-		
-	print "****Found %i table patterns" % n
 	
 	# displayed quotation processing
 	
@@ -547,6 +528,32 @@ def ActParseBody(act,pp):
 		#print pattype, n
 	print "****Found %i quotation patterns" % n
 	#print act.quotations
+
+
+
+
+	# remove general kinds of table, which are probably not quotations
+	# that need to be handled carefully
+	
+	tablepatterns=[
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>)&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>\s*<table border width=100%>([\s\S]*?)</table>\s*(?=</td>\s*</tr>)(?i)','taxtable1997c16'),
+		('<TABLE cellpadding=10 border>([\s\S]*?)</table>(?i)','repealtable1'),
+		('<table border>([\s\S]*?)</table>(?i)','repealtable2'),
+		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
+	
+	n=0
+	for (tablepat,pattype) in tablepatterns:
+		while re.search(tablepat,remain):
+			m=re.search(tablepat,remain)
+			act.tables.append(m.group(1))
+			tableref='<tableref n="%i" pattype="%s"/>' % (n,pattype)
+			n=n+1
+			
+			remain=re.sub(tablepat,tableref,remain)
+		
+	print "****Found %i table patterns" % n
+
 	
 	# Main loop
 	
