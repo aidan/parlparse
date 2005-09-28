@@ -107,9 +107,13 @@ class Act(ActFragment):
 
 # main running part
 if __name__ == '__main__':
+	if len(sys.argv) > 1:
+		ldir = ["ukgpa%s.html" % x for x in sys.argv[1:]]
+	else:
+		ldir = os.listdir(actdirhtml)
+		del ldir[0]	# removes file ".svn"
+	
 	# just run through and apply to all the files
-	ldir = os.listdir(actdirhtml)
-	del ldir[0]	# removes file ".svn"
 	for i in range(0,len(ldir)):
 		print "reading ", i, ldir[i]
 		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])

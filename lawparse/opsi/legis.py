@@ -1,6 +1,16 @@
 import re
 import copy
 
+# need correct value for amp
+
+doctype='''
+	<!DOCTYPE legis [
+		<!ENTITY copy "&#169;">
+		<!ENTITY amp "&#38;"> 
+		<!ENTITY pound "&#163;">
+        ]>\n'''
+
+
 class Margin:				# represents marginal notes
 	def __init__(self,t=''):
 		self.margintext=t
@@ -35,7 +45,7 @@ class Legis:				# the unit of legislation
 		return self.content[len(self.content)-1]
 
 	def xml(self):
-		s='<?xml version="1.0" encoding="UTF-8"?>\n<legis\n\tid="%s">\n%s%s' % (self.id,self.preamble.xml(),self.sourceinfo.xml())
+		s='<?xml version="1.0" encoding="iso-8859-1"?>%s\n<legis\n\tid="%s">\n%s%s' % (doctype, self.id,self.preamble.xml(),self.sourceinfo.xml())
 		
 		s=s+'\n<content>\n'
 		for leaf in self.content:

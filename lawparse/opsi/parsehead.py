@@ -52,13 +52,13 @@ headlinestoc1 = [('middle', '(?:<sup><a name="fnf1"></a><a href="#tfnf1">\[1\]</
 			 ]
 
 headlinestoc2 = [('middle', '<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col.gif"></TD><TD valign=top>&nbsp;</TD></TR>\s*'),
-		('middle','<\s*TR valign=top><TD valign=top>&nbsp;</TD><TD valign=top>(?=<TABLE>)(?i)')]
+		('middle','\s*<TR valign=top><TD valign=top>&nbsp;</TD><TD valign=top>(?=<TABLE(?: width="?100%"?)?>)(?i)')]
 
 
-headlines2 = [  ('middle','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom| valign=top)>(?i)'),
+headlines2 = [  ('pageurl2','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<td(?: width="10%"| width=120 align=center valign=bottom| valign=top)>(?i)'),
 	('middle', '(?:<img src="/img/ra-col\.gif">)?\s*(?:<br>|&nbsp;)?\s*</td>(?i)'),
 	('middle', '\s*(?:<td valign=top>&nbsp;</td>)?\s*'),
-	('middle', '(\s*</tr>\s*<pageurl[^>]*>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
+	('pageurl3', '(\s*</tr>\s*<pageurl[^>]*>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*)?(?i)'),
 	('middle', '<td(?: valign=top)?>(?i)'),
 	('middle', '\s*(?:<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</td></tr>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)?(?i)')]
 
@@ -137,7 +137,7 @@ def ActParseHead(act):
 
 		print "ttttt", len(act.txt)
 
-	btoc2exists = re.search('<td colspan="?2"? align="?center"?>.*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*</td>(?si)', act.txt)
+	btoc2exists = re.search('<td colspan="?2"? align="?center"?>.*(ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES)|CONTENTS).*</td>(?si)', act.txt)
 	if btoc2exists:
 		print "***** Table of contents TYPE 2 (internal heading)"
 		for headline in headlinestoc2:
@@ -147,7 +147,9 @@ def ActParseHead(act):
 		# look for last open table on first page
 		print len(act.txt)
 		act.txt = act.txt[TableBalance(act.txt):]
-		act.NibbleHead("middle", '\s*</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top><BR>\s*<HR width=70% align=left>\s*<BR></TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<BR>&nbsp;<BR>&nbsp;</TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR>|<P>)(?i)')
+		act.NibbleHead("middle", '\s*</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top><BR>\s*<HR width=70% align=left>\s*<BR></TD></TR>(?i)')
+		act.NibbleHead("pageurl1",'(\s*<pageurl[^>]*>)?(?i)')
+		act.NibbleHead("middle", '\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<BR>&nbsp;<BR>&nbsp;</TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR>|<P>)(?i)')
 
 		print "ttttt", len(act.txt)
 
@@ -177,7 +179,9 @@ def ActParseHead(act):
 # It turns out to be simpler to treat acts that were a single page differently
 # from the others. Not unreasonable I think.
 
-	if re.search('<pageurl', act.txt):
+	if re.match('An Act',act.txt):
+		pass
+	elif re.search('<pageurl', act.txt):
 		for headline in headlines2:
 			act.NibbleHead(headline[0], headline[1])
 	else:
@@ -214,8 +218,8 @@ def ActParseHead(act):
 			act.NibbleHead('middle', '\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;\s*(?i)')
 			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):(?:&#151|-);</td>\s*</tr>(?i)')
 	else:
-		if re.match('<font size=\+3><B>B</B></font><font size=-1>E IT ENACTED</font>(?i)',act.txt):
-			act.NibbleHead('enact', '<font size=\+3><B>(B</B></font><font size=-1>E IT ENACTED</font>\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:- )<BR>&nbsp;</TD></TR>(?i)')
+		if re.match('(?:<font size=\+3><B>)?(?:<p>)?B(?:</B></font>)?<font size=-1>E IT ENACTED</font>(?i)',act.txt):
+			act.NibbleHead('enact', '(?:<font size=\+3><B>)?(?:<p>)?(B(?:</B></font>)?<font size=-1>E IT ENACTED</font>\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:-\s*)(?:<BR>&nbsp;</TD></TR>)?(?i)')
 		else:		
 			act.NibbleHead('enact',  '((?:Be it (?:therefore )?enacted|WE IT ENACTED)\s+by the Queen\'s most Excellent Majesty[\s\S]*? as\s+follows)(?:<br>|&nbsp;|:|\.|-|&#151;|\s)*</td>\s*</tr>(?i)')
 

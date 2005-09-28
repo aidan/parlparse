@@ -17,6 +17,9 @@ def defont(s):
 	s=re.sub('<font[^>]*>|</font>(?i)','',s)
 	return s
 
+def deamp(s):
+	s=re.sub('&','&amp;',s)
+	return s
 
 def threetable(t):
 	tcontents=''
@@ -385,6 +388,8 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			tablehtml=act.tables[int(m.group(1))]
 			tablehtml=re.sub('(<P>|<BR>|&nbsp;)+','',tablehtml)
 			tablehtml=deformat(tablehtml)
+			tablehtml=defont(tablehtml)
+			tablehtml=deamp(tablehtml)	# will need more care
 			leaf=legis.Table(locus)
 			leaf.sourcetype="opsi:puretable(%s)" % m.group(2)
 			#rows=[re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
@@ -395,6 +400,13 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			right=right[m.end():]
 			continue
 
+
+		m=re.match('<I>Note:</I>(.*)(?i)',right)
+		if m:
+			leaf=legis.Leaf('note',locus,margin)
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
 	
 # This should never match (since I hope all such occurances have alaredy been
 # removed.)
@@ -456,6 +468,16 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		if m:
 			right=right[m.end():]
 			continue
+
+		m=re.match('<FONT size=-1>([A-Z ]*)</FONT>$(?i)',right)
+		if m:
+			leaf=legis.Leaf('text',locus)
+			leaf.content=m.group(1)
+			leaf.sourcerule='opsi:EmphasizedText1'
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
 
 		m=re.match('<|&nbsp;',right)
 		if m:
@@ -583,16 +605,21 @@ def ActParseBody(act,pp):
 
 		# italicised heading
 
-		m=re.match('\s*<TR><TD valign=top>(?:&nbsp;|<IMG src="/img/amdt-col\.gif">)</TD><TD align=center><BR><I>((?:"|&quot;)?)(.*?)</I></TD></TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>(?:&nbsp;|<IMG src="/img/amdt-col\.gif">)</TD><TD align=center><BR><(?P<style>I|B)>((?:"|&quot;)?)(.*?)</(?P=style)></TD></TR>(?i)',remain)
 		if m:
 			leaf=legis.Heading(locus)
-			leaf.content=m.group(2)
-			if len(m.group(1))>0:
+			leaf.content=m.group(3)
+			if m.group('style')=='B':
+				leaf.sourcerule='opsi:HeadingBold1'
+			else:
+				leaf.sourcerule='opsi:HeadingItalic1'
+			if len(m.group(2))>0:
 				quotestart(locus,leaf)
 			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
 			# need to check there is no preceding heading
+
 
 
 
@@ -686,6 +713,15 @@ def ActParseBody(act,pp):
 			remain=remain[lineend:]
 			continue
 
+		# Sections numbers/"margin notes" in later acts
+		m=re.match('\s*<TR><TD align=right valign=top><B><a name="\d+"></a>(\d+)</B>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD valign=top><B>([\s\S]*?)</B><BR>&nbsp;</TD></TR>',remain)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus,legis.Margin(m.group(2)))
+			leaf.sourcerule='opsi:section2'
+			locus.lex.append(leaf)
+			remain=remain[m.end():]
+			continue
 
 		# Remaining line matches -- mostly headings
 	
@@ -717,7 +753,7 @@ def ActParseBody(act,pp):
 		#if re.match('\s*',remain):
 		#	print "****matched"
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>S C H E D U L E S</FONT></TD></TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>S C H E D U L E S</FONT>\s*</TD></TR>(?i)',remain)
 		if m:
 			print "***** schedule marker"
 			leaf=legis.Leaf('schedule marker',locus)
@@ -727,19 +763,27 @@ def ActParseBody(act,pp):
 			continue
 	
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="([^"]*)"></a>P<FONT size=-1>ART </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="([^"]*)"></a>(P<FONT size=-1>ART|C<FONT size=-1>HAPTER) </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
 		if m:
-			locus.addpart('part',m.group(2))
-			leaf=legis.Division(locus,'part',m.group(2))
+			if re.match('P',m.group(2)):
+				locus.addpart('part',m.group(3))
+				leaf=legis.Division(locus,'part',m.group(3))
+			else:
+				locus.addpart('chapter',m.group(3))
+				leaf=legis.Division(locus,'chapter',m.group(3))
 			pp.append(leaf)	
 			remain=remain[m.end():]
 			continue
 
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top>P<FONT size=-1>ART </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top>(?P<bold><b>)?P<FONT size=-1>ART </FONT>(?P<no>[IVXLDCM]+|\d+)(?(bold)</b>|\s*)</TD></TR>(?i)',remain)
 		if m:
-			locus.addpart('part',m.group(1))
-			leaf=legis.Division(locus,'part',m.group(1))
+			locus.addpart('part',m.group('no'))
+			leaf=legis.Division(locus,'part',m.group('no'))
+			if m.group('bold'):
+				leaf.sourcerule='opsi:PartHeadingBold1'
+			else:
+				leaf.sourcerule='opsi:PartHeading1'
 			pp.append(leaf)	
 			remain=remain[m.end():]
 			continue
@@ -828,6 +872,13 @@ def ActParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>(?=\s*<TR>)(?i)',remain)
+		if m:
+			remain=remain[m.end():]
+			continue
+
+
+
 		# a hanging text line (in later acts)
 		m=re.match('\s*<TR><TD></TD><TD>([^<]*?)</TD>\s*</TR>',remain)
 		if m:
@@ -838,6 +889,7 @@ def ActParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 			
+
 		# Two ghastly abortions of lines (we didn't go to HTML
 		# school clearly)
 
@@ -861,6 +913,12 @@ def ActParseBody(act,pp):
 	
 		# Yuk, the page trimming needs to be improved:
 		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD><pageurl [^<]*>',remain)
+		if m:
+			remain=remain[m.end():]
+			continue
+
+		# also yuk
+		m=re.match('\s*<BR>&nbsp;</TD></TR>(?i)',remain)
 		if m:
 			remain=remain[m.end():]
 			continue
