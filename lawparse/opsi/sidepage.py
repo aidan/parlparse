@@ -106,7 +106,7 @@ def GetAllPages(url):
 	while True:
 		page = urllib.urlopen(url).read()
 		res.append((url, page))
-		contbutton = re.search('<TR><TD><A HREF="[^">]*"><IMG border=0 align=top src="/img/nav-conu.gif" Alt="continue"></A></TD></TR>(?i)', page)
+		contbutton = re.search('<TR>(?:<TD valign=top>&nbsp;</TD>)?<TD(?: valign=top)?>\s*<A HREF="([^">]*)"><IMG border=0 align=top src="/img/nav-conu.gif" Alt="continue"></A>(?:<BR>|&nbsp;|\s)*</TD></TR>(?i)', page)
 		if not contbutton:
 			break
 		url = urlparse.urljoin(url, contbutton.group(1))
