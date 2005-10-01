@@ -94,7 +94,7 @@ class ActPreamble(Preamble):
 			self.whereas=[]
 
 		def xml(self):
-			s='<preamble>\n<longtitle \n\tdate="%s">%s</longtitle>\n<enactment>%s</enactment>\n</preamble>\n' % (self.date,self.longtitle,self.enactment)
+			s='<preamble>\n<longtitle \n\tdate="%s"\n>%s</longtitle>\n<enactment>%s</enactment>\n</preamble>\n' % (self.date,self.longtitle,self.enactment)
 			return s
 	
 class SIPreamble(Preamble):
@@ -144,7 +144,7 @@ class Quotation(Legis,Leaf):
 		#self.leaves=[]
 		self.quote=True
 		self.content=[]
-		self.id='quotation in(%s)' % locus.lex.id
+		self.id='quotation in(%s)' % locus.text()
 		self.preamble=Preamble()
 
 	def addleaf(self,l):
@@ -189,6 +189,7 @@ class Table(Leaf):
 		Leaf.__init__(self,'table',locus)
 		self.heading=''
 		self.rows=[]
+		self.locus=locus
 
 	def xml(self,u=''):
 		if len(self.heading)>0:
@@ -201,7 +202,7 @@ class Table(Leaf):
 	def xmlcontent(self):
 		s=''
 		for row in self.rows:
-			s=s+row.xml()
+			s=s+row.xml(self.locus)
 		return s
 
 class TableRow:
@@ -209,11 +210,11 @@ class TableRow:
 		self.cells=cells
 		self.content=''
 
-	def xml(self):
+	def xml(self,locus):
 		s=''
 		for i in self.cells:
 			s=s + '<cell>%s</cell>' % i
-		return '<row>%s</row>\n' % s
+		return '<row %s>%s</row>\n' % (locus.xml(), s)
 
 class Locus:
 	def __init__(self,lex):
@@ -236,21 +237,30 @@ class Locus:
 				self.part2xml())
 		return s
 
-	def addenum(self, s):
-		(num,t,left,right)=extractenum(s)
+	def text(self):
+		s='%s/%s' % (self.lex.id, self.division)
 
-		for x in range(0,len(self.path)):
-			if self.path[x][1]==t and self.path[x][2]==left and self.path[x][3]==right:
+		for n in self.path:
+			s=s+('/%s' % n.text())
+	
+		return s
+
+	def addenum(self, s):
+		new=PathElement(s)
+
+		for x in range(0, len(self.path)):
+			if self.path[x].matches(new):
 				self.path=self.path[:x]
-				self.path.append((num,t,left,right))
+				self.path.append(new)
 				return x
 
-		self.path.append((num,t,left,right))
+		self.path.append(new)
 
 	def newdivision(self,t,s):
 		print "***new division:%s%s" % (t,s)
 		self.partitions={}
-		self.division=t+s						
+		self.division=t+s	
+		self.path=[]					
 
 	def addpart(self, t, s):
 		self.partitions[t]=s
@@ -264,18 +274,43 @@ class Locus:
 		return sxml
 
 
-def extractenum(s):
-	m=re.match('((?:[\|\(])?)(\w+)([\)\.\]]?)',s)
-	if m:
-		left=m.group(1)
-		num=m.group(2)
-		right=m.group(3)
-	else:
-		print "****Illegal enumeration passed to locus:%s" % num
-		sys.exit()
+class PathElement:
+	def __init__(self,s):
+		m=re.match('((?:[\|\(])?)(\w+)([\)\.\]]?)',s)
+		if m:
+			left=m.group(1)
+			num=m.group(2)
+			right=m.group(3)
+		else:
+			print "****Illegal enumeration passed to locus:%s" % num
+			sys.exit()
 
-	return (num, enumtype(num), left, right)
-	
+		self.num=num
+		self.enumtype=enumtype(num)
+		self.left=left
+		self.right=right
+
+	def text(self):
+		return '%s%s%s' % (self.left,self.num,self.right)
+
+	def matches(self,pe):
+		if self.enumtype==pe.enumtype and self.left==pe.left and self.right==pe.right:
+			return True
+		else:
+			return False
+
+#def extractenum(s):
+#	m=re.match('((?:[\|\(])?)(\w+)([\)\.\]]?)',s)
+#	if m:
+#		left=m.group(1)
+#		num=m.group(2)
+#		right=m.group(3)
+#	else:
+#		print "****Illegal enumeration passed to locus:%s" % num
+#		sys.exit()
+#
+#	return (num, enumtype(num), left, right)
+#	
 
 def enumtype(s):
 	if re.match('[1-9][0-9]*',s):
@@ -296,8 +331,8 @@ def enumtype(s):
 def pathprint(p):
 	s=''
 	sname='s'
-	for (num,t,left,right) in p:
-		s='%s %s="%s%s%s"' % (s,sname,left,num,right)
+	for pe in p:
+		s='%s %s="%s"' % (s,sname,pe.text())
 		sname=sname + 's'
 	return s
 

@@ -6,6 +6,11 @@ import legis
 
 formats=[('i','italic'),('b','bold')]
 
+
+class ParseError(Exception):
+	"""Exception class for parse errors"""
+	pass
+
 def deformat(s):
 	for (a,b) in formats:
 		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s)
@@ -21,6 +26,36 @@ def deamp(s):
 	s=re.sub('&','&amp;',s)
 	return s
 
+# assumes no nested tables.
+
+def RemoveTables(act, tablelist, patternlist, tabtype):
+	n=0
+	for (pat,pattype) in patternlist:
+		while re.search(pat,act.txt):
+			m=re.search(pat,act.txt)
+			tablelist.append(m.group(1))
+			quote='<%s n="%i" pattype="%s"/>' % (tabtype, 
+				n,pattype)
+			n=n+1
+			act.txt=re.sub(pat,quote,act.txt)
+			
+			# Diagnostic
+#			if pattype=='repealtable2':
+#				print "***** diagnostic for repealtable2"
+#				print act.txt[m.start()-32:m.end()+32]
+#				print m.group(2)
+#				print n
+#
+
+	print "****Found %i %s patterns" % (n, tabtype)
+	#print act.txt
+	i=0
+	for t in tablelist:
+		print "***** number:", i
+		print t
+		i=i+1
+#	sys.exit()
+
 def threetable(t):
 	tcontents=''
 	while len(t) > 0:
@@ -35,7 +70,7 @@ def threetable(t):
 			#print "****threetable failed linescan",t[:256],"****tcontents=",tcontents,"------failed linescan"		
 			nn=0
 		else:
-			#print "rowmatch row=(%s)" % m.group(1)
+		#print "rowmatch row=(%s)" % m.group(1)
 			nn=0
 		row=m.group(1)
 		tcontents=tcontents+"<row"
@@ -104,7 +139,7 @@ def parseline(line,locus):
 		print "unrecognised line element [[[\n%s\n]]]:" % line
 		print line[:128]
 		#print quotations[:-1]
-		sys.exit()
+		raise ParseError, "unrecognised line element"
 
 	aftersectionflag=False
 
@@ -113,7 +148,7 @@ def parseline(line,locus):
 
 # parseright parses the right hand side, where there is a marginal note and something on its right.
 
-def parseright(act,right,locus,margin=legis.Margin()):
+def parseright(act,right,locus,margin=legis.Margin(),format=''):
 	first=True
 
 	while len(right) >0:
@@ -382,16 +417,19 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			
 		# Table references for freestanding tables
 
-		m=re.match('\s*<tableref n="(\d+)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
+		m=re.match('\s*<tabular n="(\d+)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
 		if m:
-			print "Handling table n=%s" % m.group(1)
+			print "Handling table n=%s pattype=%s" % (m.group(1),
+				m.group(2))
 			tablehtml=act.tables[int(m.group(1))]
 			tablehtml=re.sub('(<P>|<BR>|&nbsp;)+','',tablehtml)
 			tablehtml=deformat(tablehtml)
 			tablehtml=defont(tablehtml)
 			tablehtml=deamp(tablehtml)	# will need more care
+			print "*****tablehtml at %s:" % locus.xml()
+			print tablehtml
 			leaf=legis.Table(locus)
-			leaf.sourcetype="opsi:puretable(%s)" % m.group(2)
+			leaf.sourcerule="opsi:puretable(%s)" % m.group(2)
 			#rows=[re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
 			#print "****table rows:",rows
 			leaf.rows=[legis.TableRow(re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x)) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
@@ -431,6 +469,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		m=re.match('\s*<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
 		if m:
 			print "Handling quotation n=%s" % m.group(1)
+			#sys.exit()
 			if m.group(2)=="rightquote":
 				qnumber=int(m.group(1))
 				quotation=act.QuotationAsFragment(qnumber)
@@ -483,7 +522,7 @@ def parseright(act,right,locus,margin=legis.Margin()):
 		if m:
 			print "unrecognised right line element [[[\n%s\n]]]:" % right
 			print right[:256]
-			sys.exit()
+			raise ParseError, "unrecognised right line element"
 		else:
 			(t,right)=gettext(right)
 			#output('leaf','type="text"',t)
@@ -491,37 +530,42 @@ def parseright(act,right,locus,margin=legis.Margin()):
 			leaf.content=t
 			locus.lex.append(leaf)			
 
-# ActParseBody should really be a method of act (why isn't it?)
+# ParseBody should really be a method of act (why isn't it?)
 # its second argument is something of class Legis (or subclass thereof)
 # ActParseBody will fill it up with leaves generated from parsing the act's 
 # text
 
-def ActParseBody(act,pp):
+def ParseBody(act,pp):
 	locus=legis.Locus(pp)
 	locus.division='main'
 
-	remain=re.sub('\s*<hr[^>]*>(?i)','',act.txt)
+	act.txt=re.sub('\s*<hr[^>]*>(?i)','',act.txt)
 	justhad3table=False
 
 
 	# remove tables -- deal with them at a later date
 	
-	tables=[]
-	n=0
-	tablepat='<center>\s*<table>[\s\S]*?</table>\s*?</center>'
-	while re.search(tablepat,remain):
-		m=re.search(tablepat,remain)
-		tables.append(m.group())
-		#tablebody='<excision n="%s" />' % n
-		tablebody=''
-		n=n+1
-		remain=re.sub(tablepat,tablebody,remain)
-	
-	# displayed quotation processing
-	
-	#quotations=[]
-	n=0
-	
+#	tables=[]
+#	n=0
+#	tablepat='<center>\s*<table>[\s\S]*?</table>\s*?</center>'
+#	while re.search(tablepat,act.txt):
+#		m=re.search(tablepat,act.txt)
+#		tables.append(m.group())
+#		#tablebody='<excision n="%s" />' % n
+#		tablebody=''
+#		n=n+1
+#		act.txt=re.sub(tablepat,tablebody,act.txt)
+#	
+#	# displayed quotation processing
+#	
+#	#quotations=[]
+#	n=0
+#	
+
+	tablepatterns1=[('<center>\s*<table>([\s\S]*?)</table>\s*?</center>','tableCentered')]
+
+	RemoveTables(act, act.tables, tablepatterns1, 'tabular')	
+
 	#print "****removing quotations"
 	
 	quotepatterns=[
@@ -534,51 +578,56 @@ def ActParseBody(act,pp):
 		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote')]
 	
 	
-	print re.search('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>[\s\S]*</TABLE>\s*(?=</TD>\s*</TR>)(?i)',remain)
+	print re.search('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>[\s\S]*</TABLE>\s*(?=</TD>\s*</TR>)(?i)',act.txt)
 	
-	for (quotepat,pattype) in quotepatterns:
-		while re.search(quotepat,remain):
-			m=re.search(quotepat,remain)
-			act.quotations.append(m.group(1))
-			quote='<quotation n="%i" pattype="%s"/>' % (n,pattype)
-			n=n+1
-			#print pattype, type(pattype)
-			#
-			#print n,quotepat,quote,m.start(),m.end(),len(remain),remain[:128]
-			#	sys.exit()
-			remain=re.sub(quotepat,quote,remain)
-		#print pattype, n
-	print "****Found %i quotation patterns" % n
-	#print act.quotations
+#	for (quotepat,pattype) in quotepatterns:
+#		while re.search(quotepat,act.txt):
+#			m=re.search(quotepat,act.txt)
+#			act.quotations.append(m.group(1))
+#			quote='<quotation n="%i" pattype="%s"/>' % (n,pattype)
+#			n=n+1
+#			#print pattype, type(pattype)
+#			#
+#			#print n,quotepat,quote,m.start(),m.end(),len(act.txt),act.txt[:128]
+#			#	sys.exit()
+#			act.txt=re.sub(quotepat,quote,act.txt)
+#		#print pattype, n
+#	print "****Found %i quotation patterns" % n
+#	#print act.quotations
 
-
+	RemoveTables(act, act.quotations, quotepatterns, 'quotation')
 
 
 	# remove general kinds of table, which are probably not quotations
 	# that need to be handled carefully
 	
-	tablepatterns=[
+	tablepatterns2=[
 		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable'),
 		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>)&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>\s*<table border width=100%>([\s\S]*?)</table>\s*(?=</td>\s*</tr>)(?i)','taxtable1997c16'),
 		('<TABLE cellpadding=10 border>([\s\S]*?)</table>(?i)','repealtable1'),
 		('<table border>([\s\S]*?)</table>(?i)','repealtable2'),
 		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
 	
-	n=0
-	for (tablepat,pattype) in tablepatterns:
-		while re.search(tablepat,remain):
-			m=re.search(tablepat,remain)
-			act.tables.append(m.group(1))
-			tableref='<tableref n="%i" pattype="%s"/>' % (n,pattype)
-			n=n+1
-			
-			remain=re.sub(tablepat,tableref,remain)
-		
-	print "****Found %i table patterns" % n
+#	n=0
+#	for (tablepat,pattype) in tablepatterns:
+#		while re.search(tablepat,act.txt):
+#			m=re.search(tablepat,act.txt)
+#			act.tables.append(m.group(1))
+#			tableref='<tableref n="%i" pattype="%s"/>' % (n,pattype)
+#			n=n+1
+#			
+#			act.txt=re.sub(tablepat,tableref,act.txt)
+#		
+#	print "****Found %i table patterns" % n
+#
+#	
 
-	
+	RemoveTables(act, act.tables, tablepatterns2, 'tabular')
+
 	# Main loop
 	
+	remain=act.txt
+
 	while  0 < len(remain):
 		
 		# lines with marginal elements
@@ -590,10 +639,16 @@ def ActParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 			
+		# lines with empty margins, all we need to do is pass
+		# them on to parseright
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD valign=top(?: align=center)?>([\s\S]*?)</TD>\s*</TR>(?i)',remain)
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD valign=top( align=center)?>([\s\S]*?)</TD>\s*</TR>(?i)',remain)
 		if m:
-			parseright(act,m.group(1),locus,legis.Margin())
+			if m.group(1):
+				format='center'
+			else:
+				format=''
+			parseright(act,m.group(2),locus,legis.Margin(), format)
 			remain=remain[m.end():]
 			continue
 
@@ -621,11 +676,12 @@ def ActParseBody(act,pp):
 			# need to check there is no preceding heading
 
 
-
+		# This should be obsolete
 
 		m=re.match('\s*(?:<p>)?\s*<tr(?: valign="top">|>(?=\s*<td width="(?:20%|10%)" valign="top">))([\s\S]*?)</tr>\s*(?:</p>)?(?i)',remain)
 		if m:
 			print "****oldmatch"
+			sys.exit()
 			lineend=m.end()
 			line=m.group(1)
 			lpos=0
@@ -823,6 +879,7 @@ def ActParseBody(act,pp):
 		m=re.match('\s*<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',remain)
 		if m:
 			print "Handling quotation n=%s" % m.group(1)
+			sys.exit
 			if m.group(2)=="rightquote":
 				qnumber=int(m.group(1))
 				quotation=act.QuotationAsFragment(qnumber)
@@ -950,6 +1007,6 @@ def ActParseBody(act,pp):
 		else:
 			print "unrecognised line:"
 			print remain[:350].strip()
-			sys.exit()
+			raise ParseError, "unrecognised line"
 
 	

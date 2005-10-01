@@ -12,45 +12,62 @@ actdirhtml = miscfun.actdirhtml
 actdirxml = miscfun.actdirxml
 
 from parsehead import ActParseHead
-from analyser import ActParseBody
+from analyser import ParseBody, ParseError
 import legis
 
 
-# may grow into a class which handles much of this
+# basic class -- some legislative text
 
-class ActFragment:
+class LegislationFragment:
 	def __init__(self,txt):
 		self.txt=txt
 		self.quotations=[]
 		self.tables=[]
 		self.isquotation=False
-		self.id='fragment'
 
-	def ParseAsQuotation(self):
-		locus=legis.Locus(self)
-		quotation=legis.Quotation(True,locus)
-		if re.search('>"',self.txt):
-			ActParseBody(self,quotation)
-		else:
-			print "***warning, tried to parse as quotation without quotation marks"
-			#print "***warning, unparseable quotation text", self.txt
-		return quotation
+
+	def ShortID(self):
+		return 'unidentified fragment'
+
+# Probably don't need a separate class for this, but I am not sure.
+
+class ActFragment(LegislationFragment):
+	def __init__(self,txt):
+		LegislationFragment.__init__(self,txt)
 
 class QuotedActFragment(ActFragment):
 	def __init__(self,txt):
 		ActFragment.__init__(self,txt)
 		self.isquotation=True
 
+
+	def ParseAsQuotation(self):
+		locus=legis.Locus(self)
+		quotation=legis.Quotation(True,locus)
+		if re.search('>"',self.txt):
+			ParseBody(self,quotation)
+		else:
+			print "***warning, tried to parse as quotation without quotation marks"
+			#print "***warning, unparseable quotation text", self.txt
+		return quotation
+
+
+class SI(LegislationFragment):
+	def __init__(self, year, number, txt):
+		LegislationFragment.__init__(self,txt)
+		self.year=year
+		self.number=number
+
+	def ShortID(self):
+		return "uksi%sno%s" % (year,number)
+	
 class Act(ActFragment):
 	def __init__(self, cname, txt):
+		LegislationFragment.__init__(self,txt)
 		m = re.search("(\d{4})c(\d+).html$", cname)
 		self.year = m.group(1)
 		self.chapter = m.group(2)
-		self.txt = txt
 		self.headvalues = { }
-		self.quotations=[]
-		self.tables=[]
-		self.isquotation=False
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
@@ -84,13 +101,14 @@ class Act(ActFragment):
 		self.txt = self.txt[mline.end(0):]
 
 	def Parse(self):
-		ActParseHead(act)
+		ActParseHead(self)
 		
 		legisact=legis.Act(self.year,0,self.chapter)
 		self.ActLegisHeader(legisact)
 		legisact.sourceinfo.source='opsi'
-		ActParseBody(act,legisact)
+		ParseBody(self,legisact)
 		return legisact
+
 	
 	def QuotationAsFragment(self,n):
 		qtext=self.quotations[n]
@@ -114,7 +132,7 @@ if __name__ == '__main__':
 		del ldir[0]	# removes file ".svn"
 	
 	# just run through and apply to all the files
-	for i in range(0,len(ldir)):
+	for i in range(12,len(ldir)):
 		print "reading ", i, ldir[i]
 		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])
 		fin = open(os.path.join(actdirhtml, ldir[i]), "r")
@@ -126,7 +144,10 @@ if __name__ == '__main__':
 
 		# the parsing process
 		#ActParseHead(act)
-		lexact=act.Parse()
-
+		try:
+			lexact=act.Parse()
+		except ParseError:
+			print "+++Error occurred in file number %s" % i
+			raise
 		out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
 		out.write(lexact.xml()) 
