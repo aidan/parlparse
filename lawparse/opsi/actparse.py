@@ -117,11 +117,26 @@ class Act(ActFragment):
 		return fragment
 
 	def ActLegisHeader(self,legisact):
-		legisact.preamble.longtitle=self.headvalues['longtitle'][0]
+
+		if self.headvalues.has_key('longtitle'):
+			legisact.preamble=legis.ActPreamble()
+			legisact.preamble.longtitle=self.headvalues['longtitle'][0]
+			enact=self.headvalues['enact'][0]
+			if enact:
+				legisact.preamble.enactment=re.sub('(<B>|</B>|<FONT[^>]*>|</FONT>)(?i)','',enact)
+		else:
+			legisact.preamble=legis.SupplyActPreamble()
+			legisact.preamble.apply=self.headvalues['apply']
+			legisact.preamble.date=self.headvalues['consoldate']
+			if self.headvalues.has_key('petition1'):
+				legisact.preamble.petition=self.headvalues['petition1']
+			else:
+				legisact.preamble.petition=self.headvalues['petition2']+self.headvalues['enact']
+
+
 		#print self.headvalues
-		enact=self.headvalues['enact'][0]
-		if enact:
-			legisact.preamble.enactment=re.sub('(<B>|</B>|<FONT[^>]*>|</FONT>)(?i)','',enact)
+		
+		
 
 # main running part
 if __name__ == '__main__':
@@ -132,8 +147,11 @@ if __name__ == '__main__':
 		del ldir[0]	# removes file ".svn"
 	
 	# just run through and apply to all the files
-	for i in range(12,len(ldir)):
+	for i in range(0,len(ldir)):
 		print "reading ", i, ldir[i]
+		if ldir[i] in ['ukgpa1997c31.html']:
+			print "***skipping***"
+			continue
 		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])
 		fin = open(os.path.join(actdirhtml, ldir[i]), "r")
 		txt = fin.read()

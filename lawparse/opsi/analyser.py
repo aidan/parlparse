@@ -6,15 +6,34 @@ import legis
 
 formats=[('i','italic'),('b','bold')]
 
+	
+quotepatterns=[
+		('<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>(?i)','simple'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="15%">\s*<br>([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','withmargin'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="5%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>([\s\S]*?)&quot;\s*</td>\s*</tr>\s*</table>(?i)','section'),
+		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>(?i)','full'),
+		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>(?i)','heading'),
+		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','error'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote')]
+
+tablepatterns1=[('<center>\s*<table>([\s\S]*?)</table>\s*?</center>','tableCentered')]
+
+tablepatterns2=[
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>)&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>\s*<table border width=100%>([\s\S]*?)</table>\s*(?=</td>\s*</tr>)(?i)','taxtable1997c16'),
+		('<TABLE cellpadding=10 border>([\s\S]*?)</table>(?i)','repealtable1'),
+		('<table border>([\s\S]*?)</table>(?i)','repealtable2'),
+		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
+	
 
 class ParseError(Exception):
 	"""Exception class for parse errors"""
 	pass
 
-def deformat(s):
+def deformat(s,count=0):
 	for (a,b) in formats:
-		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s)
-		s=re.sub('</%s>(?i)' % a,'</format>',s)
+		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s,count)
+		s=re.sub('</%s>(?i)' % a,'</format>',s,count)
 	s=re.sub('<img[^>]*>(?i)','',s)
 	return s
 
@@ -156,6 +175,15 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			margin=legis.Margin()
 			first=False
 
+		m=re.match('\s*<BR><a name="sch(\d+)pt(\d+)"></a>A<FONT size=-1>RTICLE\s*</FONT>(\d+)(?i)',right)
+		if m:
+			locus.addpart('article',m.group(3))
+			leaf=legis.Division(locus,'article',m.group(3),margin)
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
+
 		# Deleting some hanging material
 
 		m=re.match('</ul>',right)
@@ -246,16 +274,20 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>([1-9][0-9]*)(\.)?</b>',right)
 		if m:
 			#print "***matched section III?"
-			section=m.group(1)
-			leaf.addenum(section)
-			path=[(section,'numeric','','')]
-			leafoptions=path2opt(path)+partoption+divoptions+leftoption
 			right=right[m.end():]
 			aftersectionflag=True
 
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
+			continue
+
+		m=re.match('(\s+\.)([^<]*)',right)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus,margin)
+			locus.lex.append(leaf)
+			right=right[m.end():]
 			continue
 
 # Matching various patterns used for numbering
@@ -316,7 +348,26 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		# often used for lower level numbering in older acts		
 
-		m=re.match('\s*<ul>&nbsp;(\(\S*\))&nbsp;',right)
+		m=re.match('\s*<p>\s*<ul>(\([a-z]+\))(?i)',right)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus,margin)
+			leaf.sourcerule='opsi:subsection3'
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
+		m=re.match('\s*<p>(\([a-z]+\))(?i)',right)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus,margin)
+			leaf.sourcerule='opsi:subsetion4'
+			locus.lex.append(leaf)
+			right=right[m.end():]
+			continue
+
+
+		m=re.match('\s*<ul>&nbsp;(\(\S*\))&nbsp;(?i)',right)
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
@@ -518,7 +569,11 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			continue
 
 
-		m=re.match('<|&nbsp;',right)
+		m=re.match('<i>|<b>(?i)',right)
+		if m:
+			right=deformat(right,1)
+
+		m=re.match('<(?!a|format)|&nbsp;',right)
 		if m:
 			print "unrecognised right line element [[[\n%s\n]]]:" % right
 			print right[:256]
@@ -542,85 +597,9 @@ def ParseBody(act,pp):
 	act.txt=re.sub('\s*<hr[^>]*>(?i)','',act.txt)
 	justhad3table=False
 
-
-	# remove tables -- deal with them at a later date
-	
-#	tables=[]
-#	n=0
-#	tablepat='<center>\s*<table>[\s\S]*?</table>\s*?</center>'
-#	while re.search(tablepat,act.txt):
-#		m=re.search(tablepat,act.txt)
-#		tables.append(m.group())
-#		#tablebody='<excision n="%s" />' % n
-#		tablebody=''
-#		n=n+1
-#		act.txt=re.sub(tablepat,tablebody,act.txt)
-#	
-#	# displayed quotation processing
-#	
-#	#quotations=[]
-#	n=0
-#	
-
-	tablepatterns1=[('<center>\s*<table>([\s\S]*?)</table>\s*?</center>','tableCentered')]
-
 	RemoveTables(act, act.tables, tablepatterns1, 'tabular')	
 
-	#print "****removing quotations"
-	
-	quotepatterns=[
-		('<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>(?i)','simple'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="15%">\s*<br>([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','withmargin'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="5%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>([\s\S]*?)&quot;\s*</td>\s*</tr>\s*</table>(?i)','section'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>(?i)','full'),
-		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>(?i)','heading'),
-		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','error'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote')]
-	
-	
-	print re.search('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>[\s\S]*</TABLE>\s*(?=</TD>\s*</TR>)(?i)',act.txt)
-	
-#	for (quotepat,pattype) in quotepatterns:
-#		while re.search(quotepat,act.txt):
-#			m=re.search(quotepat,act.txt)
-#			act.quotations.append(m.group(1))
-#			quote='<quotation n="%i" pattype="%s"/>' % (n,pattype)
-#			n=n+1
-#			#print pattype, type(pattype)
-#			#
-#			#print n,quotepat,quote,m.start(),m.end(),len(act.txt),act.txt[:128]
-#			#	sys.exit()
-#			act.txt=re.sub(quotepat,quote,act.txt)
-#		#print pattype, n
-#	print "****Found %i quotation patterns" % n
-#	#print act.quotations
-
-	RemoveTables(act, act.quotations, quotepatterns, 'quotation')
-
-
-	# remove general kinds of table, which are probably not quotations
-	# that need to be handled carefully
-	
-	tablepatterns2=[
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)\s*<table>\s*<TR><TD valign=top align=center colspan=2>&nbsp;<BR>TABLE([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','simpletable'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>)&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>\s*<table border width=100%>([\s\S]*?)</table>\s*(?=</td>\s*</tr>)(?i)','taxtable1997c16'),
-		('<TABLE cellpadding=10 border>([\s\S]*?)</table>(?i)','repealtable1'),
-		('<table border>([\s\S]*?)</table>(?i)','repealtable2'),
-		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
-	
-#	n=0
-#	for (tablepat,pattype) in tablepatterns:
-#		while re.search(tablepat,act.txt):
-#			m=re.search(tablepat,act.txt)
-#			act.tables.append(m.group(1))
-#			tableref='<tableref n="%i" pattype="%s"/>' % (n,pattype)
-#			n=n+1
-#			
-#			act.txt=re.sub(tablepat,tableref,act.txt)
-#		
-#	print "****Found %i table patterns" % n
-#
-#	
+	RemoveTables(act, act.quotations, quotepatterns, 'quotation')	
 
 	RemoveTables(act, act.tables, tablepatterns2, 'tabular')
 
@@ -629,6 +608,148 @@ def ParseBody(act,pp):
 	remain=act.txt
 
 	while  0 < len(remain):
+
+		# Headings
+	
+		# Heading: SCHEDULE 1
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;<BR><BR>&nbsp;\s*</TD>\s*<TD align=center valign=top>&nbsp;<BR>&nbsp;<BR>(?:<a name="(?:sch[^"]*)"></a>)?((?:"|&quot;)?)SCHEDULE( (\d+[A-Z]*))?<BR>&nbsp;</TD></TR>(?i)',remain)
+		if m:
+			if m.group(2):
+				snumber=m.group(2)
+			else:
+				snumber=''
+			print "++++ snumber=%s %s" % (snumber,type(snumber))
+			locus.newdivision('schedule',snumber)
+			leaf=legis.Division(locus,'schedule',snumber)
+			if len(m.group(1))>0:
+				leaf=quotestart(locus,leaf)
+			pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+
+		# Heading: SCHEDULE
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center>&nbsp;<BR><BR>\s*<BR><BR><FONT SIZE=5>S C H E D U L E</FONT></TD></TR>\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;&nbsp;</TD>\s*<TD align=center valign=top>&nbsp;&nbsp;<a name="schunnumbered"></a><BR>&nbsp;</TD></TR>',remain)
+		if m:
+			snumber=''
+			locus.newdivision('schedule',snumber)
+			leaf=legis.Division(locus,'schedule',snumber)
+			pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+			
+
+		#if re.match('\s*',remain):
+		#	print "****matched"
+
+		# Heading: SCHEDULES
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>S C H E D U L E S</FONT>\s*</TD></TR>(?i)',remain)
+		if m:
+			print "***** schedule marker"
+			leaf=legis.Leaf('schedule marker',locus)
+			leaf.content='schedules'
+			pp.append(leaf)
+			remain=remain[m.end():]
+			continue
+
+		# Heading: PART I	
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="([^"]*)"></a>(P<FONT size=-1>ART|C<FONT size=-1>HAPTER) </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
+		if m:
+			if re.match('P',m.group(2)):
+				locus.addpart('part',m.group(3))
+				leaf=legis.Division(locus,'part',m.group(3))
+			else:
+				locus.addpart('chapter',m.group(3))
+				leaf=legis.Division(locus,'chapter',m.group(3))
+			pp.append(leaf)	
+			remain=remain[m.end():]
+			continue
+
+		# Heading: PART I 
+
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top>(?P<bold><b>)?P<FONT size=-1>ART </FONT>(?P<no>[IVXLDCM]+|\d+)(?(bold)</b>|\s*)</TD></TR>(?i)',remain)
+		if m:
+			locus.addpart('part',m.group('no'))
+			leaf=legis.Division(locus,'part',m.group('no'))
+			if m.group('bold'):
+				leaf.sourcerule='opsi:PartHeadingBold1'
+			else:
+				leaf.sourcerule='opsi:PartHeading1'
+			pp.append(leaf)	
+			remain=remain[m.end():]
+			continue
+	
+
+		# Italicised heading 1
+
+		m=re.match('\s*<TR><TD valign=top>(?:&nbsp;|<IMG src="/img/amdt-col\.gif">)</TD><TD align=center><BR><(?P<style>I|B)>((?:"|&quot;)?)(.*?)</(?P=style)></TD></TR>(?i)',remain)
+		if m:
+			leaf=legis.Heading(locus)
+			leaf.content=m.group(3)
+			if m.group('style')=='B':
+				leaf.sourcerule='opsi:HeadingBold1'
+			else:
+				leaf.sourcerule='opsi:HeadingItalic1'
+			if len(m.group(2))>0:
+				quotestart(locus,leaf)
+			locus.lex.append(leaf)
+			remain=remain[m.end():]
+			continue
+			# need to check there is no preceding heading
+
+
+		# Italicised heading 2
+
+		m=re.match('\s*<TR valign=top><TD colspan=2 align=center><br><I>([\s\S]*?)</I></TD></TR>(?i)',remain)
+		if m:
+			heading=m.group(1)
+			lastleaf=pp.last()
+			if lastleaf and lastleaf.t=='division':	
+				lastleaf.content=heading
+			else:
+				leaf=legis.Heading(locus)
+				leaf.content=heading
+				leaf.sourcerule="opsi:HeadingItalic2"
+				pp.append(leaf)
+
+			remain=remain[m.end():]
+			continue
+
+		# Generic heading 1
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center(?: valign=top)?>((?:(?:[^<]*)<FONT size=-1>(?:[^<]*)</FONT>)*)([\s\S]*?)</TD></TR>(?i)',remain)
+		if m:
+			print "****heading"
+
+			heading=re.sub('(<FONT[^>]*?>|</FONT>)(?i)','',m.group(1))
+			nextheading=''
+
+			if re.match('\s*<BR>',m.group(2)):
+				nextheading=m.group(2)
+			else:
+				heading=heading+m.group(2)
+
+			print heading
+
+			lastleaf=pp.last()
+			if lastleaf and lastleaf.t=='division':	
+				lastleaf.content=heading
+			else:
+				leaf=legis.Heading(locus)
+				leaf.content=heading
+				pp.append(leaf)
+
+			if nextheading:
+				parseright(act,nextheading,locus)
+
+			remain=remain[m.end():]
+			continue
+
+			
 		
 		# lines with marginal elements
 
@@ -657,23 +778,6 @@ def ParseBody(act,pp):
 			parseright(act,m.group(1),locus,legis.Margin())
 			remain=remain[m.end():]
 			continue
-
-		# italicised heading
-
-		m=re.match('\s*<TR><TD valign=top>(?:&nbsp;|<IMG src="/img/amdt-col\.gif">)</TD><TD align=center><BR><(?P<style>I|B)>((?:"|&quot;)?)(.*?)</(?P=style)></TD></TR>(?i)',remain)
-		if m:
-			leaf=legis.Heading(locus)
-			leaf.content=m.group(3)
-			if m.group('style')=='B':
-				leaf.sourcerule='opsi:HeadingBold1'
-			else:
-				leaf.sourcerule='opsi:HeadingItalic1'
-			if len(m.group(2))>0:
-				quotestart(locus,leaf)
-			locus.lex.append(leaf)
-			remain=remain[m.end():]
-			continue
-			# need to check there is no preceding heading
 
 
 		# This should be obsolete
@@ -779,100 +883,8 @@ def ParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
-		# Remaining line matches -- mostly headings
-	
-		m=re.match('\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;<BR><BR>&nbsp;\s*</TD>\s*<TD align=center valign=top>&nbsp;<BR>&nbsp;<BR>(?:<a name="(?:sch[^"]*)"></a>)?((?:"|&quot;)?)SCHEDULE( (\d+[A-Z]*))?<BR>&nbsp;</TD></TR>(?i)',remain)
-		if m:
-			if m.group(2):
-				snumber=m.group(2)
-			else:
-				snumber=''
-			print "++++ snumber=%s %s" % (snumber,type(snumber))
-			locus.newdivision('schedule',snumber)
-			leaf=legis.Division(locus,'schedule',snumber)
-			if len(m.group(1))>0:
-				leaf=quotestart(locus,leaf)
-			pp.append(leaf)
-			remain=remain[m.end():]
-			continue
+		# Remaining line matches 
 
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center>&nbsp;<BR><BR>\s*<BR><BR><FONT SIZE=5>S C H E D U L E</FONT></TD></TR>\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;&nbsp;</TD>\s*<TD align=center valign=top>&nbsp;&nbsp;<a name="schunnumbered"></a><BR>&nbsp;</TD></TR>',remain)
-		if m:
-			snumber=''
-			locus.newdivision('schedule',snumber)
-			leaf=legis.Division(locus,'schedule',snumber)
-			pp.append(leaf)
-			remain=remain[m.end():]
-			continue
-			
-
-		#if re.match('\s*',remain):
-		#	print "****matched"
-
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>S C H E D U L E S</FONT>\s*</TD></TR>(?i)',remain)
-		if m:
-			print "***** schedule marker"
-			leaf=legis.Leaf('schedule marker',locus)
-			leaf.content='schedules'
-			pp.append(leaf)
-			remain=remain[m.end():]
-			continue
-	
-
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="([^"]*)"></a>(P<FONT size=-1>ART|C<FONT size=-1>HAPTER) </FONT>([IVXLDCM]+)</TD></TR>(?i)',remain)
-		if m:
-			if re.match('P',m.group(2)):
-				locus.addpart('part',m.group(3))
-				leaf=legis.Division(locus,'part',m.group(3))
-			else:
-				locus.addpart('chapter',m.group(3))
-				leaf=legis.Division(locus,'chapter',m.group(3))
-			pp.append(leaf)	
-			remain=remain[m.end():]
-			continue
-
-
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top>(?P<bold><b>)?P<FONT size=-1>ART </FONT>(?P<no>[IVXLDCM]+|\d+)(?(bold)</b>|\s*)</TD></TR>(?i)',remain)
-		if m:
-			locus.addpart('part',m.group('no'))
-			leaf=legis.Division(locus,'part',m.group('no'))
-			if m.group('bold'):
-				leaf.sourcerule='opsi:PartHeadingBold1'
-			else:
-				leaf.sourcerule='opsi:PartHeading1'
-			pp.append(leaf)	
-			remain=remain[m.end():]
-			continue
-	
-
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center(?: valign=top)?>((?:(?:[^<]*)<FONT size=-1>(?:[^<]*)</FONT>)+)([\s\S]*?)</TD></TR>(?i)',remain)
-		if m:
-			print "****heading"
-			#l=re.findall('(([A-Z\-\d\s]+)<FONT size=-1>([A-Z0-9, ]+))+',m.group(1))
-			#print l, m.group(1),':',m.group(2),':',m.group(3),':',m.group(4)		
-			heading=re.sub('(<FONT[^>]*?>|</FONT>)(?i)','',m.group(1))
-			nextheading=''
-			if re.match('\s*<BR>',m.group(2)):
-				nextheading=m.group(2)
-			else:
-				heading=heading+m.group(2)
-			#for (a,b,c) in l:
-			#	heading=heading+b+c
-			print heading
-			#sys.exit()
-			lastleaf=pp.last()
-			if lastleaf.t=='division':
-				lastleaf.content=heading
-			else:
-				leaf=legis.Heading(locus)
-				leaf.content=heading
-				pp.append(leaf)
-
-			if nextheading:
-				parseright(act,nextheading,locus)
-
-			remain=remain[m.end():]
-			continue
 
 	
 

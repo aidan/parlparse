@@ -75,7 +75,7 @@ frontmatter = [
 #	('middle', '(</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;)?(?i)') ]
 
 
-consolidated=[('consolidated','(?:<p>)?(Apply a sum out of the Consolidated Fund to the service of the year ending on\s*(\d+(?:st|th|nd|rd)\s*(\w*)\s*(\d+)); to appropriate the supplies granted in this Session of Parliament; and to repeal certain Consolidated Fund and Appropriation Acts\.)(?i)'),
+consolidated=[('apply','(?:<p>)?(Apply a sum out of the Consolidated Fund to the service of the year ending on\s*(\d+(?:st|th|nd|rd)\s*(\w*)\s*(\d+)); to appropriate the supplies granted in this Session of Parliament; and to repeal certain Consolidated Fund and Appropriation Acts\.)(?i)'),
 		('middle','(?:\s*<p align=right>)?(?i)'),
 		('consoldate','\[(.*?)\]\s*(?i)')]
 
@@ -209,7 +209,7 @@ def ActParseHead(act):
 
 	if re.match("(<p>)?Most Gracious Sovereign,(?i)", act.txt):
 		print "****money act"
-		act.NibbleHead('middle', '(?:<p>)?(Most Gracious Sovereign,)\s*(?:<p>)?(?i)')
+		act.NibbleHead('petition2', '(?:<p>)?(Most Gracious Sovereign,)\s*(?:<p>)?(?i)')
 		if re.match("\s*(<P>)?(<font|WE,)(?i)", act.txt):
 			act.NibbleHead('enact', '\s*(?:<P>)?(?P<font><font size="-1">)?We(?:, )?(?(font)</font>|)\s*,?\s*(Your Majesty\'s most dutiful and loyal subjects.*? as follows):(?:&#151;|-)(?i)')
 			act.NibbleHead('middle','(?:<br>|&nbsp;|\s)*</td>\s*</tr>\s*(?:<p>)?(?i)')

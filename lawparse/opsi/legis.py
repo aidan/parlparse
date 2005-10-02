@@ -42,8 +42,11 @@ class Legis:				# the unit of legislation
 		self.content.extend(leaflist)
 
 	def last(self):
-		return self.content[len(self.content)-1]
-
+		if len(self.content)>0:
+			return self.content[len(self.content)-1]
+		else:
+			return None
+	
 	def xml(self):
 		s='<?xml version="1.0" encoding="iso-8859-1"?>%s\n<legis\n\tid="%s">\n%s%s' % (doctype, self.id,self.preamble.xml(),self.sourceinfo.xml())
 		
@@ -79,11 +82,18 @@ class SourceInfo:
 		return '<sourceinfo source="%s"/>\n' % self.source
 		
 class Preamble:
-		def __init__(self):
-			pass
+	def __init__(self):
+		self.type='empty'
 
-		def xml(self):
-			return ''
+	def xml(self):
+		xmlc=self.xmlcontent()
+		if xmlc=='':
+			return '<preamble />\n'
+		else:
+			return '<preamble type="%s">\n%s</preamble>\n' % (self.type, xmlc)
+
+	def xmlcontent(self):
+		return ''
 
 class ActPreamble(Preamble):
 		def __init__(self):
@@ -92,17 +102,32 @@ class ActPreamble(Preamble):
 			self.date=''
 			self.enactment=''
 			self.whereas=[]
+			self.type='act'
 
-		def xml(self):
-			s='<preamble>\n<longtitle \n\tdate="%s"\n>%s</longtitle>\n<enactment>%s</enactment>\n</preamble>\n' % (self.date,self.longtitle,self.enactment)
+		def xmlcontent(self):
+			s='<longtitle \n\tdate="%s"\n>%s</longtitle>\n<enactment>%s</enactment>\n' % (self.date,self.longtitle,self.enactment)
 			return s
 	
+class SupplyActPreamble(Preamble):
+		def __init__(self):
+			Preamble.__init__(self)
+			self.apply=''
+			self.date=''
+			self.petition=''
+			self.whereas=[]
+			self.type='supply act'
+
+		def xmlcontent(self):
+			s='<apply \n\tdate="%s"\n>%s</apply>\n<petition>%s</petition>\n' % (self.date, self.apply, self.petition)
+			return s
+
 class SIPreamble(Preamble):
 		def __init__(self):
 			Preamble.__init__(self)
+			self.type='SI'
 
-		def xml(self):
-			return '\n<preamble />\n'
+		def xmlcontent(self):
+			return ''
 
 class Leaf:
 	def __init__(self, t, locus, margin=Margin()):
@@ -264,7 +289,7 @@ class Locus:
 
 	def addpart(self, t, s):
 		self.partitions[t]=s
-		if s not in set(['part','chapter']):
+		if t not in set(['part','chapter','article']):
 			print "****unusual division [[%s]]" % s
 
 	def part2xml(self):
