@@ -110,11 +110,6 @@ def TableBalance(tablestring):
 
 		#print t,pos
 		total=total+pos
-	#print "****tablestring ending with:"
-	#print tablestring[total-16:total]
-	#print "****next begins with:"
-	#print tablestring[total:total+32]
-	#print
 	return total
 
 

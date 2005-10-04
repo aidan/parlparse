@@ -75,6 +75,28 @@ def RemoveTables(act, tablelist, patternlist, tabtype):
 		i=i+1
 #	sys.exit()
 
+def MakeTableLeaf(act, locus, no, pattype):
+	print "Handling table n=%s pattype=%s" % (no, pattype)
+
+	tablehtml=act.tables[int(no)]
+	tablehtml=re.sub('(<P>|<BR>|&nbsp;)+','',tablehtml)
+	tablehtml=deformat(tablehtml)
+	tablehtml=defont(tablehtml)
+	tablehtml=deamp(tablehtml)	# will need more care
+
+	print "*****tablehtml at %s:" % locus.xml()
+	# print tablehtml
+
+	leaf=legis.Table(locus)
+	leaf.sourcerule="opsi:puretable(%s)" % pattype
+
+	#rows=[re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
+	#print "****table rows:",rows
+
+	leaf.rows=[legis.TableRow(re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x)) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
+	locus.lex.append(leaf)
+
+
 def threetable(t):
 	tcontents=''
 	while len(t) > 0:
@@ -470,21 +492,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('\s*<tabular n="(\d+)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
 		if m:
-			print "Handling table n=%s pattype=%s" % (m.group(1),
-				m.group(2))
-			tablehtml=act.tables[int(m.group(1))]
-			tablehtml=re.sub('(<P>|<BR>|&nbsp;)+','',tablehtml)
-			tablehtml=deformat(tablehtml)
-			tablehtml=defont(tablehtml)
-			tablehtml=deamp(tablehtml)	# will need more care
-			print "*****tablehtml at %s:" % locus.xml()
-			print tablehtml
-			leaf=legis.Table(locus)
-			leaf.sourcerule="opsi:puretable(%s)" % m.group(2)
-			#rows=[re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
-			#print "****table rows:",rows
-			leaf.rows=[legis.TableRow(re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x)) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
-			locus.lex.append(leaf)
+			MakeTableLeaf(act,locus,m.group(1),m.group(2))
 
 			right=right[m.end():]
 			continue
@@ -622,9 +630,10 @@ def ParseBody(act,pp):
 			print "++++ snumber=%s %s" % (snumber,type(snumber))
 			locus.newdivision('schedule',snumber)
 			leaf=legis.Division(locus,'schedule',snumber)
+			leaf.sourcerule='opsi:HeadingScheduleNumbered1'
 			if len(m.group(1))>0:
 				leaf=quotestart(locus,leaf)
-			pp.append(leaf)
+			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
 
@@ -635,7 +644,8 @@ def ParseBody(act,pp):
 			snumber=''
 			locus.newdivision('schedule',snumber)
 			leaf=legis.Division(locus,'schedule',snumber)
-			pp.append(leaf)
+			leaf.sourcerule='opsi:HeadingScheduleUnnumbered1'
+			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
 			
@@ -650,7 +660,8 @@ def ParseBody(act,pp):
 			print "***** schedule marker"
 			leaf=legis.Leaf('schedule marker',locus)
 			leaf.content='schedules'
-			pp.append(leaf)
+			leaf.sourcerule='opsi:HeadingSchedulesDivision'
+			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
 
@@ -661,10 +672,12 @@ def ParseBody(act,pp):
 			if re.match('P',m.group(2)):
 				locus.addpart('part',m.group(3))
 				leaf=legis.Division(locus,'part',m.group(3))
+				leaf.sourcerule='opsi:HeadingPart1'
 			else:
 				locus.addpart('chapter',m.group(3))
 				leaf=legis.Division(locus,'chapter',m.group(3))
-			pp.append(leaf)	
+				leaf.sourcerule='opsi:HeadingChapter1'
+			locus.lex.append(leaf)	
 			remain=remain[m.end():]
 			continue
 
@@ -676,10 +689,10 @@ def ParseBody(act,pp):
 			locus.addpart('part',m.group('no'))
 			leaf=legis.Division(locus,'part',m.group('no'))
 			if m.group('bold'):
-				leaf.sourcerule='opsi:PartHeadingBold1'
+				leaf.sourcerule='opsi:HeadingPart2Bold'
 			else:
-				leaf.sourcerule='opsi:PartHeading1'
-			pp.append(leaf)	
+				leaf.sourcerule='opsi:HeadingPart2'
+			locus.lex.append(leaf)	
 			remain=remain[m.end():]
 			continue
 	
@@ -714,8 +727,38 @@ def ParseBody(act,pp):
 				leaf=legis.Heading(locus)
 				leaf.content=heading
 				leaf.sourcerule="opsi:HeadingItalic2"
-				pp.append(leaf)
+				locus.lex.append(leaf)
 
+			remain=remain[m.end():]
+			continue
+
+		# Heading, eg SCHEDULE, using FONT=5
+		
+		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center><FONT SIZE=5>([^<]*)</FONT></TD></TR>',remain)
+		if m:
+			if m.group(1)=='S C H E D U L E':
+				snumber=''
+				locus.newdivision('schedule',snumber)
+				leaf=legis.Division(locus,'schedule',snumber)
+				leaf.sourcerule="opsi:DivisionSchedule1"
+			else:
+				leaf=legis.Heading(locus)
+				leaf.content=m.group(1)
+				leaf.sourcerule="opsi:HeadingLarge"
+
+			locus.lex.append(leaf)
+			remain=remain[m.end():]
+			continue
+
+		# Anchor before heading
+
+		m=re.match('\s*<TR><TD valign=top>&nbsp;<BR>&nbsp;<BR><BR>&nbsp;</TD>\s*<TD align=center valign=top>&nbsp;<BR>&nbsp;<BR><a name="[^"]*"></a><BR>&nbsp;</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center>((?:(?:[^<]*)<FONT size=-1>(?:[^<]*)</FONT>)+)</TD></TR>',remain)
+		if m:
+			heading=defont(m.group(1))
+			leaf=legis.Heading(locus)
+			leaf.content=heading
+			leaf.sourcerule='opsi:HeadingAnchorBefore'
+			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
 
@@ -741,7 +784,8 @@ def ParseBody(act,pp):
 			else:
 				leaf=legis.Heading(locus)
 				leaf.content=heading
-				pp.append(leaf)
+				leaf.sourcerule='opsi:HeadingGeneric'
+				locus.lex.append(leaf)
 
 			if nextheading:
 				parseright(act,nextheading,locus)
@@ -885,8 +929,16 @@ def ParseBody(act,pp):
 
 		# Remaining line matches 
 
+		# Tabular material
+		
+		m=re.match('\s*<TR><TD valign=top align=center>&nbsp;</TD><TD valign=top><tabular n="(\d+)*"\s+pattype="([a-z\w\s\d]+)"/></TD></TR>', remain)
+		if m:
+			MakeTableLeaf(act, locus, m.group(1), m.group(2))
+			
+			remain=remain[m.end():]
+			continue
 
-	
+		#	
 
 		m=re.match('\s*<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',remain)
 		if m:
