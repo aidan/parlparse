@@ -18,6 +18,15 @@ import legis
 
 # basic class -- some legislative text
 
+class OpsiSourceInfo(legis.SourceInfo):
+	def __init__(self,url):
+		legis.SourceInfo.__init__(self,'opsi')
+		self.url=url
+
+	def xml(self):
+		return '<sourceinfo source="opsi"\n\turl="%s"\n/>' % self.url
+		
+
 class LegislationFragment:
 	def __init__(self,txt):
 		self.txt=txt
@@ -68,6 +77,7 @@ class Act(ActFragment):
 		self.year = m.group(1)
 		self.chapter = m.group(2)
 		self.headvalues = { }
+		self.url=''
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
@@ -104,19 +114,20 @@ class Act(ActFragment):
 		ActParseHead(self)
 		
 		legisact=legis.Act(self.year,0,self.chapter)
-		self.ActLegisHeader(legisact)
-		legisact.sourceinfo.source='opsi'
+		self.LegisHeader(legisact)
+		legisact.sourceinfo=OpsiSourceInfo(self.url)
 		ParseBody(self,legisact)
 		return legisact
 
 	
-	def QuotationAsFragment(self,n):
+	def QuotationAsFragment(self,n,locus):
 		qtext=self.quotations[n]
 		fragment=QuotedActFragment(qtext)
-		fragment.id="fragment of %s" % self.ShortID()
+		#fragment.id="quoted in(%s)" % locus.text()
+		fragment.id=locus.text()
 		return fragment
 
-	def ActLegisHeader(self,legisact):
+	def LegisHeader(self,legisact):
 
 		if self.headvalues.has_key('longtitle'):
 			legisact.preamble=legis.ActPreamble()

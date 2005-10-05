@@ -7,8 +7,8 @@ patches=[('ukgpa1997c16',[('&rsquo;\)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18pt}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt in relation to accounting periods beginning after 5th March 1997\."></a></TD></TR>(?i)','')]),
+	('ukgpa1997c46',[('',''),('; or<UL></TD></TR>','; or</UL></TD></TR>')])
 		]
-
 
 def ActApplyPatches(act):
 	
@@ -25,5 +25,13 @@ def ActApplyPatches(act):
 					print "***error, failed to find substitution text"
 					print re.search('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"',act.txt)
 					sys.exit()
+				m=re.search(pattern,act.txt)
+				if m:
+					print "***Before:"
+					print act.txt[m.start()-16:m.end()+16]
 				act.txt=re.sub(pattern,replacement,act.txt)
+				if m:
+					print "***After:"
+					print act.txt[m.start()-16:m.end()+16]
+
 	

@@ -36,7 +36,7 @@ class Legis:				# the unit of legislation
 		#print "****appending leaf to Legis", leaf
 		xmlofleaf=leaf.xml()
 		#print "**** after append, xml of leaf",xmlofleaf 
-		print leaf.xml()[:128]
+		print leaf.xml()[:255]
 
 	def extend(self,leaflist):
 		self.content.extend(leaflist)
@@ -75,12 +75,13 @@ class SI(Legis):
 		self.id="uksi"+year+"no"+number
 
 class SourceInfo:
-	def __init__(self):
-		self.source='unknown'
+	def __init__(self,source='unknown'):
+		self.source=source
 
 	def xml(self):
 		return '<sourceinfo source="%s"/>\n' % self.source
-		
+
+
 class Preamble:
 	def __init__(self):
 		self.type='empty'
@@ -197,17 +198,14 @@ class Heading(Leaf):
 		#self.t='heading'
 		self.content=None
 
-class Division(Heading):
-	def __init__(self,locus,dheading,dnumber,margin=Margin()):
+class HeadingDivision(Heading):
+	def __init__(self,locus,margin=Margin()):
 		Leaf.__init__(self,'division',locus,margin)
-		#self.t="division"
-		self.dheading=dheading
-		self.dnumber=dnumber
 
-	def xml(self,u=''):
-		t=' dheading="%s" dnumber="%s"%s' % (self.dheading,self.dnumber,u)
-		s=Leaf.xml(self,t)
-		return s
+#	def xml(self,u=''):
+#		t=' %s' % (self.dheading,self.dnumber,u)
+#		s=Leaf.xml(self,t)
+#		return s
 
 class Table(Leaf):
 	def __init__(self,locus):
@@ -245,25 +243,25 @@ class Locus:
 	def __init__(self,lex):
 		self.lex=lex
 		self.path=[]
-		self.division=''
+		self.division=Division()
 		self.partitions={}
 
 	def __deepcopy__(self,memo):
 		newlocus=Locus(self.lex)
 		newlocus.path=copy.deepcopy(self.path,memo)
-		newlocus.division=self.division
+		newlocus.division=copy.deepcopy(self.division,memo)
 		newlocus.partitions=copy.deepcopy(self.partitions,memo)
 		return newlocus
 
 	def xml(self):
-		s='lex="%s" division="%s"%s%s' % (self.lex.id,
-				self.division,
+		s='lex="%s"%s%s%s' % (self.lex.id,
+				self.division.xml(),
 				pathprint(self.path),
 				self.part2xml())
 		return s
 
 	def text(self):
-		s='%s/%s' % (self.lex.id, self.division)
+		s='%s/%s' % (self.lex.id, self.division.text())
 
 		for n in self.path:
 			s=s+('/%s' % n.text())
@@ -281,10 +279,10 @@ class Locus:
 
 		self.path.append(new)
 
-	def newdivision(self,t,s):
-		print "***new division:%s%s" % (t,s)
+	def newdivision(self,D):
+		print "***new division:%s" % D.text()
 		self.partitions={}
-		self.division=t+s	
+		self.division=D
 		self.path=[]					
 
 	def addpart(self, t, s):
@@ -298,6 +296,34 @@ class Locus:
 			sxml='%s %s="%s"' % (sxml,k,self.partitions[k])
 		return sxml
 
+# Acts and Statutory Instruments are usually divided into an (unnamed) main 
+# part and a number of schedules
+
+class Division:
+	def __init__(self):
+		pass
+
+	def xml(self):
+		return ' division="%s"' % self.text()
+
+	def text(self):
+		return ''
+
+class MainDivision(Division):
+	def __init__(self):
+		Division.__init__(self)
+	
+	def text(self):
+		return 'main'
+
+class Schedule(Division):
+	def __init__(self, no=''):
+		Division.__init__(self)
+		self.number=no
+
+	def text(self):
+		return 'schedule%s' % self.number
+		
 
 class PathElement:
 	def __init__(self,s):
