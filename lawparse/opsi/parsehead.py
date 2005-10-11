@@ -25,7 +25,7 @@ headlines1 = [('middle', '[\s\S]*?<table(?:cellpadding="?2"?|width="?95%"?|\s)*>
 			  ('middle', "<P>\s*It should be noted that the right to reproduce the text of Acts of Parliament does not extend to the Queen's Printer imprints which should be removed from any copies of the Act which are issued or made available to the public. This includes reproduction of the Act on the Internet and on intranet sites. The Royal Arms may be reproduced only where they are an integral part of the original document.\s*"),
 			  ('middle', '<p>The text of this Internet version of the Act is published by the Queen\'s Printer of Acts of Parliament and has been prepared to reflect the text as it received Royal Assent.\s*'),
 			  ('name2',  'A print version is also available and is published by The Stationery Office Limited as the <b>(.{0,100}?)\s*</b>,\s*'),
-			  ('isbn',   'ISBN ((?:0(?:&nbsp;|\s*)(\d\d)(?:&nbsp;|\s*)(\d{6})?(?:&nbsp;|\s*)(\d|X))?)\s*\.\s*'),
+			  ('preisbn',   'ISBN ((?:0(?:&nbsp;|\s*)(\d\d)(?:&nbsp;|\s*)(\d{6})?(?:&nbsp;|\s*)(\d|X))?)\s*\.\s*'),
 			  ('middle', 'The print version may be purchased by clicking\s*'),
 			  ('middle', '<A HREF="(?:/bookstore.htm\?AF=A10075(?:&amp;|&)FO=38383(?:&|&amp;)ACTION=AddItem(?:&amp;|&)|http://www.clicktso.com/portal.asp\?DT=ADDITEM&amp;|http://www.ukstate.com/portal.asp\?CH=YourLife&amp;PR=BookItem&amp;)'),
 			  ('prodid', '(?:BI|DI|ProductID)=(?:(\d{9}(?:\d|X)?)\.?)?\s*">\s*here</A>.\s*'),
@@ -66,6 +66,7 @@ headlines2 = [  ('pageurl2','\s*(?:<pageurl[^>]*>\s*)?<tr(?: valign="top")?>\s*<
 headlines3 = [ ('middle', '(?:<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col\.gif"></TD><TD\s*valign=top>&nbsp;</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>)?(?i)') ]
 
 frontmatter = [
+	('middle','(<tr valign="?top"?>\s*<td width="?10%"?>\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|<p>)?(?i)'),
 	('longtitle','\s*(?:<p>)?((?:An )?\s*(?:\[A\.D\.\s*\S*\])?\s*Act(, as respects Scotland,)? to ([^<]|</?i>)*)(?:\s*<p|</td>\s*</tr>\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td)(?i)'),
 	('date',   '\s*align="?right"?>\s*\[(\d+\w*\s*\w+\s*\d{4})\]?\s*(?:<br><br>)?(?i)'),
 	('middle', '(?:\s*</td>\s*</tr>\s*<tr valign="top">\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;|\s*<p>)(?i)'),
@@ -114,6 +115,8 @@ def TableBalance(tablestring):
 
 
 # this is outside of the class to keep it simple
+
+
 def ActParseHead(act):
 	for headline in headlines1:
 		act.NibbleHead(headline[0], headline[1])
@@ -211,7 +214,7 @@ def ActParseHead(act):
 		else:
 			act.NibbleHead('middle', '</td>\s*</tr>\s*<tr valign="top">')
 			act.NibbleHead('middle', '\s*<td width="10%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;\s*(?i)')
-			act.NibbleHead('enact',  '(WE Your Majesty\'s most dutiful and loyal subjects, .*? as follows):(?:&#151|-);</td>\s*</tr>(?i)')
+			act.NibbleHead('enact',  '(WE,? Your Majesty\'s most dutiful and loyal subjects,? .*? as follows):(?:&#151|-);</td>\s*</tr>(?i)')
 	else:
 		if re.match('(?:<font size=\+3><B>)?(?:<p>)?B(?:</B></font>)?<font size=-1>E IT ENACTED</font>(?i)',act.txt):
 			act.NibbleHead('enact', '(?:<font size=\+3><B>)?(?:<p>)?(B(?:</B></font>)?<font size=-1>E IT ENACTED</font>\s*by the Queen\'s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:-\s*)(?:<BR>&nbsp;</TD></TR>)?(?i)')

@@ -45,6 +45,26 @@ def deamp(s):
 	s=re.sub('&','&amp;',s)
 	return s
 
+
+def AddText(locus,margin,string):
+	last=locus.lex.last()
+	if last and last.t=='provision' and len(last.content)==0:
+		last.content=string
+	else:
+		leaf=legis.Leaf('text',locus,margin)
+		leaf.content=string
+		locus.lex.append(leaf)
+	
+def AddHeading(locus,margin,string):
+	last=locus.lex.last()
+	if last and last.t=='division' and len(last.content)==0:
+		last.content=string
+	else:
+		leaf=legis.Heading(locus,margin)
+		leaf.content=string
+		locus.lex.append(leaf)
+
+
 # assumes no nested tables.
 
 def RemoveTables(act, tablelist, patternlist, tabtype):
@@ -164,12 +184,13 @@ def quotestart(locus,leaf):
 def parseline(line,locus):
 	#path=[]
 	print "****Called parseline"
+	sys.exit()
 	#leaf=legis.Leaf('provision',locus)
 	# extract left and right parts of the line
 
-	m=re.match('\s*<td width="20%">\s*<a name="mdiv(?:[1-9][0-9]*)"></a><br>\s*<font size="2">([\s\S]*?)</font>\s*<br>\s*</td>\s*<td>((\s|\S)*?)</td>\s*$',line)
 
 	m2=re.match('\s*<td width="(?:5%|10%|20%)"(?: valign="top")?>(?:<br>|&nbsp;|\s)*</td>\s*<td>([\s\S]*)</td>',line)
+
 	if m:
 		marginalium=m.group(1)
 		#print "****marginalium:",marginalium
@@ -202,6 +223,8 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			margin=legis.Margin()
 			first=False
 
+		# Article 1
+
 		m=re.match('\s*<BR><a name="sch(\d+)pt(\d+)"></a>A<FONT size=-1>RTICLE\s*</FONT>(\d+)(?i)',right)
 		if m:
 			locus.addpart('article',m.group(3))
@@ -232,15 +255,19 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		# main section number
 
-		m=re.match('\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;(?:<b>)?&nbsp;&nbsp;&nbsp;&nbsp;<b>([1-9]+)(\.)?(?:</b>)?(&nbsp;&nbsp;&nbsp;&nbsp;)?</b>',right)
+		m=re.match('\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;(?:<b>)?&nbsp;&nbsp;&nbsp;&nbsp;<b>(\d+(?:\.)?)\s*(?:</b>)*(&nbsp;&nbsp;&nbsp;&nbsp;)?</b>(?i)',right)
 		if m:
-			#print "***matched section type I"
+			print "***matched section type I"
 			section=m.group(1)
-			locus.addenum(section)
+			print section, type(section)
+			print type(locus)
+			print locus
+			print locus.xml()
+			locus.addenum('15.')
+			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
-			#path=[(section,'numeric','','')]
-			#leafoptions=path2opt(path)+partoption+divoptions+leftoption
+
 			right=right[m.end():]
 			aftersectionflag=True
 			continue
@@ -297,7 +324,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			continue
 		
 
-		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>([1-9][0-9]*)(\.)?</b>',right)
+		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>([1-9][0-9]*)(\.)?</b>(?:&nbsp;&nbsp;&nbsp;&nbsp;)?',right)
 		if m:
 			#print "***matched section III?"
 			right=right[m.end():]
@@ -321,10 +348,11 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		# subsection numbers
 
-		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;((?:"|&quot;)?)(\(\d+[A-Z]*\))\s*',right)
+		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;((?:"|&quot;)?)(\(\d+[A-Z]*\))(?:&nbsp;)*\s*',right)
 		if m:
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
+			leaf.sourcerule='opsi:subsection4'
 			if len(m.group(1))>0:
 				leaf=quotestart(locus,leaf)
 			locus.lex.append(leaf)
@@ -332,11 +360,11 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			continue
 
 
-		m=re.match('&\#151;(\([1-9][0-9]*\))&nbsp;',right)
+		m=re.match('&\#151;(\([1-9][0-9]*[A-Z]*\))(?:&nbsp;)+',right)
 		if m:
 			#print "****match",right[:16]
-			pathinsert(path,m)
-			leafoptions=path2opt(path)+partoption+divoptions
+			#pathinsert(path,m)
+			#leafoptions=path2opt(path)+partoption+divoptions
 			#leaf.addenum(m.group(1))
 			#
 			locus.addenum(m.group(1))
@@ -348,19 +376,17 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		
 		# numbers like this (1), usually subsections		
 
-		m=re.match('\s*(?:<br>)*&nbsp;&nbsp;&nbsp;&nbsp;(\([1-9][0-9]*\))&nbsp;',right)
+		m=re.match('\s*(?:<br>)*&nbsp;&nbsp;&nbsp;&nbsp;(\([1-9][0-9]*\))(?:&nbsp;)+',right)
 		if m:
-			#pathinsert(path,m)
-			#leafoptions=path2opt(path)+partoption+divoptions
 			locus.addenum(m.group(1))
-			leaf=Legis.Leaf('provision',locus,margin)
+			leaf=legis.Leaf('provision',locus,margin)
 			leaf.sourcerule='opsi:subsection1'
 			right=right[m.end():]
 			continue
 
 		# usually lower level numbering like (a)
 
-		m=re.match('\s*<UL>((?:"|&quot;)?)(\([a-z]+\))([\s\S]*?)(?:</UL>)?(?i)',right)
+		m=re.match('\s*<UL>((?:"|&quot;)?)(\([a-z]+\))(?:&nbsp;)*([\s\S]*?)(?:</UL>)?(?i)',right)
 		if m:
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
@@ -463,6 +489,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			right=right[m.end():]
 			continue
 
+		# Very miscellaneous matchings
 
 		# not sure what this is or where it occurs
 
@@ -484,17 +511,22 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			#output('leaf','type="text" format="hanging"',
 			#	m.group(1))
-			leaf=legis.Leaf('text',locus,margin)
-			leaf.content=m.group(1)
-			locus.lex.append(leaf)
+			#leaf=legis.Leaf('text',locus,margin)
+			#leaf.content=m.group(1)
+			#locus.lex.append(leaf)
+		
+			AddText(locus,margin,m.group(1))
+
 			right=right[m.end():]
 			continue
 
 		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;([\s\S]*?)(?:(?:</UL>)+|<BR>&nbsp;)(?i)',right)
 		if m:
-			leaf=legis.Leaf('text',locus,margin)
-			leaf.content=m.group(1)
-			locus.lex.append(leaf)
+#			leaf=legis.Leaf('text',locus,margin)
+#			leaf.content=m.group(1)
+#			locus.lex.append(leaf)
+
+			AddText(locus,margin,m.group(1))
 			right=right[m.end():]
 			continue
 
@@ -532,6 +564,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		if m:
 			print "****Warning matched a table special"
+			sys.exit()
 			output('tablespecial','',m.group(1))
 			right=right[m.end():]
 			continue
@@ -567,6 +600,35 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			
 			right=right[m.end():]
 			continue
+
+
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;(?:&nbsp;)+(?=[^\d\(])([^<]*?)(?i)',right)
+		if m:
+			leaf=legis.Leaf('provision',locus,margin)
+			locus.lex.append(leaf)
+			leaf.content=m.group(1)
+			right=right[m.end():]
+			continue
+
+		# these occur in the badly formatted schedule 5 of the
+		# Merchant Shipping Act 1988, which may need attention.
+
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;(?=[^\d\(])([^<]*?)(?i)',right)
+		if m:
+			if locus.lex.id=='ukpga1988c12':
+				locus.resetpath()
+				leaf=legis.Leaf('provision',locus,margin)
+				locus.lex.append(leaf)
+				right=right[m.end():]
+				continue
+			else:
+				leaf=legis.Leaf('provision',locus,margin)
+				locus.lex.append(leaf)
+				leaf.content=m.group(1)
+				right=right[m.end():]
+				continue			
+
+	
 
 # Remove "whitespace" and garbage
 
@@ -613,9 +675,12 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		else:
 			(t,right)=gettext(right)
 			#output('leaf','type="text"',t)
-			leaf=legis.Leaf('text',locus,margin)
-			leaf.content=t
-			locus.lex.append(leaf)			
+			
+			AddText(locus,margin,t)
+
+			#leaf=legis.Leaf('text',locus,margin)
+			#leaf.content=t
+			#locus.lex.append(leaf)			
 
 # ParseBody should really be a method of act (why isn't it?)
 # its second argument is something of class Legis (or subclass thereof)
@@ -627,6 +692,7 @@ def ParseBody(act,pp):
 	locus.division=legis.MainDivision()
 
 	act.txt=re.sub('\s*<hr[^>]*>(?i)','',act.txt)
+	act.txt=re.sub('<dt1[^>]*>([\s\S]*?)</dt1>(?i)','\1',act.txt)
 	justhad3table=False
 
 	RemoveTables(act, act.tables, tablepatterns1, 'tabular')	
@@ -640,6 +706,28 @@ def ParseBody(act,pp):
 	remain=act.txt
 
 	while  0 < len(remain):
+		#print "+", remain[:25]
+
+		# <pageurl ....
+		m=re.match('\s*<pageurl[^>]*?>',remain)
+		if m:
+			print "**** page break"
+			remain=remain[m.end():]
+			continue
+
+		# Horrid special cases
+
+		# section 14 of the Licensing Act 1988
+		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;&nbsp;&nbsp;</b>([\s\S]*?)(\(\d+\))&nbsp;([\s\S]*?)</td>\s*</tr>(?i)',remain)
+		if m:
+			leaf=legis.Leaf('provision',locus)
+			leaf.content=m.group(1)
+			leaf.sourcerule='opsi:ghastlyhangingtext1'
+			locus.addenum=m.group(2)
+		
+			locus.lex.append(leaf)
+			remain=remain[m.end():]
+			continue
 
 		# Headings
 	
@@ -785,6 +873,29 @@ def ParseBody(act,pp):
 			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
+		
+
+		m=re.match('\s*(?:<p>)?\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*(<br>)?\s*(<i>)?\s*<center>([\s\S]*?)</center>\s*(</i>)?\s*</td>\s*</tr>(?i)',remain)
+		if m:
+			heading=m.group(3)
+			m1=re.match('P(?:ART|art) \s*([IVXLDCM]+)',heading)
+			if m1:
+				partno=m1.group(1)
+				locus.addpart('part',partno)
+				leaf=legis.HeadingDivision(locus)
+				locus.lex.append(leaf)	
+			else:
+				AddHeading(locus,legis.Margin(),heading)
+#				lastleaf=locus.lex.last()
+#				if lastleaf.t=='division':
+#					lastleaf.content=heading
+#				else:
+#					leaf=legis.Heading(locus)
+#					locus.lex.append(leaf)
+#
+			remain=remain[m.end():]
+			continue
+
 
 		# Anchor before heading
 
@@ -833,6 +944,17 @@ def ParseBody(act,pp):
 		
 		# lines with marginal elements
 
+		
+		# Margins found in some pre-1997 acts
+
+		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*<a name="mdiv(?:[1-9][0-9]*)"></a><br>\s*<font size="2">([\s\S]*?)</font>\s*<br>\s*</td>\s*<td>((\s|\S)*?)</td>\s*</tr>(?i)',remain)
+		if m:
+			parseright(act,m.group(2),locus,legis.Margin(deformat(m.group(1))))
+
+			remain=remain[m.end():]
+			continue
+
+
 		m=re.match('\s*<TR><TD valign=top><FONT size="?2"?>([\s\S]*?)</FONT></TD>\s*<td[^>]*>(.*?)</td></tr>(?i)',remain)
 		if m:
 			print "****Margin",m.group(1)[48:]
@@ -880,96 +1002,91 @@ def ParseBody(act,pp):
 
 		# This should be obsolete
 
-		m=re.match('\s*(?:<p>)?\s*<tr(?: valign="top">|>(?=\s*<td width="(?:20%|10%)" valign="top">))([\s\S]*?)</tr>\s*(?:</p>)?(?i)',remain)
+		m=re.match('\s*(?:<p>)?\s*<tr(?: valign="top">|>(?=\s*<td width="(?:20%|10%)" valign="top">))([\s\S]*?)</td>\s*<td>([\s\S]*?)</td></tr>\s*(?:</p>)?(?i)',remain)
 		if m:
 			print "****oldmatch"
-			sys.exit()
-			lineend=m.end()
-			line=m.group(1)
-			lpos=0
-	
-			if startschedule:
-		 		m=re.match('\s*<td width="20%" valign="top">([\s\S]*?)</td>\s*<td>&nbsp;</td>\s*(?i)',line)
-				startschedule=False
-				if m:
-					marginalium=m.group(1)
-					marginopts=' margin="%s"' % marginalium
-					output('heading',schedoptions+marginopts)
-					remain=remain[lineend:]
-					schedoptions=''
-					continue
-				else:
-					print "++++Warning: no margin note with schedule"
-					output('heading',schedoptions)
-					schedoptions=''
-			
-			#check for centered heading
-			m=re.match('\s*<td width="20%">&nbsp;</td>\s*<td>\s*(<br>)?\s*(<i>)?\s*<center>((?:<a>|</a>|&#160;|[\s0-9a-zA-Z,\(\)\'\-\.: ])*)</center>\s*(</i>)?\s*</td>(?i)',line)
-			if m:
-				heading=m.group(3)
-				m1=re.match('P(?:ART|art) \s*([IVXLDCM]+)',heading)
-				if m1:
-					#startpart=True
-					#part=m1.group(1)
-					#partno=part
-					#partoption=' part="%s"' % partno
-					
-					locus.addpart('part',partno)
-					leaf=legis.HeadingDivision(locus)
-					pp.append(leaf)	
-				else:
-					#if startpart:
-					#	output('heading',
-					#	  'type="part" n="%s"' % partno,
-					#	  heading)
-					#	startpart=False
-					#else:
-					#	output('heading', 'type="heading" n="%s"' % heading)
-					lastleaf=pp.last()
-					if leastleaf.t=='division':
-						leastleaf.content=heading
-					else:
-						leaf=legis.Heading(locus)
-						pp.append(leaf)
-
-				remain=remain[lineend:]
-				continue
-
-			m=re.match('\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">\s*<br><br>\s*<font size="4">SCHEDULES</font>\s*<br>\s*</td>\s*',line)		
-			if m:
-				output('heading', 'type="schedules"')
-				remain=remain[lineend:]
-				continue
-			
-			m=re.match('\s*<td width="20%" valign="top">\s*<br>&nbsp;</td>\s*<td align="center">\s*<br><a name="sdiv(\d+)"></a>SCHEDULE (\d+)</td>\s*',line)	
-			if m:
-				startschedule=True
-				if not m.group(1)==m.group(2):
-					print "++++insignificant error, schedule and sdiv number do not match at schedule %s" % m.group(2)
-			
-				division=m.group(2)
-				#marginalium=m.group(3)
-				divoptions=' division="%s"' % division
-				schedoptions='type="schedule" n="%s"' % (m.group(2))
-				#output('heading', )
-				remain=remain[lineend:]
-				continue
-			
-			m=re.match('\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">([\s\S]*?)</td>',line)
-			if m:
-				heading=m.group(1)
-				output('heading', 'type="heading" n="%s"' % heading)
-				remain=remain[lineend:]
-				continue
-			
-			else:
-				if startpart:
-					output('heading', 'type="part" n="%s"' % partno)
-				parseline(line,locus)
-			
-			
-			remain=remain[lineend:]
+#			#sys.exit()
+#			#lineend=m.end()
+#			#line=m.group(1)
+#			#lpos=0
+#	
+			parseright(act,m.group(1),locus)
+			remain=remain[m.end():]
 			continue
+#
+		# Detects marginal notes after the bottom of schedule openings
+		m=re.match('\s*<tr>\s*<td width="20%" valign="top">([^<]*?)</td>\s*<td>&nbsp;</td>\s*</tr>(?i)',remain)
+		if m:
+			margin=legis.Margin(m.group(1))
+			if locus.lex.last().t=='division':
+				locus.lex.last().margin=margin
+			else:
+				print "**** inexplicable marginal note to empty right hand side"
+				print locus.text()
+				print locus.lex.last().xml()
+			remain=remain[m.end():]
+			continue
+	
+		#check for centered heading
+
+		m=re.match('\s*<tr>\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">\s*<br><br>\s*<font size="4">SCHEDULES</font>\s*<br>\s*</td>\s*</tr>(?i)',remain)		
+		if m:
+			leaf=legis.Heading(locus)
+			leaf.content='schedules'
+			# do we want another kind of division leaf?
+			# this is an awkward heading [misfeature]
+			locus.lex.append(leaf)
+		
+			remain=remain[m.end():]
+			continue
+		
+		m=re.match('\s*<tr>\s*<td width="20%" valign="top">\s*<br>&nbsp;</td>\s*<td align="center">\s*<br><a name="sdiv(\d+)"></a>SCHEDULE (\d+)</td>\s*</tr>',remain)	
+		if m:
+			div=legis.Schedule(m.group(1))
+			locus.newdivision(div)
+			leaf=legis.HeadingDivision(locus)
+			locus.lex.append(leaf)
+			if not m.group(1)==m.group(2):
+				print "++++insignificant error, schedule and sdiv number do not match at schedule %s" % m.group(2)
+		
+			remain=remain[m.end():]
+			continue
+
+		#print "****Checking for single schedule"
+
+		m=re.match('\s*<tr>\s*<td width="20%" valign="top">\s*<br>&nbsp;</td>\s*<td align="center">\s*<br><a name="sdivsched"></a>SCHEDULE</td>\s*</tr>(?i)',remain)	
+		if m:
+			print "****schedule detected"
+			div=legis.Schedule()
+			locus.newdivision(div)
+			leaf=legis.HeadingDivision(locus)
+			leaf.sourcerule="opsi:HeadingScheduleUnnumbered2"
+			locus.lex.append(leaf)
+					
+			remain=remain[m.end():]
+			continue
+
+		
+		m=re.match('\s*<tr>\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">([\s\S]*?)</td>\s*</tr>',remain)
+		if m:
+			AddHeading(locus,margin,m.group(1))
+			#heading=m.group(1)
+			#output('heading', 'type="heading" n="%s"' % heading)
+			remain=remain[m.end():]
+			continue
+
+
+		# Section numbers (whole line)
+		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*<a name="[^"]*?"></a><br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;&nbsp;&nbsp;<b>(\d+\.)</b>&nbsp;&nbsp;&nbsp;&nbsp;</b>([\s\S]*?)</td>\s*</tr>(?i)',remain)
+		if m:
+			locus.addenum(m.group(1))
+			leaf=legis.Leaf('provision',locus)			
+			leaf.sourcerule='opsi:section4'
+			locus.lex.append(leaf)
+			parseright(act,m.group(2),locus)
+			remain=remain[m.end():]
+			continue
+
 
 		# Sections numbers/"margin notes" in later acts
 		m=re.match('\s*<TR><TD align=right valign=top><B><a name="\d+"></a>(\d+)</B>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD valign=top><B>([\s\S]*?)</B><BR>&nbsp;</TD></TR>',remain)
@@ -980,6 +1097,37 @@ def ParseBody(act,pp):
 			locus.lex.append(leaf)
 			remain=remain[m.end():]
 			continue
+
+		m=re.match('\s*<TR><TD width=120 align=center valign=bottom><img src="/img/ra-col\.gif"></TD>\s*<TD valign=top>&nbsp;&nbsp;&nbsp;&nbsp;<a name="(\d+)"></a>(\d+[A-Z]*)\. - (\(\d+\))([\s\S]*?)</td>\s*</tr>(?i)',remain)
+		if m:
+
+			locus.addenum(m.group(2))
+			locus.addenum(m.group(3))
+			leaf=legis.Leaf('provision',locus)
+			if m.group(3)!=1:
+				print "****peculiar number after section number: %s at %s" % (m.group(3), locus.text())
+			leaf.sourcerule='opsi:section3'
+			locus.lex.append(leaf)
+			parseright(act,m.group(4),locus)
+			remain=remain[m.end():]
+			continue
+
+
+		# unspecific line match in early acts WARNING: may not be
+		# rigid enough.
+		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*</td>\s*<td>([\s\S]*?)</td>\s*</tr>(?i)',remain)
+		if m:
+			parseright(act,m.group(1),locus)
+			remain=remain[m.end():]
+			continue
+
+		# very similar
+		m=re.match('\s*<tr>\s*<td width="20%">&nbsp;</td>\s*<td>([\s\S]*?)</td>\s*</tr>(?i)',remain)
+		if m:
+			parseright(act,m.group(1),locus)
+			remain=remain[m.end():]
+			continue
+
 
 		# Remaining line matches 
 
@@ -1087,7 +1235,7 @@ def ParseBody(act,pp):
 			continue
 	
 		# Yuk, the page trimming needs to be improved:
-		m=re.match('\s*<TR><TD valign=top>&nbsp;</TD><pageurl [^<]*>',remain)
+		m=re.match('\s*<TR>\s*<TD valign="?top"?>&nbsp;</TD>\s*<pageurl [^<]*>(?i)',remain)
 		if m:
 			remain=remain[m.end():]
 			continue

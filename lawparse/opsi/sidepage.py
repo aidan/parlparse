@@ -55,13 +55,13 @@ def TrimPages(urlpages, year, chapter):
 		# trim off heading bits
 		if i != 0:
 			print "page", i
-			m=re.search('<P align =right><A HREF="[^"]*">Back to previous page</A></P></TD></TR></TABLE>\s*<TABLE width=100%>(?i)',page)
+			m=re.search('<P align\s*=right><A HREF="[^"]*">Back to previous page</A></P></TD></TR></TABLE>\s*<TABLE(?: cols=3)? width=100%>(?i)',page)
 			if m:
 				page=page[m.end():]
 			else:
 				print "Can't find page start", m
 				print page[:250]
-				sys.ext()
+				sys.exit()
 
 		# trim off tail bits
 
@@ -71,15 +71,15 @@ def TrimPages(urlpages, year, chapter):
 
 		# first page
 		elif i == 0:
-			page, mobj = TailMatch('<TABLE width=95%>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<p><center>)?\s*<A HREF="[^"]*"><IMG border=0 align=top src="/img/nav-conu\.gif" Alt="continue"></A>(?i)',page)
+			page, mobj = TailMatch('<TABLE width=95%>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<p><center>)?\s*<A HREF="[^"]*"><IMG border=0 align=top src="(?:/img/nav-conu\.gif|/img/contred\.gif)" Alt="continue"></A>(?i)',page)
 
 		# middle page
 		elif i != len(urlpages) - 1:
-			page, mobj = TailMatch('<TABLE width=95%>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<p><center>)?\s*<A HREF="[^"]*"><IMG border=0 align=top src="/img/nav-conu\.gif" Alt="continue"></A>(?i)',page)
+			page, mobj = TailMatch('<TABLE width=95%>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<p><center>)?\s*<A HREF="[^"]*"><IMG border=0 align=top src="(?:/img/nav-conu\.gif|/img/contred\.gif)" Alt="continue"></A>(?i)',page)
 	
 		# last page
 		else:
-			page, mobj = TailMatch('<TABLE width=95% align=right>\s*<TR><TD colspan="?3"?>\s*(?:<p><center>)?\s*<A HREF="/stat\.htm">Other UK SIs</A>',page)
+			page, mobj = TailMatch('<TABLE width=95% align=right>\s*<TR><TD colspan="?3"?>\s*(?:<p><center>)?\s*<A HREF="/stat\.htm">Other UK SIs</A>(?i)',page)
 
 		res.append(page)
 	
@@ -94,13 +94,22 @@ def GetAllPages(url):
 		page = urllib.urlopen(url).read()
 		res.append((url, page))
 		contbutton = re.search('<TR>(?:<TD valign=top>&nbsp;</TD>)?<TD(?: valign=top)?>\s*<A HREF="([^">]*)"><IMG border=0 align=top src="/img/nav-conu.gif" Alt="continue"></A>(?:<BR>|&nbsp;|\s)*</TD></TR>(?i)', page)
-		if not contbutton:
-			if re.search('Alt="?continue"?',page):
-				print "****problem seems to be an undetected continue."
-				sys.exit()
-			else:
-				break
-		url = urlparse.urljoin(url, contbutton.group(1))
+		contbutton2 = re.search('<TR>(?:<TD valign=top>&nbsp;</TD>)?<TD(?: valign=top)?>\s*<A HREF="([^">]*)"><IMG border=0 align=top src="/img/nav-conu\.gif" Alt="continue"></A>(?i)',page)
+		contbutton3 = re.search('<A HREF="([^">]*)"><IMG border=0 align=top src="/img/contred\.gif" Alt="continue"></A>(?i)',page)
+
+		if contbutton:
+			url = urlparse.urljoin(url, contbutton.group(1))
+		elif contbutton2:
+			url = urlparse.urljoin(url, contbutton2.group(1))
+		elif contbutton3:
+			url = urlparse.urljoin(url, contbutton3.group(1))
+		elif re.search('Alt="?continue"?',page):
+			print "****problem seems to be an undetected continue in:"
+			print url
+			sys.exit()
+		else:
+			break
+	
 
 	return res
 
@@ -160,8 +169,8 @@ if __name__ == '__main__':
 			if os.path.isfile(fis):
 				#print "  skip ch", chapter, ":", name
 				continue
-			#if (yiur[0], chapter) in (("1996", "45"), ("1996", "23")) or (yiur[0] == "1996"):
-			#	print "  Skipping too hard %sc%s" % (yiur[0], chapter)
+			if (year, number) in [('1998','2211'),('1998','3249'),('1998','3250'),('1998','3254')]:
+				print "  Skipping too hard SI%s/%s" % (year, number)
 				continue
 
 			print "scraping SI", year, ":", number, ":" , name

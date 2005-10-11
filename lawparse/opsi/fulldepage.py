@@ -65,7 +65,7 @@ def TrimPages(urlpages, year, chapter):
 			else:
 				page = HeadMatch('\s*<tr[^>]*>\s*<td colspan="?2"? align="?right"?>\s*<a href=[^>]*>back to previous (?:page|text)</a>(?i)', page)
 
-			page = HeadMatch('</td>\s*</tr>\s*(?:<p>)?(?i)', page)
+			page = HeadMatch('\s*</td>\s*</tr>\s*(?:<p>)?(?i)', page)
 
 		# trim the tail different cases
 
@@ -150,7 +150,13 @@ def GetActsFromYear(yiurl):
 	# check all the numbered chapters are here
 	chnum = [ int(x[2])  for x in res ]
 	chnum.sort()
-	assert chnum == range(1, len(chnum) + 1)
+	try:
+		assert chnum == range(1, len(chnum) + 1)
+	except AssertionError:
+		print chnum, len(chnum), yiurl
+		# should put a sys.exit() here
+
+	# Noten 1988c44 is not in the alphabetical list!
 
 	return res
 

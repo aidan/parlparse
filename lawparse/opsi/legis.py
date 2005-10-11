@@ -268,6 +268,9 @@ class Locus:
 	
 		return s
 
+	def resetpath(self):
+		self.path=[]
+
 	def addenum(self, s):
 		new=PathElement(s)
 

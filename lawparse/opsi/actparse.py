@@ -22,9 +22,13 @@ class OpsiSourceInfo(legis.SourceInfo):
 	def __init__(self,url):
 		legis.SourceInfo.__init__(self,'opsi')
 		self.url=url
+		self.values={}
 
 	def xml(self):
-		return '<sourceinfo source="opsi"\n\turl="%s"\n/>' % self.url
+		s=''
+		for k in self.values.keys():
+			s=s+'\n\t%s="%s"' % (k, self.values[k])
+		return '<sourceinfo source="opsi"\n\turl="%s"%s\n/>' % (self.url,s)
 		
 
 class LegislationFragment:
@@ -33,10 +37,47 @@ class LegislationFragment:
 		self.quotations=[]
 		self.tables=[]
 		self.isquotation=False
-
+		self.headvalues={}
 
 	def ShortID(self):
 		return 'unidentified fragment'
+
+	# function for pulling off regexps from the front of the text
+
+	def QuotationAsFragment(self,n,locus):
+		qtext=self.quotations[n]
+		fragment=QuotedActFragment(qtext)
+		#fragment.id="quoted in(%s)" % locus.text()
+		fragment.id=locus.text()
+		return fragment
+
+	def NibbleHead(self, hcode, hmatch):
+		mline = re.match(hmatch, self.txt)
+		if not mline:
+			print 'failed at:', hcode, ":\n", hmatch, "\non:"
+			print self.txt[:1000]
+			raise Exception
+
+		# extract any strings
+		# (perhaps make a class that has all these fields in it)
+		elif hcode == "middle":
+			pass
+		elif hcode == "checkfront":
+			return  # just for the checking
+		elif hcode == 'preisbn':
+			if mline.group(1):
+				isbn = "%s %s %s" % (mline.group(2), mline.group(3), mline.group(4))
+			else:
+				isbn="XXXXXXXXXXX"
+			self.headvalues[hcode] = [isbn]
+
+		# remaining parameter found
+		else:
+			self.headvalues[hcode] = mline.groups()
+
+		# move on
+		self.txt = self.txt[mline.end(0):]
+
 
 # Probably don't need a separate class for this, but I am not sure.
 
@@ -69,6 +110,8 @@ class SI(LegislationFragment):
 
 	def ShortID(self):
 		return "uksi%sno%s" % (year,number)
+
+	
 	
 class Act(ActFragment):
 	def __init__(self, cname, txt):
@@ -76,56 +119,27 @@ class Act(ActFragment):
 		m = re.search("(\d{4})c(\d+).html$", cname)
 		self.year = m.group(1)
 		self.chapter = m.group(2)
-		self.headvalues = { }
-		self.url=''
+		urlmatch=re.match('<pageurl page="0" url="([^"]*?)"/>',txt)
+		if urlmatch:
+			self.url=urlmatch.group(1)
+		else:
+			print "****Warning, cannot see pageurl at beginning of act"
+			self.url=''
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
-
-	# function for pulling off regexps from the front of the text
-	def NibbleHead(self, hcode, hmatch):
-		mline = re.match(hmatch, self.txt)
-		if not mline:
-			print 'failed at:', hcode, ":\n", hmatch, "\non:"
-			print self.txt[:1000]
-			raise Exception
-
-		# extract any strings
-		# (perhaps make a class that has all these fields in it)
-		elif hcode == "middle":
-			pass
-		elif hcode == "checkfront":
-			return  # just for the checking
-		elif hcode == 'isbn':
-			if mline.group(1):
-				isbn = "%s %s %s" % (mline.group(2), mline.group(3), mline.group(4))
-			else:
-				isbn="XXXXXXXXXXX"
-			self.headvalues[hcode] = [isbn]
-
-		# remaining parameter found
-		else:
-			self.headvalues[hcode] = mline.groups()
-
-		# move on
-		self.txt = self.txt[mline.end(0):]
 
 	def Parse(self):
 		ActParseHead(self)
 		
 		legisact=legis.Act(self.year,0,self.chapter)
-		self.LegisHeader(legisact)
 		legisact.sourceinfo=OpsiSourceInfo(self.url)
+		self.LegisHeader(legisact)
+
 		ParseBody(self,legisact)
 		return legisact
 
 	
-	def QuotationAsFragment(self,n,locus):
-		qtext=self.quotations[n]
-		fragment=QuotedActFragment(qtext)
-		#fragment.id="quoted in(%s)" % locus.text()
-		fragment.id=locus.text()
-		return fragment
 
 	def LegisHeader(self,legisact):
 
@@ -143,6 +157,11 @@ class Act(ActFragment):
 				legisact.preamble.petition=self.headvalues['petition1']
 			else:
 				legisact.preamble.petition=self.headvalues['petition2']+self.headvalues['enact']
+		
+		keylist=['name','year','chapter','prodid','name2','name3','chapt2']
+		for k in keylist:
+			if self.headvalues.has_key(k):
+				legisact.sourceinfo.values[k]=self.headvalues[k][0]
 
 
 		#print self.headvalues
@@ -160,8 +179,8 @@ if __name__ == '__main__':
 	# just run through and apply to all the files
 	for i in range(0,len(ldir)):
 		print "reading ", i, ldir[i]
-		if ldir[i] in ['ukgpa1997c31.html']:
-			print "***skipping***"
+		if ldir[i] in ['ukgpa1997c31.html','ukgpa1988c1.html']:
+			print "***skipping***", ldir[i]
 			continue
 		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])
 		fin = open(os.path.join(actdirhtml, ldir[i]), "r")

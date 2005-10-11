@@ -7,7 +7,12 @@ patches=[('ukgpa1997c16',[('&rsquo;\)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18pt}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt in relation to accounting periods beginning after 5th March 1997\."></a></TD></TR>(?i)','')]),
-	('ukgpa1997c46',[('',''),('; or<UL></TD></TR>','; or</UL></TD></TR>')])
+	('ukgpa1997c46',
+		[('',''),
+		('; or<UL></TD></TR>','; or</UL></TD></TR>'),
+		('In Schedule 9, paragraph 5A is amended as follows\.','In Schedule 9, paragraph 5A is amended as follows.</td></tr>\n')]),
+	('ukgpa1997c10',
+		[('<TD valign=top>"Valuation Office"\.</TD></TR>\s*</TABLE>','<TD valign=top>"Valuation Office"\.</TD></TR>\n</TABLE>\n</td></tr>')])
 		]
 
 def ActApplyPatches(act):
