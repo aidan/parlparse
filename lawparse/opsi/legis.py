@@ -79,6 +79,7 @@ class Legis:				# the unit of legislation
 		return s
 
 	def addsourcerule(self,s):
+		print "##Rule: (%s) %s" % (s.owner, s.name)
 		if len(self.content) > 0:
 			self.last().sourcerules.addrule(s)
 		else:
@@ -202,6 +203,7 @@ class Quotation(Legis,Leaf):
 		self.content=[]
 		self.id='quotation in(%s)' % locus.text()
 		self.preamble=Preamble()
+		self.sourceinfo=SourceInfo(locus.lex.sourceinfo.source)
 
 	def addleaf(self,l):
 		#print "****quote adding leaf %s" % l.xml()

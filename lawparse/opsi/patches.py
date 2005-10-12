@@ -12,7 +12,9 @@ patches=[('ukgpa1997c16',[('&rsquo;\)',''),
 		('; or<UL></TD></TR>','; or</UL></TD></TR>'),
 		('In Schedule 9, paragraph 5A is amended as follows\.','In Schedule 9, paragraph 5A is amended as follows.</td></tr>\n')]),
 	('ukgpa1997c10',
-		[('<TD valign=top>"Valuation Office"\.</TD></TR>\s*</TABLE>','<TD valign=top>"Valuation Office"\.</TD></TR>\n</TABLE>\n</td></tr>')])
+		[('<TD valign=top>"Valuation Office"\.</TD></TR>\s*</TABLE>','<TD valign=top>"Valuation Office"\.</TD></TR>\n</TABLE>\n</td></tr>')]),
+	('ukgpa1988c19',
+		[('Wages Act 1986 in relation to any deduction from wages paid before the coming into force of this paragraph\.</td>\s*</tr>\s*</p>','Wages Act 1986 in relation to any deduction from wages paid before the coming into force of this paragraph\.</td>\n</tr>')])
 		]
 
 def ActApplyPatches(act):

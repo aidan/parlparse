@@ -46,7 +46,7 @@ class LegislationFragment:
 
 	def QuotationAsFragment(self,n,locus):
 		qtext=self.quotations[n]
-		fragment=QuotedActFragment(qtext)
+		fragment=QuotedActFragment(qtext,locus)
 		#fragment.id="quoted in(%s)" % locus.text()
 		fragment.id=locus.text()
 		return fragment
@@ -86,14 +86,14 @@ class ActFragment(LegislationFragment):
 		LegislationFragment.__init__(self,txt)
 
 class QuotedActFragment(ActFragment):
-	def __init__(self,txt):
+	def __init__(self,txt,locus):
 		ActFragment.__init__(self,txt)
 		self.isquotation=True
-
+		self.locus=locus
 
 	def ParseAsQuotation(self):
-		locus=legis.Locus(self)
-		quotation=legis.Quotation(True,locus)
+		#locus=legis.Locus(self)
+		quotation=legis.Quotation(True,self.locus)
 		if re.search('>"',self.txt):
 			ParseBody(self,quotation)
 		else:
@@ -167,11 +167,19 @@ class Act(ActFragment):
 		#print self.headvalues
 		
 
+
+# Note: skipped acts
+# Some of the acts are too hard. Others turn out to have serious erros with 
+# them. We should develop a list of "acts needing attention". Provisionally:
+
+# 1988c17 -- Schedule 2 is missing a heading in the quoted material, and
+# does not properly close a table.
+
 def ParseLoop(ldir):
 	# just run through and apply to all the files
 	for i in range(0,len(ldir)):
 		print "reading ", i, ldir[i]
-		if ldir[i] in ['ukgpa1997c31.html','ukgpa1988c1.html']:
+		if ldir[i] in ['ukgpa1997c31.html','ukgpa1988c1.html','ukgpa1988c17.html']:
 			print "***skipping***", ldir[i]
 			continue
 		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])
