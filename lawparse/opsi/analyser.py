@@ -30,6 +30,10 @@ class ParseError(Exception):
 	"""Exception class for parse errors"""
 	pass
 
+class OpsiSourceRule(legis.SourceRule):
+	def __init__(self,name):
+		legis.SourceRule.__init__(self,'opsi',name)
+
 def deformat(s,count=0):
 	for (a,b) in formats:
 		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s,count)
@@ -45,7 +49,6 @@ def deamp(s):
 	s=re.sub('&','&amp;',s)
 	return s
 
-
 def AddText(locus,margin,string):
 	last=locus.lex.last()
 	if last and last.t=='provision' and len(last.content)==0:
@@ -59,6 +62,9 @@ def AddHeading(locus,margin,string):
 	last=locus.lex.last()
 	if last and last.t=='division' and len(last.content)==0:
 		last.content=string
+		print "****Add Heading, added %s to previous division" % string
+		print last.xml()
+		print locus.lex.last().xml()
 	else:
 		leaf=legis.Heading(locus,margin)
 		leaf.content=string
@@ -111,7 +117,8 @@ def MakeTableLeaf(act, locus, no, pattype):
 	# print tablehtml
 
 	leaf=legis.Table(locus)
-	leaf.sourcerule="opsi:puretable(%s)" % pattype
+	#leaf.sourcerule="opsi:puretable(%s)" % pattype
+	locus.lex.addsourcerule(OpsiSourceRule("puretable(%s)" % pattype))
 
 	#rows=[re.findall('<td[^<]*>([\s\S]*?)</td>(?i)',x) for x in re.findall('<tr>([\s\S]*?)</tr>(?i)',tablehtml)]
 	#print "****table rows:",rows
@@ -258,12 +265,6 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		m=re.match('\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;(?:<b>)?&nbsp;&nbsp;&nbsp;&nbsp;<b>(\d+(?:\.)?)\s*(?:</b>)*(&nbsp;&nbsp;&nbsp;&nbsp;)?</b>(?i)',right)
 		if m:
 			print "***matched section type I"
-			section=m.group(1)
-			print section, type(section)
-			print type(locus)
-			print locus
-			print locus.xml()
-			locus.addenum('15.')
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
@@ -352,10 +353,11 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
-			leaf.sourcerule='opsi:subsection4'
+			#leaf.sourcerule='opsi:subsection4'
 			if len(m.group(1))>0:
 				leaf=quotestart(locus,leaf)
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection4'))
 			right=right[m.end():]
 			continue
 
@@ -380,7 +382,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			leaf.sourcerule='opsi:subsection1'
+			#leaf.sourcerule='opsi:subsection1'
+			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection2'))
 			right=right[m.end():]
 			continue
 
@@ -396,13 +400,14 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			else:
 				leaf.content=m.group(3)
 
-			leaf.sourcerule='opsi:subsection2'
+			#leaf.sourcerule='opsi:subsection2'
 
 			if len(m.group(1))>0:
 				leaf=quotestart(locus,leaf)
 
 			locus.lex.append(leaf)
-			
+			locus.lex.addsourcerule(OpsiSourceRule('subsection2'))			
+
 			if mp:
 				parseright(act,m.group(3)[mp.start():],locus,margin)
 
@@ -415,8 +420,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			leaf.sourcerule='opsi:subsection3'
+			#leaf.sourcerule='opsi:subsection3'
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection3'))
 			right=right[m.end():]
 			continue
 
@@ -424,8 +430,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			leaf.sourcerule='opsi:subsetion4'
+			#leaf.sourcerule='opsi:subsetion4'
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection4'))
 			right=right[m.end():]
 			continue
 
@@ -435,6 +442,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection5'))
 			right=right[m.end():]
 			continue
 
@@ -445,8 +453,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			leaf.content=m.group(2)
-			leaf.sourcerule='opsi:NumberDepth3'
+			#leaf.sourcerule='opsi:NumberDepth3'
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('NumberDepth3'))
 			right=right[m.end():]
 			continue
 
@@ -457,14 +466,17 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		m=re.match('\s*(?:<BR>)+([^<&]+)(?i)',right)
 		if m:
 			heading=m.group(1)
-			lastleaf=locus.lex.last()
-			if lastleaf.t=='division':
-				lastleaf.content=heading
-			else:
-				leaf=legis.Heading(locus)
-				leaf.content=heading
-				locus.lex.append(leaf)
+			AddHeading(locus,margin,heading)
+			locus.lex.addsourcerule(OpsiSourceRule('HeadingMinor1'))
+#			lastleaf=locus.lex.last()
+#			if lastleaf.t=='division':
+#				lastleaf.content=heading
+#			else:
+#				leaf=legis.Heading(locus)
+#				leaf.content=heading
+#				locus.lex.append(leaf)
 
+			
 			right=right[m.end():]
 			continue
 
@@ -475,8 +487,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			l=(len(m.group(1))/2)
 			leaf=legis.Leaf('item%i'% l,locus,margin)
 			leaf.content=m.group(2)
-			leaf.sourcerule='opsi:unordered list%i' % l
+			#leaf.sourcerule='opsi:unordered list%i' % l
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('opsi:unordered list%i' % l))
 			right=right[m.end():]
 			continue
 
@@ -484,8 +497,9 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			leaf=legis.Leaf('item',locus,margin)
 			leaf.content=m.group(1)
-			leaf.sourcerule='opsi:paragraph'
+			#leaf.sourcerule='opsi:paragraph'
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('paragraph'))
 			right=right[m.end():]
 			continue
 
@@ -495,12 +509,11 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('\s*<td width="10%" valign="top">&nbsp;</td>\s*<td>(\(\d+\))&nbsp;',right)
 		if m:
-			pathinsert(path,m)
-			leafoptions=path2opt(path)+partoption+divoptions
-			right=right[m.end():]
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('NumberMisc1'))
+			right=right[m.end():]
 			continue
 		
 
@@ -516,6 +529,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			#locus.lex.append(leaf)
 		
 			AddText(locus,margin,m.group(1))
+			locus.lex.addsourcerule(OpsiSourceRule('TextHanging1'))
 
 			right=right[m.end():]
 			continue
@@ -527,6 +541,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 #			locus.lex.append(leaf)
 
 			AddText(locus,margin,m.group(1))
+			locus.lex.addsourcerule(OpsiSourceRule('TextIndent1'))
 			right=right[m.end():]
 			continue
 
@@ -706,6 +721,12 @@ def ParseBody(act,pp):
 	remain=act.txt
 
 	while  0 < len(remain):
+
+		print "*******************************"
+		print locus.lex.xml()
+		print "*******************************"
+
+
 		#print "+", remain[:25]
 
 		# <pageurl ....
@@ -723,7 +744,7 @@ def ParseBody(act,pp):
 			leaf=legis.Leaf('provision',locus)
 			leaf.content=m.group(1)
 			leaf.sourcerule='opsi:ghastlyhangingtext1'
-			locus.addenum=m.group(2)
+			locus.addenum(m.group(2))
 		
 			locus.lex.append(leaf)
 			remain=remain[m.end():]
@@ -1060,7 +1081,8 @@ def ParseBody(act,pp):
 			div=legis.Schedule()
 			locus.newdivision(div)
 			leaf=legis.HeadingDivision(locus)
-			leaf.sourcerule="opsi:HeadingScheduleUnnumbered2"
+			#leaf.sourcerule="opsi:HeadingScheduleUnnumbered2"
+			locus.lex.addsourcerule(OpsiSourceRule('HeadingScheduleUnnumbered2'))
 			locus.lex.append(leaf)
 					
 			remain=remain[m.end():]
@@ -1069,7 +1091,10 @@ def ParseBody(act,pp):
 		
 		m=re.match('\s*<tr>\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">([\s\S]*?)</td>\s*</tr>',remain)
 		if m:
-			AddHeading(locus,margin,m.group(1))
+			AddHeading(locus,legis.Margin(),m.group(1))
+			#print "***********************************"
+			#print locus.lex.xml()
+			#print "***********************************"
 			#heading=m.group(1)
 			#output('heading', 'type="heading" n="%s"' % heading)
 			remain=remain[m.end():]
@@ -1081,8 +1106,9 @@ def ParseBody(act,pp):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus)			
-			leaf.sourcerule='opsi:section4'
+			#leaf.sourcerule='opsi:section4'
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('section4'))
 			parseright(act,m.group(2),locus)
 			remain=remain[m.end():]
 			continue
@@ -1093,8 +1119,10 @@ def ParseBody(act,pp):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,legis.Margin(m.group(2)))
-			leaf.sourcerule='opsi:section2'
+			#leaf.sourcerule='opsi:section2'
+
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('section2'))
 			remain=remain[m.end():]
 			continue
 
@@ -1106,8 +1134,9 @@ def ParseBody(act,pp):
 			leaf=legis.Leaf('provision',locus)
 			if m.group(3)!=1:
 				print "****peculiar number after section number: %s at %s" % (m.group(3), locus.text())
-			leaf.sourcerule='opsi:section3'
+			#leaf.sourcerule='opsi:section3'
 			locus.lex.append(leaf)
+			locus.addsourcerule(OpsiSourceRule('section3'))
 			parseright(act,m.group(4),locus)
 			remain=remain[m.end():]
 			continue

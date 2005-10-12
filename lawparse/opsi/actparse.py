@@ -166,16 +166,8 @@ class Act(ActFragment):
 
 		#print self.headvalues
 		
-		
 
-# main running part
-if __name__ == '__main__':
-	if len(sys.argv) > 1:
-		ldir = ["ukgpa%s.html" % x for x in sys.argv[1:]]
-	else:
-		ldir = os.listdir(actdirhtml)
-		del ldir[0]	# removes file ".svn"
-	
+def ParseLoop(ldir):
 	# just run through and apply to all the files
 	for i in range(0,len(ldir)):
 		print "reading ", i, ldir[i]
@@ -199,3 +191,15 @@ if __name__ == '__main__':
 			raise
 		out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
 		out.write(lexact.xml()) 
+
+		
+
+# main running part
+if __name__ == '__main__':
+	if len(sys.argv) > 1:
+		ldir = ["ukgpa%s.html" % x for x in sys.argv[1:]]
+	else:
+		ldir = os.listdir(actdirhtml)
+		del ldir[0]	# removes file ".svn"
+	
+	ParseLoop(ldir)

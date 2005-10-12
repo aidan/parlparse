@@ -10,6 +10,27 @@ doctype='''
 		<!ENTITY pound "&#163;">
         ]>\n'''
 
+class SourceRule:
+	def __init__(self,owner,name):
+		self.owner=owner
+		self.name=name
+
+class SourceRuleCollection:
+	def __init__(self,owner):
+		self.owner=owner
+		self.rules=[]
+
+	def addrule(self,rule):
+		if self.owner != rule.owner:
+			raise SourceRuleOwnerMismatch
+		else:
+			self.rules.append(rule)
+
+	def text(self):
+		s='%s:' % self.owner
+		for rule in self.rules:
+			s=s+('%s;' % rule.name)
+		return s
 
 class Margin:				# represents marginal notes
 	def __init__(self,t=''):
@@ -29,6 +50,7 @@ class Legis:				# the unit of legislation
 					# being quoted in another legis
 		self.preamble=Preamble()
 		self.sourceinfo=SourceInfo()
+		self.initialsourcerules=SourceRuleCollection(self.sourceinfo.source)
 		#self.info={}
 
 	def append(self,leaf):
@@ -55,6 +77,12 @@ class Legis:				# the unit of legislation
 			s=s+leaf.xml()
 		s=s+'</content>\n</legis>\n'
 		return s
+
+	def addsourcerule(self,s):
+		if len(self.content) > 0:
+			self.last().sourcerules.addrule(s)
+		else:
+			self.initialsourcerules.addrule(s)
 
 class Act(Legis):
 	def __init__(self, year, session, chapter):
@@ -137,19 +165,21 @@ class Leaf:
 		self.locus=copy.deepcopy(locus)
 		self.margin=margin
 		self.attributes=[]
-		self.sourcerule=''
+		#self.sourcerule=''
+		self.sourcerules=SourceRuleCollection(locus.lex.sourceinfo.source)
 
 	def xml(self,options=''):
 		#print "****xml of leaf", self.content
 		contents=self.xmlcontent()
 		#print "****xml contents were",contents
-		if len(self.sourcerule)>0:
-			sourcerule=' sourcerule="%s"' % self.sourcerule
-		else:
-			sourcerule=''
+		#if len(self.sourcerule)>0:
+		#	sourcerule=' sourcerule="%s"' % self.sourcerule
+		#else:
+		#	sourcerule=''
+		sourcerules=' sourcerule="%s"'  % self.sourcerules.text()
 		result= '\n<leaf type="%s" %s%s%s>%s%s</leaf>\n' % (self.t, 
 				self.locus.xml(), 
-				sourcerule,
+				sourcerules,
 				options,
 				self.margin.xml(),
 				contents)
