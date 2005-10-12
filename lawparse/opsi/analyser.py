@@ -370,7 +370,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			#leaf.sourcerule='opsi:subsection1'
+
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('subsection2C'))
 			right=right[m.end():]
@@ -406,7 +406,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			#leaf.sourcerule='opsi:subsection3'
+
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('subsection3'))
 			right=right[m.end():]
@@ -416,7 +416,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			#leaf.sourcerule='opsi:subsetion4'
+
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('subsection4'))
 			right=right[m.end():]
@@ -453,16 +453,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		if m:
 			heading=m.group(1)
 			AddHeading(locus,margin,heading)
-			locus.lex.addsourcerule(OpsiSourceRule('HeadingMinor1'))
-#			lastleaf=locus.lex.last()
-#			if lastleaf.t=='division':
-#				lastleaf.content=heading
-#			else:
-#				leaf=legis.Heading(locus)
-#				leaf.content=heading
-#				locus.lex.append(leaf)
-
-			
+			locus.lex.addsourcerule(OpsiSourceRule('HeadingMinor1'))			
 			right=right[m.end():]
 			continue
 
@@ -508,11 +499,6 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('\s*<ul>([\s\S]*?)</ul>',right)
 		if m:
-			#output('leaf','type="text" format="hanging"',
-			#	m.group(1))
-			#leaf=legis.Leaf('text',locus,margin)
-			#leaf.content=m.group(1)
-			#locus.lex.append(leaf)
 		
 			AddText(locus,margin,m.group(1))
 			locus.lex.addsourcerule(OpsiSourceRule('TextHanging1'))
@@ -522,9 +508,6 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('&nbsp;&nbsp;&nbsp;&nbsp;([\s\S]*?)(?:(?:</UL>)+|<BR>&nbsp;)(?i)',right)
 		if m:
-#			leaf=legis.Leaf('text',locus,margin)
-#			leaf.content=m.group(1)
-#			locus.lex.append(leaf)
 
 			AddText(locus,margin,m.group(1))
 			locus.lex.addsourcerule(OpsiSourceRule('TextIndent1'))
@@ -551,6 +534,17 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			continue
 
 
+		# A Note: under a table.
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;&nbsp;&nbsp;<i>Note:</i>([^\(\<\&]*?)',right)
+		if m:
+			leaf=legis.Leaf('note',locus)
+			leaf.content=m.group(1)
+			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('NoteItalic1'))
+			right=right[m.end():]
+			continue
+			
+
 		m=re.match('<I>Note:</I>(.*)(?i)',right)
 		if m:
 			leaf=legis.Leaf('note',locus,margin)
@@ -576,6 +570,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('<excision n="(\d*)"\s*/>',right)
 		if m:
+			locus.lex.addsourcerule(OpsiSourceRule('Excision'))
 			right=right[m.end():]
 			continue			
 
@@ -618,7 +613,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 		# these occur in the badly formatted schedule 5 of the
 		# Merchant Shipping Act 1988, which may need attention.
 
-		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;(?=[^\d\(])([^<]*?)(?i)',right)
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;([^<\(&]*?)(?i)',right)
 		if m:
 			if locus.lex.id=='ukpga1988c12':
 				locus.resetpath()
@@ -633,6 +628,7 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 				right=right[m.end():]
 				continue			
 
+			locus.lex.addsourcerule(OpsiSourceRule('TextHanging2'))
 	
 
 # Remove "whitespace" and garbage
@@ -655,10 +651,10 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 
 		m=re.match('<FONT size=-1>([A-Z ]*)</FONT>$(?i)',right)
 		if m:
-			leaf=legis.Leaf('text',locus)
-			leaf.content=m.group(1)
-			leaf.sourcerule='opsi:EmphasizedText1'
+			AddText(locus,margin,m.group(1))
+
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('EmphasizedText1'))
 			right=right[m.end():]
 			continue
 
@@ -683,9 +679,6 @@ def parseright(act,right,locus,margin=legis.Margin(),format=''):
 			
 			AddText(locus,margin,t)
 
-			#leaf=legis.Leaf('text',locus,margin)
-			#leaf.content=t
-			#locus.lex.append(leaf)			
 
 # ParseBody should really be a method of act (why isn't it?)
 # its second argument is something of class Legis (or subclass thereof)
@@ -733,10 +726,11 @@ def ParseBody(act,pp):
 		if m:
 			leaf=legis.Leaf('provision',locus)
 			leaf.content=m.group(1)
-			leaf.sourcerule='opsi:ghastlyhangingtext1'
+
 			locus.addenum(m.group(2))
 		
 			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('GhastlyHangingText1'))
 			remain=remain[m.end():]
 			continue
 
@@ -915,8 +909,9 @@ def ParseBody(act,pp):
 			heading=defont(m.group(1))
 			leaf=legis.Heading(locus)
 			leaf.content=heading
-			leaf.sourcerule='opsi:HeadingAnchorBefore'
+
 			locus.lex.append(leaf)
+
 			remain=remain[m.end():]
 			continue
 
@@ -998,16 +993,16 @@ def ParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
-
-
 		# empty lines
 		m=re.match('\s*<TR><TD valign=top>(<BR>|&nbsp;)*</TD></TR>(?i)',remain)
 		if m:
+			locus.lex.addsourcerule(OpsiSourceRule('BlankLine1'))
 			remain=remain[m.end():]
 			continue
 
 		m=re.match('\s*<TR><TD valign=top>(<BR>|&nbsp;)*</TD><TD valign=top>(\s|<BR>|&nbsp;)*</TD></TR>',remain)
 		if m:
+			locus.lex.addsourcerule(OpsiSourceRule('BlankLine2'))
 			remain=remain[m.end():]
 			continue
 
@@ -1136,6 +1131,7 @@ def ParseBody(act,pp):
 		# rigid enough.
 		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*</td>\s*<td>([\s\S]*?)</td>\s*</tr>(?i)',remain)
 		if m:
+			print "****Debug 1"
 			parseright(act,m.group(1),locus)
 			remain=remain[m.end():]
 			continue
@@ -1266,8 +1262,9 @@ def ParseBody(act,pp):
 			continue
 
 
-		m=re.match('</p>',remain)
+		m=re.match('\s*</p>',remain)
 		if m:
+			locus.lex.addsourcerule(OpsiSourceRule('SnippedParEnd'))
 			remain=remain[m.end():]
 			continue
 			
