@@ -1265,6 +1265,13 @@ def ParseBody(act,pp):
 			remain=remain[m.end():]
 			continue
 
+
+		m=re.match('</p>',remain)
+		if m:
+			remain=remain[m.end():]
+			continue
+			
+
 		m=re.match('<tr>\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><br>\s*<table cols="c3" border="1"><tfoot><tr>\s*<td rowspan="1" colspan="1">\s*</td>\s*</tr>\s*</tfoot>\s*<tbody>([\s\S]*?)</tbody>\s*</table>\s*<br><br>\s*</td>\s*</tr>',remain)
 		if m:
 			#print "***** 3table found"

@@ -204,6 +204,7 @@ class Quotation(Legis,Leaf):
 		self.id='quotation in(%s)' % locus.text()
 		self.preamble=Preamble()
 		self.sourceinfo=SourceInfo(locus.lex.sourceinfo.source)
+		self.initialsourcerules=SourceRuleCollection(locus.lex.sourceinfo.source)
 
 	def addleaf(self,l):
 		#print "****quote adding leaf %s" % l.xml()
