@@ -8,6 +8,7 @@ fulldepage.py - download HTML of acts, top and tail and concatenate
 sidepage.py   - as fulldepage.py, but for Statutory Instruments
 actparse.py   - parses acts from HTML into XML files
 parsetest.py  - parses every act that has already been parsed
+legischeck.py - lint for XML act files
 
 OPSI Modules
 ------------
