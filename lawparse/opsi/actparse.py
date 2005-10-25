@@ -24,6 +24,10 @@ import re
 import sys
 import os
 import patches
+import logging
+import getopt
+import traceback
+import options
 
 import miscfun
 actdirhtml = miscfun.actdirhtml
@@ -110,12 +114,13 @@ class QuotedActFragment(ActFragment):
 		self.locus=locus
 
 	def ParseAsQuotation(self):
+		logger=logging.getLogger('opsi.actparse')
 		#locus=legis.Locus(self)
 		quotation=legis.Quotation(True,self.locus)
 		if re.search('>"',self.txt):
-			ParseBody(self,quotation)
+			ParseBody(self,quotation,'entire')
 		else:
-			print "***warning, tried to parse as quotation without quotation marks"
+			logger.warning("***warning, tried to parse as quotation without quotation marks")
 			#print "***warning, unparseable quotation text", self.txt
 		return quotation
 
@@ -154,7 +159,7 @@ class Act(ActFragment):
 		legisact.sourceinfo=OpsiSourceInfo(self.url)
 		self.LegisHeader(legisact)
 
-		ParseBody(self,legisact)
+		ParseBody(self,legisact,'none')
 		return legisact
 
 	
@@ -193,40 +198,85 @@ class Act(ActFragment):
 # 1988c17 -- Schedule 2 is missing a heading in the quoted material, and
 # does not properly close a table.
 
-def ParseLoop(ldir):
+
+def SetupLogging(options,name):
+
+	logger=logging.getLogger('')
+
+	mainlog = logging.FileHandler('actparse.log')
+	options.value('debug').ConfigHandler(mainlog)
+	logger.addHandler(mainlog)
+
+	console = logging.StreamHandler()
+	options.value('consoledebug').ConfigHandler(console)
+	logger.addHandler(console)	
+
+	#print logging.getLogger('').getEffectiveLevel()
+
+def ParseLoop(actlist,options):
 	# just run through and apply to all the files
-	for i in range(0,len(ldir)):
-		print "reading ", i, ldir[i]
-		if ldir[i] in ['ukgpa1997c31.html','ukgpa1988c1.html','ukgpa1988c17.html']:
-			print "***skipping***", ldir[i]
+	logger=logging.getLogger('')
+
+	start=options.value('start')
+	skipfiles=options.value('skip')
+	filedebuglevel=options.value('filedebug')
+
+	for i in range(start,len(actlist)):
+		s="reading %s %s" % (i, actlist[i])
+		logger.warning(s)
+		if actlist[i] in skipfiles:
+			s= "***skipping*** %s" % actlist[i]
+			logger.warning(s)
 			continue
-		print actdirhtml, ldir[i], os.path.join(actdirhtml, ldir[i])
-		fin = open(os.path.join(actdirhtml, ldir[i]), "r")
+		logger.debug(actdirhtml, actlist[i], os.path.join(actdirhtml, actlist[i]))
+		fin = open(os.path.join(actdirhtml, actlist[i]), "r")
 		txt = fin.read()
 		fin.close()
 
-		act = Act(ldir[i], txt)
+		act = Act(actlist[i], txt)
 		patches.ActApplyPatches(act)
 
 		# the parsing process
-		#ActParseHead(act)
+
+		# need to do configuration better -- put in config for log
+
+		opsilogger=logging.getLogger('')
+		filelogname=os.path.join('log',act.ShortID()+'.log')
+		if os.path.exists(filelogname):
+			os.remove(filelogname)
+	
+		filehandler=logging.FileHandler(filelogname)
+		options.value('filedebug').ConfigHandler(filehandler)
+		opsilogger.addHandler(filehandler)
+
+
 		try:
 			lexact=act.Parse()
 		except ParseError:
-			print "+++Error occurred in file number %s" % i
-			raise
-		out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
-		out.write(lexact.xml()) 
+			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,act.ShortID()))
+			
+			success=False
+		else:
+			success=True
+		
+		filehandler.flush()
+		opsilogger.removeHandler(filehandler)
+#		filehandler.close()
+
+		if success:
+			out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
+			out.write(lexact.xml()) 
 
 		
 
 # main running part
 if __name__ == '__main__':
-	if len(sys.argv) > 1:
-		ldir = ["ukgpa%s.html" % x for x in sys.argv[1:]]
-	else:
-		ldir = os.listdir(actdirhtml)
-		del ldir[0]	# removes file ".svn"
-	
-	ParseLoop(ldir)
+		
+	logging.getLogger('').setLevel(0)
 
+	options=options.Options()
+	actlist=options.ParseArguments()
+
+	SetupLogging(options,'opsi')
+
+	ParseLoop(actlist,options)

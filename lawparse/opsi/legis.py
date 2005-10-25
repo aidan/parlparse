@@ -17,6 +17,7 @@
 
 import re
 import copy
+import logging
 
 # need correct value for amp
 
@@ -68,14 +69,13 @@ class Legis:				# the unit of legislation
 		self.preamble=Preamble()
 		self.sourceinfo=SourceInfo()
 		self.initialsourcerules=SourceRuleCollection(self.sourceinfo.source)
+		self.logger=logging.getLogger('legis')
 		#self.info={}
 
 	def append(self,leaf):
 		self.content.append(leaf)
-		#print "****appending leaf to Legis", leaf
 		xmlofleaf=leaf.xml()
-		#print "**** after append, xml of leaf",xmlofleaf 
-		print leaf.xml()[:255]
+		self.logger.info(leaf.xml()[:255])
 
 	def extend(self,leaflist):
 		self.content.extend(leaflist)
@@ -96,7 +96,7 @@ class Legis:				# the unit of legislation
 		return s
 
 	def addsourcerule(self,s):
-		print "##Rule: (%s) %s" % (s.owner, s.name)
+		self.logger.info("##Rule: (%s) %s" % (s.owner, s.name))
 		if len(self.content) > 0:
 			self.last().sourcerules.addrule(s)
 		else:
@@ -110,7 +110,7 @@ class Act(Legis):
 		self.chapter=chapter
 		self.id="ukpga"+year+"c"+chapter
 		self.preamble=ActPreamble()
-		print "[Legis.Act] year=%s session=%s chapter=%s" % (year, session, chapter)
+		self.logger.info("[Legis.Act] year=%s session=%s chapter=%s" % (year, session, chapter))
 
 class SI(Legis):
 	def __init__(self, year, number):
@@ -176,9 +176,29 @@ class SIPreamble(Preamble):
 		def xmlcontent(self):
 			return ''
 
+# These will need tidying up, at the moment there are far too many.
+
+ValidLeafTypes=['provision', # the basic unit of legislation
+	'text', # text, which may belong to a provision or may not
+	'quotation', # a leaf that contains a quotation of further leaves
+	'item',
+	'note', 
+	'table', # an unparsed table
+	'schedule marker', # marks the beginning of the schedules
+	'unnumbered text',
+	'division', # a heading that marks a new division (such as Part 1)
+	'heading', # a heading
+	'item1', # no idea what these are?
+	'item2',
+	'item3']
+
 class Leaf:
 	def __init__(self, t, locus, margin=Margin()):
 		self.t=t
+		if t not in ValidLeafTypes:
+			print t
+			sys.exit()
+		assert(t in ValidLeafTypes)
 		self.content=''
 		self.locus=copy.deepcopy(locus)
 		self.margin=margin
@@ -222,6 +242,7 @@ class Quotation(Legis,Leaf):
 		self.preamble=Preamble()
 		self.sourceinfo=SourceInfo(locus.lex.sourceinfo.source)
 		self.initialsourcerules=SourceRuleCollection(locus.lex.sourceinfo.source)
+		self.logger=logging.getLogger('legis')
 
 	def addleaf(self,l):
 		#print "****quote adding leaf %s" % l.xml()
@@ -287,7 +308,7 @@ class TableRow:
 		s=''
 		for i in self.cells:
 			s=s + '<cell>%s</cell>' % i
-		return '<row %s>%s</row>\n' % (locus.xml(), s)
+		return '\n<row %s>%s</row>' % (locus.xml(), s)
 
 class Locus:
 	def __init__(self,lex):
@@ -333,7 +354,7 @@ class Locus:
 		self.path.append(new)
 
 	def newdivision(self,D):
-		print "***new division:%s" % D.text()
+		self.lex.logger.debug("***new division:%s" % D.text())
 		self.partitions={}
 		self.division=D
 		self.path=[]					
@@ -341,7 +362,7 @@ class Locus:
 	def addpart(self, t, s):
 		self.partitions[t]=s
 		if t not in set(['part','chapter','article']):
-			print "****unusual division [[%s]]" % s
+			self.lex.logger.debug("****unusual division [[%s]]" % s)
 
 	def part2xml(self):
 		sxml=''
@@ -379,8 +400,9 @@ class Schedule(Division):
 		
 
 class PathElement:
-	def __init__(self,s):
-		m=re.match('((?:[\|\(])?)(\w+)([\)\.\]]?)',s)
+	def __init__(self,elementstring):
+		logger=logging.getLogger('legis')
+		m=re.match('((?:[\|\(])?)(\w+)([\)\.\]]?)',elementstring)
 		if m:
 			left=m.group(1)
 			num=m.group(2)
@@ -428,7 +450,8 @@ def enumtype(s):
 	if re.match('[IVXDLCM]',s):
 		return 'uroman'
 	else:
-		print "****unknown enumeration:%s" % s
+		logger=logging.getLogger('legis')
+		logger.warning("****unknown enumeration:%s" % s)
 
 
 
@@ -443,16 +466,3 @@ def pathprint(p):
 
 if __name__ == '__main__':
 	act=Act('1988','','1')
-	print "legis"
-	a=Locus(act)
-	a.addenum('1')
-	print a.xml()
-	a.addenum('(1)')
-	print a.xml()
-	a.addenum('(b)')
-	print a.xml()
-	a.addenum('(2)')
-	print a.xml()
-	print extractenum('(iv)')
-	print a.path
-	print pathprint(a.path)

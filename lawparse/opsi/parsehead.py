@@ -19,6 +19,7 @@ import urllib
 import urlparse
 import re
 import sys
+import logging
 
 import miscfun
 actdirhtml = miscfun.actdirhtml
@@ -133,38 +134,40 @@ def TableBalance(tablestring):
 
 
 def ActParseHead(act):
+	logger=logging.getLogger('opsi.parsehead')
+
 	for headline in headlines1:
 		act.NibbleHead(headline[0], headline[1])
 
 	btoc1exists = re.search('<center>.*ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES).*</center>(?si)', act.txt)
 	if btoc1exists:
-		print "***** Table of contents TYPE 1 (external heading)"
+		logger.debug("***** Table of contents TYPE 1 (external heading)")
 		for headline in headlinestoc1:
 			act.NibbleHead(headline[0], headline[1])
 		act.NibbleHead("checkfront", "<table(?i)")
 
 		# look for last open table on first page
-		print len(act.txt)
+		logger.debug("Length of act=%s" % len(act.txt))
 		act.txt = act.txt[TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</center>')
 
-		print "ttttt", len(act.txt)
+		logger.debug("ttttt", len(act.txt))
 
 	btoc2exists = re.search('<td colspan="?2"? align="?center"?>.*(ARRANGEMENT OF (?:SECTIONS|PARTS|CLAUSES)|CONTENTS).*</td>(?si)', act.txt)
 	if btoc2exists:
-		print "***** Table of contents TYPE 2 (internal heading)"
+		logger.debug("***** Table of contents TYPE 2 (internal heading)")
 		for headline in headlinestoc2:
 			act.NibbleHead(headline[0], headline[1])
 		act.NibbleHead("checkfront", "<table(?i)")
 
 		# look for last open table on first page
-		print len(act.txt)
+		logger.debug("Length of act is %s" % len(act.txt))
 		act.txt = act.txt[TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top><BR>\s*<HR width=70% align=left>\s*<BR></TD></TR>(?i)')
 		act.NibbleHead("pageurl1",'(\s*<pageurl[^>]*>)?(?i)')
 		act.NibbleHead("middle", '\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<BR>&nbsp;<BR>&nbsp;</TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR>|<P>)(?i)')
 
-		print "ttttt", len(act.txt)
+		logger.debug("ttttt", len(act.txt))
 
 
 
