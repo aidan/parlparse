@@ -184,12 +184,5 @@ class Options:
 					sys.exit()
 		else:
 			args=[]
-	
-		if len(args) > 0:
-			ldir = ["ukgpa%s.html" % x for x in args]
-		else:
-			ldir = os.listdir(miscfun.actdirhtml)
-			del ldir[0]	# removes file ".svn"
-	
-	
-		return ldir	
+
+		return args

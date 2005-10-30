@@ -27,13 +27,15 @@ import patches
 import logging
 import getopt
 import traceback
+import optparse 
 import options
+
 
 import parsefun
 
 import miscfun
-actdirhtml = miscfun.actdirhtml
-actdirxml = miscfun.actdirxml
+#actdirhtml = miscfun.actdirhtml
+#actdirxml = miscfun.actdirxml
 
 from parsehead import ActParseHead
 from analyser import ParseBody
@@ -130,15 +132,33 @@ class QuotedActFragment(ActFragment):
 
 
 class SI(LegislationFragment):
-	def __init__(self, year, number, txt):
+	def __init__(self, cname, txt):
 		LegislationFragment.__init__(self,txt)
-		self.year=year
-		self.number=number
+		m = re.search("(\d{4})no(\d+).html$", cname)
+		self.year=m.group(1)
+		self.number=m.group(2)
 
 	def ShortID(self):
-		return "uksi%sno%s" % (year,number)
+		return "uksi%sno%s" % (self.year,self.number)
 
+	def dir(options, name):
+		dir=options.__dict__['sidir' + name]
+		#print name,dir
+		return dir
+
+	dir=staticmethod(dir)
 	
+
+	def Parse(self):
+		ActParseHead(self)
+		
+		legisobj=legis.SI(self.year,self.number)
+		legisobj.sourceinfo=OpsiSourceInfo(self.url)
+		self.LegisHeader(legisobj)
+
+		ParseBody(self,legisobj,'none')
+		return legisobj
+
 	
 class Act(ActFragment):
 	def __init__(self, cname, txt):
@@ -153,6 +173,11 @@ class Act(ActFragment):
 		else:
 			logger.warning("Cannot see pageurl at beginning of act")
 			self.url=''
+
+	def dir(options, name):
+		return options.__dict__['actdir' + name]
+
+	dir=staticmethod(dir)
 
 	def ShortID(self):
 		return "ukgpa%sc%s" % (self.year, self.chapter)
@@ -219,7 +244,7 @@ def SetupLogging(options,name):
 
 	#print logging.getLogger('').getEffectiveLevel()
 
-def ParseLoop(actlist,options):
+def ParseLoop(statlist,options, Stat):
 	# just run through and apply to all the files
 	logger=logging.getLogger('')
 
@@ -227,27 +252,29 @@ def ParseLoop(actlist,options):
 	skipfiles=options.value('skip')
 	filedebuglevel=options.value('filedebug')
 
-	for i in range(start,len(actlist)):
-		s="reading %s %s" % (i, actlist[i])
+	for i in range(start,len(statlist)):
+		s="reading %s %s" % (i, statlist[i])
 		logger.warning(s)
-		if actlist[i] in skipfiles:
-			logger.warning("skipping %s %s" % (i, actlist[i]))
+		if statlist[i] in skipfiles:
+			logger.warning("skipping %s %s" % (i, statlist[i]))
 			#logger.warning(s)
 			continue
-		logger.debug(actdirhtml, actlist[i], os.path.join(actdirhtml, actlist[i]))
-		fin = open(os.path.join(actdirhtml, actlist[i]), "r")
+
+		dirhtml=Stat.dir(options2, 'html')
+		logger.debug(dirhtml, statlist[i], os.path.join(dirhtml, statlist[i]))
+		fin = open(os.path.join(dirhtml, statlist[i]), "r")
 		txt = fin.read()
 		fin.close()
 
-		act = Act(actlist[i], txt)
-		patches.ActApplyPatches(act)
+		stat = Stat(statlist[i], txt)
+		patches.ActApplyPatches(stat)
 
 		# the parsing process
 
 		# need to do configuration better -- put in config for log
 
 		opsilogger=logging.getLogger('')
-		filelogname=os.path.join('log',act.ShortID()+'.log')
+		filelogname=os.path.join('log',stat.ShortID()+'.log')
 		if os.path.exists(filelogname):
 			os.remove(filelogname)
 	
@@ -257,10 +284,10 @@ def ParseLoop(actlist,options):
 
 
 		try:
-			lexact=act.Parse()
+			lexed=stat.Parse()
 		except parsefun.ParseError, inst:
 			opsilogger.warning(inst)
-			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,act.ShortID()))
+			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,stat.ShortID()))
 			opsilogger.exception(traceback.format_exc())
 #			if options.isset('stoponerror'):
 #				raise parsefun.ParseError
@@ -274,19 +301,37 @@ def ParseLoop(actlist,options):
 #		filehandler.close()
 
 		if success:
-			out = open(os.path.join(actdirxml, lexact.id+".xml"), "w")
-			out.write(lexact.xml()) 
+
+			out = open(os.path.join(Stat.dir(options2, 'xml'), lexed.id+".xml"), "w")
+			out.write(lexed.xml()) 
 
 		
 
 # main running part
 if __name__ == '__main__':
 		
+	#print os.path.basename(sys.argv[0])
+
+	if os.path.basename(sys.argv[0])=='actparse.py':
+		Stat=Act
+	else:
+		Stat=SI
+
 	logging.getLogger('').setLevel(0)
 
+	parser = options.OpsiOptionParser()
+	(options2, args) = parser.parse_args()
+
 	options=options.Options()
-	actlist=options.ParseArguments()
+	args=options.ParseArguments()
+
+	
+	if len(args) > 0:
+		statlist = ["ukgpa%s.html" % x for x in args]
+	else:
+		statlist = os.listdir(Stat.dir(options2, 'html'))
+		del statlist[0]	# removes file ".svn"
 
 	SetupLogging(options,'opsi')
 
-	ParseLoop(actlist,options)
+	ParseLoop(statlist,options, Stat)

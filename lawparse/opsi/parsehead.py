@@ -24,8 +24,6 @@ import logging
 import miscfun
 import parsefun
 
-actdirhtml = miscfun.actdirhtml
-
 headlines1 = [('middle', '[\s\S]*?<table(?:cellpadding="?2"?|width="?95%"?|\s)*>\s*<tr>(?i)'),  # first one
 			  ('middle', '(?:<tr(?:\s*xml\S*)*>)*\s*<td\s*align="?center"?\s*valign="?bottom"?>\s*(?i)'),
 			  ('middle', '<img\s*src="/img/royalarm.gif"\s*alt="Royal\ Arms">\s*</td>\s+(?i)'),
@@ -141,7 +139,7 @@ def ActParseHead(act):
 
 
 	if re.match('\s*<center>\s*(?=<table)', act.txt):
-		print "*****additional tables of contents"
+		logger.info("Additional tables of contents")
 		act.NibbleHead("middle", '\s*<center>\s*')
 		act.txt = act.txt[parsefun.TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</center>')
@@ -150,7 +148,7 @@ def ActParseHead(act):
 		act.NibbleHead("middle", '\s*<br><br><br><br>\s*</td>\s*</tr>\s*')
 
 	if re.search('<i>notes:</i>(?i)', act.txt):
-		print "****suspected footnote"
+		logger.info("Suspected footnote")
 		#(x1,x2)=ScrapeTool([('first','<tr>\s*<td WIDTH="20%">&nbsp;</td>(?i)'),
 		#('middle','\s*<td>\s*<br>\s*<hr>\s*<i>notes:</i><br><br>\s*<p>\s*(?i)'),
 		#('middle','<a name="t(?P<ref>cnc1|fnf1)">\[1\]</a>(<b>)?(\[)?([a-zA-Z\.,;\s]*)(\])?\s*(</b>)?\s*<a href="#(?P=ref)">back</a>(?i)'),

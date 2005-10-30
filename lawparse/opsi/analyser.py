@@ -195,7 +195,7 @@ def RemoveTables(act, tablelist, patternlist, tabtype):
 				else:
 					d[name]=''
 			
-			store=m.expand('%s\\1\g%s' % (d['pre'],d['post']))
+			store=m.expand('%s\\1%s' % (d['pre'],d['post']))
 			
 			tablelist.append(store)
 			#print "****pattype=%s n=%s" % (pattype, n)
