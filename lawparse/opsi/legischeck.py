@@ -25,10 +25,19 @@ from Ft.Lib import Uri
 
 import xml.dom
 import sys
+import re
 
 import miscfun
 
-name='ukpga1997c2.xml'
+def divider(string):
+	print "==== %s" % string
+
+def snumconvert(string):
+	m=re.match('[(]*(\d+)[).]*',string)
+	return int(m.group(1))
+
+name='ukpga%s.xml' % sys.argv[1]
+#name='ukpga1997c2.xml'
 
 file_uri=Uri.OsPathToUri("acts/xml/%s" % name)
 doc=NonvalidatingReader.parseUri(file_uri)
@@ -43,6 +52,9 @@ leaves=doc.xpath('//legis/content/leaf')
 
 
 sections=doc.xpath('//legis/content/leaf')
+id=doc.xpath('//legis/@id')
+
+divider(id[0].nodeValue)
 
 sectionno=0
 for s in sections:
@@ -50,8 +62,13 @@ for s in sections:
 	leaftype=s.xpath('@type')[0].nodeValue
 
 	if leaftype=='provision':
-		sno=int(s.xpath('@s')[0].nodeValue)
-		
+		try:
+			sno=snumconvert(s.xpath('@s')[0].nodeValue)
+		except ValueError:
+			print s
+			print s.xpath('@s')[0].nodeValue
+			raise		
+
 		if sno > sectionno:
 			if sno==sectionno+1:
 				pass
@@ -60,7 +77,7 @@ for s in sections:
 		elif sno==sectionno:
 			continue
 		elif sno==1:
-			print "------- Restart Numbering"
+			print "++++ Numbering restarted"
 		else:
 			print "jump backwards %i to %i" % (sectionno,sno)
 
@@ -68,14 +85,14 @@ for s in sections:
 		print sectionno
 
 	elif leaftype=='division':
-		print "========== Division(%s)" % s.xpath('child::node()')[0].nodeValue
+		divider("Division(%s)" % s.xpath('child::node()')[0].nodeValue)
 	elif leaftype=='heading':
 		t=s.xpath('child::node()')
 		if len(t)>0:
 			content=t[0].nodeValue
 		else:
 			content=''
-		print "========== Heading(%s)" % content
+		divider("Heading(%s)" % content)
 
 sys.exit()
 

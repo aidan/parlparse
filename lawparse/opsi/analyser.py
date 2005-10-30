@@ -17,24 +17,53 @@
 
 import re
 import sys
-from parsefun import *
+import parsefun
 import legis
 import logging
 
 formats=[('i','italic'),('b','bold')]
-
 	
 quotepatterns=[
-		('<table cellpadding="8">\s*<tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>\s*<td>&quot;([\s\S]*?)&quot;\s*</td>\s*(?:</tr>\s*|(?=<tr))</table>(?i)','simple'),
+		("""
+	<table cellpadding="8">
+		\s*(?P<pre><tr>\s*<td width="10%"(?: valign="top")?>&nbsp;</td>
+		\s*<td>)
+		&quot;
+		([\s\S]*?)
+		&quot;
+		\s*</td>
+		\s*(?P<post></tr>\s*|(?=<tr))</table>(?ix)""",
+	'simple'),
 #unsatisfactory, see below
-#		('<table cellpadding="8">(?<=<tr valign="top">\s*<td width="15%">\s*<br>)([\s\S]*?)(?=&quot;</td>\s*</tr>\s*)</table>(?i)','withmargin'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="5%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>([\s\S]*?)&quot;\s*</td>\s*</tr>\s*</table>(?i)','section'),
-		('<table cellpadding="8">\s*<tr valign="top">\s*<td width="20%">&nbsp;</td>\s*<td>\s*<br><i>\s*<center>([\s\S]*?)</tr>\s*</table>(?i)','full'),
+		("""
+	<table cellpadding="8">
+		\s*(?P<pre><tr valign="top">\s*<td width="15%">\s*<br>)
+		([\s\S]*?)
+		&quot;(?P<post></td>\s*</tr>\s*)</table>(?ix)""",
+	'withmargin'),
+		("""
+	<table cellpadding="8">
+		\s*(?P<pre><tr valign="top">\s*<td width="5%">\s*<br>\s*</td>
+		\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>)
+		([\s\S]*?)
+		&quot;
+		\s*(?P<post></td>\s*</tr>)\s*
+		</table>(?ix)""",
+	'section'),
+		("""
+	<table cellpadding="8">
+		\s*(?P<pre>tr valign="top">
+		\s*<td width="20%">&nbsp;</td>\s*<td>
+		\s*<br><i>\s*<center>)
+		([\s\S]*?)
+		(?P<post></tr>\s*)
+		</table>(?ix)""",
+	'full'),
 		('<table cellpadding="8">\s*<tr>\s*<td width="10%" valign="top">&nbsp;</td>\s*<td align="center">\s*<a name="sdiv1A">([\s\S]*?)</tr>\s*</table>(?i)','heading'),
 # this is probably over-general, we should probably look only for quotes
-		('<table cellpadding="8">([\s\S]*?)</table>(?i)','withmargin'),
-		('(?=there shall be inserted&\#151;)([\s\S]*?)&quot;</td>\s*</tr>\s*</table>(?i)','error'),
-		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>([\s\S]*?)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote')]
+		("""<table cellpadding="8">(?P<pre>)([\s\S]*?)(?P<post>)</table>(?i)""",'withmargin2'),
+		('(?=there shall be inserted&\#151;)(?P<pre>)([\s\S]*?)(?P<post>)&quot;</td>\s*</tr>\s*</table>(?i)','error'),
+		('(?<=<TR><TD valign=top>&nbsp;</TD><TD valign=top>)<TABLE>(?P<pre>)([\s\S]*?)(?P<post>)</TABLE>\s*(?=</TD>\s*</TR>)(?i)','rightquote')]
 
 tablepatterns1=[('<center>\s*<table>([\s\S]*?)</table>\s*?</center>','tableCentered')]
 
@@ -46,14 +75,10 @@ tablepatterns2=[
 		('<table[^>]*>([\s\S]*?)</table>(?i)','misctable')]
 	
 
-class ParseError(Exception):
-	"""Exception class for parse errors"""
+class UnhandledTagError(parsefun.ParseError):
 	pass
 
-class UnhandledTagError(ParseError):
-	pass
-
-class UnhandledEntityError(ParseError):
+class UnhandledEntityError(parsefun.ParseError):
 	pass
 
 class OpsiSourceRule(legis.SourceRule):
@@ -64,8 +89,8 @@ def deformat(s,count=0):
 	"""Remove italic and bold tags and replace with <format>"""
 
 	for (a,b) in formats:
-		s=re.sub('<%s>(?i)' % a,'<format charstyle="%s">' % b,s,count)
-		s=re.sub('</%s>(?i)' % a,'</format>',s,count)
+		s=re.sub('<%s>(?i)' % a,'<hint:format charstyle="%s">' % b,s,count)
+		s=re.sub('</%s>(?i)' % a,'</hint:format>',s,count)
 	s=re.sub('<img[^>]*>(?i)','',s)
 	return s
 
@@ -81,12 +106,24 @@ def deamp(s):
 	s=re.sub('&','&amp;',s)
 	return s
 
-def AddText(locus,margin,string):
-	"""Adds a paragraph of text to the current legislation
+def checktext(string):
+	m=re.search('<%s' % parsefun.EXCLTAG,string)
+	if m:
+		errstring="Unhandled Tag:\n%s####%s####%s" % (string[:m.start()],string[m.start():m.end()],string[m.end():])
+		raise UnhandledTagError(errstring)
 
-	If the previous provision already has text as its content, then there is the text
-	should become part of that provision, otherwise the text will need to be created
-	as a freestanding text leaf.
+	m=re.search('&nbsp;',string)
+	if m:
+		raise UnhandledEntityError(string)
+
+	
+
+def AddText(locus,margin,string):
+	"""Adds text to the current legislation.
+
+	If the previous provision already has text as its content, then 
+	the text should become part of that provision, otherwise 
+	a new text leaf will need to be created.
 	"""
 
 	logger=logging.getLogger('')
@@ -94,13 +131,13 @@ def AddText(locus,margin,string):
 	last=locus.lex.last()
 	if last and last.t=='provision' and len(last.content)==0:
 		logging.info("Text:%s" % string[:64])
-		addContent(last,string)
+		AddContent(last,string)
 	else:
 		leaf=legis.Leaf('text',locus,margin)
-		addContent(leaf,string)
+		AddContent(leaf,string)
 		locus.lex.append(leaf)
 
-def addContent(leaf,string):
+def AddContent(leaf,string):
 	"""Wrapper for adding content to a leaf
 
 	Checks there are no disallowed tags or entities in the text that forms the content of
@@ -108,18 +145,22 @@ def addContent(leaf,string):
 	a parse error of some kind
 	"""
 
-	m=re.match('<',string)
-	if m:
-		raise UnhandledTagError(string)
-
-	m=re.match('&nbsp;',string)
-	if m:
-		raise UnhandledEntityError(string)
+	checktext(string)
 
 	leaf.content=string
+
+
+def AddTextLeaf(locus,margin,text):
+	"""Adds a new text leaf to the current legislation."""
+
+	checktext(text)
+
+	leaf=legis.Text(locus,margin,text)
+	locus.lex.append(leaf)
+
 	
 def AddHeading(locus,margin,string):
-	"""Adds a heading to the current legislation
+	"""Adds a heading to the current legislation.
 
 	There may already have been a part division, which, if it has not content
 	of its own, will be the parent of this heading. Otherwise the heading becomes
@@ -128,13 +169,13 @@ def AddHeading(locus,margin,string):
 
 	last=locus.lex.last()
 	if last and last.t=='division' and len(last.content)==0:
-		addContent(last,string)
+		AddContent(last,string)
 		#print "****Add Heading, added %s to previous division" % string
 		#print last.xml()
 		#print locus.lex.last().xml()
 	else:
 		leaf=legis.Heading(locus,margin)
-		addContent(leaf,string)
+		AddContent(leaf,string)
 		locus.lex.append(leaf)
 
 
@@ -144,13 +185,35 @@ def RemoveTables(act, tablelist, patternlist, tabtype):
 	logger=logging.getLogger('')
 	n=0
 	for (pat,pattype) in patternlist:
+		#print "Pat=%s\n\npattype=%s\n\n" % (pat,pattype)
 		while re.search(pat,act.txt):
 			m=re.search(pat,act.txt)
-			tablelist.append(m.group(1))
+			d={}
+			for name in ['pre','post']:
+				if m.groupdict().has_key(name):
+					d[name]=m.group(name)
+				else:
+					d[name]=''
+			
+			store=m.expand('%s\\1\g%s' % (d['pre'],d['post']))
+			
+			tablelist.append(store)
+			#print "****pattype=%s n=%s" % (pattype, n)
+			if False: #n==60:
+				print "++++pat=%s\n++++act.txt[:128]=%s" % (pat,act.txt[:128])
+				print act.txt[m.start()-32:m.end()]
+				print "--------------"
+				print act.txt[m.start():m.end()]
+				print "--------------"
+				print act.txt[m.end():m.end()+32]
+
+				sys.exit()
 			quote='<%s n="%i" pattype="%s"/>' % (tabtype, 
 				n,pattype)
 			n=n+1
 			act.txt=re.sub(pat,quote,act.txt,1)
+
+
 			
 			# Diagnostic
 			s='rightquote'
@@ -171,6 +234,29 @@ def RemoveTables(act, tablelist, patternlist, tabtype):
 		#print t[:32]
 		i=i+1
 #	sys.exit()
+
+def PrepareQuote(locus,act,margin,qnumber,pattype):
+	logger=logging.getLogger('')
+
+	logger.info("Handling quotation n=%s" % qnumber)
+
+	if pattype in ["rightquote",'simple','withmargin','heading','section']:
+		logger.info("****parsing quotation %s" % qnumber)
+
+		quotation=act.QuotationAsFragment(qnumber,locus)
+		pp=quotation.ParseAsQuotation()
+		logger.info("****parsed a quotation")
+		logger.debug(locus.lex.xml())
+		quote=legis.Quotation(True,locus)
+		quote.extend(pp.content)
+	else:
+		quote=legis.Quotation(False,locus)
+		leaf=legis.Leaf('table',locus,margin)
+		leaf.sourcetype="opsi:obsolete table"
+		AddContent(leaf,act.quotations[qnumber])
+		quote.append(leaf)
+
+	return quote
 
 def MakeTableLeaf(act, locus, no, pattype):
 	logger=logging.getLogger('')
@@ -309,9 +395,16 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 
 	while len(right) >0:
 		trace.append(right)
+		logging.debug('Right=%s' % right)
 		if not first:
 			margin=legis.Margin()
 			first=False
+
+		m=re.match('\s*<hint:',right)
+		if m:
+			(this,right)=gettext(right)
+			AddText(locus,margin,this)
+			continue	
 
 		# Article 1
 
@@ -394,7 +487,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 			locus.addenum(m.group(1))
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
-			addContent(leaf,m.group(3))
+			AddContent(leaf,m.group(3))
 			locus.lex.addsourcerule(OpsiSourceRule('sectionsubsection1'))
 			right=right[m.end():]
 			continue
@@ -422,7 +515,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			addContent(leaf,m.group(2))
+			AddContent(leaf,m.group(2))
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('subsection5A'))
 			right=right[m.end():]
@@ -472,15 +565,15 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 
 		# usually lower level numbering like (a)
 
+		# It looks to me like there's an error here.
+
 		m=re.match('\s*<UL>((?:"|&quot;)?)(\([a-z]+\))(?:&nbsp;)*([\s\S]*?)(?:</UL>)?(?i)',right)
 		if m:
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
-			mp=re.search('<P>', m.group(3))
-			if mp:
-				addContent(leaf,m.group(3)[:mp.start()])
-			else:
-				addContent(leaf,m.group(3))
+			(text,rest)=parsefun.gettext(m.group(3))
+			logging.debug("text,rest=%s,%s" % (text,rest))
+			AddContent(leaf,text)
 
 			if len(m.group(1))>0:
 				(locus,leaf,quotestatus)=quotestart(locus,leaf,quotestatus,'right')
@@ -488,8 +581,8 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('subsection2D'))
 
-			if mp:
-				parseright(act,m.group(3)[mp.start():],locus,quotestatus,margin)
+			if len(rest)>0:
+				parseright(act,rest,locus,quotestatus,margin)
 
 			right=right[m.end():]
 			continue
@@ -532,8 +625,8 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,margin)
-			addContent(leaf,m.group(2))
-			#leaf.sourcerule='opsi:NumberDepth3'
+			AddContent(leaf,m.group(2))
+		
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('NumberDepth3'))
 			right=right[m.end():]
@@ -553,22 +646,31 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 
 
 		# unordered lists:
-		m=re.match('\s*(<UL>)+([\s\S]*?)(?:&nbsp;)?(?:<BR>|&nbsp;)*(?:</UL>)?(?=<|$)(?i)',right)
+		m=re.match('\s*(<UL>)+([\s\S]*?)(?:&nbsp;)?(?:<BR>|&nbsp;)*(?:</UL>)?%s(?i)' % parsefun.TEXTEND,right)
 		if m:
 			l=(len(m.group(1))/2)
 			leaf=legis.Leaf('item%i'% l,locus,margin)
-			addContent(leaf,m.group(2))
-			#leaf.sourcerule='opsi:unordered list%i' % l
+			AddContent(leaf,m.group(2))
+		
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('opsi:unordered list%i' % l))
 			right=right[m.end():]
 			continue
 
-		m=re.match('\s*<P>(?:<UL>)?([\s\S]*?)(?:<BR>|&nbsp;)*(?:</UL>)?(?=\s*<P|$)(?i)',right)
+		# This may now be too generic
+
+		m=re.match('\s*<P>(?:<UL>)?([\s\S]*?)(?:<BR>|&nbsp;)*(?:</UL>)\s*(?=<(?!hint:|/hint:))(?=</p>)?(?i)',right)
 		if m:
 			leaf=legis.Leaf('item',locus,margin)
-			addContent(leaf,m.group(1))
-			#leaf.sourcerule='opsi:paragraph'
+			(text,rest)=parsefun.gettext(m.group(1))
+
+			AddContent(leaf,text)
+			locus.lex.append(leaf)
+			locus.lex.addsourcerule(OpsiSourceRule('subsection2D'))
+
+			if len(rest)>0:
+				parseright(act,rest,locus,quotestatus,margin)
+	
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('paragraph'))
 			right=right[m.end():]
@@ -578,7 +680,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 
 		# not sure what this is or where it occurs
 
-		m=re.match('((?:"|&quot;)?)(\(\d+[A-Z]*\))&nbsp;',right)
+		m=re.match('\s*((?:"|&quot;)?)(\(\d+[A-Z]*\))&nbsp;',right)
 		if m:
 			locus.addenum(m.group(2))
 			leaf=legis.Leaf('provision',locus,margin)
@@ -635,9 +737,9 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		# A Note: under a table.
 		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;&nbsp;&nbsp;<i>Note:</i>([^\(<\&]*?)',right)
 		if m:
-			print "****Debug, note under table"
+			logger.debug("**** note under table")
 			leaf=legis.Leaf('note',locus)
-			addContent(leaf,m.group(1))
+			AddContent(leaf,m.group(1))
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('NoteItalic1'))
 			right=right[m.end():]
@@ -676,22 +778,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 
 		m=re.match('\s*<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
 		if m:
-			logger.info("Handling quotation n=%s" % m.group(1))
-			#sys.exit()
-			if m.group(2)=="rightquote":
-				qnumber=int(m.group(1))
-				quotation=act.QuotationAsFragment(qnumber,locus)
-				pp=quotation.ParseAsQuotation()
-				logger.info("****parsed a quotation")
-				logger.debug(locus.lex.xml())
-				quote=legis.Quotation(True,locus)
-				quote.extend(pp.content)
-			else:
-				quote=legis.Quotation(False,locus)
-				leaf=legis.Leaf('table',locus,margin)
-				leaf.sourcetype="opsi:obsolete table"
-				addContent(leaf,act.quotations[int(m.group(1))])
-				quote.append(leaf)
+			quote=PrepareQuote(locus,act,margin,int(m.group(1)),m.group(2))
 			
 			locus.lex.append(quote)
 			locus.lex.addsourcerule(OpsiSourceRule('Quotation(%s)' % m.group(2)))
@@ -704,7 +791,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		if m:
 			leaf=legis.Leaf('provision',locus,margin)
 			locus.lex.append(leaf)
-			addContent(leaf,m.group(1))
+			AddContent(leaf,m.group(1))
 			locus.lex.addsourcerule(OpsiSourceRule('section8'))
 			right=right[m.end():]
 			continue
@@ -724,12 +811,31 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 			else:
 				leaf=legis.Leaf('provision',locus,margin)
 				locus.lex.append(leaf)
-				addContent(leaf,m.group(1))
+				AddContent(leaf,m.group(1))
 				right=right[m.end():]
 				continue			
 
 			locus.lex.addsourcerule(OpsiSourceRule('TextHanging2'))
-	
+
+		m=re.match('\s*<p>',right)
+		if m:
+			right=right[m.end():]
+			while len(right)>0:
+				(first,right)=parsefun.gettext(right)
+				AddTextLeaf(locus,margin,first)
+				qmobj=re.match('<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',right)
+				pmobj=re.match('</p>',right)
+				if qmobj:
+					quote=PrepareQuote(locus,act,margin,int(qmobj.group(1)),qmobj.group(2))
+					locus.lex.append(quote)
+					locus.lex.addsourcerule(OpsiSourceRule('ParQuote'))				
+					right=right[qmobj.end():]
+					continue
+				elif pmobj:
+					right=right[pmobj.end():]
+					break
+				break
+			continue			
 
 # Remove "whitespace" and garbage
 
@@ -742,6 +848,12 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		m=re.match('\s*<p>\s*$(?i)',right)
 		if m:
 			locus.lex.addsourcerule(OpsiSourceRule('SnippedParAtEnd1'))
+			right=right[m.end():]
+			continue
+
+		m=re.match('\s*</p>(?i)',right)
+		if m:
+			locus.lex.addsourcerule(OpsiSourceRule('SnippedEndPar1'))
 			right=right[m.end():]
 			continue
 
@@ -765,7 +877,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 		if m:
 			right=deformat(right,1)
 
-		m=re.match('<(?!a|format)|&nbsp;',right)
+		m=re.match('%s|&nbsp;' % parsefun.TEXTEND,right)
 		if m:
 			print "unrecognised right line element [[[\n%s\n]]]:" % right
 			print right[:256]
@@ -776,7 +888,7 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 				tn=tn+1
 			raise ParseError, "unrecognised right line element [[[\n%s\n]]]:" % right
 		else:
-			(t,right)=gettext(right)
+			(t,right)=parsefun.gettext(right)
 			#output('leaf','type="text"',t)
 			
 			AddText(locus,margin,t)
@@ -795,9 +907,10 @@ def ParseBody(act,pp,quotestatus):
 	locus=legis.Locus(pp)
 	locus.division=legis.MainDivision()
 	logger=logging.getLogger('')
+	logger.info("Parsing %s", act.ShortID())
 
 	act.txt=re.sub('\s*<hr[^>]*>(?i)','',act.txt)
-	act.txt=re.sub('<dt1[^>]*>([\s\S]*?)</dt1>(?i)','\1',act.txt)
+	act.txt=re.sub('<dt1[^>]*>([\s\S]*?)</dt1>(?i)','\\1',act.txt)
 	act.txt=re.sub('<!--[^-]*-->','',act.txt)
 	justhad3table=False
 
@@ -817,15 +930,16 @@ def ParseBody(act,pp,quotestatus):
 		#print locus.lex.xml()
 		#print "*******************************"
 
-
-		#print "+", remain[:25]
-
 		# <pageurl ....
 		m=re.match('\s*<pageurl[^>]*?>',remain)
 		if m:
-			print "**** page break"
+			logger.info("**** page break")
 			remain=remain[m.end():]
 			continue
+
+		remain=re.sub('<a[^>]*>(\d+)\s*c\.&#160;(\d+)</a>?((?:\.)?)','''<hint:actref year="\\1" chapter="\\2">\\1 c.\\2\\3</hint:actref>''',remain)
+		remain=re.sub('''S\.I\.&#160;<a[^>]*>(\d+)/(\d+)</a>((?:\.)?)''','''<hint:siref year="\\1" number="\\2">S.I.&#160;\\1/\\2\\3</hint:siref>''',remain)
+		remain=re.sub('<a[^>]*>(\d+)\s*\(c\.&#160;(\d+)\)</a>?((?:\.)?)','''<hint:actref year="\\1" chapter="\\2">\\1 (c.\\2\\3)</hint:actref>''',remain)
 
 		# Horrid special cases
 
@@ -833,7 +947,7 @@ def ParseBody(act,pp,quotestatus):
 		m=re.match('\s*<tr valign="top">\s*<td width="20%">\s*<br>\s*</td>\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;&nbsp;&nbsp;</b>([\s\S]*?)(\(\d+\))&nbsp;([\s\S]*?)</td>\s*</tr>(?i)',remain)
 		if m:
 			leaf=legis.Leaf('provision',locus)
-			addContent(leaf,m.group(1))
+			AddContent(leaf,m.group(1))
 
 			locus.addenum(m.group(2))
 		
@@ -852,7 +966,7 @@ def ParseBody(act,pp,quotestatus):
 				snumber=m.group(2)
 			else:
 				snumber=''
-			print "++++ snumber=%s %s" % (snumber,type(snumber))
+			#print "++++ snumber=%s %s" % (snumber,type(snumber))
 			locus.newdivision(legis.Schedule(snumber))
 			leaf=legis.HeadingDivision(locus)
 
@@ -889,7 +1003,7 @@ def ParseBody(act,pp,quotestatus):
 		if m:
 			logger.info("***** schedule marker")
 			leaf=legis.Leaf('schedule marker',locus)
-			addContent(leaf,'schedules')
+			AddContent(leaf,'schedules')
 	
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('HeadingSchedulesDivision'))
@@ -944,7 +1058,7 @@ def ParseBody(act,pp,quotestatus):
 			if mh:
 				locus.addpart('article',m.group(1))
 			else:
-				addContent(leaf,heading)
+				AddContent(leaf,heading)
 
 			if m.group('style')=='B':
 				sourcerule='HeadingBold1'
@@ -995,7 +1109,7 @@ def ParseBody(act,pp,quotestatus):
 				leaf.sourcerule="opsi:DivisionSchedule1"
 			else:
 				leaf=legis.Heading(locus)
-				addContent(leaf,m.group(1))
+				AddContent(leaf,m.group(1))
 				leaf.sourcerule="opsi:HeadingLarge"
 
 			locus.lex.append(leaf)
@@ -1052,10 +1166,10 @@ def ParseBody(act,pp,quotestatus):
 
 			lastleaf=locus.lex.last()
 			if lastleaf and lastleaf.t=='division':	
-				addContent(lastleaf,heading)
+				AddContent(lastleaf,heading)
 			else:
 				leaf=legis.Heading(locus)
-				addContent(leaf,heading)
+				AddContent(leaf,heading)
 			# Needs attention
 			#	leaf.sourcerule='opsi:HeadingGeneric'
 				locus.lex.append(leaf)
@@ -1142,8 +1256,9 @@ def ParseBody(act,pp,quotestatus):
 
 		m=re.match('\s*(?:<p>)?\s*<tr(?: valign="top">|>(?=\s*<td width="(?:20%|10%)" valign="top">))([\s\S]*?)</td>\s*<td>([\s\S]*?)</td></tr>\s*(?:</p>)?(?i)',remain)
 		if m:
-			print "****oldmatch"
-			sys.exit()
+			logger.warning("****oldmatch")
+			raise ParseError
+			#sys.exit()
 #			#sys.exit()
 #			#lineend=m.end()
 #			#line=m.group(1)
@@ -1171,7 +1286,7 @@ def ParseBody(act,pp,quotestatus):
 		m=re.match('\s*<tr>\s*<td width="20%" valign="top">&nbsp;</td>\s*<td align="center">\s*<br><br>\s*<font size="4">SCHEDULES</font>\s*<br>\s*</td>\s*</tr>(?i)',remain)		
 		if m:
 			leaf=legis.Heading(locus)
-			addContent(leaf,'schedules')
+			AddContent(leaf,'schedules')
 			# do we want another kind of division leaf?
 			# this is an awkward heading [misfeature]
 			locus.lex.append(leaf)
@@ -1224,7 +1339,7 @@ def ParseBody(act,pp,quotestatus):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus)			
-			#leaf.sourcerule='opsi:section4'
+		
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('section4'))
 			parseright(act,m.group(2),locus,quotestatus)
@@ -1237,8 +1352,6 @@ def ParseBody(act,pp,quotestatus):
 		if m:
 			locus.addenum(m.group(1))
 			leaf=legis.Leaf('provision',locus,legis.Margin(m.group(2)))
-			#leaf.sourcerule='opsi:section2'
-
 			locus.lex.append(leaf)
 			locus.lex.addsourcerule(OpsiSourceRule('section2'))
 			remain=remain[m.end():]
@@ -1252,7 +1365,7 @@ def ParseBody(act,pp,quotestatus):
 			leaf=legis.Leaf('provision',locus)
 			if m.group(3)!=1:
 				logger.warning("****peculiar number after section number: %s at %s" % (m.group(3), locus.text()))
-			#leaf.sourcerule='opsi:section3'
+	
 			locus.lex.append(leaf)
 			locus.addsourcerule(OpsiSourceRule('section3'))
 			parseright(act,m.group(4),locus,quotestatus)
@@ -1292,14 +1405,14 @@ def ParseBody(act,pp,quotestatus):
 
 		m=re.match('\s*<quotation n="(\d)*"\s+pattype="([a-z\w\s\d]+)"\s*/>',remain)
 		if m:
-			print "Handling quotation n=%s" % m.group(1)
+			logger.info("Handling quotation n=%s" % m.group(1))
 			sys.exit
 			if m.group(2)=="rightquote":
 				qnumber=int(m.group(1))
 				quotation=act.QuotationAsFragment(qnumber,locus)
 				pp=quotation.ParseAsQuotation()
-				print "****parsed a quotation"
-				print pp.xml()
+				logger.debug("****parsed a quotation")
+				logger.debug(pp.xml())
 				quote=legis.Quotation(True,locus)
 				quote.extend(pp.content)
 			else:
@@ -1366,10 +1479,8 @@ def ParseBody(act,pp,quotestatus):
 		# a hanging text line (in later acts)
 		m=re.match('\s*<TR><TD></TD><TD>([^<]*?)</TD>\s*</TR>',remain)
 		if m:
-			leaf=legis.Leaf('unnumbered text',locus)
-			addContent(leaf,m.group(1))
-			
-			locus.lex.append(leaf)	
+			AddTextLeaf(locus,legis.Margin(),m.group(1))
+
 			locus.lex.addsourcerule(OpsiSourceRule('Unnumbered1'))
 			remain=remain[m.end():]
 			continue
@@ -1380,20 +1491,16 @@ def ParseBody(act,pp,quotestatus):
 
 		m=re.match('\s*<TR><TD></TD><TD>([^<]*)(?=<TR>)(?i)',remain)
 		if m:
-			leaf=legis.Leaf('unnumbered text',locus)
-			addContent(leaf,m.group(1))
-			
-			locus.lex.append(leaf)	
+			AddTextLeaf(locus,legis.Margin(),m.group(1))
+
 			locus.lex.addsourcerule(OpsiSourceRule('Unnumbered2'))
 			remain=remain[m.end():]
 			continue
 
 		m=re.match('\s*<TR><TD></TD><TD>([^<]*)</TR></TD>(?i)',remain)
 		if m:
-			leaf=legis.Leaf('unnumbered text',locus)
-			addContent(leaf,m.group(1))
-			
-			locus.lex.append(leaf)	
+			AddTextLeaf(locus,legis.Margin(),m.group(1))
+
 			locus.lex.addsourcerule(OpsiSourceRule('Unnumbered3'))
 			remain=remain[m.end():]
 			continue

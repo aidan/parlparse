@@ -1,3 +1,22 @@
+#!/usr/bin/python
+
+# actparse.py - parses acts from HTML into XML files
+
+# Copyright (C) 2005 Francis Davey, part of lawparse
+
+# lawparse is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+# 
+# lawparse is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along
+# with lawparse; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# St, Fifth Floor, Boston, MA  02110-1301  USA
+
 import logging
 import re
 import sys
@@ -12,7 +31,7 @@ def parselist(l):
 class ShortFormatter(logging.Formatter):
 	def formatException(self,(exctype,value,traceback)):
 		#e=traceback.format_exception_only(exctype,value)[0]
-		print "**** called ShortFormatter"
+		#print "**** called ShortFormatter"
 		return "Exception %s" % str(exctype)
 
 
@@ -49,12 +68,13 @@ class Log:
 		handler.setLevel(self.level)
 		formatter=logging.Formatter('%(name)-6s: %(levelname)-8s %(message)s')
 		if self.length=='short':
+			#print "setting ShortFormatter"
 			handler.setFormatter(ShortFormatter())
 			#handler.setFormatter(formatter)
 		else:
+			pass
+			#print "setting Long Formatter"
 			handler.setFormatter(formatter)
-
-		#print self.level, self.length, str(handler)
 
 class Option:
 	def __init__(self,name,description):
@@ -93,6 +113,7 @@ OptionDescriptionList=[ComplexOption('skip','Names of files to be skipped',['ukg
 	ComplexOption('consoledebug','',Log(logging.WARNING,'short'),lambda x:Log.getarg(x)),
 	ComplexOption('filedebug','',Log(logging.INFO,'long'),lambda x:Log.getarg(x)),
 	ComplexOption('start','Number of file in list of files at which to start',0,lambda x:int(x)),
+	SimpleOption('stoponerror','Whether to continue processing if there is a parsing error, or whether to throw an exception'),
 	SimpleOption('help','Displays this help message')]
 
 
@@ -109,6 +130,9 @@ class Options:
 
 	def __str__(self):
 		return "Options(%s;\n%s)" % (["%s: %s" % (x,self.description[x]) for x in self.description.keys()], ["%s: %s" % (x,self.options[x]) for x in self.options.keys()])
+
+	def isset(self,name):
+		return self.options.has_key(name)
 
 	def value(self,name):
 		return self.options[name]

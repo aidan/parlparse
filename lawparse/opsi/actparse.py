@@ -29,12 +29,14 @@ import getopt
 import traceback
 import options
 
+import parsefun
+
 import miscfun
 actdirhtml = miscfun.actdirhtml
 actdirxml = miscfun.actdirxml
 
 from parsehead import ActParseHead
-from analyser import ParseBody, ParseError
+from analyser import ParseBody
 import legis
 
 
@@ -95,6 +97,8 @@ class LegislationFragment:
 
 		# remaining parameter found
 		else:
+			if self.headvalues.has_key(hcode):
+				logger.warning('second use of key %s with value %s' % (hcode, mline.groups()))
 			self.headvalues[hcode] = mline.groups()
 
 		# move on
@@ -138,6 +142,7 @@ class SI(LegislationFragment):
 	
 class Act(ActFragment):
 	def __init__(self, cname, txt):
+		logger=logging.getLogger('')
 		LegislationFragment.__init__(self,txt)
 		m = re.search("(\d{4})c(\d+).html$", cname)
 		self.year = m.group(1)
@@ -146,7 +151,7 @@ class Act(ActFragment):
 		if urlmatch:
 			self.url=urlmatch.group(1)
 		else:
-			print "****Warning, cannot see pageurl at beginning of act"
+			logger.warning("Cannot see pageurl at beginning of act")
 			self.url=''
 
 	def ShortID(self):
@@ -208,6 +213,7 @@ def SetupLogging(options,name):
 	logger.addHandler(mainlog)
 
 	console = logging.StreamHandler()
+	#print "console log options: %s" % options.value('consoledebug')
 	options.value('consoledebug').ConfigHandler(console)
 	logger.addHandler(console)	
 
@@ -225,8 +231,8 @@ def ParseLoop(actlist,options):
 		s="reading %s %s" % (i, actlist[i])
 		logger.warning(s)
 		if actlist[i] in skipfiles:
-			s= "***skipping*** %s" % actlist[i]
-			logger.warning(s)
+			logger.warning("skipping %s %s" % (i, actlist[i]))
+			#logger.warning(s)
 			continue
 		logger.debug(actdirhtml, actlist[i], os.path.join(actdirhtml, actlist[i]))
 		fin = open(os.path.join(actdirhtml, actlist[i]), "r")
@@ -252,8 +258,12 @@ def ParseLoop(actlist,options):
 
 		try:
 			lexact=act.Parse()
-		except ParseError:
+		except parsefun.ParseError, inst:
+			opsilogger.warning(inst)
 			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,act.ShortID()))
+			opsilogger.exception(traceback.format_exc())
+#			if options.isset('stoponerror'):
+#				raise parsefun.ParseError
 			
 			success=False
 		else:

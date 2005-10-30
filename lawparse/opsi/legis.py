@@ -19,8 +19,6 @@ import re
 import copy
 import logging
 
-# need correct value for amp
-
 doctype='''
 	<!DOCTYPE legis [
 		<!ENTITY copy "&#169;">
@@ -29,11 +27,23 @@ doctype='''
         ]>\n'''
 
 class SourceRule:
+	'''A rule applied to generate the current leaf.
+
+	Each leaf of a LOM object may be marked with a list of source rules,
+	which are used by the source libary to record its "reasons" for 
+	generating that particular leaf. Many rules may have contributed to
+	any single leaf.
+
+	The class Source Rule should be subclassed.
+	'''
+
 	def __init__(self,owner,name):
 		self.owner=owner
 		self.name=name
 
 class SourceRuleCollection:
+	'''The collection of rules that generate the current leaf.'''
+
 	def __init__(self,owner):
 		self.owner=owner
 		self.rules=[]
@@ -50,9 +60,20 @@ class SourceRuleCollection:
 			s=s+('%s;' % rule.name)
 		return s
 
-class Margin:				# represents marginal notes
+class Margin:				
+	'''A marginal note (if any) applied to the current leaf.
+
+	Each leaf may have a marginal note -- which, in the case of most
+	UK materials, will be in the direct left hand margin. Sometimes 
+	a marginal note is logically connected to something on a previous line
+	(this is the usual style with recent UK acts in marginal noting
+	schedules). In such cases the Margin object should be attached to the
+	appropriate leaf.
+	'''
+
 	def __init__(self,t=''):
 		self.margintext=t
+		self.used=False
 
 	def xml(self):
 		if self.margintext=='':
@@ -87,7 +108,7 @@ class Legis:				# the unit of legislation
 			return None
 	
 	def xml(self):
-		s='<?xml version="1.0" encoding="iso-8859-1"?>%s\n<legis\n\tid="%s">\n%s%s' % (doctype, self.id,self.preamble.xml(),self.sourceinfo.xml())
+		s='<?xml version="1.0" encoding="iso-8859-1"?>%s\n<legis xmlns:hint="http://www.google.com" \n\tid="%s">\n%s%s' % (doctype, self.id,self.preamble.xml(),self.sourceinfo.xml())
 		
 		s=s+'\n<content>\n'
 		for leaf in self.content:
@@ -185,7 +206,6 @@ ValidLeafTypes=['provision', # the basic unit of legislation
 	'note', 
 	'table', # an unparsed table
 	'schedule marker', # marks the beginning of the schedules
-	'unnumbered text',
 	'division', # a heading that marks a new division (such as Part 1)
 	'heading', # a heading
 	'item1', # no idea what these are?
@@ -193,6 +213,8 @@ ValidLeafTypes=['provision', # the basic unit of legislation
 	'item3']
 
 class Leaf:
+	"""A single unit (or paragraph) of legislation."""
+
 	def __init__(self, t, locus, margin=Margin()):
 		self.t=t
 		if t not in ValidLeafTypes:
@@ -201,9 +223,12 @@ class Leaf:
 		assert(t in ValidLeafTypes)
 		self.content=''
 		self.locus=copy.deepcopy(locus)
-		self.margin=margin
+		if margin.used:
+			self.margin=Margin()
+		else:
+			self.margin=margin
+			margin.used=True
 		self.attributes=[]
-		#self.sourcerule=''
 		self.sourcerules=SourceRuleCollection(locus.lex.sourceinfo.source)
 
 	def xml(self,options=''):
@@ -278,6 +303,14 @@ class HeadingDivision(Heading):
 #		s=Leaf.xml(self,t)
 #		return s
 
+class Text(Leaf):
+	"""A leaf representing a new text paragraph, without numbering."""
+
+	def __init__(self,locus,margin,text):
+		Leaf.__init__(self,'text',locus,margin)
+		self.content=text
+		
+
 class Table(Leaf):
 	def __init__(self,locus):
 		Leaf.__init__(self,'table',locus)
@@ -298,6 +331,7 @@ class Table(Leaf):
 		for row in self.rows:
 			s=s+row.xml(self.locus)
 		return s
+
 
 class TableRow:
 	def __init__(self,cells):

@@ -17,6 +17,7 @@ analyser.py   - bulk of the act parsing engine
 parsefun.py   - utility functions for parser
 parsehead.py  - parsing of the head of acts
 patches.py    - special patches to particular acts
+options.py    - an option control mechanism
 
 General Modules
 ---------------

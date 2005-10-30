@@ -22,6 +22,8 @@ import sys
 import logging
 
 import miscfun
+import parsefun
+
 actdirhtml = miscfun.actdirhtml
 
 headlines1 = [('middle', '[\s\S]*?<table(?:cellpadding="?2"?|width="?95%"?|\s)*>\s*<tr>(?i)'),  # first one
@@ -98,39 +100,6 @@ consolidated=[('apply','(?:<p>)?(Apply a sum out of the Consolidated Fund to the
 
 
 
-def TableBalance(tablestring):
-	s=tablestring
-	pos=0
-	total=0
-	m=re.match('<table(?i)',s)
-	if not m:
-		print "failed to find first table in:"
-		print tablestring
-		sys.exit()
-	t=1
-	total=m.end()
-
-	while t>0:
-		if total>=len(tablestring):
-			print "error balancing table (t=%s):" % t
-			print tablestring
-			sys.exit()
-		s=tablestring[total:]
-		m=re.search('(<table|</table>)(?i)',s)
-		if m:
-			#print m.group(1),pos,t,total
-			if re.match('<table(?i)',m.groups(1)[0]):
-				t=t+1
-			else:
-				t=t-1
-			pos=m.end()
-
-		#print t,pos
-		total=total+pos
-	return total
-
-
-# this is outside of the class to keep it simple
 
 
 def ActParseHead(act):
@@ -148,7 +117,7 @@ def ActParseHead(act):
 
 		# look for last open table on first page
 		logger.debug("Length of act=%s" % len(act.txt))
-		act.txt = act.txt[TableBalance(act.txt):]
+		act.txt = act.txt[parsefun.TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</center>')
 
 		logger.debug("ttttt", len(act.txt))
@@ -162,7 +131,7 @@ def ActParseHead(act):
 
 		# look for last open table on first page
 		logger.debug("Length of act is %s" % len(act.txt))
-		act.txt = act.txt[TableBalance(act.txt):]
+		act.txt = act.txt[parsefun.TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</TD></TR>\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top><BR>\s*<HR width=70% align=left>\s*<BR></TD></TR>(?i)')
 		act.NibbleHead("pageurl1",'(\s*<pageurl[^>]*>)?(?i)')
 		act.NibbleHead("middle", '\s*<TR><TD valign=top>&nbsp;</TD><TD valign=top>\s*(?:<BR>&nbsp;<BR>&nbsp;</TD></TR>\s*<TR><TD colspan=2>\s*</TD></TR>|<P>)(?i)')
@@ -174,7 +143,7 @@ def ActParseHead(act):
 	if re.match('\s*<center>\s*(?=<table)', act.txt):
 		print "*****additional tables of contents"
 		act.NibbleHead("middle", '\s*<center>\s*')
-		act.txt = act.txt[TableBalance(act.txt):]
+		act.txt = act.txt[parsefun.TableBalance(act.txt):]
 		act.NibbleHead("middle", '\s*</center>')
 
 	if btoc1exists:
