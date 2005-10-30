@@ -18,6 +18,7 @@
 # with lawparse; if not, write to the Free Software Foundation, Inc., 51 Franklin
 # St, Fifth Floor, Boston, MA  02110-1301  USA
 
+#import urllib1
 import urllib
 import urlparse
 import re
@@ -25,8 +26,10 @@ import sys
 import os
 import optparse
 import traceback
+import logging
 
 import miscfun
+import options
 
 # starting point for scraping
 iurl = "http://www.opsi.gov.uk/acts.htm"
@@ -183,8 +186,11 @@ def GetActsFromYear(yiurl):
 # main running part
 if __name__ == '__main__':
 
+	logger=logging.getLogger('')
+
 	# read command line parameters
-	parser = optparse.OptionParser()
+#	parser = optparse.OptionParser()
+	parser = options.OpsiOptionParser()
 	parser.set_usage("""
 Crawls the OPSI website downloading acts of parliament. Concatenates
 the HTML files of each act into one file, and saves it in lawdata/acts.""")
@@ -207,6 +213,10 @@ the HTML files of each act into one file, and saves it in lawdata/acts.""")
 		options.yearfrom = options.year
 		options.yearto = options.year
 
+	# setup paths
+
+	miscfun.setpaths(options)
+
 	# just collects links to all the first pages
 	yiurl = GetYearIndexes(iurl)
 
@@ -222,7 +232,7 @@ the HTML files of each act into one file, and saves it in lawdata/acts.""")
 		for url, name, chapter in yacts:
 			try:
 				# build the name for this
-				fact = os.path.join(miscfun.actdirhtml, "ukgpa%sc%s.html" % (yiur[0], chapter))
+				fact = os.path.join(options.actdirhtml, "ukgpa%sc%s.html" % (yiur[0], chapter))
 				if not options.force and os.path.isfile(fact):
 					continue
 				if (yiur[0], chapter) in (("1996", "45"), ("1996", "23")) or (yiur[0] == "1996"):
@@ -242,6 +252,9 @@ the HTML files of each act into one file, and saves it in lawdata/acts.""")
 				fout = open(ftemp, "w")
 				fout.writelines(trimmedpages)
 				fout.close()
+				print "******"
+				#print "cwdir=%s\nftemp=%s\nfact=%s" % (os.getcwd(),ftemp,fact)
+				
 				os.rename(ftemp, fact)
 
 			except StandardError, e:

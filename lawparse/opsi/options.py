@@ -23,6 +23,31 @@ import sys
 import getopt
 import os
 import miscfun
+import optparse
+
+class OpsiOptionParser(optparse.OptionParser):
+	def __init__(self, *args):
+		optparse.OptionParser.__init__(self, option_list=[
+			optparse.make_option('-d', '--lawdatadir', dest='lawdata_dir'),
+			optparse.make_option('--actdir', dest="actdir"),
+			optparse.make_option('--actdirhtml', dest="actdirhtml"),
+			optparse.make_option('--actdirxml', dest="actdirxml"),
+			optparse.make_option('--sidir', dest="sidir"),
+			optparse.make_option('--sidirhtml', dest="sidirhtml"),
+			optparse.make_option('--sidirxml', dest="sidirxml"),
+			], *args)
+		current_dir = os.path.dirname(sys.argv[0]) or '.'
+		lawdata_dir = os.path.join(current_dir, '../../lawdata')
+		actdir= 'acts'
+		sidir='si'
+		self.set_defaults(actdir=actdir)
+		self.set_defaults(sidir=sidir)
+		self.set_defaults(actdirhtml=os.path.join(actdir, 'html'))
+		self.set_defaults(actdirxml=os.path.join(actdir, 'xml'))
+		self.set_defaults(sidirhtml=os.path.join(sidir, 'html'))
+		self.set_defaults(sidirxml=os.path.join(sidir, 'xml'))
+
+		
 
 def parselist(l):
 	return re.split(',',l)

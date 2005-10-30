@@ -17,40 +17,54 @@
 
 import os
 import sys
+import logging
 
-# change current directory to lawparse folder
-current_dir = os.path.dirname(sys.argv[0]) or '.'
-lawdata_dir = os.path.join(current_dir, '../../lawdata')
-if not os.path.exists(lawdata_dir):
-    print "lawdata path %s doesn't exist" % lawdata_dir
-    sys.exit(1)
-os.chdir(lawdata_dir)
+def setpaths(options):
+	logger=logging.getLogger('')
 
-# starting point for directories
-actdir = "acts"
-actdirhtml = os.path.join(actdir, "html")
-actdirxml = os.path.join(actdir, "xml")
-sidir = "si"
-sidirhtml = os.path.join(sidir, "html")
-sidirxml = os.path.join(sidir, "xml") 
+	if not os.path.exists(options.lawdata_dir):
+		print "lawdata path %s doesn't exist" % options.lawdata_dir
+#		sys.exit(1)
+	
 
-if not os.path.isdir(actdir):
-	os.mkdir(actdir)
+	os.chdir(options.lawdata_dir)
 
-if not os.path.isdir(sidir):
-	os.mkdir(sidir)
+	for i in ['actdir','actdirhtml','actdirxml','sidir','sidirhtml','sidirxml']:
 
-if not os.path.isdir(actdirhtml):
-	os.mkdir(actdirhtml)
+		value=options.__dict__[i]
 
-if not os.path.isdir(actdirxml):
-	os.mkdir(actdirxml)
-
-if not os.path.isdir(sidirhtml):
-	os.mkdir(sidirhtml)
-
-if not os.path.isdir(sidirxml):
-	os.mkdir(sidirxml)
+		if not os.path.exists(value):
+			os.mkdir(value)
 
 
+			
 
+
+## starting point for directories
+#actdir = "acts"
+#actdirhtml = os.path.join(actdir, "html")
+#actdirxml = os.path.join(actdir, "xml")
+#sidir = "si"
+#sidirhtml = os.path.join(sidir, "html")
+#sidirxml = os.path.join(sidir, "xml") 
+#
+#if not os.path.isdir(actdir):
+#	os.mkdir(actdir)
+#
+#if not os.path.isdir(sidir):
+#	os.mkdir(sidir)
+#
+#if not os.path.isdir(actdirhtml):
+#	os.mkdir(actdirhtml)
+#
+#if not os.path.isdir(actdirxml):
+#	os.mkdir(actdirxml)
+#
+#if not os.path.isdir(sidirhtml):
+#	os.mkdir(sidirhtml)
+#
+#if not os.path.isdir(sidirxml):
+#	os.mkdir(sidirxml)
+#
+#
+#
