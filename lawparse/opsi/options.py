@@ -24,34 +24,45 @@ import getopt
 import os
 import miscfun
 import optparse
+import copy
 
-class OpsiOptionParser(optparse.OptionParser):
-	def __init__(self, *args):
-		optparse.OptionParser.__init__(self, option_list=[
-			optparse.make_option('-d', '--lawdatadir', dest='lawdata_dir'),
-			optparse.make_option('--actdir', dest="actdir"),
-			optparse.make_option('--actdirhtml', dest="actdirhtml"),
-			optparse.make_option('--actdirxml', dest="actdirxml"),
-			optparse.make_option('--sidir', dest="sidir"),
-			optparse.make_option('--sidirhtml', dest="sidirhtml"),
-			optparse.make_option('--sidirxml', dest="sidirxml"),
-			], *args)
-		current_dir = os.path.dirname(sys.argv[0]) or '.'
-		lawdata_dir = os.path.join(current_dir, '../../lawdata')
-		actdir= 'acts'
-		sidir='si'
-		self.set_defaults(actdir=actdir)
-		self.set_defaults(sidir=sidir)
-		self.set_defaults(actdirhtml=os.path.join(actdir, 'html'))
-		self.set_defaults(actdirxml=os.path.join(actdir, 'xml'))
-		self.set_defaults(sidirhtml=os.path.join(sidir, 'html'))
-		self.set_defaults(sidirxml=os.path.join(sidir, 'xml'))
+def check_list(option, opt, value):
+	return value.split(',')
 
-		
+class ExtendedOption (optparse.Option):
+	TYPES = optparse.Option.TYPES + ("list",)
+	TYPE_CHECKER = copy.copy(optparse.Option.TYPE_CHECKER)
+	TYPE_CHECKER["list"] = check_list
 
-def parselist(l):
-	return re.split(',',l)
-	
+OpsiOptionParser=optparse.OptionParser(option_class=ExtendedOption)
+OpsiOptionParser.add_option('-d', '--lawdatadir', dest='lawdata_dir'),
+OpsiOptionParser.add_option('--actdir', dest="actdir"),
+OpsiOptionParser.add_option('--actdirhtml', dest="actdirhtml"),
+OpsiOptionParser.add_option('--actdirxml', dest="actdirxml"),
+OpsiOptionParser.add_option('--sidir', dest="sidir"),
+OpsiOptionParser.add_option('--sidirhtml', dest="sidirhtml"),
+OpsiOptionParser.add_option('--sidirxml', dest="sidirxml"),
+#
+OpsiOptionParser.add_option('--consoledebug', dest="consoledebug"),
+OpsiOptionParser.add_option('--filedebug', dest="filedebug"),
+#
+OpsiOptionParser.add_option('--skip', dest="skip", type="list")
+
+current_dir = os.path.dirname(sys.argv[0]) or '.'
+lawdata_dir = os.path.join(current_dir, '../../lawdata')
+actdir= 'acts'
+sidir='si'
+
+OpsiOptionParser.set_defaults(actdir=actdir, 
+	sidir=sidir,
+	actdirhtml=os.path.join(actdir, 'html'),
+	actdirxml=os.path.join(actdir, 'xml'),
+	sidirhtml=os.path.join(sidir, 'html'),
+	sidirxml=os.path.join(sidir, 'xml'),
+	consoledebug="WARNING", 
+	filedebug="INFO", 
+	debug="WARNING", 
+	skip=[])
 
 class ShortFormatter(logging.Formatter):
 	def formatException(self,(exctype,value,traceback)):
@@ -77,6 +88,7 @@ class Log:
 		l=re.split(',',string)
 		if len(l)==1:
 			level=levelNames[l[0]]
+			length='long'
 		else:
 			level=levelNames[l[0]]
 			length=l[1]
@@ -101,88 +113,92 @@ class Log:
 			#print "setting Long Formatter"
 			handler.setFormatter(formatter)
 
-class Option:
-	def __init__(self,name,description):
-		self.name=name
-		self.description=description
-		self.type='null'
-
-	def __str__(self):
-		return "Option(%s,%s,%s)\n" % (self.type, self.name, self.description)
-
-	def key(self):
-		return self.name
-
-class SimpleOption(Option):
-	def __init__(self,name,description):
-		Option.__init__(self,name,description)
-		self.type='simple'
-		
-class ComplexOption(Option):
-	def __init__(self,name,description,default,map):
-		Option.__init__(self,name,description)
-		self.type='complex'
-		self.default=default
-		self.map=map
-
-	def __str__(self):
-		return "Option(%s,%s,%s,%s)\n" % (self.type, self.name, self.description,self.default)
-
-
-	def key(self):
-		return self.name + '='
-
-
-OptionDescriptionList=[ComplexOption('skip','Names of files to be skipped',['ukgpa1997c31.html','ukgpa1988c1.html','ukgpa1988c17.html'],lambda x:parselist(x)),
-	ComplexOption('debug','',Log(logging.WARNING,'short'),lambda x:Log.getarg(x)),
-	ComplexOption('consoledebug','',Log(logging.WARNING,'short'),lambda x:Log.getarg(x)),
-	ComplexOption('filedebug','',Log(logging.INFO,'long'),lambda x:Log.getarg(x)),
-	ComplexOption('start','Number of file in list of files at which to start',0,lambda x:int(x)),
-	SimpleOption('stoponerror','Whether to continue processing if there is a parsing error, or whether to throw an exception'),
-	SimpleOption('help','Displays this help message')]
-
-
-class Options:
-	def __init__(self):
-		self.keylist=[]
-		self.description={}
-		self.options={}
-		for opt in OptionDescriptionList:
-			self.description[opt.name]=opt
-			if opt.type=='complex':
-				self.options[opt.name]=opt.default
-			self.keylist.append(opt.key())
-
-	def __str__(self):
-		return "Options(%s;\n%s)" % (["%s: %s" % (x,self.description[x]) for x in self.description.keys()], ["%s: %s" % (x,self.options[x]) for x in self.options.keys()])
-
-	def isset(self,name):
-		return self.options.has_key(name)
-
-	def value(self,name):
-		return self.options[name]
- 
-	def usage(self):
-		for (name,opt) in self.description:
-			print "%s\t\t%s" % (name,opt.description)
-
-	def ParseArguments(self):
-
-		if len(sys.argv) > 1:
-			opts, args = getopt.getopt(sys.argv[1:],"",self.keylist)
-			#print opts, args
-			for o, a in opts:
-				o=re.sub('--','',o)
-				if self.description[o].type=='complex':
-					self.options[o]=self.description[o].map(a)
-					#print o, self.options[o]
-				elif o == "help":
-					self.usage()
-					sys.exit()
-				else:
-					self.usage()
-					sys.exit()
-		else:
-			args=[]
-
-		return args
+#class Option:
+#	def __init__(self,name,description):
+#		self.name=name
+#		self.description=description
+#		self.type='null'
+#
+#	def __str__(self):
+#		return "Option(%s,%s,%s)\n" % (self.type, self.name, self.description)
+#
+#	def key(self):
+#		return self.name
+#
+#class SimpleOption(Option):
+#	def __init__(self,name,description):
+#		Option.__init__(self,name,description)
+#		self.type='simple'
+#		
+#class ComplexOption(Option):
+#	def __init__(self,name,description,default,map):
+#		Option.__init__(self,name,description)
+#		self.type='complex'
+#		self.default=default
+#		self.map=map
+#
+#	def __str__(self):
+#		return "Option(%s,%s,%s,%s)\n" % (self.type, self.name, self.description,self.default)
+#
+#
+#	def key(self):
+#		return self.name + '='
+#
+#
+#OptionDescriptionList=[ComplexOption('skip','Names of files to be skipped',['ukgpa1997c31.html','ukgpa1988c1.html','ukgpa1988c17.html'],lambda x:parselist(x)),
+#	ComplexOption('debug','',Log(logging.WARNING,'short'),lambda x:Log.getarg(x)),
+#	ComplexOption('consoledebug','',Log(logging.WARNING,'short'),lambda x:Log.getarg(x)),
+#	ComplexOption('filedebug','',Log(logging.INFO,'long'),lambda x:Log.getarg(x)),
+#	ComplexOption('start','Number of file in list of files at which to start',0,lambda x:int(x)),
+#	SimpleOption('stoponerror','Whether to continue processing if there is a parsing error, or whether to throw an exception'),
+#	SimpleOption('help','Displays this help message')]
+#
+#
+#class Options:
+#	def __init__(self):
+#		self.keylist=[]
+#		self.description={}
+#		self.options={}
+#		for opt in OptionDescriptionList:
+#			self.description[opt.name]=opt
+#			if opt.type=='complex':
+#				self.options[opt.name]=opt.default
+#			self.keylist.append(opt.key())
+#
+#	def __str__(self):
+#		return "Options(%s;\n%s)" % (["%s: %s" % (x,self.description[x]) for x in self.description.keys()], ["%s: %s" % (x,self.options[x]) for x in self.options.keys()])
+#
+#	def isset(self,name):
+#		return self.options.has_key(name)
+#
+#	def value(self,name):
+#		return self.options[name]
+# 
+#	def usage(self):
+#		for (name,opt) in self.description:
+#			print "%s\t\t%s" % (name,opt.description)
+#
+#	def ParseArguments(self):
+#
+#		if len(sys.argv) > 1:
+#			try:
+#				opts, args = getopt.getopt(sys.argv[1:],"",self.keylist)
+#			except getopt.GetoptError:
+#				args=[]
+#				return args
+#			#print opts, args
+#			for o, a in opts:
+#				o=re.sub('--','',o)
+#				if self.description[o].type=='complex':
+#					self.options[o]=self.description[o].map(a)
+#					#print o, self.options[o]
+#				elif o == "help":
+#					self.usage()
+#					sys.exit()
+#				else:
+#					self.usage()
+#					sys.exit()
+#		else:
+#			args=[]
+#
+#		return args

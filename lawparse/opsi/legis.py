@@ -26,6 +26,9 @@ doctype='''
 		<!ENTITY pound "&#163;">
         ]>\n'''
 
+class LegisError(Exception):
+	pass
+
 class SourceRule:
 	'''A rule applied to generate the current leaf.
 
@@ -341,8 +344,8 @@ class TableRow:
 	def xml(self,locus):
 		s=''
 		for i in self.cells:
-			s=s + '<cell>%s</cell>' % i
-		return '\n<row %s>%s</row>' % (locus.xml(), s)
+			s=s + '<cell>%s</cell>\n' % i
+		return '<row %s>\n%s</row>\n' % (locus.xml(), s)
 
 class Locus:
 	def __init__(self,lex):
@@ -442,8 +445,7 @@ class PathElement:
 			num=m.group(2)
 			right=m.group(3)
 		else:
-			print "****Illegal enumeration passed to locus:%s" % num
-			sys.exit()
+			raise LegisError,  "****Illegal enumeration passed to locus:%s" % elementstring
 
 		self.num=num
 		self.enumtype=enumtype(num)

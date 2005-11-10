@@ -23,17 +23,72 @@ EXCLTAG='(?!hint:|/hint:)'
 TEXTEND='(?=<%s|$)' % EXCLTAG
 
 
+
+quotepatterns=[
+	('(?P<pre>there shall be inserted&\#151;)\s*(?=<table)','',
+	'error'),
+	("""
+		(?=<table cellpadding="8">
+			\s*<tr>
+			\s*<td width="10%"(?: valign="top")?>&nbsp;</td>
+			\s*<td>
+		&quot;)(?ix)""",'',
+	'simple'),
+
+#unsatisfactory, see below
+	("""
+		(?=<table\s*cellpadding="8">
+			\s*<tr\s*valign="top">
+			\s*<td\s*width="15%">
+			\s*<br>)(?ix)""",'',
+	'withmargin'),
+	("""
+		(?=<table\s*cellpadding="8">
+			\s*<tr\s*valign="top">\s*<td\s*width="5%">\s*<br>\s*</td>
+			\s*<td>\s*<br>&nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;&nbsp;<b>)(?ix)""",'',
+	'section'),
+	("""
+		(?=<table\s*cellpadding="8">
+			\s*<tr\s*valign="top">
+			\s*<td\s*width="20%">&nbsp;</td>\s*<td>
+			\s*<br><i>\s*<center>)(?ix)""",'',
+	'full'),
+	("""
+		(?=<table\s*cellpadding="8">
+			\s*<tr>\s*<td\s*width="10%"\s*valign="top">&nbsp;</td>
+			\s*<td align="center">\s*<a name="sdiv1A">)(?ix)""",'',
+	'heading'),
+# this is probably over-general, we should probably look only for quotes
+
+	('(?=<table\s*cellpadding="8">)','',
+	'withmargin2'),
+	("""
+		(?P<pre><TR><TD valign=top>&nbsp;</TD><TD\s*valign=top>)
+		(?=<TABLE>)(?ix)""",'',
+	'rightquote')
+	]
+
+	
+tablepatterns=[
+	('(?P<pre><TR><TD valign=top>&nbsp;</TD><TD valign=top align=center>&nbsp;<BR>T<FONT size=-1>ABLE OF </FONT>R<FONT size=-1>ATES OF </FONT>T<FONT size=-1>AX</TD></TR>\s*<TR><TD></TD><TD valign=top>)\s*(?=<table border width=100%>)','\s*(?P<post></td>\s*</tr>)', 'taxtable1997c16'),
+	('(?=<TABLE cellpadding=10 border>)','','repealtable1'),
+	('(?=<table border>)','','repealtable2'),
+	('<center>\s*(?=<table>)','\s*</center>','tableCentered'),
+	('(?=<table)','','misctable')]
+
+
 class ParseError(Exception):
 	"""Exception class for parse errors"""
 	pass
 
-class TableBalanceError(Exception):
+class TableBalanceError(ParseError):
 	pass
 
 def gettext(right):
-	'''Splits a string at the next significant tag.'''
+	'''Splits a string at the next significant tag or entity.'''
 
-	m=re.search('<(?!a|/a|format|/format|hint:|/hint:)',right)
+	#m=re.search('<(?!a|/a|format|/format|hint:|/hint:)',right)
+	m=re.search('<(?!a|/a|format|/format|hint:|/hint:)|&#151;|&nbsp;',right)
 	if m:
 		s=right[:m.start()]
 		rest=right[m.start():]
@@ -42,27 +97,34 @@ def gettext(right):
 			s=s+'<hint:fraction>'+m2.group(1)+'</hint:fraction>'
 			(one,rest)=gettext(rest[m2.end():])
 			s=s+one
+		if False: #re.match('&#151;',rest):
+			print rest[:32]
+			sys.exit()
 		return(s,rest)
 	else:
 		return(right,'')	
 
 
 def TableBalance(tablestring):
+	"""Returns the position where the table in tablestring ends.
+
+	The tablestring argument must beging with a <table> tag."""
+
 	logger=logging.getLogger('')
 	s=tablestring
 	pos=0
 	total=0
 	m=re.match('<table(?i)',s)
 	if not m:
-		logger.error("failed to find first table in:\n%s" % tablestring)
-		raise TableBalanceError, 'First table not found'
+		#logger.error("failed to find first table in:\n%s" % tablestring[:255])
+		raise TableBalanceError, "First table not found\nFailed to find first table in:\n%s" % tablestring[:32]
 	t=1
 	total=m.end()
 
 	while t>0:
 		if total>=len(tablestring):
-			logger.error("error balancing table (t=%s):\n%s" % (t,tablestring))
-			raise TableBalanceError, 'Balancing failed'
+			
+			raise TableBalanceError, 'Balancing failed\nError balancing table (t=%s):\n%s' % (t,tablestring[:255])
 		s=tablestring[total:]
 		m=re.search('(<table|</table>)(?i)',s)
 		if m:

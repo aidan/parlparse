@@ -70,6 +70,108 @@ class LegislationFragment:
 
 	# function for pulling off regexps from the front of the text
 
+
+
+	def RemoveQuotationMarks(self):
+			logger=logging.getLogger('')
+			quotes=re.findall('&quot;',self.txt)
+			if len(quotes) % 2 > 0:
+				logger.warning("an odd number (%i) of quotation marks found" % len(quotes))
+			if len(quotes)<2:
+				logger.warning("fewer than two quotation marks in quotation")
+			else:
+				first=self.txt.find('&quot;')
+				last=self.txt.rfind('&quot;')
+				self.txt=self.txt[:first]+self.txt[first+6:last]+self.txt[last+6:]
+	
+			logging.debug("After removal:\n%s\n---------------" % self.txt)
+	
+
+	def RemoveJunk(self):
+		'''Removes various superfluous tags and comments.
+
+		Removes horizontal rules (which shouldn't be there); XML 
+		comments which reveal only the inner workings of opsi, 
+		and <dt1 and <p4 which must be mistakes (surely).
+		'''
+
+		self.txt=re.sub('\s*<hr[^>]*>(?i)','',self.txt)
+		self.txt=re.sub('<dt1[^>]*>([\s\S]*?)</dt1>(?i)','\\1',self.txt)
+		self.txt=re.sub('<p4[^>]*>([\s\S]*?)</p4>(?i)','\\1',self.txt)
+		self.txt=re.sub('<!--[^-]*-->','',self.txt)
+
+
+	def RemoveTables(self, tablelist, patternlist, tabtype):
+		logger=logging.getLogger('')
+		n=0	
+		logger.info('Removing tables')
+		for (firstpattern, secondpattern, label) in patternlist:
+			logger.info('Searching for tabtype=%s label=%s' % (tabtype, label))
+			logger.debug('pattern to be matched %s' % firstpattern)
+			logger.debug('%s' % re.search(firstpattern,self.txt))
+	
+			logger.debug("**** %s" %  re.search('<table cellpadding="8"',self.txt))
+	
+			while re.search(firstpattern,self.txt):
+	
+				leftmatch=re.search(firstpattern,self.txt)
+				logger.info('Table pattern(%s,%s,%s)' % (tabtype, label, leftmatch.start()))
+				logger.debug('spattern=%s' % firstpattern)
+				# obtain the pre match pattern.
+				if leftmatch.groupdict().has_key('pre'):
+					pre=leftmatch.group('pre')
+				else:
+					pre=''
+	
+				tableoffset=parsefun.TableBalance(self.txt[leftmatch.end():])
+				tablestart=leftmatch.end()
+				tableend=tablestart+tableoffset
+	
+				tablematch=re.match('<table[^>]*?>([\s\S]*?)</table>$',self.txt[tablestart:tableend])
+				if not tablematch:
+					raise ParseTableError, 'table pattern fails to match:\n%s' % self.txt[tablestart:tableend]
+				store=tablematch.group(1)
+				logging.debug("Storing at number n=%s\n%s" % (n, store))
+	
+				if False: #n==8:
+					print "*****storing:"
+					print store
+					print "*****"
+	
+				rightmatch=re.match(secondpattern,self.txt[tableend:])
+				if not rightmatch:
+					raise TableBlanceError
+				if rightmatch.groupdict().has_key('post'):
+					post=rightmatch.group('post')
+				else:
+					post=''
+	
+				tablelist.append(store)
+	
+				quote='<%s n="%i" pattype="%s"/>' % (tabtype, 
+					n,label)
+				n=n+1
+				self.txt=self.txt[:tablestart] + pre + quote + post + self.txt[tableend:]
+				
+
+	def RemoveTabular(self):
+		self.RemoveTables(self.tables, parsefun.tablepatterns, 'tabular')
+
+	def RemoveQuotations(self):
+		self.RemoveTables(self.quotations, parsefun.quotepatterns, 'quotation')
+
+
+
+	def Tidy(self, isquote=False):
+		self.RemoveJunk()
+		self.RemoveQuotations()
+		self.RemoveTabular()
+	
+		if isquote:
+			logging.info("Removing quotation marks")
+			self.RemoveQuotationMarks()
+	
+
 	def QuotationAsFragment(self,n,locus):
 		qtext=self.quotations[n]
 		fragment=QuotedActFragment(qtext,locus)
@@ -123,11 +225,9 @@ class QuotedActFragment(ActFragment):
 		logger=logging.getLogger('opsi.actparse')
 		#locus=legis.Locus(self)
 		quotation=legis.Quotation(True,self.locus)
-		if re.search('>"',self.txt):
-			ParseBody(self,quotation,'entire')
-		else:
-			logger.warning("***warning, tried to parse as quotation without quotation marks")
-			#print "***warning, unparseable quotation text", self.txt
+		
+		ParseBody(self,quotation,'entire')
+		
 		return quotation
 
 
@@ -148,7 +248,6 @@ class SI(LegislationFragment):
 
 	dir=staticmethod(dir)
 	
-
 	def Parse(self):
 		ActParseHead(self)
 		
@@ -229,28 +328,36 @@ class Act(ActFragment):
 # does not properly close a table.
 
 
-def SetupLogging(options,name):
+def SetupLogging(values,name):
 
 	logger=logging.getLogger('')
 
-	mainlog = logging.FileHandler('actparse.log')
-	options.value('debug').ConfigHandler(mainlog)
-	logger.addHandler(mainlog)
+	mainlogfh = logging.FileHandler('actparse.log')
+	#options.value('debug').ConfigHandler(mainlog)
+	mainlog=options.Log.getarg(values.debug)
+	mainlog.ConfigHandler(mainlogfh)	
 
-	console = logging.StreamHandler()
+	logger.addHandler(mainlogfh)
+
+	consolefh = logging.StreamHandler()
 	#print "console log options: %s" % options.value('consoledebug')
-	options.value('consoledebug').ConfigHandler(console)
-	logger.addHandler(console)	
+	#options.value('consoledebug').ConfigHandler(console)
+	console=options.Log.getarg(values.consoledebug)
+	console.ConfigHandler(consolefh)
+
+	logger.addHandler(consolefh)	
 
 	#print logging.getLogger('').getEffectiveLevel()
 
-def ParseLoop(statlist,options, Stat):
+def ParseLoop(statlist,values, Stat):
 	# just run through and apply to all the files
 	logger=logging.getLogger('')
 
-	start=options.value('start')
-	skipfiles=options.value('skip')
-	filedebuglevel=options.value('filedebug')
+	start=values.start #options.value('start')
+	skipfiles=values.skip #options.value('skip')
+	filedebuglevel=options.Log.getarg(values.filedebug).level
+
+	#options.value('filedebug')
 
 	for i in range(start,len(statlist)):
 		s="reading %s %s" % (i, statlist[i])
@@ -260,7 +367,7 @@ def ParseLoop(statlist,options, Stat):
 			#logger.warning(s)
 			continue
 
-		dirhtml=Stat.dir(options2, 'html')
+		dirhtml=Stat.dir(values, 'html')
 		logger.debug(dirhtml, statlist[i], os.path.join(dirhtml, statlist[i]))
 		fin = open(os.path.join(dirhtml, statlist[i]), "r")
 		txt = fin.read()
@@ -279,12 +386,24 @@ def ParseLoop(statlist,options, Stat):
 			os.remove(filelogname)
 	
 		filehandler=logging.FileHandler(filelogname)
-		options.value('filedebug').ConfigHandler(filehandler)
+		options.Log.getarg(values.filedebug).ConfigHandler(filehandler)
 		opsilogger.addHandler(filehandler)
-
-
+	
 		try:
-			lexed=stat.Parse()
+			if values.preprocess:
+				print "preprocessing"
+				
+				ActParseHead(stat)
+				
+				stat.Tidy()
+				print "tidied statute"
+
+				outfile=os.path.join(Stat.dir(values, 'xml'),"%s.pp" % stat.ShortID())
+				outstring=stat.txt
+			else:
+				lexed=stat.Parse()
+				outfile=os.path.join(Stat.dir(values, 'xml'), lexed.id+'.xml')
+				outstring=lexed.xml()				
 		except parsefun.ParseError, inst:
 			opsilogger.warning(inst)
 			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,stat.ShortID()))
@@ -301,9 +420,11 @@ def ParseLoop(statlist,options, Stat):
 #		filehandler.close()
 
 		if success:
-
-			out = open(os.path.join(Stat.dir(options2, 'xml'), lexed.id+".xml"), "w")
-			out.write(lexed.xml()) 
+			
+			print outfile, len(outstring), success
+			
+			out = open(outfile, "w")
+			out.write(outstring) 
 
 		
 
@@ -319,19 +440,21 @@ if __name__ == '__main__':
 
 	logging.getLogger('').setLevel(0)
 
-	parser = options.OpsiOptionParser()
-	(options2, args) = parser.parse_args()
+	parser = options.OpsiOptionParser
 
-	options=options.Options()
-	args=options.ParseArguments()
+	parser.add_option('-s','--start',dest='start', type="int")
+	parser.add_option('-p','--preprocess',dest='preprocess', action="store_true", help="Only run the file through the preprocessor.")
 
-	
+	parser.set_defaults(preprocess=False, start=0)
+
+	(values2, args) = parser.parse_args()
+
 	if len(args) > 0:
 		statlist = ["ukgpa%s.html" % x for x in args]
 	else:
-		statlist = os.listdir(Stat.dir(options2, 'html'))
+		statlist = os.listdir(Stat.dir(values2, 'html'))
 		del statlist[0]	# removes file ".svn"
 
-	SetupLogging(options,'opsi')
+	SetupLogging(values2,'opsi')
 
-	ParseLoop(statlist,options, Stat)
+	ParseLoop(statlist,values2, Stat)

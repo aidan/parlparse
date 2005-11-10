@@ -30,7 +30,7 @@ headlines1 = [('middle', '[\s\S]*?<table(?:cellpadding="?2"?|width="?95%"?|\s)*>
 			  ('middle', '<td\s*valign="?bottom"?>(?:&nbsp;<br>)?\s+(?i)'),
 			  ('name',   '<font\s*size="?\+3"?><b>([\s\S]{1,250}?)</b></font>\s+(?i)'),
 			  ('year',   '<p>(?:</p>)?<font\s*size="?\+1"?>(?:<b>)?(\d{4})'),
-			  ('chapter','\s*(?:ch?\s*\.|chapter)?\s*(\d+)(?:</b>)?</font>\s+(?i)'),
+			  ('chapter','\s*(?:ch?\s*\.|chapter)?\s*(\d+)\s*(?:</b>)?</font>\s+(?i)'),
 			  ('middle', '</td>\s*</tr>\s+(?i)'),
 			  ('middle', '<tr(?:\s*xml\S*)*>\s*<td\s*colspan="?2"?>\s*<hr></td>\s*</tr>\s+(?i)'),
 			  ('middle', '<tr>\s*<td\s*valign="?top"?>&nbsp;</td>\s+(?i)'),
