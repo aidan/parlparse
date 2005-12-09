@@ -42,8 +42,9 @@ def deformat(s,count=0):
 	Image tags are also removed altogether"""
 
 	for (a,b) in formats:
-		s=re.sub('<%s>(?i)' % a,'<hint:format charstyle="%s">' % b,s,count)
-		s=re.sub('</%s>(?i)' % a,'</hint:format>',s,count)
+		s=s.replace('<%s>(?i)' % a, '<hint:format charstyle="%s">' % b, count)
+		s=s.replace('</%s>(?i)' % a,'</hint:format>', count)
+	
 	s=re.sub('<img[^>]*>(?i)','',s)
 	return s
 
@@ -775,26 +776,6 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 			right=right[m.end():]
 			continue
 
-		# these occur in the badly formatted schedule 5 of the
-		# Merchant Shipping Act 1988, which may need attention.
-
-		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;([^<\(&]*?)(?i)',right)
-		if m:
-			logger.debug("****debug, MSA rule")
-			if locus.lex.id=='ukpga1988c12':
-				locus.resetpath()
-				leaf=legis.Leaf('provision',locus,margin)
-				locus.lex.append(leaf)
-				right=right[m.end():]
-				continue
-			else:
-				leaf=legis.Leaf('provision',locus,margin)
-				locus.lex.append(leaf)
-				AddContent(leaf,m.group(1))
-				right=right[m.end():]
-				continue			
-
-			locus.lex.addsourcerule(OpsiSourceRule('TextHanging2'))
 
 		m=re.match('\s*<p>',right)
 		if m:
@@ -857,10 +838,25 @@ def parseright(act,right,locus,quotestatus,margin=legis.Margin(),format=''):
 			right=right[m.end():]
 			continue
 
+		# these occur in the badly formatted schedule 5 of the
+		# Merchant Shipping Act 1988, which may need attention.
 
-#		m=re.match('<i>|<b>(?i)',right)
-#		if m:
-#			right=deformat(right,1)
+		m=re.match('\s*&nbsp;&nbsp;&nbsp;&nbsp;([^<\(&]*?)(?i)',right)
+		if m:
+			logger.debug("****debug, MSA rule")
+			if locus.lex.id=='ukpga1988c12':
+				locus.resetpath()
+				leaf=legis.Leaf('provision',locus,margin)
+				locus.lex.append(leaf)
+			else:
+				leaf=legis.Leaf('provision',locus,margin)
+				locus.lex.append(leaf)
+				AddContent(leaf,m.group(1))
+
+			locus.lex.addsourcerule(OpsiSourceRule('TextHanging2'))
+			right=right[m.end():]
+			continue
+
 
 		m=re.match('%s|&nbsp;' % parsefun.TEXTEND,right)
 		if m:
@@ -905,18 +901,13 @@ def ParseBody(act,pp,quotestatus):
 
 	while  0 < len(remain):
 
-		#print "*******************************"
-		#print locus.lex.xml()
-		#print "*******************************"
-
-		# <pageurl ....
 		m=re.match('\s*<pageurl[^>]*?>',remain)
 		if m:
 			logger.info("**** page break")
 			remain=remain[m.end():]
 			continue
 
-		# Remove various address of acts that use <a> tags.
+		# Remove various addresses of acts that use <a> tags.
 
 		remain=re.sub('<a[^>]*>(\d+)\s*c\.&#160;(\d+)</a>?((?:\.)?)','''<hint:actref year="\\1" chapter="\\2">\\1 c.\\2\\3</hint:actref>''',remain)
 		remain=re.sub('''S\.I\.&#160;<a[^>]*>(\d+)/(\d+)</a>((?:\.)?)''','''<hint:siref year="\\1" number="\\2">S.I.(?:&#160;)?\s*\\1/\\2\\3</hint:siref>''',remain)

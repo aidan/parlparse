@@ -88,11 +88,13 @@ for s in sections:
 		divider("Division(%s)" % s.xpath('child::node()')[0].nodeValue)
 	elif leaftype=='heading':
 		t=s.xpath('child::node()')
+		print type(t)
 		if len(t)>0:
 			content=t[0].nodeValue
 		else:
 			content=''
 		divider("Heading(%s)" % content)
+		print t, len(t), t[0], str(t[0]), type(t[0]), t[0].data, t[0].nodeValue
 
 sys.exit()
 

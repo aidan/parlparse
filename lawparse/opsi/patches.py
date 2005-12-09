@@ -21,7 +21,11 @@ import sys
 import logging
 
 
-patches=[('ukgpa1997c16',[('&rsquo;\)',''),
+patchlist=[('ukgpa1988c1',
+		[('shall not apply\.\(2\)&nbsp;An election that paragraph 4','shall not apply.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;(2)&nbsp;An election that paragraph 4'),
+		('Schedule D\.\(2\)&nbsp;Tax under Schedule B','Schedule D.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;(2)&nbsp;Tax under Schedule B'),
+		('or stock certificate\.\(2\)&nbsp;Part III','or stock certificate.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;(2)&nbsp;Part III')]),
+	('ukgpa1997c16',[('&rsquo;\)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18pt}"></a></TD></TR>(?i)',''),
 		('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt in relation to accounting periods beginning after 5th March 1997\."></a></TD></TR>(?i)','')]),
@@ -38,13 +42,20 @@ patches=[('ukgpa1997c16',[('&rsquo;\)',''),
 		]
 
 def ActApplyPatches(act):
-	logger=logging.getLogger('opsi')
+	'''Uses a simple patching mechanism to correct the source of acts.
+
+	'''
+
+	#print "entered patches"
+	logger=logging.getLogger('')
 	
 	name=act.ShortID()
 
+	#print "name=%s" % name
+
 	logger.info("****Checking for patches to %s" % name)
 
-	for (n,l) in patches:
+	for (n,l) in patchlist:
 		if n==name:
 			logger.info("****Patching %s" % n)
 			for (pattern,replacement) in l:
@@ -53,6 +64,7 @@ def ActApplyPatches(act):
 					logging.error("***error, failed to find substitution text")
 					print re.search('<TR><TD valign=top>&nbsp;</TD>\s*<TD align=center valign=top><a name="sch18ptt cols="c3"}"',act.txt)
 					raise Exception
+
 				m=re.search(pattern,act.txt)
 				if m:
 					logger.debug("***Before:%s" % act.txt[m.start()-16:m.end()+16])

@@ -57,6 +57,10 @@ class OpsiSourceInfo(legis.SourceInfo):
 		return '<sourceinfo source="opsi"\n\turl="%s"%s\n/>' % (self.url,s)
 		
 
+class RemoveTablesError(parsefun.ParseError):
+	pass
+
+
 class LegislationFragment:
 	def __init__(self,txt):
 		self.txt=txt
@@ -69,8 +73,6 @@ class LegislationFragment:
 		return 'unidentified fragment'
 
 	# function for pulling off regexps from the front of the text
-
-
 
 	def RemoveQuotationMarks(self):
 			logger=logging.getLogger('')
@@ -129,7 +131,7 @@ class LegislationFragment:
 	
 				tablematch=re.match('<table[^>]*?>([\s\S]*?)</table>$',self.txt[tablestart:tableend])
 				if not tablematch:
-					raise ParseTableError, 'table pattern fails to match:\n%s' % self.txt[tablestart:tableend]
+					raise RemoveTablesError, 'table pattern fails to match:\n%s' % self.txt[tablestart:tableend]
 				store=tablematch.group(1)
 				logging.debug("Storing at number n=%s\n%s" % (n, store))
 	
@@ -140,7 +142,7 @@ class LegislationFragment:
 	
 				rightmatch=re.match(secondpattern,self.txt[tableend:])
 				if not rightmatch:
-					raise TableBlanceError
+					raise RemoveTablesError
 				if rightmatch.groupdict().has_key('post'):
 					post=rightmatch.group('post')
 				else:
@@ -151,8 +153,19 @@ class LegislationFragment:
 				quote='<%s n="%i" pattype="%s"/>' % (tabtype, 
 					n,label)
 				n=n+1
-				self.txt=self.txt[:tablestart] + pre + quote + post + self.txt[tableend:]
-				
+				#self.txt=self.txt[:tablestart] + pre + quote + post + self.txt[tableend:]
+				lstart=leftmatch.start()
+				lend=leftmatch.end()
+				rstart=rightmatch.start()+tableend
+				rend=rightmatch.end()+tableend
+				#print lstart,lend, tablestart, tableend, firstpattern, secondpattern, n, label, rstart, rend
+				#print self.txt[lstart:lend]
+				#print self.txt[rstart:rend]
+				#self.txt=self.txt[:leftmatch.start()] + pre + quote + post + self.txt[rightmatch.end():]
+				self.txt=self.txt[:lstart] + pre + quote + post + self.txt[rend:]
+								
+
+				#sys.exit()
 
 	def RemoveTabular(self):
 		self.RemoveTables(self.tables, parsefun.tablepatterns, 'tabular')
@@ -180,11 +193,13 @@ class LegislationFragment:
 		return fragment
 
 	def NibbleHead(self, hcode, hmatch):
+		logger=logging.getLogger('')
 		mline = re.match(hmatch, self.txt)
 		if not mline:
-			print 'failed at:', hcode, ":\n", hmatch, "\non:"
-			print self.txt[:1000]
-			raise Exception
+			#print 'failed at:', hcode, ":\n", hmatch, "\non:"
+			#print self.txt[:1000]
+			raise parsefun.ParseError, 'failed at:%s:\n%s:\non:\n%s' % (hcode, hmatch, self.txt[:1000])
+			
 
 		# extract any strings
 		# (perhaps make a class that has all these fields in it)
@@ -261,7 +276,7 @@ class SI(LegislationFragment):
 	
 class Act(ActFragment):
 	def __init__(self, cname, txt):
-		logger=logging.getLogger('')
+		logger=logging.getLogger('opsi.actparse')
 		LegislationFragment.__init__(self,txt)
 		m = re.search("(\d{4})c(\d+).html$", cname)
 		self.year = m.group(1)
@@ -333,15 +348,12 @@ def SetupLogging(values,name):
 	logger=logging.getLogger('')
 
 	mainlogfh = logging.FileHandler('actparse.log')
-	#options.value('debug').ConfigHandler(mainlog)
 	mainlog=options.Log.getarg(values.debug)
 	mainlog.ConfigHandler(mainlogfh)	
 
 	logger.addHandler(mainlogfh)
 
 	consolefh = logging.StreamHandler()
-	#print "console log options: %s" % options.value('consoledebug')
-	#options.value('consoledebug').ConfigHandler(console)
 	console=options.Log.getarg(values.consoledebug)
 	console.ConfigHandler(consolefh)
 
@@ -354,7 +366,8 @@ def ParseLoop(statlist,values, Stat):
 	logger=logging.getLogger('')
 
 	start=values.start #options.value('start')
-	skipfiles=values.skip #options.value('skip')
+	skipfiles=[ 'ukgpa%s.html' % id for id in values.skip]  #options.value('skip')
+
 	filedebuglevel=options.Log.getarg(values.filedebug).level
 
 	#options.value('filedebug')
@@ -362,6 +375,7 @@ def ParseLoop(statlist,values, Stat):
 	for i in range(start,len(statlist)):
 		s="reading %s %s" % (i, statlist[i])
 		logger.warning(s)
+
 		if statlist[i] in skipfiles:
 			logger.warning("skipping %s %s" % (i, statlist[i]))
 			#logger.warning(s)
@@ -374,7 +388,11 @@ def ParseLoop(statlist,values, Stat):
 		fin.close()
 
 		stat = Stat(statlist[i], txt)
+		
 		patches.ActApplyPatches(stat)
+		
+		if values.patchonly:
+			sys.exit()
 
 		# the parsing process
 
@@ -404,12 +422,15 @@ def ParseLoop(statlist,values, Stat):
 				lexed=stat.Parse()
 				outfile=os.path.join(Stat.dir(values, 'xml'), lexed.id+'.xml')
 				outstring=lexed.xml()				
-		except parsefun.ParseError, inst:
+		except (parsefun.ParseError,legis.LegisError), inst:
 			opsilogger.warning(inst)
-			opsilogger.exception("+++Error occurred in file number %s (%s)" % (i,stat.ShortID()))
-			opsilogger.exception(traceback.format_exc())
-#			if options.isset('stoponerror'):
-#				raise parsefun.ParseError
+			opsilogger.error("+++Error occurred in file number %s (%s)" % (i,stat.ShortID()))
+			#opsilogger.exception(traceback.format_exc())
+			if False: #values.stoponerror:
+				#raise parsefun.ParseError
+				#raise Exception
+				print "values.stoponerror=%s\nstopped on error" % values.stoponerror
+				sys.exit()
 			
 			success=False
 		else:
@@ -440,21 +461,28 @@ if __name__ == '__main__':
 
 	logging.getLogger('').setLevel(0)
 
+	# setting up options for actparse.py
+
 	parser = options.OpsiOptionParser
 
-	parser.add_option('-s','--start',dest='start', type="int")
+	parser.add_option('-s','--start',dest='start', type="int", help="Number of file to start at")
 	parser.add_option('-p','--preprocess',dest='preprocess', action="store_true", help="Only run the file through the preprocessor.")
+	parser.add_option('-x','--stoponerror', dest='stoponerror', action="store_true", help="Stop if a file gives an error, rather than continuing regardless", default="False")
+	parser.add_option('--patchonly',dest='patchonly',action="store_true",help="only apply patches to the file")
 
-	parser.set_defaults(preprocess=False, start=0)
+	parser.set_defaults(preprocess=False, start=0, patchonly=False)
 
-	(values2, args) = parser.parse_args()
+	(values, args) = parser.parse_args()
+
+	print "values.stoponerror=%s" % values.stoponerror
+	#sys.exit()
 
 	if len(args) > 0:
 		statlist = ["ukgpa%s.html" % x for x in args]
 	else:
-		statlist = os.listdir(Stat.dir(values2, 'html'))
+		statlist = os.listdir(Stat.dir(values, 'html'))
 		del statlist[0]	# removes file ".svn"
 
-	SetupLogging(values2,'opsi')
+	SetupLogging(values,'opsi')
 
-	ParseLoop(statlist,values2, Stat)
+	ParseLoop(statlist,values, Stat)

@@ -29,6 +29,9 @@ doctype='''
 class LegisError(Exception):
 	pass
 
+class SourceRuleOwnerMismatch(LegisError):
+	pass
+
 class SourceRule:
 	'''A rule applied to generate the current leaf.
 
