@@ -25,4 +25,3 @@ General Modules
 legis.py      - law object model, stores logical structure of act, emits XML
 miscfun.py    - where files are kept
 
-
