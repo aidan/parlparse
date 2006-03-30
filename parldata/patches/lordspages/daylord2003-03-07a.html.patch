@@ -1,0 +1,92 @@
+--- /home/parlparse/parldata/cmpages/lordspages/daylord2003-03-07a.html	2005-08-11 23:28:25.000000000 +0100
++++ /home/parlparse/parldata/tmp/patchtmp-daylord2003-03-07a-I_PGFI.html	2006-03-30 13:36:43.460182944 +0100
+@@ -2174,12 +2174,14 @@
+ <FONT SIZE=3></UL>
+ <a name="30307w01_para3"></a><P>
+ <br>
+-<UL><FONT SIZE=2>
++<table>
+ <TR><TD><FONT SIZE=2>R IRISH home service full time</TD><TD><FONT SIZE=2> 6
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH home service part time</TD><TD><FONT SIZE=2> 4
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH General Service</TD><TD><FONT SIZE=2> 4
++</td></tr>
++</table>
+ <P>
+ <FONT SIZE=3></UL>
+ <a name="30307w01_para4"></a>Recruitment figures for soldiers joining the Army are calculated by financial year. The number who joined the R IRISH are as follows:
+@@ -2192,12 +2194,14 @@
+ <FONT SIZE=3></UL>
+ <a name="30307w01_para6"></a><P>
+ <br>
+-<UL><FONT SIZE=2></TD></TR>
++<table>
+ <TR><TD><FONT SIZE=2>R IRISH home service full time</TD><TD><FONT SIZE=2>120
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH home service part time</TD><TD><FONT SIZE=2> 76
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH General Service</TD><TD><FONT SIZE=2> 42
++</td></tr>
++</table>
+ <P>
+ <FONT SIZE=3></UL>
+ <a name="30307w01_para7"></a><P>
+@@ -2207,13 +2211,15 @@
+ <FONT SIZE=3></UL>
+ <a name="30307w01_para8"></a><P>
+ <br>
+-<UL><FONT SIZE=2></TD></TR>
++<table>
+ <TR><TD><FONT SIZE=2>R IRISH home service full time</TD><TD><FONT SIZE=2>109
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH home service part time</TD><TD><FONT SIZE=2> 75
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>R IRISH General Service</TD><TD><FONT SIZE=2> 73
+-</UL><FONT SIZE=3>
++</td></tr>
++</table>
++
+ <a name="30307w01_sbhd7"></a><H4><center>Irish Guards Regiment</center></H4>
+ <P>
+ <P>
+@@ -2230,10 +2236,9 @@
+ 
+ 
+ <TR><TD><FONT SIZE=2>Nationality</TD><TD><FONT SIZE=2>Strength
+-</TR>
++</td></TR>
+ 
+ 
+-</TD></TR>
+ <TR><TD><FONT SIZE=2>Republic of Ireland</TD><TD><FONT SIZE=2>35
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>Great Britain</TD><TD><FONT SIZE=2>470
+@@ -2243,15 +2248,10 @@
+ <TR><TD><FONT SIZE=2>Others*</TD><TD><FONT SIZE=2>15
+ </TD></TR>
+ <TR><TD><FONT SIZE=2>Total Strength</TD><TD><FONT SIZE=2>675
+-</TD></TR>
+-<TR><TD><FONT SIZE=2><P>
+-
+ </TD></TR></table>
+-<TR><TD><FONT SIZE=2>All figures have been rounded to the nearest five.
+-</TD></TR>
+-<TR><TD><FONT SIZE=2>*Others include Fiji, Gambia, Grenada (Windward Islands), Jamaica, Kenya, Monserrat (Leeward Islands), Zimbabwe and the Isle of Man.
+-</TD></TR>
+-<TR><TD><FONT SIZE=2>
++
++<p><FONT SIZE=2>All figures have been rounded to the nearest five.
++<p><FONT SIZE=2>*Others include Fiji, Gambia, Grenada (Windward Islands), Jamaica, Kenya, Monserrat (Leeward Islands), Zimbabwe and the Isle of Man.
+ 
+ <a name="30307w01_sbhd8"></a><H4><center>Armed Forces: Anthrax Vaccine</center></H4>
+ <P>
+@@ -2391,7 +2391,7 @@
+ 
+ A review of the Army's future manpower requirement concluded last year, resulting in a revised manning target of 106,978 (106,980 rounded). This was published by the Defence Analytical Services Agency in June 2002. The previously published figure was 106,973 (106,970 rounded).<P>
+ 
+-The change in the RAF requirement figure of ¸190 is due to small variations in the requirement which occur throughout the year reflecting decisions taken as part of the manpower planning processes.<P>
++The change in the RAF requirement figure of -190 is due to small variations in the requirement which occur throughout the year reflecting decisions taken as part of the manpower planning processes.<P>
+ 
+ <P>
+ 
