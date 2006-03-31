@@ -521,7 +521,7 @@
 	<table>
 		<caption>Table A: Traffic Counts on A1 between Sprucefield and the Border</caption>
 		<tbody>
-			<tr pid="b.97.2/13"> <td></td> <td></td> <td></td> <td></td> <td>Direction of flow of traffic</td> </tr>
+			<tr pid="b.97.2/13"> <td></td> <td></td> <td></td> <td></td> <td colspan="2">Direction of flow of traffic</td> </tr>
 			<tr pid="b.97.2/14"> <td>Cross referenced to parts (a) to (h) of PQ 831/06</td> <td><br/>Road No.</td> <td>Census Point No.</td> <td><br/>Location</td> <td>Channel 1</td> <td>Channel 2</td> </tr>
 			<tr pid="b.97.2/15"> <td>(a) (b)</td> <td>Al</td> <td>522</td> <td>Sprucefield-Hillsborough, at Carnbane Road</td> <td>To Lisburn</td> <td>To Hillsborough</td> </tr>
 			<tr pid="b.97.2/16"> <td>(c)</td> <td>A1</td> <td>530</td> <td>Hillsborough Bypass</td> <td>To Lisburn</td> <td>To Dromore</td> </tr>
@@ -539,7 +539,7 @@
 	<table>
 		<caption>Table B</caption>
 		<tbody>
-			<tr pid="b.97.2/31"> <td></td> <td></td> <td></td> <td align="center">2004<br/>Annual Average Daily Traffic Flow</td> <td align="center">2003<br/>Annual Average Daily Traffic Flow</td> <td align="center">2002<br/>Annual Average Daily Traffic Flow</td> </tr>
+			<tr pid="b.97.2/31"> <td></td> <td></td> <td></td> <td colspan="3" align="center">2004<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2003<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2002<br/>Annual Average Daily Traffic Flow</td> </tr>
 			<tr pid="b.97.2/32"> <td>Road<br/>No.</td> <td>Census<br/>Point No.</td> <td>Location</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> </tr>
 			<tr pid="b.97.2/33"> <td>A1</td> <td>522*</td> <td>Lisburn-Hillsborough, at Carnbane</td> <td>13,080</td> <td>14,190</td> <td>27,270</td> <td>16,910</td> <td>17,070</td> <td>33,980</td> <td>17,250</td> <td>17,540</td> <td>34,790</td> </tr>
 			<tr pid="b.97.2/34"> <td>A1</td> <td>530*</td> <td>Hillsborough Bypass</td> <td>13,040</td> <td>14,120</td> <td>27,160</td> <td>13,853</td> <td>13,865</td> <td>27,718</td> <td>13,390</td> <td>13,339</td> <td>26,729</td> </tr>
@@ -559,7 +559,7 @@
 	<table>
 		<caption>Table C</caption>
 		<tbody>
-			<tr pid="b.97.2/51"> <td></td> <td></td> <td></td> <td align="center">2001<br/>Annual Average Daily Traffic Flow</td> <td align="center">2000<br/>Annual Average Daily Traffic Flow</td> </tr>
+			<tr pid="b.97.2/51"> <td></td> <td></td> <td></td> <td colspan="3" align="center">2001<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2000<br/>Annual Average Daily Traffic Flow</td> </tr>
 			<tr pid="b.97.2/52"> <td>Road<br/>No.</td> <td>Census<br/>Point No.</td> <td>Location</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> </tr>
 			<tr pid="b.97.2/53"> <td>A1</td> <td>522*</td> <td>Lisburn-Hillsborough, at Carnbane</td> <td>16,550</td> <td>16,900</td> <td>33,450</td> <td>16,290</td> <td>14,550</td> <td>30,840</td> </tr>
 			<tr pid="b.97.2/54"> <td>A1</td> <td>530*</td> <td>Hillsborough Bypass</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> </tr>
@@ -601,34 +601,34 @@
 	<table>
 		<caption>Table A: Traffic Counts on M1 Motorway</caption>
 		<tbody>
-			<tr pid="b.99.2/12"> <td></td> <td></td> <td></td> <td align="center">Direction of Flow of Traffic</td> </tr>
+			<tr pid="b.99.2/12"> <td></td> <td></td> <td></td> <td colspan="3" align="center">Direction of Flow of Traffic</td> </tr>
 			<tr pid="b.99.2/13"> <td>Road Number</td> <td>Census Point<br/>    Number</td> <td>Location</td> <td>Channel 1</td> <td>Channel 2</td> </tr>
 			<tr pid="b.99.2/14"> <td>M1</td> <td>201</td> <td>Broadway-Stockman's Lane (Junction 2)</td> <td>To Belfast</td> <td>From Belfast</td> </tr>
 			<tr pid="b.99.2/15"> <td>M1</td> <td>227</td> <td>Stockman's Lane Junction (above roundabout)</td> <td>To Belfast</td> <td>From Belfast</td> </tr>
-			<tr pid="b.99.2/16"> <td>M1</td> <td>230</td> <td>Blacks Road on-slip</td> <td align="center">One-way Traffic Flow</td> </tr>
-			<tr pid="b.99.2/17"> <td>M1</td> <td>231</td> <td>Blacks Road off-slip</td> <td align="center">One-way Traffic Flow</td> </tr>
+			<tr pid="b.99.2/16"> <td>M1</td> <td>230</td> <td>Blacks Road on-slip</td> <td colspan="2" align="center">One-way Traffic Flow</td> </tr>
+			<tr pid="b.99.2/17"> <td>M1</td> <td>231</td> <td>Blacks Road off-slip</td> <td colspan="2" align="center">One-way Traffic Flow</td> </tr>
 			<tr pid="b.99.2/18"> <td>M1</td> <td>520</td> <td>Blacks Road-Saintfield Road (Junction 6)</td> <td>To Belfast</td> <td>From Belfast</td> </tr>
 			<tr pid="b.99.2/19"> <td>M1</td> <td>521</td> <td>Sprucefield (Junction 7)&ndash;Moira (Junction 9)</td> <td>To Lisburn</td> <td>To Moira</td> </tr>
 			<tr pid="b.99.2/20"> <td>M1</td> <td>403</td> <td>Lough Road (Junction 10)&ndash;Ballynacor (Junction 11)</td> <td>To Lurgan</td> <td>To Dungannon</td> </tr>
-			<tr pid="b.99.2/21"> <td>M1</td> <td>435</td> <td>M1 to M12 off-slip</td> <td align="center">One-way Traffic Flow</td> </tr>
-			<tr pid="b.99.2/22"> <td>M1</td> <td>436</td> <td>M12 to M1 on-slip</td> <td align="center">One-way Traffic Flow</td> </tr>
+			<tr pid="b.99.2/21"> <td>M1</td> <td>435</td> <td>M1 to M12 off-slip</td> <td colspan="2" align="center">One-way Traffic Flow</td> </tr>
+			<tr pid="b.99.2/22"> <td>M1</td> <td>436</td> <td>M12 to M1 on-slip</td> <td colspan="2" align="center">One-way Traffic Flow</td> </tr>
 			<tr pid="b.99.2/23"> <td>M1</td> <td>404</td> <td>Stangmore (Junction 15)&ndash;Tamnamore (Junction 14)</td> <td>To Dungannon</td> <td>To Lurgan</td> </tr>
 		</tbody>
 	</table>
 	<table>
 		<caption>Table B: Traffic Counts on M1 Motorway</caption>
 		<tbody>
-			<tr pid="b.99.2/29"> <td></td> <td></td> <td></td> <td align="center">2004<br/>Annual Average Daily Traffic Flow</td> <td align="center">2003<br/>Annual Average Daily Traffic Flow</td> <td align="center">2002<br/>Annual Average Daily Traffic Flow</td> </tr>
+			<tr pid="b.99.2/29"> <td></td> <td></td> <td></td> <td colspan="3" align="center">2004<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2003<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2002<br/>Annual Average Daily Traffic Flow</td> </tr>
 			<tr pid="b.99.2/30"> <td>Road<br/>No.</td> <td>Census<br/>Point No.</td> <td>Location</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> </tr>
 			<tr pid="b.99.2/31"> <td>M1</td> <td>201*</td> <td>Broadway-Stockman's Lane Junction</td> <td>30,240</td> <td>30,130</td> <td>60,370</td> <td>30,360</td> <td>30,020</td> <td>60,380</td> <td>27,880</td> <td>26,790</td> <td>54,670</td> </tr>
 			<tr pid="b.99.2/32"> <td>M1</td> <td>227*</td> <td>Stockman's Lane Junction (above roundabout)</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> <td>24,760</td> <td>24,370</td> <td>49,130</td> <td>25,460</td> <td>25,060</td> <td>50,520</td> </tr>
-			<tr pid="b.99.2/33"> <td>M1</td> <td>230*</td> <td>Blacks Road on-slip</td> <td>13,070</td> <td>One-way</td> <td>13,070</td> <td align="center">One-way Traffic Flow</td> <td>12,740</td> <td align="center">One-way Traffic Flow</td> <td>13,910</td> </tr>
-			<tr pid="b.99.2/34"> <td>M1</td> <td>231*</td> <td>Blacks Road off-slip</td> <td>12,700</td> <td>One-way</td> <td>12,700</td> <td align="center">One-way Traffic Flow</td> <td>13,070</td> <td align="center">One-way Traffic Flow</td> <td>13,170</td> </tr>
+			<tr pid="b.99.2/33"> <td>M1</td> <td>230*</td> <td>Blacks Road on-slip</td> <td>13,070</td> <td>One-way</td> <td>13,070</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>12,740</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>13,910</td> </tr>
+			<tr pid="b.99.2/34"> <td>M1</td> <td>231*</td> <td>Blacks Road off-slip</td> <td>12,700</td> <td>One-way</td> <td>12,700</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>13,070</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>13,170</td> </tr>
 			<tr pid="b.99.2/35"> <td>M1</td> <td>520*</td> <td>Blacks Road-Saintfield Road, (Junction 6)</td> <td>22,700</td> <td>23,280</td> <td>45,980</td> <td>21,700</td> <td>22,030</td> <td>43,730</td> <td>19,920</td> <td>20,620</td> <td>40,540</td> </tr>
 			<tr pid="b.99.2/36"> <td>M1</td> <td>521*</td> <td>Sprucefield (Junction 7)&ndash;Moira (Junction 9)</td> <td>16,770</td> <td>16,640</td> <td>33,410</td> <td>16,220</td> <td>16,030</td> <td>32,250</td> <td>15,970</td> <td>15,470</td> <td>31,440</td> </tr>
 			<tr pid="b.99.2/37"> <td>M1</td> <td>403**</td> <td>Lough Road (Junction 10)&ndash; Ballynacor (Junction 11)</td> <td>16,130</td> <td>16,610</td> <td>32,740</td> <td>15,890</td> <td>16,350</td> <td>32,240</td> <td>20,380</td> <td>11,950</td> <td>32,330</td> </tr>
-			<tr pid="b.99.2/38"> <td>M1</td> <td>435*</td> <td>M1 to M12 off-slip</td> <td>2,120</td> <td>One-way</td> <td>2,120</td> <td align="center">One-way Traffic Flow</td> <td>1,920</td> <td align="center">One-way Traffic Flow</td> <td>1,830</td> </tr>
-			<tr pid="b.99.2/39"> <td>M1</td> <td>436*</td> <td>M12 to M1 on-slip</td> <td>2,050</td> <td>One-way</td> <td>2,050</td> <td align="center">One-way Traffic Flow</td> <td>1,850</td> <td align="center">One-way Traffic Flow</td> <td>1,770</td> </tr>
+			<tr pid="b.99.2/38"> <td>M1</td> <td>435*</td> <td>M1 to M12 off-slip</td> <td>2,120</td> <td>One-way</td> <td>2,120</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>1,920</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>1,830</td> </tr>
+			<tr pid="b.99.2/39"> <td>M1</td> <td>436*</td> <td>M12 to M1 on-slip</td> <td>2,050</td> <td>One-way</td> <td>2,050</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>1,850</td> <td colspan="2" align="center">One-way Traffic Flow</td> <td>1,770</td> </tr>
 			<tr pid="b.99.2/40"> <td>M1</td> <td>404*</td> <td>Stangmore (Junction 15)&ndash;Tamnamore (Junction 14)</td> <td>9,190</td> <td>9,060</td> <td>18,250</td> <td>8,830</td> <td>8,700</td> <td>17,530</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> </tr>
 		</tbody>
 	</table>
@@ -640,7 +640,7 @@
 	<table>
 		<caption>Table C: Traffic Counts on M1 Motorway</caption>
 		<tbody>
-			<tr pid="b.99.2/51"> <td></td> <td></td> <td></td> <td align="center">2001<br/>Annual Average Daily Traffic Flow</td> <td align="center">2000<br/>Annual Average Daily Traffic Flow</td> </tr>
+			<tr pid="b.99.2/51"> <td></td> <td></td> <td></td> <td colspan="3" align="center">2001<br/>Annual Average Daily Traffic Flow</td> <td colspan="3" align="center">2000<br/>Annual Average Daily Traffic Flow</td> </tr>
 			<tr pid="b.99.2/52"> <td>Road<br/>No.</td> <td>Census<br/>Point No.</td> <td>Location</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> <td>Chan 1#</td> <td>Chan 2#</td> <td>Total</td> </tr>
 			<tr pid="b.99.2/53"> <td>M1</td> <td>201*</td> <td>Broadway-Stockman's Lane<br/>    (Junction 2)</td> <td>28,530</td> <td>20,820</td> <td>49,350</td> <td>N/A</td> <td>N/A</td> <td>N/A</td> </tr>
 			<tr pid="b.99.2/54"> <td>M1</td> <td>227*</td> <td>Stockman's Lane Junction<br/>    (above roundabout)</td> <td>24,650</td> <td>24,620</td> <td>49,270</td> <td>24,630</td> <td>24,770</td> <td>49,400</td> </tr>

@@ -1,15 +1,16 @@
 --- /home/parlparse/parldata/cmpages/lordspages/daylord2005-07-13a.html	2005-07-28 08:05:57.000000000 +0100
-+++ /home/parlparse/parldata/tmp/patchtmp-daylord2005-07-13a-7Ge7XY.html	2006-03-30 02:33:33.100888177 +0100
-@@ -8362,7 +8362,7 @@
++++ /home/parlparse/parldata/tmp/patchtmp-daylord2005-07-13a-EvtY1k.html	2006-03-30 22:49:32.362047917 +0100
+@@ -8361,8 +8361,7 @@
+ <a name="wa_table_5"></a>
  
  <br>
- <center><b>2000&#150;01 School Year <br>
+-<center><b>2000&#150;01 School Year <br>
 -Controlled Schools<br>
-+Controlled Schools</b></center>
++<center><b>2000&#150;01 School Year - Controlled Schools</b></center>
  
  
  
-@@ -8402,7 +8402,6 @@
+@@ -8402,7 +8401,6 @@
  
  
  
@@ -17,17 +18,69 @@
  
  </table>
  
-@@ -8410,8 +8409,7 @@
+@@ -8410,8 +8408,6 @@
  
  
  
 -<p align=center>
 -<b>Maintained schools</center></b>
+ 
+ 
+ 
+@@ -8420,7 +8416,11 @@
+ <br>
+ 
+ 
+-<table border=1><tr><td class="tabletext">Board area</td><td class="tabletext">Identified for closure</td><td class="tabletext">Position
++<table border=1>
++
 +<center><b>Maintained schools</center></b>
++
++<tr><td class="tabletext">Board area</td><td class="tabletext">Identified for closure</td><td class="tabletext">Position
+ 
+ 
+ </td></tr>
+@@ -8473,7 +8473,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>2002&#150;03 School Year<br>Controlled schools
++<center><b>2002&#150;03 School Year - Controlled schools</b></center>
++
+ <tr><td>Board</td><td>Identified for Closure</td><td>Position</td></tr>
+ 
+ 
+@@ -8505,7 +8506,9 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>Maintained schools<tr><td>Board area</td><td>Identified for closure</td><td>Position</td></tr>
++<center><b>Maintained schools</b></center>
++
++<tr><td>Board area</td><td>Identified for closure</td><td>Position</td></tr>
  
  
  
-@@ -8586,7 +8584,7 @@
+@@ -8531,7 +8534,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>2003&#150;04 School Year<br>Controlled schools
++<center><b>2003&#150;04 School Year<br>Controlled schools</b></center>
++
+ <tr><td>Board</td><td>Identified for closure</td><td>Position</td></tr>
+ 
+ 
+@@ -8554,7 +8558,7 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>2004&#150;05 School Year<br>Controlled schools</center>
++<center><b>2004&#150;05 School Year<br>Controlled schools</b></center>
+ <tr><td>Board</td><td>Identified for closure</td><td>Position</td></tr>
+ 
+ 
+@@ -8586,7 +8590,7 @@
  
  </tr>
  </table>
@@ -36,7 +89,27 @@
  
  
  
-@@ -8705,7 +8703,7 @@
+@@ -8603,7 +8607,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>Maintained schools
++<center><b>Maintained schools</b></center>
++
+ <tr><td>Board</td><td>Identified for closure</td><td>Position</td></tr>
+ 
+ 
+@@ -8639,7 +8644,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>2000&#150;01 School Year<br>Controlled Schools
++<center><b>2000&#150;01 School Year<br>Controlled Schools</b></center>
++
+ <tr><td>Board</td><td>Identified for amalgamation</td><td>Position</td></tr>
+ 
+ 
+@@ -8705,7 +8711,7 @@
  <br>
  
  
@@ -45,12 +118,53 @@
  
  
  
-@@ -8825,7 +8823,7 @@
+@@ -8719,7 +8725,9 @@
+ <table border=1>
+ <br>
+ <center><b>2001&#150;02 School Year
+-<br>Controlled Schools<tr><td class="tabletext">Board</td><td class="tabletext">Identified for amalgamation</td><td class="tabletext">Position
++<br>Controlled Schools</b></center>
++
++<tr><td class="tabletext">Board</td><td class="tabletext">Identified for amalgamation</td><td class="tabletext">Position
+ 
+ </td></tr>
+ 
+@@ -8785,7 +8793,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>2003&#150;04 School Year<br>Controlled schools
++<center><b>2003&#150;04 School Year<br>Controlled schools</b></center>
++
+ <tr><td>Board</td><td>Identified for amalgamation</td><td>Position</center></b>
+ </td></tr>
+ 
+@@ -8825,7 +8834,7 @@
  
  
  
 -<p align=left>
 +<p>
+ 
+ 
+ 
+@@ -8838,7 +8847,8 @@
+ 
+ <table border=1>
+ <br>
+-<center><b>Maintained schools
++<center><b>Maintained schools</b></center>
++
+ <tr><td>Board area</td><td>Identified for amalgamation</td><td>Position</center></b>
+ </td></tr>
+ 
+@@ -8864,8 +8874,7 @@
+ <a name="wa_table_6"></a>
+ 
+ <br>
+-<center><b>2004&#150;05<br>
+-Maintained schools<br>
++<center><b>2004&#150;05<br>Maintained schools</b></center>
  
  
  
