@@ -7,41 +7,40 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;" >
 
-<!ENTITY egrave "&#232;" >
-<!ENTITY eacute "&#233;" >
-<!ENTITY ecirc  "&#234;" >
-<!ENTITY euml   "&#235;" >
+<!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
 <!ENTITY aacute "&#225;" >
 <!ENTITY acirc  "&#226;" >
 <!ENTITY atilde "&#227;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY uuml   "&#252;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
-<!ENTITY deg    "&#176;" >
 <!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="b" latest="yes">
@@ -778,7 +777,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2006-06-06b.123.0" speakerid="uk.org.publicwhip/member/1662" speakername="Edward Davey" colnum="123"  time="015:43:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/debtext/60606-0368.htm#06060644000213">
-	<p pid="b.123.0/1">I confirm that the Liberal Democrats certainly support the proposals for consolidation that the Government conceded in the other place. Our concern relates to the Government's programme motion and whether sufficient time is being given to scrutinise the new clauses that will have to be tabled to get the codification through. Will the Secretary of State elaborate on his thinking? Does he really believe that the House and the Committee can properly scrutinise the hundreds of clauses that will probably be needed between <phrase class="date" code="">15 June</phrase>, when the Committee is scheduled to start, and <phrase class="date" code="">13 July</phrase>?</p>
+	<p pid="b.123.0/1">I confirm that the Liberal Democrats certainly support the proposals for consolidation that the Government conceded in the other place. Our concern relates to the Government's programme motion and whether sufficient time is being given to scrutinise the new clauses that will have to be tabled to get the codification through. Will the Secretary of State elaborate on his thinking? Does he really believe that the House and the Committee can properly scrutinise the hundreds of clauses that will probably be needed between <phrase class="date" code="2006-06-15">15 June</phrase>, when the Committee is scheduled to start, and <phrase class="date" code="">13 July</phrase>?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2006-06-06b.123.1" speakerid="uk.org.publicwhip/member/1981" speakername="Alistair Darling" colnum="123"  time="015:43:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/debtext/60606-0368.htm#06060644000214">
@@ -1918,8 +1917,9 @@
 </speech>
 
 <division id="uk.org.publicwhip/debate/2006-06-06b.219.3" nospeaker="true" divdate="2006-06-06" divnumber="256" colnum="219"  time="021:37:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/debtext/60606-0378.htm#06060667000557">
-	<divisioncount ayes="270" noes="112" tellerayes="1" tellernoes="1"/>
+	<divisioncount ayes="271" noes="113" tellerayes="1" tellernoes="1"/>
 	<mplist vote="aye">
+		<mpname id="uk.org.publicwhip/member/1604" vote="aye">Abbott, Ms Diane</mpname>
 		<mpname id="uk.org.publicwhip/member/1486" vote="aye">Ainger, Nick</mpname>
 		<mpname id="uk.org.publicwhip/member/1516" vote="aye">Ainsworth, rh Mr. Bob</mpname>
 		<mpname id="uk.org.publicwhip/member/2008" vote="aye">Alexander, rh Mr. Douglas</mpname>
@@ -2193,6 +2193,7 @@
 		<mpname id="uk.org.publicwhip/member/1576" vote="aye" teller="yes">Liz Blackman</mpname>
 	</mplist>
 	<mplist vote="no">
+		<mpname id="uk.org.publicwhip/member/1929" vote="no">Afriyie, Adam</mpname>
 		<mpname id="uk.org.publicwhip/member/1995" vote="no">Alexander, Danny</mpname>
 		<mpname id="uk.org.publicwhip/member/1829" vote="no">Amess, Mr. David</mpname>
 		<mpname id="uk.org.publicwhip/member/1738" vote="no">Bacon, Mr. Richard</mpname>

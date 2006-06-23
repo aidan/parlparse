@@ -7,41 +7,40 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;" >
 
-<!ENTITY egrave "&#232;" >
-<!ENTITY eacute "&#233;" >
-<!ENTITY ecirc  "&#234;" >
-<!ENTITY euml   "&#235;" >
+<!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
 <!ENTITY aacute "&#225;" >
 <!ENTITY acirc  "&#226;" >
 <!ENTITY atilde "&#227;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY uuml   "&#252;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
-<!ENTITY deg    "&#176;" >
 <!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="b" latest="yes">
@@ -1371,8 +1370,9 @@
 </speech>
 
 <division id="uk.org.publicwhip/debate/2006-05-22b.1243.3" nospeaker="true" divdate="2006-05-22" divnumber="245" colnum="1243"  time="018:00:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060522/debtext/60522-0279.htm#06052329001880">
-	<divisioncount ayes="18" noes="441" tellerayes="1" tellernoes="1"/>
+	<divisioncount ayes="19" noes="442" tellerayes="1" tellernoes="1"/>
 	<mplist vote="aye">
+		<mpname id="uk.org.publicwhip/member/1577" vote="aye">Austin, John</mpname>
 		<mpname id="uk.org.publicwhip/member/1386" vote="aye">Clapham, Mr. Michael</mpname>
 		<mpname id="uk.org.publicwhip/member/1963" vote="aye">Clark, Ms Katy</mpname>
 		<mpname id="uk.org.publicwhip/member/1684" vote="aye">Cohen, Harry</mpname>
@@ -1394,6 +1394,7 @@
 		<mpname id="uk.org.publicwhip/member/1697" vote="aye" teller="yes">Kelvin Hopkins</mpname>
 	</mplist>
 	<mplist vote="no">
+		<mpname id="uk.org.publicwhip/member/1604" vote="no">Abbott, Ms Diane</mpname>
 		<mpname id="uk.org.publicwhip/member/1929" vote="no">Afriyie, Adam</mpname>
 		<mpname id="uk.org.publicwhip/member/1486" vote="no">Ainger, Nick</mpname>
 		<mpname id="uk.org.publicwhip/member/1516" vote="no">Ainsworth, rh Mr. Bob</mpname>
@@ -2163,7 +2164,7 @@
 	<p pid="b.1261.2/4">We have heard about the commanding officers welcoming the proposed changes to the Army Act or to military law generally. That is as may be. I was never faced with very serious crimes committed on active service, but I had some extremely difficult crimes to deal with inside barracks, and I would have loved to be able to say, &quot;Nothing to do with me, youth. You've got to go now into the military justice system and I don't have to make a decision about you, Private So-and-so.&quot; That would have been great; I would have loved it. It would have been a cop-out for me as the commanding officer. But that attacks precisely the relationship between the private soldier and the commanding officer of his unit.</p>
 	<p pid="b.1261.2/5">Let us bear in mind what we are talking about. The bulk of kids fighting in Iraq today&mdash;they are kids&mdash;are aged about 18&amp;frac12; or 19. They come, for the most part, from very difficult circumstances. I was interested to hear earlier how the House regards these fine upstanding individuals and their ability to make decisions. They are fine upstanding individuals, but by golly, they come from difficult backgrounds, for the most part. It was my experience that they needed every bit of leadership, guidance and protection that their officers and non-commissioned officers could provide for them.</p>
 	<p pid="b.1261.2/6">That is why the regimental sergeant-major, standing outside what we called commanding officer's orders&mdash;in other words, a commanding officer acting as a magistrate inside barracks or on operations&mdash;would say to a private soldier, &quot;Are you guilty?&quot;, to which the private soldier would generally say, &quot;Of course I'm guilty. I daren't say I'm not.&quot; Clearly, that is nonsense. It was up to the commanding officer to say, as a soldier came in front of him to get summary justice, &quot;Look, son, you are now in front of a court of law. Just because you've gone through your platoon commander, your company commander and now your commanding officer, that does not mean to say that you are necessarily guilty.&quot;</p>
-	<p pid="b.1261.2/7">The private soldier depends on the commanding officer to be his advocate, his leader, his protector. The private soldier who is sleeping for four hours a day in two two-hour bursts, who one minute is being shot at by well armed terrorists and the next is expected to dish out food aid or whatever to injured and hungry civilians&mdash;that man requires a lieutenant-colonel or his equivalent also to have had four hours sleep that day, also to be operating in conditions of 100&deg; Fahrenheit, and also to be required to carry a 60 or 70 lb set of webbing.</p>
+	<p pid="b.1261.2/7">The private soldier depends on the commanding officer to be his advocate, his leader, his protector. The private soldier who is sleeping for four hours a day in two two-hour bursts, who one minute is being shot at by well armed terrorists and the next is expected to dish out food aid or whatever to injured and hungry civilians&mdash;that man requires a lieutenant-colonel or his equivalent also to have had four hours sleep that day, also to be operating in conditions of 100&ordm; Fahrenheit, and also to be required to carry a 60 or 70 lb set of webbing.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2006-05-22b.1262.0" speakerid="uk.org.publicwhip/member/1412" speakername="Siôn Simon" colnum="1262"  time="019:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060522/debtext/60522-0281.htm#06052329001001">
@@ -2553,8 +2554,9 @@
 </speech>
 
 <division id="uk.org.publicwhip/debate/2006-05-22b.1284.6" nospeaker="true" divdate="2006-05-22" divnumber="246" colnum="1284"  time="020:45:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060522/debtext/60522-0283.htm#06052329001881">
-	<divisioncount ayes="322" noes="121" tellerayes="1" tellernoes="1"/>
+	<divisioncount ayes="323" noes="122" tellerayes="1" tellernoes="1"/>
 	<mplist vote="aye">
+		<mpname id="uk.org.publicwhip/member/1604" vote="aye">Abbott, Ms Diane</mpname>
 		<mpname id="uk.org.publicwhip/member/1486" vote="aye">Ainger, Nick</mpname>
 		<mpname id="uk.org.publicwhip/member/1516" vote="aye">Ainsworth, rh Mr. Bob</mpname>
 		<mpname id="uk.org.publicwhip/member/1995" vote="aye">Alexander, Danny</mpname>
@@ -2880,6 +2882,7 @@
 		<mpname id="uk.org.publicwhip/member/1413" vote="aye" teller="yes">Steve McCabe</mpname>
 	</mplist>
 	<mplist vote="no">
+		<mpname id="uk.org.publicwhip/member/1929" vote="no">Afriyie, Adam</mpname>
 		<mpname id="uk.org.publicwhip/member/1857" vote="no">Ainsworth, Mr. Peter</mpname>
 		<mpname id="uk.org.publicwhip/member/1635" vote="no">Atkinson, Mr. Peter</mpname>
 		<mpname id="uk.org.publicwhip/member/1738" vote="no">Bacon, Mr. Richard</mpname>

@@ -7,41 +7,40 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;" >
 
-<!ENTITY egrave "&#232;" >
-<!ENTITY eacute "&#233;" >
-<!ENTITY ecirc  "&#234;" >
-<!ENTITY euml   "&#235;" >
+<!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
 <!ENTITY aacute "&#225;" >
 <!ENTITY acirc  "&#226;" >
 <!ENTITY atilde "&#227;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY uuml   "&#252;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
-<!ENTITY deg    "&#176;" >
 <!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -294,7 +293,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2006-06-14a.760.5" speakerid="uk.org.publicwhip/member/1806" speakername="Tony Blair" speakeroffice="The Prime Minister"  colnum="760"  time="11:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/debtext/60614-0477.htm#06061448000074">
-	<p pid="a.760.5/1">Twenty-one out of the 31 Bichard recommendations have now been implemented. The Safeguarding Vulnerable Groups Bill, which will put into place the new vetting and barring scheme, has completed its passage through the House of Lords and will have its Second Reading in the House of Commons on <phrase class="date" code="">19 June</phrase>. We are reporting progress regularly to Parliament, most recently on<phrase class="date" code="2006-05-25">25 May</phrase>, and we see no need at present to reconvene the inquiry team.</p>
+	<p pid="a.760.5/1">Twenty-one out of the 31 Bichard recommendations have now been implemented. The Safeguarding Vulnerable Groups Bill, which will put into place the new vetting and barring scheme, has completed its passage through the House of Lords and will have its Second Reading in the House of Commons on <phrase class="date" code="2006-06-19">19 June</phrase>. We are reporting progress regularly to Parliament, most recently on<phrase class="date" code="2006-05-25">25 May</phrase>, and we see no need at present to reconvene the inquiry team.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2006-06-14a.760.6" speakerid="uk.org.publicwhip/member/1384" speakername="Eric Illsley" colnum="760"  time="11:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/debtext/60614-0477.htm#06061448000075">
@@ -626,8 +625,9 @@
 </speech>
 
 <division id="uk.org.publicwhip/debate/2006-06-14a.778.3" nospeaker="true" divdate="2006-06-14" divnumber="260" colnum="778"  time="012:46:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/debtext/60614-0478.htm#06061448000665">
-	<divisioncount ayes="71" noes="166" tellerayes="1" tellernoes="1"/>
+	<divisioncount ayes="72" noes="167" tellerayes="1" tellernoes="1"/>
 	<mplist vote="aye">
+		<mpname id="uk.org.publicwhip/member/1995" vote="aye">Alexander, Danny</mpname>
 		<mpname id="uk.org.publicwhip/member/1404" vote="aye">Beith, rh Mr. Alan</mpname>
 		<mpname id="uk.org.publicwhip/member/1487" vote="aye">Brake, Tom</mpname>
 		<mpname id="uk.org.publicwhip/member/1514" vote="aye">Breed, Mr. Colin</mpname>
@@ -702,6 +702,7 @@
 		<mpname id="uk.org.publicwhip/member/1784" vote="aye" teller="yes">Paul Rowen</mpname>
 	</mplist>
 	<mplist vote="no">
+		<mpname id="uk.org.publicwhip/member/1929" vote="no">Afriyie, Adam</mpname>
 		<mpname id="uk.org.publicwhip/member/1537" vote="no">Ancram, rh Mr. Michael</mpname>
 		<mpname id="uk.org.publicwhip/member/1427" vote="no">Anderson, Mr. David</mpname>
 		<mpname id="uk.org.publicwhip/member/1635" vote="no">Atkinson, Mr. Peter</mpname>
