@@ -22,8 +22,16 @@ def StripPageTags(xfil):
 textlinefixes = { 		# fix case in A-58-PV.84
 	('A-53-PV.4', '<text top="181" left="481" width="179" height="14" font="1">prices and the Russian crisis.</text>'): ("top", -18),
 	('A-53-PV.26', '<text top="253" left="516" width="281" height="14" font="1">take up arms, even traditional weapons --</text>'): ("left", -4),
-	('A-53-PV.28', '<text top="604" left="159" width="290" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),  # overflowing line of poetry
-	('A-53-PV.41', '<text top="628" left="547" width="281" height="17" font="6"><b> alovski </b>(The former Yugoslav Republic of</text>'): ("top", +3),  # overflowing line of poetry
+	('A-53-PV.28', '<text top="604" left="159" width="290" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),
+	('A-53-PV.41', '<text top="628" left="547" width="281" height="17" font="6"><b> alovski </b>(The former Yugoslav Republic of</text>'): ("top", +3),
+	('A-53-PV.63', '<text top="160" left="547" width="281" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),
+	('A-53-PV.63', '<text top="416" left="516" width="312" height="14" font="1">veto\' where they consider the question of vital</text>'): ("left", -4),
+	('A-53-PV.78', '<text top="325" left="544" width="73" height="14" font="1">amahiriya,</text>'): ("left", -32),
+	('A-53-PV.78', '<text top="1010" left="122" width="327" height="14" font="1">Republic of Tanzania, Uruguay, Vanuatu, Venezuela,</text>'): ("left", -1),
+	('A-53-PV.78', '<text top="1028" left="122" width="185" height="14" font="1">Viet Nam, Yemen, Zimbabwe</text>'): ("left", -1),
+	('A-53-PV.79', '<text top="127" left="484" width="344" height="14" font="1">Cessation of the nuclear arms race and nuclear</text>'): ("left", -3),
+	('A-53-PV.81', '<text top="325" left="486" width="342" height="14" font="1">and private-sector companies to effectively tackle the</text>'): ("left", -5),
+	('A-53-PV.90', '<text top="811" left="125" width="323" height="14" font="1">common standard\' to which the Preamble of the</text>'): ("left", -3),
 
 	('A-54-PV.9', '<text top="613" left="95" width="52" height="14" font="1">response</text>'): ("left", -5),
 	('A-54-PV.26', '<text top="955" left="522" width="55" height="14" font="1">too hard.</text>'): ("top", -18),  # overflowing line of poetry
@@ -339,15 +347,15 @@ for undoc in os.listdir("pdfxml"):
 	undocpdf = os.path.join("pdfxml", undoc)
 
 	# too hard.  too many indent problems (usually secret ballot announcementing)
-	if undocname in ["A-53-PV.39", "A-53-PV.52"
+	if undocname in ["A-53-PV.39", "A-53-PV.52",
 					 "A-54-PV.34", "A-54-PV.45",
 					 "A-55-PV.33", "A-55-PV.99",
 					 "A-56-PV.32", "A-56-PV.81"]:
 		continue
 
-	if not re.match("A-53-PV.5", undoc):
+	if not re.match("A-53-PV.", undoc):
 		continue
-	print "----------------",  undoc
+	print "--------:%s:-------" % undocname
 
 	fin = open(undocpdf)
 	xfil = fin.read()
