@@ -4,6 +4,7 @@ import re
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 def StripPageTags(xfil):
 	xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
@@ -21,6 +22,7 @@ def StripPageTags(xfil):
 
 textlinefixes = { 		# fix case in A-58-PV.84
 	('A-53-PV.4', '<text top="181" left="481" width="179" height="14" font="1">prices and the Russian crisis.</text>'): ("top", -18),
+	('A-53-PV.8', '<text top="757" left="472" width="356" height="14" font="1">As was pointed out during last week\'s high-level meeting</text>'): ("left", +14),
 	('A-53-PV.26', '<text top="253" left="516" width="281" height="14" font="1">take up arms, even traditional weapons --</text>'): ("left", -4),
 	('A-53-PV.28', '<text top="604" left="159" width="290" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),
 	('A-53-PV.41', '<text top="628" left="547" width="281" height="17" font="6"><b> alovski </b>(The former Yugoslav Republic of</text>'): ("top", +3),
@@ -101,21 +103,19 @@ class TextLine:
 		# will be removed
 		if not self.ltext:
 			return
-		if re.search("recorded vote", self.ltext):
-			print self.ltext
 
 		textlinefix = textlinefixes.get((self.undocname, txline))
 		if not textlinefix:
 			pass
 		elif textlinefix == "remove":
-			print textlinefix, txline
+			#print textlinefix, txline
 			self.ltext = ""
 			return
 		elif textlinefix[0] == "left":
-			print textlinefix, txline
+			#print textlinefix, txline
 			self.left += textlinefix[1]
 		elif textlinefix[0] == "top":
-			print textlinefix, txline
+			#print textlinefix, txline
 			self.top += textlinefix[1]
 		else:
 			assert not textlinefix
@@ -124,7 +124,7 @@ class TextLine:
 
 		# move on any short bits that are like 13^(th)
 		if self.height == 11 and not self.bfootertype and self.width <= 10:
-			print self.left, self.width, "'%s'" % self.ltext
+			#print self.left, self.width, "'%s'" % self.ltext
 			assert self.width <= 10
 			assert self.ltext in ["th", "rd", "st", "nd"]
 			self.top += 2  # push the step down from 16 to 18
@@ -186,8 +186,8 @@ def AppendCluster(res, tlc, sclusttype):
 
 	# two paragraphs may have been merged, try to separate them out
 	elif len(tlc.indents) == 4:
-		print tlc.indents
-		print tlc.txls[0].ltext
+		#print tlc.indents
+		#print tlc.txls[0].ltext
 		assert tlc.indents[0][0] == tlc.indents[2][0]
 		assert tlc.indents[1][0] == tlc.indents[3][0]
 		si = tlc.indents[2][1]
@@ -216,25 +216,44 @@ class TextPage:
 		assert self.pageno == 1
 		#<text top="334" left="185" width="584" height="17" font="2">Mr.  Kavan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (Czech Republic)</text>
 		while not re.search("\. \. \. \. \.", txlines[ih].ltext):
+
+			# fix missing year date
+			if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
+				txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
+
 			# extract the date out if poss
-			if re.match("\w+, \d+ \w+ \d+, \d+ [ap].m.", txlines[ih].ltext):  #Tuesday, 3 December 2002, 10 a.m.
-				self.date = txlines[ih].ltext
-				print self.date
+			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s+(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?$", txlines[ih].ltext)
+			if mdate:  #Tuesday, 3 December 2002, 10 a.m.
+				#print txlines[ih].ltext
+				iday = int(mdate.group(1))
+				imonth = mdate.group(2) == "Octoberr" and 9 or months.index(mdate.group(2))
+				syear = mdate.group(3)
+				ihour = int(mdate.group(4))
+				imin = mdate.group(5) and int(mdate.group(5)) or 0
+				if mdate.group(6) and mdate.group(6) == "p":
+					ihour += 12
+				assert not self.date
+				self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
+				#print self.date
 			ih += 1
 			if ih == len(txlines):
 				return -1
 
-		# country name is not on same line
+		if not self.date:
+			for i in range(ih):
+				print "*%s*" % txlines[i].ltext
+			assert False
+
+		# when country name for the president . . . . is not on same line
 		if not re.search("\(.*?\)$", txlines[ih].ltext):
 			ih += 1
-			print txlines[ih].ltext
+			#print txlines[ih].ltext
 			assert re.match("\(.*?\)$", txlines[ih].ltext)
 		ih += 1
 		return ih
 
 	def ExtractDotLineChairHead(self, txlines):
-		#for ih in range(21):
-		#	print txlines[ih].top, txlines[ih].left, txlines[ih].ltext
+		self.date = None
 		ih = self.ExtractDotLineChair(txlines, 0)
 		ihcochair = self.ExtractDotLineChair(txlines, ih)
 		if ihcochair != -1:
@@ -245,6 +264,9 @@ class TextPage:
 	def __init__(self, xpage, lundocname, lpageno):
 		self.pageno = lpageno
 		self.undocname = lundocname
+
+		leftcolstart = 90
+		rightcolstart = re.match("A-5[34]", lundocname) and 481 or 468
 
 		# generate the list of lines, sorted by vertical position
 		ftxlines = re.findall("<text.*?</text>", xpage)
@@ -292,6 +314,8 @@ class TextPage:
 		# separate the body into the two columns
 		self.txlcol1 = [ ]
 		self.txlcol2 = [ ]
+		self.minindentleft = 9999
+		self.minindentright = 9999
 		for txl in txlines[ih:ie]:
 			if txl.left < 459:
 				#print txl.bfootertype, txl.left, txl.width, txl.top, txl.ltext  # zzzz
@@ -306,68 +330,47 @@ class TextPage:
 								break
 							bc -= 1
 
-				txl.indent = txl.left - 90
+				txl.indent = txl.left - leftcolstart
+				assert txl.indent >= 0
+				self.minindentleft = min(txl.indent, self.minindentleft)
 				txl.brightcol = False
 				AppendToCluster(self.txlcol1, txl)
+
 			else:
-				txl.indent = txl.left - 468
+				txl.indent = txl.left - rightcolstart
+				assert txl.indent >= 0
+				self.minindentright = min(txl.indent, self.minindentright)
 				txl.brightcol = True
 				AppendToCluster(self.txlcol2, txl)
-			assert txl.indent >= 0
 
+		if self.txlcol1 and self.minindentleft != 0:
+			print "minindentleft", self.minindentleft
+		if self.txlcol2 and self.minindentright != 0:
+			print "minindentright", self.minindentright
 
-def ParseUnfile(xfil, undocname):
+def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
 	txpages = [ ]
-	res = [ ]
+	tlcall = [ ]
 	for i in range(len(xpages)):
 		txpage = TextPage(xpages[i], undocname, i + 1)
 		txpages.append(txpage)
 		if txpage.txlcol1:
-			AppendCluster(res, txpage.txlcol1[0], "newpage")
+			AppendCluster(tlcall, txpage.txlcol1[0], "newpage")
 			for tlc in txpage.txlcol1[1:]:
-				AppendCluster(res, tlc, "gapcluster")
+				AppendCluster(tlcall, tlc, "gapcluster")
 		else:
 			assert i == len(xpages) - 1
 
 		# have had a case where the first column was the blank one
 		if txpage.txlcol2:
-			AppendCluster(res, txpage.txlcol2[0], "newcolumn")
+			AppendCluster(tlcall, txpage.txlcol2[0], "newcolumn")
 			for tlc in txpage.txlcol2[1:]:
-				AppendCluster(res, tlc, "gapcluster")
+				AppendCluster(tlcall, tlc, "gapcluster")
 		else:
 			assert i == len(xpages) - 1
-	return res
+	return txpages[0].date, tlcall
 
 
-# the main function
-for undoc in os.listdir("pdfxml"):
-	undocname = os.path.splitext(undoc)[0]
-	undochtml = os.path.join("html", undocname + ".html")
-	undocpdf = os.path.join("pdfxml", undoc)
-
-	# too hard.  too many indent problems (usually secret ballot announcementing)
-	if undocname in ["A-53-PV.39", "A-53-PV.52",
-					 "A-54-PV.34", "A-54-PV.45",
-					 "A-55-PV.33", "A-55-PV.99",
-					 "A-56-PV.32", "A-56-PV.81"]:
-		continue
-
-	if not re.match("A-53-PV.", undoc):
-		continue
-	print "--------:%s:-------" % undocname
-
-	fin = open(undocpdf)
-	xfil = fin.read()
-	fin.close()
-
-	res = ParseUnfile(xfil, undocname)
-
-	h = open(undochtml, "w")
-	for tlc in res:
-		h.write(tlc.bindent and "<blockquote>\n" or "<p>\n")
-		h.write("\n".join([txl.ltext  for txl in tlc.txls]))
-		h.write(tlc.bindent and "\n</blockquote>\n" or "\n</p>\n")
-	h.close()
 
 
