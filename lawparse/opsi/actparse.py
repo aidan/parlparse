@@ -294,7 +294,7 @@ class Act(ActFragment):
 	dir=staticmethod(dir)
 
 	def ShortID(self):
-		return "ukgpa%sc%s" % (self.year, self.chapter)
+		return "ukpga%sc%s" % (self.year, self.chapter)
 
 	def Parse(self):
 		ActParseHead(self)
@@ -366,7 +366,7 @@ def ParseLoop(statlist,values, Stat):
 	logger=logging.getLogger('')
 
 	start=values.start #options.value('start')
-	skipfiles=[ 'ukgpa%s.html' % id for id in values.skip]  #options.value('skip')
+	skipfiles=[ 'ukpga%s.html' % id for id in values.skip]  #options.value('skip')
 
 	filedebuglevel=options.Log.getarg(values.filedebug).level
 
@@ -478,7 +478,7 @@ if __name__ == '__main__':
 	#sys.exit()
 
 	if len(args) > 0:
-		statlist = ["ukgpa%s.html" % x for x in args]
+		statlist = ["ukpga%s.html" % x for x in args]
 	else:
 		statlist = os.listdir(Stat.dir(values, 'html'))
 		del statlist[0]	# removes file ".svn"

@@ -232,7 +232,7 @@ the HTML files of each act into one file, and saves it in lawdata/acts.""")
 		for url, name, chapter in yacts:
 			try:
 				# build the name for this
-				fact = os.path.join(options.actdirhtml, "ukgpa%sc%s.html" % (yiur[0], chapter))
+				fact = os.path.join(options.actdirhtml, "ukpga%sc%s.html" % (yiur[0], chapter))
 				if not options.force and os.path.isfile(fact):
 					continue
 				if (yiur[0], chapter) in (("1996", "45"), ("1996", "23")) or (yiur[0] == "1996"):

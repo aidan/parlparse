@@ -31,7 +31,7 @@ import actparse
 ldir = os.listdir(actdirxml)
 del ldir[0]	# removes file ".svn"
 
-ldir = [re.sub('ukpga(\d{4}c\d+).xml','ukgpa\g<1>.html',x) for x in ldir]
+ldir = [re.sub('ukpga(\d{4}c\d+).xml','ukpga\g<1>.html',x) for x in ldir]
 
 print ldir
 
