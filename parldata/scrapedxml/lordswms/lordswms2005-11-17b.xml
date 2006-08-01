@@ -7,39 +7,42 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;" >
+<!ENTITY trade   "&#8482;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY uuml   "&#252;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="b" latest="yes">
@@ -370,16 +373,26 @@
 <speech id="uk.org.publicwhip/wms/2005-11-17b.103.3" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="103"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51117-34.htm#51117-34_spnew2">
 	<p pid="b.103.3/1">My right honourable friend the Secretary of State for Defence (John Reid) has made the following Written Ministerial Statement.</p>
 	<p pid="b.103.3/2">Subject to parliamentary approval of the necessary supplementary estimate, the Ministry of Defence departmental expenditure limits (DEL) will be increased by &pound;109,105,000 from &pound;30,944,726,000 to &pound;31,053,831,000. Within the DEL change, the impact on resources and capital are as set out in the following table.&pound;000s</p>
-	<p pid="b.103.3/3">*Depreciation, which forms part of resource DEL, is excluded from the total DEL since capital DEL includes capital spending and to include depreciation of those assets would lead to double counting.</p>
-	<p pid="b.103.3/4">The change in the resource element of the DEL arises from:</p>
-	<p pid="b.103.3/5">a transfer from capital DEL to resource DEL of &pound;370,000,000;</p>
-	<p pid="b.103.3/6">transfers totalling &pound;8,553,000 from the Department for Environment, Food and Rural Affairs (&pound;4,745,000) and the Department for Transport (&pound;3,808,000) as their share of the National Meteorological Programme and Weather Warning Service costs under a pan-government agreement;</p>
-	<p pid="b.103.3/7">a transfer of &pound;145,000 from the Department of Work and Pensions as a contribution to the Veteran Agency's postage costs;</p>
-	<p pid="b.103.3/8">a transfer of &pound;500,000 from the Department for International Development in respect of the Sub-Sahara Global Conflict Prevention Pool;</p>
-	<p pid="b.103.3/9">a transfer of &pound;93,000 to the Department of Culture, Media and Sport in respect of staff costs for the Leeds Armouries Museum Pattern Room;</p>
-	<p pid="b.103.3/10">the take-up of end year flexibility of &pound;28,281,000 capital DEL and &pound;71,719,000 resource DEL; and</p>
-	<p pid="b.103.3/11">an increase in capital appropriations in aid of &pound;45,886,000 from QinetiQ resulting from the repayment of a loan to the MoD.</p>
-	<p pid="b.103.3/12">The changes to capital and resource, together with changes in internal budgetary re-allocations, will lead to an increased net cash requirement of &pound;459,105,000.</p>
+	<table>
+		<tbody>
+			<tr pid="b.103.3/5"> <td></td> <td></td> <td>New DEL</td> </tr>
+			<tr pid="b.103.3/6"> <td></td> <td>Change</td> <td>Voted</td> <td>Non-voted</td> <td>Total</td> </tr>
+			<tr pid="b.103.3/7"> <td>Resource</td> <td>450,824</td> <td>31,674,758</td> <td>1,281,792</td> <td>32,956,550</td> </tr>
+			<tr pid="b.103.3/8"> <td>Capital</td> <td>(341,719)</td> <td>6,537,537</td> <td>744</td> <td>6,538,281</td> </tr>
+			<tr pid="b.103.3/9"> <td>Depreciation*</td> <td></td> <td>-7,556,000</td> <td>-885,000</td> <td>-8,441,000</td> </tr>
+			<tr pid="b.103.3/10"> <td>Total</td> <td>109,105</td> <td>30,656,295</td> <td>397,536</td> <td>31,053,831</td> </tr>
+		</tbody>
+	</table>
+	<p pid="b.103.3/13">*Depreciation, which forms part of resource DEL, is excluded from the total DEL since capital DEL includes capital spending and to include depreciation of those assets would lead to double counting.</p>
+	<p pid="b.103.3/14">The change in the resource element of the DEL arises from:</p>
+	<p pid="b.103.3/15">a transfer from capital DEL to resource DEL of &pound;370,000,000;</p>
+	<p pid="b.103.3/16">transfers totalling &pound;8,553,000 from the Department for Environment, Food and Rural Affairs (&pound;4,745,000) and the Department for Transport (&pound;3,808,000) as their share of the National Meteorological Programme and Weather Warning Service costs under a pan-government agreement;</p>
+	<p pid="b.103.3/17">a transfer of &pound;145,000 from the Department of Work and Pensions as a contribution to the Veteran Agency's postage costs;</p>
+	<p pid="b.103.3/18">a transfer of &pound;500,000 from the Department for International Development in respect of the Sub-Sahara Global Conflict Prevention Pool;</p>
+	<p pid="b.103.3/19">a transfer of &pound;93,000 to the Department of Culture, Media and Sport in respect of staff costs for the Leeds Armouries Museum Pattern Room;</p>
+	<p pid="b.103.3/20">the take-up of end year flexibility of &pound;28,281,000 capital DEL and &pound;71,719,000 resource DEL; and</p>
+	<p pid="b.103.3/21">an increase in capital appropriations in aid of &pound;45,886,000 from QinetiQ resulting from the repayment of a loan to the MoD.</p>
+	<p pid="b.103.3/22">The changes to capital and resource, together with changes in internal budgetary re-allocations, will lead to an increased net cash requirement of &pound;459,105,000.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2005-11-17b.104.0" nospeaker="true" colnum="104"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51117-34.htm#51117-34_head4">
