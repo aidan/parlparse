@@ -1,8 +1,7 @@
 import os
 import re
 from unglue import GlueUnfile
-from unparse import SingleParaProcess
-from unparse import countryvotes
+from unparse import ParseUnfile
 
 # the main function
 for undoc in os.listdir("pdfxml"):
@@ -17,7 +16,7 @@ for undoc in os.listdir("pdfxml"):
 					 "A-56-PV.32", "A-56-PV.81"]:
 		continue
 
-	if not re.match("A-53-PV.", undoc):
+	if not re.match("A-59-PV.", undoc):
 		continue
 	print "parsing:", undocname,
 
@@ -29,18 +28,15 @@ for undoc in os.listdir("pdfxml"):
 
 	# merge the lines together
 	for tlc in tlcall:
-		SingleParaProcess(tlc)
+		tlc.paratext = " ".join([txl.ltext  for txl in tlc.txls])
 
 	print date
-	#votes, unparas = GlueUnfile(undocname, date, tlcall)
+	ParseUnfile(undocname, date, tlcall)
 	#print votes,
 
 	h = open(undochtml, "w")
 	for tlc in tlcall:
-		h.write(tlc.paraembed[0])
-		h.write(tlc.paratext)
-		h.write(tlc.paraembed[1])
+		h.write(tlc.parafout)
 	h.close()
 
-for c in sorted(countryvotes.keys()):
-	print c, countryvotes[c]
+
