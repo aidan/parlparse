@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cd ~/work/democracy.org.uk/un/
+
+# the trailing * get added automagically
+
+# General Assembly
+./bin/fetchitemlist.pl  A/60
+
+sleep 5; # need these in here to mean that if one kills the site, they don't all die
+# SC trasnscripts (proces-verbataux)
+./bin/fetchitemlist.pl  S/PV
+
+sleep 5 ;
+# SC resolutionsj
+./bin/fetchitemlist.pl  S/RES
+
+sleep 5 ;
+# SC actions/votes
+./bin/fetchitemlist.pl  S/PRST

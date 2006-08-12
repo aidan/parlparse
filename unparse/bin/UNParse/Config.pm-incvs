@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+package UNParse::Config;
+require Exporter;
+@ISA = qw(Exporter);
+@EXPORT = qw($dbh);  # symbols to export on request
+
+use warnings;
+use strict;
+
+use DBI;
+my $dsn = 'DBI:mysql:un:localhost'; # DSN connection string
+my $db_username= 'dumdedum';              # database username
+my $db_password= 'youmustbejoking';         # database password
+our $dbh= DBI->connect($dsn, $db_username, $db_password);
+
