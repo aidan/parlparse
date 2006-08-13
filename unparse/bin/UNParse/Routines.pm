@@ -50,7 +50,7 @@ sub look_for_names_S_PV {
 	my @paras=@_;
 	# quickly, look for the words "issued in place of a verbatim record"
 
-	foreach my $p ($paras) {
+	foreach my $p (@paras) {
 		if ($p->{content} =~ m#the following communiqu. was issued through the Secretary-General in place of a verbatim record#i)  {
 			return (@paras); # closed session, so don't bother putting speakers in.
 		}
@@ -231,7 +231,7 @@ sub submit_to_db {
 		$previous=$dbh->{mysql_insertid};
 
 		$dbh->do("insert into text set contentid=$previous, text=?", undef, $p->{content});
-		$dbh->do("update documents set new=0 where documentid=$docid");
+		$dbh->do("update documents set new=0 where ourdocid=$docid");
 	}
 }
 
