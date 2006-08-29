@@ -6,11 +6,12 @@ import sys
 import os
 import shutil
 from optparse import OptionParser
-from unexception import unexception
+from unmisc import unexception, IsNotQuiet
 
 docindex = "http://www.un.org/documents/"
 
 def ScrapePlenaryPDF(plenaryurl, purl, pdfname, undocname):
+	print "scraping", undocname,
 	# first go through the forwarding blocker
 	purl = urlparse.urljoin(plenaryurl, purl)
 	req = urllib2.Request(purl)
@@ -52,7 +53,7 @@ def ScrapePlenaryPDF(plenaryurl, purl, pdfname, undocname):
 	fin = opener.open(plenarycookurl)
 	fin.close()
 
-	print "scraping", plenarypdfurl[-30:], pdfname
+	print plenarypdfurl[-30:]
 
 	# put them into the pdf link
 	fin = opener.open(plenarypdfurl)
@@ -65,18 +66,18 @@ def ScrapePlenaryPDF(plenaryurl, purl, pdfname, undocname):
 
 
 def ScrapePlenary(pdfdir, plenaryurl):
-	if not os.path.isdir(pdfdir):
-		print "Please create directory", pdfdir
-		sys.exit(0)
+	print "Plenary URL index:", plenaryurl
 
 	fin = urllib2.urlopen(plenaryurl)
 	plenaryindex = fin.read()
 	fin.close()
+
 	# <a href="http://daccess-ods.un.org/access.nsf/Get?OpenAgent&DS=A/57/PV.1&Lang=E" target="_blank">A/57/PV.1</a>
-	plenaryindexlist = re.findall('<a href="(http://daccess[^"]*)" target="_blank">([^<]*)</a>(?i)', plenaryindex)
+
+	plenaryindexlist = re.findall('<a href="(http://daccess[^"]*)" target="_blank">(.*?)</a>(?i)', plenaryindex)
 	for plenary in plenaryindexlist[:]:
 		undocname = re.sub("/", "-", plenary[1])
-		undocname = re.sub("\s", "", undocname)
+		undocname = re.sub("\s|<.*?>", "", undocname)
 		pdfname = undocname + ".pdf"
 		pdffile = os.path.join(pdfdir, pdfname)
 		if not os.path.isfile(pdffile):  # or re.match("Corr", pdfname)
@@ -86,7 +87,7 @@ def ScrapePlenary(pdfdir, plenaryurl):
 
 
 
-scrapeurlmap = {
+scrapepvurlmap = {
 	"A-53-PV":"http://www.un.org/ga/53/session/pv53.htm",
 	"A-54-PV":"http://www.un.org/ga/54/pv54e.htm",
 	"A-55-PV":"http://www.un.org/ga/55/pvlista55.htm",  # A/55/PV.26 is missing
@@ -94,27 +95,34 @@ scrapeurlmap = {
 	"A-57-PV":"http://www.un.org/ga/57/pv.html", # note that A/57/PV.90 is under embargo
 	"A-58-PV":"http://www.un.org/ga/58/pv.html",
 	"A-59-PV":"http://www.un.org/ga/59/pv.html",
+
+	"A-59":"http://www.un.org/ga/59/documentation/list0.html",
 				}
+#http://www.un.org/ga/59/documentation/list0.html
 
 def ScrapePDF(stem, pdfdir):
-	for st in scrapeurlmap:
-		if stem and not re.match(stem, st):
-			continue
-		ScrapePlenary(pdfdir, scrapeurlmap[st])
+	if stem not in scrapepvurlmap:
+		print "Allowable stems for scraping:\n ", ",\n  ".join(scrapepvurlmap.keys())
+		sys.exit(1)
+	ScrapePlenary(pdfdir, scrapepvurlmap[stem])
 
 def ConvertXML(stem, pdfdir, pdfxmldir):
 	for sd in os.listdir(pdfdir):
 		if stem and not re.match(stem, sd):
 			continue
 		pdf = os.path.join(pdfdir, sd)
+		if not os.path.isfile(pdf):
+			continue
 		pdfdest = os.path.join(pdfxmldir, sd)
 		xmldest = os.path.splitext(pdfdest)[0] + ".xml"
-		if not os.path.isfile(xmldest):
-			shutil.copyfile(pdf, pdfdest)
-			print "pdftohtml -xml", sd
-			os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdfdest)
-			os.remove(pdfdest)
-			assert os.path.isfile(xmldest)
+		if os.path.isfile(xmldest):
+			print "skipping", sd
+			continue
+		shutil.copyfile(pdf, pdfdest)
+		print "pdftohtml -xml", sd
+		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdfdest)
+		os.remove(pdfdest)
+		assert os.path.isfile(xmldest)
 
 
 

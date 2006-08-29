@@ -83,11 +83,11 @@ textlinefixes = { 		# fix case in A-58-PV.84
 	('A-58-PV.54', '<text top="907" left="90" width="273" height="15" font="9">Latin America and the Caribbean (ECLAC)</text>'): ("top", -1),
 	('A-58-PV.16', '<text top="187" left="90" width="218" height="17" font="10">Saint Kitts and Nevis</text>'): ("top", -1),
 	('A-58-PV.20', '<text top="1017" left="469" width="349" height="14" font="10"><i>Note</i>: Solomon Islands pidgin for: "Thank you for helping your</text>'): "remove",
-	('A-58-PV.20', '<text top="1031" left="502" width="42" height="14" font="3">friend".</text>'): "remove",
+	('A-58-PV.20', '<text top="1031" left="502" width="42" height="14" font="3">friend".</text>'): "remove", }
 
 
 	# these ones happen on multiple pages
-	('A-59-PV.38', '<text top="511" left="303" width="146" height="15" font="9">Economic and Social</text>'): ("top", -1),
+"""	('A-59-PV.38', '<text top="511" left="303" width="146" height="15" font="9">Economic and Social</text>'): ("top", -1),
 	('A-59-PV.38', '<text top="529" left="90" width="239" height="15" font="9">Commission for Asia and the Pacific</text>'): ("top", -1),
 	('A-59-PV.58', '<text top="970" left="411" width="7" height="15" font="9">. </text>'): ("top", -1),
 	('A-59-PV.60', '<text top="745" left="530" width="9" height="17" font="9">,</text>'): ("top", -1),
@@ -95,7 +95,8 @@ textlinefixes = { 		# fix case in A-58-PV.84
 	('A-59-PV.69', '<text top="185" left="691" width="16" height="17" font="9">  (</text>'): ("top", +1),
 	('A-59-PV.115', '<text top="1084" left="788" width="43" height="12" font="14">05-43909 </text>'): "remove",
 	('A-59-PV.115', '<text top="1084" left="90" width="43" height="12" font="14">05-43909 </text>'): "remove",
-				}
+   }
+"""
 
 #<text top="1062" left="342" width="486" height="11" font="2">xxxx</text>
 class TextLine:

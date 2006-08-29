@@ -2,10 +2,10 @@ import os
 import re
 import sys
 from unglue import GlueUnfile
-from unparse import GroupParas
+from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapePDF, ConvertXML
-from unexception import unexception
+from unmisc import unexception, IsNotQuiet, SetQuiet
 
 parser = OptionParser()
 parser.set_usage("""Parses and scrapes UN verbatim reports from General Assembly and Security Council
@@ -16,6 +16,7 @@ parse   do the parsing""")
 
 pdfdir = os.path.join("..", "pdf")
 pdfxmldir = os.path.join("..", "pdfxml")
+htmldir = os.path.join("..", "html")
 
 if not os.path.isdir(pdfdir):
 	print "please create the directory:", pdfdir
@@ -26,10 +27,13 @@ if not os.path.isdir(pdfxmldir):
 
 
 parser.add_option("--stem", dest="stem", metavar="stem", default="",
-                  help="stem of documents to be parsed")
+                  help="stem of documents to be parsed (eg A-59-PV)")
 parser.add_option("--quiet",
                   action="store_true", dest="quiet", default=False,
                   help="low volume messages")
+parser.add_option("--force-parse",
+				  action="store_true", dest="forceparse", default=False,
+				  help="Don't skip any files when parsing")
 (options, args) = parser.parse_args()
 
 stem = ""
@@ -41,7 +45,7 @@ if not stem:  # make it anyway if you don't do the stem command properly
 			stem = a
 
 #print options, args
-bQuiet = options.quiet
+SetQuiet(options.quiet)
 bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
@@ -53,61 +57,8 @@ if bScrape:
 	ScrapePDF(stem, pdfdir)
 if bConvertXML:
 	ConvertXML(stem, pdfdir, pdfxmldir)
-if not bParse:
-	sys.exit(0)
+if bParse:
+	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse)
 
-# The rest of this module runs the parser.
-
-# the main function
-undocnames = [ ]
-for undoc in os.listdir("pdfxml"):
-	undocname = os.path.splitext(undoc)[0]
-
-	# too hard.  too many indent problems (usually secret ballot announcementing)
-	if undocname in ["A-53-PV.39", "A-53-PV.52",
-					 "A-54-PV.34", "A-54-PV.45",
-					 "A-55-PV.33", "A-55-PV.99",
-					 "A-56-PV.32", "A-56-PV.81"]:
-		continue
-
-	if re.match(stem, undocname):
-		undocnames.append(undocname)
-if not bQuiet:
-	print "Preparing to parse %d files" % len(undocnames)
-
-for undocname in undocnames:
-	undochtml = os.path.join("html", undocname + ".html")
-	undocpdfxml = os.path.join("pdfxml", undocname + ".xml")
-	print "parsing:", undocname,
-
-	fin = open(undocpdfxml)
-	xfil = fin.read()
-	fin.close()
-
-	gparas = None
-	while not gparas:
-		try:
-			sdate, chairs, tlcall = GlueUnfile(xfil, undocname)
-			print sdate#, chairs
-			gparas = GroupParas(tlcall, undocname, sdate)
-		except unexception, ux:
-			assert not gparas
-			print "\nHit RETURN to launch your editor on the psdxml (or type 's' to skip)"
-			rl = sys.stdin.readline()
-			if rl[0] == "s":
-				break
-			os.system('"C:\Program Files\ConTEXT\ConTEXT" %s' % (undocpdfxml,))
-	if not gparas:
-		continue
-
-	fout = open(undochtml, "w")
-	fout.write('<html>\n<head>\n')
-	fout.write('<link href="unhtml.css" type="text/css" rel="stylesheet" media="all">\n')
-	fout.write('</head>\n<body>\n')
-	fout.write("<h1>%s  date=%s</h1>\n" % (undocname, sdate))
-	for gpara in gparas:
-		gpara.writeblock(fout)
-	fout.write('</body>\n</html>\n')
-	fout.close()
 
 
