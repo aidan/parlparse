@@ -1,5 +1,5 @@
 import re
-from nations import FixNationName, FixSpeakerNationName, GenerateNationsVoteList
+from nations import FixNationName, GenerateNationsVoteList
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 
 #	<blockquote><i>A recorded vote was taken.</i></blockquote>

@@ -213,6 +213,14 @@ nationmapping = {
 		"(Islamic Republic of)":"INVALID",
 				}
 
+nonnations = [	"European Community",
+				"Palestine", 
+				"Holy See",
+				"International Federation of Red Cross and Red Crescent Societies",
+				"General Assembly Affairs Branch",
+				"Deputy Secretary-General", 
+				"Conference of Non-Governmental Organizations in Consultative Relationship with the United Nations", 
+			 ]
 
 
 nationswithoutspaces = {}
@@ -238,14 +246,6 @@ def FixNationName(lnation, sdate):
 		print lnation, dr
 		assert False
 	return lnation
-
-def FixSpeakerNationName(lnation, sdate):
-	if lnation in ["European Community", "Palestine", "Holy See",
-				   "International Federation of Red Cross and Red Crescent Societies",
-				   "General Assembly Affairs Branch",
-				   "Deputy Secretary-General", ]:
-		return lnation
-	return FixNationName(lnation, sdate)
 
 def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate):
 	nationvotes = { }

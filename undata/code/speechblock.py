@@ -1,7 +1,7 @@
 import re
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 from voteblock import recvoterequest
-from nations import FixNationName, FixSpeakerNationName
+from nations import FixNationName, nonnations
 
 
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
@@ -32,12 +32,20 @@ respekp3 = """(?x)<b>(The(?:\sActing)?\sPresident)\s*:\s*</b>
 			  (dummy)?
 			  """
 
-def DetectSpeaker(ptext, lastindent, paranum):
+def DetectSpeaker(ptext, indents, paranum):
 	#print ptext, "\n\n\n"
 	if re.match("<i>(?:In favour|Against|Abstaining)", ptext): # should be part of a voteblock
 		print ptext
 		#print tlcall[i - 1].paratext
 		assert False
+
+	indentationerror = ""
+	if indents[0][0] == 0:
+		indentationerror = "unindented paragraph"
+	if len(indents) > 2:
+		indentationerror = "too many different indents"
+	if len(indents) == 2 and indents[1][0] != 0:
+		indentationerror = "un-left-justified paragraph"
 
 	mspek = re.match(respekp1, ptext)
 	if not mspek:
@@ -48,15 +56,22 @@ def DetectSpeaker(ptext, lastindent, paranum):
 		mspek = re.match(respek, ptext)
 	if mspek:
 		#print "&&&&& ", mspek.groups()
-		assert not lastindent
+		#print indents
+		if indentationerror:
+			print indents
+			raise unexception(indentationerror + " of speaker-intro", paranum)
 		assert not re.match("<i>", ptext)
 		nation = ""
 		if mspek.group(2):
-			nation = FixSpeakerNationName(mspek.group(2), paranum.sdate)
+			lnation = mspek.group(2)
+			if lnation in nonnations:
+				nation = lnation
+			else:
+				nation = FixNationName(nation, paranum.sdate)
 			if not nation:
 				print ptext
-				print "----unknown speakernation", mspek.group(2)
-				assert False
+				print "\ncheck if misspelt or new nonnation: ", lnation
+				raise unexception("unrecognized nation or nonnation", paranum)
 		assert mspek.group(1)
 		typ = "spoken"
 		currentspeaker = (mspek.group(1), nation, mspek.group(4) or "")
@@ -68,21 +83,28 @@ def DetectSpeaker(ptext, lastindent, paranum):
 		#<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
 		if re.match("<b>.*?</b>.*?:(?!</b>$)", ptext):
 			print ptext
-			raise unexception("unmatched spoken text", paranum)
-		if lastindent and re.match("<i>", ptext):
-			mptext = re.match("<i>(.*?)</i>\s*(?:\(resolution ([\d/]*)\))?\.?$", ptext)
+			raise unexception("improperly detected spoken text", paranum)
+
+		if re.match("<i>", ptext):
+			if indentationerror:
+				print indents
+				raise unexception(indentationerror + " of unspoken text", paranum)
+
+			mptext = re.match("<i>(.*?)</i>\s*(?:\(resolution ([\d/AB]*)\))?\.?$", ptext)
 			if not mptext:
 				print ptext
-				assert False
+				assert False  # not all italicked
+
 			ptext = re.sub("</?i>", "", ptext)
-			if re.match("It was so decided\.", ptext):
-				pass
-			elif re.match(".*?(?:resolution|decision).*?was adopted", ptext):
-				pass
-			elif re.match("The meeting (?:was called to order|rose) at", ptext):
-				pass
-			else:
+
+			# further parsing of these phrases may take place in due course
+			msodecided = re.match("It was so decided\.", ptext)
+			mwasadopted = re.match(".*?(?:resolution|decision).*?was adopted", ptext)
+			mcalledorder = re.match("The meeting (?:was called to order|rose) at", ptext)
+			mtookchair = re.match("In the absence of the President, (.*), Vice-President, took the Chair.", ptext)
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair):
 				print "unrecognized--", ptext
+				raise unexception("unrecognized italicline", paranum)
 			typ = "italicline"
 			currentspeaker = None
 
@@ -96,7 +118,8 @@ def DetectSpeaker(ptext, lastindent, paranum):
 
 		else:
 			typ = "unknown"
-			print ptext
+			print ptext, lastindent
+			#raise unexception("possible indent failure", paranum)
 			assert False
 			currentspeaker = None
 
@@ -131,7 +154,8 @@ class SpeechBlock:
 		self.gid = self.paranum.MakeGid()
 
 		tlc = self.tlcall[self.i]
-		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.lastindent, self.paranum)
+		#print tlc.indents, tlc.paratext
+		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum)
 		ptext = MarkupLinks(ptext)
 		self.i += 1
 		if self.typ == "italicline":
