@@ -203,6 +203,7 @@ nationmapping = {
 		"Syrian Arab Republic":"Syria",
 		"Libyan Arab Jamahiriya":"Libya",
 		"Iran (Islamic Republic of)":"Iran",
+		"Islamic Republic of Iran":"Iran",
 		"Serbia and Montenegro":"Serbia",
 		"Venezuela (Bolivarian Republic of)":"Venezuela",
 		"Libyan Arab amahiriya":"Libya",
@@ -238,6 +239,13 @@ def FixNationName(lnation, sdate):
 		assert False
 	return lnation
 
+def FixSpeakerNationName(lnation, sdate):
+	if lnation in ["European Community", "Palestine", "Holy See",
+				   "International Federation of Red Cross and Red Crescent Societies",
+				   "General Assembly Affairs Branch",
+				   "Deputy Secretary-General", ]:
+		return lnation
+	return FixNationName(lnation, sdate)
 
 def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate):
 	nationvotes = { }
@@ -256,7 +264,7 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate):
 	for vn in vlabstain:
 		assert nationvotes[vn] == "absent"
 		nationvotes[vn] = "abstain"
-	return sorted(nationvotes.items()), sorted([nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"])
+	return nationvotes, sorted([nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"])
 
 
 

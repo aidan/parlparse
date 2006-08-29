@@ -1,5 +1,7 @@
 import os
 import re
+from nations import FixNationName
+from paranum import paranum
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
@@ -97,7 +99,7 @@ textlinefixes = { 		# fix case in A-58-PV.84
 
 #<text top="1062" left="342" width="486" height="11" font="2">xxxx</text>
 class TextLine:
-	def __init__(self, txline, lundocname, lpageno):
+	def __init__(self, txline, lundocname, lpageno, textcountnumber):
 		mxline = re.match('<text top="(\d+)" left="(\d+)" width="-?(\d+)" height="(\d+)" font="(\d+)">(.*?)</text>', txline)
 		if not mxline:
 			print txline
@@ -108,6 +110,7 @@ class TextLine:
 		self.font = int(mxline.group(5))
 		self.pageno = lpageno
 		self.undocname = lundocname
+		self.textcountnumber = textcountnumber
 		self.ltext = mxline.group(6).strip()
 
 		if re.match("<[ib]>\s*</[ib]>$", self.ltext):
@@ -236,7 +239,10 @@ class TextPage:
 	def ExtractDotLineChair(self, txlines, ih):
 		assert self.pageno == 1
 		#<text top="334" left="185" width="584" height="17" font="2">Mr.  Kavan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (Czech Republic)</text>
-		while not re.search("\. \. \. \. \.", txlines[ih].ltext):
+		while True:
+			mchair = re.search("([^>]*?)\s*\. \. \. \. \.", txlines[ih].ltext)
+			if mchair:
+				break
 
 			# fix missing year date
 			if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
@@ -266,25 +272,31 @@ class TextPage:
 			assert False
 
 		# when country name for the president . . . . is not on same line
-		if not re.search("\(.*?\)$", txlines[ih].ltext):
+		mcountry = re.search("\((.*?)\)$", txlines[ih].ltext)
+		if not mcountry:
 			ih += 1
 			#print txlines[ih].ltext
-			assert re.match("\(.*?\)$", txlines[ih].ltext)
+			mcountry = re.match("\((.*?)\)$", txlines[ih].ltext)
+			assert mcountry
 		ih += 1
+		self.chairs.append((mchair.group(1), FixNationName(mcountry.group(1), self.date)))
 		return ih
 
 	def ExtractDotLineChairHead(self, txlines):
 		self.date = None
+		self.chairs = [ ]
 		ih = self.ExtractDotLineChair(txlines, 0)
 		ihcochair = self.ExtractDotLineChair(txlines, ih)
+
 		if ihcochair != -1:
 			return ihcochair
 		return ih
 
 
-	def __init__(self, xpage, lundocname, lpageno):
+	def __init__(self, xpage, lundocname, lpageno, textcountnumber):
 		self.pageno = lpageno
 		self.undocname = lundocname
+		self.textcountnumber = textcountnumber
 
 		leftcolstart = 90
 		rightcolstart = re.match("A-5[34]", lundocname) and 481 or 468
@@ -294,7 +306,8 @@ class TextPage:
 
 		txlines = [ ]
 		for txline in ftxlines:
-			txl = TextLine(txline, lundocname, lpageno)
+			txl = TextLine(txline, lundocname, lpageno, self.textcountnumber)
+			self.textcountnumber += 1
 			if txl.ltext:
 				if txlines and txlines[-1].bfootertype and txlines[-1].top == txl.top:
 					txl.bfootertype = True
@@ -369,12 +382,14 @@ class TextPage:
 		#if self.txlcol2 and self.minindentright != 0:
 		#	print "minindentright", self.minindentright
 
+# clusters are paragraphs after the lines have been clustered together
+
 def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
 	txpages = [ ]
 	tlcall = [ ]
 	for i in range(len(xpages)):
-		txpage = TextPage(xpages[i], undocname, i + 1)
+		txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
 		txpages.append(txpage)
 		if txpage.txlcol1:
 			AppendCluster(tlcall, txpage.txlcol1[0], "newpage")
@@ -390,7 +405,25 @@ def GlueUnfile(xfil, undocname):
 				AppendCluster(tlcall, tlc, "gapcluster")
 		else:
 			assert i == len(xpages) - 1
-	return txpages[0].date, tlcall
+
+	# assign ids to the clusters
+	sdate = txpages[0].date
+	paranumlast = paranum(undocname, sdate, 0, -1, tlc.txls[0].textcountnumber)
+	for tlc in tlcall:
+		if tlc.txls[0].pageno == paranumlast.pageno:
+			paranumlast = paranum(undocname, sdate, paranumlast.pageno, paranumlast.paragraphno + 1, tlc.txls[0].textcountnumber)
+		else:
+			paranumlast = paranum(undocname, sdate, tlc.txls[0].pageno, 1, tlc.txls[0].textcountnumber)
+		tlc.paranum = paranumlast
+
+
+	# merge the lines together and remove double bold/italics that happen across lines
+	for tlc in tlcall:
+		tlc.paratext = " ".join([txl.ltext  for txl in tlc.txls])
+		tlc.paratext = re.sub("\s*</i>\s*<i>\s*|\s*</b>\s*<b>\s*", " ", tlc.paratext)
+		tlc.lastindent = tlc.indents[-1][0]
+
+	return sdate, txpages[0].chairs, tlcall
 
 
 
