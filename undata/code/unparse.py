@@ -2,8 +2,7 @@ import os
 import re
 import sys
 from nations import FixNationName, nonnations
-from paranum import paranumC
-from unmisc import unexception, IsNotQuiet, MarkupLinks
+from unmisc import unexception, IsNotQuiet, MarkupLinks, paranumC
 from unglue import GlueUnfile
 from speechblock import SpeechBlock
 from voteblock import VoteBlock, recvoterequest

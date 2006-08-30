@@ -1,8 +1,7 @@
 import os
 import re
 from nations import FixNationName
-from paranum import paranumC
-from unmisc import unexception
+from unmisc import unexception, paranumC
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
@@ -45,6 +44,8 @@ textlinefixes = { 		# fix case in A-58-PV.84
 	('A-54-PV.9', '<text top="613" left="95" width="52" height="14" font="1">response</text>'): ("left", -5),
 	('A-54-PV.26', '<text top="955" left="522" width="55" height="14" font="1">too hard.</text>'): ("top", -18),  # overflowing line of poetry
 	('A-54-PV.35', '<text top="268" left="159" width="290" height="17" font="5"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),  # overflowing line of poetry
+}
+"""
 
 
 	('A-55-PV.3', '<text top="943" left="110" width="67" height="14" font="3">* A/55/150.</text>'): "remove",
@@ -67,8 +68,7 @@ textlinefixes = { 		# fix case in A-58-PV.84
 
 	('A-55-PV.83', '<text top="636" left="504" width="324" height="17" font="5"><i>Marshall Islands, Micronesia (Federated States</i></text>'): ("replace", 'Marshall Islands, Micronesia (Federated States of)'),
 	('A-55-PV.83', '<text top="654" left="504" width="22" height="17" font="5"><i>of).</i></text>'): "remove",
-}
-"""
+
 	('A-56-PV.79', '<text top="532" left="301" width="76" height="12" font="9">together</text>'): ("top", -4),
 	('A-56-PV.79', '<text top="550" left="369" width="76" height="12" font="9">together</text>'): ("top", -4),
 	('A-56-PV.62', '<text top="371" left="268" width="4" height="2" font="7">*   *   *</text>'): "remove",
@@ -280,7 +280,9 @@ class TextPage:
 			ih += 1
 			#print txlines[ih].ltext
 			mcountry = re.match("\((.*?)\)$", txlines[ih].ltext)
-			assert mcountry
+			if not mcountry:
+				print txlines[ih].ltext
+				raise unexception("unable to extract country from  ...-line", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 		ih += 1
 		self.chairs.append((mchair.group(1), FixNationName(mcountry.group(1), self.date)))
 		return ih

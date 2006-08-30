@@ -21,7 +21,7 @@ def ScrapePlenaryPDF(plenaryurl, purl, pdfname, undocname):
 	fin.close()
 	mfore = re.search('URL=([^"]*)', plenrefererforward)
 	if not mfore:
-		if undocname == "A-55-PV.26":
+		if undocname == "A-55-PV.26":   # claims to be embargoed
 			print "broken", pdfname
         	return
 		print plenrefererforward
