@@ -30,6 +30,8 @@ def StripPageTags(xfil):
 
 
 textlinefixes = { 		# fix case in A-58-PV.84
+}
+"""
 	('A-53-PV.4', '<text top="181" left="481" width="179" height="14" font="1">prices and the Russian crisis.</text>'): ("top", -18),
 	('A-53-PV.8', '<text top="757" left="472" width="356" height="14" font="1">As was pointed out during last week\'s high-level meeting</text>'): ("left", +14),
 	('A-53-PV.26', '<text top="253" left="516" width="281" height="14" font="1">take up arms, even traditional weapons --</text>'): ("left", -4),
@@ -41,18 +43,16 @@ textlinefixes = { 		# fix case in A-58-PV.84
 	('A-53-PV.78', '<text top="1010" left="122" width="327" height="14" font="1">Republic of Tanzania, Uruguay, Vanuatu, Venezuela,</text>'): ("left", -1),
 	('A-53-PV.78', '<text top="1028" left="122" width="185" height="14" font="1">Viet Nam, Yemen, Zimbabwe</text>'): ("left", -1),
 	('A-53-PV.79', '<text top="127" left="484" width="344" height="14" font="1">Cessation of the nuclear arms race and nuclear</text>'): ("left", -3),
-	('A-53-PV.81', '<text top="325" left="486" width="342" height="14" font="1">and private-sector companies to effectively tackle the</text>'): ("left", -5),
-	('A-53-PV.90', '<text top="811" left="125" width="323" height="14" font="1">common standard\' to which the Preamble of the</text>'): ("left", -3),
-
 	('A-53-PV.79', '<text top="974" left="121" width="327" height="14" font="1">Afghanistan, Albania, Algeria, Andorra, Angola</text>'): ("replace", 'Afghanistan, Albania, Algeria, Andorra, Angola,'),
 	('A-53-PV.79', '<text top="127" left="512" width="316" height="14" font="1">Burkina Faso, Burundi, Cameroon , Canada, Cape,</text>'): ("replace", 'Burkina Faso, Burundi, Cameroon , Canada, Cape'),
 	('A-53-PV.79', '<text top="560" left="436" width="12" height="14" font="1">1-</text>'): ("replace", ' '),
+	('A-53-PV.81', '<text top="325" left="486" width="342" height="14" font="1">and private-sector companies to effectively tackle the</text>'): ("left", -5),
+	('A-53-PV.90', '<text top="811" left="125" width="323" height="14" font="1">common standard\' to which the Preamble of the</text>'): ("left", -3),
+
 
 	('A-54-PV.9', '<text top="613" left="95" width="52" height="14" font="1">response</text>'): ("left", -5),
 	('A-54-PV.26', '<text top="955" left="522" width="55" height="14" font="1">too hard.</text>'): ("top", -18),  # overflowing line of poetry
 	('A-54-PV.35', '<text top="268" left="159" width="290" height="17" font="5"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),  # overflowing line of poetry
-}
-"""
 
 
 	('A-55-PV.3', '<text top="943" left="110" width="67" height="14" font="3">* A/55/150.</text>'): "remove",
@@ -394,7 +394,10 @@ class TextPage:
 
 			else:
 				txl.indent = txl.left - rightcolstart
-				assert txl.indent >= 0
+				if txl.indent < 0:
+					print txl.indent
+					print txl.ltext
+					raise unexception("negative indent on righthand column", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				self.minindentright = min(txl.indent, self.minindentright)
 				txl.brightcol = True
 				AppendToCluster(self.txlcol2, txl)

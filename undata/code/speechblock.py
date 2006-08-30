@@ -8,7 +8,7 @@ from nations import FixNationName, nonnations
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
 			(?:,\s(?:Rapporteur|President|Chairman|Vice-Chairperson)\sof\sthe\s
-				(.{0,130}?\s(?:Committee|Council|panel|People)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+				(.{0,130}?\s(?:Committee|Council|panel|People|Rwanda)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
 			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s)?Committee\s.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
@@ -41,7 +41,7 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(The(?:\sActing)?\sPresident)\s*:\s*</b>
+respekp3 = """(?x)<b>\s*(The(?:\sActing|\sTemporary)?\sPresident)\s*:\s*</b>
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
@@ -118,7 +118,7 @@ def DetectSpeaker(ptext, indents, paranum):
 				raise unexception(indentationerror + " of unspoken text", paranum)
 
 			if not mballots:
-				mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolution|decision) ([\d/]*\s*(?:[A-Z]|A and B)?)\))?\.?$", ptext)
+				mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolutions?|decision|draft resolution) ([\d/]*\s*(?:[A-Z]{1,2}|[A-Z] (?:and|to) [A-Z])?)\))?\.?$", ptext)
 				if not mptext:
 					print ptext
 					raise unexception("improper italicline", paranum)
@@ -127,9 +127,9 @@ def DetectSpeaker(ptext, indents, paranum):
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
-			mwasadopted = re.match(".*?(?:resolution|decision).*?(?:was|were) adopted", ptext)
+			mwasadopted = re.match(".*?(?:resolution|decision|agenda).*?(?:was|were) adopted", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
-			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the Chair\.$", ptext)
+			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("was escorted (?:from|to) the rostrum\.$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.$", ptext)

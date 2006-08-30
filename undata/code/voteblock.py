@@ -123,7 +123,8 @@ class VoteBlock:
 		msubseq = re.match("\[Subsequently,? (.*?)\.\]", adtext)
 		self.votechanges = {}
 		if not msubseq:
-			assert not re.search("Subsequently", adtext)
+			if re.search("Subsequently", adtext):
+				raise unexception("unexpected subsequently", self.tlcall[self.i].paranum)
 			return
 
 		for sadtext in re.split(";\s*", msubseq.group(1)):
