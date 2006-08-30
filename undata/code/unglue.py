@@ -67,7 +67,8 @@ textlinefixes = { 		# fix case in A-58-PV.84
 
 	('A-55-PV.83', '<text top="636" left="504" width="324" height="17" font="5"><i>Marshall Islands, Micronesia (Federated States</i></text>'): ("replace", 'Marshall Islands, Micronesia (Federated States of)'),
 	('A-55-PV.83', '<text top="654" left="504" width="22" height="17" font="5"><i>of).</i></text>'): "remove",
-
+}
+"""
 	('A-56-PV.79', '<text top="532" left="301" width="76" height="12" font="9">together</text>'): ("top", -4),
 	('A-56-PV.79', '<text top="550" left="369" width="76" height="12" font="9">together</text>'): ("top", -4),
 	('A-56-PV.62', '<text top="371" left="268" width="4" height="2" font="7">*   *   *</text>'): "remove",
@@ -75,7 +76,6 @@ textlinefixes = { 		# fix case in A-58-PV.84
 
 	('A-56-PV.82', '<text top="961" left="126" width="324" height="17" font="2">Bhutan, Gabon, Georgia, Germany, Ghana,</text>'): ("replace", "Bhutan,"),
 	('A-56-PV.82', '<text top="979" left="126" width="324" height="17" font="2">Greece, Bolivia, Brazil, Brunei Darussalam,</text>'): ("replace", "Bolivia, Brazil, Brunei Darussalam,"),
-
 	('A-57-PV.66', '<text top="654" left="126" width="324" height="17" font="2">Albania, Andorra, Argentina, Australia, Austria,</text>'): ("left", -1),
 	('A-57-PV.79', '<text top="491" left="546" width="9" height="17" font="11"><b>ø</b></text>'): ("top", +1),
 
@@ -86,7 +86,7 @@ textlinefixes = { 		# fix case in A-58-PV.84
 	('A-58-PV.20', '<text top="1017" left="469" width="349" height="14" font="10"><i>Note</i>: Solomon Islands pidgin for: "Thank you for helping your</text>'): "remove",
 	('A-58-PV.20', '<text top="1031" left="502" width="42" height="14" font="3">friend".</text>'): "remove", }
 
-
+"""
 	# these ones happen on multiple pages
 """	('A-59-PV.38', '<text top="511" left="303" width="146" height="15" font="9">Economic and Social</text>'): ("top", -1),
 	('A-59-PV.38', '<text top="529" left="90" width="239" height="15" font="9">Commission for Asia and the Pacific</text>'): ("top", -1),
@@ -175,7 +175,7 @@ def AppendToCluster(txlcol, txl):
 	#print txlcol[-1].txls[-1].ltext
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 	if not txl.vgap in (0, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 37, 43, 45, 48, 53, 54, 55, 63, 72):
-		print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
+		print "vgap=", txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 		raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 	if txl.vgap in (0, 17, 18, 19) or txl.vgap == 0:
 		txlcol[-1].AddLine(txl)
@@ -231,6 +231,7 @@ def AppendCluster(res, tlc, sclusttype):
 		print tlc.indents
 		for txl in tlc.txls:
 			print txl.indent, txl.ltext
+		raise unexception("unrecognized indent pattern", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 		assert False
 	res.append(tlc)
 	return
@@ -365,7 +366,9 @@ class TextPage:
 				#print txl.bfootertype, txl.left, txl.width, txl.top, txl.ltext  # zzzz
 				# there's a bit of spilling out where the region is larger than it should be for the words as in A-56-PV.64
 				if not (txl.left + txl.width <= 459):
-					assert (txl.left + txl.width <= 501)
+					if txl.left + txl.width > 501:
+						print txl.left, txl.width, txl.left + txl.width
+						raise unexception("right-hand extension excessive", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 					if not (txl.left <= 165):
 						bc = -1
 						while True:

@@ -10,7 +10,7 @@ recvoterequest = "A recorded vote has been requested|(?:<i>)?A recorded vote was
 
 class VoteBlock:
 	# problem is overflowing paragraphs across pages, where double barrelled country names can get split
-	def DetectNationList(self, ptext, fromlast):
+	def DetectNationList(self, ptext, fromlast, paranum):
 		bforce = (not not fromlast)
 		if fromlast and fromlast not in ["FIRST", "ANDLIST"]:
 			print "carryingforward $%s$" % fromlast
@@ -55,7 +55,7 @@ class VoteBlock:
 		if bforce and fres:
 			print "****", fres
 			print "cccccc", carryforward
-			assert False
+			raise unexception("votelist problem", self.tlcall[self.i].paranum)
 		if res and not fres:
 			return "present", res, carryforward
 		if bforce:
@@ -76,15 +76,16 @@ class VoteBlock:
 			if self.undocname in ["A-55-PV.44"] and re.search("Against", votere) and re.match("<i>Abstaining", tlc.paratext):
 				return [ ]
 			print "failed with:", votere, tlc.paratext
+			raise unexception("votelist detectvote match", tlc.paranum)
 
 		#print tlc.paratext
-		mess, natlist, carryforward = self.DetectNationList(tlc.paratext[votem.end(0):].strip(), "FIRST")
+		mess, natlist, carryforward = self.DetectNationList(tlc.paratext[votem.end(0):].strip(), "FIRST", tlc.paranum)
 		assert mess != "nothingmore"
 		self.i += 1
 
 		# deal with nation names merging across pages.
 		while True:
-			mess, cnatlist, carryforward = self.DetectNationList(self.tlcall[self.i].paratext, carryforward)
+			mess, cnatlist, carryforward = self.DetectNationList(self.tlcall[self.i].paratext, carryforward, self.tlcall[self.i].paranum)
 			if mess == "nothingmore":
 				#print self.tlcall[self.i].paratext
 				break
@@ -113,7 +114,7 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73" ]
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54" ]
 		self.motiontext = MarkupLinks(adtext)
 		self.i += 1
 
@@ -128,16 +129,17 @@ class VoteBlock:
 		for sadtext in re.split(";\s*", msubseq.group(1)):
 			if not sadtext:
 				continue
-			msadtext = re.match("the delegations? of (.*?) (?:informed|advised) the Secretariat that (?:it|they) had intended to (vote in favour|vote against|abstain)$", sadtext)
+			msadtext = re.match("the delegations? of (.*?) (?:informed|advised) the [Ss]ecretariat that (?:it|they) (?:had )?intended to (vote in favour|vote against|abstain)$", sadtext)
 			if not msadtext:
-				msadtext = re.match("the delegation of (.*?)(?:(?:informed|advised) the Secretariat that (?:it|they))? had (not) intended to participate$", sadtext)
+				msadtext = re.match("the delegations? of (.*?)(?:(?:informed|advised) the Secretariat that (?:it|they))? had (not) intended to participate(?: in the voting)?$", sadtext)
 			if not msadtext:
-				msadtext = re.match("the delegation of (.*?) had intended to (abstain)$", sadtext)
+				msadtext = re.match("the delegations? of (.*?) had intended to (abstain)$", sadtext)
 			if not msadtext:
-				print "--- ---", sadtext
-				assert False
+				print "---%s---" % sadtext
+				#print re.match("the delegations? of (.*?) (?:informed|advised) the Secretariat that (?:it|they) had", sadtext)
+				raise unexception("change vote advice unrecognized", self.tlcall[self.i].paranum)
 
-			mess, natlist, carryforward = self.DetectNationList(msadtext.group(1), "ANDLIST")
+			mess, natlist, carryforward = self.DetectNationList(msadtext.group(1), "ANDLIST", self.tlcall[self.i].paranum)
 			assert natlist
 			#print sadtext, msadtext.group(1)
 			#print natlist, "(", msadtext.group(2)
@@ -183,7 +185,7 @@ class VoteBlock:
 		self.vlfavour = self.DetectVote("<i>In(?:</i> <i>| )favour:?\s*</i>:?")
 		self.vlagainst = self.DetectVote("(?:<i>)?Against:?\s*(?:</i>)?:?")
 		self.vlabstain = self.DetectVote("(?:<i>)?Abstaining:?(?:</i>)?:?")
-		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate)
+		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate, self.paranum)
 		self.votecount = "favour=%d against=%d abstain=%d absent=%d" % (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain), len(self.vlabsent))
 		print "  ", self.votecount
 		self.DetectAdoption()

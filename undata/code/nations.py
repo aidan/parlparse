@@ -1,4 +1,5 @@
 import re
+from unmisc import unexception
 
 nationdates = {
         "Afghanistan": 	("1945", "9999-12-31"),
@@ -29,7 +30,6 @@ nationdates = {
 		"Bulgaria": 	("1945", "9999-12-31"),
 		"Burkina Faso": 	("1945", "9999-12-31"),
 		"Burundi": 	("1945", "9999-12-31"),
-		"Croatia": 	("1945", "9999-12-31"),
 		"Cambodia": 	("1945", "9999-12-31"),
 		"Cameroon": 	("1945", "9999-12-31"),
 		"Canada": 	("1945", "9999-12-31"),
@@ -47,6 +47,7 @@ nationdates = {
 		"Cyprus": 	("1945", "9999-12-31"),
 		"Czech Republic": 	("1945", "9999-12-31"),
 		"Côte d'Ivoire": 	("1945", "9999-12-31"),
+		"Democratic Republic of the Congo": 	("1945", "9999-12-31"),
 		"Democratic People's Republic of Korea": 	("1945", "9999-12-31"),
 		"Denmark": 	("1945", "9999-12-31"),
 		"Dominica": 	("1945", "9999-12-31"),
@@ -138,7 +139,7 @@ nationdates = {
 		"Portugal": 	("1945", "9999-12-31"),
 		"Qatar": 	("1945", "9999-12-31"),
 		"Republic of Korea": 	("1945", "9999-12-31"),
-		"Republic of Moldova": 	("1945", "9999-12-31"),
+		"Moldova": 	("1945", "9999-12-31"),
 		"Romania": 	("1945", "9999-12-31"),
 		"Russia": 	("1945", "9999-12-31"),
 		"Rwanda": 	("1945", "9999-12-31"),
@@ -165,7 +166,7 @@ nationdates = {
 		"Suriname": 	("1945", "9999-12-31"),
 		"Swaziland": 	("1945", "9999-12-31"),
 		"Sweden": 	("1945", "9999-12-31"),
-		"Switzerland": ("2002-09-10", "9999-12-31"),
+		"Switzerland": ("2001-09-10", "9999-12-31"),
 		"Syria": 	("1945", "9999-12-31"),
 		"Tajikistan": 	("1945", "9999-12-31"),
 		"Thailand": 	("1945", "9999-12-31"),
@@ -199,12 +200,13 @@ nationmapping = {
 		"United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
 		"Cote d'Ivoire":"Côte d'Ivoire",
 		"the former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
-		"Democratic Republic of the Congo":"Congo",
+		# "Democratic Republic of the Congo":"Congo",  # is this a separate country?
 		"Syrian Arab Republic":"Syria",
 		"Libyan Arab Jamahiriya":"Libya",
 		"Iran (Islamic Republic of)":"Iran",
 		"Islamic Republic of Iran":"Iran",
 		"Serbia and Montenegro":"Serbia",
+		"Sao Tome":"Sao Tome and Principe",
 		"Venezuela (Bolivarian Republic of)":"Venezuela",
 		"Bolivarian Republic of Venezuela":"Venezuela",
 		"United Republic of Tanzania":"Tanzania",
@@ -217,6 +219,9 @@ nationmapping = {
 		"Micronesia (Federated States of)":"Micronesia",
 		"Federated States of Micronesia":"Micronesia",
 		"Russian Federation":"Russia",
+		"Republic of Croatia":"Croatia",
+		"Principality of Monaco":"Monaco",
+		"Republic of Moldova":"Moldova", 
 				}
 
 nonnations = [	"European Community",
@@ -225,8 +230,10 @@ nonnations = [	"European Community",
 				"International Monetary Fund",
 				"World Bank",
 				"World Trade Organization",
+				"World Health Organization",
 				"United Nations Conference on Trade and Development",
 				"United Nations Development Programme",
+				"UNICEF",
 				"United Nations Population Fund",
 				"Partners in Population and Development",
 				"Inter-Parliamentary Union",
@@ -255,15 +262,38 @@ nonnations = [	"European Community",
 				"International Union for the Conservation of Nature and Natural Resources",
 				"Conference of Non-Governmental Organizations in Consultative Relationship with the United Nations",
 				"Chairman of the Committee on the Peaceful Uses of Outer Space",
+				"Chairman of the Committee on the Exercise of the Inalienable Rights of the Palestinian People",
+				"Rapporteur of the Committee on the Exercise of the Inalienable Rights of the Palestinian People",
 				"Organization for the Prohibition of Chemical Weapons",
 				"Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization",
+				"Comprehensive Nuclear-Test-Ban Treaty Organization",
 				"Chief, General Assembly Affairs Branch, Department for General Assembly and Conference Management",
+				"Under-Secretary-General, Department of General Assembly Affairs and Conference Management",
+				"Under-Secretary-General for General Assembly and Conference Management",
+				"Under-Secretary-General for General Assembly Affairs and Conference Services",
+				"Department for General Assembly and Conference Management",
 				"Chief, General Assembly Affairs Branch",
+				"International Telecommunication Union",
+				"Chairman of the Information and Communication Technologies Task Force",
+				"Digital Opportunity Task Force",
+				"Director, General Assembly and Economic and Social Council Affairs Division",
+				"Director, General Assembly and Economic and Social Council Affairs Division of the Department of General Assembly Affairs and Conference Management Services",
 				"Joint United Nations Programme on HIV/AIDS",
 				"Sovereign Military Order of Malta",
-				"President of the Economic and Social Council", 
+				"Secretary-General, Eurasian Economic Community",
+				"President of the Economic and Social Council",
+				"President, Third United Nations Conference on the Law of the Sea",
+				"New Zealand, President, Twelfth Meeting of States Parties to the United Nations Convention on the Law of the Sea",
+				"President of the Assembly of the International Seabed Authority",
+				"Judge, International Tribunal for the Law of the Sea",
+				"Commission on the Limits of the Continental Shelf",
+				"International Hydrographic Organization",
+				"Vice-President of the Economic and Social Council",
 				"Economic and Social Commission for Western Africa",
+				"United Nations Educational, Scientific and Cultural Organization",
 				"International Organization of la Francophonie",
+				"International Organization of La Francophonie",
+				"President of the Security Council",
 			 ]
 
 
@@ -288,10 +318,11 @@ def FixNationName(lnation, sdate):
 		lnation = llnation
 	if not dr[0] <= sdate < dr[1]:
 		print lnation, dr
+		print "nation out of date range"
 		assert False
 	return lnation
 
-def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate):
+def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum):
 	nationvotes = { }
 	for nation, dr in nationdates.iteritems():
 		if dr[0] <= sdate < dr[1]:
@@ -299,8 +330,8 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate):
 	#print "\n\n\n"
 	for vn in vlfavour:
 		if nationvotes[vn] != "absent":
-			print vn
-			assert False
+			print vn, sdate, nationvotes[vn]
+			raise unexception("country not in date range", paranum)
 		nationvotes[vn] = "favour"
 	for vn in vlagainst:
 		assert nationvotes[vn] == "absent"

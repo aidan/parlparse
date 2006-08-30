@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-from nations import FixNationName, nonnations, GenerateNationsVoteList
+from nations import FixNationName, nonnations
 from paranum import paranumC
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 from unglue import GlueUnfile
