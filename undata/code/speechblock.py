@@ -78,7 +78,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 	if mspek or speakerbeforetookchair:
 		if indentationerror and indents == [(0,0)] and speakerbeforetookchair:
 			indentationerror = False
-		if indentationerror and indents == [(0,0)] and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49" ]:
+		if indentationerror and indents == [(0,0)] and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49", "A-55-PV.52", "A-55-PV.56" ]:
 			indentationerror = False
 		if indentationerror:
 			print ptext
@@ -147,7 +147,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("was escorted (?:(?:from|to) the rostrum|(?:from|into|to its place in) the General Assembly Hall)\.?$", ptext)
+			mescort = re.search("was escorted (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.$", ptext)
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball):
 				print "unrecognized--%s--" % ptext
