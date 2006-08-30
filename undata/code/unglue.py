@@ -12,7 +12,14 @@ def StripPageTags(xfil):
 	xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
 	#print len(xpages), undoc
-	assert re.match(page1bit, mpage1head.group(1)) # fails for bitmap type pdfs
+	if not mpage1head:
+		print "Probably is a bitmap type"
+		print xpages[0]
+		assert False
+	if not re.match(page1bit, mpage1head.group(1)):
+		print "Probably is a bitmap type"
+		print mpage1head.group(1)
+		assert False
 	res = [ xpages[0][mpage1head.end(0):] ]
 
 	for i in range(1, len(xpages)):
@@ -213,7 +220,7 @@ def AppendCluster(res, tlc, sclusttype):
 			pass
 
 	# two paragraphs may have been merged, try to separate them out
-	elif len(tlc.indents) == 4:
+	elif len(tlc.indents) == 4 and tlc.indents[0][0] == tlc.indents[2][0] and tlc.indents[1][0] == tlc.indents[3][0]:
 		#print tlc.indents
 		#print tlc.txls[0].ltext
 		assert tlc.indents[0][0] == tlc.indents[2][0]

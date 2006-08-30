@@ -40,11 +40,9 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 		undocname = os.path.splitext(undoc)[0]
 
 		# too hard.  too many indent problems (usually secret ballot announcementing)
-		if undocname in ["A-53-PV.39", "A-53-PV.52",
-						 "A-54-PV.34", "A-54-PV.45",
-						 "A-55-PV.33", "A-55-PV.99",
-						 "A-56-PV.32", "A-56-PV.81"]:
-			continue
+#		if undocname in ["A-53-PV.39", "A-53-PV.52",
+#						 "A-54-PV.34", "A-54-PV.45"]:
+#			continue
 		if not re.match(stem, undocname):
 			continue
 		if re.search("Corr", undocname): # skip corregendas

@@ -8,8 +8,8 @@ from nations import FixNationName, nonnations
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
 			(?:,\s(?:Rapporteur|President|Chairman|Vice-Chairperson)\sof\sthe\s
-				(.{0,80}?\s(?:Committee|Council|panel|People)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-			(?:\s\(((?:Acting\s)?Chairman\sof\sthe\s(?:Ad\sHoc\s)?Committee\s.{0,90}?)\))?  # group 4 extra chairman setting
+				(.{0,130}?\s(?:Committee|Council|panel|People)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s)?Committee\s.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?the\sdelegation)?   # translated by [their] delegation
@@ -75,8 +75,8 @@ def DetectSpeaker(ptext, indents, paranum):
 	#	print ptext
 	#	print "   ___ ", m and m.group(0)
 	if mspek:
-		#print "&&&&& ", mspek.groups()
-		#print indents
+		if indentationerror and indents == [(0,0)] and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49" ]:
+			indentationerror = False
 		if indentationerror:
 			print ptext
 			print indents
@@ -131,7 +131,9 @@ def DetectSpeaker(ptext, indents, paranum):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the Chair\.$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots):
+			mescort = re.search("was escorted (?:from|to) the rostrum\.$", ptext)
+			msecball = re.search("A vote was taken by secret ballot\.$", ptext)
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
@@ -139,7 +141,7 @@ def DetectSpeaker(ptext, indents, paranum):
 			currentspeaker = None
 
 		elif re.match("<b>", ptext):
-			if not re.match("<b>.*?</b>(\(|\)|</?i>|\s|continued|and|[A/\d,]|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph)*$", ptext):
+			if not re.match("<b>.*?</b>(\(|\)|</?i>|\s|continued|and|[A/\d,]|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|Parts|I)*$", ptext):
 				print ptext
 				raise unexception("unrecognized bold completion", paranum)
 			ptext = re.sub("</?b>", "", ptext)
@@ -169,7 +171,9 @@ class SpeechBlock:
 		if re.match(".{0,40}?was so decided.{0,40}?$", ptext):
 			#print "---sss--", ptext
 			return True
-		if re.match("<i>The meeting (?:was called to order|rose|was suspended|was adjourned) at.{0,60}?$", ptext):
+		if re.match("<i>The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
+			return True
+		if re.match("<i>A vote was taken", ptext):
 			return True
 		return False
 
