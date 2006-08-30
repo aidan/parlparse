@@ -7,19 +7,32 @@ from nations import FixNationName, nonnations
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-			(?:,\sRapporteur\sof\sthe\s(.{0,60}?\sCommittee(?:\s\([^\)]*\))?))?  # group 3  committee rapporteur
+			(?:,\s(?:Rapporteur|President|Chairman)\sof\sthe\s
+				(.{0,60}?\s(?:Committee|Council)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:\s\((Chairman\sof\sthe\sCommittee\s.{0,90}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
-				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 4  speaker language
+				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?the\sdelegation)?   # translated by [their] delegation
 			(?:\)|</i>)+)?
 			\s*(?:<i>)?:(?:</i>)?\s*"""
+
+# use this to disentangle failures in the above regexp
+#respekSS = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
+#			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
+#			(?:,\s(?:Rapporteur|President|Chairman)\sof\sthe\s
+#				(.{0,60}?\s(?:Committee|Council)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+#			(?:\s\((Chairman\sof\sthe\sCommittee\s.{0,90}?)\))?  # group 4 extra chairman setting
+#"""
+
 #<b>The President</b>  (<i>spoke in French</i>):
 respekp1 = """(?x)<b>(The\sPresident)\s*</b>
 			  (?:\s*\(([^\)<]*)\))?\s*
 			  (dummy)?
+			  (dummy)?
 			  (?:\(<i>?:spoke\sin\s(\w+)</i>\))?
 			  \s*:\s*"""
 respekp2 = """(?x)<b>(The\sPresident)\s*</b>
+			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  (?:\s|\(|</?i>|</?b>)+
@@ -27,6 +40,7 @@ respekp2 = """(?x)<b>(The\sPresident)\s*</b>
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:(?:</[ib]>)?\s*"""
 respekp3 = """(?x)<b>(The(?:\sActing)?\sPresident)\s*:\s*</b>
+			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
@@ -54,6 +68,10 @@ def DetectSpeaker(ptext, indents, paranum):
 		mspek = re.match(respekp3, ptext)
 	if not mspek:
 		mspek = re.match(respek, ptext)
+	#if not mspek:
+	#	m = re.match(respekSS, ptext)
+	#	print ptext
+	#	print "   ___ ", m and m.group(0)
 	if mspek:
 		#print "&&&&& ", mspek.groups()
 		#print indents
@@ -67,14 +85,14 @@ def DetectSpeaker(ptext, indents, paranum):
 			if lnation in nonnations:
 				nation = lnation
 			else:
-				nation = FixNationName(nation, paranum.sdate)
+				nation = FixNationName(lnation, paranum.sdate)
 			if not nation:
 				print ptext
 				print "\ncheck if misspelt or new nonnation: ", lnation
 				raise unexception("unrecognized nation or nonnation", paranum)
 		assert mspek.group(1)
 		typ = "spoken"
-		currentspeaker = (mspek.group(1), nation, mspek.group(4) or "")
+		currentspeaker = (mspek.group(1), nation, mspek.group(5) or "")
 
 		ptext = ptext[mspek.end(0):]
 
@@ -90,20 +108,20 @@ def DetectSpeaker(ptext, indents, paranum):
 				print indents
 				raise unexception(indentationerror + " of unspoken text", paranum)
 
-			mptext = re.match("<i>(.*?)</i>\s*(?:\(resolution ([\d/AB]*)\))?\.?$", ptext)
+			mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolution|decision) ([\d/]*(?:A|B| A and B)?)\))?\.?$", ptext)
 			if not mptext:
 				print ptext
 				assert False  # not all italicked
 
-			ptext = re.sub("</?i>", "", ptext)
+			ptext = re.sub("</?i>", "", ptext).strip()
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided\.", ptext)
 			mwasadopted = re.match(".*?(?:resolution|decision).*?was adopted", ptext)
-			mcalledorder = re.match("The meeting (?:was called to order|rose) at", ptext)
-			mtookchair = re.match("In the absence of the President, (.*), Vice-President, took the Chair.", ptext)
+			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
+			mtookchair = re.match("In the absence of the President, (.*), Vice[\-\s]President, took the Chair.", ptext)
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair):
-				print "unrecognized--", ptext
+				print "unrecognized--%s--" % ptext
 				raise unexception("unrecognized italicline", paranum)
 			typ = "italicline"
 			currentspeaker = None
@@ -111,17 +129,15 @@ def DetectSpeaker(ptext, indents, paranum):
 		elif re.match("<b>", ptext):
 			if not re.match("<b>.*?</b>(\(|\)|</?i>|\s|continued)*$", ptext):
 				print ptext
-				assert False
+				raise unexception("unrecognized bolc completion", paranum)
 			ptext = re.sub("</?b>", "", ptext)
 			typ = "boldline"
 			currentspeaker = None
 
 		else:
 			typ = "unknown"
-			print ptext, lastindent
-			#raise unexception("possible indent failure", paranum)
-			assert False
-			currentspeaker = None
+			print ptext, indents
+			raise unexception("possible indent failure", paranum)
 
 	return ptext, typ, currentspeaker
 
@@ -181,7 +197,7 @@ class SpeechBlock:
 
 		# actual spoken section
 		assert self.typ == "spoken"
-		assert not tlc.lastindent # doesn't happen in first paragraph of speech
+		assert not tlc.lastindent or len(tlc.indents) == 1 # doesn't happen in first paragraph of speech
 		self.paragraphs = [ ("p", ptext) ]
 		while self.i < len(self.tlcall):
 			tlc = self.tlcall[self.i]

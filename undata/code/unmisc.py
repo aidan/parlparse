@@ -1,6 +1,7 @@
 import re
 
 undoclinks = "http://seagrass.goatchurch.org.uk/~undocs/cgi-bin/getundoc.py?doc="
+undoclinks = "../pdf/"
 
 bQuiet = False
 def IsNotQuiet():

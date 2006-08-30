@@ -185,7 +185,7 @@ class VoteBlock:
 		self.vlabstain = self.DetectVote("(?:<i>)?Abstaining:?(?:</i>)?:?")
 		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate)
 		self.votecount = "favour=%d against=%d abstain=%d absent=%d" % (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain), len(self.vlabsent))
-		#print "  ", self.votecount
+		print "  ", self.votecount
 		self.DetectAdoption()
 		self.DetectSubsequentVoteChange(gnv)
 

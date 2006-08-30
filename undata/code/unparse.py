@@ -2,7 +2,7 @@ import os
 import re
 import sys
 from nations import FixNationName, nonnations, GenerateNationsVoteList
-from paranum import paranum
+from paranum import paranumC
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 from unglue import GlueUnfile
 from speechblock import SpeechBlock
@@ -48,6 +48,8 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 			continue
 		if not re.match(stem, undocname):
 			continue
+		if re.search("Corr", undocname): # skip corregendas
+			continue
 		if not bforceparse:
 			undochtml = os.path.join(htmldir, undocname + ".html")
 			if os.path.isfile(undochtml):
@@ -88,14 +90,13 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 				fin.close()
 				mfinlines = re.match("(?s)(.*?<text ){%d}" % ux.paranum.textcountnumber, finlines)
 				ln = mfinlines.group(0).count("\n")
-				print ln
 				os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g00:%d' % (undocpdfxml, ln + 2))
 		if not gparas:
 			continue
 
 		fout = open(undochtml, "w")
 		fout.write('<html>\n<head>\n')
-		fout.write('<link href="unhtml.css" type="text/css" rel="stylesheet" media="all">\n')
+		fout.write('<link href="../unview.css" type="text/css" rel="stylesheet" media="all">\n')
 		fout.write('</head>\n<body>\n')
 		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, sdate))
 		for gpara in gparas:

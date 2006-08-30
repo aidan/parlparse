@@ -1,7 +1,8 @@
 import os
 import re
 from nations import FixNationName
-from paranum import paranum
+from paranum import paranumC
+from unmisc import unexception
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
@@ -175,7 +176,7 @@ def AppendToCluster(txlcol, txl):
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 	if not txl.vgap in (0, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 37, 43, 45, 48, 53, 54, 55, 63, 72):
 		print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
-		assert False
+		raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 	if txl.vgap in (0, 17, 18, 19) or txl.vgap == 0:
 		txlcol[-1].AddLine(txl)
 	else:
@@ -339,8 +340,16 @@ class TextPage:
 				assert re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
 				ih = 4;
 			ie = len(txlines) - 1
-			#print txlines[ie].ltext
-			assert int(re.sub("<..?>", "", txlines[ie].ltext)) == self.pageno
+			if re.match("\d\d\-\d\d\d\d\d", txlines[ie].ltext):
+				ie -= 1
+			pagenumtext = re.sub("<..?>", "", txlines[ie].ltext).strip()
+			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
+				ie -= 1
+			if not re.match("\d+$", pagenumtext):
+				print "jjjj", pagenumtext
+				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+			if int(pagenumtext) != self.pageno:
+				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 
 		# separate out the header and footers
 		self.txlheader = txlines[:ih]
@@ -409,18 +418,23 @@ def GlueUnfile(xfil, undocname):
 
 	# assign ids to the clusters
 	sdate = txpages[0].date
-	paranumlast = paranum(undocname, sdate, 0, -1, tlc.txls[0].textcountnumber)
+	paranumlast = paranumC(undocname, sdate, 0, -1, tlc.txls[0].textcountnumber)
 	for tlc in tlcall:
 		if tlc.txls[0].pageno == paranumlast.pageno:
-			paranumlast = paranum(undocname, sdate, paranumlast.pageno, paranumlast.paragraphno + 1, tlc.txls[0].textcountnumber)
+			paranumlast = paranumC(undocname, sdate, paranumlast.pageno, paranumlast.paragraphno + 1, tlc.txls[0].textcountnumber)
 		else:
-			paranumlast = paranum(undocname, sdate, tlc.txls[0].pageno, 1, tlc.txls[0].textcountnumber)
+			paranumlast = paranumC(undocname, sdate, tlc.txls[0].pageno, 1, tlc.txls[0].textcountnumber)
 		tlc.paranum = paranumlast
 
 
 	# merge the lines together and remove double bold/italics that happen across lines
 	for tlc in tlcall:
-		tlc.paratext = " ".join([txl.ltext  for txl in tlc.txls])
+		jparatext = [ ]  # don't insert spaces where there is a hyphen
+		for txl in tlc.txls:
+			if jparatext and not (re.search("\w-$", jparatext[-1]) and re.match("\w", txl.ltext)):
+				jparatext.append(" ")
+			jparatext.append(txl.ltext)
+		tlc.paratext = "".join(jparatext)
 		tlc.paratext = re.sub("\s*</i>\s*<i>\s*|\s*</b>\s*<b>\s*", " ", tlc.paratext)
 		tlc.lastindent = tlc.indents[-1][0]
 

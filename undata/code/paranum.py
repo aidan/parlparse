@@ -1,7 +1,7 @@
 
 # used for exceptions and for generating ids
 
-class paranum:
+class paranumC:
 	def __init__(self, undocname, sdate, pageno, paragraphno, textcountnumber):
 		self.undocname = undocname
 		self.sdate = sdate
