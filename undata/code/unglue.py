@@ -29,82 +29,6 @@ def StripPageTags(xfil):
 	return res
 
 
-textlinefixes = { 		# fix case in A-58-PV.84
-}
-"""
-	('A-53-PV.4', '<text top="181" left="481" width="179" height="14" font="1">prices and the Russian crisis.</text>'): ("top", -18),
-	('A-53-PV.8', '<text top="757" left="472" width="356" height="14" font="1">As was pointed out during last week\'s high-level meeting</text>'): ("left", +14),
-	('A-53-PV.26', '<text top="253" left="516" width="281" height="14" font="1">take up arms, even traditional weapons --</text>'): ("left", -4),
-	('A-53-PV.28', '<text top="604" left="159" width="290" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),
-	('A-53-PV.41', '<text top="628" left="547" width="281" height="17" font="6"><b> alovski </b>(The former Yugoslav Republic of</text>'): ("top", +3),
-	('A-53-PV.63', '<text top="160" left="547" width="281" height="17" font="6"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),
-	('A-53-PV.63', '<text top="416" left="516" width="312" height="14" font="1">veto\' where they consider the question of vital</text>'): ("left", -4),
-	('A-53-PV.78', '<text top="325" left="544" width="73" height="14" font="1">amahiriya,</text>'): ("left", -32),
-	('A-53-PV.78', '<text top="1010" left="122" width="327" height="14" font="1">Republic of Tanzania, Uruguay, Vanuatu, Venezuela,</text>'): ("left", -1),
-	('A-53-PV.78', '<text top="1028" left="122" width="185" height="14" font="1">Viet Nam, Yemen, Zimbabwe</text>'): ("left", -1),
-	('A-53-PV.79', '<text top="127" left="484" width="344" height="14" font="1">Cessation of the nuclear arms race and nuclear</text>'): ("left", -3),
-	('A-53-PV.79', '<text top="974" left="121" width="327" height="14" font="1">Afghanistan, Albania, Algeria, Andorra, Angola</text>'): ("replace", 'Afghanistan, Albania, Algeria, Andorra, Angola,'),
-	('A-53-PV.79', '<text top="127" left="512" width="316" height="14" font="1">Burkina Faso, Burundi, Cameroon , Canada, Cape,</text>'): ("replace", 'Burkina Faso, Burundi, Cameroon , Canada, Cape'),
-	('A-53-PV.79', '<text top="560" left="436" width="12" height="14" font="1">1-</text>'): ("replace", ' '),
-	('A-53-PV.81', '<text top="325" left="486" width="342" height="14" font="1">and private-sector companies to effectively tackle the</text>'): ("left", -5),
-	('A-53-PV.90', '<text top="811" left="125" width="323" height="14" font="1">common standard\' to which the Preamble of the</text>'): ("left", -3),
-
-
-	('A-54-PV.9', '<text top="613" left="95" width="52" height="14" font="1">response</text>'): ("left", -5),
-	('A-54-PV.26', '<text top="955" left="522" width="55" height="14" font="1">too hard.</text>'): ("top", -18),  # overflowing line of poetry
-	('A-54-PV.35', '<text top="268" left="159" width="290" height="17" font="5"><b> alovski </b>(the former Yugoslav Republic of</text>'): ("top", +3),  # overflowing line of poetry
-
-
-	('A-55-PV.3', '<text top="943" left="110" width="67" height="14" font="3">* A/55/150.</text>'): "remove",
-	('A-55-PV.4', '<text top="352" left="575" width="251" height="17" font="2">(President of the Republic of Namibia)</text>'): ("top", +2),
-	('A-55-PV.5', '<text top="352" left="575" width="251" height="17" font="2">(President of the Republic of Namibia)</text>'): ("top", +2),
-	('A-55-PV.6', '<text top="336" left="333" width="228" height="14" font="3">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>'): ("top", -2),
-	('A-55-PV.6', '<text top="354" left="325" width="235" height="14" font="3">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>'): ("top", -2),
-	('A-55-PV.7', '<text top="354" left="333" width="220" height="14" font="3">. . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>'): ("top", -2),
-	('A-55-PV.8', '<text top="360" left="310" width="228" height="14" font="3">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>'): ("top", -2),
-	('A-55-PV.10', '<text top="506" left="386" width="8" height="11" font="8">th</text>'): ("top", +1),
-	('A-55-PV.25', '<text top="336" left="271" width="375" height="14" font="3">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>'): ("top", -2),
-	('A-55-PV.28', '<text top="868" left="226" width="224" height="18" font="9">International Committee of the</text>'): ("top", +2),
-	('A-55-PV.28', '<text top="886" left="90" width="133" height="18" font="9">Red Cross (ICRC)</text>'): ("top", +2),
-	('A-55-PV.50', '<text top="605" left="332" width="8" height="11" font="12">th</text>'): ("top", +1),
-	('A-55-PV.69', '<text top="537" left="126" width="324" height="17" font="2">Albania, Algeria, Andorra, Angola, Antigua and</text>'): ("left", -3),
-	('A-55-PV.69', '<text top="429" left="126" width="324" height="17" font="2">Albania, Andorra, Angola, Antigua and Barbuda,</text>'): ("left", -3),
-	('A-55-PV.69', '<text top="726" left="504" width="324" height="17" font="2">Algeria, Bahrain, China, Democratic People\'s</text>'): ("left", -2),
-	('A-55-PV.73', '<text top="832" left="90" width="311" height="18" font="8">International Committee of the Red Cross </text>'): ("top", +2),
-	('A-55-PV.81', '<text top="371" left="185" width="1" height="2" font="7">3</text>'): "remove",
-
-	('A-55-PV.83', '<text top="636" left="504" width="324" height="17" font="5"><i>Marshall Islands, Micronesia (Federated States</i></text>'): ("replace", 'Marshall Islands, Micronesia (Federated States of)'),
-	('A-55-PV.83', '<text top="654" left="504" width="22" height="17" font="5"><i>of).</i></text>'): "remove",
-
-	('A-56-PV.79', '<text top="532" left="301" width="76" height="12" font="9">together</text>'): ("top", -4),
-	('A-56-PV.79', '<text top="550" left="369" width="76" height="12" font="9">together</text>'): ("top", -4),
-	('A-56-PV.62', '<text top="371" left="268" width="4" height="2" font="7">*   *   *</text>'): "remove",
-	('A-56-PV.68', '<text top="888" left="126" width="148" height="17" font="2">Zambia and Zimbabwe</text>'): ("replace", "Zambia, Zimbabwe"),
-
-	('A-56-PV.82', '<text top="961" left="126" width="324" height="17" font="2">Bhutan, Gabon, Georgia, Germany, Ghana,</text>'): ("replace", "Bhutan,"),
-	('A-56-PV.82', '<text top="979" left="126" width="324" height="17" font="2">Greece, Bolivia, Brazil, Brunei Darussalam,</text>'): ("replace", "Bolivia, Brazil, Brunei Darussalam,"),
-	('A-57-PV.66', '<text top="654" left="126" width="324" height="17" font="2">Albania, Andorra, Argentina, Australia, Austria,</text>'): ("left", -1),
-	('A-57-PV.79', '<text top="491" left="546" width="9" height="17" font="11"><b>ø</b></text>'): ("top", +1),
-
-	('A-58-PV.84', '<text top="988" left="571" width="67" height="17" font="10">Ecuador</text>'): ("top", -1),
-	('A-58-PV.54', '<text top="889" left="275" width="174" height="15" font="9">Economic Commission for</text>'): ("top", -1),
-	('A-58-PV.54', '<text top="907" left="90" width="273" height="15" font="9">Latin America and the Caribbean (ECLAC)</text>'): ("top", -1),
-	('A-58-PV.16', '<text top="187" left="90" width="218" height="17" font="10">Saint Kitts and Nevis</text>'): ("top", -1),
-	('A-58-PV.20', '<text top="1017" left="469" width="349" height="14" font="10"><i>Note</i>: Solomon Islands pidgin for: "Thank you for helping your</text>'): "remove",
-	('A-58-PV.20', '<text top="1031" left="502" width="42" height="14" font="3">friend".</text>'): "remove", }
-
-"""
-	# these ones happen on multiple pages
-"""	('A-59-PV.38', '<text top="511" left="303" width="146" height="15" font="9">Economic and Social</text>'): ("top", -1),
-	('A-59-PV.38', '<text top="529" left="90" width="239" height="15" font="9">Commission for Asia and the Pacific</text>'): ("top", -1),
-	('A-59-PV.58', '<text top="970" left="411" width="7" height="15" font="9">. </text>'): ("top", -1),
-	('A-59-PV.60', '<text top="745" left="530" width="9" height="17" font="9">,</text>'): ("top", -1),
-	('A-59-PV.65', '<text top="648" left="248" width="202" height="20" font="8"> General Assembly the reports</text>'): ("top", +3),
-	('A-59-PV.69', '<text top="185" left="691" width="16" height="17" font="9">  (</text>'): ("top", +1),
-	('A-59-PV.115', '<text top="1084" left="788" width="43" height="12" font="14">05-43909 </text>'): "remove",
-	('A-59-PV.115', '<text top="1084" left="90" width="43" height="12" font="14">05-43909 </text>'): "remove",
-   }
-"""
 
 #<text top="1062" left="342" width="486" height="11" font="2">xxxx</text>
 class TextLine:
@@ -128,25 +52,6 @@ class TextLine:
 		# will be removed
 		if not self.ltext:
 			return
-
-		textlinefix = textlinefixes.get((self.undocname, txline))
-		if not textlinefix:
-			pass
-		elif textlinefix == "remove":
-			#print textlinefix, txline
-			self.ltext = ""
-			return
-		elif textlinefix[0] == "replace":
-			print textlinefix, textlinefix[1]
-			self.ltext = textlinefix[1]
-		elif textlinefix[0] == "left":
-			#print textlinefix, txline
-			self.left += textlinefix[1]
-		elif textlinefix[0] == "top":
-			#print textlinefix, txline
-			self.top += textlinefix[1]
-		else:
-			assert not textlinefix
 
 		self.bfootertype = (self.left < 459 and self.left + self.width > 459) or re.match(footertext, self.ltext)
 
@@ -191,12 +96,19 @@ def AppendToCluster(txlcol, txl):
 
 def AppendCluster(res, tlc, sclusttype):
 	# check if we should merge to the next paragraph
-	if res and sclusttype != "gapcluster":
+	assert sclusttype in ["gapcluster", "newpage", "newcolumn"]
 
+	if res and sclusttype != "gapcluster":
 		# likely continuation of paragraph
 		if len(res[-1].indents) == 2:
 			if len(tlc.indents) == 1 and tlc.indents[0][0] == res[-1].indents[-1][0]:
-				if re.match("<i>", res[-1].txls[-1].ltext) == re.match("<i>", tlc.txls[0].ltext):
+				td0 = res[-1].txls[-1].ltext[:3]
+				td1 = tlc.txls[0].ltext[:3]
+				if not re.match("<[ib]>", td0):
+					td0 = ""
+				if not re.match("<[ib]>", td1):
+					td1 = ""
+				if td0 == td1:
 					res[-1].txls.extend(tlc.txls)
 					return
 				#else:
@@ -408,7 +320,6 @@ class TextPage:
 		#	print "minindentright", self.minindentright
 
 # clusters are paragraphs after the lines have been clustered together
-
 def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
 	txpages = [ ]

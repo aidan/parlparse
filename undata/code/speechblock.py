@@ -48,7 +48,8 @@ respekp3 = """(?x)<b>\s*(The(?:\sActing|\sTemporary)?\sPresident)\s*:\s*</b>
 			  (dummy)?
 			  """
 
-def DetectSpeaker(ptext, indents, paranum):
+def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
+
 	#print ptext, "\n\n\n"
 	if re.match("<i>(?:In favour|Against|Abstaining)", ptext): # should be part of a voteblock
 		print ptext
@@ -70,17 +71,26 @@ def DetectSpeaker(ptext, indents, paranum):
 		mspek = re.match(respekp3, ptext)
 	if not mspek:
 		mspek = re.match(respek, ptext)
-	#if not mspek:
-	#	m = re.match(respekSS, ptext)
-	#	print ptext
-	#	print "   ___ ", m and m.group(0)
-	if mspek:
+
+	if not mspek and re.match("<[ib]>", ptext):
+		speakerbeforetookchair = ""
+
+	if mspek or speakerbeforetookchair:
+		if indentationerror and indents == [(0,0)] and speakerbeforetookchair:
+			indentationerror = False
 		if indentationerror and indents == [(0,0)] and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49" ]:
 			indentationerror = False
 		if indentationerror:
 			print ptext
 			print indents
 			raise unexception(indentationerror + " of speaker-intro", paranum)
+
+	#if not mspek:
+	#	m = re.match(respekSS, ptext)
+	#	print ptext
+	#	print "   ___ ", m and m.group(0)
+	if mspek:
+		assert not indentationerror
 		assert not re.match("<i>", ptext)
 		nation = ""
 		if mspek.group(2):
@@ -99,10 +109,16 @@ def DetectSpeaker(ptext, indents, paranum):
 
 		ptext = ptext[mspek.end(0):]
 
+	elif speakerbeforetookchair:
+		assert not indentationerror
+		typ = "spoken"
+		currentspeaker = speakerbeforetookchair
+		print "Continuation speaker", speakerbeforetookchair
+
 	# non-spoken text
-	if not mspek:
+	else:
 		#<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
-		if re.match("<b>.*?</b>.*?:(?!</b>$)", ptext):
+		if re.match("<b>.*?(?:</b>.*?:|:</b>)(?!</b>$)", ptext):
 			print ptext
 			raise unexception("improperly detected spoken text", paranum)
 
@@ -131,13 +147,15 @@ def DetectSpeaker(ptext, indents, paranum):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("was escorted (?:from|to) the rostrum\.$", ptext)
+			mescort = re.search("was escorted (?:(?:from|to) the rostrum|(?:from|into|to its place in) the General Assembly Hall)\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.$", ptext)
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
 			typ = "italicline"
+			if mtookchair or mretchair:
+				typ = "italicline-tookchair"
 			currentspeaker = None
 
 		elif re.match("<b>", ptext):
@@ -162,6 +180,8 @@ class SpeechBlock:
 			return True
 		if re.match("<b>.*?</b>.*?:(?!</b>$)", ptext):
 			return True
+		if re.match("<b>The(?: Acting)? President", ptext):
+			return True
 		if re.match("<[ib]>.*?</[ib]>\s\(resolution [\d/AB]*\)\.$", ptext):
 			#print "----eee-", ptext
 			return True
@@ -175,10 +195,14 @@ class SpeechBlock:
 			return True
 		if re.match("<i>A vote was taken", ptext):
 			return True
+		if re.match("<i>.*?was escorted", ptext):
+			return True
+		if re.match("<i>.*?took the [Cc]hair", ptext):
+			return True
 		return False
 
 
-	def __init__(self, tlcall, i, lundocname, lsdate):
+	def __init__(self, tlcall, i, lundocname, lsdate, speakerbeforetookchair):
 		self.tlcall = tlcall
 		self.i = i
 		self.sdate = lsdate
@@ -189,10 +213,10 @@ class SpeechBlock:
 
 		tlc = self.tlcall[self.i]
 		#print tlc.indents, tlc.paratext
-		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum)
+		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
 		ptext = MarkupLinks(ptext)
 		self.i += 1
-		if self.typ == "italicline":
+		if self.typ in ["italicline", "italicline-tookchair"]:
 			self.paragraphs = [ (None, ptext) ]
 			return
 

@@ -26,7 +26,10 @@ def GroupParas(tlcall, undocname, sdate):
 
 		# non-voting line to be processed
 		else:
-			speechblock = SpeechBlock(tlcall, i, undocname, sdate)
+			speakerbeforetookchair = ""
+			if (len(res) > 2) and (res[-1].typ == "italicline-tookchair") and (res[-2].typ == "spoken"):
+				speakerbeforetookchair = res[-2].speaker
+			speechblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
 			res.append(speechblock)
 			i = speechblock.i
 

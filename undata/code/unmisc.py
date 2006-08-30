@@ -14,7 +14,7 @@ def SetQuiet(lbQuiet):
 reressplit = """(?x)(
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
 				resolution\s\d+/\d+|
-				resolution\s\d+\s\(\d+\)|
+				(?:resolution\s)?\d+\s\(\d+\)|
 				</b>\s*<b>|
 				</i>\s*<i>
 				)(?!=\s)"""
@@ -22,10 +22,10 @@ reressplit = """(?x)(
 def MarkupLinks(paratext):
 	stext = re.split(reressplit, paratext)
 	res = [ ]
-	for st in stext:
+	for st in stext:   # don't forget to change the splitting regexp above
 		mres = re.match("resolution (\d+)/(\d+)", st)
 		mdoc = re.match("A/\d+/\S*", st)
-		msecres = re.match("resolution (\d+) \((\d\d\d\d)\)", st)
+		msecres = re.match("(?:resolution )?(\d{3,4}) \(((?:19|20)\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
 			res.append('<a href="%sA-RES-%s-%s">%s</a>' % (undoclinks, mres.group(1), mres.group(2), st))
