@@ -22,12 +22,12 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		madoc = re.match("A-(\d\d)-((?:L\.)?\d+)([\w\.\-]*)$", undocname)
 		msres = re.match("S-RES-(\d+)\((\d+)\)", undocname)
 		if mares:
-			if int(mares.group(1)) < 55:  # limit the sessions we take these resolutions from
+			if int(mares.group(1)) < 53:  # limit the sessions we take these resolutions from
 				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/RES/%s/%s&Lang=E" % (mares.group(1), mares.group(2))
 			print purl
 		elif madoc:
-			if int(madoc.group(1)) < 55:  # limit the sessions we take these resolutions from
+			if int(madoc.group(1)) < 53:  # limit the sessions we take these resolutions from
 				return False
 			tail = re.sub("-", "/", madoc.group(3))
 			if tail:
@@ -35,7 +35,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
 			print purl
 		elif msres:
-			if int(msres.group(2)) < 2000:  # limit older resolutions
+			if int(msres.group(2)) < 1997:  # limit older resolutions
 				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E" % (msres.group(1), msres.group(2))
 			print purl

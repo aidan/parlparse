@@ -70,12 +70,14 @@ class TextLineCluster:
 	def __init__(self, ltxl):
 		if ltxl:
 			self.txls = [ ltxl ]
-			self.indents = [ (ltxl.indent, 0) ]
+			self.indents = [ [ltxl.indent, 1] ]
 
 	def AddLine(self, ltxl):
 		if ltxl.vgap != 0:
 			if self.indents[-1][0] != ltxl.indent:
-				self.indents.append((ltxl.indent, len(self.txls)))
+				self.indents.append([ltxl.indent, 1])
+			else:
+				self.indents[-1][1] += 1
 		self.txls.append(ltxl)
 
 # work backwards looking for paragraph heads
@@ -100,29 +102,19 @@ def AppendCluster(res, tlc, sclusttype):
 
 	if res and sclusttype != "gapcluster":
 		# likely continuation of paragraph
-		if len(res[-1].indents) == 2:
-			if len(tlc.indents) == 1 and tlc.indents[0][0] == res[-1].indents[-1][0]:
-				td0 = res[-1].txls[-1].ltext[:3]
-				td1 = tlc.txls[0].ltext[:3]
-				if not re.match("<[ib]>", td0):
-					td0 = ""
-				if not re.match("<[ib]>", td1):
-					td1 = ""
-				if td0 == td1:
-					res[-1].txls.extend(tlc.txls)
-					return
-				#else:
-				#	print "----", tlc.txls[0].ltext
+		if len(tlc.indents) == 1 and tlc.indents[0][0] == res[-1].indents[-1][0]:
+			td0 = res[-1].txls[-1].ltext[:3]
+			td1 = tlc.txls[0].ltext[:3]
+			if not re.match("<[ib]>", td0):
+				td0 = ""
+			if not re.match("<[ib]>", td1):
+				td1 = ""
+			if td0 == td1:
+				res[-1].txls.extend(tlc.txls)
+				return
+			#else:
+			#	print "----", tlc.txls[0].ltext
 
-		# possible continuation of blocked-type paragraph
-		else:
-			assert len(res[-1].indents) == 1
-			if len(tlc.indents) == 1 and res[-1].indents[0][0] == tlc.indents[0][0]:
-				if re.match("<i>", res[-1].txls[-1].ltext) == re.match("<i>", tlc.txls[0].ltext):
-					res[-1].txls.extend(tlc.txls)
-					return
-				#else:
-				#	print "----", tlc.txls[0].ltext
 
 	# new cluster; check the indenting pattern is good
 	if len(tlc.indents) == 2:
@@ -361,7 +353,10 @@ def GlueUnfile(xfil, undocname):
 				jparatext.append(" ")
 			jparatext.append(txl.ltext)
 		tlc.paratext = "".join(jparatext)
+		tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
 		tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
+		tlc.paratext = tlc.paratext.strip()
+		tlc.paratext = re.sub("^<b>(The(?: Acting)? Co-Chairperson) \(([^\)]*)\)\s*(?:</b>\s*:|:\s*</b>)", "<b>\\1</b> (\\2):", tlc.paratext)
 		tlc.lastindent = tlc.indents[-1][0]
 
 	return sdate, txpages[0].chairs, tlcall

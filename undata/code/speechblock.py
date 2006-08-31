@@ -41,14 +41,14 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(The(?:\sActing|\sTemporary)?\sPresident)\s*:\s*</b>
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan).{0,20}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  """
 
-reboldline = "<b>.*?</b>(\(|\)|</?i>|\s|continued|and|[A/\d,]|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|Parts|I)*$"
+reboldline = "<b>.*?</b>(\(|\)|</?i>|\s|continued|and|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|section [A-Z]|Chapter|Parts?|HIV|AIDS|CRP\.|A|/|\d|,|I|X|[A-Z]-)*$"
 
 def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
@@ -59,8 +59,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		assert False
 
 	indentationerror = ""
-	if indents[0][0] == 0:
-		indentationerror = "unindented paragraph"
+	if len(indents) == 1 and indents[0][0] == 0:
+		indentationerror = "unindented-paragraph"
 	if len(indents) > 2:
 		indentationerror = "too many different indents"
 	if len(indents) == 2 and indents[1][0] != 0:
@@ -78,9 +78,9 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		speakerbeforetookchair = ""
 
 	if mspek or speakerbeforetookchair:
-		if indentationerror and indents == [(0,0)] and speakerbeforetookchair:
+		if indentationerror == "unindented-paragraph" and speakerbeforetookchair:
 			indentationerror = False
-		if indentationerror and indents == [(0,0)] and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49", "A-55-PV.52", "A-55-PV.56" ]:
+		if indentationerror == "unindented-paragraph" and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49", "A-55-PV.52", "A-55-PV.56", "A-55-PV.51" ]:
 			indentationerror = False
 		if indentationerror:
 			print ptext
@@ -138,7 +138,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			if not mballots:
 				mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolutions?|decision|draft resolution) ([\d/]*\s*(?:[A-Z]{1,2}|[A-Z] (?:and|to) [A-Z])?)\))?\.?$", ptext)
 				if not mptext:
-					print ptext
+					print "--%s--" % ptext
 					raise unexception("improper italicline", paranum)
 
 			ptext = re.sub("</?i>", "", ptext).strip()
@@ -147,14 +147,20 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
 			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
-			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the [Cc]hair\.?$", ptext)
+			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("was escorted (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
+			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.$", ptext)
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball):
+			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer or meditation|silence)\.$", ptext)
+			mtellers = re.search("At the invitation of the President,.*?acted as tellers\.$", ptext)
+			melected = re.search("Having obtained the required two-thirds majority, .*? were elected", ptext)
+
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or melected):
 				print "unrecognized--%s--" % ptext
-				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the Chair\.$", ptext)
+				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
+
+			# we can add subtypes to these italic-lines
 			typ = "italicline"
 			if mtookchair or mretchair:
 				typ = "italicline-tookchair"
@@ -175,17 +181,19 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	return ptext, typ, currentspeaker
 
-def CleanupTags(ptext, typ):
+def CleanupTags(ptext, typ, paranum):
 	assert typ in ["italicline", "italicline-tookchair", "boldline", "spoken"]
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext)
 	if typ == "spoken":
-		if re.match("<i>.*?</i>[\s\.\-]?$", ptext):
+		if re.match("<i>\(spoke in \w+\)</i>", ptext):
+			pass	# could put in a type for this
+		elif re.match("<i>.*?</i>[\s\.\-]?$", ptext):
 			print ptext
-			assert False
-		if re.search("<[^/i]+>", ptext):
+			raise unexception("total italics in spoken text", paranum)
+		elif re.search("<[^/i]+>", ptext):
 			print ptext
-			assert False
+			raise unexception("other than italics in spoken text", paranum)
 	return ptext
 
 class SpeechBlock:
@@ -194,7 +202,7 @@ class SpeechBlock:
 			return True
 		if re.match("<b>.*?</b>.*?:(?!</b>$)", ptext):
 			return True
-		if re.match("<b>The(?: Acting)? President", ptext):
+		if re.match("<b>\s*The(?: Acting)? President", ptext):
 			return True
 		if re.match("<[ib]>.*?</[ib]>\s\(resolution [\d/AB]*\)\.$", ptext):
 			return True
@@ -202,17 +210,28 @@ class SpeechBlock:
 			return True
 		if re.match(".{0,40}?was so decided.{0,40}?$", ptext):
 			return True
-		if re.match("<i>The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
+		if re.match("<i>\s*The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
 			return True
 		if re.match("<i>A vote was taken", ptext):
 			return True
 		if re.match("<i>.*?was escorted", ptext):
 			return True
-		if re.match("<i>.*?took the [Cc]hair", ptext):
+		if re.match("<i>.*?(?:took|returned to) the [Cc]hair", ptext):
+			return True
+		if re.match("<i>\s*The members of the General Assembly observed .{0,80}?$", ptext):
 			return True
 
 		# anything bold
 		if re.match("<b>.*?</b>$", ptext):
+			return True
+		if re.match("<b>", ptext):
+			return True
+
+		if re.match("<i>\(spoke in \w+\)</i>$", ptext):
+			return False
+
+		# total italics
+		if re.match("<i>.*?</i>[\s\.\-]?$", ptext):
 			return True
 
 		return False
@@ -230,7 +249,7 @@ class SpeechBlock:
 		tlc = self.tlcall[self.i]
 		#print tlc.indents, tlc.paratext
 		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
-		ptext = MarkupLinks(CleanupTags(ptext, self.typ))
+		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum))
 		self.i += 1
 		if self.typ in ["italicline", "italicline-tookchair"]:
 			self.paragraphs = [ (None, ptext) ]
@@ -246,7 +265,7 @@ class SpeechBlock:
 				tlc = self.tlcall[self.i]
 				if not re.match(reboldline, tlc.paratext):
 					break
-				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ))
+				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum))
 				self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
 				self.i += 1
 			return
@@ -259,7 +278,7 @@ class SpeechBlock:
 			tlc = self.tlcall[self.i]
 			if self.DetectEndSpeech(tlc.paratext, tlc.lastindent, self.sdate):
 				break
-			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ))
+			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum))
 			self.paragraphs.append((tlc.lastindent and "blockquote" or "p", ptext))
 			self.i += 1
 

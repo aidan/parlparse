@@ -6,7 +6,7 @@ from unmisc import unexception, IsNotQuiet, MarkupLinks
 #	<blockquote><i>In favour:</i> Algeria, Andorra, Argentina, Armenia, Australia, Austria, Azerbaijan, Bahrain, Bangladesh, Belarus, Belgium, Brazil, Brunei Darussalam, Bulgaria, Burkina Faso, Cameroon, Canada, Cape Verde, Chad, Chile, Colombia, Costa Rica, Côte d'Ivoire, Cuba, Cyprus, Czech Republic, Denmark, Djibouti, Dominican Republic, Ecuador, Egypt, El Salvador, Estonia, Ethiopia, Finland, France, Georgia, Germany, Ghana, Greece, Guinea, Guinea-Bissau, Guyana, Hungary, Indonesia, Iran (Islamic Republic of), Ireland, Israel, Italy, Jamaica, Japan, Kazakhstan, Kuwait, Latvia, Libyan Arab Jamahiriya, Liechtenstein, Lithuania, Luxembourg, Malaysia, Maldives, Mali, Malta, Mauritius, Mexico, Micronesia (Federated States of), Monaco, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Netherlands, New Zealand, Nicaragua, Niger, Norway, Oman, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Republic of Korea, Republic of Moldova, Romania, San Marino, Saudi Arabia, Senegal, Singapore, Slovakia, Slovenia, South Africa, Spain, Sri Lanka, Sudan, Suriname, Swaziland, Sweden, Thailand, the former Yugoslav Republic of Macedonia, Togo, Tunisia, Turkey, Ukraine, United Arab Emirates, United Kingdom of Great Britain and Northern Ireland, United Republic of Tanzania, United States of America, Uruguay, Vanuatu, Venezuela, Yemen</blockquote>
 #	<blockquote><i>Against:</i> Democratic People's Republic of Korea</blockquote>
 #	<blockquote><i>Abstaining:</i> Bhutan, Botswana, China, India, Lao People's Democratic Republic, Pakistan, Syrian Arab Republic, Viet Nam</blockquote>
-recvoterequest = "A recorded vote has been requested|(?:<i>)?A recorded vote was taken|<i>In favour"
+recvoterequest = "(?:<i>)?A recorded vote has been requested|(?:<i>)?A recorded vote was taken|<i>In favour"
 
 class VoteBlock:
 	# problem is overflowing paragraphs across pages, where double barrelled country names can get split
@@ -171,19 +171,21 @@ class VoteBlock:
 		self.i = i
 		self.sdate = lsdate
 		self.undocname = lundocname
-		
+
 		self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
 
-		if re.match("A recorded vote has been requested(?: for this item|\. We shall now begin the voting process|<i>\.</i>)?\.?$", tlcall[self.i].paratext):
+		vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
+		if re.match("A recorded vote has been requested(?: for this item|\. We shall now begin the voting process)?\.?$", vtext):
 			self.i += 1
-		if re.match("(?:<i>)?\s*A recorded vote was taken\.?\s*(?:</i>)?\.?$", tlcall[self.i].paratext):
+			vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
+		if re.match("A recorded vote was taken\s*\.?$", vtext):
 			self.i += 1
 		if not (self.i != i or self.undocname == "A-55-PV.86"):
 			print tlcall[self.i].paratext
 			print tlcall[self.i - 1].paratext
 			assert False
 
-		self.vlfavour = self.DetectVote("<i>In(?:</i> <i>| )favour:?\s*</i>:?")
+		self.vlfavour = self.DetectVote("<i>In favour:?\s*</i>:?")
 		self.vlagainst = self.DetectVote("(?:<i>)?Against:?\s*(?:</i>)?:?")
 		self.vlabstain = self.DetectVote("(?:<i>)?Abstaining:?(?:</i>)?:?")
 		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate, self.paranum)
