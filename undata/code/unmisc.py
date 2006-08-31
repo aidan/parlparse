@@ -14,8 +14,7 @@ class unexception(Exception):
 		return ret
 
 
-undoclinks = "../unpdf/"
-#undoclinks = "../pdf/"
+undoclinks = "../pdf/"
 
 pdfdir = os.path.join("..", "pdf")
 pdfxmldir = os.path.join("..", "pdfxml")
