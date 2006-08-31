@@ -1,8 +1,26 @@
 import re
 import os
 
-undoclinks = "http://seagrass.goatchurch.org.uk/~undocs/cgi-bin/getundoc.py?doc="
-undoclinks = "../pdf/"
+class unexception(Exception):
+	def __init__(self, description, lparanum):
+		self.description = description
+		self.paranum = lparanum
+
+	def __str__(self):
+		ret = ""
+		if self.fragment:
+			ret = ret + "Fragment: " + self.paranum + "\n\n"
+		ret = ret + self.description + "\n"
+		return ret
+
+
+undoclinks = "http://seagrass.goatchurch.org.uk/unpdf/"
+#undoclinks = "../pdf/"
+
+pdfdir = os.path.join("..", "pdf")
+pdfxmldir = os.path.join("..", "pdfxml")
+htmldir = os.path.join("..", "html")
+sCallScrape = None  # set by one of the
 
 bQuiet = False
 def IsNotQuiet():
@@ -10,7 +28,9 @@ def IsNotQuiet():
 def SetQuiet(lbQuiet):
 	global bQuiet
 	bQuiet = lbQuiet
-
+def SetCallScrape(lsCallScrape):
+	global sCallScrape
+	sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
@@ -20,11 +40,15 @@ reressplit = """(?x)(
 				</i>\s*<i>
 				)(?!=\s)"""
 
+from unscrape import ScrapePDF
+
 def MakeCheckLink(ref, link):
-	fpdf = os.path.join("../pdf", ref) + ".pdf"
-	if os.path.isfile(fpdf):
-		return '<a href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
-	return '<a class="nolink" href="%s%s">%s</a>' % (undoclinks, ref, link)
+	fpdf = os.path.join("..", "pdf", ref) + ".pdf"
+	if not os.path.isfile(fpdf):
+		if not sCallScrape or not ScrapePDF(ref):
+			return '<a class="nolink" href="%s%s">%s</a>' % (undoclinks, ref, link)
+		assert os.path.isfile(fpdf)
+	return '<a href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
 
 def MarkupLinks(paratext):
 	stext = re.split(reressplit, paratext)
@@ -37,9 +61,10 @@ def MarkupLinks(paratext):
 		if mres:
 			res.append(MakeCheckLink("A-RES-%s-%s" % (mres.group(1), mres.group(2)), st))
 		elif mdoc:
-			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), mdoc.group(2)), st))
+			doccode = re.sub("/", "-", mdoc.group(2))
+			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), doccode), st))
 		elif msecres:
-			res.append(MakeCheckLink("S-RES-%s-%s" % (msecres.group(1), msecres.group(2)), st))
+			res.append(MakeCheckLink("S-RES-%s(%s)" % (msecres.group(1), msecres.group(2)), st))
 		elif mcan:
 			res.append(' ')
 		else:
@@ -48,17 +73,6 @@ def MarkupLinks(paratext):
 	return "".join(res)
 
 
-class unexception(Exception):
-    def __init__(self, description, lparanum):
-        self.description = description
-        self.paranum = lparanum
-
-    def __str__(self):
-        ret = ""
-        if self.fragment:
-            ret = ret + "Fragment: " + self.paranum + "\n\n"
-        ret = ret + self.description + "\n"
-        return ret
 
 
 # used for exceptions and for generating ids

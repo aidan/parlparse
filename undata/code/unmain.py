@@ -4,8 +4,8 @@ import sys
 from unglue import GlueUnfile
 from unparse import ParsetoHTML
 from optparse import OptionParser
-from unscrape import ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet
+from unscrape import ScrapeContentsPageFromStem, ConvertXML
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir
 
 parser = OptionParser()
 parser.set_usage("""Parses and scrapes UN verbatim reports from General Assembly and Security Council
@@ -13,10 +13,6 @@ scrape  do the downloads
 cxml    do the conversion
 parse   do the parsing""")
 
-
-pdfdir = os.path.join("..", "pdf")
-pdfxmldir = os.path.join("..", "pdfxml")
-htmldir = os.path.join("..", "html")
 
 if not os.path.isdir(pdfdir):
 	print "please create the directory:", pdfdir
@@ -34,6 +30,10 @@ parser.add_option("--quiet",
 parser.add_option("--force-parse",
 				  action="store_true", dest="forceparse", default=False,
 				  help="Don't skip any files when parsing")
+parser.add_option("--scrape-links",
+				  action="store_true", dest="scrapelinks", default=False,
+				  help="Causes cited documents to be scraped during parsing")
+
 (options, args) = parser.parse_args()
 
 stem = ""
@@ -46,6 +46,7 @@ if not stem:  # make it anyway if you don't do the stem command properly
 
 #print options, args
 SetQuiet(options.quiet)
+SetCallScrape(options.scrapelinks)
 bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
@@ -54,11 +55,12 @@ if not (bScrape or bConvertXML or bParse):
 	sys.exit(1)
 
 if bScrape:
-	ScrapePDF(stem, pdfdir)
+	ScrapeContentsPageFromStem(stem)
 if bConvertXML:
 	ConvertXML(stem, pdfdir, pdfxmldir)
 if bParse:
 	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse)
+
 
 
 

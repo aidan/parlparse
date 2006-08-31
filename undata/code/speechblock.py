@@ -48,6 +48,8 @@ respekp3 = """(?x)<b>\s*(The(?:\sActing|\sTemporary)?\sPresident)\s*:\s*</b>
 			  (dummy)?
 			  """
 
+reboldline = "<b>.*?</b>(\(|\)|</?i>|\s|continued|and|[A/\d,]|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|Parts|I)*$"
+
 def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	#print ptext, "\n\n\n"
@@ -143,7 +145,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
-			mwasadopted = re.match(".*?(?:resolution|decision|agenda).*?(?:was|were) adopted", ptext)
+			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? took the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
@@ -159,7 +161,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			currentspeaker = None
 
 		elif re.match("<b>", ptext):
-			if not re.match("<b>.*?</b>(\(|\)|</?i>|\s|continued|and|[A/\d,]|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|Parts|I)*$", ptext):
+			if not re.match(reboldline, ptext):
 				print ptext
 				raise unexception("unrecognized bold completion", paranum)
 			ptext = re.sub("</?b>", "", ptext)
@@ -173,6 +175,18 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	return ptext, typ, currentspeaker
 
+def CleanupTags(ptext, typ):
+	assert typ in ["italicline", "italicline-tookchair", "boldline", "spoken"]
+	if typ == "boldline":
+		ptext = re.sub("</?b>", "", ptext)
+	if typ == "spoken":
+		if re.match("<i>.*?</i>[\s\.\-]?$", ptext):
+			print ptext
+			assert False
+		if re.search("<[^/i]+>", ptext):
+			print ptext
+			assert False
+	return ptext
 
 class SpeechBlock:
 	def DetectEndSpeech(self, ptext, lastindent, sdate):
@@ -183,13 +197,10 @@ class SpeechBlock:
 		if re.match("<b>The(?: Acting)? President", ptext):
 			return True
 		if re.match("<[ib]>.*?</[ib]>\s\(resolution [\d/AB]*\)\.$", ptext):
-			#print "----eee-", ptext
 			return True
-		if re.match(".{0,40}?<i>.{0,40}?(?:resolution|decision).{0,40}?was adopted.{0,40}$", ptext):
-			#print "----fff-", ptext
+		if re.match(".{0,40}?<i>.{0,40}?(?:resolution|decision|amendment).{0,60}?was adopted.{0,40}$", ptext):
 			return True
 		if re.match(".{0,40}?was so decided.{0,40}?$", ptext):
-			#print "---sss--", ptext
 			return True
 		if re.match("<i>The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
 			return True
@@ -199,6 +210,11 @@ class SpeechBlock:
 			return True
 		if re.match("<i>.*?took the [Cc]hair", ptext):
 			return True
+
+		# anything bold
+		if re.match("<b>.*?</b>$", ptext):
+			return True
+
 		return False
 
 
@@ -214,26 +230,24 @@ class SpeechBlock:
 		tlc = self.tlcall[self.i]
 		#print tlc.indents, tlc.paratext
 		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
-		ptext = MarkupLinks(ptext)
+		ptext = MarkupLinks(CleanupTags(ptext, self.typ))
 		self.i += 1
 		if self.typ in ["italicline", "italicline-tookchair"]:
 			self.paragraphs = [ (None, ptext) ]
 			return
 
-		## series of boldlines
+		# series of boldlines
 		if self.typ == "boldline":
 			blinepara = tlc.lastindent and "blockquote" or "p"
 			if re.match("Agenda item (\d+)", ptext):
-				blinepara = "agenda"
+				blinepara = "boldline-agenda"
 			self.paragraphs = [ (blinepara, ptext) ]
 			while self.i < len(self.tlcall):
 				tlc = self.tlcall[self.i]
-				mptext = re.match("<b>(.*?)</b>$", tlc.paratext)
-				if not mptext:
+				if not re.match(reboldline, tlc.paratext):
 					break
-				ptext = mptext.group(1)
-				ptext = MarkupLinks(ptext)
-				self.paragraphs.append((tlc.lastindent and "blockquote" or "p", ptext))
+				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ))
+				self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
 				self.i += 1
 			return
 
@@ -245,7 +259,7 @@ class SpeechBlock:
 			tlc = self.tlcall[self.i]
 			if self.DetectEndSpeech(tlc.paratext, tlc.lastindent, self.sdate):
 				break
-			ptext = MarkupLinks(tlc.paratext)
+			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ))
 			self.paragraphs.append((tlc.lastindent and "blockquote" or "p", ptext))
 			self.i += 1
 
@@ -260,15 +274,15 @@ class SpeechBlock:
 			fout.write('\n</span>\n')
 
 		if self.typ == "spoken":
-			fout.write('<div class="spokentext">\n')
+			fout.write('\t<div class="spokentext">\n')
 		for para in self.paragraphs:
+			#print para[1]
+			assert not re.search("</?b>", para[1])
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
-			#elif para[0] in ["p", "blockquote"]:
-			#	fout.write('\t<%s>%s</%s>\n' % (para[0], para[1], para[0]))
 			else:
 				fout.write('\t<div class="%s">%s</div>\n' % (para[0], para[1]))
 		if self.typ == "spoken":
-			fout.write('</div>\n')
+			fout.write('\t</div>\n')
 		fout.write('</div>\n')
 

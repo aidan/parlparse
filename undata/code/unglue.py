@@ -361,7 +361,7 @@ def GlueUnfile(xfil, undocname):
 				jparatext.append(" ")
 			jparatext.append(txl.ltext)
 		tlc.paratext = "".join(jparatext)
-		tlc.paratext = re.sub("\s*</i>\s*<i>\s*|\s*</b>\s*<b>\s*", " ", tlc.paratext)
+		tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
 		tlc.lastindent = tlc.indents[-1][0]
 
 	return sdate, txpages[0].chairs, tlcall

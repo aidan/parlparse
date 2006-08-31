@@ -7,8 +7,6 @@ from unglue import GlueUnfile
 from speechblock import SpeechBlock
 from voteblock import VoteBlock, recvoterequest
 
-voteblocks = [ ]
-
 
 def GroupParas(tlcall, undocname, sdate):
 	res = [ ]
@@ -17,10 +15,9 @@ def GroupParas(tlcall, undocname, sdate):
 	while i < len(tlcall):
 		tlc = tlcall[i]
 		if re.match(recvoterequest, tlc.paratext):
-			voteblock = VoteBlock(tlcall, i, undocname, sdate)
-			voteblocks.append(voteblock)
-			res.append(voteblock)
-			i = voteblock.i
+			lvoteblock = VoteBlock(tlcall, i, undocname, sdate)
+			res.append(lvoteblock)
+			i = lvoteblock.i
 
 		# non-voting line to be processed
 		else:
@@ -39,11 +36,6 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 	undocnames = [ ]
 	for undoc in os.listdir(pdfxmldir):
 		undocname = os.path.splitext(undoc)[0]
-
-		# too hard.  too many indent problems (usually secret ballot announcementing)
-#		if undocname in ["A-53-PV.39", "A-53-PV.52",
-#						 "A-54-PV.34", "A-54-PV.45"]:
-#			continue
 		if not re.match(stem, undocname):
 			continue
 		if re.search("Corr", undocname): # skip corregendas
@@ -92,14 +84,20 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 		if not gparas:
 			continue
 
-		fout = open(undochtml, "w")
+		# actually write the file
+		tmpfile = undochtml + "--temp"
+		fout = open(tmpfile, "w")
 		fout.write('<html>\n<head>\n')
-		fout.write('<link href="../unview.css" type="text/css" rel="stylesheet" media="all">\n')
+		fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
 		fout.write('</head>\n<body>\n')
 		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, sdate))
 		for gpara in gparas:
 			gpara.writeblock(fout)
 		fout.write('</body>\n</html>\n')
 		fout.close()
+		if os.path.isfile(undochtml):
+			os.remove(undochtml)
+		os.rename(tmpfile, undochtml)
+
 
 
