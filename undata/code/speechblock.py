@@ -41,14 +41,24 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan).{0,20}?)\s*(?:</b>\s*:|:\s*</b>)
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General).{0,20}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
 			  """
 
-reboldline = "<b>.*?</b>(\(|\)|</?i>|\s|continued|and|Rev\.|L\.|Add\.|Corr\.|para\.|paragraph|section [A-Z]|Chapter|Parts?|HIV|AIDS|CRP\.|A|/|\d|,|I|X|[A-Z]-)*$"
+reboldline = """(?x)<b>.*?</b>
+					(
+					\(|\)|
+					</?i>|\s|
+					continued|and|
+					Rev\.|L\.|Add\.|Corr\.|
+					(?:para(?:graph|\.)|sect(?:ion|\.)|[Cc]hap(?:ter|\.)|draft\sresolution)\s[A-Z0-9]|
+					Parts?|
+					HIV|AIDS|CRP\.|rule|
+					A/|/|\d|,|;|-|I|X|[A-Z]-
+					)*$"""
 
 def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
@@ -127,7 +137,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		if re.match("<i>", ptext):
 			mballots = re.search("Number of ballot papers", ptext)
 			if mballots:
-				print "BALLOT:", ptext
+				print "BALLOT:", ptext, "\n"
 				indentationerror = False
 
 			if indentationerror:
@@ -150,10 +160,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
-			msecball = re.search("A vote was taken by secret ballot\.$", ptext)
+			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer or meditation|silence)\.$", ptext)
-			mtellers = re.search("At the invitation of the President,.*?acted as tellers\.$", ptext)
-			melected = re.search("Having obtained the required two-thirds majority, .*? were elected", ptext)
+			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
+			melected = re.search("Having obtained (?:the required (?:two-thirds )|an absolute )?majority.*? (?:(?:were|was|been) elected|will be included [io]n the list)", ptext)
 
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or melected):
 				print "unrecognized--%s--" % ptext

@@ -46,6 +46,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 				continue
 		undocnames.append(undocname)
 
+	undocnames.sort()
 	if IsNotQuiet():
 		print "Preparing to parse %d files" % len(undocnames)
 
