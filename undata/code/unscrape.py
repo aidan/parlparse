@@ -75,6 +75,8 @@ def ScrapePlenary(pdfdir, plenaryurl):
 	# <a href="http://daccess-ods.un.org/access.nsf/Get?OpenAgent&DS=A/57/PV.1&Lang=E" target="_blank">A/57/PV.1</a>
 
 	plenaryindexlist = re.findall('<a href="(http://daccess[^"]*)" target="_blank">(.*?)</a>(?i)', plenaryindex)
+	if not plenaryindexlist:
+		plenaryindexlist = re.findall('<a target="_blank" href="(http://daccess[^"]*)">(.*?)</a>(?i)', plenaryindex)
 	for plenary in plenaryindexlist[:]:
 		undocname = re.sub("/", "-", plenary[1])
 		undocname = re.sub("\s|<.*?>", "", undocname)
@@ -97,6 +99,7 @@ scrapepvurlmap = {
 	"A-59-PV":"http://www.un.org/ga/59/pv.html",
 
 	"A-59":"http://www.un.org/ga/59/documentation/list0.html",
+	"A-RES-56":"http://www.un.org/Depts/dhl/resguide/r56.htm",
 				}
 #http://www.un.org/ga/59/documentation/list0.html
 
@@ -105,6 +108,7 @@ def ScrapePDF(stem, pdfdir):
 		print "Allowable stems for scraping:\n ", ",\n  ".join(scrapepvurlmap.keys())
 		sys.exit(1)
 	ScrapePlenary(pdfdir, scrapepvurlmap[stem])
+
 
 def ConvertXML(stem, pdfdir, pdfxmldir):
 	for sd in os.listdir(pdfdir):

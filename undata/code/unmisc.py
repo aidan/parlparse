@@ -1,4 +1,5 @@
 import re
+import os
 
 undoclinks = "http://seagrass.goatchurch.org.uk/~undocs/cgi-bin/getundoc.py?doc="
 undoclinks = "../pdf/"
@@ -19,20 +20,26 @@ reressplit = """(?x)(
 				</i>\s*<i>
 				)(?!=\s)"""
 
+def MakeCheckLink(ref, link):
+	fpdf = os.path.join("../pdf", ref) + ".pdf"
+	if os.path.isfile(fpdf):
+		return '<a href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
+	return '<a class="nolink" href="%s%s">%s</a>' % (undoclinks, ref, link)
+
 def MarkupLinks(paratext):
 	stext = re.split(reressplit, paratext)
 	res = [ ]
 	for st in stext:   # don't forget to change the splitting regexp above
 		mres = re.match("resolution (\d+)/(\d+)", st)
-		mdoc = re.match("A/\d+/\S*", st)
+		mdoc = re.match("A/(\d+)/(\S*)", st)
 		msecres = re.match("(?:resolution )?(\d{3,4}) \(((?:19|20)\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
-			res.append('<a href="%sA-RES-%s-%s">%s</a>' % (undoclinks, mres.group(1), mres.group(2), st))
+			res.append(MakeCheckLink("A-RES-%s-%s" % (mres.group(1), mres.group(2)), st))
 		elif mdoc:
-			res.append('<a href="%s%s">%s</a>' % (undoclinks, re.sub("/", "-", st), st))
+			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), mdoc.group(2)), st))
 		elif msecres:
-			res.append('<a href="%sS-RES-%s(%s)">%s</a>' % (undoclinks, msecres.group(1), msecres.group(2), st))
+			res.append(MakeCheckLink("S-RES-%s-%s" % (msecres.group(1), msecres.group(2)), st))
 		elif mcan:
 			res.append(' ')
 		else:

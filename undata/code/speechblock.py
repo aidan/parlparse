@@ -113,7 +113,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		assert not indentationerror
 		typ = "spoken"
 		currentspeaker = speakerbeforetookchair
-		print "Continuation speaker", speakerbeforetookchair
+		#print "Continuation speaker", speakerbeforetookchair
 
 	# non-spoken text
 	else:

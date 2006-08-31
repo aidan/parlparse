@@ -10,8 +10,6 @@ from voteblock import VoteBlock, recvoterequest
 voteblocks = [ ]
 
 
-
-
 def GroupParas(tlcall, undocname, sdate):
 	res = [ ]
 	i = 0
