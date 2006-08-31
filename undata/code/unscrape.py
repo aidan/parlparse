@@ -23,25 +23,23 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
 		mapv  = re.match("A-(\d\d)-PV.(\d+)$", undocname)
 		if mares:
-			if int(mares.group(1)) < 53:  # limit the sessions we take these resolutions from
+			if int(mares.group(1)) < 50:  # limit the sessions we take these resolutions from
 				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/RES/%s/%s&Lang=E" % (mares.group(1), mares.group(2))
 			#print purl
 		elif madoc:
-			if int(madoc.group(1)) < 53:  # limit the sessions we take these resolutions from
+			if int(madoc.group(1)) < 50:  # limit the sessions we take these resolutions from
 				return False
 			tail = re.sub("-", "/", madoc.group(3))
-			if tail:
-				print "TAIL Part", tail
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
 			#print purl
 		elif msres:
-			if int(msres.group(2)) < 1997:  # limit older resolutions
+			if int(msres.group(2)) < 1940:  # limit older resolutions
 				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E" % (msres.group(1), msres.group(2))
 			#print purl
 		elif mapv:
-			if int(mapv.group(1)) < 53:  # limit the sessions we take these resolutions from
+			if int(mapv.group(1)) < 50:  # limit the sessions we take these resolutions from
 				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s&Lang=E" % (mapv.group(1), mapv.group(2))
 
@@ -132,7 +130,6 @@ def ScrapeContentsPage(contentsurl):
 		ScrapePDF(undocname, contentsurl, plenary[0])
 
 
-
 scrapepvurlmap = {
 	"A-53-PV":"http://www.un.org/ga/53/session/pv53.htm",
 	"A-54-PV":"http://www.un.org/ga/54/pv54e.htm",
@@ -152,6 +149,12 @@ scrapepvurlmap = {
 #http://www.un.org/ga/59/documentation/list0.html
 
 def ScrapeContentsPageFromStem(stem):
+	mpv = re.match("A-(\d+)-PV$", stem)
+	if mpv:
+		for v in range(1, 137):
+			ScrapePDF("A-%s-PV.%d" % (mpv.group(1), v))
+		return
+
 	if stem not in scrapepvurlmap:
 		print "Allowable stems for scraping:\n ", ",\n  ".join(scrapepvurlmap.keys())
 		sys.exit(1)

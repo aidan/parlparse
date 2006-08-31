@@ -206,7 +206,7 @@ class VoteBlock:
 
 	def writeblock(self, fout):
 		fout.write("\n")
-		fout.write('<div class="recvote">\n')
+		fout.write('<div class="recvote" id="%s">\n' % self.paranum.MakeGid())
 		fout.write('\t<div class="motiontext">%s</div>\n' % self.motiontext)
 		fout.write('\t<div class="votecount">%s</div>\n' % self.votecount)
 		fout.write('\t<div class="votelist">%s</div>\n' % self.votelist)

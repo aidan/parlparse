@@ -15,18 +15,22 @@ def GroupParas(tlcall, undocname, sdate):
 	while i < len(tlcall):
 		tlc = tlcall[i]
 		if re.match(recvoterequest, tlc.paratext):
-			lvoteblock = VoteBlock(tlcall, i, undocname, sdate)
-			res.append(lvoteblock)
-			i = lvoteblock.i
+			lblock = VoteBlock(tlcall, i, undocname, sdate)
+			i = lblock.i
 
 		# non-voting line to be processed
 		else:
 			speakerbeforetookchair = ""
 			if (len(res) > 2) and (res[-1].typ == "italicline-tookchair") and (res[-2].typ == "spoken"):
 				speakerbeforetookchair = res[-2].speaker
-			speechblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
-			res.append(speechblock)
-			i = speechblock.i
+			lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
+			i = lblock.i
+
+		if res and res[-1].paranum.pageno == lblock.paranum.pageno:
+			lblock.paranum.blockno = res[-1].paranum.blockno + 1
+		else:
+			lblock.paranum.blockno = 1
+		res.append(lblock)
 
 	return res
 

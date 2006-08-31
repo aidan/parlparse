@@ -84,5 +84,5 @@ class paranumC:
 		self.textcountnumber = textcountnumber
 
 	def MakeGid(self):
-		return "%d-%d" % (self.pageno, self.paragraphno)
+		return "pg%03d-bk%02d" % (int(self.pageno), self.blockno)
 

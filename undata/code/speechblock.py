@@ -157,7 +157,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
-			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted", ptext)
+			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted(?i)", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
@@ -165,8 +165,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
-			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly", ptext)
 			melected = re.search("Having obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
+			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to", ptext)
 
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected):
 				print "unrecognized--%s--" % ptext
@@ -257,7 +257,7 @@ class SpeechBlock:
 		self.undocname = lundocname
 		self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
 		# paranum = ( undocname, sdate, tlc.txls[0].pageno, paranumber )
-		self.gid = self.paranum.MakeGid()
+		#self.gid = self.paranum.MakeGid()
 
 		tlc = self.tlcall[self.i]
 		#print tlc.indents, tlc.paratext
@@ -298,7 +298,8 @@ class SpeechBlock:
 
 	def writeblock(self, fout):
 		fout.write("\n")
-		fout.write('<div class="%s" id="%s">\n' % (self.typ, self.gid))
+		gid = self.paranum.MakeGid()
+		fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
 		if self.typ == "spoken":
 			fout.write('<span class="speaker" name="%s" nation="%s" language="%s">\n' % self.speaker)
 			fout.write('\t%s' % self.speaker[0])
@@ -308,6 +309,7 @@ class SpeechBlock:
 
 		if self.typ == "spoken":
 			fout.write('\t<div class="spokentext">\n')
+		paranum = 1
 		for para in self.paragraphs:
 			#print para[1]
 			if re.search("</?b>", para[1]):
@@ -316,7 +318,8 @@ class SpeechBlock:
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
 			else:
-				fout.write('\t<div class="%s">%s</div>\n' % (para[0], para[1]))
+				fout.write('\t<div class="%s" id="%s-pa%02d">%s</div>\n' % (para[0], gid, paranum, para[1]))
+			paranum += 1
 		if self.typ == "spoken":
 			fout.write('\t</div>\n')
 		fout.write('</div>\n')
