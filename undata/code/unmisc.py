@@ -14,7 +14,7 @@ class unexception(Exception):
 		return ret
 
 
-undoclinks = "http://seagrass.goatchurch.org.uk/unpdf/"
+undoclinks = "../unpdf/"
 #undoclinks = "../pdf/"
 
 pdfdir = os.path.join("..", "pdf")
