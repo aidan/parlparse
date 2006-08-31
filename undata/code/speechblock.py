@@ -137,7 +137,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		if re.match("<i>", ptext):
 			mballots = re.search("Number of ballot papers", ptext)
 			if mballots:
-				print "BALLOT:", ptext, "\n"
+				#print "BALLOT:", ptext, "\n"
 				indentationerror = False
 
 			if indentationerror:
@@ -163,9 +163,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer or meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
-			melected = re.search("Having obtained (?:the required (?:two-thirds )|an absolute )?majority.*? (?:(?:were|was|been) elected|will be included [io]n the list)", ptext)
+			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly", ptext)
+			melected = re.search("Having obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
 
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or melected):
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
@@ -289,7 +290,8 @@ class SpeechBlock:
 			if self.DetectEndSpeech(tlc.paratext, tlc.lastindent, self.sdate):
 				break
 			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum))
-			self.paragraphs.append((tlc.lastindent and "blockquote" or "p", ptext))
+			bIndent = (len(tlc.indents) == 1) and (tlc.indents[0][0] != 0) and (tlc.indents[0][1] > 1)
+			self.paragraphs.append(((bIndent and "blockquote" or "p"), ptext))
 			self.i += 1
 
 	def writeblock(self, fout):
