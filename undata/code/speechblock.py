@@ -40,7 +40,7 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			  (?:\s|\(|</?i>|</?b>)+
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
-			  \s*(?:<[ib]>)?:(?:</[ib]>)?\s*"""
+			  \s*(?:<[ib]>)?:\s*(?:</[ib]>)?\s*"""
 respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General).{0,20}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
@@ -118,8 +118,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		assert mspek.group(1)
 		typ = "spoken"
 		currentspeaker = (mspek.group(1), nation, mspek.group(5) or "")
-
 		ptext = ptext[mspek.end(0):]
+		if re.search("</b>", ptext):
+			print ptext
+			raise unexception("bold in spoken text", paranum)
 
 	elif speakerbeforetookchair:
 		assert not indentationerror
@@ -151,7 +153,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 					print "--%s--" % ptext
 					raise unexception("improper italicline", paranum)
 
-			ptext = re.sub("</?i>", "", ptext).strip()
+			ptext = re.sub("</?[ib]>", "", ptext).strip()
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
@@ -161,7 +163,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
-			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer or meditation|silence)\.$", ptext)
+			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly", ptext)
 			melected = re.search("Having obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
@@ -197,7 +199,7 @@ def CleanupTags(ptext, typ, paranum):
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext)
 	if typ == "spoken":
-		if re.match("<i>\(spoke in \w+\)</i>", ptext):
+		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\))</i>", ptext):
 			pass	# could put in a type for this
 		elif re.match("<i>.*?</i>[\s\.\-]?$", ptext):
 			print ptext
@@ -238,7 +240,7 @@ class SpeechBlock:
 		if re.match("<b>", ptext):
 			return True
 
-		if re.match("<i>\(spoke in \w+\)</i>$", ptext):
+		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\))</i>$", ptext):
 			return False
 
 		# total italics
@@ -308,7 +310,9 @@ class SpeechBlock:
 			fout.write('\t<div class="spokentext">\n')
 		for para in self.paragraphs:
 			#print para[1]
-			assert not re.search("</?b>", para[1])
+			if re.search("</?b>", para[1]):
+				print self.typ, para[1]
+				assert False
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
 			else:
