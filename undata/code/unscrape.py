@@ -71,6 +71,9 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		if re.search("This document is under EMBARGO", plenrefererforward):
 			print "*** EMBARGOED ***"
 			return False
+		if re.search("The distribution of this document is to hight", plenrefererforward):
+			print "*** TO HIGHT ***"
+			return False
 		print plenrefererforward
 		assert False
 	turl = urlparse.urljoin(purl, mfore.group(1))
