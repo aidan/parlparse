@@ -7,9 +7,9 @@ from nations import FixNationName, IsNonnation
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-			(?:,\s(?:Rapporteur|President|Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
-				(.{0,130}?(?:Committee|Council|panel|People|Rwanda|round\stable\s\d|panel\s\d)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s)?Committee\s.{0,140}?)\))?  # group 4 extra chairman setting
+			(?:,\s(?:Rapporteur|President|(?:Vice-)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
+				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
@@ -31,7 +31,8 @@ respekp1 = """(?x)<b>(The\sPresident)\s*</b>
 			  (?:\s*\(([^\)<]*)\))?\s*
 			  (dummy)?
 			  (dummy)?
-			  (?:\(<i>?:spoke\sin\s(\w+)</i>\))?
+			  (?:\(<i>?:spoke\sin\s(\w+)
+			  (?:.{0,60}?(?:by|the)\sdelegation)?</i>\))?
 			  \s*:\s*"""
 respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			  (dummy)?
@@ -161,7 +162,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
+			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)

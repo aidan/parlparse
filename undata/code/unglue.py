@@ -56,6 +56,8 @@ class TextLine:
 			return
 
 		self.bfootertype = (self.left < 459 and self.left + self.width > 459) or re.match(footertext, self.ltext)
+		#if self.bfootertype:
+		#	print self.ltext
 
 		# move on any short bits that are like 13^(th)
 		if self.height == 11 and not self.bfootertype and self.width <= 10:
@@ -90,7 +92,7 @@ def AppendToCluster(txlcol, txl):
 	txl.vgap = txl.top - txlcol[-1].txls[-1].top
 	#print txlcol[-1].txls[-1].ltext
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
-	if not txl.vgap in (0, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 37, 43, 45, 48, 53, 54, 55, 63, 72):
+	if not txl.vgap in (0, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 45, 48, 53, 54, 55, 63, 72, 83):
 		print "vgap=", txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 		raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 	if txl.vgap in (0, 17, 18, 19) or txl.vgap == 0:
@@ -142,8 +144,12 @@ def AppendCluster(res, tlc, sclusttype):
 
 	elif len(tlc.indents) != 1:
 		print tlc.indents
+		prevtop = -1
 		for txl in tlc.txls:
+			if prevtop == txl.top:
+				print " ",
 			print txl.indent, txl.ltext
+			prevtop = txl.top
 		raise unexception("unrecognized indent pattern", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 		assert False
 	res.append(tlc)
@@ -156,6 +162,7 @@ class TextPage:
 		assert self.pageno == 1
 		#<text top="334" left="185" width="584" height="17" font="2">Mr.  Kavan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (Czech Republic)</text>
 		while True:
+			#print "------" + txlines[ih].ltext
 			mchair = re.search("([^>]*?)\s*\. \. \. \. \.", txlines[ih].ltext)
 			if mchair:
 				break
@@ -165,7 +172,7 @@ class TextPage:
 				txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
 
 			# extract the date out if poss
-			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?$", txlines[ih].ltext)
+			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?(?: \(closed\))?$", txlines[ih].ltext)
 			if mdate:  #Tuesday, 3 December 2002, 10 a.m.
 				#print txlines[ih].ltext
 				iday = int(mdate.group(1))
@@ -175,9 +182,9 @@ class TextPage:
 				imin = mdate.group(5) and int(mdate.group(5)) or 0
 				if mdate.group(6) and mdate.group(6) == "p":
 					ihour += 12
-				assert not self.date
+				if self.date:
+					raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 				self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
-				#print self.date
 			ih += 1
 			if ih == len(txlines):
 				return -1
@@ -218,8 +225,8 @@ class TextPage:
 		self.textcountnumber = textcountnumber
 
 		leftcolstart = 90
-		rightcolstart = re.match("A-5[234]", lundocname) and 481 or 468
-		rightcolstartindentincrement = re.match("A-5[2]", lundocname) and 1 or 0  # adds an offset to non-zero values
+		rightcolstart = re.match("A-5[1234]", lundocname) and 481 or 468
+		rightcolstartindentincrement = re.match("A-5[12]", lundocname) and 1 or 0  # adds an offset to non-zero values
 
 		# generate the list of lines, sorted by vertical position
 		ftxlines = re.findall("<text.*?</text>", xpage)
@@ -244,7 +251,9 @@ class TextPage:
 
 			ie = len(txlines) - 1
 			while txlines[ie].bfootertype:
+				#print "FOOTER:", txlines[ie].ltext
 				ie -= 1
+			#print "**NON-FOOTER:", txlines[ie].ltext
 			ie += 1
 
 		else:
@@ -285,6 +294,7 @@ class TextPage:
 				if not (txl.left + txl.width <= 459):
 					if txl.left + txl.width > 501:
 						print txl.left, txl.width, txl.left + txl.width
+						print txl.ltext
 						raise unexception("right-hand extension excessive", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 					if not (txl.left <= 165):
 						bc = -1

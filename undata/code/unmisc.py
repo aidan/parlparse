@@ -33,8 +33,8 @@ def SetCallScrape(lsCallScrape):
 
 reressplit = """(?x)(
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
-				resolution\s\d+/\d+|
-				(?:resolution\s)?\d+\s\(\d+\)|
+				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+|
+				(?:Security\sCouncil\s)?(?:resolution\s)?\d+\s\(\d\d\d\d\)|
 				</b>\s*<b>|
 				</i>\s*<i>
 				)(?!=\s)"""
@@ -53,12 +53,15 @@ def MarkupLinks(paratext):
 	stext = re.split(reressplit, paratext)
 	res = [ ]
 	for st in stext:   # don't forget to change the splitting regexp above
-		mres = re.match("resolution (\d+)/(\d+)", st)
+		mres = re.match("(?:General Assembly )?resolution (\d+)/(\d+)", st)
+		meres = re.match("Economic and Social Council resolution (\d+)/(\d+)", st)
 		mdoc = re.match("A/(\d+)/(\S*)", st)
-		msecres = re.match("(?:resolution )?(\d{3,4}) \(((?:19|20)\d\d)\)", st)
+		msecres = re.match("(?:Security Council )?(?:resolution )?(\d+) \(((?:19|20)\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
 			res.append(MakeCheckLink("A-RES-%s-%s" % (mres.group(1), mres.group(2)), st))
+		elif meres:
+			res.append(MakeCheckLink("E-RES-%s-%s" % (meres.group(1), meres.group(2)), st))
 		elif mdoc:
 			doccode = re.sub("/", "-", mdoc.group(2))
 			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), doccode), st))
@@ -67,7 +70,9 @@ def MarkupLinks(paratext):
 		elif mcan:
 			res.append(' ')
 		else:
-			assert not re.match(reressplit, paratext)
+			if re.match(reressplit, st):
+				print st
+				assert False
 			res.append(st)
 	return "".join(res)
 

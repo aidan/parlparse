@@ -121,7 +121,7 @@ class VoteBlock:
 
 	def DetectSubsequentVoteChange(self, gnv):
 		adtext = re.sub("</?i>", "", self.tlcall[self.i].paratext)
-		msubseq = re.match("\[Subsequently,? (.*?)\.\]", adtext)
+		msubseq = re.match("\[Subsequently,? (.*?)\.?\]", adtext)
 		self.votechanges = {}
 		if not msubseq:
 			if re.search("Subsequently", adtext):

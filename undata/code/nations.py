@@ -192,6 +192,7 @@ nationdates = {
 		"Yemen": 	("1945", "9999-12-31"),
 		"Yugoslavia": 	("1945", "2003"),
 		"Zambia": 	("1945", "9999-12-31"),
+		"Zaire": 	("1945", "1999-12-31"),
 		"Zimbabwe": 	("1945", "9999-12-31"),
 		"The former Yugoslav Republic of Macedonia": 	("1945", "9999-12-31"),
 				}
@@ -227,6 +228,7 @@ nationmapping = {
 		"Republic of Moldova":"Moldova",
 		"Republic of Azerbaijan":"Azerbaijan",
 		"Kazakstan":"Kazakhstan",
+		"Vietnam":"Viet Nam",
 				}
 
 
@@ -515,3 +517,7 @@ nonnations["Agency for Cultural and Technical Cooperation"] = 0
 nonnations["Latin American Economic System"] = 0
 nonnations["International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
 nonnations["President of the International Criminal Tribunal for Rwanda"] = 0
+nonnations["International Criminal Police Organization-Interpol"] = 0
+nonnations["Caribbean Community CARICOM"] = 0
+nonnations["Director, General Assembly Affairs Division"] = 0
+nonnations["President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
