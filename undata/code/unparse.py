@@ -36,7 +36,7 @@ def GroupParas(tlcall, undocname, sdate):
 
 
 
-def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
+def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 	undocnames = [ ]
 	for undoc in os.listdir(pdfxmldir):
 		undocname = os.path.splitext(undoc)[0]
@@ -60,6 +60,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 
 
 		gparas = None
+		lbeditparse = beditparse
 		while not gparas:
 			fin = open(undocpdfxml)
 			xfil = fin.read()
@@ -67,12 +68,16 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 
 			print "parsing:", undocname,
 			try:
+				if lbeditparse:
+					lbeditparse = False
+					raise unexception("editparse", None)
 				sdate, chairs, tlcall = GlueUnfile(xfil, undocname)
 				print sdate#, chairs
 				gparas = GroupParas(tlcall, undocname, sdate)
 			except unexception, ux:
 				assert not gparas
-				print "\n\nError: %s on page %s textcounter %s" % (ux.description, ux.paranum.pageno, ux.paranum.textcountnumber)
+				if ux.description != "editparse":
+					print "\n\nError: %s on page %s textcounter %s" % (ux.description, ux.paranum.pageno, ux.paranum.textcountnumber)
 				print "\nHit RETURN to launch your editor on the psdxml (or type 's' to skip, or 't' to throw)"
 				rl = sys.stdin.readline()
 				if rl[0] == "s":
@@ -80,11 +85,14 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse):
 				if rl[0] == "t":
 					raise
 
-				fin = open(undocpdfxml, "r")
-				finlines = fin.read()
-				fin.close()
-				mfinlines = re.match("(?s)(.*?<text ){%d}" % ux.paranum.textcountnumber, finlines)
-				ln = mfinlines.group(0).count("\n")
+				if ux.description != "editparse":
+					fin = open(undocpdfxml, "r")
+					finlines = fin.read()
+					fin.close()
+					mfinlines = re.match("(?s)(.*?<text ){%d}" % ux.paranum.textcountnumber, finlines)
+					ln = mfinlines.group(0).count("\n")
+				else:
+					ln = 1
 				os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g00:%d' % (undocpdfxml, ln + 2))
 		if not gparas:
 			continue

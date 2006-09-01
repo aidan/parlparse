@@ -30,6 +30,9 @@ parser.add_option("--quiet",
 parser.add_option("--force-parse",
 				  action="store_true", dest="forceparse", default=False,
 				  help="Don't skip any files when parsing")
+parser.add_option("--edit",
+				  action="store_true", dest="editparse", default=False,
+				  help="Edit the file before parsing")
 parser.add_option("--scrape-links",
 				  action="store_true", dest="scrapelinks", default=False,
 				  help="Causes cited documents to be scraped during parsing")
@@ -59,7 +62,7 @@ if bScrape:
 if bConvertXML:
 	ConvertXML(stem, pdfdir, pdfxmldir)
 if bParse:
-	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse)
+	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
 
 
 

@@ -18,10 +18,10 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		return True
 
 	if not purl:
-		mares = re.match("A-RES-(\d\d)-(\d+)$", undocname)
-		madoc = re.match("A-(\d\d)-((?:L\.)?\d+)([\w\.\-]*)$", undocname)
+		mares = re.match("A-RES-(\d+)-(\d+)$", undocname)
+		madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-]*)$", undocname)
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
-		mapv  = re.match("A-(\d\d)-PV.(\d+)$", undocname)
+		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		if mares:
 			if int(mares.group(1)) < 50:  # limit the sessions we take these resolutions from
 				return False
@@ -36,13 +36,16 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		elif msres:
 			if int(msres.group(2)) < 1940:  # limit older resolutions
 				return False
-			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E" % (msres.group(1), msres.group(2))
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=UNDOC" % (msres.group(1), msres.group(2))
+			plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
+			print plenaryurl
 			#print purl
+
 		elif mapv:
 			if int(mapv.group(1)) < 50:  # limit the sessions we take these resolutions from
 				return False
-			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s&Lang=E" % (mapv.group(1), mapv.group(2))
-
+			tail = re.sub("-", "/", mapv.group(3))
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
 
 	print " scraping", undocname,
 	if not purl:
@@ -153,6 +156,7 @@ def ScrapeContentsPageFromStem(stem):
 	if mpv:
 		for v in range(1, 137):
 			ScrapePDF("A-%s-PV.%d" % (mpv.group(1), v))
+			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), v))
 		return
 
 	if stem not in scrapepvurlmap:
