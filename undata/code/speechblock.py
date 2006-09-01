@@ -1,18 +1,18 @@
 import re
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 from voteblock import recvoterequest
-from nations import FixNationName, nonnations
+from nations import FixNationName, IsNonnation
 
 
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-			(?:,\s(?:Rapporteur|President|Chairman|Vice-Chairperson)\sof\sthe\s
-				(.{0,130}?\s(?:Committee|Council|panel|People|Rwanda)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:,\s(?:Rapporteur|President|Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
+				(.{0,130}?(?:Committee|Council|panel|People|Rwanda|round\stable\s\d|panel\s\d)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
 			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s)?Committee\s.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
-				(?:.{0,60}?the\sdelegation)?   # translated by [their] delegation
+				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
 			(?:\)|</i>)+)?
 			\s*
 			(?:<i>:</i>|<b>\s*:\s*</b>|:)
@@ -90,7 +90,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 	if mspek or speakerbeforetookchair:
 		if indentationerror == "unindented-paragraph" and speakerbeforetookchair:
 			indentationerror = False
-		if indentationerror == "unindented-paragraph" and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49", "A-55-PV.52", "A-55-PV.56", "A-55-PV.51" ]:
+		if indentationerror == "unindented-paragraph" and paranum.undocname in [ "A-55-PV.60", "A-55-PV.63", "A-55-PV.64", "A-55-PV.68", "A-55-PV.59", "A-55-PV.44", "A-55-PV.46", "A-55-PV.48", "A-55-PV.49", "A-55-PV.52", "A-55-PV.56", "A-55-PV.51", "A-60-PV.37", "A-60-PV.38", "A-60-PV.42", "A-60-PV.51", "A-60-PV.79", "A-60-PV.85", "A-60-PV.91", "A-60-PV.86", "A-60-PV.87", "A-60-PV.92", "A-60-PV.93", "A-60-PV.94" ]:
 			indentationerror = False
 		if indentationerror:
 			print ptext
@@ -107,14 +107,14 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		nation = ""
 		if mspek.group(2):
 			lnation = mspek.group(2)
-			if lnation in nonnations:
-				nation = lnation
-			else:
-				nation = FixNationName(lnation, paranum.sdate)
+			nation = FixNationName(lnation, paranum.sdate)
+			if not nation:
+				nation = IsNonnation(lnation, paranum.sdate)
 			if not nation:
 				print ptext
-				print "\ncheck if misspelt or new nonnation: ", lnation
+				print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
 				raise unexception("unrecognized nation or nonnation", paranum)
+
 		assert mspek.group(1)
 		typ = "spoken"
 		currentspeaker = (mspek.group(1), nation, mspek.group(5) or "")
@@ -158,7 +158,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
 			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted(?i)", ptext)
-			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned) at", ptext)
+			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
@@ -166,9 +166,12 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
 			melected = re.search("Having obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
-			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to", ptext)
+			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
+			mmstar = re.match("\*", ptext)  # insert * in the text
+			if mmstar:
+				ptext = ptext[1:]
 
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected):
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)

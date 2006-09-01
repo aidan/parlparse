@@ -163,7 +163,7 @@ class TextPage:
 				txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
 
 			# extract the date out if poss
-			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s+(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?$", txlines[ih].ltext)
+			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?$", txlines[ih].ltext)
 			if mdate:  #Tuesday, 3 December 2002, 10 a.m.
 				#print txlines[ih].ltext
 				iday = int(mdate.group(1))
@@ -182,7 +182,8 @@ class TextPage:
 
 		if not self.date:
 			for i in range(ih):
-				print "*%s*" % txlines[i].ltext
+				print "--%s--" % txlines[i].ltext
+			raise unexception("dotlinechair date problem", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 			assert False
 
 		# when country name for the president . . . . is not on same line

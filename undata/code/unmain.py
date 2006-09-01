@@ -6,6 +6,7 @@ from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ConvertXML
 from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir
+from nations import PrintNonnationOccurrances
 
 parser = OptionParser()
 parser.set_usage("""Parses and scrapes UN verbatim reports from General Assembly and Security Council
@@ -63,7 +64,7 @@ if bConvertXML:
 	ConvertXML(stem, pdfdir, pdfxmldir)
 if bParse:
 	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
-
+	PrintNonnationOccurrances()
 
 
 

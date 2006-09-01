@@ -103,7 +103,8 @@ class VoteBlock:
 		if not madtext:
 			madtext = re.match("(By)\s+(\d+)(?:\s+votes)? to\s+(\d+|none)(?:,? with (\d+) abstentions?)?", adtext)
 		if not madtext:
-			print "====", self.i, adtext
+			print "--%s-- %d" % (adtext, self.i)
+			raise unexception("by votes problem", self.tlcall[self.i].paranum)
 		ifavour = int(madtext.group(2))
 		iagainst = (madtext.group(3) != "none" and int(madtext.group(3)) or 0)
 		if madtext.group(1) == "rejected":
@@ -134,7 +135,7 @@ class VoteBlock:
 			if not msadtext:
 				msadtext = re.match("the delegations? of (.*?)(?:(?:informed|advised) the Secretariat that (?:it|they))? had (not) intended to participate(?: in the voting)?$", sadtext)
 			if not msadtext:
-				msadtext = re.match("the delegations? of (.*?) had intended to (abstain)$", sadtext)
+				msadtext = re.match("the delegations? of (.*?) had intended to (vote against|abstain)$", sadtext)
 			if not msadtext:
 				print "---%s---" % sadtext
 				#print re.match("the delegations? of (.*?) (?:informed|advised) the Secretariat that (?:it|they) had", sadtext)

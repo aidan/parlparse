@@ -42,7 +42,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			#print purl
 
 		elif mapv:
-			if int(mapv.group(1)) < 50:  # limit the sessions we take these resolutions from
+			if int(mapv.group(1)) < 40:  # limit the sessions we take these resolutions from
 				return False
 			tail = re.sub("-", "/", mapv.group(3))
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
