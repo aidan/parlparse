@@ -115,7 +115,7 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54" ]
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69" ]
 		self.motiontext = MarkupLinks(adtext)
 		self.i += 1
 
@@ -125,6 +125,7 @@ class VoteBlock:
 		self.votechanges = {}
 		if not msubseq:
 			if re.search("Subsequently", adtext):
+				print adtext
 				raise unexception("unexpected subsequently", self.tlcall[self.i].paranum)
 			return
 
@@ -135,7 +136,7 @@ class VoteBlock:
 			if not msadtext:
 				msadtext = re.match("the delegations? of (.*?)(?:(?:informed|advised) the Secretariat that (?:it|they))? had (not) intended to participate(?: in the voting)?$", sadtext)
 			if not msadtext:
-				msadtext = re.match("the delegations? of (.*?) had intended to (vote against|abstain)$", sadtext)
+				msadtext = re.match("the delegations? of (.*?) had intended to (vote in favour|vote against|abstain)$", sadtext)
 			if not msadtext:
 				print "---%s---" % sadtext
 				#print re.match("the delegations? of (.*?) (?:informed|advised) the Secretariat that (?:it|they) had", sadtext)

@@ -148,7 +148,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 				raise unexception(indentationerror + " of unspoken text", paranum)
 
 			if not mballots:
-				mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolutions?|decision|draft resolution) ([\d/]*\s*(?:[A-Z]{1,2}|[A-Z] (?:and|to) [A-Z])?)\))?\.?$", ptext)
+				mptext = re.match("<i>(.*?)</i>\s*(?:\((?:resolutions?|decision|draft resolution) (A?[\d/]*\s*(?:\(?[A-Z,\s]*(?:and|to) [A-Z]\)?|[A-Z]{1,2})?)\))?\.?$", ptext)
 				if not mptext:
 					print "--%s--" % ptext
 					raise unexception("improper italicline", paranum)
@@ -163,9 +163,9 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
-			mminsil = re.search("The members of the General Assembly observed a minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
+			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
-			melected = re.search("Having obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
+			melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text
 			if mmstar:

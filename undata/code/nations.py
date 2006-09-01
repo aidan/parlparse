@@ -226,6 +226,7 @@ nationmapping = {
 		"Principality of Monaco":"Monaco",
 		"Republic of Moldova":"Moldova",
 		"Republic of Azerbaijan":"Azerbaijan",
+		"Kazakstan":"Kazakhstan",
 				}
 
 
@@ -510,3 +511,7 @@ nonnations["Treatment Action Campaign"] = 0
 nonnations["Global Fund to Fight AIDS, Tuberculosis and Malaria"] = 0
 nonnations["MTV Networks International/Global Media AIDS Initiative"] = 0
 nonnations["African Network of Religious Leaders Living with or Personally Affected by HIV/AIDS"] = 0
+nonnations["Agency for Cultural and Technical Cooperation"] = 0
+nonnations["Latin American Economic System"] = 0
+nonnations["International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
+nonnations["President of the International Criminal Tribunal for Rwanda"] = 0

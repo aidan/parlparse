@@ -72,6 +72,8 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 					lbeditparse = False
 					raise unexception("editparse", None)
 				sdate, chairs, tlcall = GlueUnfile(xfil, undocname)
+				if not tlcall:
+					break   # happens when it's a bitmap type
 				print sdate#, chairs
 				gparas = GroupParas(tlcall, undocname, sdate)
 			except unexception, ux:

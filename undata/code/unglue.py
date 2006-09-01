@@ -5,6 +5,7 @@ from unmisc import unexception, paranumC
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
+pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="1141" width="852">\s*$'
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -13,9 +14,10 @@ def StripPageTags(xfil):
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
 	#print len(xpages), undoc
 	if not mpage1head:
-		print "Probably is a bitmap type"
-		print xpages[0]
-		assert False
+		print " -- bitmap type"
+		for xpage in xpages:
+			assert re.match(pagebitmap, xpage)
+		return False
 	if not re.match(page1bit, mpage1head.group(1)):
 		print "Probably is a bitmap type"
 		print mpage1head.group(1)
@@ -216,7 +218,8 @@ class TextPage:
 		self.textcountnumber = textcountnumber
 
 		leftcolstart = 90
-		rightcolstart = re.match("A-5[34]", lundocname) and 481 or 468
+		rightcolstart = re.match("A-5[234]", lundocname) and 481 or 468
+		rightcolstartindentincrement = re.match("A-5[2]", lundocname) and 1 or 0  # adds an offset to non-zero values
 
 		# generate the list of lines, sorted by vertical position
 		ftxlines = re.findall("<text.*?</text>", xpage)
@@ -299,6 +302,8 @@ class TextPage:
 
 			else:
 				txl.indent = txl.left - rightcolstart
+				if txl.indent:
+					txl.indent += rightcolstartindentincrement
 				if txl.indent < 0:
 					print txl.indent
 					print txl.ltext
@@ -315,6 +320,8 @@ class TextPage:
 # clusters are paragraphs after the lines have been clustered together
 def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
+	if not xpages:
+		return None, None, None  # bitmap type encountered
 	txpages = [ ]
 	tlcall = [ ]
 	for i in range(len(xpages)):
