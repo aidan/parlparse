@@ -8,8 +8,8 @@ from nations import FixNationName, IsNonnation
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
 			(?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
-				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
+				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s|Advisory\s|Trust\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
@@ -19,10 +19,14 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			\s*"""
 
 # use this to disentangle failures in the above regexp
-#respekSS = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
-#			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-#			(?:\s\(Rapporteur)?
-#"""
+respekSS = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
+			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
+			(?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
+				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+			(?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
+"""
+respekSS = None
+
 
 #<b>The President</b>  (<i>spoke in French</i>):
 respekp1 = """(?x)<b>(The\sPresident)\s*</b>
@@ -96,10 +100,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			print indents
 			raise unexception(indentationerror + " of speaker-intro", paranum)
 
-	#if not mspek:
-	#	m = re.match(respekSS, ptext)
-	#	print ptext
-	#	print "   ___ ", m and m.group(0)
+	if respekSS and not mspek:
+		m = re.match(respekSS, ptext)
+		print ptext
+		print "   ___ ", m and m.group(0)
 	if mspek:
 		assert not indentationerror
 		assert not re.match("<i>", ptext)
@@ -156,14 +160,14 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
-			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment).*?(?:was|were) adopted(?i)", ptext)
+			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment|recommendation).*?(?:was|were) adopted(?i)", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))(?: by the President and the Secretary-General)?\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
-			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
+			mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?,.*?acted as tellers\.$", ptext)
 			melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text

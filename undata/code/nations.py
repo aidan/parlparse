@@ -232,6 +232,7 @@ nationmapping = {
 		"Slovak Republic":"Slovakia",
 		"People's Democratic Republic of Korea":"Democratic People's Republic of Korea",
 		"Guinea Bissau":"Guinea-Bissau",
+		"The Former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia", 
 				}
 
 
@@ -538,3 +539,14 @@ nonnations["Director General, International Atomic Energy Agency"] = 0
 nonnations["President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
 nonnations["Assistant Secretary-General for Political Affairs"] = 0
 nonnations["Director, General Assembly Affairs"] = 0
+nonnations["Director, General Assembly Affairs Division, Department of Political Affairs"] = 0
+nonnations["Director General of the International Atomic Energy Agency"] = 0
+nonnations["South Pacific Forum"] = 0
+nonnations["Director of the General Assembly and Trusteeship Council Affairs Division"] = 0
+nonnations["Special Adviser to the Secretary-General on General Assembly Matters"] = 0
+nonnations["Asian-African Consultative Committee"] = 0
+nonnations["Director of General Assembly and Trusteeship Council Affairs Division"] = 0
+nonnations["President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
+nonnations["Secretary General of the Conference on Security and Cooperation in Europe"] = 0
+nonnations["Observer for Palestine"] = 0
+nonnations["Director of the General Assembly Affairs Division"] = 0

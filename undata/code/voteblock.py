@@ -53,6 +53,7 @@ class VoteBlock:
 			else:
 				fres.append(lnation)
 		if bforce and fres:
+			print votelist
 			print "****", fres
 			print "cccccc", carryforward
 			raise unexception("votelist problem", self.tlcall[self.i].paranum)
@@ -115,7 +116,7 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90" ]
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83" ]
 		self.motiontext = MarkupLinks(adtext)
 		self.i += 1
 
@@ -177,12 +178,12 @@ class VoteBlock:
 		self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
 
 		vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
-		if re.match("A recorded vote has been requested(?: for this item|\. We shall now begin the voting process)?\.?$", vtext):
+		if re.match("A recorded vote has been requested(?: for this item| on (?:the|this) motion|\. We shall now begin the voting process)?\.?$", vtext):
 			self.i += 1
 			vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
 		if re.match("A recorded vote was taken\s*\.?$", vtext):
 			self.i += 1
-		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90"]):
+		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90", "A-49-PV.90"]):
 			print tlcall[self.i].paratext
 			print tlcall[self.i - 1].paratext
 			assert False

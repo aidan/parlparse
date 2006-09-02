@@ -63,7 +63,9 @@ class TextLine:
 		if self.height == 11 and not self.bfootertype and self.width <= 10:
 			#print self.left, self.width, "'%s'" % self.ltext
 			assert self.width <= 10
-			assert self.ltext in ["th", "rd", "st", "nd"]
+			if self.ltext not in ["th", "rd", "st", "nd"]:
+				print self.ltext
+				raise unexception("unrecognized shortbit", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 			self.top += 2  # push the step down from 16 to 18
 
 def TextLineTopKey(textline):
@@ -233,7 +235,7 @@ class TextPage:
 
 		leftcolstart = 90
 		rightcolstart = (int(re.match("A-(\d+)", lundocname).group(1)) <= 54) and 481 or 468
-		rightcolstartindentincrement = re.match("A-5[12]", lundocname) and 1 or 0  # adds an offset to non-zero values
+		rightcolstartindentincrement = (int(re.match("A-(\d+)", lundocname).group(1)) <= 52) and 1 or 0  # adds an offset to non-zero values
 
 		# generate the list of lines, sorted by vertical position
 		ftxlines = re.findall("<text.*?</text>", xpage)
@@ -313,7 +315,9 @@ class TextPage:
 							bc -= 1
 
 				txl.indent = txl.left - leftcolstart
-				assert txl.indent >= 0
+				if txl.indent < 0:
+					print txl.indent, txl.ltext
+					raise unexception("negative indentation", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 				self.minindentleft = min(txl.indent, self.minindentleft)
 				txl.brightcol = False
 				AppendToCluster(self.txlcol1, txl)
