@@ -92,6 +92,13 @@ def AppendToCluster(txlcol, txl):
 	txl.vgap = txl.top - txlcol[-1].txls[-1].top
 	#print txlcol[-1].txls[-1].ltext
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
+
+	if txl.undocname in ["A-50-PV.84", "A-50-PV.88"]:
+		if txl.vgap == 21 or txl.vgap == 22:
+			txl.vgap = 18
+		if txl.vgap == 42:
+			txl.vgap = 43
+
 	if not txl.vgap in (0, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 45, 48, 53, 54, 55, 63, 72, 83):
 		print "vgap=", txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 		raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
@@ -225,7 +232,7 @@ class TextPage:
 		self.textcountnumber = textcountnumber
 
 		leftcolstart = 90
-		rightcolstart = re.match("A-5[1234]", lundocname) and 481 or 468
+		rightcolstart = (int(re.match("A-(\d+)", lundocname).group(1)) <= 54) and 481 or 468
 		rightcolstartindentincrement = re.match("A-5[12]", lundocname) and 1 or 0  # adds an offset to non-zero values
 
 		# generate the list of lines, sorted by vertical position
@@ -264,7 +271,7 @@ class TextPage:
 				assert re.match("General Assembly", txlines[0].ltext)
 				assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
 				assert re.match("\S+ [Ss]ession", txlines[2].ltext)
-				assert re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
+				assert re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext) or (lundocname in ["A-50-PV.38", "A-50-PV.40"])
 				ih = 4;
 			ie = len(txlines) - 1
 			if re.match("\d\d\-\d\d\d\d\d", txlines[ie].ltext):
@@ -295,6 +302,7 @@ class TextPage:
 					if txl.left + txl.width > 501:
 						print txl.left, txl.width, txl.left + txl.width
 						print txl.ltext
+						print "might have page no. 1 on first page"
 						raise unexception("right-hand extension excessive", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 					if not (txl.left <= 165):
 						bc = -1

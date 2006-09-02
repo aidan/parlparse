@@ -229,6 +229,9 @@ nationmapping = {
 		"Republic of Azerbaijan":"Azerbaijan",
 		"Kazakstan":"Kazakhstan",
 		"Vietnam":"Viet Nam",
+		"Slovak Republic":"Slovakia",
+		"People's Democratic Republic of Korea":"Democratic People's Republic of Korea",
+		"Guinea Bissau":"Guinea-Bissau",
 				}
 
 
@@ -273,7 +276,9 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum):
 		assert nationvotes[vn] == "absent"
 		nationvotes[vn] = "against"
 	for vn in vlabstain:
-		assert nationvotes[vn] == "absent"
+		if nationvotes[vn] != "absent":
+			print vn, nationvotes[vn]
+			raise unexception("country already voted", paranum)
 		nationvotes[vn] = "abstain"
 	return nationvotes, sorted([nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"])
 
@@ -521,3 +526,15 @@ nonnations["International Criminal Police Organization-Interpol"] = 0
 nonnations["Caribbean Community CARICOM"] = 0
 nonnations["Director, General Assembly Affairs Division"] = 0
 nonnations["President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
+nonnations["Secretary-General of the Economic Cooperation Organization"] = 0
+nonnations["Secretary-General, Central American Integration System"] = 0
+nonnations["Deputy Secretary-General of the South Pacific Forum"] = 0
+nonnations["Secretary-General of the Caribbean Community"] = 0
+nonnations["Secretary-General of the Organization of African Unity"] = 0
+nonnations["Secretary-General of the Organization for Security and Cooperation in Europe"] = 0
+nonnations["Secretary-General of the Asian-African Legal Consultative Committee"] = 0
+nonnations["Under-Secretary-General for Policy Coordination and Sustainable Development"] = 0
+nonnations["Director General, International Atomic Energy Agency"] = 0
+nonnations["President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
+nonnations["Assistant Secretary-General for Political Affairs"] = 0
+nonnations["Director, General Assembly Affairs"] = 0

@@ -7,9 +7,9 @@ from nations import FixNationName, IsNonnation
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-			(?:,\s(?:Rapporteur|President|(?:Vice-)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
+			(?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
 				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
+			(?:\s\(((?:Acting\s)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
@@ -21,9 +21,7 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 # use this to disentangle failures in the above regexp
 #respekSS = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 #			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-#			(?:,\s(?:Rapporteur|President|Chairman)\sof\sthe\s
-#				(.{0,60}?\s(?:Committee|Council)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-#			(?:\s\((Chairman\sof\sthe\sCommittee\s.{0,90}?)\))?  # group 4 extra chairman setting
+#			(?:\s\(Rapporteur)?
 #"""
 
 #<b>The President</b>  (<i>spoke in French</i>):
@@ -31,7 +29,7 @@ respekp1 = """(?x)<b>(The\sPresident)\s*</b>
 			  (?:\s*\(([^\)<]*)\))?\s*
 			  (dummy)?
 			  (dummy)?
-			  (?:\(<i>?:spoke\sin\s(\w+)
+			  (?:\(<i>spoke\sin\s(\w+)
 			  (?:.{0,60}?(?:by|the)\sdelegation)?</i>\))?
 			  \s*:\s*"""
 respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
@@ -42,7 +40,7 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:\s*(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General).{0,20}?)\s*(?:</b>\s*:|:\s*</b>)
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General|Pope).{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
@@ -162,7 +160,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("The President (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))\.?$", ptext)
+			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))(?: by the President and the Secretary-General)?\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitation of the (?:Acting )?President,.*?acted as tellers\.$", ptext)
@@ -203,7 +201,7 @@ def CleanupTags(ptext, typ, paranum):
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext)
 	if typ == "spoken":
-		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\))</i>", ptext):
+		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\)|President's Office\))</i>", ptext):
 			pass	# could put in a type for this
 		elif re.match("<i>.*?</i>[\s\.\-]?$", ptext):
 			print ptext

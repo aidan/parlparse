@@ -115,7 +115,7 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69" ]
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90" ]
 		self.motiontext = MarkupLinks(adtext)
 		self.i += 1
 
@@ -182,7 +182,7 @@ class VoteBlock:
 			vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
 		if re.match("A recorded vote was taken\s*\.?$", vtext):
 			self.i += 1
-		if not (self.i != i or self.undocname == "A-55-PV.86"):
+		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90"]):
 			print tlcall[self.i].paratext
 			print tlcall[self.i - 1].paratext
 			assert False
