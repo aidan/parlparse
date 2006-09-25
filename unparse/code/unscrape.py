@@ -7,7 +7,7 @@ import os
 import shutil
 from optparse import OptionParser
 from unmisc import unexception, IsNotQuiet, pdfdir
-#Sym testing SVN access
+
 docindex = "http://www.un.org/documents/"
 
 def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None):
