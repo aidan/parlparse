@@ -11,6 +11,7 @@ import xapian
 # Add the sorting parameters
 # Work out what format document content should be in 
 # Decide what to do properly with spaces in names etc.
+# XAPIAN_PREFER_FLINT=1 ?
 
 # Fields are:
 # I identifier (e.g. pg001-bk01, with x for -)
