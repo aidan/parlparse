@@ -4,6 +4,8 @@ import re
 import os
 import xapian
 
+# Query Xapian database made using xapdex.py
+
 query = sys.argv[1]
 
 xapian_file = "/home/francis/toobig/undata/xapdex.db"
@@ -21,6 +23,8 @@ xapian_query.add_prefix("nation", "N")
 xapian_query.add_prefix("language", "L")
 xapian_query.add_prefix("document", "D")
 xapian_query.add_prefix("reference", "R")
+xapian_query.add_prefix("date", "E")
+xapian_query.add_prefix("heading", "H")
 parsed_query = xapian_query.parse_query(query)
 
 xapian_enquire.set_query(parsed_query)
