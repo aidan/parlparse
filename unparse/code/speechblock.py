@@ -15,7 +15,9 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
 			(?:\)|</i>)+)?
 			\s*
-			(?:<i>:</i>|<b>\s*:\s*</b>|:)
+			(?:<i>:</i>|<b>\s*:\s*</b>|:)    # make sure we get a colon
+			\s*
+			(?:</i>)?		# sometimes trailing
 			\s*"""
 
 # use this to disentangle failures in the above regexp
@@ -200,19 +202,28 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	return ptext, typ, currentspeaker
 
+
 def CleanupTags(ptext, typ, paranum):
 	assert typ in ["italicline", "italicline-tookchair", "boldline", "spoken"]
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext)
-	if typ == "spoken":
-		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\)|President's Office\))</i>", ptext):
-			pass	# could put in a type for this
-		elif re.match("<i>.*?</i>[\s\.\-]?$", ptext):
-			print ptext
-			raise unexception("total italics in spoken text", paranum)
-		elif re.search("<[^/i]+>", ptext):
-			print ptext
-			raise unexception("other than italics in spoken text", paranum)
+
+	# could have a special paragraph type for this
+	mspokein = re.match("<i>(\(spoke in \w+(?:\)|.*?delegation\)|President's Office\)))</i>$", ptext)
+	if mspokein:
+		stext = re.sub("<[ib/]*>", "", mspokein.group(1)).strip()
+		return "<i>%s</i>" % stext
+
+	if re.search("<[^/i]+>", ptext):
+		print ptext
+		raise unexception("tag other than italics in text", paranum)
+	if re.match("<i>.*?</i>[\s\.\-]?$", ptext):
+		print ptext
+		raise unexception("total italics in text", paranum)
+	if re.search("</?i>", "".join(re.split("<i>(.*?)</i>", ptext))):
+		print ptext
+		raise unexception("unmatched italics in spoken text", paranum)
+
 	return ptext
 
 class SpeechBlock:
@@ -268,7 +279,7 @@ class SpeechBlock:
 		tlc = self.tlcall[self.i]
 		#print tlc.indents, tlc.paratext
 		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
-		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum))
+		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum), self.paranum)
 		self.i += 1
 		if self.typ in ["italicline", "italicline-tookchair"]:
 			self.paragraphs = [ (None, ptext) ]
@@ -284,7 +295,7 @@ class SpeechBlock:
 				tlc = self.tlcall[self.i]
 				if not re.match(reboldline, tlc.paratext):
 					break
-				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum))
+				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.paranum)
 				self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
 				self.i += 1
 			return
@@ -297,7 +308,7 @@ class SpeechBlock:
 			tlc = self.tlcall[self.i]
 			if self.DetectEndSpeech(tlc.paratext, tlc.lastindent, self.sdate):
 				break
-			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum))
+			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.paranum)
 			bIndent = (len(tlc.indents) == 1) and (tlc.indents[0][0] != 0) and (tlc.indents[0][1] > 1)
 			self.paragraphs.append(((bIndent and "blockquote" or "p"), ptext))
 			self.i += 1

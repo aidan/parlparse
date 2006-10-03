@@ -16,9 +16,9 @@ class unexception(Exception):
 
 undoclinks = "../pdf/"
 
-pdfdir = os.path.join("..", "pdf")
-pdfxmldir = os.path.join("..", "pdfxml")
-htmldir = os.path.join("..", "html")
+pdfdir = os.path.join("..", "..", "undata", "pdf")
+pdfxmldir = os.path.join("..", "..", "undata", "pdfxml")
+htmldir = os.path.join("..", "..", "undata", "html")
 sCallScrape = None  # set by one of the
 
 bQuiet = False
@@ -42,21 +42,21 @@ reressplit = """(?x)(
 from unscrape import ScrapePDF
 
 def MakeCheckLink(ref, link):
-	fpdf = os.path.join("..", "pdf", ref) + ".pdf"
+	fpdf = os.path.join(pdfdir, ref + ".pdf")
 	if not os.path.isfile(fpdf):
 		if not sCallScrape or not ScrapePDF(ref):
-			return '<a class="nolink" href="%s%s">%s</a>' % (undoclinks, ref, link)
+			return '<a class="nolink" href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
 		assert os.path.isfile(fpdf)
 	return '<a href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
 
-def MarkupLinks(paratext):
+def MarkupLinks(paratext, paranum):
 	stext = re.split(reressplit, paratext)
 	res = [ ]
 	for st in stext:   # don't forget to change the splitting regexp above
 		mres = re.match("(?:General Assembly )?resolution (\d+)/(\d+)", st)
 		meres = re.match("Economic and Social Council resolution (\d+)/(\d+)", st)
 		mdoc = re.match("A/(\d+)/(\S*)", st)
-		msecres = re.match("(?:Security Council )?(?:resolution )?(\d+) \(((?:19|20)\d\d)\)", st)
+		msecres = re.match("(?:Security Council )?(?:resolution )?(\d+) \((\d\d\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
 			res.append(MakeCheckLink("A-RES-%s-%s" % (mres.group(1), mres.group(2)), st))
@@ -66,13 +66,15 @@ def MarkupLinks(paratext):
 			doccode = re.sub("/", "-", mdoc.group(2))
 			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), doccode), st))
 		elif msecres:
+			if not (1945 < int(msecres.group(2)) < 2007):  # should use current document year
+				print st
+				raise unexception("year on resolution not possible", paranum)
 			res.append(MakeCheckLink("S-RES-%s(%s)" % (msecres.group(1), msecres.group(2)), st))
 		elif mcan:
 			res.append(' ')
 		else:
 			if re.match(reressplit, st):
-				print st
-				assert False
+				print ":%s:" % st
 			res.append(st)
 	return "".join(res)
 

@@ -9,17 +9,19 @@ from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdf
 from nations import PrintNonnationOccurrances
 
 parser = OptionParser()
-parser.set_usage("""Parses and scrapes UN verbatim reports from General Assembly and Security Council
-scrape  do the downloads
-cxml    do the conversion
-parse   do the parsing""")
+parser.set_usage("""
+
+Parses and scrapes UN verbatim reports of General Assembly and Security Council
+  scrape  do the downloads
+  cxml    do the pdf conversion
+  parse   do the parsing""")
 
 
 if not os.path.isdir(pdfdir):
-	print "please create the directory:", pdfdir
+	print "\nplease create the directory:", pdfdir
 	sys.exit(0)
 if not os.path.isdir(pdfxmldir):
-	print "please create the directory:", pdfxmldir
+	print "\nplease create the directory:", pdfxmldir
 	sys.exit(0)
 
 

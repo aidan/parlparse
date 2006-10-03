@@ -1,6 +1,11 @@
 import re
 from unmisc import unexception
 
+
+# list of nations and their dates as part of the General Assembly can be found at
+# http://www.un.org/Overview/unmember.html
+# The following list should be made consistent with it.
+
 nationdates = {
         "Afghanistan": 	("1945", "9999-12-31"),
 		"Albania": 	("1945", "9999-12-31"),
@@ -55,7 +60,7 @@ nationdates = {
 		"Djibouti": 	("1945", "9999-12-31"),
 		"Ecuador": 	("1945", "9999-12-31"),
 		"Egypt": 	("1945", "9999-12-31"),
-		"El Salvador": 	("1945", "9999-12-31"),
+		"El Salvador": 	 ("1945", "9999-12-31"),
 		"Equatorial Guinea": 	("1945", "9999-12-31"),
 		"Eritrea": 	("1945", "9999-12-31"),
 		"Estonia": 	("1945", "9999-12-31"),
@@ -197,6 +202,7 @@ nationdates = {
 		"The former Yugoslav Republic of Macedonia": 	("1945", "9999-12-31"),
 				}
 
+# includes typos, short names, and name changes 
 nationmapping = {
 		"United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
 		"Cote d'Ivoire":"Côte d'Ivoire",
@@ -245,6 +251,9 @@ for nation in nationdates:
 
 # deals with problem that sometimes the spaces between characters are added
 def FixNationName(lnation, sdate):
+	if re.search("\[", nation):
+		print nation
+
 	lnation = nationmapping.get(lnation, lnation)
 	if lnation == "INVALID":
 		return lnation
@@ -284,6 +293,9 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum):
 	return nationvotes, sorted([nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"])
 
 
+
+# many of the following are organizations granted observer status,
+# listed in http://lib-unique.un.org/lib/unique.nsf/Link/R02020
 nonnations = [	"European Community",
 				"Palestine",
 				"Holy See",

@@ -117,7 +117,7 @@ class VoteBlock:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
 			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83" ]
-		self.motiontext = MarkupLinks(adtext)
+		self.motiontext = MarkupLinks(adtext, self.paranum)
 		self.i += 1
 
 	def DetectSubsequentVoteChange(self, gnv):
