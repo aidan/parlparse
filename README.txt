@@ -1,10 +1,18 @@
+United Kingdom Parser
+---------------------
 
 parlparse -- Parliament screen scraper and parser. Includes Commons and Lords.
-Code originally taken from the Public Whip project.
+parldata -- Data which parlparse produces. 
 
-parldata -- Data which parlparse makes. Fairly new that this is in version control.
+lawparse -- Screen scraping legislation.
+lawdata -- Data which lawparse produces.
 
-lawparse -- Screen scraping legislation. Fairly new project.
+unparse -- United Nations screen scraper (not in the UK, we know!)
+undata - Data which unparse produces.
 
-website -- ukprase.kforge.net website.
+website -- ukparse.kforge.net website.
+
+For more information see:
+http://ukparse.kforge.net
+http://www.knowledgeforge.net/project/ukparse/
 
