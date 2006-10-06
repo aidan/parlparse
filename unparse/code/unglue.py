@@ -16,7 +16,9 @@ def StripPageTags(xfil):
 	if not mpage1head:
 		print " -- bitmap type"
 		for xpage in xpages:
-			assert re.match(pagebitmap, xpage)
+			if not re.match(pagebitmap, xpage):
+				print xpage
+				assert False
 		return False
 	if not re.match(page1bit, mpage1head.group(1)):
 		print "Probably is a bitmap type"
@@ -185,6 +187,9 @@ class TextPage:
 			if mdate:  #Tuesday, 3 December 2002, 10 a.m.
 				#print txlines[ih].ltext
 				iday = int(mdate.group(1))
+				if mdate.group(2) not in months:
+					print mdate.group(2), months
+					raise unexception("unrecognized month", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 				imonth = mdate.group(2) == "Octoberr" and 9 or months.index(mdate.group(2))
 				syear = mdate.group(3)
 				ihour = int(mdate.group(4))
@@ -234,7 +239,14 @@ class TextPage:
 		self.textcountnumber = textcountnumber
 
 		leftcolstart = 90
-		rightcolstart = (int(re.match("A-(\d+)", lundocname).group(1)) <= 54) and 481 or 468
+		if int(re.match("A-(\d+)", lundocname).group(1)) <= 54:
+			rightcolstart = 481
+		else:
+			rightcolstart = 468
+		if lundocname in ["A-54-PV.100", "A-54-PV.96", "A-54-PV.98", "A-54-PV.99"]:
+			rightcolstart = 468
+		if lundocname in ["A-54-PV.97"]:
+			rightcolstart = 486
 		rightcolstartindentincrement = (int(re.match("A-(\d+)", lundocname).group(1)) <= 52) and 1 or 0  # adds an offset to non-zero values
 
 		# generate the list of lines, sorted by vertical position
@@ -327,7 +339,7 @@ class TextPage:
 				if txl.indent:
 					txl.indent += rightcolstartindentincrement
 				if txl.indent < 0:
-					print txl.indent
+					print txl.indent, txl.left, rightcolstart
 					print txl.ltext
 					raise unexception("negative indent on righthand column", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				self.minindentright = min(txl.indent, self.minindentright)

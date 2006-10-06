@@ -14,7 +14,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 	pdfname = undocname + ".pdf"
 	pdffile = os.path.join(pdfdir, pdfname)
 	if os.path.isfile(pdffile):
-		print "  skipping", pdfname
+		print "  skipping", pdffile, pdfname
 		return True
 
 	if not purl:
@@ -158,8 +158,9 @@ scrapepvurlmap = {
 
 def ScrapeContentsPageFromStem(stem):
 	mpv = re.match("A-(\d+)-PV$", stem)
+	print [ a   for a in os.listdir(pdfdir)  if re.match("A-56-PV", a) ]
 	if mpv:
-		for v in range(1, 137):
+		for v in range(0, 173):#137):
 			ScrapePDF("A-%s-PV.%d" % (mpv.group(1), v))
 			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), v))
 		return

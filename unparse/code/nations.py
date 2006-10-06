@@ -562,3 +562,5 @@ nonnations["President, International Tribunal for the Prosecution of Persons Res
 nonnations["Secretary General of the Conference on Security and Cooperation in Europe"] = 0
 nonnations["Observer for Palestine"] = 0
 nonnations["Director of the General Assembly Affairs Division"] = 0
+nonnations["Director of General Assembly and Economic and Social Council Affairs"] = 0
+nonnations["Under Secretary-General for General Assembly and Conference Management"] = 0

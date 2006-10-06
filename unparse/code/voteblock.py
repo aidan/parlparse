@@ -186,7 +186,7 @@ class VoteBlock:
 		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90", "A-49-PV.90"]):
 			print tlcall[self.i].paratext
 			print tlcall[self.i - 1].paratext
-			assert False
+			raise unexception("requested vot not followed through", tlcall[self.i].paranum)
 
 		self.vlfavour = self.DetectVote("<i>In favour:?\s*</i>:?")
 		self.vlagainst = self.DetectVote("(?:<i>)?Against:?\s*(?:</i>)?:?")

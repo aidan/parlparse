@@ -63,7 +63,11 @@ if not (bScrape or bConvertXML or bParse):
 if bScrape:
 	ScrapeContentsPageFromStem(stem)
 if bConvertXML:
-	ConvertXML(stem, pdfdir, pdfxmldir)
+	if re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
+		ConvertXML(stem, pdfdir, pdfxmldir)
+	else:
+		print "Stem should be set, eg --stem=A-49-PV"
+		print "  (Can't parse 48, so won't do)"
 if bParse:
 	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
 	PrintNonnationOccurrances()
