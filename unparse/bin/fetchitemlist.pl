@@ -31,6 +31,7 @@ $browser->agent("s\@msmith.net");
 
 	foreach my $k (sort keys %Uniques) {
 		if ($ENV{DEBUG}) {warn "$k\n";}
+		# print "$k\n";
 		&fetch_doc($k);
 	}
 }
@@ -89,8 +90,10 @@ sub handle_page {
 
 	if ($html=~ m#page%3D(\d+)[^<]*">Next</a>#i) 
 	{
-		warn "next page is turned off for development.\n"; return (0);
-		# return ($1);
+		warn "next page is turned off for development."; return (0);
+		
+		
+		return ($1);
 	} else {
 		return (0);
 	}
@@ -100,14 +103,14 @@ sub handle_page {
 sub fetch_doc {
 	my $code=shift;
 
-	my $query= $dbh->prepare("select * from documents where code=?");
-	$query->execute($code);
-	if ($query->fetchrow_hashref) { # and -d 'undocs/$code') {
-		if ($ENV{DEBUG}) {warn "skipping undata/$code\n"}
-		return;
-	} else {
-		system("mkdir", "-p", "undocs/$code"); # this is a security risk. But we'll trust the UN
-	}
+	#my $query= $dbh->prepare("select * from documents where code=?");
+	#$query->execute($code);
+	#if ($query->fetchrow_hashref) { # and -d 'undocs/$code') {
+	#	if ($ENV{DEBUG}) {warn "skipping undata/$code\n"}
+	#	return;
+	#} else {
+	#	#system("mkdir", "-p", "undocs/$code"); # this is a security risk. But we'll trust the UN
+	#}
 
 	$browser->default_header('Referer' => $start);
 	my $first_url='http://daccess-ods.un.org/access.nsf/Get?Open&DS=' . $code . '&Lang=E';
@@ -128,7 +131,12 @@ sub fetch_doc {
 		$dbh->do("insert into documents set code=?, url=?", undef, $code, $url);
 		print "$code\t$url\n";
 		$response= $browser->get($url);
+
+print "$code\t$url\n"; return;
+
 		if (defined $ENV{DEBUG}) {warn "    getting pdf $url\n"}
+
+		$code=~s#/#\.#g;# to cope with julian's layout
 		open (OUT, ">undocs/$code/original.pdf") || die "can't open undocs/$code/original.pdf:$!";
 		print  OUT $response->content;
 		close(OUT);
@@ -136,6 +144,7 @@ sub fetch_doc {
 		$url=~s/pdf/doc/;
 		$response= $browser->get($url);
 		if (defined $ENV{DEBUG}) {warn "    getting pdf $url\n"}
+
 		open (OUT, ">undocs/$code/original.doc") or die "can't  open undocs/$code/original/doc:$!".
 		print  OUT $response->content;
 		close(OUT);

@@ -3,7 +3,7 @@
 package UNParse::Routines;
 require Exporter;
 @ISA = qw(Exporter);
-@EXPORT = qw(parse_file);  # symbols to export on request
+@EXPORT = qw(parse_file &show_txt);  # symbols to export on request
 use warnings;
 use strict;
 our $dbh= $main::dbh || die "main dbh contains nothing\n";
@@ -12,17 +12,25 @@ sub parse_file {
 	my $filename= shift;
 	my $docid= shift;
 
-	if ($filename=~ m#\w+/A/#) {
-		&submit_to_db($docid, &parse_file_A($filename));
-	} elsif ($filename=~ m#\w+/S/RES#) {# Resolutions
-		&submit_to_db($docid, &parse_file_S_RES($filename));
-	} elsif ($filename=~ m#\w+/S/PRST#) {# press release statement
-		&submit_to_db($docid, &parse_file_S_PRST($filename));
-	} elsif ($filename=~ m#\w+/S/PV#) {# press release statement
-		&submit_to_db($docid, &parse_file_S_PV($filename));
+	if (not -e $filename) {
+		warn "file does not exist: $filename";
 	} else {
-		warn "unknown category for parsing: $filename\n";
+		if ($filename=~ m#\w+/A/#) {
+			&submit_to_db($docid, &parse_file_A($filename));
+		} elsif ($filename=~ m#\w+/S/RES#) {# Resolutions
+			&submit_to_db($docid, &parse_file_S_RES($filename));
+		} elsif ($filename=~ m#\w+/S/PRST#) {# press release statement
+			&submit_to_db($docid, &parse_file_S_PRST($filename));
+		} elsif ($filename=~ m#\w+/S/PV#) {# press release statement
+			&submit_to_db($docid, &parse_file_S_PV($filename));
+		} else {
+			warn "unknown category for parsing: $filename\n";
+		}
 	}
+
+	# now need to look through db to find the date and title
+	# of document and hence populate documents tabl and also populate the
+	# first_seen column so alerts work 
 
 }
 
@@ -53,10 +61,12 @@ sub look_for_names_S_PV {
 	foreach my $p (@paras) {
 		if ($p->{content} =~ m#the following communiqu. was issued through the Secretary-General in place of a verbatim record#i)  {
 			return (@paras); # closed session, so don't bother putting speakers in.
-		}
+		} elsif ($p->{content} =~ m#President of the Security Council made the following statement on behalf of the Council#i)  {
+                        return (@paras); # statement rather than transcript
+                }
 	}
 
-
+	# <b>Mr. Adada</b> (Congo) (<i>spoke in French</i>): 
 
 	return (@paras);
 
@@ -232,6 +242,23 @@ sub submit_to_db {
 
 		$dbh->do("insert into text set contentid=$previous, text=?", undef, $p->{content});
 		$dbh->do("update documents set new=0 where ourdocid=$docid");
+	}
+}
+
+
+sub show_txt {
+	my $documentid= shift;
+
+	my $query= $dbh->prepare("select * from contents,text where documentid=?
+				  and contents.contentid=text.contentid")
+		 || $dbh->errstr;
+	$query->execute($documentid);
+
+	my $result;
+
+	while ($result= $query->fetchrow_hashref) {
+		# print "==========\n";
+		# print "$result->{position}:$result->{fontid}:$result->{text}\n\n";
 	}
 }
 
