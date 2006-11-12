@@ -6,9 +6,28 @@ import xapian
 
 # Query Xapian database made using xapdex.py
 
-query = sys.argv[1]
+# Usage:
+# ./xapque.py QUERY_STRING
+# The QUERY_STRING must be just one parameter, so quote it if it has multiple
+# terms, or escape quotes if you want to do a phrase search.
 
-xapian_file = "/home/francis/toobig/undata/xapdex.db"
+# e.g. 
+# ./xapque.py "last july"
+# ./xapque.py "\"last july\""
+# ./xapque.py "nation:solomonislands"
+
+# The names of prefixes (like nation:) are given in the code below, see
+# xapdex.py for what they mean.
+
+if len(sys.argv) < 3:
+    print "Please specify xapian database and query as two parameters"
+    sys.exit()
+if len(sys.argv) > 3:
+    print "Please specify xapian database and query as two parameters (use quotes if multiple words)"
+    sys.exit()
+query = sys.argv[2]
+
+xapian_file = sys.argv[1]
 xapian_db = xapian.Database(xapian_file)
 xapian_enquire = xapian.Enquire(xapian_db)
 
@@ -26,6 +45,7 @@ xapian_query.add_prefix("reference", "R")
 xapian_query.add_prefix("date", "E")
 xapian_query.add_prefix("heading", "H")
 parsed_query = xapian_query.parse_query(query)
+print parsed_query.get_description()
 
 xapian_enquire.set_query(parsed_query)
 

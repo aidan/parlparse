@@ -3,15 +3,25 @@ import sys
 import re
 import os
 import xapian
+import distutils.dir_util
 
 # Index Julian's UN HTML in Xapian
 
+# Usage:
+# ./xapdex.py XAPIAN_DATABASE_NAME HTML_DIRECTORY_OR_FILE
+# At the moment, replaces whole database with a new one indexing the given
+# HTML_DIRECTORY_OR_FILE. XAPIAN_DATABASE_NAME must have no trailing slash
+# (XXX use os.path.join instead of + fix)
+# e.g. 
+# ./xapdex.py ~/devel/undata/xapdex.db ~/devel/undata/html
+# ./xapdex.py ~/devel/undata/xapdex.db ~/devel/undata/html/A-53-PV.63.html
+
 # TODO: 
-# Make it replace the database
 # Add the sorting parameters
 # Work out what format document content should be in 
+#    maybe put partial path in as file name?
 # Decide what to do properly with spaces in names etc.
-# XAPIAN_PREFER_FLINT=1 ?
+# Sort out the path to the database in some config
 
 # Fields are:
 # I identifier (e.g. pg001-bk01, with x for -)
@@ -97,10 +107,17 @@ def process_file(input_file, xapian_db):
             xapian_doc.add_posting(word.lower(), n)
         xapian_db.add_document(xapian_doc)
 
-# Entry point
-xapian_file = "/home/francis/toobig/undata/xapdex.db"
-xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
-input = sys.argv[1]
+# Create new database
+xapian_file = sys.argv[1]
+xapian_file_new = xapian_file + ".new"
+if os.path.exists(xapian_file_new):
+    if os.path.exists(xapian_file_new + "/iamflint"):
+        distutils.dir_util.remove_tree(xapian_file_new)
+    else:
+        raise Exception, "Path %s exists but doesn't contain Xapian database" % xapian_file_new
+os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
+xapian_db = xapian.WritableDatabase(xapian_file_new, xapian.DB_CREATE_OR_OPEN)
+input = sys.argv[2]
 if os.path.isfile(input):
     process_file(input, xapian_db)
 elif os.path.isdir(input):
@@ -108,5 +125,15 @@ elif os.path.isdir(input):
         p = os.path.join(input, d)
         if re.search(".html$", p):
             process_file(p, xapian_db)
+else:
+    raise Exception, "Directory/file %s doesn't exist" % input
+del xapian_db
+# Move new database into place
+if os.path.exists(xapian_file):
+    if os.path.exists(xapian_file + "/iamflint"):
+        distutils.dir_util.remove_tree(xapian_file)
+    else:
+        raise Exception, "Path %s exists but doesn't contain Xapian database" % xapian_file
+os.rename(xapian_file_new, xapian_file)
 
 
