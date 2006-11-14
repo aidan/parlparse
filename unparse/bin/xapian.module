@@ -1,0 +1,156 @@
+<?php
+/**
+ * This drupal module links drupal and the result of a xapian search.  
+ * The main point of it is to provide the xapian_do_search() function.  
+ * I've also added some settings, to make it a bit more pluggable.
+ */
+
+
+/**
+ * Implementation of hook_help().
+ */
+function xapian_help($section) {
+  switch ($section) {
+    case 'admin/modules#description':
+      return t('Provides options to display content from xapian in drupal, as a node.');
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function xapian_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/settings/xapian',
+      'title' => t('xapian settings'),
+      'access' => user_access('administer xapian'),   
+      'callback' => 'xapian_settings'
+     );
+     $items[] = array(
+     'path' => 'admin/settings/xapian/settings',
+     'title' => 'Settings',
+     'type' => MENU_DEFAULT_LOCAL_TASK,
+     'weight' => '-10',
+     );
+     
+     $items[] = array(
+      'path' => 'admin/settings/xapian/test',
+      'title' => t('Databse test'),
+      'access' => user_access('administer xapian'),
+      'type' => MENU_LOCAL_TASK,
+      'callback' => 'xapian_dbtest'
+     );
+  }
+  return $items;
+}
+
+
+/**
+ *  Module functions
+ */
+ 
+function xapian_settings() {
+
+  $form['dbpath'] = array(
+    '#type' => textfield,
+    '#title' => 'Path to database',
+    '#default_value' => variable_get('xapian_dbpath', '/path/to/database.db'),
+  );
+
+  $form['submit'] = array(
+    '#type' => submit,
+    '#title' => 'Save',
+    '#value' => 'Save',
+  );
+  return drupal_get_form('xapain_settings', $form);
+} 
+
+function xapain_settings_submit($form_id, $form) {
+variable_set('xapian_dbpath', $form['dbpath']);
+}
+
+function xapian_dbtest() {
+
+  $form['search'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('Search'),
+  '#collapsible' => TRUE,
+  '#collapsed' => FALSE, 
+  );
+
+
+  $form['search']['word'] = array(
+    '#type' => textfield,
+    '#title' => 'Search',
+    '#default_value' => arg(4),
+  );
+
+  $form['search']['submit'] = array(
+    '#type' => submit,
+    '#title' => 'Search',
+    '#value' => 'Search',
+  );
+
+  if (arg(4)) {
+    $form['result'] = array(
+      '#value' => "<h2>results</h2>",
+    );
+
+    $form['result_content'] = array(
+      '#value' => xapian_do_search(variable_get('xapian_dbpath', '/path/to/database.db'), arg(4)),
+    );
+
+  }
+
+  return drupal_get_form('xapain_search_test', $form);
+ 
+}
+
+
+function xapain_search_test_submit($form_id, $form) {
+  return 'admin/settings/xapian/test/' . $form['word'];
+}
+
+
+/**
+ * This is the main search function, that tries to copy xapque.py
+ */
+
+function xapian_do_search($db_path, $query) {
+
+if (!$db_path) {
+$db_path = variable_get('xapian_dbpath', '/path/to/database.db');
+}
+
+// This doesn't break well if it can't find the database
+$database = new_Database($db_path);
+
+$enquire = new_Enquire($database);
+$stemmer = new_Stem("english");
+$terms = arg(4);
+
+$queryparser = new_queryparser();
+queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
+queryparser_set_default_op($queryparser, Query_OP_OR);
+
+
+$query = queryparser_parse_query($queryparser, $terms);
+
+enquire_set_query($enquire, $query);
+
+
+$matches = Enquire_get_mset($enquire, 0, 10);
+
+$mseti = MSet_begin($matches);
+while (! MSetIterator_equals($mseti, MSet_end($matches))) {
+    $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
+	MSetIterator_get_percent($mseti) . "% [" .
+	Document_get_data(MSetIterator_get_document($mseti)) . "]<br />";
+    MSetIterator_next($mseti);
+}
+return $results;
+
+
+}
