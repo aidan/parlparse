@@ -133,8 +133,13 @@ $terms = arg(4);
 
 $queryparser = new_queryparser();
 queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
-queryparser_set_default_op($queryparser, Query_OP_OR);
+queryparser_set_default_op($queryparser, Query_OP_AND);
 
+//Why doesn't this work?  I have tried date: E, date in every order.
+//I still don't get the same result as xapque.py
+//Is this what query_remade() fixes in searchengine.php from twfy? 
+queryparser_add_prefix($queryparser, "date", "date:");
+queryparser_add_prefix($queryparser, "C", "class:");
 
 $query = queryparser_parse_query($queryparser, $terms);
 
@@ -142,6 +147,8 @@ enquire_set_query($enquire, $query);
 
 
 $matches = Enquire_get_mset($enquire, 0, 10);
+
+$results .= Query_get_description($query) . "<br />";
 
 $mseti = MSet_begin($matches);
 while (! MSetIterator_equals($mseti, MSet_end($matches))) {
