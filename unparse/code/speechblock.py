@@ -46,7 +46,7 @@ respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:\s*(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General|Pope).{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General|Pope)[^<]{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
@@ -88,6 +88,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		mspek = re.match(respekp3, ptext)
 	if not mspek:
 		mspek = re.match(respek, ptext)
+	assert not mspek or not re.search("[<>]", mspek.group(1))
 
 	if not mspek and re.match("<[ib]>", ptext):
 		speakerbeforetookchair = ""
