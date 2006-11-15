@@ -149,18 +149,30 @@ function xapian_do_search($undata_path, $db_path, $query) {
   queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
   queryparser_set_default_op($queryparser, Query_OP_AND);
 
-  //Why doesn't this work?  I have tried date: E, date in every order.
-  //I still don't get the same result as xapque.py
-  //Is this what query_remade() fixes in searchengine.php from twfy? 
-  queryparser_add_prefix($queryparser, "date", "date:");
-  queryparser_add_prefix($queryparser, "C", "class:");
+  queryparser_add_prefix($queryparser, "class", "C");
+  queryparser_add_prefix($queryparser, "id", "I");
+  queryparser_add_prefix($queryparser, "subid", "J");
+  queryparser_add_prefix($queryparser, "class", "C");
+  queryparser_add_prefix($queryparser, "name", "S");
+  queryparser_add_prefix($queryparser, "nation", "N");
+  queryparser_add_prefix($queryparser, "language", "L");
+  queryparser_add_prefix($queryparser, "document", "D");
+  queryparser_add_prefix($queryparser, "reference", "R");
+  queryparser_add_prefix($queryparser, "date", "E");
+  queryparser_add_prefix($queryparser, "heading", "H");
 
   $query = queryparser_parse_query($queryparser, $terms);
 
   enquire_set_query($enquire, $query);
 
+  # XXX for actual searches will want to sort by relevance instead, or fancier
+  # things like set_sort_by_value_then_relevance
+  enquire_set_sort_by_value($enquire, 0, false); // false for order forwards in date/time
 
-  $matches = Enquire_get_mset($enquire, 0, 10);
+
+  # XXX will want more than 100 here! See mset_get_matches_estimated in
+  # searchengine.php from TWFY for code to work out set result sizes
+  $matches = Enquire_get_mset($enquire, 0, 100); 
 
   $results .= Query_get_description($query) . "<br />\n";
 
@@ -178,7 +190,7 @@ function xapian_do_search($undata_path, $db_path, $query) {
       $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
         MSetIterator_get_percent($mseti) . "% [" .
         $doc_data . "]<br />" .
-      #  "<pre>" . $doc_content . "</pre><br />" . # XXX uncomment to print Julian's structured HTML
+        "<pre>" . $doc_content . "</pre><br />" . # XXX uncomment to print Julian's structured HTML
         "\n";
 
       // Next result

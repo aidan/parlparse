@@ -18,9 +18,7 @@ import distutils.dir_util
 # ./xapdex.py ~/devel/undata xapdex.db html
 
 # TODO: 
-# Headings so can get list
 # Get list of days
-# Add the sorting parameters
 # Decide what to do properly with spaces in names etc.
 
 # Fields are:
@@ -44,6 +42,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
     print document_id, document_date
 
+    pos_in_file = 0
     heading = None
     divs = re.finditer("^<div .*?^</div>", content, re.S + re.M)
     for div in divs:
@@ -91,14 +90,15 @@ def process_file(input_dir, input_file_rel, xapian_db):
         word_content = re.sub("[^A-Za-z0-9]", " ", word_content)
         words = re.split("\s+",word_content)
 
-        # Add to Xapian database
-        #print terms
+        # Add item to Xapian database
         xapian_doc = xapian.Document()
         doc_content = "%s|%s|%s" % (input_file_rel, off_from, off_to - off_from)
+        # ... terms (unplaced keywords, i.e. all the meta data like speaker, country)
         xapian_doc.set_data(doc_content)
         for term in terms:
             term = term.replace(" ", "")
             xapian_doc.add_term(term)
+        # ... postings (keywords with placement, so can be in phrase search; the bulk of text)
         n = 0
         for word in words:
             if word == '':
@@ -107,6 +107,13 @@ def process_file(input_dir, input_file_rel, xapian_db):
                 continue
             n = n + 1
             xapian_doc.add_posting(word.lower(), n)
+        # ... values (for sorting by)
+        # XXX we use date, position in file. Should probably include type (i.e.
+        # general assembly, security council) as well. Note must be lexicographically
+        # sortable field, i.e. probably fixed width (hence padding on the pos).
+        xapian_doc.add_value(0, "%s%06s" % (document_date, pos_in_file))
+        pos_in_file = pos_in_file + 1
+        # ... and commit to the database
         xapian_db.add_document(xapian_doc)
 
 # Get directory where we keep data
