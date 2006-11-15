@@ -1,4 +1,7 @@
 <?php
+# vim:set filetype=php:
+# vim:sw=2:ts=2:et:nowrap
+
 /**
  * This drupal module links drupal and the result of a xapian search.  
  * The main point of it is to provide the xapian_do_search() function.  
@@ -29,12 +32,12 @@ function xapian_menu($may_cache) {
       'callback' => 'xapian_settings'
      );
      $items[] = array(
-     'path' => 'admin/settings/xapian/settings',
-     'title' => 'Settings',
-     'type' => MENU_DEFAULT_LOCAL_TASK,
-     'weight' => '-10',
+      'path' => 'admin/settings/xapian/settings',
+      'title' => 'Settings',
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'weight' => '-10',
      );
-     
+
      $items[] = array(
       'path' => 'admin/settings/xapian/test',
       'title' => t('Databse test'),
@@ -68,18 +71,17 @@ function xapian_settings() {
 } 
 
 function xapain_settings_submit($form_id, $form) {
-variable_set('xapian_dbpath', $form['dbpath']);
+  variable_set('xapian_dbpath', $form['dbpath']);
 }
 
 function xapian_dbtest() {
 
   $form['search'] = array(
-  '#type' => 'fieldset',
-  '#title' => t('Search'),
-  '#collapsible' => TRUE,
-  '#collapsed' => FALSE, 
+    '#type' => 'fieldset',
+    '#title' => t('Search'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE, 
   );
-
 
   $form['search']['word'] = array(
     '#type' => textfield,
@@ -120,44 +122,45 @@ function xapain_search_test_submit($form_id, $form) {
 
 function xapian_do_search($db_path, $query) {
 
-if (!$db_path) {
-$db_path = variable_get('xapian_dbpath', '/path/to/database.db');
+  if (!$db_path) {
+    $db_path = variable_get('xapian_dbpath', '/path/to/database.db');
+  }
+
+  // This doesn't break well if it can't find the database
+  $database = new_Database($db_path);
+
+  $enquire = new_Enquire($database);
+  $stemmer = new_Stem("english");
+  $terms = arg(4);
+
+  $queryparser = new_queryparser();
+  queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
+  queryparser_set_default_op($queryparser, Query_OP_AND);
+
+  //Why doesn't this work?  I have tried date: E, date in every order.
+  //I still don't get the same result as xapque.py
+  //Is this what query_remade() fixes in searchengine.php from twfy? 
+  queryparser_add_prefix($queryparser, "date", "date:");
+  queryparser_add_prefix($queryparser, "C", "class:");
+
+  $query = queryparser_parse_query($queryparser, $terms);
+
+  enquire_set_query($enquire, $query);
+
+
+  $matches = Enquire_get_mset($enquire, 0, 10);
+
+  $results .= Query_get_description($query) . "<br />";
+
+  $mseti = MSet_begin($matches);
+  while (! MSetIterator_equals($mseti, MSet_end($matches))) {
+      $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
+      MSetIterator_get_percent($mseti) . "% [" .
+      Document_get_data(MSetIterator_get_document($mseti)) . "]<br />";
+      MSetIterator_next($mseti);
+  }
+  return $results;
+
+
 }
 
-// This doesn't break well if it can't find the database
-$database = new_Database($db_path);
-
-$enquire = new_Enquire($database);
-$stemmer = new_Stem("english");
-$terms = arg(4);
-
-$queryparser = new_queryparser();
-queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
-queryparser_set_default_op($queryparser, Query_OP_AND);
-
-//Why doesn't this work?  I have tried date: E, date in every order.
-//I still don't get the same result as xapque.py
-//Is this what query_remade() fixes in searchengine.php from twfy? 
-queryparser_add_prefix($queryparser, "date", "date:");
-queryparser_add_prefix($queryparser, "C", "class:");
-
-$query = queryparser_parse_query($queryparser, $terms);
-
-enquire_set_query($enquire, $query);
-
-
-$matches = Enquire_get_mset($enquire, 0, 10);
-
-$results .= Query_get_description($query) . "<br />";
-
-$mseti = MSet_begin($matches);
-while (! MSetIterator_equals($mseti, MSet_end($matches))) {
-    $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
-	MSetIterator_get_percent($mseti) . "% [" .
-	Document_get_data(MSetIterator_get_document($mseti)) . "]<br />";
-    MSetIterator_next($mseti);
-}
-return $results;
-
-
-}
