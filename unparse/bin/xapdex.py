@@ -2,26 +2,26 @@
 import sys
 import re
 import os
+import os.path
 import xapian
 import distutils.dir_util
 
 # Index Julian's UN HTML in Xapian
 
 # Usage:
-# ./xapdex.py XAPIAN_DATABASE_NAME HTML_DIRECTORY_OR_FILE
+# ./xapdex.py UNDATA_DIR XAPIAN_DATABASE_NAME HTML_DIRECTORY_OR_FILE
+# XAPIAN_DATABASE_NAME and HTML_DIRECTORY_OR_FILE are relative to UNDATA_DIR.
 # At the moment, replaces whole database with a new one indexing the given
-# HTML_DIRECTORY_OR_FILE. XAPIAN_DATABASE_NAME must have no trailing slash
-# (XXX use os.path.join instead of + fix)
+# HTML_DIRECTORY_OR_FILE. 
 # e.g. 
-# ./xapdex.py ~/devel/undata/xapdex.db ~/devel/undata/html
-# ./xapdex.py ~/devel/undata/xapdex.db ~/devel/undata/html/A-53-PV.63.html
+# ./xapdex.py ~/devel/undata xapdex.db html/A-53-PV.63.html
+# ./xapdex.py ~/devel/undata xapdex.db html
 
 # TODO: 
+# Headings so can get list
+# Get list of days
 # Add the sorting parameters
-# Work out what format document content should be in 
-#    maybe put partial path in as file name?
 # Decide what to do properly with spaces in names etc.
-# Sort out the path to the database in some config
 
 # Fields are:
 # I identifier (e.g. pg001-bk01, with x for -)
@@ -35,7 +35,9 @@ import distutils.dir_util
 # E date (e.g. 2002-10-01, without -)
 # H heading identifier, if speech in a heading section
 
-def process_file(input_file, xapian_db):
+def process_file(input_dir, input_file_rel, xapian_db):
+    input_file = os.path.join(input_dir, input_file_rel)
+
     content = open(input_file).read()
     document_id = os.path.splitext(os.path.basename(input_file))[0]
     document_date = re.search('<h1>.*date=(\d\d\d\d-\d\d-\d\d) ', content).group(1)
@@ -92,7 +94,7 @@ def process_file(input_file, xapian_db):
         # Add to Xapian database
         #print terms
         xapian_doc = xapian.Document()
-        doc_content = "%s|%s|%s" % (os.path.basename(input_file), off_from, off_to)
+        doc_content = "%s|%s|%s" % (input_file_rel, off_from, off_to - off_from)
         xapian_doc.set_data(doc_content)
         for term in terms:
             term = term.replace(" ", "")
@@ -107,30 +109,43 @@ def process_file(input_file, xapian_db):
             xapian_doc.add_posting(word.lower(), n)
         xapian_db.add_document(xapian_doc)
 
-# Create new database
-xapian_file = sys.argv[1]
+# Get directory where we keep data
+undata_dir = sys.argv[1].rstrip()
+if not os.path.exists(undata_dir):
+    raise Exception, "Could not find undata directory %s" % undata_dir
+
+# Work out where Xapian database is, and name of temporary new one
+xapian_file = os.path.join(undata_dir, sys.argv[2]).rstrip()
 xapian_file_new = xapian_file + ".new"
+# Erase existing temporary new one, that may be left over
 if os.path.exists(xapian_file_new):
-    if os.path.exists(xapian_file_new + "/iamflint"):
+    if os.path.exists(os.path.join(xapian_file_new, "iamflint")):
         distutils.dir_util.remove_tree(xapian_file_new)
     else:
         raise Exception, "Path %s exists but doesn't contain Xapian database" % xapian_file_new
+# Create new database
 os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
 xapian_db = xapian.WritableDatabase(xapian_file_new, xapian.DB_CREATE_OR_OPEN)
-input = sys.argv[2]
+
+# Find file / directory tree to read in
+input_rel = sys.argv[3].rstrip()
+input = os.path.join(undata_dir, input_rel)
 if os.path.isfile(input):
-    process_file(input, xapian_db)
+    process_file(undata_dir, input_rel, xapian_db)
 elif os.path.isdir(input):
     for d in os.listdir(input):
-        p = os.path.join(input, d)
+        p = os.path.join(input_rel, d)
         if re.search(".html$", p):
-            process_file(p, xapian_db)
+            process_file(undata_dir, p, xapian_db)
 else:
     raise Exception, "Directory/file %s doesn't exist" % input
+
+# Close new database, so flushed
 del xapian_db
-# Move new database into place
+
+# Move new database into place with name of main database
 if os.path.exists(xapian_file):
-    if os.path.exists(xapian_file + "/iamflint"):
+    if os.path.exists(os.path.join(xapian_file, "iamflint")):
         distutils.dir_util.remove_tree(xapian_file)
     else:
         raise Exception, "Path %s exists but doesn't contain Xapian database" % xapian_file

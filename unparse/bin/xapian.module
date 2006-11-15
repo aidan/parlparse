@@ -120,18 +120,30 @@ function xapain_search_test_submit($form_id, $form) {
  * This is the main search function, that tries to copy xapque.py
  */
 
-function xapian_do_search($db_path, $query) {
-
-  if (!$db_path) {
-    $db_path = variable_get('xapian_dbpath', '/path/to/database.db');
+function xapian_do_search($undata_path, $db_path, $query) {
+  if (!$undata_path) {
+    // XXX what should we call this parameter? is location of undata directory
+    $undata_path = variable_get('undata_path', '/path/to/undata');
   }
+  $undata_path .= "/";
+  if (!$db_path) {
+    $db_path = variable_get('xapian_dbpath', 'path/to/database.db');
+  }
+  $db_path = $undata_path . $db_path;
 
-  // This doesn't break well if it can't find the database
+  // XXX this doesn't break well if it can't find the database
   $database = new_Database($db_path);
 
   $enquire = new_Enquire($database);
   $stemmer = new_Stem("english");
-  $terms = arg(4);
+  // XXX this for my testing when not in drupal as don't have "arg()".
+  // However, not sure what the $query parameters was for anyone when
+  // running under Drupal?
+  if ($query) { 
+    $terms = $query;
+  } else {
+    $terms = arg(4);
+  }
 
   $queryparser = new_queryparser();
   queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
@@ -150,13 +162,26 @@ function xapian_do_search($db_path, $query) {
 
   $matches = Enquire_get_mset($enquire, 0, 10);
 
-  $results .= Query_get_description($query) . "<br />";
+  $results .= Query_get_description($query) . "<br />\n";
 
   $mseti = MSet_begin($matches);
   while (! MSetIterator_equals($mseti, MSet_end($matches))) {
+      // Extract XML from the disk file
+      $doc_data = Document_get_data(MSetIterator_get_document($mseti));
+      list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
+      $doc_file_full = $undata_path . $doc_file;
+      $h = fopen($doc_file_full, 'r') or die("xapian.module couldn't find $doc_file_full");
+      fseek($h, $doc_offset);
+      $doc_content = fread($h, $doc_len);
+
+      // Debug display of results
       $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
-      MSetIterator_get_percent($mseti) . "% [" .
-      Document_get_data(MSetIterator_get_document($mseti)) . "]<br />";
+        MSetIterator_get_percent($mseti) . "% [" .
+        $doc_data . "]<br />" .
+      #  "<pre>" . $doc_content . "</pre><br />" . # XXX uncomment to print Julian's structured HTML
+        "\n";
+
+      // Next result
       MSetIterator_next($mseti);
   }
   return $results;
