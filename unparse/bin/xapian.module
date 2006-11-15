@@ -180,6 +180,7 @@ function xapian_do_search($undata_path, $db_path, $query) {
   while (! MSetIterator_equals($mseti, MSet_end($matches))) {
       // Extract XML from the disk file
       $doc_data = Document_get_data(MSetIterator_get_document($mseti));
+      // print Document_get_value(MSetIterator_get_document($mseti), 0); # first sorting value
       list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
       $doc_file_full = $undata_path . $doc_file;
       $h = fopen($doc_file_full, 'r') or die("xapian.module couldn't find $doc_file_full");

@@ -111,7 +111,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
         # XXX we use date, position in file. Should probably include type (i.e.
         # general assembly, security council) as well. Note must be lexicographically
         # sortable field, i.e. probably fixed width (hence padding on the pos).
-        xapian_doc.add_value(0, "%s%06s" % (document_date, pos_in_file))
+        xapian_doc.add_value(0, "%s%06d" % (document_date.replace("-", ""), pos_in_file))
         pos_in_file = pos_in_file + 1
         # ... and commit to the database
         xapian_db.add_document(xapian_doc)
