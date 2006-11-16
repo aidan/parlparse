@@ -20,6 +20,9 @@ import distutils.dir_util
 # TODO: 
 # Get list of days
 # Decide what to do properly with spaces in names etc.
+# Index votes themselves
+# A-50-PV.61.html breaks xapdex.py
+# Unicode
 
 # Fields are:
 # I identifier (e.g. pg001-bk01, with x for -)
