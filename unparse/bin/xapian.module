@@ -10,6 +10,19 @@
 
 
 /**
+ * 15/11/2006 - Sym
+ * $query is now the first arg in xapian_do_search
+ * Made undata path and dbpath optional
+ * Added dbpath to settings page (drupal only)
+ * Made xapian_do_search in to an object that has info and data.  
+   Info is the string returned by Query_get_description($query)
+   and data is an array with the filename, offset and length of the result.
+   The idea is to leave the formatting until later on - so xapian_do_search
+   will only deal with the search.   
+ */
+
+
+/**
  * Implementation of hook_help().
  */
 function xapian_help($section) {
@@ -56,10 +69,18 @@ function xapian_menu($may_cache) {
  
 function xapian_settings() {
 
+  $form['undatapath'] = array(
+    '#type' => textfield,
+    '#title' => 'Path to UN data',
+    '#default_value' => variable_get('xapian_undatapath', '/path/to/undata'),
+    '#description' => 'Location of undata directory',
+  );
+  
   $form['dbpath'] = array(
     '#type' => textfield,
-    '#title' => 'Path to database',
-    '#default_value' => variable_get('xapian_dbpath', '/path/to/database.db'),
+    '#title' => 'Database name',
+    '#default_value' => variable_get('xapian_dbpath', 'xapdex.db'),
+    '#description' => 'Name of xapian database, relitive to the undata directory',
   );
 
   $form['submit'] = array(
@@ -72,10 +93,12 @@ function xapian_settings() {
 
 function xapain_settings_submit($form_id, $form) {
   variable_set('xapian_dbpath', $form['dbpath']);
+  variable_set('xapian_undatapath', $form['undatapath']);
 }
 
 function xapian_dbtest() {
 
+$q = arg(4);
   $form['search'] = array(
     '#type' => 'fieldset',
     '#title' => t('Search'),
@@ -86,7 +109,7 @@ function xapian_dbtest() {
   $form['search']['word'] = array(
     '#type' => textfield,
     '#title' => 'Search',
-    '#default_value' => arg(4),
+    '#default_value' => $q,
   );
 
   $form['search']['submit'] = array(
@@ -99,20 +122,26 @@ function xapian_dbtest() {
     $form['result'] = array(
       '#value' => "<h2>results</h2>",
     );
-
+    $result = xapian_do_search($q);
+    if (is_array($result->data)) {
+      foreach ($result->data as $item) {
+        $results .= $item['file'] . "<br />\n";
+      }
+    }
     $form['result_content'] = array(
-      '#value' => xapian_do_search(variable_get('xapian_dbpath', '/path/to/database.db'), arg(4)),
+      '#value' => $results,
     );
 
   }
-
   return drupal_get_form('xapain_search_test', $form);
  
 }
 
 
 function xapain_search_test_submit($form_id, $form) {
-  return 'admin/settings/xapian/test/' . $form['word'];
+  $q = $form['word'];
+//  $q = str_replace('/', 'x', $q);
+  return 'admin/settings/xapian/test/' . $q;
 }
 
 
@@ -120,19 +149,24 @@ function xapain_search_test_submit($form_id, $form) {
  * This is the main search function, that tries to copy xapque.py
  */
 
-function xapian_do_search($undata_path, $db_path, $query) {
+function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
+  
   if (!$undata_path) {
     // XXX what should we call this parameter? is location of undata directory
-    $undata_path = variable_get('undata_path', '/path/to/undata');
+    $undata_path = variable_get('xapian_undatapath', '/path/to/undata');
   }
-  $undata_path .= "/";
+  if (substr($undata_path, -1, 1) != '/') {
+    $undata_path .= "/";
+  }
+  
   if (!$db_path) {
     $db_path = variable_get('xapian_dbpath', 'path/to/database.db');
   }
+  
   $db_path = $undata_path . $db_path;
 
   // XXX this doesn't break well if it can't find the database
-  $database = new_Database($db_path);
+  $database = new_Database($db_path);  
 
   $enquire = new_Enquire($database);
   $stemmer = new_Stem("english");
@@ -174,31 +208,18 @@ function xapian_do_search($undata_path, $db_path, $query) {
   # searchengine.php from TWFY for code to work out set result sizes
   $matches = Enquire_get_mset($enquire, 0, 100); 
 
-  $results .= Query_get_description($query) . "<br />\n";
+  $result->info = Query_get_description($query);
 
   $mseti = MSet_begin($matches);
   while (! MSetIterator_equals($mseti, MSet_end($matches))) {
-      // Extract XML from the disk file
-      $doc_data = Document_get_data(MSetIterator_get_document($mseti));
-      // print Document_get_value(MSetIterator_get_document($mseti), 0); # first sorting value
-      list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
-      $doc_file_full = $undata_path . $doc_file;
-      $h = fopen($doc_file_full, 'r') or die("xapian.module couldn't find $doc_file_full");
-      fseek($h, $doc_offset);
-      $doc_content = fread($h, $doc_len);
+  
+    $doc_data = Document_get_data(MSetIterator_get_document($mseti));
+    list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
+    
+    $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len);
 
-      // Debug display of results
-      $results .= "ID " . MSetIterator_get_docid($mseti) . " " .
-        MSetIterator_get_percent($mseti) . "% [" .
-        $doc_data . "]<br />" .
-        "<pre>" . $doc_content . "</pre><br />" . # XXX uncomment to print Julian's structured HTML
-        "\n";
-
-      // Next result
-      MSetIterator_next($mseti);
+    // Next result
+    MSetIterator_next($mseti);
   }
-  return $results;
-
-
+  return $result;
 }
-
