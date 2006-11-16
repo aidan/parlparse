@@ -6,10 +6,10 @@
 # Example usages:
 # 
 # Everything containing "last" and "july"
-# ./xapque.py ~/devel/undata xapdex.db/"last july"
+# ./xapque.py ~/devel/undata xapdex.db/ "last july"
 # 
 # Everything containing "last july" as a phrase
-# ./xapque.py ~/devel/undata xapdex.db/"\"last july\""
+# ./xapque.py ~/devel/undata xapdex.db/ "\"last july\""
 # 
 # Everything said by the Solomon Islands:
 # ./xapque.py ~/devel/undata xapdex.db/"nation:solomonislands"
@@ -43,8 +43,8 @@ $query = $argv[3];
 if (!$query) {
     die("Third parameter is query string\n");
 }
-if ($argv[4]) {
-    die("Please put the whole query in the second parameter, quoted\n");
+if (count($argv) > 4) {
+    die("Please put the whole query in the third parameter, quoted\n");
 }
 
 $results = xapian_do_search($undata_path, $db_path, $query);
