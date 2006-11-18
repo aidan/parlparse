@@ -23,18 +23,42 @@ import distutils.dir_util
 # Index votes themselves
 # A-50-PV.61.html breaks xapdex.py
 # Unicode
+# Make sure the chamber (general assembly, security council) is in metadata
 
 # Fields are:
-# I identifier (e.g. pg001-bk01, with x for -)
-# J subsidiary identifier (e.g. pg001-bk01-pa01, with x for -)
+# I identifier (e.g. pg001-bk01, with - removed)
+# J subsidiary identifier (e.g. pg001-bk01-pa01, with - removed)
 # C class (e.g. italicline boldline)
 # S speaker name
 # N nation
 # L language
-# D document id (e.g. A/57/PV.57)
-# R referenced document (e.g. A/57/PV.57)
-# E date (e.g. 2002-10-01, without -)
-# H heading identifier, if speech in a heading section
+# D document id (e.g. A/57/PV.57, lowercase with punctuation removed)
+# R referenced document (e.g. A/57/PV.57, lowercase with punctuation removed)
+# E date (e.g. 2002-10-01, with - removed)
+# H heading identifier, if speech in a heading section (e.g. pg001-bk02, with - removed)
+
+# Example set of identifiers for a document:
+# Cspoken Da60pv94 E20060720 Hpg001bk05 Ipg017bk01 Jpg017bk01pa01 Jpg017bk01pa02 Jpg017bk01pa03 L Nsanmarino Ra60l49 Smrbodini
+
+# These munge functions convert codes into a format acceptable
+# to Xapian, which can't have punctuation in keywords.
+
+# e.g. A/57/PV.57 or A-57-PV.57
+def munge_un_document_id(doc_id):
+    doc_id = doc_id.replace("/", "")
+    doc_id = doc_id.replace("-", "")
+    doc_id = doc_id.replace(".", "")
+    return doc_id.lower()
+   
+# e.g. pg001-bk01
+def munge_julian_id(id):
+    id = id.replace("-", "")
+    return id.lower()
+
+# e.g. 2006-11-18
+def munge_date(date):
+    date = date.replace("-", "")
+    return date.lower()
 
 def process_file(input_dir, input_file_rel, xapian_db):
     input_file = os.path.join(input_dir, input_file_rel)
@@ -60,6 +84,8 @@ def process_file(input_dir, input_file_rel, xapian_db):
         ids = re.findall('<div [^>]*id="([^">]+)"', div_content)
         cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
         if cls == 'spoken':
+            #print "----\n"
+            #print div_content
             name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content).group(1)
             nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content).group(1)
             language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content).group(1)
@@ -69,21 +95,21 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
         # Generate terms
         terms = []
-        terms.append("D%s" % document_id.replace("-","x").lower())
-        terms.append("E%s" % document_date.replace("-", ""))
+        terms.append("D%s" % munge_un_document_id(document_id))
+        terms.append("E%s" % munge_date(document_date))
         for ref_doc in ref_docs:
-            terms.append("R%s" % ref_doc.replace("-","x").lower())
-        terms.append("I%s" % id.replace("-", ""))
+            terms.append("R%s" % munge_un_document_id(ref_doc))
+        terms.append("I%s" % munge_julian_id(id))
         for a_id in ids:
             if a_id != id:
-                terms.append("J%s" % a_id.replace("-", ""))
+                terms.append("J%s" % munge_julian_id(a_id))
         terms.append("C%s" % cls.lower())
         if cls == 'spoken':
-            terms.append("S%s" % name.lower())
+            terms.append("S%s" % name.replace(".", "").lower())
             terms.append("N%s" % nation.lower())
             terms.append("L%s" % language.lower())
         if heading:
-            terms.append("H%s" % heading.replace("-", ""))
+            terms.append("H%s" % munge_julian_id(heading))
 
         # Generate words
         word_content = div_content
@@ -143,7 +169,10 @@ input = os.path.join(undata_dir, input_rel)
 if os.path.isfile(input):
     process_file(undata_dir, input_rel, xapian_db)
 elif os.path.isdir(input):
-    for d in os.listdir(input):
+    filelist = os.listdir(input)
+    filelist.sort(reverse = True)
+    filelist = filelist[:10] # XXX debug, just stick in 10 documents
+    for d in filelist:
         p = os.path.join(input_rel, d)
         if re.search(".html$", p):
             process_file(undata_dir, p, xapian_db)

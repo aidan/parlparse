@@ -47,6 +47,6 @@ if (count($argv) > 4) {
     die("Please put the whole query in the third parameter, quoted\n");
 }
 
-$results = xapian_do_search($undata_path, $db_path, $query);
+$results = xapian_do_search($query, $undata_path, $db_path);
 print_r($results);
 
