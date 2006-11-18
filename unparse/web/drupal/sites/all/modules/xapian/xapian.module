@@ -221,15 +221,11 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   $matches = Enquire_get_mset($enquire, 0, 100); 
 
   $result->info = Query_get_description($query);
-
   $mseti = MSet_begin($matches);
-  while (! MSetIterator_equals($mseti, MSet_end($matches))) {
-  
+  while (! MSetIterator_equals($mseti, MSet_end($matches))) {  
     $doc_data = Document_get_data(MSetIterator_get_document($mseti));
     list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
-    
     $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len);
-
     // Next result
     MSetIterator_next($mseti);
   }
