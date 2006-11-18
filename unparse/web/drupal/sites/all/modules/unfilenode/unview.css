@@ -1,0 +1,82 @@
+#content {
+font-family: Verdana, "Bitstream Vera Sans", Geneva, "Lucida Grande", sans-serif;
+}
+
+div.italicline
+{
+	text-decoration: italic;
+	color: green;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+div.italicline-tookchair
+{
+	text-decoration: italic;
+	color: green;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+div.boldline
+{
+	padding-left:10px;
+	font-weight: bold;
+	text-align: center;
+	color: purple;
+	line-height:2em;
+}
+div.recvote
+{
+	color: blue;
+	border: thin black solid
+}
+div.motiontext
+{
+	font-weight: bold;
+}
+
+span.speaker
+{
+	font-weight: bold;
+	padding-top:10px;
+	float:left;
+	width:110px;
+}
+div.spokentext
+{
+	padding-left:120px;
+	padding-bottom:10px;
+}
+div.p
+{
+	padding-left:10px;
+	padding-bottom:20px;
+	line-height:1.5em;
+}
+div.blockquote
+{
+	padding-left:30px;
+	padding-bottom:10px;
+}
+div.votecount
+{
+	font-size: 6 
+}
+div.votelist 
+{
+	font-size: 6 
+}
+
+a.nolink
+{
+	color:gray;
+}
+
+.odd, .even {
+  background-image: url('../../../../themes/undemocracy/gradient-inner.png');
+  background-repeat: repeat-x;
+  border: 1px solid #d9eaf5;
+  margin:10px;
+  padding:5px;
+}
