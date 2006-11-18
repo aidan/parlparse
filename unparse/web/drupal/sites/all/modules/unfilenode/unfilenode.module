@@ -38,7 +38,7 @@ function unfilenode_menu($may_cache) {
      );
      $items[] = array(
       'path' => 'test', 
-      'title' => 'test page',
+      'title' => 'Assembly files test page',
       'access' => user_access('access content'),
       'callback' => 'unfilenode_test',
      );    
@@ -78,11 +78,37 @@ function unfilenode_settings_validate($form_id, $form) {
 
 function unfilenode_settings_form_submit($form_id, $form) {
   variable_set('unfiles_path', $form['path']);
+  print_r($form);
+die();
 }
 
 function unfilenode_test() {
-  $links[] = l('assembly spoken by the United states', 'assembly/spokenby/nation/unitedstates');
+  $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
+  $links[] = l('Document A/60/PV.9', 'assembly/document/a60pv9');
+  $links[] = drupal_get_form('unfilenode_search_form', $form);
   return theme('item_list',$links);
+}
+function unfilenode_search_form() {
+  $form['search'] = array(
+    '#title' => 'Keyword search', 
+    '#type' => 'fieldset',
+    '#collapsible' => true,
+    '#collapsed' => true,
+    );
+  $form['search']['query'] = array(
+    '#type' => 'textfield',
+    '#default_value' => 'Blair',
+    );
+  $form['search']['submit'] = array(
+    '#type' => 'submit', 
+    '#value' => 'Search',
+    );
+  return $form;
+
+}
+
+function unfilenode_search_form_submit($form_id, $form) {
+  return 'assembly/word/' . $form['query'];
 }
  
 function assembly_page() {
@@ -93,19 +119,21 @@ function assembly_page() {
       return theme('assemblyfile', xapian_do_search(arg(2).":".arg(3).' '.arg(4)));
     case 'document': 
       return theme('assemblyfile', xapian_do_search(arg(1).":".arg(2)));
-     return theme('assemblyfile', xapian_do_search("document:a60pvx92"));
-
+    case 'word':
+      return theme('assemblyfile', xapian_do_search(arg(2)));
   }
 }
 
 function theme_assemblyfile($search) {
   $path = variable_get('xapian_undatapath', '/path/to/files');
   $data = "<h2>{$search->info}</h2>";
-  foreach ($search->data as $i => $result) {
-    $contents = file_get_contents($path . $result['file']);
-    $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
-    $stripe = $i % 2 ? 'even' : 'odd';
-    $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>"; 
+  if ($search->data) {
+    foreach ($search->data as $i => $result) {
+      $contents = file_get_contents($path . $result['file']);
+      $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
+      $stripe = $i % 2 ? 'even' : 'odd';
+      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>"; 
+    }
   }
   return $data;
 }
