@@ -96,7 +96,7 @@ function xapian_settings_form() {
   return $form;
 } 
 
-function xapain_settings_form_submit($form_id, $form) {
+function xapian_settings_form_submit($form_id, $form) {
   variable_set('xapian_dbpath', $form['dbpath']);
   
   if (substr($form['undatapath'], -1, 1) != '/') {
