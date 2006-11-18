@@ -68,6 +68,11 @@ function xapian_menu($may_cache) {
  */
  
 function xapian_settings() {
+  $output = drupal_get_form('xapian_settings_form', $form);
+  return $output;
+}
+
+function xapian_settings_form() {
 
   $form['undatapath'] = array(
     '#type' => textfield,
@@ -88,17 +93,25 @@ function xapian_settings() {
     '#title' => 'Save',
     '#value' => 'Save',
   );
-  return drupal_get_form('xapain_settings', $form);
+  return $form;
 } 
 
-function xapain_settings_submit($form_id, $form) {
+function xapain_settings_form_submit($form_id, $form) {
   variable_set('xapian_dbpath', $form['dbpath']);
+  
+  if (substr($form['undatapath'], -1, 1) != '/') {
+    $form['undatapath'] .= "/";
+  }
   variable_set('xapian_undatapath', $form['undatapath']);
 }
 
 function xapian_dbtest() {
+  $output = drupal_get_form('xapian_dbtest_form', $form);
+  return $output;
+}
 
-$q = arg(4);
+function xapian_dbtest_form() {
+  $q = arg(4);
   $form['search'] = array(
     '#type' => 'fieldset',
     '#title' => t('Search'),
@@ -133,12 +146,11 @@ $q = arg(4);
     );
 
   }
-  return drupal_get_form('xapain_search_test', $form);
- 
+  return $form;
 }
 
 
-function xapain_search_test_submit($form_id, $form) {
+function xapian_dbtest_form_submit($form_id, $form) {
   $q = $form['word'];
 //  $q = str_replace('/', 'x', $q);
   return 'admin/settings/xapian/test/' . $q;
