@@ -15,7 +15,7 @@
  * Made undata path and dbpath optional
  * Added dbpath to settings page (drupal only)
  * Made xapian_do_search in to an object that has info and data.  
-   Info is the string returned by Query_get_description($query)
+   Info is the string returned by $query->get_description()
    and data is an array with the filename, offset and length of the result.
    The idea is to leave the formatting until later on - so xapian_do_search
    will only deal with the search.   
@@ -178,10 +178,10 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   $db_path = $undata_path . $db_path;
 
   // XXX this doesn't break well if it can't find the database
-  $database = new_Database($db_path);  
+  $database = new XapianDatabase($db_path);  
 
-  $enquire = new_Enquire($database);
-  $stemmer = new_Stem("english");
+  $enquire = new XapianEnquire($database);
+  $stemmer = new XapianStem("english");
   // XXX this for my testing when not in drupal as don't have "arg()".
   // However, not sure what the $query parameters was for anyone when
   // running under Drupal?
@@ -191,43 +191,44 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
     $terms = arg(4);
   }
 
-  $queryparser = new_queryparser();
-  queryparser_set_stemming_strategy($queryparser, QueryParser_STEM_NONE);
-  queryparser_set_default_op($queryparser, Query_OP_AND);
+  $queryparser = new Xapianqueryparser();
+  $queryparser->set_stemming_strategy(QueryParser_STEM_NONE);
+  $queryparser->set_default_op(Query_OP_AND);
 
-  queryparser_add_prefix($queryparser, "class", "C");
-  queryparser_add_prefix($queryparser, "id", "I");
-  queryparser_add_prefix($queryparser, "subid", "J");
-  queryparser_add_prefix($queryparser, "class", "C");
-  queryparser_add_prefix($queryparser, "name", "S");
-  queryparser_add_prefix($queryparser, "nation", "N");
-  queryparser_add_prefix($queryparser, "language", "L");
-  queryparser_add_prefix($queryparser, "document", "D");
-  queryparser_add_prefix($queryparser, "reference", "R");
-  queryparser_add_prefix($queryparser, "date", "E");
-  queryparser_add_prefix($queryparser, "heading", "H");
+  $queryparser->add_prefix("class", "C");
+  $queryparser->add_prefix("id", "I");
+  $queryparser->add_prefix("subid", "J");
+  $queryparser->add_prefix("class", "C");
+  $queryparser->add_prefix("name", "S");
+  $queryparser->add_prefix("nation", "N");
+  $queryparser->add_prefix("language", "L");
+  $queryparser->add_prefix("document", "D");
+  $queryparser->add_prefix("reference", "R");
+  $queryparser->add_prefix("date", "E");
+  $queryparser->add_prefix("heading", "H");
 
-  $query = queryparser_parse_query($queryparser, $terms);
+  $query = $queryparser->parse_query($terms);
 
-  enquire_set_query($enquire, $query);
+  $enquire->set_query($query);
 
   # XXX for actual searches will want to sort by relevance instead, or fancier
   # things like set_sort_by_value_then_relevance
-  enquire_set_sort_by_value($enquire, 0, false); // false for order forwards in date/time
+  $enquire->set_sort_by_value(0, false); // false for order forwards in date/time
 
 
   # XXX will want more than 100 here! See mset_get_matches_estimated in
   # searchengine.php from TWFY for code to work out set result sizes
-  $matches = Enquire_get_mset($enquire, 0, 100); 
+  $matches = $enquire->get_mset(0, 100); 
 
-  $result->info = Query_get_description($query);
-  $mseti = MSet_begin($matches);
-  while (! MSetIterator_equals($mseti, MSet_end($matches))) {  
-    $doc_data = Document_get_data(MSetIterator_get_document($mseti));
+  $result->info = $query->get_description();
+  $mseti = $matches->begin();
+  while (! $mseti->equals($matches->end())) {  
+    $doc = $mseti->get_document();
+    $doc_data = $doc->get_data();
     list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
     $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len);
     // Next result
-    MSetIterator_next($mseti);
+    $mseti->next();
   }
   return $result;
 }
