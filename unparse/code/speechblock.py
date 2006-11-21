@@ -75,7 +75,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	indentationerror = ""
 	if len(indents) == 1 and indents[0][0] == 0:
-		indentationerror = "unindented-paragraph"
+		if not re.match("<b> ", ptext):  # often there is a speaker with a blank space at the front
+			indentationerror = "unindented-paragraph"
 	if len(indents) > 2:
 		indentationerror = "too many different indents"
 	if len(indents) == 2 and indents[1][0] != 0:

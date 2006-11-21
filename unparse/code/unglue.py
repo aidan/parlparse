@@ -190,7 +190,7 @@ class TextPage:
 				if mdate.group(2) not in months:
 					print mdate.group(2), months
 					raise unexception("unrecognized month", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
-				imonth = mdate.group(2) == months.index(mdate.group(2))
+				imonth = months.index(mdate.group(2))
 				syear = mdate.group(3)
 				ihour = int(mdate.group(4))
 				imin = mdate.group(5) and int(mdate.group(5)) or 0
@@ -199,6 +199,7 @@ class TextPage:
 				if self.date:
 					raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 				self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
+				print self.date
 			ih += 1
 			if ih == len(txlines):
 				return -1

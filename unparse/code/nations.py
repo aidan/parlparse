@@ -120,6 +120,7 @@ nationdates = {
 		"Micronesia": 	("1945", "9999-12-31"),
 		"Monaco": 	("1945", "9999-12-31"),
 		"Mongolia": 	("1945", "9999-12-31"),
+		"Montenegro":  ("2006-06-28", "9999-12-31"), 
 		"Morocco": 	("1945", "9999-12-31"),
 		"Mozambique": 	("1945", "9999-12-31"),
 		"Myanmar": 	("1945", "9999-12-31"),
@@ -202,7 +203,7 @@ nationdates = {
 		"The former Yugoslav Republic of Macedonia": 	("1945", "9999-12-31"),
 				}
 
-# includes typos, short names, and name changes 
+# includes typos, short names, and name changes
 nationmapping = {
 		"United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
 		"Cote d'Ivoire":"Côte d'Ivoire",
@@ -238,7 +239,7 @@ nationmapping = {
 		"Slovak Republic":"Slovakia",
 		"People's Democratic Republic of Korea":"Democratic People's Republic of Korea",
 		"Guinea Bissau":"Guinea-Bissau",
-		"The Former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia", 
+		"The Former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
 				}
 
 
@@ -564,3 +565,7 @@ nonnations["Observer for Palestine"] = 0
 nonnations["Director of the General Assembly Affairs Division"] = 0
 nonnations["Director of General Assembly and Economic and Social Council Affairs"] = 0
 nonnations["Under Secretary-General for General Assembly and Conference Management"] = 0
+nonnations["Community of Portuguese-Speaking Countries"] = 0
+nonnations["African, Caribbean and Pacific Group of States"] = 0
+nonnations["Ibero-American Conference"] = 0
+nonnations["International Centre for Migration Policy Development"] = 0
