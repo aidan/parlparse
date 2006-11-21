@@ -38,7 +38,7 @@ respekp1 = """(?x)<b>(The\sPresident)\s*</b>
 			  (?:\(<i>spoke\sin\s(\w+)
 			  (?:.{0,60}?(?:by|the)\sdelegation)?</i>\))?
 			  \s*:\s*"""
-respekp2 = """(?x)<b>\s*(The\sPresident)\s*</b>
+respekp2 = """(?x)<b>\s*(The\s(?:Acting\s)?President)\s*(?:</b>)?
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
