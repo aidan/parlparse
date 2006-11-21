@@ -46,7 +46,8 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 			continue
 		if not bforceparse:
 			undochtml = os.path.join(htmldir, undocname + ".html")
-			if os.path.isfile(undochtml):
+			undochtmlunindexed = os.path.join(htmldir, undocname + ".unindexed.html")
+			if os.path.isfile(undochtml) or os.path.isfile(undochtmlunindexed):
 				continue
 		undocnames.append(undocname)
 
@@ -56,8 +57,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 
 	for undocname in undocnames:
 		undocpdfxml = os.path.join(pdfxmldir, undocname + ".xml")
-		undochtml = os.path.join(htmldir, undocname + ".html")
-
+		undochtml = os.path.join(htmldir, undocname + ".unindexed.html")
 
 		gparas = None
 		lbeditparse = beditparse

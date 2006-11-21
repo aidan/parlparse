@@ -321,11 +321,11 @@ class SpeechBlock:
 		gid = self.paranum.MakeGid()
 		fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
 		if self.typ == "spoken":
-			fout.write('<span class="speaker" name="%s" nation="%s" language="%s">\n' % self.speaker)
-			fout.write('\t%s' % self.speaker[0])
-			if self.speaker[1]:
-				fout.write(' (%s)' % self.speaker[1])
-			fout.write('\n</span>\n')
+			fout.write('<h3 class="speaker">')
+			fout.write('<span class="name">%s</span>' % self.speaker[0])
+			fout.write('<span class="nation">%s</span>' % self.speaker[1])
+			fout.write('<span class="language">%s</span>' % self.speaker[2])
+			fout.write('</h3>')
 
 		if self.typ == "spoken":
 			fout.write('\t<div class="spokentext">\n')
