@@ -193,7 +193,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			if not re.match(reboldline, ptext):
 				print ptext
 				raise unexception("unrecognized bold completion", paranum)
-			ptext = re.sub("</?b>", "", ptext)
+			ptext = re.sub("</?b>", "", ptext).strip()
 			typ = "boldline"
 			currentspeaker = None
 
@@ -208,7 +208,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 def CleanupTags(ptext, typ, paranum):
 	assert typ in ["italicline", "italicline-tookchair", "boldline", "spoken"]
 	if typ == "boldline":
-		ptext = re.sub("</?b>", "", ptext)
+		ptext = re.sub("</?b>", "", ptext).strip()
 
 	# could have a special paragraph type for this
 	mspokein = re.match("<i>(\(spoke in \w+(?:\)|.*?delegation\)|President's Office\)))</i>$", ptext)
@@ -336,7 +336,12 @@ class SpeechBlock:
 				assert False
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
+			elif para[0] == "p":
+				fout.write('\t<p id="%s-pa%02d">%s</p>\n' % (gid, paranum, para[1]))
+			elif para[0] == "blockquote":
+				fout.write('\t<blockquote id="%s-pa%02d">%s</blockquote>\n' % (gid, paranum, para[1]))
 			else:
+				assert para[0] in ["boldline-p", "boldline-agenda", "boldline-indent"]
 				fout.write('\t<div class="%s" id="%s-pa%02d">%s</div>\n' % (para[0], gid, paranum, para[1]))
 			paranum += 1
 		if self.typ == "spoken":

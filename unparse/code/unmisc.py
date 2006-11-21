@@ -47,7 +47,7 @@ def MakeCheckLink(ref, link):
 		if not sCallScrape or not ScrapePDF(ref):
 			return '<a class="nolink" href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
 		assert os.path.isfile(fpdf)
-	return '<a href="%s%s.pdf">%s</a>' % (undoclinks, ref, link)
+	return '<a href="%s%s.pdf" class="pdf">%s</a>' % (undoclinks, ref, link)
 
 def MarkupLinks(paratext, paranum):
 	stext = re.split(reressplit, paratext)
@@ -85,11 +85,12 @@ def MarkupLinks(paratext, paranum):
 class paranumC:
 	def __init__(self, undocname, sdate, pageno, paragraphno, textcountnumber):
 		self.undocname = undocname
+		self.undocnamegid = re.sub("[\.\-]", "", undocname)
 		self.sdate = sdate
 		self.pageno = pageno
 		self.paragraphno = paragraphno
 		self.textcountnumber = textcountnumber
 
 	def MakeGid(self):
-		return "pg%03d-bk%02d" % (int(self.pageno), self.blockno)
+		return "doc%s-pg%03d-bk%02d" % (self.undocnamegid, int(self.pageno), self.blockno)
 
