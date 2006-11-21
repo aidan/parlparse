@@ -199,7 +199,6 @@ class TextPage:
 				if self.date:
 					raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
 				self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
-				print self.date
 			ih += 1
 			if ih == len(txlines):
 				return -1
