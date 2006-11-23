@@ -188,9 +188,14 @@ def process_file(input_dir, input_file_rel, xapian_db):
             if cls == 'spoken':
                 #print "----\n"
                 #print div_content
-                name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content).group(1)
-                nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content).group(1)
-                language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content).group(1)
+                name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content)
+		if not name:
+			raise Exception, "No name in speaker for %s" % div_content
+		name = name.group(1)
+                nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content)
+		nation = nation.group(1)
+                language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content)
+		language = language.group(1)
             if cls == 'boldline':
                 heading = id
             ref_docs = re.findall('<a href="../pdf/([^>]+).pdf">', div_content)
