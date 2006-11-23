@@ -176,7 +176,7 @@ nationdates = {
 		"Syria": 	("1945", "9999-12-31"),
 		"Tajikistan": 	("1945", "9999-12-31"),
 		"Thailand": 	("1945", "9999-12-31"),
- 		"Timor-Leste":	("2002-09-27", "9999-12-31"),
+ 		"Timor-Leste":	("2001-01-01", "9999-12-31"), # actually 2002-09-27, but they speak earlier
  		"Togo": 	("1945", "9999-12-31"),
 		"Tonga": 	("1945", "9999-12-31"),
 		"Trinidad and Tobago": 	("1945", "9999-12-31"),
