@@ -11,8 +11,6 @@ import xapian
 import distutils.dir_util
 
 # TODO: 
-# Sort out bin/ and code/.
-# Use boolean_prefix in query parser so don't have to do munging
 # Get list of days with stuff in them
 # Decide what to do properly with spaces in names etc.
 # Index votes themselves
@@ -22,19 +20,20 @@ import distutils.dir_util
 # Finish check_removed_docs
 
 # Fields are:
-# I identifier (e.g. pg001-bk01, with - removed)
-# J subsidiary identifier (e.g. pg001-bk01-pa01, with - removed)
+# I identifier (e.g. pg001-bk01)
+# J subsidiary identifier (e.g. pg001-bk01-pa01)
 # C class (e.g. italicline boldline)
-# S speaker name
+# S speaker name (with spaces and dots removed XXX remove all punctuation)
 # N nation
 # L language
-# D document id (e.g. A/57/PV.57, lowercase with punctuation removed)
-# R referenced document (e.g. A/57/PV.57, lowercase with punctuation removed)
-# E date (e.g. 2002-10-01, with - removed)
+# D document id (e.g. A-57-PV.57)
+# R referenced document (e.g. A-57-PV.57)
+# E date (e.g. 2002-10-01)
 # H heading identifier, if speech in a heading section (e.g. pg001-bk02, with - removed)
 
 # Example set of identifiers for a document:
-# Cspoken Da60pv94 E20060720 Hpg001bk05 Ipg017bk01 Jpg017bk01pa01 Jpg017bk01pa02 Jpg017bk01pa03 L Nsanmarino Ra60l49 Smrbodini
+# Cspoken E2006-07-20 RA-60-L.49 Smrbodini Ipg017-bk01 Nsanmarino Hpg001-bk05 L DA-60-PV.94 Jpg017-bk01-pa01 Jpg017-bk01-pa02 Jpg017-bk01-pa03
+
 
 ######################################################################
 # Parse command line parameters
@@ -84,25 +83,37 @@ if len(args) == 0:
     sys.exit(0)
 
 ######################################################################
-# These munge functions convert codes into a format acceptable
-# to Xapian, which can't have punctuation in keywords.
+# These munge functions convert codes into format for Xapian.
 
 # e.g. A/57/PV.57 or A-57-PV.57
 def munge_un_document_id(doc_id):
-    doc_id = doc_id.replace("/", "")
-    doc_id = doc_id.replace("-", "")
-    doc_id = doc_id.replace(".", "")
-    return doc_id.lower()
+    doc_id = doc_id.replace("/", "-")
+    return doc_id
    
 # e.g. pg001-bk01
 def munge_julian_id(id):
-    id = id.replace("-", "")
-    return id.lower()
+    return id
 
 # e.g. 2006-11-18
 def munge_date(date):
-    date = date.replace("-", "")
-    return date.lower()
+    return date
+
+# e.g. United States
+def munge_nation(nation):
+    return nation.lower()
+
+# e.g. ?
+def munge_language(language):
+    return language.lower()
+
+# e.g. italicline
+def munge_cls(cls):
+    return cls.lower()
+
+# e.g. Mr. Zarif
+def munge_speaker_name(name):
+    # XXX remove all punctuation
+    return name.replace(".", "").lower()
 
 ######################################################################
 # Reindex one file
@@ -192,11 +203,11 @@ def process_file(input_dir, input_file_rel, xapian_db):
         for a_id in ids:
             if a_id != id:
                 terms.add("J%s" % munge_julian_id(a_id))
-        terms.add("C%s" % cls.lower())
+        terms.add("C%s" % munge_cls(cls))
         if cls == 'spoken':
-            terms.add("S%s" % name.replace(".", "").lower())
-            terms.add("N%s" % nation.lower())
-            terms.add("L%s" % language.lower())
+            terms.add("S%s" % munge_speaker_name(name))
+            terms.add("N%s" % munge_nation(nation))
+            terms.add("L%s" % munge_language(language))
         if heading:
             terms.add("H%s" % munge_julian_id(heading))
 
@@ -269,15 +280,16 @@ if not os.path.exists(undata_dir):
 
 # Work out where Xapian database is, and name of temporary new one
 xapian_file = os.path.join(undata_dir, options.xapdb).rstrip()
-xapian_file_new = xapian_file + ".new"
 # Create new database
 os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
-xapian_db = xapian.WritableDatabase(xapian_file_new, xapian.DB_CREATE_OR_OPEN)
+xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
 
 #check_removed_docs(xapian_db)
 #sys.exit()
 
 # Process files / directory trees
+if options.verbose > 1:
+    print "files/directories to process are", args
 for input_rel in args:
     input_rel = input_rel.rstrip()
     input = os.path.join(undata_dir, input_rel)

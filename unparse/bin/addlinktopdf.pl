@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# Early code from Sams, not sure where used
+
 use warnings;
 use strict;
 use PDF::Reuse;

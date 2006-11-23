@@ -1,5 +1,7 @@
 #!/usr/bin/perl -I./bin/
 
+# Early code from Sams, not sure where used
+
 use warnings;
 use strict;
 

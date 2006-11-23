@@ -8,20 +8,6 @@
  * I've also added some settings, to make it a bit more pluggable.
  */
 
-
-/**
- * 15/11/2006 - Sym
- * $query is now the first arg in xapian_do_search
- * Made undata path and dbpath optional
- * Added dbpath to settings page (drupal only)
- * Made xapian_do_search in to an object that has info and data.  
-   Info is the string returned by $query->get_description()
-   and data is an array with the filename, offset and length of the result.
-   The idea is to leave the formatting until later on - so xapian_do_search
-   will only deal with the search.   
- */
-
-
 /**
  * Implementation of hook_help().
  */
@@ -195,17 +181,17 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   $queryparser->set_stemming_strategy(QueryParser_STEM_NONE);
   $queryparser->set_default_op(Query_OP_AND);
 
-  $queryparser->add_prefix("class", "C");
-  $queryparser->add_prefix("id", "I");
-  $queryparser->add_prefix("subid", "J");
-  $queryparser->add_prefix("class", "C");
-  $queryparser->add_prefix("name", "S");
-  $queryparser->add_prefix("nation", "N");
-  $queryparser->add_prefix("language", "L");
-  $queryparser->add_prefix("document", "D");
-  $queryparser->add_prefix("reference", "R");
-  $queryparser->add_prefix("date", "E");
-  $queryparser->add_prefix("heading", "H");
+  $queryparser->add_boolean_prefix("class", "C");
+  $queryparser->add_boolean_prefix("id", "I");
+  $queryparser->add_boolean_prefix("subid", "J");
+  $queryparser->add_boolean_prefix("class", "C");
+  $queryparser->add_boolean_prefix("name", "S");
+  $queryparser->add_boolean_prefix("nation", "N");
+  $queryparser->add_boolean_prefix("language", "L");
+  $queryparser->add_boolean_prefix("document", "D");
+  $queryparser->add_boolean_prefix("reference", "R");
+  $queryparser->add_boolean_prefix("date", "E");
+  $queryparser->add_boolean_prefix("heading", "H");
 
   $query = $queryparser->parse_query($terms);
 

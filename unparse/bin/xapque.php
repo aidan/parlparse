@@ -29,7 +29,7 @@
 #phpinfo();
 #exit;
 
-require "xapian.module";
+require "../web/sites/all/modules/xapian/xapian.module";
 
 $undata_path = $argv[1];
 if (!$undata_path) {
