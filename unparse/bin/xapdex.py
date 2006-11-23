@@ -9,6 +9,7 @@ import os
 import os.path
 import xapian
 import distutils.dir_util
+import traceback
 
 # TODO: 
 # Get list of days with stuff in them
@@ -129,133 +130,136 @@ def munge_speaker_name(name):
 
 process_count = 0
 def process_file(input_dir, input_file_rel, xapian_db):
-    global process_count, options
-    process_count = process_count + 1
-    if options.limit and process_count > options.limit:
-        return
+    try:
+        global process_count, options
+        process_count = process_count + 1
+        if options.limit and process_count > options.limit:
+            return
 
-    input_file = os.path.join(input_dir, input_file_rel)
-    input_file_rel_use = input_file_rel.replace(".unindexed", "")
-    input_file_use = os.path.join(input_dir, input_file_rel_use)
-    newindex = False 
-    if ".unindexed" in input_file_rel:
-        newindex = True
+        input_file = os.path.join(input_dir, input_file_rel)
+        input_file_rel_use = input_file_rel.replace(".unindexed", "")
+        input_file_use = os.path.join(input_dir, input_file_rel_use)
+        newindex = False 
+        if ".unindexed" in input_file_rel:
+            newindex = True
 
-    content = open(input_file).read()
-    document_id = os.path.splitext(os.path.basename(input_file))[0]
-    document_date = re.search('<h1>.*date=(\d\d\d\d-\d\d-\d\d) ', content).group(1)
+        content = open(input_file).read()
+        document_id = os.path.splitext(os.path.basename(input_file))[0]
+        document_date = re.search('<h1>.*date=(\d\d\d\d-\d\d-\d\d) ', content).group(1)
 
-    if options.verbose:
-        if newindex:
-            print "indexing (again): %s %s" % (document_id, document_date)
-        else:
-            print "indexing: %s %s" % (document_id, document_date)
+        if options.verbose:
+            if newindex:
+                print "indexing (again): %s %s" % (document_id, document_date)
+            else:
+                print "indexing: %s %s" % (document_id, document_date)
 
-    # Delete existing items for the document
-    xapian_enquire = xapian.Enquire(xapian_db)
-    xapian_query = xapian.QueryParser()
-    xapian_query.set_stemming_strategy(xapian.QueryParser.STEM_NONE)
-    xapian_query.set_default_op(xapian.Query.OP_AND)
-    xapian_query.add_prefix("document", "D")
-    query = "document:%s" % munge_un_document_id(document_id)
-    parsed_query = xapian_query.parse_query(query)
-    if options.verbose > 1:
-        print "\tdelete query: %s" % parsed_query.get_description()
-    xapian_enquire.set_query(parsed_query)
-    matches = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
-    for match in matches:
+        # Delete existing items for the document
+        xapian_enquire = xapian.Enquire(xapian_db)
+        xapian_query = xapian.QueryParser()
+        xapian_query.set_stemming_strategy(xapian.QueryParser.STEM_NONE)
+        xapian_query.set_default_op(xapian.Query.OP_AND)
+        xapian_query.add_prefix("document", "D")
+        query = "document:%s" % munge_un_document_id(document_id)
+        parsed_query = xapian_query.parse_query(query)
         if options.verbose > 1:
-            print "\tdeleting existing Xapian doc: %s" % match[0]
-        xapian_db.delete_document(match[0]) # Xapian's document id
+            print "\tdelete query: %s" % parsed_query.get_description()
+        xapian_enquire.set_query(parsed_query)
+        matches = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
+        for match in matches:
+            if options.verbose > 1:
+                print "\tdeleting existing Xapian doc: %s" % match[0]
+            xapian_db.delete_document(match[0]) # Xapian's document id
 
-    # Loop through each speech
-    pos_in_file = 0
-    heading = None
-    divs = re.finditer("^<div .*?^</div>", content, re.S + re.M)
-    for div in divs:
-        # Document content
-        off_from = div.start()
-        off_to = div.end()
-        div_content = div.group(0)
-        #print div_content
-
-        # Look up all the data
-        id = re.search('^<div [^>]*id="([^">]+)"', div_content).group(1)
-        ids = re.findall('<div [^>]*id="([^">]+)"', div_content)
-        cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
-        if cls == 'spoken':
-            #print "----\n"
+        # Loop through each speech
+        pos_in_file = 0
+        heading = None
+        divs = re.finditer("^<div .*?^</div>", content, re.S + re.M)
+        for div in divs:
+            # Document content
+            off_from = div.start()
+            off_to = div.end()
+            div_content = div.group(0)
             #print div_content
-            name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content).group(1)
-            nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content).group(1)
-            language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content).group(1)
-        if cls == 'boldline':
-            heading = id
-        ref_docs = re.findall('<a href="../pdf/([^>]+).pdf">', div_content)
 
-        # Generate terms
-        terms = set()
-        terms.add("D%s" % munge_un_document_id(document_id))
-        terms.add("E%s" % munge_date(document_date))
-        for ref_doc in ref_docs:
-            terms.add("R%s" % munge_un_document_id(ref_doc))
-        terms.add("I%s" % munge_julian_id(id))
-        for a_id in ids:
-            if a_id != id:
-                terms.add("J%s" % munge_julian_id(a_id))
-        terms.add("C%s" % munge_cls(cls))
-        if cls == 'spoken':
-            terms.add("S%s" % munge_speaker_name(name))
-            terms.add("N%s" % munge_nation(nation))
-            terms.add("L%s" % munge_language(language))
-        if heading:
-            terms.add("H%s" % munge_julian_id(heading))
+            # Look up all the data
+            id = re.search('^<div [^>]*id="([^">]+)"', div_content).group(1)
+            ids = re.findall('<div [^>]*id="([^">]+)"', div_content)
+            cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
+            if cls == 'spoken':
+                #print "----\n"
+                #print div_content
+                name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content).group(1)
+                nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content).group(1)
+                language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content).group(1)
+            if cls == 'boldline':
+                heading = id
+            ref_docs = re.findall('<a href="../pdf/([^>]+).pdf">', div_content)
 
-        # Generate words
-        word_content = div_content
-        word_content = re.sub("<[^>]+>", "", word_content)
-        word_content = re.sub("&#\d+;", " ", word_content)
-        word_content = re.sub("(\d),(\d)", "$1$2", word_content)
-        word_content = re.sub("[^A-Za-z0-9]", " ", word_content)
-        words = re.split("\s+",word_content)
+            # Generate terms
+            terms = set()
+            terms.add("D%s" % munge_un_document_id(document_id))
+            terms.add("E%s" % munge_date(document_date))
+            for ref_doc in ref_docs:
+                terms.add("R%s" % munge_un_document_id(ref_doc))
+            terms.add("I%s" % munge_julian_id(id))
+            for a_id in ids:
+                if a_id != id:
+                    terms.add("J%s" % munge_julian_id(a_id))
+            terms.add("C%s" % munge_cls(cls))
+            if cls == 'spoken':
+                terms.add("S%s" % munge_speaker_name(name))
+                terms.add("N%s" % munge_nation(nation))
+                terms.add("L%s" % munge_language(language))
+            if heading:
+                terms.add("H%s" % munge_julian_id(heading))
 
-        # Add item to Xapian database
-        xapian_doc = xapian.Document()
-        doc_content = "%s|%s|%s" % (input_file_rel_use, off_from, off_to - off_from)
-        # ... terms (unplaced keywords, i.e. all the meta data like speaker, country)
-        xapian_doc.set_data(doc_content)
-        for term in terms:
-            term = term.replace(" ", "")
+            # Generate words
+            word_content = div_content
+            word_content = re.sub("<[^>]+>", "", word_content)
+            word_content = re.sub("&#\d+;", " ", word_content)
+            word_content = re.sub("(\d),(\d)", "$1$2", word_content)
+            word_content = re.sub("[^A-Za-z0-9]", " ", word_content)
+            words = re.split("\s+",word_content)
+
+            # Add item to Xapian database
+            xapian_doc = xapian.Document()
+            doc_content = "%s|%s|%s" % (input_file_rel_use, off_from, off_to - off_from)
+            # ... terms (unplaced keywords, i.e. all the meta data like speaker, country)
+            xapian_doc.set_data(doc_content)
+            for term in terms:
+                term = term.replace(" ", "")
+                if options.verbose > 1:
+                    print "\t\tterm: %s" % term
+                xapian_doc.add_term(term)
+            # ... postings (keywords with placement, so can be in phrase search; the bulk of text)
+            n = 0
+            for word in words:
+                if word == '':
+                    continue
+                if re.search("^\d{1,2}$", word):
+                    continue
+                n = n + 1
+                if options.verbose > 1:
+                    print "\t\tposting: %s" % word
+                xapian_doc.add_posting(word.lower(), n)
+            # ... values (for sorting by)
+            # XXX we use date, position in file. Should probably include type (i.e.
+            # general assembly, security council) as well. Note must be lexicographically
+            # sortable field, i.e. probably fixed width (hence padding on the pos).
+            xapian_doc.add_value(0, "%s%06d" % (document_date.replace("-", ""), pos_in_file))
+            pos_in_file = pos_in_file + 1
+            # ... and add to the database
+            new_doc_id = xapian_db.add_document(xapian_doc)
             if options.verbose > 1:
-                print "\t\tterm: %s" % term
-            xapian_doc.add_term(term)
-        # ... postings (keywords with placement, so can be in phrase search; the bulk of text)
-        n = 0
-        for word in words:
-            if word == '':
-                continue
-            if re.search("^\d{1,2}$", word):
-                continue
-            n = n + 1
-            if options.verbose > 1:
-                print "\t\tposting: %s" % word
-            xapian_doc.add_posting(word.lower(), n)
-        # ... values (for sorting by)
-        # XXX we use date, position in file. Should probably include type (i.e.
-        # general assembly, security council) as well. Note must be lexicographically
-        # sortable field, i.e. probably fixed width (hence padding on the pos).
-        xapian_doc.add_value(0, "%s%06d" % (document_date.replace("-", ""), pos_in_file))
-        pos_in_file = pos_in_file + 1
-        # ... and add to the database
-        new_doc_id = xapian_db.add_document(xapian_doc)
-        if options.verbose > 1:
-            print "\tadded Xapian doc: %s" % new_doc_id
+                print "\tadded Xapian doc: %s" % new_doc_id
 
-    # Note that the document has been indexed
-    xapian_db.flush()
-    if newindex:
-        os.unlink(input_file)
-        os.rename(input_file_use, input_file)
+        # Note that the document has been indexed
+        xapian_db.flush()
+        if newindex:
+            os.unlink(input_file)
+            os.rename(input_file_use, input_file)
+    except Exception, e:
+        traceback.print_exc()
 
 # XXX finish this off, it checks for docs that are no longer there
 def check_removed_docs(xapian_db):
