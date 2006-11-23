@@ -11,7 +11,7 @@ import xapian
 import distutils.dir_util
 
 # TODO: 
-# Move the web/drupal stuff up a level. Sort out bin/ and code/.
+# Sort out bin/ and code/.
 # Use boolean_prefix in query parser so don't have to do munging
 # Get list of days with stuff in them
 # Decide what to do properly with spaces in names etc.
