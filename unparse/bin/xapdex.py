@@ -268,14 +268,9 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
 # XXX finish this off, it checks for docs that are no longer there
 def check_removed_docs(xapian_db):
-    print xapian_db.allterms_end()
-    t = xapian_db.allterms_begin()
-
     docs_in_xap = set()
-    while t != xapian_db.allterms_end():
-        term = t.get_term()
-        t.next()
-        g = re.search("^D(.*)$", term)
+    for term in xapian_db.allterms():
+        g = re.search("^D(.*)$", term[0])
         if g:
             print g.group(1)
 
