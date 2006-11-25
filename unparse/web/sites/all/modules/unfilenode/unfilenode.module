@@ -84,7 +84,7 @@ die();
 
 function unfilenode_test() {
   $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
-  $links[] = l('Document A/60/PV.9', 'assembly/document/a60pv9');
+  $links[] = l('Document A/60/PV.9', 'assembly/document/A-60-PV.9');
   $links[] = drupal_get_form('unfilenode_search_form', $form);
   return theme('item_list',$links);
 }
