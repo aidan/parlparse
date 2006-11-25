@@ -171,7 +171,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
         xapian_query = xapian.QueryParser()
         xapian_query.set_stemming_strategy(xapian.QueryParser.STEM_NONE)
         xapian_query.set_default_op(xapian.Query.OP_AND)
-        xapian_query.add_prefix("document", "D")
+        xapian_query.add_boolean_prefix("document", "D")
         query = "document:%s" % munge_un_document_id(document_id)
         parsed_query = xapian_query.parse_query(query)
         if options.verbose > 1:
@@ -317,12 +317,12 @@ for input_rel in args:
         filelist.sort(reverse = True)
         for d in filelist:
             p = os.path.join(input_rel, d)
-            rels.append(p)
+            if re.search(".unindexed.html$", d) or (options.firsttime and re.search(".html$", d)):
+                rels.append(p)
     else:
         raise Exception, "Directory/file %s doesn't exist" % input
 for rel in rels:
-    if re.search(".unindexed.html$", rel) or (options.firsttime and re.search(".html$", rel)):
-        process_file(undata_dir, rel, xapian_db)
+    process_file(undata_dir, rel, xapian_db)
 
 # Flush and close
 xapian_db.flush()
