@@ -225,7 +225,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
                 terms.add("H%s" % munge_julian_id(heading))
 
             # Generate words
-            word_content = div_content
+            word_content = div_content.lower()
             word_content = re.sub("<[^>]+>", "", word_content)
             word_content = re.sub("&#\d+;", " ", word_content)
             word_content = re.sub("(\d),(\d)", "$1$2", word_content)
