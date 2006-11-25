@@ -133,6 +133,9 @@ function theme_assemblyfile($search) {
       $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
       $stripe = $i % 2 ? 'even' : 'odd';
       $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>"; 
+
+      # Fix up links to PDF files
+      $data = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)" class="pdf">/', '<a href="/pdf/$1">', $data);
     }
   }
   return $data;
