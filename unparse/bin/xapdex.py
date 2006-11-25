@@ -21,8 +21,8 @@ import traceback
 # Finish check_removed_docs
 
 # Fields are:
-# I identifier (e.g. pg001-bk01)
-# J subsidiary identifier (e.g. pg001-bk01-pa01)
+# I identifier (e.g. docA61PV4-pg001-bk01)
+# J subsidiary identifier (e.g. docA61PV4-pg001-bk02-pa03)
 # C class (e.g. italicline boldline)
 # S speaker name (with spaces and dots removed XXX remove all punctuation)
 # N nation
@@ -30,7 +30,7 @@ import traceback
 # D document id (e.g. A-57-PV.57)
 # R referenced document (e.g. A-57-PV.57)
 # E date (e.g. 2002-10-01)
-# H heading identifier, if speech in a heading section (e.g. pg001-bk02, with - removed)
+# H heading identifier, if speech in a heading section (e.g. docA61PV4-pg001-bk01)
 
 # Example set of identifiers for a document:
 # Cspoken E2006-07-20 RA-60-L.49 Smrbodini Ipg017-bk01 Nsanmarino Hpg001-bk05 L DA-60-PV.94 Jpg017-bk01-pa01 Jpg017-bk01-pa02 Jpg017-bk01-pa03
@@ -59,11 +59,12 @@ parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
-parser.add_option("--first-time",
-                  action="store_true", dest="firsttime", default=False,
-                  help="erases existing database, and indexes all .html files")
+parser.add_option("--first-time", action="store_true", dest="firsttime", default=False,
+                  help="Erases existing database, and indexes all .html files")
 parser.add_option("--limit", dest="limit", default=None, type="int",
       help="Stop after processing this many files, used for debugging testing")
+parser.add_option("--continue-on-error", action="store_true", dest="continueonerror", default=False,
+                  help="Continues with next file when there is an error, rather than stopping")
 parser.add_option("--verbose", dest="verbose", default=1, type="int",
       help="Ranges from 0 for no output, to 2 for lots, default 1")
 (options, args) = parser.parse_args()
@@ -117,7 +118,7 @@ def munge_speaker_name(name):
     return name.replace(".", "").lower()
 
 ######################################################################
-# Reindex one file
+# Main indexing routines
 
 # TODO can't be bothered right now:
 #   "There's an extra refinement to avoid the race condition gap between
@@ -128,6 +129,18 @@ def munge_speaker_name(name):
 # I think the frist refinement needs some cleverness in Drupal's use of the
 # index as well.
 
+# Internal, find attribute of a speaker
+def find_speaker_attribute(attr, div_content):
+    value = re.search('<span class="%s">([^<]*)</span>' % attr, div_content)
+    if not value:
+        # backwards compatibility, can remove when all files migrated to new form
+        value = re.search('<span class="speaker" [^>]*%s="([^">]*)"' % attr, div_content)
+        if not value:
+            raise Exception, "No name in speaker for %s" % div_content 
+    value = value.group(1)
+    return value
+
+# Reindex one file
 process_count = 0
 def process_file(input_dir, input_file_rel, xapian_db):
     try:
@@ -144,14 +157,14 @@ def process_file(input_dir, input_file_rel, xapian_db):
             newindex = True
 
         content = open(input_file).read()
-        document_id = os.path.splitext(os.path.basename(input_file))[0]
+        document_id = os.path.splitext(os.path.basename(input_file_use))[0]
         document_date = re.search('<h1>.*date=(\d\d\d\d-\d\d-\d\d) ', content).group(1)
 
         if options.verbose:
             if newindex:
-                print "indexing (again): %s %s" % (document_id, document_date)
+                print "indexing (unindexed): %s %s" % (document_id, document_date)
             else:
-                print "indexing: %s %s" % (document_id, document_date)
+                print "indexing (main): %s %s" % (document_id, document_date)
 
         # Delete existing items for the document
         xapian_enquire = xapian.Enquire(xapian_db)
@@ -186,19 +199,12 @@ def process_file(input_dir, input_file_rel, xapian_db):
             ids = re.findall('<div [^>]*id="([^">]+)"', div_content)
             cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
             if cls == 'spoken':
-                #print "----\n"
-                #print div_content
-                name = re.search('<span class="speaker" [^>]*name="([^">]*)"', div_content)
-		if not name:
-			raise Exception, "No name in speaker for %s" % div_content
-		name = name.group(1)
-                nation = re.search('<span class="speaker" [^>]*nation="([^">]*)"', div_content)
-		nation = nation.group(1)
-                language = re.search('<span class="speaker" [^>]*language="([^">]*)"', div_content)
-		language = language.group(1)
+                name = find_speaker_attribute("name", div_content)
+                nation = find_speaker_attribute("nation", div_content)
+                language = find_speaker_attribute("language", div_content)
             if cls == 'boldline':
                 heading = id
-            ref_docs = re.findall('<a href="../pdf/([^>]+).pdf">', div_content)
+            ref_docs = re.findall('<a href="../pdf/([^"]+).pdf">', div_content)
 
             # Generate terms
             terms = set()
@@ -261,10 +267,15 @@ def process_file(input_dir, input_file_rel, xapian_db):
         # Note that the document has been indexed
         xapian_db.flush()
         if newindex:
-            os.unlink(input_file)
-            os.rename(input_file_use, input_file)
+            if os.path.exists(input_file_use):
+                os.unlink(input_file_use)
+            os.rename(input_file, input_file_use)
     except Exception, e:
-        traceback.print_exc()
+    	if options.continueonerror:
+            traceback.print_exc()
+        else:
+            traceback.print_exc()
+            sys.exit(1)
 
 # XXX finish this off, it checks for docs that are no longer there
 def check_removed_docs(xapian_db):
@@ -294,21 +305,24 @@ xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
 # Process files / directory trees
 if options.verbose > 1:
     print "files/directories to process are", args
+
+rels = []
 for input_rel in args:
     input_rel = input_rel.rstrip()
     input = os.path.join(undata_dir, input_rel)
     if os.path.isfile(input):
-        process_file(undata_dir, input_rel, xapian_db)
+        rels.append(input_rel)
     elif os.path.isdir(input):
         filelist = os.listdir(input)
         filelist.sort(reverse = True)
         for d in filelist:
             p = os.path.join(input_rel, d)
-            if re.search(".unindexed.html$", p) \
-                or (options.firsttime and re.search(".html$", p)):
-                process_file(undata_dir, p, xapian_db)
+            rels.append(p)
     else:
         raise Exception, "Directory/file %s doesn't exist" % input
+for rel in rels:
+    if re.search(".unindexed.html$", rel) or (options.firsttime and re.search(".html$", rel)):
+        process_file(undata_dir, rel, xapian_db)
 
 # Flush and close
 xapian_db.flush()
