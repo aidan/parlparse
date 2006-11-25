@@ -204,6 +204,8 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
 
   # XXX will want more than 100 here! See mset_get_matches_estimated in
   # searchengine.php from TWFY for code to work out set result sizes
+  # And Olly says "I suspect you might want to look at the "check_at_least" parameter to
+  # Enquire::get_mset()..."
   $matches = $enquire->get_mset(0, 100); 
 
   $result->info = $query->get_description();
