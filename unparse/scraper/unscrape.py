@@ -51,6 +51,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			print "Unrecognized undocname", undocname
 			assert False
 
+	#print "$$%s$$" % purl
 	print " scraping", undocname,
 	if not purl:
 		print "*** Need to make"
@@ -225,6 +226,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				assert False
 	for (i, prst, prsturl) in prstlist:
+		prsturl = re.sub("&amp;", "&", prsturl)
 		ScrapePDF("S-PRST-%s-%s" % (prst.group(1), prst.group(2)), plenaryurl=contentsurl, purl=prsturl)
 
 	# now sort and scrape all the verbatims
@@ -243,7 +245,6 @@ def ScrapeSCContentsPage(year, contentsurl):
 			print "verbatim report missing between ", -pvlist[i - 1][0], "and", -pvlist[i][0]
 			assert False
 	for (i, scpv, scpvurl) in pvlist:
-		#break
 		resumppart = ""
 		if scpv.group(2) == "Resumption":
 			 resumppart = "-Resu.%s" % scpv.group(3)
@@ -255,6 +256,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				print scpv.group(0), scpv.group(3)
 			resumppart = "-Part.%s" % pn
+		scpvurl = re.sub(" ", "", scpvurl) # remove spaces in the url
 		ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
 
 	# do corrigendas
