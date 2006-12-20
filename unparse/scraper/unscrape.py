@@ -141,6 +141,7 @@ def ScrapeContentsPage(contentsurl):
 		assert re.match("(?:A-RES-\d\d-\d+|A-\d\d-PV-\d+|S-RES-\d+\(\d+\))$", undocname)
 		ScrapePDF(undocname, contentsurl, plenary[0])
 
+
 # breaks down into lists of links
 def ScrapeSCContentsPage(year, contentsurl):
 	print "URL index:", contentsurl
@@ -153,7 +154,6 @@ def ScrapeSCContentsPage(year, contentsurl):
 	prstlist = [ ]
 	scdoclist = [ ]
 	pvcorrlist = [ ]
-
 
 	# this gets everything except the press releases in the middle column
 	scindexlist = re.findall('<a.[^>]*?href=\s*"(http://daccess[^"]*)"[^>]*>\s*(?:<font size="2">)?(.*?)(?:<br>\s*)?</a>(?is)', scindex)
@@ -257,6 +257,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 				print scpv.group(0), scpv.group(3)
 			resumppart = "-Part.%s" % pn
 		scpvurl = re.sub(" ", "", scpvurl) # remove spaces in the url
+		scpvurl = re.sub("&amp;", "&", scpvurl)
 		ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
 
 	# do corrigendas
