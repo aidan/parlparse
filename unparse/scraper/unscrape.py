@@ -23,6 +23,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-]*)$", undocname)
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
+		mspv = re.match("S-PV.(\d+)", undocname)
 		if mares:
 			if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
 				return False
@@ -36,18 +37,19 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
 			#print purl
 		elif msres:
-			if int(msres.group(2)) < 1940:  # limit older resolutions
-				return False
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=UNDOC" % (msres.group(1), msres.group(2))
 			plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
-			#print plenaryurl
-			#print purl
-
+		elif mspv:
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/PV.%s&Lang=E" % mspv.group(1)
+			plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
 		elif mapv:
 			if int(mapv.group(1)) < 40:  # limit the sessions we take these resolutions from
 				return False
 			tail = re.sub("-", "/", mapv.group(3))
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
+		else:
+			print "Unrecognized undocname", undocname
+			assert False
 
 	print " scraping", undocname,
 	if not purl:
@@ -118,6 +120,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 	return True
 
 
+# works for general assembly pages, and not much more
 def ScrapeContentsPage(contentsurl):
 	print "URL index:", contentsurl
 
@@ -137,6 +140,135 @@ def ScrapeContentsPage(contentsurl):
 		assert re.match("(?:A-RES-\d\d-\d+|A-\d\d-PV-\d+|S-RES-\d+\(\d+\))$", undocname)
 		ScrapePDF(undocname, contentsurl, plenary[0])
 
+# breaks down into lists of links
+def ScrapeSCContentsPage(year, contentsurl):
+	print "URL index:", contentsurl
+	fin = urllib2.urlopen(contentsurl)
+	scindex = fin.read()
+	fin.close()
+
+	reslist = [ ]
+	pvlist = [ ]
+	prstlist = [ ]
+	scdoclist = [ ]
+	pvcorrlist = [ ]
+
+
+	# this gets everything except the press releases in the middle column
+	scindexlist = re.findall('<a.[^>]*?href=\s*"(http://daccess[^"]*)"[^>]*>\s*(?:<font size="2">)?(.*?)(?:<br>\s*)?</a>(?is)', scindex)
+
+	for sci in scindexlist:
+		#print sci[1]
+		# communique for an embargoed verbatim recording
+		if re.match("Communiqu.", sci[1]):
+			assert sci[0] == pvlist[-1][2]  # same link
+			continue
+
+		# security council resolutions
+		scres = re.match("S/RES/(\d+)\s*\((\d+)\)\s*$", sci[1])
+		if scres:
+			reslist.append((-int(scres.group(1)), scres, sci[0]))
+			continue
+
+		# verbatim recordings
+		scpv = re.match("S/PV\.(\d+)(?:\s*<br>)?(?:\s*\((Resumption|Part)\s*([\dI]*)\))?\s*(?:\(closed\))?$", sci[1])
+		if scpv:
+			pvlist.append((-int(scpv.group(1) or "1"), scpv, sci[0]))
+			#print scpv.group(0)
+			continue
+
+		# corrigenda, which happens to the verbatim transcripts
+		sccorr = re.match("Corr\.(\d+)\s*", sci[1])
+		if sccorr:
+			urlwithoutcorr = re.sub("/Corr\.\d+(?i)", "", sci[0])
+			if pvlist[-1][2] != urlwithoutcorr:
+				print pvlist[-1][2]
+				print urlwithoutcorr
+				if year == 1998 and re.search("PV\.3896", pvlist[-1][2]) and re.search("PV\.3986", urlwithoutcorr):
+					print "  --- known typo"
+				elif year == 1995 and re.search("PV\.3528", pvlist[-1][2]) and re.search("PV\.3611", urlwithoutcorr):
+					print "  --- known typo"
+				else:
+					assert False
+			pvcorrlist.append((pvlist[-1][1], sccorr.group(1), sci[0]))
+			continue
+
+		# presidential statements
+		scprst = re.match("S/PRST/(\d+)/(\d+)\s*$", sci[1])
+		if scprst:
+			assert int(scprst.group(1)) == year
+			prstlist.append((-int(scprst.group(2)), scprst, sci[0]))
+			continue
+
+		# security council documents (usually a failed resolution)
+		scdoc = re.match("\(?S/(\d+)/(\d+)\)?\s*$", sci[1])
+		if scdoc:
+			assert int(scdoc.group(1)) == year
+			scdoclist.append((-int(scdoc.group(2)), scdoc, sci[0]))
+			continue
+
+		# known typo link
+		if re.match("<a>", sci[1]):
+			assert sci[0] == pvlist[-1][2]  # same link
+			continue
+
+		print "Unrecognized link type", "$$%s$$" % sci[1]
+		assert False
+
+	# sort and scrape all the presidential statements
+	prstlist.sort()
+	for i in range(1, len(prstlist)):
+		if -prstlist[i - 1][0] - 1 != -prstlist[i][0]:
+			print "presidential statement missing between ", -prstlist[i - 1][0], "and", -prstlist[i][0]
+			if (year, -prstlist[i - 1][0],  -prstlist[i][0]) in [(2000, 28, 26), (1996, 11, 9), (1996, 4, 2), (1995, 57, 55), (1995, 37, 35), (1995, 15, 13), (1995, 4, 2), (1994, 77, 75), (1994, 50, 48), (1994, 42, 39), (1994, 25, 23), (1994, 19, 17), (1994, 4, 2)]:
+				print "  -- known missing statement"
+			else:
+				assert False
+	for (i, prst, prsturl) in prstlist:
+		ScrapePDF("S-PRST-%s-%s" % (prst.group(1), prst.group(2)), plenaryurl=contentsurl, purl=prsturl)
+
+	# now sort and scrape all the verbatims
+	pvlist.sort()
+	for i in range(1, len(pvlist)):
+		if -pvlist[i - 1][0] == -pvlist[i][0]:
+			if pvlist[i - 1][1].group(2) == "Resumption":
+				resum = int(pvlist[i][1].group(3) or "0")
+				if not pvlist[i - 1][1].group(2):
+					print pvlist[i - 1][1].group(0) # there nust be a resumption number
+				resumP = int(pvlist[i - 1][1].group(3) or "1")
+				assert resumP == resum + 1
+			else:
+				print pvlist[i - 1][1].group(2), pvlist[i][1].group(2)
+		elif -pvlist[i - 1][0] - 1 != -pvlist[i][0]:
+			print "verbatim report missing between ", -pvlist[i - 1][0], "and", -pvlist[i][0]
+			assert False
+	for (i, scpv, scpvurl) in pvlist:
+		resumppart = ""
+		if scpv.group(2) == "Resumption":
+			 resumppart = "-Resu.%s" % scpv.group(2)
+		elif scpv.group(2) == "Part":
+			if scpv.group(3) == "I":
+				pn = "1"
+			elif scpv.group(3) == "II":
+				pn = "2"
+			else:
+				print scpv.group(0), scpv.group(3)
+			resumppart = "-Part.%s" % pn
+		ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
+
+	# do corrigendas
+	for (scpv, pvcorr, pvcorrurl) in pvcorrlist:
+		ScrapePDF("S-PV-%s%s-Corr.%s" % (scpv.group(1), (scpv.group(2) and ("-Resu.%s" % scpv.group(2)) or ""), pvcorr), plenaryurl=contentsurl, purl=pvcorrurl)
+
+	# now sort and scrape all the resolutions
+	reslist.sort()
+	for i in range(1, len(reslist)):
+		if -reslist[i - 1][0] - 1 != -reslist[i][0]:
+			print "resolution missing between ", -reslist[i - 1][0], "and", -reslist[i][0]
+			assert False
+	for (i, scres, scresurl) in reslist:
+		ScrapePDF("S-RES-%s(%s)" % (scres.group(1), scres.group(2)), plenaryurl=contentsurl, purl=scresurl)
+
 
 scrapepvurlmap = {
 	"A-53-PV":"http://www.un.org/ga/53/session/pv53.htm",
@@ -149,28 +281,34 @@ scrapepvurlmap = {
 
 	"A-59":"http://www.un.org/ga/59/documentation/list0.html",
 	"A-RES-56":"http://www.un.org/Depts/dhl/resguide/r56.htm",
-	"A-RES-56":"http://www.un.org/Depts/dhl/resguide/r56.htm",
 	"S-RES-2001":"http://www.un.org/Docs/scres/2001/sc2001.htm",
 	"S-RES-2002":"http://www.un.org/Docs/scres/2002/sc2002.htm",
-
 				}
 #http://www.un.org/ga/59/documentation/list0.html
-
 def ScrapeContentsPageFromStem(stem):
+	# this attempts to scrape PV and corrigenda assembly vertbatims by generating the codes
+	# we could lead on from the last known
 	mpv = re.match("A-(\d+)-PV$", stem)
-	print [ a   for a in os.listdir(pdfdir)  if re.match("A-56-PV", a) ]
 	if mpv:
 		for v in range(0, 173):#137):
 			ScrapePDF("A-%s-PV.%d" % (mpv.group(1), v))
 			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), v))
 		return
 
-	if stem not in scrapepvurlmap:
-		print "Allowable stems for scraping:\n ", ",\n  ".join(scrapepvurlmap.keys())
-		sys.exit(1)
+	# this works from other contents pages for general assemblies
+	if stem in scrapepvurlmap:
+		ScrapeContentsPage(scrapepvurlmap[stem])
+		return
 
-	# could generate some of the pages regularly.
-	ScrapeContentsPage(scrapepvurlmap[stem])
+	mspv = re.match("S-(\d+)-PV", stem)
+	if mspv:
+		assert 1994 <= int(mspv.group(1)) <= 2007
+		ScrapeSCContentsPage(int(mspv.group(1)), "http://www.un.org/Depts/dhl/resguide/scact%s.htm" % mspv.group(1))
+		return
+
+	print "Allowable stems for scraping are 'A-\d\d-PV' or 'S-\d\d\d\d(year)-PV', or"
+	print ",\n  ".join(scrapepvurlmap.keys())
+	assert False
 
 
 def ConvertXML(stem, pdfdir, pdfxmldir):
@@ -190,8 +328,6 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdfdest)
 		os.remove(pdfdest)
 		assert os.path.isfile(xmldest)
-
-
 
 
 
