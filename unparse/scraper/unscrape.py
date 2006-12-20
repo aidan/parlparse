@@ -258,7 +258,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 
 	# do corrigendas
 	for (scpv, pvcorr, pvcorrurl) in pvcorrlist:
-		ScrapePDF("S-PV-%s%s-Corr.%s" % (scpv.group(1), (scpv.group(2) and ("-Resu.%s" % scpv.group(2)) or ""), pvcorr), plenaryurl=contentsurl, purl=pvcorrurl)
+		ScrapePDF("S-PV-%s%s-Corr.%s" % (scpv.group(1), (scpv.group(2) and ("-Resu.%s" % scpv.group(3)) or ""), pvcorr), plenaryurl=contentsurl, purl=pvcorrurl)
 
 	# now sort and scrape all the resolutions
 	reslist.sort()
