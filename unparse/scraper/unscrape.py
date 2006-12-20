@@ -245,7 +245,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 	for (i, scpv, scpvurl) in pvlist:
 		resumppart = ""
 		if scpv.group(2) == "Resumption":
-			 resumppart = "-Resu.%s" % scpv.group(2)
+			 resumppart = "-Resu.%s" % scpv.group(3)
 		elif scpv.group(2) == "Part":
 			if scpv.group(3) == "I":
 				pn = "1"
