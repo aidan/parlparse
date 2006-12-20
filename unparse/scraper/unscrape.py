@@ -54,7 +54,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		purl = re.sub(" ", "", purl)
 		purl = re.sub("&amp;", "&", purl)
 
-	print "$$%s$$" % purl
+	#print "$$%s$$" % purl
 	print " scraping", undocname,
 	if not purl:
 		print "*** Need to make"
