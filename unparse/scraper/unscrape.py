@@ -243,6 +243,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			print "verbatim report missing between ", -pvlist[i - 1][0], "and", -pvlist[i][0]
 			assert False
 	for (i, scpv, scpvurl) in pvlist:
+		#break
 		resumppart = ""
 		if scpv.group(2) == "Resumption":
 			 resumppart = "-Resu.%s" % scpv.group(3)
@@ -267,6 +268,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			print "resolution missing between ", -reslist[i - 1][0], "and", -reslist[i][0]
 			assert False
 	for (i, scres, scresurl) in reslist:
+		scresurl = re.sub(" ", "", scresurl)
 		ScrapePDF("S-RES-%s(%s)" % (scres.group(1), scres.group(2)), plenaryurl=contentsurl, purl=scresurl)
 
 
