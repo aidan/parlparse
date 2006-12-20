@@ -50,8 +50,11 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		else:
 			print "Unrecognized undocname", undocname
 			assert False
+	else:
+		purl = re.sub(" ", "", purl)
+		purl = re.sub("&amp;", "&", purl)
 
-	#print "$$%s$$" % purl
+	print "$$%s$$" % purl
 	print " scraping", undocname,
 	if not purl:
 		print "*** Need to make"
@@ -226,7 +229,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				assert False
 	for (i, prst, prsturl) in prstlist:
-		prsturl = re.sub("&amp;", "&", prsturl)
+		break
 		ScrapePDF("S-PRST-%s-%s" % (prst.group(1), prst.group(2)), plenaryurl=contentsurl, purl=prsturl)
 
 	# now sort and scrape all the verbatims
@@ -256,8 +259,7 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				print scpv.group(0), scpv.group(3)
 			resumppart = "-Part.%s" % pn
-		scpvurl = re.sub(" ", "", scpvurl) # remove spaces in the url
-		scpvurl = re.sub("&amp;", "&", scpvurl)
+		break
 		ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
 
 	# do corrigendas
@@ -271,7 +273,6 @@ def ScrapeSCContentsPage(year, contentsurl):
 			print "resolution missing between ", -reslist[i - 1][0], "and", -reslist[i][0]
 			assert False
 	for (i, scres, scresurl) in reslist:
-		scresurl = re.sub(" ", "", scresurl)
 		ScrapePDF("S-RES-%s(%s)" % (scres.group(1), scres.group(2)), plenaryurl=contentsurl, purl=scresurl)
 
 
