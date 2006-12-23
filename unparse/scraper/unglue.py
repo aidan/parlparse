@@ -274,21 +274,27 @@ class TextPage:
 				ih += 1
 				break
 			ih += 1
-		assert self.date
+
+		# could be a closed meeting
+		if not self.date:
+			alltext = " ".join([txline.ltext  for txline in txlines])
+			if re.search("OFFICIAL COMMUNIQU..*?Held in private in the Security Council Chamber at Headquarters", alltext):
+				return False
+			return True
 
 		while ih < len(txlines):
 			if re.match("\d\d-\d\d", txlines[ih].ltext):
 				break
 			if re.match("This record contains the text of speeches delivered in English", txlines[ih].ltext):
 				break
-			print "agagag", txlines[ih].ltext
+			#print "agagag", txlines[ih].ltext
 			assert not re.search("text of speeches|verbatim(?i)", txlines[ih].ltext)
 			self.agenda.append(txlines[ih].ltext.strip())
 			ih += 1
 
 		assert len(self.chairs) == 15
 		self.agenda = " ".join(self.agenda)
-
+		return True
 
 	def __init__(self, xpage, lundocname, lpageno, textcountnumber):
 		self.pageno = lpageno
@@ -349,7 +355,8 @@ class TextPage:
 			assert not self.bSecurityCouncil
 
 		elif self.pageno == 1 and self.bSecurityCouncil:
-			self.ExtractSeccounFrontPage(txlines)
+			if not self.ExtractSeccounFrontPage(txlines):
+				self.bSecurityCouncil = "ClosedSession"
 			return
 
 		elif self.bGeneralAssembly:
@@ -450,12 +457,15 @@ class TextPage:
 def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
 	if not xpages:
-		return None, None, None  # bitmap type encountered
+		return None, None, None, None  # bitmap type encountered
 	txpages = [ ]
 	tlcall = [ ]
 
 	for i in range(len(xpages)):
 		txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
+		if i == 0 and txpage.bSecurityCouncil == "ClosedSession":
+			print " -- closedsession"
+			return None, None, None, None  # closed session encountered
 		txpages.append(txpage)
 		if txpage.bSecurityCouncil and i == 0:
 			continue

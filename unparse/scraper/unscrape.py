@@ -234,7 +234,6 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				assert False
 	for (i, prst, prsturl) in prstlist:
-		break
 		ScrapePDF("S-PRST-%s-%s" % (prst.group(1), prst.group(2)), plenaryurl=contentsurl, purl=prsturl)
 
 	# now sort and scrape all the verbatims
@@ -264,7 +263,6 @@ def ScrapeSCContentsPage(year, contentsurl):
 			else:
 				print scpv.group(0), scpv.group(3)
 			resumppart = "-Part.%s" % pn
-		break
 		ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
 
 	# do corrigendas

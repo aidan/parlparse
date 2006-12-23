@@ -13,7 +13,11 @@ parser.set_usage("""
 Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
-  parse   do the parsing""")
+  parse   do the parsing
+  
+--stem selects what is processed.
+  scrape --stem=S-YEAR-PV
+""")
 
 
 if not os.path.isdir(pdfdir):
