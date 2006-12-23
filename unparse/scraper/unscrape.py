@@ -355,15 +355,17 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		if not os.path.isfile(pdf):
 			continue
 		pdfdest = os.path.join(pdfxmldir, sd)
-		xmldest = os.path.splitext(pdfdest)[0]
+		xmldest = os.path.splitext(pdfdest)[0] + ".xml"
 		if os.path.isfile(xmldest):
 			print "skipping", sd
 			continue
 		#shutil.copyfile(pdf, pdfdest)
 		print " ppdftohtml -xml", sd
-		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, xmldest)
+		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")
+		assert os.path.isfile("temph.xml")
+		os.rename("temph.xml", xmldest)
 		#os.remove(pdfdest)
-		assert os.path.isfile(xmldest + ".xml")
+		assert os.path.isfile(xmldest)
 
 
 
