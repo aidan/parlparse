@@ -355,7 +355,7 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		if not os.path.isfile(pdf):
 			continue
 		pdfdest = os.path.join(pdfxmldir, sd)
-		xmldest = os.path.splitext(pdfdest)[0] + ".xml"
+		xmldest = os.path.splitext(pdfdest)[0]
 		if os.path.isfile(xmldest):
 			print "skipping", sd
 			continue
@@ -363,7 +363,7 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		print " ppdftohtml -xml", sd
 		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, xmldest)
 		#os.remove(pdfdest)
-		assert os.path.isfile(xmldest)
+		assert os.path.isfile(xmldest + ".xml")
 
 
 
