@@ -359,13 +359,10 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		if os.path.isfile(xmldest):
 			print "skipping", sd
 			continue
-		print "hoho"
-		shutil.copyfile(pdf, pdfdest)
+		#shutil.copyfile(pdf, pdfdest)
 		print " ppdftohtml -xml", sd
-		#os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdfdest)
-		print "hihihi\n\n\n"
-		os.remove(pdfdest)
-		print "kk", pdfdest, xmldest
+		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, xmldest)
+		#os.remove(pdfdest)
 		assert os.path.isfile(xmldest)
 
 
