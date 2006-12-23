@@ -56,7 +56,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			print "Unrecognized undocname", undocname
 			assert False
 	else:
-		purl = re.sub(" ", "", purl)
+		purl = re.sub("\s", "", purl)
 		purl = re.sub("&amp;", "&", purl)
 
 	#print "$$%s$$" % purl
