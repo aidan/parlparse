@@ -1,7 +1,6 @@
 import os
 import re
 import sys
-from unglue import GlueUnfile
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ConvertXML
@@ -45,10 +44,6 @@ parser.add_option("--scrape-links",
 stem = ""
 if options.stem:
 	stem = re.sub("\.", "\.", options.stem)
-if not stem:  # make it anyway if you don't do the stem command properly
-	for a in args:
-		if re.match("A-", a):
-			stem = a
 
 #print options, args
 SetQuiet(options.quiet)
@@ -60,16 +55,32 @@ if not (bScrape or bConvertXML or bParse):
 	parser.print_help()
 	sys.exit(1)
 
+# lack of stem means we do special daily update
 if bScrape:
-	ScrapeContentsPageFromStem(stem)
+	# we could use current date to generate these figures
+	if not stem:
+		ScrapeContentsPageFromStem("S-2006")
+		ScrapeContentsPageFromStem("A-61")
+	else:
+		ScrapeContentsPageFromStem(stem)
+
 if bConvertXML:
-	if re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
+	if not stem:
+		ConvertXML("A-61-PV", pdfdir, pdfxmldir)
+		ConvertXML("S-PV-40", pdfdir, pdfxmldir)
+	elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
+		ConvertXML(stem, pdfdir, pdfxmldir)
+	elif re.match("S-PV-\d\d", stem):  # make sure it can't do too many at once
 		ConvertXML(stem, pdfdir, pdfxmldir)
 	else:
 		print "Stem should be set, eg --stem=A-49-PV"
 		print "  (Can't parse 48, so won't do)"
 if bParse:
-	ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
+	if not stem:
+		ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse)
+		ParsetoHTML("S-PV-40", pdfxmldir, htmldir, options.forceparse, options.editparse)
+	else:
+		ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
 	PrintNonnationOccurrances()
 
 

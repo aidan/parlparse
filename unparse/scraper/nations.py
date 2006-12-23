@@ -120,7 +120,7 @@ nationdates = {
 		"Micronesia": 	("1945", "9999-12-31"),
 		"Monaco": 	("1945", "9999-12-31"),
 		"Mongolia": 	("1945", "9999-12-31"),
-		"Montenegro":  ("2006-06-28", "9999-12-31"), 
+		"Montenegro":  ("2006-06-28", "9999-12-31"),
 		"Morocco": 	("1945", "9999-12-31"),
 		"Mozambique": 	("1945", "9999-12-31"),
 		"Myanmar": 	("1945", "9999-12-31"),
@@ -209,7 +209,6 @@ nationmapping = {
 		"Cote d'Ivoire":"Côte d'Ivoire",
 		"the former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
 		"Federal Republic of Yugoslavia":"Yugoslavia",
-		# "Democratic Republic of the Congo":"Congo",  # is this a separate country?
 		"Syrian Arab Republic":"Syria",
 		"Libyan Arab Jamahiriya":"Libya",
 		"Iran (Islamic Republic of)":"Iran",
@@ -222,9 +221,6 @@ nationmapping = {
 		"United Republic of Tanzania":"Tanzania",
 		"Commonwealth of Dominica":"Dominica",
 		"United States of America":"United States",
-		#"Libyan Arab amahiriya":"Libya",
-		#"hilippines":"Philippines",
-		#"nited Republic of Tanzania":"United Republic of Tanzania",
 		"of Great Britain and Northern Ireland":"INVALID",
 		"(Islamic Republic of)":"INVALID",
 		"Micronesia (Federated States of)":"Micronesia",
@@ -272,11 +268,16 @@ def FixNationName(lnation, sdate):
 		assert False
 	return lnation
 
-def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum):
+def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum, seccouncilchairs):
 	nationvotes = { }
-	for nation, dr in nationdates.iteritems():
-		if dr[0] <= sdate < dr[1]:
+	if seccouncilchairs:
+		for name, nation in seccouncilchairs:
 			nationvotes[nation] = "absent"
+	else:  # general assembly case
+		for nation, dr in nationdates.iteritems():
+			if dr[0] <= sdate < dr[1]:
+				nationvotes[nation] = "absent"
+
 	#print "\n\n\n"
 	for vn in vlfavour:
 		if nationvotes[vn] != "absent":
@@ -291,13 +292,17 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum):
 			print vn, nationvotes[vn]
 			raise unexception("country already voted", paranum)
 		nationvotes[vn] = "abstain"
-	return nationvotes, sorted([nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"])
+
+	vlabsent = [nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"]
+	vlabsent.sort()
+	assert not seccouncilchairs or not vlabsent
+	return nationvotes, vlabsent
 
 
 
 # many of the following are organizations granted observer status,
 # listed in http://lib-unique.un.org/lib/unique.nsf/Link/R02020
-nonnations = [	"European Community",
+DDDDnonnations = [	"European Community",
 				"Palestine",
 				"Holy See",
 				"International Monetary Fund",
@@ -551,6 +556,7 @@ nonnations["Under-Secretary-General for Policy Coordination and Sustainable Deve
 nonnations["Director General, International Atomic Energy Agency"] = 0
 nonnations["President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
 nonnations["Assistant Secretary-General for Political Affairs"] = 0
+nonnations["Assistant Secretary-General for Peacekeeping Operations"] = 0
 nonnations["Director, General Assembly Affairs"] = 0
 nonnations["Director, General Assembly Affairs Division, Department of Political Affairs"] = 0
 nonnations["Director General of the International Atomic Energy Agency"] = 0

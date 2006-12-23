@@ -24,6 +24,8 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		mspv = re.match("S-PV.(\d+)", undocname)
+		scdoc = re.match("S-(\d\d\d\d)-(\d+)$", undocname)
+
 		if mares:
 			if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
 				return False
@@ -36,8 +38,11 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			tail = re.sub("-", "/", madoc.group(3))
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
 			#print purl
+		elif scdoc:
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s/%s&Lang=E" % (scdoc.group(1), scdoc.group(2))
 		elif msres:
-			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=UNDOC" % (msres.group(1), msres.group(2))
+			sarea = int(msres.group(1)) <= 766 and "RESOLUTION" or "UNDOC"
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=%s" % (msres.group(1), msres.group(2), sarea)
 			plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
 		elif mspv:
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/PV.%s&Lang=E" % mspv.group(1)
@@ -296,9 +301,33 @@ def ScrapeContentsPageFromStem(stem):
 	# we could lead on from the last known
 	mpv = re.match("A-(\d+)-PV$", stem)
 	if mpv:
-		for v in range(0, 173):#137):
-			ScrapePDF("A-%s-PV.%d" % (mpv.group(1), v))
-			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), v))
+		# these should search for gaps
+		repv = re.compile("A-%s-PV.(\d+)(?:-Corr.(\d+))?" % mpv.group(1))
+		pvdone = []
+		for f in os.listdir(pdfdir):
+			mfm = repv.match(f)
+			if mfm:
+				pvdone.append(int(mfm.group(1)))
+
+		# onwards values
+		pvdone.sort()
+		print pvdone
+		v = (pvdone and pvdone[-1] or 0)
+		vn = v + 1
+		while ScrapePDF("A-%s-PV.%d" % (mpv.group(1), vn)):
+			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), vn))
+			vn += 1
+
+		# missing values
+		while len(pvdone) >= 2:
+			vn = pvdone[-1] - 1
+			if pvdone[-2] < vn:
+				if ScrapePDF("A-%s-PV.%d" % (mpv.group(1), vn)):
+					ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), vn))
+				pvdone[-1] = vn
+			else:
+				del pvdone[-1]
+
 		return
 
 	# this works from other contents pages for general assemblies
@@ -306,6 +335,7 @@ def ScrapeContentsPageFromStem(stem):
 		ScrapeContentsPage(scrapepvurlmap[stem])
 		return
 
+	# security council scrapage
 	mspv = re.match("S-(\d+)-PV", stem)
 	if mspv:
 		assert 1994 <= int(mspv.group(1)) <= 2007
@@ -317,6 +347,8 @@ def ScrapeContentsPageFromStem(stem):
 	assert False
 
 
+
+# the other command that converts the files using the exe command
 def ConvertXML(stem, pdfdir, pdfxmldir):
 	for sd in os.listdir(pdfdir):
 		if stem and not re.match(stem, sd):

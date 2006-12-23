@@ -169,6 +169,26 @@ def AppendCluster(res, tlc, sclusttype):
 
 # maybe shouldn't be a class
 class TextPage:
+	def ExtractDateTime(self, ltext):
+		# extract the date out if poss
+		mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?(?: \(closed\))?$", ltext)
+		if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
+			return
+		#print txlines[ih].ltext
+		iday = int(mdate.group(1))
+		if mdate.group(2) not in months:
+			print mdate.group(2), months
+			raise unexception("unrecognized month", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
+		imonth = months.index(mdate.group(2))
+		syear = mdate.group(3)
+		ihour = int(mdate.group(4))
+		imin = mdate.group(5) and int(mdate.group(5)) or 0
+		if mdate.group(6) and mdate.group(6) == "p":
+			ihour += 12
+		if self.date:
+			raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
+		self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
+
 	def ExtractDotLineChair(self, txlines, ih):
 		assert self.pageno == 1
 		#<text top="334" left="185" width="584" height="17" font="2">Mr.  Kavan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (Czech Republic)</text>
@@ -179,26 +199,10 @@ class TextPage:
 				break
 
 			# fix missing year date
-			if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
-				txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
+			#if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
+			#	txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
+			self.ExtractDateTime(txlines[ih].ltext)
 
-			# extract the date out if poss
-			mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?)?(?: \(closed\))?$", txlines[ih].ltext)
-			if mdate:  #Tuesday, 3 December 2002, 10 a.m.
-				#print txlines[ih].ltext
-				iday = int(mdate.group(1))
-				if mdate.group(2) not in months:
-					print mdate.group(2), months
-					raise unexception("unrecognized month", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
-				imonth = months.index(mdate.group(2))
-				syear = mdate.group(3)
-				ihour = int(mdate.group(4))
-				imin = mdate.group(5) and int(mdate.group(5)) or 0
-				if mdate.group(6) and mdate.group(6) == "p":
-					ihour += 12
-				if self.date:
-					raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
-				self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
 			ih += 1
 			if ih == len(txlines):
 				return -1
@@ -225,6 +229,7 @@ class TextPage:
 	def ExtractDotLineChairHead(self, txlines):
 		self.date = None
 		self.chairs = [ ]
+		self.agenda = None  # used only in sec council
 		ih = self.ExtractDotLineChair(txlines, 0)
 		ihcochair = self.ExtractDotLineChair(txlines, ih)
 
@@ -232,14 +237,70 @@ class TextPage:
 			return ihcochair
 		return ih
 
+	def ExtractSeccounFrontPage(self, txlines):
+		self.date = None
+		self.chairs = [ ]
+		self.agenda = [ ]
+		ih = 0
+		while ih < len(txlines):
+			self.ExtractDateTime(txlines[ih].ltext)
+			mpresseat = re.match("((?:M[rs]. |Sir )[\w\s]*?) \.(?: \.)*\s*(\(.*)?$", txlines[ih].ltext)
+			if mpresseat:
+				assert len(self.chairs) == 0   # first one
+				ih += 1
+				if mpresseat.group(2):
+					scountry = "%s %s" % (mpresseat.group(2), txlines[ih].ltext)
+				else:
+					scountry = txlines[ih].ltext
+				mcountry = re.search("\((.*?)\)$", scountry)
+				if not mcountry:
+					scountry = "%s %s" % (scountry, txlines[ih + 1].ltext)
+					mcountry = re.search("\((.*?)\)$", scountry)
+					if mcountry:
+						ih += 1
+				self.chairs.append((mpresseat.group(1), FixNationName(mcountry.group(1), self.date)))
+				ih += 1
+				continue
+
+			mcountryseat = re.match("([\w\s]*?) \.(?: \.)* ((?:M[rs]. |Sir )[^<>]*)$", txlines[ih].ltext)
+			if mcountryseat:
+				assert len(self.chairs) >= 1
+				self.chairs.append((mcountryseat.group(2), FixNationName(mcountryseat.group(1), self.date)))
+			else:
+				if re.search(" \. \. \. \. \. \. ", txlines[ih].ltext):
+					print "--%s--" % txlines[ih].ltext
+					assert False
+			if re.match("<b>Agenda</b>$", txlines[ih].ltext):
+				ih += 1
+				break
+			ih += 1
+		assert self.date
+
+		while ih < len(txlines):
+			if re.match("\d\d-\d\d", txlines[ih].ltext):
+				break
+			if re.match("This record contains the text of speeches delivered in English", txlines[ih].ltext):
+				break
+			print "agagag", txlines[ih].ltext
+			assert not re.search("text of speeches|verbatim(?i)", txlines[ih].ltext)
+			self.agenda.append(txlines[ih].ltext.strip())
+			ih += 1
+
+		assert len(self.chairs) == 15
+		self.agenda = " ".join(self.agenda)
+
 
 	def __init__(self, xpage, lundocname, lpageno, textcountnumber):
 		self.pageno = lpageno
 		self.undocname = lundocname
 		self.textcountnumber = textcountnumber
+		self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+		self.bGeneralAssembly = re.match("A-\d+-PV", self.undocname)
+		assert self.bSecurityCouncil or self.bGeneralAssembly
 
+		# set the column starts from some of the special cases we get
 		leftcolstart = 90
-		if int(re.match("A-(\d+)", lundocname).group(1)) <= 54:
+		if self.bGeneralAssembly and int(re.match("A-(\d+)", lundocname).group(1)) <= 54:
 			rightcolstart = 481
 		else:
 			rightcolstart = 468
@@ -247,7 +308,14 @@ class TextPage:
 			rightcolstart = 468
 		if lundocname in ["A-54-PV.97"]:
 			rightcolstart = 486
-		rightcolstartindentincrement = (int(re.match("A-(\d+)", lundocname).group(1)) <= 52) and 1 or 0  # adds an offset to non-zero values
+		if self.bSecurityCouncil:
+			rightcolstart = 481
+
+		# for right column, if not left justified, this adds a bit more to the right
+		if self.bGeneralAssembly and int(re.match("A-(\d+)", lundocname).group(1)) <= 52:
+			rightcolstartindentincrement = 1
+		else:
+			rightcolstartindentincrement = 0
 
 		# generate the list of lines, sorted by vertical position
 		ftxlines = re.findall("<text.*?</text>", xpage)
@@ -265,7 +333,7 @@ class TextPage:
 		# the half divider is at 459
 
 		# try to separate out the header and footers
-		if self.pageno == 1:
+		if self.pageno == 1 and self.bGeneralAssembly:
 			ih = self.ExtractDotLineChairHead(txlines)
 			#for Dtxl in txlines[-10:]:
 			#	print Dtxl.top, Dtxl.left, Dtxl.ltext
@@ -277,7 +345,14 @@ class TextPage:
 			#print "**NON-FOOTER:", txlines[ie].ltext
 			ie += 1
 
-		else:
+			# the whole first page gets parsed separately
+			assert not self.bSecurityCouncil
+
+		elif self.pageno == 1 and self.bSecurityCouncil:
+			self.ExtractSeccounFrontPage(txlines)
+			return
+
+		elif self.bGeneralAssembly:
 			if re.match("<b>\w/\d+/PV.\d+\s*</b>", txlines[0].ltext):
 				ih = 1
 			else:
@@ -298,6 +373,25 @@ class TextPage:
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 			if int(pagenumtext) != self.pageno:
 				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+
+		elif self.bSecurityCouncil:
+			assert re.match("Security Council", txlines[0].ltext)
+			assert re.match("\d+(?:th|st|nd|rd) meeting", txlines[1].ltext)
+			assert re.match("\w+-\w+ [Yy]ear", txlines[2].ltext)
+			assert re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
+			ih = 4;
+			ie = len(txlines) - 1
+			pagenumtext = txlines[ie].ltext
+			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
+				ie -= 1
+			if not re.match("\d+$", pagenumtext):
+				print "jjjj", pagenumtext
+				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+			if int(pagenumtext) != self.pageno:
+				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+
+		else:
+			assert False
 
 		# separate out the header and footers
 		self.txlheader = txlines[:ih]
@@ -351,6 +445,7 @@ class TextPage:
 		#if self.txlcol2 and self.minindentright != 0:
 		#	print "minindentright", self.minindentright
 
+
 # clusters are paragraphs after the lines have been clustered together
 def GlueUnfile(xfil, undocname):
 	xpages = StripPageTags(xfil)
@@ -358,15 +453,19 @@ def GlueUnfile(xfil, undocname):
 		return None, None, None  # bitmap type encountered
 	txpages = [ ]
 	tlcall = [ ]
+
 	for i in range(len(xpages)):
 		txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
 		txpages.append(txpage)
+		if txpage.bSecurityCouncil and i == 0:
+			continue
+
 		if txpage.txlcol1:
 			AppendCluster(tlcall, txpage.txlcol1[0], "newpage")
 			for tlc in txpage.txlcol1[1:]:
 				AppendCluster(tlcall, tlc, "gapcluster")
 		else:
-			assert i == len(xpages) - 1
+			assert i == len(xpages) - 1  # only last page can have missing columns (sometimes it's the first)
 
 		# have had a case where the first column was the blank one
 		if txpage.txlcol2:
@@ -401,7 +500,7 @@ def GlueUnfile(xfil, undocname):
 		tlc.paratext = re.sub("^<b>(The(?: Acting)? Co-Chairperson) \(([^\)]*)\)\s*(?:</b>\s*:|:\s*</b>)", "<b>\\1</b> (\\2):", tlc.paratext)
 		tlc.lastindent = tlc.indents[-1][0]
 
-	return sdate, txpages[0].chairs, tlcall
+	return sdate, txpages[0].chairs, txpages[0].agenda, tlcall
 
 
 

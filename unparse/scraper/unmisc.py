@@ -33,6 +33,7 @@ def SetCallScrape(lsCallScrape):
 
 reressplit = """(?x)(
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
+				S/\d+/\d+|
 				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+|
 				(?:Security\sCouncil\s)?(?:resolution\s)?\d+\s\(\d\d\d\d\)|
 				</b>\s*<b>|
@@ -56,6 +57,7 @@ def MarkupLinks(paratext, paranum):
 		mres = re.match("(?:General Assembly )?resolution (\d+)/(\d+)", st)
 		meres = re.match("Economic and Social Council resolution (\d+)/(\d+)", st)
 		mdoc = re.match("A/(\d+)/(\S*)", st)
+		mscdoc = re.match("S/(\d+)/(\d+)", st)
 		msecres = re.match("(?:Security Council )?(?:resolution )?(\d+) \((\d\d\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
@@ -65,6 +67,8 @@ def MarkupLinks(paratext, paranum):
 		elif mdoc:
 			doccode = re.sub("/", "-", mdoc.group(2))
 			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), doccode), st))
+		elif mscdoc:
+			res.append(MakeCheckLink("S-%s-%s" % (mscdoc.group(1), mscdoc.group(2)), st))
 		elif msecres:
 			if not (1945 < int(msecres.group(2)) < 2007):  # should use current document year
 				print st

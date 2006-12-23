@@ -8,14 +8,14 @@ from speechblock import SpeechBlock
 from voteblock import VoteBlock, recvoterequest
 
 
-def GroupParas(tlcall, undocname, sdate):
+def GroupParas(tlcall, undocname, sdate, chairs):
 	res = [ ]
 	i = 0
 	currentspeaker = None
 	while i < len(tlcall):
 		tlc = tlcall[i]
 		if re.match(recvoterequest, tlc.paratext):
-			lblock = VoteBlock(tlcall, i, undocname, sdate)
+			lblock = VoteBlock(tlcall, i, undocname, sdate, chairs)
 			i = lblock.i
 
 		# non-voting line to be processed
@@ -71,11 +71,11 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 				if lbeditparse:
 					lbeditparse = False
 					raise unexception("editparse", None)
-				sdate, chairs, tlcall = GlueUnfile(xfil, undocname)
+				sdate, chairs, agenda, tlcall = GlueUnfile(xfil, undocname)
 				if not tlcall:
 					break   # happens when it's a bitmap type
 				print sdate#, chairs
-				gparas = GroupParas(tlcall, undocname, sdate)
+				gparas = GroupParas(tlcall, undocname, sdate, chairs)
 			except unexception, ux:
 				assert not gparas
 				if ux.description != "editparse":
@@ -106,6 +106,14 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 		fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
 		fout.write('</head>\n<body>\n')
 		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, sdate))
+
+		if re.search("S-PV", undocname):
+			fout.write('<div class="boldline">%s</div>\n' % agenda)
+			fout.write('<div class="council-attendees">\n')
+			for chair in chairs:
+				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span></p>\n' % (chair[0], chair[1]))
+			fout.write('</div>\n')
+
 		for gpara in gparas:
 			gpara.writeblock(fout)
 		fout.write('</body>\n</html>\n')

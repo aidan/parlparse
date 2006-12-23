@@ -66,7 +66,6 @@ reboldline = """(?x)<b>.*?</b>
 					)*$"""
 
 def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
-
 	#print ptext, "\n\n\n"
 	if re.match("<i>(?:In favour|Against|Abstaining)", ptext): # should be part of a voteblock
 		print ptext
@@ -165,7 +164,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			# further parsing of these phrases may take place in due course
 			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
 			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment|recommendation).*?(?:was|were) adopted(?i)", ptext)
-			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed) at", ptext)
+			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed|was resumed) at", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("(?:The President|.*?, Vice-President,) (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))(?: by the President and the Secretary-General)?\.?$", ptext)
@@ -176,10 +175,15 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
 			mmiscnote = re.search("\[In the 79th plenary .*? III.\]$", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text
+
+			matinvite = re.match("At the invitation of the President, .*? (?:took a seat at the Council table|took the seats reserved for them at the side of the Council Chamber).$", ptext)
+
 			if mmstar:
 				ptext = ptext[1:]
 
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote):
+			# first line is from general assembly.  Second line adds in some from security council
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote or \
+					matinvite):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
@@ -319,13 +323,15 @@ class SpeechBlock:
 	def writeblock(self, fout):
 		fout.write("\n")
 		gid = self.paranum.MakeGid()
-		fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
+		fout.write('<a name="%s"><div class="%s">\n' % (gid, self.typ))
 		if self.typ == "spoken":
 			fout.write('<h3 class="speaker">')
-			fout.write('<span class="name">%s</span>' % self.speaker[0])
-			fout.write('<span class="nation">%s</span>' % self.speaker[1])
-			fout.write('<span class="language">%s</span>' % self.speaker[2])
-			fout.write('</h3>')
+			fout.write(' <span class="name">%s</span>' % self.speaker[0])
+			if self.speaker[1]:
+				fout.write(' <span class="nation">%s</span>' % self.speaker[1])
+			if self.speaker[2]:
+				fout.write(' <span class="language">%s</span>' % self.speaker[2])
+			fout.write(' </h3>\n')
 
 		if self.typ == "spoken":
 			fout.write('\t<div class="spokentext">\n')
@@ -338,14 +344,14 @@ class SpeechBlock:
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
 			elif para[0] == "p":
-				fout.write('\t<p id="%s-pa%02d">%s</p>\n' % (gid, paranum, para[1]))
+				fout.write('\t<a name="%s-pa%02d"><p>%s</p></a>\n' % (gid, paranum, para[1]))
 			elif para[0] == "blockquote":
-				fout.write('\t<blockquote id="%s-pa%02d">%s</blockquote>\n' % (gid, paranum, para[1]))
+				fout.write('\t<a name="%s-pa%02d"><blockquote>%s</blockquote></a>\n' % (gid, paranum, para[1]))
 			else:
 				assert para[0] in ["boldline-p", "boldline-agenda", "boldline-indent"]
-				fout.write('\t<div class="%s" id="%s-pa%02d">%s</div>\n' % (para[0], gid, paranum, para[1]))
+				fout.write('\t<a name="%s-pa%02d"><div class="%s">%s</div></a>\n' % (gid, paranum, para[0], para[1]))
 			paranum += 1
 		if self.typ == "spoken":
 			fout.write('\t</div>\n')
-		fout.write('</div>\n')
+		fout.write('</div></a>\n')
 
