@@ -263,7 +263,7 @@ def FixNationName(lnation, sdate):
 			return None
 		lnation = llnation
 	if not dr[0] <= sdate < dr[1]:
-		print lnation, dr
+		print lnation, dr, sdate
 		print "nation out of date range"
 		assert False
 	return lnation
@@ -295,7 +295,7 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum, secc
 
 	vlabsent = [nation  for nation, vote in nationvotes.iteritems()  if vote == "absent"]
 	vlabsent.sort()
-	assert not seccouncilchairs or not vlabsent
+	assert not seccouncilchairs or len(vlabsent) <= 1 # only one case of missing vote so far found
 	return nationvotes, vlabsent
 
 
@@ -575,3 +575,9 @@ nonnations["Community of Portuguese-Speaking Countries"] = 0
 nonnations["African, Caribbean and Pacific Group of States"] = 0
 nonnations["Ibero-American Conference"] = 0
 nonnations["International Centre for Migration Policy Development"] = 0
+nonnations["Under-Secretary-General for Peacekeeping Operations"] = 0
+nonnations["Officer-in-Charge of the Security Council Affairs Division"] = 0
+nonnations["High Commissioner for Human Rights"] = 0
+nonnations["Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator"] = 0
+nonnations["United Nations High Commissioner for Refugees"] = 0
+nonnations["Special Representative and Transitional Administrator in East Timor"] = 0

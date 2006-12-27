@@ -10,6 +10,7 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
 				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
 			(?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s|Advisory\s|Trust\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
+			(?:.{0,150}situation\sin\sAngola)?
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
@@ -62,7 +63,7 @@ reboldline = """(?x)<b>.*?</b>
 					(?:para(?:graph|\.)|sect(?:ion|\.)|[Cc]hap(?:ter|\.)|draft\sresolution)\s[A-Z0-9]|
 					Parts?|
 					HIV|AIDS|CRP\.|rule|
-					A/|/|\d|,|;|-|I|X|[A-Z]-
+					A/|S/|/|\d|,|;|-|I|X|[A-Z]-
 					)*$"""
 
 def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
@@ -82,6 +83,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		indentationerror = "un-left-justified paragraph"
 
 	mspek = re.match(respekp1, ptext)
+	print ptext, mspek
 	if not mspek:
 		mspek = re.match(respekp2, ptext)
 	if not mspek:
@@ -162,11 +164,11 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			ptext = re.sub("</?[ib]>", "", ptext).strip()
 
 			# further parsing of these phrases may take place in due course
-			msodecided = re.match("It was so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
+			msodecided = re.match("(?:There being no objection, )?[Ii]t (?:was|is) so decided(?: \(decision [\d/]*\s*(?:A|B|C|A and B)?\))?\.?$", ptext)
 			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment|recommendation).*?(?:was|were) adopted(?i)", ptext)
-			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed|was resumed) at", ptext)
+			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed|was resumed) (?:at|on)", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
-			mretchair = re.match("(?:The President|.*?, Vice-President,) (?:returned to|in) the Chair.$", ptext)
+			mretchair = re.match("(?:The President|.*?, Vice-President,|Mrs. Albright.*?) (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))(?: by the President and the Secretary-General)?\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
@@ -176,14 +178,17 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mmiscnote = re.search("\[In the 79th plenary .*? III.\]$", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text
 
-			matinvite = re.match("At the invitation of the President, .*? (?:took a seat at the Council table|took the seats reserved for them at the side of the Council Chamber).$", ptext)
+			matinvite = re.match("(?:At the invitation of the President, )?.*? (?:took (?:a )?seats? at the Council table|took (?:the seats? reserved for \w+|a seat) at the side of the Council (?:[Cc]hamber|table)).$", ptext)
+			mscsilence = re.match("The members of the (?:Security )?Council observed a minute of silence.$", ptext)
+			mscescort = re.search("(?:were|was) escorted to (?:seats|a seat) at the Council table.$", ptext)
+			mvtape = re.match("A videotape was shown in the Council Chamber.$", ptext)
 
 			if mmstar:
 				ptext = ptext[1:]
 
 			# first line is from general assembly.  Second line adds in some from security council
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote or \
-					matinvite):
+					matinvite or mscsilence or mscescort or mvtape):
 				print "unrecognized--%s--" % ptext
 				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
 				raise unexception("unrecognized italicline", paranum)
@@ -245,7 +250,7 @@ class SpeechBlock:
 			return True
 		if re.match(".{0,40}?<i>.{0,40}?(?:resolution|decision|amendment).{0,60}?was adopted.{0,40}$", ptext):
 			return True
-		if re.match(".{0,40}?was so decided.{0,40}?$", ptext):
+		if re.match(".{0,40}?(?:was|is) so decided.{0,40}?$", ptext):
 			return True
 		if re.match("<i>\s*The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
 			return True
@@ -323,7 +328,7 @@ class SpeechBlock:
 	def writeblock(self, fout):
 		fout.write("\n")
 		gid = self.paranum.MakeGid()
-		fout.write('<a name="%s"><div class="%s">\n' % (gid, self.typ))
+		fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
 		if self.typ == "spoken":
 			fout.write('<h3 class="speaker">')
 			fout.write(' <span class="name">%s</span>' % self.speaker[0])
@@ -344,14 +349,14 @@ class SpeechBlock:
 			if not para[0]:
 				fout.write('\t%s\n' % para[1])
 			elif para[0] == "p":
-				fout.write('\t<a name="%s-pa%02d"><p>%s</p></a>\n' % (gid, paranum, para[1]))
+				fout.write('\t<p id="%s-pa%02d">%s</p>\n' % (gid, paranum, para[1]))
 			elif para[0] == "blockquote":
-				fout.write('\t<a name="%s-pa%02d"><blockquote>%s</blockquote></a>\n' % (gid, paranum, para[1]))
+				fout.write('\t<blockquote id="%s-pa%02d">%s</blockquote>\n' % (gid, paranum, para[1]))
 			else:
 				assert para[0] in ["boldline-p", "boldline-agenda", "boldline-indent"]
-				fout.write('\t<a name="%s-pa%02d"><div class="%s">%s</div></a>\n' % (gid, paranum, para[0], para[1]))
+				fout.write('\t<div class="%s" id="%s-pa%02d">%s</div>\n' % (para[0], gid, paranum, para[1]))
 			paranum += 1
 		if self.typ == "spoken":
 			fout.write('\t</div>\n')
-		fout.write('</div></a>\n')
+		fout.write('</div>\n')
 
