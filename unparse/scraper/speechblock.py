@@ -83,7 +83,6 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		indentationerror = "un-left-justified paragraph"
 
 	mspek = re.match(respekp1, ptext)
-	print ptext, mspek
 	if not mspek:
 		mspek = re.match(respekp2, ptext)
 	if not mspek:
@@ -250,7 +249,7 @@ class SpeechBlock:
 			return True
 		if re.match(".{0,40}?<i>.{0,40}?(?:resolution|decision|amendment).{0,60}?was adopted.{0,40}$", ptext):
 			return True
-		if re.match(".{0,40}?(?:was|is) so decided.{0,40}?$", ptext):
+		if not self.bSecurityCouncil and re.match(".{0,40}?(?:was|is) so decided.{0,40}?$", ptext):
 			return True
 		if re.match("<i>\s*The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
 			return True
@@ -284,6 +283,7 @@ class SpeechBlock:
 		self.i = i
 		self.sdate = lsdate
 		self.undocname = lundocname
+		self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
 		self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
 		# paranum = ( undocname, sdate, tlc.txls[0].pageno, paranumber )
 		#self.gid = self.paranum.MakeGid()
