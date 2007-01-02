@@ -3,13 +3,13 @@ import re
 from nations import FixNationName
 from unmisc import unexception, paranumC
 
-page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*$'
+page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
-pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="1141" width="852">\s*$'
+pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="\d+" width="\d+">(?:<fontspec[^>]*>|\s)*$'
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-def StripPageTags(xfil):
+def StripPageTags(xfil, undocname):
 	xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
 	#print len(xpages), undoc
@@ -18,6 +18,7 @@ def StripPageTags(xfil):
 		for xpage in xpages:
 			if not re.match(pagebitmap, xpage):
 				print xpage
+				print undocname
 				assert False
 		return False
 	if not re.match(page1bit, mpage1head.group(1)):
@@ -78,17 +79,21 @@ class TextLineCluster:
 	def __init__(self, ltxl):
 		if ltxl:
 			self.txls = [ ltxl ]
-			self.indents = [ [ltxl.indent, 1] ]
+			self.indents = [ [ltxl.indent, 1, 1] ]
 
 	def AddLine(self, ltxl):
 		if ltxl.vgap != 0:
 			if self.indents[-1][0] != ltxl.indent:
-				self.indents.append([ltxl.indent, 1])
+				self.indents.append([ltxl.indent, 1, 0])
 			else:
 				self.indents[-1][1] += 1
+		self.indents[-1][2] += 1
+
 		self.txls.append(ltxl)
 
+
 # work backwards looking for paragraph heads
+familiarvgaps = (0, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 45, 48, 53, 54, 55, 63, 72, 83)
 def AppendToCluster(txlcol, txl):
 	if not txlcol:
 		txlcol.append(TextLineCluster(txl))
@@ -97,38 +102,58 @@ def AppendToCluster(txlcol, txl):
 	#print txlcol[-1].txls[-1].ltext
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 
+	# frig vgaps in some cases where the spacing was wider than normal
 	if txl.undocname in ["A-50-PV.84", "A-50-PV.88"]:
 		if txl.vgap == 21 or txl.vgap == 22:
 			txl.vgap = 18
 		if txl.vgap == 42:
 			txl.vgap = 43
 
-	if not txl.vgap in (0, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 45, 48, 53, 54, 55, 63, 72, 83):
-		print "vgap=", txl.vgap, "width/height/top", txl.width, txl.height, txl.top,  txl.ltext  # zzzz
+	if not txl.vgap in familiarvgaps:
+		print "\n\n   vgap=", txl.vgap, "\n\nwidth/height/top", txl.width, txl.height, txl.top,  txl.ltext  # zzzz
+		print " familiar vgaps:", familiarvgaps
 		raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
 	if txl.vgap in (0, 17, 18, 19) or txl.vgap == 0:
 		txlcol[-1].AddLine(txl)
 	else:
+		#print txl.vgap, "vvvv", txl.ltext
 		txlcol.append(TextLineCluster(txl))
 
 def AppendCluster(res, tlc, sclusttype):
 	# check if we should merge to the next paragraph
 	assert sclusttype in ["gapcluster", "newpage", "newcolumn"]
 
-	if res and sclusttype != "gapcluster":
+	if res and sclusttype != "gapcluster" and len(tlc.indents) == 1:
+		indentp = res[-1].indents[-1][0]
+		indentn = tlc.indents[0][0]
+
+		bbothindented = ((indentp in [31, 32]) and (indentn in [31, 32])) or \
+						((indentp in [0, 1]) and (indentn in [0, 1])) or \
+						((indentp in [36, 33]) and (indentp == indentn))
+		bonelineparacont = (len(res[-1].indents) == 1) and (res[-1].indents[0][1] == 1) and (indentp in [31, 32]) and (indentn in [0, 1])
+
+		td0 = res[-1].txls[-1].ltext[:3]
+		td1 = tlc.txls[0].ltext[:3]
+		if not re.match("<[ib]>", td0):
+			td0 = ""
+		if not re.match("<[ib]>", td1):
+			td1 = ""
+		bstylematches = (td0 == td1)
+
 		# likely continuation of paragraph
-		if len(tlc.indents) == 1 and tlc.indents[0][0] == res[-1].indents[-1][0]:
-			td0 = res[-1].txls[-1].ltext[:3]
-			td1 = tlc.txls[0].ltext[:3]
-			if not re.match("<[ib]>", td0):
-				td0 = ""
-			if not re.match("<[ib]>", td1):
-				td1 = ""
-			if td0 == td1:
-				res[-1].txls.extend(tlc.txls)
-				return
-			#else:
-			#	print "----", tlc.txls[0].ltext
+		if bbothindented and bstylematches:
+			res[-1].txls.extend(tlc.txls)
+			#print tlc.txls[0].ltext
+			return
+		else:
+			if bonelineparacont:
+				print "checkthiscontinuation case"
+				print indentp, indentn, bstylematches, bonelineparacont, res[-1].indents
+				print " ----", tlc.txls[0].ltext
+				if bstylematches:
+					print "merging"
+					res[-1].txls.extend(tlc.txls)
+					return
 
 
 	# new cluster; check the indenting pattern is good
@@ -140,17 +165,18 @@ def AppendCluster(res, tlc, sclusttype):
 
 	# two paragraphs may have been merged, try to separate them out
 	elif len(tlc.indents) == 4 and tlc.indents[0][0] == tlc.indents[2][0] and tlc.indents[1][0] == tlc.indents[3][0]:
-		#print tlc.indents
-		#print tlc.txls[0].ltext
+		print tlc.indents
 		assert tlc.indents[0][0] == tlc.indents[2][0]
 		assert tlc.indents[1][0] == tlc.indents[3][0]
-		si = tlc.indents[2][1]
+		si = tlc.indents[0][2] + tlc.indents[1][2]
 		tlcf = TextLineCluster(None)
 		tlcf.txls = tlc.txls[:si]
 		del tlc.txls[:si]
 		tlcf.indents = tlc.indents[:2]
 		del tlc.indents[:2]
 		res.append(tlcf)
+		print "splitting two paragraphs", si
+		print tlc.txls[0].ltext
 		#print tlcf.indents, tlc.indents
 
 	elif len(tlc.indents) != 1:
@@ -242,6 +268,7 @@ class TextPage:
 	def ExtractSeccounFrontPage(self, txlines):
 		self.date = None
 		self.chairs = [ ]
+		self.seccouncilmembers = [ ]
 		self.agenda = [ ]
 
   		lasttop = -1
@@ -259,32 +286,54 @@ class TextPage:
 		ih = 0
 		while ih < len(jtxlines):
 			self.ExtractDateTime(jtxlines[ih])
-			#print jtxlines[ih]
-			mpresseat = re.match("<i>President</i>:\s*((?:Mr.|Mrs.|Ms.|Sir) .*?) \.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
+			mpresseat = re.match("<i>(President|later)(?:</i>:|:</i>)\s*((?:Mr.|Mrs.|Ms.|Sir|Miss) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
+			#print jtxlines[ih], mpresseat
 			if mpresseat:
 				if not self.date:
 					raise unexception("missing date", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
-				assert len(self.chairs) == 0   # first one
+				if mpresseat.group(1) == "President":
+					assert len(self.chairs) == 0   # first one
+				else:
+					assert len(self.chairs) == 1   # later president
 				ih += 1
-				if mpresseat.group(2):
-					scountry = mpresseat.group(2)
+				if mpresseat.group(3):
+					scountry = mpresseat.group(3)
 				else:
 					scountry = ""
 				if re.search("\(", scountry) and not re.search("\)", scountry):
 					scountry = "%s %s" % (scountry, jtxlines[ih])
 					ih += 1
 				mcountry = re.match("\((.*?)\)$", scountry)
-				scountry = mcountry.group(1)
-				self.chairs.append((mpresseat.group(1), FixNationName(scountry, self.date)))
+				fscountry = FixNationName(mcountry.group(1), self.date)
+				if not fscountry:
+					print mcountry.group(1)
+					raise unexception("unrecognized nation", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+				self.chairs.append((mpresseat.group(2), fscountry, "president"))
+
+				if fscountry in self.seccouncilmembers:
+					assert len(self.seccouncilmembers) == 1
+					assert fscountry == "New Zealand"
+					assert self.undocname == "S-PV-3370"
+					assert len(self.chairs) == 2
+					del self.chairs[0]
+					del self.seccouncilmembers[0]
+
+				self.seccouncilmembers.append(fscountry)
 				continue
 
-			mcountryseat = re.match("(<i>Members</i>:)?\s*([\w\s]*?) \.(?: \.)* ((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir) [^<>]*|absent)$", jtxlines[ih])
+			mcountryseat = re.match("(<i>Members(?:</i>:|:</i>))?\s*([\w\-\s]*?) \.(?: \.)* ((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir) [^<>]*|absent)$", jtxlines[ih])
 			if mcountryseat:
 				if mcountryseat.group(1):
-					assert len(self.chairs) == 1
+					assert len(self.chairs) in [1, 2]  # in case of second president
 				else:
 					assert len(self.chairs) > 1
-				self.chairs.append((mcountryseat.group(3), FixNationName(mcountryseat.group(2), self.date)))
+				fscountry = FixNationName(mcountryseat.group(2), self.date)
+				if not fscountry:
+					print mcountryseat.group(2)
+					raise unexception("unrecognized nation", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+				self.chairs.append((mcountryseat.group(3), fscountry, "member"))
+				if fscountry not in self.seccouncilmembers:
+					self.seccouncilmembers.append(fscountry)
 			else:
 				if re.search(" \. \. \. \. \. \. ", jtxlines[ih]):
 					print "--%s--" % jtxlines[ih]
@@ -308,12 +357,19 @@ class TextPage:
 				break
 			if re.match("This record contains the text of speeches delivered in English", jtxlines[ih]):
 				break
-			print "agagag", jtxlines[ih]
+			#print "agagag", jtxlines[ih]
 			assert not re.search("text of speeches|verbatim(?i)", jtxlines[ih])
 			self.agenda.append(jtxlines[ih].strip())
 			ih += 1
 
-		assert len(self.chairs) == 15
+		#print "ccccc", self.chairs
+		if len(self.chairs) not in (15, 17):
+			if self.undocname == "S-PV-3446":
+				return False
+			print len(self.chairs), "wrong number of chairs\n", self.chairs
+			raise unexception("wrongnumber on council", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+
+		assert len(self.seccouncilmembers) == 15
 		self.agenda = " ".join(self.agenda)
 		return True
 
@@ -337,11 +393,16 @@ class TextPage:
 			rightcolstart = 481
 		else:
 			rightcolstart = 468
-		if lundocname in ["A-54-PV.100", "A-54-PV.96", "A-54-PV.98", "A-54-PV.99"]:
+
+		if lundocname in ["A-54-PV.100", "A-54-PV.96", "A-54-PV.98", "A-54-PV.99", "S-PV-4143", "S-PV-4143-Resu.1"]:
 			rightcolstart = 468
-		if lundocname in ["A-54-PV.97"]:
+		elif lundocname in ["A-54-PV.97"]:
 			rightcolstart = 486
-		if self.bSecurityCouncil:
+		elif re.match("S-PV-335[0-8]", lundocname):
+			rightcolstart = 468
+		elif re.match("S-PV-334", lundocname):
+			rightcolstart = 468
+		elif self.bSecurityCouncil:
 			rightcolstart = 481
 			rightcolstartindentincrement = 1
 
@@ -402,29 +463,38 @@ class TextPage:
 				print "jjjj", pagenumtext
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 			if int(pagenumtext) != self.pageno:
-				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+				print pagenumtext, self.pageno
+				raise unexception("pagenum serror of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 
 		elif self.bSecurityCouncil:
 			bl0 = re.match("Security Council", txlines[0].ltext)
 			bl1 = re.match("\d+(?:th|st|nd|rd)? (?:\(Resumption(?: \d)?\) )?(?:meeting)?", txlines[1].ltext)
-			bl2 = re.match("\w+-\w+ [Yy]ear", txlines[2].ltext)
+			bl2 = re.match("(\w+-\w+|\w+) [Yy]ear", txlines[2].ltext)
 			bl3 = re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
 			if not bl0 or not bl1 or not bl2 or not bl3:
-				print txlines[0].ltext
-				print txlines[1].ltext
-				print txlines[2].ltext
-				print txlines[3].ltext
-				assert False
+				print "\nFirst four lines on page:", self.pageno
+				print bl0, txlines[0].ltext
+				print bl1, txlines[1].ltext
+				print bl2, txlines[2].ltext
+				print bl3, txlines[3].ltext
 
-			ih = 4;
+				assert self.undocname in ["S-PV-4143", "S-PV-4143-Resu.1"]
+				assert txlines[0].ltext in ["<b>S/PV.4143</b>", "<b>S/PV.4143 (Resumption 1)</b>"]
+				ih = 1
+			else:
+				ih = 4;
+
 			ie = len(txlines) - 1
 			pagenumtext = txlines[ie].ltext
 			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
 				ie -= 1
-			if not re.match("\d+$", pagenumtext):
+			mpagenumtext = re.match("(?:<b>)?(\d+)(?:</b>)?$", pagenumtext)
+			if not mpagenumtext:
 				print "jjjj", pagenumtext
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
-			if int(pagenumtext) != self.pageno:
+			pgoffset = int(mpagenumtext.group(1)) - self.pageno
+			if not (pgoffset == 0 or (self.undocname == "S-PV-3536-Resu.1" and pgoffset == 26) or (self.undocname == "S-PV-3454-Resu.2" and pgoffset == 56)):
+				print mpagenumtext.group(1), self.pageno
 				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 
 		else:
@@ -467,7 +537,7 @@ class TextPage:
 
 			else:
 				txl.indent = txl.left - rightcolstart
-				if txl.indent:
+				if txl.indent != 0:
 					txl.indent += rightcolstartindentincrement
 				if txl.indent < 0:
 					print txl.indent, txl.left, rightcolstart
@@ -484,64 +554,76 @@ class TextPage:
 
 
 # clusters are paragraphs after the lines have been clustered together
-def GlueUnfile(xfil, undocname):
-	xpages = StripPageTags(xfil)
-	if not xpages:
-		return None, None, None, None  # bitmap type encountered
-	txpages = [ ]
-	tlcall = [ ]
+class GlueUnfile:
+	def __init__(self, xfil, undocname):
+		self.sdate = None
+		self.chairs = None
+		self.agenda = None
+		self.tlcall = None
+		self.seccouncilmembers = None
+		self.bSecurityCouncil = re.match("S-PV-\d+", undocname)
+		self.bGeneralAssembly = re.match("A-\d+-PV", undocname)
 
-	for i in range(len(xpages)):
-		txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
-		if i == 0 and txpage.bSecurityCouncil == "ClosedSession":
-			print " -- closedsession"
-			return None, None, None, None  # closed session encountered
-		txpages.append(txpage)
-		if txpage.bSecurityCouncil and i == 0:
-			continue
+		xpages = StripPageTags(xfil, undocname)
+		if not xpages:
+			return  # bitmap type encountered
+		txpages = [ ]
+		self.tlcall = [ ]
 
-		if txpage.txlcol1:
-			AppendCluster(tlcall, txpage.txlcol1[0], "newpage")
-			for tlc in txpage.txlcol1[1:]:
-				AppendCluster(tlcall, tlc, "gapcluster")
-		else:
-			assert i == len(xpages) - 1  # only last page can have missing columns (sometimes it's the first)
+		for i in range(len(xpages)):
+			txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
+			if i == 0 and txpage.bSecurityCouncil == "ClosedSession":
+				print " -- closedsession"
+				self.tlcall = None
+				return  # closed session encountered
+			txpages.append(txpage)
+			if txpage.bSecurityCouncil and i == 0:
+				continue
 
-		# have had a case where the first column was the blank one
-		if txpage.txlcol2:
-			AppendCluster(tlcall, txpage.txlcol2[0], "newcolumn")
-			for tlc in txpage.txlcol2[1:]:
-				AppendCluster(tlcall, tlc, "gapcluster")
-		else:
-			assert i == len(xpages) - 1
+			if txpage.txlcol1:
+				AppendCluster(self.tlcall, txpage.txlcol1[0], "newpage")
+				for tlc in txpage.txlcol1[1:]:
+					AppendCluster(self.tlcall, tlc, "gapcluster")
+			else:
+				assert i == len(xpages) - 1  # only last page can have missing columns (sometimes it's the first)
 
-	# assign ids to the clusters
-	sdate = txpages[0].date
-	paranumlast = paranumC(undocname, sdate, 0, -1, tlc.txls[0].textcountnumber)
-	for tlc in tlcall:
-		if tlc.txls[0].pageno == paranumlast.pageno:
-			paranumlast = paranumC(undocname, sdate, paranumlast.pageno, paranumlast.paragraphno + 1, tlc.txls[0].textcountnumber)
-		else:
-			paranumlast = paranumC(undocname, sdate, tlc.txls[0].pageno, 1, tlc.txls[0].textcountnumber)
-		tlc.paranum = paranumlast
+			# have had a case where the first column was the blank one
+			if txpage.txlcol2:
+				AppendCluster(self.tlcall, txpage.txlcol2[0], "newcolumn")
+				for tlc in txpage.txlcol2[1:]:
+					AppendCluster(self.tlcall, tlc, "gapcluster")
+			else:
+				assert i == len(xpages) - 1
+
+		# assign ids to the clusters
+		self.sdate = txpages[0].date
+		paranumlast = paranumC(undocname, self.sdate, 0, -1, 0)
+		for tlc in self.tlcall:
+			if tlc.txls[0].pageno == paranumlast.pageno:
+				paranumlast = paranumC(undocname, self.sdate, paranumlast.pageno, paranumlast.paragraphno + 1, tlc.txls[0].textcountnumber)
+			else:
+				paranumlast = paranumC(undocname, self.sdate, tlc.txls[0].pageno, 1, tlc.txls[0].textcountnumber)
+			tlc.paranum = paranumlast
 
 
-	# merge the lines together and remove double bold/italics that happen across lines
-	for tlc in tlcall:
-		jparatext = [ ]  # don't insert spaces where there is a hyphen
-		for txl in tlc.txls:
-			if jparatext and not (re.search("\w-$", jparatext[-1]) and re.match("\w", txl.ltext)):
-				jparatext.append(" ")
-			jparatext.append(txl.ltext)
-		tlc.paratext = "".join(jparatext)
-		tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
-		tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
-		tlc.paratext = tlc.paratext.strip()
-		tlc.paratext = re.sub("^<b>(The(?: Acting)? Co-Chairperson) \(([^\)]*)\)\s*(?:</b>\s*:|:\s*</b>)", "<b>\\1</b> (\\2):", tlc.paratext)
-		tlc.lastindent = tlc.indents[-1][0]
+		# merge the lines together and remove double bold/italics that happen across lines
+		for tlc in self.tlcall:
+			jparatext = [ ]  # don't insert spaces where there is a hyphen
+			for txl in tlc.txls:
+				if jparatext and not (re.search("\w-$", jparatext[-1]) and re.match("\w", txl.ltext)):
+					jparatext.append(" ")
+				jparatext.append(txl.ltext)
+			tlc.paratext = "".join(jparatext)
+			tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
+			tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
+			tlc.paratext = tlc.paratext.strip()
+			tlc.paratext = re.sub("^<b>(The(?: Acting)? Co-Chairperson) \(([^\)]*)\)\s*(?:</b>\s*:|:\s*</b>)", "<b>\\1</b> (\\2):", tlc.paratext)
+			tlc.lastindent = tlc.indents[-1][0]
 
-	return sdate, txpages[0].chairs, txpages[0].agenda, tlcall
-
+		self.agenda = txpages[0].agenda
+		self.chairs = txpages[0].chairs
+		if self.bSecurityCouncil:
+			self.seccouncilmembers = txpages[0].seccouncilmembers
 
 
 

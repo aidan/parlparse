@@ -34,7 +34,8 @@ def SetCallScrape(lsCallScrape):
 reressplit = """(?x)(
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
 				S/\d+/\d+|
-				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+|
+				S/PRST/\d+/\d+|
+				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+(?:\s?[AB](?!\w))?|
 				(?:Security\sCouncil\s)?(?:resolution\s)?\d+\s\(\d\d\d\d\)|
 				</b>\s*<b>|
 				</i>\s*<i>
@@ -54,21 +55,26 @@ def MarkupLinks(paratext, paranum):
 	stext = re.split(reressplit, paratext)
 	res = [ ]
 	for st in stext:   # don't forget to change the splitting regexp above
-		mres = re.match("(?:General Assembly )?resolution (\d+)/(\d+)", st)
-		meres = re.match("Economic and Social Council resolution (\d+)/(\d+)", st)
+		mres = re.match("(?:General Assembly )?resolution (\d+)/(\d+)(?:\s*(\w))?", st)
+		meres = re.match("Economic and Social Council resolution (\d+)/(\d+)(?:\s*(\w))?", st)
 		mdoc = re.match("A/(\d+)/(\S*)", st)
 		mscdoc = re.match("S/(\d+)/(\d+)", st)
+		mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
 		msecres = re.match("(?:Security Council )?(?:resolution )?(\d+) \((\d\d\d\d)\)", st)
 		mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
 		if mres:
-			res.append(MakeCheckLink("A-RES-%s-%s" % (mres.group(1), mres.group(2)), st))
+			spart = (mres.group(3) and (".%s" % mres.group(3)) or "")
+			res.append(MakeCheckLink("A-RES-%s-%s%s" % (mres.group(1), mres.group(2), spart), st))
 		elif meres:
-			res.append(MakeCheckLink("E-RES-%s-%s" % (meres.group(1), meres.group(2)), st))
+			spart = (meres.group(3) and (".%s" % meres.group(3)) or "")
+			res.append(MakeCheckLink("E-RES-%s-%s%s" % (meres.group(1), meres.group(2), spart), st))
 		elif mdoc:
 			doccode = re.sub("/", "-", mdoc.group(2))
 			res.append(MakeCheckLink("A-%s-%s" % (mdoc.group(1), doccode), st))
 		elif mscdoc:
 			res.append(MakeCheckLink("S-%s-%s" % (mscdoc.group(1), mscdoc.group(2)), st))
+		elif mscprst:
+			res.append(MakeCheckLink("S-PRST-%s-%s" % (mscprst.group(1), mscprst.group(2)), st))
 		elif msecres:
 			if not (1945 < int(msecres.group(2)) < 2007):  # should use current document year
 				print st

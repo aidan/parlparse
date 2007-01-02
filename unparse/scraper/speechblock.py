@@ -1,7 +1,7 @@
 import re
 from unmisc import unexception, IsNotQuiet, MarkupLinks
 from voteblock import recvoterequest
-from nations import FixNationName, IsNonnation
+from nations import FixNationName, IsNonnation, IsPrenation
 
 
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
@@ -33,10 +33,10 @@ respekSS = None
 
 #<b>The President</b>  (<i>spoke in French</i>):
 respekp1 = """(?x)<b>(The\sPresident)\s*</b>
-			  (?:\s*\(([^\)<]*)\))?\s*
+			  (?:\s*\((?!interpretation|spoke)([^\)<]*)\))?\s*
 			  (dummy)?
 			  (dummy)?
-			  (?:\(<i>spoke\sin\s(\w+)
+			  (?:\(<i>(?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:.{0,60}?(?:by|the)\sdelegation)?</i>\))?
 			  \s*:\s*"""
 respekp2 = """(?x)<b>\s*(The\s(?:Acting\s)?President)\s*(?:</b>)?
@@ -47,7 +47,7 @@ respekp2 = """(?x)<b>\s*(The\s(?:Acting\s)?President)\s*(?:</b>)?
 			      (?:spoke\sin|interpretation\sfrom)\s(\w+)
 			  (?:\)|</i>|</?b>)+
 			  \s*(?:<[ib]>)?:\s*(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(.{0,20}?(?:President|King|Sultan|Secretary-General|Pope)[^<]{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:Mr\.|Ms\.|President|King|Sultan|Secretary-General|Pope)[^<]{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
 			  (dummy)?
 			  (dummy)?
 			  (dummy)?
@@ -75,7 +75,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	indentationerror = ""
 	if len(indents) == 1 and indents[0][0] == 0:
-		if not re.match("<b> ", ptext):  # often there is a speaker with a blank space at the front
+		if not re.match("<b> ", ptext) and not re.match("(?:\(|<i>)+spoke in", ptext):  # often there is a speaker with a blank space at the front
 			indentationerror = "unindented-paragraph"
 	if len(indents) > 2:
 		indentationerror = "too many different indents"
@@ -112,9 +112,13 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		assert not indentationerror
 		assert not re.match("<i>", ptext)
 		nation = ""
+		bIsNotnation = True
 		if mspek.group(2):
 			lnation = mspek.group(2)
-			nation = FixNationName(lnation, paranum.sdate)
+			nation = IsPrenation(lnation, paranum.sdate)
+			if not nation:
+				nation = FixNationName(lnation, paranum.sdate)
+				bIsNotnation = not nation
 			if not nation:
 				nation = IsNonnation(lnation, paranum.sdate)
 			if not nation:
@@ -124,7 +128,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 		assert mspek.group(1)
 		typ = "spoken"
-		currentspeaker = (mspek.group(1), nation, mspek.group(5) or "")
+		currentspeaker = (mspek.group(1), nation, (mspek.group(5) or ""), bIsNotnation) # name, nation, language
 		ptext = ptext[mspek.end(0):]
 		if re.search("</b>", ptext):
 			print ptext
@@ -143,7 +147,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			print ptext
 			raise unexception("improperly detected spoken text", paranum)
 
-		if re.match("<i>", ptext):
+		if re.match("\(?<i>", ptext):
 			mballots = re.search("Number of ballot papers", ptext)
 			if mballots:
 				#print "BALLOT:", ptext, "\n"
@@ -156,7 +160,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 			if not mballots:
 				mptext = re.match("<i>(.*?)</i>\.?\s*(?:\((?:resolutions?|decision|draft resolution) (A?[\d/]*\s*(?:\(?[A-Z,\s]*(?:and|to) [A-Z]\)?|[A-Z]{1,2})?)\))?\.?$", ptext)
-				if not mptext:
+				if not mptext and not re.match("\(<i>spoke in", ptext):
 					print "--%s--" % ptext
 					raise unexception("improper italicline", paranum)
 
@@ -168,7 +172,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed|was resumed) (?:at|on)", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
 			mretchair = re.match("(?:The President|.*?, Vice-President,|Mrs. Albright.*?) (?:returned to|in) the Chair.$", ptext)
-			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room))(?: by the President and the Secretary-General)?\.?$", ptext)
+			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room|Security Council Chamber))(?: by the President and the Secretary-General)?\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?,.*?acted as tellers\.$", ptext)
@@ -176,26 +180,30 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
 			mmiscnote = re.search("\[In the 79th plenary .*? III.\]$", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text
+			mmspokein = re.match("\(spoke in \w+(?:; interpretation.*?|; .*? the delegation)?\)$", ptext)
 
-			matinvite = re.match("(?:At the invitation of the President, )?.*? (?:took (?:a )?seats? at the Council table|took (?:the seats? reserved for \w+|a seat) at the side of the Council (?:[Cc]hamber|table)).$", ptext)
+			matinvite = re.match("(?:At the invitation of the President, )?.*? (?:took (?:a )?seats? at the Council table|took (?:(?:the )?(?:seat|place)s? reserved for \w+|a seat|a place|places) at the (?:side of the )?Council (?:[Cc]hamber|table)).$", ptext)
 			mscsilence = re.match("The members of the (?:Security )?Council observed a minute of silence.$", ptext)
-			mscescort = re.search("(?:were|was) escorted to (?:seats|a seat) at the Council table.$", ptext)
+			mscescort = re.search("(?:were|was) escorted to (?:seats|a seat|his place|a place) at the (?:Security )?Council table.$", ptext)
 			mvtape = re.match("A videotape was shown in the Council Chamber.$", ptext)
+			mvresuadjourned = re.match("The meeting was resumed and adjourned on.*? a\.m\.$", ptext)
 
 			if mmstar:
 				ptext = ptext[1:]
 
 			# first line is from general assembly.  Second line adds in some from security council
-			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote or \
-					matinvite or mscsilence or mscescort or mvtape):
+			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote or mmspokein or \
+					matinvite or mscsilence or mscescort or mvtape or mvresuadjourned):
 				print "unrecognized--%s--" % ptext
-				print re.match("(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the Chair\.$", ptext)
+				print re.match("At the invitations? of the (?:Acting )?", ptext)
 				raise unexception("unrecognized italicline", paranum)
 
 			# we can add subtypes to these italic-lines
 			typ = "italicline"
 			if mtookchair or mretchair:
 				typ = "italicline-tookchair"
+			if mmspokein:
+				typ = "italicline-spokein"
 			currentspeaker = None
 
 		elif re.match("<b>", ptext):
@@ -215,12 +223,12 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 
 def CleanupTags(ptext, typ, paranum):
-	assert typ in ["italicline", "italicline-tookchair", "boldline", "spoken"]
+	assert typ in ["italicline", "italicline-tookchair", "italicline-spokein", "boldline", "spoken"]
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext).strip()
 
 	# could have a special paragraph type for this
-	mspokein = re.match("<i>(\(spoke in \w+(?:\)|.*?delegation\)|President's Office\)))</i>$", ptext)
+	mspokein = re.match("\((spoke in \w+(.*?delegation|President's Office)?)\)$", ptext)
 	if mspokein:
 		stext = re.sub("<[ib/]*>", "", mspokein.group(1)).strip()
 		return "<i>%s</i>" % stext
@@ -249,6 +257,8 @@ class SpeechBlock:
 			return True
 		if re.match(".{0,40}?<i>.{0,40}?(?:resolution|decision|amendment).{0,60}?was adopted.{0,40}$", ptext):
 			return True
+		if re.match("(?:I see|If I hear|I hear) no objection.*?so decided", ptext):
+			return False
 		if not self.bSecurityCouncil and re.match(".{0,40}?(?:was|is) so decided.{0,40}?$", ptext):
 			return True
 		if re.match("<i>\s*The meeting (?:was called to order|rose|was suspended|was adjourned).{0,60}?$", ptext):
@@ -268,8 +278,8 @@ class SpeechBlock:
 		if re.match("<b>", ptext):
 			return True
 
-		if re.match("<i>\(spoke in \w+(?:\)|.*?delegation\))</i>$", ptext):
-			return False
+		if re.match("(?:<i>\(|\(<i>)spoke in \w+(?:.*?delegation)?(?:\)</i>|</i>\))$", ptext):
+			return True
 
 		# total italics
 		if re.match("<i>.*?</i>[\s\.\-]?$", ptext):
@@ -289,11 +299,11 @@ class SpeechBlock:
 		#self.gid = self.paranum.MakeGid()
 
 		tlc = self.tlcall[self.i]
-		#print tlc.indents, tlc.paratext
+		#print "\npppp", tlc.indents, tlc.paratext, tlc.txls
 		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
 		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum), self.paranum)
 		self.i += 1
-		if self.typ in ["italicline", "italicline-tookchair"]:
+		if self.typ in ["italicline", "italicline-tookchair", "italicline-spokein"]:
 			self.paragraphs = [ (None, ptext) ]
 			return
 
@@ -333,7 +343,10 @@ class SpeechBlock:
 			fout.write('<h3 class="speaker">')
 			fout.write(' <span class="name">%s</span>' % self.speaker[0])
 			if self.speaker[1]:
-				fout.write(' <span class="nation">%s</span>' % self.speaker[1])
+				if self.speaker[3]:
+					fout.write(' <span class="non-nation">%s</span>' % self.speaker[1])
+				else:
+					fout.write(' <span class="nation">%s</span>' % self.speaker[1])
 			if self.speaker[2]:
 				fout.write(' <span class="language">%s</span>' % self.speaker[2])
 			fout.write(' </h3>\n')

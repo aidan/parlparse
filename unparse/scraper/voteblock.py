@@ -80,6 +80,8 @@ class VoteBlock:
 				return [ ]
 			if self.undocname in ["A-55-PV.44"] and re.search("Against", votere) and re.match("<i>Abstaining", tlc.paratext):
 				return [ ]
+			if re.search("Against", votere) and re.match("<i>Abstaining:</i>", tlc.paratext):
+				return [ ]
 			print "failed with:", votere, tlc.paratext
 			raise unexception("votelist detectvote match", tlc.paranum)
 
@@ -120,7 +122,7 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83" ]
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ] 
 		self.motiontext = MarkupLinks(adtext, self.paranum)
 		self.i += 1
 
@@ -184,10 +186,10 @@ class VoteBlock:
 				nat = msubvote.group(1)
 				gnv[nat] = "%s/%s" % (gnv[nat], msubvote.group(2))
 				self.i += 1
-			else:
-				assert len(vlabsent) == 0
+			elif len(vlabsent) != 0:
+				assert self.undocname in ["S-PV-3412", "S-PV-3413", "S-PV-3407", "S-PV-3409"] # cases where Rwanda is absent
 
-	def __init__(self, tlcall, i, lundocname, lsdate, chairs):
+	def __init__(self, tlcall, i, lundocname, lsdate, seccouncilmembers):
 		self.tlcall = tlcall
 		self.i = i
 		self.sdate = lsdate
@@ -196,7 +198,7 @@ class VoteBlock:
 		self.bGeneralAssembly = re.match("A-\d+-PV", self.undocname)
 		assert self.bGeneralAssembly or self.bSecurityCouncil
 		if not self.bSecurityCouncil:
-			chairs = None
+			seccouncilmembers = None
 
 		self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
 
@@ -210,14 +212,16 @@ class VoteBlock:
 			self.i += 1
 
 		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90", "A-49-PV.90"]):
-			print tlcall[self.i - 1].paratext
+			print "--%s--" % tlcall[self.i - 1].paratext
+			if not re.match("<i>", tlcall[self.i - 1].paratext):
+				print "  --[should this line be italic?]"
 			print tlcall[self.i].paratext
 			raise unexception("requested vote not followed through", tlcall[self.i].paranum)
 
 		self.vlfavour = self.DetectVote("<i>In favour:?\s*</i>:?")
 		self.vlagainst = self.DetectVote("(?:<i>)?Against:?\s*(?:</i>)?:?")
 		self.vlabstain = self.DetectVote("(?:<i>)?Abstaining:?(?:</i>)?:?")
-		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate, self.paranum, chairs)
+		gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate, self.paranum, seccouncilmembers)
 		self.votecount = "favour=%d against=%d abstain=%d absent=%d" % (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain), len(self.vlabsent))
 		print "  ", self.votecount
 		if self.bGeneralAssembly:

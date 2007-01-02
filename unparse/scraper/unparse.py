@@ -7,22 +7,28 @@ from unglue import GlueUnfile
 from speechblock import SpeechBlock
 from voteblock import VoteBlock, recvoterequest
 
-
-def GroupParas(tlcall, undocname, sdate, chairs):
+def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
 	res = [ ]
 	i = 0
 	currentspeaker = None
 	while i < len(tlcall):
 		tlc = tlcall[i]
 		if re.match(recvoterequest, tlc.paratext):
-			lblock = VoteBlock(tlcall, i, undocname, sdate, chairs)
+			lblock = VoteBlock(tlcall, i, undocname, sdate, seccouncilmembers)
 			i = lblock.i
 
 		# non-voting line to be processed
 		else:
 			speakerbeforetookchair = ""
-			if (len(res) > 2) and (res[-1].typ == "italicline-tookchair") and (res[-2].typ == "spoken"):
+			if (len(res) > 2) and (res[-1].typ in ["italicline-tookchair", "italicline-spokein"]) and (res[-2].typ == "spoken"):
 				speakerbeforetookchair = res[-2].speaker
+				if res[-1].typ == "italicline-spokein":
+					assert len(res[-1].paragraphs) == 1
+					mspokein = re.search("spoke in (\w+)", res[-1].paragraphs[0][1])
+					if not mspokein:
+						print "unrecognized spokein", res[-1].paragraphs
+					print "converting spokein", speakerbeforetookchair[2], mspokein.group(1)
+					speakerbeforetookchair = (speakerbeforetookchair[0], speakerbeforetookchair[1], mspokein.group(1), speakerbeforetookchair[3])
 			lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
 			i = lblock.i
 
@@ -71,11 +77,11 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 				if lbeditparse:
 					lbeditparse = False
 					raise unexception("editparse", None)
-				sdate, chairs, agenda, tlcall = GlueUnfile(xfil, undocname)
-				if not tlcall:
+				glueunfile = GlueUnfile(xfil, undocname)
+				if not glueunfile.tlcall:
 					break   # happens when it's a bitmap type, or communique
-				print sdate#, chairs
-				gparas = GroupParas(tlcall, undocname, sdate, chairs)
+				print glueunfile.sdate#, chairs
+				gparas = GroupParas(glueunfile.tlcall, undocname, glueunfile.sdate, glueunfile.seccouncilmembers)
 			except unexception, ux:
 				assert not gparas
 				if ux.description != "editparse":
@@ -105,17 +111,24 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 		fout.write('<html>\n<head>\n')
 		fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
 		fout.write('</head>\n<body>\n')
-		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, sdate))
+		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, glueunfile.sdate))
 
-		if re.search("S-PV", undocname):
-			fout.write('<div class="boldline">%s</div>\n' % agenda)
+		if glueunfile.bSecurityCouncil:
+			fout.write('<div class="boldline-agenda">%s</div>\n' % glueunfile.agenda)
 			fout.write('<div class="council-attendees">\n')
-			for chair in chairs:
-				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span></p>\n' % (chair[0], chair[1]))
+			for chair in glueunfile.chairs:
+				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">%s</span></p>\n' % (chair[0], chair[1], chair[2]))
+			fout.write('</div>\n')
+
+		if glueunfile.bGeneralAssembly:
+			fout.write('<div class="assembly-chairs">\n')
+			for chair in glueunfile.chairs:
+				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">president</span></p>\n' % (chair[0], chair[1]))
 			fout.write('</div>\n')
 
 		for gpara in gparas:
 			gpara.writeblock(fout)
+
 		fout.write('</body>\n</html>\n')
 		fout.close()
 		if os.path.isfile(undochtml):
