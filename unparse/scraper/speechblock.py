@@ -80,7 +80,13 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 	if len(indents) > 2:
 		indentationerror = "too many different indents"
 	if len(indents) == 2 and indents[1][0] != 0:
-		indentationerror = "un-left-justified paragraph"
+		if (indents[0][1] == 1 and ptext[0] == '"' and indents[0][0] - indents[1][0] > 30):
+			# turn this into a blockquote
+			indents[0] = (indents[0][0], indents[0][1] + indents[1][1], indents[0][2] + indents[1][2])
+			del indents[1]
+			print "ququququq", indents
+		else:
+			indentationerror = "un-left-justified paragraph"
 
 	mspek = re.match(respekp1, ptext)
 	if not mspek:
@@ -324,7 +330,7 @@ class SpeechBlock:
 
 		# actual spoken section
 		assert self.typ == "spoken"
-		assert not tlc.lastindent or len(tlc.indents) == 1 # doesn't happen in first paragraph of speech
+		assert tlc.lastindent == 0 or len(tlc.indents) == 1 # doesn't happen in first paragraph of speech
 		self.paragraphs = [ ("p", ptext) ]
 		while self.i < len(self.tlcall):
 			tlc = self.tlcall[self.i]

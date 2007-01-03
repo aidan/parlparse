@@ -46,7 +46,8 @@ nationdates = {
 		"Colombia":			("1945-11-05", "9999-12-31"),
 		"Comoros":			("1975-11-12", "9999-12-31"),
 		"Congo":			("1960-09-20", "9999-12-31"),
-		"Democratic Republic of the Congo":("1960-09-20", "9999-12-31"), # should this be the same?
+		"Zaire":			("1960-09-20", "1997-05-17"), # name changed to "Democratic Republic of the Congo"
+		"Democratic Republic of the Congo":("1997-05-17", "9999-12-31"),
 		"Costa Rica":		("1945-11-02", "9999-12-31"),
 		"Cote d'Ivoire":	("1960-09-20", "9999-12-31"),
 		"Croatia":			("1992-05-22", "9999-12-31"),
