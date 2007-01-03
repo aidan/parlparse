@@ -25,7 +25,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		mspv = re.match("S-PV.(\d+)", undocname)
 		scdoc = re.match("S-(\d\d\d\d)-(\d+)$", undocname)
-		munknown = re.match("ECESA/1/Rev.1", undocname)
+		munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
 
 		if mares:
 			if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
