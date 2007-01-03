@@ -1,14 +1,26 @@
+
+body
+{
+	width:600px;
+}
 div.italicline
 {
-	text-decoration: italic;
-	color: green;
+ 	font-style: italic;
+ 	color: green;
 	text-align: center;
 	padding-bottom: 10px;
 }
 
 div.italicline-tookchair
 {
-	text-decoration: italic;
+ 	font-style: italic;
+	color: green;
+	text-align: center;
+	padding-bottom: 10px;
+}
+div.italicline-spokein
+{
+ 	font-style: italic;
 	color: green;
 	text-align: center;
 	padding-bottom: 10px;
@@ -22,6 +34,14 @@ div.boldline
 	color: purple;
 	line-height:2em;
 }
+div.boldline-agenda
+{
+	padding-left:10px;
+	font-weight: bold;
+	text-align: right;
+	color: purple;
+}
+
 div.recvote
 {
 	color: blue;
@@ -32,10 +52,28 @@ div.motiontext
 	font-weight: bold;
 }
 
-span.speaker
+h3.speaker
 {
 	font-weight: bold;
 	padding-top:10px;
+}
+span.nation
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:green;
+}
+span.non-nation
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:blue;
+}
+span.language
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:purple;
 }
 div.spokentext
 {
@@ -62,7 +100,16 @@ div.votelist
 {
 	font-size: 6
 }
-
+div.council-attendees
+{
+	text-align: right;
+	font-size: 12
+}
+div.assembly-chairs
+{
+	text-align: right;
+	font-size: 12
+}
 a.nolink
 {
 	color:gray;
