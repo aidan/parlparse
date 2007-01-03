@@ -32,10 +32,11 @@ def SetCallScrape(lsCallScrape):
 	sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
+				ECESA/1/Rev.1|
 				A/\d+/[\w\d\.]*?\d+(?:/(?:Add|Rev)\.\d+)?|
 				S/\d+/\d+|
 				S/PRST/\d+/\d+|
-				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+(?:\s?[AB](?!\w))?|
+				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?resolution\s\d+/\d+|
 				(?:Security\sCouncil\s)?(?:resolution\s)?\d+\s\(\d\d\d\d\)|
 				</b>\s*<b>|
 				</i>\s*<i>

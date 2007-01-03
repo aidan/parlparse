@@ -25,6 +25,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		mspv = re.match("S-PV.(\d+)", undocname)
 		scdoc = re.match("S-(\d\d\d\d)-(\d+)$", undocname)
+		munknown = re.match("ECESA/1/Rev.1", undocname)
 
 		if mares:
 			if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
@@ -52,6 +53,9 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 				return False
 			tail = re.sub("-", "/", mapv.group(3))
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
+		elif munknown:
+			print "Unknown undocname", undocname
+			return False
 		else:
 			print "Unrecognized undocname", undocname
 			assert False
