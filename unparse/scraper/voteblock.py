@@ -6,7 +6,7 @@ from unmisc import unexception, IsNotQuiet, MarkupLinks
 #	<blockquote><i>In favour:</i> Algeria, Andorra, Argentina, Armenia, Australia, Austria, Azerbaijan, Bahrain, Bangladesh, Belarus, Belgium, Brazil, Brunei Darussalam, Bulgaria, Burkina Faso, Cameroon, Canada, Cape Verde, Chad, Chile, Colombia, Costa Rica, Côte d'Ivoire, Cuba, Cyprus, Czech Republic, Denmark, Djibouti, Dominican Republic, Ecuador, Egypt, El Salvador, Estonia, Ethiopia, Finland, France, Georgia, Germany, Ghana, Greece, Guinea, Guinea-Bissau, Guyana, Hungary, Indonesia, Iran (Islamic Republic of), Ireland, Israel, Italy, Jamaica, Japan, Kazakhstan, Kuwait, Latvia, Libyan Arab Jamahiriya, Liechtenstein, Lithuania, Luxembourg, Malaysia, Maldives, Mali, Malta, Mauritius, Mexico, Micronesia (Federated States of), Monaco, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Netherlands, New Zealand, Nicaragua, Niger, Norway, Oman, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Republic of Korea, Republic of Moldova, Romania, San Marino, Saudi Arabia, Senegal, Singapore, Slovakia, Slovenia, South Africa, Spain, Sri Lanka, Sudan, Suriname, Swaziland, Sweden, Thailand, the former Yugoslav Republic of Macedonia, Togo, Tunisia, Turkey, Ukraine, United Arab Emirates, United Kingdom of Great Britain and Northern Ireland, United Republic of Tanzania, United States of America, Uruguay, Vanuatu, Venezuela, Yemen</blockquote>
 #	<blockquote><i>Against:</i> Democratic People's Republic of Korea</blockquote>
 #	<blockquote><i>Abstaining:</i> Bhutan, Botswana, China, India, Lao People's Democratic Republic, Pakistan, Syrian Arab Republic, Viet Nam</blockquote>
-recvoterequest = "(?:<i>)?A recorded vote has been requested|(?:<i>)?A recorded vote was taken|<i>In favour|<i>A vote was taken by (?:a )?show of hands"
+recvoterequest = "(?:<i>)?A recorded vote has been requested|(?:<i>)?A recorded vote was taken|<i>In favour|<i>A vote was taken\.</i>$|(?:<i>)?A vote was taken by (?:a )?show of hands"
 
 class VoteBlock:
 	# problem is overflowing paragraphs across pages, where double barrelled country names can get split
@@ -70,7 +70,7 @@ class VoteBlock:
 		votem = re.match(votere, tlc.paratext)
 		if not votem:
 			# missing abstain column case
-			bAftervote = re.match("<i>(?:The )?[Dd]raft|<b>The President|<i>Operative paragraph", tlc.paratext)
+			bAftervote = re.match("<i>(?:The )?[Dd]raft|<b>The President|<i>Operative paragraph|<i>.*?did not participate", tlc.paratext)
 			if bAftervote and re.search("Abstain", votere):
 				# and self.undocname in ["A-53-PV.81", "A-55-PV.103", "A-55-PV.83", "A-55-PV.86", "A-56-PV.105", "A-56-PV.68", "A-56-PV.82", "A-56-PV.86", "A-57-PV.57", "A-57-PV.66", "A-57-PV.77", "A-58-PV.55", "A-58-PV.72"]:
 				return [ ]
@@ -80,7 +80,7 @@ class VoteBlock:
 				return [ ]
 			if self.undocname in ["A-55-PV.44"] and re.search("Against", votere) and re.match("<i>Abstaining", tlc.paratext):
 				return [ ]
-			if re.search("Against", votere) and re.match("<i>Abstaining:</i>", tlc.paratext):
+			if re.search("Against", votere) and re.match("<i>Abstaining:?</i>", tlc.paratext):
 				return [ ]
 			print "failed with:", votere, tlc.paratext
 			raise unexception("votelist detectvote match", tlc.paranum)
@@ -122,8 +122,8 @@ class VoteBlock:
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ] 
-		self.motiontext = MarkupLinks(adtext, self.paranum)
+			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ]
+		self.motiontext = MarkupLinks(adtext, self.undocname, self.paranum)
 		self.i += 1
 
 	def DetectSubsequentVoteChange(self, gnv):
@@ -178,8 +178,12 @@ class VoteBlock:
 		mnotparticipate = re.match("(.*?)\s*did not participate in the voting.", adtext)
 		if mnotparticipate:
 			assert len(vlabsent) == 1
-			assert vlabsent[0] == mnotparticipate.group(1)
-			self.i += 1
+			if vlabsent[0] == mnotparticipate.group(1):
+				self.i += 1
+			else:
+				print "nonparcitipation name wrong", vlabsent[0], mnotparticipate.group(1)
+				#if self.undocname != "S-PV-4305":
+				raise unexception("mismatch nonparticipationvoting", self.tlcall[self.i].paranum)
 		else:
 			msubvote = re.match("\[Subsequently.*? (Jamaica) .*? voted? in (favour)", adtext)
 			if msubvote:
@@ -187,7 +191,8 @@ class VoteBlock:
 				gnv[nat] = "%s/%s" % (gnv[nat], msubvote.group(2))
 				self.i += 1
 			elif len(vlabsent) != 0:
-				assert self.undocname in ["S-PV-3412", "S-PV-3413", "S-PV-3407", "S-PV-3409"] # cases where Rwanda is absent
+				if self.undocname not in ["S-PV-3412", "S-PV-3413", "S-PV-3407", "S-PV-3409"]: # cases where Rwanda is absent
+					raise unexception("unaccounted nonparticipationvoting", self.tlcall[self.i].paranum)
 
 	def __init__(self, tlcall, i, lundocname, lsdate, seccouncilmembers):
 		self.tlcall = tlcall
@@ -208,7 +213,7 @@ class VoteBlock:
 			vtext = re.sub("</?i>", "", tlcall[self.i].paratext).strip()
 		if self.bGeneralAssembly and re.match("A recorded vote was taken\s*\.?$", vtext):
 			self.i += 1
-		if self.bSecurityCouncil and re.match("A vote was taken by (?:a )?show of hands.$", vtext):
+		if self.bSecurityCouncil and re.match("A vote was taken(?: by (?:a )?show of hands)?.$", vtext):
 			self.i += 1
 
 		if not (self.i != i or self.undocname in ["A-55-PV.86", "A-50-PV.90", "A-49-PV.90"]):

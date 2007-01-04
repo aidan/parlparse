@@ -29,7 +29,10 @@ def StripPageTags(xfil, undocname):
 
 	for i in range(1, len(xpages)):
 		mpageihead = re.match(pageibit, xpages[i])
-		assert int(mpageihead.group(1)) == i + 1
+		if int(mpageihead.group(1)) != i + 1:
+			#print mpageihead.group(1), i + 1, undocname
+			assert undocname in ["S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1"]
+
 		res.append(xpages[i][mpageihead.end(0):])
 	return res
 
@@ -95,10 +98,16 @@ class TextLineCluster:
 # work backwards looking for paragraph heads
 familiarvgaps = (0, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 45, 48, 53, 54, 55, 63, 72, 83)
 def AppendToCluster(txlcol, txl):
+
+	# frig the indentation on the most common mistakes
+	if re.match("<i>The meeting (?:was called|was suspended|rose at|was resumed)", txl.ltext) and (txl.indent == 0):
+		txl.indent = 31
+
 	if not txlcol:
 		txlcol.append(TextLineCluster(txl))
 		return
 	txl.vgap = txl.top - txlcol[-1].txls[-1].top
+
 	#print txlcol[-1].txls[-1].ltext
 	#print txl.vgap, txl.width, txl.height, txl.top,  txl.ltext  # zzzz
 
@@ -139,6 +148,7 @@ def AppendCluster(res, tlc, sclusttype):
 		if not re.match("<[ib]>", td1):
 			td1 = ""
 		bstylematches = (td0 == td1)
+		#assert not (bbothindented and not bstylematches)
 
 		# likely continuation of paragraph
 		if bbothindented and bstylematches:
@@ -197,10 +207,10 @@ def AppendCluster(res, tlc, sclusttype):
 class TextPage:
 	def ExtractDateTime(self, ltext):
 		# extract the date out if poss
-		mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)\.?(\d*)(?: ([ap])\.?m\.?| noon)?(?: \(closed\))?$", ltext)
+		mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?$", ltext)
 		if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
-			if re.search("Thursday", ltext):
-				print ltext
+			if re.search("Friday", ltext):
+				print ltext, re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?", ltext)
 			return
 		#print txlines[ih].ltext
 		iday = int(mdate.group(1))
@@ -286,12 +296,14 @@ class TextPage:
 		ih = 0
 		while ih < len(jtxlines):
 			self.ExtractDateTime(jtxlines[ih])
-			mpresseat = re.match("<i>(President|later)(?:</i>:|:</i>)\s*((?:Mr.|Mrs.|Ms.|Sir|Miss) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
+			mpresseat = re.match("<i>(President|Chairman|later)(?:</i>:|:\s*</i>)\s*((?:Mr.|Mrs.|Ms.|Sir|Miss|Baroness) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
 			#print jtxlines[ih], mpresseat
 			if mpresseat:
 				if not self.date:
-					raise unexception("missing date", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
-				if mpresseat.group(1) == "President":
+					for i in range(ih):
+						print jtxlines[i]
+					raise unexception("missingg date", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+				if mpresseat.group(1) in ["President", "Chairman"]:
 					assert len(self.chairs) == 0   # first one
 				else:
 					assert len(self.chairs) == 1   # later president
@@ -304,10 +316,11 @@ class TextPage:
 					scountry = "%s %s" % (scountry, jtxlines[ih])
 					ih += 1
 				mcountry = re.match("\((.*?)\)$", scountry)
-				fscountry = FixNationName(mcountry.group(1), self.date)
+				lfscountry = re.sub("\s+", " ", mcountry.group(1))
+				fscountry = FixNationName(lfscountry, self.date)
 				if not fscountry:
-					print mcountry.group(1)
-					raise unexception("unrecognized nation", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+					print "--%s--" % mcountry.group(1)
+					raise unexception("unrecognized nationA", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				self.chairs.append((mpresseat.group(2), fscountry, "president"))
 
 				if fscountry in self.seccouncilmembers:
@@ -321,16 +334,19 @@ class TextPage:
 				self.seccouncilmembers.append(fscountry)
 				continue
 
-			mcountryseat = re.match("(<i>Members(?:</i>:|:</i>))?\s*([\w\-\s]*?) \.(?: \.)* ((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir) [^<>]*|absent)$", jtxlines[ih])
+			mcountryseat = re.match("(<i>Members(?:</i>:|:\s*</i>))?\s*([\w\-\s]*?)\s*\.(?: \.)*\s*((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir|Sheikh|Baroness) [^<>]*|absent)$", jtxlines[ih])
 			if mcountryseat:
 				if mcountryseat.group(1):
-					assert len(self.chairs) in [1, 2]  # in case of second president
+					if len(self.chairs) not in [1, 2]:  # in case of second president
+						print self.chairs, "chchchch"
+						raise unexception("chairs not thereB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				else:
 					assert len(self.chairs) > 1
-				fscountry = FixNationName(mcountryseat.group(2), self.date)
+				lfscountry = re.sub("\s+", " ", mcountryseat.group(2))
+				fscountry = FixNationName(lfscountry, self.date)
 				if not fscountry:
-					print mcountryseat.group(2)
-					raise unexception("unrecognized nation", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+					print "--%s--" % mcountryseat.group(2)
+					raise unexception("unrecognized nationB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				self.chairs.append((mcountryseat.group(3), fscountry, "member"))
 				if fscountry not in self.seccouncilmembers:
 					self.seccouncilmembers.append(fscountry)
@@ -346,7 +362,7 @@ class TextPage:
 		# could be a closed meeting
 		if not self.date:
 			alltext = " ".join(jtxlines)
-			if re.search("OFFICIAL COMMUNIQU..*?Held in private in the Security Council Chamber at Headquarters", alltext):
+			if re.search("OFFICIAL COMMUNIQU..*?Held in private (?:in the Security Council Chamber )?at Headquarters(?i)", alltext):
 				return False
 			return True
 
@@ -401,6 +417,14 @@ class TextPage:
 		elif re.match("S-PV-335[0-8]", lundocname):
 			rightcolstart = 468
 		elif re.match("S-PV-334", lundocname):
+			rightcolstart = 468
+		elif re.match("S-PV-414[4-9]", lundocname):
+			rightcolstart = 468
+		elif re.match("S-PV-41[5-9]", lundocname):
+			rightcolstart = 468
+		elif re.match("S-PV-4[2-9]", lundocname):
+			rightcolstart = 468
+		elif re.match("S-PV-5", lundocname):
 			rightcolstart = 468
 		elif self.bSecurityCouncil:
 			rightcolstart = 481
@@ -460,40 +484,47 @@ class TextPage:
 			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
 				ie -= 1
 			if not re.match("\d+$", pagenumtext):
-				print "jjjj", pagenumtext
+				print "jjjj", pagenumtext, txlines[ie].ltext
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 			if int(pagenumtext) != self.pageno:
 				print pagenumtext, self.pageno
 				raise unexception("pagenum serror of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 
 		elif self.bSecurityCouncil:
-			bl0 = re.match("Security Council", txlines[0].ltext)
-			bl1 = re.match("\d+(?:th|st|nd|rd)? (?:\(Resumption(?: \d)?\) )?(?:meeting)?", txlines[1].ltext)
-			bl2 = re.match("(\w+-\w+|\w+) [Yy]ear", txlines[2].ltext)
-			bl3 = re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
-			if not bl0 or not bl1 or not bl2 or not bl3:
+			#if len(txlines) < 4:
+			#	raise unexception("intro too short", paranumC(self.undocname, None, 0, -1, txlines[0].textcountnumber))
+
+			bl0 = len(txlines) > 4 and re.match("Security Council", txlines[0].ltext)
+			bl1 = len(txlines) > 4 and re.match("\d+(?:th|st|nd|rd)? (?:\(Resumption(?: \d)?\) )?(?:meeting)?", txlines[1].ltext)
+			bl2 = len(txlines) > 4 and re.match("(\w+-\w+|\w+) [Yy]ear", txlines[2].ltext)
+			bl3 = len(txlines) > 4 and re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
+
+			bl4 = re.match("<b>S/PV.\d+\s*(?:\(Resumption [\d|I]\)|\(Part [I]+\))?</b>", txlines[0].ltext)
+			bl4r = self.undocname >= "S-PV-4143"
+
+			if bl4 and bl4r:
+				ih = 1
+			elif bl0 and bl1 and bl2 and bl3:
+				ih = 4;
+			else:
 				print "\nFirst four lines on page:", self.pageno
 				print bl0, txlines[0].ltext
 				print bl1, txlines[1].ltext
 				print bl2, txlines[2].ltext
 				print bl3, txlines[3].ltext
-
-				assert self.undocname in ["S-PV-4143", "S-PV-4143-Resu.1"]
-				assert txlines[0].ltext in ["<b>S/PV.4143</b>", "<b>S/PV.4143 (Resumption 1)</b>"]
-				ih = 1
-			else:
-				ih = 4;
+				print bl4, bl4r
+				raise unexception("bad page header", paranumC(self.undocname, None, 0, -1, txlines[0].textcountnumber))
 
 			ie = len(txlines) - 1
 			pagenumtext = txlines[ie].ltext
 			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
 				ie -= 1
-			mpagenumtext = re.match("(?:<b>)?(\d+)(?:</b>)?$", pagenumtext)
+			mpagenumtext = re.match("(?:<b>)?(\d+)\s*(?:</b>)?$", pagenumtext)
 			if not mpagenumtext:
-				print "jjjj", pagenumtext
+				print "jkjk", pagenumtext
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 			pgoffset = int(mpagenumtext.group(1)) - self.pageno
-			if not (pgoffset == 0 or (self.undocname == "S-PV-3536-Resu.1" and pgoffset == 26) or (self.undocname == "S-PV-3454-Resu.2" and pgoffset == 56)):
+			if pgoffset != 0 and (self.undocname, pgoffset) not in [("S-PV-3536-Resu.1", 26), ("S-PV-3454-Resu.2", 56), ("S-PV-3454-Resu.2", 56), ("S-PV-4684-Resu.1", 2), ("S-PV-4999", 1), ("S-PV-4999-Resu.1", 1)]:
 				print mpagenumtext.group(1), self.pageno
 				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 

@@ -9,8 +9,8 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
 			(?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
 			(?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
 				(.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
-			(?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s|Advisory\s|Trust\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
-			(?:.{0,150}situation\sin\sAngola)?
+			(?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s|Advisory\s|Trust\s|sanctions\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
+			(?:.{0,150}(?:situation\sin\sAngola|\(1999\)))?
 			(?:\s*(?:\(|<i>)+
 				(?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
 				(?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
@@ -73,6 +73,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		#print tlcall[i - 1].paratext
 		assert False
 
+	if re.match("(?:The agenda was adopted\.|A vote was taken by show of hands\.)$", ptext):
+		print "italicizingline", len(indents), ptext
+		ptext = "<i>%s</i>" % ptext
+
 	indentationerror = ""
 	if len(indents) == 1 and indents[0][0] == 0:
 		if not re.match("<b> ", ptext) and not re.match("(?:\(|<i>)+spoke in", ptext):  # often there is a speaker with a blank space at the front
@@ -87,6 +91,12 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			print "ququququq", indents
 		else:
 			indentationerror = "un-left-justified paragraph"
+
+	mfixchinaspek = re.match("<b>(Mr\. \w+)\s*</b>\s*([\w\-]+)\s*\((?:China|Republic of Korea)\)", ptext)
+	if mfixchinaspek:
+		#print "fixing chinaspeak", ptext, "\n"
+		ptext = "<b>%s %s</b> %s" % (mfixchinaspek.group(1), mfixchinaspek.group(2), ptext[mfixchinaspek.end(2):])
+		#print ptext
 
 	mspek = re.match(respekp1, ptext)
 	if not mspek:
@@ -130,7 +140,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			if not nation:
 				print ptext
 				print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
-				raise unexception("unrecognized nation or nonnation", paranum)
+				raise unexception("unrecognized nationC or nonnation", paranum)
 
 		assert mspek.group(1)
 		typ = "spoken"
@@ -177,10 +187,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mwasadopted = re.match(".*?(?:resolution|decision|agenda|amendment|recommendation).*?(?:was|were) adopted(?i)", ptext)
 			mcalledorder = re.match("The meeting (?:was called to order|rose|was suspended|was adjourned|resumed|was resumed) (?:at|on)", ptext)
 			mtookchair = re.match("\s*(?:In the absence of the President, )?(.*?)(?:, \(?Vice[\-\s]President\)?,)? (?:took|in) the [Cc]hair\.?$", ptext)
-			mretchair = re.match("(?:The President|.*?, Vice-President,|Mrs. Albright.*?) (?:returned to|in) the Chair.$", ptext)
+			mretchair = re.match("(?:The President|.*?, Vice-President,|Mrs. Albright.*?|Baroness Amos) (?:returned to|in) the Chair.$", ptext)
 			mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room|Security Council Chamber))(?: by the President and the Secretary-General)?\.?$", ptext)
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
-			mminsil = re.search("The members of the General Assembly observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
+			mminsil = re.search("The (?:members of the General Assembly|Council) observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?,.*?acted as tellers\.$", ptext)
 			melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
 			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
@@ -188,10 +198,11 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			mmstar = re.match("\*", ptext)  # insert * in the text
 			mmspokein = re.match("\(spoke in \w+(?:; interpretation.*?|; .*? the delegation)?\)$", ptext)
 
-			matinvite = re.match("(?:At the invitation of the President, )?.*? (?:took (?:a )?seats? at the Council table|took (?:(?:the )?(?:seat|place)s? reserved for \w+|a seat|a place|places) at the (?:side of the )?Council (?:[Cc]hamber|table)).$", ptext)
+			matinvite = re.match("(?:At the invitation of the President, )?.*? (?:(?:took (?:a |the )?|were escorted to their )seats? at the Council table|took (?:(?:the |a |their )?(?:seat|place)s? reserved for \w+|a seat|a place|places|seats) at the (?:side of the )?Council (?:[Cc]hamber|table))(?:;.*?Chamber)?\.$", ptext)
 			mscsilence = re.match("The members of the (?:Security )?Council observed a minute of silence.$", ptext)
 			mscescort = re.search("(?:were|was) escorted to (?:seats|a seat|his place|a place) at the (?:Security )?Council table.$", ptext)
-			mvtape = re.match("A videotape was shown in the Council Chamber.$", ptext)
+			mvtape = re.match("A video ?tape was (?:shown|played) in the Council Chamber.$|An audio tape, in Arabic,", ptext)
+			mvprojscreen = re.match("(?:An image was|Two images were|A video was) projected on screen\.$", ptext)
 			mvresuadjourned = re.match("The meeting was resumed and adjourned on.*? a\.m\.$", ptext)
 
 			if mmstar:
@@ -199,7 +210,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 			# first line is from general assembly.  Second line adds in some from security council
 			if not (msodecided or mwasadopted or mcalledorder or mtookchair or mretchair or mballots or mescort or msecball or mminsil or mtellers or mmisc or melected or mmstar or mmiscnote or mmspokein or \
-					matinvite or mscsilence or mscescort or mvtape or mvresuadjourned):
+					mvprojscreen or matinvite or mscsilence or mscescort or mvtape or mvresuadjourned):
 				print "unrecognized--%s--" % ptext
 				print re.match("At the invitations? of the (?:Acting )?", ptext)
 				raise unexception("unrecognized italicline", paranum)
@@ -271,6 +282,8 @@ class SpeechBlock:
 			return True
 		if re.match("<i>A vote was taken", ptext):
 			return True
+		if re.match("A vote was taken by show of hands\.$", ptext):
+			return True
 		if re.match("<i>.*?was escorted", ptext):
 			return True
 		if re.match("<i>.*?(?:took|returned to) the [Cc]hair", ptext):
@@ -307,7 +320,7 @@ class SpeechBlock:
 		tlc = self.tlcall[self.i]
 		#print "\npppp", tlc.indents, tlc.paratext, tlc.txls
 		ptext, self.typ, self.speaker = DetectSpeaker(tlc.paratext, tlc.indents, self.paranum, speakerbeforetookchair)
-		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum), self.paranum)
+		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum), self.undocname, self.paranum)
 		self.i += 1
 		if self.typ in ["italicline", "italicline-tookchair", "italicline-spokein"]:
 			self.paragraphs = [ (None, ptext) ]
@@ -323,7 +336,7 @@ class SpeechBlock:
 				tlc = self.tlcall[self.i]
 				if not re.match(reboldline, tlc.paratext):
 					break
-				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.paranum)
+				ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.undocname, self.paranum)
 				self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
 				self.i += 1
 			return
@@ -336,7 +349,7 @@ class SpeechBlock:
 			tlc = self.tlcall[self.i]
 			if self.DetectEndSpeech(tlc.paratext, tlc.lastindent, self.sdate):
 				break
-			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.paranum)
+			ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.undocname, self.paranum)
 			bIndent = (len(tlc.indents) == 1) and (tlc.indents[0][0] != 0) and (tlc.indents[0][1] > 1)
 			self.paragraphs.append(((bIndent and "blockquote" or "p"), ptext))
 			self.i += 1

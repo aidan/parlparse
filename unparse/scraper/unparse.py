@@ -27,7 +27,7 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
 					mspokein = re.search("spoke in (\w+)", res[-1].paragraphs[0][1])
 					if not mspokein:
 						print "unrecognized spokein", res[-1].paragraphs
-					print "converting spokein", speakerbeforetookchair[2], mspokein.group(1)
+					#print "converting spokein", speakerbeforetookchair[2], mspokein.group(1)
 					speakerbeforetookchair = (speakerbeforetookchair[0], speakerbeforetookchair[1], mspokein.group(1), speakerbeforetookchair[3])
 			lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
 			i = lblock.i

@@ -10,6 +10,8 @@ from unmisc import unexception, IsNotQuiet, pdfdir
 
 docindex = "http://www.un.org/documents/"
 
+
+
 def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None):
 	pdfname = undocname + ".pdf"
 	pdffile = os.path.join(pdfdir, pdfname)
