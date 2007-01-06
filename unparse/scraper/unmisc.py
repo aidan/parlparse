@@ -1,5 +1,6 @@
 import re
 import os
+import datetime
 
 class unexception(Exception):
 	def __init__(self, description, lparanum):
@@ -40,7 +41,7 @@ reressplit = """(?x)(
 				(?:[Dd]ocument\s)?S/\d+/\d+|
 				S/PRST/\d+/\d+|
 				S/PV\.\d+|
-				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolution\s\d+/\d+|
+				(?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/\d+|
 				(?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?\d+\s\(\d\d\d\d\)|
 				Corr.\d|
 				</b>\s*<b>|
@@ -175,4 +176,38 @@ class paranumC:
 
 	def MakeGid(self):
 		return "doc%s-pg%03d-bk%02d" % (self.undocnamegid, int(self.pageno), self.blockno)
+
+accessdate = datetime.date.today().isoformat()
+def LinkTemplate(undocname, docdate, gid):
+	mgid = re.search("pg(\d+)-bk(\d+)(?:-pa(\d+))?", gid)
+	page = int(mgid.group(1))
+	block = int(mgid.group(2))
+	para = int(mgid.group(3) or "-1")
+
+	wikidocdate = docdate and docdate.strftime("[[%d %B]] [[%Y]]")
+	bdocdate = docdate and docdate.strftime("%d %B, %Y")
+
+	mares = re.match("A-RES-(\d+)-(\d+)$", undocname)
+	meres = re.match("E-RES-(\d\d\d\d)-(\d+)$", undocname)  # don't know what the code is
+	madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-]*)$", undocname)
+	msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
+	mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
+	mspv = re.match("S-PV.(\d+)", undocname)
+	scdoc = re.match("S-(\d\d\d\d)-(\d+)$", undocname)
+	munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
+
+	wikiref, blogref = "", ""
+	if mares:
+		wikiref = "<ref>{{UNdoc|body=A|doctype=RES|session=%s|code=%s|accessdate=%s}}</ref>" % (mares.group(1), mares.group(2), accessdate)
+		blogref = '<a href="http://www.undemocracy.org/pdfdoc/%s#%s">General Assembly resolution %s/%s on %s</a>' % (undocname, gid, mares.group(1), mares.group(2), bdocdate)
+
+	elif mapv:
+		wikiref = "<ref>{{UNdoc|body=A|doctype=PV|session=%s|plenary=%s|date=[[%s]] [[%s]]|accessdate=%s}}</ref>"
+		blogref = '<a href="http://www.undemocracy.org/pdfdoc/%s#%s">General Assembly session %s meeting %s on %s, page %s</a>"
+
+	else:
+		wikiref = ""
+		blogref = ""
+
+	return wikiref, blogref
 

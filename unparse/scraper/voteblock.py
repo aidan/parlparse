@@ -70,7 +70,7 @@ class VoteBlock:
 		votem = re.match(votere, tlc.paratext)
 		if not votem:
 			# missing abstain column case
-			bAftervote = re.match("<i>(?:The )?[Dd]raft|<b>The President|<i>Operative paragraph|<i>.*?did not participate", tlc.paratext)
+			bAftervote = re.match("<i>(?:The )?[Dd]raft|<b>\s*The President|<i>Operative paragraph|<i>.*?did not participate", tlc.paratext)
 			if bAftervote and re.search("Abstain", votere):
 				# and self.undocname in ["A-53-PV.81", "A-55-PV.103", "A-55-PV.83", "A-55-PV.86", "A-56-PV.105", "A-56-PV.68", "A-56-PV.82", "A-56-PV.86", "A-57-PV.57", "A-57-PV.66", "A-57-PV.77", "A-58-PV.55", "A-58-PV.72"]:
 				return [ ]

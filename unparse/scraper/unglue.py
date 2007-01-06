@@ -9,6 +9,7 @@ pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+misnumberedpages = ["S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1", "S-PV-5016", "S-PV-5086", "S-PV-5199", "S-PV-5328", "S-PV-5453", "S-PV-5594"]
 def StripPageTags(xfil, undocname):
 	xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
@@ -30,8 +31,10 @@ def StripPageTags(xfil, undocname):
 	for i in range(1, len(xpages)):
 		mpageihead = re.match(pageibit, xpages[i])
 		if int(mpageihead.group(1)) != i + 1:
-			#print mpageihead.group(1), i + 1, undocname
-			assert undocname in ["S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1"]
+			if undocname not in misnumberedpages:
+				print "misnumberedpages", mpageihead.group(1), i + 1, undocname, "not in list:", misnumberedpages
+				assert False
+
 
 		res.append(xpages[i][mpageihead.end(0):])
 	return res
@@ -54,7 +57,8 @@ class TextLine:
 		self.textcountnumber = textcountnumber
 		self.ltext = mxline.group(6).strip()
 
-		if re.match("<[ib]>\s*</[ib]>$", self.ltext):
+		self.ltext = re.sub("<i>\s*</i>|<b>\s*</b>", " ", self.ltext)
+		if re.match("<[ib]>\s*</[ib]>|\s*$", self.ltext):
 			self.ltext = ""
 
 		# will be removed
@@ -117,6 +121,9 @@ def AppendToCluster(txlcol, txl):
 			txl.vgap = 18
 		if txl.vgap == 42:
 			txl.vgap = 43
+	if txl.undocname == "S-PV-5584":
+		if txl.vgap == 20:
+			txl.vgap = 19
 
 	if not txl.vgap in familiarvgaps:
 		print "\n\n   vgap=", txl.vgap, "\n\nwidth/height/top", txl.width, txl.height, txl.top,  txl.ltext  # zzzz
@@ -207,7 +214,7 @@ def AppendCluster(res, tlc, sclusttype):
 class TextPage:
 	def ExtractDateTime(self, ltext):
 		# extract the date out if poss
-		mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?$", ltext)
+		mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?\s*m\.?| noon\.?)?(?: \(closed\))?$", ltext)
 		if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
 			if re.search("Friday", ltext):
 				print ltext, re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?", ltext)
@@ -296,7 +303,7 @@ class TextPage:
 		ih = 0
 		while ih < len(jtxlines):
 			self.ExtractDateTime(jtxlines[ih])
-			mpresseat = re.match("<i>(President|Chairman|later)(?:</i>:|:\s*</i>)\s*((?:Mr.|Mrs.|Ms.|Sir|Miss|Baroness) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
+			mpresseat = re.match("<i>(President|Chairman|later)(?:</i>:|:\s*</i>)\s*((?:Mr.|Mrs.|Ms.|Sir\.?|Miss|Sheikh|Baroness|Lord|Nana) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
 			#print jtxlines[ih], mpresseat
 			if mpresseat:
 				if not self.date:
@@ -334,7 +341,7 @@ class TextPage:
 				self.seccouncilmembers.append(fscountry)
 				continue
 
-			mcountryseat = re.match("(<i>Members(?:</i>:|:\s*</i>))?\s*([\w\-\s]*?)\s*\.(?: \.)*\s*((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir|Sheikh|Baroness) [^<>]*|absent)$", jtxlines[ih])
+			mcountryseat = re.match("(<i>Members(?:</i>:|:\s*</i>))?\s*([\w\-\s]*?)\s*\.(?: \.)*\s*((?:Mr.|Ms.|Mrs.|Miss|Dr.|Sir\.?|Sheikh|Baroness|Lord|Nana) [^<>]*|absent)$", jtxlines[ih])
 			if mcountryseat:
 				if mcountryseat.group(1):
 					if len(self.chairs) not in [1, 2]:  # in case of second president
@@ -350,6 +357,8 @@ class TextPage:
 				self.chairs.append((mcountryseat.group(3), fscountry, "member"))
 				if fscountry not in self.seccouncilmembers:
 					self.seccouncilmembers.append(fscountry)
+				else:
+					print "Repeat-country on council", fscountry
 			else:
 				if re.search(" \. \. \. \. \. \. ", jtxlines[ih]):
 					print "--%s--" % jtxlines[ih]
@@ -379,13 +388,13 @@ class TextPage:
 			ih += 1
 
 		#print "ccccc", self.chairs
-		if len(self.chairs) not in (15, 17):
+		if len(self.chairs) not in (15, 17) or len(self.seccouncilmembers) != 15:
 			if self.undocname == "S-PV-3446":
 				return False
-			print len(self.chairs), "wrong number of chairs\n", self.chairs
+			print len(self.seccouncilmembers), len(self.chairs), "wrong number of members or chairs\n", self.chairs
+			print self.seccouncilmembers
 			raise unexception("wrongnumber on council", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 
-		assert len(self.seccouncilmembers) == 15
 		self.agenda = " ".join(self.agenda)
 		return True
 
@@ -393,7 +402,8 @@ class TextPage:
 		self.pageno = lpageno
 		self.undocname = lundocname
 		self.textcountnumber = textcountnumber
-		self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+		self.bSecurityCouncil = re.match("S-PV-(\d+)", self.undocname)
+		self.nSecurityCouncilSession = self.bSecurityCouncil and int(self.bSecurityCouncil.group(1)) or 0
 		self.bGeneralAssembly = re.match("A-\d+-PV", self.undocname)
 		assert self.bSecurityCouncil or self.bGeneralAssembly
 
@@ -418,14 +428,18 @@ class TextPage:
 			rightcolstart = 468
 		elif re.match("S-PV-334", lundocname):
 			rightcolstart = 468
-		elif re.match("S-PV-414[4-9]", lundocname):
+		elif self.nSecurityCouncilSession >= 4144:
 			rightcolstart = 468
-		elif re.match("S-PV-41[5-9]", lundocname):
-			rightcolstart = 468
-		elif re.match("S-PV-4[2-9]", lundocname):
-			rightcolstart = 468
-		elif re.match("S-PV-5", lundocname):
-			rightcolstart = 468
+
+		#re.match("S-PV-414[4-9]", lundocname):
+		#	rightcolstart = 468
+		#elif re.match("S-PV-41[5-9]", lundocname):
+		#	rightcolstart = 468
+		#elif re.match("S-PV-4[2-9]", lundocname):
+		#	rightcolstart = 468
+		#elif re.match("S-PV-5", lundocname):
+		#	rightcolstart = 468
+
 		elif self.bSecurityCouncil:
 			rightcolstart = 481
 			rightcolstartindentincrement = 1
@@ -499,7 +513,7 @@ class TextPage:
 			bl2 = len(txlines) > 4 and re.match("(\w+-\w+|\w+) [Yy]ear", txlines[2].ltext)
 			bl3 = len(txlines) > 4 and re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
 
-			bl4 = re.match("<b>S/PV.\d+\s*(?:\(Resumption [\d|I]\)|\(Part [I]+\))?</b>", txlines[0].ltext)
+			bl4 = re.match("<b>S/PV.\d+\s*(?:\(Resumption [\d|I]\)|\(Part [I]+\))?\s*</b>", txlines[0].ltext)
 			bl4r = self.undocname >= "S-PV-4143"
 
 			if bl4 and bl4r:
@@ -516,17 +530,19 @@ class TextPage:
 				raise unexception("bad page header", paranumC(self.undocname, None, 0, -1, txlines[0].textcountnumber))
 
 			ie = len(txlines) - 1
-			pagenumtext = txlines[ie].ltext
-			if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
+			if re.match("\d\d\-\d\d\d\d\d", txlines[ie].ltext):
 				ie -= 1
+			pagenumtext = txlines[ie].ltext
 			mpagenumtext = re.match("(?:<b>)?(\d+)\s*(?:</b>)?$", pagenumtext)
 			if not mpagenumtext:
 				print "jkjk", pagenumtext
 				raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 			pgoffset = int(mpagenumtext.group(1)) - self.pageno
-			if pgoffset != 0 and (self.undocname, pgoffset) not in [("S-PV-3536-Resu.1", 26), ("S-PV-3454-Resu.2", 56), ("S-PV-3454-Resu.2", 56), ("S-PV-4684-Resu.1", 2), ("S-PV-4999", 1), ("S-PV-4999-Resu.1", 1)]:
-				print mpagenumtext.group(1), self.pageno
-				raise unexception("pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+			if pgoffset != 0 and self.undocname not in misnumberedpages:
+				print "pagenum-offset not in list", self.undocname, mpagenumtext.group(1), self.pageno
+				raise unexception("page pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
+			if re.match("\d\d-\d\d\d\d\d$", txlines[ie - 1].ltext):
+				ie -= 1
 
 		else:
 			assert False

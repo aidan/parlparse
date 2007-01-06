@@ -4,12 +4,11 @@ import sys
 from unmisc import pdfdir, pdfxmldir, htmldir
 
 searchterm = sys.argv[1]
-print "Searching for", searchterm
 
 htmlfiles = os.listdir(htmldir)
 htmlfiles.sort()
 
-ispread = 16
+ispread = 76
 def ShortPara(ptext, searchterm):
 	mg = re.search(searchterm, ptext)
 	fs = lfs = max(0, mg.start(0) - ispread)
@@ -18,9 +17,48 @@ def ShortPara(ptext, searchterm):
 		fs += 1
 	while fe != len(ptext) and fe > mg.end(0) and ptext[fe] != " ":
 		fe -= 1
-	return ptext[fs:fe]
+	res = ptext[fs:fe]
+	res = re.sub("<", "&lt;", res)
+	res = re.sub(">", "&gt;", res)
+	res = re.sub(searchterm, "<b>%s</b>" % searchterm, res)
+	return "%s%s%s" % (fs != 0 and "..." or "", res, fe != len(ptext) and "..." or "")
 
+print """<html>
+<head>
+<title>Search %s</title>
+<style type="text/css">
+body
+{
+	width:600px;
+}
+h2
+{
+	color: #08601f;
+	padding-top:10px;
+	font-size: 120%%;
+    margin-bottom: 10px;
+}
+h2.sc
+{
+	color: #60081f;
+	padding-top:10px;
+	font-size: 120%%;
+    margin-bottom: 10px;
+}
+p
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+	padding-left:20px;
+	font-size: 90%%;
+}
+</style>
+</head>
+<body>
+<h1>Searching for '%s'</h1>
+""" % (searchterm, searchterm)
 
+cc = 2000
 for htmlfile in htmlfiles:
 	if not re.search(".html$", htmlfile):
 		continue
@@ -38,19 +76,29 @@ for htmlfile in htmlfiles:
 	bSecurityCouncil = re.search("S-PV", htmlfile)
 	sagenda = ""
 	if bSecurityCouncil:
-		sagenda = re.search('<div class="boldline-agenda">(.*?)</div>', fd).group(1)
+		magenda = re.search('<div class="boldline-agenda">(.*?)</div>', fd)
+		if magenda:
+			sagenda = magenda.group(1)
 
+	#<div class="motiontext">The draft resolution was adopted by 90 votes to 48, with 21 abstentions (<a href="../pdf/A-RES-57-54.pdf" class="pdf">resolution 57/54</a>).</div>
 	parasc = [ p  for p in re.findall('<(?:p|blockquote) id="([^"]*)">(.*?)</(?:p|blockquote)>', fd)  if re.search(searchterm, p[1]) ]
 	if not parasc:
 		continue
 
 	# do the layout
-	print len(parasc), ShortPara(parasc[0][1], searchterm)
+	print '<h2 class="%s">%s %s</h2>' % (bSecurityCouncil and "sc" or "", mdate.group(2), bSecurityCouncil and "Security Council" or "General Assembly")
+	for p in parasc:
+		mdec = re.search("pg(\d+)-bk(\d+)-pa(\d+)", p[0])
+		print '<p><a href="%s/%s#%s">Page %d, speech %d, para %d</a> - ' % (htmldir, htmlfile, p[0], int(mdec.group(1)), int(mdec.group(2)), int(mdec.group(3)))
+		print ShortPara(p[1], searchterm)
+		print '</p>'
 
-
-
-#	<p id="docSPV4717Resu1-pg002-bk05-pa02">Based on their reports, Japan considers that, even though some progress has been observed recently, Iraqi cooperation is still insufficient and limited, despite the ever-stronger pressure from the international community. We think that there is a common recognition in this regard among the international community, including on the part of the members of the Security Council.</p>
-#<h1>S-PV-4717-Resu.1  date=2003-03-12 15:00</h1>
-#<div class="boldline-agenda">The situation between Iraq and Kuwait Letter dated 7 March 2003 from the Chargé d'affaires a.i. of the Permanent Mission of Malaysia to the United Nations addressed to the President of the Security Council (S/2003/283).</div>
+	cc -= 1
+	if cc == 0:
+		break
+print """
+</body>
+</html>
+"""
 
 

@@ -504,3 +504,5 @@ nonnations["Economic Community of West African States"] = 0
 nonnations["Special Adviser on Gender Issues and Advancement of Women"] = 0
 nonnations["Chairman of the Monitoring Group"] = 0
 nonnations["Geneva International Centre for Humanitarian Demining"] = 0
+nonnations["Committee on the Exercise of the Inalienable Rights of the Palestinian People"] = 0
+nonnations["Sudan People's Liberation Movement/Army"] = 0
