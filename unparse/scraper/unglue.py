@@ -156,9 +156,9 @@ def AppendCluster(res, tlc, sclusttype):
 			td1 = ""
 		bstylematches = (td0 == td1)
 		#assert not (bbothindented and not bstylematches)
-		if re.match("<i>In favour", td1):
+		if re.match("<i>In favour", tlc.txls[0].ltext):
 			bstylematches = False
-			
+
 		# likely continuation of paragraph
 		if bbothindented and bstylematches:
 			res[-1].txls.extend(tlc.txls)
