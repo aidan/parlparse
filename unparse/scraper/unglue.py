@@ -9,7 +9,7 @@ pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-misnumberedpages = ["S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1", "S-PV-5016", "S-PV-5086", "S-PV-5199", "S-PV-5328", "S-PV-5453", "S-PV-5594"]
+misnumberedpages = ["S-PV-3454-Resu.2", "S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1", "S-PV-5016", "S-PV-5086", "S-PV-5199", "S-PV-5328", "S-PV-5453", "S-PV-5594"]
 def StripPageTags(xfil, undocname):
 	xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
