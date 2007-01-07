@@ -323,7 +323,7 @@ class SpeechBlock:
 		ptext = MarkupLinks(CleanupTags(ptext, self.typ, self.paranum), self.undocname, self.paranum)
 		self.i += 1
 		if self.typ in ["italicline", "italicline-tookchair", "italicline-spokein"]:
-			self.paragraphs = [ (None, ptext) ]
+			self.paragraphs = [ ("italicline", ptext) ]
 			return
 
 		# series of boldlines
@@ -370,25 +370,24 @@ class SpeechBlock:
 				fout.write(' <span class="language">%s</span>' % self.speaker[2])
 			fout.write(' </h3>\n')
 
-		if self.typ == "spoken":
-			fout.write('\t<div class="spokentext">\n')
 		paranum = 1
 		for para in self.paragraphs:
 			#print para[1]
 			if re.search("</?b>", para[1]):
 				print self.typ, para[1]
 				assert False
-			if not para[0]:
-				fout.write('\t%s\n' % para[1])
+			if not para[0] or para[0] == "italicline":
+				fout.write('\t<p id="%s-pa%02d">%s</p>\n' % (gid, paranum, para[1])) # italicline stuff
 			elif para[0] == "p":
 				fout.write('\t<p id="%s-pa%02d">%s</p>\n' % (gid, paranum, para[1]))
 			elif para[0] == "blockquote":
 				fout.write('\t<blockquote id="%s-pa%02d">%s</blockquote>\n' % (gid, paranum, para[1]))
 			else:
 				assert para[0] in ["boldline-p", "boldline-agenda", "boldline-indent"]
-				fout.write('\t<div class="%s" id="%s-pa%02d">%s</div>\n' % (para[0], gid, paranum, para[1]))
+				if para[0] == "boldline-indent":
+					fout.write('\t<blockquote class="%s" id="%s-pa%02d">%s</blockquote>\n' % (para[0], gid, paranum, para[1]))
+				else:
+					fout.write('\t<p class="%s" id="%s-pa%02d">%s</p>\n' % (para[0], gid, paranum, para[1]))
 			paranum += 1
-		if self.typ == "spoken":
-			fout.write('\t</div>\n')
 		fout.write('</div>\n')
 

@@ -64,9 +64,11 @@ def pdfbacklinkform(pr):
 		print "ERROR", pr
 	return '<tr><td><a href="%s/%s.pdf">%s</a></td> <td><a href="%s/%s.unindexed.html">%s</a></td></td>\n' % (pdfdir, pr[0], pr[0], htmldir, pr[1], pr[1])
 
-fin = open(pdfbacklinksfile)
-finbacklinks = [ tuple(re.findall('>([\w\.\-\d()]*)</a>', fd))  for fd in fin.readlines()  if not re.match("(?:\s|<table>)*$", fd) ]
-fin.close()
+finbacklinks = [ ]
+if os.path.isfile(pdfbacklinksfile):
+	fin = open(pdfbacklinksfile)
+	finbacklinks = [ tuple(re.findall('>([\w\.\-\d()]*)</a>', fd))  for fd in fin.readlines()  if not re.match("(?:\s|<table>)*$", fd) ]
+	fin.close()
 
 finbacklinks.sort()
 fout = open(pdfbacklinksfile, "w")
@@ -175,7 +177,8 @@ class paranumC:
 		self.textcountnumber = textcountnumber
 
 	def MakeGid(self):
-		return "doc%s-pg%03d-bk%02d" % (self.undocnamegid, int(self.pageno), self.blockno)
+		#return "doc%s-pg%03d-bk%02d" % (self.undocnamegid, int(self.pageno), self.blockno)
+		return "pg%03d-bk%02d" % (int(self.pageno), self.blockno)
 
 accessdate = datetime.date.today().isoformat()
 def LinkTemplate(undocname, docdate, gid):
@@ -203,7 +206,7 @@ def LinkTemplate(undocname, docdate, gid):
 
 	elif mapv:
 		wikiref = "<ref>{{UNdoc|body=A|doctype=PV|session=%s|plenary=%s|date=[[%s]] [[%s]]|accessdate=%s}}</ref>"
-		blogref = '<a href="http://www.undemocracy.org/pdfdoc/%s#%s">General Assembly session %s meeting %s on %s, page %s</a>"
+		blogref = '<a href="http://www.undemocracy.org/pdfdoc/%s#%s">General Assembly session %s meeting %s on %s, page %s</a>'
 
 	else:
 		wikiref = ""

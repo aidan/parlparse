@@ -111,20 +111,23 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 		fout.write('<html>\n<head>\n')
 		fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
 		fout.write('</head>\n<body>\n')
-		fout.write("<h1>%s  date=%s</h1>\n" % (undocname, glueunfile.sdate))
+
+		fout.write('<div class="heading">\n')
+		fout.write('\t<span class="code">%s</span> <span class="date">%s</span> <span class="time">%s</span>\n' % (undocname, glueunfile.sdate[:10], glueunfile.sdate[10:].strip()))
+		fout.write('</div>\n')
 
 		if glueunfile.bSecurityCouncil:
-			fout.write('<div class="boldline-agenda">%s</div>\n' % glueunfile.agenda)
+			fout.write('\n<div class="boldline-agenda">\n<p class="boldline-agenda">%s</p>\n</div>\n' % glueunfile.agenda)
 			fout.write('<div class="council-attendees">\n')
 			for chair in glueunfile.chairs:
 				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">%s</span></p>\n' % (chair[0], chair[1], chair[2]))
-			fout.write('</div>\n')
+			fout.write('</div>')
 
 		if glueunfile.bGeneralAssembly:
-			fout.write('<div class="assembly-chairs">\n')
+			fout.write('\n<div class="assembly-chairs">\n')
 			for chair in glueunfile.chairs:
 				fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">president</span></p>\n' % (chair[0], chair[1]))
-			fout.write('</div>\n')
+			fout.write('</div>')
 
 		for gpara in gparas:
 			gpara.writeblock(fout)
