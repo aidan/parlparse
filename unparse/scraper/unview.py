@@ -52,7 +52,7 @@ div.main
 div.sidebar
 {
 	float: right;
-	width: 39.5%;
+	width: 39%;
 }
 div.break
 {
@@ -122,7 +122,7 @@ def WikiRef(code, date, time):
 		res.append("|body=A")
 		res.append("|type=PV")
 		res.append("|session=%s" % mgenass.group(1))
-		res.append("|meeting=%s" mgenass.group(2))
+		res.append("|meeting=%s" % mgenass.group(2))
 	elif mseccou:
 		res.append("|body=S")
 		res.append("|type=PV")

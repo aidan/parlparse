@@ -26,7 +26,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		mspv = re.match("S-PV.(\d+)", undocname)
-		scdoc = re.match("S-(\d\d\d\d)-(\d+)$", undocname)
+		scdoc = re.match("S-(\d\d\d\d)-(\d+)(\(SUPP\))$", undocname)
 		munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
 
 		if mares:
@@ -42,7 +42,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
 			#print purl
 		elif scdoc:
-			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s/%s&Lang=E" % (scdoc.group(1), scdoc.group(2))
+			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s/%s%s&Lang=E" % (scdoc.group(1), scdoc.group(2), scdoc.group(3))
 		elif msres:
 			sarea = int(msres.group(1)) <= 766 and "RESOLUTION" or "UNDOC"
 			purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=%s" % (msres.group(1), msres.group(2), sarea)
