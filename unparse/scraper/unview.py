@@ -15,7 +15,7 @@ pdfdir = "/home/undemocracy/undata/pdf"
 stylehack = """
 body
 {
-	width:800px;
+	width:100%;
 }
 div.stripe-1,
 div.stripe-1 div.main,
@@ -47,12 +47,12 @@ div.stripe-2 div.sidebar
 div.main
 {
 	float: left;
-	width: 66%;
+	width: 60%;
 }
 div.sidebar
 {
 	float: right;
-	width: 30%;
+	width: 39.5%;
 }
 div.break
 {
@@ -64,6 +64,7 @@ div.break
 li.wikiref
 {
 	font-size: 10;
+    padding-bottom: 10px;
 }
 """
 
@@ -114,12 +115,23 @@ def WikiRef(code, date, time):
 	res.append("UN document")
 	mgenass = re.match("A[/\-](\d+)[/\-]PV\.(\d+)$", code)
 	mseccou = re.match("S[/\-]PV[/\-](\d+)$", code)
+	mscres = re.match("S/RES/(\d+)\((\d+)\)$", code)
 	res.append("|code=%s" % code)
 
 	if mgenass:
-		res.append("|body=A |type=PV |session=%s |meeting=%s" % (mgenass.group(1), mgenass.group(2)))
+		res.append("|body=A")
+		res.append("|type=PV")
+		res.append("|session=%s" % mgenass.group(1))
+		res.append("|meeting=%s" mgenass.group(2))
 	elif mseccou:
-		res.append("|body=S |type=PV |meeting=%s" % (mseccou.group(1)))
+		res.append("|body=S")
+		res.append("|type=PV")
+		res.append("|meeting=%s" % mseccou.group(1))
+	elif mscres:
+		res.append("|body=S")
+		res.append("|type=RES")
+		res.append("|number=%s" % mscres.group(1))
+		res.append("|year=%s" % mscres.group(2))
 	else:
 		res.append("|decription=Document whose code is %s" % code)
 
@@ -206,6 +218,8 @@ def WriteHTML(fhtml, code):
 		print '<div class="sidebar">'
 		print '<ul>'
 		print '<li class="wikiref">%s</li>' % SpecWikiRef(docwikiref, gid, speakername, speakernation)
+		for wlink in wlinks:
+			print '<li class="wikiref">%s</li>' % WikiRef(wlink, "", "")
 		print '</ul>'
 		print '</div>'
 		print '</div>'
