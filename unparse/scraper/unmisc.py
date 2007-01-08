@@ -101,7 +101,7 @@ def MakeCheckLink(ref, link, undocname, bRecurse=False):
 
 	assert not bRecurse
 	bknownfaileddoc = ref in faileddoclinks
-	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or ScrapePDF("%s(SUPP)" % ref)):
+	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or (re.match("S-(\d\d\d\d)-(\d+)", ref) and ScrapePDF("%s(SUPP)" % ref))):
 		MakeCheckLink(ref, link, undocname, True)
 
 	if sCallScrape and (not bknownfaileddoc):
