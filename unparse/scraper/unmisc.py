@@ -53,7 +53,7 @@ from unscrape import ScrapePDF
 # the file maintaining the links we cannot scrape
 faileddoclinkfile = "faileddoclinks.txt"
 fin = open(faileddoclinkfile)
-faileddoclinks = [ re.search("file=(\w+)", fd).group(1)  for fd in fin.readlines()  if not re.match("\s*$", fd) ]
+faileddoclinks = [ re.search("file=(\S+)", fd).group(1)  for fd in fin.readlines()  if not re.match("\s*$", fd) ]
 fin.close()
 
 # the file maintaining the pairs of links; from documents to their sources
@@ -79,6 +79,7 @@ fout.close()
 
 
 def MakeCheckLink(ref, link, undocname, bRecurse=False):
+	global faileddoclinks
 	pr = (ref, undocname)
 	if pr not in finbacklinks:
 		fout = open(pdfbacklinksfile, "a")
@@ -102,7 +103,7 @@ def MakeCheckLink(ref, link, undocname, bRecurse=False):
 	assert not bRecurse
 	bknownfaileddoc = ref in faileddoclinks
 	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or (False and re.match("S-(\d\d\d\d)-(\d+)", ref) and ScrapePDF("%s(SUPP)" % ref))):
-		MakeCheckLink(ref, link, undocname, True)
+		return MakeCheckLink(ref, link, undocname, True)
 
 	if sCallScrape and (not bknownfaileddoc):
 		fout = open(faileddoclinkfile, "a")

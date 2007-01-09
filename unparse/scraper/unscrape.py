@@ -11,6 +11,64 @@ from unmisc import unexception, IsNotQuiet, pdfdir
 docindex = "http://www.un.org/documents/"
 
 
+def GetFromNet(undocname, purl, plenaryurl):
+	req = urllib2.Request(purl)
+	req.add_header('Referer', plenaryurl)
+	fin = urllib2.urlopen(req)
+	plenrefererforward = fin.read()
+	fin.close()
+	mfore = re.search('URL=([^"]*)', plenrefererforward)
+	if not mfore:
+		if undocname == "A-55-PV.26":   # claims to be embargoed
+			print "broken", pdfname
+			return False
+		if re.search("There is no document", plenrefererforward):
+			print "no-document"
+			return False
+		if re.search("This document is under EMBARGO", plenrefererforward):
+			print "*** EMBARGOED ***"
+			return False
+		if re.search("The distribution of the document is to hight", plenrefererforward):
+			print "*** TO HIGHT ***"
+			return False
+		print plenrefererforward
+		assert False
+	turl = urlparse.urljoin(purl, mfore.group(1))
+	# pull in the login url, containing another forward, and a page which gives the cookies
+	fin = urllib2.urlopen(turl)
+	plenarycookielink = fin.read()
+	fin.close()
+
+	#<META HTTP-EQUIV="refresh" CONTENT="1; URL=http://daccessdds.un.org/doc/UNDOC/GEN/N02/596/08/PDF/N0259608.pdf?OpenElement">
+	#<frame name="footer" scrolling="no" noresize target="main" src="http://daccessdds.un.org/prod/ods_mother.nsf?Login&Username=freeods2&Password=1234" marginwidth="0" marginheight="0">
+
+	# extract pdf link
+	mpdf = re.search('URL=([^"]*)', plenarycookielink)
+	if not mpdf:
+		print plenarycookielink
+	plenarypdfurl = urlparse.urljoin(turl, mpdf.group(1))
+
+	# extract cookie link
+	mcook = re.search('src="(http://daccessdds.un.org/[^"]*)', plenarycookielink)
+	if not mcook:
+		print plenarycookielink
+	plenarycookurl = urlparse.urljoin(turl, mcook.group(1))
+
+	# take the cookies from the cookie link
+	cj = cookielib.CookieJar()
+	opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+	fin = opener.open(plenarycookurl)
+	fin.close()
+
+	print plenarypdfurl[-30:]
+
+	# put them into the pdf link
+	fin = opener.open(plenarypdfurl)
+	plenarypdf = fin.read()
+	fin.close()
+
+	return plenarypdf
+	
 
 def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None):
 	pdfname = undocname + ".pdf"
@@ -72,65 +130,19 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		print "*** Need to make"
 		return False
 
-	#return False
+#	return False
 
 	# first go through the forwarding blocker
 	purl = urlparse.urljoin(plenaryurl, purl)
-	req = urllib2.Request(purl)
-	req.add_header('Referer', plenaryurl)
-	fin = urllib2.urlopen(req)
-	plenrefererforward = fin.read()
-	fin.close()
-	mfore = re.search('URL=([^"]*)', plenrefererforward)
-	if not mfore:
-		if undocname == "A-55-PV.26":   # claims to be embargoed
-			print "broken", pdfname
-			return False
-		if re.search("There is no document", plenrefererforward):
-			print "no-document"
-			return False
-		if re.search("This document is under EMBARGO", plenrefererforward):
-			print "*** EMBARGOED ***"
-			return False
-		if re.search("The distribution of the document is to hight", plenrefererforward):
-			print "*** TO HIGHT ***"
-			return False
-		print plenrefererforward
-		assert False
-	turl = urlparse.urljoin(purl, mfore.group(1))
-	# pull in the login url, containing another forward, and a page which gives the cookies
-	fin = urllib2.urlopen(turl)
-	plenarycookielink = fin.read()
-	fin.close()
 
-	#<META HTTP-EQUIV="refresh" CONTENT="1; URL=http://daccessdds.un.org/doc/UNDOC/GEN/N02/596/08/PDF/N0259608.pdf?OpenElement">
-	#<frame name="footer" scrolling="no" noresize target="main" src="http://daccessdds.un.org/prod/ods_mother.nsf?Login&Username=freeods2&Password=1234" marginwidth="0" marginheight="0">
+	try:
+		plenarypdf = GetFromNet(undocname, purl, plenaryurl)
+	except Exception, e:
+		print "Exception", e
+		return False
 
-	# extract pdf link
-	mpdf = re.search('URL=([^"]*)', plenarycookielink)
-	if not mpdf:
-		print plenarycookielink
-	plenarypdfurl = urlparse.urljoin(turl, mpdf.group(1))
-
-	# extract cookie link
-	mcook = re.search('src="(http://daccessdds.un.org/[^"]*)', plenarycookielink)
-	if not mcook:
-		print plenarycookielink
-	plenarycookurl = urlparse.urljoin(turl, mcook.group(1))
-
-	# take the cookies from the cookie link
-	cj = cookielib.CookieJar()
-	opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-	fin = opener.open(plenarycookurl)
-	fin.close()
-
-	print plenarypdfurl[-30:]
-
-	# put them into the pdf link
-	fin = opener.open(plenarypdfurl)
-	plenarypdf = fin.read()
-	fin.close()
-
+	if not plenarypdf:
+		return False
 	fout = open(pdffile, "wb")
 	fout.write(plenarypdf)
 	fout.close()
