@@ -68,7 +68,7 @@ def GetFromNet(undocname, purl, plenaryurl):
 	fin.close()
 
 	return plenarypdf
-	
+
 
 def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None):
 	pdfname = undocname + ".pdf"
@@ -84,7 +84,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
 		mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
 		mspv = re.match("S-PV.(\d+)", undocname)
-		scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\))?$", undocname)
+		scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
 		munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
 
 		if mares:
@@ -130,7 +130,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 		print "*** Need to make"
 		return False
 
-#	return False
+	##return False
 
 	# first go through the forwarding blocker
 	purl = urlparse.urljoin(plenaryurl, purl)

@@ -55,6 +55,8 @@ faileddoclinkfile = "faileddoclinks.txt"
 fin = open(faileddoclinkfile)
 faileddoclinks = [ re.search("file=(\S+)", fd).group(1)  for fd in fin.readlines()  if not re.match("\s*$", fd) ]
 fin.close()
+faileddoclinks = [ ]
+
 
 # the file maintaining the pairs of links; from documents to their sources
 pdfbacklinksfile = "pdfbacklinks.html"
