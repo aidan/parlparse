@@ -63,15 +63,15 @@ if not (bScrape or bConvertXML or bParse):
 if bScrape:
 	# we could use current date to generate these figures
 	if not stem:
-		ScrapeContentsPageFromStem("S-2006")
-		ScrapeContentsPageFromStem("A-61")
+		ScrapeContentsPageFromStem("A-61-PV")
+		ScrapeContentsPageFromStem("S-2006-PV")
 	else:
 		ScrapeContentsPageFromStem(stem)
 
 if bConvertXML:
 	if not stem:
 		ConvertXML("A-61-PV", pdfdir, pdfxmldir)
-		ConvertXML("S-PV-40", pdfdir, pdfxmldir)
+		ConvertXML("S-PV-50", pdfdir, pdfxmldir)
 	elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
 		ConvertXML(stem, pdfdir, pdfxmldir)
 	elif re.match("S-PV-\d\d", stem):  # make sure it can't do too many at once
@@ -82,7 +82,7 @@ if bConvertXML:
 if bParse:
 	if not stem:
 		ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse)
-		ParsetoHTML("S-PV-40", pdfxmldir, htmldir, options.forceparse, options.editparse)
+		ParsetoHTML("S-PV-50", pdfxmldir, htmldir, options.forceparse, options.editparse)
 	else:
 		ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
 	PrintNonnationOccurrances()

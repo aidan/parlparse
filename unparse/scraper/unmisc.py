@@ -107,7 +107,7 @@ def MakeCheckLink(ref, link, undocname, bRecurse=False):
 	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or (False and re.match("S-(\d\d\d\d)-(\d+)", ref) and ScrapePDF("%s(SUPP)" % ref))):
 		return MakeCheckLink(ref, link, undocname, True)
 
-	if sCallScrape and (not bknownfaileddoc):
+	if sCallScrape and (not bknownfaileddoc) and (not re.match("A-[56]\d-PV|S-[3-9]\d\d\d-PV", undocname)):
 		fout = open(faileddoclinkfile, "a")
 		fout.write("undocname=%s\t\tfile=%s\n" % (undocname, ref))
 		fout.close()
