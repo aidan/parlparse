@@ -74,7 +74,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		assert False
 
 	if re.match("(?:The agenda was adopted\.|A vote was taken by show of hands\.)$", ptext):
-		print "italicizingline", len(indents), ptext
+		if IsNotQuiet():
+			print "italicizingline", len(indents), ptext
 		ptext = "<i>%s</i>" % ptext
 
 	indentationerror = ""
@@ -88,7 +89,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			# turn this into a blockquote
 			indents[0] = (indents[0][0], indents[0][1] + indents[1][1], indents[0][2] + indents[1][2])
 			del indents[1]
-			print "ququququq", indents
+			if IsNotQuiet():
+				print "ququququq", indents
 		else:
 			indentationerror = "un-left-justified paragraph"
 
@@ -122,8 +124,9 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 
 	if respekSS and not mspek:
 		m = re.match(respekSS, ptext)
-		print ptext
-		print "   ___ ", m and m.group(0)
+		if IsNotQuiet():
+			print ptext
+			print "   ___ ", m and m.group(0)
 	if mspek:
 		assert not indentationerror
 		assert not re.match("<i>", ptext)

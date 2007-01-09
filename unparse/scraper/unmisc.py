@@ -53,7 +53,7 @@ from unscrape import ScrapePDF
 # the file maintaining the links we cannot scrape
 faileddoclinkfile = "faileddoclinks.txt"
 fin = open(faileddoclinkfile)
-faileddoclinks = [ fd.strip()  for fd in fin.readlines()  if not re.match("\s*$", fd) ]
+faileddoclinks = [ re.search("file=(\w+)", fd).group(1)  for fd in fin.readlines()  if not re.match("\s*$", fd) ]
 fin.close()
 
 # the file maintaining the pairs of links; from documents to their sources
@@ -101,12 +101,12 @@ def MakeCheckLink(ref, link, undocname, bRecurse=False):
 
 	assert not bRecurse
 	bknownfaileddoc = ref in faileddoclinks
-	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or (re.match("S-(\d\d\d\d)-(\d+)", ref) and ScrapePDF("%s(SUPP)" % ref))):
+	if sCallScrape and (not bknownfaileddoc) and (ScrapePDF(ref) or (False and re.match("S-(\d\d\d\d)-(\d+)", ref) and ScrapePDF("%s(SUPP)" % ref))):
 		MakeCheckLink(ref, link, undocname, True)
 
 	if sCallScrape and (not bknownfaileddoc):
 		fout = open(faileddoclinkfile, "a")
-		fout.write("%s\n" % ref)
+		fout.write("undocname=%s\t\tfile=%s\n" % (undocname, ref))
 		fout.close()
 		faileddoclinks.append(ref)
 	return '<a href="%s/%s.pdf" class="nolink">%s</a>' % (undocpdflinks, ref, link)
@@ -154,9 +154,12 @@ def MarkupLinks(paratext, undocname, paranum):
 			link = "S-RES-%s(%s)" % (msecres.group(1), msecres.group(2))
 			res.append(MakeCheckLink(link, st, undocname))
 		elif mcorr:
-			assert link and not re.search("Corr", link)
-			link = "%s.Corr.%s" % (link, mcorr.group(1))
-			res.append(MakeCheckLink(link, st, undocname))
+			if link and not re.search("Corr", link):
+				link = "%s-Corr.%s" % (link, mcorr.group(1))
+				res.append(MakeCheckLink(link, st, undocname))
+			else:
+				print "Cant corr:::  %s -- %s" % (link, st)
+				res.append(st)
 		elif mcan:
 			res.append(' ')
 		else:

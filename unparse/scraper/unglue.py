@@ -1,7 +1,8 @@
 import os
 import re
 from nations import FixNationName
-from unmisc import unexception, paranumC
+from unmisc import unexception, paranumC, IsNotQuiet
+
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
@@ -15,7 +16,8 @@ def StripPageTags(xfil, undocname):
 	mpage1head = re.match("([\s\S]*?)(?=<text)", xpages[0])
 	#print len(xpages), undoc
 	if not mpage1head:
-		print " -- bitmap type"
+		if IsNotQuiet():
+			print " -- bitmap type"
 		for xpage in xpages:
 			if not re.match(pagebitmap, xpage):
 				print xpage
@@ -166,11 +168,13 @@ def AppendCluster(res, tlc, sclusttype):
 			return
 		else:
 			if bonelineparacont:
-				print "checkthiscontinuation case"
-				print indentp, indentn, bstylematches, bonelineparacont, res[-1].indents
-				print " ----", tlc.txls[0].ltext
+				if IsNotQuiet():
+					print "checkthiscontinuation case"
+					print indentp, indentn, bstylematches, bonelineparacont, res[-1].indents
+					print " ----", tlc.txls[0].ltext
 				if bstylematches:
-					print "merging"
+					if IsNotQuiet():
+						print "merging"
 					res[-1].txls.extend(tlc.txls)
 					return
 
@@ -184,7 +188,8 @@ def AppendCluster(res, tlc, sclusttype):
 
 	# two paragraphs may have been merged, try to separate them out
 	elif len(tlc.indents) == 4 and tlc.indents[0][0] == tlc.indents[2][0] and tlc.indents[1][0] == tlc.indents[3][0]:
-		print tlc.indents
+		if IsNotQuiet():
+			print tlc.indents
 		assert tlc.indents[0][0] == tlc.indents[2][0]
 		assert tlc.indents[1][0] == tlc.indents[3][0]
 		si = tlc.indents[0][2] + tlc.indents[1][2]
@@ -194,9 +199,10 @@ def AppendCluster(res, tlc, sclusttype):
 		tlcf.indents = tlc.indents[:2]
 		del tlc.indents[:2]
 		res.append(tlcf)
-		print "splitting two paragraphs", si
-		print tlc.txls[0].ltext
-		#print tlcf.indents, tlc.indents
+		if IsNotQuiet():
+			print "splitting two paragraphs", si
+			print tlc.txls[0].ltext
+			#print tlcf.indents, tlc.indents
 
 	elif len(tlc.indents) != 1:
 		print tlc.indents
@@ -350,7 +356,11 @@ class TextPage:
 						print self.chairs, "chchchch"
 						raise unexception("chairs not thereB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				else:
-					assert len(self.chairs) > 1
+					if len(self.chairs) == 0:
+						if not self.date:  # prob a closed meeting
+							break
+						print ih, jtxlines[ih]
+						raise unexception("seat without chair", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 				lfscountry = re.sub("\s+", " ", mcountryseat.group(2))
 				fscountry = FixNationName(lfscountry, self.date)
 				if not fscountry:
@@ -516,7 +526,7 @@ class TextPage:
 			bl3 = len(txlines) > 4 and re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
 
 			bl4 = re.match("<b>S/PV.\d+\s*(?:\(Resumption [\d|I]\)|\(Part [I]+\))?\s*</b>", txlines[0].ltext)
-			bl4r = self.undocname >= "S-PV-4143"
+			bl4r = (self.undocname >= "S-PV-4143")
 
 			if bl4 and bl4r:
 				ih = 1
@@ -622,7 +632,8 @@ class GlueUnfile:
 		for i in range(len(xpages)):
 			txpage = TextPage(xpages[i], undocname, i + 1, (txpages or 0) and txpages[-1].textcountnumber)
 			if i == 0 and txpage.bSecurityCouncil == "ClosedSession":
-				print " -- closedsession"
+				if IsNotQuiet():
+					print " -- closedsession"
 				self.tlcall = None
 				return  # closed session encountered
 			txpages.append(txpage)
