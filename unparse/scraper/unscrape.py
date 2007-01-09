@@ -74,7 +74,8 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 	pdfname = undocname + ".pdf"
 	pdffile = os.path.join(pdfdir, pdfname)
 	if os.path.isfile(pdffile):
-		print "  skipping", pdffile, pdfname
+		if IsNotQuiet():
+			print "  skipping", pdffile, pdfname
 		return True
 
 	if not purl:
@@ -377,7 +378,8 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 		pdfdest = os.path.join(pdfxmldir, sd)
 		xmldest = os.path.splitext(pdfdest)[0] + ".xml"
 		if os.path.isfile(xmldest):
-			print "skipping", sd
+			if IsNotQuiet():
+				print "skipping", sd
 			continue
 		#shutil.copyfile(pdf, pdfdest)
 		print " ppdftohtml -xml", sd
