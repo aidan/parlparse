@@ -6,6 +6,7 @@ from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ConvertXML
 from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir
 from nations import PrintNonnationOccurrances
+from unindex import MiscIndexFiles
 
 parser = OptionParser()
 parser.set_usage("""
@@ -14,7 +15,8 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
   parse   do the parsing
-  
+  index   generate miscelaneous index files
+
 --stem selects what is processed.
   scrape --stem=S-YEAR-PV
 """)
@@ -55,7 +57,8 @@ SetCallScrape(options.scrapelinks)
 bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
-if not (bScrape or bConvertXML or bParse):
+bIndexfiles = "index" in args
+if not (bScrape or bConvertXML or bParse or bIndexfiles):
 	parser.print_help()
 	sys.exit(1)
 
@@ -70,8 +73,8 @@ if bScrape:
 
 if bConvertXML:
 	if not stem:
+		ConvertXML("S-PV-5", pdfdir, pdfxmldir)
 		ConvertXML("A-61-PV", pdfdir, pdfxmldir)
-		ConvertXML("S-PV-50", pdfdir, pdfxmldir)
 	elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
 		ConvertXML(stem, pdfdir, pdfxmldir)
 	elif re.match("S-PV-\d\d", stem):  # make sure it can't do too many at once
@@ -79,6 +82,7 @@ if bConvertXML:
 	else:
 		print "Stem should be set, eg --stem=A-49-PV"
 		print "  (Can't parse 48, so won't do)"
+
 if bParse:
 	if not stem:
 		ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse)
@@ -87,5 +91,5 @@ if bParse:
 		ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
 	PrintNonnationOccurrances()
 
-
-
+if bIndexfiles:
+	MiscIndexFiles(htmldir)

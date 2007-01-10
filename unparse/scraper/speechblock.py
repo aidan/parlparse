@@ -195,8 +195,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 			msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
 			mminsil = re.search("The (?:members of the General Assembly|Council) observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
 			mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?,.*?acted as tellers\.$", ptext)
-			melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been) s?elected|will be included [io]n the list)", ptext)
-			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over", ptext)
+			melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been|is) s?elected|will be included [io]n the list)", ptext)
+			mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the President,|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over|The following .*? States have.*?been elected members of the Security Council", ptext)
 			mmiscnote = re.search("\[In the 79th plenary .*? III.\]$", ptext)
 			mmstar = re.match("\*", ptext)  # insert * in the text
 			mmspokein = re.match("\(spoke in \w+(?:; interpretation.*?|; .*? the delegation)?\)$", ptext)
@@ -246,11 +246,13 @@ def CleanupTags(ptext, typ, paranum):
 	assert typ in ["italicline", "italicline-tookchair", "italicline-spokein", "boldline", "spoken"]
 	if typ == "boldline":
 		ptext = re.sub("</?b>", "", ptext).strip()
+	if re.search("<b>", ptext):
+		ptext = re.sub("<b>([.,]\s*)</b>", "\\1", ptext)
 
 	# could have a special paragraph type for this
 	mspokein = re.match("\((spoke in \w+(.*?delegation|President's Office)?)\)$", ptext)
 	if mspokein:
-		stext = re.sub("<[ib/]*>", "", mspokein.group(1)).strip()
+		stext = re.sub("<[/ib]*>", "", mspokein.group(1)).strip()
 		return "<i>%s</i>" % stext
 
 	if re.search("<[^/i]+>", ptext):
