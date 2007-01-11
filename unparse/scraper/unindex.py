@@ -10,7 +10,7 @@ table.main
 {
 	border-spacing: 0;
 }
-table.main td, 
+table.main td,
 table.main th
 {
 	border: solid 0.4px black;
@@ -84,7 +84,6 @@ class UndocData:
 		res.append("</td>")
 		res.append("<td>")
 		for link in self.links:
-			print link
 			res.append(' <a href="%s%s"%s>%s</a>' % (webdocurl, link[0], link[1], link[0]))
 		res.append("</td>")
 		res.append("</tr>")
