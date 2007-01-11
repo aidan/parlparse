@@ -51,7 +51,7 @@ class UndocData:
 		self.kbytes = len(fd) / 1024.0
 		self.pages = int(re.findall('id="pg(\d+)-', fd)[-1])
 		self.votes = re.findall('"recvote" id="([^"]*)"[\s\S]*?<p class="votecount">favour=(\d+) against=(\d+) abstain=(\d+) absent=(\d+)</p>', fd)
-		self.links = re.findall('<a href="\.\./pdf/([^"]*?)\.pdf"( class="nolink")?>', fd)
+		self.links = re.findall('<a href="\.\./pdf/([^"]*?)\.pdf"([^>]*)>', fd)
 		lspeakers = re.findall('<span class="name">([^<]*)</span> <span class="nation">([^<]*)</span>', fd)
 		lspeakers.sort()
 		self.speakers = [ ]
@@ -84,6 +84,7 @@ class UndocData:
 		res.append("</td>")
 		res.append("<td>")
 		for link in self.links:
+			print link
 			res.append(' <a href="%s%s"%s>%s</a>' % (webdocurl, link[0], link[1], link[0]))
 		res.append("</td>")
 		res.append("</tr>")
