@@ -1,8 +1,10 @@
-import os
-import re
-import sys
-from unmisc import pdfdir, pdfxmldir, htmldir
+#!/usr/bin/python2.3
 
+# this is the start of a cgi script that will view the html files we've got
+# it works on seagrass and should be able to be hosted anywhere because it
+# references to the data files using absolute paths
+
+import sys, os, stat, re
 import cgi, cgitb
 import datetime
 cgitb.enable()
@@ -38,7 +40,7 @@ p
 """
 
 htmldir = "/home/undemocracy/undata/html"
-htmldir = "..\\..\\undata\\html"
+#htmldir = "..\\..\\undata\\html"
 pdfdir = "/home/undemocracy/undata/pdf"
 
 ispread = 76
@@ -104,6 +106,8 @@ def WriteSearch(searchstring, year):
 	print '</head>'
 	print '<h1>Searching for: "%s" in %s</h1>' % (searchstring, year)
 
+	if not re.match("\d\d\d\d$", year) or not searchstring:
+		print '<h2>You need to use ?search=word&year=1999</h2>'
 	sdate = ""
 	for doc in re.findall('<td rowspan="\d+">(\d\d\d\d-\d\d-\d\d)</td>|code=[^"#]*">([^<]+)</td>', dxfile):
 		if doc[0]:
@@ -120,15 +124,12 @@ def WriteSearch(searchstring, year):
 
 # the main section that interprets the fields
 if __name__ == "__main__":
-	#form = cgi.FieldStorage()
+	form = cgi.FieldStorage()
 
-	#year = form.has_key("year") and form["year"].value or ""
-	#searchstring = form.has_key("search") and form["search"].value or ""
+	year = form.has_key("year") and form["year"].value or ""
+	searchstring = form.has_key("search") and form["search"].value or ""
 
-	searchstring = "nuclear"
-	year = "2006"
+	#searchstring = "nuclear"
+	#year = "2006"
 	WriteSearch(searchstring, year)
-
-
-
 

@@ -83,8 +83,12 @@ class UndocData:
 
 		res.append("</td>")
 		res.append("<td>")
-		for link in self.links:
-			res.append(' <a href="%s%s"%s>%s</a>' % (webdocurl, link[0], link[1], link[0]))
+		prevlink = ""
+		for link in sorted(self.links):
+			if link[0] != prevlink:
+				res.append(' <a href="%s%s"%s>%s</a>' % (webdocurl, link[0], link[1], link[0]))
+				prevlink = link
+
 		res.append("</td>")
 		res.append("</tr>")
 		return "".join(res)
