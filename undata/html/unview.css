@@ -102,7 +102,7 @@ p.motiontext
 }
 p.votelist
 {
-	font-size: 8;
+	font-size: 11;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -125,3 +125,21 @@ a.nolink
 	color:gray;
 }
 
+span.absent-against,
+span.against
+{
+	color:red;
+}
+span.absent-favour,
+span.favour
+{
+	color:green;
+}
+span.abstain
+{
+	color:purple;
+}
+span.absent
+{
+	color:gray;
+}
