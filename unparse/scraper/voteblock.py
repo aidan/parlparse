@@ -102,7 +102,7 @@ class VoteBlock:
 
 	#<blockquote indent="31"><i>Draft resolution A/53/L.52 was adopted by 149 votes</i> <i>to 1, with 7 abstentions </i>(resolution 53/37).</blockquote>
 
-	#  and the following should affect the vote, by making it Haiti: absent/favour
+	#  and the following should affect the vote, by making it Haiti: absent-favour
 	#<blockquote indent="32">[Subsequently, the delegations of Haiti and Mozambique informed the Secretariat that they had intended to vote in favour.]</blockquote>
 	def DetectAdoption(self):
 		adtext = re.sub("</?i>", "", self.tlcall[self.i].paratext)
@@ -171,7 +171,7 @@ class VoteBlock:
 		self.votechange = adtext
 		self.i += 1
 		for nat in self.votechanges:
-			gnv[nat] = "%s/%s" % (gnv[nat], self.votechanges[nat])
+			gnv[nat] = "%s-%s" % (gnv[nat], self.votechanges[nat])
 
 	def DetectDidnotparticipate(self, gnv, vlabsent):
 		adtext = re.sub("</?i>", "", self.tlcall[self.i].paratext)
@@ -188,7 +188,7 @@ class VoteBlock:
 			msubvote = re.match("\[Subsequently.*? (Jamaica) .*? voted? in (favour)", adtext)
 			if msubvote:
 				nat = msubvote.group(1)
-				gnv[nat] = "%s/%s" % (gnv[nat], msubvote.group(2))
+				gnv[nat] = "%s-%s" % (gnv[nat], msubvote.group(2))
 				self.i += 1
 			elif len(vlabsent) != 0:
 				if self.undocname not in ["S-PV-3412", "S-PV-3413", "S-PV-3407", "S-PV-3409"]: # cases where Rwanda is absent
@@ -239,9 +239,9 @@ class VoteBlock:
 		#res = [ '\t\t<div style="border:1px solid black; margin-left:2em"><b>VOTE ', votecount, "</b><br>\n", "\t\t<i>", self.motiontext, "</i>\n" ]
 		#res.append('\t\t<div style="font-size:6">')
 		lvotelist = [ ]
-		for gn in sorted(gnv.items()):
-			lvotelist.append("<span>%s:<i>%s</i></span>" % gn)
-		self.votelist = " ".join(lvotelist)
+		for nation, vote in sorted(gnv.items()):
+			lvotelist.append('<span class="%s">%s</span>' % (vote, nation))
+		self.votelist = ", ".join(lvotelist)
 		#res.append("</div></div>\n")
 		#self.parafout = "".join(res)
 		self.typ = "vote"
