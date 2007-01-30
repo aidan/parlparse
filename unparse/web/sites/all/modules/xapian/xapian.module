@@ -162,12 +162,17 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   }
   
   $db_path = $undata_path . $db_path;
+  
+  include_once('xapian_php5.php' );
 
   // XXX this doesn't break well if it can't find the database
   $database = new XapianDatabase($db_path);  
 
   $enquire = new XapianEnquire($database);
   $stemmer = new XapianStem("english");
+  
+  
+  
   // XXX this for my testing when not in drupal as don't have "arg()".
   // However, not sure what the $query parameters was for anyone when
   // running under Drupal?

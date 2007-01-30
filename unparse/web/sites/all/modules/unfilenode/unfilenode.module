@@ -126,13 +126,36 @@ function assembly_page() {
 
 function theme_assemblyfile($search) {
   $path = variable_get('xapian_undatapath', '/path/to/files');
+  
+  #display information about the xapian query.
   $data = "<h2>{$search->info}</h2>";
+  
   if ($search->data) {
     foreach ($search->data as $i => $result) {
       $contents = file_get_contents($path . $result['file']);
+      #strip everything not in the html body
       $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
+      #Add stripe info
       $stripe = $i % 2 ? 'even' : 'odd';
       $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>"; 
+
+
+      preg_match('/<span.*name="(.*?)".*nation="(.*?)".*language="(.*?)".*>.*<\\/span>/imxs', $data, $matches);
+//      print_r($matches);
+      $data =  preg_replace('/<span(.*?)class="(.*?)speaker(.*?)"(.*?)>(.*?)<\\/span>/ixsm', '<span$1class="$2speaker$3"$4>'.$matches[1].'<br />'.l($matches[2], 'members/'.$matches[2]).'</span>', $data);
+
+
+
+//print $data;
+
+
+
+
+      #Format the information about the speaker
+      $data = format_states($data);
+//      $data = preg_replace('/<span class="speaker" name="(.*?)" nation="(.*?)" language="(.*?)">(.*?)<\/span>/ixm', '<span class="speaker" name="$1" nation="$2" language="$3">$1 ($2) testing<\/span>', $data);
+
+
 
       # Fix up links to PDF files
       $data = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)" class="pdf">/', '<a href="/pdf/$1">', $data);
