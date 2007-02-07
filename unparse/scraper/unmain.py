@@ -77,7 +77,7 @@ if bConvertXML:
 		ConvertXML("A-61-PV", pdfdir, pdfxmldir)
 	elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
 		ConvertXML(stem, pdfdir, pdfxmldir)
-	elif re.match("S-PV-\d\d", stem):  # make sure it can't do too many at once
+	elif re.match("S-PV", stem):  # make sure it can't do too many at once
 		ConvertXML(stem, pdfdir, pdfxmldir)
 	else:
 		print "Stem should be set, eg --stem=A-49-PV"

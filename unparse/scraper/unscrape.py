@@ -1,3 +1,4 @@
+
 import urllib2
 import cookielib
 import urlparse
@@ -383,7 +384,7 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
 			continue
 		#shutil.copyfile(pdf, pdfdest)
 		print " ppdftohtml -xml", sd
-		os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")
+		res = os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")
 		assert os.path.isfile("temph.xml")
 		os.rename("temph.xml", xmldest)
 		#os.remove(pdfdest)
