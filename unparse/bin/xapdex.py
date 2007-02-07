@@ -54,7 +54,7 @@ with a new one indexing the given files.
 
 Example command lines:
 ./xapdex.py html/A-53-PV.63.html
-./xapdex.py --undata=~/devel/undata --xapdb=xapdex.db html""")
+./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db html""")
 parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
@@ -136,7 +136,7 @@ def find_speaker_attribute(attr, div_content):
         # backwards compatibility, can remove when all files migrated to new form
         value = re.search('<span class="speaker" [^>]*%s="([^">]*)"' % attr, div_content)
         if not value:
-            raise Exception, "No name in speaker for %s" % div_content 
+            return False
     value = value.group(1)
     return value
 
@@ -158,7 +158,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
         content = open(input_file).read()
         document_id = os.path.splitext(os.path.basename(input_file_use))[0]
-        document_date = re.search('<h1>.*date=(\d\d\d\d-\d\d-\d\d) ', content)
+        document_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', content)
         assert document_date, "not found document_date in file %s" % input_file
         document_date = document_date.group(1)
 
@@ -194,19 +194,25 @@ def process_file(input_dir, input_file_rel, xapian_db):
             off_from = div.start()
             off_to = div.end()
             div_content = div.group(0)
-            #print div_content
+            
+            # Lookup class
+            cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
+            if cls == 'heading' or cls == 'assembly-chairs':
+                continue
+            #print cls, input_file, div_content
 
             # Look up all the data
             id = re.search('^<div [^>]*id="([^">]+)"', div_content).group(1)
-            ids = re.findall('<div [^>]*id="([^">]+)"', div_content)
-            cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
+            ids = re.findall('<(?:p|blockquote) [^>]*id="([^">]+)"', div_content)
             if cls == 'spoken':
                 name = find_speaker_attribute("name", div_content)
+                if not name:
+                    raise Exception, "No attr 'name' in speaker for: %s" % (attr, div_content)
                 nation = find_speaker_attribute("nation", div_content)
                 language = find_speaker_attribute("language", div_content)
             if cls == 'boldline':
                 heading = id
-            ref_docs = re.findall('<a href="../pdf/([^"]+).pdf">', div_content)
+            ref_docs = re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_content)
 
             # Generate terms
             terms = set()
@@ -221,8 +227,10 @@ def process_file(input_dir, input_file_rel, xapian_db):
             terms.add("C%s" % munge_cls(cls))
             if cls == 'spoken':
                 terms.add("S%s" % munge_speaker_name(name))
-                terms.add("N%s" % munge_nation(nation))
-                terms.add("L%s" % munge_language(language))
+                if nation:
+                    terms.add("N%s" % munge_nation(nation))
+                if language:
+                    terms.add("L%s" % munge_language(language))
             if heading:
                 terms.add("H%s" % munge_julian_id(heading))
 
@@ -319,8 +327,9 @@ for input_rel in args:
         filelist.sort(reverse = True)
         for d in filelist:
             p = os.path.join(input_rel, d)
-            if re.search(".unindexed.html$", d) or (options.firsttime and re.search(".html$", d)):
-                rels.append(p)
+            if not re.search("^S-", d): # skip security council for now
+                if re.search(".unindexed.html$", d) or (options.firsttime and re.search(".html$", d)):
+                    rels.append(p)
     else:
         raise Exception, "Directory/file %s doesn't exist" % input
 for rel in rels:
