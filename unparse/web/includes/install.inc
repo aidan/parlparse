@@ -1,5 +1,5 @@
 <?php
-// $Id: install.inc,v 1.25 2006/11/16 08:28:07 drumm Exp $
+// $Id: install.inc,v 1.31 2007/01/02 05:05:38 drumm Exp $
 
 define('SCHEMA_UNINSTALLED', -1);
 define('SCHEMA_INSTALLED', 0);
@@ -37,6 +37,7 @@ function drupal_load_updates() {
  *   FALSE.
  */
 function drupal_get_schema_versions($module) {
+  $updates = array();
   $functions = get_defined_functions();
   foreach ($functions['user'] as $function) {
     if (strpos($function, $module .'_update_') === 0) {
@@ -275,14 +276,14 @@ function drupal_verify_profile($profile, $locale) {
 
   // Get a list of modules that exist in Drupal's assorted subdirectories.
   $present_modules = array();
-  foreach(drupal_system_listing('\.module$', 'modules', 'name', 0) as $present_module) {
+  foreach (drupal_system_listing('\.module$', 'modules', 'name', 0) as $present_module) {
     $present_modules[] = $present_module->name;
   }
 
   // Verify that all of the profile's required modules are present.
   $missing_modules = array_diff($module_list, $present_modules);
   if (count($missing_modules)) {
-    foreach($missing_modules as $module) {
+    foreach ($missing_modules as $module) {
       drupal_set_message(st('The %module module is required but was not found. Please move it into the <em>modules</em> subdirectory.', array('%module' => $module)), 'error');
     }
   }
@@ -305,7 +306,7 @@ function drupal_install_profile($profile, $module_list) {
   // installed, so we can't use the normal installation function.
   $module_list = array_diff($module_list, array('system'));
 
-  $system_path = dirname(drupal_get_filename('module', 'system', NULL, FALSE));
+  $system_path = dirname(drupal_get_filename('module', 'system', NULL));
   require_once './' . $system_path . '/system.install';
   module_invoke('system', 'install');
   $system_versions = drupal_get_schema_versions('system');
@@ -372,7 +373,7 @@ function drupal_uninstall_module($module) {
  * @param $type
  *   The type of file. Can be file (default), dir, or link.
  * @return
- *   TRUE on success or FALSE on failure. A messsage is set for the latter.
+ *   TRUE on success or FALSE on failure. A message is set for the latter.
  */
 function drupal_verify_install_file($file, $mask = NULL, $type = 'file') {
   $return = TRUE;
@@ -484,6 +485,15 @@ function drupal_install_mkdir($file, $mask, $message = TRUE) {
 /**
  * Attempt to fix file permissions.
  *
+ * The general approach here is that, because we do not know the security
+ * setup of the webserver, we apply our permission changes to all three
+ * digits of the file permission (i.e. user, group and all).
+ *
+ * To ensure that the values behave as expected (and numbers don't carry
+ * from one digit to the next) we do the calculation on the octal value
+ * using bitwise operations. This lets us remove, for example, 0222 from
+ * 0700 and get the correct value of 0500.
+ *
  * @param $file
  *  The name of the file with permissions to fix.
  * @param $mask
@@ -495,48 +505,54 @@ function drupal_install_mkdir($file, $mask, $message = TRUE) {
  *  TRUE/FALSE whether or not we were able to fix the file's permissions.
  */
 function drupal_install_fix_file($file, $mask, $message = TRUE) {
-  $mod = substr(sprintf('%o', fileperms($file)), -4);
-  $prefix = substr($mod, 0, 1);
-  $mod = substr($mod, 1 ,4);
+  $mod = fileperms($file) & 0777;
   $masks = array(FILE_READABLE, FILE_WRITABLE, FILE_EXECUTABLE, FILE_NOT_READABLE, FILE_NOT_WRITABLE, FILE_NOT_EXECUTABLE);
+
+  // FILE_READABLE, FILE_WRITABLE, and FILE_EXECUTABLE permission strings
+  // can theoretically be 0400, 0200, and 0100 respectively, but to be safe
+  // we set all three access types in case the administrator intends to
+  // change the owner of settings.php after installation.
   foreach ($masks as $m) {
     if ($mask & $m) {
       switch ($m) {
         case FILE_READABLE:
           if (!is_readable($file)) {
-            $mod += 444;
+            $mod |= 0444;
           }
           break;
         case FILE_WRITABLE:
           if (!is_writable($file)) {
-            $mod += 222;
+            $mod |= 0222;
           }
           break;
         case FILE_EXECUTABLE:
           if (!is_executable($file)) {
-            $mod += 111;
+            $mod |= 0111;
           }
           break;
         case FILE_NOT_READABLE:
           if (is_readable($file)) {
-            $mod -= 444;
+            $mod &= ~0444;
           }
           break;
         case FILE_NOT_WRITABLE:
           if (is_writable($file)) {
-            $mod -= 222;
+            $mod &= ~0222;
           }
           break;
         case FILE_NOT_EXECUTABLE:
           if (is_executable($file)) {
-            $mod -= 111;
+            $mod &= ~0111;
           }
           break;
       }
     }
   }
 
-  if (@chmod($file, intval("$prefix$mod", 8))) {
+  // chmod() will work if the web server is running as owner of the file.
+  // If PHP safe_mode is enabled the currently executing script must also
+  // have the same owner.
+  if (@chmod($file, $mod)) {
     return TRUE;
   }
   else {
@@ -580,7 +596,7 @@ function st($string, $args = array()) {
   require_once './includes/theme.inc';
   $GLOBALS['theme'] = 'theme';
   // Transform arguments before inserting them
-  foreach($args as $key => $value) {
+  foreach ($args as $key => $value) {
     switch ($key[0]) {
       // Escaped only
       case '@':
@@ -596,6 +612,60 @@ function st($string, $args = array()) {
     }
   }
   return strtr((!empty($locale_strings[$string]) ? $locale_strings[$string] : $string), $args);
+}
+
+/**
+ * Converts a set of tables to UTF-8 encoding.
+ *
+ * This update is designed to be re-usable by contrib modules and is
+ * used by system_update_169().
+ */
+function _system_update_utf8($tables) {
+  // Are we starting this update for the first time?
+  if (!isset($_SESSION['update_utf8'])) {
+    switch ($GLOBALS['db_type']) {
+      // Only for MySQL 4.1+
+      case 'mysqli':
+        break;
+      case 'mysql':
+        if (version_compare(mysql_get_server_info($GLOBALS['active_db']), '4.1.0', '<')) {
+          return array();
+        }
+        break;
+      case 'pgsql':
+        return array();
+    }
+
+    // See if database uses UTF-8 already
+    global $db_url;
+    $url = parse_url(is_array($db_url) ? $db_url['default'] : $db_url);
+    $db_name = substr($url['path'], 1);
+    $result = db_fetch_array(db_query('SHOW CREATE DATABASE `%s`', $db_name));
+    if (preg_match('/utf8/i', array_pop($result))) {
+      return array();
+    }
+
+    // Make list of tables to convert
+    $_SESSION['update_utf8'] = $tables;
+    // Keep track of total for progress bar
+    $_SESSION['update_utf8_total'] = count($tables);
+  }
+
+  // Fetch remaining tables list and convert next table
+  $list = &$_SESSION['update_utf8'];
+
+  $ret = update_convert_table_utf8(array_shift($list));
+
+  // Are we done?
+  if (count($list) == 0) {
+    unset($_SESSION['update_utf8']);
+    unset($_SESSION['update_utf8_total']);
+    return $ret;
+  }
+
+  // Progress percentage
+  $ret['#finished'] = 1 - (count($list) / $_SESSION['update_utf8_total']);
+  return $ret;
 }
 
 /**

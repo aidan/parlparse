@@ -1,5 +1,5 @@
 <?php
-// $Id: watchdog.module,v 1.158 2006/10/22 08:28:47 unconed Exp $
+// $Id: watchdog.module,v 1.165 2006/12/29 17:22:20 dries Exp $
 
 /**
  * @file
@@ -20,16 +20,10 @@ function watchdog_help($section) {
     case 'admin/help#watchdog':
       $output = '<p>'. t('The watchdog module monitors your system, capturing system events in a log to be reviewed by an authorized individual at a later time. This is useful for site administrators who want a quick overview of activities on their site. The logs also record the sequence of events, so it can be useful for debugging site errors.') .'</p>';
       $output .= '<p>'. t('The watchdog log is simply a list of recorded events containing usage data, performance data, errors, warnings and operational information. Administrators should check the watchdog report on a regular basis to ensure their site is working properly.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>view watchdog logs at <a href="@admin-watchdog">administer &gt;&gt; logs &gt;&gt; watchdog</a>.</li>
-<li>view watchdog event logs at <a href="@admin-watchdog-events">administer &gt;&gt; logs &gt;&gt; watchdog &gt;&gt; events</a>.</li>
-</ul>
-', array('@admin-watchdog' => url('admin/logs/watchdog'), '@admin-watchdog-events' => url('admin/logs/watchdog/events')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@watchdog">Watchdog page</a>.', array('@watchdog' => 'http://drupal.org/handbook/modules/watchdog/')) .'</p>';
       return $output;
     case 'admin/logs':
-      return t('<p>The watchdog module monitors your web site, capturing system events in a log to be reviewed by an authorized individual at a later time. The watchdog log is simply a list of recorded events containing usage data, performance data, errors, warnings and operational information. It is vital to check the watchdog report on a regular basis as it is often the only way to tell what is going on.</p>');
+      return '<p>'. t('The watchdog module monitors your web site, capturing system events in a log to be reviewed by an authorized individual at a later time. The watchdog log is simply a list of recorded events containing usage data, performance data, errors, warnings and operational information. It is vital to check the watchdog report on a regular basis as it is often the only way to tell what is going on.') .'</p>';
   }
 }
 
@@ -57,9 +51,10 @@ function watchdog_menu($may_cache) {
       'type' => MENU_CALLBACK);
   }
   else {
-    // Add the CSS for this module
-    // We put this in !$may_cache so it's only added once per request
-    drupal_add_css(drupal_get_path('module', 'watchdog') .'/watchdog.css');
+    if (arg(0) == 'admin' && arg(1) == 'logs') {
+      // Add the CSS for this module
+      drupal_add_css(drupal_get_path('module', 'watchdog') .'/watchdog.css', 'module', 'all', FALSE);
+    }
   }
 
   return $items;
@@ -125,7 +120,7 @@ function watchdog_overview() {
     array('data' => t('Operations'))
   );
 
-  $sql = "SELECT w.*, u.name, u.uid FROM {watchdog} w INNER JOIN {users} u ON w.uid = u.uid";
+  $sql = "SELECT w.wid, w.uid, w.severity, w.type, w.timestamp, w.message, w.link, u.name FROM {watchdog} w INNER JOIN {users} u ON w.uid = u.uid";
   $tablesort = tablesort_sql($header);
   $type = $_SESSION['watchdog_overview_filter'];
   if ($type != 'all') {

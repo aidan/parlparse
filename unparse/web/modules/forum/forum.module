@@ -1,5 +1,5 @@
 <?php
-// $Id: forum.module,v 1.364 2006/11/14 06:30:10 drumm Exp $
+// $Id: forum.module,v 1.375 2007/01/10 15:17:51 dries Exp $
 
 /**
  * @file
@@ -15,22 +15,16 @@ function forum_help($section) {
       $output = '<p>'. t('The forum module lets you create threaded discussion forums for a particular topic on your site. This is similar to a message board system such as phpBB. Forums are very useful because they allow community members to discuss topics with one another, and they are archived for future reference.') .'</p>';
       $output .= '<p>'. t('Forums can be organized under what are called <em>containers</em>. Containers hold forums and, in turn, forums hold threaded discussions. Both containers and forums can be placed inside other containers and forums. By planning the structure of your containers and forums well, you make it easier for users to find a topic area of interest to them. Forum topics can be moved by selecting a different forum and can be left in the existing forum by selecting <em>leave a shadow copy</em>. Forum topics can also have their own URL.') .'</p>';
       $output .= '<p>'. t('Forums module <strong>requires Taxonomy and Comments module</strong> be enabled.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>administer forums at <a href="@admin-forum">administer &gt;&gt; content management &gt;&gt; forums</a>.</li>
-<li>enable the required comment and taxonomy modules at <a href="@admin-modules">administer &gt;&gt; site configuration &gt;&gt; modules</a>.</li>
-<li>read about the comment module at <a href="@admin-help-comment">administer &gt;&gt; help &gt;&gt; comment</a>.</li>
-<li>read about the taxonomy module at <a href="@admin-help-taxonomy">administer &gt;&gt; help &gt;&gt; taxonomy</a>.</li>
-</ul>
-', array('@admin-forum' => url('admin/content/forum'), '@admin-modules' => url('admin/settings/modules'), '@admin-help-comment' => url('admin/help/comment'), '@admin-help-taxonomy' => url('admin/help/taxonomy')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@forum">Forum page</a>.', array('@forum' => 'http://drupal.org/handbook/modules/forum/')) .'</p>';
       return $output;
     case 'admin/content/forum':
-      return t('<p>This is a list of existing containers and forums that you can edit. Containers hold forums and, in turn, forums hold threaded discussions. Both containers and forums can be placed inside other containers and forums. By planning the structure of your containers and forums well, you make it easier for users to find a topic area of interest to them.</p>');
+      return '<p>'. t('This is a list of existing containers and forums that you can edit. Containers hold forums and, in turn, forums hold threaded discussions. Both containers and forums can be placed inside other containers and forums. By planning the structure of your containers and forums well, you make it easier for users to find a topic area of interest to them.') .'</p>';
     case 'admin/content/forum/add/container':
-      return t('<p>Containers help you organize your forums. The job of a container is to hold, or contain, other forums that are related. For example, a container named "Food" might hold two forums named "Fruit" and "Vegetables".</p>');
+      return '<p>'. t('Containers help you organize your forums. The job of a container is to hold, or contain, other forums that are related. For example, a container named "Food" might hold two forums named "Fruit" and "Vegetables".') .'</p>';
     case 'admin/content/forum/add/forum':
-      return t('<p>A forum holds discussion topics that are related. For example, a forum named "Fruit" might contain topics titled "Apples" and "Bananas".</p>');
+      return '<p>'. t('A forum holds discussion topics that are related. For example, a forum named "Fruit" might contain topics titled "Apples" and "Bananas".') .'</p>';
+    case 'admin/content/forum/settings':
+      return '<p>'. t('These settings provide the ability to fine tune the display of your forum topics.') .'</p>';
   }
 }
 
@@ -41,9 +35,6 @@ function forum_menu($may_cache) {
   $items = array();
 
   if ($may_cache) {
-    $items[] = array('path' => 'node/add/forum',
-      'title' => t('Forum topic'),
-      'access' => user_access('create forum topics'));
     $items[] = array('path' => 'forum',
       'title' => t('Forums'),
       'callback' => 'forum_page',
@@ -317,10 +308,12 @@ function forum_view(&$node, $teaser = FALSE, $page = FALSE) {
   }
 
   $node = node_prepare($node, $teaser);
-  $node->content['forum_navigation'] = array(
-    '#value' => theme('forum_topic_navigation', $node),
-    '#weight' => 100,
-  );
+  if (!$teaser) {
+    $node->content['forum_navigation'] = array(
+      '#value' => theme('forum_topic_navigation', $node),
+      '#weight' => 100,
+    );
+  }
   return $node;
 }
 
@@ -597,10 +590,10 @@ function forum_overview() {
   if ($tree) {
     foreach ($tree as $term) {
       if (in_array($term->tid, variable_get('forum_containers', array()))) {
-        $rows[] = array(str_repeat(' -- ', $term->depth) .' '. check_plain($term->name), l(t('edit container'), "admin/content/forum/edit/container/$term->tid"));
+        $rows[] = array(str_repeat(' -- ', $term->depth) .' '. l(check_plain($term->name), 'forum/'. $term->tid), l(t('edit container'), 'admin/content/forum/edit/container/'. $term->tid));
       }
       else {
-        $rows[] = array(str_repeat(' -- ', $term->depth) .' '. check_plain($term->name), l(t('edit forum'), "admin/content/forum/edit/forum/$term->tid"));
+        $rows[] = array(str_repeat(' -- ', $term->depth) .' '. l(check_plain($term->name), 'forum/'. $term->tid), l(t('edit forum'), 'admin/content/forum/edit/forum/'. $term->tid));
        }
 
     }
@@ -756,7 +749,7 @@ function forum_get_forums($tid = 0) {
     $sql = db_rewrite_sql($sql);
     $topic = db_fetch_object(db_query_range($sql, $forum->tid, 0, 1));
 
-    $last_post = new StdClass();
+    $last_post = new stdClass();
     $last_post->timestamp = $topic->last_comment_timestamp;
     $last_post->name = $topic->last_comment_name;
     $last_post->uid = $topic->last_comment_uid;
@@ -825,7 +818,7 @@ function forum_get_topics($tid, $sortby, $forum_per_page) {
     }
 
     if ($topic->num_comments > 0) {
-      $last_reply = new StdClass();
+      $last_reply = new stdClass();
       $last_reply->timestamp = $topic->last_comment_timestamp;
       $last_reply->name = $topic->last_comment_name;
       $last_reply->uid = $topic->last_comment_uid;
@@ -902,7 +895,7 @@ function theme_forum_display($forums, $topics, $parents, $tid, $sortby, $forum_p
     }
   }
 
-  drupal_set_title($title);
+  drupal_set_title(check_plain($title));
 
   $breadcrumb[] = array('path' => $_GET['q']);
   menu_set_location($breadcrumb);
@@ -910,14 +903,6 @@ function theme_forum_display($forums, $topics, $parents, $tid, $sortby, $forum_p
   if (count($forums) || count($parents)) {
     $output  = '<div id="forum">';
     $output .= '<ul>';
-
-    if (module_exists('tracker')) {
-      if ($user->uid) {
-        $output .= ' <li>'. l(t('My discussions.'), "tracker/$user->uid") .'</li>';
-      }
-
-      $output .= ' <li>'. l(t('Active discussions.'), 'tracker') .'</li>';
-    }
 
     if (user_access('create forum topics')) {
       $output .= '<li>'. l(t('Post new forum topic.'), "node/add/forum/$tid") .'</li>';
@@ -1082,7 +1067,7 @@ function theme_forum_topic_navigation($node) {
   $stop = 0;
   while ($topic = db_fetch_object($result)) {
     if ($stop == 1) {
-      $next = new StdClass();
+      $next = new stdClass();
       $next->nid = $topic->nid;
       $next->title = $topic->title;
       break;
@@ -1091,7 +1076,7 @@ function theme_forum_topic_navigation($node) {
       $stop = 1;
     }
     else {
-      $prev = new StdClass();
+      $prev = new stdClass();
       $prev->nid = $topic->nid;
       $prev->title = $topic->title;
     }

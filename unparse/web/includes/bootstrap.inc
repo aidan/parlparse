@@ -1,33 +1,108 @@
 <?php
-// $Id: bootstrap.inc,v 1.130 2006/11/12 19:16:09 dries Exp $
+// $Id: bootstrap.inc,v 1.145 2007/01/15 11:52:02 unconed Exp $
 
 /**
  * @file
  * Functions that need to be loaded on every Drupal request.
  */
 
+/**
+ * Indicates that the item should never be removed unless explicitly told to
+ * using cache_clear_all() with a cache ID.
+ */
 define('CACHE_PERMANENT', 0);
+
+/**
+ * Indicates that the item should be removed at the next general cache wipe.
+ */
 define('CACHE_TEMPORARY', -1);
 
+/**
+ * Indicates that page caching is disabled.
+ */
 define('CACHE_DISABLED', 0);
+
+/**
+ * Indicates that page caching is enabled, using "normal" mode.
+ */
 define('CACHE_NORMAL', 1);
+
+/**
+ * Indicates that page caching is using "aggressive" mode. This bypasses
+ * loading any modules for additional speed, which may break functionality in
+ * modules that expect to be run on each page load.
+ */
 define('CACHE_AGGRESSIVE', 2);
 
+/**
+ * Indicates a notice-level watchdog event; these are normally notifications
+ * of normal system events that have occurred and can usually be safely ignored.
+ */
 define('WATCHDOG_NOTICE', 0);
+
+/**
+ * Indicates a warning-level watchdog event; this can be triggered by an error
+ * in a module that does not impact the overall functionality of the site.
+ */
 define('WATCHDOG_WARNING', 1);
+
+/**
+ * Indicates an error-level watchdog event; could be indicative of an attempt
+ * to compromise the security of the site, or a serious system error.
+ */
 define('WATCHDOG_ERROR', 2);
 
+/**
+ * First bootstrap phase: initialize configuration.
+ */
 define('DRUPAL_BOOTSTRAP_CONFIGURATION', 0);
+
+/**
+ * Second bootstrap phase: try to call a non-database cache
+ * fetch routine.
+ */
 define('DRUPAL_BOOTSTRAP_EARLY_PAGE_CACHE', 1);
+
+/**
+ * Third bootstrap phase: initialize database layer.
+ */
 define('DRUPAL_BOOTSTRAP_DATABASE', 2);
+
+/**
+ * Fourth bootstrap phase: identify and reject banned hosts.
+ */
 define('DRUPAL_BOOTSTRAP_ACCESS', 3);
+
+/**
+ * Fifth bootstrap phase: initialize session handling.
+ */
 define('DRUPAL_BOOTSTRAP_SESSION', 4);
+
+/**
+ * Sixth bootstrap phase: load bootstrap.inc and module.inc, start
+ * the variable system and try to serve a page from the cache.
+ */
 define('DRUPAL_BOOTSTRAP_LATE_PAGE_CACHE', 5);
+
+/**
+ * Seventh bootstrap phase: set $_GET['q'] to Drupal path of request.
+ */
 define('DRUPAL_BOOTSTRAP_PATH', 6);
+
+/**
+ * Final bootstrap phase: Drupal is fully loaded; validate and fix
+ * input data.
+ */
 define('DRUPAL_BOOTSTRAP_FULL', 7);
 
-// These values should match the 'role' table
+/**
+ * Role ID for anonymous users; should match what's in the "role" table.
+ */
 define('DRUPAL_ANONYMOUS_RID', 1);
+
+/**
+ * Role ID for authenticated users; should match what's in the "role" table.
+ */
 define('DRUPAL_AUTHENTICATED_RID', 2);
 
 /**
@@ -176,7 +251,7 @@ function conf_init() {
     // Create base URL
     $base_root = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
     $base_url = $base_root .= '://'. $_SERVER['HTTP_HOST'];
-    if ($dir = trim(dirname($_SERVER['SCRIPT_NAME']), '\,/')) {
+    if ($dir = trim(dirname($_SERVER['PHP_SELF']), '\,/')) {
       $base_path = "/$dir";
       $base_url .= $base_path;
       $base_path .= '/';
@@ -192,6 +267,18 @@ function conf_init() {
  * theme, etc.). The filename, whether provided, cached, or retrieved
  * from the database, is only returned if the file exists.
  *
+ * This function plays a key role in allowing Drupal's resources (modules
+ * and themes) to be located in different places depending on a site's
+ * configuration. For example, a module 'foo' may legally be be located
+ * in any of these three places:
+ *
+ * modules/foo/foo.module
+ * sites/all/modules/foo/foo.module
+ * sites/example.com/modules/foo/foo.module
+ *
+ * Calling drupal_get_filename('module', 'foo') will give you one of
+ * the above, depending on where the module is located.
+ *
  * @param $type
  *   The type of the item (i.e. theme, theme_engine, module).
  * @param $name
@@ -199,15 +286,13 @@ function conf_init() {
  * @param $filename
  *   The filename of the item if it is to be set explicitly rather
  *   than by consulting the database.
- * @param $check_db
- *   Allows the database search to be skipped (useful for pre-bootstrap
- *   checks where configuration paths must still be respected).
  *
  * @return
  *   The filename of the requested item.
  */
-function drupal_get_filename($type, $name, $filename = NULL, $check_db = TRUE) {
+function drupal_get_filename($type, $name, $filename = NULL) {
   static $files = array();
+  global $active_db;
 
   if (!isset($files[$type])) {
     $files[$type] = array();
@@ -219,10 +304,16 @@ function drupal_get_filename($type, $name, $filename = NULL, $check_db = TRUE) {
   elseif (isset($files[$type][$name])) {
     // nothing
   }
-  elseif ($check_db && (($file = db_result(db_query("SELECT filename FROM {system} WHERE name = '%s' AND type = '%s'", $name, $type))) && file_exists($file))) {
+  // Verify that we have an active database connection, before querying
+  // the database.  This is required because this function is called both
+  // before we have a database connection (i.e. during installation) and
+  // when a database connection fails.
+  elseif ($active_db && (($file = db_result(db_query("SELECT filename FROM {system} WHERE name = '%s' AND type = '%s'", $name, $type))) && file_exists($file))) {
     $files[$type][$name] = $file;
   }
   else {
+    // Fallback to searching the filesystem if the database connection is
+    // not established or the requested file is not found.
     $config = conf_path();
     $dir = (($type == 'theme_engine') ? 'themes/engines' : "${type}s");
     $file = (($type == 'theme_engine') ? "$name.engine" : "$name.$type");
@@ -398,7 +489,6 @@ function drupal_page_header() {
   header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
   header("Cache-Control: no-store, no-cache, must-revalidate");
   header("Cache-Control: post-check=0, pre-check=0", FALSE);
-  header("Pragma: no-cache");
 }
 
 /**
@@ -667,9 +757,11 @@ function drupal_anonymous_user($session = '') {
  *     DRUPAL_BOOTSTRAP_CONFIGURATION: initialize configuration.
  *     DRUPAL_BOOTSTRAP_EARLY_PAGE_CACHE: try to call a non-database cache fetch routine.
  *     DRUPAL_BOOTSTRAP_DATABASE: initialize database layer.
+ *     DRUPAL_BOOTSTRAP_ACCESS: identify and reject banned hosts.
  *     DRUPAL_BOOTSTRAP_SESSION: initialize session handling.
  *     DRUPAL_BOOTSTRAP_LATE_PAGE_CACHE: load bootstrap.inc and module.inc, start
  *       the variable system and try to serve a page from the cache.
+ *     DRUPAL_BOOTSTRAP_PATH: set $_GET['q'] to Drupal path of request.
  *     DRUPAL_BOOTSTRAP_FULL: Drupal is fully loaded, validate and fix input data.
  */
 function drupal_bootstrap($phase) {
@@ -707,15 +799,15 @@ function _drupal_bootstrap($phase) {
     case DRUPAL_BOOTSTRAP_ACCESS:
       // Deny access to hosts which were banned - t() is not yet available.
       if (drupal_is_denied('host', $_SERVER['REMOTE_ADDR'])) {
-        header('HTTP/1.0 403 Forbidden');
+        header('HTTP/1.1 403 Forbidden');
         print 'Sorry, '. $_SERVER['REMOTE_ADDR']. ' has been banned.';
         exit();
       }
       break;
 
     case DRUPAL_BOOTSTRAP_SESSION:
-      require_once './includes/session.inc';
-      session_set_save_handler("sess_open", "sess_close", "sess_read", "sess_write", "sess_destroy", "sess_gc");
+      require_once variable_get('session_inc', './includes/session.inc');
+      session_set_save_handler('sess_open', 'sess_close', 'sess_read', 'sess_write', 'sess_destroy_sid', 'sess_gc');
       session_start();
       break;
 
@@ -789,8 +881,8 @@ function drupal_maintenance_theme() {
   require_once './includes/unicode.inc';
   require_once './modules/filter/filter.module';
   unicode_check();
-  drupal_add_css(drupal_get_path('module', 'system') .'/defaults.css', 'core');
-  drupal_add_css(drupal_get_path('module', 'system') .'/system.css', 'core');
+  drupal_add_css(drupal_get_path('module', 'system') .'/defaults.css', 'module');
+  drupal_add_css(drupal_get_path('module', 'system') .'/system.css', 'module');
   $theme = '';
 }
 

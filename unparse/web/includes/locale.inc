@@ -1,5 +1,5 @@
 <?php
-// $Id: locale.inc,v 1.95 2006/10/23 15:52:35 dries Exp $
+// $Id: locale.inc,v 1.105 2007/01/05 05:32:22 unconed Exp $
 
 /**
  * @file
@@ -103,7 +103,7 @@ function theme_locale_admin_manage_screen($form) {
 function _locale_admin_manage_screen_submit($form_id, $form_values) {
   // Save changes to existing languages.
   $languages = locale_supported_languages(FALSE, TRUE);
-  foreach($languages['name'] as $key => $value) {
+  foreach ($languages['name'] as $key => $value) {
     if ($form_values['site_default'] == $key) {
       $form_values['enabled'][$key] = 1; // autoenable the default language
     }
@@ -153,7 +153,7 @@ function locale_custom_language_form() {
     '#size' => 12,
     '#maxlength' => 60,
     '#required' => TRUE,
-    '#description' => t("Commonly this is an <a href=\"@iso-codes\">ISO 639 language code</a> with an optional country code for regional variants. Examples include 'en', 'en-US' and 'zh-cn'.", array('@iso-codes' => 'http://www.w3.org/WAI/ER/IG/ert/iso639.htm')),
+    '#description' => t('Commonly this is an <a href="@iso-codes">ISO 639 language code</a> with an optional country code for regional variants. Examples include "en", "en-US" and "zh-cn".', array('@iso-codes' => 'http://www.w3.org/WAI/ER/IG/ert/iso639.htm')),
   );
   $form['custom language']['langname'] = array('#type' => 'textfield',
     '#title' => t('Language name in English'),
@@ -422,7 +422,6 @@ function _locale_string_edit($lid) {
 function _locale_string_edit_submit($form_id, $form_values) {
   $lid = $form_values['lid'];
   foreach ($form_values['translations'] as $key => $value) {
-    $value = filter_xss_admin($value);
     $trans = db_fetch_object(db_query("SELECT translation FROM {locales_target} WHERE lid = %d AND locale = '%s'", $lid, $key));
     if (isset($trans->translation)) {
       db_query("UPDATE {locales_target} SET translation = '%s' WHERE lid = %d AND locale = '%s'", $value, $lid, $key);
@@ -645,7 +644,7 @@ function _locale_import_read_po($op, $file, $mode = NULL, $lang = NULL) {
 }
 
 /**
- * Sets an error message occured during locale file parsing.
+ * Sets an error message occurred during locale file parsing.
  *
  * @param $message
  *   The message to be translated
@@ -714,7 +713,7 @@ function _locale_import_one_string($op, $value = NULL, $mode = NULL, $lang = NUL
 
       // Some real string to import
       else {
-        $comments = filter_xss_admin(_locale_import_shorten_comments($value['#']));
+        $comments = _locale_import_shorten_comments($value['#']);
 
         // Handle a translation for some plural string
         if (strpos($value['msgid'], "\0")) {
@@ -736,11 +735,11 @@ function _locale_import_one_string($op, $value = NULL, $mode = NULL, $lang = NUL
               db_query("UPDATE {locales_source} SET location = '%s' WHERE lid = %d", $comments, $lid);
               $trans2 = db_fetch_object(db_query("SELECT lid, translation, plid, plural FROM {locales_target} WHERE lid = %d AND locale = '%s'", $lid, $lang));
               if (!$trans2->lid) { // no translation in current language
-                db_query("INSERT INTO {locales_target} (lid, locale, translation, plid, plural) VALUES (%d, '%s', '%s', %d, %d)", $lid, $lang, filter_xss_admin($trans), $plid, $key);
+                db_query("INSERT INTO {locales_target} (lid, locale, translation, plid, plural) VALUES (%d, '%s', '%s', %d, %d)", $lid, $lang, $trans, $plid, $key);
                 $additions++;
               } // translation exists
               else if ($mode == 'overwrite' || $trans2->translation == '') {
-                db_query("UPDATE {locales_target} SET translation = '%s', plid = %d, plural = %d WHERE locale = '%s' AND lid = %d", filter_xss_admin($trans), $plid, $key, $lang, $lid);
+                db_query("UPDATE {locales_target} SET translation = '%s', plid = %d, plural = %d WHERE locale = '%s' AND lid = %d", $trans, $plid, $key, $lang, $lid);
                 if ($trans2->translation == '') {
                   $additions++;
                 }
@@ -750,10 +749,10 @@ function _locale_import_one_string($op, $value = NULL, $mode = NULL, $lang = NUL
               }
             }
             else { // no string
-              db_query("INSERT INTO {locales_source} (location, source) VALUES ('%s', '%s')", $comments, filter_xss_admin($english[$key]));
+              db_query("INSERT INTO {locales_source} (location, source) VALUES ('%s', '%s')", $comments, $english[$key]);
               $loc = db_fetch_object(db_query("SELECT lid FROM {locales_source} WHERE source = '%s'", $english[$key]));
               $lid = $loc->lid;
-              db_query("INSERT INTO {locales_target} (lid, locale, translation, plid, plural) VALUES (%d, '%s', '%s', %d, %d)", $lid, $lang, filter_xss_admin($trans), $plid, $key);
+              db_query("INSERT INTO {locales_target} (lid, locale, translation, plid, plural) VALUES (%d, '%s', '%s', %d, %d)", $lid, $lang, $trans, $plid, $key);
               if ($trans != '') {
                 $additions++;
               }
@@ -773,11 +772,11 @@ function _locale_import_one_string($op, $value = NULL, $mode = NULL, $lang = NUL
             db_query("UPDATE {locales_source} SET location = '%s' WHERE source = '%s'", $comments, $english);
             $trans = db_fetch_object(db_query("SELECT lid, translation FROM {locales_target} WHERE lid = %d AND locale = '%s'", $lid, $lang));
             if (!$trans->lid) { // no translation in current language
-              db_query("INSERT INTO {locales_target} (lid, locale, translation) VALUES (%d, '%s', '%s')", $lid, $lang, filter_xss_admin($translation));
+              db_query("INSERT INTO {locales_target} (lid, locale, translation) VALUES (%d, '%s', '%s')", $lid, $lang, $translation);
               $additions++;
             } // translation exists
             else if ($mode == 'overwrite') { //overwrite in any case
-              db_query("UPDATE {locales_target} SET translation = '%s' WHERE locale = '%s' AND lid = %d", filter_xss_admin($translation), $lang, $lid);
+              db_query("UPDATE {locales_target} SET translation = '%s' WHERE locale = '%s' AND lid = %d", $translation, $lang, $lid);
               if ($trans->translation == '') {
                 $additions++;
               }
@@ -794,7 +793,7 @@ function _locale_import_one_string($op, $value = NULL, $mode = NULL, $lang = NUL
             db_query("INSERT INTO {locales_source} (location, source) VALUES ('%s', '%s')", $comments, $english);
             $loc = db_fetch_object(db_query("SELECT lid FROM {locales_source} WHERE source = '%s'", $english));
             $lid = $loc->lid;
-            db_query("INSERT INTO {locales_target} (lid, locale, translation) VALUES (%d, '%s', '%s')", $lid, $lang, filter_xss_admin($translation));
+            db_query("INSERT INTO {locales_target} (lid, locale, translation) VALUES (%d, '%s', '%s')", $lid, $lang, $translation);
             if ($translation != '') {
               $additions++;
             }
@@ -979,7 +978,7 @@ function _locale_import_tokenize_formula($formula) {
     if (is_numeric($formula[$i])) {
       $num = $formula[$i];
       $j = $i + 1;
-      while($j < strlen($formula) && is_numeric($formula[$j])) {
+      while ($j < strlen($formula) && is_numeric($formula[$j])) {
         $num .= $formula[$j];
         $j++;
       }
@@ -1283,6 +1282,9 @@ function _locale_export_remove_plural($entry) {
  * List languages in search result table
  */
 function _locale_string_language_list($translation) {
+  // Add CSS
+  drupal_add_css(drupal_get_path('module', 'locale') .'/locale.css', 'module', 'all', FALSE);
+
   $languages = locale_supported_languages(FALSE, TRUE);
   unset($languages['name']['en']);
   $output = '';
@@ -1303,7 +1305,7 @@ function _locale_string_seek_query() {
 
   if (!isset($query)) {
     $fields = array('string', 'language', 'searchin');
-    $query = new StdClass;
+    $query = new stdClass();
     if (is_array($_REQUEST['edit'])) {
       foreach ($_REQUEST['edit'] as $key => $value) {
         if (!empty($value) && in_array($key, $fields)) {
@@ -1554,7 +1556,8 @@ function _locale_get_iso639_list() {
     "pi" => array("Pali"),
     "pl" => array("Polish", "Polski"),
     "ps" => array("Pashto", "پښتو"),
-    "pt" => array("Portuguese", "Português"),
+    "pt" => array("Portuguese, Portugal", "Português"),
+    "pt-br" => array("Portuguese, Brazil", "Português"),
     "qu" => array("Quechua"),
     "rm" => array("Rhaeto-Romance"),
     "rn" => array("Kirundi"),

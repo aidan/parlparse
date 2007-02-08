@@ -1,5 +1,5 @@
 <?php
-// $Id: content_types.inc,v 1.12 2006/11/12 19:56:07 dries Exp $
+// $Id: content_types.inc,v 1.24 2007/01/09 07:53:26 drumm Exp $
 
 /**
  * @file
@@ -67,6 +67,8 @@ function node_type_form($type = NULL) {
     $type->locked = FALSE;
   }
 
+  $form['#node_type'] = $type; // Make the type object available to implementations of hook_form_alter.
+
   $form['identity'] = array(
     '#type' => 'fieldset',
     '#title' => t('Identification'),
@@ -75,7 +77,7 @@ function node_type_form($type = NULL) {
     '#title' => t('Name'),
     '#type' => 'textfield',
     '#default_value' => $type->name,
-    '#description' => t('The human-readable name of this content type. This text will be displayed as part of the list on the <em>create content</em> page. It is recommended that this name consists only of lowercase letters, numbers, and <strong>spaces</strong>. The name must be unique to this content type.'),
+    '#description' => t('The human-readable name of this content type. This text will be displayed as part of the list on the <em>create content</em> page. It is recommended that this name begins with a capital letter and consists only of letters, numbers, and <strong>spaces</strong>. This name must be unique to this content type.'),
     '#required' => TRUE,
   );
 
@@ -86,7 +88,7 @@ function node_type_form($type = NULL) {
       '#default_value' => $type->type,
       '#maxlength' => 32,
       '#required' => TRUE,
-      '#description' => t('The machine-readable name of this content type. This text will be used for constructing the URL of the <em>create content</em> page for this content type. It is recommended that this name consists only of lowercase letters, numbers, and <strong>underscores</strong>. Dashes are not allowed. Underscores will be converted into dashes when constructing the URL of the <em>create content</em> page. The name must be unique to this content type.'),
+      '#description' => t('The machine-readable name of this content type. This text will be used for constructing the URL of the <em>create content</em> page for this content type. This name may consist of only of lowercase letters, numbers, and underscores. Dashes are not allowed. Underscores will be converted into dashes when constructing the URL of the <em>create content</em> page. This name must be unique to this content type.'),
     );
   }
   else {
@@ -101,6 +103,13 @@ function node_type_form($type = NULL) {
       '#description' => t('The machine-readable name of this content type. This field cannot be modified for system-defined content types.'),
     );
   }
+
+  $form['identity']['description'] = array(
+    '#title' => t('Description'),
+    '#type' => 'textarea',
+    '#default_value' => $type->description,
+    '#description' => t('A brief description of this content type. This text will be displayed as part of the list on the <em>create content</em> page.'),
+    );
 
   $form['submission'] = array(
     '#type' => 'fieldset',
@@ -127,24 +136,18 @@ function node_type_form($type = NULL) {
     '#default_value' => $type->body_label,
     '#description' => t('To omit the body field for this content type, remove any text and leave this field blank.'),
   );
-  $form['submission']['description'] = array(
-    '#title' => t('Description'),
-    '#type' => 'textarea',
-    '#default_value' => $type->description,
-    '#description' => t('A brief description of this content type. This text will be displayed as part of the list on the <em>create content</em> page.'),
-  );
-  $form['submission']['help']  = array(
-    '#type' => 'textarea',
-    '#title' => t('Explanation or submission guidelines'),
-    '#default_value' =>  $type->help,
-    '#description' => t('This text will be displayed at the top of the submission form for this content type. It is useful for helping or instructing your users.')
-  );
   $form['submission']['min_word_count'] = array(
     '#type' => 'select',
     '#title' => t('Minimum number of words'),
     '#default_value' => $type->min_word_count,
     '#options' => drupal_map_assoc(array(0, 10, 25, 50, 75, 100, 125, 150, 175, 200)),
     '#description' => t('The minimum number of words for the body field to be considered valid for this content type. This can be useful to rule out submissions that do not meet the site\'s standards, such as short test posts.')
+  );
+  $form['submission']['help']  = array(
+    '#type' => 'textarea',
+    '#title' => t('Explanation or submission guidelines'),
+    '#default_value' =>  $type->help,
+    '#description' => t('This text will be displayed at the top of the submission form for this content type. It is useful for helping or instructing your users.')
   );
   $form['workflow'] = array(
     '#type' => 'fieldset',
@@ -231,8 +234,12 @@ function node_type_form_validate($form_id, $form_values) {
     if (isset($types[$type->type]) && $type->type != $old_type) {
       form_set_error('type', t('The machine-readable name %type is already taken.', array('%type' => $type->type)));
     }
-    if (strpos($type->type, '-') !== FALSE) {
-      form_set_error('type', t('The machine-readable name cannot contain dashes.', array('%type' => $type->type)));
+    if (!preg_match('!^[a-z0-9_]+$!', $type->type)) {
+      form_set_error('type', t('The machine-readable name can only consist of lowercase letters, underscores, and numbers.'));
+    }
+    // The type cannot be just the character '0', since elsewhere we check it using empty().
+    if ($type->type === '0') {
+      form_set_error('type', t("Invalid type. Please enter a type name other than '0' (the character zero)."));
     }
   }
 
@@ -240,7 +247,6 @@ function node_type_form_validate($form_id, $form_values) {
 
   if (isset($names[$type->name]) && $names[$type->name] != $old_type) {
     form_set_error('name', t('The human-readable name %name is already taken.', array('%name' => $names[$type->name])));
-    break;
   }
 }
 
@@ -282,18 +288,20 @@ function node_type_form_submit($form_id, $form_values) {
 
   $status = node_type_save($type);
 
+  $variables = $form_values;
+
   // Remove everything that's been saved already - whatever's left is assumed
   // to be a persistent variable.
-  foreach ($form_values as $key => $value) {
+  foreach ($variables as $key => $value) {
     if (isset($type->$key)) {
-      unset($form_values[$key]);
+      unset($variables[$key]);
     }
   }
 
-  unset($form_values['type_display'], $form_values['old_type'], $form_values['orig_type'], $form_values['submit'], $form_values['delete'], $form_values['reset'], $form_values['form_id']);
+  unset($variables['form_token'], $variables['op'], $variables['submit'], $variables['delete'], $variables['reset'], $variables['form_id']);
 
   // Save or reset persistent variable values.
-  foreach ($form_values as $key => $value) {
+  foreach ($variables as $key => $value) {
     $key .= '_'. $type->type;
     if ($op == t('Reset to defaults')) {
       variable_del($key);
@@ -357,7 +365,7 @@ function node_node_type($op, $info) {
  *   then nothing happens.
  */
 function node_type_reset(&$type) {
-  $info_array = module_invoke($type->module, 'node_info');
+  $info_array = module_invoke_all('node_info');
   if (isset($info_array[$type->orig_type])) {
     $info = _node_type_set_defaults($info_array[$type->orig_type]);
     $info['type'] = $type->orig_type;
@@ -380,7 +388,7 @@ function node_type_delete_confirm($type) {
 
   $num_nodes = db_num_rows(db_query("SELECT * FROM {node} WHERE type = '%s'", $type->type));
   if ($num_nodes) {
-    $caption .= '<p>'. t('<strong>Warning:</strong> there %are currently %num_nodes %type %nodes on your site. %they may not be able to be displayed or edited correctly, once you have removed this content type.', array('%are' => format_plural($num_nodes, 'is', 'are'), '%num_nodes' => $num_nodes, '%type' => $type->name, '%nodes' => format_plural($num_nodes, 'node', 'nodes'), '%they' => format_plural($num_nodes, 'It', 'They'))) .'</p>';
+    $caption .= '<p>'. strtr(format_plural($num_nodes, '<strong>Warning:</strong> there is currently @count %type post on your site. It may not be able to be displayed or edited correctly, once you have removed this content type.', '<strong>Warning:</strong> there are currently @count %type posts on your site. They may not be able to be displayed or edited correctly, once you have removed this content type.'), array('%type' => theme('placeholder', $type->name))) .'</p>';
   }
 
   $caption .= '<p>'. t('This action cannot be undone.') .'</p>';

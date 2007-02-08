@@ -1,5 +1,5 @@
 <?php
-// $Id: install.php,v 1.24 2006/11/10 08:52:53 drumm Exp $
+// $Id: install.php,v 1.34 2007/01/10 10:15:07 unconed Exp $
 
 require_once './includes/install.inc';
 
@@ -19,6 +19,10 @@ function install_main() {
   require_once './includes/bootstrap.inc';
   drupal_bootstrap(DRUPAL_BOOTSTRAP_CONFIGURATION);
   require_once './modules/system/system.install';
+  require_once './includes/file.inc';
+
+  // Ensure correct page headers are sent (e.g. caching)
+  drupal_page_header();
 
   // Check existing settings.php.
   $verify = install_verify_settings();
@@ -86,6 +90,9 @@ function install_main() {
   $settings_file = './'. conf_path() .'/settings.php';
   if (!drupal_verify_install_file($settings_file, FILE_EXIST|FILE_READABLE|FILE_NOT_WRITABLE)) {
     drupal_set_message(st('All necessary changes to %file have been made, so you should now remove write permissions to this file. Failure to remove write permissions to this file is a security risk.', array('%file' => $settings_file)), 'error');
+  }
+  else {
+    drupal_set_message(st('All necessary changes to %file have been made. It has been set to read-only for security.', array('%file' => $settings_file)));
   }
 
   // Show end page.
@@ -180,7 +187,7 @@ function install_settings_form($profile, $install_locale, $settings_file, $db_ur
     $form['basic_options'] = array(
       '#type' => 'fieldset',
       '#title' => st('Basic options'),
-      '#description' => st('<p>To set up your @drupal database, enter the following information.</p>', array('@drupal' => drupal_install_profile_name())),
+      '#description' => '<p>'. st('To set up your @drupal database, enter the following information.', array('@drupal' => drupal_install_profile_name())) .'</p>',
     );
 
     if (count($db_types) > 1) {
@@ -242,7 +249,7 @@ function install_settings_form($profile, $install_locale, $settings_file, $db_ur
       '#title' => st('Advanced options'),
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
-      '#description' => st('These options are only necessary for some sites. If you\'re not sure what you should enter here, leave the default settings or check with your hosting provider.')
+      '#description' => st("These options are only necessary for some sites. If you're not sure what you should enter here, leave the default settings or check with your hosting provider.")
     );
 
     // Database host
@@ -309,8 +316,8 @@ function _install_settings_form_validate($db_prefix, $db_type, $db_user, $db_pas
   }
 
   // Verify the table prefix
-  if (!empty($db_prefix) && is_string($db_prefix) && preg_match('/[^A-Za-z0-9_]/', $db_prefix)) {
-    form_set_error('db_prefix', st('The database table prefix you have entered, %db_prefix, is invalid. The table prefix can only contain alphanumeric characters and underscores.', array('%db_prefix' => $db_prefix)), 'error');
+  if (!empty($db_prefix) && is_string($db_prefix) && !preg_match('/^[A-Za-z0-9_.]+$/', $db_prefix)) {
+    form_set_error('db_prefix', st('The database table prefix you have entered, %db_prefix, is invalid. The table prefix can only contain alphanumeric characters, underscores or dots.', array('%db_prefix' => $db_prefix)), 'error');
   }
 
   if (!empty($db_port) && !is_numeric($db_port)) {
@@ -374,7 +381,6 @@ function install_settings_form_submit($form_id, $form_values) {
  *   The selected profile.
  */
 function install_select_profile() {
-  include_once './includes/file.inc';
   include_once './includes/form.inc';
 
   $profiles = file_scan_directory('./profiles', '\.profile$', array('.', '..', 'CVS'), 0, TRUE, 'name', 0);
@@ -464,13 +470,13 @@ function install_select_locale_form($locales) {
     // Try to use verbose locale name
     $name = $locale->name;
     if (isset($languages[$name])) {
-      $name = $languages[$name][0] . (isset($languages[$name][1]) ? ' (' . $languages[$name][1] . ')' : '');
+      $name = $languages[$name][0] . (isset($languages[$name][1]) ? ' '. st('(@language)', array('@language' => $languages[$name][1])) : '');
     }
     $form['locale'][$locale->name] = array(
       '#type' => 'radio',
       '#return_value' => $locale->name,
       '#default_value' => ($locale->name == 'en' ? TRUE : FALSE),
-      '#title' => $name . ($locale->name == 'en' ? ' (built-in)' : ''),
+      '#title' => $name . ($locale->name == 'en' ? ' '. st('(built-in)') : ''),
       '#parents' => array('locale')
     );
   }
@@ -487,7 +493,7 @@ function install_select_locale_form($locales) {
 function install_no_profile_error() {
   drupal_maintenance_theme();
   drupal_set_title(st('No profiles available'));
-  print theme('install_page', st('<p>We were unable to find any installer profiles. Installer profiles tell us what modules to enable and what schema to install in the database. A profile is necessary to continue with the installation process.</p>'));
+  print theme('install_page', '<p>'. st('We were unable to find any installer profiles. Installer profiles tell us what modules to enable and what schema to install in the database. A profile is necessary to continue with the installation process.') .'</p>');
   exit;
 }
 
@@ -532,13 +538,18 @@ function install_complete($profile) {
   // Build final page.
   drupal_maintenance_theme();
   drupal_set_title(st('@drupal installation complete', array('@drupal' => drupal_install_profile_name())));
-  $output .= st('<p>Congratulations, @drupal has been successfully installed.</p>', array('@drupal' => drupal_install_profile_name()));
+  $output .= '<p>'. st('Congratulations, @drupal has been successfully installed.', array('@drupal' => drupal_install_profile_name())) .'</p>';
 
   // Show profile finalization info.
   $function = $profile .'_profile_final';
   if (function_exists($function)) {
     // More steps required
-    $output .= $function();
+    $profile_message = $function();
+  }
+
+  // If the profile returned a welcome message, use that instead of default.
+  if (isset($profile_message)) {
+    $output .= $profile_message;
   }
   else {
     // No more steps
@@ -565,7 +576,7 @@ function install_check_requirements($profile) {
       }
     }
 
-    drupal_set_title('Incompatible environment');
+    drupal_set_title(st('Incompatible environment'));
     print theme('install_page', '');
     exit;
   }

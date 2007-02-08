@@ -1,5 +1,5 @@
 <?php
-// $Id: book.module,v 1.397 2006/11/16 21:14:42 drumm Exp $
+// $Id: book.module,v 1.406 2007/01/09 08:31:22 drumm Exp $
 
 /**
  * @file
@@ -63,7 +63,7 @@ function book_link($type, $node = NULL, $teaser = FALSE) {
 
   if ($type == 'node' && isset($node->parent)) {
     if (!$teaser) {
-      if (book_access('create', $node)) {
+      if (book_access('create', $node) && $node->status == 1) {
         $links['book_add_child'] = array(
           'title' => t('Add child page'),
           'href' => "node/add/book/parent/$node->nid"
@@ -92,7 +92,7 @@ function book_menu($may_cache) {
     $items[] = array(
       'path' => 'admin/content/book',
       'title' => t('Books'),
-      'description' => t('Manage site\'s books and orphaned book pages.'),
+      'description' => t("Manage site's books and orphaned book pages."),
       'callback' => 'book_admin',
       'access' => user_access('administer nodes'));
     $items[] = array(
@@ -195,8 +195,7 @@ function book_submit(&$node) {
   // Set default values for non-administrators.
   if (!user_access('administer nodes')) {
     $node->revision = 1;
-    $book->uid = $user->uid;
-    $book->name = $user->uid ? $user->name : '';
+    $node->uid = $user->uid;
   }
 }
 
@@ -645,7 +644,7 @@ function book_export($type = 'html', $nid = 0) {
       $node = db_fetch_object($node_result);
   }
   $depth = count(book_location($node)) + 1;
-  $export_function = 'book_export_' . $type;
+  $export_function = 'book_export_'. $type;
 
   if (function_exists($export_function)) {
     print call_user_func($export_function, $nid, $depth);
@@ -707,7 +706,7 @@ function theme_book_export_html($title, $content) {
   $html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
   $html .= '<base href="'. $base_url .'/" />' . "\n";
   $html .= "<style type=\"text/css\">\n@import url(misc/print.css);\n</style>\n";
-  $html .= "</head>\n<body>\n". $content . "\n</body>\n</html>\n";
+  $html .= "</head>\n<body>\n". $content ."\n</body>\n</html>\n";
   return $html;
 }
 
@@ -716,6 +715,8 @@ function theme_book_export_html($title, $content) {
  * node, is called recursively for each child of the node (in weight,
  * title order). Finally appends the output of the $visit_post()
  * callback to the output before returning the generated output.
+ *
+ * @todo This is duplicitous with node_build_content().
  *
  * @param nid
  *  - the node id (nid) of the root node of the book hierarchy.
@@ -779,19 +780,25 @@ function book_recurse($nid = 0, $depth = 1, $visit_pre, $visit_post) {
  *   - the HTML generated for the given node.
  */
 function book_node_visitor_html_pre($node, $depth, $nid) {
-  // Output the content:
-  if (node_hook($node, 'content')) {
-    $node = node_invoke($node, 'content');
+  // Remove the delimiter (if any) that separates the teaser from the body.
+  $node->body = str_replace('<!--break-->', '', $node->body);
+
+  // The 'view' hook can be implemented to overwrite the default function
+  // to display nodes.
+  if (node_hook($node, 'view')) {
+    $node = node_invoke($node, 'view', FALSE, FALSE);
   }
-  // Allow modules to change $node->body before viewing.
-  node_invoke_nodeapi($node, 'print', $node->body, FALSE);
+  else {
+    $node = node_prepare($node, FALSE);
+  }
+
+  // Allow modules to make their own additions to the node.
+  node_invoke_nodeapi($node, 'print');
 
   $output .= "<div id=\"node-". $node->nid ."\" class=\"section-$depth\">\n";
   $output .= "<h1 class=\"book-heading\">". check_plain($node->title) ."</h1>\n";
+  $output .= drupal_render($node->content);
 
-  if ($node->body) {
-    $output .= drupal_render($node->content);
-  }
   return $output;
 }
 
@@ -974,29 +981,21 @@ function book_admin_overview() {
 function book_help($section) {
   switch ($section) {
     case 'admin/help#book':
-      $output = '<p>'. t('The <em>book</em> content type is suited for creating structured, multi-page hypertexts such as site resource guides, manuals, and Frequently Asked Questions (FAQs). It permits a document to have chapters, sections, subsections, etc. Authors with suitable permissions can add pages to a collaborative book,  placing them into the existing document by adding them to a table of contents menu. ') .'</p>';
-      $output .= '<p>'. t('Books have additional <em>previous</em>, <em>up</em>, and <em>next</em> navigation elements at the bottom of each page for moving through the text. Additional navigation may be provided by enabling the <em>book navigation block</em> on the <a href="@admin-block">block administration page</a>.', array('@admin-block' => url('admin/build/block'))) .'</p>';
+      $output = '<p>'. t('The <em>book</em> module is suited for creating structured, multi-page hypertexts such as site resource guides, manuals, and Frequently Asked Questions (FAQs). It permits a document to have chapters, sections, subsections, etc. Authors with suitable permissions can add pages to a collaborative book,  placing them into the existing document by adding them to a table of contents menu.') .'</p>';
+      $output .= '<p>'. t('Book pages have navigation elements at the bottom of the page for moving through the text.  These link to the previous and next pages in the book, as well as a link labeled <em>up</em>, leading to the level above in the structure.  More comprehensive navigation may be provided by enabling the <em>book navigation block</em> on the <a href="@admin-block">block administration page</a>.', array('@admin-block' => url('admin/build/block'))) .'</p>';
       $output .= '<p>'. t('Users can select the <em>printer-friendly version</em> link visible at the bottom of a book page to generate a printer-friendly display of the page and all of its subsections. ') .'</p>';
-      $output .= '<p>'. t('Administrators can view a book outline, from which is it possible to change the titles of sections, and their <i>weight</i> (thus reordering sections). From this outline, it is also possible to edit and/or delete book pages. Many content types besides pages (for example, blog entries, stories, and polls) can be added to a collaborative book by choosing the <em>outline</em> tab when viewing the post.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>create new book pages: <a href="@node-add-book">create content &gt;&gt; book page</a>.</li>
-<li>administer individual books (choose a book from list): <a href="@admin-node-book">administer &gt;&gt; content management &gt;&gt; books</a>.</li>
-<li>set workflow and other global book settings on the book configuration page: <a href="@admin-settings-content-types-book-page" title="book page content type">administer &gt;&gt; content management &gt;&gt; content types &gt;&gt; book page</a>.</li>
-<li>enable the book navigation block: <a href="@admin-block">administer &gt;&gt; site building &gt;&gt; blocks</a>.</li>
-<li>control who can create, edit, and outline posts in books by setting access permissions: <a href="@admin-access">administer &gt;&gt; user management &gt;&gt; access control</a>.</li>
-</ul>
-', array('@node-add-book' => url('node/add/book'), '@admin-node-book' => url('admin/content/book'), '@admin-settings-content-types-book-page' => url('admin/content/types/book'), '@admin-block' => url('admin/build/block'), '@admin-access' => url('admin/user/access')));
+      $output .= '<p>'. t("Posts of type %book are automatically added to the book hierarchy. Users with the <em>outline posts in books</em> permission can also add content of any other type to a book, placing it into the existing book structure through the interface that's available by clicking on the <em>outline</em> tab while viewing that post.", array('%book' => node_get_types('name', 'book'))) .'</p>';
+      $output .= '<p>'. t('Administrators can view a list of all books on the <a href="@admin-node-book">book administration page</a>.  In this list there is a link to an outline page for each book, from which is it possible to change the titles of sections, or to change their weight, thus reordering sections. From this administrative interface, it is also possible to determine whether there are any orphan pages - pages that have become disconnected from the rest of the book structure.', array('@admin-node-book' => url('admin/content/book'))) .'</p>';
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@book">Book page</a>.', array('@book' => 'http://drupal.org/handbook/modules/book/')) .'</p>';
       return $output;
     case 'admin/content/book':
-      return t('<p>The book module offers a means to organize content, authored by many users, in an online manual, outline or FAQ.</p>');
+      return '<p>'. t('The book module offers a means to organize content, authored by many users, in an online manual, outline or FAQ.') .'</p>';
     case 'admin/content/book/orphan':
-      return t('<p>Pages in a book are like a tree. As pages are edited, reorganized and removed, child pages might be left with no link to the rest of the book. Such pages are referred to as "orphan pages". On this page, administrators can review their books for orphans and reattach those pages as desired.</p>');
+      return '<p>'. t('Pages in a book are like a tree. As pages are edited, reorganized and removed, child pages might be left with no link to the rest of the book. Such pages are referred to as "orphan pages". On this page, administrators can review their books for orphans and reattach those pages as desired.') .'</p>';
   }
 
   if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'outline') {
-    return t('The outline feature allows you to include posts in the <a href="@book">book hierarchy</a>.', array('@book' => url('book')));
+    return '<p>'. t('The outline feature allows you to include posts in the <a href="@book">book hierarchy</a>.', array('@book' => url('book'))) .'</p>';
   }
 }
 

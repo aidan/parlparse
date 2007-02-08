@@ -1,5 +1,5 @@
 <?php
-// $Id: system.install,v 1.40 2006/11/08 19:24:11 dries Exp $
+// $Id: system.install,v 1.69 2007/01/10 23:22:34 unconed Exp $
 
 define('DRUPAL_MINIMUM_PHP',    '4.3.3');
 define('DRUPAL_MINIMUM_MYSQL',  '3.23.17'); // If using MySQL
@@ -106,6 +106,62 @@ function system_requirements($phase) {
     $requirements['cron']['title'] = $t('Cron maintenance tasks');
   }
 
+  // Test files directory
+  if ($phase == 'runtime') {
+    $directory = file_directory_path();
+    $is_writable = is_writable($directory);
+    $is_directory = is_dir($directory);
+    if (!$is_writable || !$is_directory) {
+      if (!$is_directory) {
+        $error = $t('The directory %directory does not exist.', array('%directory' => $directory));
+      }
+      else {
+        $error = $t('The directory %directory is not writable.', array('%directory' => $directory));
+      }
+      $requirements['file system'] = array(
+        'value' => $t('Not writable'),
+        'severity' => REQUIREMENT_ERROR,
+        'description' => $error .' '. $t('You may need to set the correct directory at the <a href="@admin-file-system">file system settings page</a> or change the current directory\'s permissions so that it is writable.', array('@admin-file-system' => url('admin/settings/file-system'))),
+      );
+    }
+    else {
+      if (variable_get('file_downloads', FILE_DOWNLOADS_PUBLIC) == FILE_DOWNLOADS_PUBLIC) {
+        $requirements['file system'] = array(
+          'value' => $t('Writable (<em>public</em> download method)'),
+        );
+      }
+      else {
+        $requirements['file system'] = array(
+          'value' => $t('Writable (<em>private</em> download method)'),
+        );
+      }
+    }
+    $requirements['file system']['title'] = $t('File system');
+  }
+
+  // See if updates are available in update.php.
+  if ($phase == 'runtime') {
+    $requirements['update'] = array(
+      'title' => $t('Database schema'),
+      'severity' => REQUIREMENT_OK,
+      'value' => $t('Up to date'),
+    );
+
+    // Check installed modules.
+    foreach (module_list() as $module) {
+      $updates = drupal_get_schema_versions($module);
+      if ($updates !== FALSE) {
+        $default = drupal_get_installed_schema_version($module);
+        if (max($updates) > $default) {
+          $requirements['update']['severity'] = REQUIREMENT_ERROR;
+          $requirements['update']['value'] = $t('Out of date');
+          $requirements['update']['description'] = $t('Some modules have database schema updates to install. You should run the <a href="@update">database update script</a> immediately.', array('@update' => base_path() .'update.php'));
+          break;
+        }
+      }
+    }
+  }
+
   // Test Unicode library
   include_once './includes/unicode.inc';
   $requirements = array_merge($requirements, unicode_requirements());
@@ -122,7 +178,7 @@ function system_install() {
     case 'mysql':
     case 'mysqli':
       db_query("CREATE TABLE {access} (
-        aid tinyint NOT NULL auto_increment,
+        aid int NOT NULL auto_increment,
         mask varchar(255) NOT NULL default '',
         type varchar(255) NOT NULL default '',
         status tinyint NOT NULL default '0',
@@ -148,12 +204,12 @@ function system_install() {
         custom tinyint DEFAULT '0' NOT NULL,
         throttle tinyint DEFAULT '0' NOT NULL,
         visibility tinyint DEFAULT '0' NOT NULL,
-        pages text DEFAULT '' NOT NULL,
+        pages text NOT NULL,
         title varchar(64) DEFAULT '' NOT NULL
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
 
       db_query("CREATE TABLE {boxes} (
-        bid tinyint NOT NULL auto_increment,
+        bid int NOT NULL auto_increment,
         body longtext,
         info varchar(128) NOT NULL default '',
         format int NOT NULL default '0',
@@ -189,7 +245,7 @@ function system_install() {
         INDEX expire (expire)
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
       db_query("CREATE TABLE {cache_page} (
-        cid varchar(255) NOT NULL default '',
+        cid varchar(255) BINARY NOT NULL default '',
         data longblob,
         expire int NOT NULL default '0',
         created int NOT NULL default '0',
@@ -236,7 +292,8 @@ function system_install() {
         filepath varchar(255) NOT NULL default '',
         filemime varchar(255) NOT NULL default '',
         filesize int unsigned NOT NULL default 0,
-        PRIMARY KEY (fid)
+        PRIMARY KEY (fid),
+        KEY nid (nid)
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
 
       db_query("CREATE TABLE {file_revisions} (
@@ -332,9 +389,9 @@ function system_install() {
         vid int unsigned NOT NULL,
         uid int NOT NULL default '0',
         title varchar(128) NOT NULL default '',
-        body longtext NOT NULL default '',
-        teaser longtext NOT NULL default '',
-        log longtext NOT NULL default '',
+        body longtext NOT NULL,
+        teaser longtext NOT NULL,
+        log longtext NOT NULL,
         timestamp int NOT NULL default '0',
         format int NOT NULL default '0',
         PRIMARY KEY  (vid),
@@ -378,7 +435,7 @@ function system_install() {
 
       db_query("CREATE TABLE {role} (
         rid int unsigned NOT NULL auto_increment,
-        name varchar(32) NOT NULL default '',
+        name varchar(64) NOT NULL default '',
         PRIMARY KEY (rid),
         UNIQUE KEY name (name)
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
@@ -537,11 +594,12 @@ function system_install() {
         message longtext NOT NULL,
         severity tinyint unsigned NOT NULL default '0',
         link varchar(255) NOT NULL default '',
-        location varchar(128) NOT NULL default '',
+        location text NOT NULL,
         referer varchar(128) NOT NULL default '',
         hostname varchar(128) NOT NULL default '',
         timestamp int NOT NULL default '0',
-        PRIMARY KEY (wid)
+        PRIMARY KEY (wid),
+        KEY (type)
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
 
       break;
@@ -693,7 +751,7 @@ function system_install() {
       db_query("CREATE INDEX {node_comment_statistics}_node_comment_timestamp_idx ON {node_comment_statistics} (last_comment_timestamp)");
 
       db_query("CREATE TABLE {files} (
-        fid int_unsigned NOT NULL default 0,
+        fid serial CHECK (fid >= 0),
         nid int_unsigned NOT NULL default 0,
         filename varchar(255) NOT NULL default '',
         filepath varchar(255) NOT NULL default '',
@@ -701,6 +759,7 @@ function system_install() {
         filesize int_unsigned NOT NULL default 0,
         PRIMARY KEY (fid)
       )");
+      db_query("CREATE INDEX {files}_nid_idx ON {files} (nid)");
 
       db_query("CREATE TABLE {file_revisions} (
         fid int_unsigned NOT NULL default 0,
@@ -841,7 +900,7 @@ function system_install() {
 
       db_query("CREATE TABLE {role} (
         rid serial CHECK (rid >= 0),
-        name varchar(32) NOT NULL default '',
+        name varchar(64) NOT NULL default '',
         PRIMARY KEY (rid),
         UNIQUE (name)
       )");
@@ -1001,12 +1060,13 @@ function system_install() {
         message text NOT NULL,
         severity smallint_unsigned NOT NULL default '0',
         link varchar(255) NOT NULL default '',
-        location varchar(128) NOT NULL default '',
+        location text NOT NULL default '',
         referer varchar(128) NOT NULL default '',
         hostname varchar(128) NOT NULL default '',
         timestamp int NOT NULL default '0',
         PRIMARY KEY (wid)
       )");
+      db_query("CREATE INDEX {watchdog}_type_idx ON {watchdog} (type)");
       break;
   }
 
@@ -1023,13 +1083,11 @@ function system_install() {
 
   db_query("INSERT INTO {variable} (name,value) VALUES('theme_default', 's:7:\"garland\";')");
 
-  db_query("INSERT INTO {blocks} (module,delta,theme,status) VALUES('user', 0, 'garland', 1)");
-  db_query("INSERT INTO {blocks} (module,delta,theme,status) VALUES('user', 1, 'garland', 1)");
+  db_query("INSERT INTO {blocks} (module,delta,theme,status,pages) VALUES('user', 0, 'garland', 1, '')");
+  db_query("INSERT INTO {blocks} (module,delta,theme,status,pages) VALUES('user', 1, 'garland', 1, '')");
 
   db_query("INSERT INTO {node_access} VALUES (0, 0, 'all', 1, 0, 0)");
 
-  db_query("INSERT INTO {node_type} (type, name, module, description, help, has_title, title_label, has_body, body_label, min_word_count, custom, modified, locked, orig_type) VALUES ('page', 'Page', 'node', 'If you want to add a static page, like a contact page or an about page, use a page.', '', 1, 'Title', 1, 'Body', 0, 1, 1, 0, 'page')");
-  db_query("INSERT INTO {node_type} (type, name, module, description, help, has_title, title_label, has_body, body_label, min_word_count, custom, modified, locked, orig_type) VALUES ('story', 'Story', 'node', 'Stories are articles in their simplest form: they have a title, a teaser and a body, but can be extended by other modules. The teaser is part of the body too. Stories may be used as a personal blog or for news articles.', '', 1, 'Title', 1, 'Body', 0, 1, 1, 0, 'story')");
   db_query("INSERT INTO {filter_formats} (name, roles, cache) VALUES ('Filtered HTML',',1,2,',1)");
   db_query("INSERT INTO {filter_formats} (name, roles, cache) VALUES ('PHP code','',0)");
   db_query("INSERT INTO {filter_formats} (name, roles, cache) VALUES ('Full HTML','',1)");
@@ -1545,7 +1603,7 @@ function system_update_132() {
       /**
        * Wipe the search index
        */
-      include_once './modules/search.module';
+      include_once './'. drupal_get_path('module', 'search') .'/search.module';
       search_wipe();
     }
 
@@ -1561,8 +1619,8 @@ function system_update_133() {
   if ($GLOBALS['db_type'] == 'mysql') {
     $ret[] = update_sql("CREATE TABLE {contact} (
       subject varchar(255) NOT NULL default '',
-      recipients longtext NOT NULL default '',
-      reply longtext NOT NULL default ''
+      recipients longtext NOT NULL,
+      reply longtext NOT NULL
       )");
     $ret[] = update_sql("ALTER TABLE {users} ADD login int NOT NULL default '0'");
   }
@@ -1746,7 +1804,7 @@ function system_update_145() {
   $ret[] = update_sql("UPDATE {blocks} SET region = 'right' WHERE region = '1'");
   db_query("UPDATE {blocks} SET theme = '%s'", $default_theme);
 
-  // Initialze block data for other enabled themes.
+  // Initialize block data for other enabled themes.
   $themes = list_themes();
   foreach (array_keys($themes) as $theme) {
     if (($theme != $default_theme) && $themes[$theme]->status == 1) {
@@ -2297,7 +2355,7 @@ function system_update_159() {
 function system_update_160() {
   $types = module_invoke('node', 'get_types');
   if (is_array($types)) {
-    foreach($types as $type) {
+    foreach ($types as $type) {
       if (!is_array(variable_get("node_options_$type", array()))) {
         variable_set("node_options_$type", array());
       }
@@ -2533,60 +2591,6 @@ function system_update_169() {
   ));
 }
 
-/**
- * Converts a set of tables to UTF-8 encoding.
- *
- * This update is designed to be re-usable by contrib modules and is
- * used by system_update_169().
- */
-function _system_update_utf8($tables) {
-  // Are we starting this update for the first time?
-  if (!isset($_SESSION['update_utf8'])) {
-    switch ($GLOBALS['db_type']) {
-      // Only for MySQL 4.1+
-      case 'mysqli':
-        break;
-      case 'mysql':
-        if (version_compare(mysql_get_server_info($GLOBALS['active_db']), '4.1.0', '<')) {
-          return array();
-        }
-        break;
-      case 'pgsql':
-        return array();
-    }
-
-    // See if database uses UTF-8 already
-    global $db_url;
-    $url = parse_url(is_array($db_url) ? $db_url['default'] : $db_url);
-    $db_name = substr($url['path'], 1);
-    $result = db_fetch_array(db_query('SHOW CREATE DATABASE `%s`', $db_name));
-    if (preg_match('/utf8/i', array_pop($result))) {
-      return array();
-    }
-
-    // Make list of tables to convert
-    $_SESSION['update_utf8'] = $tables;
-    // Keep track of total for progress bar
-    $_SESSION['update_utf8_total'] = count($tables);
-  }
-
-  // Fetch remaining tables list and convert next table
-  $list = &$_SESSION['update_utf8'];
-
-  $ret = update_convert_table_utf8(array_shift($list));
-
-  // Are we done?
-  if (count($list) == 0) {
-    unset($_SESSION['update_utf8']);
-    unset($_SESSION['update_utf8_total']);
-    return $ret;
-  }
-
-  // Progress percentage
-  $ret['#finished'] = 1 - (count($list) / $_SESSION['update_utf8_total']);
-  return $ret;
-}
-
 function system_update_170() {
   if (!variable_get('update_170_done', FALSE)) {
     switch ($GLOBALS['db_type']) {
@@ -2619,7 +2623,7 @@ function system_update_172() {
     $_SESSION['system_update_172_max'] = db_result(db_query('SELECT MAX(cid) FROM {comments}'));
   }
 
-  include_once './modules/comment.module';
+  include_once './'. drupal_get_path('module', 'comment') .'/comment.module';
 
   $limit = 20;
   $result = db_query_range("SELECT cid, thread FROM {comments} WHERE cid > %d ORDER BY cid ASC", $_SESSION['system_update_172'], 0, $limit);
@@ -2784,7 +2788,7 @@ function system_update_177() {
       // Deleting is required, because _user_mail_text() checks for the existance of the variable.
       variable_del('user_mail_'. $message_id);
       $ret[] = array(
-        'query' => strtr('The mail template %message_id has been reset to the default. The old template <a href="%url">has been saved</a>.', array('%message_id' => 'user_mail_'. $message_id, '%url' => url('admin/logs/event/'. $last->wid))),
+        'query' => strtr('The mail template %message_id has been reset to the default. The old template <a href="@url">has been saved</a>.', array('%message_id' => 'user_mail_'. $message_id, '@url' => url('admin/logs/event/'. $last->wid))),
         'success' => TRUE
       );
     }
@@ -3069,7 +3073,7 @@ function system_update_182() {
 }
 
 /**
- * @defgroup updates-4.7-to-x.x System updates from 4.7 to x.x
+ * @defgroup updates-4.7-to-5.0 System updates from 4.7 to 5.0
  * @{
  */
 
@@ -3151,8 +3155,8 @@ function system_update_1004() {
   switch ($GLOBALS['db_type']) {
     case 'mysql':
     case 'mysqli':
-    $ret[] = update_sql("ALTER TABLE {access} CHANGE `aid` `aid` INT( 10 ) NOT NULL AUTO_INCREMENT ");
-    $ret[] = update_sql("ALTER TABLE {boxes} CHANGE `bid` `bid` INT( 10 ) NOT NULL AUTO_INCREMENT ");
+    $ret[] = update_sql("ALTER TABLE {access} CHANGE `aid` `aid` int  NOT NULL AUTO_INCREMENT ");
+    $ret[] = update_sql("ALTER TABLE {boxes} CHANGE `bid` `bid` int NOT NULL AUTO_INCREMENT ");
       break;
     case 'pgsql':
       // No database update required for PostgreSQL because it already uses big SERIAL numbers.
@@ -3164,6 +3168,24 @@ function system_update_1004() {
 function system_update_1005() {
   // Add ability to create dynamic node types like the CCK module
   $ret = array();
+
+  // The node_type table may already exist for anyone who ever used CCK in 4.7,
+  // even if CCK is no longer installed. We need to make sure any previously
+  // created table gets renamed before we create the new node_type table in
+  // order to ensure that the new table gets created without errors.
+  // TODO: This check should be removed for Drupal 6.
+  if (db_table_exists('node_type')) {
+    switch ($GLOBALS['db_type']) {
+      case 'mysql':
+      case 'mysqli':
+        $ret[] = update_sql('RENAME TABLE {node_type} TO {node_type_content}');
+        break;
+
+      case 'pgsql':
+        $ret[] = update_sql('ALTER TABLE {node_type} RENAME TO {node_type_content}');
+        break;
+    }
+  }
 
   switch ($GLOBALS['db_type']) {
     case 'mysqli':
@@ -3229,7 +3251,7 @@ function system_update_1005() {
       'type' => 'story',
       'name' => t('Story'),
       'module' => 'node',
-      'description' => t('Stories are articles in their simplest form: they have a title, a teaser and a body, but can be extendd by other modules. The teaser is part of the body too. Stories may be used as a personal blog or for news articles.'),
+      'description' => t('Stories are articles in their simplest form: they have a title, a teaser and a body, but can be extended by other modules. The teaser is part of the body too. Stories may be used as a personal blog or for news articles.'),
       'custom' => TRUE,
       'modified' => TRUE,
       'locked' => FALSE,
@@ -3327,7 +3349,7 @@ function system_update_1010() {
 
   // Disable urlfilter.module, if it exists.
   if (module_exists('urlfilter')) {
-    module_disable('urlfilter');
+    module_disable(array('urlfilter'));
     $ret[] = update_sql("UPDATE {filter_formats} SET module = 'filter', delta = 3 WHERE module = 'urlfilter'");
     $ret[] = t('URL Filter module was disabled; this functionality has now been added to core.');
   }
@@ -3348,9 +3370,11 @@ function system_update_1012() {
     case 'mysql':
     case 'mysqli':
       $ret[] = update_sql("ALTER TABLE {file_revisions} ADD INDEX(vid)");
+      $ret[] = update_sql("ALTER TABLE {files} ADD INDEX(nid)");
       break;
     case 'pgsql':
       $ret[] = update_sql('CREATE INDEX {file_revisions}_vid_idx ON {file_revisions} (vid)');
+      $ret[] = update_sql('CREATE INDEX {files}_nid_idx ON {files} (nid)');
       break;
   }
   return $ret;
@@ -3375,7 +3399,123 @@ function system_update_1014() {
   return array();
 }
 
+
 /**
- * @} End of "defgroup updates-4.7-to-x.x"
- * The next series of updates should start at 2000.
+ * Add an index on watchdog type.
+ */
+function system_update_1015() {
+  $ret = array();
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      $ret[] = update_sql('ALTER TABLE {watchdog} ADD INDEX (type)');
+      break;
+    case 'pgsql':
+      $ret[] = update_sql('CREATE INDEX {watchdog}_type_idx ON {watchdog}(type)');
+      break;
+  }
+  return $ret;
+}
+
+/**
+ * Allow for longer URL encoded (%NN) UTF-8 characters in the location field of watchdog table.
+ */
+function system_update_1016() {
+  $ret = array();
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      $ret[] = update_sql("ALTER TABLE {watchdog} CHANGE COLUMN location location text NOT NULL");
+      break;
+    case 'pgsql':
+      db_change_column($ret, 'watchdog', 'location', 'location', 'text',  array('not null' => TRUE, 'default' => "''"));
+      break;
+  }
+  return $ret;
+}
+
+/**
+ * Allow role names to be up to 64 characters.
+ */
+function system_update_1017() {
+  $ret = array();
+  switch ($GLOBALS['db_type']) {
+    case 'pgsql':
+      db_change_column($ret, 'role', 'name', 'name', 'varchar(64)', array('not null' => TRUE, 'default' => "''"));
+      break;
+    case 'mysql':
+    case 'mysqli':
+      $ret[] = update_sql("ALTER TABLE {role} CHANGE name name varchar(64) NOT NULL default ''");
+      break;
+  }
+  return $ret;
+}
+
+/**
+ * Change break tag (was removed, see 1020).
+ */
+function system_update_1018() {
+  variable_set('update_1020_ok', TRUE);
+  return array();
+}
+
+/**
+ * Change variable format for user-defined e-mails.
+ */
+function system_update_1019() {
+  $message_ids = array('welcome_subject', 'welcome_body',
+                       'approval_subject', 'approval_body',
+                       'pass_subject', 'pass_body',
+  );
+  foreach ($message_ids as $id) {
+    // Replace all %vars with !vars
+    if ($message = variable_get('user_mail_'. $id, NULL)) {
+      $fixed = preg_replace('/%([A-Za-z_-]+)/', '!\1', $message);
+      variable_set('user_mail_'. $id, $fixed);
+    }
+  }
+  return array();
+}
+
+/**
+ * Change break tag back (was removed from head).
+ */
+function system_update_1020() {
+  $ret = array();
+  if (!variable_get('update_1020_ok', FALSE)) {
+    $ret[] = update_sql("UPDATE {node_revisions} SET body = REPLACE(body, '<break>', '<!--break-->')");
+  }
+  variable_del('update_1020_ok');
+  return $ret;
+}
+
+/**
+ * Update two more variables that were missing from system_update_1019.
+ */
+function system_update_1021() {
+  $message_ids = array('admin_body', 'admin_subject');
+  foreach ($message_ids as $id) {
+    // Replace all %vars with !vars
+    if ($message = variable_get('user_mail_'. $id, NULL)) {
+      $fixed = preg_replace('/%([A-Za-z_-]+)/', '!\1', $message);
+      variable_set('user_mail_'. $id, $fixed);
+    }
+  }
+  return array();
+}
+
+/**
+ * @} End of "defgroup updates-4.7-to-5.0"
+ */
+
+
+/**
+ * @defgroup updates-5.0-to-x.x System updates from 5.0 to x.x
+ * @{
+ * @todo Start this series of updates at 2000.
+ */
+
+/**
+ * @} End of "defgroup updates-5.0-to-x.x"
+ * The next series of updates should start at 3000.
  */

@@ -1,5 +1,5 @@
 <?php
-// $Id: profile.module,v 1.178 2006/11/12 19:33:30 dries Exp $
+// $Id: profile.module,v 1.189 2007/01/11 03:31:18 unconed Exp $
 
 /**
  * @file
@@ -7,11 +7,23 @@
  */
 
 /**
- * Flags to define the visibility of a profile field.
+ * Private field, content only available to privileged users.
  */
 define('PROFILE_PRIVATE', 1);
+
+/**
+ * Public field, content shown on profile page but not used on member list pages.
+ */
 define('PROFILE_PUBLIC', 2);
+
+/**
+ * Public field, content shown on profile page and on member list pages.
+ */
 define('PROFILE_PUBLIC_LISTINGS', 3);
+
+/**
+ * Hidden profile field, only accessible by administrators, modules and themes.
+ */
 define('PROFILE_HIDDEN', 4);
 
 /**
@@ -32,16 +44,10 @@ function profile_help($section) {
 <li>date</li>
 </ul>
 ');
-      $output .= t('<p>You can</p>
-<ul>
-<li>view user <a href="@profile">profiles</a>.</li>
-<li>administer profile settings: <a href="@admin-settings-profile">administer &gt;&gt; user management &gt;&gt; profiles</a>.</li>
-</ul>
-', array('@profile' => url('profile'), '@admin-settings-profile' => url('admin/user/profile')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@profile">Profile page</a>.', array('@profile' => 'http://drupal.org/handbook/modules/profile/')) .'</p>';
       return $output;
     case 'admin/user/profile':
-      return t('<p>Here you can define custom fields that users can fill in in their user profile (such as <em>country</em>, <em>real name</em>, <em>age</em>, ...).</p>');
+      return '<p>'. t('Here you can define custom fields that users can fill in in their user profile (such as <em>country</em>, <em>real name</em>, <em>age</em>, ...).') .'</p>';
   }
 }
 
@@ -85,11 +91,6 @@ function profile_menu($may_cache) {
       'callback' => 'profile_autocomplete',
       'access' => 1,
       'type' => MENU_CALLBACK);
-  }
-  else {
-    // Add the CSS for this module
-    // We put this in !$may_cache so it's only added once per request
-    drupal_add_css(drupal_get_path('module', 'profile') .'/profile.css');
   }
 
   return $items;
@@ -169,7 +170,7 @@ function profile_user($type, &$edit, &$user, $category = NULL) {
     case 'load':
       return profile_load_profile($user);
     case 'register':
-      return profile_form_profile($edit, $user, $category);
+      return profile_form_profile($edit, $user, $category, TRUE);
     case 'update':
     case 'insert':
       return profile_save_profile($edit, $user, $category);
@@ -305,8 +306,8 @@ Unless you know what you are doing, it is highly recommended that you prefix the
  */
 function profile_field_form_validate($form_id, $form_values) {
   // Validate the 'field name':
-  if (eregi('[^a-z0-9_-]', $form_values['name'])) {
-    form_set_error('name', t('The specified form name contains one or more illegal characters. Spaces or any other special characters expect dash (-) and underscore (_) are not allowed.'));
+  if (preg_match('/[^a-zA-Z0-9_-]/', $form_values['name'])) {
+    form_set_error('name', t('The specified form name contains one or more illegal characters. Spaces or any other special characters except dash (-) and underscore (_) are not allowed.'));
   }
 
   if (in_array($form_values['name'], user_fields())) {
@@ -420,7 +421,6 @@ function profile_admin_overview() {
  * Menu callback; display a list of user information.
  */
 function profile_browse() {
-
   $name = arg(1);
   list(,,$value) = explode('/', $_GET['q'], 3);
 
@@ -477,10 +477,10 @@ function profile_browse() {
     $output .= theme('pager', NULL, 20);
 
     if ($field->type == 'selection' || $field->type == 'list' || $field->type == 'textfield') {
-      $title = strtr($field->page, array('%value' => theme('placeholder', $value)));
+      $title = strtr(check_plain($field->page), array('%value' => theme('placeholder', $value)));
     }
     else {
-      $title = $field->page;
+      $title = check_plain($field->page);
     }
     $output .= '</div>';
 
@@ -621,8 +621,8 @@ function _profile_form_explanation($field) {
   return $output;
 }
 
-function profile_form_profile($edit, $user, $category) {
-  $result = _profile_get_fields($category);
+function profile_form_profile($edit, $user, $category, $register = FALSE) {
+  $result = _profile_get_fields($category, $register);
   $w = 0;
   while ($field = db_fetch_object($result)) {
     $category = $field->category;
@@ -798,11 +798,11 @@ function _profile_field_serialize($type = NULL) {
   return $type == 'date';
 }
 
-function _profile_get_fields($category) {
+function _profile_get_fields($category, $register = FALSE) {
   $args = array();
   $sql = 'SELECT * FROM {profile_fields} WHERE ';
   $filters = array();
-  if ((arg(0) == 'user' && arg(1) == 'register') || (arg(0) == 'admin' && arg(1) == 'user' && arg(2) == 'create')) {
+  if ($register) {
     $filters[] = 'register = 1';
   }
   else {

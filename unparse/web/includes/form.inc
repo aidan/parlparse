@@ -1,5 +1,5 @@
 <?php
-// $Id: form.inc,v 1.160 2006/11/16 09:06:59 drumm Exp $
+// $Id: form.inc,v 1.174 2007/01/15 04:09:40 unconed Exp $
 
 /**
  * @defgroup form Form generation
@@ -17,25 +17,8 @@
  * $output = drupal_get_form('user_register');
  *
  * Forms can also be built and submitted programmatically without any user input
- * using the drupal_execute() function. Pass in the id of the form, the values to
- * submit to the form, and any parameters needed by the form's builder function.
- * For example:
+ * using the drupal_execute() function.
  *
- * // register a new user
- * $values['name'] = 'robo-user';
- * $values['mail'] = 'robouser@example.com';
- * $values['pass'] = 'password';
- * drupal_execute('user_register', $values);
- *
- * // Create a new node
- * $node = array('type' => 'story');
- * $values['title'] = 'My node';
- * $values['body'] = 'This is the body text!';
- * $values['name'] = 'robo-user';
- * drupal_execute('story_node_form', $values, $node);
- *
- * Calling form_get_errors() after execution will return an array of any
- * validation errors encountered.
  *
  * For information on the format of the structured arrays used to define forms,
  * and more detailed explanations of the Form API workflow, see the reference at
@@ -47,7 +30,7 @@
 /**
  * Retrieves a form from a builder function, passes it on for
  * processing, and renders the form or redirects to its destination
- * as appropriate. In multi-step form scenerios, it handles properly
+ * as appropriate. In multi-step form scenarios, it handles properly
  * processing the values using the previous step's form definition,
  * then rendering the requested step for display.
  *
@@ -64,17 +47,17 @@
  *   The rendered form.
  */
 function drupal_get_form($form_id) {
-  // In multi-step form scenerios, the incoming $_POST values are not
+  // In multi-step form scenarios, the incoming $_POST values are not
   // necessarily intended for the current form. We need to build
   // a copy of the previously built form for validation and processing,
   // then go on to the one that was requested if everything works.
 
   $form_build_id = md5(mt_rand());
-  if (isset($_POST['form_build_id']) && isset($_SESSION['form'][$_POST['form_build_id']]) && $_POST['form_id'] == $form_id) {
+  if (isset($_POST['form_build_id']) && isset($_SESSION['form'][$_POST['form_build_id']]['args']) && $_POST['form_id'] == $form_id) {
     // There's a previously stored multi-step form. We should handle
     // IT first.
     $stored = TRUE;
-    $args = $_SESSION['form'][$_POST['form_build_id']];
+    $args = $_SESSION['form'][$_POST['form_build_id']]['args'];
     $form = call_user_func_array('drupal_retrieve_form', $args);
   }
   else {
@@ -84,7 +67,9 @@ function drupal_get_form($form_id) {
     $args = func_get_args();
     $form = call_user_func_array('drupal_retrieve_form', $args);
     if (isset($form['#multistep']) && $form['#multistep']) {
-      $_SESSION['form'][$form_build_id] = $args;
+      // Clean up old multistep form session data.
+      _drupal_clean_form_sessions();
+      $_SESSION['form'][$form_build_id] = array('timestamp' => time(), 'args' => $args);
       $form['#build_id'] = $form_build_id;
     }
     $stored = FALSE;
@@ -104,13 +89,28 @@ function drupal_get_form($form_id) {
     $form = call_user_func_array('drupal_retrieve_form', $args);
     unset($_SESSION['form'][$_POST['form_build_id']]);
     if (isset($form['#multistep']) && $form['#multistep']) {
-      $_SESSION['form'][$form_build_id] = $args;
+      $_SESSION['form'][$form_build_id] = array('timestamp' => time(), 'args' => $args);
       $form['#build_id'] = $form_build_id;
     }
     drupal_prepare_form($args[0], $form);
   }
 
   return drupal_render_form($args[0], $form);
+}
+
+
+/**
+ * Remove form information that's at least a day old from the
+ * $_SESSION['form'] array.
+ */
+function _drupal_clean_form_sessions() {
+  if (isset($_SESSION['form'])) {
+    foreach ($_SESSION['form'] as $build_id => $data) {
+      if ($data['timestamp'] < (time() - 84600)) {
+        unset($_SESSION['form'][$build_id]);
+      }
+    }
+  }
 }
 
 
@@ -133,6 +133,21 @@ function drupal_get_form($form_id) {
  *   Any additional arguments needed by the form building function.
  * @return
  *   Any form validation errors encountered.
+ *
+ * For example:
+ *
+ * // register a new user
+ * $values['name'] = 'robo-user';
+ * $values['mail'] = 'robouser@example.com';
+ * $values['pass'] = 'password';
+ * drupal_execute('user_register', $values);
+ *
+ * // Create a new node
+ * $node = array('type' => 'story');
+ * $values['title'] = 'My node';
+ * $values['body'] = 'This is the body text!';
+ * $values['name'] = 'robo-user';
+ * drupal_execute('story_node_form', $values, $node);
  */
 function drupal_execute($form_id, $form_values) {
   $args = func_get_args();
@@ -223,7 +238,7 @@ function drupal_retrieve_form($form_id) {
 function drupal_process_form($form_id, &$form) {
   global $form_values, $form_submitted, $user, $form_button_counter;
   static $saved_globals = array();
-  // In some scenerios, this function can be called recursively. Pushing any pre-existing
+  // In some scenarios, this function can be called recursively. Pushing any pre-existing
   // $form_values and form submission data lets us start fresh without clobbering work done
   // in earlier recursive calls.
   array_push($saved_globals, array($form_values, $form_submitted, $form_button_counter));
@@ -276,7 +291,7 @@ function drupal_prepare_form($form_id, &$form) {
     $form['#programmed'] = TRUE;
   }
 
-  // In multi-step form scenerios, this id is used to identify
+  // In multi-step form scenarios, this id is used to identify
   // a unique instance of a particular form for retrieval.
   if (isset($form['#build_id'])) {
     $form['form_build_id'] = array(
@@ -309,7 +324,7 @@ function drupal_prepare_form($form_id, &$form) {
   else if ($user->uid && !$form['#programmed']) {
     $form['#token'] = $form_id;
     $form['form_token'] = array(
-      '#id' => 'edit-'. str_replace('_', '-', $form_id) .'-form-token',
+      '#id' => form_clean_id('edit-'. $form_id .'-form-token'),
       '#type' => 'token',
       '#default_value' => drupal_get_token($form['#token']),
     );
@@ -317,10 +332,10 @@ function drupal_prepare_form($form_id, &$form) {
 
 
   if (isset($form_id)) {
-    $form['form_id'] = array('#type' => 'hidden', '#value' => $form_id, '#id' => str_replace('_', '-', "edit-$form_id"));
+    $form['form_id'] = array('#type' => 'hidden', '#value' => $form_id, '#id' => form_clean_id("edit-$form_id"));
   }
   if (!isset($form['#id'])) {
-    $form['#id'] = $form_id;
+    $form['#id'] = form_clean_id($form_id);
   }
 
   $form += _element_info('form');
@@ -506,6 +521,11 @@ function _form_validate($elements, $form_id = NULL) {
         form_error($elements, t('!name field is required.', array('!name' => $elements['#title'])));
       }
 
+      // Verify that the value is not longer than #maxlength.
+      if (isset($elements['#maxlength']) && drupal_strlen($elements['#value']) > $elements['#maxlength']) {
+        form_error($elements, t('!name cannot be longer than %max characters but is currently %length characters long.', array('!name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'], '%max' => $elements['#maxlength'], '%length' => drupal_strlen($elements['#value']))));
+      }
+
       // Add legal choice check if element has #options. Can be skipped, but then you must validate your own element.
       if (isset($elements['#options']) && isset($elements['#value']) && !isset($elements['#DANGEROUS_SKIP_CHECK'])) {
         if ($elements['#type'] == 'select') {
@@ -636,7 +656,7 @@ function form_builder($form_id, $form) {
       array_unshift($form['#parents'], $name);
     }
     if (!isset($form['#id'])) {
-      $form['#id'] = 'edit-'. implode('-', $form['#parents']);
+      $form['#id'] = form_clean_id('edit-'. implode('-', $form['#parents']));
     }
 
     if (isset($form['#disabled']) && $form['#disabled']) {
@@ -735,8 +755,11 @@ function form_builder($form_id, $form) {
     form_set_value($form, $form['#value']);
   }
 
+  // We start off assuming all form elements are in the correct order.
+  $form['#sorted'] = TRUE;
+
   // Recurse through all child elements.
-  $count  = 0;
+  $count = 0;
   foreach (element_children($form) as $key) {
     $form[$key]['#post'] = $form['#post'];
     $form[$key]['#programmed'] = $form['#programmed'];
@@ -759,6 +782,10 @@ function form_builder($form_id, $form) {
     // Assign a decimal placeholder weight to preserve original array order
     if (!isset($form[$key]['#weight'])) {
       $form[$key]['#weight'] = $count/1000;
+    }
+    else {
+      // If one the child elements has a weight then we will need to sort later.
+      unset($form['#sorted']);
     }
     $form[$key] = form_builder($form_id, $form[$key]);
     $count++;
@@ -909,7 +936,7 @@ function form_select_options($element, $choices = NULL) {
     }
     else {
       $key = (string)$key;
-      if ($value_valid && ($element['#value'] == $key || ($value_is_array && in_array($key, $element['#value'])))) {
+      if ($value_valid && ((string)$element['#value'] === $key || ($value_is_array && in_array($key, $element['#value'])))) {
         $selected = ' selected="selected"';
       }
       else {
@@ -919,6 +946,56 @@ function form_select_options($element, $choices = NULL) {
     }
   }
   return $options;
+}
+
+/**
+ * Traverses a select element's #option array looking for any values
+ * that hold the given key. Returns an array of indexes that match.
+ *
+ * This function is useful if you need to modify the options that are
+ * already in a form element, for example, to remove choices which are
+ * not valid because of additional filters imposed by another module.
+ * One example might be altering the choices in a taxonomy selector.
+ * To correctly handle the case of a multiple hierarchy taxonomy,
+ * #options arrays can now hold an array of objects, instead of a
+ * direct mapping of keys to labels, so that multiple choices in the
+ * selector can have the same key (and label). This makes it difficult
+ * to manipulate directly, which is why this helper function exists.
+ *
+ * This function does not support optgroups (when the elements of the
+ * #options array are themselves arrays), and will return FALSE if
+ * arrays are found. The caller must either flatten/restore or
+ * manually do their manipulations in this case, since returning the
+ * index is not sufficient, and supporting this would make the
+ * "helper" too complicated and cumbersome to be of any help.
+ *
+ * As usual with functions that can return array() or FALSE, do not
+ * forget to use === and !== if needed.
+ *
+ * @param $element
+ *   The select element to search.
+ * @param $key
+ *   The key to look for.
+ * @return
+ *   An array of indexes that match the given $key. Array will be
+ *   empty if no elements were found. FALSE if optgroups were found.
+ */
+function form_get_options($element, $key) {
+  $keys = array();
+  foreach ($element['#options'] as $index => $choice) {
+    if (is_array($choice)) {
+      return FALSE;
+    }
+    else if (is_object($choice)) {
+      if (isset($choice->option[$key])) {
+        $keys[] = $index;
+      }
+    }
+    else if ($index == $key) {
+      $keys[] = $index;
+    }
+  }
+  return $keys;
 }
 
 /**
@@ -981,7 +1058,11 @@ function theme_radio($element) {
  *   A themed HTML string representing the radio button set.
  */
 function theme_radios($element) {
-  $element['#children'] = '<div class="form-radios">'. $element['#children'] .'</div>';
+  $class = 'form-radios';
+  if (isset($element['#attributes']['class'])) {
+    $class .= ' '. $element['#attributes']['class'];
+  }
+  $element['#children'] = '<div class="'. $class .'">'. $element['#children'] .'</div>';
   if ($element['#title'] || $element['#description']) {
     unset($element['#id']);
     return theme('form_element', $element, $element['#children']);
@@ -1020,6 +1101,10 @@ function expand_password_confirm($element) {
   );
   $element['#validate'] = array('password_confirm_validate' => array());
   $element['#tree'] = TRUE;
+
+  if (isset($element['#size'])) {
+    $element['pass1']['#size'] = $element['pass2']['#size'] = $element['#size'];
+  }
 
   return $element;
 }
@@ -1212,7 +1297,11 @@ function theme_checkbox($element) {
  *   A themed HTML string representing the checkbox set.
  */
 function theme_checkboxes($element) {
-  $element['#children'] = '<div class="form-checkboxes">'. $element['#children'] .'</div>';
+  $class = 'form-checkboxes';
+  if (isset($element['#attributes']['class'])) {
+    $class .= ' '. $element['#attributes']['class'];
+  }
+  $element['#children'] = '<div class="'. $class .'">'. $element['#children'] .'</div>';
   if ($element['#title'] || $element['#description']) {
     unset($element['#id']);
     return theme('form_element', $element, $element['#children']);
@@ -1243,7 +1332,7 @@ function theme_submit($element) {
 }
 
 function theme_button($element) {
-  //Make sure not to overwrite classes
+  // Make sure not to overwrite classes.
   if (isset($element['#attributes']['class'])) {
     $element['#attributes']['class'] = 'form-'. $element['#button_type'] .' '. $element['#attributes']['class'];
   }
@@ -1251,7 +1340,7 @@ function theme_button($element) {
     $element['#attributes']['class'] = 'form-'. $element['#button_type'];
   }
 
-  return '<input type="submit" '. (empty($element['#name']) ? '' : 'name="'. $element['#name'] .'" ') .'value="'. check_plain($element['#value']) .'" '. drupal_attributes($element['#attributes']) ." />\n";
+  return '<input type="submit" '. (empty($element['#name']) ? '' : 'name="'. $element['#name'] .'" ')  .'id="'. $element['#id'].'" value="'. check_plain($element['#value']) .'" '. drupal_attributes($element['#attributes']) ." />\n";
 }
 
 /**
@@ -1410,7 +1499,7 @@ function process_weight($element) {
  */
 function theme_file($element) {
   _form_set_class($element, array('form-file'));
-  return theme('form_element', $element, '<input type="file" name="'. $element['#name'] .'"'. ($element['#attributes'] ? ' '. drupal_attributes($element['#attributes']) : '') .' id="'. form_clean_id($element['#id']) .'" size="'. $element['#size'] ."\" />\n");
+  return theme('form_element', $element, '<input type="file" name="'. $element['#name'] .'"'. ($element['#attributes'] ? ' '. drupal_attributes($element['#attributes']) : '') .' id="'. $element['#id'] .'" size="'. $element['#size'] ."\" />\n");
 }
 
 /**
@@ -1431,7 +1520,7 @@ function theme_form_element($element, $value) {
   if (!empty($element['#title'])) {
     $title = $element['#title'];
     if (!empty($element['#id'])) {
-      $output .= ' <label for="'. form_clean_id($element['#id']) .'">'. t('!title: !required', array('!title' => $title, '!required' => $required)) ."</label>\n";
+      $output .= ' <label for="'. $element['#id'] .'">'. t('!title: !required', array('!title' => $title, '!required' => $required)) ."</label>\n";
     }
     else {
       $output .= ' <label>'. t('!title: !required', array('!title' => $title, '!required' => $required)) ."</label>\n";
@@ -1481,7 +1570,7 @@ function _form_set_class(&$element, $class = array()) {
  *   The cleaned ID
  */
 function form_clean_id($id = NULL) {
-  $id = str_replace('][', '-', $id);
+  $id = str_replace(array('][', '_', ' '), '-', $id);
   return $id;
 }
 

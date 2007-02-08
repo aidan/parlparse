@@ -1,5 +1,5 @@
 <?php
-// $Id: filter.module,v 1.148 2006/10/26 05:31:14 dries Exp $
+// $Id: filter.module,v 1.160 2007/01/12 07:27:21 unconed Exp $
 
 /**
  * @file
@@ -20,14 +20,8 @@ define('FILTER_HTML_ESCAPE', 2);
 function filter_help($section) {
   switch ($section) {
     case 'admin/help#filter':
-      $output = '<p>'. t('The filter module allows administrators to configure  text input formats for the site. For example, an administrator may want a filter to strip out malicious HTML from user\'s comments. Administrators may also want to make URLs linkable even if they are only entered in an unlinked format.') .'</p>';
+      $output = '<p>'. t("The filter module allows administrators to configure  text input formats for the site. For example, an administrator may want a filter to strip out malicious HTML from user's comments. Administrators may also want to make URLs linkable even if they are only entered in an unlinked format.") .'</p>';
       $output .= '<p>'. t('Users can choose between the available input formats when creating or editing content. Administrators can configure which input formats are available to which user roles, as well as choose a default input format. Administrators can also create new input formats. Each input format can be configured to use a selection of filters.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>administer input format permissions and settings  at <a href="@admin-filters">administer &gt;&gt; site configuration &gt;&gt; input formats</a>.</li>
-<li>configure the filters for each input format at <a href="@admin-filters">administer &gt;&gt; site configuration &gt;&gt; input formats</a>.</li>
-</ul>
-', array('@admin-filters' => url('admin/settings/filters')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@filter">Filter page</a>.', array('@filter' => 'http://drupal.org/handbook/modules/filter/')) .'</p>';
       return $output;
 
@@ -44,13 +38,12 @@ function filter_help($section) {
 <p>If you notice some filters are causing conflicts in the output, you can <a href="@rearrange">rearrange them</a>.</p>', array('@rearrange' => url('admin/settings/filters/'. arg(3) .'/order')));
 
     case 'admin/settings/filters/'. arg(3) .'/configure':
-      return t('
-<p>If you cannot find the settings for a certain filter, make sure you\'ve enabled it on the <a href="@url">view tab</a> first.</p>', array('@url' => url('admin/settings/filters/'. arg(3))));
+      return '<p>'. t('If you cannot find the settings for a certain filter, make sure you have enabled it on the <a href="@url">view tab</a> first.', array('@url' => url('admin/settings/filters/'. arg(3)))) .'</p>';
 
     case 'admin/settings/filters/'. arg(3) .'/order':
       return t('
 <p>Because of the flexible filtering system, you might encounter a situation where one filter prevents another from doing its job. For example: a word in an URL gets converted into a glossary term, before the URL can be converted in a clickable link. When this happens, you will need to rearrange the order in which filters get executed.</p>
-<p>Filters are executed from top-to-bottom. You can use the weight column to rearrange them: heavier filters \'sink\' to the bottom.</p>');
+<p>Filters are executed from top-to-bottom. You can use the weight column to rearrange them: heavier filters "sink" to the bottom.</p>');
   }
 }
 
@@ -72,7 +65,7 @@ function filter_menu($may_cache) {
       'title' => t('List'),
       'callback' => 'filter_admin_overview',
       'type' => MENU_DEFAULT_LOCAL_TASK,
-      'access' => user_access('administer filters'),
+'access' => user_access('administer filters'),
     );
     $items[] = array('path' => 'admin/settings/filters/add',
       'title' => t('Add input format'),
@@ -268,7 +261,7 @@ function filter_filter_tips($delta, $format, $long = FALSE) {
         case 1:
           return t('
 <h4>Using custom PHP code</h4>
-<p>If you know how to script in PHP, Drupal gives you the power to embed any script you like. It will be executed when the page is viewed and dynamically embedded into the page. This gives you amazing flexibility and power, but of course with that comes danger and insecurity if you don\'t write good code. If you are not familiar with PHP, SQL or with the site engine, avoid experimenting with PHP because you can corrupt your database or render your site insecure or even unusable! If you don\'t plan to do fancy stuff with your content then you\'re probably better off with straight HTML.</p>
+<p>If you know how to script in PHP, Drupal gives you the power to embed any script you like. It will be executed when the page is viewed and dynamically embedded into the page. This gives you amazing flexibility and power, but of course with that comes danger and insecurity if you do not write good code. If you are not familiar with PHP, SQL or with the site engine, avoid experimenting with PHP because you can corrupt your database or render your site insecure or even unusable! If you do not plan to do fancy stuff with your content then you are probably better off with straight HTML.</p>
 <p>Remember that the code within each PHP item must be valid PHP code - including things like correctly terminating statements with a semicolon. It is highly recommended that you develop your code separately using a simple test script on top of a test database before migrating to your production environment.</p>
 <p>Notes:</p><ul><li>You can use global variables, such as configuration parameters, within the scope of your PHP code but remember that global variables which have been given values in your code will retain these values in the engine afterwards.</li><li>register_globals is now set to <strong>off</strong> by default. If you need form information you need to get it from the "superglobals" $_POST, $_GET, etc.</li><li>You can either use the <code>print</code> or <code>return</code> statement to output the actual content for your item.</li></ul>
 <p>A basic example:</p>
@@ -461,9 +454,9 @@ function filter_admin_format_form($format = NULL) {
     $extra = '<p>'. l(t('More information about formatting options'), 'filter/tips') .'</p>';
     $tiplist = theme('filter_tips', $tips, FALSE, $extra);
     if (!$tiplist) {
-      $tiplist = t('<p>No guidelines available.</p>');
+      $tiplist = '<p>'. t('No guidelines available.') .'</p>';
     }
-    $group = t('<p>These are the guidelines that users will see for posting in this input format. They are automatically generated from the filter settings.</p>');
+    $group = '<p>'. t('These are the guidelines that users will see for posting in this input format. They are automatically generated from the filter settings.') .'</p>';
     $group .= $tiplist;
     $form['tips'] = array('#value' => '<h2>'. t('Formatting guidelines') .'</h2>'. $group);
   }
@@ -529,7 +522,7 @@ function filter_admin_format_form_submit($form_id, $form_values) {
       }
     }
   }
-  $roles = ','. implode(',', ($form_values['default_format'] ? user_roles() : $roles)) .',';
+  $roles = ','. implode(',', ($form_values['default_format'] ? array_keys(user_roles()) : $roles)) .',';
 
   db_query("UPDATE {filter_formats} SET cache = %d, name='%s', roles = '%s' WHERE format = %d", $cache, $name, $roles, $format);
 
@@ -1038,11 +1031,38 @@ function filter_filter($op, $delta = 0, $format = -1, $text = '') {
  * Settings for the HTML filter.
  */
 function _filter_html_settings($format) {
-  $form['filter_html'] = array('#type' => 'fieldset', '#title' => t('HTML filter'), '#collapsible' => TRUE, '#collapsed' => TRUE);
-  $form['filter_html']["filter_html_$format"] = array('#type' => 'radios', '#title' => t('Filter HTML tags'), '#default_value' => variable_get("filter_html_$format", FILTER_HTML_STRIP), '#options' => array(FILTER_HTML_STRIP => t('Strip disallowed tags'), FILTER_HTML_ESCAPE => t('Escape all tags')), '#description' => t('How to deal with HTML tags in user-contributed content. If set to "Strip disallowed tags", dangerous tags are removed (see below). If set to "Escape tags", all HTML is escaped and presented as it was typed.'));
-  $form['filter_html']["allowed_html_$format"] = array('#type' => 'textfield', '#title' => t('Allowed HTML tags'), '#default_value' => variable_get("allowed_html_$format", '<a> <em> <strong> <cite> <code> <ul> <ol> <li> <dl> <dt> <dd>'), '#size' => 64, '#maxlength' => 255, '#description' => t('If "Strip disallowed tags" is selected, optionally specify tags which should not be stripped. JavaScript event attributes are always stripped.'));
-  $form['filter_html']["filter_html_help_$format"] = array('#type' => 'checkbox', '#title' => t('Display HTML help'), '#default_value' => variable_get("filter_html_help_$format", 1), '#description' => t('If enabled, Drupal will display some basic HTML help in the long filter tips.'));
-  $form['filter_html']["filter_html_nofollow_$format"] = array('#type' => 'checkbox', '#title' => t('Spam link deterrent'), '#default_value' => variable_get("filter_html_nofollow_$format", FALSE), '#description' => t('If enabled, Drupal will add rel="nofollow" to all links, as a measure to reduce the effectiveness of spam links. Note: this will also prevent valid links from being followed by search engines, therefore it is likely most effective when enabled for anonymous users.'));
+  $form['filter_html'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('HTML filter'),
+    '#collapsible' => TRUE,
+  );
+  $form['filter_html']["filter_html_$format"] = array(
+    '#type' => 'radios',
+    '#title' => t('Filter HTML tags'),
+    '#default_value' => variable_get("filter_html_$format", FILTER_HTML_STRIP),
+    '#options' => array(FILTER_HTML_STRIP => t('Strip disallowed tags'), FILTER_HTML_ESCAPE => t('Escape all tags')),
+    '#description' => t('How to deal with HTML tags in user-contributed content. If set to "Strip disallowed tags", dangerous tags are removed (see below). If set to "Escape tags", all HTML is escaped and presented as it was typed.'),
+  );
+  $form['filter_html']["allowed_html_$format"] = array(
+    '#type' => 'textfield',
+    '#title' => t('Allowed HTML tags'),
+    '#default_value' => variable_get("allowed_html_$format", '<a> <em> <strong> <cite> <code> <ul> <ol> <li> <dl> <dt> <dd>'),
+    '#size' => 64,
+    '#maxlength' => 255,
+    '#description' => t('If "Strip disallowed tags" is selected, optionally specify tags which should not be stripped. JavaScript event attributes are always stripped.'),
+  );
+  $form['filter_html']["filter_html_help_$format"] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display HTML help'),
+    '#default_value' => variable_get("filter_html_help_$format", 1),
+    '#description' => t('If enabled, Drupal will display some basic HTML help in the long filter tips.'),
+  );
+  $form['filter_html']["filter_html_nofollow_$format"] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Spam link deterrent'),
+    '#default_value' => variable_get("filter_html_nofollow_$format", FALSE),
+    '#description' => t('If enabled, Drupal will add rel="nofollow" to all links, as a measure to reduce the effectiveness of spam links. Note: this will also prevent valid links from being followed by search engines, therefore it is likely most effective when enabled for anonymous users.'),
+  );
   return $form;
 }
 
@@ -1075,14 +1095,13 @@ function _filter_url_settings($format) {
     '#type' => 'fieldset',
     '#title' => t('URL filter'),
     '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
   );
   $form['filter_urlfilter']['filter_url_length_'. $format] = array(
     '#type' => 'textfield',
     '#title' => t('Maximum link text length'),
     '#default_value' => variable_get('filter_url_length_'. $format, 72),
     '#maxlength' => 4,
-    '#description' => t('URLs longer than this number of characters will be truncated to prevent long strings that break formatting. The link itself will be retained, just the text portion of the link will be truncated.'),
+    '#description' => t('URLs longer than this number of characters will be truncated to prevent long strings that break formatting. The link itself will be retained; just the text portion of the link will be truncated.'),
   );
   return $form;
 }
@@ -1098,13 +1117,13 @@ function _filter_url($text, $format) {
   $text   = ' '. $text .' ';
 
   // Match absolute URLs.
-  $text = preg_replace_callback("!(<p>|<li>|<br\s*/?>|[ \n\r\t\(])((http://|https://|ftp://|mailto:|smb://|afp://|file://|gopher://|news://|ssl://|sslv2://|sslv3://|tls://|tcp://|udp://)([a-zA-Z0-9@:%_+*~#?&=.,/;-]*[a-zA-Z0-9@:%_+*~#&=/;-]))([.,?]?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))!i", '_filter_url_parse_full_links', $text);
+  $text = preg_replace_callback("`(<p>|<li>|<br\s*/?>|[ \n\r\t\(])((http://|https://|ftp://|mailto:|smb://|afp://|file://|gopher://|news://|ssl://|sslv2://|sslv3://|tls://|tcp://|udp://)([a-zA-Z0-9@:%_+*~#?&=.,/;-]*[a-zA-Z0-9@:%_+*~#&=/;-]))([.,?!]*?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))`i", '_filter_url_parse_full_links', $text);
 
   // Match e-mail addresses.
-  $text = preg_replace("!(<p>|<li>|<br\s*/?>|[ \n\r\t\(])([A-Za-z0-9._-]+@[A-Za-z0-9._+-]+\.[A-Za-z]{2,4})([.,?]?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))!i", '\1<a href="mailto:\2">\2</a>\3', $text);
+  $text = preg_replace("`(<p>|<li>|<br\s*/?>|[ \n\r\t\(])([A-Za-z0-9._-]+@[A-Za-z0-9._+-]+\.[A-Za-z]{2,4})([.,?!]*?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))`i", '\1<a href="mailto:\2">\2</a>\3', $text);
 
   // Match www domains/addresses.
-  $text = preg_replace_callback("!(<p>|<li>|[ \n\r\t\(])(www\.[a-zA-Z0-9@:%_+*~#?&=.,/;-]*[a-zA-Z0-9@:%_+~#\&=/;-])([.,?]?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))!i", '_filter_url_parse_partial_links', $text);
+  $text = preg_replace_callback("`(<p>|<li>|[ \n\r\t\(])(www\.[a-zA-Z0-9@:%_+*~#?&=.,/;-]*[a-zA-Z0-9@:%_+~#\&=/;-])([.,?!]*?)(?=(</p>|</li>|<br\s*/?>|[ \n\r\t\)]))`i", '_filter_url_parse_partial_links', $text);
   $text = substr($text, 1, -1);
 
   return $text;
@@ -1188,7 +1207,7 @@ function _filter_autop($text) {
       $chunk = preg_replace('!(</'. $block .'>)!', "$1\n\n", $chunk); // Space things out a little
       $chunk = preg_replace("/\n\n+/", "\n\n", $chunk); // take care of duplicates
       $chunk = preg_replace('/\n?(.+?)(?:\n\s*\n|\z)/s', "<p>$1</p>\n", $chunk); // make paragraphs, including one at the end
-      $chunk = preg_replace('|<p>\s*?</p>|', '', $chunk); // under certain strange conditions it could create a P of entirely whitespace
+      $chunk = preg_replace('|<p>\s*?</p>\n|', '', $chunk); // under certain strange conditions it could create a P of entirely whitespace
       $chunk = preg_replace("|<p>(<li.+?)</p>|", "$1", $chunk); // problem with nested lists
       $chunk = preg_replace('|<p><blockquote([^>]*)>|i', "<blockquote$1><p>", $chunk);
       $chunk = str_replace('</blockquote></p>', '</p></blockquote>', $chunk);
@@ -1259,9 +1278,11 @@ function filter_xss($string, $allowed_tags = array('a', 'em', 'strong', 'cite', 
 
   return preg_replace_callback('%
     (
-    <[^>]*.(>|$)  # a string that starts with a <, up until the > or the end of the string
-    |             # or
-    >             # just a >
+    <(?=[^a-zA-Z!/])  # a lone <
+    |                 # or
+    <[^>]*.(>|$)      # a string that starts with a <, up until the > or the end of the string
+    |                 # or
+    >                 # just a >
     )%x', '_filter_xss_split', $string);
 }
 
@@ -1291,6 +1312,10 @@ function _filter_xss_split($m, $store = FALSE) {
   if (substr($string, 0, 1) != '<') {
     // We matched a lone ">" character
     return '&gt;';
+  }
+  else if (strlen($string) == 1) {
+    // We matched a lone "<" character
+    return '&lt;';
   }
 
   if (!preg_match('%^<\s*(/\s*)?([a-zA-Z0-9]+)([^>]*)>?$%', $string, $matches)) {
@@ -1449,19 +1474,26 @@ function filter_xss_bad_protocol($string, $decode = TRUE) {
     $allowed_protocols = array_flip(variable_get('filter_allowed_protocols', array('http', 'https', 'ftp', 'news', 'nntp', 'telnet', 'mailto', 'irc', 'ssh', 'sftp', 'webcal')));
   }
 
-  // Get the plain text representation of the attribute value (i.e. its meaning)
+  // Get the plain text representation of the attribute value (i.e. its meaning).
   if ($decode) {
     $string = decode_entities($string);
   }
-  // Remove soft hyphen
-  $string = str_replace(chr(194) . chr(173), '', $string);
-  // Strip protocols
+
+  // Iteratively remove any invalid protocol found.
 
   do {
     $before = $string;
     $colonpos = strpos($string, ':');
     if ($colonpos > 0) {
+      // We found a colon, possibly a protocol. Verify.
       $protocol = substr($string, 0, $colonpos);
+      // If a colon is preceded by a slash, question mark or hash, it cannot
+      // possibly be part of the URL scheme. This must be a relative URL,
+      // which inherits the (safe) protocol of the base document.
+      if (preg_match('![/?#]!', $protocol)) {
+        break;
+      }
+      // Check if this is a disallowed protocol.
       if (!isset($allowed_protocols[$protocol])) {
         $string = substr($string, $colonpos + 1);
       }

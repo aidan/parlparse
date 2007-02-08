@@ -1,5 +1,5 @@
 <?php
-// $Id: node.module,v 1.731 2006/11/17 07:01:38 dries Exp $
+// $Id: node.module,v 1.776 2007/01/14 02:12:29 unconed Exp $
 
 /**
  * @file
@@ -25,29 +25,23 @@ function node_help($section) {
 <li>The search tab lets you search all content on your site</li>
 </ul>
 ');
-      $output .= t('<p>You can</p>
-<ul>
-<li>search for content at <a href="@search">search</a>.</li>
-<li>administer nodes at <a href="@admin-settings-content-types">administer &gt;&gt; content management &gt;&gt; content types</a>.</li>
-</ul>
-', array('@search' => url('search'), '@admin-settings-content-types' => url('admin/content/types')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@node">Node page</a>.', array('@node' => 'http://drupal.org/handbook/modules/node/')) .'</p>';
       return $output;
     case 'admin/content/search':
-      return t('<p>Enter a simple pattern to search for a post. Words are matched exactly. Phrases can be surrounded by quotes to do an exact search.</p>');
+      return '<p>'. t('Enter a simple pattern to search for a post. Words are matched exactly. Phrases can be surrounded by quotes to do an exact search.') .'</p>';
     case 'admin/content/types':
       return '<p>'. t('Below is a list of all the content types on your site. All posts that exist on your site are instances of one of these content types.') .'</p>';
     case 'admin/content/types/add':
-      return '<p>'. t('To create a new content type, enter the human-readable name, the machine-readable name, and all other relevant fields that are on this page. Once created, users of your site will be able to create posts that are instances of this content type.');
+      return '<p>'. t('To create a new content type, enter the human-readable name, the machine-readable name, and all other relevant fields that are on this page. Once created, users of your site will be able to create posts that are instances of this content type.') .'</p>';
   }
 
   if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'revisions') {
-    return t('The revisions let you track differences between multiple versions of a post.');
+    return '<p>'. t('The revisions let you track differences between multiple versions of a post.') .'</p>';
   }
 
   if (arg(0) == 'node' && arg(1) == 'add' && $type = arg(2)) {
-    $type = node_get_types('type', arg(2));
-    return filter_xss_admin($type->help);
+    $type = node_get_types('type', str_replace('-', '_', arg(2)));
+    return '<p>'. filter_xss_admin($type->help) .'</p>';
   }
 }
 
@@ -151,7 +145,7 @@ function node_teaser($body, $format = NULL) {
 
   $size = variable_get('teaser_length', 600);
 
-  // find where the delimiter is in the body
+  // Find where the delimiter is in the body
   $delimiter = strpos($body, '<!--break-->');
 
   // If the size is zero, and there is no delimiter, the entire body is the teaser.
@@ -159,19 +153,19 @@ function node_teaser($body, $format = NULL) {
     return $body;
   }
 
+  // If a valid delimiter has been specified, use it to chop off the teaser.
+  if ($delimiter !== FALSE) {
+    return substr($body, 0, $delimiter);
+  }
+
   // We check for the presence of the PHP evaluator filter in the current
   // format. If the body contains PHP code, we do not split it up to prevent
   // parse errors.
   if (isset($format)) {
     $filters = filter_list_format($format);
-    if (isset($filters['filter/1']) && (strpos($body, '<?') !== FALSE) && (strpos($body, '<?') < $delimiter)) {
+    if (isset($filters['filter/1']) && strpos($body, '<?') !== FALSE) {
       return $body;
     }
-  }
-
-  // If a valid delimiter has been specified, use it to chop of the teaser.
-  if ($delimiter !== FALSE) {
-    return substr($body, 0, $delimiter);
   }
 
   // If we have a short body, the entire body is the teaser.
@@ -179,19 +173,36 @@ function node_teaser($body, $format = NULL) {
     return $body;
   }
 
-  // In some cases, no delimiter has been specified (e.g. when posting using
-  // the Blogger API). In this case, we try to split at paragraph boundaries.
-  // When even the first paragraph is too long, we try to split at the end of
-  // the next sentence.
-  $breakpoints = array('</p>' => 4, '<br />' => 0, '<br>' => 0, "\n" => 0, '. ' => 1, '! ' => 1, '? ' => 1, '。' => 3, '؟ ' => 1);
-  foreach ($breakpoints as $point => $charnum) {
-    if ($length = strpos($body, $point, $size)) {
-      return substr($body, 0, $length + $charnum);
+  // The teaser may not be longer than maximum length specified. Initial slice.
+  $teaser = truncate_utf8($body, $size);
+  $position = 0;
+  // Cache the reverse of the teaser.
+  $reversed = strrev($teaser);
+
+  // In some cases, no delimiter has been specified. In this case, we try to
+  // split at paragraph boundaries.
+  $breakpoints = array('</p>' => 0, '<br />' => 6, '<br>' => 4, "\n" => 1);
+  // We use strpos on the reversed needle and haystack for speed.
+  foreach ($breakpoints as $point => $offset) {
+    $length = strpos($reversed, strrev($point));
+    if ($length !== FALSE) {
+      $position = - $length - $offset;
+      return ($position == 0) ? $teaser : substr($teaser, 0, $position);
     }
   }
 
-  // If all else fails, we simply truncate the string.
-  return truncate_utf8($body, $size);
+  // When even the first paragraph is too long, we try to split at the end of
+  // the last full sentence.
+  $breakpoints = array('. ' => 1, '! ' => 1, '? ' => 1, '。' => 0, '؟ ' => 1);
+  $min_length = strlen($reversed);
+  foreach ($breakpoints as $point => $offset) {
+    $length = strpos($reversed, strrev($point));
+    if ($length !== FALSE) {
+      $min_length = min($length, $min_length);
+      $position = 0 - $length - $offset;
+    }
+  }
+  return ($position == 0) ? $teaser : substr($teaser, 0, $position);
 }
 
 /**
@@ -310,7 +321,7 @@ function node_type_delete($type) {
 /**
  * Updates all nodes of one type to be of another type.
  *
- * @param $orig_type
+ * @param $old_type
  *   The current node type of the nodes.
  * @param $type
  *   The new node type of the nodes.
@@ -479,10 +490,9 @@ function node_load($param = array(), $revision = NULL, $reset = NULL) {
     $nodes = array();
   }
 
-  $cachable = FALSE;
+  $cachable = ($revision == NULL);
   $arguments = array();
   if (is_numeric($param)) {
-    $cachable = $revision == NULL;
     if ($cachable && isset($nodes[$param])) {
       return is_object($nodes[$param]) ? drupal_clone($nodes[$param]) : $nodes[$param];
     }
@@ -522,10 +532,9 @@ function node_load($param = array(), $revision = NULL, $reset = NULL) {
         $node->$key = $value;
       }
     }
-  }
-
-  if ($cachable) {
-    $nodes[$param] = is_object($node) ? drupal_clone($node) : $node;
+    if ($cachable) {
+      $nodes[$node->nid] = is_object($node) ? drupal_clone($node) : $node;
+    }
   }
 
   return $node;
@@ -577,7 +586,7 @@ function node_save(&$node) {
                      'title' => "'%s'", 'body' => "'%s'",
                      'teaser' => "'%s'", 'timestamp' => '%d',
                      'uid' => '%d', 'format' => '%d');
-  if (!empty($node->log)) {
+  if (!empty($node->log) || $node->is_new) {
     // Only store the log message if there's something to store; this prevents
     // existing log messages from being unintentionally overwritten by a blank
     // message. A new revision will have an empty log message (or $node->log).
@@ -696,9 +705,7 @@ function node_prepare($node, $teaser = FALSE) {
   // First we'll overwrite the existing node teaser and body with
   // the filtered copies! Then, we'll stick those into the content
   // array and set the read more flag if appropriate.
-  if (strlen($node->teaser) < strlen($node->body)) {
-    $node->readmore = TRUE;
-  }
+  $node->readmore = (strlen($node->teaser) < strlen($node->body));
 
   if ($teaser == FALSE) {
     $node->body = check_markup($node->body, $node->format, FALSE);
@@ -731,7 +738,6 @@ function node_prepare($node, $teaser = FALSE) {
  */
 function node_build_content($node, $teaser = FALSE, $page = FALSE) {
   // Remove the delimiter (if any) that separates the teaser from the body.
-  // TODO: this strips legitimate uses of '<!--break-->' also.
   $node->body = str_replace('<!--break-->', '', $node->body);
 
   // The 'view' hook can be implemented to overwrite the default function
@@ -860,10 +866,12 @@ function node_search($op = 'search', $keys = NULL) {
       $join2 = '';
       // Used to avoid joining on node_comment_statistics twice
       $stats_join = FALSE;
+      $total = 0;
       if ($weight = (int)variable_get('node_rank_relevance', 5)) {
         // Average relevance values hover around 0.15
         $ranking[] = '%d * i.relevance';
         $arguments2[] = $weight;
+        $total += $weight;
       }
       if ($weight = (int)variable_get('node_rank_recent', 5)) {
         // Exponential decay with half-life of 6 months, starting at last indexed node
@@ -872,6 +880,7 @@ function node_search($op = 'search', $keys = NULL) {
         $arguments2[] = (int)variable_get('node_cron_last', 0);
         $join2 .= ' INNER JOIN {node} n ON n.nid = i.sid LEFT JOIN {node_comment_statistics} c ON c.nid = i.sid';
         $stats_join = TRUE;
+        $total += $weight;
       }
       if (module_exists('comment') && $weight = (int)variable_get('node_rank_comments', 5)) {
         // Inverse law that maps the highest reply count on the site to 1 and 0 to 0.
@@ -882,6 +891,7 @@ function node_search($op = 'search', $keys = NULL) {
         if (!$stats_join) {
           $join2 .= ' LEFT JOIN {node_comment_statistics} c ON c.nid = i.sid';
         }
+        $total += $weight;
       }
       if (module_exists('statistics') && variable_get('statistics_count_content_views', 0) &&
           $weight = (int)variable_get('node_rank_views', 5)) {
@@ -891,8 +901,9 @@ function node_search($op = 'search', $keys = NULL) {
         $arguments2[] = $weight;
         $arguments2[] = $scale;
         $join2 .= ' LEFT JOIN {node_counter} nc ON nc.nid = i.sid';
+        $total += $weight;
       }
-      $select2 = (count($ranking) ? implode(' + ', $ranking) : 'i.relevance') . ' AS score';
+      $select2 = (count($ranking) ? implode(' + ', $ranking) : 'i.relevance') .' AS score';
 
       // Do search
       $find = do_search($keys, 'node', 'INNER JOIN {node} n ON n.nid = i.sid '. $join1 .' INNER JOIN {users} u ON n.uid = u.uid', $conditions1 . (empty($where1) ? '' : ' AND '. $where1), $arguments1, $select2, $join2, $arguments2);
@@ -911,13 +922,14 @@ function node_search($op = 'search', $keys = NULL) {
         $node->body .= module_invoke('taxonomy', 'nodeapi', $node, 'update index');
 
         $extra = node_invoke_nodeapi($node, 'search result');
-        $results[] = array('link' => url('node/'. $item->sid),
+        $results[] = array('link' => url('node/'. $item->sid, NULL, NULL, TRUE),
                            'type' => node_get_types('name', $node),
                            'title' => $node->title,
                            'user' => theme('username', $node),
                            'date' => $node->changed,
                            'node' => $node,
                            'extra' => $extra,
+                           'score' => $item->score / $total,
                            'snippet' => search_excerpt($keys, $node->body));
       }
       return $results;
@@ -956,9 +968,9 @@ function theme_node_search_admin($form) {
  */
 function node_configure() {
   // Only show rebuild button if there is 0 or more than 2 rows in node_access table, or if there are modules that implement node_grant.
-  if (db_result(db_query('SELECT COUNT(*) FROM {node_access}')) != 1 || count(module_implements('node_grant'))) {
+  if (db_result(db_query('SELECT COUNT(*) FROM {node_access}')) != 1 || count(module_implements('node_grants')) > 0) {
     $status = '<p>'. t('If the site is experiencing problems with permissions to content, you may have to rebuild the permissions cache. Possible causes for permission problems are disabling modules or configuration changes to permissions. Rebuilding will remove all privileges to posts, and replace them with permissions based on the current modules and settings.') .'</p>';
-    $status .= '<p>'. t('Rebuilding may take some time if there is a lot of a content or complex permission settings. After rebuilding has completed posts will automatically use the new permissions.'). '</p>';
+    $status .= '<p>'. t('Rebuilding may take some time if there is a lot of content or complex permission settings. After rebuilding has completed posts will automatically use the new permissions.') .'</p>';
 
     $form['access'] = array('#type' => 'fieldset', '#title' => t('Node access status'));
     $form['access']['status'] = array('#value' => $status);
@@ -1050,7 +1062,7 @@ function node_menu($may_cache) {
   if ($may_cache) {
     $items[] = array('path' => 'admin/content',
       'title' => t('Content management'),
-      'description' => t('Manage your site\'s content.'),
+      'description' => t("Manage your site's content."),
       'position' => 'left',
       'weight' => -10,
       'callback' => 'system_admin_menu_block_page',
@@ -1059,8 +1071,8 @@ function node_menu($may_cache) {
 
     $items[] = array(
       'path' => 'admin/content/node',
-      'title' => t('Posts'),
-      'description' => t('View, edit, and delete your site\'s content.'),
+      'title' => t('Content'),
+      'description' => t("View, edit, and delete your site's content."),
       'callback' => 'node_admin_content',
       'access' => user_access('administer nodes')
     );
@@ -1069,8 +1081,8 @@ function node_menu($may_cache) {
       'type' => MENU_DEFAULT_LOCAL_TASK, 'weight' => -10);
 
     if (module_exists('search')) {
-      $items[] = array('path' => 'admin/content/search', 'title' => t('Search posts'),
-        'description' => t('Search posts by keyword.'),
+      $items[] = array('path' => 'admin/content/search', 'title' => t('Search content'),
+        'description' => t('Search content by keyword.'),
         'callback' => 'node_admin_search',
         'access' => user_access('administer nodes'),
         'type' => MENU_NORMAL_ITEM);
@@ -1134,8 +1146,22 @@ function node_menu($may_cache) {
         $type_url_str = str_replace('_', '-', $type->type);
         $items[] = array(
           'path' => 'node/add/'. $type_url_str,
-          'title' => drupal_ucfirst(t($name)),
+          'title' => drupal_ucfirst($name),
           'access' => node_access('create', $type->type),
+        );
+      }
+    }
+    // Error pages must to be present in the menu cache and be accessible to
+    // all. More often than not these are individual nodes.
+    for ($error_code = 403; $error_code <= 404; $error_code++) {
+      if (preg_match('|^node/(?P<nid>\d+)(?:/view)?$|', drupal_get_normal_path(variable_get('site_'. $error_code, '')), $matches) && ($node = node_load($matches['nid']))) {
+        $items[] = array(
+          'path' => 'node/'. $node->nid,
+          'title' => t('View'),
+          'callback' => 'node_page_view',
+          'callback arguments' => array($node),
+          'access' => TRUE,
+          'type' => MENU_CALLBACK,
         );
       }
     }
@@ -1164,7 +1190,7 @@ function node_menu($may_cache) {
           'type' => MENU_LOCAL_TASK);
         $items[] = array('path' => 'node/'. arg(1) .'/delete', 'title' => t('Delete'),
           'callback' => 'drupal_get_form',
-          'callback arguments' => array('node_delete_confirm'),
+          'callback arguments' => array('node_delete_confirm', $node),
           'access' => node_access('delete', $node),
           'weight' => 1,
           'type' => MENU_CALLBACK);
@@ -1221,38 +1247,49 @@ function node_last_changed($nid) {
  */
 function node_node_operations() {
   $operations = array(
-    'approve' => array(
-      'label' => t('Approve the selected posts'),
-      'callback' => 'node_operations_approve',
-    ),
-    'promote' => array(
-      'label' => t('Promote the selected posts'),
-      'callback' => 'node_operations_promote',
-    ),
-    'sticky' => array(
-      'label' => t('Make the selected posts sticky'),
-      'callback' => 'node_operations_sticky',
-    ),
-    'demote' => array(
-      'label' => t('Demote the selected posts'),
-      'callback' => 'node_operations_demote',
+    'publish' => array(
+      'label' => t('Publish'),
+      'callback' => 'node_operations_publish',
     ),
     'unpublish' => array(
-      'label' => t('Unpublish the selected posts'),
+      'label' => t('Unpublish'),
       'callback' => 'node_operations_unpublish',
     ),
+    'promote' => array(
+      'label' => t('Promote to front page'),
+      'callback' => 'node_operations_promote',
+    ),
+    'demote' => array(
+      'label' => t('Demote from front page'),
+      'callback' => 'node_operations_demote',
+    ),
+    'sticky' => array(
+      'label' => t('Make sticky'),
+      'callback' => 'node_operations_sticky',
+    ),
+    'unsticky' => array(
+      'label' => t('Remove stickiness'),
+      'callback' => 'node_operations_unsticky',
+    ),
     'delete' => array(
-      'label' => t('Delete the selected posts'),
+      'label' => t('Delete'),
     ),
   );
   return $operations;
 }
 
 /**
- * Callback function for admin mass approving nodes.
+ * Callback function for admin mass publishing nodes.
  */
-function node_operations_approve($nodes) {
+function node_operations_publish($nodes) {
   db_query('UPDATE {node} SET status = 1 WHERE nid IN(%s)', implode(',', $nodes));
+}
+
+/**
+ * Callback function for admin mass unpublishing nodes.
+ */
+function node_operations_unpublish($nodes) {
+  db_query('UPDATE {node} SET status = 0 WHERE nid IN(%s)', implode(',', $nodes));
 }
 
 /**
@@ -1263,13 +1300,6 @@ function node_operations_promote($nodes) {
 }
 
 /**
- * Callback function for admin mass editing nodes to be sticky.
- */
-function node_operations_sticky($nodes) {
-  db_query('UPDATE {node} SET status = 1, sticky = 1 WHERE nid IN(%s)', implode(',', $nodes));
-}
-
-/**
  * Callback function for admin mass demoting nodes.
  */
 function node_operations_demote($nodes) {
@@ -1277,10 +1307,17 @@ function node_operations_demote($nodes) {
 }
 
 /**
- * Callback function for admin mass unpublishing nodes.
+ * Callback function for admin mass editing nodes to be sticky.
  */
-function node_operations_unpublish($nodes) {
-  db_query('UPDATE {node} SET status = 0 WHERE nid IN(%s)', implode(',', $nodes));
+function node_operations_sticky($nodes) {
+  db_query('UPDATE {node} SET status = 1, sticky = 1 WHERE nid IN(%s)', implode(',', $nodes));
+}
+
+/**
+ * Callback function for admin mass editing nodes to remove stickiness.
+ */
+function node_operations_unsticky($nodes) {
+  db_query('UPDATE {node} SET sticky = 0 WHERE nid IN(%s)', implode(',', $nodes));
 }
 
 /**
@@ -1312,7 +1349,7 @@ function node_build_filter_query() {
   $join = '';
   foreach ($_SESSION['node_overview_filter'] as $index => $filter) {
     list($key, $value) = $filter;
-    switch($key) {
+    switch ($key) {
       case 'status':
         // Note: no exploitable hole as $key/$value have already been checked when submitted
         list($key, $value) = explode('-', $value, 2);
@@ -1391,23 +1428,23 @@ function theme_node_filter_form($form) {
 }
 
 /**
- * Theme node administraton filter selector.
+ * Theme node administration filter selector.
  */
 function theme_node_filters($form) {
   $output .= '<ul class="clear-block">';
   if (sizeof($form['current'])) {
     foreach (element_children($form['current']) as $key) {
-      $output .= '<li>' . drupal_render($form['current'][$key]) . '</li>';
+      $output .= '<li>'. drupal_render($form['current'][$key]) .'</li>';
     }
   }
 
-  $output .= '<li><dl class="multiselect">' . (sizeof($form['current']) ? '<dt><em>'. t('and') .'</em> '. t('where') .'</dt>' : '') . '<dd class="a">';
+  $output .= '<li><dl class="multiselect">'. (sizeof($form['current']) ? '<dt><em>'. t('and') .'</em> '. t('where') .'</dt>' : '') .'<dd class="a">';
   foreach (element_children($form['filter']) as $key) {
     $output .= drupal_render($form['filter'][$key]);
   }
   $output .= '</dd>';
 
-  $output .= '<dt>'. t('is') .'</dt>' . '<dd class="b">';
+  $output .= '<dt>'. t('is') .'</dt><dd class="b">';
 
   foreach (element_children($form['status']) as $key) {
     $output .= drupal_render($form['status'][$key]);
@@ -1424,11 +1461,9 @@ function theme_node_filters($form) {
 /**
  * Process result from node administration filter form.
  */
-function node_filter_form_submit() {
-  global $form_values;
-  $op = $_POST['op'];
+function node_filter_form_submit($form_id, $form_values) {
   $filters = node_filters();
-  switch ($op) {
+  switch ($form_values['op']) {
     case t('Filter'):
     case t('Refine'):
       if (isset($form_values['filter'])) {
@@ -1533,7 +1568,7 @@ function node_admin_nodes() {
  */
 function theme_node_admin_nodes($form) {
   // Overview table:
-  $header = array(NULL, t('Title'), t('Type'), t('Author'), t('Status'), t('Operations'));
+  $header = array(theme('table_select_header_cell'), t('Title'), t('Type'), t('Author'), t('Status'), t('Operations'));
 
   $output .= drupal_render($form['options']);
   if (isset($form['title']) && is_array($form['title'])) {
@@ -1760,7 +1795,7 @@ function node_feed($nodes = 0, $channel = array()) {
 
       // Filter and prepare node teaser
       if (node_hook($item, 'view')) {
-        node_invoke($item, 'view', $teaser, FALSE);
+        $item = node_invoke($item, 'view', $teaser, FALSE);
       }
       else {
         $item = node_prepare($item, $teaser);
@@ -1772,7 +1807,7 @@ function node_feed($nodes = 0, $channel = array()) {
 
     // Allow modules to add additional item fields and/or modify $item
     $extra = node_invoke_nodeapi($item, 'rss item');
-    $extra = array_merge($extra, array(array('key' => 'pubDate', 'value' =>  date('r', $item->created)), array('key' => 'dc:creator', 'value' => $item->name), array('key' => 'guid', 'value' => $item->nid . ' at ' . $base_url, 'attributes' => array('isPermaLink' => 'FALSE'))));
+    $extra = array_merge($extra, array(array('key' => 'pubDate', 'value' =>  date('r', $item->created)), array('key' => 'dc:creator', 'value' => $item->name), array('key' => 'guid', 'value' => $item->nid .' at '. $base_url, 'attributes' => array('isPermaLink' => 'false'))));
     foreach ($extra as $element) {
       if ($element['namespace']) {
         $namespaces = array_merge($namespaces, $element['namespace']);
@@ -1808,7 +1843,7 @@ function node_feed($nodes = 0, $channel = array()) {
   $channel = array_merge($channel_defaults, $channel);
 
   $output = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
-  $output .= "<rss version=\"". $channel["version"] . "\" xml:base=\"". $base_url ."\" ". implode(' ', $namespaces) .">\n";
+  $output .= "<rss version=\"". $channel["version"] ."\" xml:base=\"". $base_url ."\" ". implode(' ', $namespaces) .">\n";
   $output .= format_rss_channel($channel['title'], $channel['link'], $channel['description'], $items, $channel['language']);
   $output .= "</rss>\n";
 
@@ -1843,10 +1878,21 @@ function node_submit($node) {
 
     $node->created = $node->date ? strtotime($node->date) : NULL;
   }
-  // Force defaults in case people modify the form:
-  $node_options = variable_get('node_options_'. $node->type, array('status', 'promote'));
+
+  // Process the workflow options and provide defaults. If the user
+  // can not administer nodes, ignore the form and either use the
+  // saved values if the node exists, or force the defaults.
+  if (!$access && $node->nid) {
+    $saved_node = node_load($node->nid);
+  }
+  else {
+    $node_options = variable_get('node_options_'. $node->type, array('status', 'promote'));
+  }
   foreach (array('status', 'promote', 'sticky', 'revision') as $key) {
-    if (!$access || !isset($node->$key)) {
+    if (!$access && $node->nid) {
+      $node->$key = $saved_node->$key;
+    }
+    else if (!isset($node->$key) || !$access) {
       $node->$key = in_array($key, $node_options);
     }
   }
@@ -1982,7 +2028,7 @@ function node_form($node, $form_values = NULL) {
     '#collapsed' => TRUE,
     '#weight' => 20,
   );
-  $form['author']['name'] = array('#type' => 'textfield', '#title' => t('Authored by'), '#maxlength' => 60, '#autocomplete_path' => 'user/autocomplete', '#default_value' => $node->name ? $node->name : '', '#weight' => -1, '#description' => t('Leave blank for %anonymous.', array('%anonymous' => variable_get('anonymous', 'Anonymous'))));
+  $form['author']['name'] = array('#type' => 'textfield', '#title' => t('Authored by'), '#maxlength' => 60, '#autocomplete_path' => 'user/autocomplete', '#default_value' => $node->name ? $node->name : '', '#weight' => -1, '#description' => t('Leave blank for %anonymous.', array('%anonymous' => variable_get('anonymous', t('Anonymous')))));
   $form['author']['date'] = array('#type' => 'textfield', '#title' => t('Authored on'), '#maxlength' => 25, '#description' => t('Format: %time. Leave blank to use the time of form submission.', array('%time' => $node->date)));
 
   if (isset($node->nid)) {
@@ -2002,7 +2048,7 @@ function node_form($node, $form_values = NULL) {
   $form['options']['promote']  = array('#type' => 'checkbox', '#title' => t('Promoted to front page'), '#default_value' => $node->promote);
   $form['options']['sticky']   = array('#type' => 'checkbox', '#title' => t('Sticky at top of lists'), '#default_value' => $node->sticky);
   $form['options']['revision'] = array('#type' => 'checkbox', '#title' => t('Create new revision'), '#default_value' => $node->revision);
-  // These values are used when the user has no administrator accesss.
+  // These values are used when the user has no administrator access.
   foreach (array('uid', 'created') as $key) {
     $form[$key] = array('#type' => 'value', '#value' => $node->$key);
   }
@@ -2022,11 +2068,20 @@ function node_form_add_preview($form) {
   global $form_values;
 
   $op = isset($form_values['op']) ? $form_values['op'] : '';
-  if ($op == $form_values['preview']) {
+  if ($op == t('Preview')) {
     drupal_validate_form($form['form_id']['#value'], $form);
     if (!form_get_errors()) {
-      // We pass the global $form_values here to preserve changes made during form validation
-      $form['node_preview'] = array('#value' => node_preview((object)$form_values), '#weight' => -100);
+      // Because the node preview may display a form, we must render it
+      // outside the node submission form tags using the #prefix property
+      // (i.e. to prevent illegally nested forms).
+      // If the node form already has a #prefix, we must preserve it.
+      // In this case, we put the preview before the #prefix so we keep
+      // the #prefix as "close" to the rest of the form as possible,
+      // for example, to keep a <div> only around the form, not the
+      // preview. We pass the global $form_values here to preserve
+      // changes made during form validation.
+      $preview = node_preview((object)$form_values);
+      $form['#prefix'] = isset($form['#prefix']) ? $preview . $form['#prefix'] : $preview;
     }
   }
   if (variable_get('node_preview', 0) && (form_get_errors() || $op != t('Preview'))) {
@@ -2037,9 +2092,6 @@ function node_form_add_preview($form) {
 
 function theme_node_form($form) {
   $output = "\n<div class=\"node-form\">\n";
-  if (isset($form['node_preview'])) {
-    $output .= drupal_render($form['node_preview']);
-  }
 
   // Admin form fields and submit buttons must be rendered first, because
   // they need to go to the bottom of the form, and so should not be part of
@@ -2127,6 +2179,7 @@ function node_preview($node) {
       // user ID 0 denotes the anonymous user.
       if ($user = user_load(array('name' => $node->name))) {
         $node->uid = $user->uid;
+        $node->picture = $user->picture;
       }
       else {
         $node->uid = 0; // anonymous user
@@ -2135,6 +2188,7 @@ function node_preview($node) {
     else if ($node->uid) {
       $user = user_load(array('uid' => $node->uid));
       $node->name = $user->name;
+      $node->picture = $user->picture;
     }
 
     // Set the timestamps when needed:
@@ -2157,7 +2211,7 @@ function node_preview($node) {
       $output = theme('node_preview', $cloned_node);
     }
     drupal_set_title(t('Preview'));
-    drupal_set_breadcrumb(array(l(t('Home'), NULL), l(t('create content'), 'node/add'), l(t('Submit @name', array('@name' => node_get_types('name', $node))), 'node/add/'. $node->type)));
+    drupal_set_breadcrumb(array(l(t('Home'), NULL), l(t('Create content'), 'node/add'), l(t('Submit @name', array('@name' => node_get_types('name', $node))), 'node/add/'. $node->type)));
 
     return $output;
   }
@@ -2200,12 +2254,12 @@ function node_form_submit($form_id, $form_values) {
   if ($node->nid) {
     node_save($node);
     watchdog('content', t('@type: updated %title.', array('@type' => t($node->type), '%title' => $node->title)), WATCHDOG_NOTICE, l(t('view'), 'node/'. $node->nid));
-    drupal_set_message(t('The %post has been updated.', array ('%post' => node_get_types('name', $node))));
+    drupal_set_message(t('The %post has been updated.', array('%post' => node_get_types('name', $node))));
   }
   else {
     node_save($node);
     watchdog('content', t('@type: added %title.', array('@type' => t($node->type), '%title' => $node->title)), WATCHDOG_NOTICE, l(t('view'), "node/$node->nid"));
-    drupal_set_message(t('Your %post has been created.', array ('%post' => node_get_types('name', $node))));
+    drupal_set_message(t('Your %post has been created.', array('%post' => node_get_types('name', $node))));
   }
   if ($node->nid) {
     if (node_access('view', $node)) {
@@ -2222,20 +2276,14 @@ function node_form_submit($form_id, $form_values) {
 /**
  * Menu callback -- ask for confirmation of node deletion
  */
-function node_delete_confirm() {
-  $edit = $_POST;
-  $edit['nid'] = $edit['nid'] ? $edit['nid'] : arg(1);
-  $node = node_load($edit['nid']);
+function node_delete_confirm($node) {
+ $form['nid'] = array('#type' => 'value', '#value' => $node->nid);
 
-  if (node_access('delete', $node)) {
-    $form['nid'] = array('#type' => 'value', '#value' => $node->nid);
-    $output = confirm_form($form,
-                   t('Are you sure you want to delete %title?', array('%title' => $node->title)),
-                   $_GET['destination'] ? $_GET['destination'] : 'node/'. $node->nid, t('This action cannot be undone.'),
-                   t('Delete'), t('Cancel')  );
-  }
-
-  return $output;
+ return confirm_form($form,
+   t('Are you sure you want to delete %title?', array('%title' => $node->title)),
+   $_GET['destination'] ? $_GET['destination'] : 'node/'. $node->nid,
+   t('This action cannot be undone.'),
+   t('Delete'), t('Cancel'));
 }
 
 /**
@@ -2332,35 +2380,23 @@ function node_page_default() {
     $output .= theme('pager', NULL, variable_get('default_nodes_main', 10));
   }
   else {
-    $output = t('
-      <h1 class="title">Welcome to your new Drupal website!</h1>
-      <p>Please follow these steps to set up and start using your website:</p>
-      <ol>
-        <li>
-          <strong>Create your administrator account</strong>
-          To begin, <a href="@register">create the first account</a>. This account will have full administration rights and will allow you to configure your website.
-        </li>
-        <li>
-          <strong>Configure your website</strong>
-          Once logged in, visit the <a href="@admin">administration section</a>, where you can <a href="@config">customize and configure</a> all aspects of your website.
-        </li>
-        <li>
-          <strong>Enable additional functionality</strong>
-          Next, visit the <a href="@modules">module list</a> and enable features which suit your specific needs. You can find additional modules in the <a href="@download_modules">Drupal modules download section</a>.
-        </li>
-        <li>
-          <strong>Customize your website design</strong>
-          To change the "look and feel" of your website, visit the <a href="@themes">themes section</a>. You may choose from one of the included themes or download additional themes from the <a href="@download_themes">Drupal themes download section</a>.
-        </li>
-        <li>
-          <strong>Start posting content</strong>
-          Finally, you can <a href="@content">create content</a> for your website. This message will disappear once you have published your first post.
-        </li>
-      </ol>
-      <p>For more information, please refer to the <a href="@help">help section</a>, or the <a href="@handbook">online Drupal handbooks</a>. You may also post at the <a href="@forum">Drupal forum</a>, or view the wide range of <a href="@support">other support options</a> available.</p>',
-      array('@drupal' => 'http://drupal.org/', '@register' => url('user/register'), '@admin' => url('admin'), '@config' => url('admin/settings'), '@modules' => url('admin/build/modules'), '@download_modules' => 'http://drupal.org/project/modules', '@themes' => url('admin/build/themes'), '@download_themes' => 'http://drupal.org/project/themes', '@content' => url('node/add'), '@help' => url('admin/help'), '@handbook' => 'http://drupal.org/handbooks', '@forum' => 'http://drupal.org/forum', '@support' => 'http://drupal.org/support')
-    );
-    $output = '<div id="first-time">'. $output .'</div>';
+    // Check for existence of admin account.
+    $admin = db_result(db_query('SELECT uid FROM {users} WHERE uid = 1'));
+
+    $default_message = t('<h1 class="title">Welcome to your new Drupal website!</h1><p>Please follow these steps to set up and start using your website:</p>');
+    $default_message .= '<ol>';
+
+    if (!$admin) {
+      $default_message .= '<li>'. t('<strong>Create your administrator account</strong> To begin, <a href="@register">create the first account</a>. This account will have full administration rights and will allow you to configure your website.', array('@register' => url('user/register'))) .'</li>';
+    }
+    $default_message .= '<li>'. t('<strong>Configure your website</strong> Once logged in, visit the <a href="@admin">administration section</a>, where you can <a href="@config">customize and configure</a> all aspects of your website.', array('@admin' => url('admin'), '@config' => url('admin/settings'))) .'</li>';
+    $default_message .= '<li>'. t('<strong>Enable additional functionality</strong> Next, visit the <a href="@modules">module list</a> and enable features which suit your specific needs. You can find additional modules in the <a href="@download_modules">Drupal modules download section</a>.', array('@modules' => url('admin/build/modules'), '@download_modules' => 'http://drupal.org/project/modules')) .'</li>';
+    $default_message .= '<li>'. t('<strong>Customize your website design</strong> To change the "look and feel" of your website, visit the <a href="@themes">themes section</a>. You may choose from one of the included themes or download additional themes from the <a href="@download_themes">Drupal themes download section</a>.', array('@themes' => url('admin/build/themes'), '@download_themes' => 'http://drupal.org/project/themes')) .'</li>';
+    $default_message .= '<li>'. t('<strong>Start posting content</strong> Finally, you can <a href="@content">create content</a> for your website. This message will disappear once you have promoted a post to the front page.', array('@content' => url('node/add'))) .'</li>';
+    $default_message .= '</ol>';
+    $default_message .= '<p>'. t('For more information, please refer to the <a href="@help">help section</a>, or the <a href="@handbook">online Drupal handbooks</a>. You may also post at the <a href="@forum">Drupal forum</a>, or view the wide range of <a href="@support">other support options</a> available.', array('@help' => url('admin/help'), '@handbook' => 'http://drupal.org/handbooks', '@forum' => 'http://drupal.org/forum', '@support' => 'http://drupal.org/support')) .'</p>';
+
+    $output = '<div id="first-time">'. $default_message .'</div>';
   }
   drupal_set_title('');
 
@@ -2389,7 +2425,7 @@ function node_page_edit($node) {
   }
 
   drupal_set_title(check_plain($node->title));
-  return drupal_get_form($node->type . '_node_form', $node);
+  return drupal_get_form($node->type .'_node_form', $node);
 }
 
 /**
@@ -2839,32 +2875,16 @@ function node_access_write_grants($node, $grants, $realm = NULL, $delete = TRUE)
     db_query($query, $node->nid, $realm);
   }
 
-  // only perform work when node_access modules are active
+  // Only perform work when node_access modules are active.
   if (count(module_implements('node_grants'))) {
-    // This optimization reduces the number of db inserts a little bit. We could
-    // optimize further for mass updates if we wanted.
-    $values = array();
-    $query = '';
     foreach ($grants as $grant) {
       if ($realm && $realm != $grant['realm']) {
         continue;
       }
       // Only write grants; denies are implicit.
       if ($grant['grant_view'] || $grant['grant_update'] || $grant['grant_delete']) {
-        $query .= ($query ? ', ' : '') . "(%d, '%s', %d, %d, %d, %d)";
-
-        $values[] = $node->nid;
-        $values[] = $grant['realm'];
-        $values[] = $grant['gid'];
-        $values[] = $grant['grant_view'];
-        $values[] = $grant['grant_update'];
-        $values[] = $grant['grant_delete'];
+        db_query("INSERT INTO {node_access} (nid, realm, gid, grant_view, grant_update, grant_delete) VALUES (%d, '%s', %d, %d, %d, %d)", $node->nid, $grant['realm'], $grant['gid'], $grant['grant_view'], $grant['grant_update'], $grant['grant_delete']);
       }
-    }
-
-    if ($values) {
-     $query = "INSERT INTO {node_access} (nid, realm, gid, grant_view, grant_update, grant_delete) VALUES " . $query;
-     db_query($query, $values);
     }
   }
 }
@@ -2943,7 +2963,7 @@ function node_content_form($node) {
       '#title' => check_plain($type->body_label),
       '#default_value' => $node->body,
       '#rows' => 20,
-      '#required' => TRUE);
+      '#required' => ($type->min_word_count > 0));
     $form['body_filter']['format'] = filter_form($node->format);
   }
 

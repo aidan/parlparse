@@ -1,5 +1,5 @@
 <?php
-// $Id: module.inc,v 1.90 2006/11/16 08:28:07 drumm Exp $
+// $Id: module.inc,v 1.93 2006/12/07 17:03:34 dries Exp $
 
 /**
  * @file
@@ -193,9 +193,13 @@ function _module_parse_info_file($filename) {
 
   if (file_exists($filename)) {
     $info = parse_ini_file($filename);
-  }
-  if (isset($info['dependencies'])) {
-    $info['dependencies'] = explode(" ", $info['dependencies']);
+
+    if (isset($info['dependencies'])) {
+      $info['dependencies'] = explode(" ", $info['dependencies']);
+    }
+    else {
+      $info['dependencies'] = NULL;
+    }
   }
   return $info;
 }
@@ -258,20 +262,28 @@ function module_enable($module_list) {
 }
 
 /**
- * Disable a given module and call its disable hook.
+ * Disable a given set of modules.
  *
- * @param $module
- *   The name of the module (without the .module extension).
+ * @param $module_list
+ *   An array of module names.
  */
-function module_disable($module) {
-  if (module_exists($module)) {
-    module_load_install($module);
-    module_invoke($module, 'disable');
-    db_query("UPDATE {system} SET status = 0, throttle = 0 WHERE type = 'module' AND name = '%s'", $module);
-    return TRUE;
+function module_disable($module_list) {
+  $invoke_modules = array();
+  foreach ($module_list as $module) {
+    if (module_exists($module)) {
+      module_load_install($module);
+      module_invoke($module, 'disable');
+      db_query("UPDATE {system} SET status = 0, throttle = 0 WHERE type = 'module' AND name = '%s'", $module);
+      $invoke_modules[] = $module;
+    }
   }
-  else {
-    return FALSE;
+
+  if (!empty($invoke_modules)) {
+    // Refresh the module list to exclude the disabled modules.
+    module_list(TRUE, FALSE);
+    // Force to regenerate the stored list of hook implementations.
+    module_implements('', FALSE, TRUE);
+    cache_clear_all('*', 'cache_menu', TRUE);
   }
 }
 
@@ -319,11 +331,20 @@ function module_hook($module, $hook) {
  * @param $sort
  *   By default, modules are ordered by weight and filename, settings this option
  *   to TRUE, module list will be ordered by module name.
+ * @param $refresh
+ *   For internal use only: Whether to force the stored list of hook
+ *   implementations to be regenerated (such as after enabling a new module,
+ *   before processing hook_enable).
  * @return
  *   An array with the names of the modules which are implementing this hook.
  */
-function module_implements($hook, $sort = FALSE) {
+function module_implements($hook, $sort = FALSE, $refresh = FALSE) {
   static $implementations;
+
+  if ($refresh) {
+    unset($implementations);
+    return;
+  }
 
   if (!isset($implementations[$hook])) {
     $implementations[$hook] = array();

@@ -1,5 +1,5 @@
 <?php
-// $Id: update.php,v 1.205 2006/10/02 11:36:17 dries Exp $
+// $Id: update.php,v 1.211 2006/12/25 21:22:03 drumm Exp $
 
 /**
  * @file
@@ -439,9 +439,13 @@ function update_do_updates() {
     $percentage = 100;
   }
 
-  // When no updates remain, clear the cache.
+  // When no updates remain, clear the caches in case the data has been updated.
   if (!isset($update['module'])) {
-    db_query('DELETE FROM {cache}');
+    cache_clear_all('*', 'cache', TRUE);
+    cache_clear_all('*', 'cache_page', TRUE);
+    cache_clear_all('*', 'cache_menu', TRUE);
+    cache_clear_all('*', 'cache_filter', TRUE);
+    drupal_clear_css_cache();
   }
 
   return array($percentage, isset($update['module']) ? 'Updating '. $update['module'] .' module' : 'Updating complete');
@@ -477,7 +481,7 @@ function update_progress_page_nojs() {
     // Error handling: if PHP dies, it will output whatever is in the output
     // buffer, followed by the error message.
     ob_start();
-    $fallback = '<p class="error">An unrecoverable error has occurred. You can find the error message below. It is advised to copy it to the clipboard for reference. Please continue to the <a href="update.php?op=error">update summary</a>.</p><p class="error">';
+    $fallback = '<p class="error">An unrecoverable error has occurred. You can find the error message below. It is advised to copy it to the clipboard for reference. Please continue to the <a href="update.php?op=error">update summary</a>.</p>';
     print theme('maintenance_page', $fallback, FALSE, TRUE);
 
     list($percentage, $message) = update_do_updates();
@@ -511,11 +515,11 @@ function update_finished_page($success) {
 
   // Report end result
   if ($success) {
-    $output = '<p>Updates were attempted. If you see no failures below, you may proceed happily to the <a href="index.php?q=admin">administration pages</a>. Otherwise, you may need to update your database manually. All errors have been <a href="index.php?q=admin/logs">logged</a>.</p>';
+    $output = '<p>Updates were attempted. If you see no failures below, you may proceed happily to the <a href="index.php?q=admin">administration pages</a>. Otherwise, you may need to update your database manually. All errors have been <a href="index.php?q=admin/logs/watchdog">logged</a>.</p>';
   }
   else {
     $update = reset($_SESSION['update_remaining']);
-    $output = '<p class="error">The update process was aborted prematurely while running <strong>update #'. $update['version'] .' in '. $update['module'] .'.module</strong>. All other errors have been <a href="index.php?q=admin/logs">logged</a>. You may need to check the <code>watchdog</code> database table manually.</p>';
+    $output = '<p class="error">The update process was aborted prematurely while running <strong>update #'. $update['version'] .' in '. $update['module'] .'.module</strong>. All other errors have been <a href="index.php?q=admin/logs/watchdog">logged</a>. You may need to check the <code>watchdog</code> database table manually.</p>';
   }
 
   if ($GLOBALS['access_check'] == FALSE) {
@@ -713,7 +717,7 @@ function update_create_cache_tables() {
         INDEX expire (expire)
       ) /*!40100 DEFAULT CHARACTER SET UTF8 */ ");
       $ret[] = update_sql("CREATE TABLE {cache_page} (
-        cid varchar(255) NOT NULL default '',
+        cid varchar(255) BINARY NOT NULL default '',
         data longblob,
         expire int NOT NULL default '0',
          created int NOT NULL default '0',

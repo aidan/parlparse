@@ -1,12 +1,12 @@
 <?php
-// $Id: system.module,v 1.398 2006/11/17 17:22:45 dries Exp $
+// $Id: system.module,v 1.440.2.1 2007/01/15 12:04:14 unconed Exp $
 
 /**
  * @file
  * Configuration system that lets administrators modify the workings of the site.
  */
 
-define('VERSION', '5.0 dev');
+define('VERSION', '5.0');
 
 /**
  * Implementation of hook_help().
@@ -18,39 +18,28 @@ function system_help($section) {
     case 'admin/help#system':
       $output = '<p>'. t('The system module provides system-wide defaults such as running jobs at a particular time, and storing web pages to improve efficiency. The ability to run scheduled jobs makes administering the web site more usable, as administrators do not have to manually start jobs. The storing of web pages, or caching, allows the site to efficiently re-use web pages and improve web site performance. The settings module provides control over preferences, behaviours including visual and operational settings.') .'</p>';
       $output .= '<p>'. t('Some modules require regularly scheduled actions, such as cleaning up logfiles. Cron, which stands for chronograph, is a periodic command scheduler executing commands at intervals specified in seconds. It can be used to control the execution of daily, weekly and monthly jobs (or anything with a period measured in seconds). The aggregator module periodically updates feeds using cron. Ping periodically notifies services of new content on your site. Search periodically indexes the content on your site. Automating tasks is one of the best ways to keep a system running smoothly, and if most of your administration does not require your direct involvement, cron is an ideal solution. Cron can, if necessary, also be run manually.') .'</p>';
-      $output .= '<p>'. t('There is a caching mechanism which stores dynamically generated web pages in a database. By caching a web page, the system module does not have to create the page each time someone wants to view it, instead it takes only one SQL query to display it, reducing response time and the server\'s load. Only pages requested by <em>anonymous</em> users are cached. In order to reduce server load and save bandwidth, the system module stores and sends cached pages compressed.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>activate your cron job on the cron page <a href="@file-cron">cron.php</a>.</li>
-<li>read how to <a href="@external-http-drupal-org-cron">configure cron jobs</a>.</li>
-<li>administer cache settings in <a href="@admin-settings">administer &gt;&gt; site configuration &gt;&gt; page caching</a>.</li>
-<li><a href="@cron-status">view</a> whether or not cron is running on your site.</li>
-<li>run cron <a href="@cron-manually">manually</a>.</li>
-</ul>
-', array('@file-cron' => 'cron.php', '@external-http-drupal-org-cron' => 'http://drupal.org/cron', '@cron-status' => url('admin/logs/status'), '@cron-manually' => url('admin/logs/status/run-cron'), '@admin-settings' => url('admin/settings/page-caching')));
+      $output .= '<p>'. t("There is a caching mechanism which stores dynamically generated web pages in a database. By caching a web page, the system module does not have to create the page each time someone wants to view it, instead it takes only one SQL query to display it, reducing response time and the server's load. Only pages requested by <em>anonymous</em> users are cached. In order to reduce server load and save bandwidth, the system module stores and sends cached pages compressed.") .'</p>';
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@system">System page</a>.', array('@system' => 'http://drupal.org/handbook/modules/system/')) .'</p>';
       return $output;
     case 'admin':
-      return t('<p>Welcome to the administration section. Here you may control how your site functions.</p>');
+      return '<p>'. t('Welcome to the administration section. Here you may control how your site functions.') .'</p>';
     case 'admin/by-module':
-      return t('<p>This page shows you all available administration tasks for each module.</p>');
-    case 'admin/settings/page-caching':
-      return t('Enabling the cache will offer a sufficient performance boost. Drupal can store and send compressed cached pages requested by "anonymous" users. By caching a web page, Drupal does not have to create the page each time someone wants to view it.');
+      return '<p>'. t('This page shows you all available administration tasks for each module.') .'</p>';
     case 'admin/build/themes':
-      return t('<p>Select which themes are available to your users and specify the default theme. To configure site-wide display settings, click the "configure" task above. Alternately, to override these settings in a specific theme, click the "configure" link for the corresponding theme. Note that different themes may have different regions available for rendering content like blocks. If you want consistency in what your users see, you may wish to enable only one theme.</p>');
+      return '<p>'. t('Select which themes are available to your users and specify the default theme. To configure site-wide display settings, click the "configure" task above. Alternately, to override these settings in a specific theme, click the "configure" link for the corresponding theme. Note that different themes may have different regions available for rendering content like blocks. If you want consistency in what your users see, you may wish to enable only one theme.') .'</p>';
     case 'admin/build/themes/settings':
-      return t('<p>These options control the default display settings for your entire site, across all themes. Unless they have been overridden by a specific theme, these settings will be used.</p>');
+      return '<p>'. t('These options control the default display settings for your entire site, across all themes. Unless they have been overridden by a specific theme, these settings will be used.') .'</p>';
     case 'admin/build/themes/settings/'. arg(3):
       $reference = explode('.', arg(3), 2);
       $theme = array_pop($reference);
-      return t('<p>These options control the display settings for the <code>%template</code> theme. When your site is displayed using this theme, these settings will be used. By clicking "Reset to defaults," you can choose to use the <a href="@global">global settings</a> for this theme.</p>', array('%template' => $theme, '@global' => url('admin/build/themes/settings')));
+      return '<p>'. t('These options control the display settings for the <code>%template</code> theme. When your site is displayed using this theme, these settings will be used. By clicking "Reset to defaults," you can choose to use the <a href="@global">global settings</a> for this theme.', array('%template' => $theme, '@global' => url('admin/build/themes/settings'))) .'</p>';
     case 'admin/build/modules':
       return t('<p>Modules are plugins for Drupal that extend its core functionality. Here you can select which modules are enabled. Click on the name of the module in the navigation menu for their individual configuration pages. Once a module is enabled, new <a href="@permissions">permissions</a> might be made available. Modules can automatically be temporarily disabled to reduce server load when your site becomes extremely busy by enabling the throttle.module and checking throttle. The auto-throttle functionality must be enabled on the <a href="@throttle">throttle configuration page</a> after having enabled the throttle module.</p>
 <p>It is important that <a href="@update-php">update.php</a> is run every time a module is updated to a newer version.</p><p>You can find all administration tasks belonging to a particular module on the <a href="@by-module">administration by module page</a>.</p>', array('@permissions' => url('admin/user/access'), '@throttle' => url('admin/settings/throttle'), '@update-php' => $base_url .'/update.php', '@by-module' => url('admin/by-module')));
     case 'admin/build/modules/uninstall':
-      return (t('<p>The uninstall process removes all data related to a module. To uninstall a module, you must first disable it. Not all modules support this feature.</p>'));
+      return '<p>'. t('The uninstall process removes all data related to a module. To uninstall a module, you must first disable it. Not all modules support this feature.') .'</p>';
     case 'admin/logs/status':
-      return t('<p>Here you can find a short overview of your Drupal site\'s parameters as well as any problems detected with your installation. It is useful to copy/paste this information when you need support.</p>');
+      return '<p>'. t("Here you can find a short overview of your Drupal site's parameters as well as any problems detected with your installation. It is useful to copy/paste this information when you need support.") .'</p>';
   }
 }
 
@@ -73,7 +62,7 @@ function system_elements() {
   $type['submit'] = array('#input' => TRUE, '#name' => 'op', '#button_type' => 'submit', '#executes_submit_callback' => TRUE);
   $type['button'] = array('#input' => TRUE, '#name' => 'op', '#button_type' => 'submit', '#executes_submit_callback' => FALSE);
   $type['textfield'] = array('#input' => TRUE, '#size' => 60, '#maxlength' => 128, '#autocomplete_path' => FALSE);
-  $type['password'] = array('#input' => TRUE, '#size' => 30);
+  $type['password'] = array('#input' => TRUE, '#size' => 60);
   $type['password_confirm'] = array('#input' => TRUE, '#process' => array('expand_password_confirm' => array()));
   $type['textarea'] = array('#input' => TRUE, '#cols' => 60, '#rows' => 5);
   $type['radios'] = array('#input' => TRUE, '#process' => array('expand_radios' => array()));
@@ -238,11 +227,11 @@ function system_menu($may_cache) {
       'callback' => 'drupal_get_form',
       'callback arguments' => array('system_error_reporting_settings'));
     $items[] = array(
-      'path' => 'admin/settings/page-caching',
-      'title' => t('Page caching'),
-      'description' => t('Enable or disable page caching for anonymous users.'),
+      'path' => 'admin/settings/performance',
+      'title' => t('Performance'),
+      'description' => t('Enable or disable page caching for anonymous users, and enable or disable CSS preprocessor.'),
       'callback' => 'drupal_get_form',
-      'callback arguments' => array('system_page_caching_settings'));
+      'callback arguments' => array('system_performance_settings'));
     $items[] = array(
       'path' => 'admin/settings/file-system',
       'title' => t('File system'),
@@ -264,7 +253,7 @@ function system_menu($may_cache) {
     $items[] = array(
       'path' => 'admin/settings/date-time',
       'title' => t('Date and time'),
-      'description' => t('Settings for how Drupal displays date and time, as well as the system\'s default timezone.'),
+      'description' => t("Settings for how Drupal displays date and time, as well as the system's default timezone."),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('system_date_time_settings'));
     $items[] = array(
@@ -292,7 +281,7 @@ function system_menu($may_cache) {
     $items[] = array(
       'path' => 'admin/logs/status',
       'title' => t('Status report'),
-      'description' => t('Get a status report about your site\'s operation and any detected problems.'),
+      'description' => t("Get a status report about your site's operation and any detected problems."),
       'callback' => 'system_status',
       'weight' => 10,
       'access' => $access);
@@ -319,13 +308,13 @@ function system_menu($may_cache) {
     if (arg(0) == 'admin') {
       global $custom_theme;
       $custom_theme = variable_get('admin_theme', '0');
-      drupal_add_css(drupal_get_path('module', 'system') .'/admin.css', 'core');
+      drupal_add_css(drupal_get_path('module', 'system') .'/admin.css', 'module');
     }
 
     // Add the CSS for this module. We put this in !$may_cache so it is only
     // added once per request.
-    drupal_add_css(drupal_get_path('module', 'system') .'/defaults.css', 'core');
-    drupal_add_css(drupal_get_path('module', 'system') .'/system.css', 'core');
+    drupal_add_css(drupal_get_path('module', 'system') .'/defaults.css', 'module');
+    drupal_add_css(drupal_get_path('module', 'system') .'/system.css', 'module');
   }
 
   return $items;
@@ -342,10 +331,18 @@ function system_user($type, $edit, &$user, $category = NULL) {
 
     if (variable_get('configurable_timezones', 1)) {
       $zones = _system_zonelist();
-      $form['timezone'] = array('#type'=>'fieldset', '#title' => t('Locale settings'), '#weight' => 6);
+      $form['timezone'] = array(
+        '#type'=>'fieldset',
+        '#title' => t('Locale settings'),
+        '#weight' => 6,
+        '#collapsible' => TRUE,
+      );
       $form['timezone']['timezone'] = array(
-        '#type' => 'select', '#title' => t('Time zone'), '#default_value' => strlen($edit['timezone']) ? $edit['timezone'] : variable_get('date_default_timezone', 0),
-        '#options' => $zones, '#description' => t('Select your current local time. Dates and times throughout this site will be displayed using this time zone.')
+        '#type' => 'select',
+        '#title' => t('Time zone'),
+        '#default_value' => strlen($edit['timezone']) ? $edit['timezone'] : variable_get('date_default_timezone', 0),
+        '#options' => $zones,
+        '#description' => t('Select your current local time. Dates and times throughout this site will be displayed using this time zone.'),
       );
     }
 
@@ -438,7 +435,7 @@ function system_admin_theme_settings() {
     '#type' => 'select',
     '#options' => $options,
     '#title' => t('Administration theme'),
-    '#description' => t('Choose which theme the administration pages should display in. If you choose "System default" the administration pages theme will display in the same theme the rest of the site uses.'),
+    '#description' => t('Choose which theme the administration pages should display in. If you choose "System default" the administration pages will use the same theme as the rest of the site.'),
     '#default_value' => variable_get('admin_theme', '0'),
   );
 
@@ -500,7 +497,7 @@ function system_theme_select_form($description = '', $default_value = '', $weigh
         $screenshot = file_exists($info->screenshot) ? theme('image', $info->screenshot, t('Screenshot for %theme theme', array('%theme' => $info->name)), '', array('class' => 'screenshot'), FALSE) : t('no screenshot');
 
         $form['themes'][$info->key]['screenshot'] = array('#value' => $screenshot);
-        $form['themes'][$info->key]['description'] = array('#type' => 'item', '#title' => $info->name,  '#value' => dirname($info->filename) . ($info->name == variable_get('theme_default', 'garland') ? t('<br /> <em>(site default theme)</em>') : ''));
+        $form['themes'][$info->key]['description'] = array('#type' => 'item', '#title' => $info->name,  '#value' => dirname($info->filename) . ($info->name == variable_get('theme_default', 'garland') ? '<br /> <em>'. t('(site default theme)') .'</em>' : ''));
         $options[$info->key] = '';
       }
 
@@ -574,7 +571,7 @@ function system_site_information_settings() {
   $form['anonymous'] = array(
     '#type' => 'textfield',
     '#title' => t('Anonymous user'),
-    '#default_value' => variable_get('anonymous', 'Anonymous'),
+    '#default_value' => variable_get('anonymous', t('Anonymous')),
     '#description' => t('The name used to indicate anonymous users.')
   );
   $form['site_frontpage'] = array(
@@ -605,7 +602,7 @@ function system_clean_url_settings() {
       $form['clean_url']['#disabled'] = TRUE;
     }
     else {
-      $form['clean_url']['#description'] .= t(' You have successfully demonstrated that clean URLs work on your server. You are welcome to enable/disable them as you wish.');
+      $form['clean_url']['#description'] .= t(' You have successfully demonstrated that clean URLs work on your server. You may enable/disable them as you wish.');
       $form['#collapsed'] = FALSE;
     }
   }
@@ -652,7 +649,7 @@ function system_error_reporting_settings() {
   return system_settings_form($form);
 }
 
-function system_page_caching_settings() {
+function system_performance_settings() {
 
   $description = '<p>'. t("The normal cache mode is suitable for most sites and does not cause any side effects. The aggressive cache mode causes Drupal to skip the loading (init) and unloading (exit) of enabled modules when serving a cached page. This results in an additional performance boost but can cause unwanted side effects.") .'</p>';
 
@@ -660,13 +657,18 @@ function system_page_caching_settings() {
   sort($problem_modules);
 
   if (count($problem_modules) > 0) {
-    $description .= '<p>'. t("<strong class=\"error\">The following enabled modules are incompatible with aggressive mode caching and will not function properly: %modules</strong>", array('%modules' => implode(', ', $problem_modules))) .'.</p>';
+    $description .= '<p>'. t('<strong class="error">The following enabled modules are incompatible with aggressive mode caching and will not function properly: %modules</strong>', array('%modules' => implode(', ', $problem_modules))) .'.</p>';
   }
   else {
-    $description .= '<p>'. t("<strong class=\"ok\">Currently, all enabled modules are compatible with the aggressive caching policy.</strong> Please note, if you use aggressive caching and enable new modules, you'll need to check this page again to ensure compatibility.") .'</p>';
+    $description .= '<p>'. t('<strong class="ok">Currently, all enabled modules are compatible with the aggressive caching policy.</strong> Please note, if you use aggressive caching and enable new modules, you will need to check this page again to ensure compatibility.') .'</p>';
   }
+  $form['page_cache'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Page cache'),
+    '#description' => t('Enabling the cache will offer a significant performance boost. Drupal can store and send compressed cached pages requested by <em>anonymous</em> users. By caching a web page, Drupal does not have to construct the page each time someone wants to view it.'),
+  );
 
-  $form['cache'] = array(
+  $form['page_cache']['cache'] = array(
     '#type' => 'radios',
     '#title' => t('Caching mode'),
     '#default_value' => variable_get('cache', CACHE_DISABLED),
@@ -676,13 +678,33 @@ function system_page_caching_settings() {
 
   $period = drupal_map_assoc(array(0, 60, 180, 300, 600, 900, 1800, 2700, 3600, 10800, 21600, 32400, 43200, 86400), 'format_interval');
   $period[0] = t('none');
-  $form['cache_lifetime'] = array(
+  $form['page_cache']['cache_lifetime'] = array(
     '#type' => 'select',
     '#title' => t('Minimum cache lifetime'),
     '#default_value' => variable_get('cache_lifetime', 0),
     '#options' => $period,
     '#description' => t('On high-traffic sites it can become necessary to enforce a minimum cache lifetime. The minimum cache lifetime is the minimum amount of time that will go by before the cache is emptied and recreated. A larger minimum cache lifetime offers better performance, but users will not see new content for a longer period of time.')
   );
+
+  $form['bandwidth_optimizations'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Bandwidth optimizations'),
+    '#description' => t('These options can help reduce both the size and number of requests made to your website. This can reduce the server load, the bandwidth used, and the average page loading time for your visitors.')
+  );
+
+  $directory = file_directory_path();
+  $is_writable = is_dir($directory) && is_writable($directory) && (variable_get('file_downloads', FILE_DOWNLOADS_PUBLIC) == FILE_DOWNLOADS_PUBLIC);
+  $form['bandwidth_optimizations']['preprocess_css'] = array(
+    '#type' => 'radios',
+    '#title' => t('Aggregate and compress CSS files'),
+    '#default_value' => variable_get('preprocess_css', FALSE) && $is_writable,
+    '#disabled' => !$is_writable,
+    '#options' => array(t('Disabled'), t('Enabled')),
+    '#description' => t("Some Drupal modules include their own CSS files. When these modules are enabled, each module's CSS file adds an additional HTTP request to the page, which can increase the load time of each page. These HTTP requests can also slightly increase server load. It is recommended to only turn this option on when your site is in production, as it can interfere with theme development. This option is disabled if you have not set up your files directory, or if your download method is set to private."),
+  );
+
+  $form['#submit']['system_settings_form_submit'] = array();
+  $form['#submit']['drupal_clear_css_cache'] = array();
 
   return system_settings_form($form);
 }
@@ -727,13 +749,12 @@ function system_image_toolkit_settings() {
       '#default_value' => variable_get('image_toolkit', image_get_toolkit()),
       '#options' => $toolkits_available
     );
-
-    return system_settings_form($form);
   }
   else {
-    $form['error'] = array('#value' => '<p>'. t("No image toolkits found.  Drupal will use PHP's built-in GD library for image handling.") .'</p>');
-    return $form;
+    $form['image_toolkit'] = array('#value' => '<p>'. t("No image toolkits found. Drupal will use PHP's built-in GD library for image handling.") .'</p>');
   }
+  $form['image_toolkit_settings'] = image_toolkit_invoke('settings');
+  return system_settings_form($form);
 }
 
 function system_rss_feeds_settings() {
@@ -847,7 +868,7 @@ function system_site_maintenance_settings() {
   $form['site_offline_message'] = array(
     '#type' => 'textarea',
     '#title' => t('Site off-line message'),
-    '#default_value' => variable_get('site_offline_message', t('@site is currently under maintenance. We should be back shortly. Thank you for your patience.', array('@site' => variable_get('site_name', t('This Drupal site'))))),
+    '#default_value' => variable_get('site_offline_message', t('@site is currently under maintenance. We should be back shortly. Thank you for your patience.', array('@site' => variable_get('site_name', 'Drupal')))),
     '#description' => t('Message to show visitors when the site is in off-line mode.')
   );
 
@@ -1037,7 +1058,7 @@ function system_initialize_theme_blocks($theme) {
     $default_theme = variable_get('theme_default', 'garland');
     $regions = system_region_list($theme);
     $result = db_query("SELECT * FROM {blocks} WHERE theme = '%s'", $default_theme);
-    while($block = db_fetch_array($result)) {
+    while ($block = db_fetch_array($result)) {
       // If the region isn't supported by the theme, assign the block to the theme's default region.
       if (!array_key_exists($block['region'], $regions)) {
         $block['region'] = system_default_region($theme);
@@ -1092,7 +1113,7 @@ function system_settings_form_submit($form_id, $form_values) {
   $op = isset($form_values['op']) ? $form_values['op'] : '';
 
   // Exclude unnecessary elements.
-  unset($form_values['submit'], $form_values['reset'], $form_values['form_id']);
+  unset($form_values['submit'], $form_values['reset'], $form_values['form_id'], $form_values['op'], $form_values['form_token']);
 
   foreach ($form_values as $key => $value) {
     if ($op == t('Reset to defaults')) {
@@ -1111,6 +1132,7 @@ function system_settings_form_submit($form_id, $form_values) {
   else {
     drupal_set_message(t('The configuration options have been saved.'));
   }
+
   menu_rebuild();
 }
 
@@ -1118,6 +1140,8 @@ function system_settings_form_submit($form_id, $form_values) {
  * Menu callback; displays a listing of all themes.
  */
 function system_themes() {
+
+  drupal_clear_css_cache();
   $themes = system_theme_data();
   ksort($themes);
 
@@ -1179,10 +1203,7 @@ function system_themes_submit($form_id, $form_values) {
       foreach ($form_values['status'] as $key => $choice) {
         // Always enable the default theme, despite its status checkbox being checked:
         if ($choice || $form_values['theme_default'] == $key) {
-          // If theme status is being set to 1 from 0, initialize block data for this theme if necessary.
-          if (db_num_rows(db_query("SELECT status FROM {system} WHERE type = 'theme' AND name = '%s' AND status = 0", $key))) {
-            system_initialize_theme_blocks($key);
-          }
+          system_initialize_theme_blocks($key);
           db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", $key);
         }
       }
@@ -1239,6 +1260,7 @@ function system_modules($form_values = NULL) {
   // Traverse the files retrieved and build the form.
   foreach ($files as $filename => $file) {
     $form['name'][$filename] = array('#value' => $file->info['name']);
+    $form['version'][$filename] = array('#value' => $file->info['version']);
     $form['description'][$filename] = array('#value' => t($file->info['description']));
     $options[$filename] = '';
     if ($file->status) {
@@ -1380,9 +1402,8 @@ function system_modules_confirm_form($modules, $form_values = array()) {
       $t_argument = array(
         '%module' => $modules[$name]->info['name'],
         '%dependencies' => implode(', ', $missing_dependencies),
-        '!modules' => format_plural(count($missing_dependencies), ' module', ' modules'),
       );
-      $items[] = t('You must enable the %dependencies !modules to install %module.', $t_argument);
+      $items[] = strtr(format_plural(count($missing_dependencies), 'You must enable the %dependencies module to install %module.', 'You must enable the %dependencies modules to install %module.'), $t_argument);
     }
     $form['text'] = array('#value' => theme('item_list', $items));
   }
@@ -1430,7 +1451,7 @@ function system_modules_submit($form_id, $form_values) {
   $new_modules = array();
 
   // Merge in disabled active modules since they should be enabled.
-  // They don't appear because disabled checkboxes are not submited
+  // They don't appear because disabled checkboxes are not submitted
   // by browsers.
   $form_values['status'] = array_merge($form_values['status'], $form_values['disabled_modules']);
 
@@ -1443,6 +1464,7 @@ function system_modules_submit($form_id, $form_values) {
   }
 
   $enable_modules = array();
+  $disable_modules = array();
   foreach ($form_values['status'] as $key => $choice) {
     if ($choice) {
       if (drupal_get_installed_schema_version($key) == SCHEMA_UNINSTALLED) {
@@ -1453,15 +1475,18 @@ function system_modules_submit($form_id, $form_values) {
       }
     }
     else {
-      module_disable($key);
+      $disable_modules[] = $key;
     }
   }
+
+  $old_module_list = module_list();
 
   if (!empty($enable_modules)) {
     module_enable($enable_modules);
   }
-
-  $old_module_list = module_list();
+  if (!empty($disable_modules)) {
+    module_disable($disable_modules);
+  }
 
   // Install new modules.
   foreach ($new_modules as $key => $module) {
@@ -1489,6 +1514,9 @@ function system_modules_submit($form_id, $form_values) {
   if ($dependencies && !isset($form_values['confirm'])) {
     return FALSE;
   }
+
+  drupal_clear_css_cache();
+
   return 'admin/build/modules';
 }
 
@@ -1506,13 +1534,14 @@ function theme_system_modules($form) {
     $header[] = t('Throttle');
   }
   $header[] = t('Name');
+  $header[] = t('Version');
   $header[] = t('Description');
 
   // Pull package information from module list and start grouping modules.
   $modules = $form['validation_modules']['#value'];
   foreach ($modules as $module) {
-    if (!isset($module->info['package'])) {
-      $module->info['package'] = 'Uncategorized';
+    if (!isset($module->info['package']) || !$module->info['package']) {
+      $module->info['package'] = 'Other';
     }
     $packages[$module->info['package']][$module->name] = $module->info;
   }
@@ -1530,6 +1559,7 @@ function theme_system_modules($form) {
         $row[] = array('data' => drupal_render($form['throttle'][$key]), 'align' => 'center');
       }
       $row[] = '<strong>'. drupal_render($form['name'][$key]) .'</strong>';
+      $row[] = drupal_render($form['version'][$key]);
       $row[] = array('data' => drupal_render($form['description'][$key]), 'class' => 'description');
       $rows[] = $row;
     }
@@ -1775,7 +1805,7 @@ function system_sql() {
 
   $output .= '<h2>'. t('Query performance') .'</h2>';
   $output .= _system_sql($data, array(
-   'Select_full_join' => t(' The number of joins without an index; should be zero.'),
+   'Select_full_join' => t('The number of joins without an index; should be zero.'),
    'Select_range_check' => t('The number of joins without an index; should be zero.'),
    'Sort_scan' => t('The number of sorts done without using an index; should be zero.'),
    'Table_locks_immediate' => t('The number of times a lock could be acquired immediately.'),
@@ -2060,6 +2090,25 @@ function system_theme_settings($key = '') {
 }
 
 /**
+ * Implementation of hook_node_type().
+ *
+ * Updates theme settings after a node type change.
+ */
+function system_node_type($op, $info) {
+  if ($op == 'update' && !empty($info->old_type) && $info->type != $info->old_type) {
+    $old = 'toggle_node_info_'. $info->old_type;
+    $new = 'toggle_node_info_'. $info->type;
+
+    $theme_settings = variable_get('theme_settings', array());
+    if (isset($theme_settings[$old])) {
+      $theme_settings[$new] = $theme_settings[$old];
+      unset($theme_settings[$old]);
+      variable_set('theme_settings', $theme_settings);
+    }
+  }
+}
+
+/**
  * Output a confirmation form
  *
  * This function returns a complete form for confirming an action. A link is
@@ -2075,8 +2124,9 @@ function system_theme_settings($key = '') {
  * @param $question
  *   The question to ask the user (e.g. "Are you sure you want to delete the
  *   block <em>foo</em>?").
- * @param $destination
+ * @param $path
  *   The page to go to if the user denies the action.
+ *   Can be either a drupal path, or an array with the keys 'path', 'query', 'fragment'.
  * @param $description
  *   Additional text to display (defaults to "This action cannot be undone.").
  * @param $yes
@@ -2089,9 +2139,18 @@ function system_theme_settings($key = '') {
  * @return
  *   The form.
  */
-function confirm_form($form, $question, $destination, $description = NULL, $yes = NULL, $no = NULL, $name = 'confirm') {
-  $description = ($description) ? $description : t('This action cannot be undone.');
-  extract(parse_url($destination));
+function confirm_form($form, $question, $path, $description = NULL, $yes = NULL, $no = NULL, $name = 'confirm') {
+  $description = isset($description) ? $description : t('This action cannot be undone.');
+
+  // Prepare cancel link
+  $query = $fragment = NULL;
+  if (is_array($path)) {
+    $query = isset($path['query']) ? $path['query'] : NULL;
+    $fragment = isset($path['fragment']) ? $path['fragment'] : NULL;
+    $path = isset($path['path']) ? $path['path'] : NULL;
+  }
+  $cancel = l($no ? $no : t('Cancel'), $path, array(), $query, $fragment);
+
   drupal_set_title($question);
   $form['#attributes'] = array('class' => 'confirmation');
   $form['description'] = array('#value' => $description);
@@ -2099,7 +2158,7 @@ function confirm_form($form, $question, $destination, $description = NULL, $yes 
 
   $form['actions'] = array('#prefix' => '<div class="container-inline">', '#suffix' => '</div>');
   $form['actions']['submit'] = array('#type' => 'submit', '#value' => $yes ? $yes : t('Confirm'));
-  $form['actions']['cancel'] = array('#value' => l($no ? $no : t('Cancel'), $path, null, $query, $fragment));
+  $form['actions']['cancel'] = array('#value' => $cancel);
   $form['#base'] = 'confirm_form';
   return $form;
 }
@@ -2124,6 +2183,8 @@ function system_admin_compact_mode() {
  */
 function theme_admin_page($blocks) {
   $stripe = 0;
+  $container = array();
+
   foreach ($blocks as $block) {
     if ($block_output = theme('admin_block', $block)) {
       if (!$block['position']) {
@@ -2134,13 +2195,13 @@ function theme_admin_page($blocks) {
     }
   }
 
-  $output = '<div class="admin">';
+  $output = '<div class="admin clear-block">';
   $output .= '<div class="compact-link">';
   if (system_admin_compact_mode()) {
     $output .= l(t('Show descriptions'), 'admin/compact/off', array('title' => t('Produce a less compact layout that includes descriptions.')));
   }
   else {
-    $output .= l(t('Hide descriptions'), 'admin/compact/on', array('title' => t('Produce a more compact layout that doesn\'t include descriptions.')));
+    $output .= l(t('Hide descriptions'), 'admin/compact/on', array('title' => t("Produce a more compact layout that doesn't include descriptions.")));
   }
   $output .= '</div>';
 
@@ -2219,43 +2280,54 @@ function theme_admin_block_content($content) {
  */
 function system_admin_by_module() {
   $modules = module_rebuild_cache();
-  $menu = menu_get_menu();
   $menu_items = array();
-  $admin_access = user_access('administer access control');
   foreach ($modules as $file) {
     $module = $file->name;
     if ($module == 'help') {
       continue;
     }
-    $admin_tasks = array();
 
-    // Check for permissions.
-    if (module_hook($module, 'perm') && $admin_access) {
-      $admin_tasks[-1] = l(t('Configure permissions'), 'admin/user/access', NULL, NULL, 'module-'. $module);
-    }
+    $admin_tasks = system_get_module_admin_tasks($module);
 
-    // Check for menu items that are admin links.
-    if ($items = module_invoke($module, 'menu', TRUE)) {
-      foreach ($items as $item) {
-        $parts = explode('/', $item['path']);
-        $n = count($parts);
-        if ((!isset($item['type']) || ($item['type'] & MENU_VISIBLE_IN_TREE)) && ($parts[0] == 'admin') && ($n >= 3) && _menu_item_is_accessible($menu['path index'][$item['path']])) {
-          $admin_tasks[$item['title']] = l($item['title'], $item['path']);
-        }
+    // Only display a section if there are any available tasks.
+    if (count($admin_tasks)) {
+
+      // Check for help links.
+      if (module_invoke($module, 'help', "admin/help#$module")) {
+        $admin_tasks[100] = l(t('Get help'), "admin/help/$module");
       }
+
+      // Sort.
+      ksort($admin_tasks);
+
+      $menu_items[$file->info['name']] = array($file->info['description'], $admin_tasks);
     }
-
-    // Check for help links.
-    if (module_invoke($module, 'help', "admin/help#$module")) {
-      $admin_tasks[100] = l(t('Get help'), "admin/help/$module");
-    }
-
-    // Sort
-    ksort($admin_tasks);
-
-    $menu_items[$file->info['name']] = array($file->info['description'], $admin_tasks);
   }
   return theme('system_admin_by_module', $menu_items);
+}
+
+function system_get_module_admin_tasks($module) {
+  $admin_access = user_access('administer access control');
+  $menu = menu_get_menu();
+  $admin_tasks = array();
+
+  // Check for permissions.
+  if (module_hook($module, 'perm') && $admin_access) {
+    $admin_tasks[-1] = l(t('Configure permissions'), 'admin/user/access', NULL, NULL, 'module-'. $module);
+  }
+
+  // Check for menu items that are admin links.
+  if ($items = module_invoke($module, 'menu', TRUE)) {
+    foreach ($items as $item) {
+      $parts = explode('/', $item['path']);
+      $n = count($parts);
+      if ((!isset($item['type']) || ($item['type'] & MENU_VISIBLE_IN_TREE)) && ($parts[0] == 'admin') && ($n >= 3) && _menu_item_is_accessible($menu['path index'][$item['path']])) {
+        $admin_tasks[$item['title']] = l($item['title'], $item['path']);
+      }
+    }
+  }
+
+  return $admin_tasks;
 }
 
 /**
@@ -2275,7 +2347,7 @@ function theme_system_admin_by_module($menu_items) {
       $block = array();
       $block['title'] = $module;
       $block['content'] = theme('item_list', $items);
-      $block['description'] = $description;
+      $block['description'] = t($description);
 
       if ($block_output = theme('admin_block', $block)) {
         if (!$block['position']) {

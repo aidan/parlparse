@@ -1,5 +1,5 @@
 <?php
-// $Id: theme.inc,v 1.321 2006/11/17 06:53:31 dries Exp $
+// $Id: theme.inc,v 1.337 2007/01/11 03:36:06 unconed Exp $
 
 /**
  * @file
@@ -159,11 +159,15 @@ function list_theme_engines($refresh = FALSE) {
  *   An HTML string that generates the themed output.
  */
 function theme() {
+  static $functions;
   $args = func_get_args();
   $function = array_shift($args);
 
-  if ($func = theme_get_function($function)) {
-    return call_user_func_array($func, $args);
+  if (!isset($functions[$function])) {
+    $functions[$function] = theme_get_function($function);
+  }
+  if ($functions[$function]) {
+    return call_user_func_array($functions[$function], $args);
   }
 }
 
@@ -205,9 +209,28 @@ function theme_get_function($function) {
 function path_to_theme() {
   global $theme;
 
+  if (!isset($theme)) {
+    init_theme();
+  }
+
   $themes = list_themes();
 
   return dirname($themes[$theme]->filename);
+}
+
+/**
+ * Return the path to the currently selected engine.
+ */
+function path_to_engine() {
+  global $theme, $theme_engine;
+
+  if (!isset($theme)) {
+    init_theme();
+  }
+
+  $engines = list_theme_engines();
+
+  return dirname($engines[$theme_engine]->filename);
 }
 
 /**
@@ -359,6 +382,9 @@ function theme_placeholder($text) {
  *   A string containing the entire HTML page.
  */
 function theme_page($content) {
+  // Get blocks before so that they can alter the header (JavaScript, Stylesheets etc.)
+  $blocks = theme('blocks', 'all');
+
   $output = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
   $output .= '<html xmlns="http://www.w3.org/1999/xhtml">';
   $output .= '<head>';
@@ -371,7 +397,7 @@ function theme_page($content) {
   $output .= ' <body style="background-color: #fff; color: #000;">';
   $output .= '<table border="0" cellspacing="4" cellpadding="4"><tr><td style="vertical-align: top; width: 170px;">';
 
-  $output .= theme('blocks', 'all');
+  $output .= $blocks;
   $output .= '</td><td style="vertical-align: top;">';
 
   $output .= theme('breadcrumb', drupal_get_breadcrumb());
@@ -399,7 +425,9 @@ function theme_page($content) {
 
 function theme_maintenance_page($content, $messages = TRUE, $partial = FALSE) {
   drupal_set_header('Content-Type: text/html; charset=utf-8');
-  drupal_add_css('misc/maintenance.css', 'core');
+  drupal_set_html_head('<style type="text/css" media="all">@import "'. base_path() .'misc/maintenance.css";</style>');
+  drupal_set_html_head('<style type="text/css" media="all">@import "'. base_path() . drupal_get_path('module', 'system') .'/defaults.css";</style>');
+  drupal_set_html_head('<style type="text/css" media="all">@import "'. base_path() . drupal_get_path('module', 'system') .'/system.css";</style>');
   drupal_set_html_head('<link rel="shortcut icon" href="'. base_path() .'misc/favicon.ico" type="image/x-icon" />');
 
   $output = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
@@ -407,7 +435,6 @@ function theme_maintenance_page($content, $messages = TRUE, $partial = FALSE) {
   $output .= '<head>';
   $output .= ' <title>'. strip_tags(drupal_get_title()) .'</title>';
   $output .= drupal_get_html_head();
-  $output .= drupal_get_css();
   $output .= drupal_get_js();
   $output .= '</head>';
   $output .= '<body>';
@@ -430,7 +457,7 @@ function theme_maintenance_page($content, $messages = TRUE, $partial = FALSE) {
 
 function theme_install_page($content) {
   drupal_set_header('Content-Type: text/html; charset=utf-8');
-  drupal_add_css('misc/maintenance.css', 'core');
+  drupal_add_css('misc/maintenance.css', 'module', 'all', FALSE);
   drupal_set_html_head('<link rel="shortcut icon" href="'. base_path() .'misc/favicon.ico" type="image/x-icon" />');
   $output = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
   $output .= '<html xmlns="http://www.w3.org/1999/xhtml">';
@@ -445,14 +472,14 @@ function theme_install_page($content) {
 
   $messages = drupal_set_message();
   if (isset($messages['error'])) {
-    $errors = count($messages['error']) > 1 ? 'errors' : 'error';
-    $output .= "<h3>The following $errors must be resolved before you can continue the installation process:</h3>";
+    $title = count($messages['error']) > 1 ? st('The following errors must be resolved before you can continue the installation process') : st('The following error must be resolved before you can continue the installation process');
+    $output .= '<h3>' .$title. ':</h3>';
     $output .= theme('status_messages', 'error');
   }
 
   if (isset($messages['status'])) {
-    $warnings = count($messages['status']) > 1 ? 'warnings' : 'warning';
-    $output .= "<h4>The following installation $warnings should be carefully reviewed, but in most cases may be safely ignored:</h4>";
+    $warnings = count($messages['status']) > 1 ? st('The following installation warnings should be carefully reviewed, but in most cases may be safely ignored') : st('The following installation warning should be carefully reviewed, but in most cases may be safely ignored');
+    $output .= '<h4>' .$title. ':</h4>';
     $output .= theme('status_messages', 'status');
   }
 
@@ -481,7 +508,7 @@ function theme_status_messages($display = NULL) {
     $output .= "<div class=\"messages $type\">\n";
     if (count($messages) > 1) {
       $output .= " <ul>\n";
-      foreach($messages as $message) {
+      foreach ($messages as $message) {
         $output .= '  <li>'. $message ."</li>\n";
       }
       $output .= " </ul>\n";
@@ -507,7 +534,7 @@ function theme_status_messages($display = NULL) {
 function theme_links($links, $attributes = array('class' => 'links')) {
   $output = '';
 
-  if (is_array($links)) {
+  if (count($links) > 0) {
     $output = '<ul'. drupal_attributes($attributes) .'>';
 
     $num_links = count($links);
@@ -526,14 +553,24 @@ function theme_links($links, $attributes = array('class' => 'links')) {
         $class = $key;
       }
 
-      // Add first and last classes to the list of links to help out themers
-      $extra_class = ($i == 1) ? 'first ' : (($i == $num_links) ? 'last ' : '');
+      // Add first and last classes to the list of links to help out themers.
+      $extra_class = '';
+      if ($i == 1) {
+        $extra_class .= 'first ';
+      }
+      if ($i == $num_links) {
+        $extra_class .= 'last ';
+      }
       $output .= '<li class="'. $extra_class . $class .'">';
 
       // Is the title HTML?
       $html = isset($link['html']) && $link['html'];
 
-      if ($link['href']) {
+      // Initialize fragment and query variables.
+      $link['query'] = isset($link['query']) ? $link['query'] : NULL;
+      $link['fragment'] = isset($link['fragment']) ? $link['fragment'] : NULL;
+
+      if (isset($link['href'])) {
         $output .= l($link['title'], $link['href'], $link['attributes'], $link['query'], $link['fragment'], FALSE, $html);
       }
       else if ($link['title']) {
@@ -779,6 +816,16 @@ function theme_table($header, $rows, $attributes = array(), $caption = NULL) {
 }
 
 /**
+ * Returns a header cell for tables that have a select all functionality.
+ */
+function theme_table_select_header_cell() {
+  drupal_add_js(array('tableSelect' => array('selectAll' => t('Select all rows in this table'), 'selectNone' => t('Deselect all rows in this table'))), 'setting');
+  drupal_add_js('misc/tableselect.js');
+
+  return array('class' => 'select-all');
+}
+
+/**
  * Return a themed sort icon.
  *
  * @param $style
@@ -943,7 +990,7 @@ function theme_feed_icon($url) {
  * close of the body tag.
  *
  * @param $main (optional)
- *
+ *   Whether the current page is the front page of the site.
  * @return
  *   A string containing the results of the hook_footer() calls.
  */
@@ -1018,7 +1065,7 @@ function theme_username($object) {
     $output .= ' ('. t('not verified') .')';
   }
   else {
-    $output = variable_get('anonymous', 'Anonymous');
+    $output = variable_get('anonymous', t('Anonymous'));
   }
 
   return $output;

@@ -1,5 +1,5 @@
 <?php
-// $Id: search.module,v 1.202 2006/10/26 05:31:14 dries Exp $
+// $Id: search.module,v 1.209 2007/01/13 11:02:30 unconed Exp $
 
 /**
  * @file
@@ -98,19 +98,10 @@ function search_help($section) {
     case 'admin/help#search':
       $output = '<p>'. t('The search module adds the ability to search for content by keywords. Search is often the only practical way to find content on a large site. Search is useful for finding users and posts by searching on keywords.') .'</p>';
       $output .= '<p>'. t('The search engine works by maintaining an index of the words in your site\'s content. It indexes the posts and users. You can adjust the settings to tweak the indexing behaviour. Note that the search requires cron to be set up correctly. The index percentage sets the maximum amount of items that will be indexed in one cron run. Set this number lower if your cron is timing out or if PHP is running out of memory.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>read about how your site uses cron in the <a href="@admin-help-system">administer &gt;&gt; help &gt;&gt; system</a>.</li>
-<li>run your <a href="@file-cron">cron.php</a>.</li>
-<li>read about <a href="@external-http-drupal-org-node-23714">configuring cron jobs</a>.</li>
-<li><a href="@admin-settings-search">administer &gt;&gt; site configuration &gt;&gt; search</a>.</li></ul>
-', array('@admin-help-system' => url('admin/help/system'), '@file-cron' => 'cron.php', '@external-http-drupal-org-node-23714' => 'http://drupal.org/node/23714', '@admin-settings-search' => url('admin/settings/search')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@search">Search page</a>.', array('@search' => 'http://drupal.org/handbook/modules/search/')) .'</p>';
       return $output;
     case 'admin/settings/search':
-      return t('
-<p>The search engine works by maintaining an index of the words in your site\'s content. You can adjust the settings below to tweak the indexing behaviour. Note that the search requires cron to be set up correctly.</p>
-');
+      return '<p>'. t('The search engine works by maintaining an index of the words in your site\'s content. You can adjust the settings below to tweak the indexing behaviour. Note that the search requires cron to be set up correctly.') .'</p>';
     case 'search#noresults':
       return t('<ul>
 <li>Check if your spelling is correct.</li>
@@ -151,8 +142,8 @@ function search_menu($may_cache) {
   if ($may_cache) {
     $items[] = array('path' => 'search',
       'title' => t('Search'),
-      'callback' => 'drupal_get_form',
-      'callback arguments' => array('search_view'),
+      'callback' => 'search_view',
+      'callback arguments' => array('node'),
       'access' => user_access('search content'),
       'type' => MENU_SUGGESTED_ITEM);
     $items[] = array('path' => 'admin/settings/search',
@@ -178,19 +169,17 @@ function search_menu($may_cache) {
     // we dynamically add the keywords to the search tabs' paths.
     $keys = search_get_keys();
     $keys = strlen($keys) ? '/'. $keys : '';
-    foreach (module_list() as $name) {
-      if (module_hook($name, 'search') && $title = module_invoke($name, 'search', 'name')) {
-        $items[] = array('path' => 'search/'. $name . $keys, 'title' => $title,
-          'callback' => 'search_view',
-          'access' => user_access('search content'),
-          'type' => MENU_LOCAL_TASK);
-      }
+    foreach (module_implements('search') as $name) {
+      $title = module_invoke($name, 'search', 'name');
+      $items[] = array('path' => 'search/'. $name . $keys, 'title' => $title,
+        'callback' => 'search_view',
+        'callback arguments' => array($name),
+        // The search module only returns a title when the user is allowed to
+        // access that particular search type.
+        'access' => user_access('search content') && $title,
+        'type' => MENU_LOCAL_TASK,
+      );
     }
-  }
-  else {
-    // Add the CSS for this module
-    // We put this in !$may_cache so it's only added once per request
-    drupal_add_css(drupal_get_path('module', 'search') .'/search.css');
   }
 
   return $items;
@@ -904,9 +893,7 @@ function search_get_keys() {
 /**
  * Menu callback; presents the search form and/or search results.
  */
-function search_view() {
-  $type = arg(1);
-
+function search_view($type = '') {
   // Search form submits with POST but redirects to GET. This way we can keep
   // the search query URL clean as a whistle:
   // search/type/keyword+keyword
@@ -1087,6 +1074,9 @@ function theme_search_block_form($form) {
  * Perform a standard search on the given keys, and return the formatted results.
  */
 function search_data($keys = NULL, $type = 'node') {
+  // Add CSS
+  drupal_add_css(drupal_get_path('module', 'search') .'/search.css', 'module', 'all', FALSE);
+
   if (isset($keys)) {
     if (module_hook($type, 'search')) {
       $results = module_invoke($type, 'search', 'search', $keys);

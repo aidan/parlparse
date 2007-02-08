@@ -1,5 +1,5 @@
 <?php
-// $Id: database.pgsql.inc,v 1.39 2006/10/23 18:38:45 drumm Exp $
+// $Id: database.pgsql.inc,v 1.43 2006/12/27 22:13:56 dries Exp $
 
 /**
  * @file
@@ -202,7 +202,7 @@ function db_num_rows($result) {
  * @param $row
  *   The index of the row whose result is needed.
  * @return
- *   The resulting field.
+ *   The resulting field or FALSE.
  */
 function db_result($result, $row = 0) {
   if ($result && pg_num_rows($result) > $row) {
@@ -210,6 +210,7 @@ function db_result($result, $row = 0) {
 
     return $res[0];
   }
+  return FALSE;
 }
 
 /**
@@ -227,6 +228,9 @@ function db_error() {
  * database tables. Instead, this function is used to return a new unique ID
  * of the type requested. If necessary, a new sequence with the given name
  * will be created.
+ *
+ * Note that the table name should be in curly brackets to preserve compatibility
+ * with table prefixes. For example, db_next_id('{node}_nid');
  */
 function db_next_id($name) {
   $id = db_result(db_query("SELECT nextval('%s_seq')", db_prefix_tables($name)));
@@ -394,6 +398,8 @@ function db_table_exists($table) {
  * Verify if the database is set up correctly.
  */
 function db_check_setup() {
+  $t = get_t();
+
   $encoding = db_result(db_query('SHOW server_encoding'));
   if (!in_array(strtolower($encoding), array('unicode', 'utf8'))) {
     drupal_set_message($t('Your PostgreSQL database is set up with the wrong character encoding (%encoding). It is possible it will not work as expected. It is advised to recreate it with UTF-8/Unicode encoding. More information can be found in the <a href="@url">PostgreSQL documentation</a>.', array('%encoding' => $encoding, '@url' => 'http://www.postgresql.org/docs/7.4/interactive/multibyte.html')), 'status');
@@ -414,7 +420,7 @@ function db_check_setup() {
 function db_distinct_field($table, $field, $query) {
   $field_to_select = 'DISTINCT ON ('. $table .'.'. $field .") $table.$field";
   // (?<!text) is a negative look-behind (no need to rewrite queries that already use DISTINCT).
-  $query = preg_replace('/(SELECT.*)('. $table .'\.)?(?<!DISTINCT\()(?<!DISTINCT\('. $table .'\.)'. $field .'(.*FROM )/AUsi', '\1'. $field_to_select .'\3', $query);
+  $query = preg_replace('/(SELECT.*)(?:'. $table .'\.|\s)(?<!DISTINCT\()(?<!DISTINCT\('. $table .'\.)'. $field .'(.*FROM )/AUsi', '\1 '. $field_to_select .'\2', $query);
   $query = preg_replace('/(ORDER BY )(?!'.$table.'\.'.$field.')/', '\1'."$table.$field, ", $query);
   return $query;
 }

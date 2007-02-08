@@ -1,5 +1,5 @@
 <?php
-// $Id: database.mysql.inc,v 1.62 2006/10/23 18:38:45 drumm Exp $
+// $Id: database.mysql.inc,v 1.66 2006/12/27 22:50:09 dries Exp $
 
 /**
  * @file
@@ -225,12 +225,13 @@ function db_num_rows($result) {
  * @param $row
  *   The index of the row whose result is needed.
  * @return
- *   The resulting field.
+ *   The resulting field or FALSE.
  */
 function db_result($result, $row = 0) {
   if ($result && mysql_num_rows($result) > $row) {
     return mysql_result($result, $row);
   }
+  return FALSE;
 }
 
 /**
@@ -248,6 +249,9 @@ function db_error() {
  * database tables. Instead, this function is used to return a new unique ID
  * of the type requested. If necessary, a new sequence with the given name
  * will be created.
+ *
+ * Note that the table name should be in curly brackets to preserve compatibility
+ * with table prefixes. For example, db_next_id('{node}_nid');
  */
 function db_next_id($name) {
   $name = db_prefix_tables($name);
@@ -274,11 +278,6 @@ function db_affected_rows() {
  * returned.
  * User-supplied arguments to the query should be passed in as separate parameters
  * so that they can be properly escaped to avoid SQL injection attacks.
- *
- * Note that if you need to know how many results were returned, you should do
- * a SELECT COUNT(*) on the temporary table afterwards. db_num_rows() and
- * db_affected_rows() do not give consistent result across different database
- * types in this case.
  *
  * @param $query
  *   A string containing an SQL query.
@@ -431,7 +430,7 @@ function db_table_exists($table) {
 function db_distinct_field($table, $field, $query) {
   $field_to_select = 'DISTINCT('. $table .'.'. $field .')';
   // (?<!text) is a negative look-behind (no need to rewrite queries that already use DISTINCT).
-  return preg_replace('/(SELECT.*)('. $table .'\.)?(?<!DISTINCT\()(?<!DISTINCT\('. $table .'\.)'. $field .'(.*FROM )/AUsi', '\1'. $field_to_select .'\3', $query);
+  return preg_replace('/(SELECT.*)(?:'. $table .'\.|\s)(?<!DISTINCT\()(?<!DISTINCT\('. $table .'\.)'. $field .'(.*FROM )/AUsi', '\1 '. $field_to_select .'\2', $query);
 }
 
 /**

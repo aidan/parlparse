@@ -1,5 +1,5 @@
 <?php
-// $Id: menu.inc,v 1.141 2006/11/17 17:16:56 dries Exp $
+// $Id: menu.inc,v 1.146 2007/01/14 01:37:48 unconed Exp $
 
 /**
  * @file
@@ -437,10 +437,6 @@ function menu_set_active_item($path = NULL) {
     }
     else {
       $_GET['q'] = $path;
-
-      // If we change ?q= we need to rebuild the contextual menu items
-      // because they are often variable depending on the value of ?q=.
-      _menu_append_contextual_items();
     }
     $menu = menu_get_menu();
 
@@ -518,8 +514,8 @@ function menu_get_active_help() {
       }
       if (module_hook('help', 'page')) {
         if (arg(0) == "admin") {
-          if (module_invoke($name, 'help', 'admin/help#' . arg(2))) {
-            $output .= theme("more_help_link", url('admin/help/' . arg(2)));
+          if (module_invoke($name, 'help', 'admin/help#'. arg(2)) && !empty($output)) {
+            $output .= theme("more_help_link", url('admin/help/'. arg(2)));
           }
         }
       }
@@ -540,7 +536,7 @@ function menu_get_active_breadcrumb() {
 
   // We do *not* want to use "variable_get('site_frontpage', 'node)" here
   // as that will create the link '/node'. This is unsightly and creates
-  // a second URL for the hompeage ('/' *and* '/node').
+  // a second URL for the homepage ('/' *and* '/node').
   $links[] = l(t('Home'), '');
 
   $trail = _menu_get_active_trail();
@@ -613,7 +609,7 @@ function menu_rebuild() {
     // Save the new items updating the pids in each iteration
     while (($c = count($new_items)) && ($c != $old_count)) {
       $old_count = count($new_items);
-      foreach($new_items as $mid => $item) {
+      foreach ($new_items as $mid => $item) {
         // If the item has a valid parent, save it
         if ($item['pid'] >= 0) {
           // The new menu ID gets passed back by reference as $item['mid']
@@ -1017,8 +1013,8 @@ function _menu_get_active_trail_in_submenu($pid) {
 function _menu_sort($a, $b) {
   $menu = menu_get_menu();
 
-  $a = &$menu['items'][$a];
-  $b = &$menu['items'][$b];
+  $a = $menu['items'][$a];
+  $b = $menu['items'][$b];
 
   if ($a['weight'] < $b['weight']) {
     return -1;

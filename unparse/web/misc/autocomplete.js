@@ -1,4 +1,4 @@
-// $Id: autocomplete.js,v 1.14 2006/10/14 02:39:48 unconed Exp $
+// $Id: autocomplete.js,v 1.17 2007/01/09 07:31:04 drumm Exp $
 
 /**
  * Attaches the autocomplete behaviour to all required fields
@@ -173,18 +173,16 @@ Drupal.jsAC.prototype.populatePopup = function () {
   if (this.popup) {
     $(this.popup).remove();
   }
-  var pos = Drupal.absolutePosition(this.input);
   this.selected = false;
   this.popup = document.createElement('div');
   this.popup.id = 'autocomplete';
   this.popup.owner = this;
   $(this.popup).css({
-    top: (pos.y + this.input.offsetHeight) +'px',
-    left: pos.x +'px',
+    marginTop: this.input.offsetHeight +'px',
     width: (this.input.offsetWidth - 4) +'px',
     display: 'none'
   });
-  $('body').append(this.popup);
+  $(this.input).before(this.popup);
 
   // Do search
   this.db.owner = this;
@@ -195,6 +193,11 @@ Drupal.jsAC.prototype.populatePopup = function () {
  * Fills the suggestion popup with any matches received
  */
 Drupal.jsAC.prototype.found = function (matches) {
+  // If no value in the textfield, do not show the popup.
+  if (!this.input.value.length) {
+    return false;
+  }
+
   // Prepare matches
   var ul = document.createElement('ul');
   var ac = this;
@@ -210,12 +213,14 @@ Drupal.jsAC.prototype.found = function (matches) {
   }
 
   // Show popup with matches, if any
-  if (ul.childNodes.length > 0) {
-    $(this.popup).empty().append(ul).show();
-  }
-  else {
-    $(this.popup).css({visibility: 'hidden'});
-    this.hidePopup();
+  if (this.popup) {
+    if (ul.childNodes.length > 0) {
+      $(this.popup).empty().append(ul).show();
+    }
+    else {
+      $(this.popup).css({visibility: 'hidden'});
+      this.hidePopup();
+    }
   }
 }
 

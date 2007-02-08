@@ -1,5 +1,5 @@
 <?php
-// $Id: file.inc,v 1.86 2006/10/17 19:29:26 dries Exp $
+// $Id: file.inc,v 1.90 2007/01/05 05:32:22 unconed Exp $
 
 /**
  * @file
@@ -116,6 +116,7 @@ function file_check_directory(&$directory, $mode = 0, $form_item = NULL) {
     $htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\nOptions None\nOptions +FollowSymLinks";
     if (($fp = fopen("$directory/.htaccess", 'w')) && fputs($fp, $htaccess_lines)) {
       fclose($fp);
+      chmod($directory .'/.htaccess', 0664);
     }
     else {
       $message = t("Security warning: Couldn't write .htaccess file. Please create a .htaccess file in your %directory directory which contains the following lines: <code>!htaccess</code>", array('%directory' => $directory, '!htaccess' => '<br />'. nl2br(check_plain($htaccess_lines))));
@@ -219,7 +220,7 @@ function file_check_upload($source = 'upload') {
     }
 
     // Begin building file object.
-    $file = new StdClass();
+    $file = new stdClass();
     $file->filename = trim(basename($_FILES["files"]["name"][$source]), '.');
 
     // Create temporary name/path for newly uploaded files.
@@ -602,8 +603,10 @@ function file_download() {
 
 
 /**
- * Finds all files that match a given mask in a given
- * directory.
+ * Finds all files that match a given mask in a given directory.
+ * Directories and files beginning with a period are excluded; this
+ * prevents hidden files and directories (such as SVN working directories)
+ * from being scanned.
  *
  * @param $dir
  *   The base directory for the scan.
@@ -637,7 +640,7 @@ function file_scan_directory($dir, $mask, $nomask = array('.', '..', 'CVS'), $ca
 
   if (is_dir($dir) && $handle = opendir($dir)) {
     while ($file = readdir($handle)) {
-      if (!in_array($file, $nomask)) {
+      if (!in_array($file, $nomask) && $file[0] != '.') {
         if (is_dir("$dir/$file") && $recurse) {
           $files = array_merge($files, file_scan_directory("$dir/$file", $mask, $nomask, $callback, $recurse, $key, $min_depth, $depth + 1));
         }
@@ -713,26 +716,6 @@ function file_directory_path() {
 }
 
 /**
- * Helper function for file_upload_max_size().
- */
-function _file_convert_to_mb($val){
-  $val = trim($val);
-  $last = strtolower($val[strlen($val) - 1]);
-  switch ($last) {
-    // The 'G' modifier is available since PHP 5.1.0
-    case 'g':
-      $size = $val * 1024;
-      break;
-    case 'k':
-      $size = $val / 1024;
-      break;
-    default:
-      $size = (int) $val;
-  }
-  return $size;
-}
-
-/**
  * Determine the maximum file upload size by querying the PHP settings.
  *
  * @return
@@ -742,9 +725,9 @@ function file_upload_max_size() {
   static $max_size = -1;
 
   if ($max_size < 0) {
-    $upload_max = _file_convert_to_mb(ini_get('upload_max_filesize'));
+    $upload_max = parse_size(ini_get('upload_max_filesize'));
     // sanity check- a single upload should not be more than 50% the size limit of the total post
-    $post_max = _file_convert_to_mb(ini_get('post_max_size')) / 2;
+    $post_max = parse_size(ini_get('post_max_size')) / 2;
     $max_size = ($upload_max < $post_max) ? $upload_max : $post_max;
   }
   return $max_size;

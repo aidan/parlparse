@@ -1,5 +1,5 @@
 <?php
-// $Id: help.module,v 1.61 2006/10/22 08:28:45 unconed Exp $
+// $Id: help.module,v 1.69 2006/12/23 22:06:05 dries Exp $
 
 /**
  * @file
@@ -28,11 +28,6 @@ function help_menu($may_cache) {
         'access' => $admin_access);
     }
   }
-  else {
-    // Add the CSS for this module
-    // We put this in !$may_cache so it's only added once per request
-    drupal_add_css(drupal_get_path('module', 'help') .'/help.css');
-  }
 
   return $items;
 }
@@ -41,30 +36,25 @@ function help_menu($may_cache) {
  * Menu callback; prints a page listing a glossary of Drupal terminology.
  */
 function help_main() {
-  $output = t("
+  // Add CSS
+  drupal_add_css(drupal_get_path('module', 'help') .'/help.css', 'module', 'all', FALSE);
+
+  $output = t('
   <h2>Help topics</h2>
   <p>Help is available on the following items:</p>
   !help_pages
   <h2>Glossary of Drupal terminology</h2>
   <dl>
-   <dt>Block</dt><dd>A small box containing information or content placed in the left-hand or right-hand sidebar of a web page.</dd>
-   <dt>Comment</dt><dd>A note attached to a node. Usually intended to clarify, explain, criticize, or express an opinion on the original material.</dd>
-   <dt>Moderation</dt>
-   <dd>The activity of making sure a post to a Drupal site fits in with what is expected for that Drupal site.
-    <dl>
-     <dt>Approved</dt><dd>A moderated post which has been accepted by the moderators for publication (see published).</dd>
-     <dt>Waiting</dt><dd>A moderated post which is still being voted on to be accepted for publication (see published).</dd>
-    </dl>
-   </dd>
-   <dt>Node</dt><dd>The basic data unit in Drupal. Everything is a node or an extension of a node.</dd>
-   <dt>Public</dt><dd>See published.</dd>
-   <dt>Published</dt><dd>A node that is viewable by everyone (see unpublished).</dd>
-   <dt>Role</dt><dd>A classification users are placed into for the purpose of setting users' permissions.</dd>
-   <dt>Taxonomy</dt><dd>A division of a collection of things into ordered, classified groups (see <a href=\"@taxonomy\">taxonomy help</a>).</dd>
-   <dt>Unpublished</dt><dd>A node that is only viewable by administrators and moderators.</dd>
-   <dt>User</dt><dd>A person who has an account at your Drupal site, and is logged in with that account.</dd>
-   <dt>Visitor</dt><dd>A person who does not have an account at your Drupal site or a person who has an account at your Drupal site but is <strong>not</strong> logged in with that account. Also termed \"anonymous user\".</dd>
-  </dl>", array('!help_pages' => help_links_as_list(), '@taxonomy' => url('admin/help/taxonomy')));
+   <dt>Block</dt><dd>A small box containing information or content placed in a region of a web page (e.g. in a sidebar, below or above the content, or in any other region the current theme allows).</dd>
+   <dt>Comment</dt><dd>Text attached to a post intended to clarify, explain, criticize, or express an opinion on the original post.</dd>
+   <dt>Node</dt><dd>The basic unit of content in Drupal, often referred to as a "post". All content that can be created using the "create content" menu is a node. Keep in mind that comments, blocks, and users are <em>not</em> nodes.</dd>
+   <dt>Published</dt><dd>A post that is viewable by every visitor of the site, regardless of whether he is logged in (see also "Unpublished").</dd>
+   <dt>Role</dt><dd>A classification users are placed into for the purpose of setting users\' permissions. A user receives the combined permissions of all roles to which he or she is subscribed.</dd>
+   <dt>Taxonomy</dt><dd>A categorization system that allows the building of complex hierarchial or relational structures and tagging of content (see <a href="@taxonomy">taxonomy help</a>).</dd>
+   <dt>Unpublished</dt><dd>A post that is only viewable by administrators and moderators.</dd>
+   <dt>User</dt><dd>A person who has an account at your Drupal site, and is currently logged in with that account.</dd>
+   <dt>Visitor</dt><dd>A person who does not have an account at your Drupal site or a person who has an account at your Drupal site but is <em>not</em> currently logged in with that account. A visitor is also called an "anonymous user".</dd>
+  </dl>', array('!help_pages' => help_links_as_list(), '@taxonomy' => url('admin/help/taxonomy')));
 
   return $output;
 }
@@ -100,22 +90,19 @@ function help_links_as_list() {
 function help_help($section) {
   switch ($section) {
     case 'admin/help':
-      $output = t('<p>This guide explains what the various modules in <a href="@Drupal">Drupal</a> do and how to configure them.</p>
+      $output = t('<p>This guide explains what the various modules in <a href="@Drupal">Drupal</a> do and how to configure them. Additionally, you will find a glossary of basic Drupal terminology to help get you started.</p>
 <p>It is not a substitute for the <a href="@handbook">Drupal handbook</a> available online and should be used in conjunction with it. The online reference handbook might be more up-to-date and has helpful user-contributed comments. It is your definitive reference point for all Drupal documentation.</p>
 ', array('@Drupal' => 'http://drupal.org', '@handbook' => 'http://drupal.org/handbook'));
       return $output;
     case 'admin/help#help':
       $output = '<p>'. t('The help module displays context sensitive help information. Users can learn how to use modules and accomplish tasks quicker with less errors by clicking on links in provided by the help module.') .'</p>';
-      $output .= t('<p>Modules can make documentation available to other modules with this module. All user help should be presented using this module. Some examples of help: </p>
+      $output .= t("<p>Modules can make documentation available to other modules with this module. All user help should be presented using this module. Some examples of help: </p>
 <ul>
-<li>The name of a module (unused, but there).</li>
-<li>The description found on the admin/settings/modules page.</li>
-<li>The module\'s help text, displayed on the admin/help page and through the module\'s individual help link.</li>
+<li>The module's help text, displayed on the <a href=\"@help\">help page</a> and through the module's individual help link.</li>
+<li>More elaborate help text on sites a module defines.</li>
 <li>The help for a distributed authorization module (if applicable).</li>
-<li>The description of a post type (if applicable).</li>
 </ul>
-');
-      $output .= '<p>'. t('You can not administer the help system.') .'</p>';
+", array('@help' => url('admin/help')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@help">Help page</a>.', array('@help' => 'http://drupal.org/handbook/modules/help/')) .'</p>';
       return $output;
   }
@@ -128,13 +115,20 @@ function help_page() {
   $name = arg(2);
   $output = '';
   if (module_hook($name, 'help')) {
+    $module = _module_parse_info_file(drupal_get_path('module', $name).'/'. $name .'.info');
+    drupal_set_title($module['name']);
+
     $temp = module_invoke($name, 'help', "admin/help#$name");
     if (empty($temp)) {
-      $output .= t("No help is available for module %module.", array('%module' => $name));
+      $output .= t("No help is available for module %module.", array('%module' => $module['name']));
     }
     else {
       $output .= $temp;
     }
+
+    $admin_tasks = system_get_module_admin_tasks($name);
+    ksort($admin_tasks);
+    $output .= theme('item_list', $admin_tasks, t('@module administration pages', array('@module' => $module['name'])));
   }
   return $output;
 }

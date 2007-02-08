@@ -6,6 +6,7 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
+    <style type="text/css" media="print">@import "<?php print base_path() . path_to_theme() ?>/print.css";</style>
     <!--[if lt IE 7]>
     <style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie.css";</style>
     <![endif]-->
@@ -13,7 +14,7 @@
   <body<?php print phptemplate_body_class($sidebar_left, $sidebar_right); ?>>
 
 <!-- Layout -->
-  <div id="navigation"></div>
+  <div id="header-region" class="clear-block"><?php print $header; ?></div>
 
     <div id="wrapper">
     <div id="container" class="clear-block">
@@ -67,12 +68,13 @@
           <?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
           <?php if ($tabs): print $tabs .'</div>'; endif; ?>
 
-          <?php if ($tabs2): print $tabs2; endif; ?>
+          <?php if (isset($tabs2)): print $tabs2; endif; ?>
 
           <?php if ($help): print $help; endif; ?>
           <?php if ($messages): print $messages; endif; ?>
           <?php print $content ?>
           <span class="clear"></span>
+          <?php print $feed_icons ?>
           <div id="footer"><?php print $footer_message ?></div>
       </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
 

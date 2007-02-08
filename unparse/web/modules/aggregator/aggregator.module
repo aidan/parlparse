@@ -1,5 +1,5 @@
 <?php
-// $Id: aggregator.module,v 1.313 2006/11/17 00:21:44 drumm Exp $
+// $Id: aggregator.module,v 1.324 2006/12/26 10:28:12 dries Exp $
 
 /**
  * @file
@@ -14,25 +14,14 @@ function aggregator_help($section) {
     case 'admin/help#aggregator':
       $output = '<p>'. t('The news aggregator is a powerful on-site RSS syndicator/news reader that can gather fresh content from news sites and weblogs around the web.') .'</p>';
       $output .= '<p>'. t('Users can view the latest news chronologically in the <a href="@aggregator">main news aggregator display</a> or by <a href="@aggregator-sources">source</a>. Administrators can add, edit and delete feeds and choose how often to check for newly updated news for each individual feed. Administrators can also tag individual feeds with categories, offering selective grouping of some feeds into separate displays. Listings of the latest news for individual sources or categorized sources can be enabled as blocks for display in the sidebar through the <a href="@admin-block">block administration page</a>. The news aggregator requires cron to check for the latest news from the sites to which you have subscribed. Drupal also provides a <a href="@aggregator-opml">machine-readable OPML file</a> of all of your subscribed feeds.', array('@aggregator' => url('aggregator'), '@aggregator-sources' => url('aggregator/sources'), '@admin-block' => url('admin/build/block'), '@aggregator-opml' => url('aggregator/opml'))) .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>administer your list of news feeds <a href="@admin-aggregator">administer &gt;&gt; content management &gt;&gt; RSS aggregator</a>.</li>
-<li>add a new feed <a href="@admin-aggregator-add-feed">administer &gt;&gt; content management &gt;&gt; RSS aggregator &gt;&gt; add feed</a>.</li>
-<li>add a new category <a href="@admin-aggregator-add-category">administer &gt;&gt; content management &gt;&gt; RSS aggregator &gt;&gt; add category</a>.</li>
-<li>configure global settings for the news aggregator <a href="@admin-settings-aggregator">administer &gt;&gt; content management &gt;&gt; RSS aggregator &gt;&gt; settings</a>.</li>
-<li>control access to the aggregator module through access permissions <a href="@admin-access">administer &gt;&gt; user management &gt;&gt; access control</a>.</li>
-<li>set permissions to access new feeds for user roles such as anonymous users at <a href="@admin-access">administer &gt;&gt; user management &gt;&gt; access control</a>.</li>
-<li>view the <a href="@aggregator">aggregator page</a>.</li>
-</ul>
-', array('@admin-aggregator' => url('admin/content/aggregator'), '@admin-aggregator-add-feed' => url('admin/content/aggregator/add/feed'), '@admin-aggregator-add-category' => url('admin/content/aggregator/add/category'), '@admin-settings-aggregator' => url('admin/settings/aggregator'), '@admin-access' => url('admin/user/access'), '@aggregator' => url('aggregator')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@aggregator">Aggregator page</a>.', array('@aggregator' => 'http://drupal.org/handbook/modules/aggregator/')) .'</p>';
       return $output;
     case 'admin/content/aggregator':
-      return t('<p>Thousands of sites (particularly news sites and weblogs) publish their latest headlines and/or stories in a machine-readable format so that other sites can easily link to them. This content is usually in the form of an <a href="http://blogs.law.harvard.edu/tech/rss">RSS</a> feed (which is an XML-based syndication standard). To display the feed or category in a block you must decide how many items to show by editing the feed or block and turning on the <a href="@block">feed\'s block</a>.</p>', array('@block' => url('admin/build/block')));
+      return '<p>'. t('Thousands of sites (particularly news sites and weblogs) publish their latest headlines and/or stories in a machine-readable format so that other sites can easily link to them. This content is usually in the form of an <a href="http://blogs.law.harvard.edu/tech/rss">RSS</a> feed (which is an XML-based syndication standard). To display the feed or category in a block you must decide how many items to show by editing the feed or block and turning on the <a href="@block">feed\'s block</a>.', array('@block' => url('admin/build/block'))) .'</p>';
     case 'admin/content/aggregator/add/feed':
-      return t('<p>Add a site that has an RSS/RDF/Atom feed. The URL is the full path to the feed file. For the feed to update automatically you must run "cron.php" on a regular basis. If you already have a feed with the URL you are planning to use, the system will not accept another feed with the same URL.</p>');
+      return '<p>'. t('Add a site that has an RSS/RDF/Atom feed. The URL is the full path to the feed file. For the feed to update automatically you must run "cron.php" on a regular basis. If you already have a feed with the URL you are planning to use, the system will not accept another feed with the same URL.') .'</p>';
     case 'admin/content/aggregator/add/category':
-      return t('<p>Categories provide a way to group items from different news feeds together. Each news category has its own feed page and block. For example, you could tag various sport-related feeds as belonging to a category called <em>Sports</em>. News items can be added to a category automatically by setting a feed to automatically place its item into that category, or by using the categorize items link in any listing of news items.</p>');
+      return '<p>'. t('Categories provide a way to group items from different news feeds together. Each news category has its own feed page and block. For example, you could tag various sport-related feeds as belonging to a category called <em>Sports</em>. News items can be added to a category automatically by setting a feed to automatically place its item into that category, or by using the categorize items link in any listing of news items.') .'</p>';
   }
 }
 
@@ -46,8 +35,8 @@ function aggregator_menu($may_cache) {
 
   if ($may_cache) {
     $items[] = array('path' => 'admin/content/aggregator',
-      'title' => t('RSS aggregator'),
-      'description' => t('Configure which content your site aggregates from other sites, how often it polls them, and how they\'re categorized.'),
+      'title' => t('News aggregator'),
+      'description' => t("Configure which content your site aggregates from other sites, how often it polls them, and how they're categorized."),
       'callback' => 'aggregator_admin_overview',
       'access' => $edit);
     $items[] = array('path' => 'admin/content/aggregator/add/feed',
@@ -262,11 +251,11 @@ function aggregator_block($op = 'list', $delta = 0, $edit = array()) {
     if ($op == 'list') {
       $result = db_query('SELECT cid, title FROM {aggregator_category} ORDER BY title');
       while ($category = db_fetch_object($result)) {
-        $block['category-'. $category->cid]['info'] = t('%title category latest items', array('%title' => $category->title));
+        $block['category-'. $category->cid]['info'] = t('!title category latest items', array('!title' => $category->title));
       }
       $result = db_query('SELECT fid, title FROM {aggregator_feed} ORDER BY fid');
       while ($feed = db_fetch_object($result)) {
-        $block['feed-'. $feed->fid]['info'] = t('%title feed latest items', array('%title' => $feed->title));
+        $block['feed-'. $feed->fid]['info'] = t('!title feed latest items', array('!title' => $feed->title));
       }
     }
     else if ($op == 'configure') {
@@ -296,7 +285,7 @@ function aggregator_block($op = 'list', $delta = 0, $edit = array()) {
           if ($feed = db_fetch_object(db_query('SELECT fid, title, block FROM {aggregator_feed} WHERE fid = %d', $id))) {
             $block['subject'] = check_plain($feed->title);
             $result = db_query_range('SELECT * FROM {aggregator_item} WHERE fid = %d ORDER BY timestamp DESC, iid DESC', $feed->fid, 0, $feed->block);
-            $block['content'] = '<div class="more-link">'. l(t('more'), 'aggregator/sources/'. $feed->fid, array('title' => t('View this feed\'s recent news.'))) .'</div>';
+            $read_more = '<div class="more-link">'. l(t('more'), 'aggregator/sources/'. $feed->fid, array('title' => t("View this feed's recent news."))) .'</div>';
           }
           break;
 
@@ -304,7 +293,7 @@ function aggregator_block($op = 'list', $delta = 0, $edit = array()) {
           if ($category = db_fetch_object(db_query('SELECT cid, title, block FROM {aggregator_category} WHERE cid = %d', $id))) {
             $block['subject'] = check_plain($category->title);
             $result = db_query_range('SELECT i.* FROM {aggregator_category_item} ci LEFT JOIN {aggregator_item} i ON ci.iid = i.iid WHERE ci.cid = %d ORDER BY i.timestamp DESC, i.iid DESC', $category->cid, 0, $category->block);
-            $block['content'] = '<div class="more-link">'. l(t('more'), 'aggregator/categories/'. $category->cid, array('title' => t('View this category\'s recent news.'))) .'</div>';
+            $read_more = '<div class="more-link">'. l(t('more'), 'aggregator/categories/'. $category->cid, array('title' => t("View this category's recent news."))) .'</div>';
           }
           break;
       }
@@ -312,7 +301,11 @@ function aggregator_block($op = 'list', $delta = 0, $edit = array()) {
       while ($item = db_fetch_object($result)) {
         $items[] = theme('aggregator_block_item', $item);
       }
-      $block['content'] = theme('item_list', $items) . $block['content'];
+
+      // Only display the block if there are items to show.
+      if (count($items) > 0) {
+        $block['content'] = theme('item_list', $items) . $read_more;
+      }
     }
     return $block;
   }
@@ -429,7 +422,7 @@ function aggregator_form_feed($edit = array()) {
   $form['title'] = array('#type' => 'textfield',
     '#title' => t('Title'),
     '#default_value' => $edit['title'],
-    '#maxlength' => 64,
+    '#maxlength' => 255,
     '#description' => t('The name of the feed; typically the name of the web site you syndicate content from.'),
     '#required' => TRUE,
   );
@@ -771,8 +764,8 @@ function aggregator_refresh($feed) {
       }
       break;
     default:
-      watchdog('aggregator', t('The RSS-feed from %site seems to be broken, due to "%error".', array('%site' => $feed['title'], '%error' => $result->code .' '. $result->error)), WATCHDOG_WARNING);
-      drupal_set_message(t('The RSS-feed from %site seems to be broken, because of error "%error".', array('%site' => $feed['title'], '%error' => $result->code .' '. $result->error)));
+      watchdog('aggregator', t('The feed from %site seems to be broken, due to "%error".', array('%site' => $feed['title'], '%error' => $result->code .' '. $result->error)), WATCHDOG_WARNING);
+      drupal_set_message(t('The feed from %site seems to be broken, because of error "%error".', array('%site' => $feed['title'], '%error' => $result->code .' '. $result->error)));
   }
 }
 
@@ -828,8 +821,8 @@ function aggregator_parse_feed(&$data, $feed) {
   xml_set_character_data_handler($xml_parser, 'aggregator_element_data');
 
   if (!xml_parse($xml_parser, $data, 1)) {
-    watchdog('aggregator', t('The RSS-feed from %site seems to be broken, due to an error "%error" on line %line.', array('%site' => $feed['title'], '%error' => xml_error_string(xml_get_error_code($xml_parser)), '%line' => xml_get_current_line_number($xml_parser))), WATCHDOG_WARNING);
-    drupal_set_message(t('The RSS-feed from %site seems to be broken, because of error "%error" on line %line.', array('%site' => $feed['title'], '%error' => xml_error_string(xml_get_error_code($xml_parser)), '%line' => xml_get_current_line_number($xml_parser))), 'error');
+    watchdog('aggregator', t('The feed from %site seems to be broken, due to an error "%error" on line %line.', array('%site' => $feed['title'], '%error' => xml_error_string(xml_get_error_code($xml_parser)), '%line' => xml_get_current_line_number($xml_parser))), WATCHDOG_WARNING);
+    drupal_set_message(t('The feed from %site seems to be broken, because of error "%error" on line %line.', array('%site' => $feed['title'], '%error' => xml_error_string(xml_get_error_code($xml_parser)), '%line' => xml_get_current_line_number($xml_parser))), 'error');
     return 0;
   }
   xml_parser_free($xml_parser);
@@ -985,7 +978,7 @@ function aggregator_get_category($cid) {
 function aggregator_view() {
   $result = db_query('SELECT f.*, COUNT(i.iid) AS items FROM {aggregator_feed} f LEFT JOIN {aggregator_item} i ON f.fid = i.fid GROUP BY f.fid, f.title, f.url, f.refresh, f.checked, f.link, f.description, f.etag, f.modified, f.image, f.block ORDER BY f.title');
 
-  $output .= '<h3>'. t('Feed overview') .'</h3>';
+  $output = '<h3>'. t('Feed overview') .'</h3>';
 
   $header = array(t('Title'), t('Items'), t('Last update'), t('Next update'), array('data' => t('Operations'), 'colspan' => '3'));
   $rows = array();
@@ -1068,6 +1061,7 @@ function aggregator_page_list($sql, $header, $categorize) {
   $categories = array();
   $done = FALSE;
   $form['items'] = array();
+  $form['categories'] = array('#tree' => TRUE);
   while ($item = db_fetch_object($result)) {
     $form['items'][$item->iid] = array('#value' => theme('aggregator_page_item', $item));
     $form['categories'][$item->iid] = array();
@@ -1144,7 +1138,7 @@ function aggregator_page_list_validate($form_id, &$form) {
 }
 
 function aggregator_page_list_submit($form_id, $form_values) {
-  foreach ($form_values as $iid => $selection) {
+  foreach ($form_values['categories'] as $iid => $selection) {
     db_query('DELETE FROM {aggregator_category_item} WHERE iid = %d', $iid);
     foreach ($selection as $cid) {
       if ($cid) {
@@ -1223,7 +1217,7 @@ function aggregator_page_rss() {
 
   $output .= "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
   $output .= "<rss version=\"2.0\">\n";
-  $output .= format_rss_channel(variable_get('site_name', t('Drupal')) . ' ' . t('aggregator'), url('aggregator' . $url, NULL, NULL, TRUE), variable_get('site_name', t('Drupal')) . ' - ' . t('aggregated feeds') . $title, $items, 'en');
+  $output .= format_rss_channel(variable_get('site_name', 'Drupal') . ' ' . t('aggregator'), url('aggregator' . $url, NULL, NULL, TRUE), variable_get('site_name', 'Drupal') . ' - ' . t('aggregated feeds') . $title, $items, 'en');
   $output .= "</rss>\n";
 
   drupal_set_header('Content-Type: application/rss+xml; charset=utf-8');

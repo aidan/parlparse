@@ -1,5 +1,5 @@
 <?php
-// $Id: upload.module,v 1.136 2006/10/26 05:31:14 dries Exp $
+// $Id: upload.module,v 1.148 2007/01/15 11:22:34 unconed Exp $
 
 /**
  * @file
@@ -15,17 +15,10 @@ function upload_help($section) {
     case 'admin/help#upload':
       $output = '<p>'. t('The upload module allows users to upload files to the site. The ability to upload files to a site is important for members of a community who want to share work. It is also useful to administrators who want to keep uploaded files connected to a node or page.') .'</p>';
       $output .= '<p>'. t('Users with the upload files permission can upload attachments. You can choose which post types can take attachments on the content types settings page. Each user role can be customized for the file size of uploads, and the dimension of image files.') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>administer user permissions at <a href="@admin-access">administer &gt;&gt; user management &gt;&gt; access control</a>.</li>
-<li>administer content at <a href="@admin-content-types">administer &gt;&gt; content management &gt;&gt; content types</a>.</li>
-<li>administer upload at <a href="@admin-upload">administer &gt;&gt; site configuration &gt;&gt; file upload</a>.</li>
-</ul>
-', array('@admin-access' => url('admin/user/access'), '@admin-content-types' => url('admin/settings/types'), '@admin-upload' => url('admin/settings/upload')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@upload">Upload page</a>.', array('@upload' => 'http://drupal.org/handbook/modules/upload/')) .'</p>';
       return $output;
     case 'admin/settings/upload':
-      return t('<p>Users with the <a href="@permissions">upload files permission</a> can upload attachments. Users with the <a href="@permissions">view uploaded files permission</a> can view uploaded attachments. You can choose which post types can take attachments on the <a href="@types">content types settings</a> page.</p>', array('@permissions' => url('admin/user/access'), '@types' => url('admin/settings/types')));
+      return '<p>'. t('Users with the <a href="@permissions">upload files permission</a> can upload attachments. Users with the <a href="@permissions">view uploaded files permission</a> can view uploaded attachments. You can choose which post types can take attachments on the <a href="@types">content types settings</a> page.', array('@permissions' => url('admin/user/access'), '@types' => url('admin/settings/types'))) .'</p>';
   }
 }
 
@@ -165,7 +158,7 @@ function upload_admin_settings_validate($form_id, $form_values) {
  * Menu callback for the upload settings form.
  */
 function upload_admin_settings() {
-  $upload_extensions_default = variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps');
+  $upload_extensions_default = variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps odt ods odp');
   $upload_uploadsize_default = variable_get('upload_uploadsize_default', 1);
   $upload_usersize_default = variable_get('upload_usersize_default', 1);
 
@@ -181,7 +174,7 @@ function upload_admin_settings() {
     '#size' => 15,
     '#maxlength' => 10,
     '#description' => t('The maximum allowed image size (e.g. 640x480). Set to 0 for no restriction.'),
-    '#field_suffix' => t('<kbd>WIDTHxHEIGHT</kbd>')
+    '#field_suffix' => '<kbd>'. t('WIDTHxHEIGHT') .'</kbd>'
   );
   $form['settings_general']['upload_list_default'] = array(
     '#type' => 'select',
@@ -217,7 +210,7 @@ function upload_admin_settings() {
     '#field_suffix' => t('MB')
   );
 
-  $form['upload_max_size'] = array('#value' => '<p>'. t('Your PHP settings limit the maximum file size per upload to %size MB.', array('%size' => file_upload_max_size())).'</p>');
+  $form['settings_general']['upload_max_size'] = array('#value' => '<p>'. t('Your PHP settings limit the maximum file size per upload to %size.', array('%size' => format_size(file_upload_max_size()))).'</p>');
 
   $roles = user_roles(0, 'upload files');
   $form['roles'] = array('#type' => 'value', '#value' => $roles);
@@ -272,15 +265,10 @@ function upload_file_download($file) {
     if (user_access('view uploaded files')) {
       $node = node_load($file->nid);
       if (node_access('view', $node)) {
-        $name = mime_header_encode($file->filename);
         $type = mime_header_encode($file->filemime);
-        // Serve images and text inline for the browser to display rather than download.
-        $disposition = ereg('^(text/|image/)', $file->filemime) ? 'inline' : 'attachment';
         return array(
-          'Content-Type: '. $type .'; name='. $name,
+          'Content-Type: '. $type,
           'Content-Length: '. $file->filesize,
-          'Content-Disposition: '. $disposition .'; filename='. $name,
-          'Cache-Control: private'
         );
       }
       else {
@@ -303,7 +291,7 @@ function _upload_prepare(&$node) {
   // i.e. the user left the edit page, because they didn't want to upload anything.
   if(count($_POST) == 0) {
     if (is_array($_SESSION['file_previews']) && count($_SESSION['file_previews'])) {
-      foreach($_SESSION['file_previews'] as $fid => $file) {
+      foreach ($_SESSION['file_previews'] as $fid => $file) {
         file_delete($file->filepath);
       }
       unset($_SESSION['file_previews']);
@@ -339,7 +327,7 @@ function _upload_prepare(&$node) {
 
   // Attach file previews to node object.
   if (is_array($_SESSION['file_previews']) && count($_SESSION['file_previews'])) {
-    foreach($_SESSION['file_previews'] as $fid => $file) {
+    foreach ($_SESSION['file_previews'] as $fid => $file) {
       if ($user->uid != 1) {
         // Here something.php.pps becomes something.php_.pps
         $file->filename = upload_munge_filename($file->filename, NULL, 0);
@@ -355,7 +343,7 @@ function upload_form_alter($form_id, &$form) {
     $form['workflow']['upload'] = array(
       '#type' => 'radios',
       '#title' => t('Attachments'),
-      '#default_value' => variable_get('upload_'. $form['identity']['type']['#default_value'], 1),
+      '#default_value' => variable_get('upload_'. $form['#node_type']->type, 1),
       '#options' => array(t('Disabled'), t('Enabled')),
     );
   }
@@ -384,8 +372,25 @@ function upload_form_alter($form_id, &$form) {
         '#prefix' => '<div id="attach-wrapper">',
         '#suffix' => '</div>',
       );
-      $form['attachments']['wrapper'] += _upload_form($node);
-      $form['#attributes']['enctype'] = 'multipart/form-data';
+
+      // Make sure necessary directories for upload.module exist and are
+      // writable before displaying the attachment form.
+      $path = file_directory_path();
+      $temp = file_directory_temp();
+      // Note: pass by reference
+      if (!file_check_directory($path, FILE_CREATE_DIRECTORY) || !file_check_directory($temp, FILE_CREATE_DIRECTORY)) {
+        $form['attachments']['#description'] =  t('File attachments are disabled. The file directories have not been properly configured.');
+        if (user_access('administer site configuration')) {
+          $form['attachments']['#description'] .= ' '. t('Please visit the <a href="@admin-file-system">file system configuration page</a>.', array('@admin-file-system' => url('admin/settings/file-system')));
+        }
+        else {
+          $form['attachments']['#description'] .= ' '. t('Please contact the site administrator.');
+        }
+      }
+      else {
+        $form['attachments']['wrapper'] += _upload_form($node);
+        $form['#attributes']['enctype'] = 'multipart/form-data';
+      }
     }
   }
 }
@@ -397,7 +402,7 @@ function _upload_validate(&$node) {
   // Check if node->files exists, and if it contains something.
   if (is_array($node->files)) {
     // Update existing files with form data.
-    foreach($node->files as $fid => $file) {
+    foreach ($node->files as $fid => $file) {
       // Convert file to object for compatibility
       $file = (object)$file;
 
@@ -416,7 +421,7 @@ function _upload_validate(&$node) {
           $total_usersize = upload_space_used($user->uid) + $filesize;
           $error = array();
           foreach ($user->roles as $rid => $name) {
-            $extensions = variable_get("upload_extensions_$rid", variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps'));
+            $extensions = variable_get("upload_extensions_$rid", variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps odt ods odp'));
             $uploadsize = variable_get("upload_uploadsize_$rid", variable_get('upload_uploadsize_default', 1)) * 1024 * 1024;
             $usersize = variable_get("upload_usersize_$rid", variable_get('upload_usersize_default', 1)) * 1024 * 1024;
 
@@ -634,7 +639,7 @@ function upload_munge_filename($filename, $extensions = NULL, $alerts = 1) {
     if (!isset($extensions)) {
       $extensions = '';
       foreach ($user->roles as $rid => $name) {
-        $extensions .= ' '. variable_get("upload_extensions_$rid", variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps'));
+        $extensions .= ' '. variable_get("upload_extensions_$rid", variable_get('upload_extensions_default', 'jpg jpeg gif png txt html doc xls pdf ppt pps odt ods odp'));
       }
 
     }
@@ -646,7 +651,7 @@ function upload_munge_filename($filename, $extensions = NULL, $alerts = 1) {
     $new_filename = array_shift($filename_parts); // Remove file basename.
     $final_extension = array_pop($filename_parts); // Remove final extension.
 
-    foreach($filename_parts as $filename_part) {
+    foreach ($filename_parts as $filename_part) {
       $new_filename .= ".$filename_part";
       if (!in_array($filename_part, $whitelist) && preg_match("/^[a-zA-Z]{2,5}\d?$/", $filename_part)) {
         $new_filename .= '_';
@@ -670,7 +675,7 @@ function upload_unmunge_filename($filename) {
   return str_replace('_.', '.', $filename);
 }
 
-function upload_save($node) {
+function upload_save(&$node) {
   if (!is_array($node->files)) {
     return;
   }
@@ -705,6 +710,8 @@ function upload_save($node) {
         $file->fid = db_next_id('{files}_fid');
         db_query("INSERT INTO {files} (fid, nid, filename, filepath, filemime, filesize) VALUES (%d, %d, '%s', '%s', '%s', %d)", $file->fid, $node->nid, $file->filename, $file->filepath, $file->filemime, $file->filesize);
         db_query("INSERT INTO {file_revisions} (fid, vid, list, description) VALUES (%d, %d, %d, '%s')", $file->fid, $node->vid, $file->list, $file->description);
+        // Tell other modules where the file was stored.
+        $node->files[$fid] = $file;
       }
       unset($_SESSION['file_previews'][$fid]);
     }
@@ -791,7 +798,7 @@ function _upload_form($node) {
       '#suffix' => '</div>',
     );
     $form['new']['upload'] = array('#type' => 'file', '#title' => t('Attach new file'), '#size' => 40);
-    $form['new']['attach'] = array('#type' => 'button', '#value' => t('Attach'), '#name' => 'attach', '#attributes' => array('id' => 'attach-button'));
+    $form['new']['attach'] = array('#type' => 'button', '#value' => t('Attach'), '#name' => 'attach', '#id' => 'attach-button');
     // The class triggers the js upload behaviour.
     $form['attach-url'] = array('#type' => 'hidden', '#value' => url('upload/js', NULL, NULL, TRUE), '#attributes' => array('class' => 'upload'));
   }

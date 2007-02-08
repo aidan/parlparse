@@ -1,4 +1,4 @@
-// $Id: INSTALL.txt,v 1.36 2006/09/08 16:29:35 dries Exp $
+// $Id: INSTALL.txt,v 1.39 2007/01/08 11:59:16 dries Exp $
 
 CONTENTS OF THIS FILE
 ---------------------
@@ -55,21 +55,21 @@ INSTALLATION
    are in .tar.gz format and can be extracted using most compression tools. On a
    typical Unix command line, use:
 
-     wget http://drupal.org/files/projects/drupal-x.x.x.tar.gz
-     tar -zxvf drupal-x.x.x.tar.gz
+     wget http://drupal.org/files/projects/drupal-x.x.tar.gz
+     tar -zxvf drupal-x.x.tar.gz
 
-   This will create a new directory drupal-x.x.x/ containing all Drupal files
+   This will create a new directory drupal-x.x/ containing all Drupal files
    and directories. Move the contents of that directory into a directory within
    your web server's document root or your public HTML directory:
 
-     mv drupal-x.x.x/* drupal-x.x.x/.htaccess /var/www/html
+     mv drupal-x.x/* drupal-x.x/.htaccess /var/www/html
 
 2. CREATE THE DRUPAL DATABASE
 
    Drupal requires access to a database in order to be installed. Your database
    user will need sufficient privileges to run Drupal. Additional information
    about privileges, and instructions to create a database using the command
-   line are avaialable in INSTALL.mysql.txt (for MySQL) or INSTALL.pgsql.txt
+   line are available in INSTALL.mysql.txt (for MySQL) or INSTALL.pgsql.txt
    (for PostgreSQL).
 
    To create a database using PHPMyAdmin or a web-based control panel consult
@@ -86,6 +86,14 @@ INSTALLATION
    To run the install script point your browser to the base url of your website
    (i.e. http://www.example.com). You will be presented with the "Database
    Configuration" page.
+
+   The install script will attempt to write-protect the settings.php after
+   updating it with the information you provide in the installation routine.
+   If you make manual changes to that file later, be sure to protect it again
+   after making your modifications. Failure to remove write permissions to
+   that file is a security risk. The default location for the settings.php
+   file is at sites/default/settings.php, but it may be in another location
+   if you use the multi-site setup, as explained below.
 
 4. CONFIGURE DRUPAL
 

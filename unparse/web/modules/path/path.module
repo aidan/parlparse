@@ -1,5 +1,5 @@
 <?php
-// $Id: path.module,v 1.98 2006/11/17 06:57:59 dries Exp $
+// $Id: path.module,v 1.105 2007/01/09 08:34:03 dries Exp $
 
 /**
  * @file
@@ -21,23 +21,14 @@ function path_help($section) {
 <li>node/3 =&gt; contact</li>
 </ul>
 ');
-      $output .= '<p>'. t('The path module enables an extra field for aliases in all node input and editing forms (when users have the appropriate permissions). It also provides an interface to view and edit all URL aliases. The two permissions are related to URL aliasing are "administer a list of URL aliases" and "add url aliases". ') .'</p>';
+      $output .= '<p>'. t('The path module enables an extra field for aliases in all node input and editing forms (when users have the appropriate permissions). It also provides an interface to view and edit all URL aliases. The two permissions related to URL aliasing are "administer url aliases" and "create url aliases". ') .'</p>';
       $output .= '<p>'. t('This module also comes with user-defined mass URL aliasing capabilities, which is useful if you wish to uniformly use URLs different from the default. For example, you may want to have your URLs presented in a different language. Access to the Drupal source code on the web server is required to set up these kinds of aliases. ') .'</p>';
-      $output .= t('<p>You can</p>
-<ul>
-<li>set the path for a post with the path module.</li>
-<li>add a URL alias: <a href="@admin-path-add">administer &gt;&gt; site building &gt;&gt; url aliases &gt;&gt; add alias</a>.</li>
-<li>administer the list of URL aliases: <a href="@admin-path">administer &gt;&gt; site building &gt;&gt; url aliases</a>.</li>
-<li>read how to <a href="@external-http-drupal-org-node-15365">configure clean URLs</a> for your webserver.
-<li>enable clean url\'s to remove the =? at <a href="@admin-clean-url-settings">administer &gt;&gt; site configuration &gt;&gt; clean URLs</a>.</li>
-</ul>
-', array('@admin-path-add' => url('admin/build/path/add'), '@admin-path' => url('admin/build/path'), '@external-http-drupal-org-node-15365' => 'http://drupal.org/node/15365', '@admin-clean-url-settings' => url('admin/settings/clean-urls')));
       $output .= '<p>'. t('For more information please read the configuration and customization handbook <a href="@path">Path page</a>.', array('@path' => 'http://drupal.org/handbook/modules/path/')) .'</p>';
       return $output;
     case 'admin/build/path':
-      return t("<p>Drupal provides users complete control over URLs through aliasing. This feature is typically used to make URLs human-readable or easy to remember. For example, one could map the relative URL 'node/1' onto 'about'. Each system path can have multiple aliases.</p>");
+      return '<p>'. t("Drupal provides users complete control over URLs through aliasing. This feature is typically used to make URLs human-readable or easy to remember. For example, one could map the relative URL 'node/1' onto 'about'. Each system path can have multiple aliases.") .'</p>';
     case 'admin/build/path/add':
-      return t('<p>Enter the path you wish to create the alias for, followed by the name of the new alias.</p>');
+      return '<p>'. t('Enter the path you wish to create the alias for, followed by the name of the new alias.') .'</p>';
   }
 }
 
@@ -87,7 +78,7 @@ function path_admin() {
 function path_admin_edit($pid = 0) {
   if ($pid) {
     $alias = path_load($pid);
-    drupal_set_title($alias['dst']);
+    drupal_set_title(check_plain($alias['dst']));
     $output = path_form($alias);
   }
   else {
@@ -224,10 +215,7 @@ function path_nodeapi(&$node, $op, $arg) {
     switch ($op) {
       case 'validate':
         $node->path = trim($node->path);
-        if ($node->path && !valid_url($node->path)) {
-          form_set_error('path', t('The path is invalid.'));
-        }
-        else if (db_result(db_query("SELECT COUNT(dst) FROM {url_alias} WHERE dst = '%s' AND src != '%s'", $node->path, "node/$node->nid"))) {
+        if (db_result(db_query("SELECT COUNT(dst) FROM {url_alias} WHERE dst = '%s' AND src != '%s'", $node->path, "node/$node->nid"))) {
           form_set_error('path', t('The path is already in use.'));
         }
         break;
@@ -318,7 +306,7 @@ function path_overview() {
 
   $destination = drupal_get_destination();
   while ($data = db_fetch_object($result)) {
-    $rows[] = array($data->dst, $data->src, l(t('edit'), "admin/build/path/edit/$data->pid", array(), $destination), l(t('delete'), "admin/build/path/delete/$data->pid", array(), $destination));
+    $rows[] = array(check_plain($data->dst), check_plain($data->src), l(t('edit'), "admin/build/path/edit/$data->pid", array(), $destination), l(t('delete'), "admin/build/path/delete/$data->pid", array(), $destination));
   }
 
   if (!$rows) {
@@ -344,14 +332,6 @@ function path_form_validate($form_id, $form_values) {
   $src = $form_values['src'];
   $dst = $form_values['dst'];
   $pid = $form_values['pid'];
-
-  if (!valid_url($src)) {
-    form_set_error('src', t('The system path %path is invalid.', array('%path' => $src)));
-  }
-
-  if (!valid_url($dst)) {
-    form_set_error('dst', t('The alias %alias is invalid.', array('%alias' => $dst)));
-  }
 
   if (db_result(db_query("SELECT COUNT(dst) FROM {url_alias} WHERE pid != %d AND dst = '%s'", $pid, $dst))) {
     form_set_error('dst', t('The alias %alias is already in use.', array('%alias' => $dst)));
