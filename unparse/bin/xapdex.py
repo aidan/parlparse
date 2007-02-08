@@ -159,7 +159,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
         content = open(input_file).read()
         document_id = os.path.splitext(os.path.basename(input_file_use))[0]
         document_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', content)
-        assert document_date, "not found document_date in file %s" % input_file
+        assert document_date, "not found date in file %s" % input_file
         document_date = document_date.group(1)
 
         if options.verbose:
