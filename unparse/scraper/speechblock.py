@@ -73,7 +73,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
 		#print tlcall[i - 1].paratext
 		assert False
 
-	if re.match("(?:The agenda was adopted\.|A vote was taken by show of hands\.)$", ptext):
+	if re.match("(?:The agenda was adopted\.|A vote was taken by show of hands\.|There being no objection, it is so decided\.)$", ptext):
 		if IsNotQuiet():
 			print "italicizingline", len(indents), ptext
 		ptext = "<i>%s</i>" % ptext

@@ -114,15 +114,16 @@ class VoteBlock:
 			raise unexception("by votes problem", self.tlcall[self.i].paranum)
 		ifavour = int(madtext.group(2))
 		iagainst = (madtext.group(3) != "none" and int(madtext.group(3)) or 0)
-		if madtext.group(1) == "rejected":
-			i = ifavour;  ifavour = iagainst;  iagainst = i
+		#if madtext.group(1) == "rejected":
+		#	i = ifavour;  ifavour = iagainst;  iagainst = i
 		iabstain = (madtext.group(4) and int(madtext.group(4)) or 0)
 		il = (ifavour, iagainst, iabstain)
 		ivl = (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain))
 		if il != ivl:
 			print "wrong-count", self.undocname, il, ivl
 			# wrong values are found on A-57-PV.73 s(favour=154, 152)
-			assert self.undocname in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ]
+			if self.undocname not in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ]:
+				raise unexception("wrong votecount", self.tlcall[self.i].paranum)
 		self.motiontext = MarkupLinks(adtext, self.undocname, self.paranum)
 		self.i += 1
 
