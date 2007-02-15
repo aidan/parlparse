@@ -67,7 +67,7 @@ if bScrape:
 	# we could use current date to generate these figures
 	if not stem:
 		ScrapeContentsPageFromStem("A-61-PV")
-		ScrapeContentsPageFromStem("S-2006-PV")
+		ScrapeContentsPageFromStem("S-2007-PV")
 	else:
 		ScrapeContentsPageFromStem(stem)
 
