@@ -334,8 +334,10 @@ def ScrapeContentsPageFromStem(stem):
 		print pvdone
 		v = (pvdone and pvdone[-1] or 0)
 		vn = v + 1
-		while ScrapePDF("A-%s-PV.%d" % (mpv.group(1), vn)):
-			ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), vn))
+		while vn - v < 3:
+			if ScrapePDF("A-%s-PV.%d" % (mpv.group(1), vn)):
+				v = vn
+				ScrapePDF("A-%s-PV.%d-Corr.1" % (mpv.group(1), vn))
 			vn += 1
 
 		# missing values
