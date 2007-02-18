@@ -19,15 +19,9 @@ $items = array();
 
 
 
-function format_states($text) {
-  //(array)$states = member_states();
-
-//foreach ($states as $name => $info) {
-      $text = preg_replace('/<span class="speaker" name="(.*?)" nation="(.*?)" language="(.*?)">(.*?)<\/span>"/ixm', '<span class="speaker" name="$1" nation="$2" language="$3">$1 ($2) -=fo<\/span>', $text);
-//} 
-
-
-
+function format_state($text) {
+  print $text;
+      $text = l($text, 'members/'.$text[1]);
   return $text;
 }
 

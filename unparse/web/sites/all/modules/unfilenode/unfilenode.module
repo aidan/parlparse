@@ -137,12 +137,12 @@ function theme_assemblyfile($search) {
       $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
       #Add stripe info
       $stripe = $i % 2 ? 'even' : 'odd';
-      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>"; 
+      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
 
-
-      preg_match('/<span.*name="(.*?)".*nation="(.*?)".*language="(.*?)".*>.*<\\/span>/imxs', $data, $matches);
+//      preg_match('/<span class="nation">(.*?)<\\/span>/ims',$data, $matches);
+      preg_replace('/<span class="nation">(.*?)<\\/span>/ims', '<span class="nation">' . format_state('1') . '</span>',$data);
 //      print_r($matches);
-      $data =  preg_replace('/<span(.*?)class="(.*?)speaker(.*?)"(.*?)>(.*?)<\\/span>/ixsm', '<span$1class="$2speaker$3"$4>'.$matches[1].'<br />'.l($matches[2], 'members/'.$matches[2]).'</span>', $data);
+//      $data =  preg_replace('/<span(.*?)class="(.*?)speaker(.*?)"(.*?)>(.*?)<\\/span>/ixsm', '<span$1class="$2speaker$3"$4>'.$matches[1].'<br />'.l($matches[2], 'members/'.$matches[2]).'</span>', $data);
 
 
 
@@ -152,7 +152,7 @@ function theme_assemblyfile($search) {
 
 
       #Format the information about the speaker
-      $data = format_states($data);
+//      $data = format_states($data);
 //      $data = preg_replace('/<span class="speaker" name="(.*?)" nation="(.*?)" language="(.*?)">(.*?)<\/span>/ixm', '<span class="speaker" name="$1" nation="$2" language="$3">$1 ($2) testing<\/span>', $data);
 
 
