@@ -162,9 +162,9 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   }
   
   $db_path = $undata_path . $db_path;
-  
+if (file_exists('xapian_php5.php')) {  
   include_once('xapian_php5.php' );
-
+}
   // XXX this doesn't break well if it can't find the database
   $database = new XapianDatabase($db_path);  
 
