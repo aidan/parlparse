@@ -93,7 +93,7 @@ function unfilenode_search_form() {
     '#title' => 'Keyword search', 
     '#type' => 'fieldset',
     '#collapsible' => true,
-    '#collapsed' => true,
+    '#collapsed' => FALSE,
     );
   $form['search']['query'] = array(
     '#type' => 'textfield',
@@ -134,19 +134,41 @@ function theme_assemblyfile($search) {
     foreach ($search->data as $i => $result) {
       $contents = file_get_contents($path . $result['file']);
       #strip everything not in the html body
-      $contents .= preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
-      #Add stripe info
-      $stripe = $i % 2 ? 'even' : 'odd';
-      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
+//      $contents = preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
 
+			#get the document code
+			preg_match('/<span class="code">(.*?)<\\/span>/', $contents, $matches);
+			$code = $matches[1];
+
+			#get the document date
+			preg_match('/<span class="date">(.*?)<\\/span>/', $contents, $matches);
+			$date = strtotime($matches[1]);
+			$date = date('jS M Y',$date);
+
+      #Add stripe info and remove any text outside of the offset and length
+      $stripe = $i % 2 ? 'even' : 'odd';
+      $contents = '<div class="'.$stripe.'">'.substr($contents, $result['offset'], $result['len'])."</div>"; 
+//      $contents = substr($contents, $result['offset'], $result['len']); 
+      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
+      #Format the information about the speaker
+      $contents = preg_replace('/<h3 class="speaker">.*<span class="name">(.*?)<\\/span>.*<span class="nation">(.*?)<\\/span>.*<\\/h3>/s', '<h3 class="speaker">'.$date.'<br /> Spoken by <span class="name">$1</span> of <span class="nation"><a href="/members/$2">$2</a></span></h3>', $contents);
+
+			#Add links to paragraphs
+			$contents = preg_replace('/<p id="(.*?)">(.*?)<\\/p>/s', '<p id="$1">$2<a href="/link/'.$code.'/$1" title="link to this">#</a></p>', $contents);
 //      preg_match('/<span class="nation">(.*?)<\\/span>/ims',$data, $matches);
       preg_replace('/<span class="nation">(.*?)<\\/span>/ims', '<span class="nation">' . format_state('1') . '</span>',$data);
 //      print_r($matches);
 //      $data =  preg_replace('/<span(.*?)class="(.*?)speaker(.*?)"(.*?)>(.*?)<\\/span>/ixsm', '<span$1class="$2speaker$3"$4>'.$matches[1].'<br />'.l($matches[2], 'members/'.$matches[2]).'</span>', $data);
 
+      # Fix up links to PDF files
+      $contents = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)" class="pdf">/', '<a href="/pdf/$1">', $contents);
 
+      $data .= $contents;
+    }
+  }
+  return $data;
+}
 
-//print $data;
 
 
 
@@ -157,11 +179,5 @@ function theme_assemblyfile($search) {
 
 
 
-      # Fix up links to PDF files
-      $data = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)" class="pdf">/', '<a href="/pdf/$1">', $data);
-    }
-  }
-  return $data;
-}
 
 

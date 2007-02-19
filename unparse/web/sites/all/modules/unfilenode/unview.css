@@ -36,13 +36,21 @@ div.motiontext
 	font-weight: bold;
 }
 
-span.speaker
+h3.speaker
 {
-	font-weight: bold;
+
 	padding-top:10px;
 	float:left;
 	width:110px;
+	font-size:1em;
 }
+
+h3.speaker span {
+	font-weight: bold;
+	display:block;
+	font-size:1.3em;	
+}
+
 div.spokentext
 {
 	padding-left:120px;
@@ -50,7 +58,7 @@ div.spokentext
 }
 div.p
 {
-	padding-left:10px;
+	padding-left:100px;
 	padding-bottom:20px;
 	line-height:1.5em;
 }
@@ -79,6 +87,10 @@ a.nolink
   border: 1px solid #d9eaf5;
   margin:10px;
   padding:5px;
+}
+
+.odd p, .even p {
+	margin:0 10px 1.2em 120px;
 }
 
 
