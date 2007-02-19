@@ -20,7 +20,6 @@ $items = array();
 
 
 function format_state($text) {
-  print $text;
       $text = l($text, 'members/'.$text[1]);
   return $text;
 }
