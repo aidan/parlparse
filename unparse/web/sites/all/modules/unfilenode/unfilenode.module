@@ -89,15 +89,9 @@ function unfilenode_test() {
   return theme('item_list',$links);
 }
 function unfilenode_search_form() {
-  $form['search'] = array(
-    '#title' => 'Keyword search', 
-    '#type' => 'fieldset',
-    '#collapsible' => true,
-    '#collapsed' => FALSE,
-    );
-  $form['search']['query'] = array(
+  $form['query'] = array(
     '#type' => 'textfield',
-    '#default_value' => 'Blair',
+    '#description' => "Examples: Blair, Nuclear, Climate change",
     );
   $form['search']['submit'] = array(
     '#type' => 'submit', 
@@ -110,7 +104,24 @@ function unfilenode_search_form() {
 function unfilenode_search_form_submit($form_id, $form) {
   return 'assembly/word/' . $form['query'];
 }
- 
+
+
+function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
+  if ($op == 'list') {
+    $blocks[0]['info'] = t('un keyword search');
+    return $blocks;
+  } else if ($op == 'view') {
+    switch($delta) {
+      case 0:
+        $block['subject'] = t('Search');
+        $block['content'] = drupal_get_form(unfilenode_search_form,$form);
+        return $block;
+    }
+  }
+}
+
+
+
 function assembly_page() {
   $op = arg(1);
   drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
@@ -149,7 +160,7 @@ function theme_assemblyfile($search) {
       $stripe = $i % 2 ? 'even' : 'odd';
       $contents = '<div class="'.$stripe.'">'.substr($contents, $result['offset'], $result['len'])."</div>"; 
 //      $contents = substr($contents, $result['offset'], $result['len']); 
-      $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
+ //     $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
       #Format the information about the speaker
       $contents = preg_replace('/<h3 class="speaker">.*<span class="name">(.*?)<\\/span>.*<span class="nation">(.*?)<\\/span>.*<\\/h3>/s', '<h3 class="speaker">'.$date.'<br /> Spoken by <span class="name">$1</span> of <span class="nation"><a href="/members/$2">$2</a></span></h3>', $contents);
 

@@ -8,7 +8,7 @@
     <?php print $scripts ?>
     </head>
 
- <body>
+ <body id="front">
 
 	<h1 id="logo"><a href="<?php print url() ?>"><span class="un">UN</span>DEMOCRACY<span class="com">.COM</span></a></h1>
 	<div id="map"></div>
