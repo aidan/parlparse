@@ -1,0 +1,41 @@
+<?php
+
+
+function links_menu($may_cache) {
+
+$items = array();
+ if ($may_cache) {
+   $items[] = array(
+     'path' => 'link',
+     'title' => t('Link'),
+     'callback' => 'link_page',
+     'access' => user_access('access content'),   
+    );
+ }
+ return $items;
+
+  
+}
+
+
+
+function link_page() {
+$path = variable_get('xapian_undatapath', '/path/to/files');
+$replace = array('-','.');
+$document =arg(1);
+$para_id = arg(2);
+$subid = $para_id;
+
+
+$result = xapian_do_search('document:'.$document.' subid:'.$subid);
+//print_r($result);
+$contents = file_get_contents($path . $result->data[0]['file']);
+$contents = substr($contents, $result->data[0]['offset'], $result->data[0]['len']);
+//print_r($contents);
+$wikipedia = "<ref> {{ UN document |code=S/RES/1390(2002) |body=S |type=RES |number=1390 |year=2002 |accessdate=2007-01-08 }} </ref>";
+return $wikipedia;
+
+
+	
+
+}
