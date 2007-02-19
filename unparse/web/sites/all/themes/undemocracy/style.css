@@ -87,3 +87,20 @@
 width:700px;
 margin:0 auto 0 auto;
 }
+
+ul.links {
+width:700px;
+margin:0 auto 0 auto;
+text-align:center;
+}
+
+ul.links li {
+padding:0;
+}
+ul.links li a {
+padding:5px;
+border:4px solid #888888;
+}
+ul.links li .active {
+background-color:#888888;
+}

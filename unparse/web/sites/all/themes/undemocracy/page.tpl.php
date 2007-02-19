@@ -14,6 +14,7 @@
 	<div id="map"></div>
 	<div id="left" class="mapcol"></div>
 	<div id="right" class="mapcol"></div>
+    <?php print theme(links, $primary_links); ?>
 	<div id="content">
 	<?php if ($title != ""): ?>
           <h2 class="content-title"><?php print $title ?></h2>
