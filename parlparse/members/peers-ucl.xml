@@ -2278,7 +2278,7 @@
 	lordofname_full="Ripley"
 	county="the County of Surrey"
 	peeragetype="L" affiliation="Other"
-	fromdate="1982" todate="9999-12-31"
+	fromdate="1982" todate="2007-02-28" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100221"
@@ -3459,7 +3459,7 @@
 	lordofname_full="St Pancras"
 	county="Greater London"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2007-02-26" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -3468,7 +3468,7 @@
 	forenames="George"
 	title="Earl" lordname="Jellicoe" lordofname=""
 	peeragetype="L" affiliation="Con"
-	fromdate="1935" todate="2007-02-22"
+	fromdate="1935" todate="2007-02-22" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100334"
@@ -3582,7 +3582,7 @@
 	lordofname_full="Ongar"
 	county="the County of Essex"
 	peeragetype="L" affiliation="Con"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2007-01-27" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -4791,7 +4791,7 @@
 	lordofname_full="Brasted"
 	county="the County of Kent"
 	peeragetype="A" affiliation="XB"
-	fromdate="1994" todate="9999-12-31"
+	fromdate="1994" todate="2007-01-22" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100462"
@@ -9643,6 +9643,24 @@
 	fromdate="2007-01-23" todate="9999-12-31"
 />
 
-
+<lord
+    id="uk.org.publicwhip/lord/100947"
+    house="lords"
+    forenames="David"
+    forenames_full="David Edmond"
+    title="Lord" lordname="Neuberger" lordofname="Abbotsbury"
+    county="the County of Dorset"
+    peeragetype="A" affiliation="XB"
+    fromdate="2007-01-15" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100948"
+    house="lords"
+    forenames="Charles"
+    forenames_full="Charles Alan Andrew"
+    title="Earl" lordname="Cathcart" lordofname=""
+    peeragetype="HP" affiliation="Con"
+    fromdate="2007-03-07" todate="9999-12-31"
+/>
 
 </publicwhip>
