@@ -67,6 +67,7 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1"):
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
