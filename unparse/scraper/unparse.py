@@ -113,21 +113,27 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
         fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
         fout.write('</head>\n<body>\n')
 
-        fout.write('<div class="heading">\n')
+        fout.write('<div class="heading" id="pg000-bk00">\n')
         fout.write('\t<span class="code">%s</span> <span class="date">%s</span> <span class="time">%s</span>\n' % (undocname, glueunfile.sdate[:10], glueunfile.sdate[10:].strip()))
         fout.write('</div>\n')
 
         if glueunfile.bSecurityCouncil:
-            fout.write('\n<div class="boldline-agenda">\n<p class="boldline-agenda">%s</p>\n</div>\n' % glueunfile.agenda)
-            fout.write('<div class="council-attendees">\n')
+            fout.write('\n<div class="council-agenda" id="pg000-bk01">\n')
+            fout.write('\t<p class="boldline-agenda" id="pg000-bk01-pa01">%s</p>\n' % glueunfile.agenda)
+            fout.write('</div>\n')
+            fout.write('<div class="council-attendees" id="pg000-bk02">\n')
+            ichairn = 0
             for chair in glueunfile.chairs:
-                fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">%s</span></p>\n' % (chair[0], chair[1], chair[2]))
+                ichairn += 1
+                fout.write('\t<p id="pg000-bk02-pa%02d"><span class="name">%s</span> <span class="nation">%s</span> <span class="place">%s</span></p>\n' % (ichairn, chair[0], chair[1], chair[2]))
             fout.write('</div>')
 
         if glueunfile.bGeneralAssembly:
-            fout.write('\n<div class="assembly-chairs">\n')
+            fout.write('\n<div class="assembly-chairs" id="pg000-bk03">\n')
+            ichairn = 0
             for chair in glueunfile.chairs:
-                fout.write('\t<p><span class="name">%s</span> <span class="nation">%s</span> <span class="place">president</span></p>\n' % (chair[0], chair[1]))
+                ichairn += 1
+                fout.write('\t<p id="pg000-bk03-pa%02d"><span class="name">%s</span> <span class="nation">%s</span> <span class="place">president</span></p>\n' % (ichairn, chair[0], chair[1]))
             fout.write('</div>')
 
         for gpara in gparas:
