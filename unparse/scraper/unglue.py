@@ -220,7 +220,8 @@ def AppendCluster(res, tlc, sclusttype):
 
 # maybe shouldn't be a class
 class TextPage:
-    def ExtractDateTime(self, ltext):
+    def ExtractDateTime(self, txline):
+        ltext = txline.ltext
         # extract the date out if poss
         mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?\s*m\.?| noon\.?)?(?: \(closed\))?$", ltext)
         if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
@@ -231,7 +232,7 @@ class TextPage:
         iday = int(mdate.group(1))
         if mdate.group(2) not in months:
             print mdate.group(2), months
-            raise unexception("unrecognized month", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
+            raise unexception("unrecognized month", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         imonth = months.index(mdate.group(2))
         syear = mdate.group(3)
         ihour = int(mdate.group(4))
@@ -239,7 +240,7 @@ class TextPage:
         if mdate.group(6) and mdate.group(6) == "p" and ihour != 12:
             ihour += 12
         if self.date:
-            raise unexception("date redefined", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
+            raise unexception("date redefined", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
 
     def ExtractDotLineChair(self, txlines, ih):
@@ -254,7 +255,7 @@ class TextPage:
             # fix missing year date
             #if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
             #    txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
-            self.ExtractDateTime(txlines[ih].ltext)
+            self.ExtractDateTime(txlines[ih])
 
             ih += 1
             if ih == len(txlines):

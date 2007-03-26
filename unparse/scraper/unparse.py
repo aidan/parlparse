@@ -101,8 +101,13 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
                     ln = mfinlines.group(0).count("\n")
                 else:
                     ln = 1
-                # must look for using vim in unix version
-                os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g00:%d' % (undocpdfxml, ln + 2))
+
+                #editor = os.getenv('EDITOR')
+                if sys.platform == "win32":
+                    os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g00:%d' % (undocpdfxml, ln + 2))
+                else:
+                    os.system('vim "%s" +%d' % (undocpdfxml, ln + 2))
+
         if not gparas:
             continue
 

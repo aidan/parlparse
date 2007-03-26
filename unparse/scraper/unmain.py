@@ -18,7 +18,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   index   generate miscelaneous index files
 
 --stem selects what is processed.
-  scrape --stem=S-YEAR-PV
+  scrape --stem=S-[YEAR]-PV
 """)
 
 

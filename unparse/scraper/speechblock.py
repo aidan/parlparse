@@ -5,6 +5,7 @@ from nations import FixNationName, IsNonnation, IsPrenation
 
 
 #<b>Mr. Al-Mahmoud </b>(Qatar) (<i>spoke in Arabic</i>):
+# slightly too prescriptive in this detection, but we're there already.
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
             (?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
             (?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
@@ -318,6 +319,7 @@ class SpeechBlock:
         self.sdate = lsdate
         self.undocname = lundocname
         self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+
         self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
         # paranum = ( undocname, sdate, tlc.txls[0].pageno, paranumber )
         #self.gid = self.paranum.MakeGid()
@@ -333,9 +335,21 @@ class SpeechBlock:
 
         # series of boldlines
         if self.typ == "boldline":
+            self.agendanum = ""
+            self.agendacont = ""
             blinepara = tlc.lastindent and "blockquote" or "p"
-            if re.match("Agenda item (\d+)", ptext):
+            if re.match("Agenda item \d+", ptext):
                 blinepara = "boldline-agenda"
+                mblag = re.match("Agenda item (\d+)(?: and (\d+))?\s*((?:<i>|\()+continued(?:\)|</i>)+)?$", ptext)
+                if not mblag:
+                    print ptext
+                    raise unexception("malformed boldline agenda", self.paranum)
+                self.agendasess = re.match("A-(\d+)", self.undocname).group(1)  # can only happen in Assemblies
+                if mblag.group(2):
+                    self.agendanum = "%s,%s" % (mblag.group(1), mblag.group(2))
+                else:
+                    self.agendanum = mblag.group(1)
+                self.agendacont = mblag.group(3)
             self.paragraphs = [ (blinepara, ptext) ]
             while self.i < len(self.tlcall):
                 tlc = self.tlcall[self.i]
@@ -362,8 +376,9 @@ class SpeechBlock:
     def writeblock(self, fout):
         fout.write("\n")
         gid = self.paranum.MakeGid()
-        fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
+
         if self.typ == "spoken":
+            fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
             fout.write('<h3 class="speaker">')
             fout.write(' <span class="name">%s</span>' % self.speaker[0])
             if self.speaker[1]:
@@ -374,6 +389,17 @@ class SpeechBlock:
             if self.speaker[2]:
                 fout.write(' <span class="language">%s</span>' % self.speaker[2])
             fout.write(' </h3>\n')
+
+        elif self.typ == "boldline":
+            fout.write('<div class="subheading" id="%s"' % (gid))
+            if self.agendanum:
+                fout.write(' agendanum="%s" agendasess="%s"' % (self.agendanum, self.agendasess)) # session is included for easier matching
+            if self.agendacont:
+                fout.write(' agendacontinued="yes"')
+            fout.write('>\n')
+
+        else:
+            fout.write('<div class="%s" id="%s">\n' % (self.typ, gid))
 
         paranum = 1
         for para in self.paragraphs:

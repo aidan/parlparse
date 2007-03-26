@@ -117,7 +117,10 @@ class VoteBlock:
         #if madtext.group(1) == "rejected":
         #    i = ifavour;  ifavour = iagainst;  iagainst = i
         iabstain = (madtext.group(4) and int(madtext.group(4)) or 0)
-        il = (ifavour, iagainst, iabstain)
+        if madtext.group(1) == "rejected":
+            il = (iagainst, ifavour, iabstain)
+        else:
+            il = (ifavour, iagainst, iabstain)
         ivl = (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain))
         if il != ivl:
             print "wrong-count", self.undocname, il, ivl
