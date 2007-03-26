@@ -340,16 +340,16 @@ class SpeechBlock:
             blinepara = tlc.lastindent and "blockquote" or "p"
             if re.match("Agenda item \d+", ptext):
                 blinepara = "boldline-agenda"
-                mblag = re.match("Agenda item (\d+)(?: and(?: agenda item)? (\d+))?\s*((?:<i>|\s|\()+continued(?:\)|\s|</i>)+)?$", ptext)
+                mblag = re.match("Agenda item (\d+)( (?:</b>|\(|<i>)+continued(?:</i>|\)|<b>)+)?(?: and(?: agenda item)? (\d+))?\s*((?:<i>|\s|\()+continued(?:\)|\s|</i>)+)?$", ptext)
                 if not mblag:
                     print ptext
                     raise unexception("malformed boldline agenda", self.paranum)
                 self.agendasess = re.match("A-(\d+)", self.undocname).group(1)  # can only happen in Assemblies
-                if mblag.group(2):
-                    self.agendanum = "%s,%s" % (mblag.group(1), mblag.group(2))
+                if mblag.group(3):
+                    self.agendanum = "%s,%s" % (mblag.group(1), mblag.group(3))
                 else:
                     self.agendanum = mblag.group(1)
-                self.agendacont = mblag.group(3)
+                self.agendacont = mblag.group(2) or mblag.group(4)
             self.paragraphs = [ (blinepara, ptext) ]
             while self.i < len(self.tlcall):
                 tlc = self.tlcall[self.i]
