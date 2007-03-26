@@ -203,7 +203,7 @@ def AppendCluster(res, tlc, sclusttype):
         res.append(tlcf)
         if IsNotQuiet():
             print "splitting two paragraphs", si
-            print tlc.txls[0].ltext
+            print " ", tlc.txls[0].ltext
             #print tlcf.indents, tlc.indents
 
     elif len(tlc.indents) != 1:
@@ -222,8 +222,7 @@ def AppendCluster(res, tlc, sclusttype):
 
 # maybe shouldn't be a class
 class TextPage:
-    def ExtractDateTime(self, txline):
-        ltext = txline.ltext
+    def ExtractDateTime(self, txline, ltext):
         # extract the date out if poss
         mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?\s*m\.?| noon\.?)?(?: \(closed\))?$", ltext)
         if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
@@ -257,7 +256,7 @@ class TextPage:
             # fix missing year date
             #if self.undocname == "A-55-PV.44" and txlines[ih].ltext == "Monday, 30 October, 10 a.m.":
             #    txlines[ih].ltext = "Monday, 30 October 2000, 10 a.m."
-            self.ExtractDateTime(txlines[ih])
+            self.ExtractDateTime(txlines[ih], txlines[ih].ltext)
 
             ih += 1
             if ih == len(txlines):
@@ -313,7 +312,7 @@ class TextPage:
         del txlines # just deletes the reference to this object
         ih = 0
         while ih < len(jtxlines):
-            self.ExtractDateTime(jtxlines[ih])
+            self.ExtractDateTime(None, jtxlines[ih])
             mpresseat = re.match("<i>(President|Chairman|later)(?:</i>:|:\s*</i>)\s*((?:Mr.|Mrs.|Ms.|Sir\.?|Miss|Sheikh|Baroness|Lord|Nana) .*?)\s+\.(?: \.)*\s*(\(.*)?$", jtxlines[ih])
             #print jtxlines[ih], mpresseat
             if mpresseat:
