@@ -340,7 +340,7 @@ class SpeechBlock:
             blinepara = tlc.lastindent and "blockquote" or "p"
             if re.match("Agenda item \d+", ptext):
                 blinepara = "boldline-agenda"
-                mblag = re.match("Agenda item (\d+)(?: and (\d+))?\s*((?:<i>|\()+continued(?:\)|</i>)+)?$", ptext)
+                mblag = re.match("Agenda item (\d+)(?: and(?: agenda item)? (\d+))?\s*((?:<i>|\()+continued(?:\)|</i>)+)?$", ptext)
                 if not mblag:
                     print ptext
                     raise unexception("malformed boldline agenda", self.paranum)
