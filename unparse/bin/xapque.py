@@ -44,16 +44,19 @@ xapian_query.add_boolean_prefix("document", "D")
 xapian_query.add_boolean_prefix("reference", "R")
 xapian_query.add_boolean_prefix("date", "E")
 xapian_query.add_boolean_prefix("heading", "H")
-parsed_query = xapian_query.parse_query(query)
-print parsed_query.get_description()
+parsed_query = xapian_query.parse_query(query, 16+4+2+1) # allows wildcards
+print "desc:", parsed_query.get_description()
 
 xapian_enquire.set_query(parsed_query)
+xapian_enquire.set_docid_order(xapian.Enquire.ASCENDING)
+xapian_enquire.set_weighting_scheme(xapian.BoolWeight())
 
 # do sorting etc. here
 
 matches = xapian_enquire.get_mset(0, 500)
 print matches.size()
 for match in matches:
-    print match[3], match[4].get_data()
+    #print match
+    print match[3], match[4].get_value(0), match[4].get_data()
 
 

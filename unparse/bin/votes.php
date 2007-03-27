@@ -1,14 +1,14 @@
 <?php
 // Datebase stuff, used later on
-$con = mysql_connect( "localhost","","");
+$con = mysql_connect( "localhost","un","quoh1eiM");
 if (!$con) {
   die("Can't connect to datebase: ".mysql_error());
 }
-mysql_select_db("", $con);
+mysql_select_db("un_staging", $con);
 
 
 // Set up the file paths
-$filepath = "/home/sym/un/undata/html";
+$filepath = "/home/undemocracy/undata/html/";
 $dir = opendir($filepath);
 
 
@@ -36,7 +36,8 @@ while ( false !== ( $file = readdir( $dir))) {
         preg_match('/<p class="votelist">(.*?)<\\/p>/s', $matches[2][$vote_no], $votelist);
         // Put every vote in to the $votes array
         preg_match_all('/<span class="(.*?)">(.*?)<\\/span>/', $votelist[1], $votes);
-        
+        $vote_id = $file . '#' . $para_id;
+
         // Deal with the datebase stuff:
         // We will query the database for each file name and paragraph id
         // to make sure it's not there already
@@ -47,13 +48,13 @@ while ( false !== ( $file = readdir( $dir))) {
         $result = @mysql_fetch_object($result) ;
         // If there is nothing there, insert the new row
         if ( !$result ) {
-          mysql_query("INSERT INTO votes (id,file,date,motion,count) VALUES ('$para_id','$file','$date','$vote_motion_text[1]','$vote_count_text[1]')");
+          mysql_query("INSERT INTO votes (id,para_id,file,date,motion,count) VALUES ('$vote_id','$para_id','$file','$date','$vote_motion_text[1]','$vote_count_text[1]')");
           
           // Go though all the votes and insert them in to vote_records
           for ($i =0;$i<sizeOf($votes[0]);$i++) {
             $member = $votes[2][$i];
             $vote = $votes[1][$i];
-            mysql_query("INSERT INTO vote_records (file,id,member,vote) VALUES ('$file','$para_id','$member','$vote')");
+            mysql_query("INSERT INTO vote_records (id,member,vote) VALUES ('$vote_id','$member','$vote')");
           }
         }
       }

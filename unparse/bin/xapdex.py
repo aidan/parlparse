@@ -14,7 +14,7 @@ import traceback
 # TODO: 
 # Get list of days with stuff in them
 # Decide what to do properly with spaces in names etc.
-# Index votes themselves
+# Index votes themselves (still needed?  This is now in a mysql database)
 # A-50-PV.61.html breaks xapdex.py
 # Unicode
 # Make sure the chamber (general assembly, security council) is in metadata
@@ -53,10 +53,12 @@ paths relative to the UN data directory. At the moment, replaces whole database
 with a new one indexing the given files.
 
 Example command lines:
-./xapdex.py html/A-53-PV.63.html
-./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db html""")
+./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db 
+./xapdex.py --stem=A-53-PV""")
 parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
+parser.add_option("--stem", dest="stem", default=None, 
+      help="Restricts the files scanned within the directory similar to the parser feature")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
 parser.add_option("--first-time", action="store_true", dest="firsttime", default=False,
@@ -80,7 +82,8 @@ if not options.undata:
         options.undata = "%s/undata" % os.getenv('HOME')
     if not os.path.isdir(options.undata):
         parser.error("Please specify UN data directory with --undata=, or run script with undata in current directory, in parent directory (up to 3 levels), or directly in your home directory")
-if len(args) == 0:
+if len(args) != 0:
+    print "No args used by this function; see --stem"
     parser.print_help()
     sys.exit(0)
 
@@ -197,8 +200,8 @@ def process_file(input_dir, input_file_rel, xapian_db):
             
             # Lookup class
             cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
-            if cls == 'heading' or cls == 'assembly-chairs':
-                continue
+            #if cls in ['heading', 'assembly-chairs', 'boldline-agenda', 'council-attendees']: # boldline-agenda is the div, not the p
+            #    continue
             #print cls, input_file, div_content
 
             # Look up all the data
@@ -210,7 +213,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
                     raise Exception, "No attr 'name' in speaker for: %s" % (attr, div_content)
                 nation = find_speaker_attribute("nation", div_content)
                 language = find_speaker_attribute("language", div_content)
-            if cls == 'boldline':
+            if cls == 'subheading':
                 heading = id
             ref_docs = re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_content)
 
@@ -280,6 +283,10 @@ def process_file(input_dir, input_file_rel, xapian_db):
             if os.path.exists(input_file_use):
                 os.unlink(input_file_use)
             os.rename(input_file, input_file_use)
+    except KeyboardInterrupt, e:
+        print "  ** Keyboard interrupt"
+        sys.exit(1)
+
     except Exception, e:
     	if options.continueonerror:
             traceback.print_exc()
@@ -317,17 +324,17 @@ if options.verbose > 1:
     print "files/directories to process are", args
 
 rels = []
-for input_rel in args:
-    input_rel = input_rel.rstrip()
-    input = os.path.join(undata_dir, input_rel)
-    if os.path.isfile(input):
+if True:
+    input_rel = "html"
+    inputd = os.path.join(undata_dir, input_rel)
+    if os.path.isfile(inputd):
         rels.append(input_rel)
-    elif os.path.isdir(input):
-        filelist = os.listdir(input)
+    elif os.path.isdir(inputd):
+        filelist = os.listdir(inputd)
         filelist.sort(reverse = True)
         for d in filelist:
-            p = os.path.join(input_rel, d)
-            if not re.search("^S-", d): # skip security council for now
+            if not options.stem or re.match(options.stem, d):
+                p = os.path.join(input_rel, d)
                 if re.search(".unindexed.html$", d) or (options.firsttime and re.search(".html$", d)):
                     rels.append(p)
     else:
