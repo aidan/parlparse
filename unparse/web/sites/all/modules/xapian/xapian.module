@@ -5,174 +5,33 @@
 /**
  * This drupal module links drupal and the result of a xapian search.  
  * The main point of it is to provide the xapian_do_search() function.  
- * I've also added some settings, to make it a bit more pluggable.
  */
 
-/**
- * Implementation of hook_help().
- */
-function xapian_help($section) {
-  switch ($section) {
-    case 'admin/modules#description':
-      return t('Provides options to display content from xapian in drupal, as a node.');
-  }
-}
-
-/**
- * Implementation of hook_menu().
- */
-function xapian_menu($may_cache) {
-  $items = array();
-  if ($may_cache) {
-    $items[] = array(
-      'path' => 'admin/settings/xapian',
-      'title' => t('xapian settings'),
-      'access' => user_access('administer xapian'),   
-      'callback' => 'xapian_settings'
-     );
-     $items[] = array(
-      'path' => 'admin/settings/xapian/settings',
-      'title' => 'Settings',
-      'type' => MENU_DEFAULT_LOCAL_TASK,
-      'weight' => '-10',
-     );
-
-     $items[] = array(
-      'path' => 'admin/settings/xapian/test',
-      'title' => t('Databse test'),
-      'access' => user_access('administer xapian'),
-      'type' => MENU_LOCAL_TASK,
-      'callback' => 'xapian_dbtest'
-     );
-  }
-  return $items;
-}
-
-
-/**
- *  Module functions
- */
- 
-function xapian_settings() {
-  $output = drupal_get_form('xapian_settings_form', $form);
-  return $output;
-}
-
-function xapian_settings_form() {
-
-  $form['undatapath'] = array(
-    '#type' => textfield,
-    '#title' => 'Path to UN data',
-    '#default_value' => variable_get('xapian_undatapath', '/path/to/undata'),
-    '#description' => 'Location of undata directory',
-  );
-  
-  $form['dbpath'] = array(
-    '#type' => textfield,
-    '#title' => 'Database name',
-    '#default_value' => variable_get('xapian_dbpath', 'xapdex.db'),
-    '#description' => 'Name of xapian database, relitive to the undata directory',
-  );
-
-  $form['submit'] = array(
-    '#type' => submit,
-    '#title' => 'Save',
-    '#value' => 'Save',
-  );
-  return $form;
-} 
-
-function xapian_settings_form_submit($form_id, $form) {
-  variable_set('xapian_dbpath', $form['dbpath']);
-  
-  if (substr($form['undatapath'], -1, 1) != '/') {
-    $form['undatapath'] .= "/";
-  }
-  variable_set('xapian_undatapath', $form['undatapath']);
-}
-
-function xapian_dbtest() {
-  $output = drupal_get_form('xapian_dbtest_form', $form);
-  return $output;
-}
-
-function xapian_dbtest_form() {
-  $q = arg(4);
-  $form['search'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Search'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE, 
-  );
-
-  $form['search']['word'] = array(
-    '#type' => textfield,
-    '#title' => 'Search',
-    '#default_value' => $q,
-  );
-
-  $form['search']['submit'] = array(
-    '#type' => submit,
-    '#title' => 'Search',
-    '#value' => 'Search',
-  );
-
-  if (arg(4)) {
-    $form['result'] = array(
-      '#value' => "<h2>results</h2>",
-    );
-    $result = xapian_do_search($q);
-    if (is_array($result->data)) {
-      foreach ($result->data as $item) {
-        $results .= $item['file'] . "<br />\n";
-      }
-    }
-    $form['result_content'] = array(
-      '#value' => $results,
-    );
-
-  }
-  return $form;
-}
-
-
-function xapian_dbtest_form_submit($form_id, $form) {
-  $q = $form['word'];
-//  $q = str_replace('/', 'x', $q);
-  return 'admin/settings/xapian/test/' . $q;
-}
-
-
-/**
- * This is the main search function, that tries to copy xapque.py
- */
 
 function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
+
+  if (!$db_path) {
+    $db_path = "/home/undemocracy/undata/xapdex.db/";
+  }
   
   if (!$undata_path) {
     // XXX what should we call this parameter? is location of undata directory
-    $undata_path = variable_get('xapian_undatapath', '/path/to/undata');
+    $undata_path = "/home/undemocracy/undata/html/";
   }
   if (substr($undata_path, -1, 1) != '/') {
     $undata_path .= "/";
   }
   
-  if (!$db_path) {
-    $db_path = variable_get('xapian_dbpath', 'path/to/database.db');
-  }
-  
   $db_path = $undata_path . $db_path;
-if (file_exists('xapian_php5.php')) {  
-  include_once('xapian_php5.php' );
-}
+  if (file_exists('xapian_php5.php')) {  
+    include_once('xapian_php5.php' );
+  }
   // XXX this doesn't break well if it can't find the database
   $database = new XapianDatabase($db_path);  
 
   $enquire = new XapianEnquire($database);
   $stemmer = new XapianStem("english");
-  
-  
-  
+  ``
   // XXX this for my testing when not in drupal as don't have "arg()".
   // However, not sure what the $query parameters was for anyone when
   // running under Drupal?
