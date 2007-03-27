@@ -114,11 +114,13 @@ def delete_all_for_doc(document_id, xapian_db):
     xapian_enquire.set_query(parsed_query)
     xapian_enquire.set_weighting_scheme(xapian.BoolWeight())
     mset = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
+    nmset = 0
     for mdoc in mset:
         if options.verbose > 1:
             print "\tdeleting existing Xapian doc: %s" % mdoc[4].get_value(0)
         xapian_db.delete_document(mdoc[0]) # Xapian's document id
-    return len(mset)
+        nmset += 1
+    return nmset
 
 def thinned_docid(document_id):
     mgass = re.match("A-(\d+)-PV-(\d+)$", document_id)
@@ -197,8 +199,8 @@ def process_file(input_dir, input_file_rel, xapian_db):
     doccontent = fin.read()
     fin.close()
 
-    mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', content)
-    assert document_date, "not found date in file %s" % input_file
+    mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', doccontent)
+    assert mdocument_date, "not found date in file %s" % input_file
     document_date = mdocument_date.group(1)
 
     if options.verbose:
@@ -206,6 +208,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
     while delete_all_for_doc(document_id, xapian_db):
         pass   # keep calling delete until all clear
+    sys.exit(1)
 
     tdocument_id = thinned_docid(document_id)
 
