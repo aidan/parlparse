@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4 
+#!/usr/bin/python2.4
 
 # unparse/bin/xapdex.py - Index Julian's UN HTML in Xapian. Run with --help
 # for command line options.
@@ -17,8 +17,6 @@ import traceback
 # Index votes themselves (still needed?  This is now in a mysql database)
 # A-50-PV.61.html breaks xapdex.py
 # Unicode
-# Make sure the chamber (general assembly, security council) is in metadata
-# Finish check_removed_docs
 
 # Fields are:
 # I identifier (e.g. docA61PV4-pg001-bk01)
@@ -31,6 +29,7 @@ import traceback
 # R referenced document (e.g. A-57-PV.57)
 # E date (e.g. 2002-10-01)
 # H heading identifier, if speech in a heading section (e.g. docA61PV4-pg001-bk01)
+# A agenda number-session number
 
 # Example set of identifiers for a document:
 # Cspoken E2006-07-20 RA-60-L.49 Smrbodini Ipg017-bk01 Nsanmarino Hpg001-bk05 L DA-60-PV.94 Jpg017-bk01-pa01 Jpg017-bk01-pa02 Jpg017-bk01-pa03
@@ -53,11 +52,11 @@ paths relative to the UN data directory. At the moment, replaces whole database
 with a new one indexing the given files.
 
 Example command lines:
-./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db 
+./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db
 ./xapdex.py --stem=A-53-PV""")
 parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
-parser.add_option("--stem", dest="stem", default=None, 
+parser.add_option("--stem", dest="stem", default=None,
       help="Restricts the files scanned within the directory similar to the parser feature")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
@@ -87,38 +86,6 @@ if len(args) != 0:
     parser.print_help()
     sys.exit(0)
 
-######################################################################
-# These munge functions convert codes into format for Xapian.
-
-# e.g. A/57/PV.57 or A-57-PV.57
-def munge_un_document_id(doc_id):
-    doc_id = doc_id.replace("/", "-")
-    return doc_id
-   
-# e.g. pg001-bk01
-def munge_julian_id(id):
-    return id
-
-# e.g. 2006-11-18
-def munge_date(date):
-    return date
-
-# e.g. United States
-def munge_nation(nation):
-    return nation.lower()
-
-# e.g. ?
-def munge_language(language):
-    return language.lower()
-
-# e.g. italicline
-def munge_cls(cls):
-    return cls.lower()
-
-# e.g. Mr. Zarif
-def munge_speaker_name(name):
-    # XXX remove all punctuation
-    return name.replace(".", "").lower()
 
 ######################################################################
 # Main indexing routines
@@ -132,175 +99,171 @@ def munge_speaker_name(name):
 # I think the frist refinement needs some cleverness in Drupal's use of the
 # index as well.
 
-# Internal, find attribute of a speaker
-def find_speaker_attribute(attr, div_content):
-    value = re.search('<span class="%s">([^<]*)</span>' % attr, div_content)
-    if not value:
-        # backwards compatibility, can remove when all files migrated to new form
-        value = re.search('<span class="speaker" [^>]*%s="([^">]*)"' % attr, div_content)
-        if not value:
-            return False
-    value = value.group(1)
-    return value
 
 # Reindex one file
-process_count = 0
-def process_file(input_dir, input_file_rel, xapian_db):
-    try:
-        global process_count, options
-        process_count = process_count + 1
-        if options.limit and process_count > options.limit:
-            return
-
-        input_file = os.path.join(input_dir, input_file_rel)
-        input_file_rel_use = input_file_rel.replace(".unindexed", "")
-        input_file_use = os.path.join(input_dir, input_file_rel_use)
-        newindex = False 
-        if ".unindexed" in input_file_rel:
-            newindex = True
-
-        content = open(input_file).read()
-        document_id = os.path.splitext(os.path.basename(input_file_use))[0]
-        document_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', content)
-        assert document_date, "not found date in file %s" % input_file
-        document_date = document_date.group(1)
-
-        if options.verbose:
-            if newindex:
-                print "indexing (unindexed): %s %s" % (document_id, document_date)
-            else:
-                print "indexing (main): %s %s" % (document_id, document_date)
-
-        # Delete existing items for the document
-        xapian_enquire = xapian.Enquire(xapian_db)
-        xapian_query = xapian.QueryParser()
-        xapian_query.set_stemming_strategy(xapian.QueryParser.STEM_NONE)
-        xapian_query.set_default_op(xapian.Query.OP_AND)
-        xapian_query.add_boolean_prefix("document", "D")
-        query = "document:%s" % munge_un_document_id(document_id)
-        parsed_query = xapian_query.parse_query(query)
+def delete_all_for_doc(document_id, xapian_db):
+    xapian_enquire = xapian.Enquire(xapian_db)
+    xapian_query = xapian.QueryParser()
+    xapian_query.set_stemming_strategy(xapian.QueryParser.STEM_NONE)
+    xapian_query.set_default_op(xapian.Query.OP_AND)
+    xapian_query.add_boolean_prefix("document", "D")
+    query = "document:%s" % document_id
+    parsed_query = xapian_query.parse_query(query)
+    if options.verbose > 1:
+        print "\tdelete query: %s" % parsed_query.get_description()
+    xapian_enquire.set_query(parsed_query)
+    xapian_enquire.set_weighting_scheme(xapian.BoolWeight())
+    mset = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
+    for mdoc in mset:
         if options.verbose > 1:
-            print "\tdelete query: %s" % parsed_query.get_description()
-        xapian_enquire.set_query(parsed_query)
-        matches = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
-        for match in matches:
-            if options.verbose > 1:
-                print "\tdeleting existing Xapian doc: %s" % match[0]
-            xapian_db.delete_document(match[0]) # Xapian's document id
+            print "\tdeleting existing Xapian doc: %s" % mdoc[4].get_value(0)
+        xapian_db.delete_document(mdoc[0]) # Xapian's document id
+    return len(mset)
 
-        # Loop through each speech
-        pos_in_file = 0
-        heading = None
-        divs = re.finditer("^<div .*?^</div>", content, re.S + re.M)
-        for div in divs:
-            # Document content
-            off_from = div.start()
-            off_to = div.end()
-            div_content = div.group(0)
-            
-            # Lookup class
-            cls = re.search('^<div [^>]*class="([^">]+)"', div_content).group(1)
-            #if cls in ['heading', 'assembly-chairs', 'boldline-agenda', 'council-attendees']: # boldline-agenda is the div, not the p
-            #    continue
-            #print cls, input_file, div_content
+def thinned_docid(document_id):
+    mgass = re.match("A-(\d+)-PV-(\d+)$", document_id)
+    if mgass:
+        return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2)))
+    msecc = re.match("S-PV-(\d+)(?:-Resu\.(\d+))?$", document_id)
+    if msecc:
+        return "SPV%05d%02d" % (int(msecc.group(1)), (msecc.group(2) and int(msecc.group(2)) or 0))
+    assert False, "Cannot parse docid: %s" % document_id
 
-            # Look up all the data
-            id = re.search('^<div [^>]*id="([^">]+)"', div_content).group(1)
-            ids = re.findall('<(?:p|blockquote) [^>]*id="([^">]+)"', div_content)
-            if cls == 'spoken':
-                name = find_speaker_attribute("name", div_content)
-                if not name:
-                    raise Exception, "No attr 'name' in speaker for: %s" % (attr, div_content)
-                nation = find_speaker_attribute("nation", div_content)
-                language = find_speaker_attribute("language", div_content)
-            if cls == 'subheading':
-                heading = id
-            ref_docs = re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_content)
 
-            # Generate terms
-            terms = set()
-            terms.add("D%s" % munge_un_document_id(document_id))
-            terms.add("E%s" % munge_date(document_date))
-            for ref_doc in ref_docs:
-                terms.add("R%s" % munge_un_document_id(ref_doc))
-            terms.add("I%s" % munge_julian_id(id))
-            for a_id in ids:
-                if a_id != id:
-                    terms.add("J%s" % munge_julian_id(a_id))
-            terms.add("C%s" % munge_cls(cls))
-            if cls == 'spoken':
-                terms.add("S%s" % munge_speaker_name(name))
-                if nation:
-                    terms.add("N%s" % munge_nation(nation))
-                if language:
-                    terms.add("L%s" % munge_language(language))
-            if heading:
-                terms.add("H%s" % munge_julian_id(heading))
+#mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+def MakeBaseXapianDoc(mdiv, tdocument_id, document_date):
+    xapian_doc = xapian.Document()
 
-            # Generate words
-            word_content = div_content.lower()
-            word_content = re.sub("<[^>]+>", "", word_content)
-            word_content = re.sub("&#\d+;", " ", word_content)
-            word_content = re.sub("(\d),(\d)", "$1$2", word_content)
-            word_content = re.sub("[^A-Za-z0-9]", " ", word_content)
-            words = re.split("\s+",word_content)
+    div_class = mdiv.group(1)
+    div_id = mdiv.group(2)
+    div_agendanum = mdiv.group(3)
+    div_agendasess = mdiv.group(4)
+    div_text = mdiv.group(5)
 
-            # Add item to Xapian database
-            xapian_doc = xapian.Document()
-            doc_content = "%s|%s|%s" % (input_file_rel_use, off_from, off_to - off_from)
-            # ... terms (unplaced keywords, i.e. all the meta data like speaker, country)
-            xapian_doc.set_data(doc_content)
-            for term in terms:
-                term = term.replace(" ", "")
-                if options.verbose > 1:
-                    print "\t\tterm: %s" % term
-                xapian_doc.add_term(term)
-            # ... postings (keywords with placement, so can be in phrase search; the bulk of text)
-            n = 0
-            for word in words:
-                if word == '':
-                    continue
-                if re.search("^\d{1,2}$", word):
-                    continue
-                n = n + 1
-                if options.verbose > 1:
-                    print "\t\tposting: %s" % word
-                xapian_doc.add_posting(word.lower(), n)
-            # ... values (for sorting by)
-            # XXX we use date, position in file. Should probably include type (i.e.
-            # general assembly, security council) as well. Note must be lexicographically
-            # sortable field, i.e. probably fixed width (hence padding on the pos).
-            xapian_doc.add_value(0, "%s%06d" % (document_date.replace("-", ""), pos_in_file))
-            pos_in_file = pos_in_file + 1
-            # ... and add to the database
-            new_doc_id = xapian_db.add_document(xapian_doc)
-            if options.verbose > 1:
-                print "\tadded Xapian doc: %s" % new_doc_id
+    xapian_doc.add_term("D%s" % tdocument_id)
+    xapian_doc.add_term("E%s" % document_date)
+    xapian_doc.add_term("C%s" % div_class)
+    doc_id = doc_id.replace("/", "-")
 
-        # Note that the document has been indexed
-        xapian_db.flush()
-        if newindex:
-            if os.path.exists(input_file_use):
-                os.unlink(input_file_use)
-            os.rename(input_file, input_file_use)
-    except KeyboardInterrupt, e:
-        print "  ** Keyboard interrupt"
-        sys.exit(1)
+    mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
+    assert mblockid, "unable to decode blockid:%s" % div_id
+    xapian_doc.add_term("I%s" % mblockid.group(0))
 
-    except Exception, e:
-    	if options.continueonerror:
-            traceback.print_exc()
+    for ref_doc in re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_text):
+        xapian_doc.add_term("R%s" % ref_doc)
+
+    if div_class == 'spoken':
+        for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
+            if spclass[0] == "name":
+                xapian_doc.add_term("S%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+            if spclass[0] == "language":
+                xapian_doc.add_term("L%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+            if spclass[0] == "nation":
+                xapian_doc.add_term("N%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+
+    if div_agendanum:
+        for agnum in re.split("(\d+)", div_agendanum): # sometimes it's a comma separated list
+            xapian_doc.add_term("A%03-s%03d" % (int(div_agendanum), int(div_agendasess)))
+
+    # in the future we may break everything down to the paragraph level, and have 3 levels of heading backpointers
+    textspl = [ ] # all the text broken into words
+    for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_content):
+        assert mpara.group(2) == mblockid.group(1) and mpara.group(3) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
+        xapian_doc.add_term("J%s" % mpara.group(1))
+        textspl.extend(re.findall("\w+", mpara.group(5)))
+
+    # date, docid, page, blockno
+    value0 = "%s0%s%04%03" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
+    assert len(value0) == 26 # nice and tidy; we're generating a value that gives a total global sort
+    xapian_doc.add_value(0, value0)  # it's poss to have more than one value tagged on, but I think sorting is done only on one value
+
+    nspl = 0
+    for tspl in textspl:
+        if not re.match("\d\d?$", tspl):
+            xapian_doc.add_posting(tspl.lower(), nspl)
+        nspl += 1
+
+    return xapian_doc  # still need to set the data
+
+
+# Reindex one file
+def process_file(input_dir, input_file_rel, xapian_db):
+    mdocid = re.match("(html/)([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
+    assert mdocid, "unable to match:%s" % input_file_rel
+    document_id = mdocid.group(2)
+
+    pfnameunindexed = os.path.join(input_dir, input_file_rel)
+    fin = open(pfnameunindexed)
+    doccontent = fin.read()
+    fin.close()
+
+    mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', content)
+    assert document_date, "not found date in file %s" % input_file
+    document_date = mdocument_date.group(1)
+
+    if options.verbose:
+        print "indexing %s %s" % (document_id, document_date)
+
+    while delete_all_for_doc(document_id, xapian_db):
+        pass   # keep calling delete until all clear
+
+    tdocument_id = thinned_docid(document_id)
+
+    # Loop through each speech, and batch up the headings so they can be updated with the correct info
+    xapian_doc_heading = None
+    sdiv_headingdata = None
+    xapian_doc_subheading = None
+    sdiv_subheadingdata = None
+    lastend = 0
+
+    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+    for mdiv in mdivs:
+        # used to dereference the string as it is in the file
+        div_class = mdiv.group(1)
+        div_data = (document_id, mdiv.start(), mdiv.end() - mdiv.start())
+        assert div_class in ["heading", "assembly-chairs", "council-agenda", "council-attendees", "subheading", "spoken", "italicline", "recvote"]
+
+        xapian_doc = MakeBaseXapianDoc(mdiv, tdocument_id, document_date)
+
+        if div_class == "heading":
+            assert not xapian_doc_heading, "Only one heading per document"
+            xapian_doc_heading = xapian_doc
+            sdiv_headingdata = div_data
+
+        elif div_class == "subheading":
+            if xapian_doc_subheading:
+                xapian_doc_subheading.set_data("%s|%d|%d|%s|%d", (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[0], lastend - sdiv_headingdata[1]))
+                xapian_db.add_document(xapian_doc_subheading)
+            xapian_doc_subheading = xapian_doc
+            sdiv_headingdata = div_data
+
         else:
-            traceback.print_exc()
-            sys.exit(1)
+            assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "recvote"]
+            assert sdiv_subheadingdata or sdiv_headingdata
+            xapian_doc.set_data("%s|%d|%d|%s|", (div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[0]))
+            xapian_db.add_document(xapian_doc)
 
-# XXX finish this off, it checks for docs that are no longer there
-def check_removed_docs(xapian_db):
-    docs_in_xap = set()
-    for term in xapian_db.allterms():
-        g = re.search("^D(.*)$", term[0])
-        if g:
-            print g.group(1)
+        lastend = mdiv.end()
+
+    # now add the trailing subheading and heading
+    if xapian_doc_subheading:
+        xapian_doc_subheading.set_data("%s|%d|%d|%s|%d", (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[0], lastend - sdiv_headingdata[1]))
+        xapian_db.add_document(xapian_doc_subheading)
+    if xapian_doc_heading:
+        xapian_doc_heading.set_data("%s|%d|%d||%d", (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], lastend - sdiv_headingdata[1]))
+        xapian_db.add_document(xapian_doc_heading)
+
+
+    # Note that the document has been indexed
+    xapian_db.flush()
+
+    if mdocid.group(3): # unindexed
+        fnameindexed = "%s%s%s" % (mdocid.group(1), mdocid.group(2), mdocid.group(3))
+        pfnameindexed = os.path.join(input_dir, fnameindexed)
+        if os.path.exists(pfnameindexed):
+            os.unlink(pfnameindexed)
+        os.rename(pfnameunindexed, pfnameindexed)
+
 
 ######################################################################
 # Main entry point
@@ -315,9 +278,6 @@ xapian_file = os.path.join(undata_dir, options.xapdb).rstrip()
 # Create new database
 os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
 xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
-
-#check_removed_docs(xapian_db)
-#sys.exit()
 
 # Process files / directory trees
 if options.verbose > 1:
@@ -339,8 +299,23 @@ if True:
                     rels.append(p)
     else:
         raise Exception, "Directory/file %s doesn't exist" % input
+
+# having gone through the list, now load each
+if options.limit and len(rels) > options.limit:
+    rels = rels[:options.limit]
 for rel in rels:
-    process_file(undata_dir, rel, xapian_db)
+    try:
+        process_file(undata_dir, rel, xapian_db)
+    except KeyboardInterrupt, e:
+        print "  ** Keyboard interrupt"
+        sys.exit(1)
+    except Exception, e:
+        print e
+        if options.continueonerror:
+            traceback.print_exc()
+        else:
+            traceback.print_exc()
+            sys.exit(1)
 
 # Flush and close
 xapian_db.flush()
