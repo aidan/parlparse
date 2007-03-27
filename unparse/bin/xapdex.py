@@ -134,50 +134,58 @@ def thinned_docid(document_id):
 
 #mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
 def MakeBaseXapianDoc(mdiv, tdocument_id, document_date):
-    xapian_doc = xapian.Document()
-
     div_class = mdiv.group(1)
     div_id = mdiv.group(2)
     div_agendanum = mdiv.group(3)
     div_agendasess = mdiv.group(4)
     div_text = mdiv.group(5)
 
-    xapian_doc.add_term("D%s" % tdocument_id)
-    xapian_doc.add_term("E%s" % document_date)
-    xapian_doc.add_term("C%s" % div_class)
+    terms = [ ]
+    terms.append("D%s" % tdocument_id)
+    terms.append("E%s" % document_date)
+    terms.append("C%s" % div_class)
     doc_id = doc_id.replace("/", "-")
 
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
-    xapian_doc.add_term("I%s" % mblockid.group(0))
+    terms.append("I%s" % mblockid.group(0))
 
     for ref_doc in re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_text):
-        xapian_doc.add_term("R%s" % ref_doc)
+        terms.append("R%s" % ref_doc)
 
     if div_class == 'spoken':
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
             if spclass[0] == "name":
-                xapian_doc.add_term("S%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                terms.append("S%s" % re.sub("[\.\s]", "", spclass[1]).lower())
             if spclass[0] == "language":
-                xapian_doc.add_term("L%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                terms.append("L%s" % re.sub("[\.\s]", "", spclass[1]).lower())
             if spclass[0] == "nation":
-                xapian_doc.add_term("N%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                terms.append("N%s" % re.sub("[\.\s]", "", spclass[1]).lower())
 
     if div_agendanum:
         for agnum in re.split("(\d+)", div_agendanum): # sometimes it's a comma separated list
-            xapian_doc.add_term("A%03-s%03d" % (int(div_agendanum), int(div_agendasess)))
+            terms.append("A%03-s%03d" % (int(div_agendanum), int(div_agendasess)))
 
     # in the future we may break everything down to the paragraph level, and have 3 levels of heading backpointers
     textspl = [ ] # all the text broken into words
     for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_content):
         assert mpara.group(2) == mblockid.group(1) and mpara.group(3) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
-        xapian_doc.add_term("J%s" % mpara.group(1))
+        terms.append("J%s" % mpara.group(1))
         textspl.extend(re.findall("\w+", mpara.group(5)))
 
     # date, docid, page, blockno
     value0 = "%s0%s%04%03" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
     assert len(value0) == 26 # nice and tidy; we're generating a value that gives a total global sort
+
+    if options.verbose > 1:
+        print "value0", value0, "words:", len(textspl), " terms:", terms
+
+    # assemble the document
+    xapian_doc = xapian.Document()
     xapian_doc.add_value(0, value0)  # it's poss to have more than one value tagged on, but I think sorting is done only on one value
+
+    for term in terms:
+        xapian_doc.add_term(term)
 
     nspl = 0
     for tspl in textspl:
