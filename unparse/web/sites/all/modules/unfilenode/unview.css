@@ -1,5 +1,7 @@
 #content {
 font-family: Verdana, "Bitstream Vera Sans", Geneva, "Lucida Grande", sans-serif;
+font-size:0.9em;
+line-height:1.5em;
 }
 
 div.italicline
@@ -39,10 +41,10 @@ div.motiontext
 h3.speaker
 {
 
-	padding-top:10px;
+    margin:0;
 	float:left;
 	width:110px;
-	font-size:1em;
+	font-size:0.7em;
 }
 
 h3.speaker span {
@@ -53,7 +55,7 @@ h3.speaker span {
 
 div.spokentext
 {
-	padding-left:120px;
+	padding-left:140px;
 	padding-bottom:10px;
 }
 div.p
@@ -62,18 +64,15 @@ div.p
 	padding-bottom:20px;
 	line-height:1.5em;
 }
-div.blockquote
+blockquote
 {
-	padding-left:30px;
+	padding-left:120px;
 	padding-bottom:10px;
+    font-style:italic;
 }
-div.votecount
+.votecount
 {
-	font-size: 6 
-}
-div.votelist 
-{
-	font-size: 6 
+    display:none;
 }
 
 a.nolink
@@ -87,13 +86,15 @@ a.nolink
   border: 1px solid #d9eaf5;
   margin:10px;
   padding:5px;
+  overflow:auto;
 }
 
 .odd p, .even p {
 	margin:0 10px 1.2em 120px;
 }
 
-
-.pdf {
-  background-color:red;
+.votelist {
+	font-size: 10px;
+    line-height:1em;
 }
+

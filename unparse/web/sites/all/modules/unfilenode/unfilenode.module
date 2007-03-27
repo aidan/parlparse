@@ -1,16 +1,6 @@
 <?php
 # vim:set filetype=php:
-# vim:sw=2:ts=2:et:nowrap
-
-/**
- * Implementation of hook_help().
- */
-function unfilenode_help($section) {
-  switch ($section) {
-    case 'admin/modules#description':
-      return t('Deals with the files made by unparse.');
-  }
-}
+# vim:sw=2:ts=2:et
 
 /**
  * Implementation of hook_menu().
@@ -31,10 +21,10 @@ function unfilenode_menu($may_cache) {
      'weight' => '-10',
      );
      $items[] = array(
-      'path' => 'assembly',
+      'path' => 'document',
       'title' => t('Assembly'),
       'access' => user_access('access content'),
-      'callback' => 'assembly_page'
+      'callback' => 'document_page'
      );
      $items[] = array(
       'path' => 'test', 
@@ -122,73 +112,64 @@ function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
 
 
 
-function assembly_page() {
-  $op = arg(1);
-  drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
-  switch ($op) {
-    case 'spokenby':
-      return theme('assemblyfile', xapian_do_search(arg(2).":".arg(3).' '.arg(4)));
-    case 'document': 
-      return theme('assemblyfile', xapian_do_search(arg(1).":".arg(2)));
-    case 'word':
-      return theme('assemblyfile', xapian_do_search(arg(2)));
+function document_page() {
+  $document = arg(1);
+    drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
+    return theme('document', xapian_do_search("document:".$document)); 
+}
+
+function theme_document($search) {
+  $path = "/home/undemocracy/undata/"; 
+  $file = $search->data['0']['file'];
+  #display information about the xapian query.
+  $data = "<!-- Search: $search->info -->";
+  if ($search->data) {
+      $contents = file_get_contents($path . $file);
+      return format_html($contents);
+      
   }
 }
 
-function theme_assemblyfile($search) {
-  $path = variable_get('xapian_undatapath', '/path/to/files');
-  
-  #display information about the xapian query.
-  $data = "<h2>{$search->info}</h2>";
-  
-  if ($search->data) {
-    foreach ($search->data as $i => $result) {
-      $contents = file_get_contents($path . $result['file']);
+function format_html($contents) {
+
+
+
+
+
+
+
+  return $contents;
+}
+
+
+
+
       #strip everything not in the html body
 //      $contents = preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
 
 			#get the document code
-			preg_match('/<span class="code">(.*?)<\\/span>/', $contents, $matches);
-			$code = $matches[1];
+//			preg_match('/<span class="code">(.*?)<\\/span>/', $contents, $matches);
+//			$code = $matches[1];
 
 			#get the document date
-			preg_match('/<span class="date">(.*?)<\\/span>/', $contents, $matches);
-			$date = strtotime($matches[1]);
-			$date = date('jS M Y',$date);
+//			preg_match('/<span class="date">(.*?)<\\/span>/', $contents, $matches);
+//			$date = strtotime($matches[1]);
+//			$date = date('jS M Y',$date);
 
       #Add stripe info and remove any text outside of the offset and length
-      $stripe = $i % 2 ? 'even' : 'odd';
-      $contents = '<div class="'.$stripe.'">'.substr($contents, $result['offset'], $result['len'])."</div>"; 
+//      $stripe = $i % 2 ? 'even' : 'odd';
+//      $contents = '<div class="'.$stripe.'">'.substr($contents, $result['offset'], $result['len'])."</div>"; 
 //      $contents = substr($contents, $result['offset'], $result['len']); 
  //     $data .= "<div class=\"$stripe\">".substr($contents, $result['offset'], $result['len'])."</div>\n\n"; 
       #Format the information about the speaker
-      $contents = preg_replace('/<h3 class="speaker">.*<span class="name">(.*?)<\\/span>.*<span class="nation">(.*?)<\\/span>.*<\\/h3>/s', '<h3 class="speaker">'.$date.'<br /> Spoken by <span class="name">$1</span> of <span class="nation"><a href="/members/$2">$2</a></span></h3>', $contents);
+//      $contents = preg_replace('/<h3 class="speaker">.*<span class="name">(.*?)<\\/span>.*<span class="nation">(.*?)<\\/span>.*<\\/h3>/s', '<h3 class="speaker">'.$date.'<br /> Spoken by <span class="name">$1</span> of <span class="nation"><a href="/members/$2">$2</a></span></h3>', $contents);
 
-			#Add links to paragraphs
-			$contents = preg_replace('/<p id="(.*?)">(.*?)<\\/p>/s', '<p id="$1">$2<a href="/link/'.$code.'/$1" title="link to this">#</a></p>', $contents);
+ 			#Add links to paragraphs
+//			$contents = preg_replace('/<p id="(.*?)">(.*?)<\\/p>/s', '<p id="$1">$2<a href="/link/'.$code.'/$1" title="link to this">#</a></p>', $contents);
 //      preg_match('/<span class="nation">(.*?)<\\/span>/ims',$data, $matches);
-      preg_replace('/<span class="nation">(.*?)<\\/span>/ims', '<span class="nation">' . format_state('1') . '</span>',$data);
+//      preg_replace('/<span class="nation">(.*?)<\\/span>/ims', '<span class="nation">' . format_state('1') . '</span>',$data);
 //      print_r($matches);
 //      $data =  preg_replace('/<span(.*?)class="(.*?)speaker(.*?)"(.*?)>(.*?)<\\/span>/ixsm', '<span$1class="$2speaker$3"$4>'.$matches[1].'<br />'.l($matches[2], 'members/'.$matches[2]).'</span>', $data);
 
       # Fix up links to PDF files
-      $contents = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)" class="pdf">/', '<a href="/pdf/$1">', $contents);
-
-      $data .= $contents;
-    }
-  }
-  return $data;
-}
-
-
-
-
-
-      #Format the information about the speaker
-//      $data = format_states($data);
-//      $data = preg_replace('/<span class="speaker" name="(.*?)" nation="(.*?)" language="(.*?)">(.*?)<\/span>/ixm', '<span class="speaker" name="$1" nation="$2" language="$3">$1 ($2) testing<\/span>', $data);
-
-
-
-
-
+//      $contents = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)">/', '<a href="'.base_path().'/pdf/$1">', $contents);
