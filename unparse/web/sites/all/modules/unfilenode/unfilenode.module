@@ -9,18 +9,6 @@ function unfilenode_menu($may_cache) {
   $items = array();
   if ($may_cache) {
     $items[] = array(
-      'path' => 'admin/settings/unfilenode',
-      'title' => t('UN file settings'),
-      'access' => user_access('administer unfiles'),   
-      'callback' => 'unfilenode_settings'
-     );
-     $items[] = array(
-     'path' => 'admin/settings/unfilenode/settings',
-     'title' => 'Settings',
-     'type' => MENU_DEFAULT_LOCAL_TASK,
-     'weight' => '-10',
-     );
-     $items[] = array(
       'path' => 'document',
       'title' => t('Assembly'),
       'access' => user_access('access content'),
@@ -36,110 +24,78 @@ function unfilenode_menu($may_cache) {
   return $items;
 }
 
+function document_page() {
+  $document = un_get_doc_path(arg(1));
+  return theme('document', un_file_string($document)); 
+}
+
+function format_html($contents) {
+  return $contents;
+}
+
+function theme_document($document) {
+  drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
+  return $document;
+}
+
+function undata_path() {
+  return "/home/undemocracy/undata/"; 
+}
+
+function un_file_string($document) {
+  return file_get_contents($document);
+  
+}
+
+function un_get_doc_path($id) {
+  $path = undata_path();
+  $path = $path . "html/" . $id . ".html";
+  return $path;
+}
+
+
 /**
- *  Module functions
- */
-function unfilenode_settings_form() {
-  $form['path'] = array(
-    '#type' => textfield,
-    '#title' => 'Path to files',
-    '#default_value' => variable_get('unfiles_path', '/path/to/files'),
-    '#description' => "The full path to the HTML files made by UNparse, including trailing slash"
-  );
-
-  $form['submit'] = array(
-    '#type' => submit,
-    '#title' => 'Save',
-    '#value' => 'Save',
-  );
-  return $form;
-} 
-
-function unfilenode_settings() {
-  $output = drupal_get_form('unfilenode_settings_form', $form);
-  return $output;
-}
-
-function unfilenode_settings_validate($form_id, $form) {
-  if (!file_exists($form['path'])) {
-    form_set_error('', t('Could not find folder '. $form['path']));
-  }
-}
-
-function unfilenode_settings_form_submit($form_id, $form) {
-  variable_set('unfiles_path', $form['path']);
-  print_r($form);
-die();
-}
-
+ ** This is all test stuff
+ **/
 function unfilenode_test() {
-  $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
-  $links[] = l('Document A/60/PV.9', 'assembly/document/A-60-PV.9');
-  $links[] = drupal_get_form('unfilenode_search_form', $form);
-  return theme('item_list',$links);
+   $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
+   $links[] = l('Document A/60/PV.9', 'assembly/document/A-60-PV.9');
+   $links[] = drupal_get_form('unfilenode_search_form', $form);
+   return theme('item_list',$links);
 }
+ 
 function unfilenode_search_form() {
-  $form['query'] = array(
-    '#type' => 'textfield',
-    '#description' => "Examples: Blair, Nuclear, Climate change",
-    );
-  $form['search']['submit'] = array(
-    '#type' => 'submit', 
-    '#value' => 'Search',
-    );
-  return $form;
-
+   $form['query'] = array(
+     '#type' => 'textfield',
+     '#description' => "Examples: Blair, Nuclear, Climate change",
+     );
+   $form['search']['submit'] = array(
+     '#type' => 'submit', 
+     '#value' => 'Search',
+     );
+   return $form;
 }
 
 function unfilenode_search_form_submit($form_id, $form) {
-  return 'assembly/word/' . $form['query'];
+   return 'assembly/word/' . $form['query'];
 }
-
 
 function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
   if ($op == 'list') {
     $blocks[0]['info'] = t('un keyword search');
     return $blocks;
   } else if ($op == 'view') {
-    switch($delta) {
-      case 0:
-        $block['subject'] = t('Search');
-        $block['content'] = drupal_get_form(unfilenode_search_form,$form);
-        return $block;
-    }
-  }
+     switch($delta) {
+       case 0:
+         $block['subject'] = t('Search');
+         $block['content'] = drupal_get_form(unfilenode_search_form,$form);
+         return $block;
+     }
+   }
 }
 
 
 
-function document_page() {
-  $document = arg(1);
-    drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
-    return theme('document', xapian_do_search("document:".$document)); 
-}
-
-function theme_document($search) {
-  $path = "/home/undemocracy/undata/"; 
-  $file = $search->data['0']['file'];
-  #display information about the xapian query.
-  $data = "<!-- Search: $search->info -->";
-  if ($search->data) {
-      $contents = file_get_contents($path . $file);
-      return format_html($contents);
-      
-  }
-}
-
-function format_html($contents) {
-
-
-
-
-
-
-
-  return $contents;
-}
 
 
 
@@ -173,3 +129,4 @@ function format_html($contents) {
 
       # Fix up links to PDF files
 //      $contents = preg_replace('/<a href="\\.\\.\\/pdf\\/([^"]+)">/', '<a href="'.base_path().'/pdf/$1">', $contents);
+
