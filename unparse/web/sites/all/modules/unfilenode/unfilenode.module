@@ -2,6 +2,16 @@
 # vim:set filetype=php:
 # vim:sw=2:ts=2:et
 
+function un_get_doc_path($id) {
+  $path = undata_path();
+  $path = $path . "html/" . $id . ".html";
+  return $path;
+}
+
+function undata_path() {
+  return "/home/undemocracy/undata/"; 
+}
+
 /**
  * Implementation of hook_menu().
  */
@@ -10,56 +20,82 @@ function unfilenode_menu($may_cache) {
   if ($may_cache) {
     $items[] = array(
       'path' => 'document',
-      'title' => t('Assembly'),
+      'title' => t('Document'),
       'access' => user_access('access content'),
       'callback' => 'document_page'
      );
      $items[] = array(
-      'path' => 'test', 
+      'path' => 'test',
       'title' => 'Assembly files test page',
       'access' => user_access('access content'),
       'callback' => 'unfilenode_test',
-     );    
-  }
+     );
+  }   
   return $items;
 }
 
+/**
+ * /documents/ page calllback
+ */
 function document_page() {
+  drupal_set_title("Document ".arg(1));
   $document = un_get_doc_path(arg(1));
-  return theme('document', un_file_string($document)); 
-}
-
-function format_html($contents) {
-  return $contents;
-}
-
-function theme_document($document) {
-  drupal_add_css(drupal_get_path('module', 'unfilenode').'/unview.css');
-  return $document;
-}
-
-function undata_path() {
-  return "/home/undemocracy/undata/"; 
+  return theme('full_document', un_file_string($document)); 
 }
 
 function un_file_string($document) {
-  return file_get_contents($document);
-  
-}
-
-function un_get_doc_path($id) {
-  $path = undata_path();
-  $path = $path . "html/" . $id . ".html";
-  return $path;
+  return file_get_contents($document);  
 }
 
 
 /**
- ** This is all test stuff
- **/
+ * Theme functions
+ */
+
+
+/**
+ * Strip out the undeeded tags from the document string and send the rest 
+ * though to be themed on each div.
+ */
+function theme_full_document($document) {
+  $document = preg_match('/<body>(.*)<span class="date">(.*?)<\/span> <span class="time">(.*?)<\/span>\n<\/div>(.*?)<\/body>/s', $document, $matches);
+  $document = "<h3>On $matches[2] at $matches[3]</h3>";
+  $document .= $matches[4];
+  $document = theme("full_document_divs",$document);
+  $document = implode("",$document);
+  return $document;
+}
+
+/*
+ * Split a given string in to an array of all the divs with a class (boldline etc)
+ * and run a theme function on them before adding them back in to the same formation
+ */
+function theme_full_document_divs($document) {
+  preg_match_all('/<div class="(assembly-chairs|boldline|italicline-tookchair|italicline|spoken|recvote)" id="(.*?)">(.*?)<\/div>/s', $document, $matches);
+  foreach ($matches[0] as $i => $match) {
+    $class = $matches[1][$i];
+    $stripe = $i % 2 ? 'even' : 'odd';
+    $match = preg_replace('/<div class="(.*?)"(.*?)>/i','<div class="$1 '. $stripe.'"$2>',$match);
+
+    /* Not used uet, but this can be used to theme different div classes
+    switch ($class) {
+      case "boldline":
+      $match = theme('unfile_boldline', $match);   
+    }
+    */
+    
+    $content[] = $match;
+  }
+  return $content;
+}
+
+
+/**
+ * This is all test stuff
+ */
 function unfilenode_test() {
    $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
-   $links[] = l('Document A/60/PV.9', 'assembly/document/A-60-PV.9');
+   $links[] = l('Document A/60/PV.9', 'document/A-60-PV.9');
    $links[] = drupal_get_form('unfilenode_search_form', $form);
    return theme('item_list',$links);
 }
@@ -98,9 +134,9 @@ function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
 
 
 
+// junk - keeping for now
 
-
-      #strip everything not in the html body
+//  strip everything not in the html body
 //      $contents = preg_replace('/<html.*<body>(.*?)<\\/body>.*/s', '$1', $contents);
 
 			#get the document code
