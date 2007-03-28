@@ -124,7 +124,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
 
         if glueunfile.bSecurityCouncil:
             fout.write('\n<div class="council-agenda" id="pg000-bk01">\n')
-            fout.write('\t<p class="boldline-agenda" id="pg000-bk01-pa01">%s</p>\n' % glueunfile.agenda)
+            fout.write('\t<p class="boldline-p" id="pg000-bk01-pa01">%s</p>\n' % glueunfile.agenda)
             fout.write('</div>\n')
             fout.write('\n<div class="council-attendees" id="pg000-bk02">\n')
             ichairn = 0
