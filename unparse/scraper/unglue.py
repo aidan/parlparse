@@ -236,6 +236,8 @@ class TextPage:
             raise unexception("unrecognized month", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         imonth = months.index(mdate.group(2))
         syear = mdate.group(3)
+        if not re.match("(?:20\d\d|19\d\d)$", syear):
+            raise unexception("bad year", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         ihour = int(mdate.group(4))
         imin = mdate.group(5) and int(mdate.group(5)) or 0
         if mdate.group(6) and mdate.group(6) == "p" and ihour != 12:
