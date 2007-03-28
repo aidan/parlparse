@@ -118,7 +118,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
         fout.write('<link href="unview.css" type="text/css" rel="stylesheet" media="all">\n')
         fout.write('</head>\n<body>\n')
 
-        fout.write('<div class="heading" id="pg000-bk00">\n')
+        fout.write('\n<div class="heading" id="pg000-bk00">\n')
         fout.write('\t<span class="code">%s</span> <span class="date">%s</span> <span class="time">%s</span>\n' % (undocname, glueunfile.sdate[:10], glueunfile.sdate[10:].strip()))
         fout.write('</div>\n')
 
@@ -126,7 +126,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
             fout.write('\n<div class="council-agenda" id="pg000-bk01">\n')
             fout.write('\t<p class="boldline-agenda" id="pg000-bk01-pa01">%s</p>\n' % glueunfile.agenda)
             fout.write('</div>\n')
-            fout.write('<div class="council-attendees" id="pg000-bk02">\n')
+            fout.write('\n<div class="council-attendees" id="pg000-bk02">\n')
             ichairn = 0
             for chair in glueunfile.chairs:
                 ichairn += 1
@@ -139,12 +139,16 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
             for chair in glueunfile.chairs:
                 ichairn += 1
                 fout.write('\t<p id="pg000-bk03-pa%02d"><span class="name">%s</span> <span class="nation">%s</span> <span class="place">president</span></p>\n' % (ichairn, chair[0], chair[1]))
-            fout.write('</div>')
+            fout.write('</div>\n')
 
         for gpara in gparas:
             gpara.writeblock(fout)
 
-        fout.write('</body>\n</html>\n')
+        # this for making the parsing a little easier
+        fout.write('\n<div class="end-document" id="pg999-bk99">\n')
+        fout.write('</div>\n')
+
+        fout.write('\n</body>\n</html>\n')
         fout.close()
         if os.path.isfile(undochtml):
             os.remove(undochtml)
