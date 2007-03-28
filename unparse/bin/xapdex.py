@@ -60,7 +60,7 @@ parser.add_option("--stem", dest="stem", default=None,
       help="Restricts the files scanned within the directory similar to the parser feature")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
-parser.add_option("--first-time", action="store_true", dest="firsttime", default=False,
+parser.add_option("--force", action="store_true", dest="force", default=False,
                   help="Erases existing database, and indexes all .html files")
 parser.add_option("--limit", dest="limit", default=None, type="int",
       help="Stop after processing this many files, used for debugging testing")
@@ -123,7 +123,7 @@ def delete_all_for_doc(document_id, xapian_db):
     return nmset
 
 def thinned_docid(document_id):
-    mgass = re.match("A-(\d+)-PV-(\d+)$", document_id)
+    mgass = re.match("A-(\d+)-PV\.(\d+)$", document_id)
     if mgass:
         return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2)))
     msecc = re.match("S-PV-(\d+)(?:-Resu\.(\d+))?$", document_id)
@@ -133,18 +133,19 @@ def thinned_docid(document_id):
 
 
 #mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
-def MakeBaseXapianDoc(mdiv, tdocument_id, document_date):
+def MakeBaseXapianDoc(mdiv, document_id, document_date):
     div_class = mdiv.group(1)
     div_id = mdiv.group(2)
     div_agendanum = mdiv.group(3)
     div_agendasess = mdiv.group(4)
     div_text = mdiv.group(5)
 
+    tdocument_id = thinned_docid(document_id)
+
     terms = [ ]
-    terms.append("D%s" % tdocument_id)
+    terms.append("D%s" % document_id)
     terms.append("E%s" % document_date)
     terms.append("C%s" % div_class)
-    doc_id = doc_id.replace("/", "-")
 
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
@@ -168,14 +169,14 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date):
 
     # in the future we may break everything down to the paragraph level, and have 3 levels of heading backpointers
     textspl = [ ] # all the text broken into words
-    for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_content):
-        assert mpara.group(2) == mblockid.group(1) and mpara.group(3) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
-        terms.append("J%s" % mpara.group(1))
-        textspl.extend(re.findall("\w+", mpara.group(5)))
+    for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_text):
+        assert mpara.group(3) == mblockid.group(1) and mpara.group(4) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
+        terms.append("J%s" % mpara.group(2))
+        textspl.extend(re.findall("\w+", mpara.group(6)))
 
     # date, docid, page, blockno
-    value0 = "%s0%s%04%03" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
-    assert len(value0) == 26 # nice and tidy; we're generating a value that gives a total global sort
+    value0 = "%s%sp%04d%03d" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
+    assert len(value0) == 26, len(value0) # nice and tidy; we're generating a value that gives a total global sort
 
     if options.verbose > 1:
         print "value0", value0, "words:", len(textspl), " terms:", terms
@@ -201,7 +202,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
     mdocid = re.match("(html/)([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
     assert mdocid, "unable to match:%s" % input_file_rel
     document_id = mdocid.group(2)
-
+    
     pfnameunindexed = os.path.join(input_dir, input_file_rel)
     fin = open(pfnameunindexed)
     doccontent = fin.read()
@@ -216,10 +217,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
     while delete_all_for_doc(document_id, xapian_db):
         pass   # keep calling delete until all clear
-    sys.exit(1)
-
-    tdocument_id = thinned_docid(document_id)
-
+    
     # Loop through each speech, and batch up the headings so they can be updated with the correct info
     xapian_doc_heading = None
     sdiv_headingdata = None
@@ -227,14 +225,13 @@ def process_file(input_dir, input_file_rel, xapian_db):
     sdiv_subheadingdata = None
     lastend = 0
 
-    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
         div_class = mdiv.group(1)
-        div_data = (document_id, mdiv.start(), mdiv.end() - mdiv.start())
-        assert div_class in ["heading", "assembly-chairs", "council-agenda", "council-attendees", "subheading", "spoken", "italicline", "recvote"]
+        div_data = (document_id, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
 
-        xapian_doc = MakeBaseXapianDoc(mdiv, tdocument_id, document_date)
+        xapian_doc = MakeBaseXapianDoc(mdiv, document_id, document_date)
 
         if div_class == "heading":
             assert not xapian_doc_heading, "Only one heading per document"
@@ -243,25 +240,30 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
         elif div_class == "subheading":
             if xapian_doc_subheading:
-                xapian_doc_subheading.set_data("%s|%d|%d|%s|%d", (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[0], lastend - sdiv_headingdata[1]))
+                dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
+                xapian_doc_subheading.set_data(dsubheadingdata)
                 xapian_db.add_document(xapian_doc_subheading)
             xapian_doc_subheading = xapian_doc
-            sdiv_headingdata = div_data
+            sdiv_subheadingdata = div_data
 
         else:
-            assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "recvote"]
+            assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "italicline-tookchair", "italicline-spokein", "recvote"], "unknown divclass:%s" % div_class
             assert sdiv_subheadingdata or sdiv_headingdata
-            xapian_doc.set_data("%s|%d|%d|%s|", (div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[0]))
+            ddata = "%s|%d|%d|%s|" % (div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[3])
+            xapian_doc.set_data(ddata)
             xapian_db.add_document(xapian_doc)
 
         lastend = mdiv.end()
 
     # now add the trailing subheading and heading
+    assert sdiv_headingdata
     if xapian_doc_subheading:
-        xapian_doc_subheading.set_data("%s|%d|%d|%s|%d", (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[0], lastend - sdiv_headingdata[1]))
+        dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
+        xapian_doc_subheading.set_data(dsubheadingdata)
         xapian_db.add_document(xapian_doc_subheading)
     if xapian_doc_heading:
-        xapian_doc_heading.set_data("%s|%d|%d||%d", (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], lastend - sdiv_headingdata[1]))
+        dheadingdata = "%s|%d|%d||%d" % (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], lastend - sdiv_headingdata[1])
+        xapian_doc_heading.set_data(dheadingdata)
         xapian_db.add_document(xapian_doc_heading)
 
 
@@ -269,10 +271,11 @@ def process_file(input_dir, input_file_rel, xapian_db):
     xapian_db.flush()
 
     if mdocid.group(3): # unindexed
-        fnameindexed = "%s%s%s" % (mdocid.group(1), mdocid.group(2), mdocid.group(3))
+        fnameindexed = "%s%s%s" % (mdocid.group(1), mdocid.group(2), mdocid.group(4))
         pfnameindexed = os.path.join(input_dir, fnameindexed)
         if os.path.exists(pfnameindexed):
             os.unlink(pfnameindexed)
+        print pfnameunindexed, pfnameindexed
         os.rename(pfnameunindexed, pfnameindexed)
 
 
@@ -294,7 +297,8 @@ xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
 if options.verbose > 1:
     print "files/directories to process are", args
 
-rels = []
+relsm = {}
+relsum = {}
 if True:
     input_rel = "html"
     inputd = os.path.join(undata_dir, input_rel)
@@ -306,10 +310,20 @@ if True:
         for d in filelist:
             if not options.stem or re.match(options.stem, d):
                 p = os.path.join(input_rel, d)
-                if re.search(".unindexed.html$", d) or (options.firsttime and re.search(".html$", d)):
-                    rels.append(p)
+                mux = re.match("(.*?)(\.unindexed)?\.html$", d)
+                assert mux, "unmatched file:%s" % d
+                if mux.group(2):
+                    relsum[mux.group(1)] = p  # with the html/
+                elif options.force:
+                    relsm[mux.group(1)] = p
     else:
         raise Exception, "Directory/file %s doesn't exist" % input
+
+for r in relsum:
+    relsm.pop(r, 1)
+rels = relsum.values()
+rels.extend(relsm.values())
+rels.sort()
 
 # having gone through the list, now load each
 if options.limit and len(rels) > options.limit:
