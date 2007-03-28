@@ -125,14 +125,14 @@ def delete_all_for_doc(document_id, xapian_db):
 def thinned_docid(document_id):
     mgass = re.match("A-(\d+)-PV\.(\d+)$", document_id)
     if mgass:
-        return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2)))
+        return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2))), mgass.group(1)
     msecc = re.match("S-PV-(\d+)(?:-Resu\.(\d+))?$", document_id)
     if msecc:
-        return "SPV%05d%02d" % (int(msecc.group(1)), (msecc.group(2) and int(msecc.group(2)) or 0))
+        return "SPV%05d%02d" % (int(msecc.group(1)), (msecc.group(2) and int(msecc.group(2)) or 0)), None
     assert False, "Cannot parse docid: %s" % document_id
 
 
-#mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+#mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
 def MakeBaseXapianDoc(mdiv, document_id, document_date):
     div_class = mdiv.group(1)
     div_id = mdiv.group(2)
@@ -140,13 +140,17 @@ def MakeBaseXapianDoc(mdiv, document_id, document_date):
     div_agendasess = mdiv.group(4)
     div_text = mdiv.group(5)
 
-    tdocument_id = thinned_docid(document_id)
+    tdocument_id, gasssess = thinned_docid(document_id)
 
     terms = [ ]
     terms.append("D%s" % document_id)
     terms.append("E%s" % document_date)
+    terms.append("Y%s" % document_date[:4])
+    terms.append("M%s" % document_date[:7])
     terms.append("C%s" % div_class)
-
+    if gasssess:
+        terms.append("Z%s" % gasssess)
+        
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
     terms.append("I%s" % mblockid.group(0))
@@ -165,7 +169,7 @@ def MakeBaseXapianDoc(mdiv, document_id, document_date):
 
     if div_agendanum:
         for agnum in re.split("(\d+)", div_agendanum): # sometimes it's a comma separated list
-            terms.append("A%03-s%03d" % (int(div_agendanum), int(div_agendasess)))
+            terms.append("A%ss%s" % (div_agendanum, div_agendasess))
 
     # in the future we may break everything down to the paragraph level, and have 3 levels of heading backpointers
     textspl = [ ] # all the text broken into words
@@ -209,7 +213,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
     fin.close()
 
     mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', doccontent)
-    assert mdocument_date, "not found date in file %s" % input_file
+    assert mdocument_date, "not found date in file %s" % input_file_rel
     document_date = mdocument_date.group(1)
 
     if options.verbose:
@@ -225,7 +229,7 @@ def process_file(input_dir, input_file_rel, xapian_db):
     sdiv_subheadingdata = None
     lastend = 0
 
-    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"])")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
         div_class = mdiv.group(1)
@@ -308,6 +312,9 @@ if True:
         filelist = os.listdir(inputd)
         filelist.sort(reverse = True)
         for d in filelist:
+            if re.search("(?:\.css|\.svn)$", d):
+                continue
+
             if not options.stem or re.match(options.stem, d):
                 p = os.path.join(input_rel, d)
                 mux = re.match("(.*?)(\.unindexed)?\.html$", d)

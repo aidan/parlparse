@@ -43,12 +43,16 @@ xapian_query.add_boolean_prefix("language", "L")
 xapian_query.add_boolean_prefix("document", "D")
 xapian_query.add_boolean_prefix("reference", "R")
 xapian_query.add_boolean_prefix("date", "E")
-xapian_query.add_boolean_prefix("heading", "H")
+xapian_query.add_boolean_prefix("agenda", "A")
+xapian_query.add_boolean_prefix("year", "Y")
+xapian_query.add_boolean_prefix("month", "M")
+xapian_query.add_boolean_prefix("session", "Z")
+
 parsed_query = xapian_query.parse_query(query, 16+4+2+1) # allows wildcards
 print "desc:", parsed_query.get_description()
 
 xapian_enquire.set_query(parsed_query)
-xapian_enquire.set_docid_order(xapian.Enquire.ASCENDING)
+xapian_enquire.set_sort_by_value(0, xapian.Enquire.ASCENDING)
 xapian_enquire.set_weighting_scheme(xapian.BoolWeight())
 
 # do sorting etc. here
