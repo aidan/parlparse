@@ -9,32 +9,65 @@ function shistogram_menu($may_cache) {
       'access' => user_access('access content'),
       'callback' => 'shistogram_page'
      );
-  }   
+  }
   return $items;
 }
 
 function shistogram_page() {
 
-  //$query = xapian_get_mset(arg(1));
+  // collect all the hits on this
+  $query = xapian_get_mset(arg(1));
+  $Csecco = $array();
+  $Ctotal = $array();
+  $mseti = $matches->begin();
+  while (! $mseti->equals($matches->end())) {
+    $doc = $mseti->get_document();
+    //$doc_data = $doc->get_data();
+    $doc_value = $doc->get_value(0);
+    $doc_year = int(substr($doc_value, 0, 4));
+    $doc_body = substr($doc_value, 8, 11);
+    if ($doc_body == "SPV")
+      $Csecco[$doc_year] += 1;
+    $Ctotal[$doc_year] += 1;
+    $mseti->next();
+  }
 
-  $width = 500;
+  $maxhits = 10;
+  $minyear = 1994;  // min(array_keys($Ctotal));
+  $maxyear = 2007;
+  foreach ($Ctotal as $year => $yhits)
+    $maxhits = max($maxhits, $yhits);
+  $maxhits += 10;
+
+  $cwidth = 30; // pixels wide for each bar
+  $width = ($maxyear - $minyear + 2) * $cwidth;
   $height = 300;
 
-	$im = imagecreate($width, $height);
-	$white = imagecolorallocate($im, 250, 213, 204);
-	$jjred = imagecolorallocate($im, 200, 90, 190);
+  $im = imagecreate($width, $height);
+  $white = imagecolorallocate($im, 250, 213, 204);
 
+  for ($year = $minyear; $year <= $maxyear; $year += 1) {
+    $xlo = ($year - $minyear) * $cwidth + $cwidth / 2 + 1;
+    $xhi = ($year - $minyear + 1) * $cwidth + $cwidth / 2 - 1;
+    $atop = $Ctotal[$year] * ($height - 3) / $maxhits;
+    $stop = $Csecco[$year] * ($height - 3) / $maxhits;
+    $icol = imagecolorallocate($im, 0, 90, 200);
+    ImageFilledRectangle($im, $xlo, $height - 1, $xhi, $height - $atop, $icol);
+    if ($stop != 0) {
+      $icol = imagecolorallocate($im, 140, 90, 20);
+      ImageFilledRectangle($im, $xlo + 2, $height - 1, $xhi - 2, $height - $stop, $icol);
+    }
+  }
 
-	$icol = imagecolorallocate($im, 200, 0, 0);
-	ImageFilledRectangle($im, 50, 30, 90, 90, $icol);
-    
-    $icol = imagecolorallocate($im, 50, 200, 200); 
-    imagestring($im, 3, 50, 50, "hi there:".arg(1), $icol); 
+  // write a message to help us
+  $icol = imagecolorallocate($im, 50, 200, 20);
+  imagestring($im, 3, 10, 5, arg(1), $icol);
+
 
   header('Content-type: image/png');
 
   print	imagepng($im);
-	imagedestroy($im);
+  imagedestroy($im);
 
 }
 
