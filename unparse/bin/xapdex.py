@@ -133,24 +133,16 @@ def thinned_docid(document_id):
 
 
 #mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
-def MakeBaseXapianDoc(mdiv, document_id, document_date):
+def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationterms):
     div_class = mdiv.group(1)
     div_id = mdiv.group(2)
     div_agendanum = mdiv.group(3)
     div_agendasess = mdiv.group(4)
     div_text = mdiv.group(5)
 
-    tdocument_id, gasssess = thinned_docid(document_id)
-
     terms = [ ]
-    terms.append("D%s" % document_id)
-    terms.append("E%s" % document_date)
-    terms.append("Y%s" % document_date[:4])
-    terms.append("M%s" % document_date[:7])
-    terms.append("C%s" % div_class)
-    if gasssess:
-        terms.append("Z%s" % gasssess)
-        
+    docterms.append("C%s" % div_class)
+
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
     terms.append("I%s" % mblockid.group(0))
@@ -158,14 +150,17 @@ def MakeBaseXapianDoc(mdiv, document_id, document_date):
     for ref_doc in re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_text):
         terms.append("R%s" % ref_doc)
 
-    if div_class == 'spoken':
+    if div_class in ['spoken', 'council-attendees']:
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
             if spclass[0] == "name":
                 terms.append("S%s" % re.sub("[\.\s]", "", spclass[1]).lower())
             if spclass[0] == "language":
                 terms.append("L%s" % re.sub("[\.\s]", "", spclass[1]).lower())
             if spclass[0] == "nation":
-                terms.append("N%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                nationterm = "N%s" % re.sub("[\.\s]", "", spclass[1]).lower()
+                terms.append(nationterm)
+                if div_class == 'spoken':
+                    nationterms.append(nationterm)
 
     if div_agendanum:
         for agnum in re.split("(\d+)", div_agendanum): # sometimes it's a comma separated list
@@ -176,7 +171,18 @@ def MakeBaseXapianDoc(mdiv, document_id, document_date):
     for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_text):
         assert mpara.group(3) == mblockid.group(1) and mpara.group(4) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
         terms.append("J%s" % mpara.group(2))
-        textspl.extend(re.findall("\w+", mpara.group(6)))
+        paraclass = mpara.group(1)
+        if not paraclass or paraclass in ['boldline-p', 'boldline-indent']:
+            textspl.extend(re.findall("\w+", mpara.group(6)))
+
+        elif paraclass == 'votelist':
+            for mvote in re.finditer('<span class="([^"\-]*)([^"])*">([^<]*)</span>', mpara.group(6)):
+                vnation = re.sub("[\.\s]", "", mvote.group(3)).lower()
+                vvote = mvote.group(2) or mvote.group(1)
+                terms.append("V%s-%s" % (vnation, vvote))  # could also add vetos?
+
+        else:
+            assert paraclass in ['boldline-agenda', 'motiontext', 'votecount'], "Unrecognized paraclass:%s" % paraclass
 
     # date, docid, page, blockno
     value0 = "%s%sp%04d%03d" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
@@ -201,12 +207,13 @@ def MakeBaseXapianDoc(mdiv, document_id, document_date):
     return xapian_doc  # still need to set the data
 
 
+
 # Reindex one file
 def process_file(input_dir, input_file_rel, xapian_db):
     mdocid = re.match("(html/)([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
     assert mdocid, "unable to match:%s" % input_file_rel
     document_id = mdocid.group(2)
-    
+
     pfnameunindexed = os.path.join(input_dir, input_file_rel)
     fin = open(pfnameunindexed)
     doccontent = fin.read()
@@ -221,13 +228,27 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
     while delete_all_for_doc(document_id, xapian_db):
         pass   # keep calling delete until all clear
-    
+
     # Loop through each speech, and batch up the headings so they can be updated with the correct info
     xapian_doc_heading = None
     sdiv_headingdata = None
     xapian_doc_subheading = None
     sdiv_subheadingdata = None
+    nationtermsubheading = set()  # list of nations who spoke in the block
+    nationtermheading = set()  # list of nations who spoke in the block
     lastend = 0
+
+    tdocument_id, gasssess = thinned_docid(document_id)
+    docterms = [ ]
+    docterms.append("D%s" % document_id)
+    docterms.append("E%s" % document_date)
+    docterms.append("E%s" % document_date[:4])
+    docterms.append("E%s" % document_date[:7])
+    if gasssess:
+        docterms.append("Zga")
+        docterms.append("Zga%s" % gasssess)
+    else:
+        docterms.append("Zsc")
 
     mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
     for mdiv in mdivs:
@@ -235,20 +256,41 @@ def process_file(input_dir, input_file_rel, xapian_db):
         div_class = mdiv.group(1)
         div_data = (document_id, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
 
-        xapian_doc = MakeBaseXapianDoc(mdiv, document_id, document_date)
+        xapian_doc = MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationtermsubheading)
+        for dterm in docterms:
+            xapian_doc.add_term(dterm)
 
         if div_class == "heading":
             assert not xapian_doc_heading, "Only one heading per document"
             xapian_doc_heading = xapian_doc
             sdiv_headingdata = div_data
 
-        elif div_class == "subheading":
+        elif div_class in ["subheading", "end-document"]:
+            assert xapian_doc_heading
             if xapian_doc_subheading:
+                for nterm in nationtermsubheading:
+                    xapian_doc_subheading.add_term(nterm)
                 dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
                 xapian_doc_subheading.set_data(dsubheadingdata)
                 xapian_db.add_document(xapian_doc_subheading)
-            xapian_doc_subheading = xapian_doc
-            sdiv_subheadingdata = div_data
+
+            nationtermheading.update(nationtermsubheading)
+            if div_class == "subheading":
+                nationtermsubheading.clear()
+                xapian_doc_subheading = xapian_doc
+                sdiv_subheadingdata = div_data
+            else:
+                nationtermsubheading = None
+                xapian_doc_subheading = None
+                sdiv_subheadingdata = None
+
+            if div_class == "end-document":
+                for nterm in nationtermheading:
+                    xapian_doc_heading.add_term(nterm)
+                dheadingdata = "%s|%d|%d|%s|%d" % (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], "", lastend - sdiv_headingdata[1])
+                xapian_doc_heading.set_data(dheadingdata)
+                xapian_db.add_document(xapian_doc_heading)
+                xapian_doc_heading = None
 
         else:
             assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "italicline-tookchair", "italicline-spokein", "recvote"], "unknown divclass:%s" % div_class
@@ -259,17 +301,8 @@ def process_file(input_dir, input_file_rel, xapian_db):
 
         lastend = mdiv.end()
 
-    # now add the trailing subheading and heading
-    assert sdiv_headingdata
-    if xapian_doc_subheading:
-        dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
-        xapian_doc_subheading.set_data(dsubheadingdata)
-        xapian_db.add_document(xapian_doc_subheading)
-    if xapian_doc_heading:
-        dheadingdata = "%s|%d|%d||%d" % (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], lastend - sdiv_headingdata[1])
-        xapian_doc_heading.set_data(dheadingdata)
-        xapian_db.add_document(xapian_doc_heading)
-
+    # the end-document tag helps us close these headings off
+    assert not xapian_doc_subheading and not xapian_doc_heading
 
     # Note that the document has been indexed
     xapian_db.flush()
