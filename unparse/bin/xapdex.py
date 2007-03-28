@@ -141,7 +141,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationterms):
     div_text = mdiv.group(5)
 
     terms = [ ]
-    docterms.append("C%s" % div_class)
+    terms.append("C%s" % div_class)
 
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
