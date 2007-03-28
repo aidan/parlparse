@@ -1,0 +1,43 @@
+<?php
+
+function shistogram_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'shistogram',
+      'title' => t('shistogram'),
+      'access' => user_access('access content'),
+      'callback' => 'shistogram_page'
+     );
+  }   
+  return $items;
+}
+
+function shistogram_page() {
+
+  //$query = xapian_get_mset(arg(1));
+
+  $width = 500;
+  $height = 300;
+
+	$im = imagecreate($width, $height);
+	$white = imagecolorallocate($im, 250, 213, 204);
+	$jjred = imagecolorallocate($im, 200, 90, 190);
+
+
+	$icol = imagecolorallocate($im, 200, 0, 0);
+	ImageFilledRectangle($im, 50, 30, 90, 90, $icol);
+    
+    $icol = imagecolorallocate($im, 50, 200, 200); 
+    imagestring($im, 3, 50, 50, "hi there:".arg(1), $icol); 
+
+  header('Content-type: image/png');
+
+  print	imagepng($im);
+	imagedestroy($im);
+
+}
+
+
+
+
