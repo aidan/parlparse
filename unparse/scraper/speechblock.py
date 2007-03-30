@@ -252,7 +252,7 @@ AgendaTypeMap = { "address(?i)"                 :"addr",
                   "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)" :"misc",
                   "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)" :"misc",
                   "(?:letter from the|statements? by the|oral presentations by)(?i)" :"report",
-                  "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|Dates of the.*? Dialogue)(?i)" :"misc",
+                  "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|international.*? day||Dates of the.*? Dialogue)(?i)" :"misc",
                   "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)" :"misc",
                   "(The situation in|action on the list|list of accredited civil society actors)(?i)" : "report",
                 }
@@ -262,7 +262,7 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
     if re.match("Agenda(?: items?)? \d+(?i)", ptext):
         blinepara = "boldline-agenda"
         acptext = re.sub("(?:<i>\s*\(|\(\s*<i>|\()\s*continued\s*(?:\)\s*</i>|</i>\s*\)|\))|<i>\s*</i>", " ", ptext).strip()
-        acptext = re.sub("\(\w\)", "", acptext)
+        acptext = re.sub("\(\w\)|;.*$", "", acptext)
         acptext = re.sub("agenda items?(?i)", " ", acptext)
         acptext = re.sub("and", ", ", acptext)
         if not re.match("[\d\s,]+$", acptext):
@@ -504,7 +504,7 @@ class SpeechBlock:
             print " times out of order, %s > %s" % (prevtime, res)
             return ""
 
-        if ihour - int(sprevhour) > 8:
+        if ihour - int(sprevhour) > 12:
             print " session too long, %s -> %s" % (prevtime, res)
             return ""
 
