@@ -7,11 +7,14 @@ import sys
 import re
 import os
 import os.path
-import xapian
+if sys.platform == "win32":
+    import fakexapian as xapian
+else:
+    import xapian
 import distutils.dir_util
 import traceback
 
-# TODO: 
+# TODO:
 # Get list of days with stuff in them
 # Decide what to do properly with spaces in names etc.
 # Index votes themselves (still needed?  This is now in a mysql database)
@@ -131,58 +134,151 @@ def thinned_docid(document_id):
         return "SPV%05d%02d" % (int(msecc.group(1)), (msecc.group(2) and int(msecc.group(2)) or 0)), None
     assert False, "Cannot parse docid: %s" % document_id
 
+def CharToFlat(st):
+    if re.match("[a-z0-9]+$", st):
+        return st
+    st = st.lower()
+    st = st.replace(" ", "")
+    if re.match("[a-z0-9]+$", st):
+        return st
 
-#mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
-def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationterms):
+    st = st.replace("à", "a")
+    st = st.replace("á", "a")
+    st = st.replace("â", "a")
+    st = st.replace("ã", "a")
+    st = st.replace("ä", "a")
+    st = st.replace("ç", "c")
+    st = st.replace("é", "e")
+    st = st.replace("ë", "e")
+    st = st.replace("ê", "e")
+    st = st.replace("ï", "i")
+    st = st.replace("í", "i")
+    st = st.replace("ô", "o")
+    st = st.replace("ö", "o")
+    st = st.replace("ó", "o")
+    st = st.replace("ø", "o")
+    st = st.replace("ú", "u")
+    st = st.replace("ü", "u")
+    st = st.replace("ñ", "n")
+
+    st = st.replace("ä", "a")
+
+    assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
+    return st
+
+
+wsplit = """(?x)(\s+|
+            <a[^>]*>[^<]*</a>|
+            \$\d+|\d+\.\d+|
+            &\w{1,5};|
+            [:;.,?!%\"()\[\]+]+|
+            '|
+            (?<=[a-zA-Z])/(?=[a-zA-Z])|
+            <i>\([A-Z0-9p\.,/\s\(\)]*?\)</i>|
+            <i>[\d/\.,par\s]*</i>|
+            </?[ib]>|
+            20/20
+            )"""
+#mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
     div_class = mdiv.group(1)
     div_id = mdiv.group(2)
     div_agendanum = mdiv.group(3)
-    div_agendasess = mdiv.group(4)
-    div_text = mdiv.group(5)
+    div_text = mdiv.group(4)
 
-    terms = [ ]
-    terms.append("C%s" % div_class)
+    terms = set()
+    terms.add("C%s" % div_class)
 
     mblockid = re.match("pg(\d+)-bk(\d+)$", div_id)
     assert mblockid, "unable to decode blockid:%s" % div_id
-    terms.append("I%s" % mblockid.group(0))
+    terms.add("I%s" % mblockid.group(0))
 
-    for ref_doc in re.findall('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"', div_text):
-        terms.append("R%s" % ref_doc)
-
-    if div_class in ['spoken', 'council-attendees']:
+    if div_class in ['spoken', 'council-attendees', 'assembly-chairs']:
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
+
             if spclass[0] == "name":
-                terms.append("S%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|\"|[A-Z]\.", "", spclass[1]).lower()
+                #print "SSS", speaker, spclass
+                speakerspl = speaker.split()
+                for i in range(max(0, len(speakerspl) - 3), len(speakerspl)):
+                    terms.add("S%s" % CharToFlat("".join(speakerspl[i:])))
+
             if spclass[0] == "language":
-                terms.append("L%s" % re.sub("[\.\s]", "", spclass[1]).lower())
+                terms.add("L%s" % CharToFlat(spclass[1]))
+
             if spclass[0] == "nation":
-                nationterm = "N%s" % re.sub("[\.\s]", "", spclass[1]).lower()
-                terms.append(nationterm)
-                if div_class == 'spoken':
-                    nationterms.append(nationterm)
+                nationterm = "N%s" % CharToFlat(re.sub("['\-]", "", spclass[1]))
+                terms.add(nationterm)
+                if div_class == 'spoken':  # leave out just attending cases; that's listed in the terms of the attendee blocks type
+                    headingterms.add(nationterm)
 
     if div_agendanum:
-        for agnum in re.split("(\d+)", div_agendanum): # sometimes it's a comma separated list
-            terms.append("A%ss%s" % (div_agendanum, div_agendasess))
+        mgag = re.match("(addr|natdisag)-\d+$", div_agendanum)
+        if mgag:
+            terms.add("A%s" % mgag.group(1))
+        for agnum in div_agendanum.split(","):  # a comma separated list
+            terms.add("A%s" % agnum)
 
     # in the future we may break everything down to the paragraph level, and have 3 levels of heading backpointers
     textspl = [ ] # all the text broken into words
-    for mpara in re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_text):
+    rmaraiter = re.finditer('<(?:p|blockquote)(?: class="([^"]*)")? id="(pg(\d+)-bk(\d+)-pa(\d+))">(.*?)</(?:p|blockquote)>', div_text)
+
+    if div_class in ['council-attendees', 'assembly-chairs']:
+        rmaraiter = [ ]  # suppress this case (which just contains spans of seats, already loaded)
+
+    if div_class == 'italicline-spokein':
+        mitspokin =	re.match('\s*<p[^>]*><i>spoke in (\w+)</i></p>', div_text)
+        assert mitspokin, "Unmatched spokin: %s" % div_text
+        terms.add("L%s" % re.sub("[^\w]", "", mitspokin.group(1)).lower())
+
+    for mpara in rmaraiter:
         assert mpara.group(3) == mblockid.group(1) and mpara.group(4) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
-        terms.append("J%s" % mpara.group(2))
+        terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
         paraclass = mpara.group(1)
-        if not paraclass or paraclass in ['boldline-p', 'boldline-indent']:
-            textspl.extend(re.findall("\w+", mpara.group(6)))
+        paratext = mpara.group(6).strip()
+
+        if not paraclass or paraclass in ['boldline-p', 'boldline-indent', 'boldline-agenda', 'motiontext']:
+            if paraclass == 'boldline-agenda':
+                paratext = re.sub("[^;]*;?", paratext) # throw out all, or all up to ';'
+
+            #print paraclass, paratext
+            for wtxt in re.split(wsplit, paratext):
+                if re.match("\s*$|</?[ib]>$|'$", wtxt):
+                    continue
+                if re.match("&\w{1,5};|[:;.,?!%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                    textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
+                    continue
+                if re.match("20/20$", wtxt):
+                    textspl.append("20-20")
+                    continue
+                maref = re.match('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"[^>]*>[^<]*</a>$', wtxt)
+                if maref:
+                    refdoc = "R%s" % maref.group(1)
+                    terms.add(refdoc)
+                    headingterms.add(refdoc)
+                    continue
+                assert not re.search("[<>]", wtxt), "spurious <> tags in splitpara:%s" % wtxt
+                wtxt = re.sub("['\-\$\.]", "", wtxt).lower()
+
+                #if re.search("/", wtxt):
+                #    print re.split(wsplit, paratext)
+                #    print wtxt, re.split(wsplit, wtxt), re.split("((?<=[a-z])/(?=[a-z]))", wtxt)
+
+                if wtxt and not re.match("[a-z][a-z]?$|the$", wtxt):
+                    textspl.append(CharToFlat(wtxt))
+                else:
+                    textspl.append("")
 
         elif paraclass == 'votelist':
             for mvote in re.finditer('<span class="([^"\-]*)([^"])*">([^<]*)</span>', mpara.group(6)):
-                vnation = re.sub("[\.\s]", "", mvote.group(3)).lower()
-                vvote = mvote.group(2) or mvote.group(1)
-                terms.append("V%s-%s" % (vnation, vvote))  # could also add vetos?
+                vnation = CharToFlat(mvote.group(3))
+                vvote = mvote.group(2) or mvote.group(1)   # take the latter vote position if there's two
+                terms.add("V%s-%s" % (vnation, vvote))
 
         else:
-            assert paraclass in ['boldline-agenda', 'motiontext', 'votecount'], "Unrecognized paraclass:%s" % paraclass
+            assert paraclass == 'votecount', "Unrecognized paraclass:%s" % paraclass
+
+        textspl.extend(["", "", "", "", ""])  # gap of five slots at the end of a paragraph
 
     # date, docid, page, blockno
     value0 = "%s%sp%04d%03d" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
@@ -198,20 +294,20 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationterms):
     for term in terms:
         xapian_doc.add_term(term)
 
+    # add the ordered data
     nspl = 0
     for tspl in textspl:
-        if not re.match("\d\d?$", tspl):
+        if tspl:
             xapian_doc.add_posting(tspl.lower(), nspl)
         nspl += 1
 
     return xapian_doc  # still need to set the data
 
 
-
 # Reindex one file
 def process_file(input_dir, input_file_rel, xapian_db):
-    mdocid = re.match("(html/)([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
-    assert mdocid, "unable to match:%s" % input_file_rel
+    mdocid = re.match(r"(html[\\/])([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
+    assert mdocid, "unable to match: %s" % input_file_rel
     document_id = mdocid.group(2)
 
     pfnameunindexed = os.path.join(input_dir, input_file_rel)
@@ -234,29 +330,31 @@ def process_file(input_dir, input_file_rel, xapian_db):
     sdiv_headingdata = None
     xapian_doc_subheading = None
     sdiv_subheadingdata = None
-    nationtermsubheading = set()  # list of nations who spoke in the block
-    nationtermheading = set()  # list of nations who spoke in the block
+
+    headingtermsubheading = set()
+    headingtermheading = set()
+
     lastend = 0
 
     tdocument_id, gasssess = thinned_docid(document_id)
-    docterms = [ ]
-    docterms.append("D%s" % document_id)
-    docterms.append("E%s" % document_date)
-    docterms.append("E%s" % document_date[:4])
-    docterms.append("E%s" % document_date[:7])
+    docterms = set()
+    docterms.add("D%s" % document_id)
+    docterms.add("E%s" % document_date[:4])  # year
+    docterms.add("E%s" % document_date[:7])  # year+month
+    docterms.add("E%s" % document_date)      # full date
     if gasssess:
-        docterms.append("Zga")
-        docterms.append("Zga%s" % gasssess)
+        docterms.add("Zga")
+        docterms.add("Zga%s" % gasssess)
     else:
-        docterms.append("Zsc")
+        docterms.add("Zsc")
 
-    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)" agendasess="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
+    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
         div_class = mdiv.group(1)
         div_data = (document_id, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
 
-        xapian_doc = MakeBaseXapianDoc(mdiv, tdocument_id, document_date, nationtermsubheading)
+        xapian_doc = MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingtermsubheading)
         for dterm in docterms:
             xapian_doc.add_term(dterm)
 
@@ -268,25 +366,25 @@ def process_file(input_dir, input_file_rel, xapian_db):
         elif div_class in ["subheading", "end-document"]:
             assert xapian_doc_heading
             if xapian_doc_subheading:
-                for nterm in nationtermsubheading:
-                    xapian_doc_subheading.add_term(nterm)
+                for hterm in headingtermsubheading:
+                    xapian_doc_subheading.add_term(hterm)
                 dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
                 xapian_doc_subheading.set_data(dsubheadingdata)
                 xapian_db.add_document(xapian_doc_subheading)
 
-            nationtermheading.update(nationtermsubheading)
+            headingtermheading.update(headingtermsubheading)
             if div_class == "subheading":
-                nationtermsubheading.clear()
+                headingtermsubheading.clear()
                 xapian_doc_subheading = xapian_doc
                 sdiv_subheadingdata = div_data
             else:
-                nationtermsubheading = None
+                headingtermsubheading = None
                 xapian_doc_subheading = None
                 sdiv_subheadingdata = None
 
             if div_class == "end-document":
-                for nterm in nationtermheading:
-                    xapian_doc_heading.add_term(nterm)
+                for hterm in headingtermheading:
+                    xapian_doc_heading.add_term(hterm)
                 dheadingdata = "%s|%d|%d|%s|%d" % (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], "", lastend - sdiv_headingdata[1])
                 xapian_doc_heading.set_data(dheadingdata)
                 xapian_db.add_document(xapian_doc_heading)
@@ -348,6 +446,8 @@ if True:
             if re.search("(?:\.css|\.svn)$", d):
                 continue
 
+            if re.match(options.stem, d):
+                print options.stem, d
             if not options.stem or re.match(options.stem, d):
                 p = os.path.join(input_rel, d)
                 mux = re.match("(.*?)(\.unindexed)?\.html$", d)
