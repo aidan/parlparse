@@ -102,6 +102,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
         ptext = "<b>%s %s</b> %s" % (mfixchinaspek.group(1), mfixchinaspek.group(2), ptext[mfixchinaspek.end(2):])
         #print ptext
 
+    if re.search("\s\S\s\S\s\S\s", ptext):
+        print ptext
+        raise unexception("probable gaps in text", paranum)
+
     mspek = re.match(respekp1, ptext)
     if not mspek:
         mspek = re.match(respekp2, ptext)
@@ -147,9 +151,16 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        assert mspek.group(1)
+        speakr = mspek.group(1).strip()
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheik |President ", speakr):
+            print speakr
+            raise unexception("improper title on speaker", paranum)
+        if re.search("[\.,:;]$", speakr):
+            print speakr
+            raise unexception("improper tail on speaker", paranum)
+
         typ = "spoken"
-        currentspeaker = (mspek.group(1), nation, (mspek.group(5) or ""), bIsNotnation) # name, nation, language
+        currentspeaker = (speakr, nation, (mspek.group(5) or ""), bIsNotnation) # name, nation, language
         ptext = ptext[mspek.end(0):]
         if re.search("</b>", ptext):
             print ptext
@@ -306,6 +317,9 @@ def CleanupTags(ptext, typ, paranum):
         ptext = re.sub("</?b>", "", ptext).strip()
     if re.search("<b>", ptext):
         ptext = re.sub("<b>([.,]\s*)</b>", "\\1", ptext)
+
+    # slipt in a cleaning substitution here (can't find a better place for now)
+    ptext = re.sub("[`´]", "'", ptext)
 
     # could have a special paragraph type for this
     mspokein = re.match("\((spoke in \w+(.*?delegation|President's Office)?)\)$", ptext)

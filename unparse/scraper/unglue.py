@@ -257,7 +257,7 @@ class TextPage:
         #<text top="334" left="185" width="584" height="17" font="2">Mr.  Kavan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (Czech Republic)</text>
         while True:
             #print "------" + txlines[ih].ltext
-            mchair = re.search("([^>]*?)\s*\. \. \. \. \.", txlines[ih].ltext)
+            mchair = re.search("([^>:]*?)\s*\. \. \. \. \.", txlines[ih].ltext)
             if mchair:
                 break
 
