@@ -171,9 +171,10 @@ def AppendCluster(res, tlc, sclusttype):
         else:
             if bonelineparacont:
                 if IsNotQuiet():
-                    print "checkthiscontinuation case"
-                    print indentp, indentn, bstylematches, bonelineparacont, res[-1].indents
-                    print " ----", tlc.txls[0].ltext
+                    pass
+                    #print "checkthiscontinuation case"
+                    #print indentp, indentn, bstylematches, bonelineparacont, res[-1].indents
+                    #print " ----", tlc.txls[0].ltext
                 if bstylematches:
                     if IsNotQuiet():
                         print "merging"
@@ -191,7 +192,7 @@ def AppendCluster(res, tlc, sclusttype):
     # two paragraphs may have been merged, try to separate them out
     elif len(tlc.indents) == 4 and tlc.indents[0][0] == tlc.indents[2][0] and tlc.indents[1][0] == tlc.indents[3][0]:
         if IsNotQuiet():
-            print tlc.indents
+            pass  #print tlc.indents
         assert tlc.indents[0][0] == tlc.indents[2][0]
         assert tlc.indents[1][0] == tlc.indents[3][0]
         si = tlc.indents[0][2] + tlc.indents[1][2]
@@ -202,8 +203,9 @@ def AppendCluster(res, tlc, sclusttype):
         del tlc.indents[:2]
         res.append(tlcf)
         if IsNotQuiet():
-            print "splitting two paragraphs", si
-            print " ", tlc.txls[0].ltext
+            pass
+            #print "# paragraphs", si
+            #print " ", tlc.txls[0].ltext
             #print tlcf.indents, tlc.indents
 
     elif len(tlc.indents) != 1:
@@ -229,6 +231,7 @@ class TextPage:
             if re.search("Friday", ltext):
                 print ltext, re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?", ltext)
             return
+
         #print txlines[ih].ltext
         iday = int(mdate.group(1))
         if mdate.group(2) not in months:
@@ -244,6 +247,9 @@ class TextPage:
             ihour += 12
         if self.date:
             raise unexception("date redefined", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
+        if not (1 <= ihour <= 23) or not (0 <= imin <= 59):
+            print ltext
+            raise unexception("bad time", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
 
     def ExtractDotLineChair(self, txlines, ih):
@@ -412,6 +418,7 @@ class TextPage:
             raise unexception("wrongnumber on council", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
 
         self.agenda = " ".join(self.agenda)
+
         return True
 
     def __init__(self, xpage, lundocname, lpageno, textcountnumber):
@@ -678,9 +685,14 @@ class GlueUnfile:
                     jparatext.append(" ")
                 jparatext.append(txl.ltext)
             tlc.paratext = "".join(jparatext)
+
+
             tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
+            tlc.paratext = re.sub("-</b> <b>", "-", tlc.paratext)
+            tlc.paratext = re.sub("Secretary- General", "Secretary-General", tlc.paratext)
             tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
             tlc.paratext = tlc.paratext.strip()
+
             tlc.paratext = re.sub("^<b>(The(?: Acting)? Co-Chairperson) \(([^\)]*)\)\s*(?:</b>\s*:|:\s*</b>)", "<b>\\1</b> (\\2):", tlc.paratext)
             tlc.lastindent = tlc.indents[-1][0]
 

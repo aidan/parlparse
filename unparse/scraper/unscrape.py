@@ -384,7 +384,7 @@ def ScrapeContentsPageFromStem(stem):
 
 
 # the other command that converts the files using the exe command
-def ConvertXML(stem, pdfdir, pdfxmldir):
+def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
     for sd in os.listdir(pdfdir):
         if stem and not re.match(stem, sd):
             continue
@@ -394,9 +394,12 @@ def ConvertXML(stem, pdfdir, pdfxmldir):
         pdfdest = os.path.join(pdfxmldir, sd)
         xmldest = os.path.splitext(pdfdest)[0] + ".xml"
         if os.path.isfile(xmldest):
-            if IsNotQuiet():
-                print "skipping", sd
-            continue
+            if not bForce:
+                if IsNotQuiet():
+                    print "skipping", sd
+                continue
+            os.unlink(xmldest)
+
         #shutil.copyfile(pdf, pdfdest)
         print " ppdftohtml -xml", sd
         res = os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")

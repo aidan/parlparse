@@ -37,7 +37,10 @@ parser.add_option("--quiet",
                   help="low volume messages")
 parser.add_option("--force-parse",
                   action="store_true", dest="forceparse", default=False,
-                  help="Don't skip any files when parsing")
+                  help="Don't skip files when parsing")
+parser.add_option("--force-cxml",
+                  action="store_true", dest="forcecxml", default=False,
+                  help="Don't skip files when converting xml")
 parser.add_option("--edit",
                   action="store_true", dest="editparse", default=False,
                   help="Edit the file before parsing")
@@ -73,12 +76,12 @@ if bScrape:
 
 if bConvertXML:
     if not stem:
-        ConvertXML("S-PV-5", pdfdir, pdfxmldir)
-        ConvertXML("A-61-PV", pdfdir, pdfxmldir)
+        ConvertXML("S-PV-5", pdfdir, pdfxmldir, False)
+        ConvertXML("A-61-PV", pdfdir, pdfxmldir, False)
     elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
-        ConvertXML(stem, pdfdir, pdfxmldir)
+        ConvertXML(stem, pdfdir, pdfxmldir, options.forcecxml)
     elif re.match("S-PV", stem):  # make sure it can't do too many at once
-        ConvertXML(stem, pdfdir, pdfxmldir)
+        ConvertXML(stem, pdfdir, pdfxmldir, options.forcecxml)
     else:
         print "Stem should be set, eg --stem=A-49-PV"
         print "  (Can't parse 48, so won't do)"

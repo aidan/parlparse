@@ -7,10 +7,12 @@ from unglue import GlueUnfile
 from speechblock import SpeechBlock
 from voteblock import VoteBlock, recvoterequest
 
+
 def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
     res = [ ]
     i = 0
     currentspeaker = None
+    curragendanum = ""
     while i < len(tlcall):
         tlc = tlcall[i]
         if re.match(recvoterequest, tlc.paratext):
@@ -19,6 +21,7 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
 
         # non-voting line to be processed
         else:
+
             speakerbeforetookchair = ""
             if (len(res) > 2) and (res[-1].typ in ["italicline-tookchair", "italicline-spokein"]) and (res[-2].typ == "spoken"):
                 speakerbeforetookchair = res[-2].speaker
@@ -29,7 +32,11 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
                         print "unrecognized spokein", res[-1].paragraphs
                     #print "converting spokein", speakerbeforetookchair[2], mspokein.group(1)
                     speakerbeforetookchair = (speakerbeforetookchair[0], speakerbeforetookchair[1], mspokein.group(1), speakerbeforetookchair[3])
-            lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair)
+
+            lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair, curragendanum)
+            if lblock.agendanum:
+                curragendanum = lblock.agendanum
+                
             i = lblock.i
 
         if res and res[-1].paranum.pageno == lblock.paranum.pageno:
@@ -37,6 +44,13 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
         else:
             lblock.paranum.blockno = 1
         res.append(lblock)
+
+    # find the rosetime
+    if res:
+        res[-1].rosetime = res[-1].ExtractRoseTime(sdate[10:].strip())
+        if not res[-1].rosetime:
+            res[-1].writeblock(sys.stdout)
+            raise unexception("can't find rosetime", res[-1].paranum)
 
     return res
 
@@ -82,11 +96,12 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
                     break   # happens when it's a bitmap type, or communique
                 print glueunfile.sdate#, chairs
                 gparas = GroupParas(glueunfile.tlcall, undocname, glueunfile.sdate, glueunfile.seccouncilmembers)
+
             except unexception, ux:
                 assert not gparas
                 if ux.description != "editparse":
                     print "\n\nError: %s on page %s textcounter %s" % (ux.description, ux.paranum.pageno, ux.paranum.textcountnumber)
-                print "\nHit RETURN to launch your editor on the psdxml (or type 's' to skip, or 't' to throw)"
+                print "\nHit RETURN to launch your editor on the pdfxml file (or type 's' to skip, or 't' to throw)"
                 rl = sys.stdin.readline()
                 if rl[0] == "s":
                     break
@@ -119,8 +134,13 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
         fout.write('</head>\n<body>\n')
 
         fout.write('\n<div class="heading" id="pg000-bk00">\n')
-        fout.write('\t<span class="code">%s</span> <span class="date">%s</span> <span class="time">%s</span>\n' % (undocname, glueunfile.sdate[:10], glueunfile.sdate[10:].strip()))
-        fout.write('</div>\n')
+
+        sdate, stime = glueunfile.sdate[:10], glueunfile.sdate[10:].strip()
+        fout.write('\t<span class="code">%s</span> <span class="date">%s</span> <span class="time">%s</span>' % (undocname, sdate, stime))
+        if gparas:
+            fout.write('<span class="rosetime">%s</span>' % gparas[-1].rosetime)
+
+        fout.write('\n</div>\n')
 
         if glueunfile.bSecurityCouncil:
             fout.write('\n<div class="council-agenda" id="pg000-bk01">\n')

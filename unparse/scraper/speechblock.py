@@ -91,7 +91,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             indents[0] = (indents[0][0], indents[0][1] + indents[1][1], indents[0][2] + indents[1][2])
             del indents[1]
             if IsNotQuiet():
-                print "ququququq", indents
+                pass
+                #print "ququququq", indents
         else:
             indentationerror = "un-left-justified paragraph"
 
@@ -243,6 +244,60 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
     return ptext, typ, currentspeaker
 
 
+AgendaTypeMap = { "address(?i)"                 :"addr",
+                  "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes)(?i)" :"natdis",
+                  "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy$)" :"natdis",
+                  "report(?i)" :"report",
+                  "working group(?i)" :"report",
+                  "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)" :"misc",
+                  "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation of.*? in the work|apportionment of the expenses)(?i)" :"misc",
+                  "(?:letter from the|statements? by the|oral presentations by)(?i)" :"report",
+                  "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|Dates of the.*? Dialogue)(?i)" :"misc",
+                  "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)" :"misc",
+                  "(The situation in|action on the list|list of accredited civil society actors)(?i)" : "report",
+                }
+
+
+def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
+    if re.match("Agenda(?: items?)? \d+(?i)", ptext):
+        blinepara = "boldline-agenda"
+        acptext = re.sub("(?:<i>\s*\(|\(\s*<i>|\()\s*continued\s*(?:\)\s*</i>|</i>\s*\)|\))|<i>\s*</i>", " ", ptext).strip()
+        acptext = re.sub("\(\w\)", "", acptext)
+        acptext = re.sub("agenda items?(?i)", " ", acptext)
+        acptext = re.sub("and", ", ", acptext)
+        if not re.match("[\d\s,]+$", acptext):
+            print ptext
+            raise unexception("malformed boldline agenda", paranum)
+        res = ",".join(["%s-%s" % (aa, genasssess)  for aa in re.findall("\d+", acptext)])
+        assert res
+        return res
+
+    mprovag = re.match("Item (\d+)(?: \(\w\))? of the provisional agenda", ptext)
+    if mprovag:
+        return "%sp-%s" % (mprovag.group(1), genasssess)
+
+    mreqreopen = re.match("Request for the reopening.*?agenda item (\d+)", ptext)
+    if mreqreopen:
+        return "%s-%s" % (mreqreopen.group(1), genasssess)
+
+    if re.match("\(\w\)", ptext):
+        assert re.match("\d+-\d+", prevagendanum), prevagendanum
+        assert prevagendanum.split("-")[1] == genasssess
+        print "\n\n\ncontinuingagendanum", prevagendanum, ptext
+        return prevagendanum
+
+
+    for reagt in AgendaTypeMap:
+        if re.search(reagt, ptext):
+            return "%s-%s" % (AgendaTypeMap[reagt], genasssess)
+
+    print "\n\n****  ", ptext
+    print genasssess
+    #assert not re.search("Agenda", ptext), ptext
+    return ""
+    #return "%s-%s" % ("unknown", genasssess)
+
+
 def CleanupTags(ptext, typ, paranum):
     assert typ in ["italicline", "italicline-tookchair", "italicline-spokein", "boldline", "spoken"]
     if typ == "boldline":
@@ -313,12 +368,15 @@ class SpeechBlock:
         return False
 
 
-    def __init__(self, tlcall, i, lundocname, lsdate, speakerbeforetookchair):
+    def __init__(self, tlcall, i, lundocname, lsdate, speakerbeforetookchair, prevagendanum):
         self.tlcall = tlcall
         self.i = i
         self.sdate = lsdate
         self.undocname = lundocname
         self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+        if not self.bSecurityCouncil:
+            self.genasssess = re.match("A-(\d+)", self.undocname).group(1)
+        self.agendanum = ""
 
         self.pageno, self.paranum = tlcall[i].txls[0].pageno, tlcall[i].paranum
         # paranum = ( undocname, sdate, tlc.txls[0].pageno, paranumber )
@@ -336,20 +394,15 @@ class SpeechBlock:
         # series of boldlines
         if self.typ == "boldline":
             self.agendanum = ""
-            self.agendacont = ""
             blinepara = tlc.lastindent and "blockquote" or "p"
-            if re.match("Agenda item \d+", ptext):
-                blinepara = "boldline-agenda"
-                mblag = re.match("Agenda item (\d+)(?:<i>\s*</i>)?(?: \(\w\))?( (?:</b>|\(|<i>)+continued(?:</i>|\)|<b>)+)?(?: and(?: agenda item)? (\d+))?\s*((?:<i>|\s|\()+(?:continued|resumed)(?:\)|\s|</i>)+)?(?:<i>\s*</i>)?$", ptext)
-                if not mblag:
-                    print ptext
-                    raise unexception("malformed boldline agenda", self.paranum)
-                self.agendasess = re.match("A-(\d+)", self.undocname).group(1)  # can only happen in Assemblies
-                if mblag.group(3):
-                    self.agendanum = "%s,%s" % (mblag.group(1), mblag.group(3))
-                else:
-                    self.agendanum = mblag.group(1)
-                self.agendacont = mblag.group(2) or mblag.group(4)
+
+            # detect the agenda
+            if not self.bSecurityCouncil:
+                self.agendanum = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
+                print "aaaaa  ", self.agendanum
+                if not self.agendanum:
+                    raise unexception(" uncategorized agenda title", self.paranum)
+
             self.paragraphs = [ (blinepara, ptext) ]
             while self.i < len(self.tlcall):
                 tlc = self.tlcall[self.i]
@@ -393,9 +446,7 @@ class SpeechBlock:
         elif self.typ == "boldline":
             fout.write('<div class="subheading" id="%s"' % (gid))
             if self.agendanum:
-                fout.write(' agendanum="%s" agendasess="%s"' % (self.agendanum, self.agendasess)) # session is included for easier matching
-            if self.agendacont:
-                fout.write(' agendacontinued="yes"')
+                fout.write(' agendanum="%s"' % self.agendanum) # session is included for easier matching
             fout.write('>\n')
 
         else:
@@ -422,3 +473,39 @@ class SpeechBlock:
             paranum += 1
         fout.write('</div>\n')
 
+    def ExtractRoseTime(self, prevtime):
+        if self.typ != "italicline":
+            return ""
+        if len(self.paragraphs) != 1:
+            return ""
+        para = self.paragraphs[0]
+        mroseat = re.search("meeting(?: rose| was adjourned) at (\d+)(?:[\.:]\s*(\d+))? ([ap])\.m\.(, \d+ September)?", para[1])
+        if not mroseat:
+            if re.search("meeting rose at(?: 12)? noon\.", para[1]):
+                return "12:00"
+            return ""
+        ihour = int(mroseat.group(1))
+        imin = mroseat.group(2) and int(mroseat.group(2)) or 0
+        if mroseat.group(3) and mroseat.group(3) == "p" and ihour != 12:
+            ihour += 12
+        if not (1 <= ihour <= 23) or not (0 <= imin <= 59):
+            return ""
+
+        # case of going beyond midnight
+        if mroseat.group(4) and ihour == 1:
+            ihour += 24
+            print " wrapping mid-night %s -> %s" % (prevtime, ihour)
+
+        res = "%02d:%02d" % (ihour, imin)
+
+        # check time is in order
+        sprevhour, sprevmin = prevtime.split(":")
+        if int(sprevhour) > ihour or (int(sprevhour) > ihour and int(sprevmin) > imin):
+            print " times out of order, %s > %s" % (prevtime, res)
+            return ""
+
+        if ihour - int(sprevhour) > 8:
+            print " session too long, %s -> %s" % (prevtime, res)
+            return ""
+
+        return res
