@@ -481,7 +481,7 @@ class SpeechBlock:
         if len(self.paragraphs) != 1:
             return ""
         para = self.paragraphs[0]
-        mroseat = re.search("meeting(?: rose| was adjourned) at (\d+)(?:[\.:]\s*(\d+))? ([ap])\.m\.(, \d+ September)?", para[1])
+        mroseat = re.search("meeting(?: rose| was adjourned) at (\d+)(?:[\.:]\s*(\d+))? ([ap])\.m\.(, \d+ September|, Friday,)?", para[1])
         if not mroseat:
             if re.search("meeting rose at(?: 12)? noon\.", para[1]):
                 return "12:00"
@@ -494,8 +494,11 @@ class SpeechBlock:
             return ""
 
         # case of going beyond midnight
-        if mroseat.group(4) and ihour == 1:
+        if mroseat.group(4) and (ihour == 1) and (mroseat.group(3) == "p"):
             ihour += 24
+            print " wrapping mid-night %s -> %s" % (prevtime, ihour)
+        if mroseat.group(4) and (ihour == 12) and (mroseat.group(3) == "a"):
+            ihour = 24
             print " wrapping mid-night %s -> %s" % (prevtime, ihour)
 
         res = "%02d:%02d" % (ihour, imin)
