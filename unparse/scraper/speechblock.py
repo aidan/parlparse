@@ -261,7 +261,7 @@ AgendaTypeMap = { "address(?i)"                 :"addr",
 def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
     if re.match("Agenda(?: items?)? \d+(?i)", ptext):
         blinepara = "boldline-agenda"
-        acptext = re.sub("(?:<i>\s*\(|\(\s*<i>|\()\s*continued\s*(?:\)\s*</i>|</i>\s*\)|\))|<i>\s*</i>", " ", ptext).strip()
+        acptext = re.sub("(?:<i>\s*\(|\(\s*<i>|\()\s*(?:continued|resumed)\s*(?:\)\s*</i>|</i>\s*\)|\))|<i>\s*</i>", " ", ptext).strip()
         acptext = re.sub("\(\w\)|;.*$", "", acptext)
         acptext = re.sub("agenda items?(?i)", " ", acptext)
         acptext = re.sub("and", ", ", acptext)
@@ -281,7 +281,9 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
         return "%s-%s" % (mreqreopen.group(1), genasssess)
 
     if re.match("\(\w\)", ptext):
-        assert re.match("\d+-\d+", prevagendanum), prevagendanum
+        if not re.match("\d+-\d+", prevagendanum):
+            print "can't copy from prevagendanum", prevagendanum
+            return ""
         assert prevagendanum.split("-")[1] == genasssess
         print "\n\n\ncontinuingagendanum", prevagendanum, ptext
         return prevagendanum
@@ -504,7 +506,7 @@ class SpeechBlock:
             print " times out of order, %s > %s" % (prevtime, res)
             return ""
 
-        if ihour - int(sprevhour) > 12:
+        if ihour - int(sprevhour) > 13:
             print " session too long, %s -> %s" % (prevtime, res)
             return ""
 
