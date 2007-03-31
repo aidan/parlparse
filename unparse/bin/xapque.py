@@ -19,15 +19,15 @@ import xapian
 # The names of prefixes (like nation:) are given in the code below, see
 # xapdex.py for what they mean.
 
-if len(sys.argv) < 3:
-    print "Please specify xapian database and query as two parameters"
-    sys.exit()
-if len(sys.argv) > 3:
-    print "Please specify xapian database and query as two parameters (use quotes if multiple words)"
-    sys.exit()
-query = sys.argv[2]
+#if len(sys.argv) < 3:
+#    print "Please specify xapian database and query as two parameters"
+#    sys.exit()
+#if len(sys.argv) > 3:
+#    print "Please specify xapian database and query as two parameters (use quotes if multiple words)"
+#    sys.exit()
+query = sys.argv[1]
 
-xapian_file = sys.argv[1]
+xapian_file = "../../undata/xapdex.db/"  #sys.argv[1]
 xapian_db = xapian.Database(xapian_file)
 xapian_enquire = xapian.Enquire(xapian_db)
 
@@ -44,8 +44,7 @@ xapian_query.add_boolean_prefix("document", "D")
 xapian_query.add_boolean_prefix("reference", "R")
 xapian_query.add_boolean_prefix("date", "E")
 xapian_query.add_boolean_prefix("agenda", "A")
-xapian_query.add_boolean_prefix("year", "Y")
-xapian_query.add_boolean_prefix("month", "M")
+xapian_query.add_boolean_prefix("vote", "V")
 xapian_query.add_boolean_prefix("session", "Z")
 
 parsed_query = xapian_query.parse_query(query, 16+4+2+1) # allows wildcards
@@ -61,6 +60,6 @@ matches = xapian_enquire.get_mset(0, 500)
 print matches.size()
 for match in matches:
     #print match
-    print match[3], match[4].get_value(0), match[4].get_data()
+    print match[4].get_value(0), match[4].get_data()
 
 

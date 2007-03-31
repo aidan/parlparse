@@ -129,9 +129,10 @@ def thinned_docid(document_id):
     mgass = re.match("A-(\d+)-PV\.(\d+)$", document_id)
     if mgass:
         return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2))), mgass.group(1)
-    msecc = re.match("S-PV-(\d+)(?:-Resu\.(\d+))?$", document_id)
+    msecc = re.match("S-PV-(\d+)(?:-Part\.(\d+))?(?:-Resu\.(\d+))?$", document_id)
     if msecc:
-        return "SPV%05d%02d" % (int(msecc.group(1)), (msecc.group(2) and int(msecc.group(2)) or 0)), None
+        subsec = (msecc.group(2) and int(msecc.group(2)) or 0) * 10 + (msecc.group(3) and int(msecc.group(3)) or 0)
+        return "SPV%05d%02d" % (int(msecc.group(1)), subsec), None
     assert False, "Cannot parse docid: %s" % document_id
 
 def CharToFlat(st):
@@ -281,7 +282,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     textspl.append("")
 
         elif paraclass == 'votelist':
-            for mvote in re.finditer('<span class="([^"\-]*)([^"])*">([^<]*)</span>', mpara.group(6)):
+            for mvote in re.finditer('<span class="([^"\-]+)(?:-([^"]*))?">([^<]*)</span>', mpara.group(6)):
                 vnation = CharToFlat(mvote.group(3))
                 vvote = mvote.group(2) or mvote.group(1)   # take the latter vote position if there's two
                 terms.add("V%s-%s" % (vnation, vvote))
