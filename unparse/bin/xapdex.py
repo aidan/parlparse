@@ -22,16 +22,15 @@ import traceback
 # Unicode
 
 # Fields are:
-# I identifier (e.g. docA61PV4-pg001-bk01)
-# J subsidiary identifier (e.g. docA61PV4-pg001-bk02-pa03)
+# I identifier (e.g. pg001-bk01)
+# J subsidiary identifier (e.g. pa03)
 # C class (e.g. italicline boldline)
-# S speaker name (with spaces and dots removed XXX remove all punctuation)
+# S speaker name (tail stemmed)
 # N nation
 # L language
 # D document id (e.g. A-57-PV.57)
 # R referenced document (e.g. A-57-PV.57)
 # E date (e.g. 2002-10-01)
-# H heading identifier, if speech in a heading section (e.g. docA61PV4-pg001-bk01)
 # A agenda number-session number
 
 # Example set of identifiers for a document:
@@ -262,7 +261,10 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
     for mpara in rmaraiter:
         assert mpara.group(3) == mblockid.group(1) and mpara.group(4) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
-        terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
+
+        # not actually necessary, since the ids are well-stemmed
+        # terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
+
         paraclass = mpara.group(1)
         paratext = mpara.group(6).strip()
 
