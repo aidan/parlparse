@@ -302,6 +302,8 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
 
     for reagt in AgendaTypeMap:
         if re.search(reagt, ptext):
+            if AgendaTypeMap[reagt] == "natdis":
+                print "NNNN", AgendaTypeMap[reagt]
             return "%s-%s" % (AgendaTypeMap[reagt], genasssess)
 
     print "\n\n****  ", ptext

@@ -37,26 +37,30 @@ reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-F]?|
                 A/RES/\d+/\d+|
-                A/(?:CONF|INF)[\./]\d+/\d+(?:/(?:Add|Rev).[l\d])?|
+                A/(?:CONF|INF)[\./]\d+/\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES)?/\d+|
                 SG/SM/\d+|
+                S-1996/1|
                 ECESA/1/Rev.1|
                 MAG/\d+/\d+|
                 AG/\d+|
                 E/CN.\d/\d+/\d+|
-                A/AC.\d+/\d+|
+                A/AC.\d+/(?:L\.)?\d+(?:/CRP.\d+)?|
                 JIU/REP/\d+/\d+|
                 CD/\d+|
                 ISBA/A/L.\d/Rev.\d|
                 NPT/CONF.\d+/(?:TC.\d/)?\d+|
                 WGAP/\d+/\d|
+                WGFS/\d+|
+                C/E/RES.27|
+                INFCIRC/153|
                 OAU/OL/\d+/\d+/\d+|
                 A/BUR/\d+/\d|
                 GOV/\d{4}(?:/Rev.\d)?|
                 E/\d{4}/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
-                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?|
+                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?|
                 (?:[Dd]ocument\s)?S/\d{3,6}|
                 S/PRST/\d+/\d+|
                 S/PV\.\d+|
@@ -66,7 +70,7 @@ reressplit = """(?x)(
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
-                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindub\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcf\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
                 )(?=$|\W)"""
 
 from unscrape import ScrapePDF
@@ -146,7 +150,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
         mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF)/)?(\d+)/(\S*)", st)
-        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?$", st)
+        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
         mscpv = re.match("S/PV[\./](\d+)", st)
         msecres = re.match("(?:Security Council )?(?:[Rr]esolutions? )?(?:S/RES/)?(\d+) \((\d\d\d\d)\)", st)
@@ -159,11 +163,14 @@ def MarkupLinks(paratext, undocname, paranum):
                                  MAG/\d+/\d+|
                                  AG/\d+|SG/SM/\d+|
                                  E/CN.\d/\d+/\d+|
-                                 A/AC.\d+/\d+|
+                                 S-1996/1|
+                                 A/AC.\d+/(?:L\.)?\d+(?:/CRP.\d+)?|
+                                 C/E/RES.27|
                                  JIU/REP/\d+/\d+|
                                  NPT/CONF.\d+/(?:TC.\d/)?\d+|
                                  ISBA/A/L.\d/Rev.\d|
-                                 CD/\d+|WGAP/\d+/\d|
+                                 CD/\d+|WGAP/\d+/\d|WGFS/\d+|
+                                 INFCIRC/153|
                                  OAU/OL/\d+/\d+/\d+|
                                  A/BUR/\d+/\d|
                                  GOV/\d+(?:/Rev.\d)?|
@@ -205,6 +212,8 @@ def MarkupLinks(paratext, undocname, paranum):
                 link = "S-%s" % mscdoc.group(1)
             if mscdoc.group(3):
                 link = "%s-Add.%s" % (link, mscdoc.group(3))
+            if mscdoc.group(4):
+                link = "%s-Rev.%s" % (link, mscdoc.group(4))
 
             res.append(MakeCheckLink(link, st, undocname))
         elif mscprst:
@@ -229,7 +238,7 @@ def MarkupLinks(paratext, undocname, paranum):
 
         else:
 
-            if re.match("<i>(?:.*?/.*?|\(.{1,20}?\))</i>$", st):
+            if re.match("<i>(?:.*?/.*?|\(.{1,90}?\))</i>$", st):
                 pass
             elif re.match(reressplit, st):
                 print "unmatched-link  :%s:" % st
@@ -242,6 +251,7 @@ def MarkupLinks(paratext, undocname, paranum):
                     print "Failed with "+st
                     raise unexception("bad / in paratext", paranum)
             res.append(st)
+        #print st,
     return "".join(res)
 
 
