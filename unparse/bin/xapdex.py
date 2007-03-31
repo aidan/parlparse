@@ -185,7 +185,7 @@ wsplit = """(?x)(\s+|
             <a[^>]*>[^<]*</a>|
             \$\d+|\d+\.\d+|
             &\w{1,5};|
-            [:;.,?!г*%\"()\[\]+]+|
+            [:;.,?!ге*%\"()\[\]+]+|
             '|
             (?<=[a-zA-Z\)"])/(?=[a-zA-Z])|
             <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
@@ -200,6 +200,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
     div_id = mdiv.group(2)
     div_agendanum = mdiv.group(3)
     div_text = mdiv.group(4)
+    #print div_text
 
     terms = set()
     terms.add("C%s" % div_class)
@@ -262,7 +263,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!г*%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!ге*%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
                 if re.match("20/20$", wtxt):
