@@ -155,7 +155,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
         if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
-        if re.search("[\.,:;´]$", speakr):
+        if re.search("[\.,:;]$", speakr):
             print speakr
             raise unexception("improper tail on speaker", paranum)
 

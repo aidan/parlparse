@@ -34,10 +34,10 @@ def SetCallScrape(lsCallScrape):
     sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
-                (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?|
-                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-F]?|
+                (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?|
+                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
-                A/(?:CONF|INF)[\./]\d+/\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
+                A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES)?/\d+|
                 SG/SM/\d+|
                 S-1996/1|
@@ -45,19 +45,21 @@ reressplit = """(?x)(
                 MAG/\d+/\d+|
                 AG/\d+|
                 E/CN.\d/\d+/\d+|
-                A/AC.\d+/(?:L\.)?\d+(?:/CRP.\d+)?|
+                A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP|WP).\d+)?(?:/Rev\.2)?|
                 JIU/REP/\d+/\d+|
                 CD/\d+|
                 ISBA/A/L.\d/Rev.\d|
                 NPT/CONF.\d+/(?:TC.\d/)?\d+|
                 WGAP/\d+/\d|
                 WGFS/\d+|
+                SPLOS/\d+|
                 C/E/RES.27|
-                INFCIRC/153|
+                INFCIRC/\d+|
                 OAU/OL/\d+/\d+/\d+|
                 A/BUR/\d+/\d|
                 GOV/\d{4}(?:/Rev.\d)?|
                 E/\d{4}/\d+|
+                (?:A/)?ES-\d+/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
                 (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?|
@@ -70,7 +72,7 @@ reressplit = """(?x)(
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
-                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcf\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfx\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
                 )(?=$|\W)"""
 
 from unscrape import ScrapePDF
@@ -158,19 +160,19 @@ def MarkupLinks(paratext, undocname, paranum):
         mcorr = re.match("Corr.(\d)", st)
 
         # final dustbin for all the rest
-        mflat0 = re.match("""(?x)A/CONF[\./]\d+/\d+(?:/(?:Add|Rev)\.\w)?|
+        mflat0 = re.match("""(?x)A/CONF[\./]\d+/(?:L\.)?\d+(?:/(?:Add|Rev)\.\w)?|
                                  GC\([\dLXIV]*\)(?:/RES)?/\d+|
                                  MAG/\d+/\d+|
                                  AG/\d+|SG/SM/\d+|
                                  E/CN.\d/\d+/\d+|
                                  S-1996/1|
-                                 A/AC.\d+/(?:L\.)?\d+(?:/CRP.\d+)?|
+                                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP|WP).\d+)?(?:/Rev\.2)?|
                                  C/E/RES.27|
                                  JIU/REP/\d+/\d+|
                                  NPT/CONF.\d+/(?:TC.\d/)?\d+|
                                  ISBA/A/L.\d/Rev.\d|
-                                 CD/\d+|WGAP/\d+/\d|WGFS/\d+|
-                                 INFCIRC/153|
+                                 CD/\d+|WGAP/\d+/\d|WGFS/\d+|SPLOS/\d+|(?:A/)?ES-\d+/\d+|
+                                 INFCIRC/\d+|
                                  OAU/OL/\d+/\d+/\d+|
                                  A/BUR/\d+/\d|
                                  GOV/\d+(?:/Rev.\d)?|
@@ -246,7 +248,7 @@ def MarkupLinks(paratext, undocname, paranum):
 
             elif re.search("/", st):
                 #print re.split(reressplit, st)
-                jjst = re.sub("[a-zA-Z<)]/[a-zA-Z]|20/20", "", st)
+                jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20", "", st)
                 if re.search("/", jjst):
                     print "Failed with "+st
                     raise unexception("bad / in paratext", paranum)
