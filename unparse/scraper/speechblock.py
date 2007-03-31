@@ -133,10 +133,11 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
         if IsNotQuiet():
             print ptext
             print "   ___ ", m and m.group(0)
+
     if mspek:
         assert not indentationerror
         assert not re.match("<i>", ptext)
-        speakr = mspek.group(1).strip()
+        speakr = re.sub("\s+", " ", mspek.group(1).strip())
         nation = ""
         bIsNotnation = True
         lnation = mspek.group(2)
@@ -266,8 +267,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
     return ptext, typ, currentspeaker
 
 
-AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes|bombing)(?i)"),
-                  ("natdis", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy|Recent terrorist attacks$)"),
+AgendaTypeMap = [ ("disaster", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes|bombing)(?i)"),
+                  ("disaster", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy|Recent terrorist attacks$)"),
                   ("addr", "address(?i)"),
                   ("show", "(?:ceremony|message from the|prayer|remembrance songs|boys choir|african industrialization day|international.*? day)(?i)"),
                   ("report", "report(?i)"),
@@ -317,7 +318,7 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
 
     for agt, reagt in AgendaTypeMap:
         if re.search(reagt, ptext):
-            if agt == "natdis":
+            if agt == "disaster":
                 print "NNNN", ptext
             return "%s-%s" % (agt, genasssess)
 
@@ -546,3 +547,4 @@ class SpeechBlock:
             return ""
 
         return res
+

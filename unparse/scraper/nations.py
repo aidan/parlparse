@@ -320,189 +320,243 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum, secc
 
 # sdate can be used for Switzerland special case which was later a UN nation
 def IsNonnation(nonnation, sdate):
-    if nonnation[0] == "*":
+    if nonnation[0] == "*":  # prepended
         nonnation = nonnation[1:]
-        if nonnation not in nonnations:
-            nonnations[nonnation] = 0
+        if nonnation not in nonnationscount:
+            nonnationscount[nonnation] = 0
             print "   *** new nonnation:", nonnation
             fout = open("nations.py", "a")
-            fout.write('nonnations["%s"] = 0\n' % nonnation)
+            fout.write('nonnationscount["%s"] = 0\n' % nonnation)
             fout.close()
-    if nonnation not in nonnations:
+    if nonnation not in nonnationscount:
         return False
-    nonnations[nonnation] += 1
+    nonnationscount[nonnation] += 1
     return nonnation
 
+
+# this gets parsed and used to generate nation-like tags for the speaker
+nonnationlist = """
+African:
+    African Development Bank
+    African Network of Religious Leaders Living with or Personally Affected by HIV/AIDS
+    African Union
+    African, Caribbean and Pacific Group of States
+    Organization of African Unity
+    Secretary-General of the Asian-African Legal Consultative Committee
+    Secretary-General of the Organization of African Unity
+
+American:
+    Caribbean Community
+    Caribbean Community CARICOM
+    Ibero-American Conference
+    Latin American Economic System
+    Organization of American States
+    Secretary-General of the Caribbean Community
+    Secretary-General, Central American Integration System
+
+Asian:
+    Black Sea Economic Cooperation Organization
+    Asian Development Bank
+    Asian-African Consultative Committee
+    Asian-African Legal Consultative Committee
+    Asian-African Legal Consultative Organization
+    Secretary-General, Eurasian Economic Community
+
+Business:
+    BHI Holdings Limited
+    International Monetary Fund
+    McKinsey and Company
+    Shanghai Cooperation Organization
+    World Bank
+    World Trade Organization
+
+Communities:
+    Commonwealth Secretariat
+    Community of Portuguese-Speaking Countries
+    Conference of Non-Governmental Organizations in Consultative Relationship with the United Nations
+    Conference of Presiding Officers of National Parliaments
+    Economic Community of Central African States
+    Economic Community of West African States
+    Economic Cooperation Organization
+    Economic and Social Commission for Western Africa
+    European Commission
+    European Community
+    Flora Tristan Centre for Peruvian Women
+    Inter-Parliamentary Union
+    International Confederation of Free Trade Unions
+    International Organization of La Francophonie
+    International Organization of la Francophonie
+    League of Arab States
+    Organization of the Islamic Conference
+    Organization on the Islamic Conference
+    Permanent Observer of Switzerland
+    Social Watch
+    South Pacific Forum
+    former Yugoslav Republic of Macedonia
+
+Health:
+    Global Fund to Fight AIDS, Tuberculosis and Malaria
+    International Committee of the Red Cross
+    International Federation of Red Cross and Red Crescent Societies
+    International Federation of the Red Cross and Red Crescent Societies
+    Joint United Nations Programme on HIV/AIDS
+    MTV Networks International/Global Media AIDS Initiative
+    Observer for the International Federation of Red Cross and Red Crescent Societies
+    Treatment Action Campaign
+    World Health Organization
+
+Legal:
+    International Court of Justice
+    International Criminal Court
+    International Criminal Police Organization-Interpol
+    International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
+    Organization for Security and Cooperation in Europe
+    Permanent Court of Arbitration
+    President of the International Court
+    President of the International Court of Justice
+    President of the International Criminal Tribunal for Rwanda
+    President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
+    President of the International Tribunal
+    President of the International Tribunal for Rwanda
+    President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
+    President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
+    Secretary General of the Conference on Security and Cooperation in Europe
+    The Legal Counsel
+
+Oceans:
+    Commission on the Limits of the Continental Shelf
+    International Hydrographic Organization
+    International Seabed Authority
+    International Tribunal for the Law of the Sea
+    Judge, International Tribunal for the Law of the Sea
+    New Zealand, President, Twelfth Meeting of States Parties to the United Nations Convention on the Law of the Sea
+    President of the Assembly of the International Seabed Authority
+    President, Third United Nations Conference on the Law of the Sea
+    Secretary-General of the International Seabed Authority
+
+Palistinian:
+    Chairman of the Committee on the Exercise of the Inalienable Rights of the Palestinian People
+    Committee on the Exercise of the Inalienable Rights of the Palestinian People
+    Observer for Palestine
+    Palestine
+    Rapporteur of the Committee on the Exercise of the Inalienable Rights of the Palestinian People
+
+Religion:
+    Holy See
+
+Refugees:
+    International Centre for Migration Policy Development
+    International Organization for Migration
+    Office of the United Nations High Commissioner for Refugees
+
+Technology:
+    Agency for Cultural and Technical Cooperation
+    Chairman of the Committee on the Peaceful Uses of Outer Space
+    Chairman of the Information and Communication Technologies Task Force
+    Digital Opportunity Task Force
+    Director General of the International Atomic Energy Agency
+    Director General, International Atomic Energy Agency
+    International Atomic Energy Agency
+    International Telecommunication Union
+    International Union for the Conservation of Nature and Natural Resources
+
+United Nations:
+    Assistant Secretary-General for Peacekeeping Operations
+    Assistant Secretary-General for Political Affairs
+    Chairman of the Monitoring Group
+    Chief, General Assembly Affairs Branch
+    Chief, General Assembly Affairs Branch, Department for General Assembly and Conference Management
+    Chief, General Assembly Servicing Branch
+    Council of Europe
+    Co-Chair of the Millennium Forum
+    Customs Cooperation Council
+    Department for General Assembly and Conference Management
+    Deputy Secretary-General
+    Deputy Secretary-General of the South Pacific Forum
+    Director of General Assembly and ECOSOC Affairs
+    Director of General Assembly and Economic and Social Council Affairs
+    Director of General Assembly and Trusteeship Council Affairs Division
+    Director of the General Assembly Affairs Division
+    Director of the General Assembly and Trusteeship Council Affairs Division
+    Director of the Security Council Affairs Division
+    Director, General Assembly Affairs
+    Director, General Assembly Affairs Division
+    Director, General Assembly Affairs Division, Department of Political Affairs
+    Director, General Assembly and ECOSOC Affairs Division, Department of General Assembly Affairs and Conference Services
+    Director, General Assembly and Economic and Social Council Affairs Division
+    Director, General Assembly and Economic and Social Council Affairs Division of the Department of General Assembly Affairs and Conference Management Services
+    Director, General Assembly and Economic and Social Council Affairs Division, Department for General Assembly and Conference Management
+    General Assembly Affairs Branch
+    High Commissioner for Human Rights
+    Officer-in-Charge of the Security Council Affairs Division
+    President of the Economic and Social Council
+    Rapporteur
+    Representative of the Secretariat
+    Secretary-General
+    Secretary-General of the Economic Cooperation Organization
+    Secretary-General of the Organization for Security and Cooperation in Europe
+    Special Adviser on Gender Issues and Advancement of Women
+    Special Adviser to the Secretary-General on General Assembly Matters
+    Special Representative and Transitional Administrator in East Timor
+    UNICEF
+    Under Secretary-General for General Assembly and Conference Management
+    Under-Secretary-General for General Assembly Affairs and Conference Services
+    Under-Secretary-General for General Assembly and Conference Management
+    Under-Secretary-General for Humanitarian Affairs
+    Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator
+    Under-Secretary-General for Peacekeeping Operations
+    Under-Secretary-General for Policy Coordination and Sustainable Development
+    Under-Secretary-General, Department of General Assembly Affairs and Conference Management
+    Under-Secretary-General, Department of General Assembly Affairs and Conference Services
+    United Nations Children's Fund
+    United Nations Conference on Trade and Development
+    United Nations Development Fund for Women
+    United Nations Development Programme
+    United Nations Educational, Scientific and Cultural Organization
+    United Nations High Commissioner for Human Rights
+    United Nations High Commissioner for Refugees
+    United Nations Population Fund
+    Vice-President of the Economic and Social Council
+
+Weapons:
+    Comprehensive Nuclear-Test-Ban Treaty Organization
+    Chairman of the Committee on the Peaceful Uses of Outer Space
+    Director General of the International Atomic Energy Agency
+    Director General, International Atomic Energy Agency
+    Executive Secretary of the Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization
+    Geneva International Centre for Humanitarian Demining
+    International Atomic Energy Agency
+    Organization for the Prohibition of Chemical Weapons
+    Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization
+    Sovereign Military Order of Malta
+    Sudan People's Liberation Movement/Army
+"""
+
 def PrintNonnationOccurrances():
-    for nn in reversed(sorted([(nonnations[n], n)  for n in nonnations.keys()  if nonnations[n]])):
+    for nn in reversed(sorted([(nonnationscount[n], n)  for n in nonnationscount.keys()  if nonnationscount[n]])):
         print nn
 
-nonnations = { }
+nonnationscount = { }
+nonnationcatmap = { }
+#nonnationcat = ""
+for nonnation in nonnationlist.split("\n"):
+    mcat = re.match("(\w.*?):$", nonnation)
+    if mcat:
+        nonnationcat = mcat.group(1)
+        continue
+    lnonnation = nonnation.strip()
+    if lnonnation:
+        nonnationscount[lnonnation] = 0
+        if lnonnation in nonnationcatmap:
+            nonnationcatmap[lnonnation] = "%s,%s" % (nonnationcatmap[lnonnation], nonnationcat)
+        else:
+            nonnationcatmap[lnonnation] = nonnationcat
 
-nonnations["African Development Bank"] = 0
-nonnations["African Union"] = 0
-nonnations["Asian Development Bank"] = 0
-nonnations["Asian-African Legal Consultative Committee"] = 0
-nonnations["Asian-African Legal Consultative Organization"] = 0
-nonnations["Black Sea Economic Cooperation Organization"] = 0
-nonnations["Caribbean Community"] = 0
-nonnations["Chairman of the Committee on the Exercise of the Inalienable Rights of the Palestinian People"] = 0
-nonnations["Chairman of the Committee on the Peaceful Uses of Outer Space"] = 0
-nonnations["Chairman of the Information and Communication Technologies Task Force"] = 0
-nonnations["Chief, General Assembly Affairs Branch"] = 0
-nonnations["Chief, General Assembly Affairs Branch, Department for General Assembly and Conference Management"] = 0
-nonnations["Chief, General Assembly Servicing Branch"] = 0
-nonnations["Co-Chair of the Millennium Forum"] = 0
-nonnations["Commission on the Limits of the Continental Shelf"] = 0
-nonnations["Commonwealth Secretariat"] = 0
-nonnations["Comprehensive Nuclear-Test-Ban Treaty Organization"] = 0
-nonnations["Conference of Non-Governmental Organizations in Consultative Relationship with the United Nations"] = 0
-nonnations["Conference of Presiding Officers of National Parliaments"] = 0
-nonnations["Council of Europe"] = 0
-nonnations["Customs Cooperation Council"] = 0
-nonnations["Department for General Assembly and Conference Management"] = 0
-nonnations["Deputy Secretary-General"] = 0
-nonnations["Digital Opportunity Task Force"] = 0
-nonnations["Director of General Assembly and ECOSOC Affairs"] = 0
-nonnations["Director, General Assembly and ECOSOC Affairs Division, Department of General Assembly Affairs and Conference Services"] = 0
-nonnations["Director, General Assembly and Economic and Social Council Affairs Division"] = 0
-nonnations["Director, General Assembly and Economic and Social Council Affairs Division of the Department of General Assembly Affairs and Conference Management Services"] = 0
-nonnations["Director, General Assembly and Economic and Social Council Affairs Division, Department for General Assembly and Conference Management"] = 0
-nonnations["Economic Community of Central African States"] = 0
-nonnations["Economic Cooperation Organization"] = 0
-nonnations["Economic and Social Commission for Western Africa"] = 0
-nonnations["European Commission"] = 0
-nonnations["European Community"] = 0
-nonnations["Executive Secretary of the Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization"] = 0
-nonnations["General Assembly Affairs Branch"] = 0
-nonnations["Holy See"] = 0
-nonnations["Inter-Parliamentary Union"] = 0
-nonnations["International Atomic Energy Agency"] = 0
-nonnations["International Committee of the Red Cross"] = 0
-nonnations["International Confederation of Free Trade Unions"] = 0
-nonnations["International Court of Justice"] = 0
-nonnations["International Criminal Court"] = 0
-nonnations["International Federation of Red Cross and Red Crescent Societies"] = 0
-nonnations["International Federation of the Red Cross and Red Crescent Societies"] = 0
-nonnations["International Hydrographic Organization"] = 0
-nonnations["International Monetary Fund"] = 0
-nonnations["International Organization for Migration"] = 0
-nonnations["International Organization of La Francophonie"] = 0
-nonnations["International Organization of la Francophonie"] = 0
-nonnations["International Seabed Authority"] = 0
-nonnations["International Telecommunication Union"] = 0
-nonnations["International Tribunal for the Law of the Sea"] = 0
-nonnations["International Union for the Conservation of Nature and Natural Resources"] = 0
-nonnations["Joint United Nations Programme on HIV/AIDS"] = 0
-nonnations["Judge, International Tribunal for the Law of the Sea"] = 0
-nonnations["League of Arab States"] = 0
-nonnations["McKinsey and Company"] = 0
-nonnations["New Zealand, President, Twelfth Meeting of States Parties to the United Nations Convention on the Law of the Sea"] = 0
-nonnations["Observer for the International Federation of Red Cross and Red Crescent Societies"] = 0
-nonnations["Organization for Security and Cooperation in Europe"] = 0
-nonnations["Organization for the Prohibition of Chemical Weapons"] = 0
-nonnations["Organization of African Unity"] = 0
-nonnations["Organization of American States"] = 0
-nonnations["Organization of the Islamic Conference"] = 0
-nonnations["Palestine"] = 0
-nonnations["Partners in Population and Development"] = 0
-nonnations["Permanent Court of Arbitration"] = 0
-nonnations["Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization"] = 0
-nonnations["President of the Assembly of the International Seabed Authority"] = 0
-nonnations["President of the Economic and Social Council"] = 0
-nonnations["President of the International Court"] = 0
-nonnations["President of the International Court of Justice"] = 0
-nonnations["President of the International Tribunal"] = 0
-nonnations["President of the International Tribunal for Rwanda"] = 0
-nonnations["President of the Security Council"] = 0
-nonnations["President, Third United Nations Conference on the Law of the Sea"] = 0
-nonnations["Rapporteur"] = 0
-nonnations["Rapporteur of the Committee on the Exercise of the Inalienable Rights of the Palestinian People"] = 0
-nonnations["Representative of the Secretariat"] = 0
-nonnations["Secretary-General"] = 0
-nonnations["Secretary-General of the International Seabed Authority"] = 0
-nonnations["Secretary-General, Eurasian Economic Community"] = 0
-nonnations["Shanghai Cooperation Organization"] = 0
-nonnations["Social Watch"] = 0
-nonnations["Sovereign Military Order of Malta"] = 0
-nonnations["The Legal Counsel"] = 0
-nonnations["UNICEF"] = 0
-nonnations["Under-Secretary-General for General Assembly Affairs and Conference Services"] = 0
-nonnations["Under-Secretary-General for General Assembly and Conference Management"] = 0
-nonnations["Under-Secretary-General, Department of General Assembly Affairs and Conference Management"] = 0
-nonnations["Under-Secretary-General, Department of General Assembly Affairs and Conference Services"] = 0
-nonnations["United Nations Children's Fund"] = 0
-nonnations["United Nations Conference on Trade and Development"] = 0
-nonnations["United Nations Development Programme"] = 0
-nonnations["United Nations Educational, Scientific and Cultural Organization"] = 0
-nonnations["United Nations High Commissioner for Human Rights"] = 0
-nonnations["United Nations Population Fund"] = 0
-nonnations["Vice-President of the Economic and Social Council"] = 0
-nonnations["World Bank"] = 0
-nonnations["World Health Organization"] = 0
-nonnations["World Trade Organization"] = 0
-nonnations["African Development Bank"] = 0
-nonnations["African Development Bank"] = 0
-nonnations["Flora Tristan Centre for Peruvian Women"] = 0
-nonnations["BHI Holdings Limited"] = 0
-nonnations["Treatment Action Campaign"] = 0
-nonnations["Global Fund to Fight AIDS, Tuberculosis and Malaria"] = 0
-nonnations["MTV Networks International/Global Media AIDS Initiative"] = 0
-nonnations["African Network of Religious Leaders Living with or Personally Affected by HIV/AIDS"] = 0
-nonnations["Agency for Cultural and Technical Cooperation"] = 0
-nonnations["Latin American Economic System"] = 0
-nonnations["International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
-nonnations["President of the International Criminal Tribunal for Rwanda"] = 0
-nonnations["International Criminal Police Organization-Interpol"] = 0
-nonnations["Caribbean Community CARICOM"] = 0
-nonnations["Director, General Assembly Affairs Division"] = 0
-nonnations["President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
-nonnations["Secretary-General of the Economic Cooperation Organization"] = 0
-nonnations["Secretary-General, Central American Integration System"] = 0
-nonnations["Deputy Secretary-General of the South Pacific Forum"] = 0
-nonnations["Secretary-General of the Caribbean Community"] = 0
-nonnations["Secretary-General of the Organization of African Unity"] = 0
-nonnations["Secretary-General of the Organization for Security and Cooperation in Europe"] = 0
-nonnations["Secretary-General of the Asian-African Legal Consultative Committee"] = 0
-nonnations["Under-Secretary-General for Policy Coordination and Sustainable Development"] = 0
-nonnations["Director General, International Atomic Energy Agency"] = 0
-nonnations["President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
-nonnations["Assistant Secretary-General for Political Affairs"] = 0
-nonnations["Assistant Secretary-General for Peacekeeping Operations"] = 0
-nonnations["Director, General Assembly Affairs"] = 0
-nonnations["Director, General Assembly Affairs Division, Department of Political Affairs"] = 0
-nonnations["Director General of the International Atomic Energy Agency"] = 0
-nonnations["South Pacific Forum"] = 0
-nonnations["Director of the General Assembly and Trusteeship Council Affairs Division"] = 0
-nonnations["Special Adviser to the Secretary-General on General Assembly Matters"] = 0
-nonnations["Asian-African Consultative Committee"] = 0
-nonnations["Director of General Assembly and Trusteeship Council Affairs Division"] = 0
-nonnations["President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991"] = 0
-nonnations["Secretary General of the Conference on Security and Cooperation in Europe"] = 0
-nonnations["Observer for Palestine"] = 0
-nonnations["Director of the General Assembly Affairs Division"] = 0
-nonnations["Director of General Assembly and Economic and Social Council Affairs"] = 0
-nonnations["Under Secretary-General for General Assembly and Conference Management"] = 0
-nonnations["Community of Portuguese-Speaking Countries"] = 0
-nonnations["African, Caribbean and Pacific Group of States"] = 0
-nonnations["Ibero-American Conference"] = 0
-nonnations["International Centre for Migration Policy Development"] = 0
-nonnations["Under-Secretary-General for Peacekeeping Operations"] = 0
-nonnations["Officer-in-Charge of the Security Council Affairs Division"] = 0
-nonnations["High Commissioner for Human Rights"] = 0
-nonnations["Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator"] = 0
-nonnations["United Nations High Commissioner for Refugees"] = 0
-nonnations["Special Representative and Transitional Administrator in East Timor"] = 0
-nonnations["Director of the Security Council Affairs Division"] = 0
-nonnations["Office of the United Nations High Commissioner for Refugees"] = 0
-nonnations["Under-Secretary-General for Humanitarian Affairs"] = 0
-nonnations["former Yugoslav Republic of Macedonia"] = 0
-nonnations["Organization on the Islamic Conference"] = 0
-nonnations["United Nations Development Fund for Women"] = 0
-nonnations["Permanent Observer of Switzerland"] = 0
-nonnations["Economic Community of West African States"] = 0
-nonnations["Special Adviser on Gender Issues and Advancement of Women"] = 0
-nonnations["Chairman of the Monitoring Group"] = 0
-nonnations["Geneva International Centre for Humanitarian Demining"] = 0
-nonnations["Committee on the Exercise of the Inalienable Rights of the Palestinian People"] = 0
-nonnations["Sudan People's Liberation Movement/Army"] = 0
+
+#jj = nonnationcatmap.keys(); jj.sort()
+#for i in jj:   print i[:15], ":", nonnationcatmap[i]
+
+# further non-nations will get appended here during parsing, for later incorporation
+# it's a map because because it adds up how many of each one have occurred
+
+

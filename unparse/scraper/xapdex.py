@@ -14,6 +14,8 @@ else:
 import distutils.dir_util
 import traceback
 
+from nations import nonnationcatmap # this was why the need to moveall into same directory
+
 # TODO:
 # Get list of days with stuff in them
 # Decide what to do properly with spaces in names etc.
@@ -239,11 +241,19 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 if div_class == 'spoken':  # leave out just attending cases; that's listed in the terms of the attendee blocks type
                     headingterms.add(nationterm)
 
+            if spclass[0] == "non-nation":
+                nationterm = "N%s" % CharToFlat(nonnationcatmap.get(spclass[1], "Unknown"))
+                terms.add(nationterm)
+                assert div_class == 'spoken'  # roll-call only applies to nations
+                headingterms.add(nationterm)
+                print nationterm
+
+
     if div_agendanum:
-        mgag = re.match("(addr|natdis)-\d+$", div_agendanum)
+        mgag = re.match("(addr|disaster)-\d+$", div_agendanum)
         if mgag:
             terms.add("A%s" % mgag.group(1))
-            if mgag.group(1) == "natdis":
+            if mgag.group(1) == "disaster":
                 print "AAAAA  ", div_agendanum
         for agnum in div_agendanum.split(","):  # a comma separated list
             terms.add("A%s" % agnum)
@@ -262,7 +272,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
     for mpara in rmaraiter:
         assert mpara.group(3) == mblockid.group(1) and mpara.group(4) == mblockid.group(2), "paraid disagrees with blockid: %s %s" % (div_id, mpara.group(0))
-        terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
+        # terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5) # not necessary due to well-stemming
         paraclass = mpara.group(1)
         paratext = mpara.group(6).strip()
 

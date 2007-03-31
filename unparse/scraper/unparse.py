@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-from nations import FixNationName, nonnations
+from nations import FixNationName
 from unmisc import unexception, IsNotQuiet, MarkupLinks, paranumC
 from unglue import GlueUnfile
 from speechblock import SpeechBlock
