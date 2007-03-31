@@ -195,7 +195,7 @@ wsplit = """(?x)(\s+|
             <a[^>]*>[^<]*</a>|
             \$\d+|\d+\.\d+|
             &\w{1,5};|
-            [:;.,?!ге*%@\"()\[\]+]+|
+            [:;.,?!ге*%@_\"()\[\]+]+|
             '|
             (?<=[a-zA-Z\)"])/(?=[a-zA-Z])|
             <i>\([A-Z0-9a-z\.,\-/\s\(\)\*]*?\)</i>|
@@ -274,7 +274,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!ге*%@\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!ге*%@_\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
                 if re.match("(?:20/20|9/11|[12][90]\d\d/[12][90]\d\d|HIV/AIDS)$", wtxt):
