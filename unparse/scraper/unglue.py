@@ -681,7 +681,7 @@ class GlueUnfile:
         for tlc in self.tlcall:
             jparatext = [ ]  # don't insert spaces where there is a hyphen
             for txl in tlc.txls:
-                if jparatext and not (re.search("\w-$", jparatext[-1]) and re.match("\w", txl.ltext)):
+                if jparatext and not (re.search("\w[-/]$", jparatext[-1]) and re.match("\w", txl.ltext)):
                     jparatext.append(" ")
                 jparatext.append(txl.ltext)
             tlc.paratext = "".join(jparatext)

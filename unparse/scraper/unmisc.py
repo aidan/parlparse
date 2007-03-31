@@ -34,7 +34,7 @@ def SetCallScrape(lsCallScrape):
     sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
-                (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?|
+                (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
                 A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
@@ -48,7 +48,7 @@ reressplit = """(?x)(
                 E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
                 JIU/REP/\d+/\d+|
-                CS?D/\d+|
+                CS?D/\d+(?:/\d+)?|
                 ISBA/A/L.\d/Rev.\d|
                 NPT/CONF.\d+/(?:TC.\d/)?\d+|
                 WGAP/\d+/\d|
@@ -60,7 +60,7 @@ reressplit = """(?x)(
                 OAU/OL/\d+/\d+/\d+|
                 A/BUR/\d+/\d|
                 GOV/\d{4}(?:/Rev.\d)?|
-                E/\d{4}/\d+|
+                E/\d{4}/(?:L\.)?\d+|
                 (?:A/)?ES-\d+/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
@@ -74,7 +74,7 @@ reressplit = """(?x)(
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
-                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvm\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvm\*\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
                 )(?=$|\W)"""
 
 from unscrape import ScrapePDF
@@ -174,12 +174,12 @@ def MarkupLinks(paratext, undocname, paranum):
                                  JIU/REP/\d+/\d+|
                                  NPT/CONF.\d+/(?:TC.\d/)?\d+|
                                  ISBA/A/L.\d/Rev.\d|
-                                 CS?D/\d+|WGAP/\d+/\d|WGFS/\d+|SPLOS/\d+|(?:A/)?ES-\d+/\d+|CLCS/\d|
+                                 CS?D/\d+(?:/\d+)?|WGAP/\d+/\d|WGFS/\d+|SPLOS/\d+|(?:A/)?ES-\d+/\d+|CLCS/\d|
                                  INFCIRC/\d+|
                                  OAU/OL/\d+/\d+/\d+|
                                  A/BUR/\d+/\d|
                                  GOV/\d+(?:/Rev.\d)?|
-                                 E/\d+/\d+""", st)
+                                 E/\d+/(?:L\.)?\d+""", st)
 
         if mres:
             spart = (mres.group(3) and (".%s" % mres.group(3)) or "")
