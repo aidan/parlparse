@@ -159,7 +159,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -266,18 +266,18 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
     return ptext, typ, currentspeaker
 
 
-AgendaTypeMap = { "address(?i)"                 :"addr",
-                  "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes)(?i)" :"natdis",
-                  "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy$)" :"natdis",
-                  "report(?i)" :"report",
-                  "working group(?i)" :"report",
-                  "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)" :"misc",
-                  "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)" :"misc",
-                  "(?:letter from the|statements? by the|oral presentations by)(?i)" :"report",
-                  "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|international.*? day||Dates of the.*? Dialogue)(?i)" :"misc",
-                  "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)" :"misc",
-                  "(The situation in|action on the list|list of accredited civil society actors)(?i)" : "report",
-                }
+AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes)(?i)"),
+                  ("natdis", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy$)"),
+                  ("addr", "address(?i)"),
+                  ("report", "report(?i)"),
+                  ("report", "working group(?i)"),
+                  ("misc", "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)"),
+                  ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)"),
+                  ("report", "(?:letter from the|statements? by the|oral presentations by)(?i)"),
+                  ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|international.*? day|Dates of the.*? Dialogue)(?i)"),
+                  ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
+                  ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
+                ]
 
 
 def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
@@ -311,11 +311,11 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
         return prevagendanum
 
 
-    for reagt in AgendaTypeMap:
+    for agt, reagt in AgendaTypeMap:
         if re.search(reagt, ptext):
-            if AgendaTypeMap[reagt] == "natdis":
-                print "NNNN", AgendaTypeMap[reagt]
-            return "%s-%s" % (AgendaTypeMap[reagt], genasssess)
+            if agt == "natdis":
+                print "NNNN", ptext
+            return "%s-%s" % (agt, genasssess)
 
     print "\n\n****  ", ptext
     print genasssess
