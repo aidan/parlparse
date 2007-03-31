@@ -155,6 +155,7 @@ def CharToFlat(st):
     st = st.replace("è", "e")
     st = st.replace("ï", "i")
     st = st.replace("í", "i")
+    st = st.replace("î", "i")
     st = st.replace("ô", "o")
     st = st.replace("ö", "o")
     st = st.replace("ó", "o")
@@ -163,14 +164,17 @@ def CharToFlat(st):
     st = st.replace("ú", "u")
     st = st.replace("ü", "u")
     st = st.replace("ñ", "n")
+    st = st.replace("ý", "y")
 
     st = st.replace("É", "e")
     st = st.replace("Ç", "c")
     st = st.replace("Á", "a")
 
     st = st.replace("°", "")
+    st = st.replace("¸", "")
+    st = st.replace("¯", "")
 
-    st = st.replace("Ç", "c")
+    st = st.replace("ý", "y")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -180,7 +184,7 @@ wsplit = """(?x)(\s+|
             <a[^>]*>[^<]*</a>|
             \$\d+|\d+\.\d+|
             &\w{1,5};|
-            [:;.,?!£%\"()\[\]+]+|
+            [:;.,?!£*%\"()\[\]+]+|
             '|
             (?<=[a-zA-Z\)])/(?=[a-zA-Z])|
             <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
@@ -247,7 +251,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
         paraclass = mpara.group(1)
         paratext = mpara.group(6).strip()
-     
+
         if not paraclass or paraclass in ['boldline-p', 'boldline-indent', 'boldline-agenda', 'motiontext']:
             if paraclass == 'boldline-agenda':
                 paratext = re.sub("[^;]*;?", paratext) # throw out all, or all up to ';'
@@ -256,7 +260,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!£%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!£*%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
                 if re.match("20/20$", wtxt):
