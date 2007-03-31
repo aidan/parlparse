@@ -251,7 +251,7 @@ def MarkupLinks(paratext, undocname, paranum):
 
             elif re.search("/", st):
                 #print re.split(reressplit, st)
-                jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20|HIV/AIDS|[12][90]\d\d/[12][90]\d\d", "", st)
+                jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20|9/11|HIV/AIDS|[12][90]\d\d/[12][90]\d\d", "", st)
                 if re.search("/", jjst):
                     print "Failed with "+st
                     raise unexception("bad / in paratext", paranum)
