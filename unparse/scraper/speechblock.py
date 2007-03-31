@@ -152,10 +152,10 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
         speakr = mspek.group(1).strip()
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheik |President ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
-        if re.search("[\.,:;]$", speakr):
+        if re.search("[\.,:;´]$", speakr):
             print speakr
             raise unexception("improper tail on speaker", paranum)
 
@@ -296,7 +296,7 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
             print "can't copy from prevagendanum", prevagendanum
             return ""
         assert prevagendanum.split("-")[1] == genasssess
-        print "\n\n\ncontinuingagendanum", prevagendanum, ptext
+        #print "\n\n\ncontinuingagendanum", prevagendanum, ptext
         return prevagendanum
 
 
@@ -415,7 +415,7 @@ class SpeechBlock:
             # detect the agenda
             if not self.bSecurityCouncil:
                 self.agendanum = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
-                print "aaaaa  ", self.agendanum
+                #print "aaaaa  ", self.agendanum
                 if not self.agendanum:
                     raise unexception(" uncategorized agenda title", self.paranum)
 

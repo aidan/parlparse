@@ -177,7 +177,7 @@ def AppendCluster(res, tlc, sclusttype):
                     #print " ----", tlc.txls[0].ltext
                 if bstylematches:
                     if IsNotQuiet():
-                        print "merging"
+                        pass #print "merging"
                     res[-1].txls.extend(tlc.txls)
                     return
 

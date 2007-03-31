@@ -34,27 +34,40 @@ def SetCallScrape(lsCallScrape):
     sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
-                ECESA/1/Rev.1|
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?|
+                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-F]?|
                 A/RES/\d+/\d+|
-                A/(?:CONF|INF)[\./]\d+/\d+(?:/Add.[l\d])?|
-                GC\([LXIV]*\)/RES/\d+|
+                A/(?:CONF|INF)[\./]\d+/\d+(?:/(?:Add|Rev).[l\d])?|
+                GC\([\dLXIV]*\)(?:/RES)?/\d+|
                 SG/SM/\d+|
+                ECESA/1/Rev.1|
+                MAG/\d+/\d+|
                 AG/\d+|
+                E/CN.\d/\d+/\d+|
+                A/AC.\d+/\d+|
+                JIU/REP/\d+/\d+|
+                CD/\d+|
+                ISBA/A/L.\d/Rev.\d|
+                NPT/CONF.\d+/(?:TC.\d/)?\d+|
+                WGAP/\d+/\d|
+                OAU/OL/\d+/\d+/\d+|
+                A/BUR/\d+/\d|
+                GOV/\d{4}(?:/Rev.\d)?|
+                E/\d{4}/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
                 (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?|
-                (?:[Dd]ocument\s)?S/\d{5,6}|
+                (?:[Dd]ocument\s)?S/\d{3,6}|
                 S/PRST/\d+/\d+|
                 S/PV\.\d+|
-                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+|
                 (?:the )?resolution\s\(\d\d/\d+\)|
-                (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?\d+\s\(\d\d\d\d\)|
+                (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?(?:S/RES/)?\d+\s\(\d\d\d\d\)|
                 Corr.\d|
-                (?<=\s)[3-6]\d/\d\d\d?(?=[\s,\.])|
+                (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
-                </i>\s*<i>
-                )(?!=\s)"""
+                </i>\s*<i>|
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindub\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                )(?=$|\W)"""
 
 from unscrape import ScrapePDF
 
@@ -130,16 +143,32 @@ def MarkupLinks(paratext, undocname, paranum):
     for st in stext:   # don't forget to change the splitting regexp above
         mres = re.match("(?:(?:General Assembly )?[Rr]esolutions? |[Dd]ecision |A/RES/)(\d+)/(\d+)(?:\s*(\w))?", st)
         mresb = re.match("(?:the )?resolution \((\d+)/(\d+)\)$", st)
-        mresc = re.match("([3-6]\d)/(\d\d\d?)$", st)
+        mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
         mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF)/)?(\d+)/(\S*)", st)
         mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
         mscpv = re.match("S/PV[\./](\d+)", st)
-        mflat0 = re.match("A/CONF[\./]\d+/\d+(?:/Add\.\w)?|GC\([LXIV]*\)/RES/\d+|AG/\d+|SG/SM/\d+", st)
-        msecres = re.match("(?:Security Council )?(?:[Rr]esolutions? )?(\d+) \((\d\d\d\d)\)", st)
+        msecres = re.match("(?:Security Council )?(?:[Rr]esolutions? )?(?:S/RES/)?(\d+) \((\d\d\d\d)\)", st)
         mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
         mcorr = re.match("Corr.(\d)", st)
+
+        # final dustbin for all the rest
+        mflat0 = re.match("""(?x)A/CONF[\./]\d+/\d+(?:/(?:Add|Rev)\.\w)?|
+                                 GC\([\dLXIV]*\)(?:/RES)?/\d+|
+                                 MAG/\d+/\d+|
+                                 AG/\d+|SG/SM/\d+|
+                                 E/CN.\d/\d+/\d+|
+                                 A/AC.\d+/\d+|
+                                 JIU/REP/\d+/\d+|
+                                 NPT/CONF.\d+/(?:TC.\d/)?\d+|
+                                 ISBA/A/L.\d/Rev.\d|
+                                 CD/\d+|WGAP/\d+/\d|
+                                 OAU/OL/\d+/\d+/\d+|
+                                 A/BUR/\d+/\d|
+                                 GOV/\d+(?:/Rev.\d)?|
+                                 E/\d+/\d+""", st)
+
         if mres:
             spart = (mres.group(3) and (".%s" % mres.group(3)) or "")
             link = "A-RES-%s-%s%s" % (mres.group(1), mres.group(2), spart)
@@ -191,21 +220,24 @@ def MarkupLinks(paratext, undocname, paranum):
             link = "S-RES-%s(%s)" % (msecres.group(1), msecres.group(2))
             res.append(MakeCheckLink(link, st, undocname))
         elif mcorr:
-            if link and not re.search("Corr", link):
-                link = "%s-Corr.%s" % (link, mcorr.group(1))
-                res.append(MakeCheckLink(link, st, undocname))
-            else:
-                print "Cant apply corr to :::  %s -- %s" % (link, st)
-                res.append(st)
+            if link and re.search("Corr", link):
+                link = re.sub("-Corr.\w$", "", link)
+            link = "%s-Corr.%s" % (link, mcorr.group(1))
+            res.append(MakeCheckLink(link, st, undocname))
         elif mcan:
             res.append(' ')
-        else:
-            if re.match(reressplit, st):
-                print "unmatched-link  :%s:" % st
-                assert False
 
-            if re.search("/", st):
-                jjst = re.sub("[a-zA-Z<]/[a-zA-Z]|20/20", "", st)
+        else:
+
+            if re.match("<i>(?:.*?/.*?|\(.{1,20}?\))</i>$", st):
+                pass
+            elif re.match(reressplit, st):
+                print "unmatched-link  :%s:" % st
+                raise unexception("unmatched-link", paranum)
+
+            elif re.search("/", st):
+                #print re.split(reressplit, st)
+                jjst = re.sub("[a-zA-Z<)]/[a-zA-Z]|20/20", "", st)
                 if re.search("/", jjst):
                     print "Failed with "+st
                     raise unexception("bad / in paratext", paranum)
