@@ -169,13 +169,15 @@ def CharToFlat(st):
     st = st.replace("É", "e")
     st = st.replace("Ç", "c")
     st = st.replace("Á", "a")
+    st = st.replace("Æ", "ae")
+    st = st.replace("Ö", "o")
 
     st = st.replace("°", "")
     st = st.replace("¸", "")
     st = st.replace("¯", "")
     st = st.replace("´", "")
 
-    st = st.replace("ý", "y")
+    st = st.replace("Ö", "o")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -192,6 +194,7 @@ wsplit = """(?x)(\s+|
             <i>[\d/\.,par\s]*</i>|
             </?[ib]>|
             20/20|
+            [12][90]\d\d/[12][90]\d\d|
             G-?7/|
             )"""
 #mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
@@ -268,6 +271,9 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     continue
                 if re.match("20/20$", wtxt):
                     textspl.append("20-20")
+                    continue
+                if re.match("[12][90]\d\d/[12][90]\d\d$", wtxt):
+                    textspl.append("-".join(wtxt.split("/")))
                     continue
                 maref = re.match('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"[^>]*>[^<]*</a>$', wtxt)
                 if maref:
