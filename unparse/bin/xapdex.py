@@ -148,6 +148,7 @@ def CharToFlat(st):
     st = st.replace("â", "a")
     st = st.replace("ã", "a")
     st = st.replace("ä", "a")
+    st = st.replace("å", "a")
     st = st.replace("ç", "c")
     st = st.replace("é", "e")
     st = st.replace("ë", "e")
@@ -161,6 +162,7 @@ def CharToFlat(st):
     st = st.replace("ó", "o")
     st = st.replace("õ", "o")
     st = st.replace("ø", "o")
+    st = st.replace("ò", "o")
     st = st.replace("ú", "u")
     st = st.replace("ü", "u")
     st = st.replace("ñ", "n")
@@ -177,7 +179,7 @@ def CharToFlat(st):
     st = st.replace("¯", "")
     st = st.replace("´", "")
 
-    st = st.replace("Ö", "o")
+    st = st.replace("ò", "o")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -187,13 +189,13 @@ wsplit = """(?x)(\s+|
             <a[^>]*>[^<]*</a>|
             \$\d+|\d+\.\d+|
             &\w{1,5};|
-            [:;.,?!£¥*%\"()\[\]+]+|
+            [:;.,?!£¥*%@\"()\[\]+]+|
             '|
             (?<=[a-zA-Z\)"])/(?=[a-zA-Z])|
-            <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
+            <i>\([A-Z0-9a-z\.,\-/\s\(\)\*]*?\)</i>|
             <i>[\d/\.,par\s]*</i>|
             </?[ib]>|
-            20/20|HIV/AIDS|
+            20/20|9/11|HIV/AIDS|
             [12][90]\d\d/[12][90]\d\d|
             G-?7/|
             )"""
@@ -216,7 +218,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
 
             if spclass[0] == "name":
-                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|\"|[A-Z]\.|\.", "", spclass[1]).lower()
+                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|`|\"|[A-Z]\.|\.", "", spclass[1]).lower()
                 #print "SSS", speaker, spclass
                 speakerspl = speaker.split()
                 for i in range(max(0, len(speakerspl) - 3), len(speakerspl)):
@@ -266,10 +268,10 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!£¥*%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!£¥*%@\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
-                if re.match("(?:20/20|[12][90]\d\d/[12][90]\d\d|HIV/AIDS)$", wtxt):
+                if re.match("(?:20/20|9/11|[12][90]\d\d/[12][90]\d\d|HIV/AIDS)$", wtxt):
                     textspl.append("-".join(wtxt.split("/")))
                     continue
                 maref = re.match('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"[^>]*>[^<]*</a>$', wtxt)
