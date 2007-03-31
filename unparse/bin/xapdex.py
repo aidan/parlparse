@@ -193,7 +193,7 @@ wsplit = """(?x)(\s+|
             <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
             <i>[\d/\.,par\s]*</i>|
             </?[ib]>|
-            20/20|
+            20/20|HIV/AIDS|
             [12][90]\d\d/[12][90]\d\d|
             G-?7/|
             )"""
@@ -269,10 +269,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 if re.match("&\w{1,5};|[:;.,?!ге*%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
-                if re.match("20/20$", wtxt):
-                    textspl.append("20-20")
-                    continue
-                if re.match("[12][90]\d\d/[12][90]\d\d$", wtxt):
+                if re.match("(?:20/20|[12][90]\d\d/[12][90]\d\d|HIV/AIDS)$", wtxt):
                     textspl.append("-".join(wtxt.split("/")))
                     continue
                 maref = re.match('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"[^>]*>[^<]*</a>$', wtxt)
