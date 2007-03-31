@@ -251,10 +251,10 @@ class VoteBlock:
         self.typ = "vote"
 
     def writeblock(self, fout):
-        fout.write("\n")
-        fout.write('<div class="recvote" id="%s">\n' % self.paranum.MakeGid())
-        fout.write('\t<p class="motiontext">%s</p>\n' % self.motiontext)
-        fout.write('\t<p class="votecount">%s</p>\n' % self.votecount)
-        fout.write('\t<p class="votelist">%s</p>\n' % self.votelist)
+        bgid = self.paranum.MakeGid()
+        fout.write('\n<div class="recvote" id="%s">\n' % bgid)
+        fout.write('\t<p class="motiontext" id="%s-pa01">%s</p>\n' % (bgid, self.motiontext))
+        fout.write('\t<p class="votecount" id="%s-pa02">%s</p>\n' % (bgid, self.votecount))
+        fout.write('\t<p class="votelist" id="%s-pa03">%s</p>\n' % (bgid, self.votelist))
         fout.write('</div>\n')
 
