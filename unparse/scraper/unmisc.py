@@ -44,7 +44,7 @@ reressplit = """(?x)(
                 ECESA/1/Rev.1|
                 MAG/\d+/\d+|
                 AG/\d+|
-                E/CN.\d/\d+/\d+|
+                E/CN.\d/\d+/(?:L\.)?\d+|
                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP|WP).\d+)?(?:/Rev\.2)?|
                 JIU/REP/\d+/\d+|
                 CD/\d+|
@@ -55,6 +55,7 @@ reressplit = """(?x)(
                 SPLOS/\d+|
                 C/E/RES.27|
                 INFCIRC/\d+|
+                CLCS/\d|
                 OAU/OL/\d+/\d+/\d+|
                 A/BUR/\d+/\d|
                 GOV/\d{4}(?:/Rev.\d)?|
@@ -164,14 +165,14 @@ def MarkupLinks(paratext, undocname, paranum):
                                  GC\([\dLXIV]*\)(?:/RES)?/\d+|
                                  MAG/\d+/\d+|
                                  AG/\d+|SG/SM/\d+|
-                                 E/CN.\d/\d+/\d+|
+                                 E/CN.\d/\d+/(?:L\.)?\d+|
                                  S-1996/1|
                                  A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP|WP).\d+)?(?:/Rev\.2)?|
                                  C/E/RES.27|
                                  JIU/REP/\d+/\d+|
                                  NPT/CONF.\d+/(?:TC.\d/)?\d+|
                                  ISBA/A/L.\d/Rev.\d|
-                                 CD/\d+|WGAP/\d+/\d|WGFS/\d+|SPLOS/\d+|(?:A/)?ES-\d+/\d+|
+                                 CD/\d+|WGAP/\d+/\d|WGFS/\d+|SPLOS/\d+|(?:A/)?ES-\d+/\d+|CLCS/\d|
                                  INFCIRC/\d+|
                                  OAU/OL/\d+/\d+/\d+|
                                  A/BUR/\d+/\d|
@@ -248,7 +249,7 @@ def MarkupLinks(paratext, undocname, paranum):
 
             elif re.search("/", st):
                 #print re.split(reressplit, st)
-                jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20", "", st)
+                jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20|[12][90]\d\d/[12][90]\d\d", "", st)
                 if re.search("/", jjst):
                     print "Failed with "+st
                     raise unexception("bad / in paratext", paranum)
