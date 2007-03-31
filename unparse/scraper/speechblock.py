@@ -159,7 +159,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -276,7 +276,7 @@ AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|torna
                   ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
                   ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|Dates of the.*? Dialogue)(?i)"),
                   ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
-                  ("misc", "(?:programme|high-level.*?meeting|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
+                  ("misc", "(?:programme|high-level.*?meeting|high-level.*?dialogue|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
                   ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|extension of the work|apportionment of the expenses)(?i)"),
                 ]
 

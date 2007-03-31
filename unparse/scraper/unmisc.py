@@ -37,7 +37,7 @@ reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
-                A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev\.)?[l\d])?(?:/(?:Add\.)?[l\d])?|
+                A/(?:CONF|INF|HRC)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev\.)?[l\d])?(?:/(?:Add\.)?[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                 SG/SM/\d+|
                 S-1996/1|
@@ -74,7 +74,7 @@ reressplit = """(?x)(
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
-                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvm\*\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvmgy\*\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
                 )(?=$|\W)"""
 
 from unscrape import ScrapePDF
@@ -153,7 +153,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mresb = re.match("(?:the )?resolution \((\d+)/(\d+)\)$", st)
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
-        mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF)/)?(\d+)/(\S*)", st)
+        mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF|HRC)/)?(\d+)/(\S*)", st)
         mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
         mscpv = re.match("S/PV[\./](\d+)", st)
