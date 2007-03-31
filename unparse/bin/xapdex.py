@@ -167,7 +167,8 @@ def CharToFlat(st):
     st = st.replace("ü", "u")
     st = st.replace("ñ", "n")
     st = st.replace("ý", "y")
-
+    st = st.replace("æ", "ae")
+    
     st = st.replace("É", "e")
     st = st.replace("Ç", "c")
     st = st.replace("Á", "a")
@@ -179,7 +180,7 @@ def CharToFlat(st):
     st = st.replace("¯", "")
     st = st.replace("´", "")
 
-    st = st.replace("ò", "o")
+    st = st.replace("æ", "ae")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -218,7 +219,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
 
             if spclass[0] == "name":
-                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|`|\"|[A-Z]\.|\.", "", spclass[1]).lower()
+                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The|Rev)\.?\s+|-|'|`|\"|[A-Z]\.|\.", "", spclass[1]).lower()
                 #print "SSS", speaker, spclass
                 speakerspl = speaker.split()
                 for i in range(max(0, len(speakerspl) - 3), len(speakerspl)):
