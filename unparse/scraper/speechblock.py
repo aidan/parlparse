@@ -159,7 +159,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -271,12 +271,12 @@ AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|torna
                   ("addr", "address(?i)"),
                   ("report", "report(?i)"),
                   ("report", "working group(?i)"),
-                  ("misc", "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)"),
-                  ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)"),
                   ("report", "(?:letter from the|statements? by the|oral presentations by)(?i)"),
+                  ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
                   ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|international.*? day|Dates of the.*? Dialogue)(?i)"),
                   ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
-                  ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
+                  ("misc", "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)"),
+                  ("misc", "(?:statements? on the occasion|message from the|remembrance songs|boys choir|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)"),
                 ]
 
 
@@ -522,7 +522,7 @@ class SpeechBlock:
             return ""
 
         # case of going beyond midnight
-        if mroseat.group(4) and (ihour == 1) and (mroseat.group(3) == "p"):
+        if mroseat.group(4) and (ihour == 1) and (mroseat.group(3) == "a"):
             ihour += 24
             print " wrapping mid-night %s -> %s" % (prevtime, ihour)
         if mroseat.group(4) and (ihour == 12) and (mroseat.group(3) == "a"):

@@ -38,9 +38,10 @@ reressplit = """(?x)(
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
                 A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
-                GC\([\dLXIV]*\)(?:/RES)?/\d+|
+                GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                 SG/SM/\d+|
                 S-1996/1|
+                S-\d\d/\d|
                 ECESA/1/Rev.1|
                 MAG/\d+/\d+|
                 AG/\d+|
@@ -163,12 +164,13 @@ def MarkupLinks(paratext, undocname, paranum):
 
         # final dustbin for all the rest
         mflat0 = re.match("""(?x)A/CONF[\./]\d+/(?:L\.)?\d+(?:/(?:Add|Rev)\.\w)?|
-                                 GC\([\dLXIV]*\)(?:/RES)?/\d+|
+                                 GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                                  MAG/\d+/\d+|
                                  AG/\d+|SG/SM/\d+|
                                  HIV/AIDS/CRP.\d(?:/Add.\d)?|
                                  E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                                  S-1996/1|
+                                 S-\d\d/\d|
                                  A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
                                  C/E/RES.27|
                                  JIU/REP/\d+/\d+|
