@@ -159,7 +159,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -266,17 +266,18 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
     return ptext, typ, currentspeaker
 
 
-AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes)(?i)"),
-                  ("natdis", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy$)"),
+AgendaTypeMap = [ ("natdis", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes|bombing)(?i)"),
+                  ("natdis", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy|Recent terrorist attacks$)"),
                   ("addr", "address(?i)"),
+                  ("show", "(?:ceremony|message from the|prayer|remembrance songs|boys choir|african industrialization day|international.*? day)(?i)"),
                   ("report", "report(?i)"),
                   ("report", "working group(?i)"),
                   ("report", "(?:letter from the|statements? by the|oral presentations by)(?i)"),
                   ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
-                  ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|african industrialization day|international.*? day|Dates of the.*? Dialogue)(?i)"),
+                  ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|Dates of the.*? Dialogue)(?i)"),
                   ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
-                  ("misc", "(?:programme|ceremony|organization of(?: the)? work|tribute|prayer|closure|announcement|postponement of(?: the)? date)(?i)"),
-                  ("misc", "(?:statements? on the occasion|message from the|remembrance songs|boys choir|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|apportionment of the expenses)(?i)"),
+                  ("misc", "(?:programme|high-level.*?meeting|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
+                  ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|extension of the work|apportionment of the expenses)(?i)"),
                 ]
 
 
@@ -294,9 +295,12 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
         assert res
         return res
 
-    mprovag = re.match("Item (\d+)(?: \(\w\))? of the provisional agenda", ptext)
+    mprovag = re.match("Items? (\d+)(?: and (\d+)?)?(?: \(\w\))? of the provisional agenda", ptext)
     if mprovag:
-        return "%sp-%s" % (mprovag.group(1), genasssess)
+        res = "%sp-%s" % (mprovag.group(1), genasssess)
+        if mprovag.group(2):
+            res = "%s,%sp-%s" % (res, mprovag.group(1), genasssess)
+        return res
 
     mreqreopen = re.match("Request for the reopening.*?agenda item (\d+)", ptext)
     if mreqreopen:

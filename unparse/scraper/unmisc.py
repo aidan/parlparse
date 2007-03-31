@@ -37,12 +37,11 @@ reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
-                A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev).[l\d])?(?:/(?:Add).[l\d])?|
+                A/(?:CONF|INF)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev\.)?[l\d])?(?:/(?:Add\.)?[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                 SG/SM/\d+|
                 S-1996/1|
                 S-\d\d/\d|
-                ECESA/1/Rev.1|
                 MAG/\d+/\d+|
                 AG/\d+|
                 HIV/AIDS/CRP.\d(?:/Add.\d)?|
