@@ -247,7 +247,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         terms.add("J%s" % mpara.group(2))  # or could use mpara.group(5)
         paraclass = mpara.group(1)
         paratext = mpara.group(6).strip()
-
+     
         if not paraclass or paraclass in ['boldline-p', 'boldline-indent', 'boldline-agenda', 'motiontext']:
             if paraclass == 'boldline-agenda':
                 paratext = re.sub("[^;]*;?", paratext) # throw out all, or all up to ';'
@@ -282,8 +282,8 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     textspl.append("")
 
         elif paraclass == 'votelist':
-            for mvote in re.finditer('<span class="([^"\-]+)(?:-([^"]*))?">([^<]*)</span>', mpara.group(6)):
-                vnation = CharToFlat(mvote.group(3))
+            for mvote in re.finditer('<span class="([^"\-]+)(?:-([^"]*))?">([^<]*)</span>', paratext):
+                vnation = CharToFlat(re.sub("['\-]", "", mvote.group(3)))
                 vvote = mvote.group(2) or mvote.group(1)   # take the latter vote position if there's two
                 terms.add("V%s-%s" % (vnation, vvote))
 
