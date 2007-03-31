@@ -151,17 +151,25 @@ def CharToFlat(st):
     st = st.replace("é", "e")
     st = st.replace("ë", "e")
     st = st.replace("ê", "e")
+    st = st.replace("è", "e")
     st = st.replace("ï", "i")
     st = st.replace("í", "i")
     st = st.replace("ô", "o")
     st = st.replace("ö", "o")
     st = st.replace("ó", "o")
+    st = st.replace("õ", "o")
     st = st.replace("ø", "o")
     st = st.replace("ú", "u")
     st = st.replace("ü", "u")
     st = st.replace("ñ", "n")
 
-    st = st.replace("ä", "a")
+    st = st.replace("É", "e")
+    st = st.replace("Ç", "c")
+    st = st.replace("Á", "a")
+
+    st = st.replace("°", "")
+
+    st = st.replace("Ç", "c")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -171,10 +179,10 @@ wsplit = """(?x)(\s+|
             <a[^>]*>[^<]*</a>|
             \$\d+|\d+\.\d+|
             &\w{1,5};|
-            [:;.,?!%\"()\[\]+]+|
+            [:;.,?!£%\"()\[\]+]+|
             '|
-            (?<=[a-zA-Z])/(?=[a-zA-Z])|
-            <i>\([A-Z0-9p\.,/\s\(\)]*?\)</i>|
+            (?<=[a-zA-Z\)])/(?=[a-zA-Z])|
+            <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
             <i>[\d/\.,par\s]*</i>|
             </?[ib]>|
             20/20
@@ -197,7 +205,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         for spclass in re.findall('<span class="([^"]*)">([^>]*)</span>', div_text):
 
             if spclass[0] == "name":
-                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|\"|[A-Z]\.", "", spclass[1]).lower()
+                speaker = re.sub("^\s*(?:Mr|Mrs|Ms|Sir|Miss|Dr|The)\.?\s+|-|'|\"|[A-Z]\.|\.", "", spclass[1]).lower()
                 #print "SSS", speaker, spclass
                 speakerspl = speaker.split()
                 for i in range(max(0, len(speakerspl) - 3), len(speakerspl)):
@@ -213,9 +221,11 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     headingterms.add(nationterm)
 
     if div_agendanum:
-        mgag = re.match("(addr|natdisag)-\d+$", div_agendanum)
+        mgag = re.match("(addr|natdis)-\d+$", div_agendanum)
         if mgag:
             terms.add("A%s" % mgag.group(1))
+            if mgag.group(1) == "natdis":
+                print "AAAAA  ", div_agendanum
         for agnum in div_agendanum.split(","):  # a comma separated list
             terms.add("A%s" % agnum)
 
@@ -227,7 +237,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         rmaraiter = [ ]  # suppress this case (which just contains spans of seats, already loaded)
 
     if div_class == 'italicline-spokein':
-        mitspokin =	re.match('\s*<p[^>]*><i>spoke in (\w+)</i></p>', div_text)
+        mitspokin =	re.match('\s*<p[^>]*><i>spoke in (\w+)', div_text)
         assert mitspokin, "Unmatched spokin: %s" % div_text
         terms.add("L%s" % re.sub("[^\w]", "", mitspokin.group(1)).lower())
 
@@ -245,7 +255,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!£%\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
                 if re.match("20/20$", wtxt):
@@ -265,6 +275,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 #    print wtxt, re.split(wsplit, wtxt), re.split("((?<=[a-z])/(?=[a-z]))", wtxt)
 
                 if wtxt and not re.match("[a-z][a-z]?$|the$", wtxt):
+                    #print wtxt,
                     textspl.append(CharToFlat(wtxt))
                 else:
                     textspl.append("")
