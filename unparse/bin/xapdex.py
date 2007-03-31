@@ -173,6 +173,7 @@ def CharToFlat(st):
     st = st.replace("°", "")
     st = st.replace("¸", "")
     st = st.replace("¯", "")
+    st = st.replace("´", "")
 
     st = st.replace("ý", "y")
 
@@ -186,11 +187,12 @@ wsplit = """(?x)(\s+|
             &\w{1,5};|
             [:;.,?!£*%\"()\[\]+]+|
             '|
-            (?<=[a-zA-Z\)])/(?=[a-zA-Z])|
+            (?<=[a-zA-Z\)"])/(?=[a-zA-Z])|
             <i>\([A-Z0-9a-z\.,\-/\s\(\)]*?\)</i>|
             <i>[\d/\.,par\s]*</i>|
             </?[ib]>|
-            20/20
+            20/20|
+            G-?7/|
             )"""
 #mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
 def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
@@ -279,7 +281,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 #    print re.split(wsplit, paratext)
                 #    print wtxt, re.split(wsplit, wtxt), re.split("((?<=[a-z])/(?=[a-z]))", wtxt)
 
-                if wtxt and not re.match("[a-z][a-z]?$|the$", wtxt):
+                if wtxt and not re.match("[a-z][a-z]?$|the$|g-?7/$", wtxt):
                     #print wtxt,
                     textspl.append(CharToFlat(wtxt))
                 else:
