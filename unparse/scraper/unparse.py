@@ -36,7 +36,7 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
             lblock = SpeechBlock(tlcall, i, undocname, sdate, speakerbeforetookchair, curragendanum)
             if lblock.agendanum:
                 curragendanum = lblock.agendanum
-                
+
             i = lblock.i
 
         if res and res[-1].paranum.pageno == lblock.paranum.pageno:
@@ -48,6 +48,9 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
     # find the rosetime
     if res:
         res[-1].rosetime = res[-1].ExtractRoseTime(sdate[10:].strip())
+        if undocname in ["S-PV-3698", "S-PV-3698-Resu.1", "S-PV-3765-Resu.2", "S-PV-4072-Resu.1", "S-PV-4174", "S-PV-4223", "S-PV-5100"]:
+            assert not res[-1].rosetime
+            res[-1].rosetime = sdate[10:].strip() # the missing rosetimes
         if not res[-1].rosetime:
             res[-1].writeblock(sys.stdout)
             raise unexception("can't find rosetime", res[-1].paranum)

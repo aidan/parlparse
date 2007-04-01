@@ -160,7 +160,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop ", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Transcript", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -330,7 +330,7 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
 
 
 def CleanupTags(ptext, typ, paranum):
-    assert typ in ["italicline", "italicline-tookchair", "italicline-spokein", "boldline", "spoken"]
+    assert typ in ["council-agenda", "italicline", "italicline-tookchair", "italicline-spokein", "boldline", "spoken"]
     if typ == "boldline":
         ptext = re.sub("</?b>", "", ptext).strip()
     if re.search("<b>", ptext):
@@ -513,12 +513,19 @@ class SpeechBlock:
             return ""
         if len(self.paragraphs) != 1:
             return ""
+
+        sprevhour, sprevmin = prevtime.split(":")
+
         para = self.paragraphs[0]
-        mroseat = re.search("meeting(?: rose| was adjourned) at (\d+)(?:[\.:]\s*(\d+))? ([ap])\.m\.(, \d+ September|, Friday,)?", para[1])
+        mroseat = re.search("meeting(?: rose| was adjourned| was suspended) at (\d+)(?:[\.:]\s*(\d+))? ([ap])\.m\.(, \d+ September|, Friday,| on)?", para[1])
         if not mroseat:
             if re.search("meeting rose at(?: 12)? noon\.", para[1]):
                 return "12:00"
+            if re.search("meeting rose at(?: 12)? midnight\.", para[1]):
+                assert int(sprevhour) > 13  # else session too long
+                return "24:00"
             return ""
+
         ihour = int(mroseat.group(1))
         imin = mroseat.group(2) and int(mroseat.group(2)) or 0
         if mroseat.group(3) and mroseat.group(3) == "p" and ihour != 12:
@@ -527,17 +534,16 @@ class SpeechBlock:
             return ""
 
         # case of going beyond midnight
-        if mroseat.group(4) and (ihour == 1) and (mroseat.group(3) == "a"):
+        if (ihour in [1, 2, 4]) and (mroseat.group(3) == "a") and (int(sprevhour) > ihour):
             ihour += 24
             print " wrapping mid-night %s -> %s" % (prevtime, ihour)
-        if mroseat.group(4) and (ihour == 12) and (mroseat.group(3) == "a"):
+        if (ihour == 12) and (mroseat.group(3) == "a") and (int(sprevhour) > 13):
             ihour = 24
             print " wrapping mid-night %s -> %s" % (prevtime, ihour)
 
         res = "%02d:%02d" % (ihour, imin)
 
         # check time is in order
-        sprevhour, sprevmin = prevtime.split(":")
         if int(sprevhour) > ihour or (int(sprevhour) > ihour and int(sprevmin) > imin):
             print " times out of order, %s > %s" % (prevtime, res)
             return ""

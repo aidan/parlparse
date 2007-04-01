@@ -560,3 +560,6 @@ for nonnation in nonnationlist.split("\n"):
 # it's a map because because it adds up how many of each one have occurred
 
 
+nonnationscount["Executive Director of the United Nations Children's Fund"] = 0
+nonnationscount["Under-Secretary-General for Political Affairs"] = 0
+nonnationscount["Officer-in-Charge of the Asia and the Pacific Division of the Department of Political Affairs"] = 0

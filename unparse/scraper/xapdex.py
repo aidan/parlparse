@@ -61,7 +61,7 @@ Example command lines:
 ./xapdex.py --stem=A-53-PV""")
 parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
-parser.add_option("--stem", dest="stem", default=None,
+parser.add_option("--stem", dest="stem", default="",
       help="Restricts the files scanned within the directory similar to the parser feature")
 parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
@@ -86,6 +86,7 @@ if not options.undata:
         options.undata = "%s/undata" % os.getenv('HOME')
     if not os.path.isdir(options.undata):
         parser.error("Please specify UN data directory with --undata=, or run script with undata in current directory, in parent directory (up to 3 levels), or directly in your home directory")
+
 if len(args) != 0:
     print "No args used by this function; see --stem"
     parser.print_help()

@@ -1,8 +1,8 @@
 import os
 import re
 from nations import FixNationName
-from unmisc import unexception, paranumC, IsNotQuiet
-
+from unmisc import unexception, paranumC, IsNotQuiet, MarkupLinks
+from speechblock import CleanupTags
 
 page1bit = '<page number="1" position="absolute" top="0" left="0" height="1188" width="918">(?:<fontspec[^>]*>|\s)*$'
 pageibit = '<page number="(\d+)" position="absolute" top="0" left="0" height="1188" width="918">(?:\s*<fontspec[^>]*>|\s)*(?=<text)'
@@ -243,11 +243,13 @@ class TextPage:
             raise unexception("bad year", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         ihour = int(mdate.group(4))
         imin = mdate.group(5) and int(mdate.group(5)) or 0
-        if mdate.group(6) and mdate.group(6) == "p" and ihour != 12:
+        if mdate.group(6) and mdate.group(6) == "a" and ihour == 12:
+            ihour = 0
+        elif mdate.group(6) and mdate.group(6) == "p" and ihour != 12:
             ihour += 12
         if self.date:
             raise unexception("date redefined", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
-        if not (1 <= ihour <= 23) or not (0 <= imin <= 59):
+        if not (0 <= ihour <= 23) or not (0 <= imin <= 59):
             print ltext
             raise unexception("bad time", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
@@ -410,14 +412,19 @@ class TextPage:
             ih += 1
 
         #print "ccccc", self.chairs
+        lparanum = paranumC(self.undocname, None, 0, -1, self.textcountnumber)
         if len(self.chairs) not in (15, 17) or len(self.seccouncilmembers) != 15:
             if self.undocname == "S-PV-3446":
                 return False
             print len(self.seccouncilmembers), len(self.chairs), "wrong number of members or chairs\n", self.chairs
             print self.seccouncilmembers
-            raise unexception("wrongnumber on council", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
+            raise unexception("wrongnumber on council", lparanum)
 
+        # transform and markup links
         self.agenda = " ".join(self.agenda)
+        self.agenda = re.sub("</?b>", " ", self.agenda)
+        self.agenda = re.sub("\s\s+", " ", self.agenda)
+        self.agenda = MarkupLinks(CleanupTags(self.agenda, "council-agenda", lparanum), self.undocname, lparanum)
 
         return True
 

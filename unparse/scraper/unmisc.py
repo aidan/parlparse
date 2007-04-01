@@ -37,6 +37,9 @@ reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 A/RES/\d+/\d+|
+                S/PRST/\d+/\d+|
+                S/\d+/PRST/\d+|
+                S/PV\.\d+|
                 A/(?:CONF|INF|HRC)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev\.)?[l\d])?(?:/(?:Add\.)?[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                 SG/SM/\d+|
@@ -44,6 +47,9 @@ reressplit = """(?x)(
                 S-\d\d/\d|
                 MAG/\d+/\d+|
                 AG/\d+|
+                CP/\d+|
+                (?:[Rr]egulation|presidential\sdecree)\s\d+/\d+|
+                press\s(?:release|statement)\s\(?SC/\d\d\d\d\)?|
                 HIV/AIDS/CRP.\d(?:/Add.\d)?|
                 E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
@@ -64,17 +70,15 @@ reressplit = """(?x)(
                 (?:A/)?ES-\d+/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
-                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?|
+                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?(?:/Corr\.\d)?|
                 (?:[Dd]ocument\s)?S/\d{3,6}|
-                S/PRST/\d+/\d+|
-                S/PV\.\d+|
                 (?:the )?resolution\s\(\d\d/\d+\)|
                 (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?(?:S/RES/)?\d+\s\(\d\d\d\d\)|
                 Corr.\d|
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
-                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvmgy\*\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
+                <i>\((?!resolution|A/\d\d)[A-Z0-9paresolutindubcfxvmgyh\*\.,\-\s/\(\)]*?\)</i>  # used to hide of complicated (buggered up) links which have two brackets
                 )(?=$|\W)"""
 
 from unscrape import ScrapePDF
@@ -154,18 +158,21 @@ def MarkupLinks(paratext, undocname, paranum):
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
         mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF|HRC)/)?(\d+)/(\S*)", st)
-        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?$", st)
+        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?(?:/Corr\.(\d))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
+        mscprst2 = re.match("S/(\d\d\d\d)/PRST/(\d+)", st)
         mscpv = re.match("S/PV[\./](\d+)", st)
         msecres = re.match("(?:Security Council )?(?:[Rr]esolutions? )?(?:S/RES/)?(\d+) \((\d\d\d\d)\)", st)
         mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
         mcorr = re.match("Corr.(\d)", st)
+        maltreg = re.match("(?:[Rr]egulation|presidential\sdecree)\s\d+/\d+", st)
+        msecpress = re.match("(press (?:release|statement)) SC/(\d\d\d\d)", st)
 
         # final dustbin for all the rest
         mflat0 = re.match("""(?x)A/CONF[\./]\d+/(?:L\.)?\d+(?:/(?:Add|Rev)\.\w)?|
                                  GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                                  MAG/\d+/\d+|
-                                 AG/\d+|SG/SM/\d+|
+                                 AG/\d+|SG/SM/\d+|CP/\d+|
                                  HIV/AIDS/CRP.\d(?:/Add.\d)?|
                                  E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                                  S-1996/1|
@@ -193,6 +200,10 @@ def MarkupLinks(paratext, undocname, paranum):
         elif mresc:
             link = "A-RES-%s-%s" % (mresc.group(1), mresc.group(2))
             res.append(MakeCheckLink(link, st, undocname))
+        elif msecpress:
+            res.append(msecpress.group(1))
+            link = "SC/%s" % msecpress.group(2)
+            res.append(MakeCheckLink(link, st, undocname))
 
         elif meres:
             spart = (meres.group(3) and (".%s" % meres.group(3)) or "")
@@ -207,6 +218,9 @@ def MarkupLinks(paratext, undocname, paranum):
                 link = "A-%s-%s" % (mdoc.group(2), doccode)
             res.append(MakeCheckLink(link, st, undocname))
 
+        elif maltreg:
+            res.append("<i>(%s)</i>" % maltreg.group(0))
+
         elif mflat0:
             link = re.sub("/", "-", mflat0.group(0))
             res.append(MakeCheckLink(link, st, undocname))
@@ -220,10 +234,15 @@ def MarkupLinks(paratext, undocname, paranum):
                 link = "%s-Add.%s" % (link, mscdoc.group(3))
             if mscdoc.group(4):
                 link = "%s-Rev.%s" % (link, mscdoc.group(4))
+            if mscdoc.group(5):
+                link = "%s-Corr.%s" % (link, mscdoc.group(5))
 
             res.append(MakeCheckLink(link, st, undocname))
         elif mscprst:
             link = "S-PRST-%s-%s" % (mscprst.group(1), mscprst.group(2))
+            res.append(MakeCheckLink(link, st, undocname))
+        elif mscprst2:
+            link = "S-PRST-%s-%s" % (mscprst2.group(1), mscprst2.group(2))
             res.append(MakeCheckLink(link, st, undocname))
         elif mscpv:
             link = "S-PV-%s" % (mscpv.group(1))
@@ -244,7 +263,7 @@ def MarkupLinks(paratext, undocname, paranum):
 
         else:
 
-            if re.match("<i>(?:.*?/.*?|\(.{1,90}?\))</i>$", st):
+            if re.match("<i>(?:.*?/.*?|\(.{1,190}?\))</i>$", st):
                 pass
             elif re.match(reressplit, st):
                 print "unmatched-link  :%s:" % st
