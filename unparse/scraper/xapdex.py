@@ -185,13 +185,14 @@ def CharToFlat(st):
     st = st.replace("Ï", "i")
     st = st.replace("Ó", "o")
     st = st.replace("Î", "i")
+    st = st.replace("Í", "i")
 
     st = st.replace("°", "")
     st = st.replace("¸", "")
     st = st.replace("¯", "")
     st = st.replace("´", "")
 
-    st = st.replace("ì", "i")
+    st = st.replace("Í", "i")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
