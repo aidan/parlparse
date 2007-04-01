@@ -288,7 +288,8 @@ class TextPage:
                 print txlines[ih].ltext
                 raise unexception("unable to extract country from  ...-line", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
         ih += 1
-        self.chairs.append((mchair.group(1), FixNationName(mcountry.group(1), self.date)))
+        chairname = re.sub("\s\s+", " ", mchair.group(1)).strip()
+        self.chairs.append((chairname, FixNationName(mcountry.group(1), self.date)))
         return ih
 
     def ExtractDotLineChairHead(self, txlines):
@@ -348,7 +349,8 @@ class TextPage:
                 if not fscountry:
                     print "--%s--" % mcountry.group(1)
                     raise unexception("unrecognized nationA", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
-                self.chairs.append((mpresseat.group(2), fscountry, "president"))
+                chairname = re.sub("\s\s+", " ", mpresseat.group(2)).strip()
+                self.chairs.append((chairname, fscountry, "president"))
 
                 if fscountry in self.seccouncilmembers:
                     assert len(self.seccouncilmembers) == 1
@@ -378,7 +380,8 @@ class TextPage:
                 if not fscountry:
                     print "--%s--" % mcountryseat.group(2)
                     raise unexception("unrecognized nationB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
-                self.chairs.append((mcountryseat.group(3), fscountry, "member"))
+                chairname = re.sub("\s\s+", " ", mcountryseat.group(3)).strip()
+                self.chairs.append((chairname, fscountry, "member"))
                 if fscountry not in self.seccouncilmembers:
                     self.seccouncilmembers.append(fscountry)
                 else:

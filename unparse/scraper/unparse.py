@@ -153,7 +153,10 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
             ichairn = 0
             for chair in glueunfile.chairs:
                 ichairn += 1
-                fout.write('\t<p id="pg000-bk02-pa%02d"><span class="name">%s</span> <span class="nation">%s</span> <span class="place">%s</span></p>\n' % (ichairn, chair[0], chair[1], chair[2]))
+                fout.write('\t<p id="pg000-bk02-pa%02d">' % ichairn)
+                for chperson in chair[0].split("/"):  # just for the extremely rare case we get two people sharing the seat
+                    fout.write('<span class="name">%s</span> ' % chperson.strip())
+                fout.write('<span class="nation">%s</span> <span class="place">%s</span></p>\n' % (chair[1], chair[2]))
             fout.write('</div>')
 
         if glueunfile.bGeneralAssembly:

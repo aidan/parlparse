@@ -72,7 +72,7 @@ reressplit = """(?x)(
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
                 (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?(?:/Corr\.\d)?|
                 (?:[Dd]ocument\s)?S/\d{3,6}|
-                (?:the )?resolution\s\(\d\d/\d+\)|
+                (?:the\s)?resolution\s\(\d\d/\d+\)|
                 (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?(?:S/RES/)?\d+\s\(\d\d\d\d\)|
                 Corr.\d|
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|

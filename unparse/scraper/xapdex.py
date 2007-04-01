@@ -160,6 +160,7 @@ def CharToFlat(st):
     st = st.replace("ï", "i")
     st = st.replace("í", "i")
     st = st.replace("î", "i")
+    st = st.replace("ì", "i")
     st = st.replace("ô", "o")
     st = st.replace("ö", "o")
     st = st.replace("ó", "o")
@@ -170,9 +171,11 @@ def CharToFlat(st):
     st = st.replace("ú", "u")
     st = st.replace("ü", "u")
     st = st.replace("ù", "u")
+    st = st.replace("û", "u")
     st = st.replace("ñ", "n")
     st = st.replace("ý", "y")
     st = st.replace("æ", "ae")
+    st = st.replace("¢", "c")
 
     st = st.replace("É", "e")
     st = st.replace("Ç", "c")
@@ -188,7 +191,7 @@ def CharToFlat(st):
     st = st.replace("¯", "")
     st = st.replace("´", "")
 
-    st = st.replace("Î", "i")
+    st = st.replace("ì", "i")
 
     assert re.match("[a-z0-9]+$", st), "unprocessed st: %s" % st
     return st
@@ -299,6 +302,9 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     continue
                 assert not re.search("[<>]", wtxt), "spurious <> tags in splitpara:%s" % wtxt
                 wtxt = re.sub("['\-\$\.]", "", wtxt).lower()
+
+                if tdocument_id == "SPV0407201" and not re.match("\w+$", wtxt):
+                    wtxt = ""   # detune in example when we get a system error
 
                 #if re.search("/", wtxt):
                 #    print re.split(wsplit, paratext)
