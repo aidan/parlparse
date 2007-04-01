@@ -247,11 +247,12 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     headingterms.add(nationterm)
 
             if spclass[0] == "non-nation":
-                nationterm = "N%s" % CharToFlat(nonnationcatmap.get(spclass[1], "Unknown"))
-                terms.add(nationterm)
-                assert div_class == 'spoken'  # roll-call only applies to nations
-                headingterms.add(nationterm)
-                print nationterm
+                for nncat in nonnationcatmap.get(spclass[1], "Unknown").split(","):
+                    nationterm = "N%s" % CharToFlat(nncat)
+                    terms.add(nationterm)
+                    assert div_class == 'spoken'  # roll-call only applies to nations
+                    headingterms.add(nationterm)
+                    print nationterm
 
 
     if div_agendanum:
