@@ -391,6 +391,9 @@ def process_file(input_dir, input_file_rel, xapian_db):
     docterms.add("E%s" % document_date[:4])  # year
     docterms.add("E%s" % document_date[:7])  # year+month
     docterms.add("E%s" % document_date)      # full date
+    if document_date > "2001-09-11":
+        docterms.add("Epost911")      # "9/11 changed everything"
+
     if gasssess:
         docterms.add("Zga")
         docterms.add("Zga%s" % gasssess)
