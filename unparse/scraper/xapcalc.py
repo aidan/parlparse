@@ -4,12 +4,11 @@ import re
 import os
 import xapian
 from nations import nationdates
-from unmisc import CharToFlat
 
 xapian_file = "../../undata/xapdex.db/"  #sys.argv[1]
 xapian_db = xapian.Database(xapian_file)
 
-flatnationlist = [ CharToFlat(nation)  for nation in nationdates ]
+flatnationlist = [ re.sub("['\s\-]", "", nation).lower()  for nation in nationdates ]
 flatnationlist.sort()
 print flatnationlist
 
@@ -28,8 +27,9 @@ def UpdateVoteDistances(sdate, bforce):
     xapian_query.add_boolean_prefix("nation", "N")
 
     for i in range(len(flatnationlist) - 1):
+        nation1 = flatnationlist[i]
         for nation2 in flatnationlist[i + 1:]:
-            query = "nation:%s nation:%s Zvda1000" % (nation1, nation2)
+            query = "nation:%s nation:%s session:vda1000" % (nation1, nation2)
             parsed_query = xapian_query.parse_query(query)
             #value0/1000, NcountryA NcountryB Zvda1000 date|countryA|countryB
 
@@ -52,7 +52,7 @@ def UpdateVoteDistances(sdate, bforce):
 
             # now find out how many matching
             querysame = "(vote:%s-favour vote:%s-favour)" % (nation1, nation2)
-            parsed_query = xapian_query.parse_query(query)
+            parsed_query = xapian_query.parse_query(querysame)
             xapian_enquire.set_query(parsed_query)
             mset = xapian_enquire.get_mset(0, 5000, 5000)
             print mset.size(), querysame
