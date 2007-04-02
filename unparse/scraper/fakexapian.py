@@ -30,9 +30,14 @@ class BoolWeight:
 class Query:
     OP_AND = "OP_AND"
 
+class ParsedQuery:
+    def __init__(self, lquery):
+        self.parsedquery = "Parsed:%s" % lquery
+    def get_description(self):
+        return self.parsedquery
+
 class QueryParser:
     STEM_NONE = "STEM_NONE"
-
     def __init__(self):
         pass
     def set_stemming_strategy(self, x):
@@ -42,7 +47,7 @@ class QueryParser:
     def add_boolean_prefix(self, x1, x2):
         pass
     def parse_query(self, query):
-        return "parsed:%s" % query
+        return ParsedQuery(query)
 
 class Document:
     def __init__(self):

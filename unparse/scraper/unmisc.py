@@ -21,11 +21,14 @@ undochtmllinks = "../html"
 pdfdir = os.path.join("..", "..", "undata", "pdf")
 pdfxmldir = os.path.join("..", "..", "undata", "pdfxml")
 htmldir = os.path.join("..", "..", "undata", "html")
+xapdir = os.path.join("..", "..", "undata", "xapdex.db")
 sCallScrape = None  # set by one of the
 
 bQuiet = False
 def IsNotQuiet():
     return not bQuiet
+def IsVeryNoisy():
+    return False
 def SetQuiet(lbQuiet):
     global bQuiet
     bQuiet = lbQuiet
@@ -328,4 +331,38 @@ def LinkTemplate(undocname, docdate, gid):
         blogref = ""
 
     return wikiref, blogref
+
+
+
+def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
+    # this has to be able to sift between the unindexed and indexed types
+    relsm = {}
+    relsum = {}
+
+    filelist = os.listdir(htmldir)
+    filelist.sort(reverse = True)
+    for d in filelist:
+        if re.search("(?:\.css|\.svn)$", d):
+            continue
+        if stem and not re.match(stem, d):
+            continue
+
+        p = os.path.join(htmldir, d)
+        mux = re.match("(.*?)(\.unindexed)?\.html$", d)
+        assert mux, "unmatched file:%s" % d
+        if mux.group(2):
+            relsum[mux.group(1)] = p  # .unindexed
+        else:
+            relsm[mux.group(1)] = p   # without that label
+
+    if bunindexed:
+        res = relsum.values()
+        if bforce:
+            res.extend([relsm[r]  for r in relsm  if r not in relsum])
+    else:
+        res = relsm.values()
+        res.extend([relsum[r]  for r in relsum  if r not in relsm])
+
+    res.sort()
+    return res
 

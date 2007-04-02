@@ -4,9 +4,11 @@ import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir, xapdir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
+from xapdex import GoXapdex
+from votedistances import WriteVoteDistances
 
 parser = OptionParser()
 parser.set_usage("""
@@ -15,6 +17,8 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
   parse   do the parsing
+  xapdex  call the xapian indexing system
+  votedistances generate voting distances table
   index   generate miscelaneous index files
 
 --stem selects what is processed.
@@ -28,7 +32,6 @@ if not os.path.isdir(pdfdir):
 if not os.path.isdir(pdfxmldir):
     print "\nplease create the directory:", pdfxmldir
     sys.exit(0)
-
 
 parser.add_option("--stem", dest="stem", metavar="stem", default="",
                   help="stem of documents to be parsed (eg A-59-PV)")
@@ -50,6 +53,12 @@ parser.add_option("--scrape-links",
 parser.add_option("--doc",
                   dest="scrapedoc", metavar="scrapedoc", default="",
                   help="Causes a single document to be scraped")
+parser.add_option("--force-xap", action="store_true", dest="forcexap", default=False,
+                  help="Erases existing database, and indexes all .html files")
+parser.add_option("--limit", dest="limit", default=None, type="int",
+                  help="Stop after processing this many files, used for debugging testing")
+parser.add_option("--continue-on-error", action="store_true", dest="continueonerror", default=False,
+                  help="Continues with next file when there is an error, rather than stopping")
 
 (options, args) = parser.parse_args()
 
@@ -61,8 +70,11 @@ SetCallScrape(options.scrapelinks)
 bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
+bXapdex = "xapdex" in args
+bVoteDistances = "votedistances" in args
 bIndexfiles = "index" in args
-if not (bScrape or bConvertXML or bParse or bIndexfiles):
+
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles):
     parser.print_help()
     sys.exit(1)
 
@@ -96,5 +108,15 @@ if bParse:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
     PrintNonnationOccurrances()
 
-if bIndexfiles:
+if bVoteDistances:
+    f = "votetable.txt"
+    print "Writing data to file:", f
+    fout = open(f, "w")
+    WriteVoteDistances(stem, htmldir, fout)
+    fout.close()
+
+if bXapdex:
+    GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
+
+if bIndexfiles:  # just for making the big index.html pages used in preview
     MiscIndexFiles(htmldir)

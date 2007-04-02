@@ -13,6 +13,7 @@ else:
     import xapian
 import distutils.dir_util
 import traceback
+from unmisc import GetAllHtmlDocs, IsNotQuiet, IsVeryNoisy
 
 from nations import nonnationcatmap # this was why the need to moveall into same directory
 
@@ -40,53 +41,6 @@ from nations import nonnationcatmap # this was why the need to moveall into same
 # Cspoken E2006-07-20 RA-60-L.49 Smrbodini Ipg017-bk01 Nsanmarino Hpg001-bk05 L DA-60-PV.94 Jpg017-bk01-pa01 Jpg017-bk01-pa02 Jpg017-bk01-pa03
 
 
-######################################################################
-# Parse command line parameters
-
-from optparse import OptionParser
-parser = OptionParser()
-#def option_error(self, msg): # XXX how do we make a member function?
-#    self.print_help(sys.stderr) # more informative, instead of default print_usage
-#    self.exit(2, "%s: error: %s\n" % (self.get_prog_name(), msg))
-#parser.error = option_error
-parser.set_usage("""
-./xapdex.py DIRECTORY_OR_FILE ...
-
-DIRECTORY_OR_FILE are Julian's structured HTML files to index, specified using
-paths relative to the UN data directory. At the moment, replaces whole database
-with a new one indexing the given files.
-
-Example command lines:
-./xapdex.py --undata=/home/undemocracy/undata/ --xapdb=xapdex.db
-./xapdex.py --stem=A-53-PV""")
-parser.add_option("--undata", dest="undata", default=None,
-      help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
-parser.add_option("--stem", dest="stem", default="",
-      help="Restricts the files scanned within the directory similar to the parser feature")
-parser.add_option("--xapdb", dest="xapdb", default="",
-      help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
-parser.add_option("--force", action="store_true", dest="force", default=False,
-                  help="Erases existing database, and indexes all .html files")
-parser.add_option("--limit", dest="limit", default=None, type="int",
-      help="Stop after processing this many files, used for debugging testing")
-parser.add_option("--continue-on-error", action="store_true", dest="continueonerror", default=False,
-                  help="Continues with next file when there is an error, rather than stopping")
-parser.add_option("--verbose", dest="verbose", default=1, type="int",
-      help="Ranges from 0 for no output, to 2 for lots, default 1")
-
-
-######################################################################
-# Main indexing routines
-
-# TODO can't be bothered right now:
-#   "There's an extra refinement to avoid the race condition gap between
-#   committing the Xapian database change and moving the file. And another
-#   refinement so it doesn't get tricked by the parser atlering the
-#   unindexed file while it is updating the index from it. But those
-#   refinements only affect the indexer, I think."
-# I think the frist refinement needs some cleverness in Drupal's use of the
-# index as well.
-
 
 # Reindex one file
 def delete_all_for_doc(document_id, xapian_db):
@@ -97,14 +51,14 @@ def delete_all_for_doc(document_id, xapian_db):
     xapian_query.add_boolean_prefix("document", "D")
     query = "document:%s" % document_id
     parsed_query = xapian_query.parse_query(query)
-    if options.verbose > 1:
+    if IsVeryNoisy():
         print "\tdelete query: %s" % parsed_query.get_description()
     xapian_enquire.set_query(parsed_query)
     xapian_enquire.set_weighting_scheme(xapian.BoolWeight())
     mset = xapian_enquire.get_mset(0, 999999, 999999) # XXX 999999 enough to ensure we get 'em all?
     nmset = 0
     for mdoc in mset:
-        if options.verbose > 1:
+        if IsVeryNoisy():
             print "\tdeleting existing Xapian doc: %s" % mdoc[4].get_value(0)
         xapian_db.delete_document(mdoc[0]) # Xapian's document id
         nmset += 1
@@ -234,7 +188,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     terms.add(nationterm)
                     assert div_class == 'spoken'  # roll-call only applies to nations
                     headingterms.add(nationterm)
-                    print nationterm
+                    #print nationterm
 
 
     if div_agendanum:
@@ -242,7 +196,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         if mgag:
             terms.add("A%s" % mgag.group(1))
             if mgag.group(1) == "sympathy":
-                print "AAAAA  ", div_agendanum
+                print "  AAAAA  ", div_agendanum
         for agnum in div_agendanum.split(","):  # a comma separated list
             terms.add("A%s" % agnum)
 
@@ -315,7 +269,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
     value0 = "%s%sp%04d%03d" % (re.sub("-", "", document_date), tdocument_id, int(mblockid.group(1)), int(mblockid.group(2)))
     assert len(value0) == 26, len(value0) # nice and tidy; we're generating a value that gives a total global sort
 
-    if options.verbose > 1:
+    if IsVeryNoisy():
         print "value0", value0, "words:", len(textspl), " terms:", terms
 
     # assemble the document
@@ -349,7 +303,7 @@ def process_file(pfnameunindexed, xapian_db):
     assert mdocument_date, "not found date in file %s" % pfnameunindexed
     document_date = mdocument_date.group(1)
 
-    if options.verbose:
+    if IsVeryNoisy():
         print "indexing %s %s" % (document_id, document_date)
 
     while delete_all_for_doc(document_id, xapian_db):
@@ -446,72 +400,15 @@ def process_file(pfnameunindexed, xapian_db):
         os.rename(pfnameunindexed, pfnameindexed)
 
 
-def GetAllHtmlDocs(stem, bunindexed, bforce, undatadir, xapdb):
-    if not undatadir:
-        undatadir = "undata"
-        if not os.path.isdir(undatadir):
-            undatadir = "../undata"
-        if not os.path.isdir(undatadir):
-            undatadir = "../../undata"
-        if not os.path.isdir(undatadir):
-            undatadir = "../../../undata"
-        if not os.path.isdir(undatadir):
-            undatadir = "%s/undata" % os.getenv('HOME')
-        if not os.path.isdir(undatadir):
-            raise Exception, "Please specify UN data directory with --undata=, or run script with undata in current directory, in parent directory (up to 3 levels), or directly in your home directory"
-
-    # this has to be able to sift between the unindexed and indexed types
-    relsm = {}
-    relsum = {}
-
-    inputd = os.path.join(undatadir, "html")
-    assert os.path.isdir(inputd)
-    filelist = os.listdir(inputd)
-    filelist.sort(reverse = True)
-    for d in filelist:
-        if re.search("(?:\.css|\.svn)$", d):
-            continue
-        if stem and not re.match(stem, d):
-            continue
-
-        p = os.path.join(inputd, d)
-        mux = re.match("(.*?)(\.unindexed)?\.html$", d)
-        assert mux, "unmatched file:%s" % d
-        if mux.group(2):
-            relsum[mux.group(1)] = p  # .unindexed
-        else:
-            relsm[mux.group(1)] = p   # without that label
-
-
-    if bunindexed:
-        res = relsum.values()
-        if bforce:
-            res.extend([relsm[r]  for r in relsm  if r not in relsum])
-    else:
-        res = relsm.values()
-        res.extend([relsum[r]  for r in relsum  if r not in relsm])
-
-    res.sort()
-
-    if not xapdb:
-        xapdb = "xapdex.db"
-    xapian_file = os.path.join(undatadir, xapdb).rstrip()
-    return res, xapian_file
-
-
-######################################################################
-# Main entry point
-if __name__ == "__main__":
-    (options, args) = parser.parse_args()
-
-    rels, xapian_file = GetAllHtmlDocs(options.stem, True, options.force, options.undata, options.xapdb)
+def GoXapdex(stem, bforcexap, nlimit, bcontinueonerror, htmldir, xapdir):
+    rels = GetAllHtmlDocs(stem, True, bforcexap, htmldir)
 
     # Create new database
     os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
-    xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
+    xapian_db = xapian.WritableDatabase(xapdir, xapian.DB_CREATE_OR_OPEN)
 
     # having gone through the list, now load each
-    if options.limit and len(rels) > options.limit:
+    if nlimit and len(rels) > nlimit:
         rels = rels[:options.limit]
     for rel in rels:
         try:
@@ -521,7 +418,7 @@ if __name__ == "__main__":
             sys.exit(1)
         except Exception, e:
             print e
-            if options.continueonerror:
+            if bcontinueonerror:
                 traceback.print_exc()
             else:
                 traceback.print_exc()
