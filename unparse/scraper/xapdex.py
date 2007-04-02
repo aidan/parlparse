@@ -63,7 +63,7 @@ parser.add_option("--undata", dest="undata", default=None,
       help="UN data directory; if not specified searches for it in current directory, up to 3 parent directories, and home directory")
 parser.add_option("--stem", dest="stem", default="",
       help="Restricts the files scanned within the directory similar to the parser feature")
-parser.add_option("--xapdb", dest="xapdb", default="xapdex.db",
+parser.add_option("--xapdb", dest="xapdb", default="",
       help="Xapian database as path relative to UN data directory; defaults to xapdex.db")
 parser.add_option("--force", action="store_true", dest="force", default=False,
                   help="Erases existing database, and indexes all .html files")
@@ -73,24 +73,6 @@ parser.add_option("--continue-on-error", action="store_true", dest="continueoner
                   help="Continues with next file when there is an error, rather than stopping")
 parser.add_option("--verbose", dest="verbose", default=1, type="int",
       help="Ranges from 0 for no output, to 2 for lots, default 1")
-(options, args) = parser.parse_args()
-if not options.undata:
-    options.undata = "undata"
-    if not os.path.isdir(options.undata):
-        options.undata = "../undata"
-    if not os.path.isdir(options.undata):
-        options.undata = "../../undata"
-    if not os.path.isdir(options.undata):
-        options.undata = "../../../undata"
-    if not os.path.isdir(options.undata):
-        options.undata = "%s/undata" % os.getenv('HOME')
-    if not os.path.isdir(options.undata):
-        parser.error("Please specify UN data directory with --undata=, or run script with undata in current directory, in parent directory (up to 3 levels), or directly in your home directory")
-
-if len(args) != 0:
-    print "No args used by this function; see --stem"
-    parser.print_help()
-    sys.exit(0)
 
 
 ######################################################################
@@ -256,10 +238,10 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
 
     if div_agendanum:
-        mgag = re.match("(addr|disaster)-\d+$", div_agendanum)
+        mgag = re.match("(address|sympathy)-\d+$", div_agendanum)
         if mgag:
             terms.add("A%s" % mgag.group(1))
-            if mgag.group(1) == "disaster":
+            if mgag.group(1) == "sympathy":
                 print "AAAAA  ", div_agendanum
         for agnum in div_agendanum.split(","):  # a comma separated list
             terms.add("A%s" % agnum)
@@ -354,18 +336,17 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
 
 # Reindex one file
-def process_file(input_dir, input_file_rel, xapian_db):
-    mdocid = re.match(r"(html[\\/])([\-\d\w\.]+?)(\.unindexed)?(\.html)$", input_file_rel)
-    assert mdocid, "unable to match: %s" % input_file_rel
+def process_file(pfnameunindexed, xapian_db):
+    mdocid = re.match(r".*?(html[\\/])([\-\d\w\.]+?)(\.unindexed)?(\.html)$", pfnameunindexed)
+    assert mdocid, "unable to match: %s" % pfnameunindexed
     document_id = mdocid.group(2)
 
-    pfnameunindexed = os.path.join(input_dir, input_file_rel)
     fin = open(pfnameunindexed)
     doccontent = fin.read()
     fin.close()
 
     mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', doccontent)
-    assert mdocument_date, "not found date in file %s" % input_file_rel
+    assert mdocument_date, "not found date in file %s" % pfnameunindexed
     document_date = mdocument_date.group(1)
 
     if options.verbose:
@@ -391,8 +372,8 @@ def process_file(input_dir, input_file_rel, xapian_db):
     docterms.add("E%s" % document_date[:4])  # year
     docterms.add("E%s" % document_date[:7])  # year+month
     docterms.add("E%s" % document_date)      # full date
-    if document_date > "2001-09-11":
-        docterms.add("Epost911")      # "9/11 changed everything"
+    #if document_date > "2001-09-11":
+    #    docterms.add("Epost911")      # "9/11 changed everything"
 
     if gasssess:
         docterms.add("Zga")
@@ -458,85 +439,97 @@ def process_file(input_dir, input_file_rel, xapian_db):
     xapian_db.flush()
 
     if mdocid.group(3): # unindexed
-        fnameindexed = "%s%s%s" % (mdocid.group(1), mdocid.group(2), mdocid.group(4))
-        pfnameindexed = os.path.join(input_dir, fnameindexed)
+        pfnameindexed = re.sub(r"\.unindexed", "", pfnameunindexed)
         if os.path.exists(pfnameindexed):
             os.unlink(pfnameindexed)
         print pfnameunindexed, pfnameindexed
         os.rename(pfnameunindexed, pfnameindexed)
 
 
+def GetAllHtmlDocs(stem, bunindexed, bforce, undatadir, xapdb):
+    if not undatadir:
+        undatadir = "undata"
+        if not os.path.isdir(undatadir):
+            undatadir = "../undata"
+        if not os.path.isdir(undatadir):
+            undatadir = "../../undata"
+        if not os.path.isdir(undatadir):
+            undatadir = "../../../undata"
+        if not os.path.isdir(undatadir):
+            undatadir = "%s/undata" % os.getenv('HOME')
+        if not os.path.isdir(undatadir):
+            raise Exception, "Please specify UN data directory with --undata=, or run script with undata in current directory, in parent directory (up to 3 levels), or directly in your home directory"
+
+    # this has to be able to sift between the unindexed and indexed types
+    relsm = {}
+    relsum = {}
+
+    inputd = os.path.join(undatadir, "html")
+    assert os.path.isdir(inputd)
+    filelist = os.listdir(inputd)
+    filelist.sort(reverse = True)
+    for d in filelist:
+        if re.search("(?:\.css|\.svn)$", d):
+            continue
+        if stem and not re.match(stem, d):
+            continue
+
+        p = os.path.join(inputd, d)
+        mux = re.match("(.*?)(\.unindexed)?\.html$", d)
+        assert mux, "unmatched file:%s" % d
+        if mux.group(2):
+            relsum[mux.group(1)] = p  # .unindexed
+        else:
+            relsm[mux.group(1)] = p   # without that label
+
+
+    if bunindexed:
+        res = relsum.values()
+        if bforce:
+            res.extend([relsm[r]  for r in relsm  if r not in relsum])
+    else:
+        res = relsm.values()
+        res.extend([relsum[r]  for r in relsum  if r not in relsm])
+
+    res.sort()
+
+    if not xapdb:
+        xapdb = "xapdex.db"
+    xapian_file = os.path.join(undatadir, xapdb).rstrip()
+    return res, xapian_file
+
+
 ######################################################################
 # Main entry point
+if __name__ == "__main__":
+    (options, args) = parser.parse_args()
 
-# Get directory where we keep data
-undata_dir = options.undata.rstrip()
-if not os.path.exists(undata_dir):
-    raise Exception, "Could not find undata directory %s" % undata_dir
+    rels, xapian_file = GetAllHtmlDocs(options.stem, True, options.force, options.undata, options.xapdb)
 
-# Work out where Xapian database is, and name of temporary new one
-xapian_file = os.path.join(undata_dir, options.xapdb).rstrip()
-# Create new database
-os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
-xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
+    # Create new database
+    os.environ['XAPIAN_PREFER_FLINT'] = '1' # use newer/faster Flint backend
+    xapian_db = xapian.WritableDatabase(xapian_file, xapian.DB_CREATE_OR_OPEN)
 
-# Process files / directory trees
-if options.verbose > 1:
-    print "files/directories to process are", args
-
-relsm = {}
-relsum = {}
-if True:
-    input_rel = "html"
-    inputd = os.path.join(undata_dir, input_rel)
-    if os.path.isfile(inputd):
-        rels.append(input_rel)
-    elif os.path.isdir(inputd):
-        filelist = os.listdir(inputd)
-        filelist.sort(reverse = True)
-        for d in filelist:
-            if re.search("(?:\.css|\.svn)$", d):
-                continue
-
-            if re.match(options.stem, d):
-                print options.stem, d
-            if not options.stem or re.match(options.stem, d):
-                p = os.path.join(input_rel, d)
-                mux = re.match("(.*?)(\.unindexed)?\.html$", d)
-                assert mux, "unmatched file:%s" % d
-                if mux.group(2):
-                    relsum[mux.group(1)] = p  # with the html/
-                elif options.force:
-                    relsm[mux.group(1)] = p
-    else:
-        raise Exception, "Directory/file %s doesn't exist" % input
-
-for r in relsum:
-    relsm.pop(r, 1)
-rels = relsum.values()
-rels.extend(relsm.values())
-rels.sort()
-
-# having gone through the list, now load each
-if options.limit and len(rels) > options.limit:
-    rels = rels[:options.limit]
-for rel in rels:
-    try:
-        process_file(undata_dir, rel, xapian_db)
-    except KeyboardInterrupt, e:
-        print "  ** Keyboard interrupt"
-        sys.exit(1)
-    except Exception, e:
-        print e
-        if options.continueonerror:
-            traceback.print_exc()
-        else:
-            traceback.print_exc()
+    # having gone through the list, now load each
+    if options.limit and len(rels) > options.limit:
+        rels = rels[:options.limit]
+    for rel in rels:
+        try:
+            process_file(rel, xapian_db)
+        except KeyboardInterrupt, e:
+            print "  ** Keyboard interrupt"
             sys.exit(1)
+        except Exception, e:
+            print e
+            if options.continueonerror:
+                traceback.print_exc()
+            else:
+                traceback.print_exc()
+                sys.exit(1)
 
-# Flush and close
-xapian_db.flush()
-del xapian_db
+    # Flush and close
+    xapian_db.flush()
+    del xapian_db
 
 
 

@@ -360,6 +360,7 @@ Asian:
     Asian-African Consultative Committee
     Asian-African Legal Consultative Committee
     Asian-African Legal Consultative Organization
+    Officer-in-Charge of the Asia and the Pacific Division of the Department of Political Affairs
     Secretary-General, Eurasian Economic Community
 
 Business:
@@ -486,6 +487,7 @@ United Nations:
     Director, General Assembly and Economic and Social Council Affairs Division
     Director, General Assembly and Economic and Social Council Affairs Division of the Department of General Assembly Affairs and Conference Management Services
     Director, General Assembly and Economic and Social Council Affairs Division, Department for General Assembly and Conference Management
+    Executive Director of the United Nations Children's Fund
     General Assembly Affairs Branch
     High Commissioner for Human Rights
     Officer-in-Charge of the Security Council Affairs Division
@@ -506,6 +508,7 @@ United Nations:
     Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator
     Under-Secretary-General for Peacekeeping Operations
     Under-Secretary-General for Policy Coordination and Sustainable Development
+    Under-Secretary-General for Political Affairs
     Under-Secretary-General, Department of General Assembly Affairs and Conference Management
     Under-Secretary-General, Department of General Assembly Affairs and Conference Services
     United Nations Children's Fund
@@ -560,6 +563,4 @@ for nonnation in nonnationlist.split("\n"):
 # it's a map because because it adds up how many of each one have occurred
 
 
-nonnationscount["Executive Director of the United Nations Children's Fund"] = 0
-nonnationscount["Under-Secretary-General for Political Affairs"] = 0
-nonnationscount["Officer-in-Charge of the Asia and the Pacific Division of the Department of Political Affairs"] = 0
+

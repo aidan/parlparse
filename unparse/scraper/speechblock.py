@@ -267,9 +267,9 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
     return ptext, typ, currentspeaker
 
 
-AgendaTypeMap = [ ("disaster", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes|bombing)(?i)"),
-                  ("disaster", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy|Recent terrorist attacks$)"),
-                  ("addr", "address(?i)"),
+AgendaTypeMap = [ ("sympathy", "(?:floods|flood in|tropical storm|earthquake|tornado|typhoon|hurricane|cyclone|volcano eruption|fire at a tent city|tidal waves|crash of airplanes|bombing)(?i)"),
+                  ("sympathy", "(?:Expression of sympathy to the.*?peoples of|Natural disasters in|Expression of sympathy|Recent terrorist attacks$)"),
+                  ("address", "address(?i)"),
                   ("show", "(?:ceremony|message from the|prayer|remembrance songs|boys choir|african industrialization day|international.*? day)(?i)"),
                   ("report", "report(?i)"),
                   ("report", "working group(?i)"),
@@ -318,7 +318,7 @@ def DetectAgendaForm(ptext, genasssess, prevagendanum, paranum):
 
     for agt, reagt in AgendaTypeMap:
         if re.search(reagt, ptext):
-            if agt == "disaster":
+            if agt == "sympathy":
                 print "NNNN", ptext
             return "%s-%s" % (agt, genasssess)
 

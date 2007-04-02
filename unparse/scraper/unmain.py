@@ -3,7 +3,7 @@ import re
 import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
-from unscrape import ScrapeContentsPageFromStem, ConvertXML
+from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
 from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
@@ -47,12 +47,13 @@ parser.add_option("--edit",
 parser.add_option("--scrape-links",
                   action="store_true", dest="scrapelinks", default=False,
                   help="Causes cited documents to be scraped during parsing")
+parser.add_option("--doc",
+                  dest="scrapedoc", metavar="scrapedoc", default="",
+                  help="Causes a single document to be scraped")
 
 (options, args) = parser.parse_args()
 
-stem = ""
-if options.stem:
-    stem = re.sub("\.", "\.", options.stem)
+stem = re.sub("\.", "\.", options.stem)
 
 #print options, args
 SetQuiet(options.quiet)
@@ -67,12 +68,13 @@ if not (bScrape or bConvertXML or bParse or bIndexfiles):
 
 # lack of stem means we do special daily update
 if bScrape:
-    # we could use current date to generate these figures
-    if not stem:
+    if not options.stem and not options.scrapedoc:  # default case
         ScrapeContentsPageFromStem("A-61-PV")
         ScrapeContentsPageFromStem("S-2007-PV")
-    else:
-        ScrapeContentsPageFromStem(stem)
+    if options.scrapedoc:
+        ScrapePDF(options.scrapedoc, bforce=False)
+    if options.stem:
+        ScrapeContentsPageFromStem(options.stem)
 
 if bConvertXML:
     if not stem:

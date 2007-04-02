@@ -24,7 +24,7 @@ def GetFromNet(undocname, purl, plenaryurl):
             print "broken", pdfname
             return False
         if re.search("There is no document", plenrefererforward):
-            print "no-document"
+            #print "no-document"
             return False
         if re.search("This document is under EMBARGO", plenrefererforward):
             print "*** EMBARGOED ***"
@@ -71,10 +71,10 @@ def GetFromNet(undocname, purl, plenaryurl):
     return plenarypdf
 
 
-def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None):
+def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0.html", purl=None, bforce=False):
     pdfname = undocname + ".pdf"
     pdffile = os.path.join(pdfdir, pdfname)
-    if os.path.isfile(pdffile):
+    if not bforce and os.path.isfile(pdffile):
         if IsNotQuiet():
             print "  skipping", pdffile, pdfname
         return True
@@ -138,7 +138,14 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
     purl = urlparse.urljoin(plenaryurl, purl)
 
     try:
+        print purl
         plenarypdf = GetFromNet(undocname, purl, plenaryurl)
+        if not plenarypdf:
+            purlsupp = re.sub("&Lang=E", "(SUPP)&Lang=E", purl)
+            if purlsupp != purl:
+                plenarypdf = GetFromNet(undocname, purlsupp, plenaryurl)
+                #http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/61/5/Add.1(SUPP)&Lang=E
+
     except KeyboardInterrupt, e:
         print "\n *** Keyboard Interrupt"
         sys.exit(1);
@@ -147,6 +154,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         return False
 
     if not plenarypdf:
+        print "no-document"
         return False
     fout = open(pdffile, "wb")
     fout.write(plenarypdf)
