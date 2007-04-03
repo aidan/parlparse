@@ -9,7 +9,7 @@ from unmisc import unexception
 nationdates = { }
 
 def ParseCSVLine(line):
-    return [a.strip()  for a in eval("[%s]" % line.strip(", \n")) ]
+    return [a.strip()  for a in eval("[%s]" % line.strip(", \n\r")) ]
 
 fin = open("nationdata.csv", "r")
 cols = ParseCSVLine(fin.readline())
@@ -392,3 +392,5 @@ for nonnation in nonnationlist.split("\n"):
 
 
 
+nonnationscount["Partners in Population and Development"] = 0
+nonnationscount["President of the Security Council"] = 0
