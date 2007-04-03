@@ -192,7 +192,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
 
     if div_agendanum:
-        mgag = re.match("(address|condolence)-\d+$", div_agendanum)
+        mgag = re.match("(address|condolence|show)-\d+$", div_agendanum)
         if mgag:
             terms.add("A%s" % mgag.group(1))
             if mgag.group(1) == "condolence":
