@@ -417,4 +417,6 @@ def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
         assert os.path.isfile(xmldest)
 
 
+# potential advice
+# http://blog.screen-scraper.com/2007/03/01/how-to-surf-and-screen-scrape-anonymously/
 
