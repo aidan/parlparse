@@ -192,10 +192,10 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 
 
     if div_agendanum:
-        mgag = re.match("(address|sympathy)-\d+$", div_agendanum)
+        mgag = re.match("(address|condolence)-\d+$", div_agendanum)
         if mgag:
             terms.add("A%s" % mgag.group(1))
-            if mgag.group(1) == "sympathy":
+            if mgag.group(1) == "condolence":
                 print "  AAAAA  ", div_agendanum
         for agnum in div_agendanum.split(","):  # a comma separated list
             terms.add("A%s" % agnum)

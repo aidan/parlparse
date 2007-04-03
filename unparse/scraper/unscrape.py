@@ -82,7 +82,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
     if not purl:
         mares = re.match("A-RES-(\d+)-(\d+)$", undocname)
         meres = re.match("E-RES-(\d\d\d\d)-(\d+)$", undocname)  # don't know what the code is
-        madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-]*)$", undocname)
+        madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-\(\)]*)$", undocname)
         msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
         mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
         mspv = re.match("S-PV.(\d+)", undocname)
