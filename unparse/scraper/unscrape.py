@@ -85,6 +85,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-\(\)]*)$", undocname)
         msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
         mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
+        macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d)$", undocname)
         mspv = re.match("S-PV.(\d+)", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
         munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
@@ -101,6 +102,9 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             tail = re.sub("-", "/", madoc.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
             #print purl
+        elif macdoc:
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/AC.%s/%s/%s&Lang=E" % (macdoc.group(1), macdoc.group(2), macdoc.group(3))
+
         elif scdoc:
             tail = re.sub("-", "/", scdoc.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s/%s%s%s&Lang=E" % (scdoc.group(1), scdoc.group(2), tail, scdoc.group(4))
