@@ -2,14 +2,60 @@
 # vim:set filetype=php:
 # vim:sw=2:ts=2:et
 
-function un_get_doc_path($id) {
+
+/**
+ * Format the path to a file, based on the document id
+ */
+function un_get_doc_path($id = null) {
+	if ($id) {
   $path = undata_path();
   $path = $path . "html/" . $id . ".html";
   return $path;
+  }
 }
 
+/**
+ * The path to the undata folder
+ */
 function undata_path() {
   return "/home/undemocracy/undata/"; 
+}
+
+/**
+ * Takes the document string and returns the date
+ */
+function grab_date($document) {
+	preg_match('/<span class="date">((.*?)-(.*?)-(.*?))<\/span>/', $document, $match);
+//	return format_date($match[1]);
+		return $match;
+}
+
+function grab_code($document) {
+	preg_match('/<span class="code">(.*?)<\/span>/', $document, $match);
+
+  $body = substr($match[1],0,1);
+
+  if ($body == "A") {
+    preg_match('/(.*?)\-(.*?)-(.*?)\.(.*[0-9])/',$match[1],$code);
+    $code['body'] = $code[1];
+    $code['session'] = $code[2];
+    $code['type'] = $code[3];
+    $code['meeting'] = $code[4];
+  } elseif ($body == "S") {
+	    preg_match('/(.*?)\-(.*?)-(.*[0-9])/',$match[1],$code);
+	    $code['body'] = $code[1];
+	    $code['type'] = $code[2];
+	    $code['number'] = $code[3];
+	  }
+		return $code;
+}
+
+/**
+ * Opens the file - and returns the string.  
+ * This is done so that we can change the way files are opened if needed.
+ */
+function un_file_string($document) {
+  return file_get_contents($document);  
 }
 
 /**
@@ -24,15 +70,39 @@ function unfilenode_menu($may_cache) {
       'access' => user_access('access content'),
       'callback' => 'document_page'
      );
+   $items[] = array(
+     'path' => 'image',
+     'title' => t('image'),
+     'access' => user_access('access content'),
+     'callback' => 'image_page'
+    );
      $items[] = array(
       'path' => 'test',
       'title' => 'Assembly files test page',
       'access' => user_access('access content'),
       'callback' => 'unfilenode_test',
      );
+   $items[] = array(
+    'path' => 'spokenby',
+    'title' => 'Agenda items spoken by nation',
+    'access' => user_access('access content'),
+    'callback' => 'unfilenode_spokenby',
+   );
+ $items[] = array(
+  'path' => 'agenda',
+  'title' => 'Agenda',
+  'access' => user_access('access content'),
+  'callback' => 'agenda_page',
+ );
   }   
   return $items;
 }
+
+
+/**
+ * Page callbacks
+ */
+
 
 /**
  * /documents/ page calllback
@@ -43,37 +113,119 @@ function document_page() {
   return theme('full_document', un_file_string($document)); 
 }
 
-function un_file_string($document) {
-  return file_get_contents($document);  
+/**
+ * spokenby page calllback
+ */
+function unfilenode_spokenby() {
+	$q = arg(1);
+  $search = xapian_do_search('date:'.arg(3).' class:subheading nation:'.$q);
+  $output = array();
+  $output[] = $search->info;
+  foreach($search->data as $result) {
+  	$output[] = theme('agenda_list',$result);
+  }
+  return theme('item_list', array_reverse($output));
 }
 
+function agenda_page() {
+	$search = xapian_do_search('document:'.arg(1).' id:'.arg(2).'');
+//  $search->data['len'] = $search->data['full_doc_len'];
+
+  	$output = theme('agenda_item',$search->data['0']);
+  return implode(' ',$output);
+
+}
 
 /**
  * Theme functions
  */
 
-
+	
 /**
  * Strip out the undeeded tags from the document string and send the rest 
  * though to be themed on each div.
  */
-function theme_full_document($document) {
-  $document = preg_match('/<body>(.*)<span class="date">(.*?)<\/span> <span class="time">(.*?)<\/span>\n<\/div>(.*?)<\/body>/s', $document, $matches);
-  $document = "<h3>On $matches[2] at $matches[3]</h3>";
-  $document .= $matches[4];
-  $document = theme("full_document_divs",$document);
+function theme_full_document($document_string) {
+  $document_string = preg_match('/<body>(.*?)<\/body>/s', $document_string, $matches);
+  $document['text'] = $matches[1];
+  $document['date'] = grab_date($document_string);
+  $document['code'] = grab_code($document['text']);
+
+  $document = theme("document_divs",$document);
+  $document['text'] = implode("",$document['text']);
+  return $document['text'];
+}
+
+function theme_document_segment($result) {
+	$document = un_file_string(un_get_doc_path($result['file']));
+  $document = substr($document, $result['offset'], $result['len']); 
+  $document = theme("document_divs",$document);
   $document = implode("",$document);
   return $document;
 }
 
+function theme_agenda_list($result) {
+	$path = un_get_doc_path($result['file']);
+	$document = un_file_string($path);
+	$date = grab_date($document);
+  $document = substr($document, $result['offset'], $result['len']); 
+
+  preg_match('/<div(.*)id="(.*?)"(.*)>/', $document, $id);
+  preg_match('/<p(.*)id="(.*?)">(.*?)<\/p>/', $document, $match);
+//print $document;
+  if($id[5] == "yes") {
+	$continued = " (continued)";
+  }
+  $links[] = l($date.' - '.strip_tags($match[3]).$continued,'agenda/'.$result['file'].'/'.$id[2]);
+  return $links;
+}
+
+function theme_agenda_item($result) {
+	$path = un_get_doc_path($result['file']);
+	$document = un_file_string($path);
+	$date = grab_date($document);
+  $fulldocument = substr($document, $result['offset'], $result['full_doc_len']); 
+
+  //grab the data for the boxes
+
+  $heading = substr($document, $result['offset'], $result['len']); 
+
+  preg_match('/<div class="subheading" id="(.*?)" agendanum="(.*?)" agendasess="(.*?)" agendacontinued="(.*?)">/s',$heading,$agenda_info);
+  $fulldocument = preg_replace('/<div class="subheading" id="(.*?)" agendanum="(.*?)" agendasess="(.*?)" agendacontinued="(.*?)">/s', '<div class="subheading" id="$1">', $fulldocument,$agenda_info);
+  $agendabox[] = theme('agenda_item_box',$date,$agenda_info[2],$agenda_info[3],$agenda_info[4]);
+  $fulldocument = theme("document_divs",$fulldocument);
+  return array_merge($agendabox,$fulldocument);
+}
 /*
  * Split a given string in to an array of all the divs with a class (boldline etc)
  * and run a theme function on them before adding them back in to the same formation
  */
-function theme_full_document_divs($document) {
-  preg_match_all('/<div class="(assembly-chairs|boldline|italicline-tookchair|italicline|spoken|recvote)" id="(.*?)">(.*?)<\/div>/s', $document, $matches);
+
+function theme_agenda_item_box($date,$agenda_num,$session,$yes) {
+	
+	$search = xapian_do_search('agenda:'.$agenda_num.'s'.$session);
+  $output = array();
+  foreach($search->data as $result) {
+
+  	$output[] = theme('agenda_list',$result);
+  }
+
+  $output = theme('item_list', array_reverse($output));
+
+	return '<div class="agenda_box">'.$output.'</div>';
+}
+
+
+function theme_document_divs($document) {
+  preg_match_all('/<div class="(assembly-chairs|heading|subheading|italicline-tookchair|italicline|spoken|recvote|boldline-agenda|subheading)" id="(.*?)">(.*?)<\/div>/s', $document['text'], $matches);
   foreach ($matches[0] as $i => $match) {
     $class = $matches[1][$i];
+
+
+    //Add the # links
+    $link = '';
+    $match = preg_replace('/<p(.*?)id="(.*?)">(.*?)<\/p>/','<p$1id="$2">$3<a href="/link/'.$document['code'][0].'/$2">#</a></p>',$match);
+
     $stripe = $i % 2 ? 'even' : 'odd';
     $match = preg_replace('/<div class="(.*?)"(.*?)>/i','<div class="$1 '. $stripe.'"$2>',$match);
 
@@ -86,7 +238,9 @@ function theme_full_document_divs($document) {
     
     $content[] = $match;
   }
-  return $content;
+
+  $document['text'] = $content;
+  return $document;
 }
 
 
@@ -94,7 +248,7 @@ function theme_full_document_divs($document) {
  * This is all test stuff
  */
 function unfilenode_test() {
-   $links[] = l('Everything said by the United states', 'assembly/spokenby/nation/unitedstates');
+   $links[] = l('Everything said by the United states', 'search/nation/unitedstates');
    $links[] = l('Document A/60/PV.9', 'document/A-60-PV.9');
    $links[] = drupal_get_form('unfilenode_search_form', $form);
    return theme('item_list',$links);
@@ -113,7 +267,7 @@ function unfilenode_search_form() {
 }
 
 function unfilenode_search_form_submit($form_id, $form) {
-   return 'assembly/word/' . $form['query'];
+   return 'search/' . $form['query'];
 }
 
 function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
@@ -130,7 +284,9 @@ function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
    }
 }
 
-
+function image_page() {
+	return '<img src="http://staging.undemocracy.com/shistogram/'.arg(1).'" /> ';
+}
 
 
 

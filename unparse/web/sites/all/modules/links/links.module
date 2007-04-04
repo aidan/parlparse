@@ -20,22 +20,94 @@ $items = array();
 
 
 function link_page() {
-$path = variable_get('xapian_undatapath', '/path/to/files');
-$replace = array('-','.');
-$document =arg(1);
-$para_id = arg(2);
-$subid = $para_id;
+
+	$document = arg(1);
+	$id = arg(2);
 
 
-$result = xapian_do_search('document:'.$document.' subid:'.$subid);
-//print_r($result);
-$contents = file_get_contents($path . $result->data[0]['file']);
-$contents = substr($contents, $result->data[0]['offset'], $result->data[0]['len']);
-//print_r($contents);
-$wikipedia = "<ref> {{ UN document |code=S/RES/1390(2002) |body=S |type=RES |number=1390 |year=2002 |accessdate=2007-01-08 }} </ref>";
-return $wikipedia;
+
+	$path = un_get_doc_path($document);
+	$document = un_file_string($path);
+	$date = grab_date($document);
+	$code = grab_code($document);	
+  preg_match('/<(.*?) (.*?)id="'.$id.'"(.*?)>(.*?)<\/\1>/',$document,$paragraph);
 
 
-	
+	$contents = file_get_contents($path . $result->data[0]['file']);
+	$contents = substr($contents, $result->data[0]['offset'], $result->data[0]['len']);
+
+  switch($code['body']) {
+    case "A":
+      $text[] = "General Assembly";
+    break;
+    case 'S':
+      $text[] = "Securicy Council";
+    break;
+  }
+
+  $text[] = "session $code[session]";
+  $text[] = "meeting $code[meeting]";
+
+  switch($code['type']) {
+    case "PV":
+      $text[] = "Verbatim Report";
+    break;
+    case "RES":
+      $text[] = "Resolution";
+    break;
+	  case "PRST":
+	    $text[] = "Presidential Statment";
+    break;
+  }
+
+  $text[] = $code[0];
+  $text = implode(' ',$text);
+
+  $url = "http://staging.undemocracy.com/document/$code[0]#$id";
+
+  // Wikipedia
+	$wikipedia_link[] = "<ref> {{ UN document |";
+	$wikipedia_link[] = "code=$code[0] |";
+	$wikipedia_link[] = "body=$code[body] |";
+	if($code['session']){$wikipedia_link[] = "session=$code[session] |";}	
+	if($code['type']){$wikipedia_link[] = "type=$code[type] |";}	
+	if($code['meeting']){$wikipedia_link[] = "meeting=$code[4] |";}
+	if($code['number']){$wikipedia_link[] = "number=$code[number] |";}	
+	$wikipedia_link[] = "date=$date[0] |";
+	$wikipedia_link[] = "year=$date[2] |";
+	$wikipedia_link[] = "anchor=$id |";
+	$wikipedia_link[] = "accessdate=".date('Y-m-d',time());
+	$wikipedia_link[] = "}} </ref>";
+	$links['Wikipedia'] = implode(' ',$wikipedia_link);
+
+  // HTML
+  $html_link[] = '<a href="';
+  $html_link[] = $url;
+  $html_link[] = '">';
+  $html_link[] = $text;
+  $html_link[] = '</a>';
+  $links['HTML'] = htmlspecialchars(implode('',$html_link),ENT_QUOTES);
+
+  //Markdown
+  $markdown_link = "[$text]($url)";
+  $links['Markdown'] = $markdown_link;
+  // BBcode
+  $bbcode_link[] = '[url=';
+  $bbcode_link[] = $url;
+  $bbcode_link[] = ']';
+  $bbcode_link[] = $text;
+  $bbcode_link[] = '[/url]';
+  $links['BBcode'] = htmlspecialchars(implode('',$bbcode_link),ENT_QUOTES);
+
+  $output[] = "<p>Link to this paragraph:</p><blockquote>$paragraph[0]</blockquote>";
+
+	foreach($links as $name=>$link) {
+  	$output[] = "<p>$name</p><code class='link'>$link</code>";
+	}
+	return implode('',$output);
 
 }
+
+
+
+

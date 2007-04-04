@@ -21,8 +21,8 @@ function shistogram_page() {
   imagick_resize($ff, 100, -1, IMAGICK_FILTER_UNKNOWN, 0); 
   imagick_convert($ff, "png");
   $message = $ff; 
-  //print header("Content-type: image/png"); 
-  //print imagick_image2blob($ff); 
+  print header("Content-type: image/png"); 
+  print imagick_image2blob($ff); 
   return;
   
   

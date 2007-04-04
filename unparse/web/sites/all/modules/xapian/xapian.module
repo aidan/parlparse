@@ -4,11 +4,37 @@
 
 /**
  * This drupal module links drupal and the result of a xapian search.  
- * The main point of it is to provide the xapian_do_search() function.  
+ * The main point of it is to provide the xapian_get_mset() and xapian_do_search() functions.  
  */
 
 
-function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
+
+function xapian_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'search',
+      'title' => t('Search'),
+      'access' => user_access('access content'),
+      'callback' => 'search_page'
+     );
+  }   
+  return $items;
+}
+
+function search_page() {
+	$q = arg(1);
+  $search = xapian_do_search($q);
+  $output = array();
+  $output[] = $search->info;
+  foreach($search->data as $result) {
+  	$output[] = theme('document_segment',$result);
+  }
+  return implode(' ',$output);
+}
+
+
+function xapian_get_mset($query, $undata_path = NULL, $db_path = NULL) {
 
   if (!$db_path) {
     $db_path = "/home/undemocracy/undata/xapdex.db/";
@@ -16,22 +42,24 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   
   if (!$undata_path) {
     // XXX what should we call this parameter? is location of undata directory
-    $undata_path = "/home/undemocracy/undata/html/";
+    $undata_path = un_get_doc_path();
   }
   if (substr($undata_path, -1, 1) != '/') {
     $undata_path .= "/";
   }
   
-  $db_path = $undata_path . $db_path;
+
+  // Stupid thing I have to do for my PC - Sym
   if (file_exists('xapian_php5.php')) {  
     include_once('xapian_php5.php' );
   }
+
   // XXX this doesn't break well if it can't find the database
   $database = new XapianDatabase($db_path);  
 
   $enquire = new XapianEnquire($database);
   $stemmer = new XapianStem("english");
-  ``
+
   // XXX this for my testing when not in drupal as don't have "arg()".
   // However, not sure what the $query parameters was for anyone when
   // running under Drupal?
@@ -55,30 +83,46 @@ function xapian_do_search($query, $undata_path = NULL, $db_path = NULL) {
   $queryparser->add_boolean_prefix("document", "D");
   $queryparser->add_boolean_prefix("reference", "R");
   $queryparser->add_boolean_prefix("date", "E");
-  $queryparser->add_boolean_prefix("heading", "H");
+  $queryparser->add_boolean_prefix("agenda", "A");
+  $queryparser->add_boolean_prefix("session", "Z");
+  $queryparser->add_boolean_prefix("vote", "V");
 
-  $query = $queryparser->parse_query($terms);
+  $query = $queryparser->parse_query($terms,16+4+2+1);
 
   $enquire->set_query($query);
 
   # XXX for actual searches will want to sort by relevance instead, or fancier
   # things like set_sort_by_value_then_relevance
-  $enquire->set_sort_by_value(0, false); // false for order forwards in date/time
+  $enquire->set_sort_by_value(0, 1);
+  $enquire->set_weighting_scheme(new XapianBoolWeight());  
+  (object)$result->enquire = $enquire;
+  $result->query = $query;
+  
+  return $result;
+}
 
+
+
+
+function xapian_do_search($query) {
+
+  $result = xapian_get_mset($query);
+  $query = $result->query;
+  $enquire = $result->enquire;
 
   # XXX will want more than 100 here! See mset_get_matches_estimated in
   # searchengine.php from TWFY for code to work out set result sizes
   # And Olly says "I suspect you might want to look at the "check_at_least" parameter to
   # Enquire::get_mset()..."
-  $matches = $enquire->get_mset(0, 100); 
+  $matches = $enquire->get_mset(0, 100);  
 
   $result->info = $query->get_description();
   $mseti = $matches->begin();
   while (! $mseti->equals($matches->end())) {  
     $doc = $mseti->get_document();
     $doc_data = $doc->get_data();
-    list($doc_file, $doc_offset, $doc_len) = split("\|", $doc_data);
-    $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len);
+    list($doc_file, $doc_offset, $doc_len, $heading,$full_doc_len) = split("\|", $doc_data);
+    $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len, 'heading' => $heading,'full_doc_len'=>$full_doc_len);
     // Next result
     $mseti->next();
   }

@@ -1,0 +1,24 @@
+<?php
+
+function flags_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'flag',
+      'title' => t('flag'),
+      'access' => user_access('access content'),
+      'callback' => 'flags_image'
+     );
+  }
+  return $items;
+}
+
+function flags_image($nation, $size) {
+	$ffile = "/home/undemocracy/unparse/web/images/flags/svg/Flag_of_$nation.svg"; 
+	$ff = imagick_readimage($ffile); 
+	imagick_resize($ff, $size, -1, IMAGICK_FILTER_UNKNOWN, 0); 
+	imagick_convert($ff, "png");
+	$message = $ff; 
+	print header("Content-type: image/png"); 
+	print imagick_image2blob($ff); 
+}
