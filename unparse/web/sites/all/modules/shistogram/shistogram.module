@@ -1,5 +1,6 @@
 <?php
 
+
 function shistogram_menu($may_cache) {
   $items = array();
   if ($may_cache) {
@@ -15,20 +16,45 @@ function shistogram_menu($may_cache) {
 
 function shistogram_page() {
 
+  $ffile = "/home/undemocracy/unparse/web/images/flags/svg/Flag_of_Sudan.svg"; 
+  $ff = imagick_readimage($ffile); 
+  imagick_resize($ff, 100, -1, IMAGICK_FILTER_UNKNOWN, 0); 
+  imagick_convert($ff, "png");
+  $message = $ff; 
+  //print header("Content-type: image/png"); 
+  //print imagick_image2blob($ff); 
+  return;
+  
+  
   // collect all the hits on this
-  $query = xapian_get_mset(arg(1));
-  $Csecco = $array();
-  $Ctotal = $array();
+  $xapsearchstring = arg(1); 
+  
+  $bbyheading = (preg_match('/class:heading/', $xapsearchstring) != 0); 
+  
+  $result = xapian_get_mset($xapsearchstring);
+  $query = $result->query; 
+  $enquire = $result->enquire; 
+  $matches = $enquire->get_mset(0, 1999, 1999); 
+  
+  $Csecco = array();
+  $Ctotal = array();
   $mseti = $matches->begin();
   while (! $mseti->equals($matches->end())) {
     $doc = $mseti->get_document();
-    //$doc_data = $doc->get_data();
+    $doc_data = $doc->get_data();
     $doc_value = $doc->get_value(0);
-    $doc_year = int(substr($doc_value, 0, 4));
-    $doc_body = substr($doc_value, 8, 11);
+    $doc_year = intval(substr($doc_value, 0, 4));
+    $doc_body = substr($doc_value, 8, 3);
+    
+    $increm = 1; 
+    if (! $bbyheading) {
+      $ddoc_data = explode('|', $doc_data); 
+      $increm = intval($ddoc_data[2]);
+    }
+    
     if ($doc_body == "SPV")
-      $Csecco[$doc_year] += 1;
-    $Ctotal[$doc_year] += 1;
+      $Csecco[$doc_year] += $increm;
+    $Ctotal[$doc_year] += $increm;
     $mseti->next();
   }
 
@@ -52,21 +78,27 @@ function shistogram_page() {
     $atop = $Ctotal[$year] * ($height - 3) / $maxhits;
     $stop = $Csecco[$year] * ($height - 3) / $maxhits;
     $icol = imagecolorallocate($im, 0, 90, 200);
-    ImageFilledRectangle($im, $xlo, $height - 1, $xhi, $height - $atop, $icol);
+    ImageFilledRectangle($im, $xlo, $height - $atop, $xhi, $height - 1, $icol);
     if ($stop != 0) {
-      $icol = imagecolorallocate($im, 140, 90, 20);
-      ImageFilledRectangle($im, $xlo + 2, $height - 1, $xhi - 2, $height - $stop, $icol);
+      $icol = imagecolorallocate($im, 190, 30, 120);
+      ImageFilledRectangle($im, $xlo, $height - $stop, $xhi, $height - 1, $icol);
     }
+    $icol = imagecolorallocate($im, 0, 200, 0); 
+    imagestring($im, 3, $xlo, 15, "$year", $icol); 
   }
 
   // write a message to help us
   $icol = imagecolorallocate($im, 50, 200, 20);
-  imagestring($im, 3, 10, 5, arg(1), $icol);
-
+  //if (! $byheading)
+     imagestring($im, 3, 10, 5, arg(1)." : ".$maxhits." ".$ddoc_data[2], $icol);
+  if ($message)
+    imagestring($im, 5, 50, 50, $message, $icol); 
 
   header('Content-type: image/png');
 
-  print	imagepng($im);
+
+
+print	imagepng($im);
   imagedestroy($im);
 
 }
