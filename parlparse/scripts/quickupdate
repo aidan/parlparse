@@ -1,0 +1,16 @@
+#!/bin/bash
+#set -x  # for debugging, prints each line before executing it
+
+# Manual morning update.  Only scrapes/parses last week, and
+# patchtool is always on. For Francis.
+
+source ~/parlparse/scripts/consts
+
+# Run scraper
+cd ~/parlparse/scripts
+./updatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+./updatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
+./lordsupdatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+./lordsupdatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
+
+./other-sites-update
