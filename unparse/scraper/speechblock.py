@@ -8,8 +8,8 @@ from nations import FixNationName, IsNonnation, IsPrenation
 # slightly too prescriptive in this detection, but we're there already.
 respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
             (?:\s*\((?:<i>)?(?!interpretation|spoke)([^\)<]*)(?:</i>)?\))?  # group 2  nation
-            (?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chairman|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
-                (.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
+            (?:,\s(?:Rapporteur|President|(?:Vice-|Acting\s)?Chair(?:man)?|(?:Vice-)?Chairperson)\sof\s(?:the\s)?
+                (.{0,150}?(?:Committee|Council|panel|Peoples?|Rwanda|Sierra\sLeone|Burundi|round\stable\s\d|panel\s\d|Agenda\sfor\sDevelopment|Court\sof\sJustice|Commission|lessons\slearned)(?:\s\([^\)]*\))?))?  # group 3 committee rapporteur
             (?:\s\(((?:Acting\s|Vice-)?(?:Chairman|Rapporteur)\sof\sthe\s(?:Ad\sHoc\s|Special\s|Fifth\s|Preparatory\s|Advisory\s|Trust\s|sanctions\s)?Committee.{0,140}?)\))?  # group 4 extra chairman setting
             (?:.{0,150}(?:situation\sin\sAngola|\(1999\)))?
             (?:\s*(?:\(|<i>)+

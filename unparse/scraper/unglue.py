@@ -515,10 +515,10 @@ class TextPage:
             return
 
         elif self.bGeneralAssembly:
-            if re.match("<b>\w/\d+/PV.\d+\s*</b>", txlines[0].ltext):
+            if re.match("<b>\w[/.]\d+/PV.\d+\s*</b>", txlines[0].ltext):
                 ih = 1
             else:
-                #print txlines[2].ltext
+                print txlines[0].ltext
                 assert re.match("General Assembly", txlines[0].ltext)
                 assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
                 assert re.match("\S+ [Ss]ession", txlines[2].ltext)
