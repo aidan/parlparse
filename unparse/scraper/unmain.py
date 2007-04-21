@@ -103,7 +103,7 @@ if bConvertXML:
 if bParse:
     if not stem:
         ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse)
-        ParsetoHTML("S-PV-50", pdfxmldir, htmldir, options.forceparse, options.editparse)
+        ParsetoHTML("S-PV-5[6-9]", pdfxmldir, htmldir, options.forceparse, options.editparse)
     else:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
     PrintNonnationOccurrances()

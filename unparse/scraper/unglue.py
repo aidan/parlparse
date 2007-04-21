@@ -554,7 +554,7 @@ class TextPage:
             elif bl0 and bl1 and bl2 and bl3:
                 ih = 4;
             else:
-                print "\nFirst four lines on page:", self.pageno
+                print "\nFirst four lines on page:", self.pageno, bl4, bl4r
                 print bl0, txlines[0].ltext
                 print bl1, txlines[1].ltext
                 print bl2, txlines[2].ltext
