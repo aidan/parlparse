@@ -234,7 +234,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                     continue
                 maref = re.match('<a href="../(?:pdf|html)/([^"]+).(?:pdf|html)"[^>]*>[^<]*</a>$', wtxt)
                 if maref:
-                    refdoc = "R%s" % maref.group(1)
+                    refdoc = "R%s" % re.sub("[\(\)]", "-", maref.group(1))
                     terms.add(refdoc)
                     headingterms.add(refdoc)
                     continue
