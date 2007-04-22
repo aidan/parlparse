@@ -8,9 +8,14 @@ source ~/parlparse/scripts/consts
 
 # Run scraper
 cd ~/parlparse/scripts
+echo "Scraping commons"
 ./updatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+echo "Parsing commons"
 ./updatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
+echo "Scraping lords"
 ./lordsupdatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+echo "Parsing lords"
 ./lordsupdatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
 
+echo "Calling update of other sites"
 ./other-sites-update
