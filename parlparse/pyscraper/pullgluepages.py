@@ -142,6 +142,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2007-03-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070328/halltext/70328h0001.htm':
                 urla = [urla[0]]
+        if sdate=='2007-04-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070424/debtext/70424-0001.htm':
+                urla = urla[0:14] + urla[16:]
+        #print "urla"
+        #for aaa in urla:
+        #        print aaa
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
@@ -206,6 +211,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         if urla:
                                 print "Bridging the missing next section link at %s" % url
 		else:
+                        currenturl = url
                         url = urlparse.urljoin(url, nextsectionlink[0])
                         if len(urla) > 1 and urla[1] == url:
                                 urla = urla[1:]
@@ -216,7 +222,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                                                 print string.join(urla, "\n")
                                                 print "\nbad next url:\n"
                                                 print url
-                                                print "\n"
+                                                print "\ncurrent url:\n"
+                                                print currenturl
                                                 raise Exception, "Next Section misses out the urla list"
                                 urla[0] = url
 		
