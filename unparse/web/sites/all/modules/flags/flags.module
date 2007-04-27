@@ -15,17 +15,29 @@ function flags_menu($may_cache) {
 
 function flag_image_path($width=30,$name="United_States") {
 
-	$name = str_replace(" ", "_", $name);
+    if (substr($name, 0, 1) != "D")
+        return "ghgh"; 
+    if ($name == "Belize")
+        return "known knackered $name";
+    if ($name == "Saint Kitts and Nevis") 
+        return "known knackered $name"; 
+    //if ($name >= "Benin")
+    //    return "ghgh"; 
+    //return "hhh";
+
+    $name = str_replace(" ", "_", $name);
     $pngsizedir = "/home/undemocracy/unparse/web/images/flags/png/$width"; 
     if (!is_dir($pngsizedir))
         mkdir($pngsizedir);
     $png_file = "$pngsizedir/Flag_of_$name.png";
-	if (!is_file($png_file)) {
+	if (1 && !is_file($png_file)) {
 	    $svg_file = "/home/undemocracy/unparse/web/images/flags/svg/Flag_of_$name.svg"; 
         if(!is_file($svg_file)) 
             return "unknown name $name"; 
-		$ff = imagick_readimage($svg_file);
-			
+        $ff = imagick_readimage($svg_file);
+		if (!$ff)
+            return "bad read image $name"; 
+
 		imagick_resize($ff, $width * 3, -1, IMAGICK_FILTER_UNKNOWN, 0); 
 		imagick_convert($ff, "png");
 		imagick_resize($ff, $width, -1, IMAGICK_FILTER_UNKNOWN, 1);
