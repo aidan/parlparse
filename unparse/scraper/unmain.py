@@ -4,11 +4,11 @@ import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, pdfdir, pdfxmldir, htmldir, xapdir
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
 from xapdex import GoXapdex
-from votedistances import WriteVoteDistances
+from votedistances import WriteVoteDistances, WriteDocMeasurements
 
 parser = OptionParser()
 parser.set_usage("""
@@ -18,7 +18,8 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   cxml    do the pdf conversion
   parse   do the parsing
   xapdex  call the xapian indexing system
-  votedistances generate voting distances table
+  votedistances generate voting distances table for java applet
+  measurements generate measurements of size of data
   index   generate miscelaneous index files
 
 --stem selects what is processed.
@@ -72,9 +73,10 @@ bConvertXML = "cxml" in args
 bParse = "parse" in args
 bXapdex = "xapdex" in args
 bVoteDistances = "votedistances" in args
+bMeasurements = "measurements" in args
 bIndexfiles = "index" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements):
     parser.print_help()
     sys.exit(1)
 
@@ -113,6 +115,13 @@ if bVoteDistances:
     print "Writing data to file:", f
     fout = open(f, "w")
     WriteVoteDistances(stem, htmldir, fout)
+    fout.close()
+
+if bMeasurements:
+    f = os.path.join(undatadir, "docmeasurements.html")
+    print "Writing measurements to file:", f
+    fout = open(f, "w")
+    WriteDocMeasurements(htmldir, pdfdir, fout)
     fout.close()
 
 if bXapdex:

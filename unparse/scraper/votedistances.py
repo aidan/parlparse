@@ -74,4 +74,82 @@ def WriteVoteDistances(stem, htmldir, fout):
     fout.write("ps=[%s;];\n" % "; ".join(ps))
 
 
+def WriteDocMeasurements(htmldir, pdfdir, fout):
+    rels = GetAllHtmlDocs("", False, False, htmldir)
+    gadcount = { }
+    scdcount = { }
+    scpcount = { }
+    gavcount = { }
+    scvcount = { }
+    scrcount = { }
+    garcount = { }
+
+    for pdf in os.listdir(pdfdir):
+        mgadoc = re.match("A-(\d\d)-\d", pdf)
+        mscdoc = re.match("S-(\d\d\d\d)-\d", pdf)
+        mgares = re.match("A-RES-(\d\d)", pdf)
+        mscprst = re.match("S-PRST-(\d\d\d\d)", pdf)
+        mscres = re.match("S-RES-\d+\((\d\d\d\d)\)", pdf)
+
+        if mgadoc:
+            gadcount[mgadoc.group(1)] = gadcount.setdefault(mgadoc.group(1), 0) + 1
+        elif mscdoc:
+            scdcount[mscdoc.group(1)] = scdcount.setdefault(mscdoc.group(1), 0) + 1
+        elif mgares:
+            garcount[mgares.group(1)] = garcount.setdefault(mgares.group(1), 0) + 1
+        elif mscprst:
+            scpcount[mscprst.group(1)] = scpcount.setdefault(mscprst.group(1), 0) + 1
+        elif mscres:
+            scrcount[mscres.group(1)] = scrcount.setdefault(mscres.group(1), 0) + 1
+        else:
+            print "What is this?", pdf
+
+    print gadcount
+    print scdcount
+    print scpcount
+    print scrcount
+    print garcount
+
+    for htdoc in rels:
+        #break
+        maga = re.search("A-(\d\d)-PV", htdoc)
+        masc = re.search("S-PV-(\d\d\d\d)", htdoc)
+        if maga:
+            gavcount[maga.group(1)] = gavcount.setdefault(maga.group(1), 0) + 1
+        elif masc:
+            fin = open(htdoc)
+            while True:
+                flin = fin.readline()
+                mdate = re.search('<span class="date">(\d\d\d\d)-\d\d-\d\d</span>', flin)
+                if mdate:
+                    break
+            scvcount[mdate.group(1)] = scvcount.setdefault(mdate.group(1), 0) + 1
+        else:
+            print "what is this?", htdoc
+
+    print gavcount
+    print scvcount
+
+    scyears = set()
+    scyears.update(scdcount)
+    scyears.update(scpcount)
+    scyears.update(scrcount)
+    scyears.update(scvcount)
+
+    gasess = set()
+    gasess.update(gadcount)
+    gasess.update(garcount)
+    gasess.update(gavcount)
+
+    fout.write("<table>\n")
+    fout.write('<tr class="heading"><th>Year</th> <th>Number of Meetings</th> <th>Number of Resolutions</th> <th>Number of Documents</th></tr>\n');
+    for gas in range(49, int(max(gasess)) + 1):
+        sgas = "%2d" % gas
+        sscy = "%4d" % (gas + 1945)
+        fout.write('<tr class="scrow"> <td class="scyear">%s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scdcount.get(sgas, 0) + scpcount.get(sgas, 0)))
+        fout.write('<tr class="garow"> <td class="gasess">Session %s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sgas, gavcount.get(sgas, 0), garcount.get(sgas, 0), gadcount.get(sgas, 0)))
+    sscy = "%4d" % (gas + 1946)
+    fout.write('<tr class="scrow"> <td class="scyear">%s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scdcount.get(sgas, 0) + scpcount.get(sgas, 0)))
+    fout.write("</table>\n")
+
 

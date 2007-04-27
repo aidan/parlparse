@@ -18,6 +18,7 @@ class unexception(Exception):
 undocpdflinks = "../pdf"
 undochtmllinks = "../html"
 
+undatadir = os.path.join("..", "..", "undata")
 pdfdir = os.path.join("..", "..", "undata", "pdf")
 pdfxmldir = os.path.join("..", "..", "undata", "pdfxml")
 htmldir = os.path.join("..", "..", "undata", "html")

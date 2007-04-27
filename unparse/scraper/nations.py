@@ -66,6 +66,7 @@ nationmapping = {
         "Guinea Bissau":"Guinea-Bissau",
         "The Former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
         "Lao People's Democratic Republic":"Laos",
+        "Brunei Darussalam":"Brunei",
                 }
 
 
