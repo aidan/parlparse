@@ -4,6 +4,8 @@ import re
 import os
 from nations import nationdates
 from unmisc import GetAllHtmlDocs
+import datetime
+
 
 def LoadAllVotes(rels):
     res = { }  # { nation : { voterecid: vote } }
@@ -74,7 +76,44 @@ def WriteVoteDistances(stem, htmldir, fout):
     fout.write("ps=[%s;];\n" % "; ".join(ps))
 
 
-def WriteDocMeasurements(htmldir, pdfdir, fout, foutshort):
+############################
+currentyear = datetime.date.today().year
+currentsession = currentyear - 1946
+if datetime.date.today().month >= 9:
+    currentsession += 1
+
+meetseq = [ ]  # used to sort the SC and GAs
+for gas in range(currentsession, 47, -1):
+    meetseq.append(("%4d-09-01" % (gas + 1945), "GA", "%2d" % gas))
+for scs in range(currentyear, 1992, -1):
+    meetseq.append(("%4d-01-01" % scs, "SC", "%4d" % scs))
+meetseq.sort()
+meetseq.reverse()
+
+
+def MakeNationMeetSeq(nation):
+    nationparams = nationdates[nation]
+    res = { }
+    for meeto in meetseq:
+        if meeto[1] == "GA":
+            prevsdate = "%4d%s" % (int(nationparams["startdate"][:4]) - 1, nationparams["startdate"][4:])
+            if prevsdate <= meeto[0] <= nationparams["enddate"]:
+                res["GA%s" % meeto[2]] = [ 0, 0 ]
+        if meeto[1] == "SC":
+            if nationparams["startdate"][:4] <= meeto[0][:4] <= nationparams["enddate"][:4]:
+                res["SC%s" % meeto[2]] = [ 0, 0 ]
+    return res
+
+def SetValuesOnGA(nationcounts, gacode, ftext):
+    for nation in re.findall('<span class="nation">([^<]+)</span>', ftext):
+        if nation == "Brunei Darussalam":
+            continue
+        if nation != "None":
+            if gacode not in nationcounts[nation]:
+                print nation, gacode
+            nationcounts[nation][gacode][0] += 1
+
+def WriteDocMeasurements(htmldir, pdfdir, fout):
     rels = GetAllHtmlDocs("", False, False, htmldir)
     gadcount = { }
     scdcount = { }
@@ -83,6 +122,8 @@ def WriteDocMeasurements(htmldir, pdfdir, fout, foutshort):
     scvcount = { }
     scrcount = { }
     garcount = { }
+
+    nationyearactivity = { }
 
     for pdf in os.listdir(pdfdir):
         mgadoc = re.match("A-(\d\d)-[L\d]", pdf)
@@ -104,22 +145,33 @@ def WriteDocMeasurements(htmldir, pdfdir, fout, foutshort):
         elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", pdf):
             print "What is this?", pdf
 
+    nationcounts = { }
+    for nation in nationdates:
+        nationcounts[nation] = MakeNationMeetSeq(nation)
+
     for htdoc in rels:
         maga = re.search("A-(\d\d)-PV", htdoc)
         masc = re.search("S-PV-(\d\d\d\d)", htdoc)
+
+        #if maga:    continue
+        #if masc and masc.group(1)[:2] != "46":  continue
+
+        fin = open(htdoc)
+        ftext = fin.read()
+        fin.close()
+        #print htdoc
+
         if maga:
             gavcount[maga.group(1)] = gavcount.setdefault(maga.group(1), 0) + 1
+            SetValuesOnGA(nationcounts, "GA%s" % maga.group(1), ftext)
+
         elif masc:
-            fin = open(htdoc)
-            while True:
-                flin = fin.readline()
-                mdate = re.search('<span class="date">(\d\d\d\d)-\d\d-\d\d</span>', flin)
-                if mdate:
-                    break
+            mdate = re.search('<span class="date">(\d\d\d\d)-\d\d-\d\d</span>', ftext)
             scvcount[mdate.group(1)] = scvcount.setdefault(mdate.group(1), 0) + 1
+            SetValuesOnGA(nationcounts, "SC%s" % mdate.group(1), ftext)
+
         else:
             print "what is this?", htdoc
-
 
     scyears = set()
     scyears.update(scdcount)
@@ -132,27 +184,47 @@ def WriteDocMeasurements(htmldir, pdfdir, fout, foutshort):
     gasess.update(garcount)
     gasess.update(gavcount)
 
-    foutshort.write('<table class="docmeasuresshort">\n')
-    foutshort.write('<tr class="heading"><th class="docmeasyear">Year</th><th class="docmeasbody">Body</a><th class="docmeasdocs">Docs</th></tr>\n')
-    
-    fout.write('<table class="docmeasures">\n')
-    fout.write('<tr class="heading"><th class="docmeasyear">Year</th> <th class="docmeasmeetings">Number of Meetings</th> <th class="docmeasres">Number of Resolutions</th> <th class="docmeasdocs">Number of Documents</th></tr>\n');
-    for gas in range(int(max(gasess)), 47, -1):
-        sgas = "%2d" % gas
-        sscy = "%4d" % (gas + 1946)
-        scbase = "securitycouncil/%s" % sscy
-        gabase = "generalassembly/%s" % sgas
-        
-        foutshort.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td class="bbody">SC</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, scvcount.get(sscy, 0) + scrcount.get(sscy, 0) + scdcount.get(sscy, 0)))
-        
-        fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td>%d</td> <td>%d</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scbase, scdcount.get(sscy, 0) + scpcount.get(sgas, 0)))
-        if gas == 48:
-            break
-        
-        foutshort.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td class="bbody">GA</td> <td class="num"><a href="%s/documents">%d</a></td>\n' % (gabase, sgas, gabase, gavcount.get(sgas, 0) + garcount.get(sgas, 0) + gadcount.get(sgas, 0)))
-
-        fout.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td>%d</td> <td>%d</td> <td><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, gavcount.get(sgas, 0), garcount.get(sgas, 0), gabase, gadcount.get(sgas, 0)))
+    fout.write('\n<table class="docmeasuresshort">\n')
+    fout.write('<tr class="heading"><th class="docmeasyear">Year</th><th class="docmeasdocs">Docs</th></tr>\n')
+    for meeto in meetseq:
+        if meeto[1] == "SC":
+            sscy = meeto[2]
+            scbase = "securitycouncil/%s" % sscy
+            fout.write('<tr class="scrow"> <td class="scyear"><a href="%s" title="Security Council">%s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, scvcount.get(sscy, 0) + scrcount.get(sscy, 0) + scdcount.get(sscy, 0)))
+        if meeto[1] == "GA":
+            sgas = meeto[2]
+            gabase = "generalassembly/%s" % sgas
+            fout.write('<tr class="garow"> <td class="gasess"><a href="%s" title="General Assembly">Session %s</a></td> <td class="num"><a href="%s/documents">%d</a></td>\n' % (gabase, sgas, gabase, gavcount.get(sgas, 0) + garcount.get(sgas, 0) + gadcount.get(sgas, 0)))
     fout.write("</table>\n")
-    foutshort.write("</table>\n")
 
+    fout.write('\n<table class="docmeasures">\n')
+    fout.write('<tr class="heading"><th class="docmeasyear">Year</th> <th class="docmeasmeetings">Number of Meetings</th> <th class="docmeasres">Number of Resolutions</th> <th class="docmeasdocs">Number of Documents</th></tr>\n');
+    for meeto in meetseq:
+        if meeto[1] == "SC":
+            sscy = meeto[2]
+            scbase = "securitycouncil/%s" % sscy
+            fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td>%d</td> <td>%d</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scbase, scdcount.get(sscy, 0) + scpcount.get(sscy, 0)))
+        if meeto[1] == "GA":
+            sgas = meeto[2]
+            gabase = "generalassembly/%s" % sgas
+            fout.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td>%d</td> <td>%d</td> <td><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, gavcount.get(sgas, 0), garcount.get(sgas, 0), gabase, gadcount.get(sgas, 0)))
+    fout.write("</table>\n")
+
+    for nation in nationcounts:
+        nmeetseq = nationcounts[nation]
+        fout.write('\n<table class="nationmeas" id="%s">\n' % nation)
+        fout.write('<tr class="heading"><th class="docmeasyear">Year</th> <th class="docmeasmeetings">Number of Speeches</th></tr>\n');
+        for meeto in meetseq:
+            nmeeto = "%s%s" % (meeto[1], meeto[2])
+            if nmeeto not in nmeetseq:
+                continue
+            if meeto[1] == "SC":
+                sscy = meeto[2]
+                scbase = "securitycouncil/%s" % sscy
+                fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, nationcounts[nation][nmeeto][0]))
+            if meeto[1] == "GA":
+                sgas = meeto[2]
+                gabase = "generalassembly/%s" % sgas
+                fout.write('<tr class="scrow"> <td class="gayear"><a href="%s">Session %s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, gabase, nationcounts[nation][nmeeto][0]))
+        fout.write("</table>\n")
 
