@@ -74,7 +74,7 @@ def WriteVoteDistances(stem, htmldir, fout):
     fout.write("ps=[%s;];\n" % "; ".join(ps))
 
 
-def WriteDocMeasurements(htmldir, pdfdir, fout):
+def WriteDocMeasurements(htmldir, pdfdir, fout, foutshort):
     rels = GetAllHtmlDocs("", False, False, htmldir)
     gadcount = { }
     scdcount = { }
@@ -85,7 +85,7 @@ def WriteDocMeasurements(htmldir, pdfdir, fout):
     garcount = { }
 
     for pdf in os.listdir(pdfdir):
-        mgadoc = re.match("A-(\d\d)-\d", pdf)
+        mgadoc = re.match("A-(\d\d)-[L\d]", pdf)
         mscdoc = re.match("S-(\d\d\d\d)-\d", pdf)
         mgares = re.match("A-RES-(\d\d)", pdf)
         mscprst = re.match("S-PRST-(\d\d\d\d)", pdf)
@@ -101,17 +101,10 @@ def WriteDocMeasurements(htmldir, pdfdir, fout):
             scpcount[mscprst.group(1)] = scpcount.setdefault(mscprst.group(1), 0) + 1
         elif mscres:
             scrcount[mscres.group(1)] = scrcount.setdefault(mscres.group(1), 0) + 1
-        else:
+        elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", pdf):
             print "What is this?", pdf
 
-    print gadcount
-    print scdcount
-    print scpcount
-    print scrcount
-    print garcount
-
     for htdoc in rels:
-        #break
         maga = re.search("A-(\d\d)-PV", htdoc)
         masc = re.search("S-PV-(\d\d\d\d)", htdoc)
         if maga:
@@ -127,8 +120,6 @@ def WriteDocMeasurements(htmldir, pdfdir, fout):
         else:
             print "what is this?", htdoc
 
-    print gavcount
-    print scvcount
 
     scyears = set()
     scyears.update(scdcount)
@@ -141,15 +132,27 @@ def WriteDocMeasurements(htmldir, pdfdir, fout):
     gasess.update(garcount)
     gasess.update(gavcount)
 
-    fout.write("<table>\n")
-    fout.write('<tr class="heading"><th>Year</th> <th>Number of Meetings</th> <th>Number of Resolutions</th> <th>Number of Documents</th></tr>\n');
-    for gas in range(49, int(max(gasess)) + 1):
+    foutshort.write('<table class="docmeasuresshort">\n')
+    foutshort.write('<tr class="heading"><th class="docmeasyear">Year</th><th class="docmeasbody">Body</a><th class="docmeasdocs">Docs</th></tr>\n')
+    
+    fout.write('<table class="docmeasures">\n')
+    fout.write('<tr class="heading"><th class="docmeasyear">Year</th> <th class="docmeasmeetings">Number of Meetings</th> <th class="docmeasres">Number of Resolutions</th> <th class="docmeasdocs">Number of Documents</th></tr>\n');
+    for gas in range(int(max(gasess)), 47, -1):
         sgas = "%2d" % gas
-        sscy = "%4d" % (gas + 1945)
-        fout.write('<tr class="scrow"> <td class="scyear">%s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scdcount.get(sgas, 0) + scpcount.get(sgas, 0)))
-        fout.write('<tr class="garow"> <td class="gasess">Session %s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sgas, gavcount.get(sgas, 0), garcount.get(sgas, 0), gadcount.get(sgas, 0)))
-    sscy = "%4d" % (gas + 1946)
-    fout.write('<tr class="scrow"> <td class="scyear">%s</td> <td>%d</td> <td>%d</td> <td>%d</td> </tr>\n' % (sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scdcount.get(sgas, 0) + scpcount.get(sgas, 0)))
+        sscy = "%4d" % (gas + 1946)
+        scbase = "securitycouncil/%s" % sscy
+        gabase = "generalassembly/%s" % sgas
+        
+        foutshort.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td class="bbody">SC</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, scvcount.get(sscy, 0) + scrcount.get(sscy, 0) + scdcount.get(sscy, 0)))
+        
+        fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td>%d</td> <td>%d</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scvcount.get(sscy, 0), scrcount.get(sscy, 0), scbase, scdcount.get(sscy, 0) + scpcount.get(sgas, 0)))
+        if gas == 48:
+            break
+        
+        foutshort.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td class="bbody">GA</td> <td class="num"><a href="%s/documents">%d</a></td>\n' % (gabase, sgas, gabase, gavcount.get(sgas, 0) + garcount.get(sgas, 0) + gadcount.get(sgas, 0)))
+
+        fout.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td>%d</td> <td>%d</td> <td><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, gavcount.get(sgas, 0), garcount.get(sgas, 0), gabase, gadcount.get(sgas, 0)))
     fout.write("</table>\n")
+    foutshort.write("</table>\n")
 
 

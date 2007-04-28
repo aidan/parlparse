@@ -119,10 +119,13 @@ if bVoteDistances:
 
 if bMeasurements:
     f = os.path.join(undatadir, "docmeasurements.html")
-    print "Writing measurements to file:", f
+    fsh = os.path.join(undatadir, "docmeasurementsshort.html")
+    print "Writing measurements to files:", f, fsh
     fout = open(f, "w")
-    WriteDocMeasurements(htmldir, pdfdir, fout)
+    foutshort = open(fsh, "w")
+    WriteDocMeasurements(htmldir, pdfdir, fout, foutshort)
     fout.close()
+    foutshort.close()
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
