@@ -109,7 +109,10 @@ def LordsFilterSpeakers(fout, text, sdate):
 
 		lsid = lordsList.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)  # maybe throw the exception on the outside
 
-		fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
+                if not lsid:
+                        fout.write('<speaker speakerid="unknown" error="No match" speakername="%s" colon="%s">%s</speaker>' % (name, colon, name))
+                else:
+                        fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
 
 

@@ -181,6 +181,11 @@ class LordsList(xml.sax.handler.ContentHandler):
 
                 if name == "Viscountess Hailsham":
                         name = "Baroness Hogg"
+                        
+                # XXX "Lord Speaker" is new April 2007
+                # should match this to the person, but how do we keep up to date who is the speaker? for now just keep it blank
+                if name == "Lord Speaker":
+                        return None
 
 		hom = honcompl.match(name)
 		if not hom:
