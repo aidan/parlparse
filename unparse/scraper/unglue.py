@@ -48,7 +48,7 @@ class TextLine:
     def __init__(self, txline, lundocname, lpageno, textcountnumber):
         mxline = re.match('<text top="(\d+)" left="(\d+)" width="-?(\d+)" height="(\d+)" font="(\d+)">(.*?)</text>', txline)
         if not mxline:
-            print txline
+            print txline, "tttttt"
         self.top = int(mxline.group(1))
         self.left = int(mxline.group(2))
         self.width = int(mxline.group(3))
@@ -209,7 +209,7 @@ def AppendCluster(res, tlc, sclusttype):
             #print tlcf.indents, tlc.indents
 
     elif len(tlc.indents) != 1:
-        print tlc.indents
+        print tlc.indents, "jjjj"
         prevtop = -1
         for txl in tlc.txls:
             if prevtop == txl.top:
@@ -518,7 +518,7 @@ class TextPage:
             if re.match("<b>\w[/.]\d+/PV.\d+\s*</b>", txlines[0].ltext):
                 ih = 1
             else:
-                print txlines[0].ltext
+                #print txlines[0].ltext
                 assert re.match("General Assembly", txlines[0].ltext)
                 assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
                 assert re.match("\S+ [Ss]ession", txlines[2].ltext)
