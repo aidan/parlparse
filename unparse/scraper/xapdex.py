@@ -350,12 +350,13 @@ def process_file(pfnameunindexed, xapian_db):
             xapian_doc_heading = xapian_doc
             sdiv_headingdata = div_data
 
+        # the data put into a xapian object is: speech | document-id | offset | length | heading-id containing this speech | length of full section if this is a heading
         elif div_class in ["subheading", "end-document"]:
             assert xapian_doc_heading
             if xapian_doc_subheading:
                 for hterm in headingtermsubheading:
                     xapian_doc_subheading.add_term(hterm)
-                dsubheadingdata = "%s|%d|%d|%s|%d" % (sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
+                dsubheadingdata = "%s|%s|%d|%d|%s|%d" % (sdiv_subheadingdata[3], sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
                 xapian_doc_subheading.set_data(dsubheadingdata)
                 xapian_db.add_document(xapian_doc_subheading)
 
@@ -372,7 +373,7 @@ def process_file(pfnameunindexed, xapian_db):
             if div_class == "end-document":
                 for hterm in headingtermheading:
                     xapian_doc_heading.add_term(hterm)
-                dheadingdata = "%s|%d|%d|%s|%d" % (sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], "", lastend - sdiv_headingdata[1])
+                dheadingdata = "%s|%s|%d|%d|%s|%d" % (sdiv_headingdata[3], sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], "", lastend - sdiv_headingdata[1])
                 xapian_doc_heading.set_data(dheadingdata)
                 xapian_db.add_document(xapian_doc_heading)
                 xapian_doc_heading = None
@@ -380,7 +381,7 @@ def process_file(pfnameunindexed, xapian_db):
         else:
             assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "italicline-tookchair", "italicline-spokein", "recvote"], "unknown divclass:%s" % div_class
             assert sdiv_subheadingdata or sdiv_headingdata
-            ddata = "%s|%d|%d|%s|" % (div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[3])
+            ddata = "%s|%s|%d|%d|%s|" % (div_data[3], div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[3])
             xapian_doc.set_data(ddata)
             xapian_db.add_document(xapian_doc)
 
