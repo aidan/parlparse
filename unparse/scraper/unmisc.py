@@ -23,6 +23,10 @@ pdfdir = os.path.join("..", "..", "undata", "pdf")
 pdfxmldir = os.path.join("..", "..", "undata", "pdfxml")
 htmldir = os.path.join("..", "..", "undata", "html")
 xapdir = os.path.join("..", "..", "undata", "xapdex.db")
+pdfpreviewdir = os.path.join("..", "..", "undata", "pdfpreview")
+pdfinfodir = os.path.join("..", "..", "undata", "pdfinfo")
+tmppdfpreviewdir = os.path.join("..", "..", "undata", "tmppdfpreview")
+
 sCallScrape = None  # set by one of the
 
 bQuiet = False

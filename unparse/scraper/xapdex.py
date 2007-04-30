@@ -254,14 +254,22 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 else:
                     textspl.append("")
 
+        elif paraclass == 'votecount':
+        	#<p class="votecount" id="pg004-bk05-pa02">favour=90 against=48 abstain=21 absent=33</p>
+            mfagan = re.match("favour=(\d+) against=(\d+) ", paratext)
+            vminority = (int(mfagan.group(1)) >= int(mfagan.group(2)) and "against" or "favour")
+
         elif paraclass == 'votelist':
             for mvote in re.finditer('<span class="([^"\-]+)(?:-([^"]*))?">([^<]*)</span>', paratext):
                 vnation = CharToFlat(re.sub("['\-]", "", mvote.group(3)))
                 vvote = mvote.group(2) or mvote.group(1)   # take the latter vote position if there's two
                 terms.add("V%s-%s" % (vnation, vvote))
+                if vvote == vminority:
+                    terms.add("V%s-minority" % vnation)
+            del vminority  # make sure that a votecount always comes before a votelist in the recvote div
 
         else:
-            assert paraclass == 'votecount', "Unrecognized paraclass:%s" % paraclass
+            assert False, "Unrecognized paraclass:%s" % paraclass
 
         textspl.extend(["", "", "", "", ""])  # gap of five slots at the end of a paragraph
 

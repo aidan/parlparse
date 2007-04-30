@@ -4,10 +4,11 @@ import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
 from xapdex import GoXapdex
+from pdfimgmake import GenerateDocimages
 from votedistances import WriteVoteDistances, WriteDocMeasurements
 
 parser = OptionParser()
@@ -19,8 +20,11 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   parse   do the parsing
   xapdex  call the xapian indexing system
   votedistances generate voting distances table for java applet
-  measurements generate measurements of size of data
-  index   generate miscelaneous index files
+  measurements generate measurements of quantities of documents;
+            created as a set of tables in docmeasurements.html in undata
+            used for inserting into the webpage
+  index   generate miscellaneous index files
+  docimages generate document images in undata/pdfpreview
 
 --stem selects what is processed.
   scrape --stem=S-[YEAR]-PV
@@ -60,6 +64,8 @@ parser.add_option("--limit", dest="limit", default=None, type="int",
                   help="Stop after processing this many files, used for debugging testing")
 parser.add_option("--continue-on-error", action="store_true", dest="continueonerror", default=False,
                   help="Continues with next file when there is an error, rather than stopping")
+parser.add_option("--force-docimg", action="store_true", dest="forcedocimg", default=False,
+                  help="Don't skip files when applying docimages")
 
 (options, args) = parser.parse_args()
 
@@ -74,9 +80,10 @@ bParse = "parse" in args
 bXapdex = "xapdex" in args
 bVoteDistances = "votedistances" in args
 bMeasurements = "measurements" in args
+bDocimages = "docimages" in args
 bIndexfiles = "index" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements or bDocimages):
     parser.print_help()
     sys.exit(1)
 
@@ -123,6 +130,9 @@ if bMeasurements:
     fout = open(f, "w")
     WriteDocMeasurements(htmldir, pdfdir, fout)
     fout.close()
+
+if bDocimages:
+    GenerateDocimages(stem, options.forcedocimg, options.limit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
