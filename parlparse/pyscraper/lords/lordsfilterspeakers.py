@@ -96,7 +96,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 			if (not re.match("The Deputy ", loffice)) and (loffice in officematches):
 				if officematches[loffice] != name:
 					print officematches[loffice], loffice,  name
-				assert officematches[loffice] == name
+				assert officematches[loffice] == name, "loffice: %s name: %s officematches: %s" % (loffice, name, officematches[loffice])
 			else:
 				officematches[loffice] = name
 		elif name in officematches:
