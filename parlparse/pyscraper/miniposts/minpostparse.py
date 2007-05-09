@@ -96,6 +96,7 @@ govdepts = ["Department of Health",
                                 "Scotland Office",
                                 "Wales Office",
                                 "Department for Communities and Local Government",
+                                "Ministry of Justice",
                                 "No Department",
                                 ]
 
@@ -436,7 +437,7 @@ def ParseGovPostsPage(fr, gp):
                 frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s+(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # extract special Ministers of State and PUSes
