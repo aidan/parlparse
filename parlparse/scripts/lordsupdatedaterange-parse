@@ -11,3 +11,4 @@ TODATE=$2
 # and parsing lords into pages
 cd ~/parlparse/pyscraper
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse lords
+echo "FAI test error is $?"

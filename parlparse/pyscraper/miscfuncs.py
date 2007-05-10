@@ -191,6 +191,7 @@ entitymap = {
         '&#246;':'&ouml;',   # this is o-double-dot
         '&#214;':'&Ouml;',   # this is capital o-double-dot
         '&#243;':'&oacute;',   # this is o-acute
+        '&#248;':'&oslash;',   # this is o-slash
 
         '&#237;':'&iacute;', # this is i-acute
         '&#238;':'&icirc;', # this is i-circumflex
@@ -310,7 +311,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
@@ -361,6 +362,8 @@ def StraightenHTMLrecurse(stex, stampurl):
 			sres[i] = '&eacute;'
 		elif sres[i] == '\xe9':
 			sres[i] = '&eacute;'
+                elif sres[i] == '\xc3\xb8':
+			sres[i] = '&oslash;'
 
 		elif re.match('</?i>$(?i)', sres[i]):
 			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE' 'CLOSE-i-TAG-OUT-OF-PLACE'
