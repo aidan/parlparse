@@ -344,6 +344,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 				# exception cases which cause the loop to continue
 				except ContextException, ce:
+                                        options.anyerrors = True
 					if options.patchtool:
 						print "runfilters.py", ce
 						RunPatchTool(dname, (sdate + sdatever), ce)
