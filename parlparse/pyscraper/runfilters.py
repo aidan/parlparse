@@ -344,8 +344,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 				# exception cases which cause the loop to continue
 				except ContextException, ce:
-                                        options.anyerrors = True
 					if options.patchtool:
+                                                # deliberately don't set options.anyerrors (as they are to fix it!)
 						print "runfilters.py", ce
 						RunPatchTool(dname, (sdate + sdatever), ce)
 						# find file again, in case new
@@ -353,6 +353,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 						continue # emphasise that this is the repeat condition
 
 					elif options.quietc:
+                                                options.anyerrors = True
 						print ce.description
 						print "\tERROR! %s failed on %s, quietly moving to next day" % (dname, sdate)
                                                 newday = 1
@@ -361,6 +362,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 					# reraise case (used for parser development), so we can get a stackdump and end
 					else:
+                                                options.anyerrors = True
 						raise
 
 			# endwhile

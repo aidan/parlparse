@@ -10,12 +10,16 @@ source ~/parlparse/scripts/consts
 cd ~/parlparse/scripts
 echo "Scraping commons"
 ./updatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+echo "FAI aggregate error is $?"
 echo "Parsing commons"
 ./updatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
+echo "FAI aggregate error is $?"
 echo "Scraping lords"
 ./lordsupdatedaterange-scrape $NOW_FROMDATE $NOW_TODATE
+echo "FAI aggregate error is $?"
 echo "Parsing lords"
 ./lordsupdatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool
+echo "FAI aggregate error is $?"
 
 echo "Calling update of other sites"
 ./other-sites-update
