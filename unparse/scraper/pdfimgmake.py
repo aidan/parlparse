@@ -1,17 +1,28 @@
+import sys
 import os
 import re
-import Image
+if sys.version[:3] != "2.4":
+    import Image
 
 
 def GetAllPdfDocs(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfodir):
     filelist = os.listdir(pdfdir)
-    filelist.sort(reverse = True)
+    filelist.sort()
+    filelist.reverse()
     res = [ ]
     for dpdf in filelist:
         if nlimit and len(res) >= nlimit:
             break
         if re.search("(?:\.svn)$", dpdf):
             continue
+        if dpdf == "out":
+            continue
+        if re.search("\(", dpdf):
+            dpdf = dpdf.replace("(", "\(")
+            dpdf = dpdf.replace(")", "\)")
+        if re.search("PV", dpdf):
+            continue
+
         assert dpdf[-4:] == ".pdf", dpdf
         d = dpdf[:-4]
         if stem and not re.match(stem, d):
@@ -32,7 +43,7 @@ def GenerateDocImage(df, tmppdfpreviewdir):
     for d in os.listdir(tmppdfpreviewdir):
         os.remove(os.path.join(tmppdfpreviewdir, d))
     cmd1 = "convert -density 192 %s[0] -resize %d -bordercolor black -border 3 %s" % (df[0], pwidth * 2, destpdfpng1)
-    cmd1r = "convert -background skyblue -rotate 5 %s %s" % (destpdfpng1, destpdfpng1)
+    cmd1r = "convert  -background skyblue -rotate 5 %s %s" % (destpdfpng1, destpdfpng1)
     cmdA = 'convert -density 72 %s -resize %d -bordercolor black -border 3 %s' % (df[0], pwidth / 2, destpdfpngA)
 
     print cmdA
@@ -70,12 +81,14 @@ def GenerateDocImage(df, tmppdfpreviewdir):
                 continue
             print irow, inn, npg, len(pgs)
 
-            cmdS = 'convert -background #0000 -rotate 20 %s %s' % (pgs[npg], tmppng)
+            cmdS = 'convert %s -background none -rotate 20 %s' % (pgs[npg], tmppng)
             print cmdS
             os.system(cmdS)
+            #sys.exit(0)
             cmd2 = 'composite -geometry +%d+%d %s %s %s' % (bbox[2] * inn / (nperrow + 1), int(bbox[3] * (0.5 + 0.4 * irow / nrows)), tmppng, respng, respng)
             print cmd2
             os.system(cmd2)
+            #sys.exit(0)
 
     respng2 = os.path.join(tmppdfpreviewdir, "res2.png")
     cmdC = "convert %s -crop %dx%d+0+%d -resize %dx%d %s" % (respng, bbox[2], bbox[3] * 3 / 5, bbox[3] / 5, pwidth, pheight, respng2)
@@ -88,22 +101,9 @@ def GenerateDocimages(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfo
     docfiles = GetAllPdfDocs(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfodir)
     for df in docfiles:
         GenerateDocImage(df, tmppdfpreviewdir)
-        break
+        #break
 
-"""    os.path.list
-    rels = GetAllHtmlDocs(stem, True, bforcexap, htmldir)
-
-cmd = 'convert -density 72 a.pdf[0] -resize 300 -bordercolor black -border 3 aa%03d.png'
-os.system
-# and so on
-
-# make an overlapping mosaic
-cmd1 = 'composite -size 600x400 xc:skyblue prev.png'
-cmd2 = 'composite -geometry 200x-1+50+50 page.png prev.png prev.png
-
-
-
-import Image
+"""import Image
 import PngImagePlugin
 info = PngImagePlugin.PngInfo()
 info.add_text("key", "value")

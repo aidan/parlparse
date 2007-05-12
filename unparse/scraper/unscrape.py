@@ -1,6 +1,7 @@
-
+import sys
 import urllib2
-import cookielib
+if sys.version[:3] != "2.3":
+    import cookielib
 import urlparse
 import re
 import sys
