@@ -26,6 +26,7 @@ xapdir = os.path.join("..", "..", "undata", "xapdex.db")
 pdfpreviewdir = os.path.join("..", "..", "undata", "pdfpreview")
 pdfinfodir = os.path.join("..", "..", "undata", "pdfinfo")
 tmppdfpreviewdir = os.path.join("..", "..", "undata", "tmppdfpreview")
+commentsdir = os.path.join("..", "..", "undata", "comments")
 
 sCallScrape = None  # set by one of the
 

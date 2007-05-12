@@ -4,12 +4,13 @@ import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, commentsdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
 from xapdex import GoXapdex
 from pdfimgmake import GenerateDocimages
 from votedistances import WriteVoteDistances, WriteDocMeasurements
+from wpediaget import FetchWikiBacklinks
 
 parser = OptionParser()
 parser.set_usage("""
@@ -25,6 +26,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
             used for inserting into the webpage
   index   generate miscellaneous index files
   docimages generate document images in undata/pdfpreview
+  wpscrape  scrape for UN translocutions from wikipedia
 
 --stem selects what is processed.
   scrape --stem=S-[YEAR]-PV
@@ -82,8 +84,9 @@ bVoteDistances = "votedistances" in args
 bMeasurements = "measurements" in args
 bDocimages = "docimages" in args
 bIndexfiles = "index" in args
+bScrapewp = "wpscrape" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements or bDocimages):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements or bDocimages or bScrapewp):
     parser.print_help()
     sys.exit(1)
 
@@ -133,6 +136,9 @@ if bMeasurements:
 
 if bDocimages:
     GenerateDocimages(stem, options.forcedocimg, options.limit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
+
+if bScrapewp:
+    FetchWikiBacklinks(commentsdir)
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)

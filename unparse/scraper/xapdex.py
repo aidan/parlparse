@@ -40,8 +40,6 @@ from nations import nonnationcatmap # this was why the need to moveall into same
 # Example set of identifiers for a document:
 # Cspoken E2006-07-20 RA-60-L.49 Smrbodini Ipg017-bk01 Nsanmarino Hpg001-bk05 L DA-60-PV.94 Jpg017-bk01-pa01 Jpg017-bk01-pa02 Jpg017-bk01-pa03
 
-
-
 # Reindex one file
 def delete_all_for_doc(document_id, xapian_db):
     xapian_enquire = xapian.Enquire(xapian_db)
@@ -424,6 +422,7 @@ def GoXapdex(stem, bforcexap, nlimit, bcontinueonerror, htmldir, xapdir):
             process_file(rel, xapian_db)
         except KeyboardInterrupt, e:
             print "  ** Keyboard interrupt"
+            traceback.print_exc()
             sys.exit(1)
         except Exception, e:
             print e
