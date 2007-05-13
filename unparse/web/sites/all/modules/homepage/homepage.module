@@ -1,0 +1,109 @@
+<?php
+
+function homepage_menu($may_cache) {
+
+$items = array();
+ if ($may_cache) {
+   $items[] = array(
+     'path' => 'homepage',
+     'title' => t('Undemocracy'),
+     'callback' => 'home_page',
+     'access' => user_access('access content'),   
+    );
+ }
+ return $items;  
+}
+
+function home_page() {
+
+
+	$blocks['search'] = array(
+		'title' => "Search",
+	  'content' => drupal_get_form('unfilenode_search_form', $form),
+	  'region' => 'center',
+	  'weight' => '-4',
+	);
+	
+	
+	$blocks['jazz'] = array(
+		'title' => "",
+	  'content' => "Every year the ambassador of your country attends several hundred meetings, vote on several hundred resolutions and reads several thousand documents at the United Nations. UNdemocracy.com lets you browse many of these documents and read the transcripts of both the General Assembly and Security Council meetings so that you can find out what is being done in your name.",
+	  'region' => 'top',
+	  'weight' => '-5',
+	);
+
+
+$blocks['votes'] = array(
+	'title' => "Votes",
+  'content' => "Francis' java vote thing",
+  'region' => 'right',
+  'weight' => '-6',
+);
+
+$blocks['votes'] = array(
+	'title' => "Latest Votes",
+  'content' => latest_votes(5),
+  'region' => 'right',
+  'weight' => '-6',
+);
+
+
+$blocks['twitter'] = array(
+	'title' => "Ban Ki-moon is...",
+  'content' => "...".twitter_secgen(),
+  'region' => 'right',
+  'weight' => '-5',
+);
+	
+$blocks['docmeasurementsshort'] = array(
+	'title' => "",
+  'content' => docmeasurements(),
+  'region' => 'left',
+  'weight' => '-4',
+);
+	
+	$blocks['members'] = array(
+		'title' => "",
+		'content' => members_block(),
+		'region' => 'twocol',
+		'weight' => '1',
+		);
+	
+
+	
+	uasort($blocks,'block_element_sort');
+
+	
+	foreach($blocks as $name => $block) {
+    $text = '<div class="block block-'.$name.'">';
+    if($block['title']){$text .= '<h2>'.$block['title'].'</h2>';}
+    $text .= $block['content'].'</div>';
+		$regions[$block['region']][] = $text;
+	}
+
+		$output[] = '<div class="region region-top">'.implode("",$regions['top']).'</div>';
+		$output[] = '<div class="region region-right">'.implode("",$regions['right']).'</div>';
+		$output[] = '<div class="region region-left">'.implode("",$regions['left']).'</div>';		
+		$output[] = '<div class="region region-center">'.implode("",$regions['center']).'</div>';
+		$output[] = '<div class="region region-twocol">'.implode("",$regions['twocol']).'</div>';		
+	return implode('',$output);
+	
+	
+}
+
+function block_element_sort($a, $b) {
+  $a_weight = (is_array($a) && isset($a['weight'])) ? $a['weight'] : 0;
+  $b_weight = (is_array($b) && isset($b['weight'])) ? $b['weight'] : 0;
+  if ($a_weight == $b_weight) {
+    return 0;
+  }
+  return ($a_weight < $b_weight) ? -1 : 1;
+}
+
+function twitter_secgen() {
+	$doc = file_get_contents("http://twitter.com/statuses/user_timeline/secgen.xml");
+	preg_match('/<text>(.*?)<\/text>/s',$doc,$match);
+	return $match[1];
+}
+
+
