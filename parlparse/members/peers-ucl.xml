@@ -8,8 +8,8 @@
 peeragetype can have these values:
 
 L - life peer (appointed)
-HP - hereditary elected (by party group?)
-HD - hereditary elected (by the house?)
+HP - hereditary elected (by party group)
+HD - hereditary elected (by the house, to be various offices)
 HO - hereditary officer
 A - lord of appeal
 B - bishop
@@ -9682,6 +9682,7 @@ B - bishop
     forenames_full="Jean Elizabeth"
     title="Baroness" lordname="Coussins" lordofname=""
 	lordofname_full="Whitehall Park"
+    county="the London Borough of Islington"
     peeragetype="L" affiliation="XB"
     fromdate="2007-04-24" todate="9999-12-31"
 />
@@ -9692,6 +9693,7 @@ B - bishop
     forenames="Jane"
     forenames_full="Jane Susan"
     title="Baroness" lordname="Campbell" lordofname="Surbiton"
+    county="the Royal Borough of Kingston-upon-Thames"
     peeragetype="L" affiliation="XB"
     fromdate="2007-04-24" todate="9999-12-31"
 />
@@ -9703,6 +9705,7 @@ B - bishop
     forenames_full="Khalid"
     title="Lord" lordname="Hameed" lordofname=""
 	lordofname_full="Hampstead"
+    county="the London Borough of Camden"
     peeragetype="L" affiliation="XB"
     fromdate="2007-04-26" todate="9999-12-31"
 />
@@ -9714,8 +9717,9 @@ B - bishop
     forenames_full="John Richard"
     title="Lord" lordname="Krebs" lordofname=""
 	lordofname_full="Wytham"
+    county="the County of Oxfordshire"
     peeragetype="L" affiliation="XB"
-    fromdate="2007-05-01" todate="9999-12-31"
+    fromdate="2007-04-30" todate="9999-12-31"
 />
 
 <lord
@@ -9725,8 +9729,21 @@ B - bishop
     forenames_full="Andrew"
     title="Lord" lordname="Mawson" lordofname=""
 	lordofname_full="Bromley-by-Bow"
+    county="the London Borough of Tower Hamlets"
     peeragetype="L" affiliation="XB"
-    fromdate="2007-05-01" todate="9999-12-31"
+    fromdate="2007-04-30" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100954"
+    house="lords"
+    forenames="Paul"
+    forenames_full="Paul Anthony Elliott"
+    title="Lord" lordname="Bew" lordofname=""
+    lordofname_full="Donegore"
+    county="the County of Antrim"
+    peeragetype="L" affiliation="XB"
+    fromdate="2007-05-15" todate="9999-12-31"
 />
 
 <!-- 6 new non party political peers: 
