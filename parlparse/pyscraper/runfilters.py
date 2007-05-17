@@ -121,6 +121,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("</?notus-date[^>]*>", "", text)
                 text = re.sub("\s*<meta[^>]*>\s*", "", text)
                 # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
+                # XXX - should probably be in miscfuncs.py/StraightenHTMLrecurse with other character set evil
                 text = text.replace("\xe2\x22\xa2", "&trade;")
                 text = text.replace("\xe2\x82\xac", "&euro;")
                 text = text.replace("\xe2\x80\x99", "&rsquo;")

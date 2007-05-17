@@ -163,8 +163,7 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 
 # The names of entities and what they are are here:
 # http://www.bigbaer.com/reference/character_entity_reference.htm
-# Make sure you update WriteXMLHeader below also!
-# And update website/proto decode.inc
+# Make sure you update WriteXMLHeader in xmlfilewrite.py also!
 entitymap = {
         '&nbsp;':' ',
         '&':'&amp;',
@@ -311,7 +310,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
@@ -364,6 +363,8 @@ def StraightenHTMLrecurse(stex, stampurl):
 			sres[i] = '&eacute;'
                 elif sres[i] == '\xc3\xb8':
 			sres[i] = '&oslash;'
+                elif sres[i] == '\xc3\xb1':
+                        sres[i] = '&ntilde;'
 
 		elif re.match('</?i>$(?i)', sres[i]):
 			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE' 'CLOSE-i-TAG-OUT-OF-PLACE'

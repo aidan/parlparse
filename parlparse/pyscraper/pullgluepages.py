@@ -144,9 +144,12 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2007-04-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070424/debtext/70424-0001.htm':
                 urla = urla[0:14] + urla[16:]
+        if sdate=='2007-05-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070515/halltext/70515h0001.htm':
+                urla = urla[0:4] + urla[6:]
         #print "urla"
         #for aaa in urla:
         #        print aaa
+        #sys.exit(1)
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
