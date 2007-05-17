@@ -9,7 +9,9 @@ from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
 from xapdex import GoXapdex
 from pdfimgmake import GenerateDocimages
-from votedistances import WriteVoteDistances, WriteDocMeasurements
+from votedistances import WriteVoteDistances
+from docmeasurements import WriteDocMeasurements
+from agendanames import WriteAgendaSummaries
 from wpediaget import FetchWikiBacklinks
 
 parser = OptionParser()
@@ -21,9 +23,10 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   parse   do the parsing
   xapdex  call the xapian indexing system
   votedistances generate voting distances table for java applet
-  measurements generate measurements of quantities of documents;
+  docmeasurements generate measurements of quantities of documents;
             created as a set of tables in docmeasurements.html in undata
             used for inserting into the webpage
+  agendanames generate page containing agenda summaries
   index   generate miscellaneous index files
   docimages generate document images in undata/pdfpreview
   wpscrape  scrape for UN translocutions from wikipedia
@@ -81,12 +84,13 @@ bConvertXML = "cxml" in args
 bParse = "parse" in args
 bXapdex = "xapdex" in args
 bVoteDistances = "votedistances" in args
-bMeasurements = "measurements" in args
+bDocMeasurements = "docmeasurements" in args
+bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
 bIndexfiles = "index" in args
 bScrapewp = "wpscrape" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bMeasurements or bDocimages or bScrapewp):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames):
     parser.print_help()
     sys.exit(1)
 
@@ -121,17 +125,27 @@ if bParse:
     PrintNonnationOccurrances()
 
 if bVoteDistances:
-    f = "votetable.txt"
-    print "Writing data to file:", f
+    f = os.path.join(undatadir, "votetable.txt")
+    if IsNotQuiet():
+        print "Writing vote distance to file:", f
     fout = open(f, "w")
     WriteVoteDistances(stem, htmldir, fout)
     fout.close()
 
-if bMeasurements:
+if bDocMeasurements:
     f = os.path.join(undatadir, "docmeasurements.html")
-    print "Writing measurements to file:", f
+    if IsNotQuiet():
+        print "Writing doc measurements to file:", f
     fout = open(f, "w")
-    WriteDocMeasurements(htmldir, pdfdir, fout)
+    WriteDocMeasurements(htmldir, pdfdir, fout)  # number of documents in each year of each type
+    fout.close()
+
+if bAgendanames:
+    f = os.path.join(undatadir, "agendanames.html")
+    if IsNotQuiet():
+        print "Writing agenda summaries to file:", f
+    fout = open(f, "w")
+    WriteAgendaSummaries(htmldir, fout)  # number of documents in each year of each type
     fout.close()
 
 if bDocimages:
