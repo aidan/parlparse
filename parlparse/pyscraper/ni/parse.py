@@ -218,7 +218,8 @@ class ParseDay:
 					self.display_speech()
 					speaker = re.sub("\s+", " ", new_speaker).strip()
 					speaker = re.sub(':', '', speaker)
-					self.speaker = (memberList.match(speaker, date), timestamp)
+					id, str = memberList.match(speaker, date)
+					self.speaker = (str, timestamp)
 				if p.b and p.b.nextSibling:
 					p.b.extract()
 					phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
@@ -277,7 +278,8 @@ class ParseDay:
 				speaker = p.strong.find(text=True)
 				speaker = re.sub("\s+", " ", speaker).strip()
 				speaker = re.sub(':', '', speaker)
-				self.speaker = (memberList.match(speaker, date), timestamp)
+				id, str = memberList.match(speaker, date)
+				self.speaker = (str, timestamp)
 				p.strong.extract()
 				phtml = p.renderContents()
 				phtml = re.sub('^:\s*', '', phtml)
@@ -323,7 +325,7 @@ quiet = False
 force = False
 patchtool = False
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
-    patchtool = True
+	patchtool = True
 g = glob.glob('%scmpages/ni/ni*.html' % parldata)
 g.sort()
 parser = ParseDay()

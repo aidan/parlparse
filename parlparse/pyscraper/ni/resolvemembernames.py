@@ -163,7 +163,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		matches = self.members.values()
 		ids = []
 		for attr in matches:
-			if date >= attr["fromdate"] and date <= attr["todate"]:
+			if 'fromdate' in attr and date >= attr["fromdate"] and date <= attr["todate"]:
 				ids.append(attr["id"])
 		return ids
 
@@ -266,7 +266,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 			remadename = self.members[id]["title"] + " " + remadename
 		if self.members[id]["party"] == "Speaker" and re.search("Speaker", input):
 			remadename = input
-		return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+		return id, 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
 
 	def cleardebatehistory(self):
 		self.debatenamehistory = []
