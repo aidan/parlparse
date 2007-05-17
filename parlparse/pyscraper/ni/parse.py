@@ -244,7 +244,7 @@ class ParseDay:
 	def parse_day_new(self, body):
 		self.url = ''
 
-		if not re.match('THE\s+(transitional(<br>)?\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
+		if not re.match('(THE\s+)?(transitional(<br>)?\s+)?(Northern\s+Ireland\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
 			raise ContextException, 'Missing NIA heading!'
 		date_head = body[1].find(text=True)
 		body = body[2:]
@@ -258,6 +258,7 @@ class ParseDay:
 			if (p.a and re.match('[^h/]', p.a.get('href', ''))):
 				continue
 			cl = p['class']
+			cl = re.sub(' style\d', '', cl)
 			if cl == 'H3SectionHeading':
 				self.display_speech()
 				self.speaker = (None, timestamp)
@@ -291,7 +292,7 @@ class ParseDay:
 							hour += 12
 						timestamp = "%s:%s" % (hour, match.group(3))
 					self.speaker = (self.speaker[0], timestamp)
-				match = re.search('\((Madam Speaker)', ptext)
+				match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
 				if not match:
 					match = re.search('\(Mr Deputy Speaker \[(.*?)\]', ptext)
 				if match:
@@ -300,7 +301,7 @@ class ParseDay:
 				self.text += '<p class="italic">%s</p>\n' % phtml
 			elif cl == 'B3BodyText' or cl == 'B3BodyTextnoindent' or cl == 'RollofMembersList':
 				self.text += '<p>%s</p>\n' % phtml
-			elif cl == 'Q1QuoteIndented':
+			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
 				match = re.match('(\d\d?)\.(\d\d) ?(am|pm|noon)', ptext)
