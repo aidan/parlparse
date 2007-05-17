@@ -99,6 +99,7 @@ class ParseDay:
 <!ENTITY ldquo   "&#8220;">
 <!ENTITY rdquo   "&#8221;">
 <!ENTITY hellip  "&#8230;">
+<!ENTITY bull    "&#8226;">
 ]>
 
 <publicwhip>
