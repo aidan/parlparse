@@ -223,7 +223,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# All upper case headings - UGH
-	elif not re.search('[a-z]', headingtxt):
+	elif not re.search('[a-z]', headingtxt) and not re.match('[A-Z\d/]+[\d/][A-Z\d/]+$', headingtxt):
 		bmajorheading = True
 
 	# If this is labeled major, then it gets concatenated with the
@@ -240,8 +240,9 @@ def NormalHeadingPart(headingtxt, stampurl):
 	elif re.search('^hd_|_head', stampurl.aname):
 		bmajorheading = True
 
+        # Wah
         if stampurl.sdate > '2006-05-07':
-                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order)(?i)", headingtxt):
+                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day)(?i)", headingtxt):
                         bmajorheading = True
 
 	# we're not writing a block for division headings
@@ -332,7 +333,7 @@ def FilterDebateSections(text, sdate, typ):
 			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
                         headingmajor = sht[3]
-                        if headingmajor or sht == headspeak[-1]:
+                        if headingmajor or sht == headspeak[-1]: # UGH again
                                 headingtxt = headingtxt.upper()
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
@@ -355,6 +356,10 @@ def FilterDebateSections(text, sdate, typ):
         			elif qbh.typ == 'major-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
         				flatb[-1].stext.append(" &mdash; ")
 	        			flatb[-1].stext.extend(qbh.stext)
+
+                                elif qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading' and re.search('Allotted Day(?i)', qbh.stext[-1]):
+                                        flatb[-1].stext.append(" &mdash; ")
+                                        flatb[-1].stext.extend(qbh.stext)
 
                                 elif re.search("(?:sitting suspended(?: for| until| till|\.))|(on resuming&)(?i)", qbh.stext[0]):
                                         if len(flatb) > 0 and flatb[-1].typ == 'speech':
