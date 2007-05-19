@@ -4,7 +4,7 @@ import sys
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
-from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, commentsdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir
+from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, commentsdir, pdfpreviewdir, pdfinfodir, indexstuffdir, tmppdfpreviewdir
 from nations import PrintNonnationOccurrances
 from unindex import MiscIndexFiles
 from xapdex import GoXapdex
@@ -125,7 +125,7 @@ if bParse:
     PrintNonnationOccurrances()
 
 if bVoteDistances:
-    f = os.path.join(undatadir, "votetable.txt")
+    f = os.path.join(indexstuffdir, "votetable.txt")
     if IsNotQuiet():
         print "Writing vote distance to file:", f
     fout = open(f, "w")
@@ -133,7 +133,7 @@ if bVoteDistances:
     fout.close()
 
 if bDocMeasurements:
-    f = os.path.join(undatadir, "docmeasurements.html")
+    f = os.path.join(indexstuffdir, "docmeasurements.html")
     if IsNotQuiet():
         print "Writing doc measurements to file:", f
     fout = open(f, "w")
@@ -141,7 +141,7 @@ if bDocMeasurements:
     fout.close()
 
 if bAgendanames:
-    f = os.path.join(undatadir, "agendanames.html")
+    f = os.path.join(indexstuffdir, "agendanames.html")
     if IsNotQuiet():
         print "Writing agenda summaries to file:", f
     fout = open(f, "w")
