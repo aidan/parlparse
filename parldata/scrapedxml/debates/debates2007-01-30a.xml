@@ -10,6 +10,10 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,9 +30,11 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
@@ -44,6 +50,7 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
@@ -59,7 +66,7 @@
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.65.2" nospeaker="true" colnum="65"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0001.htm#07013046000016">
 	<p pid="a.65.2/1" class="italic"> Order for Second Reading read.</p>
-	<p pid="a.65.2/2" class="italic"> To be read a Second Time on <phrase class="date" code="">Tuesday 6 February</phrase>.</p>
+	<p pid="a.65.2/2" class="italic"> To be read a Second Time on <phrase class="date" code="2007-02-06">Tuesday 6 February</phrase>.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/debate/2007-01-30a.65.3" nospeaker="true" colnum="65"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0001.htm#07013046000017">
@@ -557,7 +564,7 @@
 	<p pid="a.80.2/1">My hon. Friend has tabled such questions, and he is right about those increases. We are considering experts' fees. If I can supply the information that he seeks, I shall do so.</p>
 </speech>
 
-<speech id="uk.org.publicwhip/debate/2007-01-30a.80.3" speakerid="uk.org.publicwhip/member/1404" speakername="A J Beith" colnum="80"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0003.htm#07013046000593">
+<speech id="uk.org.publicwhip/debate/2007-01-30a.80.3" speakerid="uk.org.publicwhip/member/1404" speakername="Alan Beith" colnum="80"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0003.htm#07013046000593">
 	<p pid="a.80.3/1">Will the Minister consider the evidence that the Constitutional Affairs Committee is hearing week by week, not just from barristers and solicitors but judges and others, including representations from the president of the family division, about the likely impact on the availability of family law practitioners? Is she ready to make alterations to the timing and content of the proposals in the light of some of that evidence?</p>
 </speech>
 
@@ -591,7 +598,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.81.4" speakerid="uk.org.publicwhip/member/1831" speakername="Simon Hughes" colnum="81"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0003.htm#07013046000601">
-	<p pid="a.81.4/1">The Minister will know that since the Government announced their response to the Carter reforms and since the two debates in Westminster Hall in which the Minister spoke&mdash;after which her words were scrutinised very carefully&mdash;there has been no less concern among both the voluntary sector and the professionals that the new reforms will reduce access to justice in rural and urban Britain alike. Given <phrase class="honfriend" id="uk.org.publicwhip/member/1404" name="A J Beith">the question from my right hon. Friend the Member for Berwick-upon-Tweed (Mr. Beith)</phrase> and the fact that a Select Committee is examining the evidence now, will the Minister at least do the public and their representatives the courtesy of saying that she will not implement anything until the Select Committee has reported and the House has had a chance to debate its report?</p>
+	<p pid="a.81.4/1">The Minister will know that since the Government announced their response to the Carter reforms and since the two debates in Westminster Hall in which the Minister spoke&mdash;after which her words were scrutinised very carefully&mdash;there has been no less concern among both the voluntary sector and the professionals that the new reforms will reduce access to justice in rural and urban Britain alike. Given <phrase class="honfriend" id="uk.org.publicwhip/member/1404" name="Alan Beith">the question from my right hon. Friend the Member for Berwick-upon-Tweed (Mr. Beith)</phrase> and the fact that a Select Committee is examining the evidence now, will the Minister at least do the public and their representatives the courtesy of saying that she will not implement anything until the Select Committee has reported and the House has had a chance to debate its report?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.82.0" speakerid="uk.org.publicwhip/member/1775" speakername="Vera Baird" colnum="82"  time="14:30:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0003.htm#07013046000602">
@@ -1006,27 +1013,29 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.105.1" nospeaker="true" colnum="105"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000018">
-	<p pid="a.105.1/1">Rob Marris accordingly presented a Bill to make requirements about the monitoring of measures to address the effects of climate change; and for connected purposes: And the same was read the First time, and ordered to be read a Second time on <phrase class="date" code="">Friday 23 March</phrase>; and to be printed [Bill 54].</p>
+	<p pid="a.105.1/1">Rob Marris accordingly presented a Bill to make requirements about the monitoring of measures to address the effects of climate change; and for connected purposes: And the same was read the First time, and ordered to be read a Second time on <phrase class="date" code="2007-03-23">Friday 23 March</phrase>; and to be printed [Bill 54].</p>
 </speech>
 
-<minor-heading id="uk.org.publicwhip/debate/2007-01-30a.106.0" nospeaker="true" colnum="106"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000007">
+<major-heading id="uk.org.publicwhip/debate/2007-01-30a.106.0" nospeaker="true" colnum="106"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000007">
 	Opposition Day
 	 &mdash; 
 	[4th Allotted Day]
-	 &mdash; 
+</major-heading>
+
+<minor-heading id="uk.org.publicwhip/debate/2007-01-30a.106.1" nospeaker="true" colnum="106"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000001">
 	Special Educational Needs
 </minor-heading>
 
-<speech id="uk.org.publicwhip/debate/2007-01-30a.106.1" speakerid="uk.org.publicwhip/member/2018" speakername="Madam Deputy Speaker" speakeroffice="Madam Deputy Speaker"  colnum="106"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000683">
-	<p pid="a.106.1/1">I must inform the House that Mr. Speaker has selected the amendment in the name of the Prime Minister.</p>
+<speech id="uk.org.publicwhip/debate/2007-01-30a.106.2" speakerid="uk.org.publicwhip/member/2018" speakername="Madam Deputy Speaker" speakeroffice="Madam Deputy Speaker"  colnum="106"  time="016:34:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000683">
+	<p pid="a.106.2/1">I must inform the House that Mr. Speaker has selected the amendment in the name of the Prime Minister.</p>
 </speech>
 
-<speech id="uk.org.publicwhip/debate/2007-01-30a.106.2" speakerid="uk.org.publicwhip/member/1623" speakername="David Willetts" colnum="106"  time="016:39:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000684">
-	<p pid="a.106.2/1" class="" pwmotiontext="yes">I beg to move,</p>
-	<p pid="a.106.2/2" class="indent" pwmotiontext="yes">That this House notes the conclusions reached by Baroness Warnock in 2005 that inclusion has failed many children; further notes the recommendation of the Education and Skills Committee that a major review be undertaken of Special Educational Needs (SEN) provision; further notes the decline in the number of special schools since 1997; further notes that there are currently no plans for a review of the closure of special schools before 2009; further notes that SEN pupils who are not in special schools who do not have statements account for almost half of all permanent exclusions; further notes the non-statutory nature of the new measures to encourage those local authorities planning to close a special school to demonstrate that alternate provision would be better; believes that the inclusion policy of the Government's Removing Barriers to Achievement document encourages local authorities to shut special schools; shares Baroness Warnock's opinion that inclusion is failing many children; further believes that resources in many mainstream schools are not adequate to deal with the SEN children in their care; considers that the initial and in-service training of teachers of SEN pupils should be strengthened; and therefore calls on the Government to follow the recommendation of the Education and Skills Committee to conduct a fundamental review of SEN provision, including the statutory provisions for statementing and meeting need, and to put a moratorium on the closure of special schools until that review has taken place.</p>
-	<p pid="a.106.2/3">What an extraordinarily statesmanlike procedure the debate will follow!</p>
-	<p pid="a.106.2/4">The motion reflects the extraordinary frustration and distress felt by many parents of children with special educational needs, and by those children themselves, about what is happening to special needs provision. Those emotions poured out again the other week following the decision by the Secretary of State for Communities and Local Government to send her child to a private special school. We fully understand her right to do that, we support the decision that she made, and it is not for us to inquire into such a personal decision; but her decision did reveal&mdash;and this is a matter of legitimate public debate&mdash;the gap between the Government's official claims about the state of special education provision in our mainstream schools and the reality of the tough decisions that parents across the country must face.</p>
-	<p pid="a.106.2/5">There are, in reality, two very different worlds that clash in any debate about special educational needs. There is the SEN world according to Whitehall, and there is a completely different world, the world as experienced by parents. In the Whitehall world, we are told, everything is calm and everything is orderly, but the real world&mdash;the world of which we hear from parents who come to see us in our surgeries&mdash;is a world full of the anguish, exhaustion and desperation of those who are entangled in a system described by the Education and Skills Committee, in its excellent report, as &quot;not fit for purpose&quot;.</p>
+<speech id="uk.org.publicwhip/debate/2007-01-30a.106.3" speakerid="uk.org.publicwhip/member/1623" speakername="David Willetts" colnum="106"  time="016:39:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000684">
+	<p pid="a.106.3/1" class="" pwmotiontext="yes">I beg to move,</p>
+	<p pid="a.106.3/2" class="indent" pwmotiontext="yes">That this House notes the conclusions reached by Baroness Warnock in 2005 that inclusion has failed many children; further notes the recommendation of the Education and Skills Committee that a major review be undertaken of Special Educational Needs (SEN) provision; further notes the decline in the number of special schools since 1997; further notes that there are currently no plans for a review of the closure of special schools before 2009; further notes that SEN pupils who are not in special schools who do not have statements account for almost half of all permanent exclusions; further notes the non-statutory nature of the new measures to encourage those local authorities planning to close a special school to demonstrate that alternate provision would be better; believes that the inclusion policy of the Government's Removing Barriers to Achievement document encourages local authorities to shut special schools; shares Baroness Warnock's opinion that inclusion is failing many children; further believes that resources in many mainstream schools are not adequate to deal with the SEN children in their care; considers that the initial and in-service training of teachers of SEN pupils should be strengthened; and therefore calls on the Government to follow the recommendation of the Education and Skills Committee to conduct a fundamental review of SEN provision, including the statutory provisions for statementing and meeting need, and to put a moratorium on the closure of special schools until that review has taken place.</p>
+	<p pid="a.106.3/3">What an extraordinarily statesmanlike procedure the debate will follow!</p>
+	<p pid="a.106.3/4">The motion reflects the extraordinary frustration and distress felt by many parents of children with special educational needs, and by those children themselves, about what is happening to special needs provision. Those emotions poured out again the other week following the decision by the Secretary of State for Communities and Local Government to send her child to a private special school. We fully understand her right to do that, we support the decision that she made, and it is not for us to inquire into such a personal decision; but her decision did reveal&mdash;and this is a matter of legitimate public debate&mdash;the gap between the Government's official claims about the state of special education provision in our mainstream schools and the reality of the tough decisions that parents across the country must face.</p>
+	<p pid="a.106.3/5">There are, in reality, two very different worlds that clash in any debate about special educational needs. There is the SEN world according to Whitehall, and there is a completely different world, the world as experienced by parents. In the Whitehall world, we are told, everything is calm and everything is orderly, but the real world&mdash;the world of which we hear from parents who come to see us in our surgeries&mdash;is a world full of the anguish, exhaustion and desperation of those who are entangled in a system described by the Education and Skills Committee, in its excellent report, as &quot;not fit for purpose&quot;.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.107.0" speakerid="uk.org.publicwhip/member/1382" speakername="Tony Baldry" colnum="107"  time="016:39:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0006.htm#07013046000685">
@@ -3774,7 +3783,7 @@
 
 <speech id="uk.org.publicwhip/debate/2007-01-30a.206.2" speakerid="uk.org.publicwhip/member/1786" speakername="Andrew Rosindell" colnum="206"  time="022:18:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070130/debtext/70130-0022.htm#0701315001251">
 	<p pid="a.206.2/1">The United Kingdom of Great Britain and Northern Ireland has no truer friends in the world than the Commonwealth of Australia and New Zealand. On ANZAC day each year, members of the all-party parliamentary group for Australia and New Zealand attend Westminster abbey to commemorate this important occasion. On <phrase class="date" code="2006-11-11">11 November 2006</phrase> you, Mr. Speaker, along with several hon. Members from this House, attended the opening by Her Majesty the Queen of the New Zealand memorial at Hyde park corner, three years to the day after the Australian memorial was inaugurated by Her Majesty, both standing as lasting tributes in London to the memory of those Australians and New Zealanders who lost their lives fighting alongside British forces through various wars and conflicts.</p>
-	<p pid="a.206.2/2">The timing of today's debate could hardly be better. As many hon. Members will be aware, Australia day was celebrated only last <phrase class="date" code="2007-01-26">Friday, 26 January</phrase>. There was much revelry and celebration by many of the inhabitants of <phrase class="honfriend" id="uk.org.publicwhip/member/1610" name="Greg Hands">the constituency of my hon. Friend the Member for Hammersmith and Fulham (Mr. Hands)</phrase>. I fear there may be one or two more sore heads next Wednesday, following the Waitangi day celebrations of <phrase class="date" code="">6 February</phrase> in pubs all over Earls Court and the south-west of London.</p>
+	<p pid="a.206.2/2">The timing of today's debate could hardly be better. As many hon. Members will be aware, Australia day was celebrated only last <phrase class="date" code="2007-01-26">Friday, 26 January</phrase>. There was much revelry and celebration by many of the inhabitants of <phrase class="honfriend" id="uk.org.publicwhip/member/1610" name="Greg Hands">the constituency of my hon. Friend the Member for Hammersmith and Fulham (Mr. Hands)</phrase>. I fear there may be one or two more sore heads next Wednesday, following the Waitangi day celebrations of <phrase class="date" code="2007-02-06">6 February</phrase> in pubs all over Earls Court and the south-west of London.</p>
 	<p pid="a.206.2/3">The UK's relationship with our antipodean cousins has always been strained by the geographical distance that separates us and places us at opposite ends of the globe. However, distance has been no bar to the very special bond that exists between our three great nations.</p>
 	<p pid="a.206.2/4">Some people have defined the UK's relationship with Australian and New Zealand as being more akin to brotherhood than friendship. The three countries often fall out over sporting rivalries involving cricket, rugby or sailing, but our people have always shared a common heritage and been bound together by a deep-rooted historical camaraderie. That friendship led our three countries to share the tripartite ANZUK force; although it is now disbanded, that military unit used to be charged with protecting ANZUK interests in the Asia-Pacific region.</p>
 	<p pid="a.206.2/5">There have been various trade agreements and student and business exchange programmes between our three countries, and we also share the same ideals of democratic governance. Moreover, many school and university leavers from Australia and New Zealand opt to take their gap year in the UK, and vice versa. Perhaps the most significant thing that we have in common is the fact that we share a constitution based on the Westminster model, and all three countries proudly uphold Her Majesty Queen Elizabeth II as sovereign and head of state.</p>
