@@ -3,7 +3,7 @@ import sys
 import re
 import os
 from nations import nationdates
-from unmisc import GetAllHtmlDocs
+from unmisc import GetAllHtmlDocs, IsNotQuiet
 import datetime
 
 # writes out the votetable.txt
@@ -11,8 +11,11 @@ def LoadAllVotes(rels):
     res = { }  # { nation : { voterecid: vote } }
     for nation in nationdates:
         res[nation] = { }
+    res["Brunei Darussalam"] = {}# quick fix
 
     for rel in rels:
+        if IsNotQuiet():
+            print "loading:", rel
         fin = open(rel)
         doccontent = fin.read()
         fin.close()
