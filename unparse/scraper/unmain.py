@@ -12,6 +12,7 @@ from pdfimgmake import GenerateDocimages
 from votedistances import WriteVoteDistances
 from docmeasurements import WriteDocMeasurements
 from agendanames import WriteAgendaSummaries
+from scsummaries import ScrapeSCSummaries, WriteSCSummaries
 from wpediaget import FetchWikiBacklinks
 
 parser = OptionParser()
@@ -27,6 +28,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
             created as a set of tables in docmeasurements.html in undata
             used for inserting into the webpage
   agendanames generate page containing agenda summaries
+  scsummaries scrape and generate summary index for security council
   index   generate miscellaneous index files
   docimages generate document images in undata/pdfpreview
   wpscrape  scrape for UN translocutions from wikipedia
@@ -89,8 +91,9 @@ bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
 bIndexfiles = "index" in args
 bScrapewp = "wpscrape" in args
+bSCsummaries = "scsummaries" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries):
     parser.print_help()
     sys.exit(1)
 
@@ -146,6 +149,18 @@ if bAgendanames:
         print "Writing agenda summaries to file:", f
     fout = open(f, "w")
     WriteAgendaSummaries(htmldir, fout)  # number of documents in each year of each type
+    fout.close()
+
+if bSCsummaries:
+    scsummariesdir = os.path.join(indexstuffdir, "scsummariesdir")
+    if not os.path.isdir(scsummariesdir):
+        os.mkdir(scsummariesdir)
+    ScrapeSCSummaries(scsummariesdir)
+    f = os.path.join(indexstuffdir, "scsummaries.html")
+    if IsNotQuiet():
+        print "Writing SC summaries to file:", f
+    fout = open(f, "w")
+    WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
     fout.close()
 
 if bDocimages:

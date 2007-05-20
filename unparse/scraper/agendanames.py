@@ -212,7 +212,7 @@ class AgendaHeading:
     def SeeTextForHeading(self, stext):
         self.numspeeches = len(re.findall('<div class="spoken"', stext))
         self.numparagraphs = len(re.findall('<(?:p|blockquote)', stext))
-        self.numdocuments = len(re.findall('<a href', stext))
+        self.numdocuments = len(set(re.findall('<a href="([^"]*)"', stext)))
 
 
 def CleanupTitles(aggroup):
@@ -309,8 +309,8 @@ def WriteAgendaSummaries(htmldir, fout):
 
     agendagroups = { }
     for htdoc in rels:
-        maga = re.search("(A-\d\d-PV\.\d+)\.html", htdoc)
-        masc = re.search("(S-PV-\d+(?:-(?:Resu|Part)\.\d)?)\.html", htdoc)
+        maga = re.search("(A-\d\d-PV\.\d+)\.(?:unindexed\.)?html", htdoc)
+        masc = re.search("(S-PV-\d+(?:-(?:Resu|Part)\.\d)?)\.(?:unindexed\.)?html", htdoc)
 
         if not maga:
             if not masc:
