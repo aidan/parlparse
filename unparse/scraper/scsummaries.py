@@ -8,7 +8,6 @@ from unmisc import IsNotQuiet
 import datetime
 
 def ScrapeSCSummaries(scsummariesdir):
-    return
     currentdate = datetime.date.today()
     currentyear = currentdate.year
     currentmonth = currentdate.month
