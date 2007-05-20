@@ -448,7 +448,7 @@ class SCrecord:
         pdffile = os.path.join(pdfdir, self.pvcode + ".pdf")
         if os.path.isfile(htmlfile):
             self.doclink = '"../html/%s.html" class="lkhtml"' % self.pvcode
-            #self.meetmeas = GetSizeOfMeeting(htmlfile)
+            self.meetmeas = GetSizeOfMeeting(htmlfile)
         elif os.path.isfile(pdffile):
             self.doclink = '"../pdf/%s.pdf" class="lkpdf"' % self.pvcode
         else:
