@@ -104,7 +104,7 @@ function xapian_get_mset($query, $undata_path = NULL, $db_path = NULL) {
 
 
 
-function xapian_do_search($query) {
+function xapian_do_search($query, $start=0, $count=100) {
 
   $result = xapian_get_mset($query);
   $query = $result->query;
@@ -114,15 +114,23 @@ function xapian_do_search($query) {
   # searchengine.php from TWFY for code to work out set result sizes
   # And Olly says "I suspect you might want to look at the "check_at_least" parameter to
   # Enquire::get_mset()..."
-  $matches = $enquire->get_mset(0, 100);  
+  $matches = $enquire->get_mset($start, $count);  
 
   $result->info = $query->get_description();
   $mseti = $matches->begin();
   while (! $mseti->equals($matches->end())) {  
     $doc = $mseti->get_document();
     $doc_data = $doc->get_data();
+
+//temp hack whilst i'm waiting for a reparse
+  if (count(split("\|",$doc_data)) == 5) {
     list($doc_file, $doc_offset, $doc_len, $heading,$full_doc_len) = split("\|", $doc_data);
-    $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len, 'heading' => $heading,'full_doc_len'=>$full_doc_len);
+    $result->data[] = array('file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len, 'heading' => $heading,'full_doc_len'=>$full_doc_len);	
+  } else {
+    list($para_id, $doc_file, $doc_offset, $doc_len, $heading,$full_doc_len) = split("\|", $doc_data);
+    $result->data[] = array('para_id'=> $para_id,'file' => $doc_file, 'offset' => $doc_offset, 'len' => $doc_len, 'heading' => $heading,'full_doc_len'=>$full_doc_len);
+  }
+
     // Next result
     $mseti->next();
   }
