@@ -14,9 +14,27 @@
     <div id="left" class="mapcol"></div>
     <div id="right" class="mapcol"></div>
     <?php print theme(links, $primary_links); ?>
-    <div id="intro"><?php print variable_get('intro_text', 'intro text here'); ?></div>
-    <div id="blocks">
-      <?php print $front; ?>
-    </div>
+    <div id="content">
+        <?php if ($tabs != ""): ?>
+          <?php print $tabs ?>
+        <?php endif; ?>
+       
+        <?php if ($mission != ""): ?>
+          <p id="mission"><?php print $mission ?></p>
+        <?php endif; ?>
+       
+        <?php if ($help != ""): ?>
+          <p id="help"><?php print $help ?></p>
+        <?php endif; ?>
+       
+        <?php if ($messages != ""): ?>
+          <div id="message"><?php print $messages ?></div>
+        <?php endif; ?>
+
+        <!-- start main content -->
+        <?php print($content) ?>
+        <!-- end main content -->
+	
+	</div>
   </body>
 </html>

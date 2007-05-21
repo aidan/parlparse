@@ -84,7 +84,7 @@
 	}
 	
 #content {
-width:700px;
+width:750px;
 margin:0 auto 0 auto;
 }
 
@@ -112,7 +112,7 @@ background-color:#888888;
 #content {
 font-family: Verdana, "Bitstream Vera Sans", Geneva, "Lucida Grande", sans-serif;
 font-size:0.9em;
-line-height:1.5em;
+line-height:1em;
 }
 
 div.italicline
@@ -201,7 +201,7 @@ a.nolink
 }
 
 .odd p, .even p {
-	margin:0 10px 1.2em 120px;
+	margin:0 20px 1.2em 20px;
 }
 
 .votelist {
@@ -217,4 +217,114 @@ a.nolink
 }
 .absent {
   color:gray;
+}
+#content .item-list .active {
+	background-color:lightgray;
+	font-weight:bold;
+}
+.agenda_box {
+	float:right;
+	border:2px solid gray;
+}
+.spoken {
+	clear:both;
+}
+
+div.years ul {
+	margin:-10px 0 0 0;
+	padding:0 0 0 18px;
+	clear:both;
+}
+div.years ul li {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	width:30px;
+	font-size:10px;
+	display:block;
+	float:left;
+	height:10px;
+}
+code.link {
+	width:90%;
+	overflow:scroll;
+	display:block;
+	border:1px solid gray;
+}
+.hashlink {
+	float:right;
+	background:none;
+	border-width:0;
+}
+.pdf {
+	background-image:url('/sites/all/themes/undemocracy/images/15px-Icons-mini-file_acrobat.gif');
+	background-repeat:no-repeat;
+	background-position:top right;
+	padding-right:16px;
+}
+.block-members li {
+	display:inline;
+	font-size:0.8em;
+}
+.block-members li strong {
+	font-size:1.1em;
+}
+.docmeasures {
+
+	margin:0 auto 0 auto;
+}
+.docmeasuresshort .scrow {
+	background-color:lightgrey;
+}
+.docmeasures .docmeasyear {
+	width:90px;
+
+} 
+.gasess {
+	padding:0 0 0 5px;
+	font-style:italic;
+}
+.bbody {
+	text-align:center;
+}
+.num,.docmeasdocs {
+	text-align:right;
+}
+
+/*.docmeasmeetings,.docmeasres,.docmeasdocs {
+	width:20px;
+}
+*/
+.region-right {
+	float:right;
+	width:20%;
+}
+.region-left {
+	float:left;
+	width:28%;
+	height:160px;
+	overflow:scroll;
+}
+.region-twocol {
+	float:right;
+	width:70%;
+	height:260px;
+	overflow:scroll;
+	
+}
+.region-top {
+
+
+}
+
+.region-center {
+	float:right;
+  width:50%;
+}
+.region {
+	border:1px solid grey;
+}
+
+.speaker img {
+	border:1px solid #D9EAF5;
 }
