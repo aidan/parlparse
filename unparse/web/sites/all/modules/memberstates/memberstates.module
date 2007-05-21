@@ -30,904 +30,992 @@ function format_state($text) {
 function member_states_page() {
 $states = member_states();
 $statename = arg(1);
-if ($states[$statename]) {
-  $state = $states[$statename];
-  drupal_set_title("Information about ". $statename);
-  $output = '<div style="float:right;"><img src="/shistogram/class:spoken nation:unitedstates" /></div>';
-  $output .= "<dl>";
-  $output .= "<dt>Joined</dt>";
-  $output .= "<dd>".$state['#joined']."</dd>";
-
-
-  if ($state['#formally']) {
-    $output .= "<dt>Formally</dt>";
-    foreach ($state['#formally'] as $former) {
-      $output .= "<dd>".$former."</dd>";
-    }
-  }
-  
-  if ($state['#notes']) {
-    $output .= "<dt>Notes</dt>";
-    foreach ($state['#notes'] as $note) {
-      $output .= "<dd>".$note."</dd>";
-    }
-  }
-  $output .= "</dl>";
-  
-  if ($state['#original']) {
-  $output .=  $statename . " was an original UN member state";
-  }
-  return $output;
+if ($statename == "") {
+	return theme('memberlist',$states);
 } else {
-$output = "<ul>";
-foreach ($states as $state => $info) {
-  $output .= "<li>". l($state, "members/".$state) ."</li>";
-}
-$output .= "</ul>";
-return $output;
-}
+
+  $state = $states[$statename];
+
+  drupal_set_title("Information about ". $state['name']);
+
+  $blocks['flag'] = array(
+	  'title' => "",
+	  'content' => '<img src="'.flag_image_path(300,$state['name']).'" />',
+	  'region' => 'center',
+	  'weight' => 0,
+	);
+
+	$blocks['docmeasurements'] = array(
+		'title' => "",
+		'content' => docmeasurements($state['name']),
+		'region' => 'center',
+		'weight' => 1
+	);
+
+$blocks['minorityvotes'] = array(
+	'title' => "Minority votes",
+	'content' => minority_votes($statename),
+	'region' => 'left',
+	'weight' => 1
+);
+
+  $blocks['joined'] = array(
+	'title' => "Joined",
+	'content' => $state['joined'],
+	'region' => 'right',
+	'weight' => 0
+	);
+
+
+
+	uasort($blocks,'block_element_sort');
+
+	
+	foreach($blocks as $name => $block) {
+    $text = '<div class="block block-'.$name.'">';
+    if($block['title']){$text .= '<h2>'.$block['title'].'</h2>';}
+    $text .= $block['content'].'</div>';
+		$regions[$block['region']][] = $text;
+	}
+
+//		$output[] = '<div class="region region-top">'.implode("",$regions['top']).'</div>';
+		$output[] = '<div class="region region-right">'.implode("",$regions['right']).'</div>';
+	  $output[] = '<div class="region region-left">'.implode("",$regions['left']).'</div>';		
+		$output[] = '<div class="region region-center">'.implode("",$regions['center']).'</div>';
+		// $output[] = '<div class="region region-twocol">'.implode("",$regions['twocol']).'</div>';		
+	return implode('',$output);
+	
 
 
 
 }
 
-
-function get_state_info() {
-
-
 }
 
 
+function format_nation($name) {
+  $chars = array(
+	  "'",
+	  " ",
+		"-"
+	);
+	$name = str_replace($chars,"",strtolower($name));
+	return $name;
+}
 
 function member_states() {
+	$csv = file_get_contents("/home/undemocracy/unparse/scraper/nationdata.csv");
 
-$states["Afghanistan"] = array(
-	'#name' => '',
-	'#joined' => '1946-11-19',
-	); 	
-$states["Albania"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Algeria"] = array(
-	'#name' => '',
-	'#joined' => '1962-10-08',
-	); 	
-$states["Andorra"] = array(
-	'#name' => '',
-	'#joined' => '1993-07-28',
-	); 	
-$states["Angola"] = array(
-	'#name' => '',
-	'#joined' => '1976-12-01',
-	); 	
-$states["Antigua and Barbuda"] = array(
-	'#name' => '',
-	'#joined' => '1981-11-11',
-	); 	
-$states["Argentina"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,
-	); 	
-$states["Armenia"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Australia"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-01',
-	'#original' => true,
-	); 	
-$states["Austria"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Azerbaijan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Bahamas"] = array(
-	'#name' => '',
-	'#joined' => '1973-09-18',
-	); 	
-$states["Bahrain"] = array(
-	'#name' => '',
-	'#joined' => '1971-09-21',
-	); 	
-$states["Bangladesh"] = array(
-	'#name' => '',
-	'#joined' => '1974-09-17',
-	); 	
-$states["Barbados"] = array(
-	'#name' => '',
-	'#joined' => '1966-12-09',
-	); 	
-$states["Belarus"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,
-	'#formally' => array("Byelorussian Soviet Socialist Republic"),
-	'#notes' => array('Belarus was originally admitted as the "Byelorussian Soviet Socialist Republic". It informed the UN that it had changed its name from "Byelorussia" to its current name on 19 September 1991.'),
-	);
-$states["Belgium"] = array(
-	'#name' => '',
-	'#original' => true,
-	'#joined' => '1945-12-27',
-	); 	
-$states["Belize"] = array(
-	'#name' => '',
-	'#joined' => '1981-09-25',
-	); 	
-$states["Benin"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array('Benin was originally admitted as "Dahomey".'),
-	); 	
-$states["Bhutan"] = array(
-	'#name' => '',
-	'#joined' => '1971-09-21',
-	); 	
-$states["Bolivia"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-14',
-	'#original' => true,
-	); 	
-$states["Bosnia and Herzegovina"] = array(
-	'#name' => '',
-	'#joined' => '1992-05-22',
-	);
-$states["Botswana"] = array(
-	'#name' => '',
-	'#joined' => '1966-10-17',
-	); 	
-$states["Brazil"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Brunei"] = array(
-	'#name' => '',
-	'#joined' => '1984-09-21',
-	'#notes' => array('Brunei currently takes its seat under the name "Brunei Darussalam".'),
-	); 	
-$states["Bulgaria"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Burkina Faso"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array('Burkina Faso was originally admitted as "Upper Volta".'),
-	); 	
-$states["Burundi"] = array(
-	'#name' => '',
-	'#joined' => '1962-09-18',
-	); 	
-$states["Cambodia"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Cameroon"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array('Cameroon was originally admitted as "Cameroun".'),	
-	); 	
-$states["Canada"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-09',
-	'#original' => true,		
-	); 	
-$states["Cape Verde"] = array(
-	'#name' => '',
-	'#joined' => '1975-09-16',
-	); 	
-$states["Central African Republic"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Chad"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Chile"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["China"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	);
-$states["Colombia"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-05',
-	'#original' => true,	
-	); 	
-$states["Comoros"] = array(
-	'#name' => '',
-	'#joined' => '1975-11-12',
-	); 	
-$states["Democratic Republic of the Congo"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array("The Democratic Republic of the Congo was originally admitted as \"Congo (Leopoldville)\". It later changed its name to the \"Democratic Republic of the Congo\", and then to \"Zaire\", and back to its current name on 17 May 1997."),
-	); 	
-$states["Republic of the Congo"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array('The Republic of the Congo currently takes its seat under the name "Congo". It was originally admitted as "Congo (Brazzaville)".'),
-	); 	
-$states["Costa Rica"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-02',
-	'#original' => true,	
-	); 	
-$states["Côte d'Ivoire"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	'#notes' => array("Côte d'Ivoire was originally admitted as \"Ivory Coast\"."),
-	); 	
-$states["Croatia"] = array(
-	'#name' => '',
-	'#joined' => '1992-05-22',
-	);
-$states["Cuba"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Cyprus"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Czech Republic"] = array(
-	'#name' => '',
-	'#joined' => '1993-01-19',
-	);
-$states["Denmark"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Djibouti"] = array(
-	'#name' => '',
-	'#joined' => '1977-09-20',
-	); 	
-$states["Dominica"] = array(
-	'#name' => '',
-	'#joined' => '1978-12-18',
-	); 	
-$states["Dominican Republic"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Ecuador"] = array(
-	'#name' => '',
-	'#joined' => '1945-12-21',
-	'#original' => true,	
-	); 	
-$states["Egypt"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	);
-$states["El Salvador"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Equatorial Guinea"] = array(
-	'#name' => '',
-	'#joined' => '1968-11-12',
-	); 	
-$states["Eritrea"] = array(
-	'#name' => '',
-	'#joined' => '1993-05-28',
-	); 	
-$states["Estonia"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	);
-$states["Ethiopia"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-13',
-	'#original' => true,	
-	); 	
-$states["Fiji"] = array(
-	'#name' => '',
-	'#joined' => '1970-10-13',
-	); 	
-$states["Finland"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["France"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Gabon"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Gambia"] = array(
-	'#name' => '',
-	'#joined' => '1965-09-21',
-	); 	
-$states["Georgia"] = array(
-	'#name' => '',
-	'#joined' => '1992-07-31',
-	);
-$states["Germany"] = array(
-	'#name' => '',
-	'#joined' => '1973-09-18',
-	);
-$states["Ghana"] = array(
-	'#name' => '',
-	'#joined' => '1957-03-08',
-	); 	
-$states["Greece"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-25',
-	'#original' => true,	
-	); 	
-$states["Grenada"] = array(
-	'#name' => '',
-	'#joined' => '1974-09-17',
-	); 	
-$states["Guatemala"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-21',
-	'#original' => true,	
-	); 	
-$states["Guinea"] = array(
-	'#name' => '',
-	'#joined' => '1958-12-12',
-	); 	
-$states["Guinea-Bissau"] = array(
-	'#name' => '',
-	'#joined' => '1974-09-17',
-	); 	
-$states["Guyana"] = array(
-	'#name' => '',
-	'#joined' => '1966-09-20',
-	); 	
-$states["Haiti"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Honduras"] = array(
-	'#name' => '',
-	'#joined' => '1945-12-17',
-	'#original' => true,	
-	); 	
-$states["Hungary"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Iceland"] = array(
-	'#name' => '',
-	'#joined' => '1946-11-19',
-	); 	
-$states["India"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-30',
-	'#original' => true,	
-	); 	
-$states["Indonesia"] = array(
-	'#name' => '',
-	'#joined' => '1950-09-28',
-	'#notes' => array("Indonesia temporarily withdrew from the UN on 20 January 1965 in response to the fact that Malaysia was elected as a non-permanent member of the Security Council. It announced its intention to \"resume full cooperation with the United Nations and to resume participation in its activities\" on 19 September 1966, and was invited to re-join the UN on 28 September 1966."),
-	); 	
-$states["Iran"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("Iran currently takes its seat under the name \"Iran (Islamic Republic of)\"."),
-	); 	
-$states["Iraq"] = array(
-	'#name' => '',
-	'#joined' => '1945-12-21',
-	'#original' => true,	
-	); 	
-$states["Ireland"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Israel"] = array(
-	'#name' => '',
-	'#joined' => '1949-05-11',
-	); 	
-$states["Italy"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Jamaica"] = array(
-	'#name' => '',
-	'#joined' => '1962-09-18',
-	); 	
-$states["Japan"] = array(
-	'#name' => '',
-	'#joined' => '1956-12-18',
-	); 	
-$states["Jordan"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Kazakhstan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Kenya"] = array(
-	'#name' => '',
-	'#joined' => '1963-12-16',
-	); 	
-$states["Kiribati"] = array(
-	'#name' => '',
-	'#joined' => '1999-09-14',
-	); 	
-$states["Democratic Peoples Republic of Korea"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	); 	
-$states["South Korea"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	); 	
-$states["Kuwait"] = array(
-	'#name' => '',
-	'#joined' => '1963-05-14',
-	); 	
-$states["Kyrgyzstan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Laos"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	'#notes' => array("Laos currently takes its seat under the name \"Lao People's Democratic Republic\"."),
-	); 	
-$states["Latvia"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	);
-$states["Lebanon"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Lesotho"] = array(
-	'#name' => '',
-	'#joined' => '1966-10-17',
-	); 	
-$states["Liberia"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-02',
-	'#original' => true,	
-	); 	
-$states["Libya"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	'#notes' => array("Libya currently takes its seat under the name \"Libyan Arab Jamahiriya\".")
-	); 	
-$states["Liechtenstein"] = array(
-	'#name' => '',
-	'#joined' => '1990-09-18',
-	); 	
-$states["Lithuania"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	);
-$states["Luxembourg"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Republic of Macedonia"] = array(
-	'#name' => '',
-	'#joined' => '1993-04-08',
-	'#notes' => array("Macedonia currently takes its seat under the name \"The former Yugoslav Republic of Macedonia\", ". l('due to objections from Greece','http://en.wikipedia.org/wiki/Macedonia_naming_dispute')),
-	);
-$states["Madagascar"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Malawi"] = array(
-	'#name' => '',
-	'#joined' => '1964-12-01',
-	); 	
-$states["Malaysia"] = array(
-	'#name' => '',
-	'#joined' => '1957-09-17',
-	'#notes' => array("Malaysia was originally admitted as the \"Federation of Malaya\". On 16 September 1963, its name was changed to \"Malaysia\", following the admission of Singapore, Sabah and Sarawak to the federation. Singapore became an independent state on 9 August 1965."),
-	); 	
-$states["Maldives"] = array(
-	'#name' => '',
-	'#joined' => '1965-09-21',
-	); 	
-$states["Mali"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-28',
-	); 	
-$states["Malta"] = array(
-	'#name' => '',
-	'#joined' => '1964-12-01',
-	); 	
-$states["Marshall Islands"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	); 	
-$states["Mauritania"] = array(
-	'#name' => '',
-	'#joined' => '1961-10-27',
-	); 	
-$states["Mauritius"] = array(
-	'#name' => '',
-	'#joined' => '1968-04-24',
-	); 	
-$states["Mexico"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-07',
-	'#original' => true,	
-	); 	
-$states["Micronesia"] = array(
-	'#name' => '',
-	'#joined' => '1991-09-17',
-	'#notes' => array("Micronesia currently takes its seat under the name \"Micronesia (Federated States of)\"."),
-	); 	
-$states["Moldova"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	'#notes' => array("Moldova currently takes its seat under the name \"Republic of Moldova\"."),
-	);
-$states["Monaco"] = array(
-	'#name' => '',
-	'#joined' => '1993-05-28',
-	); 	
-$states["Mongolia"] = array(
-	'#name' => '',
-	'#joined' => '1961-10-27',
-	); 	
-$states["Montenegro"] = array(
-	'#name' => '',
-	'#joined' => '2006-06-28',
-	);
-$states["Morocco"] = array(
-	'#name' => '',
-	'#joined' => '1956-11-12',
-	); 	
-$states["Mozambique"] = array(
-	'#name' => '',
-	'#joined' => '1975-09-16',
-	); 	
-$states["Myanmar"] = array(
-	'#name' => '',
-	'#joined' => '1948-04-19',
-	'#notes' => array("Myanmar was originally admitted as \"Burma\"."),
-	); 	
-$states["Namibia"] = array(
-	'#name' => '',
-	'#joined' => '1990-04-23',
-	); 	
-$states["Nauru"] = array(
-	'#name' => '',
-	'#joined' => '1999-09-14',
-	); 	
-$states["Nepal"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Netherlands"] = array(
-	'#name' => '',
-	'#joined' => '1945-12-10',
-	'#original' => true,	
-	); 	
-$states["New Zealand"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Nicaragua"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Niger"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Nigeria"] = array(
-	'#name' => '',
-	'#joined' => '1960-10-07',
-	); 	
-$states["Norway"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-27',
-	'#original' => true,	
-	); 	
-$states["Oman"] = array(
-	'#name' => '',
-	'#joined' => '1971-10-07',
-	); 	
-$states["Pakistan"] = array(
-	'#name' => '',
-	'#joined' => '1947-09-30',
-	); 	
-$states["Palau"] = array(
-	'#name' => '',
-	'#joined' => '1994-12-15',
-	); 	
-$states["Panama"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-13',
-	'#original' => true,	
-	); 	
-$states["Papua New Guinea"] = array(
-	'#name' => '',
-	'#joined' => '1975-10-10',
-	); 	
-$states["Paraguay"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Peru"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-31',
-	'#original' => true,	
-	); 	
-$states["Philippines"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("The Philippines was originally admitted as the \"Philippine Commonwealth\"."),
-	); 	
-$states["Poland"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Portugal"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Qatar"] = array(
-	'#name' => '',
-	'#joined' => '1971-09-21',
-	); 	
-$states["Romania"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Russia"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("Russia currently takes its seat under the name \"Russian Federation\"."),
-	);
-$states["Rwanda"] = array(
-	'#name' => '',
-	'#joined' => '1962-09-18',
-	); 	
-$states["Saint Kitts and Nevis"] = array(
-	'#name' => '',
-	'#joined' => '1983-09-23',
-	); 	
-$states["Saint Lucia"] = array(
-	'#name' => '',
-	'#joined' => '1979-09-18',
-	); 	
-$states["Saint Vincent and the Grenadines"] = array(
-	'#name' => '',
-	'#joined' => '1980-09-16',
-	); 	
-$states["Samoa"] = array(
-	'#name' => '',
-	'#joined' => '1976-12-15',
-	'#notes' => array("Samoa was originally admitted as \"Western Samoa\"."),
-	); 	
-$states["San Marino"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	); 	
-$states["São Tomé and Príncipe"] = array(
-	'#name' => '',
-	'#joined' => '1975-09-16',
-	); 	
-$states["Saudi Arabia"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Senegal"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-28',
-	); 	
-$states["Serbia"] = array(
-	'#name' => '',
-	'#joined' => '2000-11-01',
-	);
-$states["Seychelles"] = array(
-	'#name' => '',
-	'#joined' => '1976-09-21',
-	); 	
-$states["Sierra Leone"] = array(
-	'#name' => '',
-	'#joined' => '1961-09-27',
-	); 	
-$states["Singapore"] = array(
-	'#name' => '',
-	'#joined' => '1965-09-21',
-	); 	
-$states["Slovakia"] = array(
-	'#name' => '',
-	'#joined' => '1993-01-19',
-	);
-$states["Slovenia"] = array(
-	'#name' => '',
-	'#joined' => '1992-05-22',
-	);
-$states["Solomon Islands"] = array(
-	'#name' => '',
-	'#joined' => '1978-09-19',
-	); 	
-$states["Somalia"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["South Africa"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-07',
-	'#original' => true,	
-	'#notes' => array("South Africa was originally admitted as the \"Union of South Africa\"."),
-	); 	
-$states["Spain"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	); 	
-$states["Sri Lanka"] = array(
-	'#name' => '',
-	'#joined' => '1955-12-14',
-	'#notes' => array("Sri Lanka was originally admitted as \"Ceylon\"."),
-	); 	
-$states["Sudan"] = array(
-	'#name' => '',
-	'#joined' => '1956-11-12',
-	); 	
-$states["Suriname"] = array(
-	'#name' => '',
-	'#joined' => '1975-12-04',
-	); 	
-$states["Swaziland"] = array(
-	'#name' => '',
-	'#joined' => '1968-09-24',
-	); 	
-$states["Sweden"] = array(
-	'#name' => '',
-	'#joined' => '1946-11-19',
-	); 	
-$states["Switzerland"] = array(
-	'#name' => '',
-	'#joined' => '2002-09-10',
-	); 	
-$states["Syria"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("Syria currently takes its seat under the name \"Syrian Arab Republic\"."),
-	);
-$states["Tajikistan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Tanzania"] = array(
-	'#name' => '',
-	'#joined' => '1961-12-14',
-	'#notes' => array("Tanzania currently takes its seat under the name \"United Republic of Tanzania\"."),
-	);
-$states["Thailand"] = array(
-	'#name' => '',
-	'#joined' => '1946-12-16',
-	'#notes' => array("Thailand was originally admitted as \"Siam\"."),
-	); 	
-$states["Timor-Leste"] = array(
-	'#name' => '',
-	'#joined' => '2002-09-27',
-	); 	
-$states["Togo"] = array(
-	'#name' => '',
-	'#joined' => '1960-09-20',
-	); 	
-$states["Tonga"] = array(
-	'#name' => '',
-	'#joined' => '1999-09-14',
-	); 	
-$states["Trinidad and Tobago"] = array(
-	'#name' => '',
-	'#joined' => '1962-09-18',
-	); 	
-$states["Tunisia"] = array(
-	'#name' => '',
-	'#joined' => '1956-11-12',
-	); 	
-$states["Turkey"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	); 	
-$states["Turkmenistan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Tuvalu"] = array(
-	'#name' => '',
-	'#joined' => '2000-09-05',
-	); 	
-$states["Uganda"] = array(
-	'#name' => '',
-	'#joined' => '1962-10-25',
-	); 	
-$states["Ukraine"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("Ukraine was originally admitted as the \"Ukrainian Soviet Socialist Republic\"."),
-	);
-$states["United Arab Emirates"] = array(
-	'#name' => '',
-	'#joined' => '1971-12-09',
-	); 	
-$states["United Kingdom"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("The United Kingdom currently takes its seat under the name the \"United Kingdom of Great Britain and Northern Ireland\"."),
-	); 	
-$states["United States"] = array(
-	'#name' => '',
-	'#joined' => '1945-10-24',
-	'#original' => true,	
-	'#notes' => array("The United States currently takes its seat under the name the \"United States of America\"."),
-	); 	
-$states["Uruguay"] = array(
-	'#name' => '',
-	'#joined' => '1945-12-18',
-	'#original' => true,	
-	); 	
-$states["Uzbekistan"] = array(
-	'#name' => '',
-	'#joined' => '1992-03-02',
-	);
-$states["Vanuatu"] = array(
-	'#name' => '',
-	'#joined' => '1981-09-15',
-	); 	
-$states["Venezuela"] = array(
-	'#name' => '',
-	'#joined' => '1945-11-15',
-	'#original' => true,	
-	'#notes' => array("Venezuela currently takes its seat under the name the \"Venezuela (Bolivarian Republic of)\"."),
-	); 	
-$states["Vietnam"] = array(
-	'#name' => '',
-	'#joined' => '1977-09-20',
-	'#notes' => array("Vietnam currently takes its seat under the name \"Viet Nam\"."),
-	); 	
-$states["Yemen"] = array(
-	'#name' => '',
-	'#joined' => '1947-09-30',
-	);
-$states["Zambia"] = array(
-	'#name' => '',
-	'#joined' => '1964-12-01',
-	); 	
-$states["Zimbabwe"] = array(
-	'#name' => '',
-	'#joined' => '1980-08-25',
-	); 	
-return $states;	
+	$rows = split("\n",$csv);
+
+  // Assume the first row is a heading
+  unset($rows[0]);
+
+	foreach($rows as $i=>$row) {
+		$row = split('","',$row);
+			$name = trim($row[0],'"');
+		  if($name != "") {
+			$members[format_nation($name)] = array(
+			  'name' => $name,
+			  'joined' => $row[1],
+			  'left' => $row[2],
+			) ;
+		}
+	}
+  return $members;
+
+
+/*
+ {
+// $states["Afghanistan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1946-11-19',
+// 	); 	
+// $states["Albania"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Algeria"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-10-08',
+// 	); 	
+// $states["Andorra"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-07-28',
+// 	); 	
+// $states["Angola"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1976-12-01',
+// 	); 	
+// $states["Antigua and Barbuda"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1981-11-11',
+// 	); 	
+// $states["Argentina"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,
+// 	); 	
+// $states["Armenia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Australia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-01',
+// 	'#original' => true,
+// 	); 	
+// $states["Austria"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Azerbaijan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Bahamas"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1973-09-18',
+// 	); 	
+// $states["Bahrain"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1971-09-21',
+// 	); 	
+// $states["Bangladesh"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1974-09-17',
+// 	); 	
+// $states["Barbados"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1966-12-09',
+// 	); 	
+// $states["Belarus"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,
+// 	'#formally' => array("Byelorussian Soviet Socialist Republic"),
+// 	'#notes' => array('Belarus was originally admitted as the "Byelorussian Soviet Socialist Republic". It informed the UN that it had changed its name from "Byelorussia" to its current name on 19 September 1991.'),
+// 	);
+// $states["Belgium"] = array(
+// 	'#name' => '',
+// 	'#original' => true,
+// 	'#joined' => '1945-12-27',
+// 	); 	
+// $states["Belize"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1981-09-25',
+// 	); 	
+// $states["Benin"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array('Benin was originally admitted as "Dahomey".'),
+// 	); 	
+// $states["Bhutan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1971-09-21',
+// 	); 	
+// $states["Bolivia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-14',
+// 	'#original' => true,
+// 	); 	
+// $states["Bosnia and Herzegovina"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-05-22',
+// 	);
+// $states["Botswana"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1966-10-17',
+// 	); 	
+// $states["Brazil"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Brunei"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1984-09-21',
+// 	'#notes' => array('Brunei currently takes its seat under the name "Brunei Darussalam".'),
+// 	); 	
+// $states["Bulgaria"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Burkina Faso"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array('Burkina Faso was originally admitted as "Upper Volta".'),
+// 	); 	
+// $states["Burundi"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-09-18',
+// 	); 	
+// $states["Cambodia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Cameroon"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array('Cameroon was originally admitted as "Cameroun".'),	
+// 	); 	
+// $states["Canada"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-09',
+// 	'#original' => true,		
+// 	); 	
+// $states["Cape Verde"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-09-16',
+// 	); 	
+// $states["Central African Republic"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Chad"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Chile"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["China"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	);
+// $states["Colombia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-05',
+// 	'#original' => true,	
+// 	); 	
+// $states["Comoros"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-11-12',
+// 	); 	
+// $states["Democratic Republic of the Congo"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array("The Democratic Republic of the Congo was originally admitted as \"Congo (Leopoldville)\". It later changed its name to the \"Democratic Republic of the Congo\", and then to \"Zaire\", and back to its current name on 17 May 1997."),
+// 	); 	
+// $states["Republic of the Congo"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array('The Republic of the Congo currently takes its seat under the name "Congo". It was originally admitted as "Congo (Brazzaville)".'),
+// 	); 	
+// $states["Costa Rica"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-02',
+// 	'#original' => true,	
+// 	); 	
+// $states["Côte d'Ivoire"] = array(
+// 	'#name' => 'cote_d_ivoire',
+// 	'#joined' => '1960-09-20',
+// 	'#notes' => array("Côte d'Ivoire was originally admitted as \"Ivory Coast\"."),
+// 	); 	
+// $states["Croatia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-05-22',
+// 	);
+// $states["Cuba"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Cyprus"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Czech Republic"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-01-19',
+// 	);
+// $states["Denmark"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Djibouti"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1977-09-20',
+// 	); 	
+// $states["Dominica"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1978-12-18',
+// 	); 	
+// $states["Dominican Republic"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Ecuador"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-12-21',
+// 	'#original' => true,	
+// 	); 	
+// $states["Egypt"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	);
+// $states["El Salvador"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Equatorial Guinea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1968-11-12',
+// 	); 	
+// $states["Eritrea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-05-28',
+// 	); 	
+// $states["Estonia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	);
+// $states["Ethiopia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-13',
+// 	'#original' => true,	
+// 	); 	
+// $states["Fiji"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1970-10-13',
+// 	); 	
+// $states["Finland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["France"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Gabon"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Gambia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1965-09-21',
+// 	); 	
+// $states["Georgia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-07-31',
+// 	);
+// $states["Germany"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1973-09-18',
+// 	);
+// $states["Ghana"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1957-03-08',
+// 	); 	
+// $states["Greece"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-25',
+// 	'#original' => true,	
+// 	); 	
+// $states["Grenada"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1974-09-17',
+// 	); 	
+// $states["Guatemala"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-21',
+// 	'#original' => true,	
+// 	); 	
+// $states["Guinea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1958-12-12',
+// 	); 	
+// $states["Guinea-Bissau"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1974-09-17',
+// 	); 	
+// $states["Guyana"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1966-09-20',
+// 	); 	
+// $states["Haiti"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Honduras"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-12-17',
+// 	'#original' => true,	
+// 	); 	
+// $states["Hungary"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Iceland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1946-11-19',
+// 	); 	
+// $states["India"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-30',
+// 	'#original' => true,	
+// 	); 	
+// $states["Indonesia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1950-09-28',
+// 	'#notes' => array("Indonesia temporarily withdrew from the UN on 20 January 1965 in response to the fact that Malaysia was elected as a non-permanent member of the Security Council. It announced its intention to \"resume full cooperation with the United Nations and to resume participation in its activities\" on 19 September 1966, and was invited to re-join the UN on 28 September 1966."),
+// 	); 	
+// $states["Iran"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("Iran currently takes its seat under the name \"Iran (Islamic Republic of)\"."),
+// 	); 	
+// $states["Iraq"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-12-21',
+// 	'#original' => true,	
+// 	); 	
+// $states["Ireland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Israel"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1949-05-11',
+// 	); 	
+// $states["Italy"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Jamaica"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-09-18',
+// 	); 	
+// $states["Japan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1956-12-18',
+// 	); 	
+// $states["Jordan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Kazakhstan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Kenya"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1963-12-16',
+// 	); 	
+// $states["Kiribati"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1999-09-14',
+// 	); 	
+// $states["Democratic Peoples Republic of Korea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	); 	
+// $states["South Korea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	); 	
+// $states["Kuwait"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1963-05-14',
+// 	); 	
+// $states["Kyrgyzstan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Laos"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	'#notes' => array("Laos currently takes its seat under the name \"Lao People's Democratic Republic\"."),
+// 	); 	
+// $states["Latvia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	);
+// $states["Lebanon"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Lesotho"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1966-10-17',
+// 	); 	
+// $states["Liberia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-02',
+// 	'#original' => true,	
+// 	); 	
+// $states["Libya"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	'#notes' => array("Libya currently takes its seat under the name \"Libyan Arab Jamahiriya\".")
+// 	); 	
+// $states["Liechtenstein"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1990-09-18',
+// 	); 	
+// $states["Lithuania"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	);
+// $states["Luxembourg"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Republic of Macedonia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-04-08',
+// 	'#notes' => array("Macedonia currently takes its seat under the name \"The former Yugoslav Republic of Macedonia\", ". l('due to objections from Greece','http://en.wikipedia.org/wiki/Macedonia_naming_dispute')),
+// 	);
+// $states["Madagascar"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Malawi"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1964-12-01',
+// 	); 	
+// $states["Malaysia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1957-09-17',
+// 	'#notes' => array("Malaysia was originally admitted as the \"Federation of Malaya\". On 16 September 1963, its name was changed to \"Malaysia\", following the admission of Singapore, Sabah and Sarawak to the federation. Singapore became an independent state on 9 August 1965."),
+// 	); 	
+// $states["Maldives"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1965-09-21',
+// 	); 	
+// $states["Mali"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-28',
+// 	); 	
+// $states["Malta"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1964-12-01',
+// 	); 	
+// $states["Marshall Islands"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	); 	
+// $states["Mauritania"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1961-10-27',
+// 	); 	
+// $states["Mauritius"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1968-04-24',
+// 	); 	
+// $states["Mexico"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-07',
+// 	'#original' => true,	
+// 	); 	
+// $states["Micronesia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1991-09-17',
+// 	'#notes' => array("Micronesia currently takes its seat under the name \"Micronesia (Federated States of)\"."),
+// 	); 	
+// $states["Moldova"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	'#notes' => array("Moldova currently takes its seat under the name \"Republic of Moldova\"."),
+// 	);
+// $states["Monaco"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-05-28',
+// 	); 	
+// $states["Mongolia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1961-10-27',
+// 	); 	
+// $states["Montenegro"] = array(
+// 	'#name' => '',
+// 	'#joined' => '2006-06-28',
+// 	);
+// $states["Morocco"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1956-11-12',
+// 	); 	
+// $states["Mozambique"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-09-16',
+// 	); 	
+// $states["Myanmar"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1948-04-19',
+// 	'#notes' => array("Myanmar was originally admitted as \"Burma\"."),
+// 	); 	
+// $states["Namibia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1990-04-23',
+// 	); 	
+// $states["Nauru"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1999-09-14',
+// 	); 	
+// $states["Nepal"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Netherlands"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-12-10',
+// 	'#original' => true,	
+// 	); 	
+// $states["New Zealand"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Nicaragua"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Niger"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Nigeria"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-10-07',
+// 	); 	
+// $states["Norway"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-27',
+// 	'#original' => true,	
+// 	); 	
+// $states["Oman"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1971-10-07',
+// 	); 	
+// $states["Pakistan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1947-09-30',
+// 	); 	
+// $states["Palau"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1994-12-15',
+// 	); 	
+// $states["Panama"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-13',
+// 	'#original' => true,	
+// 	); 	
+// $states["Papua New Guinea"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-10-10',
+// 	); 	
+// $states["Paraguay"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Peru"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-31',
+// 	'#original' => true,	
+// 	); 	
+// $states["Philippines"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("The Philippines was originally admitted as the \"Philippine Commonwealth\"."),
+// 	); 	
+// $states["Poland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Portugal"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Qatar"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1971-09-21',
+// 	); 	
+// $states["Romania"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Russia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("Russia currently takes its seat under the name \"Russian Federation\"."),
+// 	);
+// $states["Rwanda"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-09-18',
+// 	); 	
+// $states["Saint Kitts and Nevis"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1983-09-23',
+// 	); 	
+// $states["Saint Lucia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1979-09-18',
+// 	); 	
+// $states["Saint Vincent and the Grenadines"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1980-09-16',
+// 	); 	
+// $states["Samoa"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1976-12-15',
+// 	'#notes' => array("Samoa was originally admitted as \"Western Samoa\"."),
+// 	); 	
+// $states["San Marino"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	); 	
+// $states["São Tomé and Príncipe"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-09-16',
+// 	); 	
+// $states["Saudi Arabia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Senegal"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-28',
+// 	); 	
+// $states["Serbia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '2000-11-01',
+// 	);
+// $states["Seychelles"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1976-09-21',
+// 	); 	
+// $states["Sierra Leone"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1961-09-27',
+// 	); 	
+// $states["Singapore"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1965-09-21',
+// 	); 	
+// $states["Slovakia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1993-01-19',
+// 	);
+// $states["Slovenia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-05-22',
+// 	);
+// $states["Solomon Islands"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1978-09-19',
+// 	); 	
+// $states["Somalia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["South Africa"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-07',
+// 	'#original' => true,	
+// 	'#notes' => array("South Africa was originally admitted as the \"Union of South Africa\"."),
+// 	); 	
+// $states["Spain"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	); 	
+// $states["Sri Lanka"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1955-12-14',
+// 	'#notes' => array("Sri Lanka was originally admitted as \"Ceylon\"."),
+// 	); 	
+// $states["Sudan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1956-11-12',
+// 	); 	
+// $states["Suriname"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1975-12-04',
+// 	); 	
+// $states["Swaziland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1968-09-24',
+// 	); 	
+// $states["Sweden"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1946-11-19',
+// 	); 	
+// $states["Switzerland"] = array(
+// 	'#name' => '',
+// 	'#joined' => '2002-09-10',
+// 	); 	
+// $states["Syria"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("Syria currently takes its seat under the name \"Syrian Arab Republic\"."),
+// 	);
+// $states["Tajikistan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Tanzania"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1961-12-14',
+// 	'#notes' => array("Tanzania currently takes its seat under the name \"United Republic of Tanzania\"."),
+// 	);
+// $states["Thailand"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1946-12-16',
+// 	'#notes' => array("Thailand was originally admitted as \"Siam\"."),
+// 	); 	
+// $states["Timor-Leste"] = array(
+// 	'#name' => '',
+// 	'#joined' => '2002-09-27',
+// 	); 	
+// $states["Togo"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1960-09-20',
+// 	); 	
+// $states["Tonga"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1999-09-14',
+// 	); 	
+// $states["Trinidad and Tobago"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-09-18',
+// 	); 	
+// $states["Tunisia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1956-11-12',
+// 	); 	
+// $states["Turkey"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	); 	
+// $states["Turkmenistan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Tuvalu"] = array(
+// 	'#name' => '',
+// 	'#joined' => '2000-09-05',
+// 	); 	
+// $states["Uganda"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1962-10-25',
+// 	); 	
+// $states["Ukraine"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("Ukraine was originally admitted as the \"Ukrainian Soviet Socialist Republic\"."),
+// 	);
+// $states["United Arab Emirates"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1971-12-09',
+// 	); 	
+// $states["United Kingdom"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("The United Kingdom currently takes its seat under the name the \"United Kingdom of Great Britain and Northern Ireland\"."),
+// 	); 	
+// $states["United States"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-10-24',
+// 	'#original' => true,	
+// 	'#notes' => array("The United States currently takes its seat under the name the \"United States of America\"."),
+// 	); 	
+// $states["Uruguay"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-12-18',
+// 	'#original' => true,	
+// 	); 	
+// $states["Uzbekistan"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1992-03-02',
+// 	);
+// $states["Vanuatu"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1981-09-15',
+// 	); 	
+// $states["Venezuela"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1945-11-15',
+// 	'#original' => true,	
+// 	'#notes' => array("Venezuela currently takes its seat under the name the \"Venezuela (Bolivarian Republic of)\"."),
+// 	); 	
+// $states["Vietnam"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1977-09-20',
+// 	'#notes' => array("Vietnam currently takes its seat under the name \"Viet Nam\"."),
+// 	); 	
+// $states["Yemen"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1947-09-30',
+// 	);
+// $states["Zambia"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1964-12-01',
+// 	); 	
+// $states["Zimbabwe"] = array(
+// 	'#name' => '',
+// 	'#joined' => '1980-08-25',
+// 	); 	
+// return $states;	
 }
+*/
+
+
+}
+
+
+function theme_memberlist($members) {
+	$output = "<ul>";
+	foreach ($members as $member => $info) {
+		$output .= '<li><img src="'.flag_image_path(30,$info['name']).'" style="border:1px solid black;margin:2px;"/>'. l($info['name'], "members/".$member) ."</li>";
+	}
+	$output .= "</ul>";
+	return $output;
+}
+
+function members_block() {
+  $members = member_states();
+  ksort($members);
+  foreach($members as $name => $member) {
+	  $mfirst = substr($name,0,1);
+	  if ($mfirst != $first) {
+		  $first = $mfirst;
+      $output[] = '<li><a href="members/'.$name.'"><strong>'.substr($member['name'],0,1)."</strong>".substr($member['name'],1)."</a></li>";
+	  } else {
+	    $output[] = '<li><a href="members/'.$name.'">'.$member['name']."</a></li>";
+	  }
+  }  
+  return implode("\n", $output);
+}
+
+
+function docmeasurements($country = null) {
+	$doc = file_get_contents(undata_path()."/docmeasurements.html");
+	if ($country) {
+		preg_match('/<table class="nationmeas" id="'.$country.'">.*?<\/table>/s', $doc, $match);
+	} else {
+		preg_match('/<table class="docmeasuresshort">.*?<\/table>/s', $doc, $match);		
+	}
+	return $match[0];
+}
+
+

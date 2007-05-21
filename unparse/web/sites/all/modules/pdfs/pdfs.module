@@ -1,0 +1,83 @@
+<?php
+
+function pdfs_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'pdfinfo',
+      'title' => t('pdf'),
+      'access' => user_access('access content'),
+      'callback' => 'pdf_page'
+     );
+  }
+  return $items;
+}
+
+function pdf_page() {
+  $pdf = arg(1);
+	if (!arg(1)) {
+		drupal_goto();
+	} elseif (arg(3)) {
+		return pdf_page_page_image($pdf);
+	} else {
+
+	  drupal_set_title("Information about $pdf");
+
+	  $blocks['download']['title'] = "Download";
+		$blocks['download']['content'] = '<a href="/pdf/'.$pdf.'.pdf">Download '.$pdf.'</a>';
+
+	  $blocks['images']['title'] = "Images";
+		$blocks['images']['content'] = pdf_page_images($pdf);
+
+	  $blocks['pages']['title'] = "Pages";
+		$blocks['pages']['content'] = pdf_page_pages($pdf);
+
+
+	  $blocks['backlinks']['title'] = "Other referencing documents";
+		$blocks['backlinks']['content'] = pdf_page_backlinks($pdf);
+
+		foreach($blocks as $name => $block) {
+			$output[] = '<div class="block block-'.$name.'"><h2>'.$block['title'].'</h2>'.$block['content'].'</div>';
+	  }
+	  return implode('',$output);	
+	}
+}
+
+function pdf_page_backlinks($pdf) {
+	$search = xapian_do_search("reference:".str_replace(array("(",")"),"-",$pdf));
+	if(is_array($search)) {
+		return implode('<br />',theme('titles',$search));
+	}
+}
+
+
+function pdf_page_images($pdf) {
+	$output = '<img src="/undata/pdfpreview/'.$pdf.'.jpg" />';
+	return $output;
+}
+
+function pdf_page_pages($pdf) {
+	$filepath = '/home/undemocracy/undata/pdfinfo/'.$pdf.'.txt';
+	if(file_exists($filepath)) {
+	  $info = parse_ini_file('/home/undemocracy/undata/pdfinfo/'.$pdf.'.txt');
+	  for($i=1;$i < $info['pages']+1;$i++) {
+		  $output[] = l("Page $i","pdfinfo/$pdf/page/$i");
+	  }
+		return theme('item_list',$output);
+	}
+}
+
+
+function pdf_page_page_image($pdf) {
+  $page = arg(3)-1;
+
+  //Lets make sure it's safe to run...
+  if (is_numeric($page)) {
+		exec(escapeshellcmd("convert /home/undemocracy/undata/pdf/".$pdf.".pdf[".$page."] /home/undemocracy/undata/pdfpages/$pdf.page.$page.png"));
+		print "<img src=\"/undata/pdfpages/$pdf.page.$page.png\" />";	
+  }
+}
+
+
+
+

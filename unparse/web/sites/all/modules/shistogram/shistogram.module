@@ -14,17 +14,7 @@ function shistogram_menu($may_cache) {
   return $items;
 }
 
-function shistogram_page() {
-
-  $ffile = "/home/undemocracy/unparse/web/images/flags/svg/Flag_of_Sudan.svg"; 
-  $ff = imagick_readimage($ffile); 
-  imagick_resize($ff, 100, -1, IMAGICK_FILTER_UNKNOWN, 0); 
-  imagick_convert($ff, "png");
-  $message = $ff; 
-  print header("Content-type: image/png"); 
-  print imagick_image2blob($ff); 
-  return;
-  
+function shistogram_page() {  
   
   // collect all the hits on this
   $xapsearchstring = arg(1); 
@@ -84,21 +74,22 @@ function shistogram_page() {
       ImageFilledRectangle($im, $xlo, $height - $stop, $xhi, $height - 1, $icol);
     }
     $icol = imagecolorallocate($im, 0, 200, 0); 
-    imagestring($im, 3, $xlo, 15, "$year", $icol); 
+    //imagestring($im, 3, $xlo, 15, "$year", $icol); 
   }
 
   // write a message to help us
   $icol = imagecolorallocate($im, 50, 200, 20);
-  //if (! $byheading)
-     imagestring($im, 3, 10, 5, arg(1)." : ".$maxhits." ".$ddoc_data[2], $icol);
-  if ($message)
-    imagestring($im, 5, 50, 50, $message, $icol); 
+  //if (! $byheading){
+  //   imagestring($im, 3, 10, 5, arg(1)." : ".$maxhits." ".$ddoc_data[2], $icol);
+  //}  
+  
+  if ($message){
+  //  imagestring($im, 5, 50, 50, $message, $icol); 
+  }
 
   header('Content-type: image/png');
 
-
-
-print	imagepng($im);
+  print	imagepng($im);
   imagedestroy($im);
 
 }

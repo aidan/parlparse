@@ -1,2 +1,22 @@
 <?php
 
+function latest_votes($number,$country = null) {
+	$search = xapian_do_search("class:recvote", 0, $number);
+  $output[] = theme('titles',$search);
+  foreach($search->data as $result) {
+    $output[] = grab_title($result);
+  }
+  return implode("\n", $output[0]);
+}
+
+
+function minority_votes($country, $number = 100) {
+	$search = xapian_do_search("vote:$country-minority", 0, $number);
+  if ($search->data) {
+	  $output[] = theme('titles',$search);
+	  foreach($search->data as $result) {
+	    $output[] = grab_title($result);
+	  }
+    return implode("\n", $output[0]);
+  }
+}

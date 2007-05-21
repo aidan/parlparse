@@ -2,39 +2,28 @@
 
 
 function links_menu($may_cache) {
-
-$items = array();
- if ($may_cache) {
-   $items[] = array(
-     'path' => 'link',
-     'title' => t('Link'),
-     'callback' => 'link_page',
-     'access' => user_access('access content'),   
-    );
- }
- return $items;
-
-  
+	$items = array();
+	 if ($may_cache) {
+	   $items[] = array(
+	     'path' => 'link',
+	     'title' => t('Link'),
+	     'callback' => 'link_page',
+	     'access' => user_access('access content'),   
+	   );
+	 }
+ return $items;  
 }
-
-
 
 function link_page() {
 
 	$document = arg(1);
 	$id = arg(2);
 
-
-
 	$path = un_get_doc_path($document);
 	$document = un_file_string($path);
 	$date = grab_date($document);
 	$code = grab_code($document);	
   preg_match('/<(.*?) (.*?)id="'.$id.'"(.*?)>(.*?)<\/\1>/',$document,$paragraph);
-
-
-	$contents = file_get_contents($path . $result->data[0]['file']);
-	$contents = substr($contents, $result->data[0]['offset'], $result->data[0]['len']);
 
   switch($code['body']) {
     case "A":
@@ -99,7 +88,7 @@ function link_page() {
   $bbcode_link[] = '[/url]';
   $links['BBcode'] = htmlspecialchars(implode('',$bbcode_link),ENT_QUOTES);
 
-  $output[] = "<p>Link to this paragraph:</p><blockquote>$paragraph[0]</blockquote>";
+  $output[] = "<p>Link to this paragraph:</p><blockquote>".fix_links($paragraph[0])."</blockquote>";
 
 	foreach($links as $name=>$link) {
   	$output[] = "<p>$name</p><code class='link'>$link</code>";
