@@ -204,6 +204,7 @@ entitymap = {
         '&#177;':'&plusmn;',   # this is +/- symbol
         '&#163;':'&pound;',   # UK currency
         '&#167;':'&sect;',   # UK currency
+        '&#169;':'&copy;',
         '&#183;':'&middot;',   # middle dot
         '&#176;':'&deg;',   # this is the degrees
         '&#186;':'&ordm;',   # this is the M ordinal
