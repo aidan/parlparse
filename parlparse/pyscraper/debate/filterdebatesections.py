@@ -218,6 +218,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
+                        (not re.search("electoral", headingtxt)) and \
 			stampurl.sdate != "2002-06-11": # has a genuine title with Oral in it
 		print headingtxt
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
