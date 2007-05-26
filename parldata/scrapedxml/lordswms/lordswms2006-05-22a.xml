@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,33 +51,17 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-22a.31.0" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_head0">
-	Criminal Records Bureau
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-22a.31.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_spmin0">
-	<p pid="a.31.1/1">My honourable friend the Parliamentary Under-Secretary of State for the Home Department (Joan Ryan) has made the following Written Ministerial Statement.</p>
-	<p pid="a.31.1/2">The Criminal Records Bureau has today published its five-year strategy and business plan for 2006&ndash;07. Copies of the document will be placed in the Library of the House.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-22a.31.2" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_head1">
-	Freedom of Information Act 2000
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-22a.31.3" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_spmin1">
-	<p pid="a.31.3/1">Today I have deposited copies of <i>The Freedom of Information Act 2000: First annual report on the operation of the Freedom of Information Act in central government&mdash;2005</i> in the Libraries of both Houses.</p>
-	<p pid="a.31.3/2">This is the annual report analysing the performance of central government in the first full year of freedom of information.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-22a.31.4" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_head2">
-	Higher Education: Applications Process
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.0" newgid="uk.org.publicwhip/wms/2006-05-22b.31.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.1" newgid="uk.org.publicwhip/wms/2006-05-22b.31.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.2" newgid="uk.org.publicwhip/wms/2006-05-22b.31.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.3" newgid="uk.org.publicwhip/wms/2006-05-22b.31.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.4" newgid="uk.org.publicwhip/wms/2006-05-22b.31.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.31.5" newgid="uk.org.publicwhip/wms/2006-05-22b.31.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-22a.31.5" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_spmin2">
 	<p pid="a.31.5/1">My honourable friend the Minister of State for Lifelong Learning and Further and Higher Education (Bill Rammell) has made the following Written Ministerial Statement.</p>
 	<p pid="a.31.5/2">I am delighted to announce today the response to the Department for Education and Skills' consultation on improving the higher education applications process. This response is issued on behalf of myself and my ministerial colleagues in Scotland, Wales and Northern Ireland.</p>
@@ -88,11 +81,8 @@
 	<p pid="a.31.5/16" class="indent">offer those students who achieve higher grades than required by their first firm conditional offer the chance to seek an alternative place that best matches their aspirations and circumstances.</p>
 	<p pid="a.31.5/17">We have recommended the establishment of a delivery partnership, involving representatives from higher and further education, schools and other interested stakeholders, to introduce these recommendations for the 2008&ndash;09 academic year. The delivery partnership will also be tasked with assessing the impact of those changes after they have had time to bed down and to review again a move towards a full PQA system.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-22a.33.0" nospeaker="true" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_head3">
-	Ports: Policy Review
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.33.0" newgid="uk.org.publicwhip/wms/2006-05-22b.33.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.33.1" newgid="uk.org.publicwhip/wms/2006-05-22b.33.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-22a.33.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-48.htm#60522-48_spnew3">
 	<p pid="a.33.1/1">My honourable friend the Minister of State for Transport (Dr Stephen Ladyman) has made the following Ministerial Statement.</p>
 	<p pid="a.33.1/2">I am pleased to announce today, in conjunction with my right honourable friend the Secretary of State for Wales and Northern Ireland, and with Andrew Davies AM, the Welsh Assembly Government Minister for Enterprise, Innovation and Networks, the launch of a review of ports policy covering England, Wales and Northern Ireland. (Ports policy in Scotland is being progressed separately by the Scottish Executive through its national transport strategy and subordinate freight strategy.)</p>
@@ -105,11 +95,8 @@
 	<p pid="a.33.1/9">We shall, in close liaison with our partners in government, carefully consider all responses to the discussion document. The aim is then to develop a policy statement in the first half of 2007.</p>
 	<p pid="a.33.1/10">Alongside the discussion document, the department is also publishing the conclusions of the municipal ports review, <i>Opportunities for Ports in Local Authority Ownership</i>. This has been developed in close liaison with DCLG, with the British Ports Association and with the municipal ports themselves. I am grateful for their contributions. The review highlights opportunities for real improvements in ports' management and performance, and I look forward to its recommendations being taken forward. Copies of all documents will be placed in the House Library, and can be found on the department's website (<a href="http://www.dft.gov.uk">www.dft.gov.uk</a>).</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-22a.34.0" nospeaker="true" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-49.htm#60522-49_head0">
-	Treasury Counsel
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.34.0" newgid="uk.org.publicwhip/wms/2006-05-22b.34.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-22a.34.1" newgid="uk.org.publicwhip/wms/2006-05-22b.34.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-22a.34.1" speakerid="uk.org.publicwhip/lord/100245" speakername="Lord Goldsmith" colon=":" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60522-49.htm#60522-49_spmin0">
 	<p pid="a.34.1/1">Treasury counsel is appointed by the Attorney-General. In the light of the increase in the complexity of cases prosecuted by Treasury counsel and the need to ensure that appointments are open and fair, I commissioned a review of the current Treasury counsel arrangements. The review team&mdash;comprising Dru Sharpling, the Chief Crown Prosecutor for Crown Prosecution Service, London; Mohammed Aziz, Commissioner at the Commission for Racial Equality; Philip Oliver, a non-executive director of the Crown Prosecution Service; and Richard Ferguson QC&mdash;has delivered a report to me that includes 23 recommendations, which I have accepted.</p>
 	<p pid="a.34.1/2">In the course of its work, the review team consulted widely, including members of the judiciary, Treasury counsel, chairman of the Bar Council, and the Crown Prosecution Service and other barristers. Additionally, the CPS conducted, on behalf of the review team, an independent consultation exercise from an equalities perspective. I am placing a copy of the review team's report in the Library of the House.</p>

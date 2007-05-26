@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,36 +51,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.35.0" nospeaker="true" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-50.htm#60523-50_head0">
-	Courts: Key Performance Indicators
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-23a.35.1" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-50.htm#60523-50_spmin0">
-	<p pid="a.35.1/1">The following table sets out the key performance targets that have been set for Her Majesty's Courts Service for 2006-07.</p>
-	<table>
-		<tbody>
-			<tr pid="a.35.1/4"> <td>Relevant PSA</td> <td>Target 2006-07</td> </tr>
-			<tr pid="a.35.1/5"> <td>PSA 1</td> <td>To improve the delivery of justice by reducing the proportion of ineffective trials to no more than 15.5 per cent in the Crown Court and no more than 21 per cent in the magistrates' courts.</td> </tr>
-			<tr pid="a.35.1/6"> <td>PSA 2</td> <td>To reassure the public, reducing the fear of crime and anti-social behaviour, and building confidence in the criminal justice system without compromising fairness.</td> </tr>
-			<tr pid="a.35.1/7"> <td>PSA 4</td> <td>By 2009-10, increase the proportion of care cases being completed in the courts within 40 weeks by not less than 49 per cent in the county court and not less than 61 per cent in the magistrates' courts.</td> </tr>
-			<tr pid="a.35.1/8"> <td>PSA 5</td> <td>To achieve earlier and more proportionate resolution of legal problems and disputes by:</td> </tr>
-			<tr pid="a.35.1/9"> <td></td> <td>Increasing the opportunities for people involved in court cases to settle their disputes out of court to 40 per cent; and</td> </tr>
-			<tr pid="a.35.1/10"> <td></td> <td>Reducing delays in resolving those disputes that need to be decided by the courts by increasing the proportion of small claims hearings that take place within target time by 81 per cent.</td> </tr>
-		</tbody>
-	</table>
-	<p pid="a.35.1/13">Copies of the HM Courts Service business plan for 2006-07 have been placed in the parliamentary Libraries.</p>
-	<p pid="a.35.1/14">More information on these and other key supporting targets are published in the strategic and business plans, which includes how HMCS helps deliver PSA1 and 2 (joint criminal justice system targets).</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.35.2" nospeaker="true" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-50.htm#60523-50_head1">
-	EU: GAERC
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.35.0" newgid="uk.org.publicwhip/wms/2006-05-23b.35.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.35.1" newgid="uk.org.publicwhip/wms/2006-05-23b.35.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.35.2" newgid="uk.org.publicwhip/wms/2006-05-23b.35.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.35.3" newgid="uk.org.publicwhip/wms/2006-05-23b.35.3" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.35.3" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-50.htm#60523-50_spmin1">
 	<p pid="a.35.3/1">My right honourable friend the Secretary of State for Foreign and Commonwealth Affairs (Margaret Beckett), <phrase class="honfriend" id="uk.org.publicwhip/member/1378" name="Geoff Hoon">my right honourable friend the Minister for Europe (Geoff Hoon)</phrase> and Sir John Grant (UK Permanent Representative to the EU) represented the UK at the General Affairs and External Relations Council (GAERC) in Brussels on <phrase class="date" code="2006-05-15">15 May 2006</phrase>. My right honourable friend the Secretary of State for Defence (Des Browne) represented the UK at the Defence Ministers' discussions.</p>
 	<p pid="a.35.3/2">The agenda items were covered as follows:</p>
@@ -135,32 +123,12 @@
 	<p pid="a.35.3/60" class="italic">Security Sector Reform in the Western Balkans</p>
 	<p pid="a.35.3/61">The council agreed conclusions setting out the principles of EU support for security sector reform in the western Balkans.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.39.0" nospeaker="true" colnum="39"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_head0">
-	Medicines: Over-the-Counter
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-23a.39.1" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="39"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_spmin0">
-	<p pid="a.39.1/1">My honourable friend the Minister of State (Andrew Burnham) has made the following Written Ministerial Statement.</p>
-	<p pid="a.39.1/2">I am pleased to announce that the first report of the Better Regulation of Over-the-Counter Medicines Initiative (BROMI) was published today and has been placed in the Library. Copies are available for honourable Members in the Vote Office.</p>
-	<p pid="a.39.1/3">The report contains the BROMI group's first recommendations to reduce unnecessary regulatory burdens surrounding over-the-counter (OTC) medicines regulation. The recommendations have been accepted.</p>
-	<p pid="a.39.1/4">The Medicines and Healthcare Products Regulatory Agency (MHRA) will introduce, with immediate effect, a new scheme for the self-certification of certain changes to the patient information of over-the-counter medicines and a new transparent complaints procedure in respect of patient information.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.39.2" nospeaker="true" colnum="39"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_head1">
-	Official Solicitor and Public Trustee
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-23a.39.3" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="39"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_spmin1">
-	<p pid="a.39.3/1">My noble and learned friend the Lord Chancellor has approved proposals for the Official Solicitor and Public Trustee (OSPT) to retire from the bulk of his existing caseload of trusts and estates work over the next two years. This follows a recommendation in April 2004 in an NAO review of the Public Trustee's stewardship of client funds that he should establish a proactive strategy for divesting himself of trusts and estates work, particularly in terms of becoming a trustee of last resort and outsourcing his investment activities.</p>
-	<p pid="a.39.3/2">Where cases cannot otherwise be closed during that period, the OSPT proposes to invite expressions of interest from a private sector corporate trustee to take over and administer his cases in accordance with best market-regulated practice. The OSPT will work to ensure that the interests of beneficiaries will be secured through this process. The proposals will be designed to deliver the administration of their trusts in the future in accordance with best practice standards. There will be full consultation with those affected, who will be able to put forward any alternative solution more appropriate in their particular case than that which the OSPT proposes. If agreement is reached with a private sector corporate trustee, or on an alternative solution in a particular case, the OSPT will retire from these cases in favour of the new trustee.</p>
-	<p pid="a.39.3/3">As announced in April 2000 in <i>Making Changes: The Future of the Public Trust Office</i>, since the Official Solicitor was also appointed Public Trustee in 2001 he has only accepted any new trust and estates case where he has been satisfied that, in accordance with strict &quot;last resort&quot; acceptance criteria, a public sector trustee is required. In 2005-06, for example, only 13 cases were accepted by him as Official Solicitor, and one as Public Trustee. He is, however, currently responsible for administering about 1,750 trusts and estates, mainly taken on before the last resort criteria were applied.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.40.0" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_head2">
-	Planning: Crown Immunity
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.39.0" newgid="uk.org.publicwhip/wms/2006-05-23b.39.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.39.1" newgid="uk.org.publicwhip/wms/2006-05-23b.39.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.39.2" newgid="uk.org.publicwhip/wms/2006-05-23b.39.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.39.3" newgid="uk.org.publicwhip/wms/2006-05-23b.39.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.40.0" newgid="uk.org.publicwhip/wms/2006-05-23b.40.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.40.1" newgid="uk.org.publicwhip/wms/2006-05-23b.40.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.40.1" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_spmin2">
 	<p pid="a.40.1/1">My honourable friend the Minister for Housing and Planning has made the following Written Ministerial Statement.</p>
 	<p pid="a.40.1/2">The Government, on <phrase class="date" code="2006-05-17">17 May</phrase>, laid before Parliament the statutory instruments subject to the negative resolution procedure required to commence Part 7, Chapter 1 of the Planning and Compulsory Purchase Act 2004 and incorporate the Crown into the planning system. They are:</p>
@@ -171,11 +139,8 @@
 	<p pid="a.40.1/7">These instruments will commence Part 7, Chapter 1 of the 2004 Act which will end the Crown's immunity from the planning system by applying the planning Acts to the Crown. These will apply existing planning subordinate legislation to the Crown with modifications where necessary; amend the listed buildings and hazardous substances regulations; and provide rules covering the role of special advocates for planning cases with national security implications.</p>
 	<p pid="a.40.1/8">These instruments will come into force on <phrase class="date" code="2006-06-07">7 June 2006</phrase>.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.41.0" nospeaker="true" colnum="41"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_head3">
-	Prisoners: Foreign Nationals
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.41.0" newgid="uk.org.publicwhip/wms/2006-05-23b.41.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.41.1" newgid="uk.org.publicwhip/wms/2006-05-23b.41.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.41.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="41"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-51.htm#60523-51_spmin3">
 	<p pid="a.41.1/1">My right honourable friend the Secretary of State for the Home Department (John Reid) has made the following Written Ministerial Statement.</p>
 	<p pid="a.41.1/2">I would like to provide an update on the issue of foreign national prisoners. As my predecessor promised, I will set out the latest information I have on the foreign national prisoners released without consideration of deportation having been made since February 1999. I will set out eight priority areas for management action to achieve our long-term policy goals on foreign national prisoners. And I will set out two immediate changes to current guidance which I now believe are necessary to deal with the present serious situation.</p>
@@ -204,62 +169,19 @@
 	<p pid="a.41.1/25">None of the reforms set out above, in particular the long-term agenda for change, will be delivered unless the right leadership is in place across the system. I have therefore instructed the new Permanent Secretary of the Home Office to address the following issues as a matter of urgency: performance; weak services, because not every field of our operations matches the standard of the best; leadership and skills, where we have under-invested; fragmentation and silos, exacerbated by communications which are too weak; and systems and processes, which simply need to be stronger.</p>
 	<p pid="a.41.1/26">And finally, I announced yesterday that the honourable member for Birmingham, Hodge Hill will be taking overall responsibility for this reform agenda, reporting to me. I have told him I want to consider any option he believes feasible, however radical it may be. I intend to report back to the House on progress and proposals for change before the Summer Recess.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.45.0" nospeaker="true" colnum="45"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_head0">
-	Railways: West Coast Route
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.45.0" newgid="uk.org.publicwhip/wms/2006-05-23b.45.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.45.1" newgid="uk.org.publicwhip/wms/2006-05-23b.45.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.45.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="45"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_spnew0">
 	<p pid="a.45.1/1">My honourable friend the Parliamentary Under-Secretary of State for Transport (Derek Twigg) has made the following Ministerial Statement.</p>
 	<p pid="a.45.1/2">Department for Transport has this morning published a progress report describing the substantial amount of work carried out in renewing and upgrading this key railway route, along with the commitments due for completion by the end of 2008.</p>
 	<p pid="a.45.1/3">Copies of this report have been placed in the Libraries of the House and will be available on the DfT website (<a href="http://www.dft.gov.uk">www.dft.gov.uk</a>).</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.45.2" nospeaker="true" colnum="45"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_head1">
-	Somalia
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-23a.45.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="45"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_spmin0">
-	<p pid="a.45.3/1">My right honourable friend the Secretary of State for International Development (Hilary Benn) has made the following Written Ministerial Statement.</p>
-	<p pid="a.45.3/2">On <phrase class="date" code="2006-05-17">17 May 2006</phrase>, I visited:</p>
-	<p pid="a.45.3/3" class="indent">Wajid, the United Nations' logistics hub for the drought relief operation in southern Somalia to which DfID has contributed &pound;12 million; and</p>
-	<p pid="a.45.3/4" class="indent">Baidoa, the temporary seat of the Somalia Transitional Federal Parliament (TFP) and Government (TFG).</p>
-	<p pid="a.45.3/5">In Wajid, I saw at first hand the effect of the drought; first in an Action Contre La Faim (ACF) therapeutic feeding centre for malnourished children brought from distances of up to 50 kilometres, and then in a camp occupied by about 11,000 people who were living in terrible conditions under very basic shelters, and being fed by the World Food Programme. Now that some rain has arrived, the menfolk have returned to their homes to begin cultivation. However, the harvest will not come for several months, and the families in the camps will need to be cared for in the mean time. I was also able to visit a UNICEF-organised tent school in the camp, where about 300 children and an equal number of boys and girls are enjoying very basic primary education for the first time in their lives. UN agency and non-governmental organisation representatives told me that despite the logistical and security problems of working in Somalia, the relief effort had averted a humanitarian disaster, and while I was there I committed a further &pound;2 million to support what I hope will be post-drought operations.</p>
-	<p pid="a.45.3/6">In Baidoa, I called on President Abdulahi Yusuf Ahmed, Prime Minister Ali Mohamed Gedi, and Parliamentary Speaker Sharif Hassan Sheik Adan, the leaders of the transitional institutions. I was struck by the warmth of their welcome, and how, having earlier this year buried their differences, they are trying to build a new administration from absolutely nothing, working from loaned properties including a warehouse converted into a parliamentary chamber. Despite their great fragility, these transitional institutions represent the best hope for taking Somalia forward from over 15 years of internal conflict, which sadly has continued with recent fighting in Mogadishu. The President and Prime Minister emphasised the urgent need for support to education&mdash;not currently available to the vast majority (about 80 per cent) of children&mdash;and I was able to announce plans for a new &pound;6 million DfID partnership programme with UNICEF and others over three years.</p>
-	<p pid="a.45.3/7">Building the new institutions, and the systems to bring internal reconciliation, security and stability as prerequisites for development, will take time, but some progress is being made. I committed a further &pound;1.5 million to the UNDP-led institutional support programme to the transitional institutions.</p>
-	<p pid="a.45.3/8">We must all hope that the political transition in Somalia, fragile though it still is, will start to bring the stability and security for which the ordinary people of that country have been yearning for so many years. The UK will continue to provide support to the Somali transitional institutions to that end.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.46.0" nospeaker="true" colnum="46"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_head2">
-	Student Loans
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-05-23a.46.1" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="46"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_spmin1">
-	<p pid="a.46.1/1">My honourable friend the Minister of State for Lifelong Learning, Further and Higher Education (Bill Rammell) has made the following Written Ministerial Statement.</p>
-	<p pid="a.46.1/2">This announcement covers repayment arrangements for student loans made from September 2006 onwards for borrowers who move abroad after completing their courses.</p>
-	<p pid="a.46.1/3">Deferred fee loans will be made available in 2006-07 for EU students who are accepted at our universities with the first full cohort eligible to repay from April 2010. Repayments will be collected directly by the Student Loans Company (SLC) and, as for students who stay in the UK after finishing their course, will remain income-contingent with repayments based on 9 per cent of income over an earnings threshold. The Government are determined to ensure that all EU students repay fee loans on an income-contingent basis.</p>
-	<p pid="a.46.1/4">Our policy is for repayments to be fair and affordable and that on leaving their course, all those who can contribute to the costs of their higher education, should do so. This will ensure that students returning to countries where average earnings are low will repay on an income-contingent basis. However living costs and earnings vary from country to country and so we will use an index of price levels to establish fair earnings thresholds based on where borrowers choose to live. This principle will also apply where borrowers move outside the EU.</p>
-	<p pid="a.46.1/5">Countries will be banded according to price levels and the bands will be as follows.</p>
-	<table>
-		<tbody>
-			<tr pid="a.46.1/8"> <td>Band</td> <td>Price level index (UK= 100)</td> <td>Repayment Threshold (UK=&pound;15,000)</td> </tr>
-			<tr pid="a.46.1/9"> <td>A</td> <td>0&lt;30</td> <td>&pound;3,000</td> </tr>
-			<tr pid="a.46.1/10"> <td>B</td> <td>30&lt;50</td> <td>&pound;6,000</td> </tr>
-			<tr pid="a.46.1/11"> <td>C</td> <td>50&lt;70</td> <td>&pound;9,000</td> </tr>
-			<tr pid="a.46.1/12"> <td>D</td> <td>70&lt;90</td> <td>&pound;12,000</td> </tr>
-			<tr pid="a.46.1/13"> <td>E</td> <td>90&lt;110</td> <td>&pound;15,000</td> </tr>
-			<tr pid="a.46.1/14"> <td>F</td> <td>110&lt;130</td> <td>&pound;18,000</td> </tr>
-			<tr pid="a.46.1/15"> <td>G</td> <td>130+</td> <td>&pound;21,000</td> </tr>
-		</tbody>
-	</table>
-	<p pid="a.46.1/18">In addition, for student loans paid out from 2006 all borrowers will have entered into an enforceable contract to allow debts to be pursued in the courts as necessary, wherever a borrower may choose to live. From 2007, students planning to move overseas after finishing their course will be required to sign a repayment agreement with the Student Loans Company that establishes how they will repay their loan once they have moved overseas. This means the SLC will be able to take action to enforce the debt in the courts both in the UK and abroad if necessary. We intend to make use of EC Regulation 44/2001 which will allow the SLC to enforce a judgment made in the UK courts in the rest of the EU.</p>
-	<p pid="a.46.1/19">These arrangements will be enacted in regulations which are expected to be laid before Parliament later in the year.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.47.0" nospeaker="true" colnum="47"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_head3">
-	Transport Innovation Fund
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.45.2" newgid="uk.org.publicwhip/wms/2006-05-23b.45.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.45.3" newgid="uk.org.publicwhip/wms/2006-05-23b.45.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.46.0" newgid="uk.org.publicwhip/wms/2006-05-23b.46.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.46.1" newgid="uk.org.publicwhip/wms/2006-05-23b.46.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.47.0" newgid="uk.org.publicwhip/wms/2006-05-23b.47.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.47.1" newgid="uk.org.publicwhip/wms/2006-05-23b.47.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.47.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="47"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-52.htm#60523-52_spnew1">
 	<p pid="a.47.1/1">My honourable friend the Minister of State for Transport (Dr Stephen Ladyman) has made the following Ministerial Statement.</p>
 	<p pid="a.47.1/2">In July 2004 the Secretary of State for Transport announced the creation of the Transport Innovation Fund (TIF). The fund will support:</p>
@@ -273,11 +195,8 @@
 	<p pid="a.47.1/10">The guidance explains the basis on which DfT intends to allocate this pump-priming funding for the second round and sets out the information that will be required from local authorities intending to bid. The guidance applies both to authorities considering putting forward new proposals and to authorities who successfully obtained funding in the first round of pump-priming and who wish to apply for further funding. Eligibility for funding is restricted to local authorities in England.</p>
 	<p pid="a.47.1/11">The process for allocating pump-priming funding is separate from the process of allocating the main TIF. Full guidance on the TIF was published in January 2006. It is not necessary to have had a successful pump-priming bid in order to apply for funding to the TIF through the congestion entry point. Nor does a successful pump-priming bid offer any guarantee of success in a bid for main TIF scheme funding.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-05-23a.48.0" nospeaker="true" colnum="48"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-53.htm#60523-53_head0">
-	Uganda
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.48.0" newgid="uk.org.publicwhip/wms/2006-05-23b.48.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-05-23a.48.1" newgid="uk.org.publicwhip/wms/2006-05-23b.48.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-05-23a.48.1" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="48"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60523-53.htm#60523-53_spmin0">
 	<p pid="a.48.1/1">My right honourable friend the Secretary of State for International Development (Hilary Benn) has made the following Written Ministerial Statement.</p>
 	<p pid="a.48.1/2">I visited northern Uganda on 15 and <phrase class="date" code="2006-05-16">16 May</phrase> to look at the situation on the ground and to discuss the conflict and other issues affecting our development partnership with President Museveni and his Foreign Minister, Sam Kutesa.</p>

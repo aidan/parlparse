@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,13 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -43,94 +51,26 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-22a.53.0" nospeaker="true" colnum="53"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000002">
-	Armed Forces: British Naturalisation
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.53.0" newgid="uk.org.publicwhip/wms/2006-11-22b.53.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.53.1" newgid="uk.org.publicwhip/wms/2006-11-22b.53.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-22a.53.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="53"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000008">
 	<p pid="a.53.1/1"><phrase class="honfriend" id="uk.org.publicwhip/member/1414" name="Liam Byrne">My honourable friend the Minister for Immigration, Citizenship and Nationality (Liam Byrne)</phrase> has made the following Written Ministerial Statement.</p>
 	<p pid="a.53.1/2">On <phrase class="date" code="2006-10-11">11 October</phrase> the Prime Minister announced that the policy on applications for naturalisation as a British citizen from members of the British Armed Forces was being reviewed (<I>Official Report</I>, col. 298). I am pleased to announce that the review is now complete.</p>
 	<p pid="a.53.1/3">In most cases the Secretary of State will now be prepared to exercise his discretion under the British Nationality Act 1981 to disregard absences from the United Kingdom occasioned by service in the British Armed Forces when considering whether the applicant is residentially qualified for naturalisation.</p>
 	<p pid="a.53.1/4">Serving members of the Brigade of Gurkhas will continue to be treated in accordance with our longstanding agreement with the Government of Nepal. They will remain Nepalese citizens until they leave the brigade, after which they will be able to count their military service towards the residential qualification for naturalisation in the same way as other members of the Armed Forces.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-22a.54.0" nospeaker="true" colnum="54"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000003">
-	Foreign and Commonwealth Office: Winter Supplementary Estimate
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-22a.54.1" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="54"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000012">
-	<p pid="a.54.1/1">My right honourable friend the Secretary of State for Foreign and Commonwealth Affairs (Margaret Beckett) has made the following Written Ministerial Statement.</p>
-	<p pid="a.54.1/2">Subject to parliamentary approval of any necessary supplementary estimate, the Foreign and Commonwealth Office departmental expenditure limit (DEL) will be increased by &pound;62,281,000, from &pound;1,816,520,000 to &pound;1,878,801,000. The administration budget will be increased by &pound;29,341,000, from &pound;862,101,000 to &pound;891,442,000. Within the DEL change, the impact on resources and capital is set out in the following table.</p>
-	<table>
-		<tbody>
-			<tr pid="a.54.1/5"> <td></td> <td>Change &pound;000</td> <td>New DEL &pound;000</td> </tr>
-			<tr pid="a.54.1/6"> <td></td> <td>Voted</td> <td>Non-Voted</td> <td>Voted</td> <td>Non-Voted</td> <td>Total</td> </tr>
-			<tr pid="a.54.1/7"> <td>Resource</td> <td>66,781</td> <td>-4,500</td> <td>1,814,209</td> <td>66,213</td> <td>1,880,422</td> </tr>
-			<tr pid="a.54.1/8"> <td>Of which:</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr pid="a.54.1/9"> <td>Administration budget *</td> <td>14,841</td> <td>14,500</td> <td>841,942</td> <td>49,500</td> <td>891,422</td> </tr>
-			<tr pid="a.54.1/10"> <td>Near-cash in RDEL</td> <td>66,781</td> <td>-4,500</td> <td>1,657,490</td> <td>31,213</td> <td>1,688,703</td> </tr>
-			<tr pid="a.54.1/11"> <td>Capital**</td> <td>0</td> <td>0</td> <td>149,003</td> <td>1,000</td> <td>150,003</td> </tr>
-			<tr pid="a.54.1/12"> <td>Depreciation***</td> <td>0</td> <td>0</td> <td>-116,624</td> <td>-35,000</td> <td>-151,624</td> </tr>
-			<tr pid="a.54.1/13"> <td>Total</td> <td>66,781</td> <td>-4,500</td> <td>1,846,588</td> <td>32,213</td> <td>1,878,801</td> </tr>
-			<tr pid="a.54.1/14"> <td>*The total of &quot;administration budget&quot; and &quot;near-cash in resource DEL&quot; figures may well be greater than total resource DEL, due to the definitions overlapping.</td> </tr>
-			<tr pid="a.54.1/15"> <td>**Capital DEL includes items treated as resource in estimates and accounts but which are treated as capital DEL in budgets.</td> </tr>
-			<tr pid="a.54.1/16"> <td>***Depreciation, which forms part of resource DEL, is excluded from the total DEL, since capital DEL includes capital spending, and to include depreciation of those assets would lead to double counting.</td> </tr>
-		</tbody>
-	</table>
-	<p pid="a.54.1/19">The change in the resource element of the DEL arises from:</p>
-	<p pid="a.54.1/20"><I>RfR1</I></p>
-	<p pid="a.54.1/21"><I>Administration</I></p>
-	<p pid="a.54.1/22">Take-up of &pound;14,755,000 end-year flexibility (EYF) entitlement.Budget cover transfer from the Cabinet Office of &pound;73,000 for the Parliamentary Counsel Office.Budget transfer for police pension costs for Consular of &pound;13,000 from the Home Office.</p>
-	<p pid="a.54.1/23"><I>Programme</I></p>
-	<p pid="a.54.1/24">Budget transfer for police pension costs for Global Opportunities Fund (GOF) Counter-Terrorism and Economic Governance of &pound;52,000 from the Home Office.Budget transfer for police pension costs for GOF Drugs and Crime of &pound;52,000 from the Home Office.Draw-down from the departmental unallocated provision of &pound;4,500,000 for the Better Basra project.Budget transfer to the SIA of &pound;7,075,000 for planned programme activity.Movement from capital to capital grant of &pound;1,600,000 to pay invoice for government secure zone by the Cabinet Office.</p>
-	<p pid="a.54.1/25"><I>Neutral Changes</I></p>
-	<p pid="a.54.1/26">An increase in income and expenditure of &pound;6,000,000 for Afghan Delivery Plan, offset by income from the Home Office. An increase in income and expenditure of &pound;8,500,000 for Afghan Delivery Plan, offset by income from the MoD.</p>
-	<p pid="a.54.1/27"><I>RfR2</I></p>
-	<p pid="a.54.1/28"><I>Programme</I></p>
-	<p pid="a.54.1/29">Budget transfer for police pension costs for Africa Peacekeeping of &pound;141,000 from the Home Office.Budget transfer for police pension costs for Global Peacekeeping of &pound;1,270,000 from the Home Office.Draw-down of &pound;25,000,000 from the Africa Peacekeeping main estimate provision.Draw-down of &pound;25,000,000 from the Global Peacekeeping main estimate provision.Budget transfer for agreed global conflict prevention pool activity of &pound;3,000,000 from the Department for International Development.</p>
-	<p pid="a.54.1/30"><I>Changes in Capital</I></p>
-	<p pid="a.54.1/31">Movement from capital to capital grant of &pound;1,600,000 to pay invoice for government secure zone by the Cabinet Office.</p>
-	<p pid="a.54.1/32"><I>Neutral Changes</I></p>
-	<p pid="a.54.1/33">An increase in income and expenditure of &pound;11,000,000 for biometrics offset by income from the Home Office.An increase in income and expenditure of &pound;39,000,000 relating to the asset recycling agreement.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-22a.55.0" nospeaker="true" colnum="55"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000004">
-	Housing: Thames Gateway
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-22a.55.1" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="55"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000060">
-	<p pid="a.55.1/1">My right honourable friend the Minister for Housing and Planning has made the following Written Ministerial Statement.</p>
-	<p pid="a.55.1/2">Today the Government are publishing the Thames Gateway interim plan. It is a statement of common purpose by the members of the Thames Gateway Strategic Partnership, which I chair as Minister for Housing and Planning. The interim plan sets out the opportunities and priorities for delivery over the next few years, including:</p>
-	<p pid="a.55.1/3">economic and employment opportunities in the key transformational locations: Canary Wharf, Ebbsfleet Valley, the Olympic site/Stratford City and the gateway ports cluster, and in the town centres, aiming to create the conditions for 180,000 new jobs;housing to accommodate the region's growing workforce and improve conditions for current residents in 160,000 well designed new homes;environmental opportunity, through the creation of the Thames gateway parklands and new approaches to addressing climate change; and community opportunity, through investment in education and training, better quality public services and support for inclusive communities.</p>
-	<p pid="a.55.1/4">Copies of the interim plan and supporting documents are being place in the Libraries. The final version of the plan will be published after the 2007 Comprehensive Spending Review.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-22a.56.0" nospeaker="true" colnum="56"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000005">
-	Questions for Written Answer: Afghanistan
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-22a.56.1" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="56"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000063">
-	<p pid="a.56.1/1">My honourable friend the Minister of State for Foreign and Commonwealth Affairs (Kim Howells) has made the following Written Ministerial Statement.</p>
-	<p pid="a.56.1/2">In his reply on <phrase class="date" code="2002-05-14">14 May 2002</phrase> to a Question from <phrase class="honfriend" id="uk.org.publicwhip/member/1510" name="Betty Williams">my honourable friend the Member for Conwy (Betty Williams)</phrase>, my honourable friend the then Minister for Europe (Denis MacShane) stated that details of the eradication programme, maps and a video relating to the 2002 Afghan opium poppy eradication programme would be placed in the House of Commons Library.</p>
-	<p pid="a.56.1/3">As <phrase class="honfriend" id="uk.org.publicwhip/member/1733" name="Paul Flynn">my honourable friend the Member for Newport West (Paul Flynn)</phrase> has pointed out, this information was not placed in the Library at the time. Having now concluded our search for all information relevant to the 2002 programme, I can confirm that we no longer hold the specific material originally referred to byDr MacShane. I apologise that we are therefore unable to provide this to the House of Commons Library. We have, however, placed excerpts from official correspondence relating to the 2002 programme in the House of Commons Library. This information has been the subject of a separate freedom of information request.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-22a.56.2" nospeaker="true" colnum="56"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000006">
-	Taxation: Sale of Lessor Companies
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-22a.56.3" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="56"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61122-wms0001.htm#06112249000066">
-	<p pid="a.56.3/1">My right honourable friend the Paymaster General (Dawn Primarolo) has made the following Written Ministerial Statement.</p>
-	<p pid="a.56.3/2">The Government propose to introduce legislation in the 2007 Finance Bill to take effect from<phrase class="date" code="2006-11-22">22 November 2006</phrase>, in response to disclosures of schemes which undermine the effectiveness of legislation enacted in the Finance Act 2006.</p>
-	<p pid="a.56.3/3">The legislation will prevent companies from exploiting a mismatch in definitions of ownership of a company or manipulating the balance-sheet value of assets to reduce or cancel the effect of the 2006 legislation.</p>
-	<p pid="a.56.3/4">Schedule 10 to the Finance Act 2006 targeted sales to loss-making groups of lessor companies that were about to become tax profitable. The sales turned an acceptable tax-timing advantage into an unacceptable permanent deferral of tax. The legislation gave a clear signal that this was not acceptable. The disclosures show that some groups are willing to enter into contrived schemes to side-step the 2006 legislation.</p>
-	<p pid="a.56.3/5">The Government have decided to act promptly in response to the disclosures, to emphasise that attempts by companies to avoid paying their fair share of tax are not acceptable.</p>
-	<p pid="a.56.3/6">A copy of today's HMRC technical note giving the relevant background to this measure has been deposited in the Libraries and is accessible on the HMRC website at <a href="http://www.hmrc.gov.uk/">www.hmrc.gov.uk/</a>.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.54.0" newgid="uk.org.publicwhip/wms/2006-11-22b.54.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.54.1" newgid="uk.org.publicwhip/wms/2006-11-22b.54.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.55.0" newgid="uk.org.publicwhip/wms/2006-11-22b.55.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.55.1" newgid="uk.org.publicwhip/wms/2006-11-22b.55.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.56.0" newgid="uk.org.publicwhip/wms/2006-11-22b.56.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.56.1" newgid="uk.org.publicwhip/wms/2006-11-22b.56.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.56.2" newgid="uk.org.publicwhip/wms/2006-11-22b.56.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-22a.56.3" newgid="uk.org.publicwhip/wms/2006-11-22b.56.3" matchtype="perfectmatch"/>
 </publicwhip>
 

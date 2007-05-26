@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,153 +51,38 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.1.0" nospeaker="true" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000032">
-	Act of Union 1707: 300th Anniversary
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.1.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000032">
-	<p pid="a.1.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.1.1/2" qnum="HL7737">Whether they have any plans to mark the 300th anniversary of the Act of Union 1707.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.1.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000033">
-	<p pid="a.1.2/1">The 300th anniversary of the Act of Union between England and Scotland will be marked by a commemorative &pound;2 coin which will be issued in 2007, as announced by the Chancellor of the Exchequer in Parliament on <phrase class="date" code="2006-06-15">Thursday 15 June 2006</phrase>.</p>
-	<p pid="a.1.2/2">At present I am not aware of any other plans to mark the 300th anniversary of the Act of Union between England and Scotland.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.1.3" nospeaker="true" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000035">
-	Belfast Agreement
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.1.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000035">
-	<p pid="a.1.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.1.4/2" qnum="HL7827">Further to the Written Answer by the Lord Rooker on 9 October (<I>WA 15</I>), what is their assessment of the Government of the Republic of Ireland's section of the Belfast agreement entitled &quot;Rights, Safeguards and Equality of Opportunity&quot;; and whether this section fulfils all the requirements of the agreement and in the designated timescale.</p>
-</ques>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.1.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000036">
 	<p pid="a.1.5/1">No assessment has been made of the steps taken by the Irish Government in accordance with the &quot;Rights, Safeguards and Equality of Opportunity&quot; section of the agreement other than in the paper entitled <I>Achievements in Implementation of the Good Friday Agreement</I> referred to in my Written Answer on <phrase class="date" code="2006-10-09">9 October</phrase>. The Irish Government are accountable to the Oireachtas for the commitments they make.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.1.6" nospeaker="true" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000037">
-	British Citizenship
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.1.7" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000037">
-	<p pid="a.1.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.1.7/2" qnum="HL7643">Whether they will instruct the Ethnic Minorities Citizenship Unit at the British Consulate-General in Hong Kong to acknowledge within two working days, and respond substantively within a time determined by published service targets to telephone calls, letters, e-mails and faxes; and whether they will publish reports on compliance with those service targets at monthly intervals.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.1.8" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="1"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000038">
-	<p pid="a.1.8/1">The Ethnic Minorities Citizenship Unit (EMCU) at our Consulate-General in Hong Kong deals instantly with the vast majority of telephone inquiries it receives during working hours. Inquirers who leave a voice message or those who submit an inquiry by e-mail, letter or fax receive a reply within standard public service targets of 20 working days. However, in most cases the EMCU gives a substantive response within two working days.</p>
-	<p pid="a.1.8/2">The table below shows the number and type of inquiries answered by the unit since its inception in February 2006.</p>
-	<table>
-		<tbody>
-			<tr pid="a.1.8/5"> <td>Month</td> <td>Number of queries (By Telephone)</td> <td>Number of queries (By e-mail)</td> <td>Number of queries (By fax and post)</td> </tr>
-			<tr pid="a.1.8/6"> <td>February</td> <td>503</td> <td>32</td> <td>11</td> </tr>
-			<tr pid="a.1.8/7"> <td>March</td> <td>1076</td> <td>27</td> <td>17</td> </tr>
-			<tr pid="a.1.8/8"> <td>April</td> <td>507</td> <td>5</td> <td>4</td> </tr>
-			<tr pid="a.1.8/9"> <td>May</td> <td>768</td> <td>12</td> <td>4</td> </tr>
-			<tr pid="a.1.8/10"> <td>June</td> <td>964</td> <td>20</td> <td>12</td> </tr>
-			<tr pid="a.1.8/11"> <td>July</td> <td>609</td> <td>19</td> <td>25</td> </tr>
-			<tr pid="a.1.8/12"> <td>August</td> <td>1999</td> <td>28</td> <td>75</td> </tr>
-			<tr pid="a.1.8/13"> <td>September</td> <td>1293</td> <td>24</td> <td>52</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.2.0" nospeaker="true" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000072">
-	Discrimination: Sexual Orientation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.2.1" speakerid="uk.org.publicwhip/lord/100367" speakername="Lord Lester of Herne Hill" colon="" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000072">
-	<p pid="a.2.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.2.1/2" qnum="HL7766">When they intend to publish the draft regulations to prohibit discrimination on the grounds of sexual orientation in (a) the provisions of goods; (b) the provision of facilities and services; (c) in education; and (d) the exercise of public functions.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.2.2" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000073">
-	<p pid="a.2.2/1">We made clear earlier this month our intention to implement the sexual orientation regulations next April. We will lay the regulations before the House in good time for them to be debated and approved so that they can come into effect on this date.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.2.3" nospeaker="true" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000074">
-	Energy: Deep-mined Coal
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.2.4" speakerid="uk.org.publicwhip/lord/100420" speakername="Lord Mason of Barnsley" colon="" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000074">
-	<p pid="a.2.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.2.4/2" qnum="HL7868">How many deep-mined coal mines are still in production; what are their names and in which regions they are located; and how many people are employed underground and overall in the coal industry.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.2.5" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="2"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000075">
-	<p pid="a.2.5/1">At <phrase class="date" code="2006-09-30">30 September 2006</phrase> there were 5,257 production people employed in the coal industry. Of these, 3,736 were employed at 14 active deep mines, including 2,846 working underground. Details of the names, locations and workforce at these mines are given in the following table.</p>
-	<table>
-		<tbody>
-			<tr pid="a.2.5/4"> <td>Mine Name</td> <td>Region</td> <td>Total No of employees</td> <td>No employed underground</td> </tr>
-			<tr pid="a.2.5/5"> <td>Aberpergwm<sup>*</sup></td> <td>Neath, S Wales</td> <td>64</td> <td>42</td> </tr>
-			<tr pid="a.2.5/6"> <td>Blaentillery No 2</td> <td>Torfaen, S Wales</td> <td>6</td> <td>5</td> </tr>
-			<tr pid="a.2.5/7"> <td>Daw Mill</td> <td>Warwickshire</td> <td>631</td> <td>504</td> </tr>
-			<tr pid="a.2.5/8"> <td>Eckington</td> <td>Derbyshire</td> <td>26</td> <td>24</td> </tr>
-			<tr pid="a.2.5/9"> <td>Hatfield<sup>*</sup></td> <td>S Yorkshire</td> <td>152</td> <td>114</td> </tr>
-			<tr pid="a.2.5/10"> <td>Hay Royds</td> <td>W Yorkshire</td> <td>13</td> <td>12</td> </tr>
-			<tr pid="a.2.5/11"> <td>Kellingley</td> <td>N Yorkshire</td> <td>713</td> <td>572</td> </tr>
-			<tr pid="a.2.5/12"> <td>Maltby</td> <td>S Yorkshire</td> <td>502</td> <td>359</td> </tr>
-			<tr pid="a.2.5/13"> <td>Thoresby</td> <td>Nottinghamshire</td> <td>497</td> <td>373</td> </tr>
-			<tr pid="a.2.5/14"> <td>Tower Colliery</td> <td>Hirwaun, S Wales</td> <td>375</td> <td>260</td> </tr>
-			<tr pid="a.2.5/15"> <td>Unity<sup>*</sup></td> <td>Neath, S Wales</td> <td>14</td> <td>7</td> </tr>
-			<tr pid="a.2.5/16"> <td>Welbeck</td> <td>Nottinghamshire</td> <td>495</td> <td>397</td> </tr>
-			<tr pid="a.2.5/17"> <td>Harworth<sup>**</sup></td> <td>Nottingham</td> <td>214</td> <td>150</td> </tr>
-			<tr pid="a.2.5/18"> <td>Rossington<sup>**</sup></td> <td>S Yorkshire</td> <td>41</td> <td>20</td> </tr>
-			<tr pid="a.2.5/19"> <td>Data provide by the Coal Authority on 25 October 2006<sup>*</sup> mines in development to come into production during 2007<sup>**</sup> production has halted at these mines, which are currently being &quot;mothballed&quot;</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.3.0" nospeaker="true" colnum="3"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000136">
-	Government Departments: Financial Reporting
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.3.1" speakerid="uk.org.publicwhip/lord/100460" speakername="Baroness Noakes" colon="" colnum="3"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000136">
-	<p pid="a.3.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.3.1/2" qnum="HL7656">Whether the Northern Ireland Office has any arrangements to enable staff of that department to raise, in confidence, concerns about matters of financial reporting, disclosure of other information or value for money; and, if so, whether they will give details of the arrangements.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.3.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="3"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000137">
-	<p pid="a.3.2/1">The Northern Ireland Office (NIO) has whistleblowing arrangements in place for staff to report their suspicions of wrongdoing and/or malpractice under public interest disclosure.</p>
-	<p pid="a.3.2/2">The NIO is an Exchequer department and all members of staff in the NIO are required to adhere to the (HCS) Civil Service Code which has procedures in place for reporting concerns to management under the NIO Grievance Procedure (extract from the Civil Service Code follows). Staff can also speak to one of the two appointed NIO independent departmental advisers available to deal with concerns from all members of staff.</p>
-	<p pid="a.3.2/3">Also as part of the annual fraud reporting process the NIO is asked to complete questionnaires on how it managed fraud risk in that particular year.</p>
-	<p pid="a.3.2/4">The Civil Service Code states:</p>
-	<p pid="a.3.2/5">If you believe that you are being required to act in a way which conflicts with this Code, your department or agency must consider your concern, and make sure that you are not penalised for raising it.If you have a concern, you should start by talking to your line manager or someone else in your line management chain. If, for any reason, you would find this difficult, you should raise the matter with your department's nominated officers who have been appointed to advise staff on the Code. If you become aware of actions by others which conflict with this Code you should report this to your line manager or someone else in your line management chain; alternatively you may wish to seek advice from your nominated officer. You should report evidence of criminal or unlawful activity to the police or other appropriate authorities.If you have raised the matter in accordance with the relevant procedures, and do not receive what you consider to be a reasonable response, you should report the matter to the Civil Service Commissioners.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.4.0" nospeaker="true" colnum="4"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000141">
-	Government Departments: Spending
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.4.1" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="4"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000141">
-	<p pid="a.4.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.4.1/2" qnum="HL7970">Which departments have underspent their budgets for the years 2000 to date; and what was the amount of each underspend.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.4.2" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="4"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000142">
-	<p pid="a.4.2/1">Details of departmental underspends are shown in the public expenditure provisional out-turn White Paper published annually in July.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.4.3" nospeaker="true" colnum="4"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000143">
-	Gulf War Illnesses
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.4.4" speakerid="uk.org.publicwhip/lord/100414" speakername="The Countess of Mar" colon="" colnum="4"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000143">
-	<p pid="a.4.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.4.4/2" qnum="HL7839">Further to the Written Answer by the Lord Sainsbury of Turville on 16 October (<I>WA 174</I>), what reviews of research into Gulf War illnesses funded by the Government of the United States have been undertaken by the Medical Research Council since 2003; when the review conducted in 2003 was completed; who were the scientists involved in the review; and what steps were taken to inform British Gulf veterans with Gulf War illnesses and families of those veterans who have died since the conflict of the review and its outcome; and</p>
-	<p pid="a.4.4/3" qnum="HL7808">Further to the Written Answer by the Lord Sainsbury of Turville on 16 October (<I>WA 174</I>), what destinations were involved in the travel costs incurred by those engaged in the Medical Research Council's review of research funded by the Government of the United States into Gulf War illnesses; on what dates the costs were incurred; and by whom; and</p>
-	<p pid="a.4.4/4" qnum="HL7809">What assessment has been made by the Medical Research Council of the research conducted at the Lovelace Respiratory Research Institute in the United States into alterations in cholinergic receptors, cytokines, glucorticoids and immunity following low level exposure to cholinergic agents and their possible relevance to illnesses amongst British Gulf War veterans; and</p>
-	<p pid="a.4.4/5" qnum="HL7810">What consultation took place between the Medical Research Council (MRC) and the Gulf War Veterans and Families Association before the MRC undertook its review of the findings of the research into Gulf War illnesses funded by the Government of the United States.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.1.8" newgid="uk.org.publicwhip/wrans/2006-10-30b.1.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.2.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.2.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.3.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.3.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.3.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.3.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.3.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.3.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.4.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.4.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.4.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.4.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.4.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.4.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.4.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.4.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.4.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.4.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.5.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.5.0" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.5.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="5"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000144">
 	<p pid="a.5.0/1">In January 2003, the Medical Research Council (MRC), through the Military Health Research Advisory Group (MHRAG), undertook a comprehensive review of relevant Gulf research. On <phrase class="date" code="2006-01-27">27 January</phrase>, MHRAG held a private meeting with a number of scientists from the UK and overseas and then met separately on <phrase class="date" code="2006-01-28">28 January</phrase> to appraise the MRC of scientific progress, of the potential for gaining further knowledge and of research needs, and of what the likely medical issues might be. The report, <I>MRC Review of Research into UK Gulf Veterans' Illnesses</I>, was published in May 2003 and is currently available on the MRC website<sup>1</sup>. The membership of the MHRAG was as follows:</p>
 	<p pid="a.5.0/2">Professor Catherine Peckham (chair): Institute of Child Health, London Professor Bryn Bridges: Genome Damage &amp; Stability Centre, Sussex Professor David Coggon: MRC Environmental Epidemiology Unit, SouthamptonProfessor Dudley Goodhead: MRC Radiation &amp; Genome Stability Unit, HarwellProfessor George Griffin: St George's Hospital Medical School, London Professor Pierluigi Nicotera: MRC Toxicology Unit, Leicester Professor George Davey-Smith: University of Bristol, Bristol Professor Nick Tarrier: Manchester University (Withington Hospital), ManchesterProfessor Andrew McMichael: MRC Human Immunology Unit, OxfordDr Frances Murphy (observer): Department of Veterans' Affairs Washington, USA</p>
@@ -199,417 +93,113 @@
 	<p pid="a.5.0/7">One of the recommendations of the 2003 review was that MoD should replicate US neuroimaging studies in the United Kingdom. A further review of this recommendation was conducted in January 2005 and it was concluded that this area of work should not be taken forward at this time. At present, the MRC has not conducted subsequent strategic reviews of more recent research findings.</p>
 	<p pid="a.5.0/8" class="indent"><sup>1</sup> <a href="http://www.mrc.ac.uk/Utilities/Documentrecord/index.htm">http://www.mrc.ac.uk/Utilities/Documentrecord/index.htm</a>?d=MRC002464</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.6.0" nospeaker="true" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000150">
-	Immigration: Colnbrook Detention Centre
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.6.1" speakerid="uk.org.publicwhip/lord/100476" speakername="Lord Ouseley" colon="" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000150">
-	<p pid="a.6.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.6.1/2" qnum="HL7732">What action has been taken against those running the Colnbrook detention centre after an inquest into the death of a detainee found that there had been a failure to ensure that the deceased was seen by a doctor with 24 hours of admission, as advised, and for nine days thereafter.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.6.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000151">
-	<p pid="a.6.2/1">All IND removal centre contracts contain performance measures resulting in financial deductions where a contractor fails to follow agreed procedures. Application of performance measures will be considered after consideration of both the evidence from the coroner's inquiry and the relevant Stephen Shaw report into the death in custody.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.6.3" nospeaker="true" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000152">
-	Immigration: Fast Track Removal
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.6.4" speakerid="uk.org.publicwhip/lord/100569" speakername="The Earl of Sandwich" colon="" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000152">
-	<p pid="a.6.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.6.4/2" qnum="HL7806">What efforts they are making to ensure that legal and professional advice, including the provision of adequate legal aid, will be of the same quality for asylum seekers detained under the fast-track process as for asylum seekers as a whole; and what research is being undertaken to evaluate this.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.6.5" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="6"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000153">
-	<p pid="a.6.5/1">The Legal Services Commission ensures the provision of high quality legal services to people detained in the fast-track process through exclusive contracting arrangements. It is an additional requirement for such contracts that the provider has arrangements in place for work in fast-track cases to be undertaken by an accredited senior caseworker. The quality of advice delivered is monitored through the commission's auditing and peer review processes.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.7.0" nospeaker="true" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000154">
-	Interpreters
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.7.1" speakerid="uk.org.publicwhip/lord/100385" speakername="Lord Lucas" colon="" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000154">
-	<p pid="a.7.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.7.1/2" qnum="HL7812">For the most recent period for which figures are available (a) nationally, and (b) for those police forces who contract out the provision of interpreting services to an agency, what proportion of interpreters used in police interviews held qualifications as interpreters; and what those qualifications were.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.7.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0001.htm#06103023000155">
-	<p pid="a.7.2/1">Information of this kind is not held centrally. The use of interpreters for police interviews is a matter for chief officers of police. The Office for Criminal Justice Reform is currently reviewing arrangements for the provision of interpreters within the criminal justice system.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.7.3" nospeaker="true" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000156">
-	Iraq: Baghdad
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.7.4" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000156">
-	<p pid="a.7.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.7.4/2" qnum="HL7708">Further to the Written Answer by the Lord Triesman on 10 October (<I>WA 138</I>), whether United Kingdom officials experience the circumstances existing on the ground in Baghdad and Iraq if they undertake trips outside the green zone occasionally and when it is operationally essential for them to do so.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.7.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000157">
-	<p pid="a.7.5/1">Yes. United Kingdom officials do experience the circumstances existing on the ground in Baghdad and Iraq when they undertake trips outside the green zone.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.7.6" nospeaker="true" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000158">
-	Iraq: Withdrawal
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.7.7" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000158">
-	<p pid="a.7.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.7.7/2" qnum="HL7825">What assessment they have made of the campaign among leading Iraqi political and religious groups to persuade United States and United Kingdom military forces to leave the country soon.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.7.8" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="7"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000159">
-	<p pid="a.7.8/1">We are aware that some Iraqi political groups have called for foreign forces to leave Iraq, but there is broad agreement among the leaders of Iraq's main political parties on the continued need for support from the multi-national force (MNF) while Iraq builds up its own security forces to cope with the challenges it faces.</p>
-	<p pid="a.7.8/2">The MNF's presence in Iraq is mandated by United Nations Security Council Resolution (UNSCR) 1637 and is at the request of the Government of Iraq. Under the terms of the UNSCR, the Government of Iraq have the right to request the withdrawal of the MNF troops at any time.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.8.0" nospeaker="true" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000161">
-	Israel and Lebanon
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.8.1" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000161">
-	<p pid="a.8.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.8.1/2" qnum="HL7826">What representations they have made to the Government of Israel about their actions in Lebanon, in the light of recent opinion polls suggesting a rejection by the Israeli people of unilateral military action.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.6.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.6.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.7.8" newgid="uk.org.publicwhip/wrans/2006-10-30b.7.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.8.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000162">
 	<p pid="a.8.2/1">The Government have not discussed the results of any particular polls with the Government of Israel. The UK has consistently supported Israel's right to defend itself, including against the unprovoked attack by Hizbollah on <phrase class="date" code="2006-07-12">12 July</phrase>. However, during the conflict we urged the Israelis to act in proportionate and measured ways, so as to minimise civilian death and suffering. Together with the EU, the Government have consistently urged all parties to do everything possible to protect civilian populations and to refrain from actions in violation of international humanitarian law.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.8.3" nospeaker="true" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000163">
-	Israel and Palestine
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.8.4" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000163">
-	<p pid="a.8.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.8.4/2" qnum="HL7715">Whether they will make representations to the Government of the United States on the case for advancing proposals for the peace process between Israel and Palestine which will not be vetoed in the United Nations Security Council.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.8.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000164">
-	<p pid="a.8.5/1">We, along with our US partners, remain fully committed to the road map as the way forward for the Middle East peace process (MEPP). Both the Israeli Government and Palestinian President Abbas are also committed to this way forward.</p>
-	<p pid="a.8.5/2">In the past five years, both the UK and the US have voted for the following UN Security Council Resolutions on the MEPP: 1397 (2002), on a two-state solution, 1402 (2002), 1403 (2002) and 1405 (2002) on events in the Occupied Territories and 1515 (2003) which endorsed the quartet (EU, US, UN and Russia) road map. We will continue to discuss proposals to move the peace process forward with our US partners.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.8.6" nospeaker="true" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000166">
-	Israel and Palestine: Gaza
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.8.7" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="8"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000166">
-	<p pid="a.8.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.8.7/2" qnum="HL7720">What steps they will take to obtain a positive response from the Government of Israel to the letter from the European Union monitoring chief, Pietro Pistolese, and the United States security co-ordinator, Lieutenant General Dayton, seeking Israeli agreement to a second border mission at Karni in the Gaza Strip.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.8.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.8.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.0" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.9.0" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000167">
 	<p pid="a.9.0/1">General Pistolese and General Dayton wrote to the Government of Israel on <phrase class="date" code="2006-09-29">29 September</phrase> asking for the Rafah crossing to be opened. We continue to call for the full implementation of the agreement on movement and access, and will continue to work with partners to achieve that goal. The letter mentions the possibility of an EU monitoring presence at the Karni crossing. We understand the importance of the Karni crossing for the Palestinian people and are working closely with US security co-ordinator General Dayton on plans to improve security there and improve its operation. General Dayton has discussed his plans with Israel and is meeting both parties to take his plans forward on <phrase class="date" code="">7 November</phrase>.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.9.1" nospeaker="true" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000168">
-	Mental Capacity: Draft Court of Protection Rules
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.9.2" speakerid="uk.org.publicwhip/lord/100444" speakername="Lord Morris of Manchester" colon="" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000168">
-	<p pid="a.9.2/1">asked Her Majesty's Government:</p>
-	<p pid="a.9.2/2" qnum="HL7698">What contact Ministers have had with the Society for Children and Adults with Learning Disabilities and their Families regarding its concern that the draft Court of Protection Rules under the Mental Capacity Act 2005 do not include information, guidance or explanation on how to apply for appointment to the role of deputy embodied within the Act for those who are without capacity from birth; and whether they will take steps to address this concern.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.9.3" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000169">
-	<p pid="a.9.3/1">I have received a letter from the Society for Children and Adults with Learning Disabilities and their Families to which I have replied. The letter enclosed the society's response to the consultation on the draft Court of Protection Rules under the Mental Capacity Act 2005. This consultation closed on <phrase class="date" code="2006-10-06">Friday 6 October 2006</phrase>. The draft rules which were the subject of the consultation provided a general process for all applications to the Court of Protection. It would not be appropriate for rules of court to contain guidance but the Mental Capacity Act statutory code of practice will provide guidance on all parts of the Act and my officials are preparing guidance for a range of stakeholders.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.9.4" nospeaker="true" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000170">
-	North Korea: Export Credit Guarantees
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.9.5" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="9"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000170">
-	<p pid="a.9.5/1">asked Her Majesty's Government:</p>
-	<p pid="a.9.5/2" qnum="HL7743">How many export credit guarantees have been granted to British firms involved in activities in North Korea in each of the past 10 years; and, in each case, what was (a) the name of the company to which the export credit guarantee was granted; and (b) the nature of the company's business.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.10.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000171">
-	<p pid="a.10.0/1">In the past 10 years, the Export Credits Guarantee Department has provided no support in respect of business with North Korea.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.10.1" nospeaker="true" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000172">
-	Palace of Westminster: Access
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.10.2" speakerid="uk.org.publicwhip/lord/100435" speakername="Lord Monson" colon="" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000172">
-	<p pid="a.10.2/1">asked the Chairman of Committees:</p>
-	<p pid="a.10.2/2" qnum="HL7929">Whether he will take steps to ensure that pedestrian access to the Palace of Westminster is not periodically impeded by inadequate rainwater drainage on St Margaret's Street.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.10.3" speakerid="uk.org.publicwhip/lord/100067" speakername="Lord Brabazon of Tara" colon=":" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000173">
-	<p pid="a.10.3/1">The upkeep of the drainage system on St Margaret's Street is the responsibility of Westminster City Council. I will write to Westminster City Council to raise the issue with it.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.10.4" nospeaker="true" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000174">
-	Russia: Trade Sanctions
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.10.5" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000174">
-	<p pid="a.10.5/1">asked Her Majesty's Government:</p>
-	<p pid="a.10.5/2" qnum="HL7780">Whether they will make representations to the Government of the Russian Federation regarding the removal of Russian trade sanctions against Moldova and Georgia and the reinstatement of normal facilities for remittances by Georgians working in Russia.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.9.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.9.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.6" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.10.6" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000175">
 	<p pid="a.10.6/1">We have made it clear to the Government of the Russian Federation that we look to them to take early action to lift the measures taken against Georgia. In addition, on <phrase class="date" code="2006-10-17">17 October</phrase> the General Affairs and Economic Relations Council of the EU expressed its grave concern at the measures adopted by the Russian Federation against Georgia and at their economic, political and humanitarian consequences.</p>
 	<p pid="a.10.6/2">The ban on wine imports from Moldova has also been raised with Russia by the EU.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.10.7" nospeaker="true" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000177">
-	Sport: Funding
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.10.8" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000177">
-	<p pid="a.10.8/1">asked Her Majesty's Government:</p>
-	<p pid="a.10.8/2" qnum="HL7685">What contributions they make to the Governments of Wales and Scotland for spending exclusively on sport in each country; and how these figures compare with the situation before devolution.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.10.9" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="10"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000178">
-	<p pid="a.10.9/1">Sport is a devolved matter for the devolved Administrations in Scotland and Wales.</p>
-	<p pid="a.10.9/2">The devolved Administrations in Scotland and Wales are funded through the block grant which is determined by the Barnett formula. No allocations are made to the devolved Administrations specifically for sport.</p>
-	<p pid="a.10.9/3">The block grant allows the devolved Administrations to assess their own needs and priorities for all devolved matters.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.11.0" nospeaker="true" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000181">
-	Syria: Export Credit Guarantees
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.11.1" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000181">
-	<p pid="a.11.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.11.1/2" qnum="HL7745">How many export credit guarantees have been granted to British firms involved in activities in Syria in each of the past 10 years; and, in each case, what was (a) the name of the company to which the export credit guarantee was granted; and (b) the nature of the company's business.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.11.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000182">
-	<p pid="a.11.2/1">In the past 10 years, the Export Credits Guarantee Department provided the following support in respect of business with Syria:</p>
-	<table>
-		<tbody>
-			<tr pid="a.11.2/4"> <td>Year</td> <td>Name of exporter</td> <td>Nature of company's business</td> </tr>
-			<tr pid="a.11.2/5"> <td>1997</td> <td>Samplex Ltd.</td> <td>20-Bulk Grain Lorry Sampling Systems &amp; Spare Parts</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.11.3" nospeaker="true" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000186">
-	UN: Approval for Military Action
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.11.4" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000186">
-	<p pid="a.11.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.11.4/2" qnum="HL7719">What is their response to the findings of the long-term military planning report approved by the European Union Defence Ministers on 3 October in informal council that military action not explicitly authorised by the United Nations may become controversial.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.11.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000187">
-	<p pid="a.11.5/1">The long-term report referred to was written by the EU Institute of Security Studies, which is an independent academic body. As such, its report was noted rather than approved by EU Defence Ministers as it does not necessarily reflect the views of member states. The UK will therefore not be responding to its content.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.11.6" nospeaker="true" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000188">
-	UN: EU Representation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.11.7" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="11"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000188">
-	<p pid="a.11.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.11.7/2" qnum="HL7718">What is their response to the suggestion by the Deputy Secretary-General of the United Nations, Mark Malloch Brown, that at some point in the future the European Union Commission will have a permanent seat at the United Nations.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.12.0" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000189">
-	<p pid="a.12.0/1">This is a personal view of Mr Malloch Brown. By virtue of Article 4 of the UN charter, only states can become members of the UN. There is, therefore, no question of an EU seat on the UN Security Council.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.12.1" nospeaker="true" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000190">
-	Water and Sewerage Services (Northern Ireland) Order 2006
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.12.2" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000190">
-	<p pid="a.12.2/1">asked Her Majesty's Government:</p>
-	<p pid="a.12.2/2" qnum="HL7739">When the Water and Sewerage Services (Northern Ireland) Order 2006 was published; and how many working days there were between publication and the end of the consultation period.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.8" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.10.9" newgid="uk.org.publicwhip/wrans/2006-10-30b.10.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.11.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.11.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.3" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.12.3" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000191">
 	<p pid="a.12.3/1">Public consultation on the proposed Water and Sewerage Services (NI) Order 2006 ended on <phrase class="date" code="2006-08-24">24 August 2006</phrase>. The draft order was laid on <phrase class="date" code="2006-10-09">9 October</phrase>. This means there were 31 working days between the end of the consultation period and the laying of the legislation.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.12.4" nospeaker="true" inserted-heading="true" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000192">
-	Water and Sewerage Services (Northern Ireland) Order 2006
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.12.5" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000192">
-	<p pid="a.12.5/1">asked Her Majesty's Government:</p>
-	<p pid="a.12.5/2" qnum="HL7740">What groups and individuals responded to the consultation process for the Water and Sewerage Services (Northern Ireland) Order 2006; and whether they will place in the Library of the House a copy of all the consultations received.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.12.6" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000193">
-	<p pid="a.12.6/1">Forty-two groups and four individuals responded to the consultation process on the proposal for a draft Water and Sewerage Services (Northern Ireland) Order 2006. The full text of all these responses is available on the Department for Regional Development's water reform website at <a href="http://www.waterreformni.gov.uk">www.waterreformni.gov.uk</a>. A copy of all the responses has also been placed in the Libraries of both Houses.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.12.7" nospeaker="true" inserted-heading="true" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000194">
-	Water and Sewerage Services (Northern Ireland) Order 2006
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.12.8" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000194">
-	<p pid="a.12.8/1">asked Her Majesty's Government:</p>
-	<p pid="a.12.8/2" qnum="HL7773">Whether there will be a further consultation process for the Water and Sewerage Services (Northern Ireland) Order 2006.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.12.9" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000195">
-	<p pid="a.12.9/1">There will be no further consultation on the draft Water and Sewerage Services (Northern Ireland) Order 2006. This was laid before Parliament on <phrase class="date" code="2006-10-09">9 October 2006</phrase>.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.12.10" nospeaker="true" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000196">
-	Water Management: S&amp;T Report
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.12.11" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000196">
-	<p pid="a.12.11/1">asked Her Majesty's Government:</p>
-	<p pid="a.12.11/2" qnum="HL7798">Further to paragraph 8.26 of their response to the House of Lords Science and Technology Select Committee report, Water Management (8th Report, HL Paper 191-I), why the national strategy plan has to be submitted to the European Commission; when they expect the European Commission to respond; and whether there will be any delay in applying the strategy as a result; and</p>
-	<p pid="a.12.11/3" qnum="HL7799">Further to paragraph 8.26 of their response to the House of Lords Science and Technology Select Committee report, Water Management (8th Report, HL Paper 191&mdash;I), what is a strategy plan; and how a strategy plan differs from a strategy.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.13.0" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000197">
-	<p pid="a.13.0/1">The new rural development regulation, agreed in September 2005, provides member states with a framework to target funding from the European Agricultural Fund for Rural Development during the next programming period: 2007-2013. To unlock this funding the regulation requires us to submit to the EU Commission a national strategy plan plus an accompanying, and more detailed, programme document.</p>
-	<p pid="a.13.0/2">The national strategy plan is the term the EU Commission uses for a strategy that sets out at a high level; our priorities for action; a summary of the evidence base for our approach across the rural development programme's objectives; and, information about how we will co-ordinate rural development funding with other EU derived funds.</p>
-	<p pid="a.13.0/3">The regulation requires the strategy to be developed at member state level. As rural development is an area of devolved responsibility, there will be an overarching UK national strategy plan, highlighting the common themes between our four countries, with annexes covering the strategies for rural development in England, Scotland, Wales and Northern Ireland.</p>
-	<p pid="a.13.0/4">We expect the EU Commission to respond to the strategy this autumn. However, the Commission does not formally approve the strategy and submission of the strategy is not dependent on having agreement on overall budgets. Therefore it is unlikely that there will be any delay in applying the strategy as a result of the Commission's response to it.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.13.1" nospeaker="true" inserted-heading="true" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000201">
-	Water Management: S&amp;T Report
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.13.2" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000201">
-	<p pid="a.13.2/1">asked Her Majesty's Government:</p>
-	<p pid="a.13.2/2" qnum="HL7801">Further to Annex A of their response to the House of Lords Science and Technology Select Committee report, Water Management (8th Report, HL Paper 191&mdash;I), if the additional dwellings planned for under scenario 3 are not to be occupied by &quot;new people&quot;, what provision they have made to accommodate new immigrants from European Union member states to ensure that they will not have a net impact on water demand.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.13.3" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000202">
-	<p pid="a.13.3/1">All water companies have water resource management plans which look ahead 25 years and include projections of current and future demands for water. These plans are regularly updated to account for factors such as projections of household numbers and occupancy rates and the implications of climate change. Water companies' water resource management plans are currently produced voluntarily.</p>
-	<p pid="a.13.3/2">In April 2007 it is proposed to make the plans a statutory requirement, using powers in the Water Act 2003. The population and housing number estimates for these plans will be informed by the regional spatial strategy and by consultation with planning bodies.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.14.0" nospeaker="true" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000204">
-	Water Supply: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.14.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000204">
-	<p pid="a.14.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.14.1/2" qnum="HL7738">What consultation process was used for the changes to charging for water in Northern Ireland; when the process started and ended; and how the consultation was advertised.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.8" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.9" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.10" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.12.11" newgid="uk.org.publicwhip/wrans/2006-10-30b.12.11" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.13.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.13.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.13.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.13.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.13.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.13.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.13.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.13.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.14.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000205">
 	<p pid="a.14.2/1">The Government have held three separate public consultation exercises on the reform of water and sewerage services in Northern Ireland, including changes to charging arrangements.</p>
 	<p pid="a.14.2/2">Public consultation on options for water reform took place over the 12-week period between <phrase class="date" code="2006-03-11">11 March</phrase> and <phrase class="date" code="2003-06-20">20 June 2003</phrase>. Public consultation on proposals for water reform took place between <phrase class="date" code="2004-11-29">29 November 2004</phrase> and <phrase class="date" code="2005-03-04">4 March 2005</phrase>. Consultation on the legislation required to implement water reform, the proposed Water and Sewerage Services (NI) Order 2006, took place over a 12-week period between <phrase class="date" code="2006-06-01">1 June</phrase> and <phrase class="date" code="2006-08-24">24 August 2006</phrase>.</p>
 	<p pid="a.14.2/3">Each consultation exercise was advertised through public notices placed in each of Northern Ireland's three main local newspapers. Public notices in relation to the first two consultation exercises were also placed in a wide range of local newspapers published across Northern Ireland. An invitation to participate in the first two public consultations was contained in two information leaflets on water reform distributed to every household in Northern Ireland during 2003 and 2004 to co-ordinate with these exercises. Full details of the three consultation exercises is available on the Department for Regional Development's water reform website at <a href="http://www.waterreformni.gov.uk">www.waterreformni.gov.uk</a>.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.14.3" nospeaker="true" inserted-heading="true" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000208">
-	Water Supply: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.14.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000208">
-	<p pid="a.14.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.14.4/2" qnum="HL7771">What are the main elements of the estimated &pound;130 million to &pound;180 million costs arising from a delay of a year in the implementation of water charges, as outlined in a letter of 4 October to the chairman of the Northern Ireland Consumer Council from the Parliamentary Under-Secretary of State for Northern Ireland.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.14.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.14.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.14.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0002.htm#06103023000209">
 	<p pid="a.14.5/1">The Government are committed to the introduction of domestic water charges from <phrase class="date" code="">1 April 2007</phrase> as part of their programme of public service reinvestment and reform in Northern Ireland. The possible costs of delay have not been calculated in any detail and it would require significant effort to do so. However, in the event of a delay in the introduction of charges until April 2008, it is estimated that some &pound;80 million to &pound;90 million of income from customers would be forgone. Additionally access to the borrowing power of up to &pound;200 million annually under the Reinvestment and Reform Initiative is conditional upon the introduction of water charging. In the absence of detailed costing, the range of &pound;130 million to &pound;180 million represents an indicative estimate of the impact of delay.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.15.0" nospeaker="true" inserted-heading="true" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000210">
-	Water Supply: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.15.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000210">
-	<p pid="a.15.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.15.1/2" qnum="HL7775">Whether land currently owned by the Water Service in Northern Ireland will be disposed of within the next 10 years; if so, on what basis; and where the proceeds will go.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.15.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000211">
-	<p pid="a.15.2/1">As part of the water reform programme the Department for Regional Development is currently developing a transfer scheme to transfer assets and liabilities to the new government-owned company which will be responsible for the future delivery of water and sewerage services in Northern Ireland.</p>
-	<p pid="a.15.2/2">The department is currently developing a draft licence under which the company will operate. The terms of this licence will determine how any proceeds from the disposal of any land currently owned by Water Service which is transferred to the new company will be allocated. The draft licence will be issued for public consultation later this year.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.15.3" nospeaker="true" inserted-heading="true" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000213">
-	Water Supply: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.15.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000213">
-	<p pid="a.15.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.15.4/2" qnum="HL7776">What role the Northern Ireland consumer council has in the future regulation of the provision of water.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.5" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-10-30a.15.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000214">
 	<p pid="a.15.5/1">The future role of the General Consumer Council for Northern Ireland in relation to water and sewerage services is set out in Chapter III of Part III of the draft Water and Sewerage Services (Northern Ireland) Order 2006. A copy of the draft order and its accompanying explanatory memorandum were placed in the Libraries of both Houses on <phrase class="date" code="2006-10-09">9 October</phrase>.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.15.6" nospeaker="true" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000215">
-	Wildlife: Protected Areas
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.15.7" speakerid="uk.org.publicwhip/lord/100208" speakername="Lord Fearn" colon="" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000215">
-	<p pid="a.15.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.15.7/2" qnum="HL7729">Which areas of the English countryside and coastline are protected because they are red squirrel habitats.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.15.8" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000216">
-	<p pid="a.15.8/1">The red squirrel is protected under the Wildlife and Countryside Act 1981. In addition, it benefits from an individual species action plan that is led by the UK Red Squirrel Group, a consortium including all the UK conservation agencies and the Forestry Commission.</p>
-	<p pid="a.15.8/2">The majority of red squirrel habitats remaining in England are conifer plantations and do not receive statutory protection as SSSIs, as Natural England believes this would do little to improve their conservation and management. However, the Forestry Commission plays an important role in agreeing and delivering management plans for many of these sites, and also provides woodland grants to assist in the delivery of biodiversity targets. This strategy provides the best chances of maintaining a red squirrel population on mainland England.</p>
-	<p pid="a.15.8/3">In southern England, the red squirrel population does occupy some areas that are statutorily protected as SSSIs. These include parts of the two largest areas of woodland on the island, Parkhurst Forest and Briddlesford Woods. The other remaining English stronghold for the red squirrel is in the north of England. A major partnership project, Red Alert North England, is underway to manage 16 forests as red squirrel reserves, with support from the Heritage Lottery Fund. Partners include the Forestry Commission, which is responsible for the management of more than half the reserve area, Natural England and the Wildlife Trusts for Northumberland, Cumbria and Lancashire.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.16.0" nospeaker="true" inserted-heading="true" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000219">
-	Wildlife: Protected Areas
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.16.1" speakerid="uk.org.publicwhip/lord/100208" speakername="Lord Fearn" colon="" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000219">
-	<p pid="a.16.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.16.1/2" qnum="HL7730">Which areas of the English countryside and coastline are protected because they are Natterjack toad habitats.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.16.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000220">
-	<p pid="a.16.2/1">Natterjack toads are strictly protected under the Wildlife and Countryside Act 1981 (as amended) and Conservation (Natural Habitats, &amp;c.) Regulations 1994. Therefore, the places they use for breeding, resting, sheltering and protection are protected wherever the species occurs, regardless of whether the land has some statutory designation. The areas they are recorded to occupy can be found in the National Biodiversity Gateway (<a href="http://www.searchnbn.net">www.searchnbn.net</a>).</p>
-	<p pid="a.16.2/2">The below table lists the sites which are designated as sites of special scientific interest (SSSIs) expressly because of the presence of natterjack toads. In Natural England terms, this means they are a notified interest feature.</p>
-	<p pid="a.16.2/3">Cockerham Marsh, Lancs</p>
-	<p pid="a.16.2/4">Red Rocks, Wirral</p>
-	<p pid="a.16.2/5">Sefton Coast, Sefton</p>
-	<p pid="a.16.2/6">Annaside, Cumbria</p>
-	<p pid="a.16.2/7">Silloth Dunes and Mawbray Bank, Cumbria</p>
-	<p pid="a.16.2/8">Upper Solway Flats and Marshes, Cumbria</p>
-	<p pid="a.16.2/9">Drigg Coast, Cumbria</p>
-	<p pid="a.16.2/10">Duddon Estuary, Cumbria</p>
-	<p pid="a.16.2/11">North Norfolk Coast, Norfolk</p>
-	<p pid="a.16.2/12">Syderstone Common, Norfolk</p>
-	<p pid="a.16.2/13">Winterton-Horsey Dunes, Norfolk</p>
-	<p pid="a.16.2/14">Woolmer Forest, Hampshire</p>
-	<p pid="a.16.2/15">Overall, around 90 per cent of natterjack toad populations occur on SSSIs, and 70 per cent of the populations are on SSSIs where the species is a notified interest feature.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-10-30a.16.3" nospeaker="true" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000235">
-	Zimbabwe: Export Credit Guarantees
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-10-30a.16.4" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000235">
-	<p pid="a.16.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.16.4/2" qnum="HL7744">How many export credit guarantees have been granted to British firms involved in activities in Zimbabwe in each of the past 10 years; and, in each case, what was (a) the name of the company to which the export credit guarantee was granted; and (b) the nature of the company's business.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-10-30a.17.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="17"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61030w0003.htm#06103023000236">
-	<p pid="a.17.0/1">In the past 10 years, the Export Credits Guarantee Department has provided support in respect of business with Zimbabwe as listed in the table below.</p>
-	<p pid="a.17.0/2">It is ECGD's policy not to disclose details of insurance policies it provides, or the fact of having provided insurance, where it considers the disclosure of such information might effect the commercial position of ECGD or its customers, and thus the UK economy. Pursuant to that policy, one insurance policy, which has been issued in respect of business with Zimbabwe in the past 10 years, is not included in this Answer.</p>
-	<table>
-		<tbody>
-			<tr pid="a.17.0/5"> <td>Year</td> <td>Name of exporter</td> <td>Nature of business</td> </tr>
-			<tr pid="a.17.0/6"> <td>1997</td> <td>Siemens Plc</td> <td>Mobile Telecommunications</td> </tr>
-			<tr pid="a.17.0/7"> <td>Standrange Ltd</td> <td>Sawmill</td> </tr>
-			<tr pid="a.17.0/8"> <td>Edmund Nuttall Ltd</td> <td>Airport Terminal</td> </tr>
-			<tr pid="a.17.0/9"> <td>1998</td> <td>Land Rover Exports Limited</td> <td>Land Rover Vehicles</td> </tr>
-			<tr pid="a.17.0/10"> <td>Mitsui Babcock Energy Services Ltd</td> <td>Power Station</td> </tr>
-			<tr pid="a.17.0/11"> <td>Standrange Ltd</td> <td>Sawmill</td> </tr>
-			<tr pid="a.17.0/12"> <td>1999</td> <td>Siemens Plc</td> <td>Mobile Telecommunications</td> </tr>
-		</tbody>
-	</table>
-</reply>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.6" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.7" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.15.8" newgid="uk.org.publicwhip/wrans/2006-10-30b.15.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.16.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.16.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.16.1" newgid="uk.org.publicwhip/wrans/2006-10-30b.16.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.16.2" newgid="uk.org.publicwhip/wrans/2006-10-30b.16.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.16.3" newgid="uk.org.publicwhip/wrans/2006-10-30b.16.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.16.4" newgid="uk.org.publicwhip/wrans/2006-10-30b.16.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-10-30a.17.0" newgid="uk.org.publicwhip/wrans/2006-10-30b.17.0" matchtype="perfectmatch"/>
 </publicwhip>
 

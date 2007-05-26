@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,33 +51,17 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.29.0" nospeaker="true" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000028">
-	Arms Trade
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.29.1" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000028">
-	<p pid="a.29.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.29.1/2" qnum="HL6459">What action the European Union has already taken, or is proposing to take, to combat the worldwide proliferation of small arms and light weapons; and what are the current European Union priorities in this area.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.29.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000029">
-	<p pid="a.29.2/1">In December 2005 the European Council adopted a strategy to combat illicit accumulation and trafficking of small arms and light weapons (SALW) and their ammunition. The EU's priorities include agreeing common international guidelines for SALW transfer controls, stronger regulation of brokering activities, stricter stockpile management and the destruction of surplus SALW. Since 2003, the EU has allocated &euro;88 million for action undertaken by affected countries in Africa, south-east Asia and south-eastern Europe to deal with the excessive and destabilising accumulation of small arms and light weapons. This amount is in addition to member states' contributions and is drawn from the non-proliferation project line of the common foreign and security policy budget.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.29.3" nospeaker="true" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000030">
-	Assets Recovery Agency
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.29.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000030">
-	<p pid="a.29.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.29.4/2" qnum="HL6464">How much the Northern Ireland section of the Assets Recovery Agency has recovered since its creation; and how much it has cost to run during the same period.</p>
-</ques>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.29.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.29.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="29"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000031">
 	<p pid="a.29.5/1">The Northern Ireland office of the Assets Recovery agency has realised the following amounts since its creation.</p>
 	<table>
@@ -88,281 +81,91 @@
 	<p pid="a.29.5/16">Disruption is defined as: a) the freezing of assets through a restraint order, freezing order, Mareva injunction<sup>1</sup> or interim receiving order; or b) where freezing has not taken place, either i) making of a confiscation or recovery order, or ii) voluntary settlement/payment, where no order has been made, or iii) undertakings given not to deal with assets; or c) the issue of a tax assessment.</p>
 	<p pid="a.29.5/17"><sup>1</sup>Mareva Injunction: an order which freezes assets and acts as a disruption.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.30.0" nospeaker="true" inserted-heading="true" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000047">
-	Assets Recovery Agency
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.30.1" speakerid="uk.org.publicwhip/lord/100410" speakername="Lord Maginnis of Drumglass" colon="" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000047">
-	<p pid="a.30.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.30.1/2" qnum="HL6584">What was the value of illegal assets seized by the Assets Recovery Agency in (a) England, and (b) Northern Ireland in each of the past five years; what this represents as a per capita amount in each case; and what proportion of recovered assets they have permitted the police to retain within the agencies in each of these years.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.30.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000048">
-	<p pid="a.30.2/1">The information requested on assets recovered by the Assets Recovery Agency year on year since its inception in March 2003 is set out in the table. The agency has no powers to allow police forces to retain a proportion of recovered assets. Under an incentive scheme introduced by the Government in 2004-05, police forces received 33 per cent of total assets recovered that year above &pound;40 million, rising to 50 per cent in 2005-06. A total of &pound;39 million in incentive payments has been distributed to police forces in England, Wales and Northern Ireland over two years. Under a new incentive scheme which came into effect on April 1 this year, police and other agencies involved in asset recovery will get back 50 per cent of all receipts from recovered criminal assets.</p>
-	<table>
-		<tbody>
-			<tr pid="a.30.2/4"> <td><I>Assets Recovery Agency </I></td> </tr>
-			<tr pid="a.30.2/5"> <td></td> <td>Total Assets Recovered &pound; million</td> <td>England and Wales</td> <td>Assets recovered per 1,000 population (England and Wales) &pound;</td> <td>Northern Ireland &pound; million</td> <td>Assets recovered per 1,000 population (Northern Ireland) &pound;</td> </tr>
-			<tr pid="a.30.2/6"> <td>2003-04</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr>
-			<tr pid="a.30.2/7"> <td>2004-05</td> <td>&pound;4.3</td> <td>&pound;3.9</td> <td>&pound;74.1</td> <td>&pound;0.4</td> <td>&pound;265.03</td> </tr>
-			<tr pid="a.30.2/8"> <td>2005-06</td> <td>&pound;4.1</td> <td>&pound;3.3</td> <td>&pound;63.1</td> <td>&pound;0.8</td> <td>&pound;450.54</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.30.3" nospeaker="true" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000067">
-	Bangladesh: United Kingdom High Commissioner
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.30.4" speakerid="uk.org.publicwhip/lord/100608" speakername="Lord Steel of Aikwood" colon="" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000067">
-	<p pid="a.30.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.30.4/2" qnum="HL6563">Whether the inquiries by the Government of Bangladesh into the attack on the United Kingdom high commissioner in 2004 were satisfactory; and what is the latest information they have received from the Government of Bangladesh in this case.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.30.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.11" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.30.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="30"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000068">
 	<p pid="a.30.5/1">Since the grenade attack in Sylhet in May 2004 in which the high commissioner was injured, we have taken every available opportunity to stress to the Government of Bangladesh the importance of bringing the perpetrators to justice, not least for the relatives of those who tragically died. It is vital for the Government of Bangladesh to conclude credible investigations into this and other attacks as soon as possible. Regrettably, despite the high profile of the cases and consistent lobbying by the UK, EU and others in the international community, the Bangladeshi authorities have so far failed to bring these investigations to a satisfactory conclusion.</p>
 	<p pid="a.30.5/2">Most recently, the high commissioner issued a public statement on <phrase class="date" code="2006-05-21">21 May</phrase> on this subject which is available on the website of our high commission in Dhaka at <a href="http://www.britishcominission.gov.uk/servlet/Front">www.britishcominission.gov.uk/servlet/Front</a>?page name ==OpenMarket%Xcelerate/ShowPage&amp;e =Page&amp;cid= 1101397177004&amp;a=KArticle&amp;aid=1145898689339.</p>
 	<p pid="a.30.5/3">Our high commission in Dhaka continues to raise this and other unresolved cases with the Government of Bangladesh at a senior level and on a regular basis.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.31.0" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000071">
-	Child Protection: Teachers
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.31.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000071">
-	<p pid="a.31.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.31.1/2" qnum="HL6515">How many teachers have been (a) convicted, or (b) cautioned for child pornography or sexual abuse in (i) England, and (ii) Northern Ireland over the past five years.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.31.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000072">
-	<p pid="a.31.2/1">The Department for Education and Skills does not record the numbers of teachers cautioned or convicted for child pornography or sexual abuse. The Home Office has data relating to the total number of individuals cautioned or convicted, though these are not broken down by profession.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.31.3" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000073">
-	Commission for Equality and Human Rights
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.31.4" speakerid="uk.org.publicwhip/lord/100476" speakername="Lord Ouseley" colon="" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000073">
-	<p pid="a.31.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.31.4/2" qnum="HL6545">Further to the Written Answer by the Baroness Andrews on 20 June (<I>WA 69</I>), how government frameworks to ensure transparency in the procurement process are scrutinised; and how members of the public can access the results of such scrutiny and audit reports.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.31.5" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000074">
-	<p pid="a.31.5/1">Framework agreements are established in compliance with all applicable EC and UK law. This ensures that open competitions are used when selecting suppliers who are able to offer best value for money. The responsibility for procurement decisions lies with departments, which have to lay an annual report before Parliament and are subject to review by the National Audit Office and Public Accounts Committee. They are also subject to the provisions of the Freedom of Information Act 2000 which allows members of the public to ask questions about their operations.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.31.6" nospeaker="true" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000075">
-	Countryside and Rights of Way Act 2000: Coastal Access
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.31.7" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="31"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000075">
-	<p pid="a.31.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.31.7/2" qnum="HL6672">In view of the National Audit Office report on <I>The Right of Access to Open Countryside</I>, why the board of the Countryside Agency was asked to approve options for improving coastal access while the in-depth investigation of the four study areas still lacked costings; and</p>
-	<p pid="a.31.7/3" qnum="HL6673">Why the board of the Countryside Agency was asked to approve options for improving coastal access when only one of the seven parts of the Coastal Access Project Group's work programme was complete.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.12" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.13" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.14" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.15" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.16" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.17" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.6" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.18" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.31.7" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.19" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.32.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.20" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.32.0" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="32"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000076">
 	<p pid="a.32.0/1">The Countryside Agency's (CA) board paper, which was discussed at its meeting on <phrase class="date" code="2006-05-25">25 May</phrase>, summarised the results of the initial evidence, fact-finding and research work which had been undertaken to date by the CA, along with its Natural England partners: English Nature and the Rural Development Service. The board was asked to agree some initial conclusions about the best way to improve access to the English coast, subject to the completion of further work.</p>
 	<p pid="a.32.0/2">The Natural England partnership's final advice to Defra will include details of all the elements of the partnership's work programme and the costs of possible options. The board will look again at the options in the light of all the information available before that advice is submitted to Defra.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.32.1" nospeaker="true" colnum="32"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000078">
-	DNA: Supply of Pathogenic Sequences
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.32.2" speakerid="uk.org.publicwhip/lord/100339" speakername="Lord Jopling" colon="" colnum="32"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000078">
-	<p pid="a.32.2/1">asked Her Majesty's Government:</p>
-	<p pid="a.32.2/2" qnum="HL6484">What plans they have to ensure that suppliers of oligonucleotides are required to screen and report orders for pathogenic DNA sequences.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.32.3" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="32"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000079">
-	<p pid="a.32.3/1">There are no specific regulations that govern the sale, supply, or purchase of DNA sequences. The potential chemical hazards associated with the sequence itself would be covered by the Control of Substances Hazardous to Health Regulations 2002 (as amended). If DNA sequences were to be used to create a biological agent, the Genetically Modified Organisms (Contained Use) Regulations 2000 (as amended) are likely to apply. These provide for a high level of protection for human health and the environment (including animal and plant health). In addition, the Specified Animal Pathogens Order 1998 (SAPO), administered by Defra, regulates possession of nucleic acid derived from any animal pathogen specified under SAPO. In all cases the relevant containment and operating requirements laid down by HSE/Defra would need to be met.</p>
-	<p pid="a.32.3/2">Provisions in the Anti-terrorism, Crime and Security Act 2001 place an obligation on managers of laboratories and other premises holding specified pathogens or toxins to notify the authorities and to comply with the security requirements which the police may impose.</p>
-	<p pid="a.32.3/3">There is a wide range of legitimate uses to which DNA sequences may be put and the imposition of onerous controls could discourage valuable scientific research and industry use. The Government do not believe that it is necessary to require suppliers of DNA sequences to be licensed or for them to screen customers or check the intended use of the sequences. But we will continue to monitor the situation as the relevant technologies develop.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.33.0" nospeaker="true" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000082">
-	Drugs: Methamphetamine
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.33.1" speakerid="uk.org.publicwhip/lord/100410" speakername="Lord Maginnis of Drumglass" colon="" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000082">
-	<p pid="a.33.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.33.1/2" qnum="HL6582">What consultations they have had with authorities in the United States concerning the illegal drug methamphetamine; and whether they will introduce legislation to inhibit unlawful access to, and possession of, the component elements required to manufacture this drug.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.32.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.21" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.32.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.22" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.32.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.23" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.24" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.25" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.26" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.33.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000083">
 	<p pid="a.33.2/1">The Advisory Council on the Misuse of Drugs (ACMD), the independent expert body that advises Government on drug misuse issues, has recently recommended that the Government reclassify methylamphetamine from a class B drug to a class A drug. During its deliberations the council closely considered the international experience, including that of the USA. Prior to making the recommendation, the ACMD monitored and considered related articles on the methylamphetamine situation in the United States and elsewhere. The ACMD has also been in close liaison with agencies including ACPO (Association of Chief Police Officers) and Her Majesties Revenue and Customs (HMRC), who have direct links with equivalent authorities in the United States in relation to methylamphetamine.</p>
 	<p pid="a.33.2/2">The ACMD, in its report on methylamphetamine published in November 2005, recommended that methylamphetamine precursors should be controlled by being added to the European precursor legislation. The ACMD further recommended the removal of the exemption on ephedrine tablets under the European precursor legislation. The Home Office has accepted these recommendations in full and work is currently underway in taking them forward.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.33.3" nospeaker="true" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000085">
-	Energy: Nuclear
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.33.4" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000085">
-	<p pid="a.33.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.33.4/2" qnum="HL6451">What assessment they have made of the views of other European Union member states on the need to develop new generation nuclear power plants; and what was the conclusion of any such assessment.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.27" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.28" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.33.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.29" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.33.5" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="33"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000086">
 	<p pid="a.33.5/1">The Government have carried out no specific assessment on the need for other European Union (EU) member states to develop new nuclear power plants. However, we are aware of the energy policies of other member states, including their views on new nuclear build, through our regular direct contacts at EU level and bilateral meetings, through the regular reporting of our embassies to central government and through other information co-ordinated by the European Commission. Of course, each member state has different energy requirements, dependent on the natural resources available to them and the forms of energy they choose to use.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.34.0" nospeaker="true" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000087">
-	EU: Hazardous Waste Directive
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.34.1" speakerid="uk.org.publicwhip/lord/100616" speakername="Lord Stoddart of Swindon" colon="" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000087">
-	<p pid="a.34.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.34.1/2" qnum="HL6646">Further to the Written Answer by the Lord Sainsbury of Turville on 19 June (<I>WA 57</I>), whether the regulatory impact assessment on the hazardous waste directive will include an assessment of the comparative costs to British industry of (a) implementing the directive; and (b) delaying implementation and thus impeding the free movement of goods across the European Union.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.30" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.31" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.32" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.34.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000088">
 	<p pid="a.34.2/1">Copies of the DTI's final regulatory impact assessment on the restriction of hazardous substances directive were submitted to the Library of the House on <phrase class="date" code="2006-05-25">25 May</phrase> this year. The annualised costs to UK industry have been estimated to be between &pound;91 and &pound;170 million over the next 10 years. Delaying implementation would mean that equipment placed on the UK market would not have incurred their proportion of these costs but any equipment exported to other EU member states would have had to comply to be lawfully placed on the market in those countries. It would not have been economically feasible for companies placing goods on the EU market to run two manufacturing lines.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.34.3" nospeaker="true" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000089">
-	EU: Transfer of Powers
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.34.4" speakerid="uk.org.publicwhip/lord/100616" speakername="Lord Stoddart of Swindon" colon="" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000089">
-	<p pid="a.34.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.34.4/2" qnum="HL6645">Further to the Written Answer by the Lord Triesman on 22 June (<I>WA 97</I>), whether they will now give details of specific powers which have passed from the United Kingdom to the European Union and which have passed back since the implementation of the Treaty on the European Union (the Maastricht Treaty).</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.34.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000090">
-	<p pid="a.34.5/1">I refer the noble Lord to the Answer I gave him on<phrase class="date" code="2006-06-22">22 June 2006</phrase> (<I>Official Report</I>, col. <I>WA 97</I>).</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.34.6" nospeaker="true" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000091">
-	Fish Oil
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.34.7" speakerid="uk.org.publicwhip/lord/100851" speakername="Baroness Tonge" colon="" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000091">
-	<p pid="a.34.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.34.7/2" qnum="HL6323">What discussions they have held with the Medical Research Council concerning the giving of fish oil supplements to children.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.34.8" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="34"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000092">
-	<p pid="a.34.8/1">The Department of Health and the Food Standards Agency (FSA) have not entered into any discussion with the Medical Research Council concerning the provision of fish oil supplements to children. However, the FSA is currently conducting a systematic review of research looking at the effect of nutrition and diet on the performance and behaviour of children in schools. This includes investigating studies that have used omega 3 and 6 fish oil supplements in schools.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.35.0" nospeaker="true" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000093">
-	Immigration: Independent Monitor for Entry Clearance
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.35.1" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000093">
-	<p pid="a.35.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.35.1/2" qnum="HL6629">Further to the Written Answers by the Lord Triesman on 15 March (<I>WA 231-2</I>) and 23 May (<I>WA 94</I>), why the report of Ms Fiona Lindsley, the previous Independent Monitor for Entry Clearance, which was originally agreed on 22 January and resubmitted to the Secretary of State for Foreign and Commonwealth Affairs on 17 May, has not yet been published.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.35.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000094">
-	<p pid="a.35.2/1">Ms Lindsley's report is currently with my right honourable friend the Foreign Secretary for further consideration and it will be laid before Parliament once she has approved it.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.35.3" nospeaker="true" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000095">
-	NHS: Independent Sector Treatment Centres
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.35.4" speakerid="uk.org.publicwhip/lord/100305" speakername="Earl Howe" colon="" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000095">
-	<p pid="a.35.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.35.4/2" qnum="HL6612">What are the terms of reference of the review to be carried out by the Healthcare Commission into the quality of care provided by independent sector treatment centres on behalf of the National Health Service; and whether the report of the review will be published in full.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.35.5" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000096">
-	<p pid="a.35.5/1">The commission is finalising the terms of reference for its review and will publish them when completed.</p>
-	<p pid="a.35.5/2">As required by Section 52(7) of the Health and Social Care (Community Health and Standards)Act 2003, the commission will publish a report of its review.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.35.6" nospeaker="true" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000098">
-	NHS: Royal Victoria Hospital Belfast
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.35.7" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000098">
-	<p pid="a.35.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.35.7/2" qnum="HL6087">When the Royal Victoria Hospital in Belfast purchased the joint telephone and entertainment units for each bed; how much the units cost; and what is the expected percentage of units which should be in working order at any one time.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.35.8" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="35"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000099">
-	<p pid="a.35.8/1">Patientline UK Ltd currently provides joint telephone and entertainment units at the patient's bedside within the Royal Hospitals Group Trust. Patientline UK Ltd is responsible for the availability of units and their ongoing service and maintenance. The provision of this service does not involve any capital or revenue expenditure by the trust and the trust is not aware of the current cost of replacing these units. The trust does not benefit from any income earned through use of these units.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.36.0" nospeaker="true" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000100">
-	Northern Ireland Events Company
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.36.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000100">
-	<p pid="a.36.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.36.1/2" qnum="HL6335">Whether the Northern Ireland Events Company has been asked to process grant applications which will not be paid out of the organisation's budgets; and, if so, where the funding is being transferred from; why it is being transferred; and what organisations are involved.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.36.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000101">
-	<p pid="a.36.2/1">The Department of Culture, Arts and Leisure has not asked the Northern Ireland Events Company to process any grant application that will not be paid out of that organisation's budget.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.36.3" nospeaker="true" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000102">
-	Prisoners: Early Release
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.36.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000102">
-	<p pid="a.36.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.36.4/2" qnum="HL5820">Whether they will make representations to the Police Service of Northern Ireland concerning convicted prisoners who are on early release from prison in the Irish Republic and who visit Northern Ireland.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.36.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000103">
-	<p pid="a.36.5/1">The noble Lord's concern has been drawn to the attention of the chief constable.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.36.6" nospeaker="true" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000104">
-	Probation Service
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.36.7" speakerid="uk.org.publicwhip/lord/100610" speakername="Baroness Stern" colon="" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000104">
-	<p pid="a.36.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.36.7/2" qnum="HL5841">What plans they have to merge probation services.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.33" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.34" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.35" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.6" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.36" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.7" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.37" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.34.8" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.38" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.39" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.40" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.41" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.42" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.43" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.44" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.6" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.45" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.7" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.46" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.35.8" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.47" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.48" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.49" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.50" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.51" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.52" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.53" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.6" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.54" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.7" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.55" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.8" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.56" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.36.8" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0197.htm#06070470000105">
 	<p pid="a.36.8/1">No decision has been made regarding the merger of probation areas. Consideration is being given to the impact on the Probation Service of the proposed police reform and the proposed creation of probation trusts.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.36.9" nospeaker="true" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000106">
-	Public Bodies: Chairmen
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.36.10" speakerid="uk.org.publicwhip/lord/100911" speakername="Lord Lee of Trafford" colon="" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000106">
-	<p pid="a.36.10/1">asked Her Majesty's Government:</p>
-	<p pid="a.36.10/2" qnum="HL6528">What are the salary and time requirements for all chairmen of public bodies appointed by the Secretary of State for Trade and Industry.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.9" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.57" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.10" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.58" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.36.11" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.59" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.36.11" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="36"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000107">
 	<p pid="a.36.11/1">Details of the remuneration of the chairs of public bodies appointed by the Secretary of State for Trade and Industry are published in the annual Cabinet Office publication <I>Public Bodies</I>. Details of chairs appointed after <phrase class="date" code="2005-03-31">31 March 2005</phrase> are contained at Annex B7, pages 223-231 of the DTI's departmental report 2006. All the chairs are part-time.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.37.0" nospeaker="true" inserted-heading="true" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000108">
-	Public Bodies: Chairmen
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.37.1" speakerid="uk.org.publicwhip/lord/100911" speakername="Lord Lee of Trafford" colon="" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000108">
-	<p pid="a.37.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.37.1/2" qnum="HL6530">What are the salary and time requirements for all chairmen of public bodies appointed by the Secretary of State for Health.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.37.2" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000109">
-	<p pid="a.37.2/1">Details of the remuneration for chairs of public bodies sponsored by the Department of Health may be found under &quot;People in Post 2006&quot; at <a href="http://www.appointments.org.uk/publications.asp">www.appointments.org.uk/publications.asp</a>.</p>
-	<p pid="a.37.2/2">Copies of the publications will be placed in the Library. The time commitment of the chair varies between each body. For National Health Service bodies, chairs are expected to work at least three days a week.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.37.3" nospeaker="true" inserted-heading="true" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000111">
-	Public Bodies: Chairmen
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.37.4" speakerid="uk.org.publicwhip/lord/100911" speakername="Lord Lee of Trafford" colon="" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000111">
-	<p pid="a.37.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.37.4/2" qnum="HL6533">What are the salary and time requirements for all chairmen of public bodies appointed by the Secretary of State for Northern Ireland.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.60" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.61" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.62" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.63" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.64" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.37.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.65" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.37.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="37"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000112">
 	<p pid="a.37.5/1">The remuneration and time commitments of chairs/members of all Northern Ireland Office public bodies are published each year in the Northern Ireland Office departmental report. Similar information for bodies sponsored by Northern Ireland's 11 government departments is published in their annual <I>Public Appointments Annual Report</I>. Copies of the latest versions of both these reports are available from the Library of the House and can be found on the Internet at <a href="http://www.nio.gov.uk/nio_departmental_report_2006.pdf">www.nio.gov.uk/nio_departmental_report_2006.pdf</a> and <a href="http://www.ofmdfmni.gov.uk/public-appointments">www.ofmdfmni.gov.uk/public-appointments</a>.</p>
 	<p pid="a.37.5/2">The Secretary of State appoints all chairs of the Northern Ireland Office bodies listed in the departmental report excluding:</p>
@@ -378,29 +181,12 @@
 	<p pid="a.37.5/12">The Water Appeals Commission (OFMDFM)</p>
 	<p pid="a.37.5/13">The relevant pages on the internet are 157-168 and volume 2, 153, 234-236 respectively.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.38.0" nospeaker="true" inserted-heading="true" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000125">
-	Public Bodies: Chairmen
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.38.1" speakerid="uk.org.publicwhip/lord/100911" speakername="Lord Lee of Trafford" colon="" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000125">
-	<p pid="a.38.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.38.1/2" qnum="HL6555">What are the salary and time requirements for all chairmen of public bodies appointed by the Secretary of State for Wales.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.38.2" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000126">
-	<p pid="a.38.2/1">Following the devolution settlement in 1999, responsibility for appointments that were made by the Secretary of State for Wales to public bodies was transferred to the National Assembly for Wales. The Secretary of State for Wales does not make any appointments to public bodies.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.38.3" nospeaker="true" inserted-heading="true" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000127">
-	Public Bodies: Chairmen
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.38.4" speakerid="uk.org.publicwhip/lord/100911" speakername="Lord Lee of Trafford" colon="" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000127">
-	<p pid="a.38.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.38.4/2" qnum="HL6556">What are the salary and time requirements for all chairmen of public bodies appointed by the Secretary of State for Education and Skills.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.66" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.67" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.68" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.69" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.70" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.38.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.71" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-07-04a.38.5" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="38"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000128">
 	<p pid="a.38.5/1">The remuneration and time commitment for the chairs of the Department for Education and Skills' non-departmental public bodies are set out in the table below. The information is correct as at <phrase class="date" code="2006-03-31">31 March 2006</phrase>.</p>
 	<table>
@@ -437,98 +223,23 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.40.0" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000138">
-	Schools: Classroom Assistants
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.40.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000138">
-	<p pid="a.40.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.40.1/2" qnum="HL6552">Whether education and library boards in Northern Ireland have arrangements in place to provide Roman Catholic maintained schools with Roman Catholic classroom assistants, and controlled schools with Protestant classroom assistants; and whether there is equality of opportunity on religious grounds for classroom assistants employed by the boards.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.40.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000139">
-	<p pid="a.40.2/1">No such arrangements are in place. Classroom assistants, in common with other non-teaching staff, are employed by the education and library boards in accordance with the ELB code of procedure and the principles of appointment on merit. Permanent substantive posts are publicly advertised and it is made clear that such posts are open to all sections of the community.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.40.3" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000140">
-	Schools: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.40.4" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000140">
-	<p pid="a.40.4/1">asked Her Majesty's Government:</p>
-	<p pid="a.40.4/2" qnum="HL6466">How much the Northern Ireland Department of Education has spent on (a) Irish language and culture teaching in schools; and (b) Ulster-Scots language and culture teaching in schools in each of the past five years.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.40.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000141">
-	<p pid="a.40.5/1">The Department of Education allocates funds to schools on the basis of the common funding formula and it is a matter for schools to determine their spending. The department has supported Irish and Ulster-Scots curriculum materials as follows.</p>
-	<table>
-		<tbody>
-			<tr pid="a.40.5/4"> <td>Year</td> <td>Resources</td> <td>Activity</td> </tr>
-			<tr pid="a.40.5/5"> <td>2005-06</td> <td>&pound;49,000</td> <td>Ulster-Scots primary materials</td> </tr>
-			<tr pid="a.40.5/6"> <td></td> <td>&pound;67,000</td> <td>Irish language Key Stage 3 materials</td> </tr>
-			<tr pid="a.40.5/7"> <td>2004-05</td> <td>Nil</td> <td></td> </tr>
-			<tr pid="a.40.5/8"> <td>2003-04</td> <td>&pound;86,000</td> <td>Irish-medium primary reading and mathematics schemes</td> </tr>
-			<tr pid="a.40.5/9"> <td>2002-03</td> <td>Nil</td> <td></td> </tr>
-			<tr pid="a.40.5/10"> <td>2001-02</td> <td>Nil</td> <td></td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.40.6" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000156">
-	Sexual Offences: Mental Health Accommodation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.40.7" speakerid="uk.org.publicwhip/lord/100791" speakername="Baroness Murphy" colon="" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000156">
-	<p pid="a.40.7/1">asked Her Majesty's Government:</p>
-	<p pid="a.40.7/2" qnum="HL6495">When they plan to publish the data they hold on rapes and sexual assaults, both staff on patient and patient on patient, in mental health accommodation.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.40.8" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000157">
-	<p pid="a.40.8/1">The requested data are not collected centrally. The National Patient Safety Agency collects reports of patient safety incidents. The second report from the agency on its national reporting and learning system and patient safety observatory is currently being developed and will be published later this year. It will include a detailed themed analysis of patient safety incidents reported in mental health settings.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.40.9" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000158">
-	Smoking: Northern Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.40.10" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000158">
-	<p pid="a.40.10/1">asked Her Majesty's Government:</p>
-	<p pid="a.40.10/2" qnum="HL6539">What arrangements are being put in place to assist with the restrictions on smoking in public places in Northern Ireland.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.40.11" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000159">
-	<p pid="a.40.11/1">Preliminary discussions with a range of agencies have taken place to assess the implications of smoke-free legislation, which is scheduled to be introduced in April 2007. Once the draft Smoking (Northern Ireland) Order 2006 has completed its legislative process, further discussions will take place and guidance will be issued to employers, enforcement officers and the general public.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.40.12" nospeaker="true" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000160">
-	Sport: Rally Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.40.13" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000160">
-	<p pid="a.40.13/1">asked Her Majesty's Government:</p>
-	<p pid="a.40.13/2" qnum="HL6279">How the value of Rally Ireland to Northern Ireland was assessed; by whom it was assessed and when; and whether they will place a copy of the assessment in the Library of the House.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.40.14" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="40"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000161">
-	<p pid="a.40.14/1">A feasibility study was carried out by TCC International on behalf of the Northern Ireland Events Company and Failte Ireland in May 2005, followed by an economic appraisal in August 2005. An anticipated value to Northern Ireland was included in the report.</p>
-	<p pid="a.40.14/2">An independent evaluation of the event is being carried out on behalf of NIEC. It is expected that a final evaluation report will be completed by the end of July 2006.</p>
-	<p pid="a.40.14/3">A similar evaluation is being completed for the March 2006 event. It is expected to be completed by September 2006.</p>
-	<p pid="a.40.14/4">A decision on the release of these reports will be made when they have been completed. Rally Ireland has also completed its own evaluations of both events.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-07-04a.41.0" nospeaker="true" colnum="41"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000165">
-	Waterways Ireland
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-07-04a.41.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="41"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000165">
-	<p pid="a.41.1/1">asked Her Majesty's Government:</p>
-	<p pid="a.41.1/2" qnum="HL6088">To what extent Waterways Ireland is publicly accountable; and who is responsible for ensuring its public accountability.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-07-04a.42.0" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="42"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60704w0198.htm#06070470000166">
-	<p pid="a.42.0/1">The accountability arrangements for all six implementation bodies, including Waterways Ireland, are set out in points 1.1 to 1.5 of part 7 to annexe 2 of the North/South Co-operation (Implementation Bodies) (Northern Ireland) Order 1999.</p>
-	<p pid="a.42.0/2">The chief executive of Waterways Ireland is the accountable person for the body. In Northern Ireland he is designated by the accounting officer of the Department of Culture, Arts and Leisure (DCAL) and shall report to him/her. If the chief executive of Waterways Ireland was invited to appear before the Public Accounts Committee in Northern Ireland or at Westminster, the Permanent Secretary of DCAL would also normally be expected to attend and could be questioned on issues directly affecting his/her department on the body.</p>
-</reply>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.72" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.73" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.2" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.74" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.3" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.75" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.4" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.76" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.5" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.77" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.6" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.78" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.7" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.79" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.8" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.80" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.9" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.81" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.10" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.82" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.11" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.83" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.12" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.84" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.13" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.85" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.40.14" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.86" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.41.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.87" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.41.1" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.88" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-07-04a.42.0" newgid="uk.org.publicwhip/wrans/2006-07-04b.29.89" matchtype="perfectmatch"/>
 </publicwhip>
 
