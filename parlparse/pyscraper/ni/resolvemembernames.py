@@ -242,7 +242,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		if len(ids) == 0:
 			if not re.search('Some Members|A Member|Several Members|Members', input):
 				raise ContextException, "No matches %s" % (input)
-			return 'speakerid="unknown" error="No match" speakername="%s"' % (input)
+			return None, 'speakerid="unknown" error="No match" speakername="%s"' % (input)
 		if len(ids) > 1 and 'uk.org.publicwhip/member/90355' in ids:
 			# Special case for 8th May, when Mr Hay becomes Speaker
 			if input == 'Mr Hay':
@@ -256,7 +256,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 			for id in ids:
 				names += id + " " + self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
 			raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
-			return 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (input)
+			return None, 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (input)
 		for id in ids:
 			pass
 		remadename = self.members[id]["lastname"]

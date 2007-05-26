@@ -19,11 +19,11 @@ cd ~/parlparse/pyscraper
 
 # Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
 cd ~/parlparse/pyscraper/ni
-./parse.py
+./parse.py $3
 
 # Public Bill Committee transcripts
 cd ~/parlparse/pyscraper/standing
-./parse.py
+./parse.py $3
 
 # Return error code
 exit $RET

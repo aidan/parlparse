@@ -87,6 +87,7 @@ class ParseDay:
 <!ENTITY Iacute  "&#205;">
 <!ENTITY Oacute  "&#211;">
 <!ENTITY Uacute  "&#218;">
+<!ENTITY euml    "&#235;">
 <!ENTITY fnof    "&#402;">
 
 <!ENTITY nbsp    "&#160;">
