@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,30 +51,18 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.19.0" nospeaker="true" colnum="19"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-44.htm#60301-44_head0">
-	Cancer: Herceptin
-</major-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-03-01b.19.1" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="19"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-44.htm#60301-44_spmin0">
-	<p pid="b.19.1/1">My right honourable friend the Secretary of State for Health has made the following Written Ministerial Statement.</p>
-	<p pid="b.19.1/2">Following the recent ruling by the High Court on a decision by Swindon Primary Care Trust concerning the drug, Herceptin, I can confirm to the House that the policy on the prescription and provision of Herceptin for HER2 positive early stage breast cancer, ahead of a decision on licensing or National Institute for Health and Clinical Excellence (NICE) appraisal, remains as set out in the NHS Chief Executive's Bulletin: Issue 294, 4&ndash;<phrase class="date" code="2005-11-10">10 November 2005</phrase>. This is that:</p>
-	<p pid="b.19.1/3" class="indent">it is down to individual clinicians to decide whether to prescribe Herceptin for a woman who has tested HER2 positive after discussions with the woman about potential risks and taking into account her medical history;</p>
-	<p pid="b.19.1/4" class="indent">primary care trusts (PCTs) should not refuse to fund Herceptin solely on the grounds of its cost; and</p>
-	<p pid="b.19.1/5" class="indent">PCTs should not rule out treatments on principle but consider individual circumstances.</p>
-	<p pid="b.19.1/6">This policy does not, in any way, replace either the licensing process or the NICE appraisal process. It is possible for a clinician to prescribe a drug outside its licensed indications (&quot;off-licence&quot; or &quot;off-label&quot; use).</p>
-	<p pid="b.19.1/7">The manufacturers of Herceptin have now applied to the European Medicines Agency for a licence for the use of Herceptin in the treatment of early stage breast cancer and a decision is expected in summer 2006. I referred Herceptin for early stage breast cancer to NICE in July 2005, and in November 2005 I announced that we had agreed with NICE that their evaluation of Herceptin would begin immediately after a licence had been applied for. I can confirm that NICE has now started work on its appraisal. We expect the NICE evaluation to be completed shortly after any licence is granted. NICE technology appraisals are covered by a three-month funding direction. This means that PCTs must provide funding for the uses recommended by NICE within three months of publication to allow clinicians to follow the guidance.</p>
-	<p pid="b.19.1/8">In addition, Professor Mike Richards, the National Cancer Director, is working with cancer networks to ensure that testing arrangements are put in place to enable women who require it to be tested for HER2 status. This work is ongoing.</p>
-</speech>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.19.0" newgid="uk.org.publicwhip/wms/2006-03-01c.19.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.19.1" newgid="uk.org.publicwhip/wms/2006-03-01c.19.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.20.0" newgid="uk.org.publicwhip/wms/2006-03-01c.20.0" matchtype="changes"/>
 <major-heading id="uk.org.publicwhip/wms/2006-03-01b.20.0" nospeaker="true" colnum="20"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-44.htm#60301-44_head1">
 	Immigration
 </major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.20.1" newgid="uk.org.publicwhip/wms/2006-03-01c.20.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.20.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="20"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-44.htm#60301-44_spmin1">
 	<p pid="b.20.1/1"><phrase class="honfriend" id="uk.org.publicwhip/member/1618" name="Tony McNulty">My honourable friend the Minister for Immigration, Citizenship and Nationality (Tony McNulty)</phrase> has made the following Written Ministerial Statement.</p>
 	<p pid="b.20.1/2">The Government are firmly committed to maintaining effective immigration controls while at the same time ensuring that genuine passengers are able to pass through our ports with the least possible inconvenience.</p>
@@ -74,31 +71,22 @@
 	<p pid="b.20.1/5">I would want to provide reassurance that the presence of a visa regime should not be a bar to those Malawi nationals who genuinely wish to visit the UK. The rules under which decisions are made are the same whether that decision is made on arrival or before. This visa regime simply allows officials to consider the application before the passenger embarks for the UK. Providing greater certainty that a person has satisfied the Immigration Rules will also smooth the passage of genuine visitors through the immigration controls, giving advantage to all concerned.</p>
 	<p pid="b.20.1/6">I recognise that visa regimes represent an inconvenience for some passengers and we will therefore only maintain them where the immigration threat is such as to justify doing so. At present Croatia nationals require a visa in order to visit the UK. However, I judge that there is no longer any significant threat to our immigration controls from Croatia nationals. I have therefore decided that the visa regime should be lifted and standard on-entry immigration controls will apply. Changes to the Immigration Rules will have been made today and the visa regime will be lifted from on <phrase class="date" code="2006-03-22">22 March</phrase>.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.21.0" nospeaker="true" colnum="21"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head0">
-	Inquiries Act 2005
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.21.0" newgid="uk.org.publicwhip/wms/2006-03-01c.21.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.21.1" newgid="uk.org.publicwhip/wms/2006-03-01c.21.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.21.1" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="21"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spmin0">
 	<p pid="b.21.1/1">I have today published a public consultation paper on the draft rules of procedure to accompany the Inquiries Act 2005. Copies have been placed in the Libraries of both Houses. The consultation is aimed at those people with an interest in and experience of inquiries.</p>
 	<p pid="b.21.1/2">The Inquiries Act received Royal Assent on <phrase class="date" code="2005-04-07">7 April 2005</phrase> and the provisions were commenced from <phrase class="date" code="2006-06-07">7 June</phrase>. The Act provides a framework for inquiries within the United Kingdom, established by Ministers, into events that have caused or are capable of causing public concern. Section 41 of the Act contains provisions for the making of rules.</p>
 	<p pid="b.21.1/3">The rules are intended to build upon the best practice of recent inquiries. In particular they set out the procedures for applying for publicly funded legal representation, requiring rates and extent of work to be agreed in advance. This is intended to help the inquiry control costs and avoid disputes over the payment of bills. The rules also assist the chairman in controlling oral proceedings and seek to prevent extensive and costly cross-examination procedures.</p>
 	<p pid="b.21.1/4">Once laid, the rules would apply to all inquiries established by UK Ministers. Devolved administrations have powers to make rules in respect of any inquiries for which they are responsible. Where an inquiry covers issues that cross administrations the commissioning Minister, or Ministers, in respect of joint inquiries, would specify which set of rules was to be applied, or whether a combination of rules was to be adopted.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.21.2" nospeaker="true" colnum="21"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head1">
-	Ministry of Defence: Race Equality Scheme
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.21.2" newgid="uk.org.publicwhip/wms/2006-03-01c.21.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.21.3" newgid="uk.org.publicwhip/wms/2006-03-01c.21.3" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.21.3" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="21"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spmin1">
 	<p pid="b.21.3/1">My honourable friend the Parliamentary Under-Secretary of State for Defence (Don Touhig) has made the following Written Ministerial Statement.</p>
 	<p pid="b.21.3/2">To meet the undertakings in its race equality scheme, the Ministry of Defence has produced a third progress report against its race equality scheme 2002&ndash;05. The report covers the period August 2004 to July 2005. A copy of the report is being placed in the Library of the House on the Ministry of Defence's website. All the evidence shows that the department continues to have a good record in managing and retaining the ethnic minority personnel. There is no evidence of discrimination in performance appraisal and promotion and the level of race-related complaints continues to be low.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.22.0" nospeaker="true" colnum="22"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head2">
-	Planning: Listed Buildings
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.22.0" newgid="uk.org.publicwhip/wms/2006-03-01c.22.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.22.1" newgid="uk.org.publicwhip/wms/2006-03-01c.22.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.22.1" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="22"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spmin2">
 	<p pid="b.22.1/1">My honourable friend the Minister for Housing and Planning has made the following Written Ministerial Statement.</p>
 	<p pid="b.22.1/2">The ODPM is today publishing a consultation paper on the handling of certain planning applications and appeals relating to listed buildings in England. Copies of the consultation document have been placed in the Libraries of both Houses. Any comments are requested by <phrase class="date" code="2006-05-24">24 May</phrase>.</p>
@@ -111,33 +99,16 @@
 	<p pid="b.22.1/9">While remaining committed to the protection of listed buildings, the Government are keen that unnecessary delays, and the additional bureaucracy for local authorities and applicants, are removed from the system. We therefore now propose that listed building consent applications received by local planning authorities outside Greater London, to which English Heritage has raised no written objections, will not require notification to the Secretary of State. Where English Heritage has expressed concerns, the Secretary of State would still require notification. Applications within Greater London will still be referred to English Heritage.</p>
 	<p pid="b.22.1/10">The proposal will not apply to applications made by either a local authority or English Heritage for listed building consent, which will continue to be determined by the Secretary of State.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.23.0" nospeaker="true" colnum="23"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head3">
-	Railways: London and Continental
-</major-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-03-01b.23.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="23"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spnew0">
-	<p pid="b.23.1/1">My right honourable friend the Secretary of State for Transport (Alistair Darling) has made the following Ministerial Statement.</p>
-	<p pid="b.23.1/2">I announced on <phrase class="date" code="2006-02-14">14 February 2006</phrase> that my department had been independently approached by a third party, with an interest in the potential acquisition of the shareholders' interests in London and Continental Railways (LCR). LCR is the company responsible for the development of the Channel Tunnel Rail Link, including the railway itself, the associated development sites and the operation of the UK interest in the Eurostar train company.</p>
-	<p pid="b.23.1/3">LCR is a heavily indebted company, owned by private-sector shareholders, but funded by approximately &pound;6 billion of government-backed debt. In recognition of this government support, the contracts governing the development of the Channel Tunnel Rail Link give the Government certain rights, including the right to consent, refuse or force a sale.</p>
-	<p pid="b.23.1/4">The Government believe that, in the current circumstances, the best way of delivering continuing value for money for the taxpayer is for there to be an open, transparent, competitive process. Accordingly, as a first step, potentially interested parties should put their propositions to my department as well as to the LCR shareholders, so that we can establish how overall best value for the taxpayer can be achieved.</p>
-	<p pid="b.23.1/5">My department is continuing to discuss this approach with LCR's shareholders so as to ensure value and transparency, with a level playing field for all participants, including the incumbents.</p>
-	<p pid="b.23.1/6">The Government's objective will be to ensure continuing value for taxpayers' money, including the successful delivery of the Channel Tunnel Rail Link and the continuing safe and efficient operation of Eurostar, as, for instance, under the existing arrangements whereby the Government are entitled to a 50 per cent share of any future profits on the development of the sites around the CTRL.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.24.0" nospeaker="true" colnum="24"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head4">
-	Reserve Forces
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.23.0" newgid="uk.org.publicwhip/wms/2006-03-01c.23.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.23.1" newgid="uk.org.publicwhip/wms/2006-03-01c.23.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.24.0" newgid="uk.org.publicwhip/wms/2006-03-01c.24.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.24.1" newgid="uk.org.publicwhip/wms/2006-03-01c.24.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.24.1" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="24"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spmin3">
 	<p pid="b.24.1/1">My right honourable friend the Minister of State for the Armed Forces (Adam Ingram) has made the following Written Ministerial Statement.</p>
 	<p pid="b.24.1/2">A new call-out order has been made under Section 56 of the Reserve Forces Act 1996 so that reservists may continue to be called out to support UN operations in Sierra Leone and the Democratic Republic of the Congo. The order takes effect from <phrase class="date" code="2006-03-01">1 March 2006</phrase>. There are no plans to call-out reservists compulsorily under this order as it is expected that the small numbers needed will be met through volunteers.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.24.2" nospeaker="true" colnum="24"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_head5">
-	Child Protection: Safeguarding Vulnerable Groups
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.24.2" newgid="uk.org.publicwhip/wms/2006-03-01c.24.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.24.3" newgid="uk.org.publicwhip/wms/2006-03-01c.24.3" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.24.3" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="24"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-45.htm#60301-45_spmin4">
 	<p pid="b.24.3/1">My right honourable friend the Secretary of State (Ruth Kelly) has made the following Written Ministerial Statement.</p>
 	<p pid="b.24.3/2">On <phrase class="date" code="2006-01-19">19 January 2006</phrase>, I made an oral Statement to the House about arrangements for vetting those working with children, and for barring those who are unsuitable. In the course of my Statement, I made a number of commitments and I would like to update the House on progress.</p>
@@ -206,11 +177,8 @@
 	<p pid="b.24.3/65">These changes represent the first stage in a programme of work which has begun to deliver in practice on the commitments I made on the <phrase class="date" code="2006-01-19">19 January</phrase>. These measures together will bring about fundamental reform and will significantly strengthen the current system. However, while government have a responsibility to set the right framework, employers, parents and the police have a responsibility to use the powers and checks we are putting in place to make sure the system works to protect children.</p>
 	<p pid="b.24.3/66">Safeguarding is everyone's business and we must all play our part. By working together we can ensure children are better protected.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-03-01b.28.0" nospeaker="true" colnum="28"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-46.htm#60301-46_head0">
-	Supreme Court
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.28.0" newgid="uk.org.publicwhip/wms/2006-03-01c.28.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-03-01b.28.1" newgid="uk.org.publicwhip/wms/2006-03-01c.28.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-03-01b.28.1" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="28"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60301-46.htm#60301-46_spmin0">
 	<p pid="b.28.1/1">The location and the setting for the UK Supreme Court should be a reflection of its importance and its place at the apex of the justice system, and the heart of the constitution.</p>
 	<p pid="b.28.1/2">The Supreme Court Implementation Programme has taken a significant step towards delivering a world-class organisation in a location that properly meets the expectations of the public, the Law Lords, the legal profession and court users.</p>

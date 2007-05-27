@@ -9,6 +9,11 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +30,16 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
 <!ENTITY uuml   "&#252;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,33 +51,20 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.73.0" nospeaker="true" colnum="73"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_wqn0">
-	Armed Forces: Royal Irish Regiment
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.73.1" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="73"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_wqn0">
-	<p pid="b.73.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.73.1/2" qnum="HL4744">When they expect to announce the details of the after-care package for the widows and families of members of the Royal Irish Regiment home service battalions and the Ulster Defence Regiment killed in the course of their duties (as stated by the right honourable Adam Ingram MP to Lady Hermon MP on 9 March (Official Report, col. 906).</p>
-</ques>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.73.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.73.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.73.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.73.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.73.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.73.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-03-23b.73.2" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="73"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_spmin0">
 	<p pid="b.73.2/1">As my right honourable friend the Minister of State for the Armed Forces said in his Statement on <phrase class="date" code="2006-03-09">9 March</phrase> in another place, work is continuing to develop the precise elements of the aftercare package. We recognise the interest in the outcome of this detailed work and we are keen to tell members of the Home Service at the earliest opportunity.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.73.3" nospeaker="true" colnum="73"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_wqn1">
-	Cancer: Cervical
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.73.4" speakerid="uk.org.publicwhip/lord/100250" speakername="Baroness Gould of Potternewton" colon="" colnum="73"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_wqn1">
-	<p pid="b.73.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.73.4/2" qnum="HL4663">(a) how many cases of cervical cancer there have been since 1995; and (b) what the mortality rates for cervical cancer have been since 1995, in each case broken down by Strategic Health Authority.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.73.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.73.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.73.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.73.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.74.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.74.0" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-03-23b.74.0" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="74"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w01.htm#60323w01_spnew0">
 	<p pid="b.74.0/1">The Information requested falls within the responsibility of the National Statistician who has been asked to reply.</p>
 	<p pid="b.74.0/2" class="letterfrom">Letter from Karen Dunnell, National Statistician and Registrar General to Baroness Gould dated <phrase class="date" code="2006-03-23">23 March 2006</phrase></p>
@@ -180,304 +176,76 @@
 	</table>
 	<p pid="b.74.0/109"><sup>1</sup> Rate per 100,000 standardised to the European standard population. 2 Data selected using the International Classification of Diseases, Ninth Revision (ICD9) code 180 for the years 1995 to 2000, and the International Classification of Diseases, Tenth Revision (ICD10) C53 for 2001 onwards. 3 Data are for registrations of death in each calendar year. Source: Office for National Statistics</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.77.0" nospeaker="true" inserted-heading="true" colnum="77"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn0">
-	Cancer: Cervical
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.77.1" speakerid="uk.org.publicwhip/lord/100250" speakername="Baroness Gould of Potternewton" colon="" colnum="77"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn0">
-	<p pid="b.77.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.77.1/2" qnum="HL4664">What analysis they have undertaken to assess the impact which a human papillomavirus vaccine would have on (a) the number of cases of cervical cancer; (b) the treatment costs of cervical cancer; and (c) targeting health inequalities; and</p>
-	<p pid="b.77.1/3" qnum="HL4666">What analysis they have undertaken to assess the additional impact a human papillomavirus vaccine would have on (a) assisting access to genito-urinary clinics within 48 hours; and (b) the treatment costs of genital warts.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.77.2" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="77"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spmin0">
-	<p pid="b.77.2/1">The Department of Health is taking a joined-up approach in considering the development of the human papillomavirus vaccines. Officials from the department's vaccine, cancer and sexual health teams are in continuing discussions with NHS Cancer Screening Programmes, the Health Protection Agency, the National Institute for Biological Standards and Control, the National Institute for Health and Clinical Excellence and prominent researchers in the field.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.78.0" nospeaker="true" colnum="78"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn1">
-	Children: Custody
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.78.1" speakerid="uk.org.publicwhip/lord/100367" speakername="Lord Lester of Herne Hill" colon="" colnum="78"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn1">
-	<p pid="b.78.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.78.1/2" qnum="HL4870">Whether they will implement the recommendations made in the Lord Carlile of Berriew's independent inquiry into the use of physical restraint, solitary confinement and forcible strip searching of children in prisons, secure training centres and local authority secure children's homes.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.78.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="78"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spmin1">
-	<p pid="b.78.2/1">I refer the noble Lord to the reply I gave the noble Baroness, Lady Stern, on <phrase class="date" code="2006-03-14">14 March 2006</phrase>, (Official Report, col. 1093).</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.79.0" nospeaker="true" colnum="79"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn2">
-	Civil Partnerships: Foreign Countries
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.79.1" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="79"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn2">
-	<p pid="b.79.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.79.1/2" qnum="HL4631">Which governments of foreign territories have been asked whether they have any objection to the British Consulate in that territory registering same-sex partnerships between (a) two British nationals; (b) a British national and a national of the territory concerned; or (c) a British national and a national of some other foreign country; and, in each case, what was the name of the territory or state; the date of the request; the date of the reply; and whether the registration of each type of partnership was acceptable.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.79.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="79"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spmin2">
-	<p pid="b.79.2/1">In April 2004, all British Consulates were asked to send a note to their respective Ministries of Foreign Affairs inquiring whether there would be any objection to the consulate registering a same-sex partnership between either two British nationals; a British national and a national of the territory concerned, or a British national and another national of a foreign country.</p>
-	<p pid="b.79.2/2">Consulates kept a record of the correspondence and the subsequent reply. To date, the following foreign governments have agreed to British consulates registering same-sex partnerships in categories (a), (b) and (c):</p>
-	<table>
-		<tbody>
-			<tr pid="b.79.2/5"> <td>Country</td> <td>Date note received</td> </tr>
-			<tr pid="b.79.2/6"> <td>Australia</td> <td>13/11/05</td> </tr>
-			<tr pid="b.79.2/7"> <td>Colombia</td> <td>30/6/05</td> </tr>
-			<tr pid="b.79.2/8"> <td>Costa Rica</td> <td>13/7/05</td> </tr>
-			<tr pid="b.79.2/9"> <td>Czech Republic</td> <td>13/6/05</td> </tr>
-			<tr pid="b.79.2/10"> <td>Hungary</td> <td>26/5/05</td> </tr>
-			<tr pid="b.79.2/11"> <td>Ireland</td> <td>8/12/05</td> </tr>
-			<tr pid="b.79.2/12"> <td>Japan</td> <td>19/4/05</td> </tr>
-			<tr pid="b.79.2/13"> <td>Moldova</td> <td>10/10/05</td> </tr>
-			<tr pid="b.79.2/14"> <td>Portugal</td> <td>20/12/05</td> </tr>
-			<tr pid="b.79.2/15"> <td>South Africa</td> <td>7/11/05</td> </tr>
-			<tr pid="b.79.2/16"> <td>Switzerland</td> <td>20/6/05</td> </tr>
-			<tr pid="b.79.2/17"> <td>Turkmenistan</td> <td>23/5/05</td> </tr>
-			<tr pid="b.79.2/18"> <td>Uruguay</td> <td>18/1/06</td> </tr>
-		</tbody>
-	</table>
-	<p pid="b.79.2/21">British Consular staff can register same-sex partnerships in the following countries provided these are between two British nationals or a British national and a national of a third country.</p>
-	<table>
-		<tbody>
-			<tr pid="b.79.2/24"> <td>Country</td> <td>Date note received</td> </tr>
-			<tr pid="b.79.2/25"> <td>Croatia</td> <td>30/11/05</td> </tr>
-			<tr pid="b.79.2/26"> <td>Latvia</td> <td>16/12/05</td> </tr>
-			<tr pid="b.79.2/27"> <td>Mongolia</td> <td>30/5/05</td> </tr>
-			<tr pid="b.79.2/28"> <td>Vietnam</td> <td>26/4/05</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.79.3" nospeaker="true" colnum="79"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn3">
-	Civil Service
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.79.4" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="79"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn3">
-	<p pid="b.79.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.79.4/2" qnum="HL4715">Which of the ministerial gifts detailed on the Cabinet Office website which were received by the Prime Minister since June 2001 were (a) received overseas; and (b) received within the United Kingdom.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.80.0" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spnew0">
-	<p pid="b.80.0/1">The detailed information requested is not recorded in such a way that can be provided without incurring disproportionate costs.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.80.1" nospeaker="true" inserted-heading="true" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn4">
-	Civil Service
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.80.2" speakerid="uk.org.publicwhip/lord/100684" speakername="Baroness Wilcox" colon="" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn4">
-	<p pid="b.80.2/1">asked Her Majesty's Government:</p>
-	<p pid="b.80.2/2" qnum="HL4771">Whether the fact they were able to bring forward at short notice revisions to the Civil Service Code strengthens the case for the Civil Service Bill so that the service's core values are enshrined in primary legislation; and</p>
-	<p pid="b.80.2/3" qnum="HL4772">Whether in finalising the revised Civil Service Code they will ensure that it states explicitly that special advisers are, except for political impartiality, required to observe the key Civil Service values of integrity, honesty, objectivity and impartiality.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.77.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.77.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.77.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.77.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.77.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.77.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.78.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.78.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.78.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.78.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.78.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.78.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.79.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.79.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.79.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.79.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.79.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.79.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.79.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.79.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.79.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.79.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.3" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-03-23b.80.3" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spnew1">
 	<p pid="b.80.3/1">Consultation on a new Civil Service Code was launched on <phrase class="date" code="2006-01-27">27 January 2006</phrase>. In launching the consultation, the Cabinet Secretary said that the new code reaffirmed the historic Civil Service values of integrity, honesty, objectivity and impartiality.</p>
 	<p pid="b.80.3/2">The consultation period for the new Civil Service Code ends on <phrase class="date" code="2006-04-21">21 April</phrase>. The Government will then consider the responses received before finalising the new code.</p>
 	<p pid="b.80.3/3">The Government are considering the responses received to their proposals for legislation for the Civil Service.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.80.4" nospeaker="true" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn5">
-	EU: Defence
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.80.5" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn5">
-	<p pid="b.80.5/1">asked Her Majesty's Government:</p>
-	<p pid="b.80.5/2" qnum="HL4685">To what extent the confirmation by European Union defence Ministers of the policy to move towards a European defence industry will require the United Kingdom to purchase defence equipment exclusively from European Union countries.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.80.6" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spmin3">
-	<p pid="b.80.6/1">The United Kingdom is working with European partners and institutions to improve both the effectiveness of the European defence equipment market (through greater openness and use of competition) and the efficiency of European defence industries. None of these initiatives would require the UK to purchase defence equipment exclusively from European Union countries. All member states will remain free to look beyond Europe for their military capability if they so wish.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.80.7" nospeaker="true" inserted-heading="true" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn6">
-	EU: Defence
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.80.8" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="80"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn6">
-	<p pid="b.80.8/1">asked Her Majesty's Government:</p>
-	<p pid="b.80.8/2" qnum="HL4686">Whether, following the establishment of the European defence strategy, the United States will no longer share sensitive technological information with the United Kingdom.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.81.0" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spnew2">
-	<p pid="b.81.0/1">The United States supports and encourages EU member states working together to improve their defence capabilities, which would be available nationally and to both NATO and the EU. The United States continues to share sensitive technological information with the United Kingdom, as it always has, where it is in our mutual security interests to do so.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.81.1" nospeaker="true" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn7">
-	Euro
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.81.2" speakerid="uk.org.publicwhip/lord/100491" speakername="Lord Pearson of Rannoch" colon="" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn7">
-	<p pid="b.81.2/1">asked Her Majesty's Government:</p>
-	<p pid="b.81.2/2" qnum="HL4711">Whether their pledge to hold a binding referendum on whether or not the United Kingdom should adopt the euro is still in force; and, if so, whether the pledge will remain in force for the remainder of this Parliament.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.81.3" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spnew3">
-	<p pid="b.81.3/1">The Government's policy on membership of the single currency is unchanged. It remains as set out by the Chancellor in his Statements to the House of Commons in October 1997 and in June 2003.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.81.4" nospeaker="true" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn8">
-	Films
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.81.5" speakerid="uk.org.publicwhip/lord/100381" speakername="Lord Lloyd-Webber" colon="" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn8">
-	<p pid="b.81.5/1">asked Her Majesty's Government:</p>
-	<p pid="b.81.5/2" qnum="HL4763">How many British films have been made that have taken advantage of the tax concessions introduced in 1997; how many of these have been released; and, of those released, how many have been commercially successful.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.81.6" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spnew4">
-	<p pid="b.81.6/1">The information requested is not available and could be obtained only at disproportionate cost.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.81.7" nospeaker="true" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn9">
-	Freedom of Information
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.81.8" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_wqn9">
-	<p pid="b.81.8/1">asked Her Majesty's Government:</p>
-	<p pid="b.81.8/2" qnum="HL4743">Whether they propose to revise the provisions of the Freedom of Information Act 2000 so that no fees are charged for information provided under the Act.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.81.9" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="81"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w02.htm#60323w02_spmin4">
-	<p pid="b.81.9/1">Under the Freedom of Information Act, there is an appropriate limit, currently &pound;600 for central government and &pound;450 for other public authorities. This is there to prevent authorities being unable to perform their functions because of FoI requests, for which there has to be an upper limit. Under the current regime, departments can also, where appropriate, charge disbursements for providing information to applicants.</p>
-	<p pid="b.81.9/2">After the first full year of its implementation, the Government are conducting an assessment of the Freedom of Information Act and considering its impact to ensure that it is operating well. When the fees regime was introduced, Ministers committed to reviewing its operation after a year. However, no decisions have yet been taken about any changes to the regime.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.82.0" nospeaker="true" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn0">
-	Government Resources: Allocation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.82.1" speakerid="uk.org.publicwhip/lord/100104" speakername="Lord Campbell-Savours" colon="" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn0">
-	<p pid="b.82.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.82.1/2" qnum="HL4689">To what extent government resources are allocated in accordance with (a) census statistics; (b) electoral registration; and (c) other locally related statistics.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.82.2" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spnew0">
-	<p pid="b.82.2/1">The Government aim to allocate resources fairly and efficiently, directed according to need. Statistical data, particularly the Census and other national statistics, play an important role in informing allocative decisions at all levels of government.</p>
-	<p pid="b.82.2/2">In addition to the Census, government departments draw on a wide range of other locally disaggregated statistics to inform resource and policy decisions.</p>
-	<p pid="b.82.2/3">Given that the electoral register only provides basic data for a subset of the adult population, with registration rates varying between localities, it is not generally used to inform resource allocations.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.82.3" nospeaker="true" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn1">
-	Higher Education: Older Students
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.82.4" speakerid="uk.org.publicwhip/lord/100258" speakername="Baroness Greengross" colon="" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn1">
-	<p pid="b.82.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.82.4/2" qnum="HL4755">What steps have been taken to implement the statement in the Opportunity Age strategy that from 2006 there will be no age limit attached to higher education fee loans for older people.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.82.5" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin0">
-	<p pid="b.82.5/1">The Government have made the Education (Student Support) Regulations 2006 which provide fee loans for students starting in 2006&ndash;07, and fee contribution loans for existing students, without any age limits for older students.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.82.6" nospeaker="true" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn2">
-	Immigration: Asylum Judges
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.82.7" speakerid="uk.org.publicwhip/lord/100016" speakername="Baroness Anelay of St Johns" colon="" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn2">
-	<p pid="b.82.7/1">asked Her Majesty's Government:</p>
-	<p pid="b.82.7/2" qnum="HL4688">What progress they have made towards recruiting additional specialist asylum judges to adjudicate the backlog of appeals by asylum seekers.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.82.8" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="82"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin1">
-	<p pid="b.82.8/1" class="askedtoreply">I have been asked to reply. </p>
-	<p pid="b.82.8/2">The Asylum and Immigration Tribunal (AIT) is recruiting an additional 210 fee-paid immigration judges nationally, around 100 of which will be filled by new appointments with the remaining positions being filled by immigration judges who currently have fixed-term non-renewable contracts within the tribunal. It is anticipated that the appointments will be completed by mid-June for London vacancies and the end of September for vacancies in the regions.</p>
-	<p pid="b.82.8/3">There is currently no backlog of asylum appeals at the AIT. However, between April and September 2005 the AIT accrued a backlog of entry clearance and family visitor appeals due to higher volumes of receipts, particularly family visitor appeals, than anticipated. These appeals were processed by the end of December 2005 and now form part of the tribunal's work in progress. They are currently awaiting appeal bundles from the relevant entry clearance posts and will be heard throughout the remainder of this calendar year. Planning for the clearance of these appeals was not contingent upon the appointments of additional immigration judges from the current competitions.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.83.0" nospeaker="true" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn3">
-	Iraq: Military Personnel
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.83.1" speakerid="uk.org.publicwhip/lord/100778" speakername="Lord Garden" colon="" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn3">
-	<p pid="b.83.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.83.1/2" qnum="HL4675">Whether they have a detailed breakdown of how the reduction of 800 personnel in Iraq, announced on 13 March, is to be achieved, including personnel detailed by service, rank and specialisation where a formed unit is not removed.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.83.2" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin2">
-	<p pid="b.83.2/1">The reduction of about 800 personnel in Iraq will be achieved by removing two UK infantry companies and two battalion HQs, which in turn enables us to make reductions in support areas such as logistics, equipment support, engineering field support and medical support. In addition, we are also able to withdraw two Sea King helicopters plus their associated crews.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.83.3" nospeaker="true" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn4">
-	Iraq: Troop Movements
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.83.4" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn4">
-	<p pid="b.83.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.83.4/2" qnum="HL4745">What steps they are taking to reduce the minimum check-in time of four hours for British troops leaving Basra on Royal Air Force flights.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.83.5" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="83"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin3">
-	<p pid="b.83.5/1">Check-in times for those departing from Basra on a RAF C130 is between two hours and one hour before departure. For RAF Tri Star passengers, check-in is between two hours and 40 minutes before departure.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.84.0" nospeaker="true" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn5">
-	Israel and Palestine: Jericho Prison
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.84.1" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn5">
-	<p pid="b.84.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.84.1/2" qnum="HL4753">What responses they have given to charges that there was collusion between the United States, the United Kingdom and Israel before the withdrawal of United Kingdom monitors and Israel's attack on Jericho prison on 14 March.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.6" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.7" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.80.8" newgid="uk.org.publicwhip/wrans/2006-03-23c.80.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.6" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.7" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.8" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.81.9" newgid="uk.org.publicwhip/wrans/2006-03-23c.81.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.6" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.7" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.82.8" newgid="uk.org.publicwhip/wrans/2006-03-23c.82.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.83.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.83.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-03-23b.84.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin4">
 	<p pid="b.84.2/1">There was no collusion before the withdrawal. The UK and US consul-generals issued a joint US/UK letter to President Abbas on <phrase class="date" code="2006-03-08">8 March 2006</phrase>, which noted that if the Palestinian Authority (PA) did not: come into full compliance with the Ramallah agreement; make substantive improvements to the security of the monitors; or came to a new agreement with the government of Israel, we would have to withdraw our monitors with immediate effect. In accordance with our obligations under the Ramallah agreement, our ambassador in Tel Aviv informed the Israeli authorities that we were delivering a letter in these terms on <phrase class="date" code="2006-03-08">8 March</phrase>. It was considered too dangerous to inform either Israel or the Palestinian Authority of the actual date of withdrawal.</p>
 	<p pid="b.84.2/2">On <phrase class="date" code="2005-12-15">15 December 2005</phrase>, our Deputy Head of Mission in Jerusalem informed the PA President's Office, that we were concerned about security and that if we felt that the PA could not provide adequate security, we would withdraw the monitors. We also raised our concerns on at least five separate occasions after this point. On 17 and <phrase class="date" code="2006-02-22">22 February</phrase>, our ambassador in Tel Aviv informed the Israeli authorities that we might have to withdraw from the mission due to security concerns. On <phrase class="date" code="2006-03-10">10 March</phrase>, our ambassador in Tel Aviv contacted the Israeli authorities to urge that Israel exercise caution if the monitors had to withdraw.</p>
 	<p pid="b.84.2/3">The location of the prison meant that it could be observed by Israeli Defence Forces, including when the monitors left the prison.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.84.3" nospeaker="true" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn6">
-	Maintenance Loans
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.84.4" speakerid="uk.org.publicwhip/lord/100258" speakername="Baroness Greengross" colon="" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn6">
-	<p pid="b.84.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.84.4/2" qnum="HL4682">What progress has been made towards raising the age limit on maintenance loans to match the state pension age.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.84.5" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="84"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin5">
-	<p pid="b.84.5/1">The age limit on maintenance loans will be increased to 60 for higher education students from the start of the 2006&ndash;07 academic year.</p>
-	<p pid="b.84.5/2">We remain committed in the longer term to giving further consideration to the age limit on the maintenance loan which will include a review of how it interacts with state benefits for pensioners.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.85.0" nospeaker="true" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn7">
-	Official Gifts
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.85.1" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn7">
-	<p pid="b.85.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.85.1/2" qnum="HL4716">What is the job title of the official within HM Revenue and Customs with responsibility for issuing advice in regard to any duty and tax liability on any ministerial gift received overseas and over the normal travellers' allowance.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.85.2" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spnew1">
-	<p pid="b.85.2/1">No one official has this responsibility. Internal guidance explains the rules, which are then applied as necessary or appropriate by HMRC officials at ports and airports.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.85.3" nospeaker="true" inserted-heading="true" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn8">
-	Official Gifts
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.85.4" speakerid="uk.org.publicwhip/lord/100271" speakername="Lord Hanningfield" colon="" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn8">
-	<p pid="b.85.4/1">asked Her Majesty's Government:</p>
-	<p pid="b.85.4/2" qnum="HL4717">On how many occasions since June 2001 HM Revenue and Customs has issued advice in regard to any duty and tax liability on any ministerial gift received overseas and over the normal travellers' allowance in accordance with section 5 of the Ministerial Code.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.85.5" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spnew2">
-	<p pid="b.85.5/1">The information requested is not held centrally and could be obtained only at disproportionate cost.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.85.6" nospeaker="true" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn9">
-	Royal Mail
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.85.7" speakerid="uk.org.publicwhip/lord/100435" speakername="Lord Monson" colon="" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn9">
-	<p pid="b.85.7/1">asked Her Majesty's Government:</p>
-	<p pid="b.85.7/2" qnum="HL4492">Further to the Written Answer by the Lord Sainsbury of Turville on 27 February (WA 31), what proportion of Royal Mail's revenues derived from Treasury subventions or financial support in each of the past five years; and how much this represents in monetary terms.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.84.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.84.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.3" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.4" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.5" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.6" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.7" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.85.8" newgid="uk.org.publicwhip/wrans/2006-03-23c.85.8" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-03-23b.85.8" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="85"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin6">
 	<p pid="b.85.8/1">Government support for Royal Mail is not treated for accounting purposes as revenues in the companies' profit and loss account. Support has been provided by permitting Royal Mail and POL to utilise accumulated profits held in reserves on the Royal Mail balance sheet and direct funding from Government. These amount to &pound;2 billion since 1998. The direct funding related to the urban reinvention programme and Your Guide and were provided as follows:</p>
 	<table>
@@ -491,37 +259,8 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-03-23b.86.0" nospeaker="true" colnum="86"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn10">
-	Universities: Overseas Students
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-03-23b.86.1" speakerid="uk.org.publicwhip/lord/100301" speakername="Baroness Hooper" colon="" colnum="86"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_wqn10">
-	<p pid="b.86.1/1">asked Her Majesty's Government:</p>
-	<p pid="b.86.1/2" qnum="HL4735">How many students from (a) Commonwealth countries, and (b) overseas territories have studied in British universities over the past three years, both as undergraduates and post-graduates.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-03-23b.86.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="86"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60323w03.htm#60323w03_spmin7">
-	<p pid="b.86.2/1">The latest figures are shown in the table.</p>
-	<table>
-		<caption>Higher education enrolments by students from the Commonwealth countries and British Overseas Territories, at UK HE institutions</caption>
-		<tbody>
-			<tr pid="b.86.2/5"> <td></td> <td>2002-03</td> <td>2003-04</td> <td>2004-05</td> </tr>
-			<tr pid="b.86.2/6"> <td>Commonwealth</td> </tr>
-			<tr pid="b.86.2/7"> <td>countries of which:</td> <td>65,820</td> <td>72,975</td> <td>81,780</td> </tr>
-			<tr pid="b.86.2/8"> <td>Undergraduate</td> <td>30,835</td> <td>33,090</td> <td>37,200</td> </tr>
-			<tr pid="b.86.2/9"> <td>Postgraduate</td> <td>34,985</td> <td>39,880</td> <td>44,580</td> </tr>
-			<tr pid="b.86.2/10"> <td>British Overseas</td> </tr>
-			<tr pid="b.86.2/11"> <td>Territories of which:</td> <td>440</td> <td>505</td> <td>505</td> </tr>
-			<tr pid="b.86.2/12"> <td>Undergraduate</td> <td>280</td> <td>325</td> <td>305</td> </tr>
-			<tr pid="b.86.2/13"> <td>Postgraduate</td> <td>160</td> <td>185</td> <td>200</td> </tr>
-			<tr pid="b.86.2/14"> <td>United Kingdom</td> </tr>
-			<tr pid="b.86.2/15"> <td>of which:</td> <td>1,899,850</td> <td>1,947,385</td> <td>1,969,140</td> </tr>
-			<tr pid="b.86.2/16"> <td>Undergraduate</td> <td>1,542,515</td> <td>1,580,110</td> <td>1,602,305</td> </tr>
-			<tr pid="b.86.2/17"> <td>Postgraduate</td> <td>357,335</td> <td>367,275</td> <td>366,835</td> </tr>
-		</tbody>
-	</table>
-	<p pid="b.86.2/20">Source: Higher Education Statistics Agency. Numbers have been rounded to the nearest 5.</p>
-</reply>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.86.0" newgid="uk.org.publicwhip/wrans/2006-03-23c.86.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.86.1" newgid="uk.org.publicwhip/wrans/2006-03-23c.86.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-23b.86.2" newgid="uk.org.publicwhip/wrans/2006-03-23c.86.2" matchtype="perfectmatch"/>
 </publicwhip>
 
