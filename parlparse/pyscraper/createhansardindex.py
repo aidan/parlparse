@@ -138,7 +138,7 @@ def CmIndexFromPage(urllinkpage):
                                 sdate = mx.DateTime.DateTimeFrom(odate).date
 
         		if not sdate:
-        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
+        			raise Exception, 'No date for link 1 in: ' + urllinkpage + ' ' + ','.join(link1)
         		if sdate < earliestdate:
         			continue
 
@@ -166,8 +166,10 @@ def CmIndexFromPage(urllinkpage):
                                 odate = '5 January 2007'
                         elif re.match('Written Answers received between<br>\s*Monday 12 February 2007 and Friday 16 February 2007', linktext):
                                 odate = '16 February 2007'
+                        elif re.match('Written Answers received between<br>\s*Wednesday 12 February 2007 and Friday 16 February 2007', linktext):
+                                odate = '16 February 2007'
                         else:
-        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
+        			raise Exception, 'No date for link 2 in: ' + urllinkpage + ' ' + ','.join(link1)
 
                         sdate = mx.DateTime.DateTimeFrom(odate).date
         		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', linkhref))
