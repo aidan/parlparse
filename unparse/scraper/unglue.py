@@ -696,7 +696,6 @@ class GlueUnfile:
                 jparatext.append(txl.ltext)
             tlc.paratext = "".join(jparatext)
 
-
             tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
             tlc.paratext = re.sub("-</b> <b>", "-", tlc.paratext)
             tlc.paratext = re.sub("Secretary- General", "Secretary-General", tlc.paratext)

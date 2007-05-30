@@ -145,11 +145,15 @@ if bDocMeasurements:
 
 if bAgendanames:
     f = os.path.join(indexstuffdir, "agendanames.html")
+    lf = os.path.join(indexstuffdir, "agendanames.temp.html")
     if IsNotQuiet():
-        print "Writing agenda summaries to file:", f
-    fout = open(f, "w")
+        print "Writing agenda summaries to file:", lf
+    fout = open(lf, "w")
     WriteAgendaSummaries(htmldir, fout)  # number of documents in each year of each type
     fout.close()
+    if sys.platform == "win32" and os.path.isfile(f):
+        os.remove(f)
+    os.rename(lf, f)  # atomic in unix
 
 if bSCsummaries:
     scsummariesdir = os.path.join(indexstuffdir, "scsummariesdir")

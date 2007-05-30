@@ -355,6 +355,9 @@ def CleanupTags(ptext, typ, paranum):
     if re.search("</?i>", "".join(re.split("<i>(.*?)</i>", ptext))):
         print ptext
         raise unexception("unmatched italics in spoken text", paranum)
+    if re.search("\s\S\s\S\s\S\s", ptext):
+        print ptext
+        raise unexception("probable gaps in text", paranum)
 
     return ptext
 

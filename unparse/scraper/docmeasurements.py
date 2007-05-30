@@ -27,11 +27,11 @@ def MakeNationMeetSeq(nation, meetseq):
     res = { }
     for meeto in meetseq:
         if meeto[1] == "GA":
-            prevsdate = "%4d%s" % (int(nationparams["startdate"][:4]) - 1, nationparams["startdate"][4:])
-            if prevsdate <= meeto[0] <= nationparams["enddate"]:
+            prevsdate = "%4d%s" % (int(nationparams["Date entered UN"][:4]) - 1, nationparams["Date entered UN"][4:])
+            if prevsdate <= meeto[0] <= nationparams["Date left UN"]:
                 res["GA%s" % meeto[2]] = [ 0, 0 ]
         if meeto[1] == "SC":
-            if nationparams["startdate"][:4] <= meeto[0][:4] <= nationparams["enddate"][:4]:
+            if nationparams["Date entered UN"][:4] <= meeto[0][:4] <= nationparams["Date left UN"][:4]:
                 res["SC%s" % meeto[2]] = [ 0, 0 ]
     return res
 

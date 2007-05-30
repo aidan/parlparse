@@ -213,7 +213,7 @@ class AgendaHeading:
         self.numspeeches = len(re.findall('<div class="spoken"', stext))
         self.numparagraphs = len(re.findall('<(?:p|blockquote)', stext))
         self.numdocuments = len(set(re.findall('<a href="([^"]*)"', stext)))
-
+        self.numvotes = len(set(re.findall('<div class="recvote"', stext)))
 
 def CleanupTitles(aggroup):
     for ag0, ag in reversed(aggroup):
@@ -262,29 +262,50 @@ def FindDelCommonTitle(agendanum, aggroup):
             if len(ag.titlelines) > 1 and ag.titlelines[i] == mostcommon[0]:
                 del ag.titlelines[i]
 
+    mctitle = mostcommon[0]
     if re.match("(?:natdis|condolence)", agendanum):
-        return "Condolences"
+        return "Condolences", "Procedure"
     if ncountother == 0 and ncountaddressby != 0:
-        return "Addresses by ministers"
-    return mostcommon[0]
+        return "Addresses by ministers", "Procedure"
+    if re.search("financing|financial|budget|economic|expenses|pension(?i)", mctitle):
+        return mctitle, "Finance"
+    if re.search("meditation|address by|addresses by|programme of work|organization of work|admission of|election|appointment(?i)", mctitle):
+        return mctitle, "Procedure"
+    if re.search("report(?i)", mctitle):
+        return mctitle, "Reports"
+    if re.search("question of|situation in(?i)", mctitle):
+        return mctitle, "Situations"
+    if re.search("terrorism|arms|war|forces|military|weapon|nuclear|conflict|mine|test-ban|aggression|disarmament(?i)", mctitle):
+        return mctitle, "Violence"
+    if re.search("human rights|rights of|right of|discrimination|women(?i)", mctitle):
+        return mctitle, "Humanitarian"
+    return mctitle, "Other"
 
 
 # this takes a group of
-def WriteAgendaGroup(agendanum, aggroup, fout):
-    mctitle = FindDelCommonTitle(agendanum, aggroup)
-    aggroup.sort()
+def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout):
 
     fout.write('\n<div class="agendagroup" agendanum="%s">\n' % agendanum)
     fout.write('\t<h3>%s</h3>\n' % mctitle)
     for ag0, ag in aggroup:
         agtitle = " || ".join(ag.titlelines)
         fout.write('\t<p>')
-        fout.write('<span class="date">%s</span>' % ag.sdate)
-        fout.write(' (<span class="numspeeches">%d</span> <span class="numparagraphs">%d</span> <span class="numdocuments">%d</span>)' % (ag.numspeeches, ag.numparagraphs, ag.numdocuments))
-        fout.write(' <a href="../html/%s.html#%s">%s</a>' % (ag.docid, ag.subheadingid, ag.docid))
+        fout.write('<a href="../html/%s.html#%s">%s</a>' % (ag.docid, ag.subheadingid, ag.sdate))
+        fout.write(' <span class="documentid">%s</span>' % ag.docid)
+        fout.write(' <span class="subheadingid">%s</span>' % ag.subheadingid)
+        fout.write(' <span class="date">%s</span>' % ag.sdate)
+        fout.write(' <span class="numspeeches">%d</span>' % ag.numspeeches)
+        fout.write(' <span class="numparagraphs">%d</span>' % ag.numparagraphs)
+        fout.write(' <span class="numdocuments">%d</span>' % ag.numdocuments)
+        fout.write(' <span class="numvotes">%d</span>' % ag.numvotes)
+        fout.write(' <span class="agendanum">%s</span>' % agendanum)
         fout.write(' <span class="agtitle">%s</span>' % agtitle)
+        fout.write(' <span class="aggrouptitle">%s</span>' % mctitle)
+        fout.write(' <span class="agcategory">%s</span>' % mccategory)
         fout.write('</p>\n')
     fout.write('</div>\n')
+
+
 
 #<div class="subheading" id="pg001-bk02" agendanum="9-49">
 #	<p id="pg001-bk02-pa01">Agenda item 9 <i>(continued)</i></p>
@@ -334,14 +355,33 @@ def WriteAgendaSummaries(htmldir, fout):
         #if len(agendagroups) > 1000:
         #    break
 
-    agendakeys = [ (aggroup[0][1].nsession, agendanum)  for agendanum, aggroup in agendagroups.iteritems() ]
-    agendakeys.sort()
-    fout.write('<html><head>\n<style type="text/css">')
-    fout.write('p { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }')
+    # the agendagroups are lists of agenda items, the values of a dict
+    # we should associate the name and the category to them and sort by that rather than the agendanum
+    allagendas = [ ]
+    for agendanum, aggroup in agendagroups.iteritems():
+        agsession = aggroup[0][1].nsession
+        mctitle, mccategory = FindDelCommonTitle(agendanum, aggroup)
+        aggroup.sort()
+        allagendas.append((agsession, mccategory, mctitle, agendanum, aggroup))
+
+    allagendas.sort()
+
+    fout.write('<html><head>\n<style type="text/css">\n')
+    fout.write('p { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
+    fout.write('.documentid, .date, .subheadingid, .aggrouptitle, .agcategory, .agendanum  { display: none; }\n')
+    fout.write('.numspeeches, .numparagraphs, .numdocuments, .numvotes { border: thin black solid; }\n')
+    fout.write('h2 { text-decoration: underline; text-align: center; }\n')
     fout.write('</style>\n</head>')
     fout.write('<body>\n')
-    for agendakey in agendakeys:
-        WriteAgendaGroup(agendakey[1], agendagroups[agendakey[1]], fout)
+    prevagsession, prevmccategory = None, None
+    for (agsession, mccategory, mctitle, agendanum, aggroup) in allagendas:
+        if agsession != prevagsession:
+            fout.write('\n<h1>Session %s</h1>\n' % agsession)
+            prevagsession = agsession
+        if mccategory != prevmccategory:
+            fout.write('\n<h2>%s</h2>\n' % mccategory)
+            prevmccategory = mccategory
+        WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout)
     fout.write('</body>\n</html>\n')
 
 

@@ -12,8 +12,9 @@ def ParseCSVLine(line):
     return [a.strip()  for a in eval("[%s]" % line.strip(", \n\r")) ]
 
 fin = open("nationdata.csv", "r")
+fin.readline()
 cols = ParseCSVLine(fin.readline())
-assert cols[0] == "nation"
+assert cols[0] == "Name", cols  # second line lays out the fields
 pcols = cols[1:]
 for line in fin.readlines():
     if not line:
@@ -82,7 +83,7 @@ prenations = ["Switzerland"]
 def IsPrenation(lnation, sdate):
     lnation = nationmapping.get(lnation, lnation)
     dr = nationdates.get(lnation)
-    if dr and sdate < dr["startdate"]:
+    if dr and sdate < dr["Date entered UN"]:
         assert lnation in prenations
         return lnation
     return None
@@ -104,7 +105,7 @@ def FixNationName(lnation, sdate):
             return None
         lnation = llnation
 
-    if not dr["startdate"] <= sdate < dr["enddate"]:
+    if not dr["Date entered UN"] <= sdate < dr["Date left UN"]:
         print lnation, dr, sdate
         print "nation out of date range"
         assert False
@@ -117,7 +118,7 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum, secc
             nationvotes[nation] = "absent"
     else:  # general assembly case
         for nation, dr in nationdates.iteritems():
-            if dr["startdate"] <= sdate < dr["enddate"]:
+            if dr["Date entered UN"] <= sdate < dr["Date left UN"]:
                 nationvotes[nation] = "absent"
 
     #print "\n\n\n"
