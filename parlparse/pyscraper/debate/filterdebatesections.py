@@ -75,8 +75,12 @@ def StripDebateHeadings(headspeak, sdate):
 	ih = StripDebateHeading('Initial', ih, headspeak)  # the 'Initial' is inserted by the splitheadingsspeakers function
 
 	# volume type heading
-	if re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
+	if re.search('THE$', headspeak[ih][0]):
+		ih = StripDebateHeading('THE', ih, headspeak)
+		ih = StripDebateHeading('PARLIAMENTARY(?:&nbsp;)+DEBATES', ih, headspeak)
+	elif re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
 		ih = StripDebateHeading('THE PARLIAMENTARY DEBATES', ih, headspeak)
+	if re.search('OFFICIAL REPORT', headspeak[ih][0]):
 		ih = StripDebateHeading('OFFICIAL REPORT', ih, headspeak)
 		ih = StripDebateHeading('IN THE .*? SESSION OF THE .*? PARLIAMENT OF THE', ih, headspeak, True)
 		ih = StripDebateHeading('UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND', ih, headspeak, True)
@@ -334,7 +338,7 @@ def FilterDebateSections(text, sdate, typ):
 			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
                         headingmajor = sht[3]
-                        if headingmajor or sht == headspeak[-1]: # UGH again
+                        if typ == 'debate' and (headingmajor or sht == headspeak[-1]): # UGH again
                                 headingtxt = headingtxt.upper()
 			unspoketxt = sht[1]
 			speechestxt = sht[2]

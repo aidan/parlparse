@@ -124,6 +124,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[1:]
         if sdate=='2006-05-10' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
                 urla = urla[1:]
+        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060524/debtext/60524-0001.htm':
+                urla = [urla[0]]
         if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
@@ -146,6 +148,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[0:14] + urla[16:]
         if sdate=='2007-05-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070515/halltext/70515h0001.htm':
                 urla = urla[0:4] + urla[6:]
+        if urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0178.htm':
+                urla = [urla[0]]
         #print "urla"
         #for aaa in urla:
         #        print aaa

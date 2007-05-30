@@ -53,7 +53,9 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1"):
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -70,6 +72,7 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1"):
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 

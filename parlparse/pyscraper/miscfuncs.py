@@ -198,8 +198,10 @@ entitymap = {
 
         '&#231;':'&ccedil;',   # this is cedilla
         '&#199;':'&Ccedil;',   # this is capital C-cedilla
+        '&#250;':'&uacute;',
         '&#252;':'&uuml;',   # this is u-double-dot
         '&#241;':'&ntilde;',   # spanish n as in Senor
+        '&#254;':'&thorn;',
 
         '&#177;':'&plusmn;',   # this is +/- symbol
         '&#163;':'&pound;',   # UK currency
@@ -240,6 +242,7 @@ entitymap = {
         '&#352;':'&#352;',
         '&#353;':'&#353;',
         '&oelig;':'&#339;',
+        '&#230;':'&aelig;',
 }
 entitymaprev = entitymap.values()
 
