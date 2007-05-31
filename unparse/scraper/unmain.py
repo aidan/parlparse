@@ -137,11 +137,15 @@ if bVoteDistances:
 
 if bDocMeasurements:
     f = os.path.join(indexstuffdir, "docmeasurements.html")
+    lf = os.path.join(indexstuffdir, "docmeasurements.temp.html")
     if IsNotQuiet():
-        print "Writing doc measurements to file:", f
-    fout = open(f, "w")
+        print "Writing doc measurements to file:", lf
+    fout = open(lf, "w")
     WriteDocMeasurements(htmldir, pdfdir, fout)  # number of documents in each year of each type
     fout.close()
+    if sys.platform == "win32" and os.path.isfile(f):
+        os.remove(f)
+    os.rename(lf, f)  # atomic in unix
 
 if bAgendanames:
     f = os.path.join(indexstuffdir, "agendanames.html")
@@ -161,11 +165,15 @@ if bSCsummaries:
         os.mkdir(scsummariesdir)
     ScrapeSCSummaries(scsummariesdir)
     f = os.path.join(indexstuffdir, "scsummaries.html")
+    lf = os.path.join(indexstuffdir, "scsummaries.temp.html")
     if IsNotQuiet():
-        print "Writing SC summaries to file:", f
-    fout = open(f, "w")
+        print "Writing SC summaries to file:", lf
+    fout = open(lf, "w")
     WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
     fout.close()
+    if sys.platform == "win32" and os.path.isfile(f):
+        os.remove(f)
+    os.rename(lf, f)  # atomic in unix
 
 if bDocimages:
     GenerateDocimages(stem, options.forcedocimg, options.limit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)

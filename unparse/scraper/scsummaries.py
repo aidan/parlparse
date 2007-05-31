@@ -92,18 +92,6 @@ def ExtractPVdate(daterecstr, year):
     return "%s-%02d-%02d" % (year, monthdict[month], int(mdate.group(1)))
 
 
-# maybe this could pull out a longer summary from the agenda where possible
-def GetSizeOfMeeting(htmlfile):
-    fin = open(htmlfile)
-    ftext = fin.read()
-    fin.close()
-    numspeeches = 0
-    numparagraphs = 0
-    for mspoke in re.finditer('(?s)<div class="spoken"[^>]*>(.*?)</div>', ftext):
-        numspeeches += 1
-        numparagraphs =+ len(re.findall('<(?:p|blockquote)', mspoke.group(1)))
-    numdocuments = len(set(re.findall('<a href="([^"]*)"', ftext)))  # only count unique entries, not multiple mentions
-    return ' <span class="docmeas">(<span class="numspeeches">%d</span> <span class="numparagraphs">%d</span> <span class="numdocuments">%d</span>)</span>' % (numspeeches, numparagraphs, numdocuments)
 
 
 # list just to force through the changes in names
@@ -442,13 +430,25 @@ class SCrecord:
         self.otopicrecstr = InitialCleanupTopic(mrow.group(4), year)
 
 
+    # maybe this could pull out a longer summary from the agenda where possible
+    def ScanHtmlMeet(self, htmlfile):
+        fin = open(htmlfile)
+        ftext = fin.read()
+        fin.close()
+        self.numspeeches, self.numparagraphs = 0, 0
+        for mspoke in re.finditer('(?s)<div class="spoken"[^>]*>(.*?)</div>', ftext):
+            self.numspeeches += 1
+            self.numparagraphs =+ len(re.findall('<(?:p|blockquote)', mspoke.group(1)))
+        self.numdocuments = len(set(re.findall('<a href="([^"]*)"', ftext)))  # only count unique entries, not multiple mentions
+        self.numvotes = len(set(re.findall('<div class="recvote"', ftext)))
+
     def FindTopicCats(self, htmldir, pdfdir):
-        self.meetmeas = ""
+        self.numspeeches, self.numparagraphs, self.numdocuments, self.numvotes = -1, -1, -1, -1
         htmlfile = os.path.join(htmldir, self.pvcode + ".html")
         pdffile = os.path.join(pdfdir, self.pvcode + ".pdf")
         if os.path.isfile(htmlfile):
             self.doclink = '"../html/%s.html" class="lkhtml"' % self.pvcode
-            self.meetmeas = GetSizeOfMeeting(htmlfile)
+            self.ScanHtmlMeet(htmlfile)
         elif os.path.isfile(pdffile):
             self.doclink = '"../pdf/%s.pdf" class="lkpdf"' % self.pvcode
         else:
@@ -467,12 +467,6 @@ class SCrecord:
 
         # do this to over-ride the splitting and see the original files
         #self.topics = [ self.otopicrecstr ]
-
-
-    def MeetingSumm(self, topic):
-        lk = self.doclink
-        #lk = '"%s"' % self.summarylink
-        return ' <span class="scmeeting"><a href=%s>%s</a> <span class="date">%s</span> <span class="docid">%s</span>%s</span>' % (lk, self.sdate, self.sdate, self.pvcode, self.meetmeas)
 
 
 def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
@@ -502,22 +496,31 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
 
     fout.write('<html><head>\n<style type="text/css">\n')
     fout.write('\tp { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
-    fout.write('\t.date { display: none; }\n')
-    fout.write('\t.docid { display: none; }\n')
+    fout.write('\t.date, .documentid, .sctopic { display: none; }\n')
+    fout.write('\t.numspeeches, .numparagraphs, .numdocuments { display: none; }\n')
+    fout.write('\t.numvotes { border: thin black solid; }\n')
     fout.write('\ta.lkmissing { color: #555555; }\n')
     fout.write('\ta.lkpdf { color: #009900; }\n')
     fout.write('</style>\n</head>')
     fout.write('<body>\n')
 
     for topic in topics:
-        fout.write('\n<div class="sctopic">\n')
+        fout.write('\n<div class="dsctopic">\n')
         fout.write('<h3>%s</h3>\n' % topic)
         fout.write("\t<p>\n")
         topicgroups[topic].sort()
         for (meetingorder, screcord) in topicgroups[topic]:
-            fout.write("\t\t")
-            fout.write(screcord.MeetingSumm(topic))
-            fout.write("\n")
+            fout.write('\t\t<span class="scmeeting">')
+            fout.write(' <a href=%s>%s</a>' % (screcord.doclink, screcord.sdate))
+            fout.write(' <span class="documentid">%s</span>' % screcord.pvcode)
+            fout.write(' <span class="date">%s</span>' % screcord.sdate)
+            fout.write(' <span class="numspeeches">%d</span>' % screcord.numspeeches)
+            fout.write(' <span class="numparagraphs">%d</span>' % screcord.numparagraphs)
+            fout.write(' <span class="numdocuments">%d</span>' % screcord.numdocuments)
+            fout.write(' <span class="numvotes">%d</span>' % screcord.numvotes)
+            fout.write(' <span class="sctopic">%s</span>' % topic)
+            #fout.write(' <span class="sccategory">%s</span>' % mccategory)
+            fout.write('</span>\n')
         fout.write("\t</p>\n")
         fout.write("</div>\n")
     fout.write('</body>\n</html>\n')

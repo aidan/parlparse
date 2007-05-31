@@ -210,9 +210,11 @@ class AgendaHeading:
         #self.agtitle = " || ".join(self.titlelines)
 
     def SeeTextForHeading(self, stext):
-        self.numspeeches = len(re.findall('<div class="spoken"', stext))
-        self.numparagraphs = len(re.findall('<(?:p|blockquote)', stext))
-        self.numdocuments = len(set(re.findall('<a href="([^"]*)"', stext)))
+        self.numspeeches, self.numparagraphs = 0, 0
+        for mspoke in re.finditer('(?s)<div class="spoken"[^>]*>(.*?)</div>', stext):
+            self.numspeeches += 1
+            self.numparagraphs =+ len(re.findall('<(?:p|blockquote)', mspoke.group(1)))
+        self.numdocuments = len(set(re.findall('<a href="([^"]*)"', stext)))  # unique documents
         self.numvotes = len(set(re.findall('<div class="recvote"', stext)))
 
 def CleanupTitles(aggroup):
