@@ -88,11 +88,13 @@ class ParseDay:
 <!ENTITY Oacute  "&#211;">
 <!ENTITY Uacute  "&#218;">
 <!ENTITY euml    "&#235;">
+<!ENTITY ouml    "&#246;">
 <!ENTITY fnof    "&#402;">
 
 <!ENTITY nbsp    "&#160;">
 <!ENTITY shy     "&#173;">
 <!ENTITY middot  "&#183;">
+<!ENTITY ordm    "&#186;">
 <!ENTITY ndash   "&#8211;">
 <!ENTITY mdash   "&#8212;">
 <!ENTITY lsquo   "&#8216;">
@@ -258,7 +260,9 @@ class ParseDay:
 			ptext = re.sub("\s+", " ", ''.join(p(text=True)))
 			phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
 			#print p, "\n---------------------\n"
-			if (p.a and re.match('[^h/]', p.a.get('href', ''))):
+			if p.a and re.match('[^h/]', p.a.get('href', '')):
+				continue
+			if ptext == '&nbsp;':
 				continue
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
