@@ -158,7 +158,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
                 url = urla[0]
-		#print " reading " + url
+		print " reading " + url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
@@ -195,7 +195,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 		if len(hrsections) == 1:
 			print len(hrsections), 'page missing', url
 			fout.write('<UL><UL><UL></UL></UL></UL>\n')
-			break
+                        urla = urla[1:]
+			continue
 
                 # Grr, missing footers ALL OVER THE PLACE now
                 if len(hrsections) == 2:
