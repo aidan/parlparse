@@ -349,7 +349,7 @@ def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
     filelist = os.listdir(htmldir)
     filelist.sort(reverse = True)
     for d in filelist:
-        if re.search("(?:\.css|\.svn)$", d):
+        if re.search("(?:\.css|\.svn|\.js)$", d):
             continue
         if stem and not re.match(stem, d):
             continue

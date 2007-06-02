@@ -141,7 +141,7 @@ if bDocMeasurements:
     if IsNotQuiet():
         print "Writing doc measurements to file:", lf
     fout = open(lf, "w")
-    WriteDocMeasurements(htmldir, pdfdir, fout)  # number of documents in each year of each type
+    WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, fout)  # number of documents in each year of each type
     fout.close()
     if sys.platform == "win32" and os.path.isfile(f):
         os.remove(f)
@@ -186,3 +186,4 @@ if bXapdex:
 
 if bIndexfiles:  # just for making the big index.html pages used in preview
     MiscIndexFiles(htmldir)
+
