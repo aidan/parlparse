@@ -11,7 +11,7 @@ RET=0
 # Run XML-generating scraper from Public Whip, getting new files from network
 # and parsing lords into pages
 cd ~/parlparse/pyscraper
-./lazyrunall.py --from=$FROMDATE --to=$TODATE scrape lords || RET=1
+./lazyrunall.py $3 --from=$FROMDATE --to=$TODATE scrape lords || RET=1
 
 # Return error code
 exit $RET

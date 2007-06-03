@@ -355,6 +355,9 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			continue
 		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
 			continue
+                # XXX: Special exception whilst these two days are a complete mess on parliament.uk
+                if commonsIndexRecord.recordType == 'Written Answers' and (commonsIndexRecord.date == '2006-05-22' or commonsIndexRecord.date == '2006-05-09'):
+                        continue
 
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)

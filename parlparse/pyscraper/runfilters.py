@@ -184,7 +184,6 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
        			bMakeOldWransGidsToNew = (sdate < "2005")
 
        		fout = open(tempfilename, "w")
-                print "Temp:", tempfilename
        		WriteXMLHeader(fout);
        		fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
 
