@@ -158,7 +158,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
                 url = urla[0]
-		print " reading " + url
+		#print " reading " + url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
