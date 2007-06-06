@@ -5,6 +5,7 @@ import datetime
 
 from basicbits import WriteGenHTMLhead
 from basicbits import basehref, htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear
+from basicbits import EncodeHref
 from xapsearch import XapLookup
 
 class SecRecord:
@@ -122,7 +123,7 @@ def WriteIndexStuff(sess):
 
     nsess = int(sess)
     WriteGenHTMLhead("General Assembly Session %s (%d-%d)" % (sess, nsess + 1945, nsess + 1946))
-        
+
     print '<p>'
     if nsess > 49:
         print '<a href="%s?sess=%d">Session %d</a>' % (basehref, nsess - 1, nsess - 1)
@@ -169,31 +170,40 @@ def WriteIndexStuffSecYear(scyear):
     WriteAgendaList([screcord  for sdate, screcord in sl ])
     return True
 
+def WriteFrontPageError(pathpartstr, hmap):
+    WriteGenHTMLhead("Front page")
+    print "<h1>Did not recognize pathpartstr: '%s'</h1>" % pathpartstr
+    print "<h3>hmap:"
+    print hmap
+    print "</h3>"
+
 
 def WriteFrontPage():
     WriteGenHTMLhead("Front page")
     fin = open("frontpage.html")
     print fin.read()
-        
+
     print '<h3>Search feature</h3>'
-    print '<form action="%s" method="post">' % basehref
+    print '<form action="%s" method="get">' % basehref
     print 'Search:'
     print '<input type="text" name="search" value="">'
     print '<input type="submit" value="GO">'
     print '</form>'
-    
+
     allags = LoadAgendaNames()
     print '<h3>General Assembly Sessions</h3>'
     print '<p>',
     for ns in range(49, currentgasession + 1):
-        print '<a href="%s?sess=%d">Session %d</a> (%d-%d)</a>' % (basehref, ns, ns, ns + 1945, ns + 1946),
+        href = EncodeHref({"pagefunc":"gasession", "gasession":ns})
+        print '<a href="%s">Session %d</a> (%d-%d)</a>' % (href, ns, ns + 1945, ns + 1946),
     print '</p>'
 
     print '<h3>Security Council meetings</h3>'
-    print '<p><b><a href="%s?sess=sc">Meetings by topic</a></b></p>' % (basehref)
+    print '<p><b><a href="%s">Meetings by topic</a></b></p>' % EncodeHref({"pagefunc":"sctopics"})
     print '<p>By year:',
     for ny in range(1994, currentscyear + 1):
-        print '<a href="%s?sess=sc%d">%d</a>' % (basehref, ny, ny),
+        href = EncodeHref({"pagefunc":"scyear", "scyear":ny})
+        print '<a href="%s">%d</a>' % (href, ny),
     print '</p>'
 
     allags = LoadAgendaNames()

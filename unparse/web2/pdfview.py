@@ -91,6 +91,7 @@ def WritePDFpreviewpage(basehref, pdfinfo, npage, highlight, highlightedit):
         print '<p>Click and drag a box to highlight the text you want.'
         print '<a href="%s?code=%s&pdfpage=%d%s">leave editing mode</a>' % (basehref, code, npage, phighlight)
         print '<a id="consdhighlight" href="%s?code=%s&pdfpage=%d&highlight=%s|"><b>consolidate highlight</b></a>' % (basehref, code, npage, highlight)
+        print '<small>Thanks to <a href="http://www.defusion.org.uk/code/javascript-image-cropper-ui-using-prototype-scriptaculous/">Dave Spurr</a>.</small>'
         print '</p>'
     else:
         print '<p><a href="%s?code=%s&pdfpage=%d%s&highlightedit=yes"><b>add new highlight</b></a></p>' % (basehref, code, npage, phighlight)
