@@ -28,6 +28,7 @@ def WriteGenHTMLhead(title):
     print '<body>'
     print '<h1 class="tophead">UNdemocracy.com</h1>'
     print '<h1 class="topheadspec">%s</h1>' % title
+    print 'pathparts', pathparts
 
 def GetFcodes(code):
     scode = re.sub("/", "-", code)
