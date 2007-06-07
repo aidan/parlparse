@@ -67,6 +67,10 @@ def DecodeHref(pathparts):
 
         return { "pagefunc": "fronterror" }
 
+    mtopic = re.match("topicn_(.+)$", pathparts[0])
+    if mtopic:
+        return { "pagefunc":"agendanum", "agendanum":mtopic.group(1) }
+
     msc = re.match("(?:securitycouncil|sc)_?(\d+)?$", pathparts[0])
     if msc:
         if msc.group(1):
@@ -89,7 +93,7 @@ def DecodeHref(pathparts):
             pdfinfo = GetPdfInfo(docid)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
                 return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile }
-            return { "pagefunc":"document", "docid":docid, "hhh":pdfinfo.htmlfile }
+            return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
         if pathparts[1] == "documents":
             return { "pagefunc":"fronterror" }  # selected docs for this year (not done yet)
@@ -160,7 +164,7 @@ def EncodeHref(hmap):
             hmap["gameeting"] = int(mga.group(2))
         if msc:
             hmap["pagefunc"] = "scmeeting"
-            hmap["scmeeting"] = int(mcs.group(1))
+            hmap["scmeeting"] = int(msc.group(1))
             if msc.group(2):
                 hmap["scmeetingsuffix"] = "_%s_%s" % (msc.group(2), msc.group(3))
             else:
@@ -187,7 +191,7 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "scyear":
         return "%s/securitycouncil_%d" % (basehref, hmap["scyear"])
     if hmap["pagefunc"] == "agendanum":
-        magnum = re.match("[^\-]*-(\d\d)$", hmap["agendanum"])
+        magnum = re.search("-(\d\d)$", hmap["agendanum"])
         if magnum:
             return "%s/generalassembly_%s/topicn_%s" % (basehref, magnum.group(1), hmap["agendanum"])
         return "%s/topicn/%s" % (basehref, hmap["agendanum"])   # such as condolences
