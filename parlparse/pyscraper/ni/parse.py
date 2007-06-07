@@ -77,6 +77,7 @@ class ParseDay:
 
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
+<!ENTITY egrave  "&#232;">
 <!ENTITY eacute  "&#233;">
 <!ENTITY ecirc   "&#234;">
 <!ENTITY iacute  "&#237;">
