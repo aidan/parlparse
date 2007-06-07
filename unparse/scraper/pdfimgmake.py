@@ -35,8 +35,8 @@ def GenerateDocImage(pdfinfo, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdi
     for d in os.listdir(tmppdfpreviewdir):
         os.remove(os.path.join(tmppdfpreviewdir, d))
 
-    pdffile = os.path.join(pdfdir, pdfinfo.pdfc + ".pdf")
-    jpgfile = os.path.join(pdfpreviewdir, pdfinfo.pdfc + ".jpg")
+    pdffile = os.path.join(pdfdir, pdfinfo.pdfcB + ".pdf")
+    jpgfile = os.path.join(pdfpreviewdir, pdfinfo.pdfcB + ".jpg")
 
     cmd1 = "convert -density 192 %s[0] -resize %d -bordercolor black -border 3 %s" % (pdffile, pwidth * 2, destpdfpng1)
     cmd1r = "convert  -background skyblue -rotate 5 %s %s" % (destpdfpng1, destpdfpng1)
@@ -97,7 +97,7 @@ def GenerateDocimages(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfo
         print pdfinfo.pdfc
         GenerateDocImage(pdfinfo, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
         pdfinfo.WriteInfo(pdfinfodir)
-        break
+        #break
 
 """import Image
 import PngImagePlugin

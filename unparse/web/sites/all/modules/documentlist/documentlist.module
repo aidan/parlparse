@@ -25,16 +25,16 @@ function generalassembly_page() {
   if (!$session_years['sessions'][arg(1)]) {  
     return document_table("ga");
   } else {
-	  return ga_session($session_years['sessions'][arg(1)]);
+	  return theme('agenda_list',arg(1));
   }
 }
 
 function securitycouncil_page() {
-	$session_years = session_years();
-  if (!$session_years['sessions'][arg(1)]) {  
+	$session_years = session_years();	
+  if (!isset($session_years['years'][arg(1)])) {  
     return document_table("sc");
   } else {
-	  return ga_session($session_years['sessions'][arg(1)]);
+    return theme('sc_list',arg(1));
   }
 }
 
@@ -68,33 +68,34 @@ function document_table($body = null) {
 		$title = "Year/Session";
 	}
   $years = array_reverse($session_years['years'], true);
-  $header = array($title,"Verbatim", "PDFs");
+  $header = array($title,"Verbatim");
   foreach ($years as $year => $session) {
+    $nyear = $year + 1;
 	  if ($body == "sc") {
 		  $rows[] = array(
 			  $year,
-			  l('Verbatim Documents','documents/verbatim/year/'.$year),
-			  l('PDFS','documents/pdf/year/'.$year['year'])
+			  l('Documents','securitycouncil/'.$year),
+//			  l('PDFS','documents/pdf/year/'.$year['year'])
 			);
 		}
 	  if ($body == "ga") {
 		  $rows[] = array(
-			  $session,
-			  l('Verbatim Documents','generalassembly/'.$session),
-			  l('PDFS','documents/pdf/session/'.$session)
+			  $session . " ($year/$nyear)",
+			  l('Agenda','generalassembly/'.$session),
+//			  l('PDFS','documents/pdf/session/'.$session)
 			);
 	  }		
 	  if (!$body) {
 			  $rows[] = array(
 				  $year,
-				  l('Verbatim Documents','documents/verbatim/year/'.$year),
-				  l('PDFS','documents/pdf/year/'.$year['year'])
+				  l('Documents','documents/verbatim/year/'.$year),
+//				  l('PDFS','documents/pdf/year/'.$year['year'])
 				);
 
 		  $rows[] = array(
 			  $session,
-			  l('Verbatim Documents','documents/session/'.$session),
-			  l('PDFS','documents/pdf/session/'.$session)
+			  l('Agenda','documents/session/'.$session),
+//			  l('PDFS','documents/pdf/session/'.$session)
 			);
 
 
@@ -103,8 +104,6 @@ function document_table($body = null) {
   }
   return theme('table',$header,$rows);
 }
-
-
 
 function session_years() {
 	$year = "1994";

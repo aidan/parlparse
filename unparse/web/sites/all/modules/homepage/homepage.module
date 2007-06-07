@@ -101,9 +101,9 @@ function block_element_sort($a, $b) {
 }
 
 function twitter_secgen() {
-	$doc = file_get_contents("http://twitter.com/statuses/user_timeline/secgen.xml");
-	preg_match('/<text>(.*?)<\/text>/s',$doc,$match);
-	return $match[1];
+  // $doc = file_get_contents("http://twitter.com/statuses/user_timeline/secgen.xml");
+  // preg_match('/<text>(.*?)<\/text>/s',$doc,$match);
+  // return $match[1];
+  return "...too slow to load";
 }
-
 

@@ -104,12 +104,6 @@ function unfilenode_menu($may_cache) {
       'access' => user_access('access content'),
       'callback' => 'unfilenode_spokenby',
     );
-    $items[] = array(
-      'path' => 'agenda',
-      'title' => 'Agenda',
-      'access' => user_access('access content'),
-      'callback' => 'agenda_page',
-    );
   }   
   return $items;
 }
@@ -143,11 +137,6 @@ function unfilenode_spokenby() {
   return theme('item_list', array_reverse($output));
 }
 
-function agenda_page() {
-  $search = xapian_do_search('document:'.arg(1).' id:'.arg(2).'');
-  $output = theme('agenda_item',$search->data['0']);
-  return implode(' ',$output);
-}
 
 /**
  * Theme functions
@@ -173,72 +162,28 @@ function theme_document_segment($result) {
 	$document['text'] = un_file_string(un_get_doc_path($result['file']));
   $document['date'] = grab_date($document['text']);
   $document['code'] = grab_code($document['text']);
-  $document['text'] = substr($document['text'], $result['offset'], $result['len']); 
+
+  $len = $result['full_doc_len'] ? $result['full_doc_len'] : $result['len'];
+
+  $document['text'] = substr($document['text'], $result['offset'], $len); 
 
   $document = theme("document_divs",$document);
+ return implode("\n",$document['text']);
 
-  return implode("\n",$document['text']);
 }
 
-function theme_agenda_list($result) {
-	$path = un_get_doc_path($result['file']);
-	$document = un_file_string($path);
-	$date = grab_date($document);
-	$document = substr($document, $result['offset'], $result['len']); 
-	
-	preg_match('/<div(.*)id="(.*?)"(.*)>/', $document, $id);
-	preg_match('/<p(.*)id="(.*?)">(.*?)<\/p>/', $document, $match);
-
-  if($id[5] == "yes") {
-	  $continued = " (continued)";
-  }
-  $links[] = l($date['1'].' - '.strip_tags($match[3]).$continued,'agenda/'.$result['file'].'/'.$id[2]);
-  return $links;
-}
-
-function theme_agenda_item($result) {
-	$path = un_get_doc_path($result['file']);
-	$document = un_file_string($path);
-	$fulldocument['date'] = grab_date($document);
-	$fulldocument['code'] = grab_code($document);	
-  $fulldocument['text'] = substr($document, $result['offset'], $result['full_doc_len']); 
-
-  //grab the data for the boxes
-  $heading = substr($document, $result['offset'], $result['len']); 
-  preg_match('/<div class="subheading" id="(.*?)" agendanum="(.*?)"/s',$heading,$agenda_info);
-  $fulldocument['text'] = preg_replace('/<div class="subheading" id="(.*?)" agendanum="(.*?)">/s', '<div class="subheading" id="$1">', $fulldocument['text'],$agenda_info2);
-  $agenda_info[2] = split(',',$agenda_info[2]);
-  foreach ($agenda_info[2] as $item){
-    if($item !=""){$agendabox[] = theme('agenda_item_box',$date,$item);}
-  }
-  $fulldocument = theme("document_divs",$fulldocument);
-  return array_merge($agendabox,$fulldocument['text']);
-}
 
 /*
  * Split a given string in to an array of all the divs with a class (boldline etc)
  * and run a theme function on them before adding them back in to the same formation
  */
-
-function theme_agenda_item_box($date,$agenda_num) {
-	// 
-	// $search = xapian_do_search('agenda:'.$agenda_num);
-	//   $output = array();
-	//   foreach($search->data as $result) {
-	//   	$output[] = theme('agenda_list',$result);
-	//   }
-	//   $output = theme('item_list', array_reverse($output));
-	// return '<div class="agenda_box">'.$output.'</div>';
-}
-
-
-/*
- * takes a document array in the form of:
- * document['text'] = the text of the slice.  Can be any part of a document.
- * document['date'] = the array made by grab_date()
- * document['code'] = the array made by grab_code()
- */
-
+ /*
+  * takes a document array in the form of:
+  * document['text'] = the text of the slice.  Can be any part of a document.
+  * document['date'] = the array made by grab_date()
+  * document['code'] = the array made by grab_code()
+  */
+ 
 function theme_document_divs($document) {
   preg_match_all('/<div class="(assembly-chairs|heading|subheading|italicline-tookchair|italicline|spoken|recvote|boldline-agenda|subheading)" id="(.*?)">(.*?)<\/div>/s', $document['text'], $matches);
 
@@ -251,7 +196,6 @@ function theme_document_divs($document) {
     $match = preg_replace('/<p(.*?)id="(.*?)">(.*?)<\/p>/','<span class="hashlink"><a href="/link/'.$document['code'][0].'/$2">#</a></span><p$1id="$2">$3</p>',$match);
 
     $match = fix_links($match);
-  
     $stripe = $i % 2 ? 'even' : 'odd';
     $match = preg_replace('/<div class="(.*?)"(.*?)>/i','<div class="$1 '. $stripe.'"$2>',$match);
 
@@ -261,7 +205,7 @@ function theme_document_divs($document) {
       case "subheading":
         if (preg_match('/<div.*agendanum="(.*?)".*>/', $match, $headings)) {
 	       $match = preg_replace('/<div(.*?)agendanum=".*"(.*?)>/', '<div$1$2>', $match);
-         $match = theme('agenda_item_box', $document['date']['0'], $headings[1]) . "\n" . $match;   
+         $match = theme('agenda_item_box', $headings[1]) . "\n" . $match;   
         }
       break;
       case "spoken":
@@ -307,7 +251,7 @@ function theme_titles($results) {
 
 function fix_links($text) {
 	// Fix the links to the pdf files
-  $text = preg_replace('/<a href="..\/pdf\/(.*?).pdf"(.*?)class="pdf(.*?)">(.*?)<\/a>/','<a href="/pdfinfo/$1"$2class="pdf$3">$4</a>',$text);
+  $text = preg_replace('/<a href="..\/pdf\/(.*?).pdf"(.*?)class="(pdf|nolink)(.*?)">(.*?)<\/a>/','<a href="/pdfinfo/$1"$2class="$3$4">$5</a>',$text);
 
 	// Fix the links to the html files
   $text = preg_replace('/<a href="..\/html\/(.*?).html"(.*?)>(.*?)<\/a>/','<a href="/document/$1"$2>$3</a>',$text);
@@ -386,3 +330,72 @@ function unfilenode_block($op = 'list', $delta = 0, $edit = array()) {
 function image_page() {
 	return '<img src="http://staging.undemocracy.com/shistogram/'.arg(1).'" /> ';
 }
+
+
+
+
+
+
+
+// oold agenda stuff
+
+
+
+// function theme_agenda_item($result) {
+//  $path = un_get_doc_path($result['file']);
+//  $document = un_file_string($path);
+//  $fulldocument['date'] = grab_date($document);
+//  $fulldocument['code'] = grab_code($document); 
+//   $fulldocument['text'] = substr($document, $result['offset'], $result['full_doc_len']); 
+// 
+//   //grab the data for the boxes
+//   $heading = substr($document, $result['offset'], $result['len']); 
+//   preg_match('/<div class="subheading" id="(.*?)" agendanum="(.*?)"/s',$heading,$agenda_info);
+//   $fulldocument['text'] = preg_replace('/<div class="subheading" id="(.*?)" agendanum="(.*?)">/s', '<div class="subheading" id="$1">', $fulldocument['text'],$agenda_info2);
+//   $agenda_info[2] = split(',',$agenda_info[2]);
+//   foreach ($agenda_info[2] as $item){
+//     if($item !=""){$agendabox[] = theme('agenda_item_box',$date,$item);}
+//   }
+//   $fulldocument = theme("document_divs",$fulldocument);
+//   return array_merge($agendabox,$fulldocument['text']);
+// }
+
+
+
+
+
+
+/* old agenda stuff */
+
+// function theme_agenda_item_box($date,$agenda_num) {
+//  // 
+//  // $search = xapian_do_search('agenda:'.$agenda_num);
+//  //   $output = array();
+//  //   foreach($search->data as $result) {
+//  //    $output[] = theme('agenda_list',$result);
+//  //   }
+//  //   $output = theme('item_list', array_reverse($output));
+//  // return '<div class="agenda_box">'.$output.'</div>';
+// }
+
+
+// function agenda_page() {
+//   $search = xapian_do_search('document:'.arg(1).' id:'.arg(2).'');
+//   $output = theme('agenda_item',$search->data['0']);
+//   return implode(' ',$output);
+// }
+// function theme_agenda_list($result) {
+//  $path = un_get_doc_path($result['file']);
+//  $document = un_file_string($path);
+//  $date = grab_date($document);
+//  $document = substr($document, $result['offset'], $result['len']); 
+//  
+//  preg_match('/<div(.*)id="(.*?)"(.*)>/', $document, $id);
+//  preg_match('/<p(.*)id="(.*?)">(.*?)<\/p>/', $document, $match);
+// 
+//   if($id[5] == "yes") {
+//    $continued = " (continued)";
+//   }
+//   $links[] = l($date['1'].' - '.strip_tags($match[3]).$continued,'agenda/'.$result['file'].'/'.$id[2]);
+//   return $links;
+// }

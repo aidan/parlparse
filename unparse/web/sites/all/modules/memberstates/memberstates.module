@@ -1009,7 +1009,7 @@ function members_block() {
 
 
 function docmeasurements($country = null) {
-	$doc = file_get_contents(undata_path()."/docmeasurements.html");
+	$doc = file_get_contents(undata_path()."/indexstuff/docmeasurements.html");
 	if ($country) {
 		preg_match('/<table class="nationmeas" id="'.$country.'">.*?<\/table>/s', $doc, $match);
 	} else {

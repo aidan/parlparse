@@ -50,9 +50,9 @@ function xapian_get_mset($query, $undata_path = NULL, $db_path = NULL) {
   
 
   // Stupid thing I have to do for my PC - Sym
-  if (file_exists('xapian_php5.php')) {  
+//  if (file_exists('xapian_php5.php')) {  
     include_once('xapian_php5.php' );
-  }
+  // }
 
   // XXX this doesn't break well if it can't find the database
   $database = new XapianDatabase($db_path);  
