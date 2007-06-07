@@ -124,18 +124,57 @@ def WriteCollapsedAgendaList(aglist):
         print '</li>'
 
 
+def GetSessionLink(nsess, bdocuments):
+    if nsess < 49:
+        bdocuments = True
+    if bdocuments:
+        return '<a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
+    return '<a href="%s">Session %d documents</a>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":nsess}), nsess)
+
+
+def WriteIndexDocuments(nsess, nscyear):
+    if nsess:
+        WriteGenHTMLhead("General Assembly Documents Session %d" % (nsess))
+    else:
+        WriteGenHTMLhead("Security Council Documents %d" % nscyear)
+    
+    vblist = [ ]
+    doclist = [ ]
+    reslist = [ ]
+    prstlist = [ ]
+    unknolist = [ ]
+
+    for pdf in os.path.list(pdfdir):
+        if pdf[-4:] != ".pdf":
+            continue
+        docid = pdf[:-4]
+        mgadoc = re.match("A-(\d\d)-[L\.]*(\d+)", docid)
+        mgapv = re.match("A-(\d\d)-PV\.(\d+)", docid)
+        mscdoc = re.match("S-(\d\d\d\d)-(\d+)", docid)
+        mscpv = re.match("S-PV-(\d+)(.*)$", docid)
+        mgares = re.match("A-RES-(\d\d)-(\d+)", docid)
+        mscprst = re.match("S-PRST-(\d\d\d\d)-(\d+)", docid)
+        mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", docid)
+
+        if mgapv and nsess and int(mgapv.group(1)) == nsess:
+            vblist.append((int(mgapv.group(2)), docid))
+        elif mscpv and nscyear:  
+            # need to look up the date
+            pass #vblist.append(((int(mscpv.group(2))
+    # this is no good.  need to do it from some index files
+
 
 def WriteIndexStuff(nsess):
     WriteGenHTMLhead("General Assembly Session %d (%d-%d)" % (nsess, nsess + 1945, nsess + 1946))
     allags = LoadAgendaNames()
 
-    print '<p>'
-    if nsess > 49:
-        print '<a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess - 1}), nsess - 1)
-    print '<a href="%s">All sessions</a>' % (EncodeHref({"pagefunc":"front"}))
+    print '<p>',
+    if nsess > 1:
+        print GetSessionLink(nsess - 1, False),
+    print '<a href="%s">All sessions</a>' % (EncodeHref({"pagefunc":"gasummary"})),
+    print GetSessionLink(nsess, True),  # documents
     if nsess < currentgasession:
-        print '<a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess + 1}), nsess + 1)
-
+        print GetSessionLink(nsess + 1, False),
     ags = [ agrecord  for agrecord in allags  if agrecord.nsess == nsess ]
     print '<h3>Full list of topics discussed</h3>'
     print '<p>Several topics may be discussed on each day, and each topic may be discussed over several days.</p>'
@@ -222,22 +261,22 @@ def WriteFrontPage():
 
 def WriteIndexStuffAgnum(agnum):
     msess = re.search("-(\d+)$", agnum)
-    if not msess:
-        return False
-    sess = msess.group(1)
-    nsess = int(sess)
+    nsess = msess and int(msess.group(1)) or 0
 
     allags = LoadAgendaNames()
 
-    agnumlist = agnum.split(",")
-    ags = [ agrecord for agrecord in allags  if agrecord.agnum in agnumlist ]
-    if not ags:
-        return False
+    if nsess:
+        agnumlist = agnum.split(",")
+        ags = [ agrecord  for agrecord in allags  if agrecord.agnum in agnumlist ]
+    else:
+        # assert agnum == "condolence"
+        ags = [ agrecord  for agrecord in allags  if re.match("condolence", agrecord.agnum) ]
     
-    agtitle ="Topic of General Assembly Session %d" % nsess
+    agtitle = "Topic of General Assembly"
     WriteGenHTMLhead(agtitle)
     
-    print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
+    if nsess:
+        print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
     
     print '<h3>%s</h3>' % ags[0].aggrouptitle
     WriteAgendaList(ags)

@@ -46,6 +46,7 @@ def DecodeHref(pathparts):
             if len(pathparts) == 1:
                 return { "pagefunc": "fronterror" }
         
+        
         mmeeting = re.match("meeting_?(\d+)$", pathparts[1])
         if mmeeting:
             if not nsess:
@@ -62,8 +63,8 @@ def DecodeHref(pathparts):
         if mtopic:
             return { "pagefunc": "agendanum", "agendanum":mtopic.group(1) }
             # agenda num should in theory match session number
-        if pathparts[1] == "documents":
-            return { "pagefunc": "fronterror" }  # selected docs for this session (not done yet)
+        if pathparts[1] == "documents" and nsess:
+            return { "pagefunc": "gadocuments", "gasession":nsess } 
 
         return { "pagefunc": "fronterror" }
 
@@ -95,8 +96,8 @@ def DecodeHref(pathparts):
                 return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile }
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
-        if pathparts[1] == "documents":
-            return { "pagefunc":"fronterror" }  # selected docs for this year (not done yet)
+        if pathparts[1] == "documents" and nscyear:
+            return { "pagefunc":"scdocuments", "scyear":nscyear }  
         return { "pagefunc":"fronterror" }
 
     # might be able to lose the "nation" thing as well
@@ -185,11 +186,15 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "nativepdf":
         return "%s/%s.pdf" % (basehref, hmap["docid"])
     if hmap["pagefunc"] == "gasession":
-        return "%s/generalassembly_%s" % (basehref, hmap["gasession"])
+        return "%s/generalassembly_%d" % (basehref, hmap["gasession"])
+    if hmap["pagefunc"] == "gadocuments":
+        return "%s/generalassembly_%d/documents" % (basehref, hmap["gasession"])
     if hmap["pagefunc"] == "sctopics":
         return "%s/securitycouncil" % (basehref)
     if hmap["pagefunc"] == "scyear":
         return "%s/securitycouncil_%d" % (basehref, hmap["scyear"])
+    if hmap["pagefunc"] == "scdocuments":
+        return "%s/securitycouncil_%d/documents" % (basehref, hmap["scyear"])
     if hmap["pagefunc"] == "agendanum":
         magnum = re.search("-(\d\d)$", hmap["agendanum"])
         if magnum:
