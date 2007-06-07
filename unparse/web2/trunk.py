@@ -26,11 +26,32 @@ if __name__ == "__main__":
     searchvalue = form.has_key("search") and form["search"].value or ""  # returned by the search form
     pathpartstr = os.getenv("PATH_INFO") or ''
     pathparts = [ s  for s in pathpartstr.strip('/').split('/')  if s ]
-    hmap = DecodeHref(pathparts, searchvalue)
+    hmap = DecodeHref(pathparts)
 
-    if hmap["pagefunc"] == "front":
+    if searchvalue:
+        WriteIndexSearch(searchvalue)
+    elif hmap["pagefunc"] == "front":
         WriteFrontPage()
-    WriteFrontPageError(pathpartstr, hmap)
+    elif hmap["pagefunc"] == "gasession":
+        WriteIndexStuff(hmap["gasession"])
+    elif hmap["pagefunc"] == "agendanum":
+        WriteIndexStuffAgnum(hmap["agendanum"])
+    elif hmap["pagefunc"] == "gameeting":
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
+    elif hmap["pagefunc"] == "scmeeting":
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
+    elif hmap["pagefunc"] == "sctopics":
+        WriteIndexStuffSec()
+    elif hmap["pagefunc"] == "scyear":
+        WriteIndexStuffSecYear(hmap["scyear"])
+    elif hmap["pagefunc"] == "pdf":
+        WritePDF(hmap["pdffile"])
+    elif hmap["pagefunc"] == "document":
+        WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
+    elif hmap["pagefunc"] == "pdfpage":
+        WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlight"], hmap["highlightedit"])
+    else:
+        WriteFrontPageError(pathpartstr, hmap)
     print "</body>"
     print '</html>'
     sys.exit(0)
@@ -39,31 +60,7 @@ if __name__ == "__main__":
     pdfpage = form.has_key("pdfpage") and form["pdfpage"].value or ""
 
 
-    if not code:
-        nation = form.has_key("nation") and form["nation"].value or ""
-        agnum = form.has_key("agnum") and form["agnum"].value or ""
-        sess = form.has_key("sess") and form["sess"].value or ""
-        if search:
-            bsucc = WriteIndexSearch(search)
-        elif nation:
-            bsucc = WriteIndexStuffNation(nation)
-        elif agnum:
-            bsucc = WriteIndexStuffAgnum(agnum)
-        elif sess:
-            if sess[:2] == "sc":
-                scyear = sess[2:]
-                if scyear:
-                    bsucc = WriteIndexStuffSecYear(scyear)
-                else:
-                    bsucc = WriteIndexStuffSec()
-            else:
-                bsucc = WriteIndexStuff(sess)
-        else:
-            bsucc = WriteFrontPage()
-        if not bsucc:
-            WriteGenHTMLhead("Bad data")
-
-    else:
+    if 0:
         fhtml, fpdf = GetFcodes(code)
         pdfinfo = PdfInfo(code)
         pdfinfo.UpdateInfo(pdfinfodir)

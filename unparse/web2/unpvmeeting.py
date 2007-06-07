@@ -4,6 +4,7 @@
 import sys, os, stat, re
 import datetime
 import urllib
+from basicbits import WriteGenHTMLhead, EncodeHref, monthnames
 
 def WriteNotfound(code):
     WriteGenHTMLhead("not found")
@@ -18,7 +19,7 @@ def MarkupLinks(ftext, highlightdoclink):
     for ft in re.split('(<a href="../pdf/[^"]*?\.pdf"[^>]*>)', ftext):
         ma = re.match('<a href="../pdf/([^"]*?)\.pdf"([^>]*)>', ft)
         if ma:
-            res.append('<a href="%s?code=%s&pdfpage=all"' % (basehref, ma.group(1)))
+            res.append('<a href="%s"' % (EncodeHref({"pagefunc":"document", "docid":ma.group(1)})))
             if highlightdoclink and ma.group(1) == highlightdoclink:
                 res.append(' class="highlight"')
             else:
@@ -51,7 +52,7 @@ def WriteSpoken(gid, dtext, bGA):
             print '<img class="smallflag" src="%s">' % flagimg,
     print '<span class="name">%s</span>' % name,
     if nation:
-        print '<a class="nation" href="%s?nation=%s">%s</a>' % (basehref, urllib.quote(nation), nation)
+        print '<a class="nation" href="%s">%s</a>' % (EncodeHref({"pagefunc":"nation", "nation":nation}), nation)
     print '</h3>'
 
     print dtext[mspek.end(0):]
@@ -62,7 +63,7 @@ def WriteAgenda(gid, agnum, dtext):
     print '<div class="subheading" id="%s">' % gid
     print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
     if agnum:
-        print '<div class="otheraglink"><a href="%s?agnum=%s&highlightag=%s">Other discussions<br>on this topic</a></div>' % (basehref, agnum, gid)
+        print '<div class="otheraglink"><a href="%s">Other discussions<br>on this topic</a></div>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
     print dtext
     print '</div>'
 

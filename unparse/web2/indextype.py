@@ -14,6 +14,9 @@ class SecRecord:
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
+                mdec = re.match("S-PV-(\d+)(?:-(Resu|Part)\.(\d))?$", self.docid)
+                self.nmeeting = int(mdec.group(1))
+                self.meetingsuffix = mdec.group(2) and ("_%s_%s" % (mdec.group(2), mdec.group(3))) or ""
             elif sp == "date":
                 self.sdate = val
             elif sp == "sctopic":
@@ -22,11 +25,11 @@ class SecRecord:
                 self.numvotes = int(val)
     
     def GetHref(self):
-        return '%s?code=%s' % (basehref, self.docid)
+        return EncodeHref({"pagefunc":"scmeeting", "scmeeting":self.nmeeting, "scmeetingsuffix":self.meetingsuffix})
     
     def GetDesc(self):
         vs = (self.numvotes >= 1) and " (vote)" or ""
-        return '%s <a href="%s?code=%s">%s</a>%s' % (self.sdate, basehref, self.docid, self.topic, vs)
+        return '%s <a href="%s">%s</a>%s' % (self.sdate, self.GetHref(), self.topic, vs)
 
 def LoadSecRecords():
     scsummariesf = os.path.join(indexstuffdir, "scsummaries.html")
@@ -45,13 +48,17 @@ class AgRecord:
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
+                mdec = re.match("A-(\d\d)-PV\.(\d+)$", self.docid)
+                self.sess = mdec.group(1)
+                self.nsess = int(self.sess)
+                self.nmeeting = int(mdec.group(2))
             elif sp == "subheadingid":
                 self.gid = val
             elif sp == "date":
                 self.sdate = val
             elif sp == "agendanum":
                 self.agnum = val
-                self.sess = re.search("-(\d+)", self.agnum).group(1)
+                # assert self.sess == re.search("-(\d+)", self.agnum).group(1)
             elif sp == "agtitle":
                 self.agtitle = val
             elif sp == "aggrouptitle":
@@ -61,10 +68,10 @@ class AgRecord:
             # could pull in vote counts if we know what to do with them
 
     def GetHref(self):
-        return '%s?code=%s&select=%s#%s' % (basehref, self.docid, self.gid, self.gid)
+        return EncodeHref({"pagefunc":"gameeting", "gasession":self.nsess, "gameeting":self.nmeeting, "gid":self.gid})
 
     def GetDesc(self):
-        return '%s <a href="%s?code=%s&select=%s#%s">%s</a>' % (self.sdate, basehref, self.docid, self.gid, self.gid, self.agtitle)
+        return '%s <a href="%s">%s</a>' % (self.sdate, self.GetHref(), self.agtitle)
 
 
 def LoadAgendaNames():
@@ -103,7 +110,7 @@ def WriteCollapsedAgendaList(aglist):
     print '<ul class="aglistgroup">'
     for aggt, agnum in aggtitles:
         print '<li>',
-        print '<a href="%s?agnum=%s" class="aggroup">%s</a>' % (basehref, agnum, aggt)
+        print '<a href="%s" class="aggroup">%s</a>' % (EncodeHref({"pagefunc":"agendanum", "agendanum":agnum}), aggt)
         print '<ul>',
         aggl = { }
         for agrecord in aggroupm[agnum]:
@@ -118,24 +125,21 @@ def WriteCollapsedAgendaList(aglist):
 
 
 
-def WriteIndexStuff(sess):
+def WriteIndexStuff(nsess):
+    WriteGenHTMLhead("General Assembly Session %d (%d-%d)" % (nsess, nsess + 1945, nsess + 1946))
     allags = LoadAgendaNames()
-
-    nsess = int(sess)
-    WriteGenHTMLhead("General Assembly Session %s (%d-%d)" % (sess, nsess + 1945, nsess + 1946))
 
     print '<p>'
     if nsess > 49:
-        print '<a href="%s?sess=%d">Session %d</a>' % (basehref, nsess - 1, nsess - 1)
-    print '<a href="%s">All sessions</a>' % (basehref)
+        print '<a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess - 1}), nsess - 1)
+    print '<a href="%s">All sessions</a>' % (EncodeHref({"pagefunc":"front"}))
     if nsess < currentgasession:
-        print '<a href="%s?sess=%d">Session %d</a>' % (basehref, nsess + 1, nsess + 1)
+        print '<a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess + 1}), nsess + 1)
 
-    ags = [ agrecord  for agrecord in allags  if agrecord.sess == sess ]
+    ags = [ agrecord  for agrecord in allags  if agrecord.nsess == nsess ]
     print '<h3>Full list of topics discussed</h3>'
     print '<p>Several topics may be discussed on each day, and each topic may be discussed over several days.</p>'
     WriteCollapsedAgendaList(ags)
-    return True
 
 
 def WriteCollapsedSec(sclist):
@@ -230,10 +234,10 @@ def WriteIndexStuffAgnum(agnum):
     if not ags:
         return False
     
-    agtitle ="Topic of General Assembly Session %s" % sess
+    agtitle ="Topic of General Assembly Session %d" % nsess
     WriteGenHTMLhead(agtitle)
     
-    print '<p><a href="%s?sess=%s">Whole of session %s</a></p>' % (basehref, sess, sess)
+    print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
     
     print '<h3>%s</h3>' % ags[0].aggrouptitle
     WriteAgendaList(ags)
