@@ -1,43 +1,41 @@
 #!/usr/bin/python
 
 import sys, os, re
-import cgi, cgitb
 from cStringIO import StringIO
-cgitb.enable()
 
-import Image, ImageDraw, ImageEnhance, ImageChops
-from basicbits import pdfpreviewpagedir
 
-if __name__ == "__main__":
-    form = cgi.FieldStorage()
+def SubParen(f):
+    f = re.sub("\(", "\(", f)
+    f = re.sub("\)", "\)", f)
+    return f
 
-    code = form.has_key("code") and form["code"].value or ""
-    pdfpage = form.has_key("pdfpage") and form["pdfpage"].value or ""
-    highlight = form.has_key("highlight") and form["highlight"].value or ""
+def WritePNGpage(pdffile, npage, imgpixwidth, pngfile, highlightrects):
+    if not os.path.isfile(pngfile):
+        cmd = 'convert -quiet -density 192 %s[%d] -resize %d %s > /dev/null 2>&1' % (SubParen(pdffile), npage - 1, imgpixwidth, SubParen(pngfile))
+        os.system(cmd)
+    if not highlightrects or not os.path.isfile(pngfile):
+        fin = open(os.path.isfile(pngfile) and pngfile or "pngnotfound.png")
+        print "Content-type: image/png\n"
+        print fin.read()
+        fin.close()
+        return
 
-    fp = "%spage%d.png" % (code, int(pdfpage))
-    rects = [ ]
+
+    # large libraries.  load only if necessary
+    import Image, ImageDraw, ImageEnhance, ImageChops
+
     dkpercent = 70
-    for lhl in highlight.split("|"):
-        mrect = re.match("rect(\d+),(\d+),(\d+),(\d+)", lhl)
-        mdkpercent = re.match("darken(\d+)", lhl)
-        if mrect:
-            rects.append((int(mrect.group(1)), int(mrect.group(2)), int(mrect.group(3)), int(mrect.group(4))))
-        if mdkpercent:
-            dkpercent = 100 - int(mdkpercent.group(1))
-
-    afp = os.path.join(pdfpreviewpagedir, fp)
 
     p1 = Image.new("RGB", (500, 500))
     ff = StringIO()
 
-    pfp = Image.open(afp)
+    pfp = Image.open(pngfile)
     swid, shig = pfp.getbbox()[2:]
 
     dpfp = ImageEnhance.Brightness(pfp).enhance(dkpercent / 100.0)
     ddpfp = ImageDraw.Draw(dpfp)
-    for rect in rects:
-        srect = (rect[0] * swid / 1000, rect[1] * shig / 1000, rect[2] * swid / 1000, rect[3] * shig / 1000)
+    for rect in highlightrects:
+        srect = (rect[0] * swid / 1000, rect[1] * swid / 1000, rect[2] * swid / 1000, rect[3] * swid / 1000)
         ddpfp.rectangle(srect, (255, 255, 255))
 
     cpfp = ImageChops.darker(pfp, dpfp)

@@ -64,6 +64,8 @@ function GetDocAttributesFromHeading(docattributes)
             docattributes["wikidate"] = node.textContent;
         if (node.className == "time")
             docattributes["meetingtime"] = node.textContent;
+        if (node.className == "basehref")   // it's too hard to bother decoding the pathparts from this
+            docattributes["bbasehref"] = node.textContent;
     }
     if (!docattributes["docid"])
         alert("missing docid");
@@ -178,8 +180,6 @@ function wikival(docattributes)
 
     res += " }}</ref>";
     return res;
-
-
 }
 
 function addlinksonparas(divnode)
@@ -225,7 +225,7 @@ function linkere(me)
 
     var eltable = document.createElement("table");
     eltable.appendChild(rowof2("date:", rowelspan(docattributes["longdate"])));
-    lhref = docattributes["bbasehref"] + "?code=" + docattributes["docid"] + "&pdfpage=" + docattributes["pageno"]; 
+    lhref = docattributes["bbasehref"] + "/" + docattributes["docid"] + "/page_" + docattributes["pageno"]; 
     ltarg = docattributes["docid"] + " page " + docattributes["pageno"];
     eltable.appendChild(rowof2("pdf:", rowelahref(lhref, ltarg)));
     eltable.appendChild(rowof2("URL:", rowelinput(blogurl(docattributes))));

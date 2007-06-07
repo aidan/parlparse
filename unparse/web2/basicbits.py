@@ -116,11 +116,35 @@ def DecodeHref(pathparts):
         mpage = re.match("(?:page|p)_?(\d+)$", pathparts[1])
         if mpage:
             npage = int(mpage.group(1))
-            if len(pathparts) >= 3 and pathparts[2] in ["highlight", "highlightedit"]:
-                highlights = len(pathparts) >= 4 and pathparts[3] or ""
-                return { "pagefunc":"pdfpage", "docid":docid, "page":npage, "pdfinfo":pdfinfo, "highlight":highlights, "highlightedit":(pathparts[2] == "highlightedit") }
-            return { "pagefunc":"pdfpage", "docid":docid, "page":npage, "pdfinfo":pdfinfo, "highlight":"", "highlightedit":False }
+            highlightrects = [ ]
+            highlightedit = False
+            for highlight in pathparts[2:]:
+                mrect = re.match("rect_(\d+),(\d+)_(\d+),(\d+)$", highlight)
+                if mrect:
+                    highlightrects.append((int(mrect.group(1)), int(mrect.group(2)), int(mrect.group(3)), int(mrect.group(4))))
+                elif highlight == "highlightedit":
+                    highlightedit = True
+            hmap = { "pagefunc":"pdfpage", "docid":docid, "page":npage, "pdfinfo":pdfinfo }
+            hmap["highlightrects"] = highlightrects
+            hmap["highlightedit"] = highlightedit
+            return hmap
+
         return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
+
+    mpngid = re.match("png(\d+)$", pathparts[0])
+    if mpngid and len(pathparts) >= 3:
+        mpage = re.match("page_(\d+)$", pathparts[2])
+        docid = pathparts[1]
+        hmap = { "pagefunc":"pagepng", "width":int(mpngid.group(1)), "docid":docid, "page":int(mpage.group(1))}
+        hmap["pdffile"] = "%s/%s.pdf" % (pdfdir, docid)
+        hmap["pngfile"] = "%s/%s_page_%s.png" % (pathparts[0], docid, mpage.group(1))
+        highlightrects = [ ]
+        for highlight in pathparts[3:]:
+            mrect = re.match("rect_(\d+),(\d+)_(\d+),(\d+)$", highlight)
+            if mrect:
+                highlightrects.append((int(mrect.group(1)), int(mrect.group(2)), int(mrect.group(3)), int(mrect.group(4))))
+        hmap["highlightrects"] = highlightrects
+        return hmap 
 
     return { "pagefunc": "fronterror" }
 
@@ -147,11 +171,13 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "document":
         return "%s/%s" % (basehref, hmap["docid"])
     if hmap["pagefunc"] == "pdfpage":
+        rl = [ basehref, hmap["docid"], ("page_%d" % hmap["page"]) ]
         if "highlightedit" in hmap and hmap["highlightedit"]:
-            return "%s/%s/page_%d/highlightedit/%s" % (basehref, hmap["docid"], hmap["page"], hmap["highlight"])
-        if "highlights" in hmap and hmap["highlights"]:
-            return "%s/%s/page_%d/highlight/%s" % (basehref, hmap["docid"], hmap["page"], hmap["highlight"])
-        return "%s/%s/page_%d" % (basehref, hmap["docid"], hmap["page"])
+            rl.append("highlightedit")
+        if "highlightrects" in hmap:
+            for highlightrect in hmap["highlightrects"]:
+                rl.append("rect_%d,%d_%d,%d" % highlightrect)
+        return "/".join(rl)
     if hmap["pagefunc"] == "nativepdf":
         return "%s/%s.pdf" % (basehref, hmap["docid"])
     if hmap["pagefunc"] == "gasession":
@@ -174,6 +200,22 @@ def EncodeHref(hmap):
         return "%s/securitycouncil/meeting_%d%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hcode)
     if hmap["pagefunc"] == "nation":
         return "%s/nation_%s" % (basehref, hmap["nation"][0])   # will do a fancy munge down of it
+
+    if hmap["pagefunc"] == "flagpng":
+        flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], re.sub(" ", "_", hmap["flagnation"]))
+        if not os.path.isfile(flagfile):
+            return ""
+        return "%s/%s" % (basehref, flagfile)
+
+    if hmap["pagefunc"] == "pagepng":
+        pagefile = "png%d/%s_page_%d.png" % (hmap["width"], hmap["docid"], hmap["page"])
+        if os.path.isfile(pagefile) and not hmap["highlightrects"]:
+            # should touch-modify this file so it doesn't get garbage collected
+            return "%s/%s" % (basehref, pagefile)
+        rl = [ basehref, ("png%d" % hmap["width"]), hmap["docid"], ("page_%d" % hmap["page"]) ]
+        for highlightrect in hmap["highlightrects"]:
+            rl.append("rect_%d,%d_%d,%d" % highlightrect)
+        return "/".join(rl)
 
     return "%s/rubbish/%s" % (basehref, hmap["pagefunc"])
 

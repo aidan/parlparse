@@ -4,7 +4,7 @@
 import sys, os, stat, re
 import datetime
 import urllib
-from basicbits import WriteGenHTMLhead, EncodeHref, monthnames
+from basicbits import WriteGenHTMLhead, EncodeHref, basehref, monthnames
 
 def WriteNotfound(code):
     WriteGenHTMLhead("not found")
@@ -38,18 +38,9 @@ def WriteSpoken(gid, dtext, bGA):
     print '<h3 class="speaker">',
     print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>',
 
-    flagnation = nation
-    if flagnation and re.match("United Nations", flagnation):
-        flagnation = "United Nations"
-    if not flagnation and re.match("The Secretary-General$", name):
-        flagnation = "United Nations"
-    if not flagnation and bGA and re.match("The(?: Acting)? President$", name):
-        flagnation = "United Nations"
-
-    if flagnation:
-        flagimg = '../flagimg100/Flag_of_' + re.sub(" ", "_", flagnation) + ".png"
-        if os.path.isfile(flagimg):
-            print '<img class="smallflag" src="%s">' % flagimg,
+    flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":(nation or name)})
+    if flaghref:
+        print '<img class="smallflag" src="%s">' % flaghref
     print '<span class="name">%s</span>' % name,
     if nation:
         print '<a class="nation" href="%s">%s</a>' % (EncodeHref({"pagefunc":"nation", "nation":nation}), nation)
@@ -115,6 +106,7 @@ def WriteDataHeading(gid, dtext):
     longdate = '%d %s %s' % (ndate, monthnames[nmonth - 1], sdate[:4])
     print '<span class="longdate">%s</span>' % longdate
     print '<span class="wikidate">[[%d %s]] [[%s]]</span>' % (ndate, monthnames[nmonth - 1], sdate[:4])
+    print '<span class="basehref">%s</span>' % basehref
     print '</div>'
     return longdate
 

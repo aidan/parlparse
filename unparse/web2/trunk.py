@@ -17,6 +17,7 @@ from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
 from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexStuffNation, WriteIndexSearch
 from unpvmeeting import WriteNotfound, WriteHTML
+from highlightimg import WritePNGpage
 
 
 # the main section that interprets the fields
@@ -24,9 +25,17 @@ if __name__ == "__main__":
 
     form = cgi.FieldStorage()
     searchvalue = form.has_key("search") and form["search"].value or ""  # returned by the search form
-    pathpartstr = os.getenv("PATH_INFO") or ''
-    pathparts = [ s  for s in pathpartstr.strip('/').split('/')  if s ]
+    pathpartstr = (os.getenv("PATH_INFO") or '').strip('/')
+    pathparts = [ s  for s in pathpartstr.split('/')  if s ]
     hmap = DecodeHref(pathparts)
+
+    # should be done with one of those apache settings
+    if re.search("\.png", pathpartstr):
+        fin = open(pathpartstr)
+        print "Content-type: image/png\n"
+        print fin.read()
+        fin.close()
+        sys.exit(0)
 
     if searchvalue:
         WriteIndexSearch(searchvalue)
@@ -48,8 +57,11 @@ if __name__ == "__main__":
         WritePDF(hmap["pdffile"])
     elif hmap["pagefunc"] == "document":
         WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
-    elif hmap["pagefunc"] == "pdfpage":
-        WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlight"], hmap["highlightedit"])
+    elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
+        WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
+    elif hmap["pagefunc"] == "pagepng":  # this is the bitmap of the page
+        WritePNGpage(hmap["pdffile"], hmap["page"], hmap["width"], hmap["pngfile"], hmap["highlightrects"])
+        sys.exit(0)
     else:
         WriteFrontPageError(pathpartstr, hmap)
     print "</body>"
