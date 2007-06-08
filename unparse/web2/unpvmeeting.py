@@ -185,9 +185,28 @@ def WriteDataHeading(gid, dtext):
     print '</div>'
     return longdate
 
+def WritePrevNext(pdfinfo):
+    if not pdfinfo.prevmeetingdetails and not pdfinfo.nextmeetingdetails:
+        return
+    print '<table class="prevnextmeeting">'
+    print '<tr>'
+    if pdfinfo.prevmeetingdetails:
+        prevlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.prevmeetingdetails[0]})
+        print '<td><a href="%s">Previous meeting<br>finished %s %s</a></td>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])
+    else:
+        print '<td></td>'
+    thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
+    print '<td><a href="%s">This meeting on %s from %s to %s</a></td>' % (thislink, pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
+    if pdfinfo.nextmeetingdetails:
+        nextlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.nextmeetingdetails[0]})
+        print '<td><a href="%s">Next meeting started %s %s</a></td>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
+    else:
+        print '<td></td>'
+    print '</table>'
 
 def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
+    WritePrevNext(pdfinfo)
 
     fin = open(fhtml)
     ftext = fin.read()

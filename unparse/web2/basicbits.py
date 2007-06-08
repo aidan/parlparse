@@ -10,8 +10,8 @@ currentscyear = 2007
 basehref = "http://staging.undemocracy.com"
 
 def GetPdfInfo(docid):
-    res = PdfInfo(docid, False)
-    res.UpdateInfo(pdfinfodir)
+    res = PdfInfo(docid)
+    res.UpdateInfo(pdfinfodir, False)
     if re.match("A-\d+-PV|S-PV", docid):
         res.htmlfile = os.path.join(htmldir, docid + ".html")
     else:
@@ -252,7 +252,7 @@ def WriteGenHTMLhead(title):
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
     print '<html>'
     print '<head>'
-    print '<title>JGT backup site</title>'
+    print '<title>UNdemocracy - %s</title>' % title
     print '<link href="%s/unview.css" type="text/css" rel="stylesheet" media="all">' % basehref
     print '<script language="JavaScript" type="text/javascript" src="%s/unjava.js"></script>' % basehref
     print '</head>'

@@ -121,6 +121,10 @@ class PdfInfo:
                 self.time = val
             elif param == "rosetime":
                 self.rosetime = val
+            elif param == "prevmeeting":
+                self.prevmeetingdetails = val.split()
+            elif param == "nextmeeting":
+                self.nextmeetingdetails = val.split()
 
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")
