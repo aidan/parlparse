@@ -117,7 +117,10 @@ class PdfInfo:
                 self.sdaterefs.extend(val.split())
             elif param == "date":
                 self.sdate = val
-
+            elif param == "time":
+                self.time = val
+            elif param == "rosetime":
+                self.rosetime = val
 
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")
@@ -127,6 +130,7 @@ class PdfInfo:
             fout.write("date = %s\n" % self.sdate)
         if self.time:
             fout.write("time = %s\n" % self.time)
+            fout.write("rosetime = %s\n" % self.rosetime)
         if self.pages != -1:
             fout.write("pages = %d\n" % self.pages)
         for pvref in self.pvrefs:
