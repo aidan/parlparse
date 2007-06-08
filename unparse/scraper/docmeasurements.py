@@ -7,13 +7,13 @@ from unmisc import GetAllHtmlDocs
 from pdfinfo import PdfInfo
 import datetime
 
+currentyear = datetime.date.today().year
+currentsession = currentyear - 1946
+if datetime.date.today().month >= 9:
+    currentsession += 1
+
 # writes docmeasurements.html
 def MakeMeetSeq():
-    currentyear = datetime.date.today().year
-    currentsession = currentyear - 1946
-    if datetime.date.today().month >= 9:
-        currentsession += 1
-
     meetseq = [ ]  # used to sort the SC and GAs
     for gas in range(currentsession, 47, -1):
         meetseq.append(("%4d-09-01" % (gas + 1945), "GA", "%2d" % gas))
@@ -49,13 +49,13 @@ def MakeNationMeetSeq(nation, meetseq):
 
 class DocCounts:
     def __init__(self):
-        self.gadcount = { }
-        self.scdcount = { }
-        self.scpcount = { }
-        self.gavcount = { }
-        self.scvcount = { }
-        self.scrcount = { }
-        self.garcount = { }
+        self.gadlist = { }
+        self.scdlist = { }
+        self.scplist = { }
+        self.gavlist = { }
+        self.scvlist = { }
+        self.scrlist = { }
+        self.garlist = { }
         self.nationyearactivity = { }
 
         self.meetseq = MakeMeetSeq()
@@ -64,36 +64,59 @@ class DocCounts:
         for nation in nationdates:
             self.nationcounts[nation] = MakeNationMeetSeq(nation, self.meetseq)
 
-    def IncrPdfCount(self, pdf):
-        mgadoc = re.match("A-(\d\d)-[L\d]", pdf)
-        mscdoc = re.match("S-(\d\d\d\d)-\d", pdf)
-        mgares = re.match("A-RES-(\d\d)", pdf)
-        mscprst = re.match("S-PRST-(\d\d\d\d)", pdf)
-        mscres = re.match("S-RES-\d+\((\d\d\d\d)\)", pdf)
+    def IncrPdfCount(self, docid):
+        mgadoc = re.match("A-(\d\d)-[L\d]", docid)
+        mscdoc = re.match("S-(\d\d\d\d)-\d", docid)
+        mgares = re.match("A-RES-(\d\d)", docid)
+        mscprst = re.match("S-PRST-(\d\d\d\d)", docid)
+        mscres = re.match("S-RES-\d+\((\d\d\d\d)\)", docid)
 
         if mgadoc:
-            self.gadcount[mgadoc.group(1)] = self.gadcount.setdefault(mgadoc.group(1), 0) + 1
+            if mgadoc.group(1) in self.gadlist:
+                self.gadlist[mgadoc.group(1)].append(docid)
+            else:
+                self.gadlist[mgadoc.group(1)] = [ docid ]
         elif mscdoc:
-            self.scdcount[mscdoc.group(1)] = self.scdcount.setdefault(mscdoc.group(1), 0) + 1
+            if mscdoc.group(1) in self.scdlist:
+                self.scdlist[mscdoc.group(1)].append(docid)
+            else:
+                self.scdlist[mscdoc.group(1)] = [ docid ]
         elif mgares:
-            self.garcount[mgares.group(1)] = self.garcount.setdefault(mgares.group(1), 0) + 1
+            if mgares.group(1) in self.garlist:
+                self.garlist[mgares.group(1)].append(docid)
+            else:
+                self.garlist[mgares.group(1)] = [ docid ]
         elif mscprst:
-            self.scpcount[mscprst.group(1)] = self.scpcount.setdefault(mscprst.group(1), 0) + 1
+            if mscprst.group(1) in self.scplist:
+                self.scplist[mscprst.group(1)].append(docid)
+            else:
+                self.scplist[mscprst.group(1)] = [ docid ]
         elif mscres:
-            self.scrcount[mscres.group(1)] = self.scrcount.setdefault(mscres.group(1), 0) + 1
-        elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", pdf):
+            if mscres.group(1) in self.scrlist:
+                self.scrlist[mscres.group(1)].append(docid)
+            else:
+                self.scrlist[mscres.group(1)] = [ docid ]
+        elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", docid):
             print "What is this?", pdf
 
     def IncrHtmlCount(self, htdoc, ftext):
         maga = re.search("A-(\d\d)-PV", htdoc)
         masc = re.search("S-PV-(\d\d\d\d)", htdoc)
         if maga:
-            self.gavcount[maga.group(1)] = self.gavcount.setdefault(maga.group(1), 0) + 1
+            docid = htdoc[maga.start(0):]
+            if maga.group(1) in self.gavlist:
+                self.gavlist[maga.group(1)].append(docid)
+            else:
+                self.gavlist[maga.group(1)] = [ docid ]
             SetValuesOnGA(self.nationcounts, "GA%s" % maga.group(1), ftext)
 
         elif masc:
+            docid = htdoc[masc.start(0):]
             mdate = re.search('<span class="date">(\d\d\d\d)-\d\d-\d\d</span>', ftext)
-            self.scvcount[mdate.group(1)] = self.scvcount.setdefault(mdate.group(1), 0) + 1
+            if mdate.group(1) in self.scvlist:
+                self.scvlist[mdate.group(1)].append(docid)
+            else:
+                self.scvlist[mdate.group(1)] = [ docid ]
             SetValuesOnGA(self.nationcounts, "SC%s" % mdate.group(1), ftext)
 
         else:
@@ -106,11 +129,11 @@ class DocCounts:
             if meeto[1] == "SC":
                 sscy = meeto[2]
                 scbase = "securitycouncil/%s" % sscy
-                fout.write('<tr class="scrow"> <td class="scyear"><a href="%s" title="Security Council">%s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, self.scvcount.get(sscy, 0) + self.scrcount.get(sscy, 0) + self.scdcount.get(sscy, 0)))
+                fout.write('<tr class="scrow"> <td class="scyear"><a href="%s" title="Security Council">%s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, scbase, len(self.scvlist.get(sscy, [])) + len(self.scrlist.get(sscy, [])) + len(self.scdlist.get(sscy, []))))
             if meeto[1] == "GA":
                 sgas = meeto[2]
                 gabase = "generalassembly/%s" % sgas
-                fout.write('<tr class="garow"> <td class="gasess"><a href="%s" title="General Assembly">Session %s</a></td> <td class="num"><a href="%s/documents">%d</a></td>\n' % (gabase, sgas, gabase, self.gavcount.get(sgas, 0) + self.garcount.get(sgas, 0) + self.gadcount.get(sgas, 0)))
+                fout.write('<tr class="garow"> <td class="gasess"><a href="%s" title="General Assembly">Session %s</a></td> <td class="num"><a href="%s/documents">%d</a></td>\n' % (gabase, sgas, gabase, len(self.gavlist.get(sgas, [])) + len(self.garlist.get(sgas, [])) + len(self.gadlist.get(sgas, []))))
         fout.write("</table>\n")
 
     def WriteTablesDocMeasures(self, fout):
@@ -120,11 +143,11 @@ class DocCounts:
             if meeto[1] == "SC":
                 sscy = meeto[2]
                 scbase = "securitycouncil/%s" % sscy
-                fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td>%d</td> <td>%d</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, self.scvcount.get(sscy, 0), self.scrcount.get(sscy, 0), scbase, self.scdcount.get(sscy, 0) + self.scpcount.get(sscy, 0)))
+                fout.write('<tr class="scrow"> <td class="scyear"><a href="%s">%s</a></td> <td>%d</td> <td>%d</td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (scbase, sscy, len(self.scvlist.get(sscy, [])), len(self.scrlist.get(sscy, [])), scbase, len(self.scdlist.get(sscy, [])) + len(self.scplist.get(sscy, []))))
             if meeto[1] == "GA":
                 sgas = meeto[2]
                 gabase = "generalassembly/%s" % sgas
-                fout.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td>%d</td> <td>%d</td> <td><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, self.gavcount.get(sgas, 0), self.garcount.get(sgas, 0), gabase, self.gadcount.get(sgas, 0)))
+                fout.write('<tr class="garow"> <td class="gasess"><a href="%s">Session %s</a></td> <td>%d</td> <td>%d</td> <td><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, len(self.gavlist.get(sgas, [])), len(self.garlist.get(sgas, [])), gabase, len(self.gadlist.get(sgas, []))))
         fout.write("</table>\n")
 
     def WriteTablesNationCounts(self, fout):
@@ -146,6 +169,45 @@ class DocCounts:
                     fout.write('<tr class="scrow"> <td class="gayear"><a href="%s">Session %s</a></td> <td class="num"><a href="%s/documents">%d</a></td> </tr>\n' % (gabase, sgas, gabase, self.nationcounts[nation][nmeeto][0]))
             fout.write("</table>\n")
 
+    def WriteDocyear(self, docyearsdir):
+        for scyear in range(1946, currentyear + 1):
+            fout = open(os.path.join(docyearsdir, "sc%d.txt" % scyear), "w")
+            sscyear = "%d" % scyear
+            if sscyear in self.scvlist:
+                self.scvlist[sscyear].sort()
+                for docid in self.scvlist[sscyear]:
+                    fout.write("%s PV\n" % docid)
+            if sscyear in self.scdlist:
+                self.scdlist[sscyear].sort()
+                for docid in self.scdlist[sscyear]:
+                    fout.write("%s DOC\n" % docid)
+            if sscyear in self.scplist:
+                self.scplist[sscyear].sort()
+                for docid in self.scplist[sscyear]:
+                    fout.write("%s PRST\n" % docid)
+            if sscyear in self.scrlist:
+                self.scrlist[sscyear].sort()
+                for docid in self.scrlist[sscyear]:
+                    fout.write("%s RES\n" % docid)
+            fout.close()
+
+        for gasess in range(1, currentsession + 1):
+            fout = open(os.path.join(docyearsdir, "ga%d.txt" % gasess), "w")
+            sgasess = "%d" % gasess
+            if sgasess in self.gavlist:
+                self.gavlist[sgasess].sort()
+                for docid in self.gavlist[sgasess]:
+                    fout.write("%s PV\n" % docid)
+            if sgasess in self.gadlist:
+                self.gadlist[sgasess].sort()
+                for docid in self.gadlist[sgasess]:
+                    fout.write("%s DOC\n" % docid)
+            if sgasess in self.garlist:
+                self.garlist[sgasess].sort()
+                for docid in self.garlist[sgasess]:
+                    fout.write("%s RES\n" % docid)
+            fout.close()
+
 
 def UpdatePdfInfoFromPV(pdfinfos, ftext):
     mdatecode = re.search('<span class="code">([^<]*)</span> <span class="date">([^<]*)</span>', ftext)
@@ -166,8 +228,10 @@ def UpdatePdfInfoFromPV(pdfinfos, ftext):
                 pdfinfos[pdfc] = PdfInfo(pdfc)
             pdfinfos[pdfc].AddDocRef(docid, gid, sdate)
 
+
+
 # Main file
-def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, fout):
+def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir, fout):
     rels = GetAllHtmlDocs("", False, False, htmldir)
     doccounts = DocCounts()
     pdfinfos = { }
@@ -176,7 +240,7 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, fout):
         if not re.search("\.pdf$", pdf):
             continue
         pdfc = pdf[:-4]
-        #doccounts.IncrPdfCount(pdfc)
+        doccounts.IncrPdfCount(pdfc)
         pdfinfos[pdfc] = PdfInfo(pdfc)
 
     for pdfi in os.listdir(pdfinfodir):
@@ -192,12 +256,13 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, fout):
         fin = open(htdoc)
         ftext = fin.read()
         fin.close()
-        #doccounts.IncrHtmlCount(htdoc, ftext)
+        doccounts.IncrHtmlCount(htdoc, ftext)
         UpdatePdfInfoFromPV(pdfinfos, ftext)
 
     for pdfinfo in pdfinfos.values():
         pdfinfo.WriteInfo(pdfinfodir)
 
+    doccounts.WriteDocyear(os.path.join(indexstuffdir, "docyears"))
     doccounts.WriteTablesDocMeasureShort(fout)
     doccounts.WriteTablesDocMeasures(fout)
     doccounts.WriteTablesNationCounts(fout)
