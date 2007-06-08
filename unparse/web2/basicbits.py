@@ -10,7 +10,7 @@ currentscyear = 2007
 basehref = "http://staging.undemocracy.com"
 
 def GetPdfInfo(docid):
-    res = PdfInfo(docid)
+    res = PdfInfo(docid, False)
     res.UpdateInfo(pdfinfodir)
     if re.match("A-\d+-PV|S-PV", docid):
         res.htmlfile = os.path.join(htmldir, docid + ".html")

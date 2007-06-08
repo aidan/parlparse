@@ -100,15 +100,15 @@ class DocCounts:
             print "What is this?", pdf
 
     def IncrHtmlCount(self, htdoc, ftext):
-        maga = re.search("A-(\d\d)-PV", htdoc)
-        masc = re.search("S-PV-(\d\d\d\d)", htdoc)
+        maga = re.search("(A-(\d\d)-PV.*?)(\.html)", htdoc)
+        masc = re.search("(S-PV-(\d\d\d\d).*?)(\.html)", htdoc)
         if maga:
             docid = htdoc[maga.start(0):]
             if maga.group(1) in self.gavlist:
                 self.gavlist[maga.group(1)].append(docid)
             else:
                 self.gavlist[maga.group(1)] = [ docid ]
-            SetValuesOnGA(self.nationcounts, "GA%s" % maga.group(1), ftext)
+            #SetValuesOnGA(self.nationcounts, "GA%s" % maga.group(1), ftext)
 
         elif masc:
             docid = htdoc[masc.start(0):]
@@ -117,7 +117,7 @@ class DocCounts:
                 self.scvlist[mdate.group(1)].append(docid)
             else:
                 self.scvlist[mdate.group(1)] = [ docid ]
-            SetValuesOnGA(self.nationcounts, "SC%s" % mdate.group(1), ftext)
+            #SetValuesOnGA(self.nationcounts, "SC%s" % mdate.group(1), ftext)
 
         else:
             print "what is this?", htdoc
@@ -209,14 +209,13 @@ class DocCounts:
             fout.close()
 
 
-def UpdatePdfInfoFromPV(pdfinfos, ftext):
-    mdatecode = re.search('<span class="code">([^<]*)</span> <span class="date">([^<]*)</span>', ftext)
-    assert mdatecode, ftext[:200]
-    docid = mdatecode.group(1)
-    sdate = mdatecode.group(2)
+def UpdatePdfInfoFromPV(pdfinfos, pdfinfo, ftext):
+    mtime = re.search('<span class="date">([^<]*)</span>\s*<span class="time">([^<]*)</span>\s*<span class="rosetime">([^<]*)</span>', ftext)
+    if mtime:
+        pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime = mtime.group(1), mtime.group(2), mtime.group(3)
+    else:
+        pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime = "unknown", "unknown", "unknown"
 
-    # will need to split by divs and ids etc
-    mdate = re.search('<span class="date">(\d\d\d\d)-\d\d-\d\d</span>', ftext)
     gid = ""
     for mdoc in re.finditer('id="([^"]*)"|<a href="../pdf/([\w\-\.()]*?)\.pdf"[^>]*>', ftext):
         if mdoc.group(1):
@@ -226,8 +225,7 @@ def UpdatePdfInfoFromPV(pdfinfos, ftext):
             #assert re.match("[\w\-\.()]*$", pdfc), docid + "  " + pdfc
             if pdfc not in pdfinfos:
                 pdfinfos[pdfc] = PdfInfo(pdfc)
-            pdfinfos[pdfc].AddDocRef(docid, gid, sdate)
-
+            pdfinfos[pdfc].AddDocRef(pdfinfo.pdfc, gid, pdfinfo.sdate)
 
 
 # Main file
@@ -240,25 +238,48 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
         if not re.search("\.pdf$", pdf):
             continue
         pdfc = pdf[:-4]
-        doccounts.IncrPdfCount(pdfc)
         pdfinfos[pdfc] = PdfInfo(pdfc)
+        doccounts.IncrPdfCount(pdfc)  # should borrow the judgements from the PdfInfo
 
     for pdfi in os.listdir(pdfinfodir):
         if not re.search("\.txt$", pdfi):
             continue
         pdfc = pdfi[:-4]
         if pdfc not in pdfinfos:
-            pdfinfos[pdfc] = PdfInfo(pdfc)
-        pdfinfos[pdfc].UpdateInfo(pdfinfodir)
+            pdfinfos[pdfc] = PdfInfo(pdfc)  # loading up infos that don't have associated pdfs
+        pdfinfos[pdfc].UpdateInfo(pdfinfodir, True)
         pdfinfos[pdfc].pvrefs.clear()  # we're going to re-fill it
 
+    scpvlist = [ ]
+    gapvlist = [ ]
     for htdoc in rels:
         fin = open(htdoc)
         ftext = fin.read()
         fin.close()
-        doccounts.IncrHtmlCount(htdoc, ftext)
-        UpdatePdfInfoFromPV(pdfinfos, ftext)
 
+        docid = re.search("((?:A-\d\d|S-PV).*?)\.html$", htdoc).group(1)
+        doccounts.IncrHtmlCount(htdoc, ftext)
+        if docid in pdfinfos:
+            pdfinfo = pdfinfos[docid]
+            UpdatePdfInfoFromPV(pdfinfos, pdfinfo, ftext)
+            if pdfinfo.nsess:
+                gapvlist.append((pdfinfo.sortkey, pdfinfo))
+            elif pdfinfo.nscyear:
+                scpvlist.append((pdfinfo.sortkey, pdfinfo))
+
+    # produce the next and previous
+    scpvlist.sort()
+    gapvlist.sort()
+    scprev = None
+    for sortkey, scnext in scpvlist:
+        scnext.AddPrevMeetingDetails(scprev)
+        scprev = scnext
+    gaprev = None
+    for sortkey, ganext in gapvlist:
+        ganext.AddPrevMeetingDetails(gaprev)
+        gaprev = ganext
+
+    # write out all the data
     for pdfinfo in pdfinfos.values():
         pdfinfo.WriteInfo(pdfinfodir)
 
