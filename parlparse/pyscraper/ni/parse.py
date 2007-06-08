@@ -310,6 +310,8 @@ class ParseDay:
 					print "Setting deputy to %s" % match.group(1)
 					memberList.setDeputy(match.group(1))
 				self.text += '<p class="italic">%s</p>\n' % phtml
+			elif cl == 'Q3MotionBullet':
+				self.text += '<p class="indentitalic">%s</p>\n' % phtml
 			elif cl == 'B3BodyText' or cl == 'B3BodyTextnoindent' or cl == 'RollofMembersList':
 				self.text += '<p>%s</p>\n' % phtml
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
