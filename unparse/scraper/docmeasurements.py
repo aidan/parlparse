@@ -231,7 +231,7 @@ def UpdatePdfInfoFromPV(pdfinfos, ftext):
 
 
 # Main file
-def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir, fout):
+def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
     rels = GetAllHtmlDocs("", False, False, htmldir)
     doccounts = DocCounts()
     pdfinfos = { }
@@ -263,8 +263,11 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir, fout):
         pdfinfo.WriteInfo(pdfinfodir)
 
     doccounts.WriteDocyear(os.path.join(indexstuffdir, "docyears"))
+
+    fout = open(os.path.join(indexstuffdir, "docmeasurements.html"), "w")
     doccounts.WriteTablesDocMeasureShort(fout)
     doccounts.WriteTablesDocMeasures(fout)
     doccounts.WriteTablesNationCounts(fout)
+    fout.close()
 
 

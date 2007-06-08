@@ -135,17 +135,9 @@ if bVoteDistances:
     WriteVoteDistances(stem, htmldir, fout)
     fout.close()
 
+# makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
-    f = os.path.join(indexstuffdir, "docmeasurements.html")
-    lf = os.path.join(indexstuffdir, "docmeasurements.temp.html")
-    if IsNotQuiet():
-        print "Writing doc measurements to file:", lf
-    fout = open(lf, "w")
-    WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir, fout)  # number of documents in each year of each type
-    fout.close()
-    if sys.platform == "win32" and os.path.isfile(f):
-        os.remove(f)
-    os.rename(lf, f)  # atomic in unix
+    WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
 
 if bAgendanames:
     f = os.path.join(indexstuffdir, "agendanames.html")
