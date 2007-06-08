@@ -132,38 +132,6 @@ def GetSessionLink(nsess, bdocuments):
     return '<a href="%s">Session %d documents</a>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":nsess}), nsess)
 
 
-def WriteIndexDocuments(nsess, nscyear):
-    if nsess:
-        WriteGenHTMLhead("General Assembly Documents Session %d" % (nsess))
-    else:
-        WriteGenHTMLhead("Security Council Documents %d" % nscyear)
-    
-    vblist = [ ]
-    doclist = [ ]
-    reslist = [ ]
-    prstlist = [ ]
-    unknolist = [ ]
-
-    for pdf in os.path.list(pdfdir):
-        if pdf[-4:] != ".pdf":
-            continue
-        docid = pdf[:-4]
-        mgadoc = re.match("A-(\d\d)-[L\.]*(\d+)", docid)
-        mgapv = re.match("A-(\d\d)-PV\.(\d+)", docid)
-        mscdoc = re.match("S-(\d\d\d\d)-(\d+)", docid)
-        mscpv = re.match("S-PV-(\d+)(.*)$", docid)
-        mgares = re.match("A-RES-(\d\d)-(\d+)", docid)
-        mscprst = re.match("S-PRST-(\d\d\d\d)-(\d+)", docid)
-        mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", docid)
-
-        if mgapv and nsess and int(mgapv.group(1)) == nsess:
-            vblist.append((int(mgapv.group(2)), docid))
-        elif mscpv and nscyear:  
-            # need to look up the date
-            pass #vblist.append(((int(mscpv.group(2))
-    # this is no good.  need to do it from some index files
-
-
 def WriteIndexStuff(nsess):
     WriteGenHTMLhead("General Assembly Session %d (%d-%d)" % (nsess, nsess + 1945, nsess + 1946))
     allags = LoadAgendaNames()
@@ -179,6 +147,43 @@ def WriteIndexStuff(nsess):
     print '<h3>Full list of topics discussed</h3>'
     print '<p>Several topics may be discussed on each day, and each topic may be discussed over several days.</p>'
     WriteCollapsedAgendaList(ags)
+
+
+def WriteIndexStuffDocuments(docyearfile):
+    msc = re.search("sc(\d+).txt$", docyearfile)
+    mga = re.search("ga(\d+).txt$", docyearfile)
+    if msc:
+        WriteGenHTMLhead("Security Council %s Documents" % msc.group(1))
+    else:
+        WriteGenHTMLhead("General Assembly Session %s Documents" % mga.group(1))
+    dlists = { "PV":[ ], "DOC":[ ], "PRST":[ ], "RES":[ ] }
+    fin = open(docyearfile)
+    for rl in fin.readlines():
+        docid, dl = rl.split()
+        dlists[dl].append(docid)
+    if dlists["RES"]:
+        print "<h3>Resolutions</h3>"
+        print '<p>'
+        for docid in dlists["RES"]:
+            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+        print '</p>'
+    if dlists["DOC"]:
+        print "<h3>Documents</h3>"
+        print '<p>'
+        for docid in dlists["DOC"]:
+            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+        print '</p>'
+    if dlists["PRST"]:
+        print "<h3>Presidential Statements</h3>"
+        for docid in dlists["PRST"]:
+            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+        print '</p>'
+    if dlists["PV"]:
+        print "<h3>Verbatim Reports</h3>"
+        for docid in dlists["PV"]:
+            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+        print '</p>'
+
 
 
 def WriteCollapsedSec(sclist):
@@ -245,7 +250,7 @@ def WriteFrontPage():
     print '<p><b><a href="%s">Meetings by topic</a></b></p>' % EncodeHref({"pagefunc":"sctopics"})
     print '<p>By year:',
     for ny in range(1994, currentscyear + 1):
-        href = EncodeHref({"pagefunc":"scyear", "scyear":ny})
+        href = EncodeHref({"pagefunc":"scdocuments", "scyear":ny})
         print '<a href="%s">%d</a>' % (href, ny),
     print '</p>'
 
@@ -312,22 +317,26 @@ def WriteIndexSearch(search):
         if re.match("A", docid):
             agrecord = aglookup.get((docid, gidsubhead), None)
             if agrecord:
-                print '<li><b>AG</b> %s <a href="%s?code=%s#%s">%s</a></li>' % (agrecord.sdate, basehref, agrecord.docid, gidspeech, agrecord.agtitle)
+                print '<li>General Assembly: %s</li>' % (agrecord.GetDesc())
+                del aglookup[(docid, gidsubhead)]  # quick hack to avoid repeats
         if re.match("S", docid):
             screcord = sclookup.get(docid, None)
             if screcord:
-                print '<li><b>SC</b> %s <a href="%s?code=%s#%s">%s</a></li>' % (screcord.sdate, basehref, screcord.docid, gidspeech, screcord.topic)
+                print '<li>Security Council: %s</li>' % (screcord.GetDesc())
+                del sclookup[docid]
 
 
     print '</ul>'
 
-    return True
-
 
 # not written
-def WriteIndexStuffNation(nation):
-    WriteGenHTMLhead('nation= ' + nation)
-    return True
+def WriteIndexStuffNation(nation, person):
+    WriteGenHTMLhead('Nation page for %s' % nation)
+    flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
+    print '<h1>%s</h1>' % nation
+    print '<img class="nationpageflag" src="%s">' % flaghref
+    if person:
+        print '<h3>Subselection of speeches by %s</3>' % person
 
 
 

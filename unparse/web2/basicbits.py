@@ -3,6 +3,7 @@ import sys
 import re
 
 from pdfinfo import PdfInfo
+from downascii import DownAscii
 
 currentgasession = 61
 currentscyear = 2007
@@ -10,7 +11,7 @@ basehref = "http://staging.undemocracy.com"
 
 def GetPdfInfo(docid):
     res = PdfInfo(docid)
-    res.UpdateInfo(pdfdir)
+    res.UpdateInfo(pdfinfodir)
     if re.match("A-\d+-PV|S-PV", docid):
         res.htmlfile = os.path.join(htmldir, docid + ".html")
     else:
@@ -64,7 +65,9 @@ def DecodeHref(pathparts):
             return { "pagefunc": "agendanum", "agendanum":mtopic.group(1) }
             # agenda num should in theory match session number
         if pathparts[1] == "documents" and nsess:
-            return { "pagefunc": "gadocuments", "gasession":nsess } 
+            docyearfile = os.path.join(indexstuffdir, "docyears", ("ga%d.txt" % nsess))
+            if os.path.isfile(docyearfile):
+                return { "pagefunc": "gadocuments", "gasession":nsess, "docyearfile":docyearfile } 
 
         return { "pagefunc": "fronterror" }
 
@@ -77,7 +80,8 @@ def DecodeHref(pathparts):
         if msc.group(1):
             nscyear = int(msc.group(1))
             if nscyear <= 1993:
-                return { "pagefunc": "fronterror" }  # will default to pdf searching 
+                if nscyear < 1946 or len(pathparts) == 1 or pathparts[1] != "documents":
+                    return { "pagefunc": "fronterror" }  
             if nscyear > currentscyear:
                 return { "pagefunc": "fronterror" }
             if len(pathparts) == 1:
@@ -97,16 +101,11 @@ def DecodeHref(pathparts):
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
         if pathparts[1] == "documents" and nscyear:
-            return { "pagefunc":"scdocuments", "scyear":nscyear }  
+            docyearfile = os.path.join(indexstuffdir, "docyears", ("sc%d.txt" % nscyear))
+            if os.path.isfile(docyearfile):
+                return { "pagefunc":"scdocuments", "scyear":nscyear, "docyearfile":docyearfile }  
         return { "pagefunc":"fronterror" }
 
-    # might be able to lose the "nation" thing as well
-    if pathparts[0] == "nation":
-        if len(pathparts) < 2:
-            # should be list of nations
-            return { "pagefunc": "fronterror" }
-        nation = pathparts[1]  # to demunge and match
-        return { "pagefunc": "nation", "nation":nation }
 
     # avoid the superfluous "document" leader
     mdocid = re.match("([AS]-.*?)(\.pdf)?$", pathparts[0])
@@ -151,6 +150,13 @@ def DecodeHref(pathparts):
         hmap["highlightrects"] = highlightrects
         return hmap 
 
+    # detect nations by the presence of Flag_of
+    if os.path.isfile(os.path.join("png100", ("Flag_of_%s.png" % pathparts[0]))):
+        nation = re.sub("_", " ", pathparts[0])
+        if len(pathparts) == 1:
+            return { "pagefunc":"nation", "nation":nation }
+        return { "pagefunc":"nationperson", "nation":nation, "person":pathparts[1] }
+    
     return { "pagefunc": "fronterror" }
 
 
@@ -208,7 +214,12 @@ def EncodeHref(hmap):
         # in future this could include the year
         return "%s/securitycouncil/meeting_%d%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hcode)
     if hmap["pagefunc"] == "nation":
-        return "%s/nation_%s" % (basehref, hmap["nation"][0])   # will do a fancy munge down of it
+        nationf = re.sub(" ", "_", hmap["nation"])
+        return "%s/%s" % (basehref, nationf)   # will do a fancy munge down of it
+    if hmap["pagefunc"] == "nationperson":
+        nationf = re.sub(" ", "_", hmap["nation"])
+        personf = DownAscii(hmap["person"].split()[-1].lower())  # just work with last name
+        return "%s/%s/%s" % (basehref, nationf, personf)
 
     if hmap["pagefunc"] == "flagpng":
         flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], re.sub(" ", "_", hmap["flagnation"]))

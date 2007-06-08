@@ -15,7 +15,7 @@ from pdfinfo import PdfInfo
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
-from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexStuffNation, WriteIndexSearch
+from indextype import WriteIndexStuff, WriteIndexStuffDocuments, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexStuffNation, WriteIndexSearch
 from unpvmeeting import WriteNotfound, WriteHTML
 from highlightimg import WritePNGpage
 
@@ -45,6 +45,8 @@ if __name__ == "__main__":
         WriteIndexStuff(hmap["gasession"])
     elif hmap["pagefunc"] == "agendanum":
         WriteIndexStuffAgnum(hmap["agendanum"])
+    elif hmap["pagefunc"] == "gadocuments":
+        WriteIndexStuffDocuments(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
     elif hmap["pagefunc"] == "scmeeting":
@@ -53,44 +55,23 @@ if __name__ == "__main__":
         WriteIndexStuffSec()
     elif hmap["pagefunc"] == "scyear":
         WriteIndexStuffSecYear(hmap["scyear"])
+    elif hmap["pagefunc"] == "scdocuments":
+        WriteIndexStuffDocuments(hmap["docyearfile"])
     elif hmap["pagefunc"] == "pdf":
         WritePDF(hmap["pdffile"])
     elif hmap["pagefunc"] == "document":
         WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
     elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
         WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
+    elif hmap["pagefunc"] == "nation":
+        WriteIndexStuffNation(hmap["nation"], "")
+    elif hmap["pagefunc"] == "nationperson":
+        WriteIndexStuffNation(hmap["nation"], hmap["person"])
     elif hmap["pagefunc"] == "pagepng":  # this is the bitmap of the page
         WritePNGpage(hmap["pdffile"], hmap["page"], hmap["width"], hmap["pngfile"], hmap["highlightrects"])
         sys.exit(0)
     else:
         WriteFrontPageError(pathpartstr, hmap)
-    print "</body>"
-    print '</html>'
-    sys.exit(0)
-
-    code = form.has_key("code") and form["code"].value or ""
-    pdfpage = form.has_key("pdfpage") and form["pdfpage"].value or ""
-
-
-    if 0:
-        fhtml, fpdf = GetFcodes(code)
-        pdfinfo = PdfInfo(code)
-        pdfinfo.UpdateInfo(pdfinfodir)
-
-        if fhtml and not pdfpage:
-            highlightdoclink = form.has_key("highlightdoclink") and form["highlightdoclink"].value or ""
-            WriteHTML(fhtml, pdfinfo, highlightdoclink)
-        elif pdfpage == "inline":
-            WritePDF(fpdf)
-        elif re.match("\d+$", pdfpage):
-            highlight = form.has_key("highlight") and form["highlight"].value or ""
-            highlightedit = form.has_key("highlightedit") and form["highlightedit"] or ""
-            WritePDFpreviewpage(basehref, pdfinfo, int(pdfpage), highlight, highlightedit)
-        elif fpdf:
-            WritePDFpreview(basehref, pdfinfo)
-        else:
-            WriteNotfound(code)
-
     print "</body>"
     print '</html>'
 

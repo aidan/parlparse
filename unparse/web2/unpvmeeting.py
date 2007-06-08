@@ -38,21 +38,49 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
     print '<h3 class="speaker">',
     print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>',
 
+    # build up the components of the speaker
+    nationlink = nation and EncodeHref({"pagefunc":"nation", "nation":nation})
+    if nationlink:
+        nationblock = '<a class="nation" href="%s">(%s)</a>' % (nationlink, nation)
+    elif nation:
+        nationblock = '<span class="nation">(%s)</span>' % nation
+    else:
+        nationblock = ""
+
+    # the country links still go from the flag
     flagnation = nation
-    if not flagnation and re.match("The Secretary-General", name):
-        flagnation = name
-    if not flagnation and re.match("The(?: Acting)? President", name):
-        if not councilpresidentnation:
+    if councilpresidentnation:
+        if name == "The President":
+            nation = councilpresidentnation
+            flagnation = nation
+    if not flagnation:
+        if re.match("The Secretary-General", name):
+            flagnation = "United Nations"
+            nation = name
+        elif not councilpresidentnation and re.match("The(?: Acting)? President", name):
             flagnation = "%s of the General Assembly" % name
         else:
-            flagnation = (name == "The President" and councilpresidentnation or "Unknown")
-    flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":flagnation})
-    if flaghref:
-        print '<img class="smallflag" src="%s">' % flaghref
+            flagnation = "Unknown"
+    flagimg = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":flagnation})
+    flaglink = nation and EncodeHref({"pagefunc":"nation", "nation":nation})
 
-    print '<span class="name">%s</span>' % name,
-    if nation:
-        print '<a class="nation" href="%s">%s</a>' % (EncodeHref({"pagefunc":"nation", "nation":nation}), nation)
+    if nation and name and not re.search("President", name):
+        personlink = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":name})
+    else:
+        personlink = ""
+
+    if flaglink:
+        print '<a href="%s">' % flaglink,
+    print '<img class="smallflag" src="%s">' % flagimg,
+    if flaglink:
+        print '</a>',
+
+    if personlink:
+        print '<a class="name" href="%s">%s</a>' % (personlink, name),
+    else:
+        print '<span class="name">%s</span>' % name
+
+    print nationblock
     print '</h3>'
 
     print dtext[mspek.end(0):]
@@ -66,6 +94,7 @@ def WriteAgenda(gid, agnum, dtext):
         print '<div class="otheraglink"><a href="%s">Other discussions<br>on this topic</a></div>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
     print dtext
     print '</div>'
+
 
 def WriteVote(gid, dtext, bSC):
     print '<div class="recvote" id="%s">' % gid
@@ -107,13 +136,18 @@ def WriteAssemblyChair(gid, dtext):
 def WriteCouncilAttendees(gid, dtext):
     pcatt = re.findall('<p[^>]*><span class="name">([^<]*)</span> <span class="nation">([^<]*)</span> <span class="place">([^<]*)</span></p>', dtext)
     assert len(pcatt), dtext
-    rows = [ [ "President", [ ] ], [ "Members", [ ] ] ]
+    rows = [ [ "President:", [ ] ], [ "Members:", [ ] ] ]
     for name, nation, place in pcatt:
         if place == "president":
             res = nation
             rows[0][1].append((name, nation))
         else:
             rows[1][1].append((name, nation))
+
+    # line-wrap the rows (in future we'll have speaking and non-speaking rows)
+    while len(rows[-1][1]) > 3:
+        rows.append([ "", rows[-1][1][3:] ])
+        del rows[-2][1][3:]
 
     print '<div class="council-attendees" id="%s">' % gid
     print '<table>'
@@ -122,12 +156,15 @@ def WriteCouncilAttendees(gid, dtext):
         print '<th>%s</th>' % rowlab
         for name, nation in rowcont:
             hrefflag = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
-            print '<td><img class="smallflag" src="%s"></td>' % hrefflag,
-            print '<td><span class="name">%s</span></td>' % name,  # this could be marked up too
+            print '<td><img class="smallflag_sca" src="%s"></td>' % hrefflag,
+            hrefname = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":name})
+            print '<td><a class="name" href="%s">%s</a>' % (hrefname, name), 
+            print '<br>'
             hrefnation = EncodeHref({"pagefunc":"nation", "nation":nation})
-            print '<td><a class="nation" href="%s">%s</a></td>' % (hrefnation, nation)
+            print '<a class="nation" href="%s">%s</a></td>' % (hrefnation, nation)
         print '</tr>'
     print '</table>'
+    print '</div>'
     return res
 
 

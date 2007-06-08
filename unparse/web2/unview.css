@@ -16,16 +16,19 @@ div.italicline-spokein
     clear:both;
 }
 
-div.subheading
+div.subheading, div.council-agenda
 {
 	padding-left:0px;
 	font-weight: bold;
 	text-align: center;
 	color: purple;
     background-color: #feeeee;
-    margin-top:80;
     margin-bottom:0;
     border: thin #fecdcd solid;
+}
+div.subheading
+{
+    margin-top:80;
 }
 p
 {
@@ -38,6 +41,17 @@ img.smallflag
     clear: left;
     margin-right:3px;
     margin-bottom:3px;
+}
+img.smallflag_sca
+{
+    border: thin black solid;
+    width:50;
+}
+img.nationpageflag
+{
+    border: thick black solid;
+    float: right;
+    width: 300;
 }
 div.recvote
 {
@@ -67,7 +81,6 @@ span.non-nation
 }
 a.nation
 {
-    font-style: italic;
 }
 
 span.language
