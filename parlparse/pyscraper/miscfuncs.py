@@ -72,10 +72,12 @@ def AlphaStringToOrder(s):
 regparsetime = re.compile("^(\d+)[\.:](\d+)(?:\s?|&nbsp;)([\w\.]+)$")
 # 7 pm
 regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
-def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
+def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 	#print "time ", time
 
-	if previoustime:
+        previoustime = None
+	if previoustimearr:
+                previoustime = previoustimearr[-1]
 		prevtimeMatch = re.match("(\d+):(\d+)", previoustime)
 		previoustimehour = int(prevtimeMatch.group(1))
 
@@ -133,6 +135,9 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 		# correction heading case -- a copy of some text that is to be inserted into a different day.
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
+
+                elif previoustimehour == hour + 1: # assume just a typo if we've gone back an hour
+                        hour += 1
 
 		else:
 			if hour not in [0, 1, 2, 3] and stampurl.sdate not in ["2003-10-20", "2000-10-03", "2000-07-24"]:

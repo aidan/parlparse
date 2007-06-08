@@ -96,7 +96,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 		fout.write('<stamp colnum="000"/>\n')
 
 	colnum = -1
-	previoustime = None
+	previoustime = []
 	for fss in recomb.split(text):
 		# column number type
 		columng = recolumnumvals.match(fss)
@@ -144,7 +144,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 				raise ContextException("Time not matched: " + timeg.group(1), stamp=stamp, fragment=fss)
 
 			fout.write('<stamp time="%s"/>' % time)
-			previoustime = time
+			previoustime.append(time)
 			continue
 
 		# anchor names from HTML <a name="xxx">
