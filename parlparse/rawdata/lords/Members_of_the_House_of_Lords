@@ -29,6 +29,8 @@ var wgNamespaceNumber = 0;
 var wgPageName = "Members_of_the_House_of_Lords";
 var wgTitle = "Members of the House of Lords";
 var wgAction = "view";
+var wgRestrictionEdit = [];
+var wgRestrictionMove = [];
 var wgArticleId = "269064";
 var wgIsArticle = true;
 var wgUserName = null;
@@ -4728,7 +4730,7 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070603032304 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070610030123 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4824,4 +4826,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv107 in 1.095 secs. --></body></html>
+<!-- Served by srv112 in 0.091 secs. --></body></html>
