@@ -128,15 +128,27 @@ def WriteAssemblyChair(gid, dtext):
 
 
 def WriteCouncilAttendees(gid, dtext):
-    pcatt = re.findall('<p[^>]*><span class="name">([^<]*)</span> <span class="nation">([^<]*)</span> <span class="place">([^<]*)</span></p>', dtext)
-    assert len(pcatt), dtext
+    pcatt = re.findall('<p[^>]*>(.*?)</p>', dtext)
+    assert len(pcatt) == 15, dtext
     rows = [ [ "President:", [ ] ], [ "Members:", [ ] ] ]
-    for name, nation, place in pcatt:
+    res = None
+    for catt in pcatt:
+        name, nation, place = None, None, None
+        for cl, val in re.findall('<span class="([^"]*)">([^<]*)</span>', catt):
+            if cl == "nation":
+                nation = val
+            elif cl == "place":
+                place = val
+            elif cl == "name" and not name: # sometimes we get two names here
+                name = val
+        assert name and nation and place, dtext
+        
         if place == "president":
             res = nation
             rows[0][1].append((name, nation))
         else:
             rows[1][1].append((name, nation))
+    assert res, dtext
 
     # line-wrap the rows (in future we'll have speaking and non-speaking rows)
     while len(rows[-1][1]) > 3:

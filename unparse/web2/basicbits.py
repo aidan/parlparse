@@ -196,7 +196,7 @@ def DecodeHref(pathparts):
 def EncodeHref(hmap):
     if hmap["pagefunc"] == "meeting":
         mga = re.match("A-(\d\d)-PV\.(\d+)$", hmap["docid"])
-        msc = re.match("S-PV-(\d+)(?:(Resu|Part)\.(\d))?$", hmap["docid"])
+        msc = re.match("S-PV-(\d+)(?:-(Resu|Part)\.(\d))?$", hmap["docid"])
         if mga:
             hmap["pagefunc"] = "gameeting"
             hmap["gasession"] = int(mga.group(1))
@@ -251,14 +251,18 @@ def EncodeHref(hmap):
         return "%s/securitycouncil/meeting_%d%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hcode)
     if hmap["pagefunc"] == "nation":
         nationf = re.sub(" ", "_", hmap["nation"])
+        nationf = re.sub("'", "", nationf)
         return "%s/%s" % (basehref, nationf)   # will do a fancy munge down of it
     if hmap["pagefunc"] == "nationperson":
         nationf = re.sub(" ", "_", hmap["nation"])
+        nationf = re.sub("'", "", nationf)
         personf = DownAscii(hmap["person"].split()[-1].lower())  # just work with last name
         return "%s/%s/%s" % (basehref, nationf, personf)
 
     if hmap["pagefunc"] == "flagpng":
-        flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], re.sub(" ", "_", hmap["flagnation"]))
+        fnation = re.sub(" ", "_", hmap["flagnation"])
+        fnation = re.sub("'", "", fnation)
+        flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], fnation)
         if not os.path.isfile(flagfile):
             return ""
         return "%s/%s" % (basehref, flagfile)

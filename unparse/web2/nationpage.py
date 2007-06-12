@@ -10,9 +10,9 @@ from xapsearch import XapLookup
 from indexrecords import LoadSecRecords, LoadAgendaNames
 
 def WriteSpeechInstances(snation, person):
-    print '<h3>Subselection of speeches by %s</h3>' % person
+    print '<h3>Speeches by the ambassador whose name matches "%s"</h3>' % person
 
-    recs = XapLookup("nation:%s name:%s" % (snation, person))
+    recs = XapLookup("nation:%s name:%s class:spoken" % (snation, person))
     if not recs:
         print '<p>No results found</p>'
         return
