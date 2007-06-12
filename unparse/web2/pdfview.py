@@ -23,24 +23,22 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     code = pdfinfo.pdfc
 
     hmap = {"pagefunc":"pdfpage", "docid":code}
-    print '<h3>Other pages</h3>'
-    print '<p>'
+    print '<div>'
+    print '<b>Other pages:</b>'
     if npage != 1:
         hmap["page"] = npage - 1
         print '<a href="%s">Page %d</a>' % (EncodeHref(hmap), npage - 1)
-    print '<a href="%s">Full doc</a>' % EncodeHref({"pagefunc":"document", "docid":code})
+    print '<a href="%s">Full document</a>' % EncodeHref({"pagefunc":"document", "docid":code})
     if pdfinfo.pages == -1 or npage + 1 < pdfinfo.pages:
         hmap["page"] = npage + 1
         print '<a href="%s">Page %d</a>' % (EncodeHref(hmap), npage + 1)
-    print '</p>'
     
     hmap["page"] = npage
     hmap["highlightrects"] = highlightrects
     hmap["highlightedit"] = False
 
-    print '<h3>Links</h3>'
     ivl = '<a href="%s">Document %s</a>' % (EncodeHref(hmap), code)  # this is text for the pastable input box
-    print '<p>URL: <input style="text" readonly value=\'%s\'></p>' % ivl
+    print '<b>URL:</b> <input style="text" readonly value=\'%s\'>' % ivl
     
     ivw = [ '<ref>{{ UN document |code=%s' % pdfinfo.pdfc ]
     ivw.append(' |body=General Assembly |session=60')
@@ -49,19 +47,18 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
         rs = [ ("rect_%d,%d_%d,%d" % highlightrect)  for highlightrect in highlightrects ]
         ivw.append(' |highlight=%s' % "/".join(rs))
     ivw.append(' |accessdate=1999-99-99 }}</ref>')
-    print '<p>wiki: <input style="text" readonly value=\'%s\'></p>' % "".join(ivw)
+    print '<b>wiki:</b> <input style="text" readonly value=\'%s\'>' % "".join(ivw)
+    print '</div>'
 
-
-    print '<h3>Editing highlight</h3>'
+    print '<div style="background-color:#cceeff">'
     if highlightrects:
         hmap["highlightrects"] = [ ]
-        print '<p><a href="%s">no highlight</a>' % EncodeHref(hmap),
+        print '<a href="%s">no highlight</a>' % EncodeHref(hmap),
         if len(highlightrects) > 1:
             for ih in range(len(highlightrects)):
                 hmap["highlightrects"] = highlightrects[:]
                 del hmap["highlightrects"][ih]
                 print '<a href="%s">withough highlight %d</a>' % (EncodeHref(hmap), ih),
-        print '</p>'
 
         hmap["highlightrects"] = highlightrects
 
@@ -87,16 +84,14 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
                 };
                 </script>"""
 
-        print '<p>Click and drag a box to highlight the text you want.'
+        print 'Click and drag a box to highlight the text you want.'
         hmap["highlightedit"] = False
         print '<a href="%s">leave editing mode</a>' % (EncodeHref(hmap))
         print '<a id="consdhighlight" href="%s/"><b>consolidate highlight</b></a>' % EncodeHref(hmap)
         print '<small>Thanks to <a href="http://www.defusion.org.uk/code/javascript-image-cropper-ui-using-prototype-scriptaculous/">Dave Spurr</a>.</small>'
-        print '</p>'
     else:
         hmap["highlightedit"] = True
-        print '<p><a href="%s"><b>add new highlight</b></a></p>' % EncodeHref(hmap)
-    print '<p></p>'
+        print '<a href="%s"><b>add new highlight</b></a>' % EncodeHref(hmap)
 
     del hmap["highlightedit"]
     hmap["pagefunc"] = "pagepng"
