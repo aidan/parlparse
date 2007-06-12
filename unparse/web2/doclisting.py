@@ -106,11 +106,15 @@ def WriteDocumentListing(body):
         bSC, bGA = True, True
         WriteGenHTMLhead("All Documents")
 
+    print '<p>This is a table of the numbers of UN documents we have obtained for reference '
+    print 'of each kind sorted by year or session.  Click on the link to list the codes of all the documents '
+    print 'for that year.</p>'
+
     print '<table class="doccounttable">'
     print '<tr><th>Year/Session</th>'
-    print '<th>Verbatim reports</th>'
+    print '<th>Verbatim<br>reports</th>'
     print '<th>Resolutions</th>'
-    print '<th>Presidential Statements</th>'
+    print '<th>Presidential<br>Statements</th>'
     print '<th>Documents</th>'
     print '</tr>'
 
@@ -118,16 +122,16 @@ def WriteDocumentListing(body):
         gadocyearfile = os.path.join(docyearsdir, "ga%d.txt" % s)
         if bGA and os.path.isfile(gadocyearfile):
             dlist = LoadDocYearFile(gadocyearfile)
-            print '<tr>'
-            print '<td class="gadocs"><a href="%s">Session %d</a></td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":s}), s)
+            print '<tr class="gadocs">'
+            print '<td><a href="%s">Session %d</a></td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":s}), s)
             print '<td>%d</td> <td>%d</td> <td> </td> <td>%d</td>' % (len(dlist["PV"]), len(dlist["RES"]), len(dlist["DOC"]))
             print '</tr>'
         scyear = s + 1945
         scdocyearfile = os.path.join(docyearsdir, "sc%d.txt" % scyear)
         if bSC and os.path.isfile(scdocyearfile):
             dlist = LoadDocYearFile(scdocyearfile)
-            print '<tr>'
-            print '<td class="scdocs"><a href="%s">%d</a></td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":scyear}), scyear)
+            print '<tr class="scdocs">'
+            print '<td><a href="%s">%d</a></td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":scyear}), scyear)
             print '<td>%d</td> <td>%d</td> <td>%d</td> <td>%d</td>' % (len(dlist["PV"]), len(dlist["RES"]), len(dlist["PRST"]), len(dlist["DOC"]))
             print '</tr>'
 

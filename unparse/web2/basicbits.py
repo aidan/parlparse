@@ -227,6 +227,10 @@ def EncodeHref(hmap):
         return "%s/generalassembly_%d" % (basehref, hmap["gasession"])
     if hmap["pagefunc"] == "gadocuments":
         return "%s/generalassembly_%d/documents" % (basehref, hmap["gasession"])
+    if hmap["pagefunc"] == "documentlist":
+        if hmap["body"] == "both":
+            return "%s/documents" % (basehref)
+        return "%s/%s/documents" % (basehref, hmap["body"])
     if hmap["pagefunc"] == "sctopics":
         return "%s/securitycouncil" % (basehref)
     if hmap["pagefunc"] == "scyear":
@@ -237,7 +241,7 @@ def EncodeHref(hmap):
         magnum = re.search("-(\d\d)$", hmap["agendanum"])
         if magnum:
             return "%s/generalassembly_%s/topicn_%s" % (basehref, magnum.group(1), hmap["agendanum"])
-        return "%s/topicn/%s" % (basehref, hmap["agendanum"])   # such as condolences
+        return "%s/topicn_%s" % (basehref, hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
         return "%s/generalassembly_%d/meeting_%d%s" % (basehref, hmap["gasession"], hmap["gameeting"], hcode)
@@ -269,5 +273,5 @@ def EncodeHref(hmap):
             rl.append("rect_%d,%d_%d,%d" % highlightrect)
         return "/".join(rl)
 
-    return "%s/rubbish/%s" % (basehref, hmap["pagefunc"])
+    return "%s/rubbish/%s" % (basehref, hmap["pagefunc"] + "__" + "|".join(hmap.keys()))
 

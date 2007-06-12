@@ -135,6 +135,9 @@ def WriteFrontPage():
 
     allags = LoadAgendaNames()
     print '<h3>General Assembly Sessions</h3>'
+    print '<p><a href="%s">All condolences</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"})
+    print '<a href="%s">All documents</a></p>' % EncodeHref({"pagefunc":"documentlist", "body":"generalassembly"})
+
     print '<p>',
     for ns in range(49, currentgasession + 1):
         href = EncodeHref({"pagefunc":"gasession", "gasession":ns})
@@ -142,7 +145,8 @@ def WriteFrontPage():
     print '</p>'
 
     print '<h3>Security Council meetings</h3>'
-    print '<p><b><a href="%s">Meetings by topic</a></b></p>' % EncodeHref({"pagefunc":"sctopics"})
+    print '<p><b><a href="%s">Meetings by topic</a></b>' % EncodeHref({"pagefunc":"sctopics"})
+    print '<a href="%s">All documents</a></p>' % EncodeHref({"pagefunc":"documentlist", "body":"securitycouncil"})
     print '<p>By year:',
     for ny in range(1994, currentscyear + 1):
         href = EncodeHref({"pagefunc":"scdocuments", "scyear":ny})
@@ -171,9 +175,16 @@ def WriteIndexStuffAgnum(agnum):
     else:
         # assert agnum == "condolence"
         ags = [ agrecord  for agrecord in allags  if re.match("condolence", agrecord.agnum) ]
-    
+
     agtitle = "Topic of General Assembly"
     WriteGenHTMLhead(agtitle)
+
+    if agnum == "condolence":
+        print '<p>According to the rules of the General Assembly, when there has been a major disaster only '
+        print 'the president is permitted to offer condolences to the victims at the start of the meeting.'
+        print 'This is probably to avoid the entire day being taken up with every ambassador in turn offering '
+        print 'their own expression of sympathy.  This timeline of disasters is incomplete owing to the '
+        print 'General Assembly not always being in session.'
     
     if nsess:
         print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
