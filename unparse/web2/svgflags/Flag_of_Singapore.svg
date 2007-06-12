@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg>
+<svg width="900" height="600" viewBox="-60 -36 216 144" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify">
+   <rect id="white" x="-60" y="-36" width="216" height="144" fill="white"/>
+   <rect id="red" x="-60" y="-36" width="216" height="72" fill="#ce1126"/>
+   <circle r="26.5" cx="-14.5" fill="white"/>
+   <circle r="29" fill="#ce1126"/>
+   <g id="star" transform="translate(0,-15.2) scale(6.4)" fill="white">
+      <g id="cone">
+        <polygon id="triangle" points="0,0 0,1 .5,1" transform="translate(0,-1) rotate(18)"/>
+        <use xlink:href="#triangle" transform="scale(-1,1)" />
+      </g>
+      <use xlink:href="#cone" transform="rotate(72)" />
+      <use xlink:href="#cone" transform="rotate(-72)" />
+      <use xlink:href="#cone" transform="rotate(144)" />
+      <use xlink:href="#cone" transform="rotate(-144)" />
+   </g>
+   <use xlink:href="#star" transform="rotate(-72) rotate(72,0,-15.2)"/>
+   <use xlink:href="#star" transform="rotate(72) rotate(-72,0,-15.2)"/>
+   <use xlink:href="#star" transform="rotate(-144) rotate(144,0,-15.2)"/>
+   <use xlink:href="#star" transform="rotate(144) rotate(-144,0,-15.2)"/>
+</svg>
