@@ -104,10 +104,10 @@ class DocCounts:
         masc = re.search("(S-PV-(\d\d\d\d).*?)(\.html)", htdoc)
         if maga:
             docid = htdoc[maga.start(0):]
-            if maga.group(1) in self.gavlist:
-                self.gavlist[maga.group(1)].append(docid)
+            if maga.group(2) in self.gavlist:
+                self.gavlist[maga.group(2)].append(docid)
             else:
-                self.gavlist[maga.group(1)] = [ docid ]
+                self.gavlist[maga.group(2)] = [ docid ]
             #SetValuesOnGA(self.nationcounts, "GA%s" % maga.group(1), ftext)
 
         elif masc:

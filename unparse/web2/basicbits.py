@@ -35,7 +35,7 @@ def WriteGenHTMLhead(title):
 
 def GetPdfInfo(docid):
     res = PdfInfo(docid)
-    res.UpdateInfo(pdfinfodir, False)
+    res.UpdateInfo(pdfinfodir)
     if re.match("A-\d+-PV|S-PV", docid):
         res.htmlfile = os.path.join(htmldir, docid + ".html")
     else:
@@ -64,8 +64,8 @@ def DecodeHref(pathparts):
             nsess = int(mga.group(1))
             if nsess > 1945:
                 nsess = nsess - 1945
-            if nsess <= 48:
-                return { "pagefunc":"fronterror" }  # in future will default to pdf files
+            #if nsess <= 48:
+            #    return { "pagefunc":"fronterror" }  # in future will default to pdf files
             if nsess > currentgasession:
                 return { "pagefunc":"fronterror" }
             if len(pathparts) == 1:

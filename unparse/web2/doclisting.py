@@ -31,8 +31,8 @@ def WriteIndexStuffDocumentsYear(docyearfile):
         else:
             print '<td></td>'
 
-        nsess = max(1, min(currentgasess, nscyear - 1945))
-        print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasess":nsess}), nsess)
+        nsess = max(1, min(currentgasession, nscyear - 1945))
+        print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":nsess}), nsess)
 
         if nscyear < currentscyear:
             print '<td><a href="%s">Year %d</td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":(nscyear + 1)}), nscyear + 1)
@@ -46,7 +46,7 @@ def WriteIndexStuffDocumentsYear(docyearfile):
 
         print '<table class="prevnextmeeting"><tr>'
         if nsess > 1:
-            print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasess":(nsess - 1)}), nsess - 1)
+            print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":(nsess - 1)}), nsess - 1)
         else:
             print '<td></td>'
 
@@ -54,7 +54,7 @@ def WriteIndexStuffDocumentsYear(docyearfile):
         print '<td><a href="%s">year %d</td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":nscyear}), nscyear)
 
         if nsess > 1:
-            print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasess":(nsess - 1)}), nsess - 1)
+            print '<td><a href="%s">Session %d</td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":(nsess + 1)}), nsess + 1)
         else:
             print '<td></td>'
         print '</tr></table>'
@@ -83,8 +83,14 @@ def WriteIndexStuffDocumentsYear(docyearfile):
 
     if dlists["PV"]:
         print "<h3>Verbatim Reports</h3>"
-        for docid in dlists["PV"]:
-            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+        for docidh in dlists["PV"]:
+            if docidh[-5:] == ".html":
+                if msc:
+                    print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"meeting", "docid":docidh[:-5]}), docidh)
+                else:
+                    print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"meeting", "docid":docidh[:-5]}), docidh)
+            else:
+                print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
         print '</p>'
 
 
@@ -100,7 +106,7 @@ def WriteDocumentListing(body):
         bSC, bGA = True, True
         WriteGenHTMLhead("All Documents")
 
-    print '<table>'
+    print '<table class="doccounttable">'
     print '<tr><th>Year/Session</th>'
     print '<th>Verbatim reports</th>'
     print '<th>Resolutions</th>'
@@ -108,12 +114,12 @@ def WriteDocumentListing(body):
     print '<th>Documents</th>'
     print '</tr>'
 
-    for s in range(max(currentgasession, currentscyear - 1945)):
+    for s in range(max(currentgasession, currentscyear - 1945), 0, -1):
         gadocyearfile = os.path.join(docyearsdir, "ga%d.txt" % s)
         if bGA and os.path.isfile(gadocyearfile):
             dlist = LoadDocYearFile(gadocyearfile)
             print '<tr>'
-            print '<td><a href="%s">Session %d</a></td>' % (EncodeHref({"pagefunc":"scdocuments", "gasess":s}), s)
+            print '<td class="gadocs"><a href="%s">Session %d</a></td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":s}), s)
             print '<td>%d</td> <td>%d</td> <td> </td> <td>%d</td>' % (len(dlist["PV"]), len(dlist["RES"]), len(dlist["DOC"]))
             print '</tr>'
         scyear = s + 1945
@@ -121,9 +127,11 @@ def WriteDocumentListing(body):
         if bSC and os.path.isfile(scdocyearfile):
             dlist = LoadDocYearFile(scdocyearfile)
             print '<tr>'
-            print '<td><a href="%s">Year %d</a></td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":scyear}), scyear)
+            print '<td class="scdocs"><a href="%s">%d</a></td>' % (EncodeHref({"pagefunc":"scdocuments", "scyear":scyear}), scyear)
             print '<td>%d</td> <td>%d</td> <td>%d</td> <td>%d</td>' % (len(dlist["PV"]), len(dlist["RES"]), len(dlist["PRST"]), len(dlist["DOC"]))
             print '</tr>'
 
     print '</table>'
+
+
 

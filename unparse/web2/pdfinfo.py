@@ -120,9 +120,10 @@ class PdfInfo:
             elif param == "rosetime":
                 self.rosetime = val
             elif param == "prevmeeting":
-                self.prevmeetingdetails = val.split()
+                self.prevmeetingdetails = tuple(val.split())
             elif param == "nextmeeting":
-                self.nextmeetingdetails = val.split()
+                self.nextmeetingdetails = tuple(val.split())
+                assert len(self.nextmeetingdetails) == 3, val
             elif param == "agendacontained":
                 magcon = re.match("(\S+)\s+(\S+)\s+(.+)$", val)
                 self.agendascontained.append((magcon.group(1), magcon.group(2), magcon.group(3).strip()))
