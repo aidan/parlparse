@@ -3,7 +3,7 @@ import sys
 import re
 import os
 from nations import nationdates
-from unmisc import GetAllHtmlDocs
+from unmisc import GetAllHtmlDocs, IsNotQuiet
 from pdfinfo import PdfInfo
 import datetime
 
@@ -247,7 +247,8 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
         pdfc = pdfi[:-4]
         if pdfc not in pdfinfos:
             pdfinfos[pdfc] = PdfInfo(pdfc)  # loading up infos that don't have associated pdfs
-        pdfinfos[pdfc].UpdateInfo(pdfinfodir, True)
+        pdfinfos[pdfc].UpdateInfo(pdfinfodir)
+        pdfinfos[pdfc].ResetDocmeasureData()
         pdfinfos[pdfc].pvrefs.clear()  # we're going to re-fill it
 
     scpvlist = [ ]
@@ -258,6 +259,8 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
         fin.close()
 
         docid = re.search("((?:A-\d\d|S-PV).*?)\.html$", htdoc).group(1)
+        if IsNotQuiet():
+            print docid,
         doccounts.IncrHtmlCount(htdoc, ftext)
         if docid in pdfinfos:
             pdfinfo = pdfinfos[docid]

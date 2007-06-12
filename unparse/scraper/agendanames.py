@@ -3,8 +3,9 @@ import sys
 import re
 import os
 from nations import nationdates
-from unmisc import GetAllHtmlDocs, IsNotQuiet
+from unmisc import GetAllHtmlDocs, IsNotQuiet, pdfinfodir
 import datetime
+from pdfinfo import PdfInfo
 
 
 rdoc = '\((?:<a href[^>]*>[^<]*</a>|and|Add|L|para|Parts?|to|\([^\)]*\)|[IV\-\d\s,.:])+\)'
@@ -142,6 +143,7 @@ class AgendaHeading:
         self.sortval = (self.nsession, self.nmeeting)
 
         self.subheadingid = subheadingid
+        self.agendanumstr = agendanumstr
         self.agendanums = agendanumstr.split(",")
 
 
@@ -285,7 +287,7 @@ def FindDelCommonTitle(agendanum, aggroup):
 
 
 # this takes a group of
-def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout):
+def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdoc):
 
     fout.write('\n<div class="agendagroup" agendanum="%s">\n' % agendanum)
     fout.write('\t<h3>%s</h3>\n' % mctitle)
@@ -305,6 +307,8 @@ def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout):
         fout.write(' <span class="aggrouptitle">%s</span>' % mctitle)
         fout.write(' <span class="agcategory">%s</span>' % mccategory)
         fout.write('</p>\n')
+
+        agendasperdoc.setdefault(ag.docid, [ ]).append((ag.subheadingid, ag.agendanumstr, agtitle))
     fout.write('</div>\n')
 
 
@@ -358,7 +362,6 @@ def WriteAgendaSummaries(htmldir, fout):
         #    break
 
     # the agendagroups are lists of agenda items, the values of a dict
-    # we should associate the name and the category to them and sort by that rather than the agendanum
     allagendas = [ ]
     for agendanum, aggroup in agendagroups.iteritems():
         agsession = aggroup[0][1].nsession
@@ -367,6 +370,7 @@ def WriteAgendaSummaries(htmldir, fout):
         allagendas.append((agsession, mccategory, mctitle, agendanum, aggroup))
 
     allagendas.sort()
+    agendasperdoc = { }
 
     fout.write('<html><head>\n<style type="text/css">\n')
     fout.write('p { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
@@ -383,7 +387,18 @@ def WriteAgendaSummaries(htmldir, fout):
         if mccategory != prevmccategory:
             fout.write('\n<h2>%s</h2>\n' % mccategory)
             prevmccategory = mccategory
-        WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout)
+        WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdoc)
+
     fout.write('</body>\n</html>\n')
+
+
+    # now make up the pdfinfo stuff so that every file has knowledge of what the agendas should be called
+    # has to be done after the agendas are put together and their names have been sorted out
+    for docid, agendascontained in agendasperdoc.iteritems():
+        pdfinfo = PdfInfo(docid)
+        pdfinfo.UpdateInfo(pdfinfodir)
+        agendascontained.sort()
+        pdfinfo.agendascontained = agendascontained # replace it
+        pdfinfo.WriteInfo(pdfinfodir)
 
 
