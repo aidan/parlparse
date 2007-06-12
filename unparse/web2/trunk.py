@@ -7,16 +7,12 @@ import datetime
 import urllib
 cgitb.enable()
 
-from basicbits import WriteGenHTMLhead, GetFcodes, monthnames
-from basicbits import basehref, htmldir, pdfdir, pdfinfodir
 from basicbits import DecodeHref, EncodeHref
-
-from pdfinfo import PdfInfo
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
 from indextype import WriteIndexStuff, WriteIndexStuffDocuments, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexStuffNation, WriteIndexSearch
-from unpvmeeting import WriteNotfound, WriteHTML
+from unpvmeeting import WriteHTML
 from highlightimg import WritePNGpage
 
 

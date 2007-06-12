@@ -6,12 +6,6 @@ import datetime
 import urllib
 from basicbits import WriteGenHTMLhead, EncodeHref, basehref, monthnames
 
-def WriteNotfound(code):
-    WriteGenHTMLhead("not found")
-    a, b = GetFcodes(code)
-    print "<h2>:: %s</h2>" % code
-    print "<h2>--%s-- --%s--</h2>" % (a, b)
-
 
 # more efficient to print out as we go through
 def MarkupLinks(ftext, highlightdoclink):
@@ -158,7 +152,7 @@ def WriteCouncilAttendees(gid, dtext):
             hrefflag = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
             print '<td><img class="smallflag_sca" src="%s"></td>' % hrefflag,
             hrefname = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":name})
-            print '<td><a class="name" href="%s">%s</a>' % (hrefname, name), 
+            print '<td><a class="name" href="%s">%s</a>' % (hrefname, name),
             print '<br>'
             hrefnation = EncodeHref({"pagefunc":"nation", "nation":nation})
             print '<a class="nation" href="%s">%s</a></td>' % (hrefnation, nation)
@@ -167,6 +161,11 @@ def WriteCouncilAttendees(gid, dtext):
     print '</div>'
     return res
 
+# convert paragraphs to less damaging spans (keeping the ids that might be marking them)
+def WriteItalicLine(gid, dclass, dtext):
+    print '<div class="%s">' % dclass
+    print re.sub("<(/?)p([^>]*)>", "<\\1span\\2>", dtext)
+    print '</div>'
 
 # this creates the data that the javascript can look up
 def WriteDataHeading(gid, dtext):
@@ -204,9 +203,13 @@ def WritePrevNext(pdfinfo):
         print '<td></td>'
     print '</table>'
 
+
+
 def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
     WritePrevNext(pdfinfo)
+
+    print '<div class="maintext">'
 
     fin = open(fhtml)
     ftext = fin.read()
@@ -229,12 +232,19 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
         elif dclass == "assembly-chairs":
             WriteAssemblyChair(gid, dtext)
         elif dclass == "council-attendees":
-            councilpresidentnation = WriteCouncilAttendees(gid, dtext)
-        else: #dclass == "assembly-chairs":
+            councilpresidentnation = WriteCouncilAttendees(gid, dtext)  # value used to dereference "The President" in the Security Council
+        elif re.match("italicline", dclass):
+            WriteItalicLine(gid, dclass, dtext)
+        else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
-            if re.match("assembly|italicline", dclass):
-                dtext = re.sub('</?p[^>]*>', ' ', dtext)
-                dtext = re.sub('class="([^"]*)"', 'class="\\1chair"', dtext)
             print dtext
             print '</div>'
+
+    print '</div>'
+    print '<div class="sidecol">'
+    print '<p>here is room to put some side stuff</p>'
+    print '</div>'
+    print '<div style="clear:both">'
+    print '<p>Footer stuff</p>'
+    print '</div>'
 

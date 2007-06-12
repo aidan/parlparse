@@ -9,6 +9,30 @@ currentgasession = 61
 currentscyear = 2007
 basehref = "http://staging.undemocracy.com"
 
+
+htmldir = '/home/undemocracy/undata/html'
+pdfdir = '/home/undemocracy/undata/pdf'
+pdfinfodir = '/home/undemocracy/undata/pdfinfo'
+pdfpreviewdir = '/home/undemocracy/undata/pdfpreview'
+pdfpreviewpagedir = '/home/undemocracy/undata/pdfpreviewpage'
+indexstuffdir = '/home/undemocracy/undata/indexstuff'
+
+monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+def WriteGenHTMLhead(title):
+    print "Content-Type: text/html\n"
+    print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
+    print '<html>'
+    print '<head>'
+    print '<title>UNdemocracy - %s</title>' % title
+    print '<link href="%s/unview.css" type="text/css" rel="stylesheet" media="all">' % basehref
+    print '<script language="JavaScript" type="text/javascript" src="%s/unjava.js"></script>' % basehref
+    print '</head>'
+    print '<body>'
+    print '<a href="%s"><h1 class="tophead">UNdemocracy.com</h1></a>' % basehref
+    print '<h1 class="topheadspec">%s</h1>' % title
+
+
 def GetPdfInfo(docid):
     res = PdfInfo(docid)
     res.UpdateInfo(pdfinfodir, False)
@@ -67,7 +91,7 @@ def DecodeHref(pathparts):
         if pathparts[1] == "documents" and nsess:
             docyearfile = os.path.join(indexstuffdir, "docyears", ("ga%d.txt" % nsess))
             if os.path.isfile(docyearfile):
-                return { "pagefunc": "gadocuments", "gasession":nsess, "docyearfile":docyearfile } 
+                return { "pagefunc": "gadocuments", "gasession":nsess, "docyearfile":docyearfile }
 
         return { "pagefunc": "fronterror" }
 
@@ -148,7 +172,7 @@ def DecodeHref(pathparts):
             if mrect:
                 highlightrects.append((int(mrect.group(1)), int(mrect.group(2)), int(mrect.group(3)), int(mrect.group(4))))
         hmap["highlightrects"] = highlightrects
-        return hmap 
+        return hmap
 
     # detect nations by the presence of Flag_of
     if os.path.isfile(os.path.join("png100", ("Flag_of_%s.png" % pathparts[0]))):
@@ -238,43 +262,4 @@ def EncodeHref(hmap):
         return "/".join(rl)
 
     return "%s/rubbish/%s" % (basehref, hmap["pagefunc"])
-
-
-htmldir = '/home/undemocracy/undata/html'
-pdfdir = '/home/undemocracy/undata/pdf'
-pdfinfodir = '/home/undemocracy/undata/pdfinfo'
-pdfpreviewdir = '/home/undemocracy/undata/pdfpreview'
-pdfpreviewpagedir = '/home/undemocracy/undata/pdfpreviewpage'
-indexstuffdir = '/home/undemocracy/undata/indexstuff'
-
-def WriteGenHTMLhead(title):
-    print "Content-Type: text/html\n"
-    print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
-    print '<html>'
-    print '<head>'
-    print '<title>UNdemocracy - %s</title>' % title
-    print '<link href="%s/unview.css" type="text/css" rel="stylesheet" media="all">' % basehref
-    print '<script language="JavaScript" type="text/javascript" src="%s/unjava.js"></script>' % basehref
-    print '</head>'
-    print '<body>'
-    print '<a href="%s"><h1 class="tophead">UNdemocracy.com</h1></a>' % basehref
-    print '<h1 class="topheadspec">%s</h1>' % title
-
-def GetFcodes(code):
-    scode = re.sub("/", "-", code)
-    scode = re.sub("\.html$|\.pdf$", "", scode)
-
-    fhtml = os.path.join(htmldir, scode + ".html")
-    if not os.path.isfile(fhtml):  # only use unindexed types during development, since no searcher is running
-        fhtml = ""
-
-    fpdf = os.path.join(pdfdir, scode + ".pdf")
-    if not os.path.isfile(fpdf):
-        fpdf = ""
-
-    return fhtml, fpdf
-
-monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-
 
