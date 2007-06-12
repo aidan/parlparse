@@ -84,8 +84,8 @@ class PdfInfo:
 
     def AddPrevMeetingDetails(self, prevpdfinfo):
         if prevpdfinfo:
-            prevpdfinfo.nextmeetingdetails = (self.pdfc, self.sdate, self.rosetime)
-            self.prevmeetingdetails = (prevpdfinfo.pdfc, prevpdfinfo.sdate, self.time)
+            prevpdfinfo.nextmeetingdetails = (self.pdfc, self.sdate, self.time)
+            self.prevmeetingdetails = (prevpdfinfo.pdfc, prevpdfinfo.sdate, self.rosetime)
 
     # loads the data in from the file
     def UpdateInfo(self, pdfinfodir, bpagesonly):
@@ -121,6 +121,10 @@ class PdfInfo:
                 self.time = val
             elif param == "rosetime":
                 self.rosetime = val
+            elif param == "prevmeeting":
+                self.prevmeetingdetails = val.split()
+            elif param == "nextmeeting":
+                self.nextmeetingdetails = val.split()
 
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")

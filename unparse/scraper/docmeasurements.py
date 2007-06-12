@@ -97,7 +97,7 @@ class DocCounts:
             else:
                 self.scrlist[mscres.group(1)] = [ docid ]
         elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", docid):
-            print "What is this?", pdf
+            print "What is this?", docid
 
     def IncrHtmlCount(self, htdoc, ftext):
         maga = re.search("(A-(\d\d)-PV.*?)(\.html)", htdoc)
