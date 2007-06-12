@@ -34,6 +34,9 @@ def WriteCollapsedAgendaList(aglist):
     aggtitles.sort()
 
     print '<ul class="aglistgroup">'
+
+    print '<li><a href="%s" class="aggroup">Condolences</a></li>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"}) # special case
+
     for aggt, agnum in aggtitles:
         print '<li>',
         print '<a href="%s" class="aggroup">%s</a>' % (EncodeHref({"pagefunc":"agendanum", "agendanum":agnum}), aggt)
@@ -75,40 +78,6 @@ def WriteIndexStuff(nsess):
     WriteCollapsedAgendaList(ags)
 
 
-def WriteIndexStuffDocuments(docyearfile):
-    msc = re.search("sc(\d+).txt$", docyearfile)
-    mga = re.search("ga(\d+).txt$", docyearfile)
-    if msc:
-        WriteGenHTMLhead("Security Council %s Documents" % msc.group(1))
-    else:
-        WriteGenHTMLhead("General Assembly Session %s Documents" % mga.group(1))
-    dlists = { "PV":[ ], "DOC":[ ], "PRST":[ ], "RES":[ ] }
-    fin = open(docyearfile)
-    for rl in fin.readlines():
-        docid, dl = rl.split()
-        dlists[dl].append(docid)
-    if dlists["RES"]:
-        print "<h3>Resolutions</h3>"
-        print '<p>'
-        for docid in dlists["RES"]:
-            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
-        print '</p>'
-    if dlists["DOC"]:
-        print "<h3>Documents</h3>"
-        print '<p>'
-        for docid in dlists["DOC"]:
-            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
-        print '</p>'
-    if dlists["PRST"]:
-        print "<h3>Presidential Statements</h3>"
-        for docid in dlists["PRST"]:
-            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
-        print '</p>'
-    if dlists["PV"]:
-        print "<h3>Verbatim Reports</h3>"
-        for docid in dlists["PV"]:
-            print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
-        print '</p>'
 
 
 
@@ -254,15 +223,6 @@ def WriteIndexSearch(search):
 
     print '</ul>'
 
-
-# not written
-def WriteIndexStuffNation(nation, person):
-    WriteGenHTMLhead('Nation page for %s' % nation)
-    flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
-    print '<h1>%s</h1>' % nation
-    print '<img class="nationpageflag" src="%s">' % flaghref
-    if person:
-        print '<h3>Subselection of speeches by %s</3>' % person
 
 
 

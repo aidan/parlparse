@@ -11,9 +11,11 @@ from basicbits import DecodeHref, EncodeHref
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
-from indextype import WriteIndexStuff, WriteIndexStuffDocuments, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexStuffNation, WriteIndexSearch
+from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
 from unpvmeeting import WriteHTML
 from highlightimg import WritePNGpage
+from nationpage import WriteIndexStuffNation
+from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing
 
 
 # the main section that interprets the fields
@@ -42,7 +44,7 @@ if __name__ == "__main__":
     elif hmap["pagefunc"] == "agendanum":
         WriteIndexStuffAgnum(hmap["agendanum"])
     elif hmap["pagefunc"] == "gadocuments":
-        WriteIndexStuffDocuments(hmap["docyearfile"])
+        WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
     elif hmap["pagefunc"] == "scmeeting":
@@ -52,11 +54,13 @@ if __name__ == "__main__":
     elif hmap["pagefunc"] == "scyear":
         WriteIndexStuffSecYear(hmap["scyear"])
     elif hmap["pagefunc"] == "scdocuments":
-        WriteIndexStuffDocuments(hmap["docyearfile"])
+        WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "pdf":
         WritePDF(hmap["pdffile"])
     elif hmap["pagefunc"] == "document":
         WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
+    elif hmap["pagefunc"] == "documentlist":
+        WriteDocumentListing(hmap["body"])
     elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
         WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
     elif hmap["pagefunc"] == "nation":

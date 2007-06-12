@@ -48,11 +48,15 @@ def GetPdfInfo(docid):
 def DecodeHref(pathparts):
     if len(pathparts) == 0:
         return { "pagefunc": "front" }
-    
+
     # case when someone has given a document reference with the slashes
     if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
         pathparts[0] = "-".join(pathparts)
         del pathparts[1:]
+
+    if pathparts[0] == "documents":
+        if len(pathparts) == 1:
+            return { "pagefunc":"documentlist", "body":"all" }
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
     if mga:
@@ -70,8 +74,8 @@ def DecodeHref(pathparts):
             nsess = 0
             if len(pathparts) == 1:
                 return { "pagefunc": "fronterror" }
-        
-        
+
+
         mmeeting = re.match("meeting_?(\d+)$", pathparts[1])
         if mmeeting:
             if not nsess:
@@ -88,10 +92,12 @@ def DecodeHref(pathparts):
         if mtopic:
             return { "pagefunc": "agendanum", "agendanum":mtopic.group(1) }
             # agenda num should in theory match session number
-        if pathparts[1] == "documents" and nsess:
-            docyearfile = os.path.join(indexstuffdir, "docyears", ("ga%d.txt" % nsess))
-            if os.path.isfile(docyearfile):
-                return { "pagefunc": "gadocuments", "gasession":nsess, "docyearfile":docyearfile }
+        if pathparts[1] == "documents":
+            if nsess:
+                docyearfile = os.path.join(indexstuffdir, "docyears", ("ga%d.txt" % nsess))
+                if os.path.isfile(docyearfile):
+                    return { "pagefunc": "gadocuments", "gasession":nsess, "docyearfile":docyearfile }
+            return { "pagefunc":"documentlist", "body":"generalassembly" }
 
         return { "pagefunc": "fronterror" }
 
@@ -105,7 +111,7 @@ def DecodeHref(pathparts):
             nscyear = int(msc.group(1))
             if nscyear <= 1993:
                 if nscyear < 1946 or len(pathparts) == 1 or pathparts[1] != "documents":
-                    return { "pagefunc": "fronterror" }  
+                    return { "pagefunc": "fronterror" }
             if nscyear > currentscyear:
                 return { "pagefunc": "fronterror" }
             if len(pathparts) == 1:
@@ -124,10 +130,12 @@ def DecodeHref(pathparts):
                 return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile }
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
-        if pathparts[1] == "documents" and nscyear:
-            docyearfile = os.path.join(indexstuffdir, "docyears", ("sc%d.txt" % nscyear))
-            if os.path.isfile(docyearfile):
-                return { "pagefunc":"scdocuments", "scyear":nscyear, "docyearfile":docyearfile }  
+        if pathparts[1] == "documents":
+            if nscyear:
+                docyearfile = os.path.join(indexstuffdir, "docyears", ("sc%d.txt" % nscyear))
+                if os.path.isfile(docyearfile):
+                    return { "pagefunc":"scdocuments", "scyear":nscyear, "docyearfile":docyearfile }
+            return { "pagefunc":"documentlist", "body":"securitycouncil" }
         return { "pagefunc":"fronterror" }
 
 
@@ -180,7 +188,7 @@ def DecodeHref(pathparts):
         if len(pathparts) == 1:
             return { "pagefunc":"nation", "nation":nation }
         return { "pagefunc":"nationperson", "nation":nation, "person":pathparts[1] }
-    
+
     return { "pagefunc": "fronterror" }
 
 

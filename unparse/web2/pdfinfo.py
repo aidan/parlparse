@@ -40,6 +40,8 @@ class PdfInfo:
         self.prevmeetingdetails = None
         self.time = None
         self.title = None
+        self.agendascontained = [ ] # (gid, agnum, title)
+
 
         if mgadoc:
             self.desc = "General Assembly Session %s document" % mgadoc.group(1)
@@ -88,7 +90,7 @@ class PdfInfo:
             self.prevmeetingdetails = (prevpdfinfo.pdfc, prevpdfinfo.sdate, self.rosetime)
 
     # loads the data in from the file
-    def UpdateInfo(self, pdfinfodir, bpagesonly):
+    def UpdateInfo(self, pdfinfodir):
 
         # in future we'll record the wikibacklinks
 
@@ -101,10 +103,6 @@ class PdfInfo:
             mln = re.match("(.*?) = (.*)$", ln)
             assert mln, ln + " " + pdfinfofile
             param, val = mln.group(1).strip(), mln.group(2).strip()
-
-            # the pages information comes from a separate source to docmeasures, so has to be preserved
-            if bpagesonly and param != "pages":
-                continue
 
             if param == "pages":
                 self.pages = int(val)
@@ -125,6 +123,16 @@ class PdfInfo:
                 self.prevmeetingdetails = val.split()
             elif param == "nextmeeting":
                 self.nextmeetingdetails = val.split()
+            elif param == "agendacontained":
+                magcon = re.match("(\S+)\s+(\S+)\s+(.+)$", val)
+                self.agendascontained.append((magcon.group(1), magcon.group(2), magcon.group(3).strip()))
+
+    def ResetDocmeasureData(self):
+        self.sdaterefs = [ ]  # dates of meetings that refer to this one
+        self.sdate = None   # this data is used for access when we are rendering the associated html
+        self.nextmeetingdetails = None
+        self.prevmeetingdetails = None
+        self.time = None
 
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")
@@ -145,6 +153,6 @@ class PdfInfo:
             fout.write("nextmeeting = %s %s %s\n" % self.nextmeetingdetails)
         if self.prevmeetingdetails:
             fout.write("prevmeeting = %s %s %s\n" % self.prevmeetingdetails)
-
-
+        for agcontained in self.agendascontained:
+            fout.write("agendacontained = %s %s %s\n" % agcontained)
 
