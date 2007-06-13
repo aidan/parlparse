@@ -46,9 +46,9 @@ if __name__ == "__main__":
     elif hmap["pagefunc"] == "gadocuments":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
-        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
     elif hmap["pagefunc"] == "scmeeting":
-        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "")
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
     elif hmap["pagefunc"] == "sctopics":
         WriteIndexStuffSec()
     elif hmap["pagefunc"] == "scyear":

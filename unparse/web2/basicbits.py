@@ -83,9 +83,10 @@ def DecodeHref(pathparts):
             nmeeting = int(mmeeting.group(1))
             docid = "A-%d-PV.%d" % (nsess, nmeeting)
             pdfinfo = GetPdfInfo(docid)
-            # will also take topic in here to allow highlighting
+            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_([SA]-.*?)$", pathparts[2])
+            highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
-                return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile }
+                return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
             return { "pagefunc": "document", "docid":docid }
 
         mtopic = re.match("topicn_(.+)$", pathparts[1])
@@ -126,8 +127,10 @@ def DecodeHref(pathparts):
             if mmeeting.group(2):
                 docid = "%s-%s.%s" % (docid, mmeeting.group(1), mmeeting.group(2))
             pdfinfo = GetPdfInfo(docid)
+            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_([SA]-.*?)$", pathparts[2])
+            highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
-                return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile }
+                return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
         if pathparts[1] == "documents":
@@ -244,11 +247,13 @@ def EncodeHref(hmap):
         return "%s/topicn_%s" % (basehref, hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
-        return "%s/generalassembly_%d/meeting_%d%s" % (basehref, hmap["gasession"], hmap["gameeting"], hcode)
+        hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
+        return "%s/generalassembly_%d/meeting_%d%s%s" % (basehref, hmap["gasession"], hmap["gameeting"], hlight, hcode)
     if hmap["pagefunc"] == "scmeeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
+        hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
         # in future this could include the year
-        return "%s/securitycouncil/meeting_%d%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hcode)
+        return "%s/securitycouncil/meeting_%d%s%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hlight, hcode)
     if hmap["pagefunc"] == "nation":
         nationf = re.sub(" ", "_", hmap["nation"])
         nationf = re.sub("'", "", nationf)
