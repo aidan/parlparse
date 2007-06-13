@@ -5,7 +5,7 @@ import datetime
 
 from basicbits import WriteGenHTMLhead
 from basicbits import indexstuffdir, currentgasession, currentscyear
-from basicbits import EncodeHref
+from basicbits import EncodeHref, LookupAgendaTitle
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords, LoadAgendaNames
 
@@ -23,7 +23,9 @@ def WriteSpeechInstances(snation, person):
         gidspeech = srec[0]
         docid = srec[1]
         gidsubhead = srec[4]
-        print '<li><a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":gidspeech}), docid)
+        agtitle, sdate = LookupAgendaTitle(docid, gidspeech)
+        href = EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":gidspeech})
+        print '<li>%s <a href="%s">%s</a></li>' % (sdate or "", href, agtitle or docid)
     print '</ul>'
 
 

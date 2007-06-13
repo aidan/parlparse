@@ -113,7 +113,7 @@ def WritePDFpreview(basehref, pdfinfo):
             mcode = pvrefk[1]
             hmap = { "pagefunc":"meeting", "docid":mcode, "highlightdoclink":code }
             hmap["gid"] = min(pdfinfo.pvrefsing[pvrefk])
-            agtitle = LookupAgendaTitle(mcode, hmap["gid"]):
+            agtitle, sdate = LookupAgendaTitle(mcode, hmap["gid"])
             print '<li>%s <a href="%s">%s</a></li>' % (pvrefk[0], EncodeHref(hmap), (agtitle or mcode))
         print '</ul>'
 

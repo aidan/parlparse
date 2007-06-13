@@ -50,9 +50,9 @@ def LookupAgendaTitle(docid, gid):
         if agc[0] > gid:
             break
         prevagc = agc
-    if not agc:
-        return None
-    return prevagc[2]  # the title
+    if not prevagc:
+        return None, pdfinfo.sdate
+    return prevagc[2], pdfinfo.sdate  # the title
 
 
 # dereferencing for hackability
