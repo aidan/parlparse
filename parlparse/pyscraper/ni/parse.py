@@ -267,7 +267,7 @@ class ParseDay:
 				continue
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
-			if cl == 'B3BodyText' and phtml[0:8] == '<strong>':
+			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
 				cl = 'B1SpeakersName'
 			if cl == 'H3SectionHeading':
 				self.display_speech()
