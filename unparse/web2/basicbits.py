@@ -43,6 +43,18 @@ def GetPdfInfo(docid):
     return res
 
 
+def LookupAgendaTitle(docid, gid):
+    pdfinfo = GetPdfInfo(docid)
+    prevagc = None
+    for agc in pdfinfo.agendascontained:
+        if agc[0] > gid:
+            break
+        prevagc = agc
+    if not agc:
+        return None
+    return prevagc[2]  # the title
+
+
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
 def DecodeHref(pathparts):

@@ -5,6 +5,7 @@ import datetime
 
 from basicbits import WriteGenHTMLhead, EncodeHref
 from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, basehref
+from basicbits import LookupAgendaTitle
 
 
 def WritePDF(fpdf):
@@ -112,7 +113,8 @@ def WritePDFpreview(basehref, pdfinfo):
             mcode = pvrefk[1]
             hmap = { "pagefunc":"meeting", "docid":mcode, "highlightdoclink":code }
             hmap["gid"] = min(pdfinfo.pvrefsing[pvrefk])
-            print '<li>%s <a href="%s">%s</a></li>' % (pvrefk[0], EncodeHref(hmap), mcode)
+            agtitle = LookupAgendaTitle(mcode, hmap["gid"]):
+            print '<li>%s <a href="%s">%s</a></li>' % (pvrefk[0], EncodeHref(hmap), (agtitle or mcode))
         print '</ul>'
 
     if pdfinfo.mgapv or pdfinfo.mscpv:
