@@ -14,6 +14,7 @@ from docmeasurements import WriteDocMeasurements
 from agendanames import WriteAgendaSummaries
 from scsummaries import ScrapeSCSummaries, WriteSCSummaries
 from wpediaget import FetchWikiBacklinks
+from gennatdata import GenerateNationData
 
 parser = OptionParser()
 parser.set_usage("""
@@ -29,6 +30,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
             used for inserting into the webpage
   agendanames generate page containing agenda summaries
   scsummaries scrape and generate summary index for security council
+  nationdata generates the information about each nation
   index   generate miscellaneous index files
   docimages generate document images in undata/pdfpreview
   wpscrape  scrape for UN translocutions from wikipedia
@@ -92,8 +94,9 @@ bDocimages = "docimages" in args
 bIndexfiles = "index" in args
 bScrapewp = "wpscrape" in args
 bSCsummaries = "scsummaries" in args
+bNationData = "nationdata" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData):
     parser.print_help()
     sys.exit(1)
 
@@ -167,9 +170,17 @@ if bSCsummaries:
         os.remove(f)
     os.rename(lf, f)  # atomic in unix
 
+
+if bNationData:
+    nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
+    if not os.path.isdir(nationactivitydir):
+        os.mkdir(nationactivitydir)
+    GenerateNationData(nationactivitydir)
+
 if bDocimages:
     GenerateDocimages(stem, options.forcedocimg, options.limit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
 
+# this may be out-dated
 if bScrapewp:
     FetchWikiBacklinks(commentsdir)
 
