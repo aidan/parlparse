@@ -26,6 +26,7 @@ class NationDataG:
         self.votetable = { }   # maps from votesum tuple to vote
         self.voteminority = [ ]
         self.fname = re.sub(" ", "", lnation.lower()) + ".txt"
+        self.ambassadors = [ ]
 
     # votesum = (docid, mdiv.group(2), vnum, mvote.group(1))  # this 4-tuple identifies a vote
     def AddVoteMade(self, votesum, vote):
@@ -35,15 +36,20 @@ class NationDataG:
         elif vote == "against":
             self.voteminority.append((votesum[2][1], votesum))
 
+    def AddSpoken(self, name, docid, gid, sdate):
+        self.ambassadors.append((name, sdate, docid, gid))
+
     def WriteData(self, nationactivitydir):
         fname = os.path.join(nationactivitydir, self.fname)
         fout = open(fname, "w")
         self.voteminority.sort()
         for vm, votesum in self.voteminority[:10]:
             vmdat = "%d/%d/%d/%d" % votesum[2]
-            fout.write("minorityvote = %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3]))
+            fout.write("minorityvote = %s %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3], votesum[4]))
+        self.ambassadors.sort()
+        for amb in self.ambassadors:
+            fout.write("ambassador = %s %s %s %s\n" % (amb[2], amb[3], amb[1], amb[0]))
         fout.close()
-
 
 def GenerateNationData(nationactivitydir, htmldir):
     rels = GetAllHtmlDocs("", False, False, htmldir)
@@ -68,18 +74,25 @@ def GenerateNationData(nationactivitydir, htmldir):
 
         for mdiv in re.finditer('(?s)<div class="(spoken|recvote|italicline)" id="([^"]*)">(.*?)</div>', ftext):
 
+            gid = mdiv.group(2)
             if mdiv.group(1) == "recvote":
                 mvote = re.match('\s*<p class="motiontext"[^>]*>(.*?)</p>\s*<p class="votecount"[^>]*>(.*?)</p>\s*<p class="votelist"[^>]*>(.*?)</p>', mdiv.group(3))
                 assert mvote, mdiv.group(2)
                 mvnum = re.match("favour=(\d+)\s+against=(\d+)\s+abstain=(\d+)\s+absent=(\d+)", mvote.group(2))
                 vnum = [int(mvnum.group(1)), int(mvnum.group(2)), int(mvnum.group(3)), int(mvnum.group(4))]
                 #vnum.append(float(vnum[0] + vnum[1] + vnum[2] + vnum[3]))
-                votesum = (docid, mdiv.group(2), tuple(vnum), mvote.group(1))  # this 4-tuple identifies a vote
+                motiontext = re.sub("<[^>]*>", " ", mvote.group(1))
+                votesum = (docid, gid, tuple(vnum), sdate, motiontext)  # this 4-tuple identifies a vote
 
                 for mvoten in re.finditer('<span class="[^<]*?([^<\-]*)">([^<]*)</span>', mvote.group(3)):
                     nationdict[mvoten.group(2)].AddVoteMade(votesum, mvoten.group(1))  # big mapping table
 
             elif mdiv.group(1) == "spoken":
+                mspeaker = re.search('<h3 class="speaker"> <span class="name">([^<]*)</span>(?: <span class="(nation|non-nation)">([^<]*)</span>)?(?: <span class="language">[^<]*</span>)? </h3>', mdiv.group(3))
+                assert mspeaker, mdiv.group(0)
+                if mspeaker.group(2) == "nation":
+                    nationdict[mspeaker.group(3)].AddSpoken(mspeaker.group(1), docid, gid, sdate)
+
                 pass # check for ambassador speech
 
         #if nationdict["United States"].votetable:
@@ -89,7 +102,6 @@ def GenerateNationData(nationactivitydir, htmldir):
     for nation in nationdates:
         nationdict[nation].WriteData(nationactivitydir)
 
-    print "not yet making nation data"
     return
 
 
