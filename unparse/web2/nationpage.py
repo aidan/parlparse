@@ -5,13 +5,22 @@ import datetime
 
 from basicbits import WriteGenHTMLhead
 from basicbits import indexstuffdir, currentgasession, currentscyear
-from basicbits import EncodeHref, LookupAgendaTitle
+from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords, LoadAgendaNames
 
 
-def WriteSpeechInstances(snation, person):
+def WriteSpeechInstances(snation, person, nationdata):
     print '<h3>Speeches by the ambassador whose name matches "%s"</h3>' % person
+    print '<ul>'
+    for mp in nationdata:
+        if mp["lntype"] == "ambassador" and DownPersonName(mp["name"]) == person:
+            href = EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]})
+            desc, sdate = LookupAgendaTitle(mp["docid"], mp["gid"])
+            print '<li>%s %s <a href="%s">%s</a></li>' % (mp["sdate"], mp["name"], href, desc or mp["sdate"])
+    print '</ul>'
+    return
+
 
     recs = XapLookup("nation:%s name:%s class:spoken" % (snation, person))
     if not recs:
@@ -40,7 +49,7 @@ def GatherNationData(snation):
         mmv = re.match("minorityvote = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         mamb = re.match("ambassador = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         if mmv:
-            res.append({"lntype":"minorityvote", "division":mms.group(1), "docid":mmv.group(2), "gid":mmv.group(3), "decription":mmv.group(4)})
+            res.append({"lntype":"minorityvote", "division":mmv.group(1), "docid":mmv.group(2), "gid":mmv.group(3), "description":mmv.group(4)})
         elif mamb:
             res.append({"lntype":"ambassador", "docid":mamb.group(1), "gid":mamb.group(2), "sdate":mamb.group(3), "name":mamb.group(4)})
     return res
@@ -51,7 +60,7 @@ def WriteMinorityVotes(nationdata):
     print '<ul>'
     for mp in nationdata:
         if mp["lntype"] == "minorityvote":
-            vts = [ int(v)  for v in mp["division"].group(1).split("/") ]
+            vts = [ int(v)  for v in mp["division"].split("/") ]
             print '<li>'
             rw = [ ]
             rw.append('<input style="width:%dpx; background-color:green;"></input>' % vts[0])
@@ -59,25 +68,28 @@ def WriteMinorityVotes(nationdata):
             rw.append('<input style="width:%dpx; background-color:purple;"></input>' % vts[2])
             rw.append('<input style="width:%dpx; background-color:gray;"></input>' % vts[3])
             print '<span style="border:thin black solid">%s</span>' % "".join(rw)
-            print '<a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["desciption"])
+            print '<a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
     print '</ul>'
     return
 
-def WriteAmbassadorList(nationdata):
+
+def WriteAmbassadorList(nation, nationdata):
     # group by ambassadors
     ambmap = { }
     for mp in nationdata:
         if mp["lntype"] == "ambassador":
             ambmap.setdefault(mp["name"], [ ]).append(mp["sdate"])
 
-    amblist = [ (min(sdates), name, max(sdates))  for name, sdates in ambmap.iteritems() ]
+    amblist = [ (min(sdates), name, len(sdates), max(sdates))  for name, sdates in ambmap.iteritems() ]
     amblist.sort()
 
     print '<h3>Ambassadors</h3>'
-    print '<ul>'
+    print '<table style="background-color:lightgray;">'
+    print '<tr><th>Name</th><th>Number</th><th>First</th><th>Last</th></tr>'
     for ambl in amblist:
-        print '<li>%s  %s - %s</li>' % (ambl[1], ambl[0], ambl[2])
-    print '</ul>'
+        href = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":ambl[1]})
+        print '<tr><td><a href="%s">%s</a></td>  <td>%d</td> <td>%s</td> <td>%s</td></tr>' % (href, ambl[1], ambl[2], ambl[0], ambl[3])
+    print '</table>'
 
 
 # not written
@@ -90,8 +102,8 @@ def WriteIndexStuffNation(nation, person):
     nationdata = GatherNationData(snation)
 
     if person:
-        WriteSpeechInstances(snation, person)
+        WriteSpeechInstances(snation, person, nationdata)
     else:
         WriteMinorityVotes(nationdata)
-        WriteAmbassadorList(nationdata)
+        WriteAmbassadorList(nation, nationdata)
 

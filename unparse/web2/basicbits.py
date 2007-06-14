@@ -63,7 +63,8 @@ def LogIncomingDoc(docid, page, url, ipaddress):
     fout.close()
 
 
-
+def DownPersonName(person):
+    return DownAscii(person.split()[-1].lower())
 
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
@@ -283,7 +284,7 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "nationperson":
         nationf = re.sub(" ", "_", hmap["nation"])
         nationf = re.sub("'", "", nationf)
-        personf = DownAscii(hmap["person"].split()[-1].lower())  # just work with last name
+        personf = DownPersonName(hmap["person"])  # just work with last name
         return "%s/%s/%s" % (basehref, nationf, personf)
 
     if hmap["pagefunc"] == "flagpng":
