@@ -44,10 +44,10 @@ def WriteMinorityVotes(snation):
             vts = [ int(v)  for v in mmv.group(1).split("/") ]
             print '<li>'
             rw = [ ]
-            rw.append('<span style="width:%d; background-color:green;"></span>' % vts[0])
-            rw.append('<span style="width:%d; background-color:red;"></span>' % vts[1])
-            rw.append('<span style="width:%d; background-color:purple;"></span>' % vts[2])
-            rw.append('<span style="width:%d; background-color:gray;"></span>' % vts[3])
+            rw.append('<input style="width:%dpx; background-color:green;"></input>' % vts[0])
+            rw.append('<input style="width:%dpx; background-color:red;"></input>' % vts[1])
+            rw.append('<input style="width:%dpx; background-color:purple;"></input>' % vts[2])
+            rw.append('<input style="width:%dpx; background-color:gray;"></input>' % vts[3])
             print '<span style="border:thin black solid">%s</span>' % "".join(rw)
             print '<a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mmv.group(2), "gid":mmv.group(3)}), mmv.group(4))
     print '</ul>'

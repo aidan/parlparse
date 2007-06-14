@@ -16,6 +16,7 @@ pdfinfodir = '/home/undemocracy/undata/pdfinfo'
 pdfpreviewdir = '/home/undemocracy/undata/pdfpreview'
 pdfpreviewpagedir = '/home/undemocracy/undata/pdfpreviewpage'
 indexstuffdir = '/home/undemocracy/undata/indexstuff'
+logincomingdir = '/home/undemocracy/undata/logincoming'
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -53,6 +54,15 @@ def LookupAgendaTitle(docid, gid):
     if not prevagc:
         return None, pdfinfo.sdate
     return prevagc[2], pdfinfo.sdate  # the title
+
+
+def LogIncomingDoc(docid, page, url, ipaddress):
+    flog = os.path.join(logincomingdir, "logpages.txt")
+    fout = open(flog, "a")
+    fout.write("docpage = %s %s %s %s\n" % (docid, page, url, ipaddress))
+    fout.close()
+
+
 
 
 # dereferencing for hackability

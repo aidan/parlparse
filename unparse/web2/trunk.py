@@ -7,7 +7,7 @@ import datetime
 import urllib
 cgitb.enable()
 
-from basicbits import DecodeHref, EncodeHref
+from basicbits import DecodeHref, EncodeHref, LogIncomingDoc
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
@@ -25,6 +25,9 @@ if __name__ == "__main__":
     searchvalue = form.has_key("search") and form["search"].value or ""  # returned by the search form
     pathpartstr = (os.getenv("PATH_INFO") or '').strip('/')
     pathparts = [ s  for s in pathpartstr.split('/')  if s ]
+    referrer = os.getenv("HTTP_REFERER") or ''
+    ipaddress = os.getenv("REMOTE_ADDR") or ''
+
     hmap = DecodeHref(pathparts)
 
     # should be done with one of those apache settings
@@ -57,12 +60,15 @@ if __name__ == "__main__":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "pdf":
         WritePDF(hmap["pdffile"])
+        LogIncomingDoc(hmap["docid"], "pdf", referrer, ipaddress)
     elif hmap["pagefunc"] == "document":
         WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
+        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress)
     elif hmap["pagefunc"] == "documentlist":
         WriteDocumentListing(hmap["body"])
     elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
         WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
+        LogIncomingDoc(hmap["docid"], str(hmap["page"]), referrer, ipaddress)
     elif hmap["pagefunc"] == "nation":
         WriteIndexStuffNation(hmap["nation"], "")
     elif hmap["pagefunc"] == "nationperson":
@@ -72,6 +78,7 @@ if __name__ == "__main__":
         sys.exit(0)
     else:
         WriteFrontPageError(pathpartstr, hmap)
+    
     print "</body>"
     print '</html>'
 
