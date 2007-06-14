@@ -31,16 +31,17 @@ class NationDataG:
     def AddVoteMade(self, votesum, vote):
         self.votetable[votesum] = vote
         if vote == "favour":
-            self.voteminority.append((votesum[2][0] / votesum[2][4], votesum))
+            self.voteminority.append((votesum[2][0], votesum))
         elif vote == "against":
-            self.voteminority.append((votesum[2][1] / votesum[2][4], votesum))
+            self.voteminority.append((votesum[2][1], votesum))
 
     def WriteData(self, nationactivitydir):
         fname = os.path.join(nationactivitydir, self.fname)
         fout = open(fname, "w")
         self.voteminority.sort()
         for vm, votesum in self.voteminority[:10]:
-            fout.write("minorityvote = %d %s %s %s\n" % (int(vm * 1000), votesum[0], votesum[1], votesum[3]))
+            vmdat = "%d/%d/%d/%d" % votesum[2]
+            fout.write("minorityvote = %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3]))
         fout.close()
 
 
@@ -72,7 +73,7 @@ def GenerateNationData(nationactivitydir, htmldir):
                 assert mvote, mdiv.group(2)
                 mvnum = re.match("favour=(\d+)\s+against=(\d+)\s+abstain=(\d+)\s+absent=(\d+)", mvote.group(2))
                 vnum = [int(mvnum.group(1)), int(mvnum.group(2)), int(mvnum.group(3)), int(mvnum.group(4))]
-                vnum.append(float(vnum[0] + vnum[1] + vnum[2] + vnum[3]))
+                #vnum.append(float(vnum[0] + vnum[1] + vnum[2] + vnum[3]))
                 votesum = (docid, mdiv.group(2), tuple(vnum), mvote.group(1))  # this 4-tuple identifies a vote
 
                 for mvoten in re.finditer('<span class="[^<]*?([^<\-]*)">([^<]*)</span>', mvote.group(3)):
