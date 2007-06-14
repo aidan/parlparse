@@ -25,7 +25,7 @@ class NationDataG:
         self.nationname = lnation
         self.votetable = { }   # maps from votesum tuple to vote
         self.voteminority = [ ]
-        self.fname = re.sub(" ", "", lnation.lower()) + ".txt"
+        self.fname = re.sub(" ", "_", lnation.lower()) + ".txt"
         self.ambassadors = [ ]
 
     # votesum = (docid, mdiv.group(2), vnum, mvote.group(1))  # this 4-tuple identifies a vote

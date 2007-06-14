@@ -83,7 +83,7 @@ def DecodeHref(pathparts):
             return { "pagefunc":"documentlist", "body":"all" }
     if pathparts[0] == "nations":
         if len(pathparts) == 1:
-            return { "pagefunct":"nationlist" }
+            return { "pagefunc":"nationlist" }
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
     if mga:

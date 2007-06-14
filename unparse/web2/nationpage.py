@@ -63,10 +63,10 @@ def WriteMinorityVotes(nationdata):
             vts = [ int(v)  for v in mp["division"].split("/") ]
             print '<li>'
             rw = [ ]
-            rw.append('<input style="width:%dpx; background-color:green;"></input>' % vts[0])
-            rw.append('<input style="width:%dpx; background-color:red;"></input>' % vts[1])
-            rw.append('<input style="width:%dpx; background-color:purple;"></input>' % vts[2])
-            rw.append('<input style="width:%dpx; background-color:gray;"></input>' % vts[3])
+            rw.append('<span style="padding-left:%dpx; background-color:green;"></span>' % vts[0])
+            rw.append('<span style="padding-left:%dpx; background-color:red;"></span>' % vts[1])
+            rw.append('<span style="padding-left:%dpx; background-color:purple;"></span>' % vts[2])
+            rw.append('<span style="padding-left:%dpx; background-color:gray;"></span>' % vts[3])
             print '<span style="border:thin black solid">%s</span>' % "".join(rw)
             print '<a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
     print '</ul>'

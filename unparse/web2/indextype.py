@@ -133,7 +133,7 @@ def WriteFrontPage():
     print '<input type="submit" value="GO">'
     print '</form>'
 
-    print '<p><a href="%s">List all nations</a></p>' % EncodeHref({"pagefunc":"listnations"})
+    print '<p><a href="%s">List all nations</a></p>' % EncodeHref({"pagefunc":"nationlist"})
 
     allags = LoadAgendaNames()
     print '<h3>General Assembly Sessions</h3>'
