@@ -9,6 +9,7 @@ from basicbits import EncodeHref, LookupAgendaTitle
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords, LoadAgendaNames
 
+
 def WriteSpeechInstances(snation, person):
     print '<h3>Speeches by the ambassador whose name matches "%s"</h3>' % person
 
@@ -32,6 +33,19 @@ def WriteSpeechInstances(snation, person):
 def WriteMinorityVotes(snation):
     print '<h3>Minority votes</h3>'
 
+    fname = os.path.join(indexstuffdir, "nationactivity", snation + ".txt")
+    if not os.path.isfile(fname):
+        return
+    fin = open(fname)
+    print '<ul>'
+    for nd in fin.readlines():
+        mmv = re.match("minorityvote = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
+        if mmv:
+            print '<li><a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mmv.group(2), "gid":mmv.group(3)}), mmv.group(4))
+    print '</ul>'
+    return
+    
+    # defunct
     recs = XapLookup("vote:%s-minority" % snation)
     if not recs:
         print '<p>No results found</p>'

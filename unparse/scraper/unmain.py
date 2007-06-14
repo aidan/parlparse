@@ -130,14 +130,6 @@ if bParse:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
     PrintNonnationOccurrances()
 
-if bVoteDistances:
-    f = os.path.join(indexstuffdir, "votetable.txt")
-    if IsNotQuiet():
-        print "Writing vote distance to file:", f
-    fout = open(f, "w")
-    WriteVoteDistances(stem, htmldir, fout)
-    fout.close()
-
 # makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
     WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
@@ -175,7 +167,15 @@ if bNationData:
     nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
     if not os.path.isdir(nationactivitydir):
         os.mkdir(nationactivitydir)
-    GenerateNationData(nationactivitydir)
+    GenerateNationData(nationactivitydir, htmldir)
+
+if bVoteDistances:
+    f = os.path.join(indexstuffdir, "votetable.txt")
+    if IsNotQuiet():
+        print "Writing vote distance to file:", f
+    fout = open(f, "w")
+    WriteVoteDistances(stem, htmldir, fout)
+    fout.close()
 
 if bDocimages:
     GenerateDocimages(stem, options.forcedocimg, options.limit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)

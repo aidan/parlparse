@@ -1,4 +1,7 @@
 #!/usr/bin/python2.4
+
+# this module to be superceded by gennatdata.py
+
 import sys
 import re
 import os
