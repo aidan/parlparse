@@ -361,12 +361,9 @@ def FilterLordsSpeech(qb):
 	recol = re.search('colon="(:?)"', qb.speaker)
 	bSpeakerExists = not re.match('nospeaker="true"', qb.speaker)
 	if bSpeakerExists and (not recol or recol.group(1)):
-		# text of this kind at the begining should not be spoken
-		if re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
-			print qb.speaker
-			print qb.stext[0]
-			raise ContextException("has moved amendment after colon (try taking : out)", stamp=qb.sstampurl)
-		ispeechstartp1 = 1  # 0th paragraph is speech text
+		# text of this kind at the begining should not be spoken, assume there wasn't a colon
+		if not re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
+		        ispeechstartp1 = 1  # 0th paragraph is speech text
 
 	res = [ ] # output list
 	preparagraphtype = ""

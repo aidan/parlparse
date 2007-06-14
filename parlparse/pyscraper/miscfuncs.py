@@ -107,6 +107,10 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 				hour -= 12
 
 		# skipping forward by twelve hours is a good sign an am/pm has gotten mixed
+                # Assume it's that if it's exactly 12 hours, alert otherwise
+		if previoustime and previoustimehour + 12 == hour:
+                        hour -= 12
+
 		if previoustime and previoustimehour + 12 <= hour:
 			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
