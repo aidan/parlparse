@@ -74,12 +74,16 @@ def DecodeHref(pathparts):
 
     # case when someone has given a document reference with the slashes
     if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
-        pathparts[0] = "-".join(pathparts)
-        del pathparts[1:]
+        while len(pathparts) > 1 and re.match("[ASREPRTVCL\d\.()]+$", pathparts[1]):
+            pathparts[0] = "%s-%s" % (pathparts[0], pathparts[1])
+            del pathparts[1]
 
     if pathparts[0] == "documents":
         if len(pathparts) == 1:
             return { "pagefunc":"documentlist", "body":"all" }
+    if pathparts[0] == "nations":
+        if len(pathparts) == 1:
+            return { "pagefunct":"nationlist" }
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
     if mga:
@@ -236,7 +240,9 @@ def EncodeHref(hmap):
                 hmap["scmeetingsuffix"] = ""
 
     if hmap["pagefunc"] == "front":
-        return "%s" % basehref
+        return "%s" % (basehref)
+    if hmap["pagefunc"] == "nationlist":
+        return "%s/nations" % (basehref)
     if hmap["pagefunc"] == "document":
         return "%s/%s" % (basehref, hmap["docid"])
     if hmap["pagefunc"] == "pdfpage":

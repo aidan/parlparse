@@ -14,7 +14,7 @@ from indextype import WriteFrontPage, WriteFrontPageError
 from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
 from unpvmeeting import WriteHTML
 from highlightimg import WritePNGpage
-from nationpage import WriteIndexStuffNation
+from nationpage import WriteIndexStuffNation, WriteAllNations
 from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing
 
 
@@ -42,6 +42,8 @@ if __name__ == "__main__":
         WriteIndexSearch(searchvalue)
     elif hmap["pagefunc"] == "front":
         WriteFrontPage()
+    elif hmap["pagefunc"] == "nationlist":
+        WriteAllNations()
     elif hmap["pagefunc"] == "gasession":
         WriteIndexStuff(hmap["gasession"])
     elif hmap["pagefunc"] == "agendanum":

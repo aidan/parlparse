@@ -107,3 +107,7 @@ def WriteIndexStuffNation(nation, person):
         WriteMinorityVotes(nationdata)
         WriteAmbassadorList(nation, nationdata)
 
+
+def WriteAllNations():
+    WriteGenHTMLhead('List of all nations')
+
