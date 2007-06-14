@@ -176,7 +176,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "notmoved"
 	if re.match('<p>Motion not moved\.</p>', qpara):
 		return "notmoved"
-	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>', qpara):
+	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>(?i)', qpara):
 		return "suspended"
 	if re.match('<p>\[(?:<i>)?The House observed.{0,60}?(\]|\.|</i>)+</p>', qpara):
 		return "misc"
