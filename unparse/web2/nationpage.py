@@ -98,7 +98,7 @@ def WriteIndexStuffNation(nation, person):
     flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
     print '<h1>%s</h1>' % nation
     print '<img class="nationpageflag" src="%s">' % flaghref
-    snation = re.sub("\s", "", nation.lower())
+    snation = re.sub(" ", "_", nation)
     nationdata = GatherNationData(snation)
 
     if person:
@@ -110,4 +110,19 @@ def WriteIndexStuffNation(nation, person):
 
 def WriteAllNations():
     WriteGenHTMLhead('List of all nations')
+    nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
+    print '<table><tr>'
+    ns = 0
+    for nat in sorted(os.listdir(nationactivitydir)):
+        nation = re.sub("_", " ", nat[:-4])  # remove .txt
+        flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
+        href = EncodeHref({"pagefunc":"nation", "nation":nation})
+        print '<td><a href="%s"><img class="smallflag" src="%s"></a>' % (href, flaghref)
+        print '<a href="%s">%s</a></td>' % (href, nation)
+        if ns == 5:
+            print '</tr><tr>'
+            ns = 0
+        else:
+            ns += 1
+    print '</tr></table>'
 
