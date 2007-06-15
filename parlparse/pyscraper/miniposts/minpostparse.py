@@ -525,7 +525,7 @@ def ParsePrivSecPage(fr, gp):
         elif num <= 57:
 	        sdate = filedate
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s+(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s*<(?i)", fr)
                 msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
                 sdate = msdate
 
