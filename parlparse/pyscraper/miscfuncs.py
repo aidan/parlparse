@@ -69,7 +69,7 @@ def AlphaStringToOrder(s):
 	return res
 
 # This one used to break times into component parts: 7.10 pm
-regparsetime = re.compile("^(\d+)[\.:](\d+)(?:\s?|&nbsp;)([\w\.]+)$")
+regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]+)$")
 # 7 pm
 regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
 def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):

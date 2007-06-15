@@ -219,7 +219,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreeto"
 
 
-	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons .{0,350}?\.</p>', qpara):
+	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons.{0,350}?\.</p>', qpara):
 		return "bill"
 	if re.match('<p[^>]*>The Commons (?:(?:do not )?insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)*</p>', qpara):
 		return "bill"
