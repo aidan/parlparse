@@ -4,9 +4,11 @@ import re
 
 from pdfinfo import PdfInfo
 from downascii import DownAscii
+import datetime
 
+nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
-currentscyear = 2007
+currentscyear = datetime.datetime.now().year  #2007
 basehref = "http://staging.undemocracy.com"
 
 
@@ -32,6 +34,8 @@ def WriteGenHTMLhead(title):
     print '<body>'
     print '<a href="%s"><h1 class="tophead">UNdemocracy.com</h1></a>' % basehref
     print '<h1 class="topheadspec">%s</h1>' % title
+    #print os.environ
+
 
 
 def GetPdfInfo(docid):
@@ -59,7 +63,7 @@ def LookupAgendaTitle(docid, gid):
 def LogIncomingDoc(docid, page, url, ipaddress):
     flog = os.path.join(logincomingdir, "logpages.txt")
     fout = open(flog, "a")
-    fout.write("docpage = %s %s %s %s\n" % (docid, page, url, ipaddress))
+    fout.write("docpage = %s %s %s %s %s\n" % (docid, page, (url or "None"), ipaddress, nowdatetime))
     fout.close()
 
 
@@ -298,7 +302,7 @@ def EncodeHref(hmap):
         fnation = re.sub("'", "", fnation)
         flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], fnation)
         if not os.path.isfile(flagfile):
-            return ""
+            flagfile = "png%d/Flag_of_Unknown_Body.png" % hmap["width"]
         return "%s/%s" % (basehref, flagfile)
 
     if hmap["pagefunc"] == "pagepng":
