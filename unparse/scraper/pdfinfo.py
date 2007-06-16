@@ -135,6 +135,16 @@ class PdfInfo:
         self.prevmeetingdetails = None
         self.time = None
 
+    def UpdatePages(self):
+        os.system("pdftk %s dumpdata > pdftkout.txt")
+        fin = open("pdftkout.txt")
+        ftktext = fin.read()
+        fin.close()
+        mpages = re.search("NumberOfPages:\s*(\d+)", ftktext)
+        if mpages:
+            self.pages = int(mpages.group(1))
+            
+
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")
         fout = open(pdfinfofile, "w")
