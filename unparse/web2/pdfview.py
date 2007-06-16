@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead, EncodeHref
-from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, basehref
+from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir 
 from basicbits import LookupAgendaTitle
 
 
@@ -64,9 +64,9 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
         hmap["highlightrects"] = highlightrects
 
     if highlightedit:
-        print '<script src="%s/cropper/lib/prototype.js" type="text/javascript"></script>' % basehref
-        print '<script src="%s/cropper/lib/scriptaculous.js?load=builder,dragdrop" type="text/javascript"></script>' % basehref
-        print '<script src="%s/cropper/cropper.js" type="text/javascript"></script>' % basehref
+        print '<script src="/cropper/lib/prototype.js" type="text/javascript"></script>' 
+        print '<script src="/cropper/lib/scriptaculous.js?load=builder,dragdrop" type="text/javascript"></script>'
+        print '<script src="/cropper/cropper.js" type="text/javascript"></script>'
         print """<script type="text/javascript">
                     Event.observe(window, 'load',
                               function() { new Cropper.Img('pdfpageid', { onEndCrop: onEndCrop }); } );
@@ -101,7 +101,7 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
 
 
 
-def WritePDFpreview(basehref, pdfinfo):
+def WritePDFpreview(docid, pdfinfo):
     WriteGenHTMLhead('<div style="float:right; font-size:20; vertical-align:text-bottom;">%s</div> %s' % (pdfinfo.pdfc, pdfinfo.desc))
     
     code = pdfinfo.pdfc

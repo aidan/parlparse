@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead
-from basicbits import basehref, htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear
+from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear
 from basicbits import EncodeHref
 from xapsearch import XapLookup
 
@@ -127,7 +127,7 @@ def WriteFrontPage():
     print fin.read()
 
     print '<h3>Search feature</h3>'
-    print '<form action="%s" method="get">' % basehref
+    print '<form action="/" method="get">' 
     print 'Search:'
     print '<input type="text" name="search" value="">'
     print '<input type="submit" value="GO">'

@@ -12,8 +12,6 @@ from config import *
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
-# XXX remove basehref
-basehref = ""  # apparently goes back to top level when you have / "http://staging.undemocracy.com"
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -23,8 +21,8 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<html>'
     print '<head>'
     print '<title>UNdemocracy - %s</title>' % title
-    print '<link href="%s/unview.css" type="text/css" rel="stylesheet" media="all">' % basehref
-    print '<script language="JavaScript" type="text/javascript" src="%s/unjava.js"></script>' % basehref
+    print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
+    print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
     print '<body>'
     print '<div id="identity">'
@@ -267,15 +265,15 @@ def EncodeHref(hmap):
                 hmap["scmeetingsuffix"] = ""
 
     if hmap["pagefunc"] == "front":
-        return "%s/" % (basehref)
+        return "/"
     if hmap["pagefunc"] == "search":
-        return "%s/search/%s" % (basehref, hmap["searchvalue"])
+        return "/search/%s" % (hmap["searchvalue"])
     if hmap["pagefunc"] == "nationlist":
-        return "%s/nations" % (basehref)
+        return "/nations" 
     if hmap["pagefunc"] == "document":
-        return "%s/%s" % (basehref, hmap["docid"])
+        return "/%s" % (hmap["docid"])
     if hmap["pagefunc"] == "pdfpage":
-        rl = [ basehref, hmap["docid"], ("page_%d" % hmap["page"]) ]
+        rl = [ hmap["docid"], ("page_%d" % hmap["page"]) ]
         if "highlightedit" in hmap and hmap["highlightedit"]:
             rl.append("highlightedit")
         if "highlightrects" in hmap:
@@ -283,43 +281,43 @@ def EncodeHref(hmap):
                 rl.append("rect_%d,%d_%d,%d" % highlightrect)
         return "/".join(rl)
     if hmap["pagefunc"] == "nativepdf":
-        return "%s/%s.pdf" % (basehref, hmap["docid"])
+        return "/%s.pdf" % (hmap["docid"])
     if hmap["pagefunc"] == "gasession":
-        return "%s/generalassembly_%d" % (basehref, hmap["gasession"])
+        return "/generalassembly_%d" % (hmap["gasession"])
     if hmap["pagefunc"] == "gadocuments":
-        return "%s/generalassembly_%d/documents" % (basehref, hmap["gasession"])
+        return "/generalassembly_%d/documents" % (hmap["gasession"])
     if hmap["pagefunc"] == "documentlist":
         if hmap["body"] == "both":
-            return "%s/documents" % (basehref)
-        return "%s/%s/documents" % (basehref, hmap["body"])
+            return "/documents"
+        return "/%s/documents" % (hmap["body"])
     if hmap["pagefunc"] == "sctopics":
-        return "%s/securitycouncil" % (basehref)
+        return "/securitycouncil" 
     if hmap["pagefunc"] == "scyear":
-        return "%s/securitycouncil_%d" % (basehref, hmap["scyear"])
+        return "/securitycouncil_%d" % (hmap["scyear"])
     if hmap["pagefunc"] == "scdocuments":
-        return "%s/securitycouncil_%d/documents" % (basehref, hmap["scyear"])
+        return "/securitycouncil_%d/documents" % (hmap["scyear"])
     if hmap["pagefunc"] == "agendanum":
         magnum = re.search("-(\d\d)$", hmap["agendanum"])
         if magnum:
-            return "%s/generalassembly_%s/topicn_%s" % (basehref, magnum.group(1), hmap["agendanum"])
-        return "%s/topicn_%s" % (basehref, hmap["agendanum"])   # such as condolences
+            return "/generalassembly_%s/topicn_%s" % (magnum.group(1), hmap["agendanum"])
+        return "/topicn_%s" % (hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
         hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
-        return "%s/generalassembly_%d/meeting_%d%s%s" % (basehref, hmap["gasession"], hmap["gameeting"], hlight, hcode)
+        return "/generalassembly_%d/meeting_%d%s%s" % (hmap["gasession"], hmap["gameeting"], hlight, hcode)
     if hmap["pagefunc"] == "scmeeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
         hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
         # in future this could include the year
-        return "%s/securitycouncil/meeting_%d%s%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hlight, hcode)
+        return "/securitycouncil/meeting_%d%s%s%s" % (hmap["scmeeting"], hmap["scmeetingsuffix"], hlight, hcode)
     if hmap["pagefunc"] == "nation":
         nationf = CanonicaliseNation(hmap["nation"])
-        return "%s/%s" % (basehref, nationf)   # will do a fancy munge down of it
+        return "/%s" % (nationf)   # will do a fancy munge down of it
     if hmap["pagefunc"] == "nationperson":
         nationf = re.sub(" ", "_", hmap["nation"])
         nationf = re.sub("'", "", nationf)
         personf = DownPersonName(hmap["person"])  # just work with last name
-        return "%s/%s/%s" % (basehref, nationf, personf)
+        return "/%s/%s" % (nationf, personf)
 
     if hmap["pagefunc"] == "flagpng":
         fnation = re.sub(" ", "_", hmap["flagnation"])
@@ -327,17 +325,17 @@ def EncodeHref(hmap):
         flagfile = "png%d/Flag_of_%s.png" % (hmap["width"], fnation)
         if not os.path.isfile(flagfile):
             flagfile = "png%d/Flag_of_Unknown_Body.png" % hmap["width"]
-        return "%s/%s" % (basehref, flagfile)
+        return "/%s" % (flagfile)
 
     if hmap["pagefunc"] == "pagepng":
         pagefile = "png%d/%s_page_%d.png" % (hmap["width"], hmap["docid"], hmap["page"])
         if os.path.isfile(pagefile) and not hmap["highlightrects"]:
             # should touch-modify this file so it doesn't get garbage collected
-            return "%s/%s" % (basehref, pagefile)
-        rl = [ basehref, ("png%d" % hmap["width"]), hmap["docid"], ("page_%d" % hmap["page"]) ]
+            return "/%s" % (pagefile)
+        rl = [ ("png%d" % hmap["width"]), hmap["docid"], ("page_%d" % hmap["page"]) ]
         for highlightrect in hmap["highlightrects"]:
             rl.append("rect_%d,%d_%d,%d" % highlightrect)
         return "/".join(rl)
 
-    return "%s/rubbish/%s" % (basehref, hmap["pagefunc"] + "__" + "|".join(hmap.keys()))
+    return "/rubbish/%s" % (hmap["pagefunc"] + "__" + "|".join(hmap.keys()))
 

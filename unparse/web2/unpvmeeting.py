@@ -4,7 +4,7 @@
 import sys, os, stat, re
 import datetime
 import urllib
-from basicbits import WriteGenHTMLhead, EncodeHref, basehref, monthnames
+from basicbits import WriteGenHTMLhead, EncodeHref, monthnames
 
 
 # more efficient to print out as we go through
@@ -192,7 +192,7 @@ def WriteDataHeading(gid, dtext):
     longdate = '%d %s %s' % (ndate, monthnames[nmonth - 1], sdate[:4])
     print '<span class="longdate">%s</span>' % longdate
     print '<span class="wikidate">[[%d %s]] [[%s]]</span>' % (ndate, monthnames[nmonth - 1], sdate[:4])
-    print '<span class="basehref">%s</span>' % basehref
+    print '<span class="basehref">%s</span>' % "/" # XXX is this needed any more in the js?
     print '</div>'
     return longdate
 
