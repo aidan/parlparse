@@ -6,7 +6,7 @@ from pdfinfo import PdfInfo
 from downascii import DownAscii
 import datetime
 
-sys.path.append("../phplib")
+sys.path.append("../pylib")
 from config import *
 
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
