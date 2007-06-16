@@ -6,19 +6,13 @@ from pdfinfo import PdfInfo
 from downascii import DownAscii
 import datetime
 
+sys.path.append("../phplib")
+from config import *
+
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
 basehref = ""  # aparently goes back to top level when you have / "http://staging.undemocracy.com"
-
-
-htmldir = '/home/undemocracy/undata/html'
-pdfdir = '/home/undemocracy/undata/pdf'
-pdfinfodir = '/home/undemocracy/undata/pdfinfo'
-pdfpreviewdir = '/home/undemocracy/undata/pdfpreview'
-pdfpreviewpagedir = '/home/undemocracy/undata/pdfpreviewpage'
-indexstuffdir = '/home/undemocracy/undata/indexstuff'
-logincomingdir = '/home/undemocracy/undata/logincoming'
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
