@@ -34,7 +34,8 @@ def WriteGenHTMLhead(title, frontpage=False):
     if not frontpage:
         print '</a>'
     print '</div>'
-    print '<h1 class="topheadspec">%s</h1>' % title
+    print '<h1>%s</h1>' % title
+    print '<div id="content">'
     #print os.environ
 
 

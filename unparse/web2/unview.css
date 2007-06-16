@@ -65,18 +65,37 @@ body
 	background-image: url(/images/site/background-strap.jpg);
 	background-repeat: no-repeat;
 	background-position: 50% 50px;
-	width: 48em;
-	max-width: 100%;
-	margin: 0 auto;
 	}
 
 div#identity
 	{
 	text-align: center;
-	margin-top: 15px;
-	margin-bottom: 100px;
+	max-width: 100%;
+	margin: 15px auto 80px auto;
+	}
+#identity img
+	{
+	display: block;
+	margin: 0 auto;
 	}
 
+h1
+	{
+	color: #ffffff;
+	background: #000000;
+	font-size: 1.75em;
+	padding: 0.25em;
+	text-align: center;
+	text-transform: capitalize;
+	margin-bottom: 0.5em;
+	}
+
+div#content
+	{
+	width: 48em;
+	max-width: 100%;
+	margin: 0 auto;
+	}
 
 
 td.maincol
@@ -363,27 +382,7 @@ h3.speaker
     background-color:#ddddfe;
 }
 
-h1.tophead
-{
-    background-color:#0000ff;
-    color:#ffffff;
-    text-align: center;
-    font-size:50;
-    padding:20;
-    margin-bottom:0;
-    text-decoration:none;
-}
-h1.topheadspec
-{
-    background-color:#0000df;
-    color:#ffffff;
-    margin-top:0;
-    margin-bottom:0;
-    font-size:25;
-    text-align: center;
-    padding-top:10;
-    padding-bottom:10;
-}
+
 div.pdfpagediv
 {
     float:left;

@@ -221,8 +221,6 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
     WritePrevNext(pdfinfo)
 
-    print '<table><tr><td class="maincol">'
-
     fin = open(fhtml)
     ftext = fin.read()
     fin.close()
@@ -250,12 +248,8 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
         else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
             print dtext
-            print '</div>'
 
-    print '</td><td class="sidecol">'
-    print '<p>here is a spare column to put some side stuff</p>'
-    print '</td></tr></table>'
-    print '<div style="clear:both; background-color:#ffcccc; text-align:center;">'
-    print 'Footer'
-    print '</div>'
+    #print '<div id="footer">'
+    #print 'Footer'
+    #print '</div>'
 

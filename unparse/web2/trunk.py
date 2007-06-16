@@ -78,6 +78,7 @@ if __name__ == "__main__":
     else:
         WriteFrontPageError(pathpartstr, hmap)
     
+    print '</div>'
     print "</body>"
     print '</html>'
 
