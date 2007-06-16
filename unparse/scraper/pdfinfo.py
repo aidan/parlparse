@@ -135,8 +135,11 @@ class PdfInfo:
         self.prevmeetingdetails = None
         self.time = None
 
-    def UpdatePages(self):
-        os.system("pdftk %s dumpdata > pdftkout.txt")
+    def UpdatePages(self, pdfdir):
+        fpdf = os.path.join(pdfdir, self.pdfcB + ".pdf")
+        if not os.path.isfile(fpdf):
+            return
+        os.system("pdftk %s dumpdata > pdftkout.txt" % fpdf)
         fin = open("pdftkout.txt")
         ftktext = fin.read()
         fin.close()

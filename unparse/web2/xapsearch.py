@@ -26,6 +26,15 @@ def XapLookup(query):
     xapian_query.add_boolean_prefix("vote", "V")
     xapian_query.add_boolean_prefix("session", "Z")
 
+    # Stop words in scraper/xapdex.py must match those here
+    xapian_stopper = xapian.SimpleStopper()
+    xapian_stopper.add('the')
+    for letter1 in range(ord('a'), ord('z')):
+        xapian_stopper.add(chr(letter1))
+        for letter2 in range(ord('a'),ord('z')):
+            xapian_stopper.add(chr(letter1) + chr(letter2))
+    xapian_query.set_stopper(xapian_stopper)
+
     parsed_query = xapian_query.parse_query(query, 16+4+2+1) # allows wildcards
     #print "desc:", parsed_query.get_description()
 
@@ -35,9 +44,9 @@ def XapLookup(query):
 
     # do sorting etc. here
 
-    matches = xapian_enquire.get_mset(0, 500)
+    matches = xapian_enquire.get_mset(0, 500) # XXX 500 as constant is dodgy here
     res = [ ]
-    #print matches.size()
+    print "matches", matches.size()
     for match in matches:
         #print match[4].get_value(0), match[4].get_data()
         res.append(match[4].get_data())

@@ -201,6 +201,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
                 #    print re.split(wsplit, paratext)
                 #    print wtxt, re.split(wsplit, wtxt), re.split("((?<=[a-z])/(?=[a-z]))", wtxt)
 
+                # Stop words are one letter, two letter and the, and g-?7. Also add to web2/xapsearch.py.
                 if wtxt and not re.match("[a-z][a-z]?$|the$|g-?7/$", wtxt):
                     #print wtxt,
                     textspl.append(CharToFlat(wtxt))

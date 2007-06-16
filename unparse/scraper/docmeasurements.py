@@ -252,6 +252,13 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
         pdfinfos[pdfc].ResetDocmeasureData()
         pdfinfos[pdfc].pvrefs.clear()  # we're going to re-fill it
 
+    for pdfinfo in pdfinfos.values():
+        if pdfinfo.pages == -1:
+            pdfinfo.UpdatePages(pdfdir)
+            if IsNotQuiet() and pdfinfo.pages != -1:
+                print pdfinfo.pdfc, pdfinfo.pages,
+                pdfinfo.WriteInfo(pdfinfodir)
+
     scpvlist = [ ]
     gapvlist = [ ]
     for htdoc in rels:
