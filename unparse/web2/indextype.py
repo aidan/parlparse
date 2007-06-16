@@ -114,7 +114,7 @@ def WriteIndexStuffSecYear(scyear):
     return True
 
 def WriteFrontPageError(pathpartstr, hmap):
-    WriteGenHTMLhead("Front page")
+    WriteGenHTMLhead("Front page", frontpage=True)
     print "<h1>Did not recognize pathpartstr: '%s'</h1>" % pathpartstr
     print "<h3>hmap:"
     print hmap
@@ -122,7 +122,7 @@ def WriteFrontPageError(pathpartstr, hmap):
 
 
 def WriteFrontPage():
-    WriteGenHTMLhead("Front page")
+    WriteGenHTMLhead("Front page", frontpage=True)
     fin = open("frontpage.html")
     print fin.read()
 
