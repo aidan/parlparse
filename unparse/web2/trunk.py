@@ -7,7 +7,7 @@ import datetime
 import urllib
 cgitb.enable()
 
-from basicbits import DecodeHref, EncodeHref, LogIncomingDoc
+from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
@@ -36,6 +36,8 @@ if __name__ == "__main__":
         print "Location: %s\n" % remadeurl
         sys.exit()    
     #print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
+
+    SetBodyID(hmap["pagefunc"])
 
     if hmap["pagefunc"] == "front":
         WriteFrontPage()

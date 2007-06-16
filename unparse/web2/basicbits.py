@@ -15,6 +15,11 @@ currentscyear = datetime.datetime.now().year  #2007
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+bodyid = None
+def SetBodyID(lbodyid):
+    global bodyid
+    bodyid = lbodyid
+
 def WriteGenHTMLhead(title, frontpage=False):
     print "Content-Type: text/html\n"
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
@@ -24,7 +29,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
-    print '<body>'
+    print '<body id="%s">' % bodyid
     print '<div id="identity">'
     if not frontpage:
         print '<a href="/">'
