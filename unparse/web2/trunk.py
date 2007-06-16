@@ -22,26 +22,23 @@ from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing
 if __name__ == "__main__":
 
     form = cgi.FieldStorage()
-    searchvalue = form.has_key("search") and form["search"].value or ""  # returned by the search form
     pathpartstr = (os.getenv("PATH_INFO") or '').strip('/')
     pathparts = [ s  for s in pathpartstr.split('/')  if s ]
     referrer = os.getenv("HTTP_REFERER") or ''
     ipaddress = os.getenv("REMOTE_ADDR") or ''
 
-    hmap = DecodeHref(pathparts)
+    hmap = DecodeHref(pathparts, form)
+    remadeurl = EncodeHref(hmap)
+    if remadeurl != "/" + pathpartstr:
+        print "Status: 301 Moved Permanently"
+        print "Location: %s\n" % remadeurl
+        sys.exit()    
+    #print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
 
-    # should be done with one of those apache settings
-    if re.search("\.png", pathpartstr):
-        fin = open(pathpartstr)
-        print "Content-type: image/png\n"
-        print fin.read()
-        fin.close()
-        sys.exit(0)
-
-    if searchvalue:
-        WriteIndexSearch(searchvalue)
-    elif hmap["pagefunc"] == "front":
+    if hmap["pagefunc"] == "front":
         WriteFrontPage()
+    elif hmap["pagefunc"] == "search":
+        WriteIndexSearch(hmap["searchvalue"])
     elif hmap["pagefunc"] == "nationlist":
         WriteAllNations()
     elif hmap["pagefunc"] == "gasession":

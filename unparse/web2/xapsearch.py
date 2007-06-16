@@ -46,7 +46,7 @@ def XapLookup(query):
 
     matches = xapian_enquire.get_mset(0, 500) # XXX 500 as constant is dodgy here
     res = [ ]
-    print "matches", matches.size()
+    # print "matches", matches.size()
     for match in matches:
         #print match[4].get_value(0), match[4].get_data()
         res.append(match[4].get_data())

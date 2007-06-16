@@ -28,6 +28,8 @@ Needs some fancy mod-rewrite rules. Do something like this:
     #RewriteLogLevel 3
     RewriteCond %{REQUEST_URI} !^/.*.css
     RewriteCond %{REQUEST_URI} !^/.*.js
+    RewriteCond %{REQUEST_URI} !^/.*.png
+    RewriteCond %{REQUEST_URI} !^/images/.*
     RewriteRule ^/(.*)$ /trunk.py/$1 [PT,L,QSA]
 
     <Directory "/data/vhost/staging.undemocracy.com/docs/">

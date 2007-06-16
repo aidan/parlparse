@@ -12,6 +12,7 @@ from config import *
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
+# XXX remove basehref
 basehref = ""  # apparently goes back to top level when you have / "http://staging.undemocracy.com"
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -72,9 +73,14 @@ def DownPersonName(person):
 
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
-def DecodeHref(pathparts):
+def DecodeHref(pathparts, form):
     if len(pathparts) == 0:
-        return { "pagefunc": "front" }
+        searchvalue = form.has_key("search") and form["search"].value or ""  # returned by the search form
+        if searchvalue:
+            return { "pagefunc": "search", "searchvalue" : searchvalue }
+        else:
+            return { "pagefunc": "front" }
+
 
     # case when someone has given a document reference with the slashes
     if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
@@ -82,6 +88,9 @@ def DecodeHref(pathparts):
             pathparts[0] = "%s-%s" % (pathparts[0], pathparts[1])
             del pathparts[1]
 
+    if pathparts[0] == "search":
+        if len(pathparts) == 2:
+            return { "pagefunc": "search", "searchvalue" : pathparts[1] }
     if pathparts[0] == "documents":
         if len(pathparts) == 1:
             return { "pagefunc":"documentlist", "body":"all" }
@@ -244,7 +253,9 @@ def EncodeHref(hmap):
                 hmap["scmeetingsuffix"] = ""
 
     if hmap["pagefunc"] == "front":
-        return "%s" % (basehref)
+        return "%s/" % (basehref)
+    if hmap["pagefunc"] == "search":
+        return "%s/search/%s" % (basehref, hmap["searchvalue"])
     if hmap["pagefunc"] == "nationlist":
         return "%s/nations" % (basehref)
     if hmap["pagefunc"] == "document":
