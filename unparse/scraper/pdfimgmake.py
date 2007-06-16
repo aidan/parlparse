@@ -18,7 +18,7 @@ def GetAllPdfDocs(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfodir)
         if stem and not re.match(stem, pdfc):
             continue
         pdfinfo = PdfInfo(pdfc)
-        pdfinfo.UpdateInfo(pdfinfodir)
+        #pdfinfo.UpdateInfo(pdfinfodir)
         pdfpreviewfile = os.path.join(pdfpreviewdir, pdfc + ".jpg")
         if bforcedocimg or pdfinfo.pages == -1 or not os.path.isfile(pdfpreviewfile):
             pdfinfos[pdfc] = pdfinfo
@@ -90,12 +90,21 @@ def GenerateDocImage(pdfinfo, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdi
     os.system(cmdC)
     os.system("convert %s %s" % (respng2, jpgfile))
 
+def GenerateDocImageRB(pdfinfo, pdfdir, pdfpreviewdir, bforcedocimg):
+    fnamef = os.path.join(pdfdir, pdfinfo.pdfcB + ".pdf")
+    fnamet = os.path.join(pdfpreviewdir, pdfinfo.pdfcB + ".jpg")
+    if not os.path.isfile(fnamet) or bforcedocimg:
+        cmd = "ruby preview.rb %s %s %d %d" % (fnamef, fnamet, pwidth, pheight)
+        print cmd
+        os.system(cmd)
+
 
 def GenerateDocimages(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir):
     pdfinfos = GetAllPdfDocs(stem, bforcedocimg, nlimit, pdfdir, pdfpreviewdir, pdfinfodir)
     for pdfinfo in pdfinfos.values():
         print pdfinfo.pdfc
-        GenerateDocImage(pdfinfo, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
+        #GenerateDocImage(pdfinfo, pdfdir, pdfpreviewdir, pdfinfodir, tmppdfpreviewdir)
+        GenerateDocImageRB(pdfinfo, pdfdir, pdfpreviewdir, bforcedocimg)
         pdfinfo.WriteInfo(pdfinfodir)
         #break
 
