@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: latin-1 -*-
 
 # !!!!!!  Shared with web2 !!!!!!!
 
