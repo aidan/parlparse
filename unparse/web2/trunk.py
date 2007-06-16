@@ -7,7 +7,7 @@ import datetime
 import urllib
 cgitb.enable()
 
-from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID
+from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGenHTMLfoot
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage
 from indextype import WriteFrontPage, WriteFrontPageError
