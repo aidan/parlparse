@@ -226,6 +226,8 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     fin.close()
     councilpresidentnation = None  # gets set if we have a council-attendees
 
+    # TODO: Make highlightdoclink work for search results
+
     for mdiv in re.finditer('<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)', ftext):
         dclass = mdiv.group(1)
         gid = mdiv.group(2)

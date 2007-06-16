@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import cgi
 
 from pdfinfo import PdfInfo
 from downascii import DownAscii
@@ -25,7 +26,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
     print '<html>'
     print '<head>'
-    print '<title>UNdemocracy - %s</title>' % title
+    print '<title>UNdemocracy - %s</title>' % cgi.escape(title)
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
@@ -37,7 +38,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     if not frontpage:
         print '</a>'
     print '</div>'
-    print '<h1>%s</h1>' % title
+    print '<h1>%s</h1>' % cgi.escape(title)
     print '<div id="content">'
     #print os.environ
 
@@ -144,7 +145,7 @@ def DecodeHref(pathparts, form):
             nmeeting = int(mmeeting.group(1))
             docid = "A-%d-PV.%d" % (nsess, nmeeting)
             pdfinfo = GetPdfInfo(docid)
-            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_([SA]-.*?)$", pathparts[2])
+            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_(.+)$", pathparts[2])
             highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
                 return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
@@ -188,7 +189,7 @@ def DecodeHref(pathparts, form):
             if mmeeting.group(2):
                 docid = "%s-%s.%s" % (docid, mmeeting.group(1), mmeeting.group(2))
             pdfinfo = GetPdfInfo(docid)
-            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_([SA]-.*?)$", pathparts[2])
+            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_(.+)$", pathparts[2])
             highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
                 return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }

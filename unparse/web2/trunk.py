@@ -31,11 +31,11 @@ if __name__ == "__main__":
 
     # Redirect if the URL isn't in its canonical form
     remadeurl = EncodeHref(hmap)
+#    print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
     if remadeurl != "/" + pathpartstr and not re.match('^/rubbish/', remadeurl):
         print "Status: 301 Moved Permanently"
         print "Location: %s\n" % remadeurl
         sys.exit()    
-    #print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
 
     SetBodyID(hmap["pagefunc"])
 

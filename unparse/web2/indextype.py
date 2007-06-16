@@ -2,6 +2,7 @@
 
 import sys, os, stat, re
 import datetime
+import cgi
 
 from basicbits import WriteGenHTMLhead
 from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear
@@ -199,8 +200,8 @@ def WriteIndexStuffAgnum(agnum):
 
 # under construction
 def WriteIndexSearch(search):
-    WriteGenHTMLhead("search")
-    print '<h3>Searching for: %s</h3>' % search
+    WriteGenHTMLhead("Searching for %s" % search)
+    print '<h3>Searching for: %s</h3>' % cgi.escape(search)
     recs = XapLookup(search)
     if not recs:
         print '<p>No results found</p>'
@@ -225,12 +226,12 @@ def WriteIndexSearch(search):
         if re.match("A", docid):
             agrecord = aglookup.get((docid, gidsubhead), None)
             if agrecord:
-                print '<li>General Assembly: %s</li>' % (agrecord.GetDesc())
+                print '<li>General Assembly: %s</li>' % (agrecord.GetDesc(search))
                 del aglookup[(docid, gidsubhead)]  # quick hack to avoid repeats
         if re.match("S", docid):
             screcord = sclookup.get(docid, None)
             if screcord:
-                print '<li>Security Council: %s</li>' % (screcord.GetDesc())
+                print '<li>Security Council: %s</li>' % (screcord.GetDesc(search))
                 del sclookup[docid]
 
 
