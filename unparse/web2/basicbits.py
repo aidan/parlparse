@@ -9,7 +9,7 @@ import datetime
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
-basehref = "http://staging.undemocracy.com"
+basehref = ""  # aparently goes back to top level when you have / "http://staging.undemocracy.com"
 
 
 htmldir = '/home/undemocracy/undata/html'
