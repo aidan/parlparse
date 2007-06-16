@@ -36,6 +36,10 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<div id="content">'
     #print os.environ
 
+def WriteGenHTMLfoot():
+    print '</div>'
+    print "</body>"
+    print '</html>'
 
 
 def GetPdfInfo(docid):

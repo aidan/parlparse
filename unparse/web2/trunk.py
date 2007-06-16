@@ -79,9 +79,6 @@ if __name__ == "__main__":
         sys.exit(0)
     else:
         WriteFrontPageError(pathpartstr, hmap)
-    
-    print '</div>'
-    print "</body>"
-    print '</html>'
 
+    WriteGenHTMLfoot()
 
