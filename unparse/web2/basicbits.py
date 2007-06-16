@@ -12,11 +12,11 @@ from config import *
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
-basehref = ""  # aparently goes back to top level when you have / "http://staging.undemocracy.com"
+basehref = ""  # apparently goes back to top level when you have / "http://staging.undemocracy.com"
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-def WriteGenHTMLhead(title):
+def WriteGenHTMLhead(title, frontpage=False):
     print "Content-Type: text/html\n"
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
     print '<html>'
@@ -26,7 +26,13 @@ def WriteGenHTMLhead(title):
     print '<script language="JavaScript" type="text/javascript" src="%s/unjava.js"></script>' % basehref
     print '</head>'
     print '<body>'
-    print '<a href="%s"><h1 class="tophead">UNdemocracy.com</h1></a>' % basehref
+    print '<div id="identity">'
+    if not frontpage:
+        print '<a href="/">'
+    print '<img src="/images/site/logo.gif" alt="UNdemocracy.com">'
+    if not frontpage:
+        print '</a>'
+    print '</div>'
     print '<h1 class="topheadspec">%s</h1>' % title
     #print os.environ
 
