@@ -28,8 +28,10 @@ if __name__ == "__main__":
     ipaddress = os.getenv("REMOTE_ADDR") or ''
 
     hmap = DecodeHref(pathparts, form)
+
+    # Redirect if the URL isn't in its canonical form
     remadeurl = EncodeHref(hmap)
-    if remadeurl != "/" + pathpartstr:
+    if remadeurl != "/" + pathpartstr and not re.match('^/rubbish/', remadeurl):
         print "Status: 301 Moved Permanently"
         print "Location: %s\n" % remadeurl
         sys.exit()    

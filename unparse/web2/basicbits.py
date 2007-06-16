@@ -72,6 +72,11 @@ def LogIncomingDoc(docid, page, url, ipaddress):
 def DownPersonName(person):
     return DownAscii(person.split()[-1].lower())
 
+def CanonicaliseNation(nationf):
+    nationf = re.sub(" ", "_", nationf)
+    nationf = re.sub("'", "", nationf)
+    return nationf
+
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
 def DecodeHref(pathparts, form):
@@ -98,6 +103,14 @@ def DecodeHref(pathparts, form):
     if pathparts[0] == "nations":
         if len(pathparts) == 1:
             return { "pagefunc":"nationlist" }
+
+    # Legacy URLs from the Drupal site
+    if pathparts[0] == 'generalassembly' and len(pathparts) == 2 and re.match("^\d+$", pathparts[1]):
+        return { "pagefunc":"gasession", "gasession":int(pathparts[1]) }
+    if pathparts[0] == 'securitycouncil' and len(pathparts) == 2 and re.match("^\d+$", pathparts[1]):
+        return { "pagefunc":"scyear", "scyear":int(pathparts[1]) }
+    if pathparts[0] == 'members' and len(pathparts) == 2:
+        return { "pagefunc":"nation", "nation":pathparts[1] }
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
     if mga:
@@ -227,14 +240,14 @@ def DecodeHref(pathparts, form):
         return hmap
 
     # detect nations by the presence of Flag_of
-    if os.path.isfile(os.path.join("png100", ("Flag_of_%s.png" % pathparts[0]))):
-        nation = re.sub("_", " ", pathparts[0])
-        if len(pathparts) == 1:
-            return { "pagefunc":"nation", "nation":nation }
-        return { "pagefunc":"nationperson", "nation":nation, "person":pathparts[1] }
+    for flagfile in os.listdir("png100"):
+        if flagfile.lower() == ("Flag_of_%s.png" % pathparts[0]).lower():
+            nation = flagfile.replace("Flag_of_", "").replace(".png", "").replace("_", " ")
+            if len(pathparts) == 1:
+                return { "pagefunc":"nation", "nation":nation }
+            return { "pagefunc":"nationperson", "nation":nation, "person":pathparts[1] }
 
     return { "pagefunc": "fronterror" }
-
 
 
 def EncodeHref(hmap):
@@ -300,8 +313,7 @@ def EncodeHref(hmap):
         # in future this could include the year
         return "%s/securitycouncil/meeting_%d%s%s%s" % (basehref, hmap["scmeeting"], hmap["scmeetingsuffix"], hlight, hcode)
     if hmap["pagefunc"] == "nation":
-        nationf = re.sub(" ", "_", hmap["nation"])
-        nationf = re.sub("'", "", nationf)
+        nationf = CanonicaliseNation(hmap["nation"])
         return "%s/%s" % (basehref, nationf)   # will do a fancy munge down of it
     if hmap["pagefunc"] == "nationperson":
         nationf = re.sub(" ", "_", hmap["nation"])

@@ -114,7 +114,7 @@ def WriteIndexStuffSecYear(scyear):
     return True
 
 def WriteFrontPageError(pathpartstr, hmap):
-    WriteGenHTMLhead("Front page", frontpage=True)
+    WriteGenHTMLhead("Something is wrong", frontpage=False) # deliberately false, as bad URLs go here
     print "<h1>Did not recognize pathpartstr: '%s'</h1>" % pathpartstr
     print "<h3>hmap:"
     print hmap
