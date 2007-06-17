@@ -256,7 +256,7 @@ def DecodeHref(pathparts, form):
         docid = pathparts[1]
         hmap = { "pagefunc":"pagepng", "width":int(mpngid.group(1)), "docid":docid, "page":int(mpage.group(1))}
         hmap["pdffile"] = "%s/%s.pdf" % (pdfdir, docid)
-        hmap["pngfile"] = "%s/%s_page_%s.png" % (pathparts[0], docid, mpage.group(1))
+        hmap["pngfile"] = os.path.join(undata, "%s/%s_page_%s.png" % (pathparts[0], docid, mpage.group(1)))
         highlightrects = [ ]
         for highlight in pathparts[3:]:
             mrect = re.match("rect_(\d+),(\d+)_(\d+),(\d+)$", highlight)

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/undata/pdf
+for X in *.pdf; do [ -e ../html/${X/pdf/html} ] || echo $X; done
+

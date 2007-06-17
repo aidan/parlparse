@@ -10,6 +10,7 @@ def SubParen(f):
     return f
 
 def WritePNGpage(pdffile, npage, imgpixwidth, pngfile, highlightrects):
+    #print 'Content-type: text/html\n\n<h1>%s</h1><p>pdffile %s' % (pngfile, pdffile); sys.exit(0)
     if not os.path.isfile(pngfile):
         cmd = 'convert -quiet -density 192 %s[%d] -resize %d %s > /dev/null 2>&1' % (SubParen(pdffile), npage - 1, imgpixwidth, SubParen(pngfile))
         os.system(cmd)
