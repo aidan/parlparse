@@ -32,6 +32,9 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<head>'
     print '<title>UNdemocracy - %s</title>' % cgi.escape(title)
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
+    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/yahoo/yahoo-min.js"></script>'
+    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/dom/dom-min.js"></script>'
+    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/event/event-min.js"></script>'
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
     print '<body id="%s">' % bodyid

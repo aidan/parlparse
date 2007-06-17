@@ -1,3 +1,26 @@
+function initUNDemocracy()
+{
+   var getByClass = YAHOO.util.Dom.getElementsByClassName;
+   var linkheres = getByClass('discussion');
+   linkheres = linkheres.concat(getByClass('spoken'));
+   linkheres = linkheres.concat(getByClass('recvote'));
+   linkheres = linkheres.concat(getByClass('event'));
+   
+    var linkhere = document.createElement('div');
+    linkhere.className = 'unclickedlink';
+    var linkheretext = document.createTextNode('Link to this');
+    linkhere.appendChild(linkheretext);
+    for (var i = 0; i < linkheres.length; i++)
+    {
+        var insertlink = linkhere.cloneNode(true);
+        insertlink.onclick = function() { linkere(this); }
+        linkheres[i].insertBefore(insertlink, linkheres[i].childNodes[0]);
+    }
+}
+
+YAHOO.util.Event.onDOMReady(initUNDemocracy);
+
+
 
 function rowelinput(llvalue)
 {

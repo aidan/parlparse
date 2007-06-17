@@ -65,6 +65,7 @@ body
 	background-image: url(/images/site/background-strap.jpg);
 	background-repeat: no-repeat;
 	background-position: 50% 50px;
+	text-align: center;
 	}
 
 div#identity
@@ -93,9 +94,17 @@ h1
 div#content
 	{
 	width: 48em;
-	max-width: 100%;
+	max-width: 90%;
 	margin: 0 auto;
+	text-align: left;
 	}
+
+h2.agendaitem
+	{
+	font-size: 1.4em;
+	}
+
+
 
 
 td.maincol
@@ -142,6 +151,8 @@ p
 }
 img.smallflag
 {
+	margin-left: -40px;
+	width: 32px;
     border: thin black solid;
     float: left; 
     clear: left;

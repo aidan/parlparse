@@ -39,8 +39,7 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
     assert mspek, dtext[:200]
     name, nationtype, nation, language = mspek.group(1), mspek.group(2), mspek.group(3), mspek.group(4)
     print '<h3 class="speaker">',
-    if gid:
-        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>',
+
 
     # build up the components of the speaker
     nationlink = nation and EncodeHref({"pagefunc":"nation", "nation":nation})
@@ -92,8 +91,7 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
     print '</div>'
 
 def WriteAgenda(gid, agnum, dtext, docid):
-    print '<div class="subheading" id="%s">' % gid
-    print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
+    print '<div class="discussion" id="%s">' % gid
     if agnum:
         lkothdisc = '<a href="%s">Other discussions<br>on this topic</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
         flippedhcode = '%s_%s' % (docid, gid)
@@ -126,9 +124,6 @@ def WriteVote(gid, dtext, bSC):
         print '</tr><tr>'
     print '<td><span class="absentul" onclick="chvotekey(this);">absent</span></td></tr>'
     print '</table>'
-
-    if gid:
-        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
 
     print dtext
     print '</div>'
@@ -199,10 +194,8 @@ def WriteCouncilAttendees(gid, dtext):
 
 # convert paragraphs to less damaging spans (keeping the ids that might be marking them)
 def WriteItalicLine(gid, dclass, dtext):
-    print '<div class="%s" id="%s">' % (dclass, gid)
+    print '<div class="event" id="%s">' % gid # dclass
     print re.sub("<(/?)p([^>]*)>", "<\\1span\\2>", dtext)
-    if gid:
-        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
     print '</div>'
 
 # this creates the data that the javascript can look up
