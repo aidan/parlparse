@@ -308,7 +308,8 @@ def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdo
         fout.write(' <span class="agcategory">%s</span>' % mccategory)
         fout.write('</p>\n')
 
-        agendasperdoc.setdefault(ag.docid, [ ]).append((ag.subheadingid, ag.agendanumstr, agtitle))
+        if agendasperdoc:
+            agendasperdoc.setdefault(ag.docid, [ ]).append((ag.subheadingid, ag.agendanumstr, agtitle))
     fout.write('</div>\n')
 
 
@@ -331,7 +332,7 @@ def AddAgendaGroups(agendagroups, sdate, docid, ftext):
         agendaheading.SeeTextForHeading(ftext[agendaheadingE:])
 
 
-def WriteAgendaSummaries(htmldir, fout):
+def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
     rels = GetAllHtmlDocs("", False, False, htmldir)
 
     agendagroups = { }
@@ -388,6 +389,12 @@ def WriteAgendaSummaries(htmldir, fout):
             fout.write('\n<h2>%s</h2>\n' % mccategory)
             prevmccategory = mccategory
         WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdoc)
+        
+        if agendaindexdir:
+            fagname = os.path.join(agendaindexdir, agendanum + ".html")
+            fagout = open(fagname, "w")
+            WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fagout, None)
+
 
     fout.write('</body>\n</html>\n')
 
