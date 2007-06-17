@@ -8,17 +8,26 @@ from basicbits import WriteGenHTMLhead, EncodeHref, monthnames
 from indexrecords import LoadAgendaNames
 
 # more efficient to print out as we go through
-def MarkupLinks(ftext, highlightdoclink):
+rpdlk = '<a href="../pdf/[^"]*?\.pdf"[^>]*>'
+rpdlkp = '<a href="../pdf/([^"]*?)\.pdf"([^>]*)>'
+def MarkupLinks(ftext, highlights):
     res = [ ]
-    for ft in re.split('(<a href="../pdf/[^"]*?\.pdf"[^>]*>)', ftext):
-        ma = re.match('<a href="../pdf/([^"]*?)\.pdf"([^>]*)>', ft)
+    if highlights[1]:
+        rspl = '(%s|%s)' % (rpdlk, highlights[1])
+    else:
+        rspl = '(%s)' % rpdlk
+    for ft in re.split(rspl, ftext):
+        ma = re.match(rpdlkp, ft)
         if ma:
             res.append('<a href="%s"' % (EncodeHref({"pagefunc":"document", "docid":ma.group(1)})))
-            if highlightdoclink and ma.group(1) == highlightdoclink:
+            if highlights[0] and ma.group(1) == highlights[0]:
                 res.append(' class="highlight"')
-            else:
-                res.append(ma.group(2))
+            res.append(ma.group(2))
             res.append('>')
+        elif highlights[1] and re.match(highlights[1], ft):
+            res.append('<span class="search-highlight">')
+            res.append(ft)
+            res.append('</span>')
         else:
             res.append(ft)
     return "".join(res)
@@ -30,7 +39,8 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
     assert mspek, dtext[:200]
     name, nationtype, nation, language = mspek.group(1), mspek.group(2), mspek.group(3), mspek.group(4)
     print '<h3 class="speaker">',
-    print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>',
+    if gid:
+        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>',
 
     # build up the components of the speaker
     nationlink = nation and EncodeHref({"pagefunc":"nation", "nation":nation})
@@ -81,11 +91,24 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
 
     print '</div>'
 
-def WriteAgenda(gid, agnum, dtext):
+def WriteAgenda(gid, agnum, dtext, docid):
     print '<div class="subheading" id="%s">' % gid
     print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
     if agnum:
-        print '<div class="otheraglink"><a href="%s">Other discussions<br>on this topic</a></div>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
+        lkothdisc = '<a href="%s">Other discussions<br>on this topic</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
+        flippedhcode = '%s_%s' % (docid, gid)
+        lkflipagenda = '<a href="%s#%s">Flip</a>' % (EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum}), flippedhcode)
+        print '<div class="otheraglink">%s %s</div>' % (lkothdisc, lkflipagenda)
+    
+    print dtext
+    print '</div>'
+
+def WriteAgendaFlipped(gid, agnum, dtext, docid):
+    print '<div class="subheading" id="%s_%s">' % (docid, gid)
+    if agnum:
+        lkflap = '<a href="%s">Flap</a>' % (EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":gid}))
+        print '<div class="otheraglink">%s</div>' % lkflap
+
     print dtext
     print '</div>'
 
@@ -104,7 +127,8 @@ def WriteVote(gid, dtext, bSC):
     print '<td><span class="absentul" onclick="chvotekey(this);">absent</span></td></tr>'
     print '</table>'
 
-    print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
+    if gid:
+        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
 
     print dtext
     print '</div>'
@@ -175,8 +199,10 @@ def WriteCouncilAttendees(gid, dtext):
 
 # convert paragraphs to less damaging spans (keeping the ids that might be marking them)
 def WriteItalicLine(gid, dclass, dtext):
-    print '<div class="%s">' % dclass
+    print '<div class="%s" id="%s">' % (dclass, gid)
     print re.sub("<(/?)p([^>]*)>", "<\\1span\\2>", dtext)
+    if gid:
+        print '<div onclick="linkere(this);" class="unclickedlink">link to this</div>'
     print '</div>'
 
 # this creates the data that the javascript can look up
@@ -221,7 +247,7 @@ def WritePrevNext(pdfinfo):
 rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)'
 
 
-def WriteHTML(fhtml, pdfinfo, highlightdoclink):
+def WriteHTML(fhtml, pdfinfo, highlightth):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
     print '<div style="display: none;"><img id="hrefimg"></div>'
     #print '<input id="hrefimgi"></input>'
@@ -233,15 +259,31 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     fin.close()
     councilpresidentnation = None  # gets set if we have a council-attendees
 
-    # TODO: Make highlightdoclink work for search results
+    if not highlightth:
+        highlights = ("", "")
+    elif re.match("[AS]-", highlightth):
+        highlights = (highlightth, "")
+    else:
+        hls = [ hl.lower()  for hl in highlightth.split()  if hl ]
+        if hls:
+            rhls = [ ]
+            for hl in hls:
+                if rhls:
+                    rhls.append('|')
+                rhls.append(hl)
+                rhls.append('(?![a-z])')
+            rhls.append('(?i)')
+            highlights = ("", "".join(rhls))
+        else:
+            highlights = ("", "")
 
     for mdiv in re.finditer(rdivspl, ftext):
         dclass, gid, agendanum = mdiv.group(1), mdiv.group(2), mdiv.group(3)
-        dtext = MarkupLinks(mdiv.group(4).strip(), highlightdoclink)
+        dtext = MarkupLinks(mdiv.group(4).strip(), highlights)
         if dclass == "spoken":
             WriteSpoken(gid, dtext, councilpresidentnation)
         elif dclass == "subheading":
-            WriteAgenda(gid, agendanum, dtext)
+            WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
         elif dclass == "recvote":
             WriteVote(gid, dtext, pdfinfo.bSC)
         elif dclass == 'heading':
@@ -290,16 +332,15 @@ def WriteHTMLagnum(agnum, aglist):
             
             dtext = MarkupLinks(stext, "")
             if dclass == "subheading":
-                WriteAgenda(gid, agendanum, dtext)
+                WriteAgendaFlipped(gid, agendanum, dtext, agrecord.docid)
             elif dclass == "spoken": 
-                WriteSpoken(gid, dtext, "")
+                WriteSpoken("", dtext, "")
             elif dclass == "recvote":
-                WriteVote(gid, dtext, False)
+                WriteVote("", dtext, False)
             elif re.match("italicline", dclass):
-                WriteItalicLine(gid, dclass, dtext)
+                WriteItalicLine("", dclass, dtext)
             elif dclass == "end-document":
                 pass
             else:
                 print '<div>UNEXPECTED Class %s</div>' % dclass
-        #break
 
