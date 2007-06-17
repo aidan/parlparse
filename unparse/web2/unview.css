@@ -102,10 +102,10 @@ h1
 	color: #ffffff;
 	background: #000000;
 	font-size: 1.75em;
-	padding: 0.25em;
-	text-align: center;
+	padding: 0.25em auto;
 	text-transform: capitalize;
 	margin-bottom: 0.5em;
+	zwidth: 48em;
 	}
 
 div#content
@@ -116,7 +116,7 @@ div#content
 	text-align: left;
 	}
 
-#document
+#documentwrap
 	{
 	width: 30em;
 	float: left;
