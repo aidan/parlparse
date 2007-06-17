@@ -79,8 +79,14 @@ class AgRecord:
         return '%s <a href="%s">%s</a>' % (self.sdate, self.GetHref(highlight), self.agtitle)
 
 
-def LoadAgendaNames():
-    agendanamesf = os.path.join(indexstuffdir, "agendanames.html")
+def LoadAgendaNames(agendaname):
+    agendanamesf = None
+    if agendaname:
+        agendanamesf = os.path.join(indexstuffdir, "agendaindexes", agendaname + ".html")
+        b = False
+    if not agendanamesf or not os.path.isfile(agendanamesf):
+        agendanamesf = os.path.join(indexstuffdir, "agendanames.html")
+        return [ ]#b = True
     res = [ ]
     fin = open(agendanamesf)
     for ln in fin.readlines():
@@ -88,6 +94,9 @@ def LoadAgendaNames():
             agrecord = AgRecord(ln)
             res.append(agrecord)
     fin.close()
+    
+    if not b:
+        res.append(res[-1])
     return res
 
 

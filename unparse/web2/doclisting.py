@@ -7,7 +7,7 @@ from basicbits import WriteGenHTMLhead
 from basicbits import indexstuffdir, currentgasession, currentscyear
 from basicbits import EncodeHref
 from xapsearch import XapLookup
-from indexrecords import LoadSecRecords, LoadAgendaNames
+from indexrecords import LoadSecRecords
 
 def LoadDocYearFile(docyearfile):
     dlists = { "PV":[ ], "DOC":[ ], "PRST":[ ], "RES":[ ] }

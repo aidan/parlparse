@@ -64,7 +64,7 @@ def GetSessionLink(nsess, bdocuments):
 
 def WriteIndexStuff(nsess):
     WriteGenHTMLhead("General Assembly Session %d (%d-%d)" % (nsess, nsess + 1945, nsess + 1946))
-    allags = LoadAgendaNames()
+    allags = LoadAgendaNames(None)
 
     print '<p>',
     if nsess > 1:
@@ -136,7 +136,6 @@ def WriteFrontPage():
 
     print '<p><a href="%s">List all nations</a></p>' % EncodeHref({"pagefunc":"nationlist"})
 
-    allags = LoadAgendaNames()
     print '<h3>General Assembly Sessions</h3>'
     print '<p><a href="%s">All condolences</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"})
     print '<a href="%s">All documents</a></p>' % EncodeHref({"pagefunc":"documentlist", "body":"generalassembly"})
@@ -156,7 +155,7 @@ def WriteFrontPage():
         print '<a href="%s">%d</a>' % (href, ny),
     print '</p>'
 
-    allags = LoadAgendaNames()
+    allags = LoadAgendaNames("recent")
     print '<h3>Some recent General Assembly meetings</h3>'
     WriteAgendaList(FilterAgendaListRecent(allags, 10))
 
@@ -170,7 +169,7 @@ def WriteIndexStuffAgnum(agnum):
     msess = re.search("-(\d+)$", agnum)
     nsess = msess and int(msess.group(1)) or 0
 
-    allags = LoadAgendaNames()
+    allags = LoadAgendaNames(agnum)
 
     if nsess:
         agnumlist = agnum.split(",")
@@ -207,7 +206,7 @@ def WriteIndexSearch(search):
         print '<p>No results found</p>'
         return True
 
-    allags = LoadAgendaNames()  # very inefficient, but get it done
+    allags = LoadAgendaNames(None)  # very inefficient, but get it done
     aglookup = { }
     for agrecord in allags:
         aglookup[(agrecord.docid, agrecord.gid)] = agrecord

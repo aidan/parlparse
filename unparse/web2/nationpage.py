@@ -7,7 +7,7 @@ from basicbits import WriteGenHTMLhead
 from basicbits import indexstuffdir, currentgasession, currentscyear
 from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
-from indexrecords import LoadSecRecords, LoadAgendaNames
+from indexrecords import LoadSecRecords
 
 
 def WriteSpeechInstances(snation, person, nationdata):
