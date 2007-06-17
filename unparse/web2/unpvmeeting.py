@@ -282,10 +282,10 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
             if agendagidcurrent:
                 print '</div>\n\n'
             agendagidcurrent = gid
-            if not gadice or agendagidcurrent == gadice:
-                WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
             if agendagidcurrent:
                 print '<div class="discussion">'
+            if not gadice or agendagidcurrent == gadice:
+                WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
         elif dclass == "recvote":
             if not gadice or agendagidcurrent == gadice:
                 WriteVote(gid, dtext, pdfinfo.bSC)
