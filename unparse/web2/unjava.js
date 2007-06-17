@@ -6,6 +6,7 @@ function rowelinput(llvalue)
     rI.readOnly = true; 
     return rI; 
 }
+
 function rowelspan(llvalue)
 {
     var rI = document.createElement("span"); 
