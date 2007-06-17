@@ -76,6 +76,13 @@ class PdfInfo:
         else:
             self.desc = "UNKNOWN"
 
+       
+    def GetAgnum(self, cgid):
+        for (gid, agnum, title) in self.agendascontained:
+            if gid == cgid:
+                return agnum
+        return None
+    
     # called while we are scanning through all the files
     # should look up the agenda title or something
     def AddDocRef(self, docid, gid, sdate):
