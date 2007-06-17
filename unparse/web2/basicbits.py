@@ -375,3 +375,57 @@ def EncodeHref(hmap):
 
     return "/rubbish/%s" % (hmap["pagefunc"] + "__" + "|".join(hmap.keys()))
 
+
+# Split words from a search into separate words
+# Returns a pair of (link that might be highlighted, rexexp that gets highlighted)
+def SplitHighlight(highlightth):
+    # Split up search string into words
+    if not highlightth:
+        highlights = ("", "")
+    elif re.match("[AS]-", highlightth):
+        highlights = (highlightth, "")
+    else:
+        hls = [ hl.lower()  for hl in highlightth.split()  if hl ]
+        if hls:
+            rhls = [ ]
+            for hl in hls:
+                if rhls:
+                    rhls.append('|')
+                rhls.append(hl)
+                rhls.append('(?![a-z])')
+            rhls.append('(?i)')
+            highlights = ("", "".join(rhls))
+        else:
+            highlights = ("", "")
+    return highlights
+
+
+# more efficient to print out as we go through
+rpdlk = '<a href="../pdf/[^"]*?\.pdf"[^>]*>'
+rpdlkp = '<a href="../pdf/([^"]*?)\.pdf"([^>]*)>'
+def MarkupLinks(ftext, highlightth):
+    highlights = SplitHighlight(highlightth)
+
+    # Apply highlighting
+    res = [ ]
+    if highlights[1]:
+        rspl = '(%s|%s)' % (rpdlk, highlights[1])
+    else:
+        rspl = '(%s)' % rpdlk
+    for ft in re.split(rspl, ftext):
+        ma = re.match(rpdlkp, ft)
+        if ma:
+            res.append('<a href="%s"' % (EncodeHref({"pagefunc":"document", "docid":ma.group(1)})))
+            if highlights[0] and ma.group(1) == highlights[0]:
+                res.append(' class="highlight"')
+            res.append(ma.group(2))
+            res.append('>')
+        elif highlights[1] and re.match(highlights[1], ft):
+            res.append('<span class="search-highlight">')
+            res.append(ft)
+            res.append('</span>')
+        else:
+            res.append(ft)
+    return "".join(res)
+
+

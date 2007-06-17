@@ -5,8 +5,8 @@ import datetime
 import cgi
 
 from basicbits import WriteGenHTMLhead
-from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear
-from basicbits import EncodeHref
+from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currentscyear, undata
+from basicbits import EncodeHref, MarkupLinks, SplitHighlight
 from xapsearch import XapLookup
 
 from indexrecords import LoadSecRecords, LoadAgendaNames
@@ -216,7 +216,6 @@ def WriteIndexStuffAgnum(agnum):
 # under construction
 def WriteIndexSearch(search):
     WriteGenHTMLhead("Searching for %s" % search)
-    print '<h3>Searching for: %s</h3>' % cgi.escape(search)
     recs = XapLookup(search)
     if not recs:
         print '<p>No results found</p>'
@@ -232,25 +231,52 @@ def WriteIndexSearch(search):
     for screcord in allsc:
         sclookup[screcord.docid] = screcord
 
-    print '<ul>'
+    highlights = SplitHighlight(search)
+
+    print '<div id="search-results">';
     for rec in recs:
+        # id of para, document number, byte offset start, byte length, heading id
         srec = rec.split("|")
+        #print "xap records", srec
         gidspeech = srec[0]
         docid = srec[1]
+        byte_start = int(srec[2])
+        byte_len = int(srec[3])
         gidsubhead = srec[4]
+
+        # extract record using byte offset
+        fullfilename = os.path.join(undata, "html", docid + '.html')
+        f = open(fullfilename)
+        f.seek(byte_start)
+        content = f.read(byte_len)
+        f.close()
+
+        # really nasty search highlighting
+        words = re.split("<[^>]*>|</[^>]*>|(\S+)", content)
+        words = [ x for x in words if x ]
+        firstword = 0
+        for i in range(len(words)):
+            word = words[i]
+            if re.match(highlights[1], word) and not firstword:
+                firstword = i
+        roundwords = words[firstword-50:firstword+50]
+        extract_text = " ".join(roundwords)
+        extract_text = extract_text.replace("</p>", "") # XXX why does split not cover this?
+        extract_text = MarkupLinks(extract_text, search)
+
         if re.match("A", docid):
             agrecord = aglookup.get((docid, gidsubhead), None)
             if agrecord:
-                print '<li>General Assembly: %s</li>' % (agrecord.GetDesc(search))
+                print '<h2>General Assembly: %s</h2>' % (agrecord.GetDesc(search, gidspeech))
+                print extract_text
                 del aglookup[(docid, gidsubhead)]  # quick hack to avoid repeats
         if re.match("S", docid):
             screcord = sclookup.get(docid, None)
             if screcord:
-                print '<li>Security Council: %s</li>' % (screcord.GetDesc(search))
+                print '<h2>Security Council: %s</h2>' % (screcord.GetDesc(search, gidspeech))
+                print '<p>'+extract_text+'</p>'
                 del sclookup[docid]
-
-
-    print '</ul>'
+    print '</div>';
 
 
 

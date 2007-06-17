@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+sys.path.append("../pylib")
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML

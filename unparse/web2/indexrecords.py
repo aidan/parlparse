@@ -24,15 +24,17 @@ class SecRecord:
             elif sp == "numvotes":
                 self.numvotes = int(val)
 
-    def GetHref(self, highlight = None):
+    def GetHref(self, highlight = None, gid = None):
         params = {"pagefunc":"scmeeting", "scmeeting":self.nmeeting, "scmeetingsuffix":self.meetingsuffix}
         if highlight:
             params['highlightdoclink'] = highlight
+        if gid:
+            params['gid'] = gid
         return EncodeHref(params)
 
-    def GetDesc(self, highlight = None):
+    def GetDesc(self, highlight = None, gid = None):
         vs = (self.numvotes >= 1) and " (vote)" or ""
-        return '%s <a href="%s">%s</a>%s' % (self.sdate, self.GetHref(highlight), self.topic, vs)
+        return '%s <a href="%s">%s</a>%s' % (self.sdate, self.GetHref(highlight, gid), self.topic, vs)
 
 
 def LoadSecRecords():
@@ -73,14 +75,16 @@ class AgRecord:
                 self.agcategory = val
             # could pull in vote counts if we know what to do with them
 
-    def GetHref(self, highlight = None):
+    def GetHref(self, highlight = None, gid = None):
         params = {"pagefunc":"gameeting", "gasession":self.nsess, "gameeting":self.nmeeting, "gid":self.gid}
         if highlight:
             params['highlightdoclink'] = highlight
+        if gid:
+            params['gid'] = gid
         return EncodeHref(params)
 
-    def GetDesc(self, highlight = None):
-        return '%s <a href="%s">%s</a>' % (self.sdate, self.GetHref(highlight), self.agtitle)
+    def GetDesc(self, highlight = None, gid = None):
+        return '%s <a href="%s">%s</a>' % (self.sdate, self.GetHref(highlight, gid), self.agtitle)
 
 
 def LoadAgendaNames(agendaname):
