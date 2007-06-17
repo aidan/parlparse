@@ -12,9 +12,9 @@ class SecRecord:
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
-                mdec = re.match("S-PV-(\d+)(?:-(Resu|Part)\.(\d))?$", self.docid)
+                mdec = re.match("S-PV-(\d+)(-(?:Resu|Part)\.\d+)?$", self.docid)
                 self.nmeeting = int(mdec.group(1))
-                self.meetingsuffix = mdec.group(2) and ("_%s_%s" % (mdec.group(2), mdec.group(3))) or ""
+                self.meetingsuffix = mdec.group(2) or ""
             elif sp == "date":
                 self.sdate = val
             elif sp == "sctopic":
@@ -83,10 +83,8 @@ def LoadAgendaNames(agendaname):
     agendanamesf = None
     if agendaname:
         agendanamesf = os.path.join(indexstuffdir, "agendaindexes", agendaname + ".html")
-        b = False
     if not agendanamesf or not os.path.isfile(agendanamesf):
         agendanamesf = os.path.join(indexstuffdir, "agendanames.html")
-        return [ ]#b = True
     res = [ ]
     fin = open(agendanamesf)
     for ln in fin.readlines():
@@ -95,8 +93,6 @@ def LoadAgendaNames(agendaname):
             res.append(agrecord)
     fin.close()
     
-    if not b:
-        res.append(res[-1])
     return res
 
 

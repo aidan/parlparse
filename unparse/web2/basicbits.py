@@ -188,16 +188,17 @@ def DecodeHref(pathparts, form):
             nscyear = 0
             if len(pathparts) == 1:
                 return { "pagefunc":"sctopics" }
-        mmeeting = re.match("meeting_?(\d+)(?:_?(Resu(?:mtion)?|Part)_(\d))?$", pathparts[1])
+        mmeeting = re.match("meeting_?(\d+)(-(?:Resu|Part)\.\d+)?$", pathparts[1])
+        meetingsuffix = mmeeting.group(2) or ""
         if mmeeting:
-            docid = "S-PV-%s" % mmeeting.group(1)
-            if mmeeting.group(2):
-                docid = "%s-%s.%s" % (docid, mmeeting.group(1), mmeeting.group(2))
+            scmeeting = int(mmeeting.group(1))
+            docid = "S-PV-%d%s" % (scmeeting, meetingsuffix)
+
             pdfinfo = GetPdfInfo(docid)
             mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_(.+)$", pathparts[2])
             highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
-                return { "pagefunc":"scmeeting", "docid":docid, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
+                return { "pagefunc":"scmeeting", "docid":docid, "scmeeting":scmeeting, "scmeetingsuffix":meetingsuffix, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
         if pathparts[1] == "documents":
@@ -266,7 +267,7 @@ def DecodeHref(pathparts, form):
 def EncodeHref(hmap):
     if hmap["pagefunc"] == "meeting":
         mga = re.match("A-(\d\d)-PV\.(\d+)$", hmap["docid"])
-        msc = re.match("S-PV-(\d+)(?:-(Resu|Part)\.(\d))?$", hmap["docid"])
+        msc = re.match("S-PV-(\d+)(-(?:Resu|Part)\.\d)?$", hmap["docid"])
         if mga:
             hmap["pagefunc"] = "gameeting"
             hmap["gasession"] = int(mga.group(1))
@@ -274,10 +275,7 @@ def EncodeHref(hmap):
         if msc:
             hmap["pagefunc"] = "scmeeting"
             hmap["scmeeting"] = int(msc.group(1))
-            if msc.group(2):
-                hmap["scmeetingsuffix"] = "_%s_%s" % (msc.group(2), msc.group(3))
-            else:
-                hmap["scmeetingsuffix"] = ""
+            hmap["scmeetingsuffix"] = msc.group(2) or ""
 
     if hmap["pagefunc"] == "front":
         return "/"
@@ -318,11 +316,11 @@ def EncodeHref(hmap):
         return "/topicn_%s" % (hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
-        hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
+        hlight = hmap.get("highlightdoclink", "") and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
         return "/generalassembly_%d/meeting_%d%s%s" % (hmap["gasession"], hmap["gameeting"], hlight, hcode)
     if hmap["pagefunc"] == "scmeeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
-        hlight = ("highlightdoclink" in hmap) and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
+        hlight = hmap.get("highlightdoclink", "") and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
         # in future this could include the year
         return "/securitycouncil/meeting_%d%s%s%s" % (hmap["scmeeting"], hmap["scmeetingsuffix"], hlight, hcode)
     if hmap["pagefunc"] == "nation":
