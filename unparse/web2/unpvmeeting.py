@@ -247,7 +247,7 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     #print '<input id="hrefimgi">%s</input>' % gadice
     print '<script type="text/javascript">document.getElementById("hrefimg").src = HrefImgReport(location.href);</script>'
 
-    agnum = gadice and pdfinfo.GetAgnum(gadice) or ""
+    agnums = gadice and pdfinfo.GetAgnum(gadice) or ""
 
     print '<div id="meta">'
     if not gadice:
@@ -255,18 +255,20 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     print '</div>'
     print '<div id="documentwrap">'
 
-    if gadice and agnum:
-        aglist = LoadAgendaNames(agnum)
-        print '<table class="agendatable">'
-        for agrecord in aglist:
-            print '<tr><td>'
-            if (agrecord.docid, agrecord.gid) != (pdfinfo.pdfc, gadice):
-                href = EncodeHref({"pagefunc":"meeting", "docid":agrecord.docid, "gadice":agrecord.gid})
-                print '%s <a href="%s">%s</a>' % (agrecord.sdate, href, agrecord.agtitle)
-            else:
-                print '%s %s' % (agrecord.sdate, agrecord.agtitle)
-            print '</td></tr>'
-        print '</table>'
+    if gadice and agnums:
+        for agnum in agnums.split(","):
+            aglist = LoadAgendaNames(agnum)
+            print '<table class="agendatable">'
+            print '<caption>agenda %s</caption>' % agnum
+            for agrecord in aglist:
+                print '<tr><td>'
+                if (agrecord.docid, agrecord.gid) != (pdfinfo.pdfc, gadice):
+                    href = EncodeHref({"pagefunc":"meeting", "docid":agrecord.docid, "gadice":agrecord.gid})
+                    print '%s <a href="%s">%s</a>' % (agrecord.sdate, href, agrecord.agtitle)
+                else:
+                    print '%s %s' % (agrecord.sdate, agrecord.agtitle)
+                print '</td></tr>'
+            print '</table>'
 
     fin = open(fhtml)
     ftext = fin.read()
