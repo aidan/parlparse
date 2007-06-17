@@ -115,9 +115,31 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
 
 
 def WritePDFpreview(docid, pdfinfo):
-    WriteGenHTMLhead('<div style="float:right; font-size:20; vertical-align:text-bottom;">%s</div> %s' % (pdfinfo.pdfc, pdfinfo.desc))
+    parsed = (pdfinfo.mgapv or pdfinfo.mscpv)
+
+    WriteGenHTMLhead('%s %s' % (pdfinfo.pdfc, pdfinfo.desc))
     
     code = pdfinfo.pdfc
+
+    pdfpreviewf = os.path.join(pdfpreviewdir, code + ".jpg")
+    if os.path.isfile(pdfpreviewf):
+        print '<img style="float:right" src="/pdfpreviewjpg/%s">' % code
+
+    if parsed:
+        print '<h3><a href="%s">UNdemocracy version of document</a></h3>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
+
+    pdflink = EncodeHref({"pagefunc":"nativepdf", "docid":code})
+    print '<h3><a href="%s">Original United Nations document</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></h3>' % (pdflink, pdflink)
+
+    print '<h3>Images of pages</h3>'
+    if pdfinfo.pages != -1:
+        print '<p>',
+        for n in range(pdfinfo.pages):
+            print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
+        print '</p>'
+    else:
+        print '<p>We don\'t know how many pages.  '
+        print '<a href="%s">Page 1</a></p>' % EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":1})
 
     if pdfinfo.pvrefs:
         print '<h3>Meetings that refer to this document</h3>'
@@ -130,24 +152,6 @@ def WritePDFpreview(docid, pdfinfo):
             print '<li>%s <a href="%s">%s</a></li>' % (pvrefk[0], EncodeHref(hmap), (agtitle or mcode))
         print '</ul>'
 
-    if pdfinfo.mgapv or pdfinfo.mscpv:
-        print '<p>Return to <a href="%s">Parsed document</a></p>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
-    
-    print '<h3><a href="%s">native pdf</a></h3>' % EncodeHref({"pagefunc":"nativepdf", "docid":code})
-
-    print '<h3>Link to pages</h3>'
-    if pdfinfo.pages != -1:
-        print '<p>',
-        for n in range(pdfinfo.pages):
-            print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
-        print '</p>'
-    else:
-        print '<p>We don\'t know how many pages.  '
-        print '<a href="%s">Page 1</a></p>' % EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":1})
-
-    pdfpreviewf = os.path.join(pdfpreviewdir, code + ".jpg")
-    if os.path.isfile(pdfpreviewf):
-        print '<img src="/pdfpreviewjpg/%s">' % code
 
     print '</body>'
     print '</html>'
