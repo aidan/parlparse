@@ -30,6 +30,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
     print '<html>'
     print '<head>'
+    print '<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">'
     print '<title>UNdemocracy - %s</title>' % cgi.escape(title)
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
     print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/yahoo/yahoo-min.js"></script>'

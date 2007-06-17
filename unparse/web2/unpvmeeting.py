@@ -91,12 +91,13 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
     print '</div>'
 
 def WriteAgenda(gid, agnum, dtext, docid):
-    print '<div class="discussion" id="%s">' % gid
+    print '<div class="agendaitem" id="%s">' % gid
     if agnum:
         lkothdisc = '<a href="%s">Other discussions<br>on this topic</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
         flippedhcode = '%s_%s' % (docid, gid)
         lkflipagenda = '<a href="%s#%s">Flip</a>' % (EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum}), flippedhcode)
-        print '<div class="otheraglink">%s %s</div>' % (lkothdisc, lkflipagenda)
+        #print '<div class="otheraglink">%s %s</div>' % (lkothdisc, lkflipagenda)
+        print '<div class="otheraglink">%s</div>' % lkothdisc
     
     print dtext
     print '</div>'
@@ -220,13 +221,13 @@ def WritePrevNext(pdfinfo):
         return
     print '<table class="prevnextmeeting">'
     print '<tr>'
+    thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
+    print '<td><a href="%s">This meeting on %s from %s to %s</a></td>' % (thislink, pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
     if pdfinfo.prevmeetingdetails:
         prevlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.prevmeetingdetails[0]})
         print '<td><a href="%s">Previous meeting<br>finished %s %s</a></td>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])
     else:
         print '<td></td>'
-    thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
-    print '<td><a href="%s">This meeting on %s from %s to %s</a></td>' % (thislink, pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
     if pdfinfo.nextmeetingdetails:
         nextlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.nextmeetingdetails[0]})
         print '<td><a href="%s">Next meeting started %s %s</a></td>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
@@ -242,10 +243,15 @@ rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)
 
 def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
-    print '<div style="display: none;"><img id="hrefimg"></div>'
+    print '<div style="display: none;"><img id="hrefimg" src="" alt=""></div>'
     #print '<input id="hrefimgi">%s</input>' % gadice
     print '<script type="text/javascript">document.getElementById("hrefimg").src = HrefImgReport(location.href);</script>'
-    WritePrevNext(pdfinfo)
+
+    print '<div id="meta">'
+    if not gadice:
+        WritePrevNext(pdfinfo)
+    print '</div>'
+    print '<div id="documentwrap">'
 
     fin = open(fhtml)
     ftext = fin.read()
@@ -279,10 +285,10 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
             if not gadice or agendagidcurrent == gadice:
                 WriteSpoken(gid, dtext, councilpresidentnation)
         elif dclass == "subheading":
-            if agendagidcurrent:
+            if agendagidcurrent and (not gadice or agendagidcurrent == gadice):
                 print '</div>\n\n'
             agendagidcurrent = gid
-            if agendagidcurrent:
+            if agendagidcurrent and (not gadice or agendagidcurrent == gadice):
                 print '<div class="discussion">'
             if not gadice or agendagidcurrent == gadice:
                 WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
@@ -301,8 +307,9 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
         else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
             print dtext, '</div>'
-        if agendagidcurrent:
-            print '</div>'
+    if agendagidcurrent and (not gadice or agendagidcurrent == gadice):
+        print '</div>'
+    print '</div>'
 
 def WriteHTMLagnum(agnum, aglist):
     WriteGenHTMLhead("Unrolled: " + aglist[0].aggrouptitle)
