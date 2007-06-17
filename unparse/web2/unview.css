@@ -66,6 +66,7 @@ body
 	background-repeat: no-repeat;
 	background-position: 50% 50px;
 	text-align: center;
+	padding-bottom: 1.5em;
 	}
 
 div#identity
@@ -78,6 +79,22 @@ div#identity
 	{
 	display: block;
 	margin: 0 auto;
+	}
+
+h2
+	{
+	font-size: 1.5em;
+	margin: 0.5em 0;
+	}
+h3
+	{
+	font-size: 1.2em;
+	margin: 0.5em 0;
+	}
+h4
+	{
+	font-size: 1em;
+	margin: 0.5em 0;
 	}
 
 h1
@@ -99,9 +116,33 @@ div#content
 	text-align: left;
 	}
 
+#document
+	{
+	width: 30em;
+	float: left;
+	}
+#meta
+	{
+	width: 17em;
+	float: right;
+	}
+
+.assembly-chairs
+	{
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+
 h2.agendaitem
 	{
 	font-size: 1.4em;
+	}
+
+.discussion
+	{
+	margin-top: 1em;
+	border-top: solid 1px #000000;
+	padding-top: 0.5em;
 	}
 
 .speech
@@ -111,8 +152,13 @@ h2.agendaitem
 	}
 .speech cite
 	{
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: bold;
+	font-style: normal;
+	}
+.speech cite .nation
+	{
+	font-size: 0.75em;
 	}
 .speech p
 	{
@@ -122,8 +168,11 @@ h2.agendaitem
 .act
 	{
 	margin-top: 1em;
+	margin-bottom: 1em;
 	font-style: italic;
 	}
+
+
 
 
 td.maincol
@@ -160,14 +209,7 @@ div.subheading, div.council-agenda
     margin-bottom:0;
     border: thin #fecdcd solid;
 }
-div.subheading
-{
-    margin-top:80;
-}
-p
-{
-    margin-bottom:0;
-}
+
 img.smallflag
 {
 	margin-left: -40px;
@@ -243,10 +285,7 @@ a.aggroup
 {
     font-weight:bold;
 }
-p
-{
-	padding-left:10px;
-}
+
 div.blockquote
 {
 	padding-left:30px;
@@ -284,15 +323,7 @@ div.cdocattr
     margin:0;
     background-color:red;
 }
-div.assembly-chairs
-{
-	text-align: left;
-	font-size: 20;
-    background-color: #4000ee;
-    color: #ffffff;
-    margin-top:0;
-    padding:5;
-}
+
 table.prevnextmeeting
 {
     background-color: #b0cc99;
