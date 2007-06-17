@@ -219,6 +219,9 @@ def WritePrevNext(pdfinfo):
 
 def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
+    print '<div style="display: none;"><img id="hrefimg"></div>'
+    #print '<input id="hrefimgi"></input>'
+    print '<script type="text/javascript">document.getElementById("hrefimg").src = HrefImgReport(location.href);</script>'
     WritePrevNext(pdfinfo)
 
     fin = open(fhtml)

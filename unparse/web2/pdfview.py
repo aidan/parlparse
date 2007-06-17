@@ -19,6 +19,19 @@ def SubParen(f):
     f = re.sub("\)", "\)", f)
     return f
 
+def WritePdfPreviewJpg(docid):
+    fname = os.path.join(pdfpreviewdir, docid + ".jpg")
+    if os.path.isfile(fname):
+        print "Content-type: image/png\n"
+    else:
+        fname = "pngnotfound.png"
+        print "Content-type: image/png\n"
+    
+    fin = open(fname)
+    print fin.read()
+    fin.close()
+
+
 def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     WriteGenHTMLhead("%s page %d" % (pdfinfo.desc, npage))
     code = pdfinfo.pdfc
@@ -134,7 +147,7 @@ def WritePDFpreview(docid, pdfinfo):
 
     pdfpreviewf = os.path.join(pdfpreviewdir, code + ".jpg")
     if os.path.isfile(pdfpreviewf):
-        print '<img src="../undata/pdfpreview/%s.jpg">' % code
+        print '<img src="/pdfpreviewjpg/%s">' % code
 
     print '</body>'
     print '</html>'

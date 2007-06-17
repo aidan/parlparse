@@ -49,6 +49,15 @@ function GetDocAttributesBaseHref(docattributes)
     docattributes["bbasehref"] = (ibh != -1 ? basehref.slice(0, ibh) : basehref); 
 }
 
+function HrefImgReport(lhref)
+{
+    res = lhref.replace(/http:\/\/[^\/]*\//, "/imghrefrep/", lhref);
+    res = res.replace(/#/, '__HASH__', res);
+    if (res.search(/imghrefrep/))
+        return res;
+    return "";
+}
+
 var monthlist = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 function GetDocAttributesFromHeading(docattributes)
 {
@@ -237,6 +246,9 @@ function linkere(me)
     if (docattributes["blockclass"] == "spoken")
         addlinksonparas(divnode);
     me.className = "clickedlink";
+
+    document.getElementById("hrefimg").src = HrefImgReport(location.href);  // this doesn't appear effective
+    //document.getElementById("hrefimgi").value = HrefImgReport(location.href);
     return true;
 };
 

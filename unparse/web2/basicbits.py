@@ -70,10 +70,11 @@ def LookupAgendaTitle(docid, gid):
     return prevagc[2], pdfinfo.sdate  # the title
 
 
-def LogIncomingDoc(docid, page, url, ipaddress):
+def LogIncomingDoc(docid, page, url, ipaddress, useragent):
     flog = os.path.join(logincomingdir, "logpages.txt")
     fout = open(flog, "a")
-    fout.write("docpage = %s %s %s %s %s\n" % (docid, page, (url or "None"), ipaddress, nowdatetime))
+    lua = re.sub("\s", "_", useragent or "empty")
+    fout.write("docpage = %s %s %s %s %s %s\n" % (docid, page, (url or "None"), ipaddress, nowdatetime, lua))
     fout.close()
 
 
@@ -95,7 +96,11 @@ def DecodeHref(pathparts, form):
         else:
             return { "pagefunc": "front" }
 
-
+    if pathparts[0] == "imghrefrep":
+        return { "pagefunc":"imghrefrep", "imghrefrep":"/".join(pathparts[1:]) }
+    
+    if pathparts[0] == "pdfpreviewjpg" and len(pathparts) == 2:
+        return { "pagefunc":"pdfpreviewjpg", "docid":pathparts[1] }
     # case when someone has given a document reference with the slashes
     if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
         while len(pathparts) > 1 and re.match("[ASREPRTVCL\d\.()]+$", pathparts[1]):
@@ -283,7 +288,7 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "document":
         return "/%s" % (hmap["docid"])
     if hmap["pagefunc"] == "pdfpage":
-        rl = [ hmap["docid"], ("page_%d" % hmap["page"]) ]
+        rl = [ "", hmap["docid"], ("page_%d" % hmap["page"]) ]
         if "highlightedit" in hmap and hmap["highlightedit"]:
             rl.append("highlightedit")
         if "highlightrects" in hmap:
@@ -342,7 +347,7 @@ def EncodeHref(hmap):
         if os.path.isfile(pagefile) and not hmap["highlightrects"]:
             # should touch-modify this file so it doesn't get garbage collected
             return "/%s" % (pagefile)
-        rl = [ ("png%d" % hmap["width"]), hmap["docid"], ("page_%d" % hmap["page"]) ]
+        rl = [ "", ("png%d" % hmap["width"]), hmap["docid"], ("page_%d" % hmap["page"]) ]
         for highlightrect in hmap["highlightrects"]:
             rl.append("rect_%d,%d_%d,%d" % highlightrect)
         return "/".join(rl)
