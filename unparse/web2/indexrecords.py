@@ -87,6 +87,8 @@ def LoadAgendaNames(agendaname):
     agendanamesf = None
     if agendaname:
         agendanamesf = os.path.join(indexstuffdir, "agendaindexes", agendaname + ".html")
+        if not os.path.isfile(agendanamesf):
+            return [ ]  # quick fix
     if not agendanamesf or not os.path.isfile(agendanamesf):
         agendanamesf = os.path.join(indexstuffdir, "agendanames.html")
     res = [ ]

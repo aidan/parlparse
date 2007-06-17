@@ -57,6 +57,7 @@ def GatherNationData(snation):
 
 def WriteMinorityVotes(nationdata):
     print '<h3>Minority votes</h3>'
+    print '<p>Votes where this country was most in the minority.</p>';
     print '<ul>'
     for mp in nationdata:
         if mp["lntype"] == "minorityvote":
@@ -92,7 +93,6 @@ def WriteAmbassadorList(nation, nationdata):
     print '</table>'
 
 
-# not written
 def WriteIndexStuffNation(nation, person):
     WriteGenHTMLhead('Nation page for %s' % nation)
     flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
