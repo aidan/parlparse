@@ -68,7 +68,7 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
 def WriteAgenda(gid, agnum, dtext, docid):
     print '<div class="agendaitem" id="%s">' % gid
     if agnum:
-        lkothdisc = '<a href="%s">Other discussions<br>on this topic</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
+        lkothdisc = '<a href="%s">More on this topic</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
         flippedhcode = '%s_%s' % (docid, gid)
         lkflipagenda = '<a href="%s#%s">Flip</a>' % (EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum}), flippedhcode)
         #print '<div class="otheraglink">%s %s</div>' % (lkothdisc, lkflipagenda)
@@ -194,21 +194,25 @@ def WriteDataHeading(gid, dtext):
 def WritePrevNext(pdfinfo):
     if not pdfinfo.prevmeetingdetails and not pdfinfo.nextmeetingdetails:
         return
-    print '<table class="prevnextmeeting">'
-    print '<tr>'
-    thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
-    print '<td><a href="%s">This meeting on %s from %s to %s</a></td>' % (thislink, pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
+    #print '<div class="prevnexmeeting">'
+    #thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
+    #print '<p><a href="%s">This meeting held on %s from %s to %s</a></p>' % (pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
+    print '<table>'
+    print '<tr class="meeting-date"><th>Date</th><td>%s</td></tr>' % pdfinfo.sdate
+    print '<tr class="meeting-time"><th>Started</th><td>%s</td></tr>' % pdfinfo.time
+    print '<tr class="meeting-rosetime"><th>Ended</th><td>%s</td></tr>' % pdfinfo.rosetime
+    print '</table>'
+
+    if pdfinfo.prevmeetingdetails and pdfinfo.nextmeetingdetails:
+        print '<ul>'
     if pdfinfo.prevmeetingdetails:
         prevlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.prevmeetingdetails[0]})
-        print '<td><a href="%s">Previous meeting<br>finished %s %s</a></td>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])
-    else:
-        print '<td></td>'
+        print '<li><a href="%s" title="Previous meeting: finished %s %s">Previous meeting</a></li>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])
     if pdfinfo.nextmeetingdetails:
         nextlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.nextmeetingdetails[0]})
-        print '<td><a href="%s">Next meeting started %s %s</a></td>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
-    else:
-        print '<td></td>'
-    print '</table>'
+        print '<li><a href="%s" title="Next meeting: started %s %s">Next meeting</a></li>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
+    if pdfinfo.prevmeetingdetails and pdfinfo.nextmeetingdetails:
+        print '</ul>'
 
 
 
@@ -225,12 +229,14 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     agnums = gadice and pdfinfo.GetAgnum(gadice) or ""
 
     print '<div id="meta">'
+   # print gadice, agnums
     if not gadice:
         WritePrevNext(pdfinfo)
     print '</div>'
     print '<div id="documentwrap">'
 
     if gadice and agnums:
+      #  print '<h1>HOORAY!</h1>'
         for agnum in agnums.split(","):
             aglist = LoadAgendaNames(agnum)
             print '<table class="agendatable">'

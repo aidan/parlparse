@@ -33,15 +33,18 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">'
     print '<title>UNdemocracy - %s</title>' % cgi.escape(title)
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
-    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/yahoo/yahoo-min.js"></script>'
-    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/dom/dom-min.js"></script>'
-    print '<script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/event/event-min.js"></script>'
+    yuibase = 'http://yui.yahooapis.com'
+    yuibase = '/yui'
+    print '<script type="text/javascript" src="%s/2.2.2/build/yahoo/yahoo-min.js"></script>' % yuibase
+    print '<script type="text/javascript" src="%s/2.2.2/build/dom/dom-min.js"></script>' % yuibase
+    print '<script type="text/javascript" src="%s/2.2.2/build/event/event-min.js"></script>' % yuibase
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
     print '<body id="%s">' % bodyid
 
     if os.getenv("HTTP_HOST") != 'www.publicwhip.org.uk':
-        print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page.</p>'''
+        if os.getenv("HTTP_HOST") != 'local.undemocracy.com':
+            print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page.</p>'''
 
     print '<div id="identity">'
     if not frontpage:
@@ -50,7 +53,17 @@ def WriteGenHTMLhead(title, frontpage=False):
     if not frontpage:
         print '</a>'
     print '</div>'
-    print '<h1>%s</h1>' % cgi.escape(title)
+    if not frontpage:
+        print '<h1>%s</h1>' % cgi.escape(title)
+    else:
+        print '<div id="bigsearch">'
+        print '<form action="/" method="get">'
+        print '<p>'
+        print '<input type="text" name="search">'
+        print '<button>Search</button>'
+        print '</form>'
+        print '<p class="nations"><a href="/nations">View list of all nations</a></p>'
+        print '</div>'
     print '<div id="content">'
     #print os.environ
 

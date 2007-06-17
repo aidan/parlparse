@@ -138,9 +138,11 @@ def WriteFrontPageError(pathpartstr, hmap):
 
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
+    
     fin = open("frontpage.html")
     print fin.read()
-
+    
+    return
     print '<h3>Search feature</h3>'
     print '<form action="/" method="get">' 
     print 'Search:'

@@ -71,6 +71,85 @@ body
 	font-family: Gill Sans, Helvetica, Arial, sans;
 	}
 
+p.nations a
+	{
+	display: block;
+	font-size: 0.75em;
+	color: #ffffff;
+	margin-top: 0.5em;
+	margin-bottom: -0.5em;
+	}
+
+#sectors
+	{
+	float: left;
+	width: 100%;
+	}
+#sectors:after
+	{
+	clear: both;
+	content: '.';
+	text-indent: -3000px;
+	height: 0;
+	display: block;
+	visibility: hidden;
+	}
+
+#securitycouncil
+	{
+	float: left;
+	width: 33%;
+	}
+#generalassembly
+	{
+	float: left;
+	width: 33%;
+	border-left: solid 1px #0000000
+	padding-left: 1%;
+	}
+
+#securitycouncil li, #generalassembly li
+	{
+	font-size: 0.6em;
+	}
+#securitycouncil li a, #generalassembly li a
+	{
+	display: block;
+	font-size: 1.7em;
+	}
+
+h3.browse
+	{
+	margin-bottom: 0.25em;
+	}
+
+#nations
+	{
+	float: right;
+	width: 32%;
+	}
+#nations li
+	{
+	font-size: 0.6em;
+	float: left;
+	width: 50%;
+	}
+#about
+	{
+	float: right;
+	width: 32%;
+	background-color: #B3D7F1;
+	}
+#about h2
+	{
+	margin: 0.35em;
+	}
+#about p
+	{
+	margin: 0.5em;
+	}
+
+
 div#identity
 	{
 	max-width: 100%;
@@ -415,18 +494,19 @@ span.againstul
     border:thin solid black;
 }
 
+#documentwrap
+	{
+	position: relative;
+	}
 div.unclickedlink 
-{
-    background-color:#cccccc;  
-    color: #660000;  
-    cursor: pointer; 
-    margin-left: 5; 
-    float: right; 
-    clear: right;
-    font-size: 16;
-    font-weight: normal;
-    text-decoration: underline;
-}
+	{
+	position: absolute;
+	right: 0;
+	display: inline;
+	background-color: #cccccc;
+	border: solid 1px #000000;
+	text-decoration: underline;
+	}
 
 div.clickedlink 
 {
