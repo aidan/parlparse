@@ -66,13 +66,15 @@ body
 	background-repeat: no-repeat;
 	background-position: 50% 50px;
 	text-align: center;
-	padding-bottom: 1.5em;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	font-family: Gill Sans, Helvetica, Arial, sans;
 	}
 
 div#identity
 	{
-	text-align: center;
 	max-width: 100%;
+	width: 48em;
 	margin: 15px auto 80px auto;
 	}
 #identity img
@@ -83,12 +85,12 @@ div#identity
 
 h2
 	{
-	font-size: 1.5em;
-	margin: 0.5em 0;
+	font-size: 1.2em;
+	margin: 0.5em 0 0 0;
 	}
 h3
 	{
-	font-size: 1.2em;
+	font-size: 1.1em;
 	margin: 0.5em 0;
 	}
 h4
@@ -97,14 +99,33 @@ h4
 	margin: 0.5em 0;
 	}
 
-h1
+h1, #bigsearch
 	{
 	color: #ffffff;
 	background: #000000;
-	font-size: 1.75em;
+	font-size: 1.6em;
 	padding: 0.25em;
 	/* text-transform: capitalize; */
+	margin: 0 auto;
 	margin-bottom: 0.5em;
+	ztext-align: left;
+	}
+
+#bigsearch
+	{
+	padding: 1.25em;
+	}
+
+#bigsearch input, #bigsearch button
+	{
+	font-size: 1em;
+	}
+
+h1 Zspan
+	{
+	width: 30em;
+	display: block;
+	margin: 0 auto;
 	}
 
 div#content
@@ -142,9 +163,18 @@ div#content
 	font-size: 0.8em;
 	}
 
-.ZZZotheraglink
+div.otheraglink
 	{
-	display: none;
+	float: left;
+	background-color: #cccccc;
+	border: solid 1px #000000;
+	margin-left: -4.5em;
+	width: 3.5em;
+	padding: 0.25em;
+	}
+div.otheraglink a
+	{
+	font-size: 0.5em;
 	}
 
 .discussion
@@ -179,6 +209,11 @@ div#content
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-style: italic;
+	}
+
+span.search-highlight
+	{
+	background-color: #ffcc00;
 	}
 
 
@@ -436,12 +471,7 @@ table.votekey
     font-size:14;
     cursor:pointer;
 }
-div.otheraglink
-{
-    float: left;
-    background-color: #f0d4d4;
-    text-align: left;
-}
+
 
 div.spoken 
 {
