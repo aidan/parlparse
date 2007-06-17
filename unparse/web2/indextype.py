@@ -27,7 +27,7 @@ def WriteAgendaList(aglist):
 
 
 
-def WriteCollapsedAgendaList(aglist):
+def WriteCollapsedAgendaList(aglist, bDiced):
     aggroupm = { }
     for agrecord in aglist:
         aggroupm.setdefault(agrecord.agnum, [ ]).append(agrecord)
@@ -37,6 +37,20 @@ def WriteCollapsedAgendaList(aglist):
     print '<ul class="aglistgroup">'
 
     print '<li><a href="%s" class="aggroup">Condolences</a></li>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"}) # special case
+
+    if bDiced:
+        for aggt, agnum in aggtitles:
+            aggl = { }
+            for agrecord in aggroupm[agnum]:
+                aggl.setdefault((agrecord.sdate, agrecord.docid), [ ]).append((agrecord.gid, agrecord))
+            agglks = aggl.keys()
+            agglks.sort()
+            agglk = min(agglks)
+            agrecord = min(aggl[agglk])[1]
+            href = EncodeHref({"pagefunc":"meeting", "docid":agrecord.docid, "gadice":agrecord.gid})
+            print '<li>%d %s <a href="%s" class="aggroup">%s</a></li>' % (len(agglks), agrecord.sdate, href, aggt)
+        print '</ul>'
+        return        
 
     for aggt, agnum in aggtitles:
         print '<li>',
@@ -76,7 +90,7 @@ def WriteIndexStuff(nsess):
     ags = [ agrecord  for agrecord in allags  if agrecord.nsess == nsess ]
     print '<h3>Full list of topics discussed</h3>'
     print '<p>Several topics may be discussed on each day, and each topic may be discussed over several days.</p>'
-    WriteCollapsedAgendaList(ags)
+    WriteCollapsedAgendaList(ags, True)
 
 
 
