@@ -208,8 +208,8 @@ def DecodeHref(pathparts, form):
             if len(pathparts) == 1:
                 return { "pagefunc":"sctopics" }
         mmeeting = re.match("meeting_?(\d+)(-(?:Resu|Part)\.\d+)?$", pathparts[1])
-        meetingsuffix = mmeeting.group(2) or ""
         if mmeeting:
+            meetingsuffix = mmeeting.group(2) or ""
             scmeeting = int(mmeeting.group(1))
             docid = "S-PV-%d%s" % (scmeeting, meetingsuffix)
 
