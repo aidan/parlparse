@@ -165,10 +165,12 @@ def DecodeHref(pathparts, form):
             nmeeting = int(mmeeting.group(1))
             docid = "A-%d-PV.%d" % (nsess, nmeeting)
             pdfinfo = GetPdfInfo(docid)
-            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_(.+)$", pathparts[2])
+            gadice = (len(pathparts) > 2 and re.match("pg\d+-bk\d+$", pathparts[2])) and pathparts[2] or ""
+            
+            mhighlightdoclink = re.match("highlight_(.+)$", pathparts[-1])
             highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
-                return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
+                return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "gadice":gadice, "highlightdoclink":highlightdoclink }
             return { "pagefunc": "document", "docid":docid }
 
         if pathparts[1] == "documents":
@@ -211,8 +213,8 @@ def DecodeHref(pathparts, form):
             docid = "S-PV-%d%s" % (scmeeting, meetingsuffix)
 
             pdfinfo = GetPdfInfo(docid)
-            mhighlightdoclink = (len(pathparts) > 2) and re.match("highlight_(.+)$", pathparts[2])
-            highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1)
+            mhighlightdoclink = re.match("highlight_(.+)$", pathparts[-1])
+            highlightdoclink = mhighlightdoclink and mhighlightdoclink.group(1) or ""
             if pdfinfo.htmlfile and os.path.isfile(pdfinfo.htmlfile):
                 return { "pagefunc":"scmeeting", "docid":docid, "scmeeting":scmeeting, "scmeetingsuffix":meetingsuffix, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
             return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
@@ -332,9 +334,12 @@ def EncodeHref(hmap):
             return "/generalassembly_%s/%s_%s" % (magnum.group(1), agtop, hmap["agendanum"])
         return "/%s_%s" % (agtop, hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
-        hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
+        hcode = hmap.get("gid", "") and ("#%s" % hmap["gid"]) or ""
+        gadice = hmap.get("gadice", "") and ("/%s" % hmap["gadice"]) or ""
         hlight = hmap.get("highlightdoclink", "") and ("/highlight_%s" % hmap["highlightdoclink"]) or ""
-        return "/generalassembly_%d/meeting_%d%s%s" % (hmap["gasession"], hmap["gameeting"], hlight, hcode)
+        if gadice and hcode and hmap["gadice"] == hmap["gid"]:
+            hcode = ""
+        return "/generalassembly_%d/meeting_%d%s%s%s" % (hmap["gasession"], hmap["gameeting"], gadice, hlight, hcode)
     if hmap["pagefunc"] == "scmeeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
         hlight = hmap.get("highlightdoclink", "") and ("/highlight_%s" % hmap["highlightdoclink"]) or ""

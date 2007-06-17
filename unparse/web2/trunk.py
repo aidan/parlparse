@@ -65,12 +65,12 @@ if __name__ == "__main__":
     elif hmap["pagefunc"] == "gadocuments":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
-        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["gadice"], hmap["highlightdoclink"])
     elif hmap["pagefunc"] == "agendanumexpanded":
         aglist = LoadAgendaNames(hmap["agendanum"])
         WriteHTMLagnum(hmap["agendanum"], aglist)
     elif hmap["pagefunc"] == "scmeeting":
-        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
+        WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "", hmap["highlightdoclink"])
     elif hmap["pagefunc"] == "sctopics":
         WriteIndexStuffSec()
     elif hmap["pagefunc"] == "scyear":

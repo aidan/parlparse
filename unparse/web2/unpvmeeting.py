@@ -240,10 +240,10 @@ def WritePrevNext(pdfinfo):
 rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)'
 
 
-def WriteHTML(fhtml, pdfinfo, highlightth):
+def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
     print '<div style="display: none;"><img id="hrefimg"></div>'
-    #print '<input id="hrefimgi"></input>'
+    #print '<input id="hrefimgi">%s</input>' % gadice
     print '<script type="text/javascript">document.getElementById("hrefimg").src = HrefImgReport(location.href);</script>'
     WritePrevNext(pdfinfo)
 
@@ -270,15 +270,25 @@ def WriteHTML(fhtml, pdfinfo, highlightth):
         else:
             highlights = ("", "")
 
+    agendanumcurrent = ""
+    agendagidcurrent = ""
     for mdiv in re.finditer(rdivspl, ftext):
         dclass, gid, agendanum = mdiv.group(1), mdiv.group(2), mdiv.group(3)
         dtext = MarkupLinks(mdiv.group(4).strip(), highlights)
         if dclass == "spoken":
-            WriteSpoken(gid, dtext, councilpresidentnation)
+            if not gadice or agendagidcurrent == gadice:
+                WriteSpoken(gid, dtext, councilpresidentnation)
         elif dclass == "subheading":
-            WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
+            if agendagidcurrent:
+                print '</div>\n\n'
+            agendagidcurrent = gid
+            if not gadice or agendagidcurrent == gadice:
+                WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
+            if agendagidcurrent:
+                print '<div class="discussion">'
         elif dclass == "recvote":
-            WriteVote(gid, dtext, pdfinfo.bSC)
+            if not gadice or agendagidcurrent == gadice:
+                WriteVote(gid, dtext, pdfinfo.bSC)
         elif dclass == 'heading':
             longdate = WriteDataHeading(gid, dtext)
         elif dclass == "assembly-chairs":
@@ -286,11 +296,13 @@ def WriteHTML(fhtml, pdfinfo, highlightth):
         elif dclass == "council-attendees":
             councilpresidentnation = WriteCouncilAttendees(gid, dtext)  # value used to dereference "The President" in the Security Council
         elif re.match("italicline", dclass):
-            WriteItalicLine(gid, dclass, dtext)
+            if not gadice or agendagidcurrent == gadice:
+                WriteItalicLine(gid, dclass, dtext)
         else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
             print dtext, '</div>'
-
+        if agendagidcurrent:
+            print '</div>'
 
 def WriteHTMLagnum(agnum, aglist):
     WriteGenHTMLhead("Unrolled: " + aglist[0].aggrouptitle)
