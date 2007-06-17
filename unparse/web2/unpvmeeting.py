@@ -5,7 +5,7 @@ import sys, os, stat, re
 import datetime
 import urllib
 from basicbits import WriteGenHTMLhead, EncodeHref, monthnames
-
+from indexrecords import LoadAgendaNames
 
 # more efficient to print out as we go through
 def MarkupLinks(ftext, highlightdoclink):
@@ -217,6 +217,10 @@ def WritePrevNext(pdfinfo):
 
 
 
+
+rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)'
+
+
 def WriteHTML(fhtml, pdfinfo, highlightdoclink):
     WriteGenHTMLhead(pdfinfo.desc)  # this will be the place the date gets extracted from
     print '<div style="display: none;"><img id="hrefimg"></div>'
@@ -231,10 +235,8 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
 
     # TODO: Make highlightdoclink work for search results
 
-    for mdiv in re.finditer('<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)', ftext):
-        dclass = mdiv.group(1)
-        gid = mdiv.group(2)
-        agendanum = mdiv.group(3)
+    for mdiv in re.finditer(rdivspl, ftext):
+        dclass, gid, agendanum = mdiv.group(1), mdiv.group(2), mdiv.group(3)
         dtext = MarkupLinks(mdiv.group(4).strip(), highlightdoclink)
         if dclass == "spoken":
             WriteSpoken(gid, dtext, councilpresidentnation)
@@ -252,9 +254,52 @@ def WriteHTML(fhtml, pdfinfo, highlightdoclink):
             WriteItalicLine(gid, dclass, dtext)
         else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
-            print dtext
+            print dtext, '</div>'
 
-    #print '<div id="footer">'
-    #print 'Footer'
-    #print '</div>'
+
+def WriteHTMLagnum(agnum, aglist):
+    WriteGenHTMLhead("Unrolled: " + aglist[0].aggrouptitle)
+    print '<h3><a href="%s">Rolled back up agenda</a></h3><p></p>' % EncodeHref({"pagefunc":"agendanum", "agendanum":agnum})
+
+    prevfhtml = ""
+    for agrecord in aglist:
+        if agrecord.fhtml == prevfhtml: # avoid repeating the same document more than once when agendas get re-opened
+            continue
+        prevfhtml = agrecord.fhtml
+        
+        fin = open(agrecord.fhtml)
+        ftext = fin.read()
+        fin.close()
+        
+        print '<h1>%s</h1>' % agrecord.sdate
+        agendanumcurrent = ""
+        #continue
+        for mdiv in re.finditer(rdivspl, ftext):
+            dclass, gid, agendanum = mdiv.group(1), mdiv.group(2), mdiv.group(3)
+            stext = mdiv.group(4).strip()
+            if dclass == "assembly-chairs":
+                WriteAssemblyChair(gid, ftext)   # could always use this for doing the date band
+                continue   
+            if dclass == "heading":
+                continue   # wot are we going to do about this? needs numbers for the javascript links
+
+            if dclass == "subheading":
+                agendanumcurrent = agendanum   # this would do some kind of folding down or up when we get there
+            if agnum != agendanumcurrent:
+                continue   # only printing that which is in this agenda 
+            
+            dtext = MarkupLinks(stext, "")
+            if dclass == "subheading":
+                WriteAgenda(gid, agendanum, dtext)
+            elif dclass == "spoken": 
+                WriteSpoken(gid, dtext, "")
+            elif dclass == "recvote":
+                WriteVote(gid, dtext, False)
+            elif re.match("italicline", dclass):
+                WriteItalicLine(gid, dclass, dtext)
+            elif dclass == "end-document":
+                pass
+            else:
+                print '<div>UNEXPECTED Class %s</div>' % dclass
+        #break
 

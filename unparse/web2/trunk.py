@@ -12,11 +12,12 @@ from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGe
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage, WritePdfPreviewJpg
 from indextype import WriteFrontPage, WriteFrontPageError
 from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
-from unpvmeeting import WriteHTML
+from unpvmeeting import WriteHTML, WriteHTMLagnum
 from highlightimg import WritePNGpage
 from nationpage import WriteIndexStuffNation, WriteAllNations
 from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing
 
+from indexrecords import LoadAgendaNames
 
 # the main section that interprets the fields
 if __name__ == "__main__":
@@ -65,6 +66,9 @@ if __name__ == "__main__":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
+    elif hmap["pagefunc"] == "agendanumexpanded":
+        aglist = LoadAgendaNames(hmap["agendanum"])
+        WriteHTMLagnum(hmap["agendanum"], aglist)
     elif hmap["pagefunc"] == "scmeeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["highlightdoclink"])
     elif hmap["pagefunc"] == "sctopics":

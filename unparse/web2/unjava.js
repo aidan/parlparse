@@ -235,7 +235,7 @@ function linkere(me)
 
     var eltable = document.createElement("table");
     eltable.appendChild(rowof2("date:", rowelspan(docattributes["longdate"])));
-    lhref = docattributes["bbasehref"] + "/" + docattributes["docid"] + "/page_" + docattributes["pageno"]; 
+    lhref = "/" + docattributes["docid"] + "/page_" + docattributes["pageno"]; 
     ltarg = docattributes["docid"] + " page " + docattributes["pageno"];
     eltable.appendChild(rowof2("pdf:", rowelahref(lhref, ltarg)));
     eltable.appendChild(rowof2("URL:", rowelinput(blogurl(docattributes))));

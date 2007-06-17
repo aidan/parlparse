@@ -3,6 +3,9 @@ import sys
 import re
 import cgi
 
+indexstuffdir = "/home/undemocracy/undata/indexstuff"
+
+
 from pdfinfo import PdfInfo
 from downascii import DownAscii
 import datetime
@@ -13,6 +16,7 @@ from config import *
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
+
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -126,6 +130,10 @@ def DecodeHref(pathparts, form):
         return { "pagefunc":"nation", "nation":pathparts[1] }
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
+    if mga and len(pathparts) >= 2 and re.match("topic[nx]_(.*)$", pathparts[1]):
+        # agenda num should in theory match session number
+        del pathparts[0]
+        mga = None
     if mga:
         if mga.group(1):
             nsess = int(mga.group(1))
@@ -156,10 +164,6 @@ def DecodeHref(pathparts, form):
                 return { "pagefunc":"gameeting", "docid":docid, "gasession":nsess, "gameeting":nmeeting, "pdfinfo":pdfinfo, "htmlfile":pdfinfo.htmlfile, "highlightdoclink":highlightdoclink }
             return { "pagefunc": "document", "docid":docid }
 
-        mtopic = re.match("topicn_(.+)$", pathparts[1])
-        if mtopic:
-            return { "pagefunc": "agendanum", "agendanum":mtopic.group(1) }
-            # agenda num should in theory match session number
         if pathparts[1] == "documents":
             if nsess:
                 docyearfile = os.path.join(indexstuffdir, "docyears", ("ga%d.txt" % nsess))
@@ -169,9 +173,14 @@ def DecodeHref(pathparts, form):
 
         return { "pagefunc": "fronterror" }
 
-    mtopic = re.match("topicn_(.+)$", pathparts[0])
+    mtopic = re.match("topic([nx])_(.+)$", pathparts[0])
     if mtopic:
-        return { "pagefunc":"agendanum", "agendanum":mtopic.group(1) }
+        agnum = mtopic.group(2)
+        if mtopic.group(1) == "n":
+            return { "pagefunc":"agendanum", "agendanum":agnum }
+        
+        #aglist = LoadAgendaNames(agnum) # if this is length 1 we can demote this to single list html
+        return { "pagefunc":"agendanumexpanded", "agendanum":agnum } #, "aglist":aglist }
 
     msc = re.match("(?:securitycouncil|sc)_?(\d+)?$", pathparts[0])
     if msc:
@@ -309,11 +318,12 @@ def EncodeHref(hmap):
         return "/securitycouncil_%d" % (hmap["scyear"])
     if hmap["pagefunc"] == "scdocuments":
         return "/securitycouncil_%d/documents" % (hmap["scyear"])
-    if hmap["pagefunc"] == "agendanum":
+    if hmap["pagefunc"] == "agendanum" or hmap["pagefunc"] == "agendanumexpanded":
+        agtop = hmap["pagefunc"] == "agendanumexpanded" and "topicx" or "topicn"
         magnum = re.search("-(\d\d)$", hmap["agendanum"])
         if magnum:
-            return "/generalassembly_%s/topicn_%s" % (magnum.group(1), hmap["agendanum"])
-        return "/topicn_%s" % (hmap["agendanum"])   # such as condolences
+            return "/generalassembly_%s/%s_%s" % (magnum.group(1), agtop, hmap["agendanum"])
+        return "/%s_%s" % (agtop, hmap["agendanum"])   # such as condolences
     if hmap["pagefunc"] == "gameeting":
         hcode = ("gid" in hmap) and ("#%s" % hmap["gid"]) or ""
         hlight = hmap.get("highlightdoclink", "") and ("/highlight_%s" % hmap["highlightdoclink"]) or ""

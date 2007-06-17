@@ -3,8 +3,10 @@
 import sys, os, stat, re
 import datetime
 
-from basicbits import indexstuffdir, EncodeHref
+from basicbits import EncodeHref
 
+# put back in for now
+from basicbits import indexstuffdir, htmldir
 
 class SecRecord:
     def __init__(self, stext):
@@ -14,7 +16,7 @@ class SecRecord:
                 self.docid = val
                 mdec = re.match("S-PV-(\d+)(-(?:Resu|Part)\.\d+)?$", self.docid)
                 self.nmeeting = int(mdec.group(1))
-                self.meetingsuffix = mdec.group(2) or ""
+                self.meetingsuffix = mdec.group(2) or ""    
             elif sp == "date":
                 self.sdate = val
             elif sp == "sctopic":
@@ -54,6 +56,8 @@ class AgRecord:
                 self.sess = mdec.group(1)
                 self.nsess = int(self.sess)
                 self.nmeeting = int(mdec.group(2))
+                self.fhtml = os.path.join(htmldir, self.docid + ".html")
+
             elif sp == "subheadingid":
                 self.gid = val
             elif sp == "date":

@@ -191,6 +191,8 @@ def WriteIndexStuffAgnum(agnum):
     if nsess:
         print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
     
+    print '<h2><a href="%s">See this agenda all unrolled</a></h2>' % EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum})
+
     print '<h3>%s</h3>' % ags[0].aggrouptitle
     WriteAgendaList(ags)
 
