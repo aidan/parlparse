@@ -38,6 +38,10 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
     print '<body id="%s">' % bodyid
+
+    if os.getenv("HTTP_HOST") != 'www.publicwhip.org.uk':
+        print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page.</p>'''
+
     print '<div id="identity">'
     if not frontpage:
         print '<a href="/">'
