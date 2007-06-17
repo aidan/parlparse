@@ -2,9 +2,9 @@ function initUNDemocracy()
 {
    var getByClass = YAHOO.util.Dom.getElementsByClassName;
    var linkheres = getByClass('discussion');
-   linkheres = linkheres.concat(getByClass('spoken'));
+   linkheres = linkheres.concat(getByClass('speech'));
    linkheres = linkheres.concat(getByClass('recvote'));
-   linkheres = linkheres.concat(getByClass('event'));
+   linkheres = linkheres.concat(getByClass('act'));
    
     var linkhere = document.createElement('div');
     linkhere.className = 'unclickedlink';

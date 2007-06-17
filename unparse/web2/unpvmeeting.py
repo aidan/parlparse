@@ -34,11 +34,11 @@ def MarkupLinks(ftext, highlights):
 
 
 def WriteSpoken(gid, dtext, councilpresidentnation):
-    print '<div class="spoken" id="%s">' % gid
+    print '<div class="speech" id="%s">' % gid
     mspek = re.search('<h3 class="speaker"> <span class="name">([^<]*)</span>(?: <span class="(nation|non-nation)">([^<]*)</span>)?(?: <span class="language">([^<]*)</span>)? </h3>', dtext)
     assert mspek, dtext[:200]
     name, nationtype, nation, language = mspek.group(1), mspek.group(2), mspek.group(3), mspek.group(4)
-    print '<h3 class="speaker">',
+    print '<cite>',
 
 
     # build up the components of the speaker
@@ -84,7 +84,7 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
         print '<span class="name">%s</span>' % name
 
     print nationblock
-    print '</h3>'
+    print '</cite>'
 
     print dtext[mspek.end(0):]
 
@@ -194,7 +194,7 @@ def WriteCouncilAttendees(gid, dtext):
 
 # convert paragraphs to less damaging spans (keeping the ids that might be marking them)
 def WriteItalicLine(gid, dclass, dtext):
-    print '<div class="event" id="%s">' % gid # dclass
+    print '<div class="act" id="%s">' % gid # dclass
     print re.sub("<(/?)p([^>]*)>", "<\\1span\\2>", dtext)
     print '</div>'
 
