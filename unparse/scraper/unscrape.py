@@ -82,6 +82,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 
     if not purl:
         mares = re.match("A-RES-(\d+)-(\d+)$", undocname)
+        maresr = re.match("A-RES-(\d+)\(([IVXL]+)\)$", undocname)  # resolutions used to have sessions in roman numerals
         meres = re.match("E-RES-(\d\d\d\d)-(\d+)$", undocname)  # don't know what the code is
         madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-\(\)]*)$", undocname)
         msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
@@ -89,6 +90,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d)$", undocname)
         mspv = re.match("S-PV.(\d+)", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
+        stdoc = re.match("ST-SGB-(\d+)$", undocname)  # experimental secretariat document
         munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
 
         if mares:
@@ -97,6 +99,11 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/RES/%s/%s&Lang=E" % (mares.group(1), mares.group(2))
         #if meres:
         #    purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=E/RES/%s/%s&Lang=E" % (meres.group(1), meres.group(2))
+        elif maresr:
+            purl = "http://daccess-ods.un.org/access.nsf/Get?OpenAgent&DS=A/RES/%s(%s)&Lang=E&Area=RESOLUTION" % (maresr.group(1), maresr.group(2))
+        elif stdoc:
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=ST/SGB/%s&Lang=E" % (stdoc.group(1))
+
         elif madoc:
             if int(madoc.group(1)) < 1:  # limit the sessions we take these resolutions from
                 return False
