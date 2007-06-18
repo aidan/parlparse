@@ -243,7 +243,7 @@ def DecodeHref(pathparts, form):
 
 
     # avoid the superfluous "document" leader
-    mdocid = re.match("([AS]-.*?)(\.pdf)?$", pathparts[0])
+    mdocid = re.match("([AS]T?-.*?)(\.pdf)?$", pathparts[0])
     if mdocid:
         docid = mdocid.group(1)
         pdfinfo = GetPdfInfo(docid)
