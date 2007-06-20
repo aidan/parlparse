@@ -373,3 +373,30 @@ def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
     res.sort()
     return res
 
+
+def RomanToDecimal(rn):
+    lrn = list(rn)
+    res = 0
+    while lrn and lrn[-1] == "I":
+        res += 1
+        del lrn[-1]
+    if not lrn:
+        return res
+    if lrn[-1] == "V":
+        res += 5;
+        del lrn[-1]
+        if lrn and lrn[-1] == "I":
+            res -= 1
+            del lrn[-1]
+    if not lrn:
+        return res
+    while lrn and lrn[-1] == "X":
+        res += 10
+        del lrn[-1]
+    if lrn and lrn[-1] == "I":
+        res -= 1
+        del lrn[-1]
+    assert not lrn, rn
+    return res
+
+

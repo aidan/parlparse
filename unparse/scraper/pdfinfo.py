@@ -5,6 +5,7 @@
 import os
 import re
 import sys
+from unmisc import RomanToDecimal
 
 # this class encapsulates all the info we know of one pdf file
 # the slow data is the number of pages of the file, which we don't destroy
@@ -26,6 +27,7 @@ class PdfInfo:
         mscdoc = re.match("S-(\d\d\d\d)-\d", self.pdfc)
         self.mscpv = re.match("S-PV-(\d+)", self.pdfc)
         mgares = re.match("A-RES-(\d\d)-(\d+)", self.pdfc)
+        mgaresr = re.match("A-RES-(\d+)\((S-)?([IVXL]+)\)$", self.pdfc)  # resolutions used to have sessions in roman numerals
         mscprst = re.match("S-PRST-(\d\d\d\d)", self.pdfc)
         mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", self.pdfc)
 
@@ -64,6 +66,10 @@ class PdfInfo:
         elif mgares:
             self.desc = "General Assembly Resolution %s/%s" % (mgares.group(1), mgares.group(2))
             self.nsess = int(mgares.group(1))
+            self.bGA = True
+        elif mgaresr:
+            self.nsess = RomanToDecimal(mgaresr.group(3))
+            self.desc = "General Assembly Resolution %s(%s%s)" % (mgaresr.group(1), mgaresr.group(2), mgaresr.group(3))
             self.bGA = True
         elif mscprst:
             self.nscyear = int(mscprst.group(1))
@@ -117,6 +123,8 @@ class PdfInfo:
                 self.sdate = val
             elif param == "time":
                 self.time = val
+            elif param == "title":
+                self.title = val
             elif param == "rosetime":
                 self.rosetime = val
             elif param == "prevmeeting":
@@ -146,7 +154,7 @@ class PdfInfo:
         mpages = re.search("NumberOfPages:\s*(\d+)", ftktext)
         if mpages:
             self.pages = int(mpages.group(1))
-            
+
 
     def WriteInfo(self, pdfinfodir):
         pdfinfofile = os.path.join(pdfinfodir, self.pdfc + ".txt")
@@ -159,6 +167,8 @@ class PdfInfo:
             fout.write("rosetime = %s\n" % self.rosetime)
         if self.pages != -1:
             fout.write("pages = %d\n" % self.pages)
+        if self.title:
+            fout.write("title = %s\n" % self.title)
         for pvref in self.pvrefs:
             fout.write("pvref = %s\n" % pvref)
         if self.sdaterefs:
@@ -169,4 +179,5 @@ class PdfInfo:
             fout.write("prevmeeting = %s %s %s\n" % self.prevmeetingdetails)
         for agcontained in self.agendascontained:
             fout.write("agendacontained = %s %s %s\n" % agcontained)
+
 

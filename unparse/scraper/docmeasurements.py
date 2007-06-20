@@ -4,7 +4,7 @@ import sys
 import re
 import os
 from nations import nationdates
-from unmisc import GetAllHtmlDocs, IsNotQuiet
+from unmisc import GetAllHtmlDocs, IsNotQuiet, RomanToDecimal
 from pdfinfo import PdfInfo
 import datetime
 
@@ -23,6 +23,8 @@ def MakeMeetSeq():
     meetseq.sort()
     meetseq.reverse()
     return meetseq
+
+
 
 
 def SetValuesOnGA(nationcounts, gacode, ftext):
@@ -68,7 +70,8 @@ class DocCounts:
     def IncrPdfCount(self, docid):
         mgadoc = re.match("A-(\d\d)-[L\d]", docid)
         mscdoc = re.match("S-(\d\d\d\d)-\d", docid)
-        mgares = re.match("A-RES-(\d\d)", docid)
+        mgares = re.match("A-RES-(\d+)-(\d+)", docid)
+        mgaresroman = re.match("A-RES-(\d+)\(([IVXL]+)\)", docid)
         mscprst = re.match("S-PRST-(\d\d\d\d)", docid)
         mscres = re.match("S-RES-\d+\((\d\d\d\d)\)", docid)
 
@@ -87,6 +90,14 @@ class DocCounts:
                 self.garlist[mgares.group(1)].append(docid)
             else:
                 self.garlist[mgares.group(1)] = [ docid ]
+        elif mgaresroman:
+            yr = RomanToDecimal(mgaresroman.group(2))
+            syr = "%d" % yr
+            print mgaresroman.group(2), "roman", syr
+            if syr in self.garlist:
+                self.garlist[syr].append(docid)
+            else:
+                self.garlist[syr] = [ docid ]
         elif mscprst:
             if mscprst.group(1) in self.scplist:
                 self.scplist[mscprst.group(1)].append(docid)
@@ -254,7 +265,8 @@ def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
 
     for pdfinfo in pdfinfos.values():
         if pdfinfo.pages == -1:
-            pdfinfo.UpdatePages(pdfdir)
+            if sys.platform != "win32":
+                pdfinfo.UpdatePages(pdfdir)
             if IsNotQuiet() and pdfinfo.pages != -1:
                 print pdfinfo.pdfc, pdfinfo.pages,
                 pdfinfo.WriteInfo(pdfinfodir)

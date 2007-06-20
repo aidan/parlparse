@@ -14,6 +14,7 @@ from votedistances import WriteVoteDistances
 from docmeasurements import WriteDocMeasurements
 from agendanames import WriteAgendaSummaries
 from scsummaries import ScrapeSCSummaries, WriteSCSummaries
+from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from gennatdata import GenerateNationData
 
@@ -95,9 +96,10 @@ bDocimages = "docimages" in args
 bIndexfiles = "index" in args
 bScrapewp = "wpscrape" in args
 bSCsummaries = "scsummaries" in args
+bGAsummaries = "gasummaries" in args
 bNationData = "nationdata" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
     parser.print_help()
     sys.exit(1)
 
@@ -164,6 +166,13 @@ if bSCsummaries:
         os.remove(f)
     os.rename(lf, f)  # atomic in unix
 
+if bGAsummaries:
+    agsummariesdir = os.path.join(indexstuffdir, "gasummariesdir")
+    if not os.path.isdir(agsummariesdir):
+        os.mkdir(agsummariesdir)
+    #ScrapeGASummaries(agsummariesdir)
+    sess = 1
+    ParseScrapeGASummaries(agsummariesdir, pdfinfodir, sess)
 
 if bNationData:
     nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
