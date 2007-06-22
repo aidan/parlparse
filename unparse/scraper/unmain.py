@@ -170,7 +170,7 @@ if bGAsummaries:
     agsummariesdir = os.path.join(indexstuffdir, "gasummariesdir")
     if not os.path.isdir(agsummariesdir):
         os.mkdir(agsummariesdir)
-    #ScrapeGASummaries(agsummariesdir)
+    ScrapeGASummaries(agsummariesdir)
     sess = 1
     ParseScrapeGASummaries(agsummariesdir, pdfinfodir, sess)
 

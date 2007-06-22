@@ -473,8 +473,12 @@ class SCrecord:
 def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
     screcords = [ ]
     for lf in os.listdir(scsummariesdir):
+        if lf == ".svn":
+            continue
         summarylink = "scsummariesdir/%s" % lf
-        year = re.search("\d\d\d\d", lf).group(0)
+        myear = re.search("\d\d\d\d", lf)
+        assert myear, lf
+        year = myear.group(0)
         print "year", year
         f = os.path.join(scsummariesdir, lf)
         fin = open(f)
