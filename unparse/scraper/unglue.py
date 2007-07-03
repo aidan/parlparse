@@ -390,9 +390,10 @@ class TextPage:
                 if re.search(" \. \. \. \. \. \. ", jtxlines[ih]):
                     print "--%s--" % jtxlines[ih]
                     raise unexception("missing country", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
-            if re.match("<b>Agenda</b>$", jtxlines[ih]):
+            if re.match("<b>Agenda\s*</b>$", jtxlines[ih]):
                 ih += 1
                 break
+            assert not re.search("Agenda", jtxlines[ih])
             ih += 1
 
         # could be a closed meeting
@@ -423,12 +424,10 @@ class TextPage:
             print self.seccouncilmembers
             raise unexception("wrongnumber on council", lparanum)
 
-        # transform and markup links
         self.agenda = " ".join(self.agenda)
         self.agenda = re.sub("</?b>", " ", self.agenda)
         self.agenda = re.sub("\s\s+", " ", self.agenda)
         self.agenda = MarkupLinks(CleanupTags(self.agenda, "council-agenda", lparanum), self.undocname, lparanum)
-
         return True
 
     def __init__(self, xpage, lundocname, lpageno, textcountnumber):
@@ -509,9 +508,24 @@ class TextPage:
             # the whole first page gets parsed separately
             assert not self.bSecurityCouncil
 
-        elif self.pageno == 1 and self.bSecurityCouncil:
+        elif self.bSecurityCouncil and self.pageno == 1:
             if not self.ExtractSeccounFrontPage(txlines):
                 self.bSecurityCouncil = "ClosedSession"
+            return
+
+        # special case where the agenda spills to a second page (don't forget the outer application of this if)
+        elif self.bSecurityCouncil and lundocname == "S-PV-5697" and self.pageno == 2:
+            ih = 0
+            self.agenda = [ ]
+            while ih < len(txlines):
+                if 132 <= txlines[ih].top < 1000:
+                    self.agenda.append(txlines[ih].ltext)
+                ih += 1
+            self.agenda = " ".join(self.agenda)
+            self.agenda = re.sub("</?b>", " ", self.agenda)
+            self.agenda = re.sub("\s\s+", " ", self.agenda)
+            lparanum = paranumC(self.undocname, None, 0, -1, self.textcountnumber)
+            self.agenda = MarkupLinks(CleanupTags(self.agenda, "council-agenda", lparanum), self.undocname, lparanum)
             return
 
         elif self.bGeneralAssembly:
@@ -658,7 +672,12 @@ class GlueUnfile:
                 self.tlcall = None
                 return  # closed session encountered
             txpages.append(txpage)
+
             if txpage.bSecurityCouncil and i == 0:
+                continue
+
+            if txpage.bSecurityCouncil and undocname == "S-PV-5697" and i == 1:  # special case of agenda overflowing into two pages
+                txpages[0].agenda = "%s %s" % (txpages[0].agenda, txpage.agenda) # ram it all into one paragraph (who cares)
                 continue
 
             if txpage.txlcol1:
