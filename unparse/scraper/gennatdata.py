@@ -8,6 +8,7 @@ from unmisc import GetAllHtmlDocs, IsNotQuiet
 from pdfinfo import PdfInfo
 import datetime
 
+
 #        document_id = re.search('<span class="code">([^<]*)</span>', doccontent).group(1)
 #        for recvotet in re.findall('<p class="votelist" id="(pg\d+-bk\d+)-pa\d+">(.*?)</p>', doccontent):
 #          #print document_id, recvotet[0]

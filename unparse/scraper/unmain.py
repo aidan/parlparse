@@ -17,6 +17,7 @@ from scsummaries import ScrapeSCSummaries, WriteSCSummaries
 from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from gennatdata import GenerateNationData
+from nationdatasucker import ScrapePermMissions, NationDataSucker
 
 parser = OptionParser()
 parser.set_usage("""
@@ -175,6 +176,8 @@ if bGAsummaries:
     ParseScrapeGASummaries(agsummariesdir, pdfinfodir, sess)
 
 if bNationData:
+    ScrapePermMissions()
+    NationDataSucker()
     nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
     if not os.path.isdir(nationactivitydir):
         os.mkdir(nationactivitydir)
