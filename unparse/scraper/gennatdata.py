@@ -27,6 +27,7 @@ class NationDataG:
         self.voteminority = [ ]
         self.fname = re.sub(" ", "_", lnation) + ".txt"
         self.ambassadors = [ ]
+        self.nationdatacsv = None
 
     # votesum = (docid, mdiv.group(2), vnum, mvote.group(1))  # this 4-tuple identifies a vote
     def AddVoteMade(self, votesum, vote):
@@ -42,6 +43,7 @@ class NationDataG:
     def WriteData(self, nationactivitydir):
         fname = os.path.join(nationactivitydir, self.fname)
         fout = open(fname, "w")
+        fout.write("nationdatacsv = %s\n" % self.nationdatacsv)
         self.voteminority.sort()
         for vm, votesum in self.voteminority[:10]:
             vmdat = "%d/%d/%d/%d" % votesum[2]
@@ -62,6 +64,15 @@ def GenerateNationData(nationactivitydir, htmldir):
         nationdict[nation] = NationDataG(nation)
     nationdict["Brunei Darussalam"] = nationdict["Brunei"]    # quick fix
 
+    fin = open("nationdata.csv")
+    for nd in fin.readlines():
+        md = re.match('"([^"]*)"', nd)
+        if md and md.group(1) != "Name":
+            assert md.group(1) in nationdict, nd
+            nationdict[md.group(1)].nationdatacsv = nd.strip()
+    for nation in nationdict:
+        assert nationdict[nation].nationdatacsv, nation
+
     for htdoc in rels:
         fin = open(htdoc)
         ftext = fin.read()
@@ -81,7 +92,10 @@ def GenerateNationData(nationactivitydir, htmldir):
                 mvnum = re.match("favour=(\d+)\s+against=(\d+)\s+abstain=(\d+)\s+absent=(\d+)", mvote.group(2))
                 vnum = [int(mvnum.group(1)), int(mvnum.group(2)), int(mvnum.group(3)), int(mvnum.group(4))]
                 #vnum.append(float(vnum[0] + vnum[1] + vnum[2] + vnum[3]))
-                motiontext = re.sub("<[^>]*>", " ", mvote.group(1))
+                motiontext = mvote.group(1)
+                motiontext = re.sub('<a [^>]*>([^<]*)</a>', "\\1", motiontext)
+                motiontext = re.sub("<[^>]*>", " ", motiontext)
+                motiontext = re.sub(" (?:was|were) (?:retained|adopted|rejected) by .*? abstentions", "", motiontext)
                 votesum = (docid, gid, tuple(vnum), sdate, motiontext)  # this 4-tuple identifies a vote
 
                 for mvoten in re.finditer('<span class="[^<]*?([^<\-]*)">([^<]*)</span>', mvote.group(3)):
