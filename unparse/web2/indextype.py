@@ -81,19 +81,40 @@ def WriteIndexStuff(nsess):
     allags = LoadAgendaNames(None)
 
     print '<p>',
+    tlinks = [ ]
     if nsess > 1:
-        print GetSessionLink(nsess - 1, False),
-    print '<a href="%s">All sessions</a>' % (EncodeHref({"pagefunc":"gasummary"})),
-    print GetSessionLink(nsess, True),  # documents
+        tlinks.append(GetSessionLink(nsess - 1, False))
+    tlinks.append('<a href="%s">All sessions</a>' % (EncodeHref({"pagefunc":"gatopics"})))
+    tlinks.append(GetSessionLink(nsess, True))  # documents
     if nsess < currentgasession:
-        print GetSessionLink(nsess + 1, False),
+        tlinks.append(GetSessionLink(nsess + 1, False))
+    print ' | '.join(tlinks),
+    print '</p>'
+
     ags = [ agrecord  for agrecord in allags  if agrecord.nsess == nsess ]
     print '<h3>Full list of topics discussed</h3>'
     print '<p>Several topics may be discussed on each day, and each topic may be discussed over several days.</p>'
     WriteCollapsedAgendaList(ags, True)
 
 
+def WriteIndexStuffGA():
+    WriteGenHTMLhead("All General Assembly Topics")
+   
+    print '<p><a href="%s">Security Council Topics</a></p>' % EncodeHref({"pagefunc":"sctopics"})
+    print '<h3>Topics that span more than one year</h3>'
+    print '<ul class="aglistgroup">'
+    print '<li><a href="%s" class="aggroup">Condolences</a></li>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"}) # special case
+    print '</ul>'
 
+    print '<h3>General Assembly Sessions topics by year</h3>'
+    print '<ul>'
+    for nsess in range(49, currentgasession + 1):
+        print '<li>',
+        print GetSessionLink(nsess, True),
+        print '(%d-%d)' % (nsess + 1945, nsess + 1946)
+        print '</li>',
+    print '</ul>'
+    return
 
 
 def WriteCollapsedSec(sclist):
@@ -209,15 +230,21 @@ def WriteIndexStuffAgnum(agnum):
     
     print '<h2><a href="%s">See this agenda all unrolled</a></h2>' % EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum})
 
-    print '<h3>%s</h3>' % ags[0].aggrouptitle
-    WriteAgendaList(ags)
+    if ags:
+        print '<h3>%s</h3>' % ags[0].aggrouptitle
+        WriteAgendaList(ags)
+    else:
+        print '<h3>List appears empty</h3>'
+        print len(allags)
+        for a in allags[:99]:
+            print '<p>' + a.agnum
 
     return True
 
 
 # under construction
 def WriteIndexSearch(search):
-    WriteGenHTMLhead("Searching for %s" % search)
+    WriteGenHTMLhead("Searching for '%s'" % search)
     recs = XapLookup(search)
     if not recs:
         print '<p>No results found</p>'

@@ -89,19 +89,31 @@ class AgRecord:
 
 def LoadAgendaNames(agendaname):
     agendanamesf = None
-    if agendaname:
-        agendanamesf = os.path.join(indexstuffdir, "agendaindexes", agendaname + ".html")
-        if not os.path.isfile(agendanamesf):
-            return [ ]  # quick fix
-    if not agendanamesf or not os.path.isfile(agendanamesf):
-        agendanamesf = os.path.join(indexstuffdir, "agendanames.html")
+    lagendanamesf = [ ]
+    agendaindexesdir = os.path.join(indexstuffdir, "agendaindexes")
+    if agendaname == None:
+        lagendanamesf.append(os.path.join(indexstuffdir, "agendanames.html"))
+    elif agendaname == "condolence":
+        for ff in os.listdir(agendaindexesdir):
+            if re.match("condolence-\d+\.html", ff):
+                lagendanamesf.append(os.path.join(agendaindexesdir, ff))
+        lagendanamesf.sort()
+        lagendanamesf.append(os.path.join(agendaindexesdir, "89-50.html"))
+    else:
+        for cagendaname in agendaname.split(","):
+            agendanamesf = os.path.join(agendaindexesdir, cagendaname + ".html")
+            if os.path.isfile(agendanamesf):
+                lagendanamesf.append(agendanamesf)
+    
+    
     res = [ ]
-    fin = open(agendanamesf)
-    for ln in fin.readlines():
-        if re.match("\s*<p>", ln):
-            agrecord = AgRecord(ln)
-            res.append(agrecord)
-    fin.close()
+    for agendanamesf in lagendanamesf:
+        fin = open(agendanamesf)
+        for ln in fin.readlines():
+            if re.match("\s*<p>", ln):
+                agrecord = AgRecord(ln)
+                res.append(agrecord)
+        fin.close()
     
     return res
 

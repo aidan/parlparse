@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead
-from basicbits import indexstuffdir, currentgasession, currentscyear
+from basicbits import indexstuffdir, currentgasession, currentscyear, LongDate
 from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords
@@ -48,29 +48,43 @@ def GatherNationData(snation):
     for nd in fin.readlines():
         mmv = re.match("minorityvote = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         mamb = re.match("ambassador = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
+        # "Philippines","1945-10-24","9999-12-31","PH","PHL","Asia / Middle East"
+        mcsv = re.match('nationdatacsv = "[^"]*","([^"]*)","([^"]*)","[^"]*","[^"]*","([^"]*)"', nd)
         if mmv:
             res.append({"lntype":"minorityvote", "division":mmv.group(1), "docid":mmv.group(2), "gid":mmv.group(3), "description":mmv.group(4)})
         elif mamb:
             res.append({"lntype":"ambassador", "docid":mamb.group(1), "gid":mamb.group(2), "sdate":mamb.group(3), "name":mamb.group(4)})
+        elif mcsv:
+            res.append({"lntype":"csvdata", "startdate":mcsv.group(1), "enddate":mcsv.group(2), "continent":mcsv.group(3)})
     return res
 
+def WriteNationHeading(nation, nationdata):
+    for mp in nationdata:
+        if mp["lntype"] == "csvdata":
+            print '<p>%s joined the United Nations on %s' % (nation, LongDate(mp["startdate"]))
+            if not re.match("9999", mp["enddate"]):
+                print 'and left the UN in %s' % LongDate(mp["enddate"])
+            print '</p>'
+            return
+    print "<p>No csv data</p>"
 
-def WriteMinorityVotes(nationdata):
-    print '<h3>Minority votes</h3>'
-    print '<p>Votes where this country was most in the minority.</p>';
-    print '<ul>'
+
+def WriteMinorityVotes(nation, nationdata):
+    print '<h3 style="clear:both">Minority votes</h3>'
+    print '<p>Votes where %s was most in the minority.</p>' % nation
+    print '<table class="minorityvotetable">'
+    print '<tr> <th>Favour</th> <th>Against</th> <th>Abstain</th> <th>Absent</th> <th>Topic</th> </tr>'
     for mp in nationdata:
         if mp["lntype"] == "minorityvote":
             vts = [ int(v)  for v in mp["division"].split("/") ]
-            print '<li>'
-            rw = [ ]
-            rw.append('<span style="padding-left:%dpx; background-color:green;"></span>' % vts[0])
-            rw.append('<span style="padding-left:%dpx; background-color:red;"></span>' % vts[1])
-            rw.append('<span style="padding-left:%dpx; background-color:purple;"></span>' % vts[2])
-            rw.append('<span style="padding-left:%dpx; background-color:gray;"></span>' % vts[3])
-            print '<span style="border:thin black solid">%s</span>' % "".join(rw)
-            print '<a href="%s">%s</a></li>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
-    print '</ul>'
+            print '<tr>'
+            print '<td>%d</td>' % vts[0]
+            print '<td>%d</td>' % vts[1]
+            print '<td>%d</td>' % vts[2]
+            print '<td>%d</td>' % vts[3]
+            print '<td><a href="%s">%s</a></tr>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
+            print '</tr>'
+    print '</table>'
     return
 
 
@@ -81,15 +95,16 @@ def WriteAmbassadorList(nation, nationdata):
         if mp["lntype"] == "ambassador":
             ambmap.setdefault(mp["name"], [ ]).append(mp["sdate"])
 
-    amblist = [ (min(sdates), name, len(sdates), max(sdates))  for name, sdates in ambmap.iteritems() ]
+    amblist = [ (max(sdates), name, len(sdates), min(sdates))  for name, sdates in ambmap.iteritems() ]
     amblist.sort()
+    amblist.reverse()
 
     print '<h3>Ambassadors</h3>'
-    print '<table style="background-color:lightgray;">'
-    print '<tr><th>Name</th><th>Number</th><th>First</th><th>Last</th></tr>'
+    print '<table class="nationambassadortable" style="background-color:lightgray;">'
+    print '<tr><th>Name</th><th>Speeches</th><th>First</th><th>Last</th></tr>'
     for ambl in amblist:
         href = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":ambl[1]})
-        print '<tr><td><a href="%s">%s</a></td>  <td>%d</td> <td>%s</td> <td>%s</td></tr>' % (href, ambl[1], ambl[2], ambl[0], ambl[3])
+        print '<tr><td><a href="%s">%s</a></td>  <td>%d</td> <td>%s</td> <td>%s</td></tr>' % (href, ambl[1], ambl[2], LongDate(ambl[3]), LongDate(ambl[0]))
     print '</table>'
 
 
@@ -104,7 +119,8 @@ def WriteIndexStuffNation(nation, person):
     if person:
         WriteSpeechInstances(snation, person, nationdata)
     else:
-        WriteMinorityVotes(nationdata)
+        WriteNationHeading(nation, nationdata)
+        WriteMinorityVotes(nation, nationdata)
         WriteAmbassadorList(nation, nationdata)
 
 

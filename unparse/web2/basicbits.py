@@ -20,6 +20,10 @@ currentscyear = datetime.datetime.now().year  #2007
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+def LongDate(sdate):
+    nmonth = int(sdate[5:7])
+    return "%d %s %s" % (int(sdate[8:]), monthnames[nmonth - 1], sdate[:4])
+
 bodyid = None
 def SetBodyID(lbodyid):
     global bodyid
@@ -42,7 +46,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '</head>'
     print '<body id="%s">' % bodyid
 
-    if os.getenv("HTTP_HOST") != 'www.publicwhip.org.uk':
+    if os.getenv("HTTP_HOST") != 'www.undemocracy.com':
         if os.getenv("HTTP_HOST") != 'local.undemocracy.com':
             print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page.</p>'''
 
@@ -169,7 +173,7 @@ def DecodeHref(pathparts, form):
         else:
             nsess = 0
             if len(pathparts) == 1:
-                return { "pagefunc": "fronterror" }
+                return { "pagefunc": "gatopics" }
 
 
         mmeeting = re.match("meeting_?(\d+)$", pathparts[1])
@@ -331,6 +335,8 @@ def EncodeHref(hmap):
         return "/generalassembly_%d" % (hmap["gasession"])
     if hmap["pagefunc"] == "gadocuments":
         return "/generalassembly_%d/documents" % (hmap["gasession"])
+    if hmap["pagefunc"] == "gatopics":
+        return "/generalassembly"
     if hmap["pagefunc"] == "documentlist":
         if hmap["body"] == "both":
             return "/documents"

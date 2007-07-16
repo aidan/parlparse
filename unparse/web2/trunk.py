@@ -11,7 +11,7 @@ from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGe
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage, WritePdfPreviewJpg
 from indextype import WriteFrontPage, WriteFrontPageError
-from indextype import WriteIndexStuff, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
+from indextype import WriteIndexStuff, WriteIndexStuffGA, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
 from unpvmeeting import WriteHTML, WriteHTMLagnum
 from highlightimg import WritePNGpage
 from nationpage import WriteIndexStuffNation, WriteAllNations
@@ -60,6 +60,8 @@ if __name__ == "__main__":
         WriteAllNations()
     elif hmap["pagefunc"] == "gasession":
         WriteIndexStuff(hmap["gasession"])
+    elif hmap["pagefunc"] == "gatopics":
+        WriteIndexStuffGA()
     elif hmap["pagefunc"] == "agendanum":
         WriteIndexStuffAgnum(hmap["agendanum"])
     elif hmap["pagefunc"] == "gadocuments":
