@@ -43,12 +43,9 @@ if __name__ == "__main__":
     remadeurl = EncodeHref(hmap)
 #    print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
     if remadeurl != "/" + pathpartstr and not re.match('^/rubbish/', remadeurl):
-        #print 'Content-type: text/html\n'
-        #print '<h1>%s</h1>\n<h2>%s</h2>' % (pathpartstr, remadeurl)
-        
         print "Status: 301 Moved Permanently"
         print "Location: %s\n" % remadeurl
-        sys.exit()    
+        sys.exit()
 
     SetBodyID(hmap["pagefunc"])
 

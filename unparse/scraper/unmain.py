@@ -33,15 +33,15 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
             used for inserting into the webpage
   agendanames generate page containing agenda summaries
   scsummaries scrape and generate summary index for security council
-  nationdata generates the information about each nation
-  index   generate miscellaneous index files
+  nationdata generates speeches/urls about nations
   docimages generate document images in undata/pdfpreview
-  wpscrape  scrape for UN translocutions from wikipedia
 
 --stem selects what is processed.
   scrape --stem=S-[YEAR]-PV
 """)
 
+#  index   generate miscellaneous index files
+#  wpscrape  scrape for UN translocutions from wikipedia
 
 if not os.path.isdir(pdfdir):
     print "\nplease create the directory:", pdfdir

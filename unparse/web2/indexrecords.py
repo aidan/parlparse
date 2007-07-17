@@ -98,14 +98,13 @@ def LoadAgendaNames(agendaname):
             if re.match("condolence-\d+\.html", ff):
                 lagendanamesf.append(os.path.join(agendaindexesdir, ff))
         lagendanamesf.sort()
-        lagendanamesf.append(os.path.join(agendaindexesdir, "89-50.html"))
     else:
         for cagendaname in agendaname.split(","):
             agendanamesf = os.path.join(agendaindexesdir, cagendaname + ".html")
             if os.path.isfile(agendanamesf):
                 lagendanamesf.append(agendanamesf)
-    
-    
+
+
     res = [ ]
     for agendanamesf in lagendanamesf:
         fin = open(agendanamesf)
@@ -114,7 +113,7 @@ def LoadAgendaNames(agendaname):
                 agrecord = AgRecord(ln)
                 res.append(agrecord)
         fin.close()
-    
+
     return res
 
 

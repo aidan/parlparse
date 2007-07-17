@@ -326,9 +326,12 @@ def AddAgendaGroups(agendagroups, sdate, docid, ftext):
             agendaheading.SeeTextForHeading(ftext[agendaheadingE:magheading.start(0)])
         agendaheading = AgendaHeading(sdate, docid, magheading.group(1), magheading.group(2), magheading.group(3))
         for agendanum in agendaheading.agendanums:
-            agendagroups.setdefault(agendanum, [ ]).append((agendaheading.sortval, agendaheading))
+            if agendanum not in agendagroups:
+                agendagroups[agendanum] = [ ]
+            agendagroups[agendanum].append((agendaheading.sortval, agendaheading))
         agendaheadingE = magheading.end(0)
-    if agendaheading:
+
+    if agendaheading:  # end of final heading
         agendaheading.SeeTextForHeading(ftext[agendaheadingE:])
 
 
@@ -364,11 +367,13 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
 
     # the agendagroups are lists of agenda items, the values of a dict
     allagendas = [ ]
+    recentagendas = [ ]
     for agendanum, aggroup in agendagroups.iteritems():
         agsession = aggroup[0][1].nsession
         mctitle, mccategory = FindDelCommonTitle(agendanum, aggroup)
         aggroup.sort()
         allagendas.append((agsession, mccategory, mctitle, agendanum, aggroup))
+        recentagendas.extend(aggroup)
 
     allagendas.sort()
     agendasperdoc = { }
@@ -380,6 +385,7 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
     fout.write('h2 { text-decoration: underline; text-align: center; }\n')
     fout.write('</style>\n</head>')
     fout.write('<body>\n')
+
     prevagsession, prevmccategory = None, None
     for (agsession, mccategory, mctitle, agendanum, aggroup) in allagendas:
         if agsession != prevagsession:
@@ -389,12 +395,20 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
             fout.write('\n<h2>%s</h2>\n' % mccategory)
             prevmccategory = mccategory
         WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdoc)
-        
+
         if agendaindexdir:
             fagname = os.path.join(agendaindexdir, agendanum + ".html")
             fagout = open(fagname, "w")
             WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fagout, None)
+            fagout.close()
 
+    recentagendas.sort()
+    recentagendas.reverse()
+    agnumrecent = "recent"
+    fagname = os.path.join(agendaindexdir, agnumrecent + ".html")
+    fagout = open(fagname, "w")
+    WriteAgendaGroup("Recent", "Recent", agnumrecent, recentagendas[:100], fagout, None)
+    fagout.close()
 
     fout.write('</body>\n</html>\n')
 
