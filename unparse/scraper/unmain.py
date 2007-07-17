@@ -43,6 +43,9 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
 #  index   generate miscellaneous index files
 #  wpscrape  scrape for UN translocutions from wikipedia
 
+# the quiet cronjob should be
+# unmain.py --quiet --scrape-links --continue-on-error scrape cxml parse xapdex docmeasurements agendanames scsummaries nationdata
+
 if not os.path.isdir(pdfdir):
     print "\nplease create the directory:", pdfdir
     sys.exit(0)
@@ -90,7 +93,6 @@ bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
 bXapdex = "xapdex" in args
-bVoteDistances = "votedistances" in args
 bDocMeasurements = "docmeasurements" in args
 bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
@@ -99,6 +101,7 @@ bScrapewp = "wpscrape" in args
 bSCsummaries = "scsummaries" in args
 bGAsummaries = "gasummaries" in args
 bNationData = "nationdata" in args
+bVoteDistances = "votedistances" in args
 
 if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
     parser.print_help()
@@ -128,11 +131,14 @@ if bConvertXML:
 
 if bParse:
     if not stem:
-        ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse)
-        ParsetoHTML("S-PV-5[6-9]", pdfxmldir, htmldir, options.forceparse, options.editparse)
+        ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
+        ParsetoHTML("S-PV-5[6-9]", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     else:
-        ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse)
+        ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()
+
+if bXapdex:
+    GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
 
 # makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
@@ -197,9 +203,6 @@ if bDocimages:
 # this may be out-dated
 if bScrapewp:
     FetchWikiBacklinks(commentsdir)
-
-if bXapdex:
-    GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
 
 if bIndexfiles:  # just for making the big index.html pages used in preview
     MiscIndexFiles(htmldir)

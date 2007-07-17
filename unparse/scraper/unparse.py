@@ -29,7 +29,8 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
                     assert len(res[-1].paragraphs) == 1
                     mspokein = re.search("spoke in (\w+)", res[-1].paragraphs[0][1])
                     if not mspokein:
-                        print "unrecognized spokein", res[-1].paragraphs
+                        if IsNotQuiet():
+                            print "unrecognized spokein", res[-1].paragraphs
                     #print "converting spokein", speakerbeforetookchair[2], mspokein.group(1)
                     speakerbeforetookchair = (speakerbeforetookchair[0], speakerbeforetookchair[1], mspokein.group(1), speakerbeforetookchair[3])
 
@@ -59,7 +60,7 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
 
 
 
-def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
+def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse, bcontinueonerror):
     undocnames = [ ]
     for undoc in os.listdir(pdfxmldir):
         undocname = os.path.splitext(undoc)[0]
@@ -89,7 +90,8 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
             xfil = fin.read()
             fin.close()
 
-            print "parsing:", undocname,
+            if IsNotQuiet():
+                print "parsing:", undocname,
             try:
                 if lbeditparse:
                     lbeditparse = False
@@ -97,12 +99,15 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse):
                 glueunfile = GlueUnfile(xfil, undocname)
                 if not glueunfile.tlcall:
                     break   # happens when it's a bitmap type, or communique
-                print glueunfile.sdate#, chairs
+                if IsNotQuiet():
+                    print glueunfile.sdate#, chairs
                 gparas = GroupParas(glueunfile.tlcall, undocname, glueunfile.sdate, glueunfile.seccouncilmembers)
 
             except unexception, ux:
                 assert not gparas
                 if ux.description != "editparse":
+                    if bcontinueonerror:
+                        break
                     print "\n\nError: %s on page %s textcounter %s" % (ux.description, ux.paranum.pageno, ux.paranum.textcountnumber)
                 print "\nHit RETURN to launch your editor on the pdfxml file (or type 's' to skip, or 't' to throw)"
                 rl = sys.stdin.readline()

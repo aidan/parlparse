@@ -25,9 +25,11 @@ def StripPageTags(xfil, undocname):
                 assert False
         return False
     if not re.match(page1bit, mpage1head.group(1)):
-        print "Probably is a bitmap type"
-        print mpage1head.group(1)
-        assert False
+        if IsNotQuiet():
+            print "Probably is a bitmap type"
+            print mpage1head.group(1)
+            assert False
+        return False
     res = [ xpages[0][mpage1head.end(0):] ]
 
     for i in range(1, len(xpages)):
@@ -76,7 +78,8 @@ class TextLine:
             #print self.left, self.width, "'%s'" % self.ltext
             assert self.width <= 10
             if self.ltext not in ["th", "rd", "st", "nd"]:
-                print self.ltext
+                if IsNotQuiet():
+                    print self.ltext
                 raise unexception("unrecognized shortbit", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
             self.top += 2  # push the step down from 16 to 18
 
@@ -128,8 +131,9 @@ def AppendToCluster(txlcol, txl):
             txl.vgap = 19
 
     if not txl.vgap in familiarvgaps:
-        print "\n\n   vgap=", txl.vgap, "\n\nwidth/height/top", txl.width, txl.height, txl.top,  txl.ltext  # zzzz
-        print " familiar vgaps:", familiarvgaps
+        if IsNotQuiet():
+            print "\n\n   vgap=", txl.vgap, "\n\nwidth/height/top", txl.width, txl.height, txl.top,  txl.ltext  # zzzz
+            print " familiar vgaps:", familiarvgaps
         raise unexception("vgap not familiar", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
     if txl.vgap in (0, 17, 18, 19) or txl.vgap == 0:
         txlcol[-1].AddLine(txl)
@@ -209,12 +213,14 @@ def AppendCluster(res, tlc, sclusttype):
             #print tlcf.indents, tlc.indents
 
     elif len(tlc.indents) != 1:
-        print tlc.indents, "jjjj"
+        if IsNotQuiet():
+            print tlc.indents, "jjjj"
         prevtop = -1
         for txl in tlc.txls:
-            if prevtop == txl.top:
-                print " ",
-            print txl.indent, txl.ltext
+            if IsNotQuiet():
+                if prevtop == txl.top:
+                    print " ",
+                print txl.indent, txl.ltext
             prevtop = txl.top
         raise unexception("unrecognized indent pattern", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
         assert False
@@ -228,14 +234,15 @@ class TextPage:
         # extract the date out if poss
         mdate = re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?\s*m\.?| noon\.?)?(?: \(closed\))?$", ltext)
         if not mdate:  #Tuesday, 3 December 2002, 10 a.m.
-            if re.search("Friday", ltext):
+            if re.search("Friday", ltext) and IsNotQuiet():
                 print ltext, re.match("\w+\s*, (\d+)\s+(\w+)\s+(\d+),\s*(?:at )?(\d+)[\.:]?(\d*)(?:\s+([ap])\.?m\.?| noon\.?)?(?: \(closed\))?", ltext)
             return
 
         #print txlines[ih].ltext
         iday = int(mdate.group(1))
         if mdate.group(2) not in months:
-            print mdate.group(2), months
+            if IsNotQuiet():
+                print mdate.group(2), months
             raise unexception("unrecognized month", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         imonth = months.index(mdate.group(2))
         syear = mdate.group(3)
@@ -250,7 +257,8 @@ class TextPage:
         if self.date:
             raise unexception("date redefined", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         if not (0 <= ihour <= 23) or not (0 <= imin <= 59):
-            print ltext
+            if IsNotQuiet():
+                print ltext
             raise unexception("bad time", paranumC(txline.undocname, None, 0, -1, txline.textcountnumber))
         self.date = "%s-%02d-%02d %02d:%02d" % (syear, imonth + 1, iday, ihour, imin)
 
@@ -273,8 +281,9 @@ class TextPage:
                 return -1
 
         if not self.date:
-            for i in range(ih):
-                print "--%s--" % txlines[i].ltext
+            if IsNotQuiet():
+                for i in range(ih):
+                    print "--%s--" % txlines[i].ltext
             raise unexception("dotlinechair date problem", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
             assert False
 
@@ -285,7 +294,8 @@ class TextPage:
             #print txlines[ih].ltext
             mcountry = re.match("\((.*?)\)$", txlines[ih].ltext)
             if not mcountry:
-                print txlines[ih].ltext
+                if IsNotQuiet():
+                    print txlines[ih].ltext
                 raise unexception("unable to extract country from  ...-line", paranumC(txlines[ih].undocname, None, 0, -1, txlines[ih].textcountnumber))
         ih += 1
         chairname = re.sub("\s\s+", " ", mchair.group(1)).strip()
@@ -328,8 +338,9 @@ class TextPage:
             #print jtxlines[ih], mpresseat
             if mpresseat:
                 if not self.date:
-                    for i in range(ih):
-                        print jtxlines[i]
+                    if IsNotQuiet():
+                        for i in range(ih):
+                            print jtxlines[i]
                     raise unexception("missingg date", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 if mpresseat.group(1) in ["President", "Chairman"]:
                     assert len(self.chairs) == 0   # first one
@@ -347,7 +358,8 @@ class TextPage:
                 lfscountry = re.sub("\s+", " ", mcountry.group(1))
                 fscountry = FixNationName(lfscountry, self.date)
                 if not fscountry:
-                    print "--%s--" % mcountry.group(1)
+                    if IsNotQuiet():
+                        print "--%s--" % mcountry.group(1)
                     raise unexception("unrecognized nationA", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 chairname = re.sub("\s\s+", " ", mpresseat.group(2)).strip()
                 self.chairs.append((chairname, fscountry, "president"))
@@ -367,28 +379,33 @@ class TextPage:
             if mcountryseat:
                 if mcountryseat.group(1):
                     if len(self.chairs) not in [1, 2]:  # in case of second president
-                        print self.chairs, "chchchch"
+                        if IsNotQuiet():
+                            print self.chairs, "chchchch"
                         raise unexception("chairs not thereB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 else:
                     if len(self.chairs) == 0:
                         if not self.date:  # prob a closed meeting
                             break
-                        print ih, jtxlines[ih]
+                        if IsNotQuiet():
+                            print ih, jtxlines[ih]
                         raise unexception("seat without chair", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 lfscountry = re.sub("\s+", " ", mcountryseat.group(2))
                 fscountry = FixNationName(lfscountry, self.date)
                 if not fscountry:
-                    print "--%s--" % mcountryseat.group(2)
+                    if IsNotQuiet():
+                        print "--%s--" % mcountryseat.group(2)
                     raise unexception("unrecognized nationB", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 chairname = re.sub("\s\s+", " ", mcountryseat.group(3)).strip()
                 self.chairs.append((chairname, fscountry, "member"))
                 if fscountry not in self.seccouncilmembers:
                     self.seccouncilmembers.append(fscountry)
                 else:
-                    print "Repeat-country on council", fscountry
+                    if IsNotQuiet():
+                        print "Repeat-country on council", fscountry
             else:
                 if re.search(" \. \. \. \. \. \. ", jtxlines[ih]):
-                    print "--%s--" % jtxlines[ih]
+                    if IsNotQuiet():
+                        print "--%s--" % jtxlines[ih]
                     raise unexception("missing country", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
             if re.match("<b>Agenda\s*</b>$", jtxlines[ih]):
                 ih += 1
@@ -420,8 +437,9 @@ class TextPage:
         if len(self.chairs) not in (15, 17) or len(self.seccouncilmembers) != 15:
             if self.undocname == "S-PV-3446":
                 return False
-            print len(self.seccouncilmembers), len(self.chairs), "wrong number of members or chairs\n", self.chairs
-            print self.seccouncilmembers
+            if IsNotQuiet():
+                print len(self.seccouncilmembers), len(self.chairs), "wrong number of members or chairs\n", self.chairs
+                print self.seccouncilmembers
             raise unexception("wrongnumber on council", lparanum)
 
         self.agenda = " ".join(self.agenda)
@@ -545,10 +563,12 @@ class TextPage:
             if re.match("\d\d\-\d\d\d\d\d", txlines[ie - 1].ltext):
                 ie -= 1
             if not re.match("\d+$", pagenumtext):
-                print "jjjj", pagenumtext, txlines[ie].ltext
+                if IsNotQuiet():
+                    print "jjjj", pagenumtext, txlines[ie].ltext
                 raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
             if int(pagenumtext) != self.pageno:
-                print pagenumtext, self.pageno
+                if IsNotQuiet():
+                    print pagenumtext, self.pageno
                 raise unexception("pagenum serror of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
 
         elif self.bSecurityCouncil:
@@ -568,12 +588,13 @@ class TextPage:
             elif bl0 and bl1 and bl2 and bl3:
                 ih = 4;
             else:
-                print "\nFirst four lines on page:", self.pageno, bl4, bl4r
-                print bl0, txlines[0].ltext
-                print bl1, txlines[1].ltext
-                print bl2, txlines[2].ltext
-                print bl3, txlines[3].ltext
-                print bl4, bl4r
+                if IsNotQuiet():
+                    print "\nFirst four lines on page:", self.pageno, bl4, bl4r
+                    print bl0, txlines[0].ltext
+                    print bl1, txlines[1].ltext
+                    print bl2, txlines[2].ltext
+                    print bl3, txlines[3].ltext
+                    print bl4, bl4r
                 raise unexception("bad page header", paranumC(self.undocname, None, 0, -1, txlines[0].textcountnumber))
 
             ie = len(txlines) - 1
@@ -582,11 +603,13 @@ class TextPage:
             pagenumtext = txlines[ie].ltext
             mpagenumtext = re.match("(?:<b>)?(\d+)\s*(?:</b>)?$", pagenumtext)
             if not mpagenumtext:
-                print "jkjk", pagenumtext
+                if IsNotQuiet():
+                    print "jkjk", pagenumtext
                 raise unexception("pagenum error not a number", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
             pgoffset = int(mpagenumtext.group(1)) - self.pageno
             if pgoffset != 0 and self.undocname not in misnumberedpages:
-                print "pagenum-offset not in list", self.undocname, mpagenumtext.group(1), self.pageno
+                if IsNotQuiet():
+                    print "pagenum-offset not in list", self.undocname, mpagenumtext.group(1), self.pageno
                 raise unexception("page pagenum error of speaker-intro", paranumC(self.undocname, None, 0, -1, txlines[ie].textcountnumber))
             if re.match("\d\d-\d\d\d\d\d$", txlines[ie - 1].ltext):
                 ie -= 1
@@ -609,9 +632,10 @@ class TextPage:
                 # there's a bit of spilling out where the region is larger than it should be for the words as in A-56-PV.64
                 if not (txl.left + txl.width <= 459):
                     if txl.left + txl.width > 501:
-                        print txl.left, txl.width, txl.left + txl.width
-                        print txl.ltext
-                        print "might have page no. 1 on first page"
+                        if IsNotQuiet():
+                            print txl.left, txl.width, txl.left + txl.width
+                            print txl.ltext
+                            print "might have page no. 1 on first page"
                         raise unexception("right-hand extension excessive", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
                     if not (txl.left <= 165):
                         bc = -1
@@ -623,7 +647,8 @@ class TextPage:
 
                 txl.indent = txl.left - leftcolstart
                 if txl.indent < 0:
-                    print txl.indent, txl.ltext
+                    if IsNotQuiet():
+                        print txl.indent, txl.ltext
                     raise unexception("negative indentation", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
                 self.minindentleft = min(txl.indent, self.minindentleft)
                 txl.brightcol = False
@@ -634,8 +659,9 @@ class TextPage:
                 if txl.indent != 0:
                     txl.indent += rightcolstartindentincrement
                 if txl.indent < 0:
-                    print txl.indent, txl.left, rightcolstart
-                    print txl.ltext
+                    if IsNotQuiet():
+                        print txl.indent, txl.left, rightcolstart
+                        print txl.ltext
                     raise unexception("negative indent on righthand column", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
                 self.minindentright = min(txl.indent, self.minindentright)
                 txl.brightcol = True

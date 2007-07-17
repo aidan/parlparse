@@ -22,18 +22,23 @@ def GetFromNet(undocname, purl, plenaryurl):
     mfore = re.search('URL=([^"]*)', plenrefererforward)
     if not mfore:
         if undocname == "A-55-PV.26":   # claims to be embargoed
-            print "broken", pdfname
+            if IsNotQuiet():
+                print "broken", pdfname
             return False
         if re.search("There is no document", plenrefererforward):
             #print "no-document"
             return False
         if re.search("This document is under EMBARGO", plenrefererforward):
-            print "*** EMBARGOED ***"
+            if IsNotQuiet():
+                print "*** EMBARGOED ***"
             return False
         if re.search("The distribution of the document is to hight", plenrefererforward):
-            print "*** TO HIGHT ***"
+            if IsNotQuiet():
+                print "*** TO HIGHT ***"
             return False
-        print plenrefererforward
+        if not IsNotQuiet():  # bail out without error
+            return False
+        print "plplplpl", plenrefererforward
         assert False
     turl = urlparse.urljoin(purl, mfore.group(1))
     # pull in the login url, containing another forward, and a page which gives the cookies
@@ -47,13 +52,17 @@ def GetFromNet(undocname, purl, plenaryurl):
     # extract pdf link
     mpdf = re.search('URL=([^"]*)', plenarycookielink)
     if not mpdf:
-        print plenarycookielink
+        if not IsNotQuiet():  # bail out without error
+            return False
+        print "pcpcpcpc", plenarycookielink
     plenarypdfurl = urlparse.urljoin(turl, mpdf.group(1))
 
     # extract cookie link
     mcook = re.search('src="(http://daccessdds.un.org/[^"]*)', plenarycookielink)
     if not mcook:
-        print plenarycookielink
+        if not IsNotQuiet():  # bail out without error
+            return False
+        print "plplsplspl", plenarycookielink
     plenarycookurl = urlparse.urljoin(turl, mcook.group(1))
 
     # take the cookies from the cookie link
@@ -62,7 +71,8 @@ def GetFromNet(undocname, purl, plenaryurl):
     fin = opener.open(plenarycookurl)
     fin.close()
 
-    print plenarypdfurl[-30:]
+    if IsNotQuiet():
+        print plenarypdfurl[-30:]
 
     # put them into the pdf link
     fin = opener.open(plenarypdfurl)
@@ -137,17 +147,20 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             tail = re.sub("-", "/", mapv.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
         elif meres or munknown:
-            print "Unknown undocname", undocname
+            if IsNotQuiet():
+                print "Unknown undocname", undocname
             return False
         else:
-            print "Unrecognized undocname", undocname
+            if IsNotQuiet():
+                print "Unrecognized undocname", undocname
             return False
     else:
         purl = re.sub("\s", "", purl)
         purl = re.sub("&amp;", "&", purl)
 
     #print "$$%s$$" % purl
-    print " scraping", undocname,
+    if IsNotQuiet():
+        print " scraping", undocname,
     if not purl:
         print "*** Need to make"
         return False
@@ -158,7 +171,8 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
     purl = urlparse.urljoin(plenaryurl, purl)
 
     try:
-        print purl
+        if IsNotQuiet():
+            print purl
         plenarypdf = GetFromNet(undocname, purl, plenaryurl)
         if not plenarypdf:
             purlsupp = re.sub("&Lang=E", "(SUPP)&Lang=E", purl)
@@ -170,11 +184,13 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         print "\n *** Keyboard Interrupt"
         sys.exit(1);
     except Exception, e:
-        print "Exception", e
+        if IsNotQuiet():
+            print "Exception", e
         return False
 
     if not plenarypdf:
-        print "no-document"
+        if IsNotQuiet():
+            print "no-document"
         return False
     fout = open(pdffile, "wb")
     fout.write(plenarypdf)
@@ -184,7 +200,8 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 
 # works for general assembly pages, and not much more
 def ScrapeContentsPage(contentsurl):
-    print "URL index:", contentsurl
+    if IsNotQuiet():
+        print "URL index:", contentsurl
 
     fin = urllib2.urlopen(contentsurl)
     plenaryindex = fin.read()
@@ -205,7 +222,8 @@ def ScrapeContentsPage(contentsurl):
 
 # breaks down into lists of links
 def ScrapeSCContentsPage(year, contentsurl):
-    print "URL index:", contentsurl
+    if IsNotQuiet():
+        print "URL index:", contentsurl
     fin = urllib2.urlopen(contentsurl)
     scindex = fin.read()
     fin.close()
@@ -243,7 +261,7 @@ def ScrapeSCContentsPage(year, contentsurl):
         sccorr = re.match("Corr\.(\d+)\s*", sci[1])
         if sccorr:
             urlwithoutcorr = re.sub("/Corr\.\d+(?i)", "", sci[0])
-            if pvlist[-1][2] != urlwithoutcorr:
+            if pvlist[-1][2] != urlwithoutcorr and IsNotQuiet():
                 print pvlist[-1][2]
                 print urlwithoutcorr
                 if year == 1998 and re.search("PV\.3896", pvlist[-1][2]) and re.search("PV\.3986", urlwithoutcorr):
@@ -274,13 +292,14 @@ def ScrapeSCContentsPage(year, contentsurl):
             assert sci[0] == pvlist[-1][2]  # same link
             continue
 
-        print "Unrecognized link type", "$$%s$$" % sci[1]
+        if IsNotQuiet():
+            print "Unrecognized link type", "$$%s$$" % sci[1]
         assert False
 
     # sort and scrape all the presidential statements
     prstlist.sort()
     for i in range(1, len(prstlist)):
-        if -prstlist[i - 1][0] - 1 != -prstlist[i][0]:
+        if -prstlist[i - 1][0] - 1 != -prstlist[i][0] and IsNotQuiet():
             print "presidential statement missing between ", -prstlist[i - 1][0], "and", -prstlist[i][0]
             if (year, -prstlist[i - 1][0],  -prstlist[i][0]) in [(2000, 28, 26), (1996, 11, 9), (1996, 4, 2), (1995, 57, 55), (1995, 37, 35), (1995, 15, 13), (1995, 4, 2), (1994, 77, 75), (1994, 50, 48), (1994, 42, 39), (1994, 25, 23), (1994, 19, 17), (1994, 4, 2)]:
                 print "  -- known missing statement"
@@ -297,7 +316,8 @@ def ScrapeSCContentsPage(year, contentsurl):
             if pvlist[i - 1][1].group(2) == "Resumption":
                 resum = int(pvlist[i][1].group(3) or "0")
                 if not pvlist[i - 1][1].group(2):
-                    print pvlist[i - 1][1].group(0) # there must be a resumption number
+                    if IsNotQuiet():
+                        print "rrr", pvlist[i - 1][1].group(0) # there must be a resumption number
                 if not pvlist[i - 1][1].group(3):
                     resumP = 1
                 elif pvlist[i - 1][1].group(3) == "I":
@@ -306,10 +326,12 @@ def ScrapeSCContentsPage(year, contentsurl):
                     resumP = int(pvlist[i - 1][1].group(3))
                 assert resumP == resum + 1
             else:
-                print pvlist[i - 1][1].group(2), pvlist[i][1].group(2)
+                if IsNotQuiet():
+                    print "slslsl", pvlist[i - 1][1].group(2), pvlist[i][1].group(2)
         elif -pvlist[i - 1][0] - 1 != -pvlist[i][0]:
-            print "verbatim report missing between ", -pvlist[i - 1][0], "and", -pvlist[i][0]
-            assert False
+            if IsNotQuiet():
+                print "verbatim report missing between ", -pvlist[i - 1][0], "and", -pvlist[i][0]
+                assert False
     for (i, scpv, scpvurl) in pvlist:
         resumppart = ""
         if scpv.group(2) == "Resumption":
@@ -324,7 +346,8 @@ def ScrapeSCContentsPage(year, contentsurl):
             elif scpv.group(3) == "II":
                 pn = "2"
             else:
-                print scpv.group(0), scpv.group(3)
+                if IsNotQuiet():
+                    print "asspv", scpv.group(0), scpv.group(3)
             resumppart = "-Part.%s" % pn
         ScrapePDF("S-PV-%s%s" % (scpv.group(1), resumppart), plenaryurl=contentsurl, purl=scpvurl)
 
@@ -336,8 +359,9 @@ def ScrapeSCContentsPage(year, contentsurl):
     reslist.sort()
     for i in range(1, len(reslist)):
         if -reslist[i - 1][0] - 1 != -reslist[i][0]:
-            print "resolution missing between ", -reslist[i - 1][0], "and", -reslist[i][0]
-            assert False
+            if IsNotQuiet():
+                print "resolution missing between ", -reslist[i - 1][0], "and", -reslist[i][0]
+                assert False
     for (i, scres, scresurl) in reslist:
         ScrapePDF("S-RES-%s(%s)" % (scres.group(1), scres.group(2)), plenaryurl=contentsurl, purl=scresurl)
 
@@ -372,7 +396,8 @@ def ScrapeContentsPageFromStem(stem):
 
         # onwards values
         pvdone.sort()
-        print pvdone
+        if IsNotQuiet():
+            print "pvddd", pvdone
         v = (pvdone and pvdone[-1] or 0)
         vn = v + 1
         while vn - v < 3:
@@ -429,7 +454,10 @@ def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
             os.unlink(xmldest)
 
         #shutil.copyfile(pdf, pdfdest)
-        print " ppdftohtml -xml", sd
+        if IsNotQuiet():
+            print " ppdftohtml -xml", sd
+        else:
+            print "Need to find a way to make this system call quiet (see pdfimgmake.py)"
         res = os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")
         assert os.path.isfile("temph.xml")
         os.rename("temph.xml", xmldest)
