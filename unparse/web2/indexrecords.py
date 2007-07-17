@@ -11,6 +11,7 @@ from basicbits import indexstuffdir, htmldir
 class SecRecord:
     def __init__(self, stext):
         self.bGA, self.bSC = False, True
+        self.bparsed = True
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
@@ -23,6 +24,8 @@ class SecRecord:
                 self.topic = val
             elif sp == "numvotes":
                 self.numvotes = int(val)
+            elif sp == "parsed":
+                self.bparsed = (val == "1")
 
     def GetHref(self, highlight = None, gid = None):
         params = {"pagefunc":"scmeeting", "scmeeting":self.nmeeting, "scmeetingsuffix":self.meetingsuffix}
@@ -34,14 +37,21 @@ class SecRecord:
 
     def GetDesc(self, highlight = None, gid = None):
         vs = (self.numvotes >= 1) and " (vote)" or ""
+        if not self.bparsed:
+            vs = " (unparsed)"
         return '%s <a href="%s">%s</a>%s' % (self.sdate, self.GetHref(highlight, gid), self.topic, vs)
 
 
-def LoadSecRecords():
+def LoadSecRecords(secsubj):
     scsummariesf = os.path.join(indexstuffdir, "scsummaries.html")
     res = [ ]
     fin = open(scsummariesf)
-    for ln in fin.readlines():
+    while True:
+        ln = fin.readline()
+        if not ln:
+            break
+        if secsubj == "recent" and len(res) > 20:
+            break
         if re.match('\s*<span class="scmeeting">', ln):
             res.append(SecRecord(ln))
     fin.close()

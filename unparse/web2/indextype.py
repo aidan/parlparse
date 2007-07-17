@@ -127,15 +127,16 @@ def WriteCollapsedSec(sclist):
     for sctopic in sctopics:
         scgroup = sctopicm[sctopic]
         scgroup.sort()
-        print '<li>%s<ul>' % sctopic,
+        print '<li><b>%s</b><ul>' % sctopic,
         for sdate, screcord in scgroup:
-            print '<a href="%s">%s</a>' % (screcord.GetHref(), sdate),
+            patype = (not screcord.bparsed) and ' class="unparsed"' or '' 
+            print '<a href="%s"%s>%s</a>' % (screcord.GetHref(), patype, sdate),
         print '</ul></li>'
 
 
 
 def WriteIndexStuffSec():
-    allsc = LoadSecRecords()
+    allsc = LoadSecRecords("all")
     WriteGenHTMLhead("Security Council Meetings by topic")
     WriteCollapsedSec(allsc)
     return True
@@ -143,7 +144,7 @@ def WriteIndexStuffSec():
 
 def WriteIndexStuffSecYear(scyear):
     WriteGenHTMLhead("Security Council Meetings of %s" % scyear)
-    allsc = LoadSecRecords()
+    allsc = LoadSecRecords("all")
     sl = [ (screcord.sdate, screcord)  for screcord in allsc  if (screcord.sdate[:4] == scyear) ]
     sl.sort()
     WriteAgendaList([screcord  for sdate, screcord in sl ])
@@ -160,22 +161,59 @@ def WriteFrontPageError(pathpartstr, hmap):
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
     
-    fin = open("frontpage.html")
-    print fin.read()
+    print '<div id="sectors">'
+    print '<div id="securitycouncil">'
+    print '<h2>Security Council</h2>'
+    print '<h3>Recent meetings</h3>'
+    recentsc = LoadSecRecords("recent")[:10]
+    print '<ul class="cslist">'
+    for screcord in recentsc:
+        print '<li>%s</li>' % screcord.GetDesc()
+    print '</ul>'
+
+    print '<h3 class="browse">Browse</h3>'
+    print '<p><a href="/securitycouncil">Meetings by topic</a></p>'
+    print '<p><a href="/securitycouncil/documents">All Security Council documents</a></p>'
+    print '</div>'
+
+    print '<div id="generalassembly">'
+    print '<h2>General Assembly</h2>'
+    print '<h3>Recent meetings</h3>'
+
+    recentags = LoadAgendaNames("recent")[:8]
+    print '<ul class="cslist">'
+    for agrecord in recentags:
+        print '<li>%s</li>' % agrecord.GetDesc()
+    print '</ul>'
     
-    return
-    print '<h3>Search feature</h3>'
-    print '<form action="/" method="get">' 
-    print 'Search:'
-    print '<input type="text" name="search" value="">'
-    print '<input type="submit" value="GO">'
-    print '</form>'
+    print '<h3 class="browse">Browse</h3>'
+    print '<p><a href="/generalassembly">Meetings by topic</a></p>'
+    print '<p><a href="/generalassembly/documents">All General Assembly documents</a></p>'
+    print '</div>'
 
-    print '<p><a href="%s">List all nations</a></p>' % EncodeHref({"pagefunc":"nationlist"})
+    print """<div id="about">
+    <h2>About Us</h2>
+    <p>Thirteen years of official <a href="http://en.wikipedia.org/wiki/United_Nations">United Nations</a>
+    meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a> 
+    and the <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a> 
+    including many supporting documents are available for browsing and linking to on this site. 
+    You can see every publically reported members' vote  
+    and resolution (both passed and vetoed) in this time period.</p>
 
-    print '<h3>General Assembly Sessions</h3>'
-    print '<p><a href="%s">All condolences</a>' % EncodeHref({"pagefunc":"agendanum", "agendanum":"condolence"})
-    print '<a href="%s">All documents</a></p>' % EncodeHref({"pagefunc":"documentlist", "body":"generalassembly"})
+    <p>This is for use as a tool to facilitate public cited research 
+    in articles in such places as wikipedia and on blogs.</p>   
+
+    <p>This project has been created by the people behind 
+    <a href="http://www.publicwhip.org.uk">Public whip</a> using 
+    screen scraping and PDF text parsing <a href="http://www.python.org">technology</a>.  
+    Email <i>team@undemocracy.com</i> for details. 
+    Patchy reports about how this was built can be found on the <a href="http://www.freesteel.co.uk/wpblog">Freesteel blog</a>.
+    The computer source code, which is the physical embodiment of this project, 
+    can be found on <a href="http://project.knowledgeforge.net/ukparse/svn/trunk/unparse/">knowledgeforge-ukparse</a>.</p>
+    
+    </div>"""
+
+    return True
 
     print '<p>',
     for ns in range(49, currentgasession + 1):
@@ -192,18 +230,10 @@ def WriteFrontPage():
         print '<a href="%s">%d</a>' % (href, ny),
     print '</p>'
 
-    allags = LoadAgendaNames("recent")
-    print '<h3>Some recent General Assembly meetings</h3>'
-    WriteAgendaList(FilterAgendaListRecent(allags, 10))
-
-    allsc = LoadSecRecords()
-    print '<h3>Some recent Security Council meetings</h3>'
-    WriteAgendaList(FilterAgendaListRecent(allsc, 10))  # functions apply here
-    return True
 
 
 def WriteIndexStuffAgnum(agnum):
-    msess = re.search("-(\d+)$", agnum)
+    msess = re.search("-(\d+)$", agnum) # derive the session if there is one
     nsess = msess and int(msess.group(1)) or 0
 
     allags = LoadAgendaNames(agnum)
@@ -212,8 +242,8 @@ def WriteIndexStuffAgnum(agnum):
         agnumlist = agnum.split(",")
         ags = [ agrecord  for agrecord in allags  if agrecord.agnum in agnumlist ]
     else:
-        # assert agnum == "condolence"
-        ags = [ agrecord  for agrecord in allags  if re.match("condolence", agrecord.agnum) ]
+        # assert agnum in ["condolence", "recent" ]
+        ags = [ agrecord  for agrecord in allags  if re.match(agnum, agrecord.agnum) ]
 
     agtitle = "Topic of General Assembly"
     WriteGenHTMLhead(agtitle)
@@ -236,7 +266,7 @@ def WriteIndexStuffAgnum(agnum):
     else:
         print '<h3>List appears empty</h3>'
         print len(allags)
-        for a in allags[:99]:
+        for a in allags[:89]:
             print '<p>' + a.agnum
 
     return True
@@ -255,7 +285,7 @@ def WriteIndexSearch(search):
     for agrecord in allags:
         aglookup[(agrecord.docid, agrecord.gid)] = agrecord
 
-    allsc = LoadSecRecords()
+    allsc = LoadSecRecords("all")
     sclookup = { }
     for screcord in allsc:
         sclookup[screcord.docid] = screcord

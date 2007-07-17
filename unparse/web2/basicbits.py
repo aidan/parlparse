@@ -17,6 +17,8 @@ nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
 
+scpermanentmembers = ["China", "France", "Russia", "United Kingdom", "United States"]
+scelectedmembers = ["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"]
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -53,7 +55,7 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<div id="identity">'
     if not frontpage:
         print '<a href="/">'
-    print '<img src="/images/site/logo.gif" alt="UNdemocracy.com">'
+    print '<img src="/images/site/logobeta.gif" alt="UNdemocracy.com">'
     if not frontpage:
         print '</a>'
     print '</div>'

@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead
-from basicbits import indexstuffdir, currentgasession, currentscyear, LongDate
+from basicbits import indexstuffdir, currentgasession, currentscyear, scpermanentmembers, scelectedmembers, LongDate
 from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords
@@ -49,25 +49,36 @@ def GatherNationData(snation):
         mmv = re.match("minorityvote = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         mamb = re.match("ambassador = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         # "Philippines","1945-10-24","9999-12-31","PH","PHL","Asia / Middle East"
-        mcsv = re.match('nationdatacsv = "[^"]*","([^"]*)","([^"]*)","[^"]*","[^"]*","([^"]*)"', nd)
+        mcsv = re.match('nationdatacsv = "[^"]*","([^"]*)","([^"]*)","[^"]*","[^"]*","([^"]*)","([^"]*)', nd)
         if mmv:
             res.append({"lntype":"minorityvote", "division":mmv.group(1), "docid":mmv.group(2), "gid":mmv.group(3), "description":mmv.group(4)})
         elif mamb:
             res.append({"lntype":"ambassador", "docid":mamb.group(1), "gid":mamb.group(2), "sdate":mamb.group(3), "name":mamb.group(4)})
         elif mcsv:
-            res.append({"lntype":"csvdata", "startdate":mcsv.group(1), "enddate":mcsv.group(2), "continent":mcsv.group(3)})
+            res.append({"lntype":"csvdata", "startdate":mcsv.group(1), "enddate":mcsv.group(2), "continent":mcsv.group(3),"missionurl":mcsv.group(4)})
     return res
 
 def WriteNationHeading(nation, nationdata):
+    csvdata = None
     for mp in nationdata:
         if mp["lntype"] == "csvdata":
-            print '<p>%s joined the United Nations on %s' % (nation, LongDate(mp["startdate"]))
-            if not re.match("9999", mp["enddate"]):
-                print 'and left the UN in %s' % LongDate(mp["enddate"])
-            print '</p>'
-            return
-    print "<p>No csv data</p>"
+            csvdata = mp
+    if csvdata:
+        print '<p>%s (<i>%s</i>) joined the United Nations on %s' % (nation, csvdata["continent"], LongDate(csvdata["startdate"]))
+        if not re.match("9999", csvdata["enddate"]):
+            print 'and left the UN in %s' % LongDate(csvdata["enddate"])
+        print '</p>'
+        if csvdata["missionurl"]:
+            print '<p>See the <a href="%s">webpage of %s at the United Nations</a> for contact details and further information</p>' % (csvdata["missionurl"], nation)
+        else:
+            print '<p>There is no webpage for %s at the United Nations, according to <a href="http://www.un.int/index-en/index.html">the records</a>.</p>' % nation
+    else:
+        print "<p>No csv data</p>"
 
+    if nation in scpermanentmembers:
+        print '<p>%s is a <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Permanent_members">permanent member</a> of the Security Council.</p>' % nation
+    if nation in scelectedmembers:
+        print '<p>%s is an <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Elected_members">elected member</a> of the Security Council.</p>' % nation
 
 def WriteMinorityVotes(nation, nationdata):
     print '<h3 style="clear:both">Minority votes</h3>'
