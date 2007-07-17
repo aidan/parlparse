@@ -469,6 +469,25 @@ class SCrecord:
         # do this to over-ride the splitting and see the original files
         #self.topics = [ self.otopicrecstr ]
 
+def WriteTopicG(fout, topic, topicg):
+    fout.write('\n<div class="dsctopic">\n')
+    fout.write('<h3>%s</h3>\n' % topic)
+    fout.write("\t<p>\n")
+    sctopic = (topic != "Recent" and topic or "")
+    for (meetingorder, screcord) in topicg:
+        fout.write('\t\t<span class="scmeeting">')
+        fout.write(' <a href=%s>%s</a>' % (screcord.doclink, screcord.sdate))
+        fout.write(' <span class="documentid">%s</span>' % screcord.pvcode)
+        fout.write(' <span class="date">%s</span>' % screcord.sdate)
+        fout.write(' <span class="numspeeches">%d</span>' % screcord.numspeeches)
+        fout.write(' <span class="numparagraphs">%d</span>' % screcord.numparagraphs)
+        fout.write(' <span class="numdocuments">%d</span>' % screcord.numdocuments)
+        fout.write(' <span class="numvotes">%d</span>' % screcord.numvotes)
+        fout.write(' <span class="sctopic">%s</span>' % (sctopic or screcord.otopicrecstr))
+        #fout.write(' <span class="sccategory">%s</span>' % mccategory)
+        fout.write('</span>\n')
+    fout.write("\t</p>\n")
+    fout.write("</div>\n")
 
 def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
     screcords = [ ]
@@ -492,12 +511,17 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
             screcords.append(screcord)
 
     topicgroups = { }
+    recentgroup = [ ]
     for screcord in screcords:
         for topic in screcord.topics:
             topicgroups.setdefault(topic, [ ]).append((screcord.meetingorder, screcord))
+        recentgroup.append((screcord.meetingorder, screcord))
 
     topics = topicgroups.keys()
     topics.sort()
+
+    recentgroup.sort()
+    recentgroup.reverse()
 
     fout.write('<html><head>\n<style type="text/css">\n')
     fout.write('\tp { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
@@ -509,25 +533,14 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
     fout.write('</style>\n</head>')
     fout.write('<body>\n')
 
+    WriteTopicG(fout, "Recent", recentgroup[:100])
+
     for topic in topics:
-        fout.write('\n<div class="dsctopic">\n')
-        fout.write('<h3>%s</h3>\n' % topic)
-        fout.write("\t<p>\n")
-        topicgroups[topic].sort()
-        for (meetingorder, screcord) in topicgroups[topic]:
-            fout.write('\t\t<span class="scmeeting">')
-            fout.write(' <a href=%s>%s</a>' % (screcord.doclink, screcord.sdate))
-            fout.write(' <span class="documentid">%s</span>' % screcord.pvcode)
-            fout.write(' <span class="date">%s</span>' % screcord.sdate)
-            fout.write(' <span class="numspeeches">%d</span>' % screcord.numspeeches)
-            fout.write(' <span class="numparagraphs">%d</span>' % screcord.numparagraphs)
-            fout.write(' <span class="numdocuments">%d</span>' % screcord.numdocuments)
-            fout.write(' <span class="numvotes">%d</span>' % screcord.numvotes)
-            fout.write(' <span class="sctopic">%s</span>' % topic)
-            #fout.write(' <span class="sccategory">%s</span>' % mccategory)
-            fout.write('</span>\n')
-        fout.write("\t</p>\n")
-        fout.write("</div>\n")
+        topicg = topicgroups[topic]
+        topicg.sort()
+        topicg.reverse()
+        WriteTopicG(fout, topic, topicg)
+
     fout.write('</body>\n</html>\n')
 
 
