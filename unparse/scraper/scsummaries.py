@@ -407,7 +407,7 @@ def InitialCleanupTopic(st, year):
 
 rrow = re.compile('(?s)<td[^>]*>(.*?)\s*(?:</td>)?\s*<td[^>]*>(.*?)\s*</td>\s*<td[^>]*>(.*?)\s*</td>\s*<td[^>]*>(.*?)\s*</td>')
 class SCrecord:
-    def __init__(self, year, row, summarylink):
+    def __init__(self, year, row, summarylink, htmldir):
         self.summarylink = summarylink
 
         mrow = rrow.match(row)
@@ -422,6 +422,9 @@ class SCrecord:
         daterecstr = re.sub("</?font[^>]*>", " ", daterecstr).strip()
         self.sdate = ExtractPVdate(daterecstr, year)
         #print sdate
+        hfile = os.path.join(htmldir, self.pvcode + ".html")
+        hfileunindexed = os.path.join(htmldir, self.pvcode + ".unindexed.html")
+        self.bparsed = os.path.isfile(hfile) or os.path.isfile(hfileunindexed)
 
         # not too worried about these for now
         pressrecstr = mrow.group(3)
@@ -484,7 +487,7 @@ def WriteTopicG(fout, topic, topicg):
         fout.write(' <span class="numdocuments">%d</span>' % screcord.numdocuments)
         fout.write(' <span class="numvotes">%d</span>' % screcord.numvotes)
         fout.write(' <span class="sctopic">%s</span>' % (sctopic or screcord.otopicrecstr))
-        #fout.write(' <span class="sccategory">%s</span>' % mccategory)
+        fout.write(' <span class="parsed">%s</span>' % (screcord.bparsed and "1" or "0"))
         fout.write('</span>\n')
     fout.write("\t</p>\n")
     fout.write("</div>\n")
@@ -506,7 +509,7 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
 
         for mrow in re.finditer('(?s)<tr valign="top">(.*?)</tr>', ftext):
             row = mrow.group(1).strip()
-            screcord = SCrecord(year, row, summarylink)
+            screcord = SCrecord(year, row, summarylink, htmldir)
             screcord.FindTopicCats(htmldir, pdfdir)
             screcords.append(screcord)
 
