@@ -9,8 +9,7 @@ from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currents
 from basicbits import EncodeHref, MarkupLinks, SplitHighlight
 from xapsearch import XapLookup
 
-from indexrecords import LoadSecRecords, LoadAgendaNames
-
+from indexrecords import LoadSecRecords, LoadAgendaNames, ReadWikipediaReferrers
 
 def FilterAgendaListRecent(aglist, num):
     sl = [ (agrecord.sdate, agrecord)  for agrecord in aglist ]
@@ -160,7 +159,7 @@ def WriteFrontPageError(pathpartstr, hmap):
 
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
-    
+
     print '<div id="sectors">'
     print '<div id="securitycouncil">'
     print '<h2>Security Council</h2>'
@@ -185,7 +184,7 @@ def WriteFrontPage():
     for agrecord in recentags:
         print '<li>%s</li>' % agrecord.GetDesc()
     print '</ul>'
-    
+
     print '<h3 class="browse">Browse</h3>'
     print '<p><a href="/generalassembly">Meetings by topic</a></p>'
     print '<p><a href="/generalassembly/documents">All General Assembly documents</a></p>'
@@ -194,42 +193,33 @@ def WriteFrontPage():
     print """<div id="about">
     <h2>About Us</h2>
     <p>Thirteen years of official <a href="http://en.wikipedia.org/wiki/United_Nations">United Nations</a>
-    meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a> 
-    and the <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a> 
-    including many supporting documents are available for browsing and linking to on this site. 
-    You can see every publically reported members' vote  
+    meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
+    and the <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
+    including many supporting documents are available for browsing and linking to on this site.
+    You can see every publically reported members' vote
     and resolution (both passed and vetoed) in this time period.</p>
 
-    <p>This is for use as a tool to facilitate public cited research 
-    in articles in such places as wikipedia and on blogs.</p>   
+    <p>This is for use as a tool to facilitate public cited research
+    in articles in such places as wikipedia and on blogs.</p>
 
-    <p>This project has been created by the people behind 
-    <a href="http://www.publicwhip.org.uk">Public whip</a> using 
-    screen scraping and PDF text parsing <a href="http://www.python.org">technology</a>.  
-    Email <i>team@undemocracy.com</i> for details. 
+    <p>This project has been created by the people behind
+    <a href="http://www.publicwhip.org.uk">Public whip</a> using
+    screen scraping and PDF text parsing <a href="http://www.python.org">technology</a>.
+    Email <i>team@undemocracy.com</i> for details.
     Patchy reports about how this was built can be found on the <a href="http://www.freesteel.co.uk/wpblog">Freesteel blog</a>.
-    The computer source code, which is the physical embodiment of this project, 
+    The computer source code, which is the physical embodiment of this project,
     can be found on <a href="http://project.knowledgeforge.net/ukparse/svn/trunk/unparse/">knowledgeforge-ukparse</a>.</p>
-    
+
     </div>"""
 
-    return True
-
-    print '<p>',
-    for ns in range(49, currentgasession + 1):
-        href = EncodeHref({"pagefunc":"gasession", "gasession":ns})
-        print '<a href="%s">Session %d</a> (%d-%d)</a>' % (href, ns, ns + 1945, ns + 1946),
-    print '</p>'
-
-    print '<h3>Security Council meetings</h3>'
-    print '<p><b><a href="%s">Meetings by topic</a></b>' % EncodeHref({"pagefunc":"sctopics"})
-    print '<a href="%s">All documents</a></p>' % EncodeHref({"pagefunc":"documentlist", "body":"securitycouncil"})
-    print '<p>By year:',
-    for ny in range(1994, currentscyear + 1):
-        href = EncodeHref({"pagefunc":"scdocuments", "scyear":ny})
-        print '<a href="%s">%d</a>' % (href, ny),
-    print '</p>'
-
+    wprefs = ReadWikipediaReferrers(6)
+    print '<div id="wplinks">'
+    print '<h3>Wikipedia articles referring to hosted documents</h3>'
+    print '<ul class="cslist">'
+    for wpref in wprefs:
+        print '<li><a href="%s">%s</a></li>' % wpref
+    print '</ul>'
+    print '</div>'
 
 
 def WriteIndexStuffAgnum(agnum):

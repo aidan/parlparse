@@ -101,12 +101,71 @@ def LookupAgendaTitle(docid, gid):
     return prevagc[2], pdfinfo.sdate  # the title
 
 
-def LogIncomingDoc(docid, page, url, ipaddress, useragent):
-    flog = os.path.join(logincomingdir, "logpages.txt")
-    fout = open(flog, "a")
+def LogIncomingDoc(docid, page, referrer, ipaddress, useragent):
     lua = re.sub("\s", "_", useragent or "empty")
-    fout.write("docpage = %s %s %s %s %s %s\n" % (docid, page, (url or "None"), ipaddress, nowdatetime, lua))
+    logtxt = "docpage = %s %s %s %s %s %s\n" % (docid, page, (referrer or "None"), ipaddress, nowdatetime, lua)
+
+    # log according to user agent
+    if re.search("google", useragent):
+        fflog = "logpages_google.txt"
+    elif re.search("picsearch", useragent):
+        fflog = "logpages_picsearch.txt"
+    elif re.search("search.msnbot", useragent):
+        fflog = "logpages_msn.txt"
+    elif re.search("cuill.*?robot", useragent):
+        fflog = "logpages_cuill.txt"
+    elif re.search("ysearch/slurp", useragent):
+        fflog = "logpages_yahoo.txt"
+    else:
+        fflog = "logpages_unknown.txt"
+
+    flog = os.path.join(logincomingdir, fflog)
+    fout = open(flog, "a")
+    fout.write(logtxt)
     fout.close()
+
+    # now log according to referrer
+    if re.search("undemocracy", referrer):
+        fout = open(os.path.join(logincomingdir, "logpages_interlink.txt"), "a")
+        fout.write(logtxt)
+        fout.close()
+    if re.search("wikipedia", referrer):
+        fout = open(os.path.join(logincomingdir, "logpages_wikipedia.txt"), "a")
+        fout.write(logtxt)
+        fout.close()
+
+def ReadLogReferrers(logpagen):
+    flog = os.path.join(logincomingdir, logpagen)
+    if not os.path.isfile(flog):
+        return [ ]
+    fin = open(flog)
+    loglines = fin.readlines()
+    fin.close()
+
+    #logtxt = "docpage = %s %s %s %s %s %s\n" % (docid, page, (referrer or "None"), ipaddress, nowdatetime, lua)
+    res = [ ]
+    for logline in loglines:
+        lch = logline.split()
+        if len(lch) == 8:
+            res.append(lch[6], lch[4], lch[2]) # time, referrer, docid
+    return res
+
+
+def ReadWikipediaReferrers(nrefs)
+    wprefs = ReadLogReferrers("logpages_wikipedia.txt")
+    wprefs.sort()
+    wprefs.reverse()
+    res = [ ]
+    wprefseen = [ ]
+    for wpref in wprefs:
+        mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)$", wpref[1])
+        if not mref or mref.group(1) in wprefseen:
+            continue
+        res.append((mref.group(1), re.sub("_", " ", mref.group(2))))
+        wprefseen.append(mref.group(1))
+        if len(res) >= nrefs:
+            break
+    return res
 
 
 def DownPersonName(person):

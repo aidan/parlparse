@@ -17,7 +17,7 @@ class SecRecord:
                 self.docid = val
                 mdec = re.match("S-PV-(\d+)(-(?:Resu|Part)\.\d+)?$", self.docid)
                 self.nmeeting = int(mdec.group(1))
-                self.meetingsuffix = mdec.group(2) or ""    
+                self.meetingsuffix = mdec.group(2) or ""
             elif sp == "date":
                 self.sdate = val
             elif sp == "sctopic":

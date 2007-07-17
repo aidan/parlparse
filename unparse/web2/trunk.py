@@ -29,9 +29,10 @@ if __name__ == "__main__":
     ipaddress = os.getenv("REMOTE_ADDR") or ''
     useragent = os.getenv("HTTP_USER_AGENT") or ''
 
-    
+
     hmap = DecodeHref(pathparts, form)
 
+    # used to spot what anchor tag the user was sent to
     if hmap["pagefunc"] == "imghrefrep":
         LogIncomingDoc(hmap["imghrefrep"], "imghrefrep", referrer, ipaddress, useragent)
         sys.exit(0)
