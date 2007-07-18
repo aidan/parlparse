@@ -4,7 +4,7 @@
 import sys, os, stat, re
 import datetime
 import urllib
-from basicbits import WriteGenHTMLhead, EncodeHref, monthnames, MarkupLinks
+from basicbits import WriteGenHTMLhead, EncodeHref, monthnames, MarkupLinks, LongDate
 from indexrecords import LoadAgendaNames
 
 
@@ -198,7 +198,7 @@ def WritePrevNext(pdfinfo):
     #thislink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
     #print '<p><a href="%s">This meeting held on %s from %s to %s</a></p>' % (pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
     print '<table>'
-    print '<tr class="meeting-date"><th>Date</th><td>%s</td></tr>' % pdfinfo.sdate
+    print '<tr class="meeting-date"><th>Date</th><td>%s</td></tr>' % LongDate(pdfinfo.sdate)
     print '<tr class="meeting-time"><th>Started</th><td>%s</td></tr>' % pdfinfo.time
     print '<tr class="meeting-rosetime"><th>Ended</th><td>%s</td></tr>' % pdfinfo.rosetime
     print '</table>'

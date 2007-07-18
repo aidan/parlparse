@@ -93,7 +93,8 @@ class DocCounts:
         elif mgaresroman:
             yr = RomanToDecimal(mgaresroman.group(2))
             syr = "%d" % yr
-            print mgaresroman.group(2), "roman", syr
+            if IsNotQuiet():
+                print mgaresroman.group(2), "roman", syr
             if syr in self.garlist:
                 self.garlist[syr].append(docid)
             else:
@@ -109,7 +110,8 @@ class DocCounts:
             else:
                 self.scrlist[mscres.group(1)] = [ docid ]
         elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", docid):
-            print "What is this?", docid
+            if IsNotQuiet():
+                print "What is this?", docid
 
     def IncrHtmlCount(self, htdoc, ftext):
         maga = re.search("(A-(\d\d)-PV.*?)(\.html)", htdoc)

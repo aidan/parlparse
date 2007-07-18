@@ -123,7 +123,8 @@ class VoteBlock:
             il = (ifavour, iagainst, iabstain)
         ivl = (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain))
         if il != ivl:
-            print "wrong-count", self.undocname, il, ivl
+            if IsNotQuite():
+                print "wrong-count", self.undocname, il, ivl
             # wrong values are found on A-57-PV.73 s(favour=154, 152)
             if self.undocname not in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ]:
                 raise unexception("wrong votecount", self.tlcall[self.i].paranum)
@@ -232,7 +233,8 @@ class VoteBlock:
         self.vlabstain = self.DetectVote("(?:<i>)?Abstaining:?(?:</i>)?:?")
         gnv, self.vlabsent = GenerateNationsVoteList(self.vlfavour, self.vlagainst, self.vlabstain, self.sdate, self.paranum, seccouncilmembers)
         self.votecount = "favour=%d against=%d abstain=%d absent=%d" % (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain), len(self.vlabsent))
-        print "  ", self.votecount
+        if IsNotQuet():
+            print "  ", self.votecount
         if self.bGeneralAssembly:
             self.DetectAdoption()
             self.DetectSubsequentVoteChange(gnv)

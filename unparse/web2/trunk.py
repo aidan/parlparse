@@ -66,11 +66,13 @@ if __name__ == "__main__":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["gadice"], hmap["highlightdoclink"])
+        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress, useragent)
     elif hmap["pagefunc"] == "agendanumexpanded":
         aglist = LoadAgendaNames(hmap["agendanum"])
         WriteHTMLagnum(hmap["agendanum"], aglist)
     elif hmap["pagefunc"] == "scmeeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "", hmap["highlightdoclink"])
+        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress, useragent)
     elif hmap["pagefunc"] == "sctopics":
         WriteIndexStuffSec()
     elif hmap["pagefunc"] == "scyear":

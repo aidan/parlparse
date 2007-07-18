@@ -147,18 +147,18 @@ def ReadLogReferrers(logpagen):
     for logline in loglines:
         lch = logline.split()
         if len(lch) == 8:
-            res.append(lch[6], lch[4], lch[2]) # time, referrer, docid
+            res.append((lch[6], lch[4], lch[2])) # time, referrer, docid
     return res
 
 
-def ReadWikipediaReferrers(nrefs)
+def ReadWikipediaReferrers(nrefs):
     wprefs = ReadLogReferrers("logpages_wikipedia.txt")
     wprefs.sort()
     wprefs.reverse()
     res = [ ]
     wprefseen = [ ]
     for wpref in wprefs:
-        mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)$", wpref[1])
+        mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)?$", wpref[1])
         if not mref or mref.group(1) in wprefseen:
             continue
         res.append((mref.group(1), re.sub("_", " ", mref.group(2))))

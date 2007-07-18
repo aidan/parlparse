@@ -6,7 +6,7 @@ import csv
 import urllib2
 import urlparse
 import re
-from unmisc import indexstuffdir
+from unmisc import indexstuffdir, IsNotQuiet
 
 permmissionsurl = "http://www.un.int/index-en/webs.html"
 def ScrapePermMissions():
@@ -328,7 +328,8 @@ def NationDataSucker():
             continent = GeoIP_country_continent[geoip_id]
             continent_name = continent_names[continent]
         else:
-            print "country %s not in GeoIP" % geoip_name
+            if IsNotQuiet():
+                print "country %s not in GeoIP" % geoip_name
 
         # Write out data
         writer.writerow([unname, date_from, date_to, iso2, iso3, continent_name, permmiss])

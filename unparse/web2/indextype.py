@@ -9,7 +9,8 @@ from basicbits import htmldir, pdfdir, indexstuffdir, currentgasession, currents
 from basicbits import EncodeHref, MarkupLinks, SplitHighlight
 from xapsearch import XapLookup
 
-from indexrecords import LoadSecRecords, LoadAgendaNames, ReadWikipediaReferrers
+from indexrecords import LoadSecRecords, LoadAgendaNames
+from basicbits import ReadWikipediaReferrers
 
 def FilterAgendaListRecent(aglist, num):
     sl = [ (agrecord.sdate, agrecord)  for agrecord in aglist ]
@@ -126,6 +127,7 @@ def WriteCollapsedSec(sclist):
     for sctopic in sctopics:
         scgroup = sctopicm[sctopic]
         scgroup.sort()
+        scgroup.reverse()
         print '<li><b>%s</b><ul>' % sctopic,
         for sdate, screcord in scgroup:
             patype = (not screcord.bparsed) and ' class="unparsed"' or '' 
@@ -196,18 +198,24 @@ def WriteFrontPage():
     meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
     and the <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
     including many supporting documents are available for browsing and linking to on this site.
-    You can see every publically reported members' vote
-    and resolution (both passed and vetoed) in this time period.</p>
+    This includes votes and resolutions, both adopted and vetoed.</p> 
 
-    <p>This is for use as a tool to facilitate public cited research
-    in articles in such places as wikipedia and on blogs.</p>
+    <p>This website is a resource for public researchers who contribute to 
+    wikipedia, blogs, and other community discussion forums 
+    where citizens inform themselves and eventually hold their Governments to account.  
+    It has no association, formal or informal, with the United Nations 
+    or any other political group or NGO.  
+    As such, it is independent of the unspoken constraints put upon such 
+    organizations never to criticize or enable the criticism of the Governments 
+    on which their existence depends.</p>
 
     <p>This project has been created by the people behind
     <a href="http://www.publicwhip.org.uk">Public whip</a> using
     screen scraping and PDF text parsing <a href="http://www.python.org">technology</a>.
     Email <i>team@undemocracy.com</i> for details.
-    Patchy reports about how this was built can be found on the <a href="http://www.freesteel.co.uk/wpblog">Freesteel blog</a>.
-    The computer source code, which is the physical embodiment of this project,
+    Some commentary about how it was moved forward can be found on the 
+    <a href="http://www.freesteel.co.uk/wpblog">Freesteel blog</a>.
+    The computer source code, which is the physical embodiment of it all,
     can be found on <a href="http://project.knowledgeforge.net/ukparse/svn/trunk/unparse/">knowledgeforge-ukparse</a>.</p>
 
     </div>"""

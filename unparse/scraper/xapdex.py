@@ -265,7 +265,7 @@ def process_file(pfnameunindexed, xapian_db):
     assert mdocument_date, "not found date in file %s" % pfnameunindexed
     document_date = mdocument_date.group(1)
 
-    if True or IsVeryNoisy():
+    if IsNotQuiet():
         print "indexing %s %s" % (document_id, document_date)
 
     while delete_all_for_doc(document_id, xapian_db):

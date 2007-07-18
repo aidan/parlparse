@@ -77,7 +77,7 @@ def ExtractPVlinks(meetingrecs):
             corrs.append("%s-Corr.%d" % (pvcode, int(mcorr.group(1))))
 
     #print pvcode, meetingrecs[0]
-    if mpvcode.group(4):
+    if mpvcode.group(4) and IsNotQuiet():
         print "the closed one:", pvcode
     return pvcode, (meetingnumber, secondarymeetingnumber), corrs
 
@@ -501,7 +501,8 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
         myear = re.search("\d\d\d\d", lf)
         assert myear, lf
         year = myear.group(0)
-        print "year", year
+        if IsNotQuiet():
+            print "year", year
         f = os.path.join(scsummariesdir, lf)
         fin = open(f)
         ftext = fin.read()

@@ -2,7 +2,7 @@
 
 # Run every morning
 
-cd ~/unparse/scraper
+cd ~/unparse-live/scraper
 
 python2.4 ./unmain.py --quiet --scrape-links --continue-on-error scrape cxml parse xapdex docmeasurements agendanames scsummaries nationdata
 

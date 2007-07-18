@@ -205,7 +205,7 @@ class AgendaHeading:
                 self.titlelines[i] = re.sub(substm, substr, self.titlelines[i])
 
 
-        if re.search("agenda item(?i)", self.titlelines[0]):
+        if re.search("agenda item(?i)", self.titlelines[0]) and IsNotQuiet():
             print "Poss bad agenda item", self.titlelines
         assert self.titlelines
         assert not re.match("\s*$", self.titlelines[0]), self.titletext

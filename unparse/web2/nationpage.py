@@ -82,7 +82,7 @@ def WriteNationHeading(nation, nationdata):
 
 def WriteMinorityVotes(nation, nationdata):
     print '<h3 style="clear:both">Minority votes</h3>'
-    print '<p>Votes where %s was most in the minority.</p>' % nation
+    print '<p>Votes where %s was most in the minority, often highlighting issues in which it most greatly differs from the rest of the international community.</p>' % nation
     print '<table class="minorityvotetable">'
     print '<tr> <th>Favour</th> <th>Against</th> <th>Abstain</th> <th>Absent</th> <th>Topic</th> </tr>'
     for mp in nationdata:
@@ -111,6 +111,8 @@ def WriteAmbassadorList(nation, nationdata):
     amblist.reverse()
 
     print '<h3>Ambassadors</h3>'
+    print '<p>People who have spoken in the General Assembly or Security Council in the name of %s.  Sometimes ministers or heads of state take the place of the official ambassador of the day.</p>' % nation
+
     print '<table class="nationambassadortable" style="background-color:lightgray;">'
     print '<tr><th>Name</th><th>Speeches</th><th>First</th><th>Last</th></tr>'
     for ambl in amblist:
