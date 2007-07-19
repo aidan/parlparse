@@ -161,7 +161,11 @@ def ReadWikipediaReferrers(nrefs):
         mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)?$", wpref[1])
         if not mref or mref.group(1) in wprefseen:
             continue
-        res.append((mref.group(1), re.sub("_", " ", mref.group(2))))
+        lktext = mref.group(2)
+        lktext = re.sub("_", " ", lktext)
+        lktext = re.sub("%28", "(", lktext)
+        lktext = re.sub("%29", ")", lktext)
+        res.append((mref.group(1), lktext))
         wprefseen.append(mref.group(1))
         if len(res) >= nrefs:
             break
@@ -200,6 +204,8 @@ def DecodeHref(pathparts, form):
     if pathparts[0] == "search":
         if len(pathparts) == 2:
             return { "pagefunc": "search", "searchvalue" : pathparts[1] }
+    if pathparts[0] == "about":
+        return { "pagefunc":"about" }
     if pathparts[0] == "documents":
         if len(pathparts) == 1:
             return { "pagefunc":"documentlist", "body":"all" }
@@ -376,6 +382,8 @@ def EncodeHref(hmap):
 
     if hmap["pagefunc"] == "front":
         return "/"
+    if hmap["pagefunc"] == "about":
+        return "/about"
     if hmap["pagefunc"] == "search":
         return "/search/%s" % (hmap["searchvalue"])
     if hmap["pagefunc"] == "nationlist":

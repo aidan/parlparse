@@ -61,7 +61,9 @@ img
 
 div#wplinks 
 {
-    clear:both;
+    padding-top:1em;
+    clear:left;
+    background-color: #e0e0e0;
 }
 /* -------------------  Now do the proper stuff  ---------------- */
 body
@@ -139,17 +141,18 @@ h3.browse
 	float: left;
 	width: 50%;
 	}
-#about
+#aboutus
 	{
 	float: right;
 	width: 32%;
 	background-color: #B3D7F1;
-	}
-#about h2
+	background-color: #B3F1D7;
+    }
+#aboutus h2
 	{
 	margin: 0.35em;
 	}
-#about p
+#aboutus p
 	{
 	margin: 0.5em;
 	}

@@ -158,6 +158,12 @@ def WriteFrontPageError(pathpartstr, hmap):
     print hmap
     print "</h3>"
 
+def WriteAboutPage():
+    WriteGenHTMLhead("About Us")
+    fin = open("aboutpage.html")
+    print fin.read()
+    fin.close()
+    return True
 
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
@@ -192,7 +198,7 @@ def WriteFrontPage():
     print '<p><a href="/generalassembly/documents">All General Assembly documents</a></p>'
     print '</div>'
 
-    print """<div id="about">
+    print """<div id="aboutus">
     <h2>About Us</h2>
     <p>Thirteen years of official <a href="http://en.wikipedia.org/wiki/United_Nations">United Nations</a>
     meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
@@ -207,25 +213,17 @@ def WriteFrontPage():
     or any other political group or NGO.  
     As such, it is independent of the unspoken constraints put upon such 
     organizations never to criticize or enable the criticism of the Governments 
-    on which their existence depends.</p>
+    on which their existence depends.</p>"""
 
-    <p>This project has been created by the people behind
-    <a href="http://www.publicwhip.org.uk">Public whip</a> using
-    screen scraping and PDF text parsing <a href="http://www.python.org">technology</a>.
-    Email <i>team@undemocracy.com</i> for details.
-    Some commentary about how it was moved forward can be found on the 
-    <a href="http://www.freesteel.co.uk/wpblog">Freesteel blog</a>.
-    The computer source code, which is the physical embodiment of it all,
-    can be found on <a href="http://project.knowledgeforge.net/ukparse/svn/trunk/unparse/">knowledgeforge-ukparse</a>.</p>
-
-    </div>"""
+    print '<p><a href="%s">[read more...]</a></p>' % EncodeHref({"pagefunc":"about"})
+    print '</div>'
 
     wprefs = ReadWikipediaReferrers(6)
     print '<div id="wplinks">'
-    print '<h3>Wikipedia articles referring to hosted documents</h3>'
+    print '<h3>Wikipedia referring articles</h3>'
     print '<ul class="cslist">'
     for wpref in wprefs:
-        print '<li><a href="%s">%s</a></li>' % wpref
+        print '<li>* <a href="%s">%s</a></li>' % wpref
     print '</ul>'
     print '</div>'
 
