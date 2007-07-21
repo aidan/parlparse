@@ -25,7 +25,9 @@ class NationDataG:
     def __init__(self, lnation):
         self.nationname = lnation
         self.votetable = { }   # maps from votesum tuple to vote
+        self.scvoteminority = [ ]
         self.voteminority = [ ]
+        self.scminority = [ ]
         self.fname = re.sub(" ", "_", lnation) + ".txt"
         self.ambassadors = [ ]
         self.nationdatacsv = None
@@ -33,10 +35,21 @@ class NationDataG:
     # votesum = (docid, mdiv.group(2), vnum, mvote.group(1))  # this 4-tuple identifies a vote
     def AddVoteMade(self, votesum, vote):
         self.votetable[votesum] = vote
-        if vote == "favour":
-            self.voteminority.append((votesum[2][0], votesum))
-        elif vote == "against":
-            self.voteminority.append((votesum[2][1], votesum))
+
+        if re.match("S-", votesum[0]):
+            if vote == "favour" and votesum[2][0] <= 7:
+                self.scvoteminority.append((votesum[2][0], votesum))
+            elif vote == "against" and votesum[2][1] <= 7:
+                self.scvoteminority.append((votesum[2][1], votesum))
+            elif vote == "abstain" and (votesum[2][2] + votesum[2][1]) <= 7:
+                self.scvoteminority.append((votesum[2][2] + votesum[2][1], votesum))  # captures minority abstentions when very few against
+        else:
+            if vote == "favour":
+                self.voteminority.append((votesum[2][0], votesum))
+            elif vote == "against":
+                self.voteminority.append((votesum[2][1], votesum))
+            elif vote == "abstain":
+                self.voteminority.append((votesum[2][2] + votesum[2][1], votesum))  # captures minority abstentions when very few against
 
     def AddSpoken(self, name, docid, gid, sdate):
         self.ambassadors.append((name, sdate, docid, gid))
@@ -46,9 +59,15 @@ class NationDataG:
         fout = open(fname, "w")
         fout.write("nationdatacsv = %s\n" % self.nationdatacsv)
         self.voteminority.sort()
+        self.scvoteminority.sort()
         for vm, votesum in self.voteminority[:10]:
             vmdat = "%d/%d/%d/%d" % votesum[2]
             fout.write("minorityvote = %s %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3], votesum[4]))
+            # votebreakdown  docid, gid, date, motiontext
+        for vm, votesum in self.scvoteminority[:10]:
+            vmdat = "%d/%d/%d/%d" % votesum[2]
+            fout.write("scminorityvote = %s %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3], votesum[4]))
+            print "scminorityvote", self.fname
         self.ambassadors.sort()
         for amb in self.ambassadors:
             fout.write("ambassador = %s %s %s %s\n" % (amb[2], amb[3], amb[1], amb[0]))
