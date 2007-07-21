@@ -18,7 +18,9 @@ currentgasession = 61
 currentscyear = datetime.datetime.now().year  #2007
 
 scpermanentmembers = ["China", "France", "Russia", "United Kingdom", "United States"]
-scelectedmembers = ["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"]
+scelectedmembersyear = { 
+2007:["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"],
+}
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 

@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead
-from basicbits import indexstuffdir, currentgasession, currentscyear, scpermanentmembers, scelectedmembers, LongDate
+from basicbits import indexstuffdir, currentgasession, currentscyear, scpermanentmembers, scelectedmembersyear, LongDate
 from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords
@@ -77,7 +77,7 @@ def WriteNationHeading(nation, nationdata):
 
     if nation in scpermanentmembers:
         print '<p>%s is a <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Permanent_members">permanent member</a> of the Security Council.</p>' % nation
-    if nation in scelectedmembers:
+    if nation in scelectedmembersyear[currentscyear]:
         print '<p>%s is an <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Elected_members">elected member</a> of the Security Council.</p>' % nation
 
 def WriteMinorityVotes(nation, nationdata):
@@ -104,7 +104,7 @@ def WriteMinorityVotes(nation, nationdata):
 
     print '<p>Security Council votes where %s was most in the minority.  For a permanent member a vote against constitutes a veto.</p>' % nation
     print '<ul class="scminorityvote">'
-    for mp in minorityvotes:
+    for mp in scminorityvotes:
         sdesc = "Description"
         print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), sdesc)
     print '</ul>'

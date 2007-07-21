@@ -10,8 +10,12 @@ from indexrecords import LoadAgendaNames
 
 def WriteSpoken(gid, dtext, councilpresidentnation):
     print '<div class="speech" id="%s">' % gid
-    mspek = re.search('<h3 class="speaker"> <span class="name">([^<]*)</span>(?: <span class="(nation|non-nation)">([^<]*)</span>)?(?: <span class="language">([^<]*)</span>)? </h3>', dtext)
-    assert mspek, dtext[:200]
+    respek = '<h3 class="speaker"> <span class="name">([^<]*)</span>(?: <span class="(nation|non-nation)">([^<]*)</span>)?(?: <span class="language">([^<]*)</span>)? </h3>'
+    mspek = re.search(respek, dtext)
+    if not mspek:
+        dtext = re.sub('<span class="search-highlight">(.*?)</span>', '\\1', dtext)
+        mspek = re.search(respek, dtext)
+    assert mspek, dtext[:300]
     name, nationtype, nation, language = mspek.group(1), mspek.group(2), mspek.group(3), mspek.group(4)
     print '<cite>',
 

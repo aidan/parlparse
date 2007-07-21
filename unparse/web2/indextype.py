@@ -215,6 +215,8 @@ def WriteFrontPage():
     organizations never to criticize or enable the criticism of the Governments 
     on which their existence depends.</p>"""
 
+    print '<p>The real website for the United nations is <a href="http://www.un.org/english/">here</a></p>'
+
     print '<p><a href="%s">[read more...]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
