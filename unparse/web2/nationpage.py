@@ -46,12 +46,12 @@ def GatherNationData(snation):
         return res
     fin = open(fname)
     for nd in fin.readlines():
-        mmv = re.match("minorityvote = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
+        mmv = re.match("((?:sc)?minorityvote) = (\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         mamb = re.match("ambassador = (\S+)\s+(\S+)\s+(\S+)\s+(.*)", nd)
         # "Philippines","1945-10-24","9999-12-31","PH","PHL","Asia / Middle East"
         mcsv = re.match('nationdatacsv = "[^"]*","([^"]*)","([^"]*)","[^"]*","[^"]*","([^"]*)","([^"]*)', nd)
         if mmv:
-            res.append({"lntype":"minorityvote", "division":mmv.group(1), "docid":mmv.group(2), "gid":mmv.group(3), "description":mmv.group(4)})
+            res.append({"lntype":mmv.group(1), "division":mmv.group(2), "docid":mmv.group(3), "gid":mmv.group(4), "date":mmv.group(5), "description":mmv.group(6)})
         elif mamb:
             res.append({"lntype":"ambassador", "docid":mamb.group(1), "gid":mamb.group(2), "sdate":mamb.group(3), "name":mamb.group(4)})
         elif mcsv:
@@ -81,22 +81,33 @@ def WriteNationHeading(nation, nationdata):
         print '<p>%s is an <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Elected_members">elected member</a> of the Security Council.</p>' % nation
 
 def WriteMinorityVotes(nation, nationdata):
-    print '<h3 style="clear:both">Minority votes</h3>'
-    print '<p>Votes where %s was most in the minority, often highlighting issues in which it most greatly differs from the rest of the international community.</p>' % nation
-    print '<table class="minorityvotetable">'
-    print '<tr> <th>Favour</th> <th>Against</th> <th>Abstain</th> <th>Absent</th> <th>Topic</th> </tr>'
+    minorityvotes = [ ]
+    scminorityvotes = [ ]
     for mp in nationdata:
         if mp["lntype"] == "minorityvote":
-            vts = [ int(v)  for v in mp["division"].split("/") ]
-            print '<tr>'
-            print '<td>%d</td>' % vts[0]
-            print '<td>%d</td>' % vts[1]
-            print '<td>%d</td>' % vts[2]
-            print '<td>%d</td>' % vts[3]
-            print '<td><a href="%s">%s</a></tr>' % (EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
-            print '</tr>'
-    print '</table>'
-    return
+            minorityvotes.append(mp)
+        elif mp["lntype"] == "scminorityvote":
+            scminorityvotes.append(mp)
+    if not minorityvotes and not scminorityvotes:
+        return
+
+    # vts = [ int(v)  for v in mp["division"].split("/") ]
+    print '<h3 style="clear:both">Minority votes</h3>'
+    print '<p>General Assembly votes where %s was most in the minority, often highlighting issues in which it most greatly differs from the rest of the international community.</p>' % nation
+    print '<ul class="minorityvote">'
+    for mp in minorityvotes:
+        print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
+    print '</ul>'
+
+    if not scminorityvotes:
+        return
+
+    print '<p>Security Council votes where %s was most in the minority.  For a permanent member a vote against constitutes a veto.</p>' % nation
+    print '<ul class="scminorityvote">'
+    for mp in minorityvotes:
+        sdesc = "Description"
+        print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), sdesc)
+    print '</ul>'
 
 
 def WriteAmbassadorList(nation, nationdata):
