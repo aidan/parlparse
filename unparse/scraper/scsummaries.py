@@ -495,7 +495,7 @@ def WriteTopicG(fout, topic, topicg):
 def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
     screcords = [ ]
     for lf in os.listdir(scsummariesdir):
-        if lf == ".svn":
+        if re.match("\.svn", lf):
             continue
         summarylink = "scsummariesdir/%s" % lf
         myear = re.search("\d\d\d\d", lf)
