@@ -147,7 +147,9 @@ class PdfInfo:
         fpdf = os.path.join(pdfdir, self.pdfcB + ".pdf")
         if not os.path.isfile(fpdf):
             return
+        print "Here\n"
         os.system("pdftk %s dumpdata > pdftkout.txt" % fpdf)
+        print "There\n"
         fin = open("pdftkout.txt")
         ftktext = fin.read()
         fin.close()

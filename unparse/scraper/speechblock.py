@@ -279,6 +279,7 @@ AgendaTypeMap = [ ("condolence", "(?:floods|flood in|tropical storm|earthquake|t
                   ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
                   ("misc", "(?:programme|high-level.*?meeting|high-level.*?dialogue|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
                   ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|extension of the work|apportionment of the expenses)(?i)"),
+                  ("misc", "(?:Drawing of lots for the seating protocol)(?i)"),
                 ]
 
 
@@ -439,6 +440,8 @@ class SpeechBlock:
                 self.agendanum = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
                 #print "aaaaa  ", self.agendanum
                 if not self.agendanum:
+                    if IsNotQuiet():
+                        print "if no agenda, add to AgendaTypeMap"
                     raise unexception(" uncategorized agenda title", self.paranum)
 
             self.paragraphs = [ (blinepara, ptext) ]

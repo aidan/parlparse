@@ -1,8 +1,53 @@
 #!/bin/bash
 
-# Run every morning
+set -x
+
+# Run every morning :)
 
 cd ~/unparse-live/scraper
 
-python2.4 ./unmain.py --quiet --scrape-links --continue-on-error scrape cxml parse xapdex docmeasurements agendanames scsummaries nationdata
+# Pulls latest PDF files of General Assembly and Security Council
+# into undata/pdf
+python2.4 ./unmain.py --quiet scrape 
+
+# Converts new PDF files in undata/pdf to XML in undata/pdfxml
+# (so this is unprocessed XML, just text and coordinates)
+python2.4 ./unmain.py --quiet cxml 
+
+# Converts XML from undata/pdfxml to structured HTML in undata/html, with
+# extension .unindexed.html, for any that don't already exist.
+#
+# --continue-on-error means it skips on when it finds files that can't be
+# passed. Run without --continue-on-error to edit files with errors.
+#
+# --scrape-links means it attempts to download referenced documents.
+python2.4 ./unmain.py --quiet --scrape-links --continue-on-error parse 
+
+# Indexes undata/html/*.unindexed.html for full text search with Xapian.
+# Then renames these files to *.html
+python2.4 ./unmain.py --quiet xapdex 
+
+# Fills up tables in undata/indexstuff/docyears with documents in each year.
+# Internal backlinks from speeches to documents go into undata/pdfinfo 
+# This scans all HTML files.
+python2.4 ./unmain.py --quiet docmeasurements 
+
+# Works out what to name General Assembly "agendas", UN-speak for "topics".
+# This goes into undata/indexstuff/agendaindexes and agendanames.html
+# This scans all HTML files.
+python2.4 ./unmain.py --quiet agendanames 
+
+# Scrapes UN web index and constructs short names for Security Council
+# discussions. Puts results into undata/indexstuff/scsummariesdir
+python2.4 ./unmain.py --quiet scsummaries 
+
+# Updates undata/indexstuff/nationactivity with country activity - minority
+# votes, ambassador speeches. Updates the mission URL in
+# unparse/scraper/nationdata.csv . This scans all HTML files.
+python2.4 ./unmain.py --quiet nationdata
+
+# Add things to Subversion
+cd ~/undata/pdfxml
+svn -q add . --force
+svn -q commit -m "Auto commit from morningupdate"
 

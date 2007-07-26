@@ -454,14 +454,16 @@ def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
             os.unlink(xmldest)
 
         #shutil.copyfile(pdf, pdfdest)
+        cmd = 'pdftohtml -xml "%s" temph' % pdf
         if IsNotQuiet():
-            print " ppdftohtml -xml", sd
+            print cmd
         else:
-            print "Need to find a way to make this system call quiet (see pdfimgmake.py)"
-        res = os.spawnl(os.P_WAIT, 'pdftohtml', 'pdftohtml', '-xml', pdf, "temph")
+            cmd = cmd + " >/dev/null 2>&1" # can't turn off output, so throw away even stderr yeuch
+        os.system(cmd)
         assert os.path.isfile("temph.xml")
         os.rename("temph.xml", xmldest)
-        #os.remove(pdfdest)
+        if sys.platform == "win32" and os.path.isfile(pdfdest): # can't rename onto existing file in Windows
+            os.remove(pdfdest)
         assert os.path.isfile(xmldest)
 
 
