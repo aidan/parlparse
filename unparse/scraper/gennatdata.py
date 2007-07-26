@@ -67,7 +67,6 @@ class NationDataG:
         for vm, votesum in self.scvoteminority[:10]:
             vmdat = "%d/%d/%d/%d" % votesum[2]
             fout.write("scminorityvote = %s %s %s %s %s\n" % (vmdat, votesum[0], votesum[1], votesum[3], votesum[4]))
-            print "scminorityvote", self.fname
         self.ambassadors.sort()
         for amb in self.ambassadors:
             fout.write("ambassador = %s %s %s %s\n" % (amb[2], amb[3], amb[1], amb[0]))

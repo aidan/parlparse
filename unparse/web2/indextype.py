@@ -220,7 +220,7 @@ def WriteFrontPage():
     print '<p><a href="%s">[read more...]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
-    wprefs = ReadWikipediaReferrers(6)
+    wprefs = ReadWikipediaReferrers(12)
     print '<div id="wplinks">'
     print '<h3>Wikipedia referring articles</h3>'
     print '<ul class="cslist">'
