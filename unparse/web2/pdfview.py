@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead, EncodeHref
-from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir 
+from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, nowdatetime, basehref 
 from basicbits import LookupAgendaTitle
 
 
@@ -51,16 +51,20 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     hmap["highlightrects"] = highlightrects
     hmap["highlightedit"] = False
 
-    ivl = '<a href="%s">Document %s</a>' % (EncodeHref(hmap), code)  # this is text for the pastable input box
+    ivl = '<a href="%s%s">Document %s</a>' % (basehref, EncodeHref(hmap), code)  # this is text for the pastable input box
     print '<b>URL:</b> <input style="text" readonly value=\'%s\'>' % ivl
     
-    ivw = [ '<ref>{{ UN document |code=%s' % pdfinfo.pdfc ]
-    ivw.append(' |body=General Assembly |session=60')
+    ivw = [ '<ref>{{ UN document |docid=%s' % pdfinfo.pdfc ]
+    if pdfinfo.bGA:
+        ivw.append(' |body=General Assembly |session=%d' % pdfinfo.nsess)
+    if pdfinfo.bSC:
+        ivw.append(' |body=Security Council |year=%s' % pdfinfo.nscyear)
     ivw.append(' |page=%d' % npage)
+    ivw.append(' |type=%s' % pdfinfo.dtype)
     if highlightrects:
         rs = [ ("rect_%d,%d_%d,%d" % highlightrect)  for highlightrect in highlightrects ]
         ivw.append(' |highlight=%s' % "/".join(rs))
-    ivw.append(' |accessdate=1999-99-99 }}</ref>')
+    ivw.append(' |accessdate=%s }}</ref>' % nowdatetime[:10])
     print '<b>wiki:</b> <input style="text" readonly value=\'%s\'>' % "".join(ivw)
     print '</div>'
 

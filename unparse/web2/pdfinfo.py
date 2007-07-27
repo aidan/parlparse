@@ -45,33 +45,40 @@ class PdfInfo:
 
         if mgadoc:
             self.desc = "General Assembly Session %s document" % mgadoc.group(1)
+            self.dtype = "Document"
             self.nsess = int(mgadoc.group(1))
             self.bGA = True
         elif self.mgapv:
             self.desc = "General Assembly Session %s meeting %s" % (self.mgapv.group(1), self.mgapv.group(2))
+            self.dtype = "Verbatim Report"
             self.nsess = int(self.mgapv.group(1))
             self.nmeeting = int(self.mgapv.group(2))
             self.sortkey = (self.nsess, self.nmeeting)
             self.bGA = True
         elif mscdoc:
             self.desc = "Security Council %s document" % mscdoc.group(1)
+            self.dtype = "Document"
             self.nscyear = int(mscdoc.group(1))
             self.bSC = True
         elif self.mscpv:
             self.desc = "Security Council meeting %s" % self.mscpv.group(1)
+            self.dtype = "Verbatim Report"
             self.scmeeting = self.mscpv.group(1)
             self.bSC = True
         elif mgares:
             self.desc = "General Assembly Resolution %s/%s" % (mgares.group(1), mgares.group(2))
+            self.dtype = "Resolution"
             self.nsess = int(mgares.group(1))
             self.bGA = True
         elif mscprst:
             self.nscyear = int(mscprst.group(1))
             self.desc = "Security Council Presidential Statement %d" % self.nscyear
+            self.dtype = "Presidental Statement"
             self.bSC = True
         elif mscres:
             self.nscyear = int(mscres.group(2))
             self.desc = "Security Council Resolution %s (%d)" % (mscres.group(1), self.nscyear)
+            self.dtype = "Resolution"
             self.bSC = True
         else:
             self.desc = "UNKNOWN"
