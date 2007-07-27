@@ -10,7 +10,7 @@ from basicbits import EncodeHref, MarkupLinks, SplitHighlight
 from xapsearch import XapLookup
 
 from indexrecords import LoadSecRecords, LoadAgendaNames
-from basicbits import ReadWikipediaReferrers
+from basicbits import ReadWikipediaReferrers, LongDate
 
 def FilterAgendaListRecent(aglist, num):
     sl = [ (agrecord.sdate, agrecord)  for agrecord in aglist ]
@@ -175,7 +175,7 @@ def WriteFrontPage():
     recentsc = LoadSecRecords("recent")[:10]
     print '<ul class="cslist">'
     for screcord in recentsc:
-        print '<li>%s</li>' % screcord.GetDesc()
+        print '<li>%s</li>' % re.sub("--", " - ", screcord.GetDesc())  # sub to allow word wrapping
     print '</ul>'
 
     print '<h3 class="browse">Browse</h3>'
@@ -220,13 +220,22 @@ def WriteFrontPage():
     print '<p><a href="%s">[read more...]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
-    wprefs = ReadWikipediaReferrers(12)
+
+    fromdate = "1900-01-01" # in future will be set to the last 30 days (one month)
+    wprefs = ReadWikipediaReferrers(fromdate)
     print '<div id="wplinks">'
     print '<h3>Wikipedia referring articles</h3>'
-    print '<ul class="cslist">'
+    print '<p>Table of recent articles in Wikipedia where citations have landed on this site.</p>'
+    print '<table class="wpreftab">'
+    print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
     for wpref in wprefs:
-        print '<li>* <a href="%s">%s</a></li>' % wpref
-    print '</ul>'
+        wname = re.sub("_", " ", wpref[3])
+        wname = re.sub("%28", "(", wname)
+        wname = re.sub("%29", ")", wname)
+        print '<tr> <td class="wpreftabdate">%s</td>' % LongDate(wpref[0][:10])
+        print '<td>%s</td> <td><a href="%s">%s</a></td> </tr>' % (wpref[1], wpref[2], wname)
+        
+    print '</table>'
     print '</div>'
 
 

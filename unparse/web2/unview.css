@@ -640,7 +640,28 @@ tr.scdocs
     background-color:#ffbebe;
 }
 
-.search-highlight
+table.wpreftab
 {
-    background-color:#ffff00;
+    border: thin black solid;
+    border-collapse: collapse;
 }
+table.wpreftab td
+{
+    margin:1px;
+    border:solid lightgray;
+}
+table.wpreftab th
+{
+    margin:1px;
+    border:solid lightgray;
+    font-weight:bold;
+}
+.wpreftabdate
+{
+    width:8em;
+}
+div#upperdoclinks
+{
+margin: 1em;
+}
+

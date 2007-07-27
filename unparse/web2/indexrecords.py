@@ -15,9 +15,8 @@ class SecRecord:
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
-                mdec = re.match("S-PV-(\d+)(-(?:Resu|Part)\.\d+)?$", self.docid)
-                self.nmeeting = int(mdec.group(1))
-                self.meetingsuffix = mdec.group(2) or ""
+                mdec = re.match("S-PV-(\d+(?:-(?:Resu|Part)\.\d+)?)$", self.docid)
+                self.scmeeting = mdec.group(1)
             elif sp == "date":
                 self.sdate = val
             elif sp == "sctopic":
@@ -28,7 +27,7 @@ class SecRecord:
                 self.bparsed = (val == "1")
 
     def GetHref(self, highlight = None, gid = None):
-        params = {"pagefunc":"scmeeting", "scmeeting":self.nmeeting, "scmeetingsuffix":self.meetingsuffix}
+        params = {"pagefunc":"scmeeting", "scmeeting":self.scmeeting}
         if highlight:
             params['highlightdoclink'] = highlight
         if gid:

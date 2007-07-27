@@ -123,7 +123,10 @@ def WriteDocumentListing(body):
         if bGA and os.path.isfile(gadocyearfile):
             dlist = LoadDocYearFile(gadocyearfile)
             print '<tr class="gadocs">'
-            print '<td><a href="%s">Session %d</a></td>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":s}), s)
+            print '<td><a href="%s">Session %d</a>' % (EncodeHref({"pagefunc":"gadocuments", "gasession":s}), s)
+            if not bSC:
+                print ' (%s-%s)' % (s + 1945, s + 1946)
+            print '</td> '
             print '<td>%d</td> <td>%d</td> <td> </td> <td>%d</td>' % (len(dlist["PV"]), len(dlist["RES"]), len(dlist["DOC"]))
             print '</tr>'
         scyear = s + 1945
