@@ -47,6 +47,7 @@ class PdfInfo:
             self.desc = "General Assembly Session %s document" % mgadoc.group(1)
             self.dtype = "Document"
             self.nsess = int(mgadoc.group(1))
+            self.nmeeting = None
             self.bGA = True
         elif self.mgapv:
             self.desc = "General Assembly Session %s meeting %s" % (self.mgapv.group(1), self.mgapv.group(2))
@@ -59,6 +60,7 @@ class PdfInfo:
             self.desc = "Security Council %s document" % mscdoc.group(1)
             self.dtype = "Document"
             self.nscyear = int(mscdoc.group(1))
+            self.scmeeting = None
             self.bSC = True
         elif self.mscpv:
             self.desc = "Security Council meeting %s" % self.mscpv.group(1)
@@ -69,27 +71,30 @@ class PdfInfo:
             self.desc = "General Assembly Resolution %s/%s" % (mgares.group(1), mgares.group(2))
             self.dtype = "Resolution"
             self.nsess = int(mgares.group(1))
+            self.nmeeting = None
             self.bGA = True
         elif mscprst:
             self.nscyear = int(mscprst.group(1))
             self.desc = "Security Council Presidential Statement %d" % self.nscyear
             self.dtype = "Presidental Statement"
+            self.scmeeting = None # although it could be obtained through the indexes
             self.bSC = True
         elif mscres:
             self.nscyear = int(mscres.group(2))
             self.desc = "Security Council Resolution %s (%d)" % (mscres.group(1), self.nscyear)
             self.dtype = "Resolution"
+            self.scmeeting = None # although it could be obtained through the indexes
             self.bSC = True
         else:
             self.desc = "UNKNOWN"
 
-       
+
     def GetAgnum(self, cgid):
         for (gid, agnum, title) in self.agendascontained:
             if gid == cgid:
                 return agnum
         return None
-    
+
     # called while we are scanning through all the files
     # should look up the agenda title or something
     def AddDocRef(self, docid, gid, sdate):

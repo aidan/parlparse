@@ -4,8 +4,8 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead, EncodeHref
-from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, nowdatetime, basehref 
-from basicbits import LookupAgendaTitle
+from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, nowdatetime, basehref
+from basicbits import LookupAgendaTitle, GenWDocLink
 
 
 def WritePDF(fpdf):
@@ -46,26 +46,14 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     if pdfinfo.pages == -1 or npage + 1 < pdfinfo.pages:
         hmap["page"] = npage + 1
         print '<a href="%s">Page %d</a>' % (EncodeHref(hmap), npage + 1)
-    
+
     hmap["page"] = npage
     hmap["highlightrects"] = highlightrects
     hmap["highlightedit"] = False
 
-    ivl = '<a href="%s%s">Document %s</a>' % (basehref, EncodeHref(hmap), code)  # this is text for the pastable input box
-    print '<b>URL:</b> <input style="text" readonly value=\'%s\'>' % ivl
-    
-    ivw = [ '<ref>{{ UN document |docid=%s' % pdfinfo.pdfc ]
-    if pdfinfo.bGA:
-        ivw.append(' |body=General Assembly |session=%d' % pdfinfo.nsess)
-    if pdfinfo.bSC:
-        ivw.append(' |body=Security Council |year=%s' % pdfinfo.nscyear)
-    ivw.append(' |page=%d' % npage)
-    ivw.append(' |type=%s' % pdfinfo.dtype)
-    if highlightrects:
-        rs = [ ("rect_%d,%d_%d,%d" % highlightrect)  for highlightrect in highlightrects ]
-        ivw.append(' |highlight=%s' % "/".join(rs))
-    ivw.append(' |accessdate=%s }}</ref>' % nowdatetime[:10])
-    print '<b>wiki:</b> <input style="text" readonly value=\'%s\'>' % "".join(ivw)
+    resurl, reswref = GenWDocLink(pdfinfo, npage, highlightrects)
+    print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
+    print '<b>wiki:</b> <input style="text" readonly value="%s">' % reswref
     print '</div>'
 
     print '<div style="background-color:#cceeff">'

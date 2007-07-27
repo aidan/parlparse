@@ -4,7 +4,7 @@
 import sys, os, stat, re
 import datetime
 import urllib
-from basicbits import WriteGenHTMLhead, EncodeHref, monthnames, MarkupLinks, LongDate, basehref, nowdatetime
+from basicbits import WriteGenHTMLhead, EncodeHref, monthnames, MarkupLinks, LongDate, GenWDocLink, basehref, nowdatetime
 from indexrecords import LoadAgendaNames
 
 
@@ -232,28 +232,10 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
 
     agnums = gadice and pdfinfo.GetAgnum(gadice) or ""
 
+    resurl, reswref = GenWDocLink(pdfinfo, None, None)
     print '<div id="upperdoclinks">'
-    lhref = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
-    print 'URL: <input style="text" readonly value="<a href=&quot;%s%s&quot;>%s of %s</a>">' % (basehref, lhref, pdfinfo.desc, pdfinfo.sdate)
-    wklk = [ '<ref name=&quot;' ]
-    wklk.append("UN_%s_%s" % (re.sub("[^0-9a-zA-Z]", "", pdfinfo.pdfc), pdfinfo.sdate[:4]))
-    wklk.append("&quot;>")
-    wklk.append("{{UN document")
-    wklk.append(" |docid=%s" % pdfinfo.pdfc)
-    wklk.append(" |date=[[%d %s]] [[%s]]" % (int(pdfinfo.sdate[8:10]), monthnames[int(pdfinfo.sdate[5:7]) - 1], pdfinfo.sdate[:4]))
-    if pdfinfo.bSC:
-        wklk.append(" |body=Security Council")
-        wklk.append(" |year=%s" % pdfinfo.sdate[:4])
-        wklk.append(" |meeting=%s" % pdfinfo.scmeeting)
-    if pdfinfo.bGA:
-        wklk.append(" |body=General Assembly")
-        wklk.append(" |session=%d" % pdfinfo.nsess)
-        wklk.append(" |meeting=%d" % pdfinfo.nmeeting)
-    wklk.append(" |accessdate=%s" % nowdatetime[:10])
-
-    wklk.append("}}")
-    wklk.append('</ref>')
-    print '&nbsp;<a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a> <input style="text" readonly value="%s">' % "".join(wklk)
+    print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
+    print '&nbsp;<a href="http://en.wikipedia.org/wiki/Help:Footnotes"><b>wiki:</b></a> <input style="text" readonly value="%s">' % reswref
     print '</div>'
 
     print '<div id="meta">'
@@ -264,7 +246,6 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     print '<div id="documentwrap">'
 
     if gadice and agnums:
-      #  print '<h1>HOORAY!</h1>'
         for agnum in agnums.split(","):
             aglist = LoadAgendaNames(agnum)
             print '<table class="agendatable">'
@@ -328,7 +309,7 @@ def WriteHTMLagnum(agnum, aglist):
         if agrecord.fhtml == prevfhtml: # avoid repeating the same document more than once when agendas get re-opened
             continue
         prevfhtml = agrecord.fhtml
-        
+
         fin = open(agrecord.fhtml)
         ftext = fin.read()
         fin.close()

@@ -525,3 +525,44 @@ def MarkupLinks(ftext, highlightth):
     return "".join(res)
 
 
+
+def GenWDocLink(pdfinfo, npage, highlightrects):
+    if highlightrects:
+        lhighlightrects = [ ("rect_%d,%d_%d,%d" % highlightrect)  for highlightrect in highlightrects ]
+        # ought to apply to the resurl
+
+    lhref = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
+    resurl = '<a href=&quot;%s%s&quot;>%s of %s</a>' % (basehref, lhref, pdfinfo.desc, pdfinfo.sdate)
+
+    wklk = [ '<ref name=&quot;' ]
+    wklk.append("UN_%s" % re.sub("[^0-9a-zA-Z]", "", pdfinfo.pdfc))
+    if pdfinfo.sdate:
+        wklk.append("_%s", pdfinfo.sdate[:4])
+    wklk.append("&quot;>")
+    wklk.append("{{UN document")
+    wklk.append(" |docid=%s" % pdfinfo.pdfc)
+    if pdfinfo.sdate:
+        wklk.append(" |date=[[%d %s]] [[%s]]" % (int(pdfinfo.sdate[8:10]), monthnames[int(pdfinfo.sdate[5:7]) - 1], pdfinfo.sdate[:4]))
+    ivw.append(' |type=%s' % pdfinfo.dtype)
+    if pdfinfo.bSC:
+        wklk.append(" |body=Security Council")
+        if pdfinfo.nscyear:
+            wklk.append(" |year=%d" % pdfinfo.nscyear)
+        if pdfinfo.scmeeting:
+            wklk.append(" |meeting=%s" % pdfinfo.scmeeting)
+    if pdfinfo.bGA:
+        wklk.append(" |body=General Assembly")
+        if pdfinfo.nsess:
+            wklk.append(" |session=%d" % pdfinfo.nsess)
+        if self.nmeeting:
+            wklk.append(" |meeting=%d" % pdfinfo.nmeeting)
+    if highlightrects:
+        wklk.append(' |highlight=%s' % "/".join(lhighlightrects))
+    if npage:
+        wklk.append(" |page=%d" % npage)
+    wklk.append(" |accessdate=%s" % nowdatetime[:10])
+    wklk.append("}}")
+    wklk.append('</ref>')
+
+    return resurl, "".join(wklk)
+
