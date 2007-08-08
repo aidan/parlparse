@@ -80,7 +80,7 @@ reressplit = """(?x)(
                 (?:A/)?ES-\d+/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
                 decision\s\d\d/\d+(?!\sof\sthe\sCommission)|
-                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?(?:/Corr\.\d)?|
+                (?:[Dd]ocument\s)?S/\d+/\d+(?:/Add\.\d+)?(?:/Rev\.\d+)?(?:/Add\.\d+)?(?:/Corr\.\d)?|
                 (?:[Dd]ocument\s)?S/\d{3,6}|
                 (?:the\s)?resolution\s\(\d\d/\d+\)|
                 (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?(?:S/RES/)?\d+\s\(\d\d\d\d\)|
@@ -168,7 +168,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
         mdoc = re.match("(?:[Dd]ocument )?A/(?:(C\.\d|INF|HRC)/)?(\d+)/(\S*)", st)
-        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?(?:/Corr\.(\d))?$", st)
+        mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?(?:/Add\.(\d))?(?:/Corr\.(\d))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
         mscprst2 = re.match("S/(\d\d\d\d)/PRST/(\d+)", st)
         mscpv = re.match("S/PV[\./](\d+)", st)
@@ -245,7 +245,9 @@ def MarkupLinks(paratext, undocname, paranum):
             if mscdoc.group(4):
                 link = "%s-Rev.%s" % (link, mscdoc.group(4))
             if mscdoc.group(5):
-                link = "%s-Corr.%s" % (link, mscdoc.group(5))
+                link = "%s-Add.%s" % (link, mscdoc.group(5))
+            if mscdoc.group(6):
+                link = "%s-Corr.%s" % (link, mscdoc.group(6))
 
             res.append(MakeCheckLink(link, st, undocname))
         elif mscprst:
