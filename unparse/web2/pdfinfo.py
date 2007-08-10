@@ -87,6 +87,7 @@ class PdfInfo:
             self.bSC = True
         else:
             self.desc = "UNKNOWN"
+            self.dtype = None
 
 
     def GetAgnum(self, cgid):

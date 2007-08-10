@@ -36,13 +36,16 @@ def WriteSpoken(gid, dtext, councilpresidentnation):
             nation = councilpresidentnation
             flagnation = nation
     if not flagnation:
-        if re.match("The Secretary-General", name):
+        if re.match("The(?: Deputy)? Secretary-General", name):
             flagnation = "United Nations"
             nation = name
         elif not councilpresidentnation and re.match("The(?: Acting)? President", name):
             flagnation = "%s of the General Assembly" % name
-        else:
-            flagnation = "Unknown"
+    if not flagnation:
+        flagnation = "Unknown"
+    if re.search("for General Assembly", flagnation):
+        flagnation = "Secretariat"
+    
     flagimg = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":flagnation})
     flaglink = nation and EncodeHref({"pagefunc":"nation", "nation":nation})
 
@@ -195,7 +198,7 @@ def WriteDataHeading(gid, dtext):
     print '</div>'
     return longdate
 
-def WritePrevNext(pdfinfo):
+def WritePrevNext(pdfinfo, gadice):
     if not pdfinfo.prevmeetingdetails and not pdfinfo.nextmeetingdetails:
         return
     #print '<div class="prevnexmeeting">'
@@ -203,20 +206,26 @@ def WritePrevNext(pdfinfo):
     #print '<p><a href="%s">This meeting held on %s from %s to %s</a></p>' % (pdfinfo.sdate, pdfinfo.time, pdfinfo.rosetime)
     print '<table>'
     print '<tr class="meeting-date"><th>Date</th><td>%s</td></tr>' % LongDate(pdfinfo.sdate)
-    print '<tr class="meeting-time"><th>Started</th><td>%s</td></tr>' % pdfinfo.time
-    print '<tr class="meeting-rosetime"><th>Ended</th><td>%s</td></tr>' % pdfinfo.rosetime
+    if not gadice:
+        print '<tr class="meeting-time"><th>Started</th><td>%s</td></tr>' % pdfinfo.time
+        print '<tr class="meeting-rosetime"><th>Ended</th><td>%s</td></tr>' % pdfinfo.rosetime
     print '</table>'
 
-    if pdfinfo.prevmeetingdetails and pdfinfo.nextmeetingdetails:
-        print '<ul>'
-    if pdfinfo.prevmeetingdetails:
+    
+    if not (pdfinfo.prevmeetingdetails or pdfinfo.nextmeetingdetails or gadice):
+        return
+    
+    print '<ul>'
+    if gadice:
+        currlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
+        print '<li><a href="%s" title="Full meeting">Full meeting</a></li>' % currlink
+    if not gadice and pdfinfo.prevmeetingdetails:
         prevlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.prevmeetingdetails[0]})
         print '<li><a href="%s" title="Previous meeting: finished %s %s">Previous meeting</a></li>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])
-    if pdfinfo.nextmeetingdetails:
+    if not gadice and pdfinfo.nextmeetingdetails:
         nextlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.nextmeetingdetails[0]})
         print '<li><a href="%s" title="Next meeting: started %s %s">Next meeting</a></li>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
-    if pdfinfo.prevmeetingdetails and pdfinfo.nextmeetingdetails:
-        print '</ul>'
+    print '</ul>'
 
 
 
@@ -240,8 +249,7 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
 
     print '<div id="meta">'
    # print gadice, agnums
-    if not gadice:
-        WritePrevNext(pdfinfo)
+    WritePrevNext(pdfinfo, gadice)
     print '</div>'
     print '<div id="documentwrap">'
 

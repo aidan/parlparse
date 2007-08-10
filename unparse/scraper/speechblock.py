@@ -219,7 +219,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             mescort = re.search("(?:was escorted|escorted the.*?) (?:(?:from|to) the (?:rostrum|podium|platform)|(?:from|into|to its place in) the (?:General Assembly Hall|Conference Room|Security Council Chamber))(?: by the President and the Secretary-General)?\.?$", ptext)
             msecball = re.search("A vote was taken by secret ballot\.(?: The meeting was suspended at|$)", ptext)
             mminsil = re.search("The (?:members of the (?:General )?Assembly|Council) observed (?:a|one) minute of (?:silent prayer (?:or|and) meditation|silence)\.$", ptext)
-            mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?.*?acted as tellers\.$", ptext)
+            mtellers = re.search("At the invitations? of the (?:Acting )?Presidents?.*?acted as tellers\.$|Having been drawn by lot", ptext)
             melected = re.search("[Hh]aving obtained (?:the required (?:two-thirds )?|an absolute )majority.*?(?:(?:were|was|been|is) s?elected|will be included [io]n the list)", ptext)
             mmisc = re.search("The Acting President drew the following.*?from the box|sang.*?for the General Assembly|The Assembly heard a musical performance|The Secretary-General presented the award to|From the .*? Group:|Having been drawn by lot by the (?:President|Secretary-General),|were elected members of the Organizational Committee|President \w+ and then Vice-President|Vice-President \S+ \S+ presided over|The following .*? States have.*?been elected members of the Security Council", ptext)
             mmiscnote = re.search("\[In the 79th plenary .*? III.\]$", ptext)

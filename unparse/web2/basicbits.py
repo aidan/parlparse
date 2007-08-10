@@ -11,7 +11,7 @@ from downascii import DownAscii
 import datetime
 
 sys.path.append("../pylib")
-from config import *
+from config import *  # this must bring in htmldir
 
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
 currentgasession = 61
@@ -188,6 +188,17 @@ def CanonicaliseNation(nationf):
     nationf = re.sub("'", "", nationf)
     return nationf
 
+
+def CompleteResYear(docid):
+    mresno = re.match("S-RES-(\d+)(\.pdf)?$", docid)
+    if mresno:
+        resno = mresno.group(1)
+        for ldocid in os.listdir(pdfdir):
+            mlresno = re.match("S-RES-(\d+)([^.]*)", ldocid)
+            if mlresno and mlresno.group(1) == resno:
+                return "S-RES-%s%s%s" % (resno, mlresno.group(2), mresno.group(2) or "")
+    return docid
+
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
 def DecodeHref(pathparts, form):
@@ -326,6 +337,9 @@ def DecodeHref(pathparts, form):
     mdocid = re.match("([AS]T?-.*?)(\.pdf)?$", pathparts[0])
     if mdocid:
         docid = mdocid.group(1)
+        if re.match("S-RES-\d+$", docid):
+            docid = CompleteResYear(docid)
+        
         pdfinfo = GetPdfInfo(docid)
         if len(pathparts) == 1:
             pdffile = os.path.join(pdfdir, docid + ".pdf")
@@ -537,13 +551,13 @@ def GenWDocLink(pdfinfo, npage, highlightrects):
     wklk = [ '<ref name=&quot;' ]
     wklk.append("UN_%s" % re.sub("[^0-9a-zA-Z]", "", pdfinfo.pdfc))
     if pdfinfo.sdate:
-        wklk.append("_%s", pdfinfo.sdate[:4])
+        wklk.append("_%s" % pdfinfo.sdate[:4])
     wklk.append("&quot;>")
     wklk.append("{{UN document")
     wklk.append(" |docid=%s" % pdfinfo.pdfc)
     if pdfinfo.sdate:
         wklk.append(" |date=[[%d %s]] [[%s]]" % (int(pdfinfo.sdate[8:10]), monthnames[int(pdfinfo.sdate[5:7]) - 1], pdfinfo.sdate[:4]))
-    ivw.append(' |type=%s' % pdfinfo.dtype)
+    wklk.append(' |type=%s' % pdfinfo.dtype)
     if pdfinfo.bSC:
         wklk.append(" |body=Security Council")
         if pdfinfo.nscyear:
@@ -554,7 +568,7 @@ def GenWDocLink(pdfinfo, npage, highlightrects):
         wklk.append(" |body=General Assembly")
         if pdfinfo.nsess:
             wklk.append(" |session=%d" % pdfinfo.nsess)
-        if self.nmeeting:
+        if pdfinfo.nmeeting:
             wklk.append(" |meeting=%d" % pdfinfo.nmeeting)
     if highlightrects:
         wklk.append(' |highlight=%s' % "/".join(lhighlightrects))

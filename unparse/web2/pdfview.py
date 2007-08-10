@@ -117,11 +117,22 @@ def WritePDFpreview(docid, pdfinfo):
     if os.path.isfile(pdfpreviewf):
         print '<img style="float:right" src="/pdfpreviewjpg/%s">' % code
 
-    if parsed:
-        print '<h3><a href="%s">UNdemocracy version of document</a></h3>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
+    if pdfinfo.mgapv or pdfinfo.mscpv:
+        pfile = os.path.join(htmldir, pdfinfo.pdfc + ".html")
+        if os.path.isfile(pfile):
+            print '<h3><a href="%s">UNdemocracy version of document</a></h3>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
+        else:
+            print '<p>There is no parsed version for this verbatim report.</p>'
+
+    resurl, reswref = GenWDocLink(pdfinfo, None, None)
+    print '<div id="upperdoclinks">'
+    print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
+    print '&nbsp;<a href="http://en.wikipedia.org/wiki/Help:Footnotes"><b>wiki:</b></a> <input style="text" readonly value="%s">' % reswref
+    print '</div>'
+
 
     pdflink = EncodeHref({"pagefunc":"nativepdf", "docid":code})
-    print '<h3><a href="%s">Original United Nations document</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></h3>' % (pdflink, pdflink)
+    print '<h3><a href="%s">Original PDF United Nations document</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></h3>' % (pdflink, pdflink)
 
     print '<h3>Images of pages</h3>'
     if pdfinfo.pages != -1:
