@@ -183,6 +183,9 @@ American:
     Organization of American States
     Secretary-General of the Caribbean Community
     Secretary-General, Central American Integration System
+    Secretary-General of the Agency for the Prohibition of Nuclear Weapons in Latin America and the Caribbean
+    President of the Latin American Parliament
+    Director of Functional Integration at the General Secretariat of the Central American Integration System
 
 Asian:
     Black Sea Economic Cooperation Organization
@@ -217,9 +220,9 @@ Communities:
     International Confederation of Free Trade Unions
     International Organization of La Francophonie
     International Organization of la Francophonie
+    Permanent Council of Francophonie
     League of Arab States
     Organization of the Islamic Conference
-    Organization on the Islamic Conference
     Permanent Observer of Switzerland
     Social Watch
     South Pacific Forum
@@ -244,6 +247,7 @@ Legal:
     Organization for Security and Cooperation in Europe
     Permanent Court of Arbitration
     President of the International Court
+    President of the International Criminal Court
     President of the International Court of Justice
     President of the International Criminal Tribunal for Rwanda
     President of the International Criminal Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
@@ -251,6 +255,8 @@ Legal:
     President of the International Tribunal for Rwanda
     President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
     President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
+    President of the International Tribunal for the Former Yugoslavia
+    President of the International Criminal Tribunal for the Former Yugoslavia
     Secretary General of the Conference on Security and Cooperation in Europe
     The Legal Counsel
 
@@ -301,6 +307,7 @@ United Nations:
     Council of Europe
     Co-Chair of the Millennium Forum
     Customs Cooperation Council
+    Secretary-General of the Department for General Assembly and Conference Management
     Department for General Assembly and Conference Management
     Deputy Secretary-General
     Deputy Secretary-General of the South Pacific Forum
@@ -320,6 +327,7 @@ United Nations:
     Executive Director of the United Nations Children's Fund
     General Assembly Affairs Branch
     High Commissioner for Human Rights
+    President of the Human Rights Council
     Officer-in-Charge of the Security Council Affairs Division
     President of the Economic and Social Council
     Rapporteur
@@ -350,6 +358,8 @@ United Nations:
     United Nations High Commissioner for Refugees
     United Nations Population Fund
     Vice-President of the Economic and Social Council
+    President of the Security Council
+    Representative of the Secretary-General
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
@@ -395,4 +405,3 @@ for nonnation in nonnationlist.split("\n"):
 
 
 nonnationscount["Partners in Population and Development"] = 0
-nonnationscount["President of the Security Council"] = 0

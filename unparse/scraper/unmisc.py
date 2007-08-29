@@ -46,7 +46,7 @@ def SetCallScrape(lsCallScrape):
 reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
-                draft\sresolution\sA/\d\d/L\.\d+|
+                draft\sresolution\sA/\d\d/L\.\d+(?:/Add.\d)?(?:/Rev.\d)?|
                 A/RES/\d+/\d+|
                 S/PRST/\d+/\d+|
                 S/\d+/PRST/\d+|
@@ -178,6 +178,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mcorr = re.match("Corr.(\d)", st)
         maltreg = re.match("(?:[Rr]egulation|presidential\sdecree)\s\d+/\d+", st)
         msecpress = re.match("(press (?:release|statement)) SC/(\d\d\d\d)", st)
+        #print st, mdoc
 
         # final dustbin for all the rest
         mflat0 = re.match("""(?x)A/CONF[\./]\d+/(?:L\.)?\d+(?:/(?:Add|Rev)\.\w)?|

@@ -146,7 +146,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
         if mbumpnation and not lnation and FixNationName(mbumpnation.group(2), paranum.sdate):
             speakr = mbumpnation.group(1)
             lnation = mbumpnation.group(2)
-            print "BBBB bumpingnat", speakr, lnation
+            if IsNotQuiet():
+                print "BBBB bumpingnat", speakr, lnation
 
         if lnation:
             nation = IsPrenation(lnation, paranum.sdate)
@@ -159,6 +160,8 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print ptext
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
+        elif not re.match("The(?: Acting| Temporary)? President|The(?: Deputy)? Secretary-General|The(?: Acting)? Chairman", speakr):
+            raise unexception("missing nation for %s" % speakr, paranum)
 
         if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Justice |Transcript", speakr):
             print speakr

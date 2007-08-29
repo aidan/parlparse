@@ -123,7 +123,7 @@ class VoteBlock:
             il = (ifavour, iagainst, iabstain)
         ivl = (len(self.vlfavour), len(self.vlagainst), len(self.vlabstain))
         if il != ivl:
-            if IsNotQuite():
+            if IsNotQuiet():
                 print "wrong-count", self.undocname, il, ivl
             # wrong values are found on A-57-PV.73 s(favour=154, 152)
             if self.undocname not in [ "A-56-PV.82", "A-57-PV.73", "A-58-PV.54", "A-52-PV.69", "A-50-PV.90", "A-49-PV.83", ]:
