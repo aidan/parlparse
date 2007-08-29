@@ -154,6 +154,28 @@ def ReadLogReferrers(logpagen):
     return res
 
 
+wpredirects = { "World_Health_Organisation":"World_Health_Organization",
+                "World_health_organization":"World_Health_Organization",
+                "WHO":"World_Health_Organization",
+                "Negotiations_for_ceasefire_in_the_2006_Israel-Lebanon_conflict":"Ceasefire_attempts_during_the_2006_Lebanon_War",
+                "Peace_Day":"International_Day_of_Peace",
+                "Conference_on_the_Illicit_Trade_in_Small_Arms":"United_Nations_Conference_on_the_Illicit_Trade_in_Small_Arms",
+                "UN_Conference_on_the_Illicit_Trade_in_Small_Arms":"United_Nations_Conference_on_the_Illicit_Trade_in_Small_Arms",
+                "Eldorado_canyon":"Bombing_of_Libya_%28April_1986%29",
+                "Operation_El_Dorado_Canyon":"Bombing_of_Libya_%28April_1986%29",
+                "United_States_bombing_of_Libya":"Bombing_of_Libya_%28April_1986%29",
+                "Millennium_Declaration":"United_Nations_Millennium_Declaration",
+                "Oil_for_Food":"Oil-for-Food_Programme",
+                "Oil-for-food_program":"Oil-for-Food_program",
+                "Oil_for_food_scandal":"Oil-for-Food_program",
+                "Oil-for-food_programme":"Oil-for-Food_program",
+                "Oil_for_food_program":"Oil-for-Food_program",
+                "Oil_for_food_programme":"Oil-for-Food_program",
+                "UNSCOM":"United_Nations_Special_Commission",
+                "UN_Security_Council_Resolution_1267":"United_Nations_Security_Council_Resolution_1267",
+
+}
+
 def ReadWikipediaReferrers(fromdate):
     wprefs = ReadLogReferrers("logpages_wikipedia.txt")
     wprefs.sort()
@@ -167,6 +189,7 @@ def ReadWikipediaReferrers(fromdate):
         if wsdate < fromdate:  # use to measure for the last 30 days
             break
         wrefpage = mref.group(2)
+        wrefpage = wpredirects.get(wrefpage, wrefpage)
         if wrefpage in mres:
             mres[wrefpage][2] += 1
         else:
@@ -552,6 +575,8 @@ def GenWDocLink(pdfinfo, npage, highlightrects):
     wklk.append("UN_%s" % re.sub("[^0-9a-zA-Z]", "", pdfinfo.pdfc))
     if pdfinfo.sdate:
         wklk.append("_%s" % pdfinfo.sdate[:4])
+    if npage:
+        wklk.append("_page%d" % npage)
     wklk.append("&quot;>")
     wklk.append("{{UN document")
     wklk.append(" |docid=%s" % pdfinfo.pdfc)

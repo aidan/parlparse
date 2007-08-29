@@ -13,11 +13,13 @@ from indexrecords import LoadSecRecords
 def WriteSpeechInstances(snation, person, nationdata):
     print '<h3>Speeches by the ambassador whose name matches "%s"</h3>' % person
     print '<ul>'
+    prevdocid = ""
     for mp in nationdata:
-        if mp["lntype"] == "ambassador" and DownPersonName(mp["name"]) == person:
+        if mp["lntype"] == "ambassador" and DownPersonName(mp["name"]) == person and mp["docid"] != prevdocid:
             href = EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]})
             desc, sdate = LookupAgendaTitle(mp["docid"], mp["gid"])
             print '<li>%s %s <a href="%s">%s</a></li>' % (mp["sdate"], mp["name"], href, desc or mp["sdate"])
+            prevdocid = mp["docid"]
     print '</ul>'
     return
 
@@ -115,11 +117,15 @@ def WriteAmbassadorList(nation, nationdata):
     ambmap = { }
     for mp in nationdata:
         if mp["lntype"] == "ambassador":
-            ambmap.setdefault(mp["name"], [ ]).append(mp["sdate"])
+            ambmap.setdefault(mp["name"], set()).add((mp["sdate"], mp["docid"]))
 
-    amblist = [ (max(sdates), name, len(sdates), min(sdates))  for name, sdates in ambmap.iteritems() ]
+    
+    amblist = [ ]
+    for name, sdatedocs in ambmap.iteritems():
+        sk = re.search("(\S+)$", name).group(1) # last name
+        amblist.append((sk, name, sdatedocs))
+    
     amblist.sort()
-    amblist.reverse()
 
     print '<h3>Ambassadors</h3>'
     print '<p>People who have spoken in the General Assembly or Security Council in the name of %s.  Sometimes ministers or heads of state take the place of the official ambassador of the day.</p>' % nation
@@ -128,7 +134,11 @@ def WriteAmbassadorList(nation, nationdata):
     print '<tr><th>Name</th><th>Speeches</th><th>First</th><th>Last</th></tr>'
     for ambl in amblist:
         href = EncodeHref({"pagefunc":"nationperson", "nation":nation, "person":ambl[1]})
-        print '<tr><td><a href="%s">%s</a></td>  <td>%d</td> <td>%s</td> <td>%s</td></tr>' % (href, ambl[1], ambl[2], LongDate(ambl[3]), LongDate(ambl[0]))
+        sdatedocs = ambl[2]
+        ndocs = len(sdatedocs)
+        firstdate = min(sdatedocs)[0]
+        lastdate = max(sdatedocs)[0]
+        print '<tr><td><a href="%s">%s</a></td>  <td>%d</td> <td>%s</td> <td>%s</td></tr>' % (href, ambl[1], ndocs, LongDate(firstdate), LongDate(lastdate))
     print '</table>'
 
 
