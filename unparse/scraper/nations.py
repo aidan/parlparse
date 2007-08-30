@@ -174,6 +174,7 @@ African:
     Organization of African Unity
     Secretary-General of the Asian-African Legal Consultative Committee
     Secretary-General of the Organization of African Unity
+    Permanent Observer for the Organization of African Unity
 
 American:
     Caribbean Community
@@ -202,6 +203,7 @@ Business:
     McKinsey and Company
     Shanghai Cooperation Organization
     World Bank
+    President of the World Bank
     World Trade Organization
 
 Communities:
@@ -223,6 +225,8 @@ Communities:
     Permanent Council of Francophonie
     League of Arab States
     Organization of the Islamic Conference
+    Permanent Observer of the Organization of the Islamic Conference
+    Secretary General of the Organization of the Islamic Conference
     Permanent Observer of Switzerland
     Social Watch
     South Pacific Forum
@@ -231,6 +235,7 @@ Communities:
 Health:
     Global Fund to Fight AIDS, Tuberculosis and Malaria
     International Committee of the Red Cross
+    President of the International Committee of the Red Cross
     International Federation of Red Cross and Red Crescent Societies
     International Federation of the Red Cross and Red Crescent Societies
     Joint United Nations Programme on HIV/AIDS
@@ -238,6 +243,7 @@ Health:
     Observer for the International Federation of Red Cross and Red Crescent Societies
     Treatment Action Campaign
     World Health Organization
+    Executive Director of the World Food Programme
 
 Legal:
     International Court of Justice
@@ -256,6 +262,7 @@ Legal:
     President of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
     President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
     President of the International Tribunal for the Former Yugoslavia
+    Prosecutor of the International Tribunal for the Former Yugoslavia
     President of the International Criminal Tribunal for the Former Yugoslavia
     Secretary General of the Conference on Security and Cooperation in Europe
     The Legal Counsel
@@ -338,6 +345,7 @@ United Nations:
     Special Adviser on Gender Issues and Advancement of Women
     Special Adviser to the Secretary-General on General Assembly Matters
     Special Representative and Transitional Administrator in East Timor
+    Special Adviser on Africa
     UNICEF
     Under Secretary-General for General Assembly and Conference Management
     Under-Secretary-General for General Assembly Affairs and Conference Services
@@ -360,6 +368,13 @@ United Nations:
     Vice-President of the Economic and Social Council
     President of the Security Council
     Representative of the Secretary-General
+    Special Envoy of the Secretary-General
+    Chairman of the Security Council Committee
+    Chairman of the Independent Inquiry into the actions of the United Nations during the 1994 genocide in Rwanda
+    High Representative for the Implementation of the Peace Agreement on Bosnia and Herzegovina
+    Special Representative of the Secretary-General
+    Secretary-General of the Council of the European Union
+	Acting Chairman of the Organizational Committee of the Peacebuilding Commission
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
@@ -373,6 +388,7 @@ Weapons:
     Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization
     Sovereign Military Order of Malta
     Sudan People's Liberation Movement/Army
+    Director of the World Campaign against Military and Nuclear Collaboration with South Africa
 """
 
 def PrintNonnationOccurrances():

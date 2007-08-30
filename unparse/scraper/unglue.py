@@ -410,7 +410,9 @@ class TextPage:
             if re.match("<b>Agenda\s*</b>$", jtxlines[ih]):
                 ih += 1
                 break
-            assert not re.search("Agenda", jtxlines[ih])
+            if re.search("Agenda", jtxlines[ih]):
+                print ih, jtxlines
+                raise unexception("unextracted Agenda (should be <b>?)", paranumC(self.undocname, None, 0, -1, self.textcountnumber))
             ih += 1
 
         # could be a closed meeting
