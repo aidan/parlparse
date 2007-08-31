@@ -366,6 +366,7 @@ United Nations:
     Under-Secretary-General, Department of General Assembly Affairs and Conference Management
     Under-Secretary-General, Department of General Assembly Affairs and Conference Services
 	Under-Secretary-General for Legal Affairs
+	Under-Secretary-General for Disarmament Affairs
     United Nations Children's Fund
     United Nations Conference on Trade and Development
     United Nations Development Fund for Women
@@ -382,6 +383,7 @@ United Nations:
     Chairman of the Independent Inquiry into the actions of the United Nations during the 1994 genocide in Rwanda
     High Representative for the Implementation of the Peace Agreement on Bosnia and Herzegovina
     Special Representative of the Secretary-General
+    Personal Representative of the Secretary-General
     Secretary-General of the Council of the European Union
 	Acting Chairman of the Organizational Committee of the Peacebuilding Commission
     Special Coordinator for the Middle East Peace Process
