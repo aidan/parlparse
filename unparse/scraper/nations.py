@@ -218,7 +218,8 @@ Communities:
     Economic and Social Commission for Western Africa
     European Commission
     European Community
-    Flora Tristan Centre for Peruvian Women
+    European Union
+	Flora Tristan Centre for Peruvian Women
     Inter-Parliamentary Union
     International Confederation of Free Trade Unions
     International Organization of La Francophonie
@@ -233,6 +234,8 @@ Communities:
     South Pacific Forum
     former Yugoslav Republic of Macedonia
 	Transitional Cabinet of East Timor
+	Second Transitional Government of East Timor
+	East Timor
 	President of the National Council of Timorese Resistance
 
 Health:
@@ -385,6 +388,9 @@ United Nations:
 	Chairperson of the Panel of Experts on the Illegal Exploitation of Natural Resources and Other Forms of Wealth in the Democratic Republic of the Congo
     Deputy Emergency Relief Coordinator
 	Chairman of the Committee of Experts
+	Chairman of the Panel of Experts on Liberia
+	United Nations Humanitarian Coordinator for Angola
+	Security Council mission to Eritrea and Ethiopia
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
