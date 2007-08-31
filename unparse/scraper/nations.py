@@ -218,7 +218,8 @@ Communities:
     Economic and Social Commission for Western Africa
     European Commission
     European Community
-    European Union
+    Special Representative of the EU Presidency
+	European Union
 	Flora Tristan Centre for Peruvian Women
     Inter-Parliamentary Union
     International Confederation of Free Trade Unions
@@ -391,6 +392,7 @@ United Nations:
 	Chairman of the Panel of Experts on Liberia
 	United Nations Humanitarian Coordinator for Angola
 	Security Council mission to Eritrea and Ethiopia
+	Chairman of the Security Council ad hoc Working Group
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
