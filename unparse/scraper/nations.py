@@ -203,7 +203,8 @@ Business:
     McKinsey and Company
     Shanghai Cooperation Organization
     World Bank
-    President of the World Bank
+    Vice-President of the World Bank
+	President of the World Bank
     World Trade Organization
 
 Communities:
@@ -231,6 +232,8 @@ Communities:
     Social Watch
     South Pacific Forum
     former Yugoslav Republic of Macedonia
+	Transitional Cabinet of East Timor
+	President of the National Council of Timorese Resistance
 
 Health:
     Global Fund to Fight AIDS, Tuberculosis and Malaria
@@ -352,11 +355,13 @@ United Nations:
     Under-Secretary-General for General Assembly and Conference Management
     Under-Secretary-General for Humanitarian Affairs
     Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator
+	Office for the Coordination of Humanitarian Affairs
     Under-Secretary-General for Peacekeeping Operations
     Under-Secretary-General for Policy Coordination and Sustainable Development
     Under-Secretary-General for Political Affairs
     Under-Secretary-General, Department of General Assembly Affairs and Conference Management
     Under-Secretary-General, Department of General Assembly Affairs and Conference Services
+	Under-Secretary-General for Legal Affairs
     United Nations Children's Fund
     United Nations Conference on Trade and Development
     United Nations Development Fund for Women
@@ -375,6 +380,10 @@ United Nations:
     Special Representative of the Secretary-General
     Secretary-General of the Council of the European Union
 	Acting Chairman of the Organizational Committee of the Peacebuilding Commission
+	President of the General Assembly
+	Chairperson of the Panel of Experts on the Illegal Exploitation of Natural Resources and Other Forms of Wealth in the Democratic Republic of the Congo
+    Deputy Emergency Relief Coordinator
+	Chairman of the Committee of Experts
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
