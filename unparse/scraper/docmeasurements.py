@@ -192,12 +192,14 @@ class DocCounts:
                 for docid in self.scvlist[sscyear]:
                     fout.write("%s PV\n" % docid)
             if sscyear in self.scdlist:
-                self.scdlist[sscyear].sort()
-                for docid in self.scdlist[sscyear]:
+                scdsort = [ (int(re.match("S-\d+-(\d+)", docid).group(1)), docid)  for docid in self.scdlist[sscyear] ]
+                scdsort.sort()
+                for dk, docid in scdsort:
                     fout.write("%s DOC\n" % docid)
             if sscyear in self.scplist:
-                self.scplist[sscyear].sort()
-                for docid in self.scplist[sscyear]:
+                scpsort = [ (int(re.match("S-PRST-\d+-(\d+)", docid).group(1)), docid)  for docid in self.scplist[sscyear] ]
+                scpsort.sort()
+                for pk, docid in scpsort:
                     fout.write("%s PRST\n" % docid)
             if sscyear in self.scrlist:
                 self.scrlist[sscyear].sort()
@@ -209,16 +211,22 @@ class DocCounts:
             fout = open(os.path.join(docyearsdir, "ga%d.txt" % gasess), "w")
             sgasess = "%d" % gasess
             if sgasess in self.gavlist:
-                self.gavlist[sgasess].sort()
-                for docid in self.gavlist[sgasess]:
+                gavsort = [ (int(re.match("A-\d+-PV.(\d+)", docid).group(1)), docid)  for docid in self.gavlist[sgasess] ]
+                gavsort.sort()
+                for vk, docid in gavsort:
                     fout.write("%s PV\n" % docid)
             if sgasess in self.gadlist:
-                self.gadlist[sgasess].sort()
-                for docid in self.gadlist[sgasess]:
+                gadsort = [ (int(re.match("A-\d+-(?:L\.)?(\d+)", docid).group(1)), docid)  for docid in self.gadlist[sgasess] ]
+                gadsort.sort()
+                for dk, docid in gadsort:
                     fout.write("%s DOC\n" % docid)
             if sgasess in self.garlist:
-                self.garlist[sgasess].sort()
+                garsort = [ ]
                 for docid in self.garlist[sgasess]:
+                    mgar = re.match("A-RES-\d+-(\d+)|A-RES-(\d+)", docid)
+                    garsort.append((int(mgar.group(1) or mgar.group(2)), docid))
+                garsort.sort()
+                for ak, docid in garsort:
                     fout.write("%s RES\n" % docid)
             fout.close()
 

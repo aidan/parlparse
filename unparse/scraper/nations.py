@@ -380,6 +380,7 @@ United Nations:
     Special Representative of the Secretary-General
     Secretary-General of the Council of the European Union
 	Acting Chairman of the Organizational Committee of the Peacebuilding Commission
+    Special Coordinator for the Middle East Peace Process
 	President of the General Assembly
 	Chairperson of the Panel of Experts on the Illegal Exploitation of Natural Resources and Other Forms of Wealth in the Democratic Republic of the Congo
     Deputy Emergency Relief Coordinator
