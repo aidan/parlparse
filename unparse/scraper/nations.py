@@ -341,7 +341,8 @@ United Nations:
     Executive Director of the United Nations Children's Fund
     General Assembly Affairs Branch
     High Commissioner for Human Rights
-    President of the Human Rights Council
+    Deputy High Commissioner for Human Rights
+	President of the Human Rights Council
     Officer-in-Charge of the Security Council Affairs Division
     President of the Economic and Social Council
     Rapporteur
@@ -353,6 +354,7 @@ United Nations:
     Special Adviser to the Secretary-General on General Assembly Matters
     Special Representative and Transitional Administrator in East Timor
     Special Adviser on Africa
+    Special Adviser to the Secretary-General
     UNICEF
     Under Secretary-General for General Assembly and Conference Management
     Under-Secretary-General for General Assembly Affairs and Conference Services
@@ -395,6 +397,13 @@ United Nations:
 	United Nations Humanitarian Coordinator for Angola
 	Security Council mission to Eritrea and Ethiopia
 	Chairman of the Security Council ad hoc Working Group
+	Chairman of the Security Council Working Group on Peacekeeping Operations
+	Head of the Security Council Mission
+	Programme for Coordination and Assistance for Security and Development
+	Executive Director of Sustainable Development and Health Environments
+    Security Council mission to Central Africa
+    Chairman of the Ad Hoc Advisory Group
+	Head of the United Nations Political Office in Bougainville
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
@@ -409,6 +418,8 @@ Weapons:
     Sovereign Military Order of Malta
     Sudan People's Liberation Movement/Army
     Director of the World Campaign against Military and Nuclear Collaboration with South Africa
+	Executive Chairman of the United Nations Monitoring, Verification and Inspection Commission
+	Director General of the United Nations Office at Vienna
 """
 
 def PrintNonnationOccurrances():

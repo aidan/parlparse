@@ -160,7 +160,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
                 print ptext
                 print "\ncheck if misspelt or new nonnation, can add * to front of it: ", lnation
                 raise unexception("unrecognized nationC or nonnation", paranum)
-        elif not re.match("The(?: Acting| Temporary)? President|The(?: Deputy| Assistant)? Secretary-General|The(?: Acting)? Chairman", speakr):
+        elif not re.match("The(?: Acting| Temporary)? President|The(?: Deputy| Assistant)? Secretary-General|The(?: Acting)? Chairman|Transcript", speakr):
             if IsNotQuiet(): # allow for less strict when done by cronjob
                 raise unexception("missing nation for %s" % speakr, paranum)
 
