@@ -204,8 +204,11 @@ Business:
     Shanghai Cooperation Organization
     World Bank
     Vice-President of the World Bank
-	President of the World Bank
+    President of the World Bank
     World Trade Organization
+    President and Chief Executive Officer of Siemens
+    Secretary General of CARE International
+    Vice President of the International Center for Transitional Justice
 
 Communities:
     Commonwealth Secretariat
@@ -270,6 +273,7 @@ Legal:
     President, International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991
     President of the International Tribunal for the Former Yugoslavia
     Prosecutor of the International Tribunal for the Former Yugoslavia
+    Prosecutor of the International Criminal Tribunal for Rwanda
     President of the International Criminal Tribunal for the Former Yugoslavia
     Secretary General of the Conference on Security and Cooperation in Europe
     The Legal Counsel
@@ -398,12 +402,19 @@ United Nations:
 	Security Council mission to Eritrea and Ethiopia
 	Chairman of the Security Council ad hoc Working Group
 	Chairman of the Security Council Working Group on Peacekeeping Operations
+	Chairman of the Security Council Working Group
 	Head of the Security Council Mission
 	Programme for Coordination and Assistance for Security and Development
 	Executive Director of Sustainable Development and Health Environments
     Security Council mission to Central Africa
+    Security Council mission to Afghanistan
     Chairman of the Ad Hoc Advisory Group
 	Head of the United Nations Political Office in Bougainville
+	Legal Counsel of the United Nations
+	Senior Deputy High Representative
+	Chairman of the Counter-Terrorism Committee
+    Executive Director of the Office of the Iraq Programme
+	Senior Gender Adviser of the United Nations Organization Mission in the Democratic Republic of the Congo
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
