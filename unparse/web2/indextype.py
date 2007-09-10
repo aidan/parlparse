@@ -200,24 +200,29 @@ def WriteFrontPage():
 
     print """<div id="aboutus">
     <h2>About Us</h2>
-    <p>Thirteen years of official <a href="http://en.wikipedia.org/wiki/United_Nations">United Nations</a>
-    meetings of the <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
-    and the <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
-    including many supporting documents are available for browsing and linking to on this site.
-    This includes votes and resolutions, both adopted and vetoed.</p> 
+    <p>This is an independent easier-to-navigate interface for the official
+    <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
+    and <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
+    related documents held by the <a href="http://www.un.org/aboutun/charter/">United Nations</a>.
+    (Please refer to the wikipedia articles linked above if you do not know what these two organs do.)</p>
+    
+    <p>The real website for the United Nations is <a href="http://www.un.org/english/">here</a>.</p>
 
-    <p>This website is a resource for public researchers who contribute to 
-    wikipedia, blogs, and other community discussion forums 
-    where citizens inform themselves and eventually hold their Governments to account.  
-    It has no association, formal or informal, with the United Nations 
-    or any other political group or NGO.  
-    As such, it is independent of the unspoken constraints put upon such 
-    organizations never to criticize or enable the criticism of the Governments 
-    on which their existence depends.</p>"""
+    <p>All public meetings of the General Assembly and Security Council since 1994 have been converted 
+    into usable HTML for reference, searchability, and vote checking.  
+    You can create links to this site from blogs and from Wikipedia articles through this
+    site, since it is impossible to link to most UN documents directly.</p>
 
-    print '<p>The real website for the United nations is <a href="http://www.un.org/english/">here</a></p>'
+    <p>You can get started by seeing all speeches made by 
+    <a href="http://www.undemocracy.com/United_States/bush">President Bush</a> of
+    <a href="http://www.undemocracy.com/United_States">The United States</a>, or
+    <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of 
+    <a href="http://www.undemocracy.com/Iran">Iran</a>, as well as 
+    <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
+    that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
+    """
 
-    print '<p><a href="%s">[read more...]</a></p>' % EncodeHref({"pagefunc":"about"})
+    print '<p><a href="%s">[click here for further details]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
 
@@ -225,7 +230,7 @@ def WriteFrontPage():
     wprefs = ReadWikipediaReferrers(fromdate)
     print '<div id="wplinks">'
     print '<h3>Wikipedia referring articles</h3>'
-    print '<p>Table of recent articles in Wikipedia where citations have landed on this site.</p>'
+    print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
     print '<table class="wpreftab">'
     print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
     for wpref in wprefs:

@@ -21,12 +21,12 @@ class PdfInfo:
             self.pdfcB = re.sub("\(", "\(", self.pdfcB)
             self.pdfcB = re.sub("\)", "\)", self.pdfcB)
 
-        mgadoc = re.match("A-(\d\d)-[L\d]", self.pdfc)
+        mgadoc = re.match("A-(\d\d)-([L\d].*)", self.pdfc)
         self.mgapv = re.match("A-(\d\d)-PV\.(\d+)", self.pdfc)
-        mscdoc = re.match("S-(\d\d\d\d)-\d", self.pdfc)
+        mscdoc = re.match("S-(\d\d\d\d)-(\d.*)", self.pdfc)
         self.mscpv = re.match("S-PV-(\d+\S*)", self.pdfc)
         mgares = re.match("A-RES-(\d\d)-(\d+)", self.pdfc)
-        mscprst = re.match("S-PRST-(\d\d\d\d)", self.pdfc)
+        mscprst = re.match("S-PRST-(\d\d\d\d)-(.+)", self.pdfc)
         mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", self.pdfc)
 
         self.bSC, self.bGA = False, False
@@ -49,6 +49,7 @@ class PdfInfo:
             self.nsess = int(mgadoc.group(1))
             self.nmeeting = None
             self.bGA = True
+            self.document_number = mgadoc.group(2)
         elif self.mgapv:
             self.desc = "General Assembly Session %s meeting %s" % (self.mgapv.group(1), self.mgapv.group(2))
             self.dtype = "Verbatim Report"
@@ -61,6 +62,7 @@ class PdfInfo:
             self.dtype = "Document"
             self.nscyear = int(mscdoc.group(1))
             self.scmeeting = None
+            self.document_number = mscdoc.group(2)
             self.bSC = True
         elif self.mscpv:
             self.desc = "Security Council meeting %s" % self.mscpv.group(1)
@@ -73,11 +75,13 @@ class PdfInfo:
             self.nsess = int(mgares.group(1))
             self.nmeeting = None
             self.bGA = True
+            self.resolution_number = mgares.group(2)
         elif mscprst:
             self.nscyear = int(mscprst.group(1))
             self.desc = "Security Council Presidential Statement %d" % self.nscyear
             self.dtype = "Presidental Statement"
             self.scmeeting = None # although it could be obtained through the indexes
+            self.document_number = mscprst.group(2)
             self.bSC = True
         elif mscres:
             self.nscyear = int(mscres.group(2))
@@ -85,6 +89,7 @@ class PdfInfo:
             self.dtype = "Resolution"
             self.scmeeting = None # although it could be obtained through the indexes
             self.bSC = True
+            self.resolution_number = mscres.group(1)
         else:
             self.desc = "UNKNOWN"
             self.dtype = None

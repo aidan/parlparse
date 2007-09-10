@@ -103,18 +103,27 @@ function GetDocAttributesFromHeading(docattributes)
     if (!docattributes["docid"])
         alert("missing docid");
     var mga = /A-([0-9]+)-PV\.([0-9]+)/.exec(docattributes["docid"]);
+    var msc = /S-PV-([0-9]+.*)/.exec(docattributes["docid"]);
+    
+    // other types don't get in here
+    //var mgares = /A-RES-([0-9]+)-(.+)/.exec(docattributes["docid"]);
     if (mga)
     {
         docattributes["body"] = "General Assembly";
         docattributes["session"] = parseInt(mga[1]);
         docattributes["meeting"] = parseInt(mga[2]);
+        docattributes["type"] = "Verbotim Report";
     }
 
-    var msc = /S-PV-([0-9]+)/.exec(docattributes["docid"]);
-    if (msc)
+    else if (msc)
     {
         docattributes["body"] = "Security Council";
-        docattributes["meeting"] = parseInt(msc[1]);
+        docattributes["meeting"] = msc[1];
+        docattributes["type"] = "Verbotim Report";
+    }
+    else
+    {
+        docattributes["type"] = "unrecognized docid";
     }
 }
 
@@ -145,20 +154,21 @@ function GetDocAttributesFromBlock(docattributes, me)
     }
 
     docattributes["blockclass"] = gidme.className; 
-    if (gidme.className == "spoken")
+    if (gidme.className == "speech")
     {
-        var h3speaker = null;
-        for (h3speaker = gidme.firstChild; h3speaker; h3speaker = h3speaker.nextSibling)
+        var citetag = null;
+        for (citetag = gidme.firstChild; citetag; citetag = citetag.nextSibling)
         {
-            if (h3speaker.className == "speaker")
+            if (citetag.tagName && (citetag.tagName.toLowerCase() == "cite"))
                 break;
         }
-        for (var node = h3speaker.firstChild; node; node = node.nextSibling)
+        if (citetag)
+        for (var node = citetag.firstChild; node; node = node.nextSibling)
         {
             if (node.className == "name")
                 docattributes["speakername"] = node.textContent;
             if (node.className == "nation")
-                docattributes["speakernation"] = node.textContent;
+                docattributes["speakernation"] = node.textContent.replace(/[()]/g, "");
             if (node.className == "language")
                 docattributes["speakerlanguage"] = node.textContent;
         }
@@ -183,22 +193,34 @@ function blogurl(docattributes)
 
 function wikival(docattributes)
 {
-    var wpvalue = "{{ UN document |code=" + docattributes["docid"] + "|body=A | type=PV| page=" + docattributes["pageno"] + "}}";
-
     var res = "<ref>{{ UN document";
-    res += " |code=" + docattributes["docid"];
+    res += " |docid=" + docattributes["docid"];
     res += " |body=" + docattributes["body"];
+    if (docattributes["type"])
+        res += " |type=" + docattributes["type"];
+    if (docattributes["resolution_number"])
+        res += " |resolution_number=" + docattributes["resolution_number"];
     if (docattributes["session"])
         res += " |session=" + docattributes["session"];
-    res += " |meeting=" + docattributes["meeting"];
-    res += " |page=" + docattributes["pageno"];
-    res += " |anchor=" + docattributes["gid"];
+    if (docattributes["meeting"])
+        res += " |meeting=" + docattributes["meeting"];
+    if (docattributes["pageno"])
+        res += " |page=" + docattributes["pageno"];
+    if (docattributes["gid"])
+        res += " |anchor=" + docattributes["gid"];
 
-    res += " |date=";
-    res += docattributes["wikidate"]
+    if (docattributes["wikidate"])
+        res += " |date=" + docattributes["wikidate"];
 
-    res += " |time=" + docattributes["time"];
+    if (docattributes["meetingtime"])
+        res += " |meetingtime=" + docattributes["meetingtime"];
 
+    if (docattributes["speakername"])
+        res += " |speakername=" + docattributes["speakername"];
+    if (docattributes["speakernation"])
+        res += " | speakernation=" + docattributes["speakernation"]; 
+
+    
     tday = new Date();
     res += " |accessdate=";
     res += tday.getFullYear();
@@ -226,7 +248,7 @@ function addlinksonparas(divnode)
                 //<div onclick="linkere(this);" class="unclickedlink">link to this</div>
                 var nnlink = document.createElement("div");
                 nnlink.className = "unclickedlink";
-                nnlink.textContent = "link to this";
+                nnlink.textContent = "Link to this";
                 nnlink.onclick = function(){ return linkere(this); };
                 node.insertBefore(nnlink, node.firstChild);
             }
@@ -266,7 +288,7 @@ function linkere(me)
     eltable.className = "linktable";
     me.appendChild(eltable);
 
-    if (docattributes["blockclass"] == "spoken")
+    if (docattributes["blockclass"] == "speech")
         addlinksonparas(divnode);
     me.className = "clickedlink";
 

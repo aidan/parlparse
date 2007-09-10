@@ -277,10 +277,11 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     agendagidcurrent = ""
     for mdiv in re.finditer(rdivspl, ftext):
         dclass, gid, agendanum = mdiv.group(1), mdiv.group(2), mdiv.group(3)
-        dtext = MarkupLinks(mdiv.group(4).strip(), highlightth)
+        dtext = mdiv.group(4).strip()
+        dtextmu = MarkupLinks(dtext, highlightth)
         if dclass == "spoken":
             if not gadice or agendagidcurrent == gadice:
-                WriteSpoken(gid, dtext, councilpresidentnation)
+                WriteSpoken(gid, dtextmu, councilpresidentnation)
         elif dclass == "subheading":
             if agendagidcurrent and (not gadice or agendagidcurrent == gadice):
                 print '</div>\n\n'
@@ -288,19 +289,19 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
             if agendagidcurrent and (not gadice or agendagidcurrent == gadice):
                 print '<div class="discussion">'
             if not gadice or agendagidcurrent == gadice:
-                WriteAgenda(gid, agendanum, dtext, pdfinfo.pdfc)
+                WriteAgenda(gid, agendanum, dtextmu, pdfinfo.pdfc)
         elif dclass == "recvote":
             if not gadice or agendagidcurrent == gadice:
-                WriteVote(gid, dtext, pdfinfo.bSC)
+                WriteVote(gid, dtextmu, pdfinfo.bSC)
         elif dclass == 'heading':
             longdate = WriteDataHeading(gid, dtext)
         elif dclass == "assembly-chairs":
-            WriteAssemblyChair(gid, dtext)
+            WriteAssemblyChair(gid, dtextmu)
         elif dclass == "council-attendees":
             councilpresidentnation = WriteCouncilAttendees(gid, dtext)  # value used to dereference "The President" in the Security Council
         elif re.match("italicline", dclass):
             if not gadice or agendagidcurrent == gadice:
-                WriteItalicLine(gid, dclass, dtext)
+                WriteItalicLine(gid, dclass, dtextmu)
         else:  # all cases should have been handled
             print '<div class="%s" id="%s">' % (dclass, gid)
             print dtext, '</div>'

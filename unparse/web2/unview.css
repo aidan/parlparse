@@ -322,7 +322,8 @@ div.otheraglink a
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-style: italic;
-	}
+	text-align: center;
+    }
 
 a.unparsed
 { font-style: italic; 
@@ -559,13 +560,15 @@ span.againstul
 	}
 div.unclickedlink 
 	{
-	position: absolute;
-	right: 0;
+	float: right;
+	clear: right;
+    right: 0;
 	display: inline;
-	background-color: #cccccc;
+    background-color: #cccccc;
 	border: solid 1px #000000;
 	text-decoration: underline;
-	}
+    font-size:12;
+    }
 
 div.clickedlink 
 {
@@ -658,7 +661,7 @@ table.wpreftab th
 }
 .wpreftabdate
 {
-    width:8em;
+    width:9em;
 }
 div#upperdoclinks
 {

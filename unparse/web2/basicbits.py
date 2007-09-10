@@ -166,13 +166,20 @@ wpredirects = { "World_Health_Organisation":"World_Health_Organization",
                 "United_States_bombing_of_Libya":"Bombing_of_Libya_%28April_1986%29",
                 "Millennium_Declaration":"United_Nations_Millennium_Declaration",
                 "Oil_for_Food":"Oil-for-Food_Programme",
-                "Oil-for-food_program":"Oil-for-Food_program",
-                "Oil_for_food_scandal":"Oil-for-Food_program",
-                "Oil-for-food_programme":"Oil-for-Food_program",
-                "Oil_for_food_program":"Oil-for-Food_program",
-                "Oil_for_food_programme":"Oil-for-Food_program",
+                "Oil-for-food_program":"Oil-for-Food_Program",
+                "Oil_for_food_scandal":"Oil-for-Food_Program",
+                "Oil-for-food_programme":"Oil-for-Food_Program",
+                "Oil_for_food_program":"Oil-for-Food_Program",
+                "Oil_for_food_programme":"Oil-for-Food_Program",
+                "Oil_for_food":"Oil-for-Food_Programme",
                 "UNSCOM":"United_Nations_Special_Commission",
                 "UN_Security_Council_Resolution_1267":"United_Nations_Security_Council_Resolution_1267",
+                "Darfur_crisis":"Darfur_conflict",
+                "Multinational_Force_in_Iraq":"Multinational_force_in_Iraq",
+                "Culture_of_peace":"Decade_for_the_Promotion_of_a_Culture_of_Peace_and_Non-Violence_for_the_Children_of_the_World",
+                "United_Nations_Assistance_Mission_in_Iraq":"Multinational_force_in_Iraq",
+                "UN_resolution_1441":"United_Nations_Security_Council_Resolution_1441",
+                "UN_Security_Council_Resolution_1244":"United_Nations_Security_Council_Resolution_1244",
 
 }
 
@@ -353,7 +360,7 @@ def DecodeHref(pathparts, form):
             return { "pagefunc":"documentlist", "body":"securitycouncil" }
         return { "pagefunc":"fronterror" }
 
-    if pathparts[0] == "meeting" and len(pathparts) == 2:
+    if pathparts[0] == "meeting" and len(pathparts) >= 2:
         return { "pagefunc":"meeting", "docid":pathparts[1] }
 
     # avoid the superfluous "document" leader
@@ -595,6 +602,12 @@ def GenWDocLink(pdfinfo, npage, highlightrects):
             wklk.append(" |session=%d" % pdfinfo.nsess)
         if pdfinfo.nmeeting:
             wklk.append(" |meeting=%d" % pdfinfo.nmeeting)
+    if pdfinfo.dtype == "Resolution":
+        wklk.append(" |resolution_number=%s" % pdfinfo.resolution_number)
+    if pdfinfo.dtype == "Document" or pdfinfo.dtype == "Presidential Statement":
+        wklk.append(" |document_number=%s" % pdfinfo.document_number)
+
+
     if highlightrects:
         wklk.append(' |highlight=%s' % "/".join(lhighlightrects))
     if npage:
