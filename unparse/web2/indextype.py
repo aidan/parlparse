@@ -171,10 +171,23 @@ def WriteWikiPage():
     print '<h3>Wikipedia table</h3>'
     print '<p>List of incoming links from Wikipedia from wikipedia articles.</p>'
     print '<table class="wpreftab">'
-    print '<tr> <th>Article</th> <th>Docid</th> <th>Page</th> <th>Date</th> </tr>'
+    print '<tr> <th>Article</th> <th>Document</th> <th>Page</th> <th>Date</th> </tr>'
 
+    prevarticle, prevdocid, prevpage = "", "", ""
     for bigwikirow in bigwikitable:
-        print '<tr> <td><a href="%s">%s</a></td> <td>%s</td> <td>%s</td> <td>%s</td> </tr>' % (shortwikirow[4], shortwikirow[0], shortwikirow[1], shortwikirow[2], shortwikirow[3])
+        warticle = bigwikirow[0]
+        wdocid = bigwikirow[1]
+        wpage = bigwikirow[2]
+        wtime = bigwikirow[3]
+        if (warticle, wdocid, wpage) != (prevarticle, prevdocid, prevpage):
+            print '<tr>',
+            if warticle != prevarticle:
+                print '<td class="wikiarticle"><a href="%s">%s</a></td>' % (bigwikirow[4], warticle),
+            else:
+                print '<td></td>'
+            print '<td><a href="/%s">%s</a>' % (bigwikirow[1], bigwikirow[1]),
+            print '<td>%s</td> <td>%s</td> </tr>' % (wpage, wtime)
+            prevarticle, prevdocid, prevpage = warticle, wdocid, wpage
 
     print '</table>'
     print '</div>'
@@ -250,6 +263,7 @@ def WriteFrontPage():
         print '<div id="wplinks">'
         print '<h3>Wikipedia referring articles</h3>'
         print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
+        print '<p>See <a href="/incoming">list of all incoming wikipedia references.</p>'
         print '<table class="wpreftab">'
         print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
 

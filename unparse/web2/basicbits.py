@@ -198,8 +198,8 @@ def DecodeHref(pathparts, form):
     if pathparts[0] == "search":
         if len(pathparts) == 2:
             return { "pagefunc": "search", "searchvalue" : pathparts[1] }
-    if pathparts[0] == "about":
-        return { "pagefunc":"about" }
+    if pathparts[0] in ["about", "incoming"]:
+        return { "pagefunc":pathparts[0] }
     if pathparts[0] == "documents":
         if len(pathparts) == 1:
             return { "pagefunc":"documentlist", "body":"all" }

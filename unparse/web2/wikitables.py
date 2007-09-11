@@ -28,8 +28,8 @@ def ReadWikipediaReferrers():
         if not mref:
             continue
         wsdate = wpref[0]
-        if wsdate < fromdate:  # use to measure for the last 30 days
-            break
+        #if wsdate < fromdate:  # use to measure for the last 30 days
+        #    break
         wrefpage = Wikiredirect(mref.group(2))
         if wrefpage in mres:
             mres[wrefpage][2] += 1
@@ -52,20 +52,21 @@ def ConvertName(wname):
     return wname
 
 def ShortWikipediaTable(nentries):
-    lres = ReadWikipediaReferrers(fromdate)
+    lres = ReadWikipediaReferrers()
     res = [ ]
     for wpref in lres[:nentries]:
         res.append((LongDate(wpref[0][:10]), wpref[1], wpref[2], ConvertName(wpref[3])))
+    return res
 
 def BigWikipediaTable():
     wprefs = ReadLogReferrers("logpages_wikipedia.txt")
     res = [ ] # wikiname, docid, page, date, wikifullurl
     for wpref in wprefs:
-        mref = re.match("(http://.*?wikipedia.org/wiki/)([^#/]*))(#.*)?$", wpref[1])
+        mref = re.match("(http://.*?wikipedia.org/wiki/)([^#/]*)(#.*)?$", wpref[1])
         if not mref:
             continue
         wrefpage = Wikiredirect(mref.group(2))
-        wikifullurl = "%s%s%s" % (mref.group(1), wrefpage, mref.group(2))
-        res.append((wrefpage, wpref[2], wpref[3], wpref[0], wikifullurl))
+        wikifullurl = "%s%s%s" % (mref.group(1), wrefpage, mref.group(3) or "")
+        res.append((ConvertName(wrefpage), wpref[2], wpref[3], wpref[0], wikifullurl))
     res.sort()
     return res
