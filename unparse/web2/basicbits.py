@@ -154,64 +154,6 @@ def ReadLogReferrers(logpagen):
     return res
 
 
-wpredirects = { "World_Health_Organisation":"World_Health_Organization",
-                "World_health_organization":"World_Health_Organization",
-                "WHO":"World_Health_Organization",
-                "Negotiations_for_ceasefire_in_the_2006_Israel-Lebanon_conflict":"Ceasefire_attempts_during_the_2006_Lebanon_War",
-                "Peace_Day":"International_Day_of_Peace",
-                "Conference_on_the_Illicit_Trade_in_Small_Arms":"United_Nations_Conference_on_the_Illicit_Trade_in_Small_Arms",
-                "UN_Conference_on_the_Illicit_Trade_in_Small_Arms":"United_Nations_Conference_on_the_Illicit_Trade_in_Small_Arms",
-                "Eldorado_canyon":"Bombing_of_Libya_%28April_1986%29",
-                "Operation_El_Dorado_Canyon":"Bombing_of_Libya_%28April_1986%29",
-                "United_States_bombing_of_Libya":"Bombing_of_Libya_%28April_1986%29",
-                "Millennium_Declaration":"United_Nations_Millennium_Declaration",
-                "Oil_for_Food":"Oil-for-Food_Programme",
-                "Oil-for-food_program":"Oil-for-Food_Program",
-                "Oil_for_food_scandal":"Oil-for-Food_Program",
-                "Oil-for-food_programme":"Oil-for-Food_Program",
-                "Oil_for_food_program":"Oil-for-Food_Program",
-                "Oil_for_food_programme":"Oil-for-Food_Program",
-                "Oil_for_food":"Oil-for-Food_Programme",
-                "UNSCOM":"United_Nations_Special_Commission",
-                "UN_Security_Council_Resolution_1267":"United_Nations_Security_Council_Resolution_1267",
-                "Darfur_crisis":"Darfur_conflict",
-                "Multinational_Force_in_Iraq":"Multinational_force_in_Iraq",
-                "Culture_of_peace":"Decade_for_the_Promotion_of_a_Culture_of_Peace_and_Non-Violence_for_the_Children_of_the_World",
-                "United_Nations_Assistance_Mission_in_Iraq":"Multinational_force_in_Iraq",
-                "UN_resolution_1441":"United_Nations_Security_Council_Resolution_1441",
-                "UN_Security_Council_Resolution_1244":"United_Nations_Security_Council_Resolution_1244",
-                "UN_Security_Council_Resolution_1441":"United_Nations_Security_Council_Resolution_1441",
-                "UN_Security_Council_Resolution_1559":"United_Nations_Security_Council_Resolution_1559",
-                "UNSCR_1546":"United_Nations_Security_Council_Resolution_1546",
-
-}
-
-def ReadWikipediaReferrers(fromdate):
-    wprefs = ReadLogReferrers("logpages_wikipedia.txt")
-    wprefs.sort()
-    wprefs.reverse()
-    mres = { }  # wikipediapage : [ recentdate, wikipediafullurl, number ]
-    for wpref in wprefs:
-        mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)?$", wpref[1])
-        if not mref:
-            continue
-        wsdate = wpref[0]
-        if wsdate < fromdate:  # use to measure for the last 30 days
-            break
-        wrefpage = mref.group(2)
-        wrefpage = wpredirects.get(wrefpage, wrefpage)
-        if wrefpage in mres:
-            mres[wrefpage][2] += 1
-        else:
-            mres[wrefpage] = [wsdate, mref.group(1), 1]
-    
-    lres = [ ]
-    for mr, mrl in mres.iteritems():
-        lres.append((mrl[0], mrl[2], mrl[1], mr))
-    lres.sort()  # date, number, fullurl, name
-    lres.reverse()
-    return lres
-
 
 def DownPersonName(person):
     return DownAscii(person.split()[-1].lower())
@@ -244,7 +186,7 @@ def DecodeHref(pathparts, form):
 
     if pathparts[0] == "imghrefrep":
         return { "pagefunc":"imghrefrep", "imghrefrep":"/".join(pathparts[1:]) }
-    
+
     if pathparts[0] == "pdfpreviewjpg" and len(pathparts) == 2:
         return { "pagefunc":"pdfpreviewjpg", "docid":pathparts[1] }
     # case when someone has given a document reference with the slashes

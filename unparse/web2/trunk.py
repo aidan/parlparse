@@ -10,7 +10,7 @@ cgitb.enable()
 from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGenHTMLfoot
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage, WritePdfPreviewJpg
-from indextype import WriteFrontPage, WriteFrontPageError, WriteAboutPage
+from indextype import WriteFrontPage, WriteFrontPageError, WriteAboutPage, WriteWikiPage
 from indextype import WriteIndexStuff, WriteIndexStuffGA, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
 from unpvmeeting import WriteHTML, WriteHTMLagnum
 from highlightimg import WritePNGpage
@@ -54,6 +54,8 @@ if __name__ == "__main__":
         WriteFrontPage()
     elif hmap["pagefunc"] == "about":
         WriteAboutPage()
+    elif hmap["pagefunc"] == "incoming":
+        WriteWikiPage()
     elif hmap["pagefunc"] == "search":
         WriteIndexSearch(hmap["searchvalue"])
     elif hmap["pagefunc"] == "nationlist":

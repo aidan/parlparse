@@ -10,7 +10,7 @@ from basicbits import EncodeHref, MarkupLinks, SplitHighlight
 from xapsearch import XapLookup
 
 from indexrecords import LoadSecRecords, LoadAgendaNames
-from basicbits import ReadWikipediaReferrers, LongDate
+from wikitables import ShortWikipediaTable, BigWikipediaTable
 
 def FilterAgendaListRecent(aglist, num):
     sl = [ (agrecord.sdate, agrecord)  for agrecord in aglist ]
@@ -99,7 +99,7 @@ def WriteIndexStuff(nsess):
 
 def WriteIndexStuffGA():
     WriteGenHTMLhead("All General Assembly Topics")
-   
+
     print '<p><a href="%s">Security Council Topics</a></p>' % EncodeHref({"pagefunc":"sctopics"})
     print '<h3>Topics that span more than one year</h3>'
     print '<ul class="aglistgroup">'
@@ -163,7 +163,22 @@ def WriteAboutPage():
     fin = open("aboutpage.html")
     print fin.read()
     fin.close()
-    return True
+
+def WriteWikiPage():
+    WriteGenHTMLhead("Wikipedia references")
+    bigwikitable = BigWikipediaTable()
+    print '<div id="wplinks">'
+    print '<h3>Wikipedia table</h3>'
+    print '<p>List of incoming links from Wikipedia from wikipedia articles.</p>'
+    print '<table class="wpreftab">'
+    print '<tr> <th>Article</th> <th>Docid</th> <th>Page</th> <th>Date</th> </tr>'
+
+    for bigwikirow in bigwikitable:
+        print '<tr> <td><a href="%s">%s</a></td> <td>%s</td> <td>%s</td> <td>%s</td> </tr>' % (shortwikirow[4], shortwikirow[0], shortwikirow[1], shortwikirow[2], shortwikirow[3])
+
+    print '</table>'
+    print '</div>'
+
 
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
@@ -200,53 +215,49 @@ def WriteFrontPage():
 
     print """<div id="aboutus">
     <h2>Information</h2>
-    <p>This is an independent easy to use page for accessing 
+    <p>This is an independent easy to use page for accessing
     <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
     and <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
     documents produced by the <a href="http://www.un.org/aboutun/charter/">United Nations</a>.</p>
-    
-    <p>(Follow the links if do not know what they are, or go to the 
+
+    <p>(Follow the links if do not know what they are, or go to the
     <a href="http://www.un.org/english/">real UN website</a> if you want more.)</p>
 
-    <p>Get started with all speeches made by 
+    <p>Get started with all speeches made by
     <a href="http://www.undemocracy.com/United_States/bush">President Bush</a> of
     <a href="http://www.undemocracy.com/United_States">The United States</a>, or
-    <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of 
-    <a href="http://www.undemocracy.com/Iran">Iran</a>, as well as 
+    <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of
+    <a href="http://www.undemocracy.com/Iran">Iran</a>, as well as
     <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
     that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
-    
-    <p>Answers to further questions can be found at 
+
+    <p>Answers to further questions can be found at
     <a href="http://www.publicwhip.org.uk/faq.php#organisation">Who?</a>
     <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">What?</a>
     <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">When?</a>
     <a href="http://www.freesteel.co.uk/wpblog/">Where?</a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
-    <a href="/">How?</a>, and finally 
+    <a href="/">How?</a>, and finally
     <a href="/">I want to help</a>.</p>
-    
+
     <p>Comments can be left in some of those places.</p>"""
 
     print '<p><a href="%s">[click here for further details]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
+    shortwikitable = ShortWikipediaTable(10)
+    if shortwikitable:
+        print '<div id="wplinks">'
+        print '<h3>Wikipedia referring articles</h3>'
+        print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
+        print '<table class="wpreftab">'
+        print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
 
-    fromdate = "1900-01-01" # in future will be set to the last 30 days (one month)
-    wprefs = ReadWikipediaReferrers(fromdate)
-    print '<div id="wplinks">'
-    print '<h3>Wikipedia referring articles</h3>'
-    print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
-    print '<table class="wpreftab">'
-    print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
-    for wpref in wprefs:
-        wname = re.sub("_", " ", wpref[3])
-        wname = re.sub("%28", "(", wname)
-        wname = re.sub("%29", ")", wname)
-        print '<tr> <td class="wpreftabdate">%s</td>' % LongDate(wpref[0][:10])
-        print '<td>%s</td> <td><a href="%s">%s</a></td> </tr>' % (wpref[1], wpref[2], wname)
-        
-    print '</table>'
-    print '</div>'
+        for shortwikirow in shortwikitable:
+            print '<tr> <td class="wpreftabdate">%s</td> <td>%s</td> <td><a href="%s">%s</a></td> </tr>' % shortwikirow
+
+        print '</table>'
+        print '</div>'
 
 
 def WriteIndexStuffAgnum(agnum):
