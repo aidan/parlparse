@@ -199,28 +199,33 @@ def WriteFrontPage():
     print '</div>'
 
     print """<div id="aboutus">
-    <h2>About Us</h2>
-    <p>This is an independent easier-to-navigate interface for the official
+    <h2>Information</h2>
+    <p>This is an independent easy to use page for accessing 
     <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
     and <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
-    related documents held by the <a href="http://www.un.org/aboutun/charter/">United Nations</a>.
-    (Please refer to the wikipedia articles linked above if you do not know what these two organs do.)</p>
+    documents produced by the <a href="http://www.un.org/aboutun/charter/">United Nations</a>.</p>
     
-    <p>The real website for the United Nations is <a href="http://www.un.org/english/">here</a>.</p>
+    <p>(Follow the links if do not know what they are, or go to the 
+    <a href="http://www.un.org/english/">real UN website</a> if you want more.)</p>
 
-    <p>All public meetings of the General Assembly and Security Council since 1994 have been converted 
-    into usable HTML for reference, searchability, and vote checking.  
-    You can create links to this site from blogs and from Wikipedia articles through this
-    site, since it is impossible to link to most UN documents directly.</p>
-
-    <p>You can get started by seeing all speeches made by 
+    <p>Get started with all speeches made by 
     <a href="http://www.undemocracy.com/United_States/bush">President Bush</a> of
     <a href="http://www.undemocracy.com/United_States">The United States</a>, or
     <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of 
     <a href="http://www.undemocracy.com/Iran">Iran</a>, as well as 
     <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
     that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
-    """
+    
+    <p>Answers to further questions can be found at 
+    <a href="http://www.publicwhip.org.uk/faq.php#organisation">Who?</a>
+    <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">What?</a>
+    <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">When?</a>
+    <a href="http://www.freesteel.co.uk/wpblog/">Where?</a>
+    <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
+    <a href="/">How?</a>, and finally 
+    <a href="/">I want to help</a>.</p>
+    
+    <p>Comments can be left in some of those places.</p>"""
 
     print '<p><a href="%s">[click here for further details]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'

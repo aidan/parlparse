@@ -68,7 +68,7 @@ if __name__ == "__main__":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["gadice"], hmap["highlightdoclink"])
-        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress, useragent)
+        LogIncomingDoc(hmap["docid"], (hpap["gadice"] or "0"), referrer, ipaddress, useragent)
     elif hmap["pagefunc"] == "agendanumexpanded":
         aglist = LoadAgendaNames(hmap["agendanum"])
         WriteHTMLagnum(hmap["agendanum"], aglist)
@@ -91,12 +91,12 @@ if __name__ == "__main__":
         WriteDocumentListing(hmap["body"])
     elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
         WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
-        LogIncomingDoc(hmap["docid"], str(hmap["page"]), referrer, ipaddress, useragent)
+        LogIncomingDoc(hmap["docid"], "page_" + str(hmap["page"]), referrer, ipaddress, useragent)
     elif hmap["pagefunc"] == "nation":
         WriteIndexStuffNation(hmap["nation"], "")
     elif hmap["pagefunc"] == "nationperson":
         WriteIndexStuffNation(hmap["nation"], hmap["person"])
-    elif hmap["pagefunc"] == "pagepng":  # this is the bitmap of the page
+    elif hmap["pagefunc"] == "pagepng":  # this is the actual image bitmap of the page
         #print 'Content-type: text/html\n\n<h1>%s</h1>' % hmap["pngfile"]
         #sys.exit(0)
         WritePNGpage(hmap["pdffile"], hmap["page"], hmap["width"], hmap["pngfile"], hmap["highlightrects"])

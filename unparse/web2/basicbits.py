@@ -150,7 +150,7 @@ def ReadLogReferrers(logpagen):
     for logline in loglines:
         lch = logline.split()
         if len(lch) == 8:
-            res.append((lch[6], lch[4], lch[2])) # time, referrer, docid
+            res.append((lch[6], lch[4], lch[2], lch[3])) # time, referrer, docid, page
     return res
 
 
@@ -180,6 +180,9 @@ wpredirects = { "World_Health_Organisation":"World_Health_Organization",
                 "United_Nations_Assistance_Mission_in_Iraq":"Multinational_force_in_Iraq",
                 "UN_resolution_1441":"United_Nations_Security_Council_Resolution_1441",
                 "UN_Security_Council_Resolution_1244":"United_Nations_Security_Council_Resolution_1244",
+                "UN_Security_Council_Resolution_1441":"United_Nations_Security_Council_Resolution_1441",
+                "UN_Security_Council_Resolution_1559":"United_Nations_Security_Council_Resolution_1559",
+                "UNSCR_1546":"United_Nations_Security_Council_Resolution_1546",
 
 }
 
@@ -246,7 +249,7 @@ def DecodeHref(pathparts, form):
         return { "pagefunc":"pdfpreviewjpg", "docid":pathparts[1] }
     # case when someone has given a document reference with the slashes
     if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
-        while len(pathparts) > 1 and re.match("[ASREPRTVCL\d\.()]+$", pathparts[1]):
+        while len(pathparts) > 1 and re.match("[ASREPRTVCL\d\.()]+|(?:Rev|Add|Corr|Resu)\.\d+$", pathparts[1]):
             pathparts[0] = "%s-%s" % (pathparts[0], pathparts[1])
             del pathparts[1]
 
