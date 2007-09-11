@@ -95,10 +95,10 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         maresr = re.match("A-RES-(\d+)\((S-I|[IVXL]+)\)$", undocname)  # resolutions used to have sessions in roman numerals
         meres = re.match("E-RES-(\d\d\d\d)-(\d+)$", undocname)  # don't know what the code is
         madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-\(\)]*)$", undocname)
-        maodoc = re.match("A-(\d+)-([^\dLC][\w\.\-]*)$", undocname)
         msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
         mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
         macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d)$", undocname)
+        maodoc = re.match("A-(\d+)(-?[\w\.\-]*)$", undocname)
         mspv = re.match("S-PV.(\d+)", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
         #stdoc = re.match("ST-SGB-(\d+)$", undocname)  # experimental secretariat document
@@ -129,10 +129,6 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             tail = re.sub("-", "/", madoc.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s%s&Lang=E" % (madoc.group(1), madoc.group(2), tail)
             #print purl
-        elif maodoc:
-            tail = re.sub("-", "/", maodoc.group(2))
-            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/%s&Lang=E" % (maodoc.group(1), tail)
-            print "oldstyle doc", purl
 
         elif macdoc:
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/AC.%s/%s/%s&Lang=E" % (macdoc.group(1), macdoc.group(2), macdoc.group(3))
@@ -152,6 +148,11 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
                 return False
             tail = re.sub("-", "/", mapv.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
+        elif maodoc:
+            tail = re.sub("-", "/", maodoc.group(2))
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s%s&Lang=E" % (maodoc.group(1), tail)
+            print "oldstyle doc", purl
+
         elif meres or munknown:
             if IsNotQuiet():
                 print "Unknown undocname", undocname
