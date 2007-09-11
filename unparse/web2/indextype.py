@@ -244,18 +244,17 @@ def WriteFrontPage():
     <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
     that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
 
-    <p>Answers to further questions can be found at
+    <p>Answers to further questions can be found under
     <a href="http://www.publicwhip.org.uk/faq.php#organisation">Who?</a>
     <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">What?</a>
     <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">When?</a>
     <a href="http://www.freesteel.co.uk/wpblog/">Where?</a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
-    <a href="/">How?</a>, and finally
-    <a href="/">I want to help</a>.</p>
+    <a href="http://www.freesteel.co.uk/wpblog/2007/09/how-does-undemocracycom-work/">How?</a>, and finally
+    <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">I want to help</a>.</p>
 
-    <p>Comments can be left in some of those places.</p>"""
+    <p>Comments can be left on pages that are blogs.</p>"""
 
-    print '<p><a href="%s">[click here for further details]</a></p>' % EncodeHref({"pagefunc":"about"})
     print '</div>'
 
     shortwikitable = ShortWikipediaTable(10)
