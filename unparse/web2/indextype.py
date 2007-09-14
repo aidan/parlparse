@@ -264,10 +264,10 @@ def WriteFrontPage():
         print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
         print '<p>See <a href="/incoming">list of all incoming wikipedia references.</p>'
         print '<table class="wpreftab">'
-        print '<tr> <th>Recent date</th> <th>Count</th> <th>Article</th> </tr>'
+        print '<tr> <th>Recent date</th> <th>time</th> <th>Count</th> <th>Article</th> </tr>'
 
         for shortwikirow in shortwikitable:
-            print '<tr> <td class="wpreftabdate">%s</td> <td>%s</td> <td><a href="%s">%s</a></td> </tr>' % shortwikirow
+            print '<tr> <td class="wpreftabdate">%s</td> <td>%s</td> <td>%s</td> <td><a href="%s">%s</a></td> </tr>' % shortwikirow
 
         print '</table>'
         print '</div>'

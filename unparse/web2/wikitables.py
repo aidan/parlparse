@@ -55,7 +55,7 @@ def ShortWikipediaTable(nentries):
     lres = ReadWikipediaReferrers()
     res = [ ]
     for wpref in lres[:nentries]:
-        res.append((LongDate(wpref[0][:10]), wpref[1], wpref[2], ConvertName(wpref[3])))
+        res.append((LongDate(wpref[0][:10]), wpref[0][11:], wpref[1], wpref[2], ConvertName(wpref[3])))
     return res
 
 def BigWikipediaTable():
