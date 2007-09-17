@@ -204,7 +204,7 @@ class VoteBlock:
         self.i = i
         self.sdate = lsdate
         self.undocname = lundocname
-        self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+        self.bSecurityCouncil = re.match("S-PV.\d+", self.undocname)
         self.bGeneralAssembly = re.match("A-\d+-PV", self.undocname)
         assert self.bGeneralAssembly or self.bSecurityCouncil
         if not self.bSecurityCouncil:

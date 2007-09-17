@@ -454,7 +454,7 @@ class TextPage:
         self.pageno = lpageno
         self.undocname = lundocname
         self.textcountnumber = textcountnumber
-        self.bSecurityCouncil = re.match("S-PV-(\d+)", self.undocname)
+        self.bSecurityCouncil = re.match("S-PV.(\d+)", self.undocname)
         self.nSecurityCouncilSession = self.bSecurityCouncil and int(self.bSecurityCouncil.group(1)) or 0
         self.bGeneralAssembly = re.match("A-\d+-PV", self.undocname)
         assert self.bSecurityCouncil or self.bGeneralAssembly
@@ -583,7 +583,7 @@ class TextPage:
             bl3 = len(txlines) > 4 and re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext)
 
             bl4 = re.match("<b>S/PV.\d+\s*(?:\(Resumption [\d|I]\)|\(Part [I]+\))?\s*</b>", txlines[0].ltext)
-            bl4r = (self.undocname >= "S-PV-4143")
+            bl4r = (self.undocname[5:] >= "4143")
 
             if bl4 and bl4r:
                 ih = 1
@@ -683,7 +683,7 @@ class GlueUnfile:
         self.agenda = None
         self.tlcall = None
         self.seccouncilmembers = None
-        self.bSecurityCouncil = re.match("S-PV-\d+", undocname)
+        self.bSecurityCouncil = re.match("S-PV.\d+", undocname)
         self.bGeneralAssembly = re.match("A-\d+-PV", undocname)
 
         xpages = StripPageTags(xfil, undocname)
@@ -708,20 +708,24 @@ class GlueUnfile:
                 txpages[0].agenda = "%s %s" % (txpages[0].agenda, txpage.agenda) # ram it all into one paragraph (who cares)
                 continue
 
+            bmissingcolumns = undocname in ["A-61-PV.106"]
             if txpage.txlcol1:
                 AppendCluster(self.tlcall, txpage.txlcol1[0], "newpage")
                 for tlc in txpage.txlcol1[1:]:
                     AppendCluster(self.tlcall, tlc, "gapcluster")
-            else:
-                assert i == len(xpages) - 1  # only last page can have missing columns (sometimes it's the first)
+            elif not bmissingcolumns:
+                #assert i == len(xpages) - 1  # only last page can have missing columns (sometimes it's the first)
+                print "page", i, "of", len(xpages)
+                #print txpages[-1].textcountnumber
+                raise unexception("missing column not on last page", paranumC(undocname, None, 0, -1, txpages[-1].textcountnumber))
 
             # have had a case where the first column was the blank one
             if txpage.txlcol2:
                 AppendCluster(self.tlcall, txpage.txlcol2[0], "newcolumn")
                 for tlc in txpage.txlcol2[1:]:
                     AppendCluster(self.tlcall, tlc, "gapcluster")
-            else:
-                assert i == len(xpages) - 1
+            elif not bmissingcolumns:
+                assert i == len(xpages) - 1, "%d != %d" % (i, len(xpages) - 1)
 
         # assign ids to the clusters
         self.sdate = txpages[0].date

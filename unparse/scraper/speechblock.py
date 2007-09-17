@@ -416,7 +416,7 @@ class SpeechBlock:
         self.i = i
         self.sdate = lsdate
         self.undocname = lundocname
-        self.bSecurityCouncil = re.match("S-PV-\d+", self.undocname)
+        self.bSecurityCouncil = re.match("S-PV.\d+", self.undocname)
         if not self.bSecurityCouncil:
             self.genasssess = re.match("A-(\d+)", self.undocname).group(1)
         self.agendanum = ""
