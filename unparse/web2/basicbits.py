@@ -174,6 +174,18 @@ def CompleteResYear(docid):
                 return "S-RES-%s%s%s" % (resno, mlresno.group(2), mresno.group(2) or "")
     return docid
 
+def SortSPVdashdot(docid):
+    mpvdd = re.match("S-PV(.)(\d+.*?)(\.pdf)?$", docid)
+    if mpvdd:
+        fname = os.path.join(pdfdir, "S-PV%s%s.pdf" % (mpvdd.group(1), mpvdd.group(2)))
+        if not os.path.isfile(fname):
+            ddalt = mpvdd.group(1) == "-" and "." or "-"
+            fname2 = os.path.join(pdfdir, "S-PV%s%s.pdf" % (ddalt, mpvdd.group(2)))
+            if os.path.isfile(fname2):
+                return "S-PV%s%s%s" % (ddalt, mpvdd.group(2), mpvdd.group(3) or "")
+    return docid 
+
+
 # dereferencing for hackability
 # this is a very brutal system for breaking it down
 def DecodeHref(pathparts, form):
@@ -314,7 +326,8 @@ def DecodeHref(pathparts, form):
         docid = mdocid.group(1)
         if re.match("S-RES-\d+$", docid):
             docid = CompleteResYear(docid)
-        
+        docid = SortSPVdashdot(docid)
+
         pdfinfo = GetPdfInfo(docid)
         if len(pathparts) == 1:
             pdffile = os.path.join(pdfdir, docid + ".pdf")
@@ -368,7 +381,7 @@ def DecodeHref(pathparts, form):
 def EncodeHref(hmap):
     if hmap["pagefunc"] == "meeting":
         mga = re.match("A-(\d\d)-PV\.(\d+)$", hmap["docid"])
-        msc = re.match("S-PV-(\d+(?:-(?:Resu|Part)\.\d)?)$", hmap["docid"])
+        msc = re.match("S-PV.(\d+(?:-(?:Resu|Part)\.\d)?)$", hmap["docid"])
         if mga:
             hmap["pagefunc"] = "gameeting"
             hmap["gasession"] = int(mga.group(1))

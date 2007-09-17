@@ -15,7 +15,7 @@ class SecRecord:
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val
-                mdec = re.match("S-PV-(\d+(?:-(?:Resu|Part)\.\d+)?)$", self.docid)
+                mdec = re.match("S-PV.(\d+(?:-(?:Resu|Part)\.\d+)?)$", self.docid)
                 self.scmeeting = mdec.group(1)
             elif sp == "date":
                 self.sdate = val

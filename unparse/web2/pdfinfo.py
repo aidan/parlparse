@@ -24,7 +24,7 @@ class PdfInfo:
         mgadoc = re.match("A-(\d\d)-([L\d].*)", self.pdfc)
         self.mgapv = re.match("A-(\d\d)-PV\.(\d+)", self.pdfc)
         mscdoc = re.match("S-(\d\d\d\d)-(\d.*)", self.pdfc)
-        self.mscpv = re.match("S-PV-(\d+\S*)", self.pdfc)
+        self.mscpv = re.match("S-PV.(\d+\S*)", self.pdfc)
         mgares = re.match("A-RES-(\d\d)-(\d+)", self.pdfc)
         mscprst = re.match("S-PRST-(\d\d\d\d)-(.+)", self.pdfc)
         mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", self.pdfc)
