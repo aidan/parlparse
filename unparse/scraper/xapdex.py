@@ -67,7 +67,7 @@ def thinned_docid(document_id):
     mgass = re.match("A-(\d+)-PV\.(\d+)$", document_id)
     if mgass:
         return "APV%03d%04d" % (int(mgass.group(1)), int(mgass.group(2))), mgass.group(1)
-    msecc = re.match("S-PV-(\d+)(?:-Part\.(\d+))?(?:-Resu\.(\d+))?$", document_id)
+    msecc = re.match("S-PV.(\d+)(?:-Part\.(\d+))?(?:-Resu\.(\d+))?$", document_id)
     if msecc:
         subsec = (msecc.group(2) and int(msecc.group(2)) or 0) * 10 + (msecc.group(3) and int(msecc.group(3)) or 0)
         return "SPV%05d%02d" % (int(msecc.group(1)), subsec), None

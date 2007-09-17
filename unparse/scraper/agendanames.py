@@ -341,7 +341,7 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
     agendagroups = { }
     for htdoc in rels:
         maga = re.search("(A-\d\d-PV\.\d+)\.(?:unindexed\.)?html", htdoc)
-        masc = re.search("(S-PV-\d+(?:-(?:Resu|Part)\.\d)?)\.(?:unindexed\.)?html", htdoc)
+        masc = re.search("(S-PV.\d+(?:-(?:Resu|Part)\.\d)?)\.(?:unindexed\.)?html", htdoc)
 
         if not maga:
             if not masc:

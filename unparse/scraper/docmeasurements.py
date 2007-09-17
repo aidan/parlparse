@@ -109,13 +109,13 @@ class DocCounts:
                 self.scrlist[mscres.group(1)].append(docid)
             else:
                 self.scrlist[mscres.group(1)] = [ docid ]
-        elif not re.search("A-\d\d-PV|S-PV-\d\d\d\d", docid):
+        elif not re.search("A-\d\d-PV|S-PV.\d\d\d\d", docid):
             if IsNotQuiet():
                 print "What is this?", docid
 
     def IncrHtmlCount(self, htdoc, ftext):
         maga = re.search("(A-(\d\d)-PV.*?)(\.html)", htdoc)
-        masc = re.search("(S-PV-(\d\d\d\d).*?)(\.html)", htdoc)
+        masc = re.search("(S-PV.(\d\d\d\d).*?)(\.html)", htdoc)
         if maga:
             docid = htdoc[maga.start(0):]
             if maga.group(2) in self.gavlist:
