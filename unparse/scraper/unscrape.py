@@ -101,6 +101,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         maodoc = re.match("A-(\d+)(-?[\w\.\-]*)$", undocname)
         mspv = re.match("S-PV.(\d+)", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
+        scodoc = re.match("S-(\d+)$", undocname)
         #stdoc = re.match("ST-SGB-(\d+)$", undocname)  # experimental secretariat document
         dashdoc = re.match("ST-|A-C", undocname)
         munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
@@ -152,6 +153,9 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             tail = re.sub("-", "/", maodoc.group(2))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s%s&Lang=E" % (maodoc.group(1), tail)
             print "oldstyle doc", purl
+
+        elif scodoc:
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s&Lang=E" % (scodoc.group(1))
 
         elif meres or munknown:
             if IsNotQuiet():
