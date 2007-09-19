@@ -105,6 +105,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         #stdoc = re.match("ST-SGB-(\d+)$", undocname)  # experimental secretariat document
         dashdoc = re.match("ST-|A-C", undocname)
         munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
+        mahrc = re.match("A-HRC(?:-S-(\d+))?-(\d[\w\.\-]*)$", undocname)
 
         if mares:
             if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
@@ -156,6 +157,14 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
 
         elif scodoc:
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s&Lang=E" % (scodoc.group(1))
+
+        elif mahrc:
+            tail = re.sub("-", "/", mahrc.group(2))
+            if mahrc.group(1):
+                purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/HRC/S-%s/%s&Lang=E" % (mahrc.group(1), tail)
+            else:
+                purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/HRC/%s&Lang=E" % tail
+            print "human rights council", purl
 
         elif meres or munknown:
             if IsNotQuiet():
