@@ -70,7 +70,7 @@ if __name__ == "__main__":
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
     elif hmap["pagefunc"] == "gameeting":
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["gadice"], hmap["highlightdoclink"])
-        LogIncomingDoc(hmap["docid"], (hpap["gadice"] or "0"), referrer, ipaddress, useragent)
+        LogIncomingDoc(hmap["docid"], (hmap["gadice"] or "0"), referrer, ipaddress, useragent)
     elif hmap["pagefunc"] == "agendanumexpanded":
         aglist = LoadAgendaNames(hmap["agendanum"])
         WriteHTMLagnum(hmap["agendanum"], aglist)

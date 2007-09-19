@@ -290,16 +290,17 @@ def WriteIndexStuffAgnum(agnum):
     WriteGenHTMLhead(agtitle)
 
     if agnum == "condolence":
-        print '<p>According to the rules of the General Assembly, when there has been a major disaster only '
+        print '<p>According to the <a href="http://www.undemocracy.com/A-520-Rev.16/page_97">procedures of the General Assembly</a>, when there has been a major disaster only '
         print 'the president is permitted to offer condolences to the victims at the start of the meeting.'
         print 'This is probably to avoid the entire day being taken up with every ambassador in turn offering '
         print 'their own expression of sympathy.  This timeline of disasters is incomplete owing to the '
         print 'General Assembly not always being in session.'
-    
+        ags.reverse()
+
     if nsess:
         print '<p><a href="%s">Whole of session %d</a></p>' % (EncodeHref({"pagefunc":"gasession", "gasession":nsess}), nsess)
     
-    print '<h2><a href="%s">See this agenda all unrolled</a></h2>' % EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum})
+    #print '<h2><a href="%s">See this agenda all unrolled</a></h2>' % EncodeHref({"pagefunc":"agendanumexpanded", "agendanum":agnum})
 
     if ags:
         print '<h3>%s</h3>' % ags[0].aggrouptitle

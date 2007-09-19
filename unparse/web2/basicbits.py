@@ -113,7 +113,7 @@ def LogIncomingDoc(docid, page, referrer, ipaddress, useragent):
         fflog = "logpages_google.txt"
     elif re.search("picsearch", useragent):
         fflog = "logpages_picsearch.txt"
-    elif re.search("search.msnbot", useragent):
+    elif re.search("search.msnbot|search.msn.com/msnbot", useragent):
         fflog = "logpages_msn.txt"
     elif re.search("cuill.*?robot", useragent):
         fflog = "logpages_cuill.txt"
@@ -202,8 +202,8 @@ def DecodeHref(pathparts, form):
     if pathparts[0] == "pdfpreviewjpg" and len(pathparts) == 2:
         return { "pagefunc":"pdfpreviewjpg", "docid":pathparts[1] }
     # case when someone has given a document reference with the slashes
-    if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+)", pathparts[1]):
-        while len(pathparts) > 1 and re.match("[ASREPRTVCL\d\.()]+|(?:Rev|Add|Corr|Resu)\.\d+$", pathparts[1]):
+    if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+|HRC)", pathparts[1]):
+        while len(pathparts) > 1 and re.match("[ASREPRTVCLHNGO\d\.()]+$|(?:Rev|Add|Corr|Resu)\.\d+$|S-\d+$", pathparts[1]):
             pathparts[0] = "%s-%s" % (pathparts[0], pathparts[1])
             del pathparts[1]
 
