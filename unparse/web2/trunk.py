@@ -44,7 +44,10 @@ if __name__ == "__main__":
     remadeurl = EncodeHref(hmap)
 #    print "Content-type: text/html\n"; print hmap; print "ello"; print remadeurl; print pathpartstr; sys.exit()
     if remadeurl != "/" + pathpartstr and not re.match('^/rubbish/', remadeurl):
-        print "Status: 301 Moved Permanently"
+        if re.search("meeting_", pathpartstr) and not re.match("meeting_", remadeurl):
+            print "Status: 302 Moved Temporarily"
+        else:
+            print "Status: 301 Moved Permanently"
         print "Location: %s\n" % remadeurl
         sys.exit()
 
