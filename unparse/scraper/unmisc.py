@@ -76,7 +76,7 @@ reressplit = """(?x)(
                 CLCS/\d|
                 OAU/OL/\d+/\d+/\d+|
                 A/BUR/\d+/\d|
-                GOV/\d{4}(?:/Rev.\d)?|
+                GOV/\d{4}(?:/Rev.\d+|/\d+)?|
                 E/\d{4}/(?:L\.)?\d+|
                 (?:A/)?ES-\d+/\d+|
                 Economic\sand\sSocial\sCouncil\sdecision\s\d+/\d+|
@@ -198,7 +198,7 @@ def MarkupLinks(paratext, undocname, paranum):
                                  INFCIRC/\d+|
                                  OAU/OL/\d+/\d+/\d+|
                                  A/BUR/\d+/\d|
-                                 GOV/\d+(?:/Rev.\d)?|
+                                 GOV/\d+(?:/Rev.\d+|/\d+)?|
                                  E/\d+/(?:L\.)?\d+""", st)
 
         if mres:
