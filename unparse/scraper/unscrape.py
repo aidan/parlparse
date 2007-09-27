@@ -461,30 +461,33 @@ def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
     for sd in os.listdir(pdfdir):
         if stem and not re.match(stem, sd):
             continue
-        pdf = os.path.join(pdfdir, sd)
-        if not os.path.isfile(pdf):
+        sdn, sde = os.path.splitext(sd)
+        if sde != ".pdf":
             continue
-        pdfdest = os.path.join(pdfxmldir, sd)
-        xmldest = os.path.splitext(pdfdest)[0] + ".xml"
+        pdf = os.path.join(pdfdir, sd)
+        xmldest = os.path.join(pdfxmldir, sdn + ".xml")
         if os.path.isfile(xmldest):
             if not bForce:
                 if IsNotQuiet():
                     print "skipping", sd
                 continue
-            os.unlink(xmldest)
+            os.remove(xmldest)
 
         #shutil.copyfile(pdf, pdfdest)
-        cmd = 'pdftohtml -xml "%s" temph' % pdf
+        tmpxml = "temph.xml"
+        cmd = 'pdftohtml -xml "%s" "%s"' % (pdf, os.path.splitext(tmpxml)[0])
         if IsNotQuiet():
             print cmd
         else:
             cmd = cmd + " >/dev/null 2>&1" # can't turn off output, so throw away even stderr yeuch
         os.system(cmd)
-        assert os.path.isfile("temph.xml")
-        os.rename("temph.xml", xmldest)
-        if sys.platform == "win32" and os.path.isfile(pdfdest): # can't rename onto existing file in Windows
-            os.remove(pdfdest)
-        assert os.path.isfile(xmldest)
+        if not os.path.isfile(tmpxml):
+            print "Failed to execute and generate file"
+            print cmd
+            continue
+        if sys.platform == "win32" and os.path.isfile(xmldest): # can't rename onto existing file in Windows
+            os.remove(xmldest)
+        os.rename(tmpxml, xmldest)
 
 
 # potential advice
