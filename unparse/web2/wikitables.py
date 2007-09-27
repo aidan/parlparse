@@ -6,6 +6,11 @@ import cgi
 from basicbits import indexstuffdir, ReadLogReferrers, LongDate
 
 def Wikiredirect(wrefpage):
+    
+    # some standard mistakes
+    wrefpage = re.sub("^UN_(?i)", "United_Nations_", wrefpage)
+    wrefpage = re.sub("^United_Nations_Resolution_(?i)", "United_Nations_Security_Council_Resolution_", wrefpage)
+
     fin = open("wikiredirects.txt")
     mainname = ""
     for sline in fin.readlines():
