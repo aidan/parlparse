@@ -54,8 +54,7 @@ reressplit = """(?x)(
                 A/(?:CONF|INF|HRC)[\./]\d+/(?:L\.)?\d+(?:/(?:Rev\.)?[l\d])?(?:/(?:Add\.)?[l\d])?|
                 GC\([\dLXIV]*\)(?:/RES|/DEC)?/\d+[A-X]?|
                 SG/SM/\d+|
-                S-1996/1|
-                S-\d\d/\d|
+                S-\d+/\d|
                 MAG/\d+/\d+|
                 AG/\d+|
                 CP/\d+|
@@ -187,8 +186,7 @@ def MarkupLinks(paratext, undocname, paranum):
                                  AG/\d+|SG/SM/\d+|CP/\d+|
                                  HIV/AIDS/CRP.\d(?:/Add.\d)?|
                                  E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
-                                 S-1996/1|
-                                 S-\d\d/\d|
+                                 S-\d+/\d|
                                  A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
                                  C/E/RES.27|
                                  JIU/REP/\d+/\d+|
