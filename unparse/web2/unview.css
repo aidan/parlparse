@@ -81,10 +81,11 @@ body
 p.nations a
 	{
 	display: block;
-	font-size: 0.75em;
+	font-size: 1.0em;
 	color: #ffffff;
-	margin-top: 0.5em;
-	margin-bottom: -0.5em;
+	margin-top: 0.em;
+	margin-bottom: -0.em;
+    text-align: center;
 	}
 
 #sectors
@@ -212,7 +213,7 @@ h4
 	margin: 0.5em 0;
 	}
 
-h1, #bigsearch
+h1
 	{
 	color: #ffffff;
 	background: #000000;
@@ -226,13 +227,25 @@ h1, #bigsearch
 
 #bigsearch
 	{
-	padding: 1.25em;
+	color: #ffffff;
+    background: #000000;
+    padding: 1.25em;
+    text-align:center;
 	}
 
 #bigsearch input, #bigsearch button
 	{
 	font-size: 1em;
 	}
+#bigsearch a
+{
+    float:center;
+    color: #ffffff;
+}
+#bigsearch form
+{
+    float:right;
+}
 
 h1 Zspan
 	{

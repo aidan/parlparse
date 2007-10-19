@@ -14,7 +14,7 @@ sys.path.append("../pylib")
 from config import *  # this must bring in htmldir
 
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
-currentgasession = 61
+currentgasession = 62
 currentscyear = datetime.datetime.now().year  #2007
 basehref = "http://www.undemocracy.com"
 
@@ -66,12 +66,13 @@ def WriteGenHTMLhead(title, frontpage=False):
         print '<h1>%s</h1>' % cgi.escape(title)
     else:
         print '<div id="bigsearch">'
+        #print '<a href="/nations">List all nations</a>'
         print '<form action="/" method="get">'
-        print '<p>'
+        #print '<p>'
         print '<input type="text" name="search">'
         print '<button>Search</button>'
         print '</form>'
-        print '<p class="nations"><a href="/nations">View list of all nations</a></p>'
+        print '<a href="/nations">View list of all nations</a>'
         print '</div>'
     print '<div id="content">'
     #print os.environ

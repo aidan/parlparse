@@ -29,7 +29,7 @@ def ReadWikipediaReferrers():
     wprefs.reverse()
     mres = { }  # wikipediapage : [ recentdate, wikipediafullurl, number ]
     for wpref in wprefs:
-        mref = re.match("(http://.*?wikipedia.org/wiki/([^#/]*))(?:#.*)?$", wpref[1])
+        mref = re.match("(http://en.wikipedia.org/wiki/([^#/]*))(?:#.*)?$", wpref[1])
         if not mref:
             continue
         wsdate = wpref[0]
@@ -53,7 +53,10 @@ def ConvertName(wname):
     if re.search("%", wname):
         wname = re.sub("%28", "(", wname)
         wname = re.sub("%29", ")", wname)
-        wname = re.sub("%C3%B6", "ö", wname)
+        wname = re.sub("%C3%A9", "&#233;", wname)
+        wname = re.sub("%C3%B6", "&#246;", wname)
+        wname = re.sub("%27", "'", wname)
+
     return wname
 
 def ShortWikipediaTable(nentries):
@@ -67,7 +70,7 @@ def BigWikipediaTable():
     wprefs = ReadLogReferrers("logpages_wikipedia.txt")
     res = [ ] # wikiname, docid, page, date, wikifullurl
     for wpref in wprefs:
-        mref = re.match("(http://.*?wikipedia.org/wiki/)([^#/]*)(#.*)?$", wpref[1])
+        mref = re.match("(http://en.wikipedia.org/wiki/)([^#/]*)(#.*)?$", wpref[1])
         if not mref:
             continue
         wrefpage = Wikiredirect(mref.group(2))
