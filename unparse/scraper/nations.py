@@ -463,3 +463,4 @@ for nonnation in nonnationlist.split("\n"):
 
 
 nonnationscount["Partners in Population and Development"] = 0
+nonnationscount["Chairman of the Peacebuilding Commission"] = 0

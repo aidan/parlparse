@@ -110,7 +110,7 @@ if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexf
 # lack of stem means we do special daily update
 if bScrape:
     if not options.stem and not options.scrapedoc:  # default case
-        ScrapeContentsPageFromStem("A-61-PV")
+        ScrapeContentsPageFromStem("A-62-PV")
         ScrapeContentsPageFromStem("S-2007-PV")
     if options.scrapedoc:
         ScrapePDF(options.scrapedoc, bforce=False)
@@ -120,7 +120,7 @@ if bScrape:
 if bConvertXML:
     if not stem:
         ConvertXML("S-PV.5", pdfdir, pdfxmldir, False)
-        ConvertXML("A-61-PV", pdfdir, pdfxmldir, False)
+        ConvertXML("A-62-PV", pdfdir, pdfxmldir, False)
     elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
         ConvertXML(stem, pdfdir, pdfxmldir, options.forcecxml)
     elif re.match("S-PV", stem):  # make sure it can't do too many at once
@@ -131,7 +131,7 @@ if bConvertXML:
 
 if bParse:
     if not stem:
-        ParsetoHTML("A-61-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
+        ParsetoHTML("A-62-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
         ParsetoHTML("S-PV.5[6-9]", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     else:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)

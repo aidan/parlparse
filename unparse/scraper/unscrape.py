@@ -106,6 +106,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         dashdoc = re.match("ST-|A-C", undocname)
         munknown = re.match("(?:ECESA/1/Rev.1|S-26-2)$", undocname)
         mahrc = re.match("A-HRC(?:-S-(\d+))?-(\d[\w\.\-]*)$", undocname)
+        mprst = re.match("S-PRST-(\d\d\d\d)-(\d+)$", undocname)
 
         if mares:
             if int(mares.group(1)) < 1:  # limit the sessions we take these resolutions from
@@ -138,6 +139,9 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         elif scdoc:
             tail = re.sub("-", "/", scdoc.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s/%s%s%s&Lang=E" % (scdoc.group(1), scdoc.group(2), tail, scdoc.group(4))
+        elif mprst:
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/PRST/%s/%s&Lang=E" % (mprst.group(1), mprst.group(2))
+
         elif msres:
             sarea = int(msres.group(1)) <= 766 and "RESOLUTION" or "UNDOC"
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=%s" % (msres.group(1), msres.group(2), sarea)
@@ -159,8 +163,6 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s%s&Lang=E" % (mscodoc.group(1), tail)
             print "oldstyle doc", purl
 
-        elif scodoc:
-            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/%s&Lang=E" % (scodoc.group(1))
 
         elif mahrc:
             tail = re.sub("-", "/", mahrc.group(2))
