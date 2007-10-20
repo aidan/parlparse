@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,21 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="c" latest="yes">
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.159.0" nospeaker="true" colnum="159"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000031">
-	Agriculture: Costs and Regulation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.159.1" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="159"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000031">
-	<p pid="c.159.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.159.1/2" qnum="HL482">What is the Department for Environment, Food and Rural Affairs' current strategy to achieve its targets of reducing farming costs by 25 per cent by 2010; and</p>
-	<p pid="c.159.1/3" qnum="HL483">Whether as part of the Department for Environment, Food and Rural Affairs' simplification plan to reduce its administration costs an assessment will be made of whether United Kingdom farmers have been disadvantaged by over-implementation of regulations compared with other European Union member states.</p>
-</ques>
-
+<publicwhip scrapeversion="c" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.159.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.159.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.159.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.159.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.159.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.159.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.159.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="159"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000032">
 	<p pid="c.159.2/1">Defra does not have a target to reduce total costs to farmers by 25 per cent. However, we do have a commitment to reduce administrative burdens by 25 per cent by 2010.</p>
 	<p pid="c.159.2/2">Lord Davidson's review on the implementation of EU legislation, published on <phrase class="date" code="2006-11-28">28 November 2006</phrase>, found that the unnecessary over-implementation of EU legislation may not be as widespread in the UK as is sometimes claimed. It is sometimes beneficial for the UK economy to set or maintain regulatory standards that exceed the minimum requirements of European legislation.</p>
@@ -67,17 +71,9 @@
 	<p pid="c.159.2/5">The plan reports on the key findings from the cross-Whitehall exercise to measure the administrative burdens imposed by regulations, and how these burdens fall on different stakeholders. It also details simplification projects, many already under way, which will ensure that Defra meets its commitment to reduce administrative burdens by 25 per cent by 2010. Reducing these burdens is just one aspect of better regulation and the plan details initiatives that will improve the way in which Defra and its delivery bodies interact with business. We are working with business stakeholders, including the National Farmers' Union, to develop these initiatives and to help to monitor our delivery of the plan as a whole.</p>
 	<p pid="c.159.2/6">Defra's farm regulation and charging strategy, <I>Partners for Success</I>, was launched on <phrase class="date" code="2005-11-28">28 November 2005</phrase>. The strategy commits the Government to improving the way in which we regulate (and enforce regulation) and to reducing bureaucracy. This will improve farmers' capacity to help to protect the environment, animal health and welfare, food safety and worker safety. It is available on the Defra website at <a href="http://www.defra.gov.uk/farm/policy/regulation/charge/index.htm">www.defra.gov.uk/farm/policy/regulation/charge/index.htm</a>.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.160.0" nospeaker="true" colnum="160"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000038">
-	Agriculture: Poultry
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.160.1" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="160"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000038">
-	<p pid="c.160.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.160.1/2" qnum="HL533">Whether, in order to prevent possible commercial disadvantage, they will reduce the &pound;3,000 registration fee payable by United Kingdom poultry producers under the integrated pollution prevention and control regulations, bearing in mind the &pound;700 registration fee payable by Danish poultry producers; and</p>
-	<p pid="c.160.1/3" qnum="HL534">Whether they will reduce the charges that United Kingdom poultry producers are required to pay on an annual basis under the integrated pollution prevention and control regulations once they are registered under the scheme.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.160.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.160.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.160.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.160.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.160.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.160.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.160.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="160"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000039">
 	<p pid="c.160.2/1">The integrated pollution prevention and control (IPPC) directive applies an integrated environmental approach to the regulation of industrial activities. This means that emissions to air, water (including discharges to sewer) and land, plus a range of other environmental effects, including noise and vibration, must be considered together before a permit is granted. IPPC aims to prevent emissions and waste production and, where that is not practicable, to reduce them to acceptable levels.</p>
 	<p pid="c.160.2/2">The regulator must set permit conditions so as to achieve a high level of protection for the environment and human health as a whole. These conditions are based on the use of the &quot;best available techniques&quot;, which balances the costs to the operator against the benefits to the environment and human health.</p>
@@ -87,116 +83,30 @@
 	<p pid="c.160.2/6">Some EU member states may not charge for IPPC permit applications, but may recover varying proportions of their costs from the regulated industry, while others bear the cost in general taxation. This is a political decision for each national Government. The differing practices that are in place make it difficult to make comparisons of the costs to producers across the EU.</p>
 	<p pid="c.160.2/7">I met representatives of the industry recently and assured them that I would look again at what might be able to be done to reduce the costs of these regulatory requirements.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.161.0" nospeaker="true" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000046">
-	Assisted Dying
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.161.1" speakerid="uk.org.publicwhip/lord/100012" speakername="Lord Alton of Liverpool" colon="" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000046">
-	<p pid="c.161.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.161.1/2" qnum="HL289">How they will respond to the proposal made by the Royal College of Obstetricians and Gynaecologists that the deliberate intervention to cause the death of a disabled infant should be made legal through the enactment of laws; and what account they are taking of the opposition of the Disability Rights Commission and disabled people's organisations such as RADAR: The Disability Rights Network.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.161.2" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000047">
-	<p pid="c.161.2/1">The Royal College has confirmed that it has never promoted or advocated that very premature babies should be actively euthanised and it is not calling for a change in the law to introduce euthanasia. It claims that recent media reports have misrepresented its position. We welcome this confirmation.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.161.3" nospeaker="true" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000048">
-	Care Services: Fresh Drinking Water
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.161.4" speakerid="uk.org.publicwhip/lord/100427" speakername="Baroness Miller of Chilthorne Domer" colon="" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000048">
-	<p pid="c.161.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.161.4/2" qnum="HL215">Whether care standards require that fresh drinking water is available to care residents throughout the day and that it is offered to them regularly; and</p>
-	<p pid="c.161.4/3" qnum="HL216">Whether they will take further steps to ensure that fresh water is a required element of the nutritional standards for older people in care.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.162.0" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000049">
-	<p pid="c.162.0/1">Regulation 16 of the Care Homes Regulations requires care homes to,</p>
-	<p pid="c.162.0/2" class="indent">&quot;provide, in adequate quantities, suitable, wholesome and nutritious food which is varied and properly prepared and available at such time as may reasonably be required by service users&quot;.</p>
-	<p pid="c.162.0/3">Food, in the regulations, includes drink.</p>
-	<p pid="c.162.0/4">Standard 15 of the national minimum standards (NMS) for care homes for older people includes the requirements that:</p>
-	<p pid="c.162.0/5">service users receive a varied, appealing, wholesome and nutritious diet, which is suited to individual assessed and recorded requirements, and that meals are taken in a congenial setting and at flexible times; andhot and cold drinks and snacks are available at all times and offered regularly.</p>
-	<p pid="c.162.0/6">The review of the NMS, which the Commission for Social Care Inspection must take into account when inspecting care homes, is ongoing and will be subject to public consultation in due course. The issue of availability of drinking water to residents is being considered as part of the review.</p>
-	<p pid="c.162.0/7">The Food Standards Agency (FSA) published nutrient and food-based advice for those providing food in care homes on <phrase class="date" code="2006-10-19">19 October 2006</phrase>. This advice includes example menus, which include making water available at all eating occasions. Government advice is that we need to drink six to eight glasses of fluid every day. It is therefore implicit that care homes should be making water freely available throughout the day.</p>
-	<p pid="c.162.0/8">The nutrient and food-based guidance for those providing residential care for older people is the first part in a series of guidance documents for United Kingdom institutions. The FSA expects to produce guidance for other institutions, including the National Health Service and prisons, in early 2007.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.162.1" nospeaker="true" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000054">
-	Child Protection: Bichard Inquiry
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.162.2" speakerid="uk.org.publicwhip/lord/100278" speakername="Baroness Harris of Richmond" colon="" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000054">
-	<p pid="c.162.2/1">asked Her Majesty's Government:</p>
-	<p pid="c.162.2/2" qnum="HL260">What progress has been made in ensuring the delivery of the Bichard inquiry recommendations before 2010.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.162.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000055">
-	<p pid="c.162.3/1">Over two-thirds of the 31 recommendations from the Bichard inquiry have already been substantially delivered. Comprehensive programme management arrangements are in place to ensure delivery of the remainder through to 2010. Some of the most significant aspects of the programme, such as IMPACT, will generate improvements and benefits incrementally during this period.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.162.4" nospeaker="true" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000056">
-	Crime: Rape
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.162.5" speakerid="uk.org.publicwhip/lord/100104" speakername="Lord Campbell-Savours" colon="" colnum="162"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000056">
-	<p pid="c.162.5/1">asked Her Majesty's Government:</p>
-	<p pid="c.162.5/2" qnum="HL525">What are the conditions and circumstances in which DNA would be taken from an accuser of rape from the time of the original reporting of the rape to the period following the verdict of a jury in a rape trial.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.163.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000057">
-	<p pid="c.163.0/1">Victims of crime may be asked to consent to provide the police with a DNA sample for elimination purposes as part of the investigation into that crime. The victim's DNA sample is not retained after the conclusion of the case and the DNA profile is not added to the National DNA Database unless the victim has given their written consent for this.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.163.1" nospeaker="true" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000058">
-	Democratic Republic of Congo: Poaching
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.163.2" speakerid="uk.org.publicwhip/lord/100855" speakername="Lord Jones of Cheltenham" colon="" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000058">
-	<p pid="c.163.2/1">asked Her Majesty's Government:</p>
-	<p pid="c.163.2/2" qnum="HL506">What assistance they have offered to the Government of the Democratic Republic of Congo to assist wildlife wardens to prevent poaching of wildlife.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.163.3" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000059">
-	<p pid="c.163.3/1">Wildlife wardens in the Democratic Republic of Congo (DRC) work in difficult and dangerous conditions to combat poaching. My honourable friend the then Parliamentary Under-Secretary of State for the Environment, Food and Rural Affairs, Jim Knight, discussed these challenges when he met wardens in Virunga and Kahuzi-Biega parks during his 2005 visit to the DRC.</p>
-	<p pid="c.163.3/2">The biggest threat to wardens, and the wildlife that they are working to protect, comes from armed poachers and from the various foreign and Congolese militia groups operating in remote parts of the DRC. The UK continues to support the UN peacekeeping force, which is working with the new Congolese army to tackle the foreign armed groups. We are also supporting the reform and training of the new Congolese army by providing &pound;3 million for basic life needs support, such as tents and water. This will help to stop Congolese soldiers and militias preying on civilians, wardens and wildlife.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.163.4" nospeaker="true" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000061">
-	EU: Turkey
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.163.5" speakerid="uk.org.publicwhip/lord/100341" speakername="Lord Judd" colon="" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000061">
-	<p pid="c.163.5/1">asked Her Majesty's Government:</p>
-	<p pid="c.163.5/2" qnum="HL532">What is their position on the accession of Turkey to the European Union.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.163.6" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="163"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000062">
-	<p pid="c.163.6/1">We believe that the accession of Turkey is of immense strategic importance to the EU. Turkey is a growing, dynamic economy, it has an educated workforce and it is a close partner on many of the global issues that matter to us most&mdash;drugs, terrorism, non-proliferation and migration. Turkey would also make a significant contribution to the EU's security capabilities and has leverage on all sides engaged in the Middle East peace process. Turkey also links Europe and the Muslim world, and accession would help to refute claims of a clash of civilisations.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.164.0" nospeaker="true" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000063">
-	Guantanamo Bay
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.164.1" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000063">
-	<p pid="c.164.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.164.1/2" qnum="HL370">Why they will not make an exception to the general policy of not assisting non-British nationals in the case of the former British residents held for a long time without charge or trial at Guantanamo Bay; and whether they have made an assessment of the effect that offering to accept the return of some or all of these detainees might have on the early closure of the detention centre.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.164.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000064">
-	<p pid="c.164.2/1">It is the long-standing policy of the British Government not to offer consular assistance to non-British nationals, except in cases where a specific agreement to do so exists with another state. A recent Court of Appeal judgment in a judicial review application brought by some of the detainees at the Guantanamo Bay detention facility who were formally resident in the UK confirmed that there is no duty on my right honourable friend the Foreign Secretary, in domestic or international law, to make the formal request for release and return from Guantanamo Bay sought by those detainees. In these proceedings, the Government's assessment was that the US Government would be very likely to resist any request for the release of the claimants, and that lobbying would make it more difficult for the UK to engage with the US on wider issues of detainee policy, including our wish to see the Guantanamo Bay detention facility closed.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.164.3" nospeaker="true" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000065">
-	Health: Audiology
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.164.4" speakerid="uk.org.publicwhip/lord/100650" speakername="Lord Turnberg" colon="" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000065">
-	<p pid="c.164.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.164.4/2" qnum="HL166">What are the most recently available waiting times for National Health Service audiology services by English regions.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.161.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.161.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.161.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.161.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.161.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.161.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.161.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.161.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.161.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.161.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.162.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.162.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.163.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.163.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.164.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.164.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.164.5" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="164"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000066">
 	<p pid="c.164.5/1">Waiting times for pure tone audiometry by strategic health authority are set out in the following table:</p>
 	<table>
@@ -219,111 +129,37 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.166.0" nospeaker="true" inserted-heading="true" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000143">
-	Health: Audiology
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.166.1" speakerid="uk.org.publicwhip/lord/100650" speakername="Lord Turnberg" colon="" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000143">
-	<p pid="c.166.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.166.1/2" qnum="HL169">What advice the Department of Health has sought from the professional bodies representing United Kingdom audiologists in formulating their national audiology plan.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.2" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.166.2" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000144">
 	<p pid="c.166.2/1">Our intention is to publish the action plan early in 2007. It is clearly essential that it should be informed by the views of the broad range of stakeholders, including the professional bodies, and that it should command broad support wherever possible. A working group has been established to develop proposals, but for reasons of size has not been designed to be representative of the various groups. A forum will be held before publication to ensure that stakeholder groups and others have a formal opportunity to consider possible proposals and contribute their views. The department has already had submissions from a number of professional organisations and others are of course welcome to write with theirs. Whether or not there is formal consultation on the action plan or elements of it will depend on the nature of the measures.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.166.3" nospeaker="true" inserted-heading="true" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000145">
-	Health: Audiology
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.166.4" speakerid="uk.org.publicwhip/lord/100650" speakername="Lord Turnberg" colon="" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000145">
-	<p pid="c.166.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.166.4/2" qnum="HL168">What consideration has been given to the maintenance of specialist audiology services within the National Health Service in plans to contract out audiology services to private providers; and</p>
-	<p pid="c.166.4/3" qnum="HL170">What estimates have been made of the proportion of deaf people able to benefit from a hearing aid who have received such an aid.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.166.5" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0001.htm#06121122000146">
-	<p pid="c.166.5/1">Information on the number of deaf people able to benefit from a hearing aid who have received such an aid is not held centrally.</p>
-	<p pid="c.166.5/2">A national action plan for audiology will be published in early 2007. The action plan will be aimed at improving access and reducing waiting times through a strategic improvement approach for the service. A working group is currently developing proposals for the audiology action plan. It will consider all the services that audiology departments provide, including specialist audiology services. In addition to the development of the action plan, the department has announced the procurement of up to 300,000 audiology pathways to provide assessment, fitting and follow-up. Both these measures will assist in significantly reducing waiting times and will greatly benefit those who receive hearing aids.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.166.6" nospeaker="true" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000148">
-	Health: Regulation of Psychologists
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.166.7" speakerid="uk.org.publicwhip/lord/100669" speakername="Lord Walton of Detchant" colon="" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000148">
-	<p pid="c.166.7/1">asked Her Majesty's Government:</p>
-	<p pid="c.166.7/2" qnum="HL327">What is their assessment of the extent to which their proposal to place the regulation of the psychological professions under the Health Professions Council will be more successful than the proposal by nine professional bodies representing psychologists to establish a psychological professions council.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.166.8" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="166"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000149">
-	<p pid="c.166.8/1">The Government set out their proposals for the statutory regulation of applied psychologists in their March 2005 public consultation document, <I>Applied Psychology&mdash;Enhancing Public Protection: Proposals for the Statutory Regulation of Applied Psychologists. </I>More recently, the department held a four-month period of consultation on our proposals to reform the regulation of medical and non-medical healthcare professionals, following the recommendations made by Sir Liam Donaldson and the advisory group headed by Andrew Foster earlier this year. This consultation ended on <phrase class="date" code="2006-11-10">10 November 2006</phrase>. We are now considering the way forward in the light of responses and the Government's policy objectives. We expect to publish our proposals shortly.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.167.0" nospeaker="true" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000150">
-	Health: Sport and Exercise Medicine Doctors
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.167.1" speakerid="uk.org.publicwhip/lord/100305" speakername="Earl Howe" colon="" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000150">
-	<p pid="c.167.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.167.1/2" qnum="HL195">Which of the first 16 sport and exercise medicine doctors recognised by the Department of Health have been contracted by Olympic governing bodies of sport.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.167.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000151">
-	<p pid="c.167.2/1">At present there are three doctors in the United Kingdom who have formal recognition and a certificate of specialist training from the Faculty of Sport and Exercise Medicine. This new faculty is recognised by the Department of Health as the official route of approval and accreditation in sport and exercise medicine, and those approved by the new faculty are then registered on the General Medical Council's specialist register. The faculty will be increasing the number of fully accredited doctors over the next few years.</p>
-	<p pid="c.167.2/2">Separately, the English Institute of Sport, which receives lottery funding from UK Sport, currently employs 16 doctors. These doctors specialise in sport medicine. One of these doctors is on the specialist register. All the other doctors are in the process of undergoing assessment to be included on the specialist register. Of the 16 doctors employed by the institute, 11 have contractual arrangements with Olympic governing bodies of sport, including the one doctor on the register. The Olympic governing bodies of sport all have doctors contracted to them, although these contractual arrangements vary considerably.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.167.3" nospeaker="true" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000153">
-	Immigration: Unaccompanied Children
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.167.4" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000153">
-	<p pid="c.167.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.167.4/2" qnum="HL375">How many unaccompanied children arrived in England and Wales, for whom an asylum claim has been made, in each quarter or month of the last two years for which figures are available; and which were the principal countries from which they came.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.7" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.166.8" newgid="uk.org.publicwhip/wrans/2006-12-11d.166.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.167.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.167.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.167.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="167"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000154">
 	<p pid="c.167.5/1">Asylum seekers apply to be granted refugee status in the UK rather than specifically in England, Scotland, Wales or Northern Ireland. Asylum applications data are not available at regional level.</p>
 	<p pid="c.167.5/2">Information on unaccompanied asylum-seeking children is published quarterly and annually. Copies of these publications and others relating to general immigration to the UK are available from the Library of the House and from the Home Office Research Development and Statistics Directorate website at <a href="http://www.homeoffice.gov.uk/rds/immigration1.html">http://www.homeoffice.gov.uk/rds/immigration1.html</a>.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.168.0" nospeaker="true" inserted-heading="true" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000156">
-	Immigration: Unaccompanied Children
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.168.1" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000156">
-	<p pid="c.168.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.168.1/2" qnum="HL412">Whether the care and education of unaccompanied children, granted asylum or long-term leave to remain, are a national responsibility.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.168.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000157">
-	<p pid="c.168.2/1">Support of unaccompanied asylum-seeking children is the statutory responsibility of local authorities, but central government funding from both the Department for Education and Skills and the Home Office is available for this purpose.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.168.3" nospeaker="true" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000158">
-	Iraq: British Consulate
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.168.4" speakerid="uk.org.publicwhip/lord/100130" speakername="Lord Clement-Jones" colon="" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000158">
-	<p pid="c.168.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.168.4/2" qnum="HL385">Whether suitable premises have been identified for the British consulate in Erbil, Iraq; and, if so, which premises have been identified.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.168.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000159">
-	<p pid="c.168.5/1">Foreign and Commonwealth Office officials are currently reviewing plans for the future status of our consulate in Kirkuk. One of the options under consideration is to move to Erbil.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.168.6" nospeaker="true" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000160">
-	NHS: Compensation
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.168.7" speakerid="uk.org.publicwhip/lord/100669" speakername="Lord Walton of Detchant" colon="" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000160">
-	<p pid="c.168.7/1">asked Her Majesty's Government:</p>
-	<p pid="c.168.7/2" qnum="HL328">What has been the total compensation paid to patients and families in the past five years as a result of litigation against National Health Service obstetricians alleging brain damage during pregnancy or parturition resulting from negligent clinical care.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.7" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.168.8" newgid="uk.org.publicwhip/wrans/2006-12-11d.168.8" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.168.8" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="168"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000161">
 	<p pid="c.168.8/1">It is not possible to differentiate claims made against obstetricians and midwife-led teams. The table shows the payments in the past five years for all claims where the injury was either brain damage or cerebral palsy.</p>
 	<table>
@@ -340,70 +176,22 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.169.0" nospeaker="true" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000174">
-	Olympic Games 2012: Budget
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.1" matchtype="changes"/>
 <ques id="uk.org.publicwhip/wrans/2006-12-11c.169.1" speakerid="uk.org.publicwhip/lord/100388" speakername="Lord Luke" colon="" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000174">
 	<p pid="c.169.1/1">asked Her Majesty's Government:</p>
 	<p pid="c.169.1/2" qnum="HL200">Whether, following their objective to deliver the London Olympic Games on an all-party basis, they intend to agree all aspects of the overall budgetfor the London 2012 Olympic Games with representatives from the Conservative and Liberal Democrat parties.</p>
 </ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.169.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000175">
-	<p pid="c.169.2/1">The Government welcome the all-party support for the Olympic Games and will continue to share information about the delivery of the Games on an all-party basis. The Secretary of State for Culture, Media and Sport has given an undertaking to continue to keep Parliament informed about Olympic costs and to report as necessary on the budget.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.169.3" nospeaker="true" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000176">
-	Palace of Westminster: Post
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.169.4" speakerid="uk.org.publicwhip/lord/100468" speakername="Lord Norton of Louth" colon="" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000176">
-	<p pid="c.169.4/1">asked the Chairman of Committees:</p>
-	<p pid="c.169.4/2" qnum="HL683">What was the total number of items of post received in the Palace of Westminster in 2005; and what proportion was received in each of the two Houses.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.169.5" speakerid="uk.org.publicwhip/lord/100067" speakername="Lord Brabazon of Tara" colon=":" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000177">
-	<p pid="c.169.5/1">Prior to the introduction of systematic screening of the post received in the Palace of Westminster, no accurate figures were kept for the volume of post. Since the introduction of this screening system in January 2006, the volume of post received has been as follows.</p>
-	<table>
-		<tbody>
-			<tr pid="c.169.5/4"> <td>January</td> <td>377,468</td> </tr>
-			<tr pid="c.169.5/5"> <td>February</td> <td>456,159</td> </tr>
-			<tr pid="c.169.5/6"> <td>March</td> <td>509,709</td> </tr>
-			<tr pid="c.169.5/7"> <td>April</td> <td>402,208</td> </tr>
-			<tr pid="c.169.5/8"> <td>May</td> <td>452,238</td> </tr>
-			<tr pid="c.169.5/9"> <td>June</td> <td>423,505</td> </tr>
-			<tr pid="c.169.5/10"> <td>July</td> <td>382,171</td> </tr>
-			<tr pid="c.169.5/11"> <td>August</td> <td>260,055</td> </tr>
-			<tr pid="c.169.5/12"> <td>September</td> <td>338,823</td> </tr>
-			<tr pid="c.169.5/13"> <td>October</td> <td>383,248</td> </tr>
-		</tbody>
-	</table>
-	<p pid="c.169.5/16">Royal Mail estimates that recipients in the House of Lords account for 20 per cent of the total volume. The remaining 80 per cent of the post is destined for recipients in the House of Commons.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.169.6" nospeaker="true" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000199">
-	Pensions: Richardsons Fertilisers
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.169.7" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="169"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000199">
-	<p pid="c.169.7/1">asked Her Majesty's Government:</p>
-	<p pid="c.169.7/2" qnum="HL477">Whether they will propose policy changes as a result of the collapse of the Richardsons Fertilisers pension scheme.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.170.0" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000200">
-	<p pid="c.170.0/1">We do not propose any policy changes as a result of the collapse of the Richardsons Fertilisers pension scheme.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.170.1" nospeaker="true" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000201">
-	Prisons: Operational Management
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.170.2" speakerid="uk.org.publicwhip/lord/100840" speakername="Lord Ramsbotham" colon="" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000201">
-	<p pid="c.170.2/1">asked Her Majesty's Government:</p>
-	<p pid="c.170.2/2" qnum="HL587">Following the abolition of the Office for Contracted Prisons, who is responsible for the direct operational management of each of the private sector prisons containing adult prisoners.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.169.7" newgid="uk.org.publicwhip/wrans/2006-12-11d.169.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.3" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.170.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000202">
 	<p pid="c.170.3/1">The operational management of contracted sector prisons has always been the responsibility of the contractor for each of the11 establishments. This has been the situation both prior to and following the closure of the Officefor Contracted Prisons at the end of March 2006.The Home Office is responsible for contractual management, ensuring that contractors deliver the service as set out in the individual contracts. The chief executive of the National Offender Management Service is the ultimate authority for each contract. With the exception of HMP &amp; YOI Ashfield, this is delegated to regional offender managers for the area where the prison is located. Within each of the contracted establishments is a Home Office controller whose task is to ensure adherence to the contract on a day-to-day basis and to take remedial action in the event of non-compliance. The Home Office controllers are line-managed through the regional offender manager. The attached table lists contracted adult establishments and their respective regional offender managers.</p>
 	<table>
@@ -422,137 +210,53 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.170.4" nospeaker="true" inserted-heading="true" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000233">
-	Prisons: Operational Management
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.170.5" speakerid="uk.org.publicwhip/lord/100840" speakername="Lord Ramsbotham" colon="" colnum="170"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0002.htm#06121122000233">
-	<p pid="c.170.5/1">asked Her Majesty's Government:</p>
-	<p pid="c.170.5/2" qnum="HL589">Following the abolition of the Office for Contracted Prisons, what direct operational responsibility the director-general of the Prison Service has for private sector prisons.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.170.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.170.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.0" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.171.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000234">
 	<p pid="c.171.0/1">The director-general of HM Prison Service has no direct operational responsibility for contracted sector prisons, although some elements of policy work from HMPS directly impact on the contracted sector.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.171.1" nospeaker="true" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000235">
-	Serious Organised Crime and Police Act 2005: Designation of Land
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.2" matchtype="changes"/>
 <ques id="uk.org.publicwhip/wrans/2006-12-11c.171.2" speakerid="uk.org.publicwhip/lord/100427" speakername="Baroness Miller of Chilthorne Domer" colon="" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000235">
 	<p pid="c.171.2/1">asked Her Majesty's Government:</p>
 	<p pid="c.171.2/2" qnum="HL518">What area of land has so far been designated or protected under sections 128 to 138 of the Serious Organised Crime and Police Act 2005.</p>
 </ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.171.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000236">
-	<p pid="c.171.3/1">On <phrase class="date" code="2006-04-01">1 April 2006</phrase>, a designation order (SI 2005/3447) made on behalf of the Secretary of State for Defence came into effect designating the following MoD sites as protected sites under Sections 128 and 129 of the Serious Organised Crime and Police Act 2005: Her Majesty's Naval Base Clyde, Royal Naval Armaments Depot Coulport, Northwood Headquarters, RAF Fylingdales, RAF Menwith Hill, RAF Croughton, RAF Lakenheath, RAF Feltwell, RAF Mildenhall, RAF Brize Norton, Sea Mounting Centre Marchwood, RAF Fairford and RAF Welford.</p>
-	<p pid="c.171.3/2">On <phrase class="date" code="2006-04-13">13 April 2006</phrase>, following amendments made to Sections 128 and 129 by Section 12 of the Terrorism Act 2006, all licensed nuclear sites also became protected sites. An order defining a designated area under Section 138 was laid before Parliament on <phrase class="date" code="2005-06-10">10 June 2005</phrase> (SI 2005/1537). A map is available at <a href="http://www.met.police.uk/publicorder/protest_march.htm">http://www.met.police.uk/publicorder/protest_march.htm</a>.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.171.4" nospeaker="true" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000238">
-	Sport: Anti-doping
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.171.5" speakerid="uk.org.publicwhip/lord/100388" speakername="Lord Luke" colon="" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000238">
-	<p pid="c.171.5/1">asked Her Majesty's Government:</p>
-	<p pid="c.171.5/2" qnum="HL433">Who are the members of the security panel responsible for monitoring UK Sport's national anti-doping organisation for elite sport; on which dates they have met; and when their reports are due to be placed in the Library of the House.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.171.6" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="171"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000239">
-	<p pid="c.171.6/1">The Independent Anti-Doping Scrutiny Panel was set up in September 2005 and is focused specifically on scrutinising the potential for conflicts of interest in relation to the performance of the anti-doping function within UK Sport. The panel is chaired by David Kenworthy, the former chief constable of North Yorkshire Police. The other members of the panel are:</p>
-	<p pid="c.171.6/2">Nerys Williams, head of the Health and Safety Executive's Employment Medical Advisory Service;Mark Emerton, former Royal Navy commander and member of the Criminal Cases Review Commission;Trevor Rothwell, former director of Huntingdon Forensic Science Service laboratory; andGillian Ekins, solicitor.</p>
-	<p pid="c.171.6/3">To date the panel has met on:</p>
-	<p pid="c.171.6/4"><phrase class="date" code="2005-09-30">30 September 2005</phrase>;</p>
-	<p pid="c.171.6/5"><phrase class="date" code="2005-11-09">9 November 2005</phrase>;</p>
-	<p pid="c.171.6/6"><phrase class="date" code="2005-12-02">2 December 2005</phrase>;</p>
-	<p pid="c.171.6/7"><phrase class="date" code="2006-02-08">8 February 2006</phrase>;</p>
-	<p pid="c.171.6/8"><phrase class="date" code="2006-03-15">15 March 2006</phrase>;</p>
-	<p pid="c.171.6/9"><phrase class="date" code="2006-05-11">11 May 2006</phrase>;</p>
-	<p pid="c.171.6/10"><phrase class="date" code="2006-07-26">26 July 2006</phrase>;</p>
-	<p pid="c.171.6/11"><phrase class="date" code="2006-09-06">6 September 2006</phrase>;</p>
-	<p pid="c.171.6/12"><phrase class="date" code="2006-11-01">1 November 2006</phrase>; and</p>
-	<p pid="c.171.6/13"><phrase class="date" code="2006-11-29">29 November 2006</phrase>.</p>
-	<p pid="c.171.6/14">Under its terms of reference, the scrutiny panel will produce an annual report, which will be sent to the Minister for Sport and the chair of UK Sport. The panel expects to produce its first report in December 2006 and copies of this document will be placed in the Libraries of both Houses.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.172.0" nospeaker="true" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000252">
-	Sport: English Institute of Sport
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.172.1" speakerid="uk.org.publicwhip/lord/100388" speakername="Lord Luke" colon="" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000252">
-	<p pid="c.172.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.172.1/2" qnum="HL432">Whether they have agreed performance measures for the English Institute of Sport; if so, when these were last reviewed; and whether they will place a copy of their findings in the Library of the House.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.172.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000253">
-	<p pid="c.172.2/1">UK Sport assumed responsibility from Sport England for the English Institute of Sport (EIS) on <phrase class="date" code="2006-04-01">1 April 2006</phrase>. To date, performance measures for the EIS have not been agreed between DCMS and UK Sport. However, in line with the funding agreement 2005-08, target outcomes and performance measures for EIS will be determined by the end of this calendar year.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.172.3" nospeaker="true" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000254">
-	Sport: UK Sport Performance Targets
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.172.4" speakerid="uk.org.publicwhip/lord/100388" speakername="Lord Luke" colon="" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000254">
-	<p pid="c.172.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.172.4/2" qnum="HL431">What are the annual performance targets set out in the funding agreement between UK Sport and the Department for Culture, Media and Sport; when these targets were last reviewed; and when they expect to publish the results achieved by UK Sport.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.171.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.171.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.172.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.172.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.172.5" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="172"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000255">
 	<p pid="c.172.5/1">The funding agreement for the period 2005-08 between UK Sport and DCMS is available on UK Sport's website at <a href="http://www.uksport.gov.uk/pages/corporate_publications/">www.uksport.gov.uk/pages/corporate_publications/</a>. DCMS and UK Sport meet on a quarterly basis primarily to measure progress against the targets set out in the agreement. The most recent meeting took place on <phrase class="date" code="">17 October</phrase>. Details of UK Sport's annual performance against the funding agreement targets will be published in UK Sport's annual review, which is required to be laid before Parliament before the end of October 2007.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.173.0" nospeaker="true" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000256">
-	Stone of Destiny
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.173.1" speakerid="uk.org.publicwhip/lord/100358" speakername="Lord Laird" colon="" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000256">
-	<p pid="c.173.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.173.1/2" qnum="HL442">In what circumstances the Stone of Destiny would return to London for ceremonial purposes; and whether there are any plans for such a return.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.173.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000257">
-	<p pid="c.173.2/1">The Stone of Destiny will return to London for the next coronation, after which it will be returned to Scotland.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.173.3" nospeaker="true" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000258">
-	Tourism: Indian Visitors
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.173.4" speakerid="uk.org.publicwhip/lord/100795" speakername="Lord Rana" colon="" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000258">
-	<p pid="c.173.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.173.4/2" qnum="HL427">How many tourists with Indian passports visited the United Kingdom in 2005; and how many tourists from India visited Northern Ireland in this period.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.173.5" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000259">
-	<p pid="c.173.5/1">There were 332,000 tourist visits by Indian passport holders and 272,000 tourist visits by Indian residents to the UK in 2005. The data were obtained from the International Passenger Survey, which is a sample survey, so the results are subject to sampling error. Data for Northern Ireland have not been provided, because sample sizes are too small. VisitBritain expects visits from India to increase significantly in future years and regards India as a priority emerging market for its overseas activities in promoting inbound tourism to the UK.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.173.6" nospeaker="true" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000260">
-	Vehicles: Weight Restrictions
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.173.7" speakerid="uk.org.publicwhip/lord/100068" speakername="Lord Bradshaw" colon="" colnum="173"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000260">
-	<p pid="c.173.7/1">asked Her Majesty's Government:</p>
-	<p pid="c.173.7/2" qnum="HL402">Further to the Written Answer by Baroness Scotland of Asthal on 23 November (<I>WA 19</I>), what evidence the fixed penalty procedures working group has taken on (a) the number and frequency of, and (b) the cost of enforcement of, weight restrictions offences; and what comparison the working group has made of the fixed penalty for ignoring weight restrictions with more recent fixed penalties such as the &pound;80 fixed penalty for anti-social behaviour.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.6" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.173.7" newgid="uk.org.publicwhip/wrans/2006-12-11d.173.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.174.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.174.0" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.174.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="174"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000261">
 	<p pid="c.174.0/1">The fixed penalty procedures working group has not taken such evidence. In reviewing the level of fixed penalties, the group normally considers relevant factors that might justify an across-the-board increase in the level of the standard fixed penalties and the small number of non-standard fixed penalties. It would not be practical to review individually the level of every fixed penalty.</p>
 	<p pid="c.174.0/2">The group has to date received no representation proposing an increase in the fixed penalty level for failing to comply with a statutory weight restriction.</p>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.174.1" nospeaker="true" colnum="174"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000263">
-	Young Offender Institutions: Ashfield
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.174.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.174.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.174.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.174.2" matchtype="changes"/>
 <ques id="uk.org.publicwhip/wrans/2006-12-11c.174.2" speakerid="uk.org.publicwhip/lord/100107" speakername="Lord Carlile of Berriew" colon="" colnum="174"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000263">
 	<p pid="c.174.2/1">asked Her Majesty's Government:</p>
 	<p pid="c.174.2/2" qnum="HL485">On how many occasions physical restraint was used at Ashfield young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
 	<p pid="c.174.2/3" qnum="HL486">On how many occasions physical restraint occurred at Ashfield young offender institution in relation to, respectively, male and female black and ethnic minority clients during each of the 12 months prior to 1 November; and</p>
 	<p pid="c.174.2/4" qnum="HL487">On how many occasions strip-searching involving physical restraint occurred at Ashfield young offender institution in relation to, respectively, male and female clients during each of the 12 months prior to 1 November.</p>
 </ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.174.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.174.3" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.174.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="174"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000264">
 	<p pid="c.174.3/1">The attached table lists the number of incidents where physical restraint was used at HMP &amp; YOI Ashfield during the months November 2005 through to October 2006. Also included are figures for the number of black and minority ethnic (BME) boys subject to physical restraint. The prison does not strip-search boys under physical restraint. Ashfield is a juvenile establishment that accommodates only males.</p>
 	<table>
@@ -575,38 +279,12 @@
 		</tbody>
 	</table>
 </reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.176.0" nospeaker="true" inserted-heading="true" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000317">
-	Young Offender Institutions: Ashfield
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.176.1" speakerid="uk.org.publicwhip/lord/100840" speakername="Lord Ramsbotham" colon="" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000317">
-	<p pid="c.176.1/1">asked Her Majesty's Government:</p>
-	<p pid="c.176.1/2" qnum="HL588">Following the abolition of the Office for Contracted Prisons, who is responsible for the direct operational management of the juveniles and young offenders in HM Young Offender Institution Ashfield.</p>
-</ques>
-
-<reply id="uk.org.publicwhip/wrans/2006-12-11c.176.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0003.htm#06121122000318">
-	<p pid="c.176.2/1">The operational management of HMP &amp; YOI Ashfield has always been the responsibility of Serco, the company holding the contract. This has been the situation both prior to and following the closure of the Office for Contracted Prisons at the end of March 2006. The Home Office is responsible for contractual management, ensuring that Serco delivers the service as set out in the contract. The chief executive of the National Offender Management Service is the ultimate authority for the contract. For HMP &amp; YOI Ashfield, this is delegated to the head of the commissioner's support bureau, which is part of NOMS. In fulfilling this task, the bureau works closely with the Youth Justice Board in identifying its requirements as the customer for Ashfield's services.</p>
-	<p pid="c.176.2/2">As with all contracted establishments, there is a Home Office controller at Ashfield whose role is to ensure adherence to the contract on a day-to-day basis and to take remedial action in the event of non-compliance. The Home Office controller at Ashfield is line-managed through the head of the commissioner's support bureau.</p>
-</reply>
-
-<minor-heading id="uk.org.publicwhip/wrans/2006-12-11c.176.3" nospeaker="true" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0004.htm#06121122000320">
-	Young Offender Institutions
-</minor-heading>
-
-<ques id="uk.org.publicwhip/wrans/2006-12-11c.176.4" speakerid="uk.org.publicwhip/lord/100107" speakername="Lord Carlile of Berriew" colon="" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0004.htm#06121122000320">
-	<p pid="c.176.4/1">asked Her Majesty's Government:</p>
-	<p pid="c.176.4/2" qnum="HL488">On how many occasions physical restraint was used at Brinsford young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/3" qnum="HL489">On how many occasions physical restraint was used at Castington young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/4" qnum="HL490">On how many occasions physical restraint was used at Feltham young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/5" qnum="HL491">On how many occasions physical restraint was used at Hindley young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/6" qnum="HL493">On how many occasions physical restraint was used at Huntercombe young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/7" qnum="HL492">On how many occasions physical restraint was used at Lancaster Farms young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/8" qnum="HL494">On how many occasions physical restraint was used at Stoke Heath young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/9" qnum="HL495">On how many occasions physical restraint was used at Thorn Cross young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November; and</p>
-	<p pid="c.176.4/10" qnum="HL496">On how many occasions physical restraint was used at Warren Hill young offender institution on, respectively, male and female clients during each of the 12 months prior to 1 November.</p>
-</ques>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.0" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.1" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.2" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.3" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.4" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-12-11c.176.5" newgid="uk.org.publicwhip/wrans/2006-12-11d.176.5" matchtype="changes"/>
 <reply id="uk.org.publicwhip/wrans/2006-12-11c.176.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="176"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61211w0004.htm#06121122000321">
 	<p pid="c.176.5/1">The following table shows the number of times approved control and restraint techniques were used, in addition to other incidents where use of force was applied, in the 12 months prior to <phrase class="date" code="">1 November</phrase>. All the establishments hold male young offenders only.</p>
 	<table>
