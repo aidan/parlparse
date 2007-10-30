@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-27b.77WS.0" nospeaker="true" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#61127m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-27b.77WS.1" nospeaker="true" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000008">
-	ECOFIN (28 November)
-</minor-heading>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.77WS.0" newgid="uk.org.publicwhip/wms/2006-11-27c.77WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.77WS.1" newgid="uk.org.publicwhip/wms/2006-11-27c.77WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.77WS.2" newgid="uk.org.publicwhip/wms/2006-11-27c.77WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-27b.77WS.2" speakerid="uk.org.publicwhip/member/1997" speakername="Gordon Brown" speakeroffice="The Chancellor of the Exchequer" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000319">
 	<p pid="b.77WS.2/1">Items on the agenda are as follows:</p>
 	<p pid="b.77WS.2/2" class="italic">Stability and Growth Pact</p>
@@ -86,15 +92,9 @@
 	<p pid="b.77WS.2/26" class="italic">Company Tax</p>
 	<p pid="b.77WS.2/27">Ministers will hear an oral progress report from the Commission on company tax obstacles hindering the function of the internal market.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-27b.78WS.0" nospeaker="true" colnum="78WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#61127m0001.htm_dpthd1">
-	Constitutional Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-27b.78WS.1" nospeaker="true" colnum="78WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000009">
-	Community Justice
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.78WS.0" newgid="uk.org.publicwhip/wms/2006-11-27c.78WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.78WS.1" newgid="uk.org.publicwhip/wms/2006-11-27c.78WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.78WS.2" newgid="uk.org.publicwhip/wms/2006-11-27c.78WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-27b.78WS.2" speakerid="uk.org.publicwhip/member/1472" speakername="Harriet Harman" speakeroffice="The Minister of State, Department for Constitutional Affairs" colnum="78WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000320">
 	<p pid="b.78WS.2/1">My right hon. and noble Friend the Secretary of State and Lord Chancellor has made the following written ministerial statement.</p>
 	<p pid="b.78WS.2/2" class="indent">&quot;As announced in paper &quot;Delivering Simple, Summary, Speedy Justice&quot; published in July 2006, the Government wish to establish 10 further community justice initiatives. This is to build on the community justice initiatives already underway at the North Liverpool Community Justice Centre and the Salford Magistrates' Court. Community justice makes a key contribution to the Government's Respect Action Plan, which was published in January 2006. It aims to strengthen the links between the courts, the criminal justice system and the local community so that local people's confidence in the work of the courts and the wider criminal justice system increases. In particular we want to build on the work judges and magistrates already carry out to deliver community justice. Magistrates demonstrate a huge commitment to public service and to making their communities better and safer places to live.</p>
@@ -110,15 +110,9 @@
 	<p pid="b.78WS.2/12" class="indent">Reintegrating offenders and building communities. Community justice can play a crucial role in improving social bonds and cohesion within the community. More specifically, this involves developing pathways to support the re-integration of offenders back into their community.</p>
 	<p pid="b.78WS.2/13" class="indent">I believe these new community justice initiatives will build on the achievements of the North Liverpool and Salford projects. They will demonstrate further how the courts, the wider criminal justice system and the public can be brought Closer together to foster new relationships that work to make justice better for everyone.&quot;</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-27b.79WS.0" nospeaker="true" colnum="79WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#61127m0001.htm_dpthd2">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-27b.79WS.1" nospeaker="true" colnum="79WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000010">
-	Royal Commission on Environmental Pollution
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.79WS.0" newgid="uk.org.publicwhip/wms/2006-11-27c.79WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.79WS.1" newgid="uk.org.publicwhip/wms/2006-11-27c.79WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.79WS.2" newgid="uk.org.publicwhip/wms/2006-11-27c.79WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-27b.79WS.2" speakerid="uk.org.publicwhip/member/1554" speakername="Ian Pearson" speakeroffice="The Minister for Climate Change and the Environment" colnum="79WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000321">
 	<p pid="b.79WS.2/1">DEFRA is today launching a review of the Royal Commission on Environmental Pollution (RCEP), which will focus on the following issues:</p>
 	<p pid="b.79WS.2/2" class="indent">Effectiveness and impact of RCEP reports since the last review;</p>
@@ -129,15 +123,9 @@
 	<p pid="b.79WS.2/7">Once the review has reported, DEFRA will examine its recommendations and see how they should be implemented. In particular, by reviewing the agreement setting out the framework within which the relationship between the two bodies operates. Should it prove necessary, DEFRA will then bring forward proposals to change the framework document and alter the way that the RCEP operates.</p>
 	<p pid="b.79WS.2/8">Copies of the scoping document will be deposited in the Libraries of both Houses and will also be available on the DEFRA website at <a href="http://www.defra.gov.uk/environment/rcep/index.htm">www.defra.gov.uk/environment/rcep/index.htm</a>.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-27b.80WS.0" nospeaker="true" colnum="80WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#61127m0001.htm_dpthd3">
-	Health
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-27b.80WS.1" nospeaker="true" colnum="80WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000011">
-	System Management and Reform
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.80WS.0" newgid="uk.org.publicwhip/wms/2006-11-27c.80WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.80WS.1" newgid="uk.org.publicwhip/wms/2006-11-27c.80WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.80WS.2" newgid="uk.org.publicwhip/wms/2006-11-27c.80WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-27b.80WS.2" speakerid="uk.org.publicwhip/member/1676" speakername="Patricia Hewitt" speakeroffice="The Secretary of State for Health" colnum="80WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0001.htm#0611272000322">
 	<p pid="b.80WS.2/1">Today I am publishing two publications which will take forward our commitment to place patients and the public at the heart of the way our health services are run:</p>
 	<p pid="b.80WS.2/2" class="indent">The future regulation of health and adult social care in England</p>
@@ -158,15 +146,9 @@
 	<p pid="b.80WS.2/17">I commend these documents to the House.</p>
 	<p pid="b.80WS.2/18">Copies of both today's publications have been placed in the Library.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-27b.82WS.0" nospeaker="true" colnum="82WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0002.htm#61127m0002.htm_dpthd0">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-27b.82WS.1" nospeaker="true" colnum="82WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0002.htm#0611272000012">
-	Local Policing
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.82WS.0" newgid="uk.org.publicwhip/wms/2006-11-27c.82WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.82WS.1" newgid="uk.org.publicwhip/wms/2006-11-27c.82WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-27b.82WS.2" newgid="uk.org.publicwhip/wms/2006-11-27c.82WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-27b.82WS.2" speakerid="uk.org.publicwhip/member/1618" speakername="Tony McNulty" speakeroffice="The Minister for Policing, Security and Community Safety" colnum="82WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061127/wmstext/61127m0002.htm#0611272000323">
 	<p pid="b.82WS.2/1">I have today placed in the Library a copy of the proposals of my right hon. Friend, the Home Secretary for allocation of specific grant to police authorities in England and Wales for Police Community Support Officers (PCSOs) and the neighbourhood policing Fund in 2007-08.</p>
 	<p pid="b.82WS.2/2">In summary, this settlement provides for an increase of 41 per cent. in funding for Police and Community Support Officers and neighbourhood policing in 2007-08 and indicates our willingness to consider additional flexibility on the Crime Fighting Fund for all forces in 2007-08. We are making these changes in response to requests from the police service itself for greater flexibilities and freedoms in order to decide locally the best way of delivering visible, responsive, and accessible policing.</p>

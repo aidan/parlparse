@@ -9,6 +9,12 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd2">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.7WS.1" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000012">
-	ECOFIN (10 October 2006)
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.2" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.7WS.2" speakerid="uk.org.publicwhip/member/1997" speakername="Gordon Brown" speakeroffice="The Chancellor of the Exchequer" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000023">
 	<p pid="a.7WS.2/1">At its meeting of <phrase class="date" code="2006-10-10">10 October 2006</phrase>, the Economic and Financial Affairs Council was briefed on the interpretation and application of the price stability criterion in relation to enlargement of the euro area.</p>
 	<p pid="a.7WS.2/2">Council adopted an opinion on the updated Convergence Programme for Hungary and a recommendation under Article 104(7), and also received Commission Communications on Germany and the UK.</p>
@@ -66,25 +74,11 @@
 	<p pid="a.7WS.2/8">Council adopted Conclusions on the creation of a single euro payments area initiative.</p>
 	<p pid="a.7WS.2/9">The Paymaster General represented the UK.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.7WS.3" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd5">
-	Communities and Local Government
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.7WS.4" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000013">
-	National Interest Mapping Services Agreement
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-10-31a.7WS.5" speakerid="uk.org.publicwhip/member/1813" speakername="Meg Munn" speakeroffice="The Parliamentary Under-Secretary of State for Communities and Local Government" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000033">
-	<p pid="a.7WS.5/1">I have today placed in the Library of the House copies of the report into the future of the National Interest Mapping Services Agreement (NIMSA) beyond 2006.</p>
-	<p pid="a.7WS.5/2">NIMSA was established to fund mapping services that are in the national interest, but would not otherwise be provided by the market as they are not economically viable. NIMSA services have been provided by Ordnance Survey.</p>
-	<p pid="a.7WS.5/3">As the agreement is due to expire, the Department for Communities and Local Government has given detailed consideration to the future of funding for mapping in the national interest. DCLG's decisions are presented in the report, which will be placed on the Department's website. While NIMSA will cease at the end of December 2006, DCLG will continue to support a national metadata service.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.8WS.0" nospeaker="true" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000014">
-	Agriculture and Fisheries Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.3" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.4" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.7WS.5" newgid="uk.org.publicwhip/wms/2006-10-31b.7WS.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.8WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.8WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.8WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.8WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.8WS.1" speakerid="uk.org.publicwhip/member/1580" speakername="Ben Bradshaw" speakeroffice="The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000036">
 	<p pid="a.8WS.1/1">I represented the United Kingdom at the Agriculture and Fisheries Council meeting in Luxembourg on 24 and <phrase class="date" code="2006-10-25">25 October 2006</phrase>. Ross Finnie, the Scottish Environment and Rural Affairs Minister, also attended.</p>
 	<p pid="a.8WS.1/2">The Council reached political agreement on a Council Regulation fixing cod recovery measures and a range of separate fishing quotas in the Baltic Sea for 2007. The UK is not directly affected by this regulation, but it was important that it was approved promptly to avoid over-loading future Council agendas later in the year.</p>
@@ -99,15 +93,9 @@
 	<p pid="a.8WS.1/11" class="indent">The Council also took note of an update from the Commission on CAP simplification, and information from the presidency on the conference of Directors of national paying agencies which was held in Rovaniemi, Finland.</p>
 	<p pid="a.8WS.1/12" class="indent">A number of member states, asked for amendments to the Commission's draft guidelines on agricultural state aids.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.9WS.0" nospeaker="true" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd13">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.9WS.1" nospeaker="true" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000015">
-	Environment Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.9WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.9WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.9WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.9WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.9WS.2" newgid="uk.org.publicwhip/wms/2006-10-31b.9WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.9WS.2" speakerid="uk.org.publicwhip/member/1826" speakername="David Miliband" speakeroffice="The Secretary of State for Environment, Food and Rural Affairs" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000048">
 	<p pid="a.9WS.2/1">I and the Minister with responsibility for local environment, marine and animal welfare, <phrase class="honfriend" id="uk.org.publicwhip/member/1580" name="Ben Bradshaw">my hon. Friend the Member for Exeter (Mr. Bradshaw)</phrase>, represented the UK at the Environment Council in Luxembourg on <phrase class="date" code="2006-10-23">23 October</phrase>.</p>
 	<p pid="a.9WS.2/2">The Council adopted a political agreement on the proposed Directive on ambient air quality and cleaner air for Europe, based closely on the general approach agreed at the June Council. The Directive, the first legal measure to be brought forward under the Commission's Air Thematic Strategy of September 2005, consolidates and simplifies current EU ambient air quality legislation, retaining existing standards for pollutants in air, but gives member states several new flexibilities to help them comply with the legislation. The UK supported the political agreement as it represents a balanced compromise. Although the UK would have liked a binding exposure reduction target for fine particles, we are satisfied that the political agreement would result in a net improvement in public health protection.</p>
@@ -118,40 +106,18 @@
 	<p pid="a.9WS.2/7">Under Any Other Business, member states raised the First European Congress on Conservation Biology, a ban on mercury exports from the EU, forest fires, invasive alien species, import of unauthorised GMOs into the EU and the investigation concerning the tanker Probo Koala. In addition, the resumption of commercial whaling by Iceland was discussed. The UK condemned the decision by Iceland and urged other member states to voice their concerns.</p>
 	<p pid="a.9WS.2/8">The Presidency and the Commission updated Ministers on EU/Third Country meetings with: the EU/Russia Partnership Council on Environment; Korea; China; ASEM; and India.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.0" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd16">
-	Foreign and Commonwealth Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.1" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000016">
-	National Technical Assistance Centre
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-10-31a.11WS.2" speakerid="uk.org.publicwhip/member/1533" speakername="Margaret Beckett" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000056">
-	<p pid="a.11WS.2/1">The National Technical Assistance Centre (NTAC) was formally transferred from the Home Office to Government Communications Headquarters (GCHQ) in April 2006. As the Minister responsible for GCHQ, I now have ministerial oversight of its activities.</p>
-	<p pid="a.11WS.2/2">There have been no changes to NTAC's remit, mandate or customer base.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.3" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd19">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.4" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000017">
-	Animal Procedure Committee
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.2" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.3" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.4" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.5" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.11WS.5" speakerid="uk.org.publicwhip/member/1572" speakername="Joan Ryan" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000058">
 	<p pid="a.11WS.5/1">In accordance with Section 20(5) of the Animals (Scientific Procedures) Act 1986, I have placed the Committee's annual report for 2005 in the Library today. Among other things the report includes; the advice offered by the Committee on project licence applications that were referred to the Committee for advice; the work carried out by the Committee's sub-committees; the completion of the Committee's review, commissioned by the Home Office, of the annual statistical report on the use of animals in scientific procedures; and the Committee's work on the retrospective assessment of suffering and severity.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.6" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd22">
-	Leader of the House
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.11WS.7" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000018">
-	Recess Questions
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.6" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.7" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.11WS.8" newgid="uk.org.publicwhip/wms/2006-10-31b.11WS.8" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.11WS.8" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Leader of the House of Commons" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#06103161000059">
 	<p pid="a.11WS.8/1">Before the summer recess the House agreed a motion that introduced, for the first time ever, an experimental period during September, in which a limited number of named-day Parliamentary questions could be tabled and answered. I am grateful to the House authorities, particularly the Table Office, for their co-operation in the successful introduction of this process.</p>
 	<p pid="a.11WS.8/2">In excess of 100 Members made use of this new process, tabling 733 questions. The table below gives details of all the questions tabled, shown by date tabled and relevant Department.</p>
@@ -188,50 +154,29 @@
 	<p pid="a.11WS.8/33">During the same period Government Departments issued 35 written ministerial statements, keeping the House informed of a wide-range of domestic and international issues.</p>
 	<p pid="a.11WS.8/34">Following this experiment, a motion is now tabled to give the House the opportunity to express its view on the introduction of this new procedure and the earlier 2002 resolution of the House on September Sittings. This is for debate tomorrow, <phrase class="date" code="2006-11-01">1 November</phrase>.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.12WS.0" nospeaker="true" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0001.htm#61031m0001.htm_dpthd25">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.12WS.1" nospeaker="true" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000019">
-	Chief Electoral Officer
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.2" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.12WS.2" speakerid="uk.org.publicwhip/member/1723" speakername="Peter Hain" speakeroffice="The Secretary of State for Northern Ireland" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000180">
 	<p pid="a.12WS.2/1">The Chief Electoral Officer for Northern Ireland, Douglas Bain, is responsible for all aspects of electoral administration in Northern Ireland, including the conduct of all elections and referendums, as well as electoral registration. In accordance with section 14 of the Electoral Law Act (Northern Ireland) 1962&mdash;as amended by Section 9 of the Northern Ireland (Miscellaneous Provisions) Act 2006&mdash;the Chief Electoral Officer is required to submit an annual report to the Secretary of State.</p>
 	<p pid="a.12WS.2/2">I am pleased to announce that the annual report of the Chief Electoral Officer for Northern Ireland for the year 2005-06 has been laid before Parliament today. Copies are available in the Library.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.12WS.3" nospeaker="true" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#61031m0002.htm_dpthd2">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.12WS.4" nospeaker="true" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000020">
-	Isle of Grain Power Station
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.3" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.4" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.12WS.5" newgid="uk.org.publicwhip/wms/2006-10-31b.12WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.12WS.5" speakerid="uk.org.publicwhip/member/1523" speakername="Malcolm Wicks" speakeroffice="The Minister for Energy" colnum="12WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000182">
 	<p pid="a.12WS.5/1">I have today granted consent under section 36 of the Electricity Act 1989 to E.ON UK plc to construct a 1,200 MW combined cycle gas turbine generating station at grain in Kent. Planning permission has also been deemed to be granted subject to the inclusion of 51 conditions agreed with Medway council.</p>
 	<p pid="a.12WS.5/2">In accordance with the Government's commitment that combined heat and power (CHP) should be used wherever feasible, E.ON has entered into an agreement to supply heat to a neighbouring industry should that prove acceptable to both parties. If that is the case the proposed station would qualify as a good quality CHP power station.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.13WS.0" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000021">
-	Sustainable Construction Strategy
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.13WS.0" newgid="uk.org.publicwhip/wms/2006-10-31b.13WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.13WS.1" newgid="uk.org.publicwhip/wms/2006-10-31b.13WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.13WS.1" speakerid="uk.org.publicwhip/member/1383" speakername="Margaret Hodge" speakeroffice="The Minister for Industry and the Regions" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000184">
 	<p pid="a.13WS.1/1">I am today announcing the publication of the Review of Sustainable Construction. The review was launched in July 2005 and reflects the views of many in the construction industry and of other interested parties. It pulls together in one document the main strands of Government policy and industry initiatives on Sustainable Construction, taking account of developments since the publication of &quot;Building a better quality of Life&quot; in 2000. It also sets out some initial targets on how industry can meet the challenge of Sustainable Construction. Copies of the review are available in the Libraries of both Houses.</p>
 	<p pid="a.13WS.1/2">I have asked my officials to develop over the course of the next year a forward-looking strategy for sustainable construction. This will refine the initial targets set out in the current review and set out how Government and the industry can work together to deliver greater sustainability in the construction industry.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-10-31a.13WS.2" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#61031m0002.htm_dpthd7">
-	Transport
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-10-31a.13WS.3" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000022">
-	East Midlands and West Midland Franchises
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.13WS.2" newgid="uk.org.publicwhip/wms/2006-10-31b.13WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.13WS.3" newgid="uk.org.publicwhip/wms/2006-10-31b.13WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-10-31a.13WS.4" newgid="uk.org.publicwhip/wms/2006-10-31b.13WS.4" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-10-31a.13WS.4" speakerid="uk.org.publicwhip/member/1990" speakername="Tom Harris" speakeroffice="The Parliamentary Under-Secretary of State for Transport" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061031/wmstext/61031m0002.htm#06103161000187">
 	<p pid="a.13WS.4/1">I am today announcing that we have issued bidders for the new East Midlands, West Midlands and New Cross Country rail franchises with an Invitation to Tender (ITT), Copies of stakeholder briefing documents, which give a synopsis of each ITT, have been placed in the Libraries of both Houses and are available on the Department for Transport website at <a href="http://www.dft.gov.uk">www.dft.gov.uk</a></p>
 	<p pid="a.13WS.4/2">On the <phrase class="date" code="2005-10-18">18 October 2005</phrase>, <i>Official Report</i>, col 52-53 WS, the Secretary of State announced that three new rail franchises would be created (east midlands, west midlands and a new cross-country) from four currently existing franchises (Central, Silverlink, Cross Country and Midland Mainline). The new franchises will begin operation on <phrase class="date" code="">Sunday 11 November 2007</phrase> and will provide over 2,000 daily rail services.</p>

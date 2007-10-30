@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,36 +54,17 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-07a.37WS.0" nospeaker="true" colnum="37WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#70207m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-07a.37WS.1" nospeaker="true" colnum="37WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#07020755000005">
-	United Nations Measures Orders
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-02-07a.37WS.2" speakerid="uk.org.publicwhip/member/1740" speakername="Edward Balls" speakeroffice="The Economic Secretary to the Treasury" colnum="37WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#07020755000013">
-	<p pid="a.37WS.2/1">The Foreign and Commonwealth Office's written ministerial statement of <phrase class="date" code="2007-01-11">11 January</phrase> informed Parliament of the unanimous adoption of United Nations Security Council Resolution 1737. The binding resolution calls upon all member states to impose sanctions aimed at restricting Iran's ability to develop nuclear and missile technologies which could be used in a weapons programme.</p>
-	<p pid="a.37WS.2/2">The Government are today seeking the agreement of the Privy Council for the adoption of Orders in Council concerned with giving effect to the financial sanctions against Iran's Nuclear Programme as required by UNSCR 1737, and implementing UNSCR 1737 in the UK's overseas territories. The Government are strongly supportive of international efforts in tackling abuse of financial systems and these actions are further evidence of this.</p>
-	<p pid="a.37WS.2/3">Consistent with the UN Security Council resolutions and with other financial sanctions legislation, the Orders in Council include provisions to allow licensed exemptions to the restrictions to meet legitimate humanitarian needs.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-07a.38WS.0" nospeaker="true" colnum="38WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#70207m0001.htm_dpthd1">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-07a.38WS.1" nospeaker="true" colnum="38WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#07020755000006">
-	Felindre to Tirley Pipeline
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-02-07a.38WS.2" speakerid="uk.org.publicwhip/member/1523" speakername="Malcolm Wicks" speakeroffice="The Minister for Science and Innovation" colnum="38WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070207/wmstext/70207m0001.htm#07020755000014">
-	<p pid="a.38WS.2/1">I have today given my approval for National Grid to construct a 196 km gas pipeline from Felindre near Swansea to Tirley in Gloucestershire.</p>
-	<p pid="a.38WS.2/2">In making my decision I took into account the stringent requirements which have to be met when a major development is proposed in a national park. In this instance part of the pipeline crosses the Brecon Beacons national park and I have decided that the pipeline satisfies the criteria that such development should be in the national interest and that there is no other practicable route. I have also included stringent conditions to reduce and mitigate any impact on the park.</p>
-</speech>
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.37WS.0" newgid="uk.org.publicwhip/wms/2007-02-07b.37WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.37WS.1" newgid="uk.org.publicwhip/wms/2007-02-07b.37WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.37WS.2" newgid="uk.org.publicwhip/wms/2007-02-07b.37WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.38WS.0" newgid="uk.org.publicwhip/wms/2007-02-07b.38WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.38WS.1" newgid="uk.org.publicwhip/wms/2007-02-07b.38WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-07a.38WS.2" newgid="uk.org.publicwhip/wms/2007-02-07b.38WS.2" matchtype="perfectmatch"/>
 </publicwhip>
 

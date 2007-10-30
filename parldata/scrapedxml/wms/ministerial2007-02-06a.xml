@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,46 +54,21 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-06a.29WS.0" nospeaker="true" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#70206m0001.htm_dpthd0">
-	Communities and Local Government
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-06a.29WS.1" nospeaker="true" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000008">
-	Council Elections
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-02-06a.29WS.2" speakerid="uk.org.publicwhip/member/1752" speakername="Phil Woolas" speakeroffice="The Minister for Local Government" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000104">
-	<p pid="a.29WS.2/1">Our local government White Paper, &quot;Strong and prosperous communities&quot;, proposed that a move to whole council elections should be a matter for local discretion. We have now included provision to give effect to this in the Local Government and Public Involvement in Health Bill, which received its second reading on <phrase class="date" code="2007-01-22">22 January</phrase>. District councils will in future, subject to the Bill receiving Royal Assent, be able to move to whole council elections after passing a resolution to that effect and for that change to take place in the usual year for whole council elections for that type of authority.</p>
-	<p pid="a.29WS.2/2">In these circumstances, we believe that it is no longer appropriate for the Secretary of State to make orders under section 7 of the Local Government Act 1972 to effect changes to electoral cycles, should she be requested to do so by shire district councils in accordance with the procedures in that section.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-06a.29WS.3" nospeaker="true" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#70206m0001.htm_dpthd1">
-	Constitutional Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-06a.29WS.4" nospeaker="true" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000009">
-	Mental Capacity Act 2005 (Court of Protection)
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-02-06a.29WS.5" speakerid="uk.org.publicwhip/member/1775" speakername="Vera Baird" speakeroffice="The Parliamentary Under-Secretary of State for Constitutional Affairs" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000105">
-	<p pid="a.29WS.5/1">My noble Friend the Parliamentary Under-Secretary, Department for Constitutional Affairs, Baroness Ashton of Upholland, has made the following written ministerial statement.</p>
-	<p pid="a.29WS.5/2" class="indent">&quot;My Department has today published the Government response to the consultation on new rules of court for the new Court of Protection established under the Mental Capacity Act 2005. The consultation ended on <phrase class="date" code="2006-10-06">6 October 2006</phrase> and 39 responses were received. The consultation response provides a summary of responses and the next steps in light of the consultation. Copies have been placed in the Libraries of both Houses.</p>
-	<p pid="a.29WS.5/3" class="indent">The Mental Capacity Act 2005 establishes a new specialist court, to be known as the Court of Protection, with a new jurisdiction to deal with decision-making for adults who lack capacity. This court will have important structural differences from the current Court of Protection. The new court will be able to make decisions both, as the current court can, about property and affairs (the term used in the Act to describe the financial decision-making jurisdiction) and also about personal welfare matters including health care. The new Court of Protection will begin operating from October 2007.&quot;</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-06a.30WS.0" nospeaker="true" colnum="30WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#70206m0001.htm_dpthd2">
-	Education and Skills
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-06a.30WS.1" nospeaker="true" colnum="30WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000010">
-	School Teachers' Review Body (Recommendations)
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.0" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.1" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.2" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.3" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.4" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.29WS.5" newgid="uk.org.publicwhip/wms/2007-02-06b.29WS.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.30WS.0" newgid="uk.org.publicwhip/wms/2007-02-06b.30WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.30WS.1" newgid="uk.org.publicwhip/wms/2007-02-06b.30WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.30WS.2" newgid="uk.org.publicwhip/wms/2007-02-06b.30WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-02-06a.30WS.2" speakerid="uk.org.publicwhip/member/1648" speakername="Alan Johnson" speakeroffice="The Secretary of State for Education and Skills" colnum="30WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0001.htm#07020659000106">
 	<p pid="a.30WS.2/1">The 16th report of the School Teachers' Review Body (STRB) is being published today. It covers a range of matters referred to the STRB in May 2006. Copies are available in the Vote Office, the Printed Paper Office and in the Libraries of the House and at <a href="http://www.teachernet.gov.uk/pay">http://www.teachernet.gov.uk/pay</a>.</p>
 	<p pid="a.30WS.2/2">In making its recommendations, the STRB was required to have regard to the matters set out in the remit letter of <phrase class="date" code="2006-05-17">17 May 2006</phrase>. The16th STRB report does not include a pay award as we are currently in the middle of a multi-year award, but it does deal with some very important matters affecting teachers' pay and conditions, and I am most grateful for the careful and detailed attention the STRB has given to these matters. The STRB recommendations are set out below followed in each case by my response.</p>
@@ -151,15 +136,9 @@
 	<p pid="a.30WS.2/64">The STRB has provided a helpful set of criteria for the preparation of new statements of teachers' professional roles and responsibilities. I am grateful to the STRB for the work they did in preparation for this report to survey consultees' views on the need for and place of duties in teachers' statutory conditions framework. That process generated a broad consensus that they were needed, but that the time had come to consider changes. I agree with that analysis and am happy to accept the recommendation made by the Review Body that we should develop new statements along the lines they suggest and I look forward to developing these statements with partners.</p>
 	<p pid="a.30WS.2/65">The STRB is absolutely right to flag the need for statements of teachers' roles and responsibilities to be coherent with the other elements of the statutory pay and conditions framework and, importantly, with any changes arising from the current deliberations on the leadership group. It would be wrong for statements of roles and responsibilities to be finalised in advance of decisions on any relevant changes that may emerge in relation to the leadership group or indeed to fail to take account of the other developments mentioned in the recommendation. However it does seem to me that we should be looking to take forward these developments in parallel, so that the impact of each area on the other can be considered.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-06a.34WS.0" nospeaker="true" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#70206m0002.htm_dpthd0">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-06a.34WS.1" nospeaker="true" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#07020659000011">
-	Agriculture and Fisheries Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.34WS.0" newgid="uk.org.publicwhip/wms/2007-02-06b.34WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.34WS.1" newgid="uk.org.publicwhip/wms/2007-02-06b.34WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.34WS.2" newgid="uk.org.publicwhip/wms/2007-02-06b.34WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-02-06a.34WS.2" speakerid="uk.org.publicwhip/member/1826" speakername="David Miliband" speakeroffice="The Secretary of State for Environment, Food and Rural Affairs" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#07020659000107">
 	<p pid="a.34WS.2/1">I represented the United Kingdom at the Agriculture and Fisheries Council in Brussels on <phrase class="date" code="2007-01-29">29 January 2007</phrase>.</p>
 	<p pid="a.34WS.2/2">The Agriculture Commissioner presented proposals to reform the fruit and vegetable sector which she said would help it to meet the challenges it faces from third country competition and pressure from the retail sector. The proposals focused on increasing the competitiveness of the sector, risk management measures and simplifying legislation. The Council held its first exchange of views on the proposal and I intervened in support of aligning this regime with the 2003 CAP reform model, but expressed concern that the proposed risk and crisis management measures should not distort the market. I also underlined the need for budget discipline.</p>
@@ -179,18 +158,8 @@
 	<p pid="a.34WS.2/16">France, Austria and Denmark called for Council to discuss the measures required to redress a persistent imbalance in the EU sugar market. The Commissioner announced that because of poor uptake of the buy-out scheme, a temporary quota suspension of at least 12 per cent. or 2 million tonnes would be needed this year.</p>
 	<p pid="a.34WS.2/17">Belgium, supported by four other member states, sought clarification from the Commission on a technical point of detail regarding state-aid top ups to rural development payments.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-06a.36WS.0" nospeaker="true" colnum="36WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#70206m0002.htm_dpthd1">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-06a.36WS.1" nospeaker="true" colnum="36WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#07020659000012">
-	Security Industry Authority (Annual Report 2005-06)
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-02-06a.36WS.2" speakerid="uk.org.publicwhip/member/1593" speakername="Vernon Coaker" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="36WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070206/wmstext/70206m0002.htm#07020659000108">
-	<p pid="a.36WS.2/1">I am pleased to announce that the annual report 2005-2006 and accounts of the Security Industry Authority (SIA) will be laid before Parliament and published today.</p>
-	<p pid="a.36WS.2/2">Copies of the report will be available in the House Library.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.36WS.0" newgid="uk.org.publicwhip/wms/2007-02-06b.36WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.36WS.1" newgid="uk.org.publicwhip/wms/2007-02-06b.36WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-06a.36WS.2" newgid="uk.org.publicwhip/wms/2007-02-06b.36WS.2" matchtype="perfectmatch"/>
 </publicwhip>
 

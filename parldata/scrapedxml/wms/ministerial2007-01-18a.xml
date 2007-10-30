@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-18a.39WS.0" nospeaker="true" colnum="39WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#70118m0001.htm_dpthd0">
-	Communities and Local Government
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-18a.39WS.1" nospeaker="true" colnum="39WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000007">
-	Local Government Finance Settlement 2007-08
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.39WS.0" newgid="uk.org.publicwhip/wms/2007-01-18b.39WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.39WS.1" newgid="uk.org.publicwhip/wms/2007-01-18b.39WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.39WS.2" newgid="uk.org.publicwhip/wms/2007-01-18b.39WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-18a.39WS.2" speakerid="uk.org.publicwhip/member/1752" speakername="Phil Woolas" speakeroffice="The Minister for Local Government" colnum="39WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000269">
 	<p pid="a.39WS.2/1">I have today laid before the House two reports.</p>
 	<p pid="a.39WS.2/2">The first is the Local Government Finance Report (England) 2007-08. This report establishes the amounts of revenue support grant (RSG) and non-domestic rates (NDR) to be paid to local authorities in 2007-08, and the basis of their distribution. A draft of this report was issued for consultation on <phrase class="date" code="2006-11-28">28 November 2006</phrase>.</p>
@@ -70,11 +76,8 @@
 	<p pid="a.39WS.2/10">I shall be sending copies of these reports to all local authorities in England, and making available full supporting information on the Communities and Local Government website at <a href="http://www.local.communities.gov.uk/finance/0708/grant.htm">http://www.local.communities.gov.uk/finance/0708/grant.htm</a>.</p>
 	<p pid="a.39WS.2/11">Copies of the reports and related tables showing each authority's allocation of Formula Grant and other supporting material, have been placed in the Vote Office and the Libraries of both Houses.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-18a.40WS.0" nospeaker="true" colnum="40WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000008">
-	Disabled Facilities Grant
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.40WS.0" newgid="uk.org.publicwhip/wms/2007-01-18b.40WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.40WS.1" newgid="uk.org.publicwhip/wms/2007-01-18b.40WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-18a.40WS.1" speakerid="uk.org.publicwhip/member/1762" speakername="Yvette Cooper" speakeroffice="The Minister for Housing and Planning" colnum="40WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000270">
 	<p pid="a.40WS.1/1">I would like to make the following statement with regard to the progress of the Government's review of the Disabled Facilities Grant (DFG) programme which is the responsibility of my Department. This is an interdepartmental review being conducted jointly between the Department for Communities and Local Government, the Department of Health, the Department for Work and Pensions, The Office for Disability Issues and the Department for Education and Skills.</p>
 	<p pid="a.40WS.1/2">We are today publishing an inter-departmental consultation paper setting out the Government's proposals for improving delivery of this important programme.</p>
@@ -94,15 +97,9 @@
 	<p pid="a.40WS.1/16">I am also announcing today how the &pound;126 million of grant from my Department to support the DFG programme in 2007-08 will be allocated to local authorities. Details of the amount awarded to each authority are available on the DCLG website: <a href="http://www.communities.gov.uk/index.asp?id=l502662">http://www.communities.gov.uk/index.asp?id=l502662</a>.</p>
 	<p pid="a.40WS.1/17">Copies of the grant allocations and consultation papers have been placed in the Libraries of both Houses.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-18a.42WS.0" nospeaker="true" colnum="42WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#70118m0001.htm_dpthd1">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-18a.42WS.1" nospeaker="true" colnum="42WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000009">
-	Police Grant Report 2007-08
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.42WS.0" newgid="uk.org.publicwhip/wms/2007-01-18b.42WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.42WS.1" newgid="uk.org.publicwhip/wms/2007-01-18b.42WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.42WS.2" newgid="uk.org.publicwhip/wms/2007-01-18b.42WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-18a.42WS.2" speakerid="uk.org.publicwhip/member/1618" speakername="Tony McNulty" speakeroffice="The Minister for Policing, Security and Community Safety" colnum="42WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0001.htm#07011842000271">
 	<p pid="a.42WS.2/1">I have today placed in the Library a copy of the Police Grant Report (England and Wales) 2007-08 (HC 207). The report sets out my determination for 2007-08 of the aggregate amount of grants that I propose to pay under section 46(2) of the Police Act 1996, and the amount to be paid to the Greater London authority for the Metropolitan Police Authority.</p>
 	<p pid="a.42WS.2/2">General grant allocations, which include Home Office police grant and revenue support grant from the Department for Communities and Local Government and Welsh Assembly Government, for each police authority for 2007-08 are set out in the table.</p>
@@ -170,27 +167,15 @@
 		</tbody>
 	</table>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-18a.44WS.0" nospeaker="true" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#70118m0002.htm_dpthd0">
-	Prime Minister
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-18a.44WS.1" nospeaker="true" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#07011842000010">
-	Committee on Standards in Public Life (11th Report)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.0" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.1" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.2" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-18a.44WS.2" speakerid="uk.org.publicwhip/member/1806" speakername="Tony Blair" speakeroffice="The Prime Minister" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#07011842000272">
 	<p pid="a.44WS.2/1">The 11th report of the Committee on Standards in public Life, &quot;Review of the Electoral Commission&quot; (Cm 7006) has been published by the Committee today. I have laid the report before the House and copies of the report have been placed in the Libraries of both Houses.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-18a.44WS.3" nospeaker="true" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#70118m0002.htm_dpthd1">
-	Work and Pensions
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-18a.44WS.4" nospeaker="true" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#07011842000011">
-	Pensions Transfer Values
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.3" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.4" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-18a.44WS.5" newgid="uk.org.publicwhip/wms/2007-01-18b.44WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-18a.44WS.5" speakerid="uk.org.publicwhip/member/1836" speakername="James Purnell" speakeroffice="The Minister for Pensions Reform" colnum="44WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070118/wmstext/70118m0002.htm#07011842000273">
 	<p pid="a.44WS.5/1">Last year we consulted on approaches to the calculation of pensions transfer values.</p>
 	<p pid="a.44WS.5/2">Members of defined benefit occupational pension schemes are usually best served by leaving their pension rights in the scheme when they change employment. Transfers are an option that members can exercise. But transfers should not jeopardise the success or sustainability of the pension scheme.</p>

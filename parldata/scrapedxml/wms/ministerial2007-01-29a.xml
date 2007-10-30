@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-29a.1WS.0" nospeaker="true" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#70129m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-29a.1WS.1" nospeaker="true" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000008">
-	ECOFIN
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.1WS.0" newgid="uk.org.publicwhip/wms/2007-01-29b.1WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.1WS.1" newgid="uk.org.publicwhip/wms/2007-01-29b.1WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.1WS.2" newgid="uk.org.publicwhip/wms/2007-01-29b.1WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-29a.1WS.2" speakerid="uk.org.publicwhip/member/1997" speakername="Gordon Brown" speakeroffice="The Chancellor of the Exchequer" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000082">
 	<p pid="a.1WS.2/1">The Economic and Financial Affairs Council will be held on <phrase class="date" code="2007-01-30">30 January</phrase> in Brussels. The items on the agenda are as follows:</p>
 	<p pid="a.1WS.2/2" class="italic">Presidency Work Programme</p>
@@ -82,15 +88,9 @@
 	<p pid="a.1WS.2/22" class="italic">Enlargement of the Euro Area&mdash; Current Status of Slovenia's Adoption of the Euro</p>
 	<p pid="a.1WS.2/23">The Commission will deliver a presentation on Slovenia's adoption of the euro. A related Commission paper considers that the introduction to the euro in Slovenia has been successful. This is expected to be a short agenda item and no conclusions are expected.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-29a.2WS.0" nospeaker="true" colnum="2WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#70129m0001.htm_dpthd1">
-	Constitutional Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-29a.2WS.1" nospeaker="true" colnum="2WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000009">
-	Electoral Pilots (May 2007)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.2WS.0" newgid="uk.org.publicwhip/wms/2007-01-29b.2WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.2WS.1" newgid="uk.org.publicwhip/wms/2007-01-29b.2WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.2WS.2" newgid="uk.org.publicwhip/wms/2007-01-29b.2WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-29a.2WS.2" speakerid="uk.org.publicwhip/member/1682" speakername="Bridget Prentice" speakeroffice="The Parliamentary Under-Secretary of State for Constitutional Affairs" colnum="2WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000083">
 	<p pid="a.2WS.2/1">My right hon. and noble Friend the Secretary of State and Lord Chancellor has made the following written ministerial statement:</p>
 	<p pid="a.2WS.2/2" class="indent">The Government are continuing to look at ways to modernise our electoral system and to increase the opportunities that people have to vote. To test the effectiveness and robustness of these innovations and to build public confidence in them, we are continuing to conduct a programme of pilots in 2007 which maintains the momentum that was started in 2000.</p>
@@ -119,43 +119,20 @@
 	<p pid="a.2WS.2/25" class="indent">Sunderland City Council</p>
 	<p pid="a.2WS.2/26" class="indent">Swindon Borough Council</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-29a.3WS.0" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#70129m0001.htm_dpthd2">
-	Defence
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-29a.3WS.1" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000010">
-	3 Commando Brigade Royal Marines (Attachment of a Fourth Manoeuvre Unit)
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2007-01-29a.3WS.2" speakerid="uk.org.publicwhip/member/1976" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000084">
-	<p pid="a.3WS.2/1">I announce today the attachment of 1 Rifles to 3 Commando Brigade Royal Marines, from <phrase class="date" code="">1 April 2008</phrase>, as a fourth manoeuvre unit. The battalion is due to form up in February 2007 following the merger of the Devonshire and Dorset Light Infantry (DDLI) and the Royal Gloucestershire, Berkshire and Wiltshire Light Infantry (RGBWLI).</p>
-	<p pid="a.3WS.2/2">The addition of a fourth manoeuvre unit will give 3 Commando Brigade Royal Marines more robust organisational and structural depth to enable it to contribute units simultaneously to current operations and to tasks that might arise in relation to other defence objectives. The permanent nature of the fourth manoeuvre unit grouping will enable the development of common doctrine and procedures, thus allowing it to participate more fully in amphibious operations as a secondary assault wave. This move will enhance the capability of 3 Commando Brigade Royal Marines and achieve increased delivery of military capability. It also reflects the desire to deepen joint relationships between the Royal Navy and Army. The Army already provides combat support within 3 Commando Brigade Royal Marines in the form of 29 Commando Regiment Royal Artillery and 59 Independent Commando Squadron Royal Engineers, and contributes to the combat service support provided by Commando Logistic Regiment. There are clearly wider defence benefits as we balance operational capability across defence. The fourth manoeuvre unit role will provide challenging and varied opportunities for an Army light role infantry battalion in 3 Commando Brigade Royal Marines.</p>
-	<p pid="a.3WS.2/3">1 Rifles will remain on the Army list under the full command of the Chief of the General Staff but serve under the operational command of the Commander-in-Chief Fleet and the Commander of 3 Commando Brigade Royal Marines. Regimental personnel will continue to wear the 1 Rifles cap badge.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-29a.4WS.0" nospeaker="true" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#70129m0001.htm_dpthd3">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-29a.4WS.1" nospeaker="true" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000011">
-	Police (Northern Ireland) Act 2000 (Temporary Provisions)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.3WS.0" newgid="uk.org.publicwhip/wms/2007-01-29b.3WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.3WS.1" newgid="uk.org.publicwhip/wms/2007-01-29b.3WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.3WS.2" newgid="uk.org.publicwhip/wms/2007-01-29b.3WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.4WS.0" newgid="uk.org.publicwhip/wms/2007-01-29b.4WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.4WS.1" newgid="uk.org.publicwhip/wms/2007-01-29b.4WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.4WS.2" newgid="uk.org.publicwhip/wms/2007-01-29b.4WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-29a.4WS.2" speakerid="uk.org.publicwhip/member/1950" speakername="Paul Goggins" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000085">
 	<p pid="a.4WS.2/1">On <phrase class="date" code="2006-09-04">4 September 2006</phrase>, I launched a wide-ranging review of the effectiveness of the temporary provisions of the Police (Northern Ireland) Act 2000. This review formed part of the Secretary of State's statutory duty to have regard to progress made towards securing that membership of the police and police support staff is representative of the community in Northern Ireland, and to consult with the policing board, when making a decision as to whether these provisions should be renewed. This consultation ended on <phrase class="date" code="2006-11-27">27 November 2006</phrase>.</p>
 	<p pid="a.4WS.2/2">As a result of these temporary provisions, tremendous progress has been made during the last few years towards a more representative Police Service for Northern Ireland with the proportion of Catholic officers in the regulars increasing from 8.3 per cent. in 1998 to 21.19 per cent. on <phrase class="date" code="2007-01-17">17 January 2007</phrase>. The number of Catholic applications to the PSNI has also been encouraging, averaging 35 per cent. in each competition. Catholic representation among civilian staff also continues to rise. The percentage of directly recruited Catholic police support staff has increased from 13.76 per cent. in January 2002 to 22.12 per cent. on <phrase class="date" code="2007-01-01">1 January 2007</phrase> with the overall composition now at 16.99 per cent. There are a number of initiatives ongoing which will continue to improve this over time. An example of this is the proposed introduction of Police Community Support Officers (PCSOs) who will be civilians recruited under the 50:50 provisions.</p>
 	<p pid="a.4WS.2/3">The Government are committed in continuing to address the religious imbalance within the police service and the St. Andrews agreement makes it clear that the temporary 50:50 recruitment arrangements to the PSNI will lapse when the Government's target of 30 per cent. Catholic officers has been achieved. For these reasons, and after looking carefully at the responses to the consultation, the Secretary of State has now decided that those temporary provisions should be renewed for a further three years. This will enable the Government to reach its target of 30 per cent. Catholic representation in PSNI by 2010-11. That is why today I am laying before Parliament the Police (Northern Ireland) Act 2000 (Renewal of Temporary Provisions) Order 2007. There will be an opportunity to debate the order in both Houses of Parliament.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-29a.5WS.0" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#70129m0001.htm_dpthd4">
-	Work and Pensions
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-29a.5WS.1" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000012">
-	Employment and Social Policy (Ministerial Meeting)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.5WS.0" newgid="uk.org.publicwhip/wms/2007-01-29b.5WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.5WS.1" newgid="uk.org.publicwhip/wms/2007-01-29b.5WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-29a.5WS.2" newgid="uk.org.publicwhip/wms/2007-01-29b.5WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-29a.5WS.2" speakerid="uk.org.publicwhip/member/1909" speakername="James Plaskitt" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmstext/70129m0001.htm#0701295000086">
 	<p pid="a.5WS.2/1">The Employment and Social Policy informal meeting was held on 18 to <phrase class="date" code="2007-01-20">20 January</phrase> in Berlin, Germany.</p>
 	<p pid="a.5WS.2/2">My right hon. Friend, the Secretary of State for Work and Pensions and my hon. Friend, the Under-Secretary for Employment Relations and Postal Services (Jim Fitzpatrick) represented the UK.</p>

@@ -8,12 +8,20 @@
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
 <!ENTITY aacute "&#225;" >
 <!ENTITY acirc  "&#226;" >
 <!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
 <!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
@@ -23,12 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -40,31 +54,21 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.73WS.0" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000002">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.73WS.1" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000009">
-	Office for National Statistics
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.2" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.73WS.2" speakerid="uk.org.publicwhip/member/1918" speakername="John Healey" speakeroffice="The Financial Secretary to the Treasury" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000017">
 	<p pid="a.73WS.2/1">The Financial Secretary to the Treasury(Mr John Healey): The National Statistics Annual Report and the Office for National Statistics' Annual Report and Accounts for 2005-06 are being published and laid before the House today. Copies of both documents are available in the Libraries of the House and can be accessed free on the National Statistics website.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.73WS.3" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000003">
-	Communities and Local Government
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.73WS.4" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000010">
-	Greater London Authority
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.3" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.4" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.73WS.5" newgid="uk.org.publicwhip/wms/2006-07-13b.73WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.73WS.5" speakerid="uk.org.publicwhip/member/1433" speakername="Ruth Kelly" speakeroffice="The Secretary of State for Communities and Local Government" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000018">
 	<p pid="a.73WS.5/1">The Government are today publishing a statement setting out final proposals for additional powers and responsibilities for the Greater London Authority (GLA)&mdash;the Mayor of London and the London Assembly.</p>
 	<p pid="a.73WS.5/2">In November 2005 we launched a consultation exercise which looked at options for giving the Mayor a greater say in the planning and delivery of London's strategic services. The consultation exercise stimulated a great deal of interest and debate about the future strategic governance of London. We have carefully considered all the responses to consultation in deciding the final package of new powers published today.</p>
@@ -82,15 +86,12 @@
 	<p pid="a.73WS.5/14">We plan to implement the changes as quickly as possible. We will introduce a GLA Bill as soon as parliamentary time allows, to enact any changes requiring primary legislation. Other changes will be made through secondary legislation or by agreement.</p>
 	<p pid="a.73WS.5/15">Copies of the Policy Statement, an accompanying Regulatory Impact Assessment, a Summary of Responses to Consultation and the responses to the consultation exercise have been placed in the Libraryof the House.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.75WS.0" nospeaker="true" colnum="75WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000004">
-	Foreign and Commonwealth Office
-</major-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.75WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.75WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.75WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.75WS.1" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wms/2006-07-13a.75WS.1" nospeaker="true" colnum="75WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000011">
 	Afghanistan: Counter Narcotics
 </minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.75WS.2" newgid="uk.org.publicwhip/wms/2006-07-13b.75WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.75WS.2" speakerid="uk.org.publicwhip/member/1763" speakername="Kim Howells" speakeroffice="The Minister for the Middle East" colnum="75WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000033">
 	<p pid="a.75WS.2/1">Following the launch of the National Drug Control Strategy at the London Conference on Afghanistan in January, the UK continues, as partner nation, to support the Government of Afghanistan's counter narcotics effort. This year's planting season pre-dated the launch of that strategy and, although last year saw a 21 per cent. decline in opium poppy cultivation across Afghanistan, this year it is likely that there will be a significant rise in cultivation. This is worrying and is due, in part, to a substantial increase in planting of opium poppy in the south of Afghanistan, including in Helmand province. But in areas where governance, security and levels of development have improved, there are signs that last year's cultivation reductions will be sustained. At the same time, the Government of Afghanistan's eradication effort has been more effective than in previous years.</p>
 	<p pid="a.75WS.2/2">The Government of Afghanistan's National Drug Control Strategy offers the best means to tackle the opium trade at its source. We are determined to work with the Government and people of Afghanistan to sharpen delivery in order to achieve sustained impact on the ground. In particular they will be focusing their efforts on targeting the traffickers and their accomplices who profit most from the trade. We will be assisting by helping to establish the rule of law across Afghanistan, which is essential to counter narcotics efforts and to the success of the broader reconstruction process. The UK is working with the Government of Afghanistan and with other donors to develop new intelligence structures and to build the capacity of counter narcotics law enforcement and criminal justice agencies. These efforts are starting to show results. Since August 2005 we have seen the conviction of over 190 traffickers, and a significant increase in drugs related seizures and the destruction of laboratories. These actions are helping to disrupt the trade, forcing traffickers to move and store drugs in smaller quantities.</p>
@@ -106,27 +107,12 @@
 	<p pid="a.75WS.2/12" class="indent"><i>Pillar 8: International and Regional Cooperation</i>&mdash;&pound;2,006,000 to support border control and other regional projects focused on disrupting the flow of illicit drugs and precursor materials across Afghanistan's borders.</p>
 	<p pid="a.75WS.2/13">The UK also contributed &pound;9,000,000 to the Government of Afghanistan's Counter Narcotics Trust Fund and a further &pound;1,500,000 to the Law and Order Trust Fund established to cover the cost of police salaries and equipment. A further &pound;2,970,000 was spent on strategy, research and reviews, including support to the United Nations Office on Drugs and Crime's annual poppy survey.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.76WS.0" nospeaker="true" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000005">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.76WS.1" nospeaker="true" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000012">
-	Life Sentence Review Commissioners/Sentence Review Commissioners
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-07-13a.76WS.2" speakerid="uk.org.publicwhip/member/1723" speakername="Peter Hain" speakeroffice="The Secretary of State for Northern Ireland" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000046">
-	<p pid="a.76WS.2/1">I have today arranged for the Annual Reports of the Life Sentence Review Commissioners and the Sentence Review Commissioners to be laid in the House. Copies of the reports have been placed in the Libraries of both Houses.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.76WS.3" nospeaker="true" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000006">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.76WS.4" nospeaker="true" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000013">
-	OECD Guidelines for Multinational Enterprises
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.2" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.3" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.4" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.76WS.5" newgid="uk.org.publicwhip/wms/2006-07-13b.76WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.76WS.5" speakerid="uk.org.publicwhip/member/1702" speakername="Ian McCartney" speakeroffice="The Minister for Trade" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000047">
 	<p pid="a.76WS.5/1">The All-Party Parliamentary Group on the Great Lakes Region and Genocide Prevention (APPG) reported in February 2005 on the effectiveness of the application of the OECD Guidelines for Multinational Enterprises (Guidelines) to the Democratic Republic of Congo.</p>
 	<p pid="a.76WS.5/2">It made a number of recommendations, and in response the Government committed to consult on possible improvements to the UK National Contact Point's (NCP) promotion and implementation of the guidelines.</p>
@@ -139,15 +125,9 @@
 	<p pid="a.76WS.5/9">The Government will review the effectiveness of the changes, in consultation with stakeholders, in a year's time.</p>
 	<p pid="a.76WS.5/10">The Government want the new NCR to work with businesses, employees and other parties to deal with issues raised under the guidelines. I believe that this approach, allied with the changes set out in the Government's response, will deliver a more open and transparent system in which all organisations canput their faith in encouraging responsible business activities overseas.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-07-13a.77WS.0" nospeaker="true" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000007">
-	Work and Pensions
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.77WS.1" nospeaker="true" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000014">
-	Buncefield Explosion
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.77WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.77WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.77WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.77WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.77WS.2" newgid="uk.org.publicwhip/wms/2006-07-13b.77WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.77WS.2" speakerid="uk.org.publicwhip/member/2013" speakername="Anne McGuire" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="77WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000058">
 	<p pid="a.77WS.2/1">My hon. Friend Lord Hunt of Kings Heath has made the following written ministerial statement:</p>
 	<p pid="a.77WS.2/2" class="indent">&quot;The independent Major Incident Investigation Board&mdash;appointed by the Health and Safety Commission (HSC) to supervise the investigation into the explosions and fires atthe Buncefield Oil Storage Depot, Hemel Hempstead, on<phrase class="date" code="2005-12-11">11 December 2005</phrase>&mdash;will today publish its initial report. The report has been received by the HSC and the Board of the Environment Agency who have endorsed its publication. Copies of the report will be placed in the Libraries of both Houses.</p>
@@ -156,11 +136,8 @@
 	<p pid="a.77WS.2/5" class="indent">The Board also draws attention to the process of incremental development around Buncefield and expresses an interest in the cross-Government work addressing the implications of new information about major hazard sites recently gathered by HSE. This work has been underway since before the Buncefield incident, but will take account of information and analysis arising from the investigation. Once clear conclusions emerge, the work will be the subject of consultation with stakeholders. Information about this was set out in a previous Parliamentary Statement on the <phrase class="date" code="2006-05-15">15 May</phrase>.</p>
 	<p pid="a.77WS.2/6" class="indent">The investigation is continuing. Many people, not least the local residents and businesses directly affected by the incident, need answers to resolve the uncertainties caused by Buncefield. The Investigation Board is keenly aware of their needs, while ensuring the investigation is thorough and fully considers the implications of its findings. The Board is also conscious that in doing so it must not prejudice any future criminal proceedings, should it be decided that there be grounds to pursue them. The HSC and Environment Agency are now considering the initial report and the Board's early conclusions, and will ensure that actions identified are taken forward without delay&quot;.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.78WS.0" nospeaker="true" colnum="78WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000015">
-	Improving the Life Chances of Disabled People
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.78WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.78WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.78WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.78WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.78WS.1" speakerid="uk.org.publicwhip/member/2013" speakername="Anne McGuire" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="78WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000065">
 	<p pid="a.78WS.1/1">The Government's Office for Disability Issues (ODI) has today published its first annual report to the Prime Minister, which details the progress that is being made towards realising the Government's ambitious vision for real equality for disabled people by 2025. Copies of the report are available in the Vote Office and Printed Paper Office.</p>
 	<p pid="a.78WS.1/2">The ODI was launched in December 2005 to deliver the strategy set out in the Prime Minister's strategy unit report, &quot;Improving the Life Chances of Disabled People&quot;. Since then, the ODI has successfully formed partnerships with internal and external stakeholders and driven forward an ambitious programme of work.</p>
@@ -168,11 +145,8 @@
 	<p pid="a.78WS.1/4">The report provides an update on action against all the recommendations in the 'Life Chances' report and makes clear what further activity is necessary to deliver improved outcomes for disabled people. One key area where Government need to do much more is in involving disabled people in the design and delivery of services which impact on their lives; the GDI's report provides information on our progress in developing a UK Advisory Network on Disability Equality, which will be established from later this year.</p>
 	<p pid="a.78WS.1/5">I commend this report to the House.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-07-13a.79WS.0" nospeaker="true" colnum="79WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000016">
-	Review Group on Common Parts
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.79WS.0" newgid="uk.org.publicwhip/wms/2006-07-13b.79WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-07-13a.79WS.1" newgid="uk.org.publicwhip/wms/2006-07-13b.79WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-07-13a.79WS.1" speakerid="uk.org.publicwhip/member/2013" speakername="Anne McGuire" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="79WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060713/wmstext/60713m0134.htm#06071356000073">
 	<p pid="a.79WS.1/1">As my statement of <phrase class="date" code="2006-02-01">1 February</phrase> said, the Government set up the Review Group on Common Parts, during the passage of the Disability Discrimination Act 2005, to review the legal position in relation to alterationsto the common parts of let residential premisesand of residential commonholds and to make recommendations. The Government are very grateful for Members' work on this and has published the group's report on my Department's website at: <a href="http://dwp.gov.uk/aboutus/business.asp">http://dwp.gov.uk/aboutus/business.asp</a></p>
 	<p pid="a.79WS.1/2">This is an initial response to the report and covers the five non-legislative recommendations made by the review group. We are continuing to consider the complexities of the legislative recommendations, including with the devolved administrations, and will issue a further response as that work develops.</p>

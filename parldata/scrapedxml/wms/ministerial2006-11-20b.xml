@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,30 +54,17 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-20b.13WS.0" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#61120m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-20b.13WS.1" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000006">
-	Budget ECOFIN
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-20b.13WS.2" speakerid="uk.org.publicwhip/member/1740" speakername="Edward Balls" speakeroffice="The Economic Secretary to the Treasury" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000059">
-	<p pid="b.13WS.2/1">Items on the agenda are as follows:</p>
-	<p pid="b.13WS.2/2"><i>Preliminary Draft Amending Budget Number 6 for 2006&mdash;</i>Ministers will be invited to adopt Preliminary Draft Amending Budget 6. This would amend the 2006 budget to reflect latest implementation capacity.</p>
-	<p pid="b.13WS.2/3"><i>Letters of Amendment Number 2 and 3 to the Preliminary Draft Budget for 2007&mdash;</i>Ministers will be invited to adopt amending letters 2 and 3 to the Preliminary Draft Budget for 2007. The letters reflect latest information on agricultural prices and other developments.</p>
-	<p pid="b.13WS.2/4"><i>Draft Budget for 2007&mdash;</i>The Council will look to agree their Second Reading of the 2007 Draft Budget and finalise figures for compulsory expenditure (agriculture), in preparation for the subsequent conciliation with the European Parliament. The UK will seek a budget that is affordable, reflects realistic forecasts of agriculture and structural funds spending and bears down on administration.</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-20b.13WS.3" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000007">
-	European Union (Financial Management and Fraud)
-</minor-heading>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.13WS.0" newgid="uk.org.publicwhip/wms/2006-11-20c.13WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.13WS.1" newgid="uk.org.publicwhip/wms/2006-11-20c.13WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.13WS.2" newgid="uk.org.publicwhip/wms/2006-11-20c.13WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.13WS.3" newgid="uk.org.publicwhip/wms/2006-11-20c.13WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.13WS.4" newgid="uk.org.publicwhip/wms/2006-11-20c.13WS.4" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-20b.13WS.4" speakerid="uk.org.publicwhip/member/1740" speakername="Edward Balls" speakeroffice="The Economic Secretary to the Treasury" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000060">
 	<p pid="b.13WS.4/1">A year ago, under the UK's presidency of the EU, finance Ministers agreed important conclusions on strengthening the EU's internal financial control framework. Progress has since been made in this area, and agreement is close on a revised EU financial regulation.</p>
 	<p pid="b.13WS.4/2">So it is highly regrettable that, once again, the European Court of Auditors, in its annual report published on <phrase class="date" code="2006-10-24">24 October</phrase>, was unable to give a positive &quot;statement of assurance&quot; on the EU's accounts. The Court once again qualified the reliability of the EU's accounts&mdash;for the 12th year in succession&mdash;and found that not all EU money had been spent strictly in line with the regulations.</p>
@@ -82,37 +79,12 @@
 	<p pid="b.13WS.4/11">I will therefore be sending copies of this statement and the House of Lords report to my counterparts in other EU countries, encouraging them to reflect fully on all its recommendations, and urging them to take similar initiatives to our own to improve national accountability for the sound management of EU funds.</p>
 	<p pid="b.13WS.4/12">It is of fundamental importance to EU taxpayers that EU money is spent correctly. That is the focus of the House of Lords report. But it is also of equal importance that EU money is spent effectively. In the view of the UK, we need to go further in equipping the EU with a performance-driven and results-oriented system of financial management and administration, which ensures EU money is spent both efficiently and effectively. That will be a focus of the review of the EU budget that will be conducted in 2008-09 and on which I will make further reports to the House in the coming months.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-20b.15WS.0" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#61120m0001.htm_dpthd1">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-20b.15WS.1" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000008">
-	Agriculture and Fisheries Council
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-20b.15WS.2" speakerid="uk.org.publicwhip/member/1580" speakername="Ben Bradshaw" speakeroffice="The Minister for Local Environment, Marine and Animal Welfare" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000061">
-	<p pid="b.15WS.2/1">I will be representing the United Kingdom at this month's Agriculture and Fisheries Council in Brussels.</p>
-	<p pid="b.15WS.2/2">The presidency will seek political agreements on fixing fishing opportunities for certain deep-sea fish stocks for 2007 and 2008; measures for the sustainable exploitation of fishery resources in the Mediterranean Sea and on the electronic recording and reporting of fishing activities.</p>
-	<p pid="b.15WS.2/3">There will be an exchange of views on the Commission Communication implementing sustainability in EU fisheries through maximum sustainable yield.</p>
-	<p pid="b.15WS.2/4">The Fisheries Commissioner will give a progress report on his draft action plan for simplifying and improving the Common Fisheries Policy.</p>
-	<p pid="b.15WS.2/5">There will also be an exchange of views on a Commission Communication: &quot;Halting the loss of biodiversity by 2010&mdash;and beyond&quot;, structured around two questions posed by the presidency.</p>
-	<p pid="b.15WS.2/6">The Council will hold a policy debate on the reform proposal for support of banana production within the EU.</p>
-	<p pid="b.15WS.2/7">The Council will also hold a policy debate on a proposal to extend the existing energy crop support to new member states; to prolong the new member states simplified version of the single payment scheme (SAPS) until after 2008 and to make some technical corrections to the single payment legislation.</p>
-	<p pid="b.15WS.2/8">Under any other business, the Fisheries Commissioner will update the Council on the EU/Norway fisheries agreement to apply in 2007.</p>
-	<p pid="b.15WS.2/9">The Health and Consumer Protection Commissioner will give a presentation on genetically modified food and feed and provide an update to Council on avian influenza H5N1.</p>
-	<p pid="b.15WS.2/10">The Agriculture Commissioner will give a progress report on uptake in year one of the restructuring scheme for the sugar industry, agreed as part of the 2005 reform package.</p>
-	<p pid="b.15WS.2/11">Over lunch, Fisheries Ministers will discuss the simplification of the common fisheries policy.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-20b.15WS.3" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#61120m0001.htm_dpthd2">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-20b.15WS.4" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000009">
-	Estate Agents (Regulation)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.0" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.1" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.2" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.3" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.4" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-20b.15WS.5" newgid="uk.org.publicwhip/wms/2006-11-20c.15WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-20b.15WS.5" speakerid="uk.org.publicwhip/member/1981" speakername="Alistair Darling" speakeroffice="The Secretary of State for Trade and Industry" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061120/wmstext/61120m0001.htm#06112010000062">
 	<p pid="b.15WS.5/1">This Government are committed to a robust and effective consumer and competition regime&mdash;one that is fair to consumers as well as business.</p>
 	<p pid="b.15WS.5/2">We believe that the key to successful, fair, and competitive markets are confident, knowledgeable consumers who know what their rights are. We have a duty to give consumers:</p>

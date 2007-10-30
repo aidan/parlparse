@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-02-05a.27WS.0" nospeaker="true" colnum="27WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/wmstext/70205m0001.htm#70205m0001.htm_dpthd0">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-02-05a.27WS.1" nospeaker="true" colnum="27WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/wmstext/70205m0001.htm#0702051000004">
-	Community-based Restorative Justice
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-05a.27WS.0" newgid="uk.org.publicwhip/wms/2007-02-05b.27WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-05a.27WS.1" newgid="uk.org.publicwhip/wms/2007-02-05b.27WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-02-05a.27WS.2" newgid="uk.org.publicwhip/wms/2007-02-05b.27WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-02-05a.27WS.2" speakerid="uk.org.publicwhip/member/1530" speakername="David Hanson" speakeroffice="The Minister of State, Northern Ireland Office" colnum="27WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/wmstext/70205m0001.htm#0702051000031">
 	<p pid="a.27WS.2/1">The House will recall that on <phrase class="date" code="2006-07-25">25 July 2006</phrase> I gave a commitment to consult further on the draft protocol, which is designed to provide a framework for regulating community-based restorative justice schemes in Northern Ireland. Consultation on the draft protocol&mdash;which ran in parallel with an Equality Impact Assessment (EQIA)&mdash;has now ended, and I wish to inform the House of the next steps.</p>
 	<p pid="a.27WS.2/2">The extended consultation has afforded a full opportunity to all interested parties to make known their views, and I am pleased that some 32 organisations and individuals across the statutory and voluntary sectors, including many key stakeholders, have chosen to do so. I am particularly grateful to the Chair and hon. Members of the Northern Ireland Affairs Committee, who have conducted a very thorough inquiry into the draft protocol, drawing evidence from a wide range of interests. I shall make a separate and detailed response to the Committee's Report in the next few weeks.</p>

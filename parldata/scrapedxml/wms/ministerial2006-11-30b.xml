@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,31 +54,18 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.113WS.0" nospeaker="true" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#61130m0001.htm_dpthd0">
-	Defence
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.113WS.1" nospeaker="true" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000009">
-	Military Flying Training
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-30b.113WS.2" speakerid="uk.org.publicwhip/member/1609" speakername="Derek Twigg" speakeroffice="The Parliamentary Under-Secretary of State for Defence" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000107">
-	<p pid="b.113WS.2/1">I am pleased to announce that the Ascent Consortium has been selected as the preferred bidder for the UK military flying training system (UKMFTS) training system partner. The Ascent Consortium consists of Lockheed Martin and the VT Group. The training system partner will work with the Ministry of Defence to deliver a long-term, cost effective, flexible training capability for the future flying training needs of the armed forces. Detailed contract negotiations with the consortium will now commence.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.113WS.3" nospeaker="true" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#61130m0001.htm_dpthd1">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.113WS.4" nospeaker="true" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000010">
-	Marine Climate Impact Partnership
-</minor-heading>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.0" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.1" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.2" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.3" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.4" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.113WS.5" newgid="uk.org.publicwhip/wms/2006-11-30c.113WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-30b.113WS.5" speakerid="uk.org.publicwhip/member/1554" speakername="Ian Pearson" speakeroffice="The Minister for Climate Change and the Environment" colnum="113WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000108">
 	<p pid="b.113WS.5/1">I have today launched the first annual report card of the marine climate change impact partnership.</p>
 	<p pid="b.113WS.5/2">This MCCIP report card is the first ever holistic assessment of the impacts of climate change in UK seas. This report card shows us, at a glance, the latest scientific knowledge on climate impacts on different marine sectors. It also, crucially, gives a measure of uncertainty surrounding the findings. This is extremely useful for decision makers, policy advisors, researchers, scientists, environmentalists and the public.</p>
@@ -76,57 +73,22 @@
 	<p pid="b.113WS.5/4" class="indent">Centre for the Environment, Fisheries and Aquaculture Science; Countryside Council for Wales; Climate Research Unit&mdash;University of East Anglia; Environment Agency; Joint Nature Conservation Committee; Marine Environmental Change Network; Natural England; Natural Environment Research Council; Royal Society for the Protection of Birds; Scottish Environment Protection Agency; Scottish Natural Heritage;Sir Alastair Hardy Foundation for Ocean Science; The Crown Estate; UK Climate Impacts Programme and WWF.</p>
 	<p pid="b.113WS.5/5">Copies are available through MCCIP (<a href="http://www.mccip.org.uk">www.mccip.org.uk</a>) and will be placed in the Libraries of the House.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.114WS.0" nospeaker="true" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000011">
-	Nirex
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-30b.114WS.1" speakerid="uk.org.publicwhip/member/1554" speakername="Ian Pearson" speakeroffice="The Minister for Climate Change and the Environment" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000109">
-	<p pid="b.114WS.1/1">My right hon. Friend the Secretary of State for Environment Food and Rural Affairs made an oral statement on the report of the Committee on Radioactive Waste Management (CoRWM) on <phrase class="date" code="2006-10-25">25 October 2006</phrase>, column 1519.</p>
-	<p pid="b.114WS.1/2">As part of arrangements for securing the geological disposal for the UK's higher activity radioactive waste, the statement proposed transfer of ownership of United Kingdom Nirex Ltd. from DEFRA and DTI to the Nuclear Decommissioning Authority (NDA). After allowing Nirex a period for comment on how this proposed share transfer could best be brought about I am pleased to confirm the transfer has now taken place.</p>
-	<p pid="b.114WS.1/3">The NDA will now begin a three month TUPE consultation on integration arrangements for transferring staff into the organisation.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.114WS.2" nospeaker="true" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#61130m0001.htm_dpthd2">
-	Foreign and Commonwealth Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.114WS.3" nospeaker="true" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000012">
-	Diplomatic Service and Home Service Regulations
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.0" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.1" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.2" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.3" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.4" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.4" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-30b.114WS.4" speakerid="uk.org.publicwhip/member/1533" speakername="Margaret Beckett" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000110">
 	<p pid="b.114WS.4/1">The Cabinet Office launched the new civil service code on<phrase class="date" code="2006-06-06">6 June</phrase>. The code sets out the core values of the civil service and the standards expected of civil servants. The code has been redrafted to make it more relevant and accessible to all civil servants.</p>
 	<p pid="b.114WS.4/2">The code of Ethics in Diplomatic Service Regulations (DSR) and Home Service Regulations (HSR) derives from the civil service code. This code has been revised to reflect the new civil service code.</p>
 	<p pid="b.114WS.4/3">A copy of the new regulations will be placed in the Library of the House.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.114WS.5" nospeaker="true" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#61130m0001.htm_dpthd3">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.114WS.6" nospeaker="true" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000013">
-	Harmondsworth Immigration Removal Centre
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-11-30b.114WS.7" speakerid="uk.org.publicwhip/member/1958" speakername="John Reid" speakeroffice="The Secretary of State for the Home Department" colnum="114WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000111">
-	<p pid="b.114WS.7/1">The House will be aware that there was a disturbance at Harmondsworth Immigration Removal Centre yesterday. I would like to pay tribute to the speed and professionalism of the services who responded in containing the incident and ensuring that the centre was brought back under control without serious injuries or loss of life. The operation in response to the incident is ongoing, but the following events have been reported to me.</p>
-	<p pid="b.114WS.7/2">A number of small fires were lit in the early hours of the morning which automatically activated the sprinkler system. The police surrounded the perimeter and the fire service attended the scene. At 1.15 am the decision to open the Gold Command Suite at Prison Service Headquarters was taken. Prison Service Tornado teams arrived by 6 am and were deployed soon after 7 am.</p>
-	<p pid="b.114WS.7/3">The police service secured the perimeter and the perimeter remained secure throughout the incident. No detainees escaped. There have been no reports of serious injuries to staff or detainees. There has been no risk to the public.</p>
-	<p pid="b.114WS.7/4">The Immigration and Nationality Directorate (IND) have informed me that 484 detainees were present at Harmondsworth at the time of the disturbance, and that of these 177 were foreign nationals who had been convicted of criminal offences, had completed their custodial sentences and who were in the process of being deported or considered for deportation. The centre also held immigration offenders and failed asylum seekers who are in the United Kingdom in breach of our immigration laws and who are being held pending removal.</p>
-	<p pid="b.114WS.7/5">The disturbance appears to have been an attempt to sabotage the enforcement of our immigration law. The perpetrators have been prepared to destroy property and to endanger their fellow detainees. They have, themselves, harmed their own environment. We will not allow them to succeed in frustrating the enforcement of the law.</p>
-	<p pid="b.114WS.7/6">Operations took place last night to transfer safely detainees from Harmondsworth to other secure accommodation in the Immigration and Nationality Directorate and Prison Service estates. No detainees from Harmondsworth have been released. Around 150 low risk immigration detainees from elsewhere in IND's estate may be bailed, with reporting restrictions, in order to accommodate the higher risk population transferring from Harmondsworth, but the actual number bailed may be fewer, as the operation progresses. No foreign national prisoners have been released. The Director General of the Immigration and Nationality Directorate has assured me that, in all cases, removal from the country will be pursued vigorously.</p>
-	<p pid="b.114WS.7/7">In the early hours of this morning, there was an incident at Lindholme detention centre. The Fire Service attended. The incident has been dealt with and there was no loss of accommodation.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.115WS.0" nospeaker="true" colnum="115WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#61130m0001.htm_dpthd4">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.115WS.1" nospeaker="true" colnum="115WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000014">
-	EU Competitiveness Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.5" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.6" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.114WS.7" newgid="uk.org.publicwhip/wms/2006-11-30c.114WS.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.115WS.0" newgid="uk.org.publicwhip/wms/2006-11-30c.115WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.115WS.1" newgid="uk.org.publicwhip/wms/2006-11-30c.115WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.115WS.2" newgid="uk.org.publicwhip/wms/2006-11-30c.115WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-30b.115WS.2" speakerid="uk.org.publicwhip/member/1523" speakername="Malcolm Wicks" speakeroffice="The Minister for Science and Innovation" colnum="115WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000112">
 	<p pid="b.115WS.2/1">I will be attending the Competitiveness Council in Brussels on <phrase class="date" code="2006-12-04">4 December</phrase>. Mauri Pekkarinen, Finnish Minister for Trade and Industry, will chair the Council.</p>
 	<p pid="b.115WS.2/2">The first item on the agenda will be the proposal for a modernised customs code. The Finnish presidency have prepared a discussion paper. The aim is to hold a policy debate on the issues in the discussion paper in order to move the negotiations forward.</p>
@@ -145,11 +107,8 @@
 	<p pid="b.115WS.2/15">(viii) Review of the Timeshare Directive (Information from the Commission)</p>
 	<p pid="b.115WS.2/16">(ix) Information on the state of play on suspension of import duties on primary aluminium (Request from the Polish delegation and Information from the Commission).</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.116WS.0" nospeaker="true" colnum="116WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000015">
-	Farepak
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.116WS.0" newgid="uk.org.publicwhip/wms/2006-11-30c.116WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.116WS.1" newgid="uk.org.publicwhip/wms/2006-11-30c.116WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-30b.116WS.1" speakerid="uk.org.publicwhip/member/1702" speakername="Ian McCartney" speakeroffice="The Minister for Trade" colnum="116WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0001.htm#06113090000113">
 	<p pid="b.116WS.1/1">At DTI questions on <phrase class="date" code="2006-10-17">17 October</phrase> and during the Westminster Hall debate on <phrase class="date" code="2006-11-07">7 November</phrase>, I undertook to come back to the House in an appropriate forum at each stage to keep hon. Members up to date, and this is an appropriate moment since the Farepak response fund closed yesterday.</p>
 	<p pid="b.116WS.1/2">I think every Member of the House will be aware of the collapse of this company; that a large number of people who were customers have lost the money they had intended to put by for the festive season. I have hear stories from hon. Members about whole families in their constituencies who have lost out They were not investing their money hoping to make a profit or receive interest but they were expecting that they would get their money back in the form of vouchers. Many had also ordered hampers of food and confectionery for the Christmas festivities. Many of the poor families now face a very bleak Christmas.</p>
@@ -189,15 +148,9 @@
 	<p pid="b.116WS.1/36">I will come back to the House with further details surrounding the review by the OFT and of the administration as and when appropriate.</p>
 	<p pid="b.116WS.1/37">Finally, I should like once more to express my thanks to all those who have done so much to make this gesture of goodwill possible, and to help it happen in time. While it would be impractical to name them all, I would particularly like to thank the hon. Member for South Swindon for doing so much to put the issue in the public eye. I would like to thank the media, which has helpfully brought out the personal dimension by showing how this collapse is impacting on individuals and particular families; and for publicising the response fund and contact information to help their readers, listeners and viewers to make donations. Above all I should like to thank all those who have contributed so generously to the fund; I should like to thank my private office for all their hard work, the Administrators, Shagun Dubey and Martha Thomson of BDO Stoy Haywood for their invaluable help . The Park Group and Findel Plc both for contributing tothe fund and for providing their facilities to support the distribution of vouchers; and of course I should like to thank the family fund for organising it all and ensuring that the Farepak families who a few weeks ago looked to have lost everything will now at least have a little something.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-11-30b.120WS.0" nospeaker="true" colnum="120WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0002.htm#61130m0002.htm_dpthd0">
-	Transport
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-11-30b.120WS.1" nospeaker="true" colnum="120WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0002.htm#06113090000016">
-	Transport Strategy
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.120WS.0" newgid="uk.org.publicwhip/wms/2006-11-30c.120WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.120WS.1" newgid="uk.org.publicwhip/wms/2006-11-30c.120WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-11-30b.120WS.2" newgid="uk.org.publicwhip/wms/2006-11-30c.120WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-11-30b.120WS.2" speakerid="uk.org.publicwhip/member/2008" speakername="Douglas Alexander" speakeroffice="The Secretary of State for Transport" colnum="120WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/wmstext/61130m0002.htm#06113090000114">
 	<p pid="b.120WS.2/1">Sir Rod Eddington will tomorrow publish the conclusions of his study into the effects of transport on economic growth, competition and productivity. Copies of his final report and advice will be made available in the Vote Office.</p>
 	<p pid="b.120WS.2/2">The study, which was commissioned last year by the Chancellor of the Exchequer and my predecessor as Secretary of State for Transport, has carried out a rigorous and independent review of the effect of transport policy on economic growth in the UK.</p>

@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,31 +54,18 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-05a.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#61205m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.7WS.1" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000008">
-	Leitch Skills
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-12-05a.7WS.2" speakerid="uk.org.publicwhip/member/1918" speakername="John Healey" speakeroffice="The Financial Secretary to the Treasury" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000062">
-	<p pid="a.7WS.2/1">Lord Leitch's final report: &quot;Prosperity for all in the Global Economy&mdash;World Class Skills&quot;, is published today. Copies of the report are available in the Vote Office and the Printed Paper Office.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-05a.7WS.3" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#61205m0001.htm_dpthd1">
-	Communities and Local Government
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.7WS.4" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000009">
-	Local Development Frameworks
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.0" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.1" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.2" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.3" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.4" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.7WS.5" newgid="uk.org.publicwhip/wms/2006-12-05b.7WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-05a.7WS.5" speakerid="uk.org.publicwhip/member/1762" speakername="Yvette Cooper" speakeroffice="The Minister for Housing and Planning" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000063">
 	<p pid="a.7WS.5/1">The Government are today announcing provisional allocations of the first tranche of &pound;28.8 million out of a total of &pound;120 million of planning delivery grant (PDG) for 2007-08. We are also announcing additional support to local planning authorities in preparing local development frameworks.</p>
 	<p pid="a.7WS.5/2" class="italic">Planning Delivery Grant allocations</p>
@@ -87,44 +84,20 @@
 	<p pid="a.7WS.5/15">We will be working with local planning authorities and the planning profession to see how the new system can be further streamlined for the next round of LDFs once core strategies are in place.</p>
 	<p pid="a.7WS.5/16">Copies of all supporting documents are being placed in the House Libraries.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.9WS.0" nospeaker="true" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000010">
-	Barker Review
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-12-05a.9WS.1" speakerid="uk.org.publicwhip/member/1433" speakername="Ruth Kelly" speakeroffice="The Secretary of State for Communities and Local Government" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000064">
-	<p pid="a.9WS.1/1">Kate Barker has today published the final report of her independent review of land use planning. Copies of the report are available in the Vote Office.</p>
-	<p pid="a.9WS.1/2">Kate Barker was asked by the Chancellor and the Deputy Prime Minister in December 2005 to conduct an independent review of the land use planning system in England. The terms of reference were to consider how, building on recent reforms, the planning system could better deliver economic growth alongside other sustainable development goals. Her interim report was published in July 2006.</p>
-	<p pid="a.9WS.1/3">Kate Barker's final report makes it clear that planning is a valued and necessary activity that can deliver positive economic outcomes, alongside important social and environmental objectives. She is clear that in taking forward further reforms the importance of consultation and democratic accountability must be respected. But within this framework, she concludes that the context for the planning system is becoming ever more challenging and therefore recommends further wide-ranging reform, building on recent changes and the plan-led approach, to ensure that the planning system supports sustainable economic growth in a global economy.</p>
-	<p pid="a.9WS.1/4">We have already introduced substantial reforms to the planning system to speed up the plan making process and most recently to planning for housing as a result of Kate Barker's first report. We will also shortly publish a new draft planning policy statement on climate change to help reduce carbon emissions.</p>
-	<p pid="a.9WS.1/5">The Government welcome Kate Barker's report, which we will take forward, and agrees with her overall analysis. We will set out in a White Paper in spring 2007 our proposals in response to her recommendations for improving the speed, responsiveness and efficiency of land use planning, and for taking forward Kate Barker's and Rod Eddington's proposals for reform of major infrastructure planning.</p>
-	<p pid="a.9WS.1/6">In the meantime, the Government will be interested to hear responses to the report.</p>
-	<p pid="a.9WS.1/7">Finally, I would like to put on record my thanks to Kate Barker and her team for their work on this review.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-05a.10WS.0" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#61205m0001.htm_dpthd2">
-	Constitutional Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.10WS.1" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000011">
-	Legal Services Board
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.9WS.0" newgid="uk.org.publicwhip/wms/2006-12-05b.9WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.9WS.1" newgid="uk.org.publicwhip/wms/2006-12-05b.9WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.0" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.1" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.2" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-05a.10WS.2" speakerid="uk.org.publicwhip/member/1682" speakername="Bridget Prentice" speakeroffice="The Parliamentary Under-Secretary of State for Constitutional Affairs" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000065">
 	<p pid="a.10WS.2/1">My right hon. and noble Friend the Secretary of State and Lord Chancellor has made the following written ministerial statement:</p>
 	<p pid="a.10WS.2/2" class="indent">On <phrase class="date" code="2006-11-23">23 November</phrase> the Government introduced the Legal Services Bill. Two of the key elements of the Bill are proposals for the establishment of a Legal Services Board (LSB) and the establishment of an Office for Legal Complaints (OLC). The LSB will be an over-arching regulator and the OLC will deal with all complaints about regulated legal service providers.</p>
 	<p pid="a.10WS.2/3" class="indent">In June 2006 the Government announced that their preferred location for the OLC is the West Midlands. This announcement was made based on a strong business case. Since that announcement we have been looking at potential locations for the LSB.</p>
 	<p pid="a.10WS.2/4" class="indent">Following a thorough analysis of a range of options there is not an obvious candidate for a preferred location for the LSB and, therefore, the Government have decided to leave the decision to the LSB, once appointed. In the absence of a strong business case to support a preferred location a decision at this stage would be premature.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-05a.10WS.3" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#61205m0001.htm_dpthd3">
-	Foreign and Commonwealth Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.10WS.4" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000012">
-	Future of Europe (German Presidency)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.3" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.4" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.10WS.5" newgid="uk.org.publicwhip/wms/2006-12-05b.10WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-05a.10WS.5" speakerid="uk.org.publicwhip/member/1378" speakername="Geoff Hoon" speakeroffice="The Minister for Europe" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000066">
 	<p pid="a.10WS.5/1">According to the conclusions of the June 2006 European Council, the German presidency will present a report at the June 2007 European Council based on extensive consultations with member states about the future of Europe.</p>
 	<p pid="a.10WS.5/2">The purpose of this statement is to inform the House about the principles that will underpin the Government's approach to these discussions.</p>
@@ -136,15 +109,9 @@
 	<p pid="a.10WS.5/8" class="indent"><i>Use of existing Treaties</i>: As agreed at the June 2006 European Council, we need to make best use of the possibilities offered by the existing treaties in order to deliver practical results that citizens expect. For example, the European arrest warrant, which was agreed on the basis of the current treaties, allows us to speed up and simplify arrangements for cross border investigations and prosecutions thereby making a significant contribution to the fight against cross-border crime.</p>
 	<p pid="a.10WS.5/9" class="indent"><i>Openness</i>: The EU must keep pace with global change. We want an EU which is outward looking, open to new developments, to trade and investment, and to developing partnerships with third countries.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-05a.11WS.0" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#61205m0001.htm_dpthd4">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-05a.11WS.1" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000013">
-	Sentencing Framework (Northern Ireland)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.11WS.0" newgid="uk.org.publicwhip/wms/2006-12-05b.11WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.11WS.1" newgid="uk.org.publicwhip/wms/2006-12-05b.11WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-05a.11WS.2" newgid="uk.org.publicwhip/wms/2006-12-05b.11WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-05a.11WS.2" speakerid="uk.org.publicwhip/member/1530" speakername="David Hanson" speakeroffice="The Minister of State, Northern Ireland Office" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061205/wmstext/61205m0001.htm#06120551000067">
 	<p pid="a.11WS.2/1">Protection of the public is the first duty of the Criminal Justice System. That is one of the key reasons why, last year, the Northern Ireland Office undertook a comprehensive public consultation on proposals for reviewing the sentencing framework for Northern Ireland. As part of that process I asked for views about the way in which the criminal justice system can best tackle the threat which offenders, particularly violent and sexual offenders, pose to our society.</p>
 	<p pid="a.11WS.2/2">It is the role of Government to ensure that the widest possible range of sentencing options are available to the courts to ensure that our responsibilities in terms of public protection, deterrence, punishment and rehabilitation can be fully realised.</p>

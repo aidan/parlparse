@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="b" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.17WS.0" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#70111m0001.htm_dpthd0">
-	Defence
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.17WS.1" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000010">
-	National Employer Advisory Board
-</minor-heading>
-
+<publicwhip scrapeversion="b" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.0" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.1" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.2" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.17WS.2" speakerid="uk.org.publicwhip/member/1609" speakername="Derek Twigg" speakeroffice="The Parliamentary Under-Secretary of State for Defence" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000101">
 	<p pid="b.17WS.2/1">Following an open competition, I am pleased to advise the House of the reappointment of two members to the National Employer Advisory Board (NEAB).</p>
 	<p pid="b.17WS.2/2">They are:</p>
@@ -64,15 +70,9 @@
 	<p pid="b.17WS.2/4">Mr. Gordon Scott</p>
 	<p pid="b.17WS.2/5">They join the other twelve members of the board, which is chaired by the noble Lord, Lord Glenarthur, and which continues to provide appropriate support in conjunction with the SaBRE campaign to reservists and their employers. I take this opportunity to thank NEAB for its work which is greatly valued by the Ministry of Defence.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.17WS.3" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#70111m0001.htm_dpthd1">
-	Foreign and Commonwealth Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.17WS.4" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000011">
-	Iran: United Nations Security Council Resolution 1737
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.3" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.4" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.17WS.5" newgid="uk.org.publicwhip/wms/2007-01-11c.17WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.17WS.5" speakerid="uk.org.publicwhip/member/1763" speakername="Kim Howells" speakeroffice="The Minister for the Middle East" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000102">
 	<p pid="b.17WS.5/1">On <phrase class="date" code="2006-12-23">23 December 2006</phrase>, the United Nations Security Council adopted Resolution 1737, on Iran's nuclear programme. The Resolution was adopted by consensus, once again underlining that the international community is united and determined to see that Iran does not acquire the means to develop nuclear weapons.</p>
 	<p pid="b.17WS.5/2">Iran has not met its legal obligation in Security Council Resolution 1696, adopted on <phrase class="date" code="">31 July</phrase>, to suspend all uranium enrichment related and reprocessing activities, nor has it taken the other steps required by the International Atomic Energy Agency (IAEA) Board of Governors. Recent reports by the IAEA Director-General, Dr Mohammed El-Baradei, show that Iran's co-operation with the Agency remains inadequate, and that far from suspending enrichment related activities, Iran has continued to install and operate new centrifuges at its enrichment plant at Natanz.</p>
@@ -91,15 +91,9 @@
 	<p pid="b.17WS.5/15">A copy of the Resolution is available on theUN website at: <a href="http://www.un.org/Docs/sc/unsc_resolutions06.htm">http://www.un.org/Docs/sc/unsc_resolutions06.htm</a></p>
 	<p pid="b.17WS.5/16">We remain committed to a negotiated solution. The E3+3's proposals remain on the table. I urge Iran to take the positive path on offer by meeting in full the requirements of the Security Council and the IAEA Board and beginning negotiations with the E3+3 on the basis of those proposals. As the adoption of Resolution 1737 demonstrates, that is the clear and united wish of the whole international community.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.18WS.0" nospeaker="true" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#70111m0001.htm_dpthd2">
-	Health
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.18WS.1" nospeaker="true" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000012">
-	NHS Pharmaceutical Services in England 2006 (Control of Entry)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.18WS.0" newgid="uk.org.publicwhip/wms/2007-01-11c.18WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.18WS.1" newgid="uk.org.publicwhip/wms/2007-01-11c.18WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.18WS.2" newgid="uk.org.publicwhip/wms/2007-01-11c.18WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.18WS.2" speakerid="uk.org.publicwhip/member/1678" speakername="Andy Burnham" speakeroffice="The Minister of State, Department of Health" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000103">
 	<p pid="b.18WS.2/1">In July 2003, the Government responded to the Office of Fair Trading (OFT) report &quot;The Control of Entry Regulations and Retail Pharmacy Services in the UK&quot; which had recommended total deregulation, by setting out a balanced package of reform measures to the national health service regulatory system known as &quot;control of entry&quot;.</p>
 	<p pid="b.18WS.2/2">The majority of these reforms were introducedby revising NHS regulations in April 2005. The announcement also committed the Government to review progress in mid-2006 and to publish the findings. My right hon. Friend the Secretary of State announced that review to the House on <phrase class="date" code="2006-06-13">13 June 2006</phrase>.</p>
@@ -123,15 +117,9 @@
 	<p pid="b.18WS.2/20" class="indent">to report by March 2007&quot;.</p>
 	<p pid="b.18WS.2/21">This work will help fulfil our commitment in &quot;Our Health, Our Care, Our Say&quot; to review contractual arrangements in line with the White Paper's ambitions. I very much look forward to the results of Anne's work. I am confident this will prove an important driver for ensuring we bring pharmaceutical services into the mainstream of NHS services, provide a firm basis on which the NHS can invest to secure the improvements in health and well-being we all want to see and give business the confidence it needs to sustain its commitment to the NHS, patients and consumers alike.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.21WS.0" nospeaker="true" colnum="21WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#70111m0001.htm_dpthd3">
-	Home Department
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.21WS.1" nospeaker="true" colnum="21WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000013">
-	Merger of Assets Recovery Agency and Serious Organised Crime Agency
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.21WS.0" newgid="uk.org.publicwhip/wms/2007-01-11c.21WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.21WS.1" newgid="uk.org.publicwhip/wms/2007-01-11c.21WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.21WS.2" newgid="uk.org.publicwhip/wms/2007-01-11c.21WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.21WS.2" speakerid="uk.org.publicwhip/member/1593" speakername="Vernon Coaker" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="21WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0001.htm#07011193000104">
 	<p pid="b.21WS.2/1">The Government will be bringing forward proposals to merge the Assets Recovery Agency (ARA) with the Serious Organised Crime Agency (SOCA), and to extend to prosecutors the power to launch civil recovery action under the Proceeds of Crime Act 2002.</p>
 	<p pid="b.21WS.2/2">The Assets Recovery Agency has successfully steered the radical new powers in the Proceeds of Crime Act through every legal challenge it has faced. It is recovering significant amounts of criminally acquired wealth, including a recent settlement worth over&pound;12 million. There are significant synergies in merging ARA with SOCA, as SOCA builds its understanding of organised crime and widens the toolkit used to tackle it.</p>
@@ -141,27 +129,15 @@
 	<p pid="b.21WS.2/6">The power to launch civil recovery proceedings will be extended to the three main prosecutors in England and Wales; the Crown Prosecution Service (CPS), the Revenue and Customs Prosecutions Office (RCPO) and the Serious Fraud Office (SFO). It will also be extended to the Public Prosecution Service in Northern Ireland.</p>
 	<p pid="b.21WS.2/7">Subject to the passing of the necessary legislation, the merger provisions are likely to come into force from April 2008. Both ARA and SOCA are committed to maintaining their efforts in the recovery of criminal assets during the transition.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.22WS.0" nospeaker="true" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#70111m0002.htm_dpthd0">
-	Northern Ireland
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.22WS.1" nospeaker="true" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000014">
-	Appointment of District Electoral Area Commissioner
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.0" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.1" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.2" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.22WS.2" speakerid="uk.org.publicwhip/member/1723" speakername="Peter Hain" speakeroffice="The Secretary of State for Northern Ireland" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000105">
 	<p pid="b.22WS.2/1">I am pleased to announce that Richard Mackenzie CB will be appointed as the next District Electoral Areas Commissioner for Northern Ireland. His appointment will have effect from <phrase class="date" code="">1 June 2007</phrase>, following the completion of his work as Local Government Boundaries Commissioner for Northern Ireland. As District Electoral Areas Commissioner, his role will be to group the wards in Northern Ireland into multi-member constituencies for the purposes of elections to local councils.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.22WS.3" nospeaker="true" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#70111m0002.htm_dpthd1">
-	Trade and Industry
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.22WS.4" nospeaker="true" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000015">
-	Holiday Entitlement
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.3" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.4" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.22WS.5" newgid="uk.org.publicwhip/wms/2007-01-11c.22WS.5" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.22WS.5" speakerid="uk.org.publicwhip/member/1765" speakername="Jim Fitzpatrick" speakeroffice="The Parliamentary Under-Secretary of State for Trade and Industry" colnum="22WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000106">
 	<p pid="b.22WS.5/1">On <phrase class="date" code="2006-06-13">13 June 2006</phrase>, 1 announced the launch of a consultation on proposals to increase the holiday entitlement from four weeksto 5.6 weeks, subject to a maximum entitlement of28 days, implementing the Government's manifesto commitment to make paid leave for bank and public holidays additional to the existing statutory entitlement. The consultation attracted considerable attention and a healthy number of responses.</p>
 	<p pid="b.22WS.5/2">Today I am publishing the Government's response to that consultation, along with a further consultation on draft regulations. The initial consultation sought views on the phasing of the introduction of the additional holiday entitlement. Based on the views expressed in the consultation and in order to minimise the administrative costs of introducing the additional holiday, the Government propose that the holiday entitlement will be increased in two equal phases from <phrase class="date" code="">1 October 2007</phrase> and <phrase class="date" code="">1 October 2008</phrase>.</p>
@@ -169,15 +145,9 @@
 	<p pid="b.22WS.5/4">To further identify the sectors most likely to be affected by these proposals, we have conducted a detailed research project and the findings are presented in the partial regulatory impact assessment that accompanies the further consultation. Whilst the overall cost burden is only around 0.4 per cent. of the total wage bill, we recognise that the impact on individual businesses may be more significant.</p>
 	<p pid="b.22WS.5/5">The further consultation will run until <phrase class="date" code="">13 April</phrase> and we aim to lay the draft regulations before the House for approval by affirmative resolution in early summer. Copies of the Government response to the initial consultation, the further consultation document and the partial regulatory impact assessment have been placed in the Library.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2007-01-11b.23WS.0" nospeaker="true" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#70111m0002.htm_dpthd2">
-	Transport
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2007-01-11b.23WS.1" nospeaker="true" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000016">
-	South Eastern and Southern Regional Planning Assessments (Railways)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.23WS.0" newgid="uk.org.publicwhip/wms/2007-01-11c.23WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.23WS.1" newgid="uk.org.publicwhip/wms/2007-01-11c.23WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2007-01-11b.23WS.2" newgid="uk.org.publicwhip/wms/2007-01-11c.23WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2007-01-11b.23WS.2" speakerid="uk.org.publicwhip/member/1990" speakername="Tom Harris" speakeroffice="The Parliamentary Under-Secretary of State for Transport" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070111/wmstext/70111m0002.htm#07011193000107">
 	<p pid="b.23WS.2/1">The Department for Transport has today published the &quot;South Eastern and Southern Regional Planning Assessments&quot; for the railway (RPAs), the latest in the series of eleven RPAs covering England and Wales.</p>
 	<p pid="b.23WS.2/2">Copies of the documents have been placed in the House Libraries and can also be downloaded from the Department's website at: <a href="http://www.dft.gov.uk">www.dft.gov.uk</a>.</p>

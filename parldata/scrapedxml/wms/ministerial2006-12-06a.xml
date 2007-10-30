@@ -10,6 +10,11 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +31,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,19 +54,15 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
-<publicwhip scrapeversion="a" latest="yes">
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.13WS.0" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#61206m0001.htm_dpthd0">
-	Treasury
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.13WS.1" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000009">
-	National Insurance Contributions 2007-08
-</minor-heading>
-
+<publicwhip scrapeversion="a" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.13WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.13WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.13WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.13WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.13WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.13WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.13WS.2" speakerid="uk.org.publicwhip/member/1457" speakername="Dawn Primarolo" speakeroffice="The Paymaster General" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000138">
 	<p pid="a.13WS.2/1">I have completed the annual review under section 141 of the Social Security Administration Act 1992. I propose the following changes to take effect from <phrase class="date" code="">6 April 2007</phrase>. These rates and limits will also apply to national insurance contributions in Northern Ireland.</p>
 	<p pid="a.13WS.2/2" class="italic">Employers and Employees</p>
@@ -103,11 +109,8 @@
 		</tbody>
 	</table>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.14WS.0" nospeaker="true" colnum="14WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000010">
-	Tax Credits
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.14WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.14WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.14WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.14WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.14WS.1" speakerid="uk.org.publicwhip/member/1457" speakername="Dawn Primarolo" speakeroffice="The Paymaster General" colnum="14WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000139">
 	<p pid="a.14WS.1/1">In the 2005 pre-Budget report, the Government announced a series of reforms to improve the tax credit system by increasing certainty for claimants. One of these changes was automatic limits on the rates of recovery where awards are adjusted in year following a reported change.</p>
 	<p pid="a.14WS.1/2">From February 2006, HMRC have widened the availability of additional payments to claimants experiencing hardship following an in-year adjustment to their tax credit payments. Making this process automatic has proved to involve significant changes to the IT system and, after extensive testing, HMRC has concluded that it is not possible to make a risk-free introduction of these automatic limits to the original timetable. Introducing fully automatic limits remains a key priority, and from April 2007 I have instructed HMRC to introduce an IT solution to ensure that claimants will benefit from reduced rates of recovery without them having to ask for this service.</p>
@@ -115,43 +118,15 @@
 	<p pid="a.14WS.1/4">The Government will continue to make improvements to the tax credit system, including those announced in the 2005 pre-Budget report, while minimising the risk of disruption to claimants. To minimise those risks and ensure that some of the most vulnerable families are protected, the Government will not begin migration of the remaining IS/JSA recipients with children to the child tax credit in 2007. In addition, HMRC is putting in place special arrangements for a small proportion of claimants who may experience disruption in their payments following the processing of changes in their circumstances, and will update the IT system in April 2007 to prevent this.</p>
 	<p pid="a.14WS.1/5">Delivering a good service to tax credit claimants is of course, the key priority for HMRC. They are committed to implementing the package of measures announced in the 2005 pre-Budget report, and to delivering a high quality service to claimants.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.15WS.0" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#61206m0001.htm_dpthd1">
-	Culture, Media and Sport
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.15WS.1" nospeaker="true" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000011">
-	Government Indemnity Scheme
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-12-06a.15WS.2" speakerid="uk.org.publicwhip/member/1882" speakername="David Lammy" speakeroffice="The Parliamentary Under-Secretary of State for Culture, Media and Sport" colnum="15WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000140">
-	<p pid="a.15WS.2/1">The provision for the Government indemnity scheme is made by the National Heritage Act 1980. The scheme facilitates public access to loans of works of art and other objects for public display made to museums, galleries and other such institutions by private owners and non-national institutions. It does this by indemnifying lenders against loss or damage to their loan. Loans covered by the scheme must be for public benefit. The scheme also covers loans of such objects for study purposes within borrowing institutions where this would contribute materially to the public's understanding or appreciation of the loan. Examples of this are enhancing interpretation or explanation to the public of objects or bringing into the public domain, the conclusions of any study.</p>
-	<p pid="a.15WS.2/2">In the six month period ended <phrase class="date" code="2006-09-30">30 September 2006</phrase>, a total of 1,374 undertakings were given to indemnify objects on loan to national and non-national institutions under section 16 by the relevant Departments. The Museums, Libraries and Archives Council (MLA), which manages the scheme on behalf of the Department for Culture, Media and Sport, issued a total of 1,129 undertakings to national museums and 218 undertakings to non-national museums in England, the Scottish Executive Education Department issued six undertakings and the National Assembly for Wales issued two. Finally, the Government Art Collection issued 19 in the same period.</p>
-	<p pid="a.15WS.2/3">The value of contingent liabilities in respect of undertakings given at any time under section 16 and which remained outstanding as at <phrase class="date" code="2006-09-30">30 September 2006</phrase> for national museums are &pound;2,634,357,427 and are &pound;1,291,128,448 for non-nationals in England. The value of section 16 contingent liabilities as at <phrase class="date" code="2006-09-30">30 September 2006</phrase> for the Scottish Executive Education Department are &pound;23,322,208; &pound;33,409,197 for the National Assembly for Wales, and &pound;2,531,500 for the Government Art Collection.</p>
-	<p pid="a.15WS.2/4">The value of non-statutory undertakings given to Her Majesty in respect of loans from the Royal Collection and which remained outstanding as at <phrase class="date" code="2006-09-30">30 September 2006</phrase> are &pound;588,211,857; &pound;36,821,000 for non-national museums issued by the MLA, &pound;25,000 for the Government art collections and &pound;15,000 for the Scottish Executive Education Department.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.16WS.0" nospeaker="true" colnum="16WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#61206m0001.htm_dpthd2">
-	Environment, Food and Rural Affairs
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.16WS.1" nospeaker="true" colnum="16WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000012">
-	Coastal Access
-</minor-heading>
-
-<speech id="uk.org.publicwhip/wms/2006-12-06a.16WS.2" speakerid="uk.org.publicwhip/member/1446" speakername="Barry Gardiner" speakeroffice="The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs" colnum="16WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000141">
-	<p pid="a.16WS.2/1">In July this year I announced that I had asked the Natural England Board to come forward with its recommendations on coastal access to the Government before the end of December.</p>
-	<p pid="a.16WS.2/2">I met the chair and chief executive of Natural England last week and following the meeting I have asked the Natural England Board to do some further work in order to finalise its advice. I have now agreed that the board should come forward with its final advice and recommendations on coastal access by end February 2007. As a result I would expect that there will be a delay in the issue of the public consultation document from the previous date that I have announced of early 2007.</p>
-</speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.17WS.0" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#61206m0001.htm_dpthd3">
-	Foreign and Commonwealth Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.17WS.1" nospeaker="true" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000013">
-	General Affairs and External Relations Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.15WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.15WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.15WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.15WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.15WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.15WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.16WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.16WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.16WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.16WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.16WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.16WS.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.17WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.17WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.17WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.17WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.17WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.17WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.17WS.2" speakerid="uk.org.publicwhip/member/1378" speakername="Geoff Hoon" speakeroffice="The Minister for Europe" colnum="17WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0001.htm#06120656000142">
 	<p pid="a.17WS.2/1">The General Affairs and External Relations Council (GAERC) will be held on 11-<phrase class="date" code="">12 December</phrase> in Brussels. My right hon. Friend the Secretary of State for Foreign and Commonwealth Affairs and I will represent the UK.</p>
 	<p pid="a.17WS.2/2">The agenda items are as follows:</p>
@@ -179,15 +154,9 @@
 	<p pid="a.17WS.2/24" class="italic">Draft council common position defining common rules governing the control of exports of military technology and equipment</p>
 	<p pid="a.17WS.2/25">The council will discuss the common position which updates, and makes legally binding, the existing EU code of conduct on arms exports.</p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.18WS.0" nospeaker="true" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#61206m0002.htm_dpthd0">
-	Cabinet Office
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.18WS.1" nospeaker="true" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000014">
-	Third Sector Involvement (Action Plan)
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.18WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.18WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.18WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.18WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.18WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.18WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.18WS.2" speakerid="uk.org.publicwhip/member/1545" speakername="Edward Miliband" speakeroffice="The Parliamentary Secretary, Cabinet Office" colnum="18WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000143">
 	<p pid="a.18WS.2/1">Following the Chancellor's pre-Budget statement, we will be publishing Partnership in Public Services: an Action Plan for Third Sector Involvement.</p>
 	<p pid="a.18WS.2/2">Third sector organisations play a number of roles in public life&mdash;from campaigning to building community cohesion and from delivering services to giving voice to their users. They have an enormous amount to contribute to our public services, both in the ways they are designed and delivered and in the ways they are improved and held to account.</p>
@@ -195,15 +164,9 @@
 	<p pid="a.18WS.2/4">Copies of the Action Plan will be placed in the Library for the reference of Members and will be available in the Vote Office.</p>
 	<p pid="a.18WS.2/5">The Action Plan will also be available on the Cabinet Office website at: <a href="http://www.cabinetoffice.gov.uk/thirdsector">www.cabinetoffice.gov.uk/thirdsector</a></p>
 </speech>
-
-<major-heading id="uk.org.publicwhip/wms/2006-12-06a.19WS.0" nospeaker="true" colnum="19WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#61206m0002.htm_dpthd1">
-	Transport
-</major-heading>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.19WS.1" nospeaker="true" colnum="19WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000015">
-	European Transport Council
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.19WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.19WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.19WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.19WS.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.19WS.2" newgid="uk.org.publicwhip/wms/2006-12-06b.19WS.2" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.19WS.2" speakerid="uk.org.publicwhip/member/1874" speakername="Stephen Ladyman" speakeroffice="The Minister of State, Department for Transport" colnum="19WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000144">
 	<p pid="a.19WS.2/1">I will attend the second Transport Council of the Finnish presidency which takes place in Brussels on 11-<phrase class="date" code="">12 December</phrase>.</p>
 	<p pid="a.19WS.2/2">The Council will be asked to agree conclusions on the Commission Communication, presented to the Council in June, on its mid-term review of the programme for the promotion of short sea shipping (any maritime journey within or between member states or a close third country, that is, Norway). This is a priority of the Finnish presidency. The programme was presented in 2003. It contains 14 different actions ranging from identifying bottlenecks which impede the smooth operation of short sea shipping to streamlining procedures through the setting up of short sea shipping promotion centres and legislative measures. The UK achieved all of its negotiating objectives for inclusion in the draft conclusions.</p>
@@ -220,11 +183,8 @@
 	<p pid="a.19WS.2/13">The Council will aim to reach a general approach on a Regulation amending Regulation 1592/2002, which established a framework for aviation safety regulation built around the European aviation safety agency. The amending proposals extend the regulation's scope to cover safety standards and licensing of operations and their personnel, and the safety oversight of third country operators. We were concerned during negotiations to ensure that the extension of tasks to the agency matches its fitness to carry them out and that the proposals should not impose restrictions on non-EU airlines contrary to international obligations or member states' interests.</p>
 	<p pid="a.19WS.2/14">Under AOB there will be reports on the EU-Russia transport dialogue and on the ministerial conference on road safety held in Verona on 3-<phrase class="date" code="2006-11-04">4 November</phrase>.</p>
 </speech>
-
-<minor-heading id="uk.org.publicwhip/wms/2006-12-06a.20WS.0" nospeaker="true" colnum="20WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000016">
-	Operator Licensing
-</minor-heading>
-
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.20WS.0" newgid="uk.org.publicwhip/wms/2006-12-06b.20WS.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wms/2006-12-06a.20WS.1" newgid="uk.org.publicwhip/wms/2006-12-06b.20WS.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/wms/2006-12-06a.20WS.1" speakerid="uk.org.publicwhip/member/1874" speakername="Stephen Ladyman" speakeroffice="The Minister of State, Department for Transport" colnum="20WS"  url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061206/wmstext/61206m0002.htm#06120656000145">
 	<p pid="a.20WS.1/1">We have completed our consultation on the Government's proposals for streamlining and modernising the licensing system for operators of heavy goods vehicles and public service vehicles.</p>
 	<p pid="a.20WS.1/2">We proposed three key changes to take forward our commitment in the White Paper, &quot;The Future of Transport&quot; to provide better regulation of the road haulage and passenger transport industries:</p>
