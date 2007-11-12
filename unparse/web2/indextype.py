@@ -199,6 +199,10 @@ def WriteFrontPage():
     print '<div id="sectors">'
     print '<div id="securitycouncil">'
     print '<h2>Security Council</h2>'
+    
+    print '<p><a href="/securitycouncil">Meetings by topic</a></p>'
+    print '<p><a href="/securitycouncil/documents">All documents</a></p>'
+    
     print '<h3>Recent meetings</h3>'
     recentsc = LoadSecRecords("recent")[:10]
     print '<ul class="cslist">'
@@ -206,13 +210,14 @@ def WriteFrontPage():
         print '<li>%s</li>' % re.sub("--", " - ", screcord.GetDesc())  # sub to allow word wrapping
     print '</ul>'
 
-    print '<h3 class="browse">Browse</h3>'
-    print '<p><a href="/securitycouncil">Meetings by topic</a></p>'
-    print '<p><a href="/securitycouncil/documents">All Security Council documents</a></p>'
     print '</div>'
 
     print '<div id="generalassembly">'
     print '<h2>General Assembly</h2>'
+    
+    print '<p><a href="/generalassembly">Meetings by topic</a></p>'
+    print '<p><a href="/generalassembly/documents">All documents</a></p>'
+    
     print '<h3>Recent meetings</h3>'
 
     recentags = LoadAgendaNames("recent")[:8]
@@ -221,22 +226,24 @@ def WriteFrontPage():
         print '<li>%s</li>' % agrecord.GetDesc()
     print '</ul>'
 
-    print '<h3 class="browse">Browse</h3>'
-    print '<p><a href="/generalassembly">Meetings by topic</a></p>'
-    print '<p><a href="/generalassembly/documents">All General Assembly documents</a></p>'
     print '</div>'
 
-    print """<div id="aboutus">
+    txtaboutus = """
     <h2>Information</h2>
-    <p>This is an independent easy to use page for accessing
-    <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly</a>
-    and <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council</a>
-    documents produced by the <a href="http://www.un.org/aboutun/charter/">United Nations</a>.</p>
+    <p>This site has nothing to do with the <a href="http://www.un.org/english">actual UN website</a> 
+    or the UN organization itself.  It is merely a private attempt to provide Web 2.0 compliant access to 
+    many of the important official UN documents 
+    (eg <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council Resolutions</a>, 
+    and <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly votes</a>)
+    which feature in the news and should be made more available for recent historical research.</p>
 
-    <p>(Follow the links if do not know what they are, or go to the
-    <a href="http://www.un.org/english/">real UN website</a> if you want more.)</p>
-
-    <p>Get started with all speeches made by
+    <p>For background information about the UN and its structure which will 
+    provide guidance as to the meaning and nature of these documents, 
+    check out the <a href="http://en.wikipedia.org/wiki/United_Nations">Wikipedia United Nations</a>
+    and the numerous related articles of varying quality.  
+    Why not help to <a href="http://en.wikipedia.org/wiki/Wikipedia:WikiProject_United_Nations">improve them</a>?</p>
+    
+    <p>For a quick tour of the sets of documents available here, check out
     <a href="http://www.undemocracy.com/United_States/bush">President Bush</a> of
     <a href="http://www.undemocracy.com/United_States">The United States</a>, or
     <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of
@@ -244,33 +251,36 @@ def WriteFrontPage():
     <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
     that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
 
-    <p>Answers to further questions can be found under
+    <p>Questions about this website in particular are addressed under:
     <a href="http://www.publicwhip.org.uk/faq.php#organisation">Who?</a>
     <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">What?</a>
     <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">When?</a>
     <a href="http://www.freesteel.co.uk/wpblog/">Where?</a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/how-does-undemocracycom-work/">How?</a>, and finally
-    <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">I want to help</a>.</p>
-
-    <p>Comments can be left on pages that are blogs.</p>"""
-
-    print '</div>'
+    <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">What can I do to help?</a>.
+    You can leave comments under some of these links, or email <i>team@undemocracy.com</i>.
+    This project is a hobby started by programmers who recognized that the accessibility of this important 
+    information was so limited they were compelled to do something about it.</p>"""
 
     shortwikitable = ShortWikipediaTable(10)
-    if shortwikitable:
-        print '<div id="wplinks">'
-        print '<h3>Wikipedia referring articles</h3>'
-        print '<p>Table of recent articles in Wikipedia where citations have landed on this site, including hit count.</p>'
-        print '<p>See <a href="/incoming">list of all incoming wikipedia references.</p>'
-        print '<table class="wpreftab">'
-        print '<tr> <th>Recent date</th> <th>time</th> <th>Count</th> <th>Article</th> </tr>'
-
+    if True:
+        print '<div id="wpblogincoming">'
+        print '<h2>Wikipedia referring articles</h2>'
+        print '<p><a href="/incoming">All incoming citations</a></p>'
+        print '<p><i>(<a href="http://en.wikipedia.org/wiki/Portal:United_Nations">Portal:United Nations</a>)</i></p>'
+        print '<h3>Recently followed citations</h3>'
+        print '<ul class="cslist">'
         for shortwikirow in shortwikitable:
-            print '<tr> <td class="wpreftabdate">%s</td> <td>%s</td> <td>%s</td> <td><a href="%s">%s</a></td> </tr>' % shortwikirow
+            # shortwikirow[0] date, shortwikirow[1] time, shortwikirow[2] count
+            print '<li>%s %s (%s) <a href="%s">%s</a></td> </li>' % (shortwikirow[0], shortwikirow[1], shortwikirow[2], shortwikirow[3], shortwikirow[4])
 
-        print '</table>'
+        print '</ul>'
         print '</div>'
+
+    print '<div id="aboutfooter">'
+    print txtaboutus
+    print '</div>'
 
 
 def WriteIndexStuffAgnum(agnum):

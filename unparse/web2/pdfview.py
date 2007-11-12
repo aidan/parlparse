@@ -37,34 +37,39 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     code = pdfinfo.pdfc
 
     hmap = {"pagefunc":"pdfpage", "docid":code}
-    print '<div>'
-    print '<b>Other pages:</b>'
+    print '<div id="docpagespecs">'
+    
+
+    print '<p><b>Link to:</b>'
     if npage != 1:
         hmap["page"] = npage - 1
         print '<a href="%s">Page %d</a>' % (EncodeHref(hmap), npage - 1)
-    print '<a href="%s">Full document</a>' % EncodeHref({"pagefunc":"document", "docid":code})
+    print '<a href="%s"><b>Full document</b></a>' % EncodeHref({"pagefunc":"document", "docid":code})
     if pdfinfo.pages == -1 or npage + 1 < pdfinfo.pages:
         hmap["page"] = npage + 1
         print '<a href="%s">Page %d</a>' % (EncodeHref(hmap), npage + 1)
+    print '</p>'
 
+    resurl, reswref = GenWDocLink(pdfinfo, npage, highlightrects)
+    print '<p><b>URL:</b> <input style="text" readonly value="%s">' % resurl
+    print '<b>wiki:</b> <input style="text" readonly value="%s"></p>' % reswref
+    
+    
     hmap["page"] = npage
     hmap["highlightrects"] = highlightrects
     hmap["highlightedit"] = False
 
-    resurl, reswref = GenWDocLink(pdfinfo, npage, highlightrects)
-    print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
-    print '<b>wiki:</b> <input style="text" readonly value="%s">' % reswref
     print '</div>'
 
-    print '<div style="background-color:#cceeff">'
+    print '<div id="highlightcontrols">'
     if highlightrects:
         hmap["highlightrects"] = [ ]
-        print '<a href="%s">no highlight</a>' % EncodeHref(hmap),
+        print '<a href="%s">Cancel highlight</a>.' % EncodeHref(hmap),
         if len(highlightrects) > 1:
             for ih in range(len(highlightrects)):
                 hmap["highlightrects"] = highlightrects[:]
                 del hmap["highlightrects"][ih]
-                print '<a href="%s">withough highlight %d</a>' % (EncodeHref(hmap), ih),
+                print '<a href="%s">Without highlight %d</a>' % (EncodeHref(hmap), ih + 1),
 
         hmap["highlightrects"] = highlightrects
 
@@ -90,16 +95,18 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
                 };
                 </script>"""
 
-        print 'Click and drag a box to highlight the text you want.'
+        print 'Click and drag with your mouse to highlight the area of text you want.'
         hmap["highlightedit"] = False
-        print '<a href="%s">leave editing mode</a>' % (EncodeHref(hmap))
-        print '<a id="consdhighlight" href="%s/"><b>consolidate highlight</b></a>' % EncodeHref(hmap)
-        print '<small>Thanks to <a href="http://www.defusion.org.uk/code/javascript-image-cropper-ui-using-prototype-scriptaculous/">Dave Spurr</a>.</small>'
+        print '<br><a href="%s">Leave editing mode</a>' % (EncodeHref(hmap))
+        print '<a id="consdhighlight" href="%s/"><b>Consolidate highlight</b></a>' % EncodeHref(hmap)
+        print '<br><small>Thanks to <a href="http://www.defusion.org.uk/code/javascript-image-cropper-ui-using-prototype-scriptaculous/">Dave Spurr</a>.</small>'
     else:
         hmap["highlightedit"] = True
-        print '<a href="%s"><b>add new highlight</b></a>' % EncodeHref(hmap)
+        print '<a href="%s"><b>Add new highlight</b></a>' % EncodeHref(hmap)
 
     del hmap["highlightedit"]
+    print '</div>'
+
     hmap["pagefunc"] = "pagepng"
     hmap["width"] = 800
     print '<div class="pdfpagediv"><img id="pdfpageid" src="%s"></div>' % EncodeHref(hmap)
@@ -125,28 +132,27 @@ def WritePDFpreview(docid, pdfinfo):
             print '<p>There is no parsed version for this verbatim report.</p>'
 
     resurl, reswref = GenWDocLink(pdfinfo, None, None)
-    print '<div id="upperdoclinks">'
+    print '<div id="rightdoclinks">'
     print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
-    print '&nbsp;<a href="http://en.wikipedia.org/wiki/Help:Footnotes"><b>wiki:</b></a> <input style="text" readonly value="%s">' % reswref
+    print '<br><a href="http://en.wikipedia.org/wiki/Help:Footnotes"><b>wiki:</b></a> <input style="text" readonly value="%s">' % reswref
     print '</div>'
 
 
     pdflink = EncodeHref({"pagefunc":"nativepdf", "docid":code})
-    print '<h3><a href="%s">Original PDF United Nations document</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></h3>' % (pdflink, pdflink)
+    print '<p>View entire document as <a href="%s">PDF</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></p>' % (pdflink, pdflink)
 
-    print '<h3>Images of pages</h3>'
-    if pdfinfo.pages != -1:
-        print '<p>',
-        for n in range(pdfinfo.pages):
-            print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
-        print '</p>'
-    else:
-        print '<p>We don\'t know how many pages.  '
-        print '<a href="%s">Page 1</a></p>' % EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":1})
+    print '<p>Or click on individual pages:'
+    npages = pdfinfo.pages == -1 and 5 or pdfinfo.pages
+    for n in range(npages):
+        print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
+    if pdfinfo.pages == -1:
+        print '(We\'re not sure how many pages there actually are in this file, so click on them to see what you get.)'
+    print '</p>'
 
     if pdfinfo.pvrefs:
-        print '<h3>Meetings that refer to this document</h3>'
-        print '<ul>'
+        print '<h3>References to this document</h3>'
+        print '<p>List of all recent Security Council and General Assembly meetings where this document is mentioned.</p>'
+        print '<ul class="docrefs">'
         for pvrefk in sorted(pdfinfo.pvrefsing.keys()):
             mcode = pvrefk[1]
             hmap = { "pagefunc":"meeting", "docid":mcode, "highlightdoclink":code }

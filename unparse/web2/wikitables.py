@@ -55,6 +55,7 @@ def ConvertName(wname):
         wname = re.sub("%29", ")", wname)
         wname = re.sub("%C3%A9", "&#233;", wname)
         wname = re.sub("%C3%B6", "&#246;", wname)
+        wname = re.sub("%C3%B4", "&#244;", wname)
         wname = re.sub("%27", "'", wname)
 
     return wname
@@ -68,6 +69,7 @@ def ShortWikipediaTable(nentries):
 
 def BigWikipediaTable():
     wprefs = ReadLogReferrers("logpages_wikipedia.txt")
+    wprefs.extend(ReadLogReferrers("logpages_wikipedia_1.txt"))
     res = [ ] # wikiname, docid, page, date, wikifullurl
     for wpref in wprefs:
         mref = re.match("(http://en.wikipedia.org/wiki/)([^#/]*)(#.*)?$", wpref[1])

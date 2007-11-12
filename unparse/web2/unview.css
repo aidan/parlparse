@@ -59,11 +59,12 @@ img
 	border: 0;
 	}
 
-div#wplinks 
+div#aboutfooter 
 {
-    padding-top:1em;
+    padding-top: 0.5em;
     clear:left;
-    background-color: #e0e0e0;
+    background-color: #e0e0ff;
+    color:#505050;
 }
 /* -------------------  Now do the proper stuff  ---------------- */
 body
@@ -112,19 +113,26 @@ p.nations a
 	{
 	float: left;
 	width: 33%;
-	border-left: solid 1px #0000000
 	padding-left: 1%;
 	}
+#wpblogincoming
+    {
+    float: left;
+    width: 33%;
+    background-color:#B3F1D7;
+    }
 
-#securitycouncil li, #generalassembly li
+#securitycouncil li, #generalassembly li, #wpblogincoming li
 	{
 	font-size: 0.6em;
 	}
-#securitycouncil li a, #generalassembly li a
+#securitycouncil li a, #generalassembly li a, #wpblogincoming li a
 	{
 	display: block;
 	font-size: 1.7em;
 	}
+
+
 
 h3.browse
 	{
@@ -142,6 +150,7 @@ h3.browse
 	float: left;
 	width: 50%;
 	}
+
 #aboutus
 	{
 	float: right;
@@ -149,11 +158,11 @@ h3.browse
 	background-color: #B3D7F1;
 	background-color: #B3F1D7;
     }
-#aboutus h2
+#aboutus h2, #aboutfooter h2
 	{
 	margin: 0.35em;
 	}
-#aboutus p
+#aboutus p, #aboutfooter p
 	{
 	margin: 0.5em;
 	}
@@ -180,8 +189,24 @@ font-size: 0.6em;
 margin:0.5em;
 }
 
+ul.docrefs
+{
+    margin: 1em;
 
+}
 
+div#docpagespecs
+{
+    width:380px;
+    float:left;
+}
+
+div#highlightcontrols
+{
+    float:right;
+    width:380px;
+    background-color:#cceeff;
+}
 
 
 
@@ -257,21 +282,30 @@ h1 Zspan
 div#content
 	{
 	width: 48em;
-	max-width: 90%;
-	margin: 0 auto;
-	text-align: left;
+	zmax-width: 48em;
+	float:center;
+    margin: 0 auto;
+    text-align: left;
+    
 	}
 
 #documentwrap
 	{
 	width: 30em;
 	float: left;
-	}
+	padding-left:0.5em;
+    }
 #meta
 	{
-	width: 17em;
+	width: 16em;
 	float: right;
 	}
+#metainstructions
+{
+    padding-top: 30em;
+    font-style: italic;
+}
+
 
 .assembly-chairs
 	{
@@ -294,8 +328,8 @@ div.otheraglink
 	float: left;
 	background-color: #cccccc;
 	border: solid 1px #000000;
-	margin-left: -4.5em;
-	width: 3.5em;
+	zmargin-left: -4.5em;
+    width: 3.5em;
 	padding: 0.25em;
 	}
 div.otheraglink a
@@ -387,7 +421,7 @@ div.subheading, div.council-agenda
 
 img.smallflag
 {
-	margin-left: -40px;
+	margin-left: 0px;
 	width: 32px;
     border: thin black solid;
     float: left; 
@@ -684,5 +718,11 @@ td.wikiarticle
 div#upperdoclinks
 {
 margin: 1em;
+}
+div#rightdoclinks
+{
+margin: 1em;
+float: right;
+width: 15em;
 }
 

@@ -1,7 +1,7 @@
 function initUNDemocracy()
 {
    var getByClass = YAHOO.util.Dom.getElementsByClassName;
-   var linkheres = getByClass('discussion');
+   var linkheres = getByClass('agendaitem');
    linkheres = linkheres.concat(getByClass('speech'));
    linkheres = linkheres.concat(getByClass('recvote'));
    linkheres = linkheres.concat(getByClass('act'));
@@ -82,24 +82,41 @@ function HrefImgReport(lhref)
 }
 
 var monthlist = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+
+
+function SetDocAttributePrez(docattributes, classname, vclassname, node)
+{
+    var hasClass = YAHOO.util.Dom.hasClass;
+    if (hasClass(node, classname))
+    {
+        if (node.innerText)
+            docattributes[vclassname] = node.innerText;
+        else if (node.textContent)
+            docattributes[vclassname] = node.textContent;
+    }
+}
+
+
 function GetDocAttributesFromHeading(docattributes)
 {
-    var headsec = document.getElementById("pg000-bk00");
-    for (var node = headsec.firstChild; node; node = node.nextSibling)
+    //alert("hii theree");
+    
+    var get = YAHOO.util.Dom.get;
+    var getChildren = YAHOO.util.Dom.getChildren;
+    var hasClass = YAHOO.util.Dom.hasClass;
+
+    var headsec = get("pg000-bk00");
+    var headvars = getChildren(headsec);
+    for (var i = 0; i < headvars.length; i++)
     {
-        if (node.className == "docid")
-            docattributes["docid"] = node.textContent;
-        if (node.className == "date")
-            docattributes["date"] = node.textContent;
-        if (node.className == "longdate")
-            docattributes["longdate"] = node.textContent;
-        if (node.className == "wikidate")
-            docattributes["wikidate"] = node.textContent;
-        if (node.className == "time")
-            docattributes["meetingtime"] = node.textContent;
-        if (node.className == "basehref")   // it's too hard to bother decoding the pathparts from this
-            docattributes["bbasehref"] = node.textContent;
+        node = headvars[i];
+        SetDocAttributePrez(docattributes, "docid", "docid", node);
+        SetDocAttributePrez(docattributes, "longdate", "longdate", node);
+        SetDocAttributePrez(docattributes, "wikidate", "wikidate", node);
+        SetDocAttributePrez(docattributes, "meetingtime", "meetingtime", node);
+        SetDocAttributePrez(docattributes, "basehref", "bbasehref", node);
     }
+
     if (!docattributes["docid"])
         alert("missing docid");
     var mga = /A-([0-9]+)-PV\.([0-9]+)/.exec(docattributes["docid"]);
@@ -143,6 +160,10 @@ function GetDocAttributesFromBlock(docattributes, me)
     docattributes["pageno"] = parseInt(/pg0*([0-9]+)/.exec(gid)[1]);
     docattributes["nhref"] = docattributes["basehref"] + "#" + gid;
 
+    var getFirstChild = YAHOO.util.Dom.getFirstChild;
+    var getNextSibling = YAHOO.util.Dom.getNextSibling;
+    
+    
     // find the div for this object
     while (gidme && (gidme.tagName.toLowerCase() != "div"))
         gidme = gidme.parentNode;
@@ -163,15 +184,14 @@ function GetDocAttributesFromBlock(docattributes, me)
                 break;
         }
         if (citetag)
-        for (var node = citetag.firstChild; node; node = node.nextSibling)
+        for (var node = getFirstChild(citetag); node; node = getNextSibling(node))
         {
-            if (node.className == "name")
-                docattributes["speakername"] = node.textContent;
-            if (node.className == "nation")
-                docattributes["speakernation"] = node.textContent.replace(/[()]/g, "");
-            if (node.className == "language")
-                docattributes["speakerlanguage"] = node.textContent;
+            SetDocAttributePrez(docattributes, "name", "speakername", node);
+            SetDocAttributePrez(docattributes, "nation", "speakernation", node);
+            SetDocAttributePrez(docattributes, "language", "speakerlanguage", node);
         }
+        if (docattributes["speakernation"])
+            docattributes["speakernation"].replace(/[()]/g, "");
     }
 
     return gidme;
@@ -255,6 +275,8 @@ function addlinksonparas(divnode)
         }
     }
 }
+
+
 
 function linkere(me)
 {

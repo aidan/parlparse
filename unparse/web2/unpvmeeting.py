@@ -228,6 +228,15 @@ def WritePrevNext(pdfinfo, gadice):
     print '</ul>'
 
 
+def WriteInstructions():
+    print """<div id="metainstructions"><h3>Instructions</h3>
+             <p>Click on "link to this" to obtain a link to an image of the page in the original document, 
+             a hyperlink you can use in a blog to a speech you found here, or a 
+             <a href="http://en.wikipedia.org/wiki/Template:UN_document">Wikipedia citation</a> 
+             which is suitable for inclusion in an article.</p>
+             <p><b>Feature does not work on Internet Explorer.  
+             Try <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>.</b></p>
+             </div>"""
 
 
 rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)'
@@ -250,6 +259,7 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     print '<div id="meta">'
    # print gadice, agnums
     WritePrevNext(pdfinfo, gadice)
+    WriteInstructions()
     print '</div>'
     print '<div id="documentwrap">'
 
@@ -299,6 +309,11 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
             WriteAssemblyChair(gid, dtextmu)
         elif dclass == "council-attendees":
             councilpresidentnation = WriteCouncilAttendees(gid, dtext)  # value used to dereference "The President" in the Security Council
+        elif dclass == "council-agenda":
+            print '<div class="%s" id="%s">' % (dclass, gid)
+            print dtextmu
+            print '</div>'
+
         elif re.match("italicline", dclass):
             if not gadice or agendagidcurrent == gadice:
                 WriteItalicLine(gid, dclass, dtextmu)

@@ -42,11 +42,11 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">'
     print '<title>UNdemocracy - %s</title>' % cgi.escape(title)
     print '<link href="/unview.css" type="text/css" rel="stylesheet" media="all">'
-    yuibase = 'http://yui.yahooapis.com'
-    yuibase = '/yui'
-    print '<script type="text/javascript" src="%s/2.2.2/build/yahoo/yahoo-min.js"></script>' % yuibase
-    print '<script type="text/javascript" src="%s/2.2.2/build/dom/dom-min.js"></script>' % yuibase
-    print '<script type="text/javascript" src="%s/2.2.2/build/event/event-min.js"></script>' % yuibase
+    yuibase = 'http://yui.yahooapis.com/2.3.1'
+    yuibase = '/yui/2.3.1'
+    print '<script type="text/javascript" src="%s/build/yahoo/yahoo-min.js"></script>' % yuibase
+    print '<script type="text/javascript" src="%s/build/dom/dom-min.js"></script>' % yuibase
+    print '<script type="text/javascript" src="%s/build/event/event-min.js"></script>' % yuibase
     print '<script language="JavaScript" type="text/javascript" src="/unjava.js"></script>'
     print '</head>'
     print '<body id="%s">' % bodyid
@@ -58,7 +58,8 @@ def WriteGenHTMLhead(title, frontpage=False):
     print '<div id="identity">'
     if not frontpage:
         print '<a href="/">'
-    print '<img src="/images/site/logobeta.gif" alt="UNdemocracy.com">'
+    #print '<img src="/images/site/logobeta.gif" alt="UNdemocracy.com">'
+    print '<img src="/images/site/logobetaw.png" alt="UNdemocracy.com">'
     if not frontpage:
         print '</a>'
     print '</div>'
@@ -72,7 +73,8 @@ def WriteGenHTMLhead(title, frontpage=False):
         print '<input type="text" name="search">'
         print '<button>Search</button>'
         print '</form>'
-        print '<a href="/nations">View list of all nations</a>'
+        print '<a href="#aboutfooter">About us</a>&nbsp;&nbsp;&nbsp;'
+        print '<a href="/nations">List of all nations</a>'
         print '</div>'
     print '<div id="content">'
     #print os.environ
