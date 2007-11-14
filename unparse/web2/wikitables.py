@@ -57,6 +57,7 @@ def ConvertName(wname):
         wname = re.sub("%C3%B6", "&#246;", wname)
         wname = re.sub("%C3%B4", "&#244;", wname)
         wname = re.sub("%27", "'", wname)
+        wname = re.sub("%2C", ",", wname)
 
     return wname
 

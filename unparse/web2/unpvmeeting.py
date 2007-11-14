@@ -225,17 +225,34 @@ def WritePrevNext(pdfinfo, gadice):
     if not gadice and pdfinfo.nextmeetingdetails:
         nextlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.nextmeetingdetails[0]})
         print '<li><a href="%s" title="Next meeting: started %s %s">Next meeting</a></li>' % (nextlink, pdfinfo.nextmeetingdetails[1], pdfinfo.nextmeetingdetails[2])
+    print '<li>&nbsp;</li>'
+    if pdfinfo.bGA:
+        print '<li><a href="%s">Entire session</a></li>' % (EncodeHref({"pagefunc":"gasession", "gasession":pdfinfo.nsess}))
+    if pdfinfo.bSC:
+        print '<li><a href="/securitycouncil">All meetings</a></li>'
+
     print '</ul>'
 
 
 def WriteInstructions():
-    print """<div id="metainstructions"><h3>Instructions</h3>
-             <p>Click on "link to this" to obtain a link to an image of the page in the original document, 
-             a hyperlink you can use in a blog to a speech you found here, or a 
-             <a href="http://en.wikipedia.org/wiki/Template:UN_document">Wikipedia citation</a> 
-             which is suitable for inclusion in an article.</p>
-             <p><b>Feature does not work on Internet Explorer.  
-             Try <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>.</b></p>
+    print """<div id="metainstructions">
+             <h3>Instructions</h3>
+             <p><b>Click</b> on the <span class="unclickedlink">Link to this</span> button beside the speech or 
+             paragraph to expand it to a useful panel 
+             containing: 
+             <ul>
+             <li>The date of the speech</li>
+             <li>A link to the original page of the PDF document</li>
+             <li>A URL that can be used in most blogs</li>
+             <li>A structured <a href="http://en.wikipedia.org/wiki/Template:UN_document#Usage">Citation template</a> 
+             suitable for use in a Wikipedia article.</li>
+             </ul>
+             <p><b>Those</b> last two rows ("URL" and "wiki") use textboxes to hide most of the text.</p>
+
+             <p class="secline"><b>To access</b> this text, right-click in the textbox with your mouse and choose "Select All", 
+             then right-click again and choose "Copy".  
+             Now you can right-click into another window and choose 
+             "Paste" to see what it is.</p>
              </div>"""
 
 
@@ -263,7 +280,7 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
     print '</div>'
     print '<div id="documentwrap">'
 
-    if gadice and agnums:
+    if False and gadice and agnums:
         for agnum in agnums.split(","):
             aglist = LoadAgendaNames(agnum)
             print '<table class="agendatable">'
@@ -306,7 +323,8 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
         elif dclass == 'heading':
             longdate = WriteDataHeading(gid, dtext)
         elif dclass == "assembly-chairs":
-            WriteAssemblyChair(gid, dtextmu)
+            if not gadice:
+                WriteAssemblyChair(gid, dtextmu)
         elif dclass == "council-attendees":
             councilpresidentnation = WriteCouncilAttendees(gid, dtext)  # value used to dereference "The President" in the Security Council
         elif dclass == "council-agenda":

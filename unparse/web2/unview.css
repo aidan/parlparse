@@ -302,8 +302,22 @@ div#content
 	}
 #metainstructions
 {
-    padding-top: 30em;
+    margin-top: 10em;
     font-style: italic;
+    background-color:#ddefff;
+}
+#metainstructions ul
+{
+    margin:0.5em;
+    list-style-type: disc;
+}
+#metainstructions li
+{
+    margin:0.5em;
+}
+#metainstructions p.secline
+{
+    margin-top:0.5em;
 }
 
 
@@ -609,25 +623,45 @@ div.unclickedlink
 	{
 	float: right;
 	clear: right;
-    right: 0;
+    right: 0px;
 	display: inline;
     background-color: #cccccc;
 	border: solid 1px #000000;
-	text-decoration: underline;
     font-size:12;
-    }
+    cursor:pointer;
+    font-style:normal;
+    font-weight:normal;
+}
+
+span.unclickedlink
+{
+background-color: #cccccc;
+border: solid 1px #000000;
+font-size:12;
+font-style:normal;
+}
 
 div.clickedlink 
 {
     font-size:16;
     font-weight: normal;
+    font-style: normal;
     background-color:#bbbbff;  
-    margin-left: 10; 
-    margin-bottom: 10; 
-    width: 200; 
+    margin-left: 10px; 
+    margin-bottom: 10px; 
+    width: 200px; 
     float: right; 
     clear: right; 
 }
+span.linktabfleft
+{
+    width:35px;
+}
+span.linktabfright
+{
+    justify:right;
+}
+
 input.linkinputbox 
 {
     color: #ff0000; 

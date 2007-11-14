@@ -1,13 +1,15 @@
 function initUNDemocracy()
 {
    var getByClass = YAHOO.util.Dom.getElementsByClassName;
+   var addClass = YAHOO.util.Dom.addClass;
+
    var linkheres = getByClass('agendaitem');
    linkheres = linkheres.concat(getByClass('speech'));
    linkheres = linkheres.concat(getByClass('recvote'));
    linkheres = linkheres.concat(getByClass('act'));
    
     var linkhere = document.createElement('div');
-    linkhere.className = 'unclickedlink';
+    addClass(linkhere, 'unclickedlink');
     var linkheretext = document.createTextNode('Link to this');
     linkhere.appendChild(linkheretext);
     for (var i = 0; i < linkheres.length; i++)
@@ -33,22 +35,39 @@ function rowelinput(llvalue)
 function rowelspan(llvalue)
 {
     var rI = document.createElement("span"); 
-    rI.textContent = llvalue; 
+    rI.innerText = rI.textContent = llvalue; 
     return rI; 
 }
 function rowelahref(lhref, ltarg)
 {
     var rI = document.createElement("a"); 
-    rI.textContent = ltarg; 
+    rI.innerText = rI.textContent = ltarg; 
     rI.href = lhref; 
     return rI; 
 }
 
 
+function rowof2nontab(llab, llel)
+{
+    var addClass = YAHOO.util.Dom.addClass;
+
+    var eltd1 = document.createElement("span");
+    addClass(eltd1, "linktabfleft");
+    eltd1.innerText = eltd1.textContent = llab;
+    var eltd2 = document.createElement("span");
+    addClass(eltd2, "linktabfright");
+    eltd2.appendChild(llel);
+    var eltr = document.createElement("div");
+    eltr.appendChild(eltd1);
+    eltr.appendChild(eltd2);
+    return eltr;
+}
+
 function rowof2(llab, llel)
 {
+return rowof2nontab(llab, llel); // simplification so that IE will work
     var eltd1 = document.createElement("td");
-    eltd1.textContent = llab;
+    eltd1.innerText = eltd1.textContent = llab;
 
     var eltd2 = document.createElement("td");
     eltd2.appendChild(llel);
@@ -191,7 +210,7 @@ function GetDocAttributesFromBlock(docattributes, me)
             SetDocAttributePrez(docattributes, "language", "speakerlanguage", node);
         }
         if (docattributes["speakernation"])
-            docattributes["speakernation"].replace(/[()]/g, "");
+            docattributes["speakernation"] = docattributes["speakernation"].replace(/[()]/g, "");
     }
 
     return gidme;
@@ -259,6 +278,7 @@ function wikival(docattributes)
 
 function addlinksonparas(divnode)
 {
+    var addClass = YAHOO.util.Dom.addClass;
     for (var node = divnode.firstChild; node; node = node.nextSibling)
     {
         if (node.tagName && ((node.tagName.toLowerCase() == "p") || (node.tagName.toLowerCase() == "blockquote")))
@@ -267,8 +287,8 @@ function addlinksonparas(divnode)
             {
                 //<div onclick="linkere(this);" class="unclickedlink">link to this</div>
                 var nnlink = document.createElement("div");
-                nnlink.className = "unclickedlink";
-                nnlink.textContent = "Link to this";
+                addClass(nnlink, "unclickedlink");
+                nnlink.innerText = nnlink.textContent = "Link to this";
                 nnlink.onclick = function(){ return linkere(this); };
                 node.insertBefore(nnlink, node.firstChild);
             }
@@ -280,7 +300,11 @@ function addlinksonparas(divnode)
 
 function linkere(me)
 {
-    if (me.className == "clickedlink")
+    var hasClass = YAHOO.util.Dom.hasClass;
+    var addClass = YAHOO.util.Dom.addClass;
+    var replaceClass = YAHOO.util.Dom.replaceClass;
+
+    if (hasClass(me, "clickedlink"))
         return true;
 
     var docattributes = new Array();
@@ -292,27 +316,27 @@ function linkere(me)
 
     location.href = docattributes["nhref"];  // set url to current position
 
-    me.textContent = "";
+    me.innerText = me.textContent = "";
 
     var closebutt = document.createElement("div");
-    closebutt.textContent = "x";
-    closebutt.className = "closebutt";
-    closebutt.onclick = function(){ this.parentNode.className = "unclickedlink";  this.parentNode.textContent = "Link to this";  return true; };
+    closebutt.innerText = closebutt.textContent = "x";
+    addClass(closebutt, "closebutt");
+    closebutt.onclick = function(){ replaceClass(this.parentNode, "clickedlink", "unclickedlink");  this.parentNode.innerText = this.parentNode.textContent = "Link to this";  return true; };
     me.appendChild(closebutt);
 
-    var eltable = document.createElement("table");
+    var eltable = document.createElement("div");// should be table
     eltable.appendChild(rowof2("date:", rowelspan(docattributes["longdate"])));
     lhref = "/" + docattributes["docid"] + "/page_" + docattributes["pageno"]; 
     ltarg = docattributes["docid"] + " page " + docattributes["pageno"];
     eltable.appendChild(rowof2("pdf:", rowelahref(lhref, ltarg)));
     eltable.appendChild(rowof2("URL:", rowelinput(blogurl(docattributes))));
     eltable.appendChild(rowof2("wiki:", rowelinput(wikival(docattributes))));
-    eltable.className = "linktable";
+    addClass(eltable, "linktable");
     me.appendChild(eltable);
 
     if (docattributes["blockclass"] == "speech")
         addlinksonparas(divnode);
-    me.className = "clickedlink";
+    replaceClass(me, "unclickedlink",  "clickedlink");
 
     document.getElementById("hrefimg").src = HrefImgReport(location.href);  // this doesn't appear effective
     //document.getElementById("hrefimgi").value = HrefImgReport(location.href);

@@ -139,6 +139,9 @@ def WriteCollapsedSec(sclist):
 def WriteIndexStuffSec():
     allsc = LoadSecRecords("all")
     WriteGenHTMLhead("Security Council Meetings by topic")
+    print '<p><a href="/generalassembly">General Assembly topics</a></p>'
+    print '<p><a href="/securitycouncil/documents">Security Council documents</a></p>'
+    print '<p><a href="/">Front page</a></p>'
     WriteCollapsedSec(allsc)
     return True
 
@@ -230,20 +233,19 @@ def WriteFrontPage():
 
     txtaboutus = """
     <h2>Information</h2>
-    <p>This site has nothing to do with the <a href="http://www.un.org/english">actual UN website</a> 
-    or the UN organization itself.  It is merely a private attempt to provide Web 2.0 compliant access to 
+    <p>This site has nothing to do with the <b><a href="http://www.un.org/english">real UN website</a></b> 
+    or any part of the United Nations itself.  It is merely a private attempt to provide Web 2.0 compliant access to 
     many of the important official UN documents 
-    (eg <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council Resolutions</a>, 
+    (eg <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council">Security Council Resolutions</a> 
     and <a href="http://en.wikipedia.org/wiki/United_Nations_General_Assembly">General Assembly votes</a>)
-    which feature in the news and should be made more available for recent historical research.</p>
+    which feature in the news.</p>
 
-    <p>For background information about the UN and its structure which will 
-    provide guidance as to the meaning and nature of these documents, 
-    check out the <a href="http://en.wikipedia.org/wiki/United_Nations">Wikipedia United Nations</a>
-    and the numerous related articles of varying quality.  
+    <p>For background information about the UN, its structure as well as the meaning and purpose of these documents, 
+    check out <a href="http://en.wikipedia.org/wiki/United_Nations">United Nations on Wikipedia</a>
+    and read the related articles.  
     Why not help to <a href="http://en.wikipedia.org/wiki/Wikipedia:WikiProject_United_Nations">improve them</a>?</p>
     
-    <p>For a quick tour of the sets of documents available here, check out
+    <p>For a quick tour of the sets of documents available here, look at
     <a href="http://www.undemocracy.com/United_States/bush">President Bush</a> of
     <a href="http://www.undemocracy.com/United_States">The United States</a>, or
     <a href="http://www.undemocracy.com/Iran/ahmadinejad">President Ahmadinejad</a> of
@@ -251,7 +253,7 @@ def WriteFrontPage():
     <a href="http://www.undemocracy.com/S-RES-242(1967)">all speeches</a>
     that refer to <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_242">Resolution 242</a>.</p>
 
-    <p>Questions about this website in particular are addressed under:
+    <p>Questions about this website in particular are answered by:
     <a href="http://www.publicwhip.org.uk/faq.php#organisation">Who?</a>
     <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">What?</a>
     <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">When?</a>
@@ -259,11 +261,11 @@ def WriteFrontPage():
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/how-does-undemocracycom-work/">How?</a>, and finally
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">What can I do to help?</a>.
-    You can leave comments under some of these links, or email <i>team@undemocracy.com</i>.
-    This project is a hobby started by programmers who recognized that the accessibility of this important 
-    information was so limited they were compelled to do something about it.</p>"""
+    You can leave comments on some of those links, or email <i>team@undemocracy.com</i>.
+    This project is a hobby begun by volunteers who recognized that the accessibility of these vital documents 
+    was so limited they had to do something about it themselves.</p>"""
 
-    shortwikitable = ShortWikipediaTable(10)
+    shortwikitable = ShortWikipediaTable(12)
     if True:
         print '<div id="wpblogincoming">'
         print '<h2>Wikipedia referring articles</h2>'
