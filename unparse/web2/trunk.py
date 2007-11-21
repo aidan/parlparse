@@ -29,6 +29,13 @@ if __name__ == "__main__":
     ipaddress = os.getenv("REMOTE_ADDR") or ''
     useragent = os.getenv("HTTP_USER_AGENT") or ''
 
+    print "Content-type: text/html\n"; 
+    print "<h1>UNDEMOCRACY.COM is on strike</h1>"
+    print '<h2>For the official source of documents, go <a href="http://www.un.org/documents/">here</a></h2>'
+    print '<h2>For the scraped and parsed data, go <a href="http://seagrass.goatchurch.org.uk/~undemocracy/undata/">here</a></h2>'
+    print '<h2>For the explanation, go <a href="http://www.freesteel.co.uk/wpblog/2007/11/undemocracycom-goes-on-strike/">here</a></h2>'
+    print '<p>Thank you.  (2007-11-20)</p>'
+    sys.exit()
 
     hmap = DecodeHref(pathparts, form)
 

@@ -502,8 +502,8 @@ def SplitHighlight(highlightth):
 
 
 # more efficient to print out as we go through
-rpdlk = '<a href="../pdf/[^"]*?\.pdf"[^>]*>'
-rpdlkp = '<a href="../pdf/([^"]*?)\.pdf"([^>]*)>'
+rpdlk = '<a href="../(?:pdf|html)/[^"]*?\.(?:pdf|html)"[^>]*>'
+rpdlkp = '<a href="../(pdf|html)/([^"]*?)\.(?:pdf|html)"([^>]*)>'
 def MarkupLinks(ftext, highlightth):
     highlights = SplitHighlight(highlightth)
 
@@ -516,10 +516,13 @@ def MarkupLinks(ftext, highlightth):
     for ft in re.split(rspl, ftext):
         ma = re.match(rpdlkp, ft)
         if ma:
-            res.append('<a href="%s"' % (EncodeHref({"pagefunc":"document", "docid":ma.group(1)})))
-            if highlights[0] and ma.group(1) == highlights[0]:
+            if ma.group(1) == "html":
+                res.append('<a href="%s"' % EncodeHref({"pagefunc":"meeting", "docid":ma.group(2)}))
+            else:
+                res.append('<a href="%s"' % (EncodeHref({"pagefunc":"document", "docid":ma.group(2)})))
+            if highlights[0] and ma.group(2) == highlights[0]:
                 res.append(' class="highlight"')
-            res.append(ma.group(2))
+            res.append(ma.group(3))
             res.append('>')
         elif highlights[1] and re.match(highlights[1], ft):
             res.append('<span class="search-highlight">')

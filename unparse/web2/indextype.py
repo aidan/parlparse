@@ -199,6 +199,14 @@ def WriteWikiPage():
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
 
+    print '''<p>This website provides easy access to the official transcripts of the two main
+             political bodies of the <a href="http://en.wikipedia.org/wiki/United_Nations_System">United Nations System</a>
+             where the ambassadors from each nation are entitled to speak, sponsor resolutions, and vote 
+             on a variety of issues.
+             Some of these activities have been documented in <a href="/incoming">Wikipedia articles</a> that cite 
+             back into these
+             transcripts.  For more, read <a href="#aboutfooter">about us</a>, or 
+             look up the speeches on behalf of <a href="/nations">your own nation</a>.</p>'''
     print '<div id="sectors">'
     print '<div id="securitycouncil">'
     print '<h2>Security Council</h2>'
@@ -260,8 +268,8 @@ def WriteFrontPage():
     <a href="http://www.freesteel.co.uk/wpblog/">Where?</a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/the-purpose-of-the-undemocracycom-site/"><b>Why?</b></a>
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/how-does-undemocracycom-work/">How?</a>, and finally
-    <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">What can I do to help?</a>.
-    You can leave comments on some of those links, or email <i>team@undemocracy.com</i>.
+    <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">What can I do to help?</a>.</p>
+    <p>You can leave comments on some of those links, or email <a href="mailto:team@undemocracy.com">team@undemocracy.com</a>.
     This project is a hobby begun by volunteers who recognized that the accessibility of these vital documents 
     was so limited they had to do something about it themselves.</p>"""
 

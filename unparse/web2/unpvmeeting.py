@@ -170,6 +170,9 @@ def WriteCouncilAttendees(gid, dtext):
             print '<br>'
             hrefnation = EncodeHref({"pagefunc":"nation", "nation":nation})
             print '<a class="nation" href="%s">%s</a></td>' % (hrefnation, nation)
+        if rowlab == "President:":
+            print '<td></td>'
+            print '<td colspan="3">(The Presidency changes each month to the next member in alphabetical order)</td>'
         print '</tr>'
     print '</table>'
     print '</div>'
@@ -252,7 +255,7 @@ def WriteInstructions():
              <p class="secline"><b>To access</b> this text, right-click in the textbox with your mouse and choose "Select All", 
              then right-click again and choose "Copy".  
              Now you can right-click into another window and choose 
-             "Paste" to see what it is.</p>
+             "Paste" to get the text.</p>
              </div>"""
 
 
@@ -269,13 +272,19 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
 
     resurl, reswref = GenWDocLink(pdfinfo, None, None)
     print '<div id="upperdoclinks">'
-    print '<b>URL:</b> <input style="text" readonly value="%s">' % resurl
-    print '&nbsp;<a href="http://en.wikipedia.org/wiki/Help:Footnotes"><b>wiki:</b></a> <input style="text" readonly value="%s">' % reswref
     print '</div>'
 
     print '<div id="meta">'
    # print gadice, agnums
     WritePrevNext(pdfinfo, gadice)
+    
+    print '<div id="metadoclinks">'
+    print '<h3>Links for full page</h3>'
+    print '<p><span class="linktabfleft">URL:</span> <input style="text" readonly value="%s"></p>' % resurl
+    print '<p><span class="linktabfleft"><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a></span>' 
+    print '<input style="text" readonly value="%s"></p>' % reswref
+    print '</div>'
+
     WriteInstructions()
     print '</div>'
     print '<div id="documentwrap">'

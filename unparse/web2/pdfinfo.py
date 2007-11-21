@@ -28,6 +28,10 @@ class PdfInfo:
         mgares = re.match("A-RES-(\d\d)-(\d+)", self.pdfc)
         mscprst = re.match("S-PRST-(\d\d\d\d)-(.+)", self.pdfc)
         mscres = re.match("S-RES-(\d+)\((\d\d\d\d)\)", self.pdfc)
+        
+        mrgares = re.match("A-RES-(\d+)\(([IVXL]+)\)", self.pdfc)
+        mogadoc = re.match("A-(\d+.*)", self.pdfc)
+        moscdoc = re.match("S-(\d+.*)", self.pdfc)
 
         self.bSC, self.bGA = False, False
         self.nsess, self.nscyear = 0, 0
@@ -90,6 +94,29 @@ class PdfInfo:
             self.scmeeting = None # although it could be obtained through the indexes
             self.bSC = True
             self.resolution_number = mscres.group(1)
+        
+        elif mrgares:
+            self.desc = "General Assembly Resolution %s" % mrgares.group(1)
+            self.dtype = "Resolution"
+            self.nsess = -1 # should decode the roman numeral
+            self.nmeeting = None
+            self.bGA = True
+            self.resolution_number = mrgares.group(1)
+
+        elif mogadoc:
+            self.desc = "General Assembly Document %s" % mogadoc.group(1)
+            self.dtype = "Document"
+            self.document_number = mogadoc.group(1)
+            self.nmeeting = None
+            self.nsess = None
+            self.bGA = True
+        elif moscdoc:
+            self.desc = "Security Council Document %s" % moscdoc.group(1)
+            self.nscyear = -1
+            self.scmeeting = None
+            self.document_number = moscdoc.group(1)
+            self.bSC = True
+        
         else:
             self.desc = "UNKNOWN"
             self.dtype = None
