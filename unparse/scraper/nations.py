@@ -343,6 +343,7 @@ United Nations:
     Director, General Assembly and Economic and Social Council Affairs Division of the Department of General Assembly Affairs and Conference Management Services
     Director, General Assembly and Economic and Social Council Affairs Division, Department for General Assembly and Conference Management
     Executive Director of the United Nations Children's Fund
+    Executive Director of the United Nations Development Fund for Women
     General Assembly Affairs Branch
     High Commissioner for Human Rights
     Deputy High Commissioner for Human Rights
@@ -464,3 +465,4 @@ for nonnation in nonnationlist.split("\n"):
 
 nonnationscount["Partners in Population and Development"] = 0
 nonnationscount["Chairman of the Peacebuilding Commission"] = 0
+nonnationscount["Coordinator of the NGO Working Group on Women, Peace and Security"] = 0

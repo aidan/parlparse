@@ -376,7 +376,14 @@ def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
     return res
 
 
+# can't be bothered to code them all properl
+romantodecmap = { "XXIX":29 }
+
 def RomanToDecimal(rn):
+    res = romantodecmap.get(rn)
+    if res:
+        return res
+    
     lrn = list(rn)
     res = 0
     while lrn and lrn[-1] == "I":

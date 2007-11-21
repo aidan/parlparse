@@ -48,7 +48,7 @@ respekp2 = """(?x)<b>\s*(The\s(?:Acting\s)?President)\s*(?:</b>)?
                   (?:spoke\sin|interpretation\sfrom)\s(\w+)
               (?:\)|</i>|</?b>)+
               \s*(?:<[ib]>)?:\s*(?:</[ib]>)?\s*"""
-respekp3 = """(?x)<b>\s*(.{0,20}?(?:Mr\.|Ms\.|President|King|Sultan|Secretary-General|Pope)[^<]{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
+respekp3 = """(?x)<b>\s*(.{0,20}?(?:Mr\.|Ms\.|President|King|Sultan|Secretary-General|Pope|Commodore)[^<]{0,40}?)\s*(?:</b>\s*:|:\s*</b>)
               (dummy)?
               (dummy)?
               (dummy)?
@@ -164,7 +164,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             if IsNotQuiet(): # allow for less strict when done by cronjob
                 raise unexception("missing nation for %s" % speakr, paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Justice |Transcript", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Justice |Commodore |Metropolitan |Transcript", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -230,7 +230,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             mmstar = re.match("\*", ptext)  # insert * in the text
             mmspokein = re.match("\(spoke in \w+(?:; interpretation.*?|; .*? the delegation)?\)$", ptext)
 
-            matinvite = re.match("(?:At the invitation of the President, )?.*? (?:(?:took (?:a |the )?|were escorted to their )seats? at the Council table|took (?:(?:the |a |their )?(?:seat|place)s? reserved for \w+|a seat|a place|places|seats|their seats) at the (?:side of the )?Council (?:[Cc]hamber|table))(?:;.*?Chamber)?\.$", ptext)
+            matinvite = re.match("(?:At the invitation of the President, )?.*? (?:(?:took (?:a |the )?|were escorted to their )seats? at the Council table|(?:took|was invited to take) (?:(?:the |a |their )?(?:seat|place)s? reserved for \w+|a seat|a place|places|seats|their seats) at the (?:side of the )?Council (?:[Cc]hamber|table))(?:;.*?Chamber)?\.$", ptext)
             mscsilence = re.match("The members of the (?:Security )?Council observed a minute of silence.$", ptext)
             mscescort = re.search("(?:were|was) escorted to (?:seats|a seat|his place|a place) at the (?:Security )?Council table.$", ptext)
             mvtape = re.match("A video ?tape was (?:shown|played) in the Council Chamber.$|An audio tape, in Arabic,", ptext)
@@ -454,6 +454,11 @@ class SpeechBlock:
                 if not re.match(reboldline, tlc.paratext):
                     break
                 ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.undocname, self.paranum)
+                if not self.bSecurityCouncil and re.match("Agenda(?: item)? \d+(?i)", ptext):
+                    assert re.search("misc|show", self.agendanum), self.agendanum
+                    self.agendanum = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
+                    print "agendanum from second line", self.agendanum
+                    assert self.agendanum, ptext
                 self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
                 self.i += 1
             return
@@ -555,7 +560,7 @@ class SpeechBlock:
 
         # check time is in order
         if int(sprevhour) > ihour or (int(sprevhour) > ihour and int(sprevmin) > imin):
-            print " times out of order, %s > %s" % (prevtime, res)
+            print " *****  times out of order, %s > %s" % (prevtime, res)
             return ""
 
         if ihour - int(sprevhour) > 13:
