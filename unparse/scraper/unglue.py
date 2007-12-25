@@ -10,6 +10,8 @@ pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+twopageagendas = ["S-PV-5697", "S-PV-5796"]
+
 misnumberedpages = ["S-PV-3454-Resu.2", "S-PV-3536-Resu.1", "S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1", "S-PV-5016", "S-PV-5086", "S-PV-5199", "S-PV-5328", "S-PV-5453", "S-PV-5594"]
 def StripPageTags(xfil, undocname):
     xpages = re.findall("(<page.*\s[\s\S]*?)</page>", xfil)
@@ -534,7 +536,7 @@ class TextPage:
             return
 
         # special case where the agenda spills to a second page (don't forget the outer application of this if)
-        elif self.bSecurityCouncil and lundocname == "S-PV-5697" and self.pageno == 2:
+        elif self.bSecurityCouncil and lundocname in twopageagendas and self.pageno == 2:
             ih = 0
             self.agenda = [ ]
             while ih < len(txlines):
@@ -704,7 +706,8 @@ class GlueUnfile:
             if txpage.bSecurityCouncil and i == 0:
                 continue
 
-            if txpage.bSecurityCouncil and undocname == "S-PV-5697" and i == 1:  # special case of agenda overflowing into two pages
+            # special cases of agenda overflowing into two pages
+            if txpage.bSecurityCouncil and i == 1 and undocname in twopageagendas:
                 txpages[0].agenda = "%s %s" % (txpages[0].agenda, txpage.agenda) # ram it all into one paragraph (who cares)
                 continue
 

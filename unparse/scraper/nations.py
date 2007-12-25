@@ -230,9 +230,6 @@ Communities:
     International Organization of la Francophonie
     Permanent Council of Francophonie
     League of Arab States
-    Organization of the Islamic Conference
-    Permanent Observer of the Organization of the Islamic Conference
-    Secretary General of the Organization of the Islamic Conference
     Permanent Observer of Switzerland
     Social Watch
     South Pacific Forum
@@ -241,6 +238,7 @@ Communities:
 	Second Transitional Government of East Timor
 	East Timor
 	President of the National Council of Timorese Resistance
+    Coordinator of the NGO Working Group on Women, Peace and Security
 
 Health:
     Global Fund to Fight AIDS, Tuberculosis and Malaria
@@ -254,6 +252,7 @@ Health:
     Treatment Action Campaign
     World Health Organization
     Executive Director of the World Food Programme
+    Partners in Population and Development
 
 Legal:
     International Court of Justice
@@ -277,6 +276,7 @@ Legal:
     President of the International Criminal Tribunal for the Former Yugoslavia
     Secretary General of the Conference on Security and Cooperation in Europe
     The Legal Counsel
+    United Nations International Independent Investigation Commission
 
 Oceans:
     Commission on the Limits of the Continental Shelf
@@ -298,6 +298,9 @@ Palistinian:
 
 Religion:
     Holy See
+    Organization of the Islamic Conference
+    Permanent Observer of the Organization of the Islamic Conference
+    Secretary General of the Organization of the Islamic Conference
 
 Refugees:
     International Centre for Migration Policy Development
@@ -314,6 +317,7 @@ Technology:
     International Atomic Energy Agency
     International Telecommunication Union
     International Union for the Conservation of Nature and Natural Resources
+
 
 United Nations:
     Assistant Secretary-General for Peacekeeping Operations
@@ -416,6 +420,7 @@ United Nations:
 	Chairman of the Counter-Terrorism Committee
     Executive Director of the Office of the Iraq Programme
 	Senior Gender Adviser of the United Nations Organization Mission in the Democratic Republic of the Congo
+    Chairman of the Peacebuilding Commission
 
 Weapons:
     Comprehensive Nuclear-Test-Ban Treaty Organization
@@ -461,8 +466,3 @@ for nonnation in nonnationlist.split("\n"):
 # further non-nations will get appended here during parsing, for later incorporation
 # it's a map because because it adds up how many of each one have occurred
 
-
-
-nonnationscount["Partners in Population and Development"] = 0
-nonnationscount["Chairman of the Peacebuilding Commission"] = 0
-nonnationscount["Coordinator of the NGO Working Group on Women, Peace and Security"] = 0
