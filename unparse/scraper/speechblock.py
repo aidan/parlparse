@@ -230,7 +230,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             mmstar = re.match("\*", ptext)  # insert * in the text
             mmspokein = re.match("\(spoke in \w+(?:; interpretation.*?|; .*? the delegation)?\)$", ptext)
 
-            matinvite = re.match("(?:At the invitation of the President, )?.*? (?:(?:took (?:a |the )?|were escorted to their )seats? at the Council table|(?:took|was invited to take) (?:(?:the |a |their )?(?:seat|place)s? reserved for \w+|a seat|a place|places|seats|their seats) at the (?:side of the )?Council (?:[Cc]hamber|table))(?:;.*?Chamber)?\.$", ptext)
+            matinvite = re.match("(?:At the invitation of the President, )?.*? (?:(?:took (?:a |the )?|were escorted to their )seats? at the Council table|(?:took|was invited to take) (?:(?:the |a |their )?(?:seat|place)s? reserved for \w+|a seat|a place|places|seats|their seats|his seat) at the (?:side of the )?Council (?:[Cc]hamber|table))(?:;.*?Chamber)?\.$", ptext)
             mscsilence = re.match("The members of the (?:Security )?Council observed a minute of silence.$", ptext)
             mscescort = re.search("(?:were|was) escorted to (?:seats|a seat|his place|a place) at the (?:Security )?Council table.$", ptext)
             mvtape = re.match("A video ?tape was (?:shown|played) in the Council Chamber.$|An audio tape, in Arabic,", ptext)
