@@ -186,6 +186,7 @@ class Parser:
                               "Right Hon Elish Angiolini QC" : True,
                               "Rt hon Elish Angiolini QC" : True,
                               "Elish Angiolini QC" : True,
+                              "Eilish Angiolini QC": True,
                               "Mrs Elish Angiolini" : True,
                               "Mrs Elish Angiolini QC" : True,
                               "Frank Mulholland QC": True,
@@ -276,7 +277,7 @@ class Parser:
         if rest:
             s = rest            
         if len(s) > 0:
-            m = re.search('\(([A-Z0-9]+\-) ?([A-Z0-9]+)\)',s)
+            m = re.search('\((S[0-9][A-Z0-9]+\-) ?([0-9]+)\)',s)
             if m:
                 sp_id = m.group(1) + m.group(2)
                 self.set_id(sp_id)
@@ -291,7 +292,7 @@ class Parser:
             return holding_match.group(1) + holding_match.group(5)
 
     def get_id(self,index,type):
-        return "uk.org.publicwhip/spwa/"+str(self.date)+".%d.%s" % ( index, type )
+        return "uk.org.publicwhip/spwa/"+str(self.date)+".%s.%s" % ( index, type )
 
     def valid_speaker(self,speaker_name):
         tidied_speaker = speaker_name
@@ -299,6 +300,7 @@ class Parser:
             return None
         if self.odd_unknowns.has_key(speaker_name):
             return "unknown"
+        tidied_speaker = re.sub("((on behalf of the )?Scottish Parliamentary Corporate Body)",'',tidied_speaker)
         ids = memberList.match_whole_speaker(tidied_speaker,str(parser.date))
         if ids == None:
             return "unknown"
@@ -332,6 +334,8 @@ class Parser:
         html = re.sub('([Ss])port</strong>([Ss])',r'</strong>\1port\2',html)
 
         html = re.sub('(?ims)<a name="se_Minister">\s*</a>','',html)
+
+        html = re.sub('&rsquo;Donnell',"'Donnell",html)
     
         # Swap the windows-1252 euro and iso-8859-1 pound signs for the
         # equivalent entities...
@@ -637,6 +641,7 @@ class Parser:
 
         x = -1
         last_heading = None
+        current_sp_id = None
 
         index = 0
 
@@ -646,19 +651,28 @@ class Parser:
                 previous = self.all_stuff[i-1]
             else:
                 previous = None
+
+            if i < (len(self.all_stuff) - 1):
+                next = self.all_stuff[i+1]
+            else:
+                next = None
                 
             a = self.all_stuff[i]
 
             self.ofp.write('\n\n')
 
             if a.__class__ == Heading:
-                x += 1
                 last_was_answer = True
                 if a.major:
                     subtype = "mh"
                 else:
                     subtype = "h"
-                self.ofp.write(a.to_xml(self.get_id(x,subtype)))
+                if next and next.__class__ == QuestionOrReply and next.sp_id:
+                    # Then use the question's sp_id:
+                    self.ofp.write(a.to_xml(self.get_id(next.sp_id,subtype)))
+                else:
+                    x += 1
+                    self.ofp.write(a.to_xml(self.get_id(str(x),subtype)))
                 last_heading = a
             elif a.__class__ == QuestionOrReply:
                 # Occasionally we think questions are actually
@@ -677,17 +691,23 @@ class Parser:
                                 # If the one before is a question, that's fine.
                                 pass
                             else:
+                                current_sp_id = a.sp_id
                                 # If the previous one was an answer
                                 # then we need to replay the last
                                 # heading:
                                 if not last_heading:
                                     raise Exception, "Somehow there's been no heading so far."
                                 last_heading.sp_name = a.sp_name
-                                x += 1
-                                self.ofp.write(last_heading.to_xml(self.get_id(x,"h")))
+                                if current_sp_id:
+                                    self.ofp.write(last_heading.to_xml(self.get_id(current_sp_id,"h")))
+                                else:
+                                    x += 1
+                                    self.ofp.write(last_heading.to_xml(self.get_id(str(x),"h")))
                                 self.ofp.write("\n\n")
                                 index = 0
                         else:
+                            # i.e. this is the normal case, a question after a heading:
+                            current_sp_id = a.sp_id
                             index = 0
                     else:
                         raise Exception, "Nothing before the first question (no heading)"
@@ -695,7 +715,10 @@ class Parser:
                     subtype = "q" + str(index)
                 else:
                     subtype = "r" + str(index)
-                self.ofp.write(a.to_xml(self.get_id(x,subtype)))
+                if current_sp_id:
+                    self.ofp.write(a.to_xml(self.get_id(current_sp_id,subtype)))
+                else:
+                    self.ofp.write(a.to_xml(self.get_id(str(x),subtype)))
                 index += 1
 
         self.ofp.write("</publicwhip>")
