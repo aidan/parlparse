@@ -327,6 +327,7 @@ class Parser:
 
         html = re.sub('&nbsp;', ' ', html)
         html = re.sub('&#9;', ' ', html)
+        html = re.sub('&#160;', ' ', html)
 
         # Annoyingly, in the phrase "Sportscotland", the Sport is bold and
         # sometimes runs on from speaker names:
