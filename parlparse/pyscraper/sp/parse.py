@@ -18,6 +18,8 @@ from resolvemembernames import memberList
 import re
 import glob
 
+from findquotation import ScrapedXMLParser
+
 # ------------------------------------------------------------------------
 # 
 # This script is quite horrendous, in my opinion - I'm sure it could
@@ -109,6 +111,36 @@ def log_speaker(speaker,date,message):
         out_file = open("speakers.txt", "a")
         out_file.write(str(date)+": ["+message+"] "+speaker+"\n")
         out_file.close()
+
+# FIXME: move this to a common file
+def month_name_to_int( name ):
+
+    months = { "january"   : 1,
+               "february"  : 2,
+               "march"     : 3,
+               "april"     : 4,
+               "may"       : 5,
+               "june"      : 6,
+               "july"      : 7,
+               "august"    : 8,
+               "september" : 9,
+               "october"   : 10,             
+               "november"  : 11,
+               "december"  : 12 }
+
+    lowered = name.lower()
+
+    if months.has_key(lowered):
+        return months[lowered]
+
+    abbreviated_months = { }
+    for k in months.keys():
+        abbreviated_months[k[0:3]] = months[k]
+
+    if abbreviated_months.has_key(lowered):
+        return abbreviated_months[lowered]
+
+    return 0
 
 class Heading:
 
@@ -241,6 +273,21 @@ class Speech:
         for p in self.paragraphs:
             if verbose: print '   [paragraph] ' + p
 
+    def find_quotation(self,content,citation):
+        m = re.search(' (\d+) ([a-zA-Z]+) (\d{4})[^0-9]',citation)
+        if not m:
+            return None
+        if verbose: print "year: "+m.group(3)+", month: "+m.group(2)+", day: "+m.group(1)
+        d = datetime.date(int(m.group(3),10),month_name_to_int(m.group(2)),int(m.group(1),10))
+        m = re.search('Written Answers.*(S\d[A-Z]-\d+)',citation)
+        if m:
+            return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
+        substrings = re.split('\s*[,\.\[\]]+\s*',content)
+        long_enough_substrings = filter( lambda e: len(e) > 20, substrings )
+        regular_expressions = map( lambda e: re.compile(re.escape(e)), long_enough_substrings )
+        gid = self.parser.sxp.find_id_for_quotation( str(d), regular_expressions )
+        return gid
+
     def to_xml(self):
 
         # Those awkward alphabetical lists.
@@ -290,9 +337,9 @@ class Speech:
             real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
             indent_text = ''
 
-            m_start_and_end = re.match( '^\s*(&quot;)(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+            m_start_and_end = re.match( '^\s*(&quot;)(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
             m_start         = re.match( '^\s*(&quot;)(.*)', real_paragraph )
-            m_end           = re.match( '^\s*(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+            m_end           = re.match( '^\s*(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
 
             indent = False
 
@@ -300,6 +347,14 @@ class Speech:
                 self.opened_and_closed_quote = True
                 if not re.search('&quot;',m_start_and_end.group(2)):
                     indent = True
+                if m_start_and_end.group(5):
+                    gid = self.find_quotation(m_start_and_end.group(2),m_start_and_end.group(5))
+                    if gid:
+                        m = m_start_and_end
+                        before = m.group(1)+m.group(2)+m.group(3)
+                        if m.group(4):
+                            before += m.group(4)
+                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(5)))
             elif m_start:
                 self.open_quote = True
                 if not re.search('&quot;',m_start.group(2)):
@@ -308,6 +363,14 @@ class Speech:
                 self.close_quote = True
                 if not re.search('&quot;',m_end.group(1)):
                     indent = True
+                if m_end.group(4):
+                    gid = self.find_quotation(m_end.group(1),m_end.group(4))
+                    if gid:
+                        m = m_end
+                        before = m.group(1)+m.group(2)
+                        if m.group(3):
+                            before += m.group(3)
+                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(4)))
             elif self.after_open_quote:
                 indent = True
 
@@ -529,6 +592,8 @@ class Parser:
         self.speakers_so_far = []
 
         self.report_date = None
+
+        self.sxp = ScrapedXMLParser() 
 
     def parse_column(self,tag):
         a_name_tag = tag.find('a')
@@ -1207,7 +1272,7 @@ def compare_filename(a,b):
         else:
             return 0
     else:
-        raise Exception, "Couldn't match filenames: "+a+" and "+B
+        raise Exception, "Couldn't match filenames: "+a+" and "+b
 
 # --------------------------------------------------------------------------
 # End of function and class definitions...
@@ -1383,7 +1448,8 @@ for d in dates:
 
     parser.complete_current()
 
-    o = open(output_filename,"w")
+    temp_output_filename = xml_output_directory + "tmp.xml"
+    o = open(temp_output_filename,"w")
 
     o.write('''<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE publicwhip [
@@ -1473,6 +1539,10 @@ for d in dates:
             
     o.write("\n\n</publicwhip>\n")
     o.close()
+
+    retcode = call( [ "mv", temp_output_filename, output_filename ] )
+    if retcode != 0:
+        raise Exception, "Moving "+temp_output_filename+" to "+output_filename+" failed."
 
     retcode = call( [ "xmlstarlet", "val", output_filename ] )
     if retcode != 0:
