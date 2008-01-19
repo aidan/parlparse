@@ -210,6 +210,8 @@ class protooffice:
                 self.cons = None
                 if nameMatch.group(2):
 		        self.cons = re.sub("&amp;", "&", nameMatch.group(2))
+                if self.fullname == 'Angela E. Smith':
+                        self.cons = 'Basildon'
 
 		# map down to the department for this record
 		self.pos = "PPS"
