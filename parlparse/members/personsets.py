@@ -77,6 +77,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100967" : "David Trimble [Upper Bann]", # changed party
     "uk.org.publicwhip/lord/100930" : "Keith Bradley [Manchester, Withington]",
     "uk.org.publicwhip/lord/100345" : "John D Taylor [Strangford]",
+    "uk.org.publicwhip/lord/100907" : "Brian Cotter [Weston-Super-Mare]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
