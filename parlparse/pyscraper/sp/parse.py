@@ -1279,7 +1279,7 @@ def compare_filename(a,b):
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
-force = True
+force = False
 
 last_column_number = 0
     
