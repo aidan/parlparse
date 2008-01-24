@@ -10,6 +10,8 @@ import urllib
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 
+from common import month_name_to_int
+
 agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
 
 class MyURLopener(urllib.FancyURLopener):
@@ -40,31 +42,6 @@ for year in range(1999,currentyear+1):
         fp.write(ur.read())
         fp.close()
         ur.close()
-
-def month_name_to_int( name ):
-
-    months = [ None,
-               "january",
-               "february",
-               "march",
-               "april",
-               "may",
-               "june",
-               "july",
-               "august",
-               "september",
-               "october",
-               "november",
-               "december" ]
-
-    result = 0
-
-    for i in range(1,13):
-        if name.lower() == months[i]:
-            result = i
-            break
-
-    return result
 
 for year in range(1999,currentyear+1):
 

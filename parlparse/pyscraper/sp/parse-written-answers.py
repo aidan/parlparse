@@ -16,6 +16,10 @@ from subprocess import call
 
 from resolvemembernames import memberList
 
+from common import month_name_to_int
+from common import non_tag_data_in
+from common import tidy_string
+
 from time import strptime
 
 import re
@@ -25,6 +29,9 @@ verbose = False
 
 wa_prefix = "../../../parldata/cmpages/sp/written-answers/"
 xml_output_directory = "../../../parldata/scrapedxml/sp-written/"
+
+# ------------------------------------------------------------------------
+# Keep a dictionary on disk that maps files to dates:
 
 file_to_date = None
 date_to_file = { }
@@ -54,51 +61,13 @@ def add_file_to_date_mapping(filename,date_string):
     fp.write( "\n}\n" )
     fp.close()
 
+# ------------------------------------------------------------------------
+
 filenames = glob.glob( wa_prefix + "day-*.htm" )
 
 def paragraphs_in_tag(t):
     paragraphs = t.findAll('p',recursive=False)
     return len(paragraphs)
-
-def non_tag_data_in(o):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
-    else:
-        # Hope it's a string or something else concatenatable...
-        return o
-
-def tidy_string(s):
-    result = re.sub('(?ims)\s+',' ',s)
-    return result.strip()
-
-def month_name_to_int( name ):
-
-    months = [ None,
-               "january",
-               "february",
-               "march",
-               "april",
-               "may",
-               "june",
-               "july",
-               "august",
-               "september",
-               "october",
-               "november",
-               "december" ]
-
-    result = 0
-
-    for i in range(1,13):
-        if name.lower() == months[i]:
-            result = i
-            break
-
-    return result
 
 class QuestionOrReply:
     def __init__(self,sp_id,sp_name,parser):
@@ -367,7 +336,12 @@ class Parser:
         # iso-8859-1.  The decoding you set here doesn't actually seem to
         # solve these problems anyway (FIXME)...
 
-        self.soup = BeautifulSoup( html, fromEncoding='windows-1252' )            
+        self.soup = BeautifulSoup( html, fromEncoding='windows-1252' )
+
+        # Test trying to find the body tag; if we can't, then the
+        # parsing failed horribly:
+        if not self.soup.find('body'):
+            raise Exception, "Couldn't find body in souped "+filename
 
     def parse(self,filename):
 

@@ -15,7 +15,8 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         self.regexp_list = regexp_list
         # Look both in written answers and official reports...
         files_to_look_in = [ "../../../parldata/scrapedxml/sp/sp%s.xml" % date_string,
-                             "../../../parldata/scrapedxml/sp-written/spwa%s.xml" % date_string ]
+                             "../../../parldata/scrapedxml/sp-written/spwa%s.xml" % date_string,
+                             "../../../parldata/scrapedxml/debates/debates%s.xml" % date_string ]
         for filename in files_to_look_in:
             if os.path.exists(filename):
                 self.parser.parse(filename)

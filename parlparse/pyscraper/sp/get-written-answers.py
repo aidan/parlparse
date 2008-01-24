@@ -12,6 +12,9 @@ from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
 from BeautifulSoup import Comment
 
+from common import month_name_to_int
+from common import non_tag_data_in
+
 agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
 
 class MyURLopener(urllib.FancyURLopener):
@@ -43,39 +46,6 @@ for year in range(1999,currentyear+1):
         fp.write(ur.read())
         fp.close()
         ur.close()
-
-def month_name_to_int( name ):
-
-    months = [ None,
-               "january",
-               "february",
-               "march",
-               "april",
-               "may",
-               "june",
-               "july",
-               "august",
-               "september",
-               "october",
-               "november",
-               "december" ]
-
-    result = 0
-
-    for i in range(1,13):
-        if name.lower() == months[i]:
-            result = i
-            break
-
-    return result
-
-def non_tag_data_in( o ):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
 
 for year in range(1999,currentyear+1):
 

@@ -20,6 +20,9 @@ import glob
 
 from findquotation import ScrapedXMLParser
 
+from common import month_name_to_int
+from common import non_tag_data_in
+
 # ------------------------------------------------------------------------
 # 
 # This script is quite horrendous, in my opinion - I'm sure it could
@@ -111,36 +114,6 @@ def log_speaker(speaker,date,message):
         out_file = open("speakers.txt", "a")
         out_file.write(str(date)+": ["+message+"] "+speaker+"\n")
         out_file.close()
-
-# FIXME: move this to a common file
-def month_name_to_int( name ):
-
-    months = { "january"   : 1,
-               "february"  : 2,
-               "march"     : 3,
-               "april"     : 4,
-               "may"       : 5,
-               "june"      : 6,
-               "july"      : 7,
-               "august"    : 8,
-               "september" : 9,
-               "october"   : 10,             
-               "november"  : 11,
-               "december"  : 12 }
-
-    lowered = name.lower()
-
-    if months.has_key(lowered):
-        return months[lowered]
-
-    abbreviated_months = { }
-    for k in months.keys():
-        abbreviated_months[k[0:3]] = months[k]
-
-    if abbreviated_months.has_key(lowered):
-        return abbreviated_months[lowered]
-
-    return 0
 
 class Heading:
 
@@ -501,14 +474,6 @@ def centred( t ):
         return False
     else:
         raise Exception, "Unknown class: "+str(t.__class__)
-
-def non_tag_data_in( o ):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
 
 def just_time( non_tag_text ):
     m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
@@ -1424,8 +1389,7 @@ for d in dates:
         body = soup.find('body')
 
         if body == None:
-            print "body was None for: "+str(d)
-            continue
+            raise Exception, "body was None for: "+str(d)
 
         if verbose:
             print "----- " + detail_filename
