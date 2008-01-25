@@ -375,6 +375,8 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			continue
 		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
 			continue
+                if commonsIndexRecord.date == '2008-01-08': # XXX Until they fix it
+                        continue
 
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)

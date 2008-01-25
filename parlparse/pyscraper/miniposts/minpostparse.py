@@ -712,6 +712,7 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 	else:
 		cp.remadename = cp.fullname
 		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
+		cp.remadename = re.sub(" Kt ", " ", cp.remadename)
 		cp.remadename = re.sub(" [GKDCOM]BE$", "", cp.remadename)
 		cp.remadecons = ""
 		date = cpsdates[0]
