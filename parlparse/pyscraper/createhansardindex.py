@@ -207,6 +207,8 @@ def CmIndexFromPage(urllinkpage):
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071023/debindx/71023-x.htm'
                 if sdate=='2007-11-15' and uind=='http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071114/debindx/71115-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071115/debindx/71115-x.htm'
+                if sdate=='2008-01-15' and uind=='http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080116/index/80115-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080115/index/80115-x.htm'
 
                 if sdate>='2006-12-05' and sdate<='2006-12-14' and typ=='Westminster Hall':
                         uind = uind.replace('200506', '200607')
