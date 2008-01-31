@@ -400,7 +400,7 @@ def ParseSelCteePage(fr, gp):
         	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s+(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s+(.*?)\s+<", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         sdate = sudate
@@ -461,7 +461,7 @@ def ParseGovPostsPage(fr, gp):
                 frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # extract special Ministers of State and PUSes
@@ -553,7 +553,7 @@ def ParsePrivSecPage(fr, gp):
         elif num <= 57:
 	        sdate = filedate
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s*<(?i)", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s*<(?i)", fr)
                 msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
                 sdate = msdate
 
