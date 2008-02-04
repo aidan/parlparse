@@ -254,9 +254,7 @@ class Speech:
         d = datetime.date(int(m.group(3),10),month_name_to_int(m.group(2)),int(m.group(1),10))
         m = re.search('Written Answers.*(S\d[A-Z]-\d+)',citation)
         if m:
-            # In fact this case will be caught by a regexp when the page is generated.
-            return None
-            # return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
+            return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
         substrings = re.split('\s*[,\.\[\]]+\s*',content)
         long_enough_substrings = filter( lambda e: len(e) > 20, substrings )
         regular_expressions = map( lambda e: re.compile(re.escape(e)), long_enough_substrings )
@@ -1244,7 +1242,7 @@ def compare_filename(a,b):
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
-force = False
+force = True
 
 last_column_number = 0
     
@@ -1390,7 +1388,7 @@ for d in dates:
 
         if body == None:
             raise Exception, "body was None for: "+str(d)
-
+        
         if verbose:
             print "----- " + detail_filename
             print soup.prettify()
