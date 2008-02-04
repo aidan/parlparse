@@ -1,0 +1,3 @@
+#!/bin/bash
+
+egrep '<ques.*spid' ../../../parldata/scrapedxml/sp-written/*.xml | sed 's/^.*id="uk.org.publicwhip.spwa.\([^\.]*\).*spid="\([^"]*\)".*$/\1:\2/g' | sort | uniq > ../../../parldata/cmpages/sp/written-answer-question-spids

@@ -26,6 +26,43 @@ urllib._urlopener = MyURLopener()
 
 import re
 
+# This is just for easy sorting in the order that seems sensible to me:
+
+mention_type_order = { "business-today" : "1",
+                       "business-oral" : "2",
+                       "business-written" : "3",
+                       "answer" : "4" }
+
+class Mention:
+    def __init__(self,spid,iso_date,url,mention_type):
+        self.spid = spid
+        self.iso_date = iso_date
+        self.url = url
+        self.mention_type = mention_type
+        if mention_type not in [ "business-oral", "business-written", "business-today", "answer" ]:
+            raise Exception, "Unknown mention_type: "+mention_type
+        self.mention_index = mention_type_order[mention_type]
+        if not self.mention_index:
+            raise Exception, "Something was missing from mention_type_order ("+mention_type+")"
+
+# Make sure we have an up-to-date list of the written answers that are
+# known about (note this means that this script must be run after
+# parse-written-answers.py)...
+
+os.system("./get-written-answer-id-list")
+
+id_to_mentions = { }
+
+fp = open("../../../parldata/cmpages/sp/written-answer-question-spids","r")
+for line in fp.readlines():
+    m = re.match("^(.*):(.*)$",line)
+    if m:
+        k = m.group(2)
+        value = Mention(k,m.group(1),None,"answer")
+        id_to_mentions.setdefault(k,[])
+        if value not in id_to_mentions[k]:
+            id_to_mentions[k].append(value)
+
 currentdate = datetime.date.today()
 currentyear = datetime.date.today().year
 
@@ -43,8 +80,6 @@ bulletin_year_template = bulletin_prefix + "%d.htm"
 
 existing_contents_pages = glob.glob( output_directory + "contents-bb-[0-8]*" )
 existing_contents_pages.sort()
-
-id_to_dates_mentioned = { }
 
 for year in range(1999,currentyear+1):
     index_page_url = bulletin_year_template % year
@@ -219,31 +254,37 @@ for year in range(1999,currentyear+1):
             matches = re.findall('S[0-9][A-Z0-9]+\-[0-9]+',page_as_text)
 
             for spid in matches:
-                id_to_dates_mentioned.setdefault(spid,[])
-                value = str(date)
+                id_to_mentions.setdefault(spid,[])
+                mention_type = None
                 if oral_question:
                     if todays_business:
-                        value += "-today"
+                        mention_type = "business-today"
                     else:
-                        value += "-oral"
+                        mention_type = "business-oral"
                 else:
-                    value += "-written"
-                if value not in id_to_dates_mentioned[spid]:
-                    id_to_dates_mentioned[spid].append(value)
+                    mention_type = "business-written"
+                value = Mention(spid,str(date),day_url,mention_type)
+                if value not in id_to_mentions[spid]:
+                    id_to_mentions[spid].append(value)
 
-keys = id_to_dates_mentioned.keys()
+keys = id_to_mentions.keys()
 keys.sort()
+keys = set(keys)
 
-fp = open( "../../../parldata/cmpages/sp/question-spids-mentioned", "w" )
-fp.write( "{" )
-first_time = True
+fp = open( "../../../parldata/cmpages/sp/question-mentions.xml", "w" )
+
+fp.write( '<?xml version="1.0" encoding="utf-8"?>\n' )
+fp.write( '<publicwhip>\n' )
 for k in keys:
-    if first_time:
-        first_time = False
-    else:
-        fp.write(',')
-    values = id_to_dates_mentioned[k]
-    values.sort()
-    fp.write( '\n  "%s" : [ %s ]' % ( k, ', '.join( map( lambda e: '"' + e + '"', values ) ) ) )
-fp.write( "\n}\n" )
-fp.close()
+    mentions = id_to_mentions[k]
+    fp.write( '  <question spid="%s">\n' % k )
+    mentions.sort( key = lambda m: m.iso_date + m.mention_index )
+    for mention in mentions: 
+        url_string = None
+        if mention.url:
+            url_string = ' url="%s"' % mention.url
+        else:
+            url_string = ''
+        fp.write( '    <mention date="%s" type="%s"%s/>\n' % ( mention.iso_date, mention.mention_type, url_string ) )
+    fp.write( '  </question>\n\n' )
+fp.write( '</publicwhip>' )
