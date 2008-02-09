@@ -11,7 +11,8 @@ RET=0
 # Run XML-generating scraper from Public Whip, getting new files from network
 # and parsing the written answers and debates.
 cd ~/parlparse/pyscraper
-./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms standing || RET=1
+./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms || RET=1
+./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE scrape standing || RET=1
 
 # Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
 cd ~/parlparse/pyscraper/ni
