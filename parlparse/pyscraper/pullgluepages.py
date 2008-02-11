@@ -82,9 +82,10 @@ class CommonsIndexElement:
 	def __repr__(self):
 		return "<%s, %s, %s>" % (self.date, self.recordType, self.url)
 
-def WriteCleanText(fout, text, url):
+def WriteCleanText(fout, text, url, date):
         text = re.sub('<!--.*?-->', '', text)
 	abf = re.split('(<[^>]*>)', text)
+        inlink = False
 	for ab in abf:
 		# delete comments and links
 		if re.match('<!-[^>]*?->', ab):
@@ -96,11 +97,18 @@ def WriteCleanText(fout, text, url):
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
                                         fout.write('<a name="%s">' % aname)
+                        elif re.match('<a href.*?corrtext', ab) and date >= '2007-10-15':
+                                fout.write(ab)
+                                inlink = True
                         #else:
                                 # We should never find any other sort of <a> tag - such
                                 # as a link (as there aren't any on parliament.uk)
                                 # XXX They have started this week, 2007-10-15
                                 #print "Caught a link ", ab, " in ", url
+
+		elif inlink and re.match('</?a>(?i)', ab):
+			fout.write(ab)
+			inlink = False
 
 		elif re.match('</?a>(?i)', ab):
 			pass
@@ -220,11 +228,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
                 # Grr, missing footers ALL OVER THE PLACE now
                 if len(hrsections) == 2:
-                        WriteCleanText(fout, hrsections[1], url)
+                        WriteCleanText(fout, hrsections[1], url, sdate)
 
 		# write the body of the text
 		for i in range(1,len(hrsections) - 1):
-			WriteCleanText(fout, hrsections[i], url)
+			WriteCleanText(fout, hrsections[i], url, sdate)
 
 		# find the lead on with the footer
 		footer = hrsections[-1]
