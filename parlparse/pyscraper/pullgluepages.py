@@ -97,7 +97,7 @@ def WriteCleanText(fout, text, url, date):
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
                                         fout.write('<a name="%s">' % aname)
-                        elif re.match('<a href.*?corrtext', ab) and date >= '2007-10-15':
+                        elif re.match('<a href.*?corrtext', ab):
                                 fout.write(ab)
                                 inlink = True
                         #else:
@@ -211,7 +211,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
 
                 # Make sure correction is before written answer question number - XXX right place?
-                sr = re.sub('(\[\d+\])\s*(</p>)?\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
+                sr = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)

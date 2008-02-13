@@ -240,7 +240,9 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		qblock = None
 		for qqnum in qqnums:
 			if qblock:
-				assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
+				if qblock.headingqb.qGID != qnummapq[qqnum].headingqb.qGID:
+				    print qblock.headingqb.qGID, qnummapq[qqnum].headingqb.qGID
+				    assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
 			elif qqnum != '0' and qqnum in qnummapq:  # 0 is when there is a missing qnum
 				qblock = qnummapq[qqnum]
 
