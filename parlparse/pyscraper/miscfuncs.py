@@ -274,7 +274,7 @@ def StripAnchorTags(text):
         return ret
 
 
-def WriteCleanText(fout, text):
+def WriteCleanText(fout, text, striphref=True):
         text = re.sub('<!--.*?-->', '', text)
     	abf = re.split('(<[^>]*>)', text)
         for ab in abf:
@@ -283,12 +283,12 @@ def WriteCleanText(fout, text):
 			pass
 
                 # XXX Differs from pullgluepages version
-		elif re.match('<a[^>]+>(?i)', ab):
+		elif striphref and re.match('<a[^>]+>(?i)', ab):
 			anamem = re.match('<a name\s*?=(?i)', ab)
                         if anamem:
                                 fout.write(re.sub('\s', ' ', ab))
 
-		elif re.match('</?a>(?i)', ab):
+		elif striphref and re.match('</?a>(?i)', ab):
 			pass
 
 		# spaces only inside tags
@@ -314,19 +314,20 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
 	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
-        qisup = re.search(r'(<(i|sup|sub)>(.*?)</\2>)(?i)', stex)
+        qisup = re.search(r'(<(a|i|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
         if qisup:
                 qtagtype = qisup.group(2)
-                qtag = ('<%s>' % qtagtype, '</%s>' % qtagtype)
+                qhref = qisup.group(3) or ''
+                qtag = ('<%s%s>' % (qtagtype, qhref), '</%s>' % qtagtype)
 	if not qisup:
-		qisup = re.search('(<a href="([^"]*)">(.*?)</a>)(?i)', stex)
+		qisup = re.search('(<(a) href="([^"]*)">(.*?)</a>)(?i)', stex)
 		if qisup:
-			qtag = ('<a href="%s">' % qisup.group(2), '</a>')
+			qtag = ('<a href="%s">' % qisup.group(3), '</a>')
 
 	if qisup:
 		sres = StraightenHTMLrecurse(stex[:qisup.start(1)], stampurl)
 		sres.append(qtag[0])
-		sres.extend(StraightenHTMLrecurse(qisup.group(3), stampurl))
+		sres.extend(StraightenHTMLrecurse(qisup.group(4), stampurl))
 		sres.append(qtag[1])
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres

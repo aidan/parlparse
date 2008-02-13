@@ -151,18 +151,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2006-10-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061026/debtext/61026-0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-11-22' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061122/debtext/61122-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2006-11-29' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061129/debtext/61129-0001.htm':
-                urla = [urla[0]]
         if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
                 urla = urla[0:11] + urla[13:] # Incorrect link in middle of index
-        if sdate=='2007-01-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070115/debtext/70115-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2007-02-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/debtext/70205-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2007-03-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070326/debtext/70326-0001.htm':
-                urla = [urla[0]]
         if sdate=='2007-03-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070328/halltext/70328h0001.htm':
                 urla = [urla[0]]
         if sdate=='2007-04-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070424/debtext/70424-0001.htm':
@@ -171,7 +161,13 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[0:4] + urla[6:]
         if urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0178.htm':
                 urla = [urla[0]]
-        if sdate=='2007-10-09' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071009/debtext/71009-0001.htm':
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2007-10-15' or sdate=='2007-10-23' or sdate=='2007-10-09' or sdate=='2007-02-05' or sdate=='2007-03-26' or \
+             sdate=='2007-01-15' or sdate=='2006-11-29' or sdate=='2006-11-22' or sdate=='2007-07-11' or sdate=='2007-07-05'):
+                urla = [urla[0]]
+        if sdate=='2007-10-01' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071001/text/71001w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2007-07-19' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070719/wmstext/70719m0001.htm':
                 urla = [urla[0]]
         #print "urla"
         #for aaa in urla:
@@ -213,6 +209,9 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
                 if sdate=='2006-06-07' and re.search('/text/', url):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
+
+                # Make sure correction is before written answer question number - XXX right place?
+                sr = re.sub('(\[\d+\])\s*(</p>)?\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
@@ -383,8 +382,6 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			continue
 		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
 			continue
-                if commonsIndexRecord.date == '2008-01-08': # XXX Until they fix it
-                        continue
 
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)

@@ -73,7 +73,7 @@ def ExtractIndexContents(urlx, sdate):
 	return res
 
 
-def GlueByNext(fout, urla, urlx):
+def GlueByNext(fout, urla, urlx, sdate):
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
@@ -128,11 +128,11 @@ def GlueByNext(fout, urla, urlx):
 
                 # Lords Written Statements on 2006-07-05, for example, sadly
                 if len(hrsections) == 2:
-                        miscfuncs.WriteCleanText(fout, hrsections[1])
+                        miscfuncs.WriteCleanText(fout, hrsections[1], False)
                 
 		# write the body of the text
 		for i in range(1, len(hrsections) - 1):
-			miscfuncs.WriteCleanText(fout, hrsections[i])
+			miscfuncs.WriteCleanText(fout, hrsections[i], False)
 
 		# find the lead on with the footer
 		footer = hrsections[-1]
@@ -237,7 +237,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		# we could check that all our links above get cleared.
                 try:
                         dtemp = open(tempfilename, "w")
-		        GlueByNext(dtemp, urla, urlx)
+		        GlueByNext(dtemp, urla, urlx, dnu[0])
 		        dtemp.close()
 	        except Exception, e:
 		        print "Problem with %s, moving on" % dnu[0]

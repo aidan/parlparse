@@ -82,7 +82,7 @@ reanamevals = re.compile('<a name="(\S*?)">(?i)')
 recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolumnum6, regcolumnum7, regcolnumcont, regtime, reaname))
 
 # this covers all the different kinds of things we should have picked up
-remarginal = re.compile(':\s*column\s*(\d+)|\n(?:\d+[.:])?\d+\s*[ap]\.?m\.?[^,\w](?i)|</?a[\s>]')
+remarginal = re.compile(':\s*column\s*(\d+)|\n(?:\d+[.:])?\d+\s*[ap]\.?m\.?[^,\w](?i)|<a(?:\s+name|>)')
 
 
 def FilterDebateColTime(fout, text, sdate, typ):

@@ -37,6 +37,9 @@ from resolvemembernames import memberList
 # in the future it should be possible to pick out direct references to
 # other members of the house in speeches.
 
+# This is solely here so that already existing links (which will only be correction links and links to deposited papers)
+# can get through this tokenising stage without being mangled to death
+rehreflink = re.compile('<a href="([^"]*)">(.*?)</a>')
 
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
@@ -73,6 +76,9 @@ def TokenStandingOrder(mstandingo, phrtok):
 def TokenHttpLink(mhttp, phrtok):
 	qstrlink = ConstructHTTPlink(mhttp.group(1), mhttp.group(2), mhttp.group(3))
 	return ('a', ' href="%s"' % qstrlink)
+
+def TokenHrefLink(mhttp, phrtok):
+	return ('', '')
 
 reoffrepw = re.compile('<i>official(?:</i> <i>| )report,?</i>,? c(?:olumns?)?\.? (\d+(?:&#150;\d+)?[WS]*)(?i)')
 def TokenOffRep(qoffrep, phrtok):
@@ -137,6 +143,7 @@ def TokenHonFriend(mhonfriend, phrtok):
 
 # the array of tokens which we will detect on the way through
 tokenchain = [
+	( 'hreflink',       rehreflink,     None,               TokenHrefLink ),
 	( "date",			redatephraseval,None, 				TokenDate ),
 	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
 	( "standing order", restandingo, 	restandingomarg, 	TokenStandingOrder ),
