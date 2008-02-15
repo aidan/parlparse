@@ -7,6 +7,10 @@ import datetime
 import time
 import traceback
 
+sys.path.append('../')
+import xml.sax
+xmlvalidate = xml.sax.make_parser()
+
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
@@ -703,9 +707,10 @@ class Parser:
         if retcode != 0:
             raise Exception, "Moving "+temp_output_filename+" to "+output_filename+" failed."
 
-        retcode = call( [ "xmlstarlet", "val", output_filename ] )
-        if retcode != 0:
-            raise Exception, "Validating "+output_filename+" for well-formedness failed."
+        xmlvalidate.parse(output_filename)
+        #retcode = call( [ "xmlstarlet", "val", output_filename ] )
+        #if retcode != 0:
+        #    raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
         fil = open('%schangedates.txt' % xml_output_directory, 'a+')
         fil.write('%d,spwa%s.xml\n' % (time.time(), self.date))

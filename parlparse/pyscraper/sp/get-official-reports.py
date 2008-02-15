@@ -6,7 +6,9 @@ import random
 import datetime
 import time
 import urllib
+from optparse import OptionParser
 
+sys.path.append('../')
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 
@@ -18,6 +20,12 @@ class MyURLopener(urllib.FancyURLopener):
     version = agent
 
 urllib._urlopener = MyURLopener()
+
+parser = OptionParser()
+parser.add_option('-y', "--year", dest="year", default=1999,
+                  help="year from which to fetch")
+(options, args) = parser.parse_args()
+options.year = int(options.year)
 
 import re
 
@@ -33,7 +41,7 @@ official_report_urls_template = output_directory + "or%s.urls"
 official_reports_prefix = "http://www.scottish.parliament.uk/business/officialReports/meetingsParliament/"
 official_reports_year_template = official_reports_prefix + "%d.htm"
 
-for year in range(1999,currentyear+1):
+for year in range(options.year, currentyear+1):
     index_page_url = official_reports_year_template % year
     output_filename = output_directory + str(year) + ".html"
     if (not os.path.exists(output_filename)) or (year == currentyear):
@@ -43,7 +51,7 @@ for year in range(1999,currentyear+1):
         fp.close()
         ur.close()
 
-for year in range(1999,currentyear+1):
+for year in range(options.year, currentyear+1):
 
     year_index_filename = output_directory  + str(year) + ".html"
     if not os.path.exists(year_index_filename):

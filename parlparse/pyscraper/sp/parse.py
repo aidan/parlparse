@@ -6,6 +6,10 @@ import random
 import datetime
 import time
 
+sys.path.append('../')
+import xml.sax
+xmlvalidate = xml.sax.make_parser()
+
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
@@ -1242,7 +1246,7 @@ def compare_filename(a,b):
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
-force = True
+force = False
 
 last_column_number = 0
     
@@ -1508,9 +1512,10 @@ for d in dates:
     if retcode != 0:
         raise Exception, "Moving "+temp_output_filename+" to "+output_filename+" failed."
 
-    retcode = call( [ "xmlstarlet", "val", output_filename ] )
-    if retcode != 0:
-        raise Exception, "Validating "+output_filename+" for well-formedness failed."
+    xmlvalidate.parse(output_filename)
+    #retcode = call( [ "xmlstarlet", "val", output_filename ] )
+    #if retcode != 0:
+    #    raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
     fil = open('%schangedates.txt' % xml_output_directory, 'a+')
     fil.write('%d,sp%s.xml\n' % (time.time(), str(d)))
