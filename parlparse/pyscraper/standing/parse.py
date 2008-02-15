@@ -843,7 +843,8 @@ class ParseCommittee:
         bill_title.extract()
         bill_link.extract()
         
-        if url: url_str = ' url="%s%s"' %  (self.baseurl, url)
+        if url:
+            url_str = ' url="%s%s"' % (url[0:7] != 'http://' and self.baseurl or '', url)
         self.out.write('<bill%s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
         self.parse_new_committee(soup)

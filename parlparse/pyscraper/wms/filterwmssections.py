@@ -74,6 +74,11 @@ def NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt):
         if sdate>'2006-05-07': # Assume major heading if no speeches in new style
                 bmajorheading = not speechestxt
 
+	if bmajorheading:
+                if not parlPhrases.wransmajorheadings.has_key(headingtxt):
+		        raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings (a)", fragment = headingtxt, stamp = stampurl)
+		headingtxt = parlPhrases.wransmajorheadings[headingtxt] # no need to fix since text is from a map.
+
 	headingtxtfx = FixHTMLEntities(headingtxt)
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
 	if bmajorheading:
