@@ -9,6 +9,13 @@
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
+<!ENTITY dagger  "&#8224;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +32,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +55,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -114,10 +129,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.1" newgid="uk.org.publicwhip/debate/2006-06-29b.370.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.2" newgid="uk.org.publicwhip/debate/2006-06-29b.370.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.3" newgid="uk.org.publicwhip/debate/2006-06-29b.370.3" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.4" newgid="uk.org.publicwhip/debate/2006-06-29b.370.4" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-06-29a.370.4" speakerid="uk.org.publicwhip/member/1548" speakername="Jim Knight" speakeroffice="The Minister for Schools"  colnum="370"  time="10:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060629/debtext/60629-0702.htm#06062974001239">
-	<p pid="a.370.4/1">The application by Churchdown school for permission to sell part of its playing fields is under consideration. The School Playing Fields Advisory Panel will discuss the application at its July meeting, which I understand is on <phrase class="date" code="">20 July</phrase>, and a decision will then be taken by the Department.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.4" newgid="uk.org.publicwhip/debate/2006-06-29b.370.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.5" newgid="uk.org.publicwhip/debate/2006-06-29b.370.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.370.6" newgid="uk.org.publicwhip/debate/2006-06-29b.370.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.371.0" newgid="uk.org.publicwhip/debate/2006-06-29b.371.0" matchtype="perfectmatch"/>
@@ -158,10 +170,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.1" newgid="uk.org.publicwhip/debate/2006-06-29b.376.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.2" newgid="uk.org.publicwhip/debate/2006-06-29b.376.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.3" newgid="uk.org.publicwhip/debate/2006-06-29b.376.3" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.4" newgid="uk.org.publicwhip/debate/2006-06-29b.376.4" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-06-29a.376.4" speakerid="uk.org.publicwhip/member/1616" speakername="Bill Rammell" speakeroffice="The Minister for Higher Education and Lifelong Learning"  colnum="376"  time="10:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060629/debtext/60629-0703.htm#06062974001275">
-	<p pid="a.376.4/1">The Government's proposals for a metrics-based research assessment and funding system to be introduced after the 2008 research assessment exercise were published on <phrase class="date" code="2006-06-13">13 June</phrase>. Consultation will close on <phrase class="date" code="">13 October</phrase> and final decisions will be announced before the end of the year.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.4" newgid="uk.org.publicwhip/debate/2006-06-29b.376.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.5" newgid="uk.org.publicwhip/debate/2006-06-29b.376.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.376.6" newgid="uk.org.publicwhip/debate/2006-06-29b.376.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.377.0" newgid="uk.org.publicwhip/debate/2006-06-29b.377.0" matchtype="perfectmatch"/>
@@ -192,46 +201,9 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.380.1" newgid="uk.org.publicwhip/debate/2006-06-29b.380.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.0" newgid="uk.org.publicwhip/debate/2006-06-29b.381.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.1" newgid="uk.org.publicwhip/debate/2006-06-29b.381.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.2" newgid="uk.org.publicwhip/debate/2006-06-29b.381.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-06-29a.381.2" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Leader of the House of Commons"  colnum="381"  time="011:32:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060629/debtext/60629-0704.htm#06062974001300">
-	<p pid="a.381.2/1">The business for next week will be as follows:</p>
-	<p pid="a.381.2/2"><phrase class="date" code="">Monday 3 July</phrase>&mdash;Estimates [3rd allotted day]. There will be a debate on human reproductive technologies and the law followed by a debate on the work of the Electoral Commission. Details will be given in the <i> Official Report</i>.</p>
-	<p pid="a.381.2/3">At 10 pm the House will be asked to agree all outstanding estimates.</p>
-	<p pid="a.381.2/4"><phrase class="date" code="">Tuesday 4 July</phrase>&mdash;Proceedings on the Consolidated Fund (Appropriation) (No. 3) Bill, followed by Ways and Means resolution on the Finance (No. 2) Bill, followed by progress on remaining stages of the Finance (No. 2) Bill.</p>
-	<p pid="a.381.2/5"><phrase class="date" code="">Wednesday 5 July</phrase>&mdash;Conclusion of remaining stages of the Finance (No. 2) Bill.</p>
-	<p pid="a.381.2/6"><phrase class="date" code="">Thursday 6 July</phrase>&mdash;A debate on armed forces personnel on a motion for the Adjournment of the House.</p>
-	<p pid="a.381.2/7"><phrase class="date" code="">Friday 7 July</phrase>&mdash;The House will not be sitting.</p>
-	<p pid="a.381.2/8">The provisional business for the following week will be:</p>
-	<p pid="a.381.2/9"><phrase class="date" code="">Monday 10 July</phrase>&mdash;A debate on the BBC on a Government motion.</p>
-	<p pid="a.381.2/10"><phrase class="date" code="">Tuesday 11 July</phrase>&mdash;A debate on the Intelligence and Security Committee annual report 2005-06 on a motion for the Adjournment of the House.</p>
-	<p pid="a.381.2/11"><phrase class="date" code="">Wednesday 12 July</phrase>&mdash;Opposition Day [18<sup>(th)</sup> allotted day]. There will be a debate on an Opposition motion. Subject to be announced.</p>
-	<p pid="a.381.2/12"><phrase class="date" code="">Thursday 13 July</phrase>&mdash;Remaining stages of the NHS Redress Bill <i> [Lords].</i></p>
-	<p pid="a.381.2/13"><phrase class="date" code="">Friday 14 July</phrase>&mdash;Private Members' Bills.</p>
-	<p pid="a.381.2/14" class="italic"> Following is the information: In so far as they relate to human reproductive technologies and the law: Fifth report of the Science and Technology Committee, session 2004-05(HC7-1) and the Government response (CM 6641) and the Review of the Human Fertilisation and Embryology Act, A Public Consultation, Department of Health, 2005.</p>
-	<p pid="a.381.2/15">The House may wish to be reminded that, subject to the progress of business, we will rise for the summer recess at the end of business on <phrase class="date" code="">Tuesday 25 July</phrase> and return on <phrase class="date" code="">Monday 9 October</phrase>.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.2" newgid="uk.org.publicwhip/debate/2006-06-29b.381.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.3" newgid="uk.org.publicwhip/debate/2006-06-29b.381.3" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.4" newgid="uk.org.publicwhip/debate/2006-06-29b.381.4" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-06-29a.381.4" speakerid="uk.org.publicwhip/member/1700" speakername="Theresa May" colnum="381"  time="011:32:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060629/debtext/60629-0704.htm#06062974001302">
-	<p pid="a.381.4/1">I thank the Leader of the House for giving us the business for the next two weeks. As he announced, on <phrase class="date" code="">Monday 10 July</phrase> there will be a debate on the BBC on a Government motion. Because the Government have timed that debate to take place just hours before the BBC publishes its year-end results, Members will not have up-to-date information. What is it about the BBC's results that Ministers do not want questioned in this House; or is simply that that the debate has been timed for the convenience of ministerial diaries, not the benefit of Members? Will the right hon. Gentleman therefore look again at the timing of that debate?</p>
-	<p pid="a.381.4/2">On <phrase class="date" code="">6 July</phrase>, a debate is to take place on armed forces personnel, and I know that it has already been drawn to the right hon. Gentleman's attention that the Defence Committee is visiting UK forces abroad during that week. Will he undertake to ensure that in future such debates do not take place when the relevant Select Committee is away on a fact-finding visit? Otherwise&mdash;taking this and the previous issue together&mdash;the suggestion is that the Government will debate matters only when the facts are not available or when Members who know about the subject are not around.</p>
-	<p pid="a.381.4/3">Over the past few days, we have seen yet further job cuts in the NHS. On Tuesday, 320 job cuts were announced at the United Lincolnshire Hospitals NHS Trust, on top of 300 cuts last year. Yesterday, 500 job cuts were announced by the East and North Hertfordshire NHS Trust, with the equivalent of two to three ward closures planned. Yesterday also saw the loss of 500 jobs at Southampton University Hospitals NHS Trust. The local union leader Karen Jennings said:</p>
-	<p pid="a.381.4/4" class="indent">&quot;Thousands of staff have been taken out of the NHS in the last year, which will lead to permanent reduction of services...Patient care is now being put at risk by trusts desperate to balance the books.&quot;</p>
-	<p pid="a.381.4/5">This week, I received a letter from the chairman of the Windsor, Ascot and Maidenhead patient and public involvement in health primary care forum. She has written to the Health Secretary saying:</p>
-	<p pid="a.381.4/6" class="indent">&quot;We are concerned that, because of the many changes introduced over the last four years, tax-payers' money is being spent on administrative changes, form-filling and box-ticking exercises instead of being used on the clinical needs of the patients.&quot;</p>
-	<p pid="a.381.4/7">And this, according to the Health Secretary, is the &quot;best year ever&quot; for the NHS. Can we have a debate on the NHS before the recess?</p>
-	<p pid="a.381.4/8">Recently, I have been getting complaints from constituents about train fare increases by First Great Western. As one put it,</p>
-	<p pid="a.381.4/9" class="indent">&quot;the annual increase is over 5 times the rate of inflation...how do they explain such a dramatic increase in prices twice in a year?&quot;</p>
-	<p pid="a.381.4/10">And that comes at a time when the service is being cut. Today, we read that after a secret deal with the Government, fares on the Thameslink-Great Northern franchise&mdash;also run by First&mdash;are increasing dramatically. A spokesman for the Department said:</p>
-	<p pid="a.381.4/11" class="indent">&quot;We accepted that this was a good commercial solution to the problem of overcrowding.&quot;</p>
-	<p pid="a.381.4/12">So the Government are doing just what British Rail used to do&mdash;raising the fares if trains get busy, and pricing people off the trains and into their cars. But the Government's policy is to get people out of their cars and on to the trains. It is not even a different Department that is involved; it is within the same Department. Can we please have a debate on train services and fares?</p>
-	<p pid="a.381.4/13">Yesterday's judgment on control orders raised yet another problem in the operation of the Human Rights Act 1998. This morning, the Chairman of the Home Affairs Committee said:</p>
-	<p pid="a.381.4/14" class="indent">&quot;There is a constitutional crisis emerging here&quot;.</p>
-	<p pid="a.381.4/15">We have made our views clear. Ministers have hinted at reviewing the Human Rights Act. When will the Home Secretary come to the House to make a statement on the future of the Human Rights Act?</p>
-	<p pid="a.381.4/16">Debates before the facts are available, Departments contradicting their own policy, Ministers having to rewrite their own legislation, Ministers out of touch&mdash;are not those yet more signs of a Government in paralysis? Did not <phrase class="honfriend" id="uk.org.publicwhip/member/1745" name="Charles Clarke">the right hon. Member for Norwich, South (Mr. Clarke)</phrase> explain all that earlier this week when he said:</p>
-	<p pid="a.381.4/17" class="indent">&quot;I do think there is a sense of Tony having lost his sense of purpose and direction.&quot;</p>
-	<p pid="a.381.4/18">Is it not the case, however, that the whole Government have lost their sense of purpose and direction, and that time is running out not just for the Prime Minister, but for this Government?</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.381.4" newgid="uk.org.publicwhip/debate/2006-06-29b.381.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.383.0" newgid="uk.org.publicwhip/debate/2006-06-29b.383.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.384.0" newgid="uk.org.publicwhip/debate/2006-06-29b.384.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.384.1" newgid="uk.org.publicwhip/debate/2006-06-29b.384.1" matchtype="perfectmatch"/>
@@ -518,11 +490,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.469.0" newgid="uk.org.publicwhip/debate/2006-06-29b.469.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.469.1" newgid="uk.org.publicwhip/debate/2006-06-29b.469.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.470.0" newgid="uk.org.publicwhip/debate/2006-06-29b.470.0" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.470.1" newgid="uk.org.publicwhip/debate/2006-06-29b.470.1" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-06-29a.470.1" speakerid="uk.org.publicwhip/member/1446" speakername="Barry Gardiner" colnum="470"  time="016:30:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060629/debtext/60629-0714.htm#06062974001560">
-	<p pid="a.470.1/1" class="" pwmotiontext="yes">I beg to move amendment No. 83, in page 31, line 36, leave out '1' and insert '1(4)'.</p>
-	<p pid="a.470.1/2" class="" pwmotiontext="yes">This minor and technical amendment deals with a transitional provision in the clause. References in the Bill to Natural England are to be taken as references to English Nature until that body is formally dissolved. The amendment ensures that the provisions function effectively in relation to the commencement of section 1 of the Natural Environment and Rural Communities Act 2006, because, at present, clause 57 refers to the commencement of section 1. However, that gives rise to some uncertainty, because section 1 has already been commenced to the extent of establishing Natural England as a skeleton body. The amendment makes it clear that the transitional provision has effect until English Nature is abolished on the commencement of subsection (4) of section 1, which we expect to take place on <phrase class="date" code="">2 October</phrase> this year.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.470.1" newgid="uk.org.publicwhip/debate/2006-06-29b.470.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.470.2" newgid="uk.org.publicwhip/debate/2006-06-29b.470.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.471.0" newgid="uk.org.publicwhip/debate/2006-06-29b.471.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-06-29a.471.1" newgid="uk.org.publicwhip/debate/2006-06-29b.471.1" matchtype="perfectmatch"/>

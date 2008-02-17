@@ -10,6 +10,12 @@
 <!ENTITY euro    "&#8364;" >
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;" >
+<!ENTITY rsquo   "&#8217;" >
+<!ENTITY ldquo   "&#8220;" >
+<!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
+<!ENTITY dagger  "&#8224;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +32,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,6 +55,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -171,25 +184,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.684.1" newgid="uk.org.publicwhip/debate/2006-11-23b.684.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.685.0" newgid="uk.org.publicwhip/debate/2006-11-23b.685.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.685.1" newgid="uk.org.publicwhip/debate/2006-11-23b.685.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.685.2" newgid="uk.org.publicwhip/debate/2006-11-23b.685.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-23a.685.2" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Leader of the House of Commons"  colnum="685"  time="011:31:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061123/debtext/61123-0003.htm#06112364001534">
-	<p pid="a.685.2/1">The business for next week will be as follows:</p>
-	<p pid="a.685.2/2"><phrase class="date" code="">Monday 27 November</phrase>&mdash;Conclusion of the debate on the Queen's Speech.</p>
-	<p pid="a.685.2/3"><phrase class="date" code="">Tuesday 28 November</phrase>&mdash;Consideration of an allocation of time motion, followed by all stages of the Investment Exchanges and Clearing Houses Bill.</p>
-	<p pid="a.685.2/4"><phrase class="date" code="">Wednesday 29 November</phrase>&mdash;Second Reading of the Fraud (Trials Without a Jury) Bill.</p>
-	<p pid="a.685.2/5"><phrase class="date" code="">Thursday 30 November</phrase>&mdash;A motion to approve a European document relating to the Hague convention followed by, a motion relating to the House of Commons Members' fund, followed by a debate on rail performance on a motion for the Adjournment of the House.</p>
-	<p pid="a.685.2/6"><phrase class="date" code="">Friday 1 December</phrase>&mdash;The House will not be sitting.</p>
-	<p pid="a.685.2/7">The provisional business for the week commencing<phrase class="date" code="">4 December</phrase> will be:</p>
-	<p pid="a.685.2/8"><phrase class="date" code="">Monday 4 December</phrase>&mdash;Remaining stages of the Corporate Manslaughter and Corporate Homicide Bill.</p>
-	<p pid="a.685.2/9"><phrase class="date" code="">Tuesday 5 December</phrase>&mdash;Opposition day [1st allotted day]. There will be a debate on an Opposition motion. Subject will be announced.</p>
-	<p pid="a.685.2/10"><phrase class="date" code="">Wednesday 6 December</phrase>&mdash;The regular biannual debate on European Affairs on a motion for the Adjournment of the House.</p>
-	<p pid="a.685.2/11"><phrase class="date" code="">Thursday 7 December</phrase>&mdash;Estimates [1st allotted day]. Subject to be confirmed by the Liaison Committee.</p>
-	<p pid="a.685.2/12"><phrase class="date" code="">Friday 8 December</phrase>&mdash;The House will not be sitting.</p>
-	<p pid="a.685.2/13">I should also like to inform the House that the business in Westminster Hall for <phrase class="date" code="">30 November</phrase> and<phrase class="date" code="">7 December</phrase> will be:</p>
-	<p pid="a.685.2/14"><phrase class="date" code="">Thursday 30 November</phrase>&mdash;A debate on the report from the Northern Ireland Affairs Committee on organised crime in Northern Ireland.</p>
-	<p pid="a.685.2/15"><phrase class="date" code="">Thursday 7 December</phrase>&mdash;A debate on the report from the Home Affairs Committee on terrorism detention powers and from the Joint Committee on Human Rights on counter-terrorism policy and human rights: prosecution and pre-charge detention.</p>
-	<p pid="a.685.2/16">It may also assist the House if I tell Members that printed calendars giving details of the sitting days and therefore the recess dates until October 2007 are now available in the Vote Office.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.685.2" newgid="uk.org.publicwhip/debate/2006-11-23b.685.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.685.3" newgid="uk.org.publicwhip/debate/2006-11-23b.685.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.687.0" newgid="uk.org.publicwhip/debate/2006-11-23b.687.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.0" newgid="uk.org.publicwhip/debate/2006-11-23b.688.0" matchtype="perfectmatch"/>
@@ -198,18 +193,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.3" newgid="uk.org.publicwhip/debate/2006-11-23b.688.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.4" newgid="uk.org.publicwhip/debate/2006-11-23b.688.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.5" newgid="uk.org.publicwhip/debate/2006-11-23b.688.5" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.6" newgid="uk.org.publicwhip/debate/2006-11-23b.688.6" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-23a.688.6" speakerid="uk.org.publicwhip/member/1824" speakername="David Heath" colnum="688"  time="011:31:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061123/debtext/61123-0004.htm#06112364001543">
-	<p pid="a.688.6/1">May I ask yet again for a debate in Government time on Iraq? Before the Leader of the House tells us that we had a debate yesterday in the context of the Queen's Speech, may I say that that is no substitute for a structured debate on the Government's strategy in Iraq? There is a debate in another place on <phrase class="date" code="">5 December</phrase>, notwithstanding the Queen's Speech debate. May we have such a debate as a matter of urgency?</p>
-	<p pid="a.688.6/2">I ask in passing whether the Leader of the House will confirm what the Prime Minister said yesterday: that the White Paper on Trident will be published before the end of the year and that we will have a statement on it?</p>
-	<p pid="a.688.6/3">On a matter that is of great importance to the scientific and medical community, David Cooksey's report on the future of the Medical Research Council and NHS research is to be published shortly. Will the Leader of the House arrange for a statement to be made to the House on the basis of that report? I would imagine that that would come from the Chancellor of the Exchequer, as it was he who originally announced the merger of the two research bodies. However, given that the announcement will please some and upset others, and knowing the Chancellor's allergy to anything that might be construed as bad news, perhaps it will come from the newly appointed Minister for Science and Innovation.</p>
-	<p pid="a.688.6/4">The Attorney-General has a duty to give advice not only to the Government but to the House. Will the Leader of the House find a way for the Attorney-General to share with the House what he shared with a press conference this week: his opinions on future measures to deal with terrorism? He has supported views that have been expressed from the Liberal Democrat Benches and others over recent years on the use of intercept evidence and the possibility of qualified interview after charge. He has also rejected the view that we need to extend the 28-day detention period, saying that on</p>
-	<p pid="a.688.6/5" class="indent">&quot;extending it any further we need evidence to demonstrate that that is needed.&quot;</p>
-	<p pid="a.688.6/6">When asked if there was such evidence, he replied:</p>
-	<p pid="a.688.6/7" class="indent">&quot;Well, I haven't seen it yet.&quot;</p>
-	<p pid="a.688.6/8">As that view is an important counterweight to the frequently expressed views of the Home Secretary and the Prime Minister, may it be shared with the House?</p>
-	<p pid="a.688.6/9">Lastly, may we have a debate and a statement on the future of the sub-post office network? We are told that decisions are imminent, but we have still not had that debate. When we do have it, will a suitable Minister explain what has happened to Postwatch, the body that was set up to monitor and express the views of the consumer? It tells me that it cannot do its duty in respect of attending protest meetings about sub-post office closures, or even getting around the MPs in its area, because its time is limited and it is not given the opportunity to do its job. If Postwatch cannot express the views of the community, and if we cannot, how can we defend our sub-post office network?</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.688.6" newgid="uk.org.publicwhip/debate/2006-11-23b.688.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.689.0" newgid="uk.org.publicwhip/debate/2006-11-23b.689.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.690.0" newgid="uk.org.publicwhip/debate/2006-11-23b.690.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.690.1" newgid="uk.org.publicwhip/debate/2006-11-23b.690.1" matchtype="perfectmatch"/>
@@ -248,10 +232,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.695.5" newgid="uk.org.publicwhip/debate/2006-11-23b.695.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.695.6" newgid="uk.org.publicwhip/debate/2006-11-23b.695.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.695.7" newgid="uk.org.publicwhip/debate/2006-11-23b.695.7" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.696.0" newgid="uk.org.publicwhip/debate/2006-11-23b.696.0" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-23a.696.0" speakerid="uk.org.publicwhip/member/1374" speakername="Sammy Wilson" colnum="696"  time="011:31:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061123/debtext/61123-0005.htm#06112364001582">
-	<p pid="a.696.0/1">The declaration that the High Court in Belfast says should accompany the Water and Sewerage Services (Miscellaneous Provisions) (Northern Ireland) Order 2006 was based on the view that the Government have not conscientiously considered this important matter. Will the Leader of the House urge the Secretary of State for Northern Ireland to ensure that there is no further parliamentary progress on this order until the Northern Ireland Grand Committee, which is meeting in Belfast on <phrase class="date" code="">12 December</phrase>, has had the opportunity to debate the order fully?</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.696.0" newgid="uk.org.publicwhip/debate/2006-11-23b.696.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.696.1" newgid="uk.org.publicwhip/debate/2006-11-23b.696.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.696.2" newgid="uk.org.publicwhip/debate/2006-11-23b.696.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-23a.696.3" newgid="uk.org.publicwhip/debate/2006-11-23b.696.3" matchtype="perfectmatch"/>
