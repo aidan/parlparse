@@ -39,8 +39,8 @@ do
 	zip -rq ~/parldatazips/$X.xml.zip $X/
 done
 
-cd ~
-rm -f ~/parldatazips/parldata.zip
-find parldata | egrep -v "tmp/|\.svn|\.zip" | zip -q ~/parldatazips/parldata.zip -@
+#cd ~
+#rm -f ~/parldatazips/parldata.zip
+#find parldata | egrep -v "tmp/|\.svn|\.zip" | zip -q ~/parldatazips/parldata.zip -@
 
 

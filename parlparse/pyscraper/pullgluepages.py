@@ -133,23 +133,22 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[1:]
         if sdate=='2006-05-10' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
                 urla = urla[1:]
-        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060524/debtext/60524-0001.htm':
+        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060524/debtext/60524-0001.htm':
                 urla = [urla[0]]
         if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-06-07' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0001.htm':
                 urla = urla[0:2] + ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0003.htm'] + urla[2:]
-        if sdate=='2006-06-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0001.htm':
+        if sdate=='2006-06-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060614/halltext/60614h0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-06-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060613/halltext/60613h0001.htm':
+        if sdate=='2006-06-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060613/halltext/60613h0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060717/text/60717w0001.htm':
+        if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060717/text/60717w0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
-                urla = [urla[0], urla[1], urla[3], urla[4]] # Incorrect link in middle of index
         if sdate=='2006-10-30' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061030/text/61030w0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-10-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061026/debtext/61026-0001.htm':
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2006-10-17' or sdate=='2006-10-26' or sdate=='2006-10-11' or sdate=='2006-07-12'):
                 urla = [urla[0]]
         if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
                 urla = urla[0:11] + urla[13:] # Incorrect link in middle of index
