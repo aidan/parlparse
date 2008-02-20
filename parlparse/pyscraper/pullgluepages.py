@@ -284,7 +284,7 @@ def ExtractAllLinks(url, dgf, forcescrape):
         xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
-		raise Exception, "No link found!!! %s" % url
+		raise Exception, "No link found!!! %s\nURL: %s" % (xlines, url)
         urla = []
         for iconti in res:
                 uo = urlparse.urljoin(url, iconti)
