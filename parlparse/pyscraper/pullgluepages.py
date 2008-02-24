@@ -204,7 +204,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<div id="maincontent1">\s*<a', '<hr> <a', sr)
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
-                sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
+                sr = re.sub("</?mekon[^>]*>", "", sr)
+                sr = re.sub("</?vbcrlf>", "", sr)
 
                 if sdate=='2006-06-07' and re.search('/text/', url):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
