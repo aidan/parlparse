@@ -44,7 +44,7 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "189334277";
+var wgCurRevisionId = "192807037";
 var wgVersion = "1.12alpha";
 var wgEnableAPI = true;
 var wgEnableWriteAPI = false;
@@ -119,7 +119,7 @@ var wgEnableWriteAPI = false;
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Durham" title="Bishop of Durham">The Lord Bishop of Durham</a></td>
-<td><a href="/wiki/Tom_Wright_%28theologian%29" title="Tom Wright (theologian)">N. Thomas Wright</a></td>
+<td><a href="/wiki/Tom_Wright_%28theologian%29" class="mw-redirect" title="Tom Wright (theologian)">N. Thomas Wright</a></td>
 <td>2003</td>
 <td>2003</td>
 </tr>
@@ -154,10 +154,10 @@ var wgEnableWriteAPI = false;
 <td>1996</td>
 </tr>
 <tr>
-<td><a href="/wiki/Bishop_of_Coventry" title="Bishop of Coventry">The Lord Bishop of Coventry</a></td>
-<td><a href="/wiki/Colin_Bennetts" title="Colin Bennetts">Colin Bennetts</a></td>
-<td>2003</td>
-<td>1998</td>
+<td><a href="/wiki/Bishop_of_Chichester" title="Bishop of Chichester">The Lord Bishop of Chichester</a></td>
+<td><a href="/wiki/John_William_Hind" title="John William Hind">John William Hind</a></td>
+<td>2008</td>
+<td>1993</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Ely" title="Bishop of Ely">The Lord Bishop of Ely</a></td>
@@ -173,7 +173,7 @@ var wgEnableWriteAPI = false;
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Leicester" title="Bishop of Leicester">The Lord Bishop of Leicester</a></td>
-<td><a href="/wiki/Timothy_John_Stevens" title="Timothy John Stevens">Timothy John Stevens</a></td>
+<td><a href="/wiki/Timothy_John_Stevens" class="mw-redirect" title="Timothy John Stevens">Timothy John Stevens</a></td>
 <td>2004</td>
 <td>1999</td>
 </tr>
@@ -244,8 +244,8 @@ var wgEnableWriteAPI = false;
 <td>1997</td>
 </tr>
 <tr>
-<td><a href="/wiki/Bishop_of_Southwark" title="Bishop of Southwark">The Lord Bishop of Southwark</a></td>
-<td><a href="/wiki/Tom_Butler_%28bishop%29" title="Tom Butler (bishop)">Tom Butler</a></td>
+<td><a href="/wiki/Bishop_of_Southwark" class="mw-redirect" title="Bishop of Southwark">The Lord Bishop of Southwark</a></td>
+<td><a href="/wiki/Tom_Butler_%28bishop%29" class="mw-redirect" title="Tom Butler (bishop)">Tom Butler</a></td>
 <td>1996</td>
 <td>1991</td>
 </tr>
@@ -257,7 +257,7 @@ var wgEnableWriteAPI = false;
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Truro" title="Bishop of Truro">The Lord Bishop of Truro</a></td>
-<td><a href="/wiki/William_Ind" title="William Ind">William Ind</a></td>
+<td><a href="/wiki/William_Ind" class="mw-redirect" title="William Ind">William Ind</a></td>
 <td>2002</td>
 <td>1997</td>
 </tr>
@@ -278,25 +278,25 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Acton of Bridgnorth</td>
 </tr>
 <tr>
-<td><a href="/wiki/Irene_Adams" title="Irene Adams">The Baroness Adams of Craigielea</a></td>
+<td><a href="/wiki/Irene_Adams" class="mw-redirect" title="Irene Adams">The Baroness Adams of Craigielea</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Dominic_Hubbard%2C_6th_Baron_Addington" title="Dominic Hubbard, 6th Baron Addington">The Lord Addington</a></td>
-<td><a href="/wiki/Liberal_Democrats_%28UK%29" title="Liberal Democrats (UK)">Liberal Democrat</a></td>
+<td><a href="/wiki/Liberal_Democrats_%28UK%29" class="mw-redirect" title="Liberal Democrats (UK)">Liberal Democrat</a></td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Victor_Adebowale%2C_Baron_Adebowale_of_Thornes" title="Victor Adebowale, Baron Adebowale of Thornes">The Lord Adebowale</a></td>
+<td><a href="/wiki/Victor_Adebowale%2C_Baron_Adebowale_of_Thornes" class="mw-redirect" title="Victor Adebowale, Baron Adebowale of Thornes">The Lord Adebowale</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Cross Bench</a></td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Andrew_Adonis" title="Andrew Adonis">The Lord Adonis</a></td>
+<td><a href="/wiki/Andrew_Adonis" class="mw-redirect" title="Andrew Adonis">The Lord Adonis</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -338,13 +338,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Alton" title="David Alton">The Lord Alton of Liverpool</a></td>
+<td><a href="/wiki/David_Alton" class="mw-redirect" title="David Alton">The Lord Alton of Liverpool</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Valerie_Amos" title="Valerie Amos">The Baroness Amos</a></td>
+<td><a href="/wiki/Valerie_Amos" class="mw-redirect" title="Valerie Amos">The Baroness Amos</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -362,7 +362,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Elizabeth_Andrews%2C_Baroness_Andrews" title="Elizabeth Andrews, Baroness Andrews">The Baroness Andrews</a></td>
+<td><a href="/wiki/Elizabeth_Andrews%2C_Baroness_Andrews" class="mw-redirect" title="Elizabeth Andrews, Baroness Andrews">The Baroness Andrews</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -398,7 +398,7 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Sudley</td>
 </tr>
 <tr>
-<td><a href="/wiki/Michael_Ashcroft" title="Michael Ashcroft">The Lord Ashcroft</a></td>
+<td><a href="/wiki/Michael_Ashcroft" class="mw-redirect" title="Michael Ashcroft">The Lord Ashcroft</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -434,7 +434,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richard_Attenborough%2C_Baron_Attenborough" title="Richard Attenborough, Baron Attenborough">The Lord Attenborough</a></td>
+<td><a href="/wiki/Richard_Attenborough%2C_Baron_Attenborough" class="mw-redirect" title="Richard Attenborough, Baron Attenborough">The Lord Attenborough</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -500,7 +500,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Bassam%2C_Baron_Bassam_of_Brighton" title="John Bassam, Baron Bassam of Brighton">The Lord Bassam of Brighton</a></td>
+<td><a href="/wiki/John_Bassam%2C_Baron_Bassam_of_Brighton" class="mw-redirect" title="John Bassam, Baron Bassam of Brighton">The Lord Bassam of Brighton</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -542,7 +542,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Amirali_Bhatia%2C_Baron_Bhatia" title="Amirali Bhatia, Baron Bhatia">The Lord Bhatia</a></td>
+<td><a href="/wiki/Amirali_Bhatia%2C_Baron_Bhatia" class="mw-redirect" title="Amirali Bhatia, Baron Bhatia">The Lord Bhatia</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -574,7 +574,7 @@ var wgEnableWriteAPI = false;
 <tr>
 <td><a href="/wiki/Thomas_Bingham%2C_Baron_Bingham_of_Cornhill" title="Thomas Bingham, Baron Bingham of Cornhill">The Lord Bingham of Cornhill</a></td>
 <td>Cross Bench</td>
-<td>Senior <a href="/wiki/Law_Lord" title="Law Lord">Lord of Appeal in Ordinary</a></td>
+<td>Senior <a href="/wiki/Law_Lord" class="mw-redirect" title="Law Lord">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -584,7 +584,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Conrad_Black%2C_Baron_Black_of_Crossharbour" title="Conrad Black, Baron Black of Crossharbour">The Lord Black of Crossharbour</a></td>
+<td><a href="/wiki/Conrad_Black%2C_Baron_Black_of_Crossharbour" class="mw-redirect" title="Conrad Black, Baron Black of Crossharbour">The Lord Black of Crossharbour</a></td>
 <td>Not affiliated</td>
 <td>Life Peer</td>
 <td>Conservative whip withdrawn July 13, 2007 following Black's conviction for wire fraud and obstruction of justice.<a href="http://www.guardian.co.uk/uklatest/story/0,,-6778003,00.html" class="external autonumber" title="http://www.guardian.co.uk/uklatest/story/0,,-6778003,00.html" rel="nofollow">[1]</a></td>
@@ -626,13 +626,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Bonham-Carter_of_Yarnbury" title="Baroness Bonham-Carter of Yarnbury">The Baroness Bonham-Carter of Yarnbury</a></td>
+<td><a href="/wiki/Baroness_Bonham-Carter_of_Yarnbury" class="mw-redirect" title="Baroness Bonham-Carter of Yarnbury">The Baroness Bonham-Carter of Yarnbury</a></td>
 <td>Liberal Democrats</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Betty_Boothroyd%2C_Baroness_Boothroyd" title="Betty Boothroyd, Baroness Boothroyd">The Baroness Boothroyd</a></td>
+<td><a href="/wiki/Betty_Boothroyd%2C_Baroness_Boothroyd" class="mw-redirect" title="Betty Boothroyd, Baroness Boothroyd">The Baroness Boothroyd</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -656,7 +656,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Bowness%2C_Baron_Bowness" title="Peter Bowness, Baron Bowness">The Lord Bowness</a></td>
+<td><a href="/wiki/Peter_Bowness%2C_Baron_Bowness" class="mw-redirect" title="Peter Bowness, Baron Bowness">The Lord Bowness</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -693,7 +693,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Melvyn_Bragg%2C_Baron_Bragg" title="Melvyn Bragg, Baron Bragg">The Lord Bragg</a></td>
+<td><a href="/wiki/Melvyn_Bragg%2C_Baron_Bragg" class="mw-redirect" title="Melvyn Bragg, Baron Bragg">The Lord Bragg</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -729,19 +729,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Asa_Briggs%2C_Baron_Briggs" title="Asa Briggs, Baron Briggs">The Lord Briggs</a></td>
+<td><a href="/wiki/Asa_Briggs%2C_Baron_Briggs" class="mw-redirect" title="Asa Briggs, Baron Briggs">The Lord Briggs</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Leon_Brittan%2C_Baron_Brittan_of_Spennithorne" title="Leon Brittan, Baron Brittan of Spennithorne">The Lord Brittan of Spennithorne</a></td>
+<td><a href="/wiki/Leon_Brittan%2C_Baron_Brittan_of_Spennithorne" class="mw-redirect" title="Leon Brittan, Baron Brittan of Spennithorne">The Lord Brittan of Spennithorne</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Broers" title="Lord Broers">The Lord Broers</a></td>
+<td><a href="/wiki/Lord_Broers" class="mw-redirect" title="Lord Broers">The Lord Broers</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -753,7 +753,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Brooke%2C_Baron_Brooke_of_Sutton_Mandeville" title="Peter Brooke, Baron Brooke of Sutton Mandeville">The Lord Brooke of Sutton Mandeville</a></td>
+<td><a href="/wiki/Peter_Brooke%2C_Baron_Brooke_of_Sutton_Mandeville" class="mw-redirect" title="Peter Brooke, Baron Brooke of Sutton Mandeville">The Lord Brooke of Sutton Mandeville</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -783,7 +783,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" title="Baron Brown of Eaton-under-Heywood">The Lord Brown of Eaton-under-Heywood</a></td>
+<td><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" class="mw-redirect" title="Baron Brown of Eaton-under-Heywood">The Lord Brown of Eaton-under-Heywood</a></td>
 <td>Crossbench</td>
 <td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
@@ -801,7 +801,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Nicholas_Browne-Wilkinson%2C_Baron_Browne-Wilkinson" title="Nicholas Browne-Wilkinson, Baron Browne-Wilkinson">The Lord Browne-Wilkinson</a></td>
+<td><a href="/wiki/Nicholas_Browne-Wilkinson%2C_Baron_Browne-Wilkinson" class="mw-redirect" title="Nicholas Browne-Wilkinson, Baron Browne-Wilkinson">The Lord Browne-Wilkinson</a></td>
 <td>Cross Bench</td>
 <td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
@@ -861,19 +861,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Cameron_of_Dillington" title="Baron Cameron of Dillington">The Lord Cameron of Dillington</a></td>
+<td><a href="/wiki/Baron_Cameron_of_Dillington" class="mw-redirect" title="Baron Cameron of Dillington">The Lord Cameron of Dillington</a></td>
 <td>Crossbench</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Kenneth_Cameron%2C_Lord_Cameron_of_Lochbroom" title="Kenneth Cameron, Lord Cameron of Lochbroom">The Lord Cameron of Lochbroom</a></td>
+<td><a href="/wiki/Kenneth_Cameron%2C_Lord_Cameron_of_Lochbroom" class="mw-redirect" title="Kenneth Cameron, Lord Cameron of Lochbroom">The Lord Cameron of Lochbroom</a></td>
 <td>Cross Bench</td>
 <td>Life Peer, Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Campbell_of_Alloway" title="Lord Campbell of Alloway">The Lord Campbell of Alloway</a></td>
+<td><a href="/wiki/Lord_Campbell_of_Alloway" class="mw-redirect" title="Lord Campbell of Alloway">The Lord Campbell of Alloway</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -885,31 +885,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Campbell-Savours" title="Lord Campbell-Savours">The Lord Campbell-Savours</a></td>
+<td><a href="/wiki/Lord_Campbell-Savours" class="mw-redirect" title="Lord Campbell-Savours">The Lord Campbell-Savours</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Carey_of_Clifton" title="Lord Carey of Clifton">The Lord Carey of Clifton</a></td>
+<td><a href="/wiki/Lord_Carey_of_Clifton" class="mw-redirect" title="Lord Carey of Clifton">The Lord Carey of Clifton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Carlile_of_Berriew" title="Lord Carlile of Berriew">The Lord Carlile of Berriew</a></td>
+<td><a href="/wiki/Lord_Carlile_of_Berriew" class="mw-redirect" title="Lord Carlile of Berriew">The Lord Carlile of Berriew</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Carnegy_of_Lour" title="Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
+<td><a href="/wiki/Baroness_Carnegy_of_Lour" class="mw-redirect" title="Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Leonard_Carr%2C_Baron_Carr_of_Hadley" title="Leonard Carr, Baron Carr of Hadley">The Lord Carr of Hadley</a></td>
+<td><a href="/wiki/Leonard_Carr%2C_Baron_Carr_of_Hadley" class="mw-redirect" title="Leonard Carr, Baron Carr of Hadley">The Lord Carr of Hadley</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -921,19 +921,19 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Carington of Upton</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Carswell" title="Baron Carswell">The Lord Carswell</a></td>
+<td><a href="/wiki/Baron_Carswell" class="mw-redirect" title="Baron Carswell">The Lord Carswell</a></td>
 <td>Crossbench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Carter_of_Coles" title="Lord Carter of Coles">The Lord Carter of Coles</a></td>
+<td><a href="/wiki/Lord_Carter_of_Coles" class="mw-redirect" title="Lord Carter of Coles">The Lord Carter of Coles</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Charles_Alan_Andrew_Cathcart%2C_7th_Earl_Cathcart" title="Charles Alan Andrew Cathcart, 7th Earl Cathcart">The Earl Cathcart</a></td>
+<td><a href="/wiki/Charles_Alan_Andrew_Cathcart%2C_7th_Earl_Cathcart" class="mw-redirect" title="Charles Alan Andrew Cathcart, 7th Earl Cathcart">The Earl Cathcart</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -951,7 +951,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Chalker_of_Wallasey" title="Baroness Chalker of Wallasey">The Baroness Chalker of Wallasey</a></td>
+<td><a href="/wiki/Baroness_Chalker_of_Wallasey" class="mw-redirect" title="Baroness Chalker of Wallasey">The Baroness Chalker of Wallasey</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -963,13 +963,13 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Lyttelton of Aldershot</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Chapman_Carter" title="Baroness Chapman Carter">The Baroness Chapman</a></td>
+<td><a href="/wiki/Baroness_Chapman_Carter" class="mw-redirect" title="Baroness Chapman Carter">The Baroness Chapman</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Chidgey" title="David Chidgey">The Lord Chidgey</a></td>
+<td><a href="/wiki/David_Chidgey" class="mw-redirect" title="David Chidgey">The Lord Chidgey</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -981,7 +981,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Chitnis" title="Lord Chitnis">The Lord Chitnis</a></td>
+<td><a href="/wiki/Lord_Chitnis" class="mw-redirect" title="Lord Chitnis">The Lord Chitnis</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -999,25 +999,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Christopher" title="Lord Christopher">The Lord Christopher</a></td>
+<td><a href="/wiki/Lord_Christopher" class="mw-redirect" title="Lord Christopher">The Lord Christopher</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lynda_Clark" title="Lynda Clark">The Baroness Clark of Calton</a></td>
+<td><a href="/wiki/Lynda_Clark" class="mw-redirect" title="Lynda Clark">The Baroness Clark of Calton</a></td>
 <td>Non affiliated</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Clark_of_Windermere" title="Lord Clark of Windermere">The Lord Clark of Windermere</a></td>
+<td><a href="/wiki/Lord_Clark_of_Windermere" class="mw-redirect" title="Lord Clark of Windermere">The Lord Clark of Windermere</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Clarke_of_Hampstead" title="Lord Clarke of Hampstead">The Lord Clarke of Hampstead</a></td>
+<td><a href="/wiki/Lord_Clarke_of_Hampstead" class="mw-redirect" title="Lord Clarke of Hampstead">The Lord Clarke of Hampstead</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1029,7 +1029,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Clinton-Davis" title="Lord Clinton-Davis">The Lord Clinton-Davis</a></td>
+<td><a href="/wiki/Lord_Clinton-Davis" class="mw-redirect" title="Lord Clinton-Davis">The Lord Clinton-Davis</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1041,13 +1041,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Cobbold%2C_2nd_Baron_Cobbold" title="David Cobbold, 2nd Baron Cobbold">The Lord Cobbold</a></td>
+<td><a href="/wiki/David_Cobbold%2C_2nd_Baron_Cobbold" class="mw-redirect" title="David Cobbold, 2nd Baron Cobbold">The Lord Cobbold</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Coe" title="Lord Coe">The Lord Coe</a></td>
+<td><a href="/wiki/Lord_Coe" class="mw-redirect" title="Lord Coe">The Lord Coe</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1065,31 +1065,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Ian_Hamilton-Smith%2C_3rd_Baron_Colwyn" title="Ian Hamilton-Smith, 3rd Baron Colwyn">The Lord Colwyn</a></td>
+<td><a href="/wiki/Ian_Hamilton-Smith%2C_3rd_Baron_Colwyn" class="mw-redirect" title="Ian Hamilton-Smith, 3rd Baron Colwyn">The Lord Colwyn</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Condon" title="Lord Condon">The Lord Condon</a></td>
+<td><a href="/wiki/Lord_Condon" class="mw-redirect" title="Lord Condon">The Lord Condon</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Cope_of_Berkeley" title="Lord Cope of Berkeley">The Lord Cope of Berkeley</a></td>
+<td><a href="/wiki/Lord_Cope_of_Berkeley" class="mw-redirect" title="Lord Cope of Berkeley">The Lord Cope of Berkeley</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Corbett_of_Castle_Vale" title="Lord Corbett of Castle Vale">The Lord Corbett of Castle Vale</a></td>
+<td><a href="/wiki/Lord_Corbett_of_Castle_Vale" class="mw-redirect" title="Lord Corbett of Castle Vale">The Lord Corbett of Castle Vale</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Jean_Corston" title="Jean Corston">The Baroness Corston</a></td>
+<td><a href="/wiki/Jean_Corston" class="mw-redirect" title="Jean Corston">The Baroness Corston</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1113,13 +1113,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Cox" title="Baroness Cox">The Baroness Cox</a></td>
+<td><a href="/wiki/Baroness_Cox" class="mw-redirect" title="Baroness Cox">The Baroness Cox</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Craig_of_Radley" title="Lord Craig of Radley">The Lord Craig of Radley</a></td>
+<td><a href="/wiki/Lord_Craig_of_Radley" class="mw-redirect" title="Lord Craig of Radley">The Lord Craig of Radley</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1131,7 +1131,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Charles_Dugdale%2C_2nd_Baron_Crathorne" title="Charles Dugdale, 2nd Baron Crathorne">The Lord Crathorne</a></td>
+<td><a href="/wiki/Charles_Dugdale%2C_2nd_Baron_Crathorne" class="mw-redirect" title="Charles Dugdale, 2nd Baron Crathorne">The Lord Crathorne</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -1155,13 +1155,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Edmund_Crisp%2C_Baron_Crisp" title="Edmund Crisp, Baron Crisp">The Lord Crisp</a></td>
+<td><a href="/wiki/Edmund_Crisp%2C_Baron_Crisp" class="mw-redirect" title="Edmund Crisp, Baron Crisp">The Lord Crisp</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Croham" title="Lord Croham">The Lord Croham</a></td>
+<td><a href="/wiki/Lord_Croham" class="mw-redirect" title="Lord Croham">The Lord Croham</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1173,7 +1173,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Cullen_of_Whitekirk" title="Lord Cullen of Whitekirk">The Lord Cullen of Whitekirk</a></td>
+<td><a href="/wiki/Lord_Cullen_of_Whitekirk" class="mw-redirect" title="Lord Cullen of Whitekirk">The Lord Cullen of Whitekirk</a></td>
 <td>Cross Bench</td>
 <td>Life Peer, Lord of Appeal</td>
 <td>&#160;</td>
@@ -1191,19 +1191,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Currie_of_Marylebone" title="Lord Currie of Marylebone">The Lord Currie of Marylebone</a></td>
+<td><a href="/wiki/Lord_Currie_of_Marylebone" class="mw-redirect" title="Lord Currie of Marylebone">The Lord Currie of Marylebone</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_D%27Souza" title="Baroness D'Souza">The Baroness D'Souza</a></td>
+<td><a href="/wiki/Baroness_D%27Souza" class="mw-redirect" title="Baroness D'Souza">The Baroness D'Souza</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Dahrendorf" title="Lord Dahrendorf">The Lord Dahrendorf</a></td>
+<td><a href="/wiki/Lord_Dahrendorf" class="mw-redirect" title="Lord Dahrendorf">The Lord Dahrendorf</a></td>
 <td>Crossbench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1221,7 +1221,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_David" title="Baroness David">The Baroness David</a></td>
+<td><a href="/wiki/Baroness_David" class="mw-redirect" title="Baroness David">The Baroness David</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1233,13 +1233,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Davies_of_Coity" title="Baron Davies of Coity">The Lord Davies of Coity</a></td>
+<td><a href="/wiki/Baron_Davies_of_Coity" class="mw-redirect" title="Baron Davies of Coity">The Lord Davies of Coity</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Davies_of_Oldham" title="Baron Davies of Oldham">The Lord Davies of Oldham</a></td>
+<td><a href="/wiki/Baron_Davies_of_Oldham" class="mw-redirect" title="Baron Davies of Oldham">The Lord Davies of Oldham</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1251,13 +1251,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Dean_of_Harptree" title="Lord Dean of Harptree">The Lord Dean of Harptree</a></td>
+<td><a href="/wiki/Lord_Dean_of_Harptree" class="mw-redirect" title="Lord Dean of Harptree">The Lord Dean of Harptree</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Dean_of_Thornton-le-Fylde" title="Baroness Dean of Thornton-le-Fylde">The Baroness Dean of Thornton-le-Fylde</a></td>
+<td><a href="/wiki/Baroness_Dean_of_Thornton-le-Fylde" class="mw-redirect" title="Baroness Dean of Thornton-le-Fylde">The Baroness Dean of Thornton-le-Fylde</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1269,13 +1269,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Dearing" title="Baron Dearing">The Lord Dearing</a></td>
+<td><a href="/wiki/Baron_Dearing" class="mw-redirect" title="Baron Dearing">The Lord Dearing</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Ruth_Deech" title="Ruth Deech">The Baroness Deech</a></td>
+<td><a href="/wiki/Ruth_Deech" class="mw-redirect" title="Ruth Deech">The Baroness Deech</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1287,7 +1287,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Desai" title="Lord Desai">The Lord Desai</a></td>
+<td><a href="/wiki/Lord_Desai" class="mw-redirect" title="Lord Desai">The Lord Desai</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1299,31 +1299,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Dixon" title="Lord Dixon">The Lord Dixon</a></td>
+<td><a href="/wiki/Lord_Dixon" class="mw-redirect" title="Lord Dixon">The Lord Dixon</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Dixon-Smith" title="Lord Dixon-Smith">The Lord Dixon-Smith</a></td>
+<td><a href="/wiki/Lord_Dixon-Smith" class="mw-redirect" title="Lord Dixon-Smith">The Lord Dixon-Smith</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Donoughue" title="Lord Donoughue">The Lord Donoughue</a></td>
+<td><a href="/wiki/Lord_Donoughue" class="mw-redirect" title="Lord Donoughue">The Lord Donoughue</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Paul_Drayson" title="Paul Drayson">The Lord Drayson</a></td>
+<td><a href="/wiki/Paul_Drayson" class="mw-redirect" title="Paul Drayson">The Lord Drayson</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Dubs" title="Lord Dubs">The Lord Dubs</a></td>
+<td><a href="/wiki/Lord_Dubs" class="mw-redirect" title="Lord Dubs">The Lord Dubs</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1335,7 +1335,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Dunn" title="Baroness Dunn">The Baroness Dunn</a></td>
+<td><a href="/wiki/Baroness_Dunn" class="mw-redirect" title="Baroness Dunn">The Baroness Dunn</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1353,19 +1353,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Eames" title="Lord Eames">The Lord Eames</a></td>
+<td><a href="/wiki/Lord_Eames" class="mw-redirect" title="Lord Eames">The Lord Eames</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Eatwell" title="Lord Eatwell">The Lord Eatwell</a></td>
+<td><a href="/wiki/Lord_Eatwell" class="mw-redirect" title="Lord Eatwell">The Lord Eatwell</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Eccles_of_Moulton" title="Baroness Eccles of Moulton">The Viscountess Eccles</a></td>
+<td><a href="/wiki/Baroness_Eccles_of_Moulton" class="mw-redirect" title="Baroness Eccles of Moulton">The Viscountess Eccles</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>Sits as Baroness Eccles of Moulton</td>
@@ -1383,7 +1383,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Elder" title="Lord Elder">The Lord Elder</a></td>
+<td><a href="/wiki/Lord_Elder" class="mw-redirect" title="Lord Elder">The Lord Elder</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1395,13 +1395,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Elles" title="Baroness Elles">The Baroness Elles</a></td>
+<td><a href="/wiki/Baroness_Elles" class="mw-redirect" title="Baroness Elles">The Baroness Elles</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Elliott_of_Morpeth" title="Lord Elliott of Morpeth">The Lord Elliott of Morpeth</a></td>
+<td><a href="/wiki/Lord_Elliott_of_Morpeth" class="mw-redirect" title="Lord Elliott of Morpeth">The Lord Elliott of Morpeth</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1413,37 +1413,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Elystan-Morgan" title="Lord Elystan-Morgan">The Lord Elystan-Morgan</a></td>
+<td><a href="/wiki/Lord_Elystan-Morgan" class="mw-redirect" title="Lord Elystan-Morgan">The Lord Elystan-Morgan</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Emerton" title="Baroness Emerton">The Baroness Emerton</a></td>
+<td><a href="/wiki/Baroness_Emerton" class="mw-redirect" title="Baroness Emerton">The Baroness Emerton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Merlin_Moncreiffe%2C_24th_Earl_of_Erroll" title="Merlin Moncreiffe, 24th Earl of Erroll">The Earl of Erroll</a></td>
+<td><a href="/wiki/Merlin_Moncreiffe%2C_24th_Earl_of_Erroll" class="mw-redirect" title="Merlin Moncreiffe, 24th Earl of Erroll">The Earl of Erroll</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Evans_of_Parkside" title="Lord Evans of Parkside">The Lord Evans of Parkside</a></td>
+<td><a href="/wiki/Lord_Evans_of_Parkside" class="mw-redirect" title="Lord Evans of Parkside">The Lord Evans of Parkside</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Evans_of_Temple_Guiting" title="Lord Evans of Temple Guiting">The Lord Evans of Temple Guiting</a></td>
+<td><a href="/wiki/Lord_Evans_of_Temple_Guiting" class="mw-redirect" title="Lord Evans of Temple Guiting">The Lord Evans of Temple Guiting</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Evans_of_Watford" title="Lord Evans of Watford">The Lord Evans of Watford</a></td>
+<td><a href="/wiki/Lord_Evans_of_Watford" class="mw-redirect" title="Lord Evans of Watford">The Lord Evans of Watford</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1455,13 +1455,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Falconer_of_Thoroton" title="Lord Falconer of Thoroton">The Lord Falconer of Thoroton</a></td>
+<td><a href="/wiki/Lord_Falconer_of_Thoroton" class="mw-redirect" title="Lord Falconer of Thoroton">The Lord Falconer of Thoroton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>Former <a href="/wiki/Lord_Chancellor" title="Lord Chancellor">The Lord Chancellor</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Falkender" title="Baroness Falkender">The Baroness Falkender</a></td>
+<td><a href="/wiki/Baroness_Falkender" class="mw-redirect" title="Baroness Falkender">The Baroness Falkender</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1473,31 +1473,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Falkner_of_Margravine" title="Baroness Falkner of Margravine">The Baroness Falkner of Margravine</a></td>
+<td><a href="/wiki/Baroness_Falkner_of_Margravine" class="mw-redirect" title="Baroness Falkner of Margravine">The Baroness Falkner of Margravine</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Farrington_of_Ribbleton" title="Baroness Farrington of Ribbleton">The Baroness Farrington of Ribbleton</a></td>
+<td><a href="/wiki/Baroness_Farrington_of_Ribbleton" class="mw-redirect" title="Baroness Farrington of Ribbleton">The Baroness Farrington of Ribbleton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Faulkner_of_Worcester" title="Lord Faulkner of Worcester">The Lord Faulkner of Worcester</a></td>
+<td><a href="/wiki/Lord_Faulkner_of_Worcester" class="mw-redirect" title="Lord Faulkner of Worcester">The Lord Faulkner of Worcester</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Fearn" title="Lord Fearn">The Lord Fearn</a></td>
+<td><a href="/wiki/Lord_Fearn" class="mw-redirect" title="Lord Fearn">The Lord Fearn</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Feldman" title="Lord Feldman">The Lord Feldman</a></td>
+<td><a href="/wiki/Lord_Feldman" class="mw-redirect" title="Lord Feldman">The Lord Feldman</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1521,25 +1521,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Finlay_of_Llandaff" title="Baroness Finlay of Llandaff">The Baroness Finlay of Llandaff</a></td>
+<td><a href="/wiki/Baroness_Finlay_of_Llandaff" class="mw-redirect" title="Baroness Finlay of Llandaff">The Baroness Finlay of Llandaff</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Flather" title="Baroness Flather">The Baroness Flather</a></td>
+<td><a href="/wiki/Baroness_Flather" class="mw-redirect" title="Baroness Flather">The Baroness Flather</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Flowers" title="Lord Flowers">The Lord Flowers</a></td>
+<td><a href="/wiki/Lord_Flowers" class="mw-redirect" title="Lord Flowers">The Lord Flowers</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Fookes" title="Baroness Fookes">The Baroness Fookes</a></td>
+<td><a href="/wiki/Baroness_Fookes" class="mw-redirect" title="Baroness Fookes">The Baroness Fookes</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1551,19 +1551,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Forsyth_of_Drumlean" title="Lord Forsyth of Drumlean">The Lord Forsyth of Drumlean</a></td>
+<td><a href="/wiki/Lord_Forsyth_of_Drumlean" class="mw-redirect" title="Lord Forsyth of Drumlean">The Lord Forsyth of Drumlean</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Derek_Foster" title="Derek Foster">The Lord Foster of Bishop Auckland</a></td>
+<td><a href="/wiki/Derek_Foster" class="mw-redirect" title="Derek Foster">The Lord Foster of Bishop Auckland</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Foster_of_Thames_Bank" title="Lord Foster of Thames Bank">The Lord Foster of Thames Bank</a></td>
+<td><a href="/wiki/Lord_Foster_of_Thames_Bank" class="mw-redirect" title="Lord Foster of Thames Bank">The Lord Foster of Thames Bank</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1581,13 +1581,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Lovat_Fraser" title="Peter Lovat Fraser">The Lord Fraser of Carmyllie</a></td>
+<td><a href="/wiki/Peter_Lovat_Fraser" class="mw-redirect" title="Peter Lovat Fraser">The Lord Fraser of Carmyllie</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Freeman" title="Lord Freeman">The Lord Freeman</a></td>
+<td><a href="/wiki/Lord_Freeman" class="mw-redirect" title="Lord Freeman">The Lord Freeman</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1639,13 +1639,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Garel-Jones" title="Lord Garel-Jones">The Lord Garel-Jones</a></td>
+<td><a href="/wiki/Lord_Garel-Jones" class="mw-redirect" title="Lord Garel-Jones">The Lord Garel-Jones</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Gavron" title="Lord Gavron">The Lord Gavron</a></td>
+<td><a href="/wiki/Lord_Gavron" class="mw-redirect" title="Lord Gavron">The Lord Gavron</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1663,7 +1663,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Gibson_of_Market_Rasen" title="Baroness Gibson of Market Rasen">The Baroness Gibson of Market Rasen</a></td>
+<td><a href="/wiki/Baroness_Gibson_of_Market_Rasen" class="mw-redirect" title="Baroness Gibson of Market Rasen">The Baroness Gibson of Market Rasen</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1675,7 +1675,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Gilbert" title="Lord Gilbert">The Lord Gilbert</a></td>
+<td><a href="/wiki/Lord_Gilbert" class="mw-redirect" title="Lord Gilbert">The Lord Gilbert</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1687,7 +1687,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Glenamara" title="Lord Glenamara">The Lord Glenamara</a></td>
+<td><a href="/wiki/Lord_Glenamara" class="mw-redirect" title="Lord Glenamara">The Lord Glenamara</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1699,43 +1699,43 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Thomas_Dixon%2C_3rd_Baron_Glentoran" title="Thomas Dixon, 3rd Baron Glentoran">The Lord Glentoran</a></td>
+<td><a href="/wiki/Thomas_Dixon%2C_3rd_Baron_Glentoran" class="mw-redirect" title="Thomas Dixon, 3rd Baron Glentoran">The Lord Glentoran</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Goff_of_Chieveley" title="Lord Goff of Chieveley">The Lord Goff of Chieveley</a></td>
+<td><a href="/wiki/Lord_Goff_of_Chieveley" class="mw-redirect" title="Lord Goff of Chieveley">The Lord Goff of Chieveley</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Golding" title="Baroness Golding">The Baroness Golding</a></td>
+<td><a href="/wiki/Baroness_Golding" class="mw-redirect" title="Baroness Golding">The Baroness Golding</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Goldsmith" title="Lord Goldsmith">The Lord Goldsmith</a></td>
+<td><a href="/wiki/Lord_Goldsmith" class="mw-redirect" title="Lord Goldsmith">The Lord Goldsmith</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Goodhart" title="Lord Goodhart">The Lord Goodhart</a></td>
+<td><a href="/wiki/Lord_Goodhart" class="mw-redirect" title="Lord Goodhart">The Lord Goodhart</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Alastair_Goodlad" title="Alastair Goodlad">The Lord Goodlad</a></td>
+<td><a href="/wiki/Alastair_Goodlad" class="mw-redirect" title="Alastair Goodlad">The Lord Goodlad</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Gordon_of_Strathblane" title="Lord Gordon of Strathblane">The Lord Gordon of Strathblane</a></td>
+<td><a href="/wiki/Lord_Gordon_of_Strathblane" class="mw-redirect" title="Lord Gordon of Strathblane">The Lord Gordon of Strathblane</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1747,31 +1747,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Goudie" title="Baroness Goudie">The Baroness Goudie</a></td>
+<td><a href="/wiki/Baroness_Goudie" class="mw-redirect" title="Baroness Goudie">The Baroness Goudie</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Philip_Gould" title="Philip Gould">The Lord Gould of Brookwood</a></td>
+<td><a href="/wiki/Philip_Gould" class="mw-redirect" title="Philip Gould">The Lord Gould of Brookwood</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Gould_of_Potternewton" title="Baroness Gould of Potternewton">The Baroness Gould of Potternewton</a></td>
+<td><a href="/wiki/Baroness_Gould_of_Potternewton" class="mw-redirect" title="Baroness Gould of Potternewton">The Baroness Gould of Potternewton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Grabiner" title="Lord Grabiner">The Lord Grabiner</a></td>
+<td><a href="/wiki/Lord_Grabiner" class="mw-redirect" title="Lord Grabiner">The Lord Grabiner</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Graham_of_Edmonton" title="Lord Graham of Edmonton">The Lord Graham of Edmonton</a></td>
+<td><a href="/wiki/Lord_Graham_of_Edmonton" class="mw-redirect" title="Lord Graham of Edmonton">The Lord Graham of Edmonton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1783,7 +1783,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Greaves" title="Lord Greaves">The Lord Greaves</a></td>
+<td><a href="/wiki/Lord_Greaves" class="mw-redirect" title="Lord Greaves">The Lord Greaves</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1819,7 +1819,7 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Grenfell of Kilvey</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Griffiths" title="Lord Griffiths">The Lord Griffiths</a></td>
+<td><a href="/wiki/Lord_Griffiths" class="mw-redirect" title="Lord Griffiths">The Lord Griffiths</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1837,13 +1837,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Grocott" title="Lord Grocott">The Lord Grocott</a></td>
+<td><a href="/wiki/Lord_Grocott" class="mw-redirect" title="Lord Grocott">The Lord Grocott</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Guthrie_of_Craigiebank" title="Lord Guthrie of Craigiebank">The Lord Guthrie of Craigiebank</a></td>
+<td><a href="/wiki/Lord_Guthrie_of_Craigiebank" class="mw-redirect" title="Lord Guthrie of Craigiebank">The Lord Guthrie of Craigiebank</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1861,37 +1861,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Archie_Hamilton" title="Archie Hamilton">The Lord Hamilton of Epsom</a></td>
+<td><a href="/wiki/Archie_Hamilton" class="mw-redirect" title="Archie Hamilton">The Lord Hamilton of Epsom</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hamwee" title="Baroness Hamwee">The Baroness Hamwee</a></td>
+<td><a href="/wiki/Baroness_Hamwee" class="mw-redirect" title="Baroness Hamwee">The Baroness Hamwee</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hanham" title="Baroness Hanham">The Baroness Hanham</a></td>
+<td><a href="/wiki/Baroness_Hanham" class="mw-redirect" title="Baroness Hanham">The Baroness Hanham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hannay_of_Chiswick" title="Lord Hannay of Chiswick">The Lord Hannay of Chiswick</a></td>
+<td><a href="/wiki/Lord_Hannay_of_Chiswick" class="mw-redirect" title="Lord Hannay of Chiswick">The Lord Hannay of Chiswick</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hanningfield" title="Lord Hanningfield">The Lord Hanningfield</a></td>
+<td><a href="/wiki/Lord_Hanningfield" class="mw-redirect" title="Lord Hanningfield">The Lord Hanningfield</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hardie" title="Lord Hardie">The Lord Hardie</a></td>
+<td><a href="/wiki/Lord_Hardie" class="mw-redirect" title="Lord Hardie">The Lord Hardie</a></td>
 <td>Cross Bench</td>
 <td>Life Peer, Lord of Appeal</td>
 <td>&#160;</td>
@@ -1903,19 +1903,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Harris_of_Haringey" title="Lord Harris of Haringey">The Lord Harris of Haringey</a></td>
+<td><a href="/wiki/Lord_Harris_of_Haringey" class="mw-redirect" title="Lord Harris of Haringey">The Lord Harris of Haringey</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Harris_of_Peckham" title="Lord Harris of Peckham">The Lord Harris of Peckham</a></td>
+<td><a href="/wiki/Lord_Harris_of_Peckham" class="mw-redirect" title="Lord Harris of Peckham">The Lord Harris of Peckham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Harris_of_Richmond" title="Baroness Harris of Richmond">The Baroness Harris of Richmond</a></td>
+<td><a href="/wiki/Baroness_Harris_of_Richmond" class="mw-redirect" title="Baroness Harris of Richmond">The Baroness Harris of Richmond</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1951,7 +1951,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hattersley" title="Lord Hattersley">The Lord Hattersley</a></td>
+<td><a href="/wiki/Lord_Hattersley" class="mw-redirect" title="Lord Hattersley">The Lord Hattersley</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1963,25 +1963,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hayhoe" title="Lord Hayhoe">The Lord Hayhoe</a></td>
+<td><a href="/wiki/Lord_Hayhoe" class="mw-redirect" title="Lord Hayhoe">The Lord Hayhoe</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hayman" title="Baroness Hayman">The Baroness Hayman</a></td>
+<td><a href="/wiki/Baroness_Hayman" class="mw-redirect" title="Baroness Hayman">The Baroness Hayman</a></td>
 <td>Non-affiliated</td>
 <td><a href="/wiki/Lord_Speaker" title="Lord Speaker">Lord Speaker</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Healey" title="Lord Healey">The Lord Healey</a></td>
+<td><a href="/wiki/Lord_Healey" class="mw-redirect" title="Lord Healey">The Lord Healey</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Ruth_Henig" title="Ruth Henig">The Baroness Henig</a></td>
+<td><a href="/wiki/Ruth_Henig" class="mw-redirect" title="Ruth Henig">The Baroness Henig</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1993,13 +1993,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Heseltine" title="Lord Heseltine">The Lord Heseltine</a></td>
+<td><a href="/wiki/Lord_Heseltine" class="mw-redirect" title="Lord Heseltine">The Lord Heseltine</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Higgins" title="Lord Higgins">The Lord Higgins</a></td>
+<td><a href="/wiki/Lord_Higgins" class="mw-redirect" title="Lord Higgins">The Lord Higgins</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2011,7 +2011,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hodgson_of_Astley_Abbotts" title="Lord Hodgson of Astley Abbotts">The Lord Hodgson of Astley Abbotts</a></td>
+<td><a href="/wiki/Lord_Hodgson_of_Astley_Abbotts" class="mw-redirect" title="Lord Hodgson of Astley Abbotts">The Lord Hodgson of Astley Abbotts</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2023,31 +2023,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hogg" title="Baroness Hogg">The Viscountess Hailsham</a></td>
+<td><a href="/wiki/Baroness_Hogg" class="mw-redirect" title="Baroness Hogg">The Viscountess Hailsham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>Sits as Baroness Hogg</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hogg_of_Cumbernauld" title="Lord Hogg of Cumbernauld">The Lord Hogg of Cumbernauld</a></td>
+<td><a href="/wiki/Lord_Hogg_of_Cumbernauld" class="mw-redirect" title="Lord Hogg of Cumbernauld">The Lord Hogg of Cumbernauld</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hollick" title="Lord Hollick">The Lord Hollick</a></td>
+<td><a href="/wiki/Lord_Hollick" class="mw-redirect" title="Lord Hollick">The Lord Hollick</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hollis_of_Heigham" title="Baroness Hollis of Heigham">The Baroness Hollis of Heigham</a></td>
+<td><a href="/wiki/Baroness_Hollis_of_Heigham" class="mw-redirect" title="Baroness Hollis of Heigham">The Baroness Hollis of Heigham</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Holme_of_Cheltenham" title="Lord Holme of Cheltenham">The Lord Holme of Cheltenham</a></td>
+<td><a href="/wiki/Lord_Holme_of_Cheltenham" class="mw-redirect" title="Lord Holme of Cheltenham">The Lord Holme of Cheltenham</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2059,43 +2059,43 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Hooper" title="Baroness Hooper">The Baroness Hooper</a></td>
+<td><a href="/wiki/Baroness_Hooper" class="mw-redirect" title="Baroness Hooper">The Baroness Hooper</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hooson" title="Lord Hooson">The Lord Hooson</a></td>
+<td><a href="/wiki/Lord_Hooson" class="mw-redirect" title="Lord Hooson">The Lord Hooson</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hope_of_Craighead" title="Lord Hope of Craighead">The Lord Hope of Craighead</a></td>
+<td><a href="/wiki/Lord_Hope_of_Craighead" class="mw-redirect" title="Lord Hope of Craighead">The Lord Hope of Craighead</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Hope" title="David Hope">The Lord Hope of Thornes</a></td>
+<td><a href="/wiki/David_Hope" class="mw-redirect" title="David Hope">The Lord Hope of Thornes</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Greville_Howard" title="Greville Howard">The Lord Howard of Rising</a></td>
+<td><a href="/wiki/Greville_Howard" class="mw-redirect" title="Greville Howard">The Lord Howard of Rising</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Howarth_of_Breckland" title="Baroness Howarth of Breckland">The Baroness Howarth of Breckland</a></td>
+<td><a href="/wiki/Baroness_Howarth_of_Breckland" class="mw-redirect" title="Baroness Howarth of Breckland">The Baroness Howarth of Breckland</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Alan_Howarth" title="Alan Howarth">The Lord Howarth of Newport</a></td>
+<td><a href="/wiki/Alan_Howarth" class="mw-redirect" title="Alan Howarth">The Lord Howarth of Newport</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2107,13 +2107,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Howe_of_Aberavon" title="Lord Howe of Aberavon">The Lord Howe of Aberavon</a></td>
+<td><a href="/wiki/Lord_Howe_of_Aberavon" class="mw-redirect" title="Lord Howe of Aberavon">The Lord Howe of Aberavon</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Howe_of_Idlicote" title="Baroness Howe of Idlicote">The Baroness Howe of Idlicote</a></td>
+<td><a href="/wiki/Baroness_Howe_of_Idlicote" class="mw-redirect" title="Baroness Howe of Idlicote">The Baroness Howe of Idlicote</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2125,13 +2125,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Howells_of_St_Davids" title="Baroness Howells of St Davids">The Baroness Howells of St Davids</a></td>
+<td><a href="/wiki/Baroness_Howells_of_St_Davids" class="mw-redirect" title="Baroness Howells of St Davids">The Baroness Howells of St Davids</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Howie_of_Troon" title="Lord Howie of Troon">The Lord Howie of Troon</a></td>
+<td><a href="/wiki/Lord_Howie_of_Troon" class="mw-redirect" title="Lord Howie of Troon">The Lord Howie of Troon</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2143,37 +2143,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hughes_of_Woodside" title="Lord Hughes of Woodside">The Lord Hughes of Woodside</a></td>
+<td><a href="/wiki/Lord_Hughes_of_Woodside" class="mw-redirect" title="Lord Hughes of Woodside">The Lord Hughes of Woodside</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hunt_of_Chesterton" title="Lord Hunt of Chesterton">The Lord Hunt of Chesterton</a></td>
+<td><a href="/wiki/Lord_Hunt_of_Chesterton" class="mw-redirect" title="Lord Hunt of Chesterton">The Lord Hunt of Chesterton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hunt_of_Kings_Heath" title="Lord Hunt of Kings Heath">The Lord Hunt of Kings Heath</a></td>
+<td><a href="/wiki/Lord_Hunt_of_Kings_Heath" class="mw-redirect" title="Lord Hunt of Kings Heath">The Lord Hunt of Kings Heath</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hunt_of_Wirral" title="Lord Hunt of Wirral">The Lord Hunt of Wirral</a></td>
+<td><a href="/wiki/Lord_Hunt_of_Wirral" class="mw-redirect" title="Lord Hunt of Wirral">The Lord Hunt of Wirral</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hurd_of_Westwell" title="Lord Hurd of Westwell">The Lord Hurd of Westwell</a></td>
+<td><a href="/wiki/Lord_Hurd_of_Westwell" class="mw-redirect" title="Lord Hurd of Westwell">The Lord Hurd of Westwell</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Hutton" title="Lord Hutton">The Lord Hutton</a></td>
+<td><a href="/wiki/Lord_Hutton" class="mw-redirect" title="Lord Hutton">The Lord Hutton</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -2185,31 +2185,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Imbert" title="Lord Imbert">The Lord Imbert</a></td>
+<td><a href="/wiki/Lord_Imbert" class="mw-redirect" title="Lord Imbert">The Lord Imbert</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Inge" title="Lord Inge">The Lord Inge</a></td>
+<td><a href="/wiki/Lord_Inge" class="mw-redirect" title="Lord Inge">The Lord Inge</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richard_Vane%2C_2nd_Baron_Inglewood" title="Richard Vane, 2nd Baron Inglewood">The Lord Inglewood</a></td>
+<td><a href="/wiki/Richard_Vane%2C_2nd_Baron_Inglewood" class="mw-redirect" title="Richard Vane, 2nd Baron Inglewood">The Lord Inglewood</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Irvine_of_Lairg" title="Lord Irvine of Lairg">The Lord Irvine of Lairg</a></td>
+<td><a href="/wiki/Lord_Irvine_of_Lairg" class="mw-redirect" title="Lord Irvine of Lairg">The Lord Irvine of Lairg</a></td>
 <td>Labour</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jacobs" title="Lord Jacobs">The Lord Jacobs</a></td>
+<td><a href="/wiki/Lord_Jacobs" class="mw-redirect" title="Lord Jacobs">The Lord Jacobs</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2221,13 +2221,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_James_of_Holland_Park" title="Baroness James of Holland Park">The Baroness James of Holland Park</a></td>
+<td><a href="/wiki/Baroness_James_of_Holland_Park" class="mw-redirect" title="Baroness James of Holland Park">The Baroness James of Holland Park</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Janner_of_Braunstone" title="Lord Janner of Braunstone">The Lord Janner of Braunstone</a></td>
+<td><a href="/wiki/Lord_Janner_of_Braunstone" class="mw-redirect" title="Lord Janner of Braunstone">The Lord Janner of Braunstone</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2245,25 +2245,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Jay_of_Paddington" title="Baroness Jay of Paddington">The Baroness Jay of Paddington</a></td>
+<td><a href="/wiki/Baroness_Jay_of_Paddington" class="mw-redirect" title="Baroness Jay of Paddington">The Baroness Jay of Paddington</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jenkin_of_Roding" title="Lord Jenkin of Roding">The Lord Jenkin of Roding</a></td>
+<td><a href="/wiki/Lord_Jenkin_of_Roding" class="mw-redirect" title="Lord Jenkin of Roding">The Lord Jenkin of Roding</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Joffe" title="Lord Joffe">The Lord Joffe</a></td>
+<td><a href="/wiki/Lord_Joffe" class="mw-redirect" title="Lord Joffe">The Lord Joffe</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jones" title="Lord Jones">The Lord Jones</a></td>
+<td><a href="/wiki/Lord_Jones" class="mw-redirect" title="Lord Jones">The Lord Jones</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2275,7 +2275,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Nigel_Jones" title="Nigel Jones">The Lord Jones of Cheltenham</a></td>
+<td><a href="/wiki/Nigel_Jones" class="mw-redirect" title="Nigel Jones">The Lord Jones of Cheltenham</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2287,43 +2287,43 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jopling" title="Lord Jopling">The Lord Jopling</a></td>
+<td><a href="/wiki/Lord_Jopling" class="mw-redirect" title="Lord Jopling">The Lord Jopling</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jordan" title="Lord Jordan">The Lord Jordan</a></td>
+<td><a href="/wiki/Lord_Jordan" class="mw-redirect" title="Lord Jordan">The Lord Jordan</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Judd" title="Lord Judd">The Lord Judd</a></td>
+<td><a href="/wiki/Lord_Judd" class="mw-redirect" title="Lord Judd">The Lord Judd</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Stanley_Kalms" title="Stanley Kalms">The Lord Kalms</a></td>
+<td><a href="/wiki/Stanley_Kalms" class="mw-redirect" title="Stanley Kalms">The Lord Kalms</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Kennedy_of_The_Shaws" title="Baroness Kennedy of The Shaws">The Baroness Kennedy of The Shaws</a></td>
+<td><a href="/wiki/Baroness_Kennedy_of_The_Shaws" class="mw-redirect" title="Baroness Kennedy of The Shaws">The Baroness Kennedy of The Shaws</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Kerr%2C_Baron_Kerr_of_Kinlochard" title="John Kerr, Baron Kerr of Kinlochard">The Lord Kerr of Kinlochard</a></td>
+<td><a href="/wiki/John_Kerr%2C_Baron_Kerr_of_Kinlochard" class="mw-redirect" title="John Kerr, Baron Kerr of Kinlochard">The Lord Kerr of Kinlochard</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Kilclooney" title="Lord Kilclooney">The Lord Kilclooney</a></td>
+<td><a href="/wiki/Lord_Kilclooney" class="mw-redirect" title="Lord Kilclooney">The Lord Kilclooney</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2335,7 +2335,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Kimball" title="Lord Kimball">The Lord Kimball</a></td>
+<td><a href="/wiki/Lord_Kimball" class="mw-redirect" title="Lord Kimball">The Lord Kimball</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2353,7 +2353,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Kingsdown" title="Lord Kingsdown">The Lord Kingsdown</a></td>
+<td><a href="/wiki/Lord_Kingsdown" class="mw-redirect" title="Lord Kingsdown">The Lord Kingsdown</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2377,7 +2377,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Kirkham" title="Lord Kirkham">The Lord Kirkham</a></td>
+<td><a href="/wiki/Lord_Kirkham" class="mw-redirect" title="Lord Kirkham">The Lord Kirkham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2389,13 +2389,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Archy_Kirkwood" title="Archy Kirkwood">The Lord Kirkwood of Kirkhope</a></td>
+<td><a href="/wiki/Archy_Kirkwood" class="mw-redirect" title="Archy Kirkwood">The Lord Kirkwood of Kirkhope</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Knight_of_Collingtree" title="Baroness Knight of Collingtree">The Baroness Knight of Collingtree</a></td>
+<td><a href="/wiki/Baroness_Knight_of_Collingtree" class="mw-redirect" title="Baroness Knight of Collingtree">The Baroness Knight of Collingtree</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2413,49 +2413,49 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Laing_of_Dunphail" title="Lord Laing of Dunphail">The Lord Laing of Dunphail</a></td>
+<td><a href="/wiki/Lord_Laing_of_Dunphail" class="mw-redirect" title="Lord Laing of Dunphail">The Lord Laing of Dunphail</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Laird" title="Lord Laird">The Lord Laird</a></td>
+<td><a href="/wiki/Lord_Laird" class="mw-redirect" title="Lord Laird">The Lord Laird</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Laming" title="Lord Laming">The Lord Laming</a></td>
+<td><a href="/wiki/Lord_Laming" class="mw-redirect" title="Lord Laming">The Lord Laming</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lamont_of_Lerwick" title="Lord Lamont of Lerwick">The Lord Lamont of Lerwick</a></td>
+<td><a href="/wiki/Lord_Lamont_of_Lerwick" class="mw-redirect" title="Lord Lamont of Lerwick">The Lord Lamont of Lerwick</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lane_of_Horsell" title="Lord Lane of Horsell">The Lord Lane of Horsell</a></td>
+<td><a href="/wiki/Lord_Lane_of_Horsell" class="mw-redirect" title="Lord Lane of Horsell">The Lord Lane of Horsell</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lang_of_Monkton" title="Lord Lang of Monkton">The Lord Lang of Monkton</a></td>
+<td><a href="/wiki/Lord_Lang_of_Monkton" class="mw-redirect" title="Lord Lang of Monkton">The Lord Lang of Monkton</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lawson_of_Blaby" title="Lord Lawson of Blaby">The Lord Lawson of Blaby</a></td>
+<td><a href="/wiki/Lord_Lawson_of_Blaby" class="mw-redirect" title="Lord Lawson of Blaby">The Lord Lawson of Blaby</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Layard" title="Lord Layard">The Lord Layard</a></td>
+<td><a href="/wiki/Lord_Layard" class="mw-redirect" title="Lord Layard">The Lord Layard</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2485,37 +2485,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lester_of_Herne_Hill" title="Lord Lester of Herne Hill">The Lord Lester of Herne Hill</a></td>
+<td><a href="/wiki/Lord_Lester_of_Herne_Hill" class="mw-redirect" title="Lord Lester of Herne Hill">The Lord Lester of Herne Hill</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Levene_of_Portsoken" title="Lord Levene of Portsoken">The Lord Levene of Portsoken</a></td>
+<td><a href="/wiki/Lord_Levene_of_Portsoken" class="mw-redirect" title="Lord Levene of Portsoken">The Lord Levene of Portsoken</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Levy" title="Lord Levy">The Lord Levy</a></td>
+<td><a href="/wiki/Lord_Levy" class="mw-redirect" title="Lord Levy">The Lord Levy</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lewis_of_Newnham" title="Lord Lewis of Newnham">The Lord Lewis of Newnham</a></td>
+<td><a href="/wiki/Lord_Lewis_of_Newnham" class="mw-redirect" title="Lord Lewis of Newnham">The Lord Lewis of Newnham</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/James_Lindsay%2C_16th_Earl_of_Lindsay" title="James Lindsay, 16th Earl of Lindsay">The Earl of Lindsay</a></td>
+<td><a href="/wiki/James_Lindsay%2C_16th_Earl_of_Lindsay" class="mw-redirect" title="James Lindsay, 16th Earl of Lindsay">The Earl of Lindsay</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Linklater_of_Butterstone" title="Baroness Linklater of Butterstone">The Baroness Linklater of Butterstone</a></td>
+<td><a href="/wiki/Baroness_Linklater_of_Butterstone" class="mw-redirect" title="Baroness Linklater of Butterstone">The Baroness Linklater of Butterstone</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2539,13 +2539,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Livsey_of_Talgarth" title="Lord Livsey of Talgarth">The Lord Livsey of Talgarth</a></td>
+<td><a href="/wiki/Lord_Livsey_of_Talgarth" class="mw-redirect" title="Lord Livsey of Talgarth">The Lord Livsey of Talgarth</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lloyd_of_Berwick" title="Lord Lloyd of Berwick">The Lord Lloyd of Berwick</a></td>
+<td><a href="/wiki/Lord_Lloyd_of_Berwick" class="mw-redirect" title="Lord Lloyd of Berwick">The Lord Lloyd of Berwick</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -2557,13 +2557,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Lockwood" title="Baroness Lockwood">The Baroness Lockwood</a></td>
+<td><a href="/wiki/Baroness_Lockwood" class="mw-redirect" title="Baroness Lockwood">The Baroness Lockwood</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Lofthouse_of_Pontefract" title="Lord Lofthouse of Pontefract">The Lord Lofthouse of Pontefract</a></td>
+<td><a href="/wiki/Lord_Lofthouse_of_Pontefract" class="mw-redirect" title="Lord Lofthouse of Pontefract">The Lord Lofthouse of Pontefract</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2575,25 +2575,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Ralph_Palmer%2C_12th_Baron_Lucas_of_Crudwell" title="Ralph Palmer, 12th Baron Lucas of Crudwell">The Lord Lucas</a></td>
+<td><a href="/wiki/Ralph_Palmer%2C_12th_Baron_Lucas_of_Crudwell" class="mw-redirect" title="Ralph Palmer, 12th Baron Lucas of Crudwell">The Lord Lucas</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Luce" title="Lord Luce">The Lord Luce</a></td>
+<td><a href="/wiki/Lord_Luce" class="mw-redirect" title="Lord Luce">The Lord Luce</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Ludford" title="Baroness Ludford">The Baroness Ludford</a></td>
+<td><a href="/wiki/Baroness_Ludford" class="mw-redirect" title="Baroness Ludford">The Baroness Ludford</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Arthur_Lawson-Johnston%2C_3rd_Baron_Luke" title="Arthur Lawson-Johnston, 3rd Baron Luke">The Lord Luke</a></td>
+<td><a href="/wiki/Arthur_Lawson-Johnston%2C_3rd_Baron_Luke" class="mw-redirect" title="Arthur Lawson-Johnston, 3rd Baron Luke">The Lord Luke</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -2617,7 +2617,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_McAlpine_of_West_Green" title="Lord McAlpine of West Green">The Lord McAlpine of West Green</a></td>
+<td><a href="/wiki/Lord_McAlpine_of_West_Green" class="mw-redirect" title="Lord McAlpine of West Green">The Lord McAlpine of West Green</a></td>
 <td>Independent Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2641,7 +2641,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Macdonald_of_Tradeston" title="Lord Macdonald of Tradeston">The Lord Macdonald of Tradeston</a></td>
+<td><a href="/wiki/Lord_Macdonald_of_Tradeston" class="mw-redirect" title="Lord Macdonald of Tradeston">The Lord Macdonald of Tradeston</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2653,25 +2653,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Macfarlane_of_Bearsden" title="Lord Macfarlane of Bearsden">The Lord Macfarlane of Bearsden</a></td>
+<td><a href="/wiki/Lord_Macfarlane_of_Bearsden" class="mw-redirect" title="Lord Macfarlane of Bearsden">The Lord Macfarlane of Bearsden</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_McFarlane_of_Llandaff" title="Baroness McFarlane of Llandaff">The Baroness McFarlane of Llandaff</a></td>
+<td><a href="/wiki/Baroness_McFarlane_of_Llandaff" class="mw-redirect" title="Baroness McFarlane of Llandaff">The Baroness McFarlane of Llandaff</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_MacGregor_of_Pulham_Market" title="Lord MacGregor of Pulham Market">The Lord MacGregor of Pulham Market</a></td>
+<td><a href="/wiki/Lord_MacGregor_of_Pulham_Market" class="mw-redirect" title="Lord MacGregor of Pulham Market">The Lord MacGregor of Pulham Market</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_McIntosh_of_Haringey" title="Lord McIntosh of Haringey">The Lord McIntosh of Haringey</a></td>
+<td><a href="/wiki/Lord_McIntosh_of_Haringey" class="mw-redirect" title="Lord McIntosh of Haringey">The Lord McIntosh of Haringey</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2683,25 +2683,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mackay_of_Clashfern" title="Lord Mackay of Clashfern">The Lord Mackay of Clashfern</a></td>
+<td><a href="/wiki/Lord_Mackay_of_Clashfern" class="mw-redirect" title="Lord Mackay of Clashfern">The Lord Mackay of Clashfern</a></td>
 <td>Conservative</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mackay_of_Drumadoon" title="Lord Mackay of Drumadoon">The Lord Mackay of Drumadoon</a></td>
+<td><a href="/wiki/Lord_Mackay_of_Drumadoon" class="mw-redirect" title="Lord Mackay of Drumadoon">The Lord Mackay of Drumadoon</a></td>
 <td>Cross Bench</td>
 <td>Life Peer, Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_MacKenzie_of_Culkein" title="Lord MacKenzie of Culkein">The Lord MacKenzie of Culkein</a></td>
+<td><a href="/wiki/Lord_MacKenzie_of_Culkein" class="mw-redirect" title="Lord MacKenzie of Culkein">The Lord MacKenzie of Culkein</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/William_McKenzie" title="William McKenzie">The Lord McKenzie of Luton</a></td>
+<td><a href="/wiki/William_McKenzie" class="mw-redirect" title="William McKenzie">The Lord McKenzie of Luton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2713,7 +2713,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mackie_of_Benshie" title="Lord Mackie of Benshie">The Lord Mackie of Benshie</a></td>
+<td><a href="/wiki/Lord_Mackie_of_Benshie" class="mw-redirect" title="Lord Mackie of Benshie">The Lord Mackie of Benshie</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2725,25 +2725,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Maclennan_of_Rogart" title="Lord Maclennan of Rogart">The Lord Maclennan of Rogart</a></td>
+<td><a href="/wiki/Lord_Maclennan_of_Rogart" class="mw-redirect" title="Lord Maclennan of Rogart">The Lord Maclennan of Rogart</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Thomas_McNally%2C_Baron_McNally" title="Thomas McNally, Baron McNally">The Lord McNally</a></td>
+<td><a href="/wiki/Thomas_McNally%2C_Baron_McNally" class="mw-redirect" title="Thomas McNally, Baron McNally">The Lord McNally</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Maddock" title="Baroness Maddock">The Baroness Maddock</a></td>
+<td><a href="/wiki/Baroness_Maddock" class="mw-redirect" title="Baroness Maddock">The Baroness Maddock</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Maginnis_of_Drumglass" title="Lord Maginnis of Drumglass">The Lord Maginnis of Drumglass</a></td>
+<td><a href="/wiki/Lord_Maginnis_of_Drumglass" class="mw-redirect" title="Lord Maginnis of Drumglass">The Lord Maginnis of Drumglass</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2797,31 +2797,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Marsh" title="Lord Marsh">The Lord Marsh</a></td>
+<td><a href="/wiki/Lord_Marsh" class="mw-redirect" title="Lord Marsh">The Lord Marsh</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Marshall_of_Knightsbridge" title="Lord Marshall of Knightsbridge">The Lord Marshall of Knightsbridge</a></td>
+<td><a href="/wiki/Lord_Marshall_of_Knightsbridge" class="mw-redirect" title="Lord Marshall of Knightsbridge">The Lord Marshall of Knightsbridge</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Masham_of_Ilton" title="Baroness Masham of Ilton">The Baroness Masham of Ilton</a></td>
+<td><a href="/wiki/Baroness_Masham_of_Ilton" class="mw-redirect" title="Baroness Masham of Ilton">The Baroness Masham of Ilton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mason_of_Barnsley" title="Lord Mason of Barnsley">The Lord Mason of Barnsley</a></td>
+<td><a href="/wiki/Lord_Mason_of_Barnsley" class="mw-redirect" title="Lord Mason of Barnsley">The Lord Mason of Barnsley</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Massey_of_Darwen" title="Baroness Massey of Darwen">The Baroness Massey of Darwen</a></td>
+<td><a href="/wiki/Baroness_Massey_of_Darwen" class="mw-redirect" title="Baroness Massey of Darwen">The Baroness Massey of Darwen</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2839,19 +2839,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Maxton" title="John Maxton">The Lord Maxton</a></td>
+<td><a href="/wiki/John_Maxton" class="mw-redirect" title="John Maxton">The Lord Maxton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_May_of_Oxford" title="Lord May of Oxford">The Lord May of Oxford</a></td>
+<td><a href="/wiki/Lord_May_of_Oxford" class="mw-redirect" title="Lord May of Oxford">The Lord May of Oxford</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mayhew_of_Twysden" title="Lord Mayhew of Twysden">The Lord Mayhew of Twysden</a></td>
+<td><a href="/wiki/Lord_Mayhew_of_Twysden" class="mw-redirect" title="Lord Mayhew of Twysden">The Lord Mayhew of Twysden</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2869,13 +2869,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Michie_of_Gallanach" title="Baroness Michie of Gallanach">The Baroness Michie of Gallanach</a></td>
+<td><a href="/wiki/Baroness_Michie_of_Gallanach" class="mw-redirect" title="Baroness Michie of Gallanach">The Baroness Michie of Gallanach</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Miller_of_Chilthorne_Domer" title="Baroness Miller of Chilthorne Domer">The Baroness Miller of Chilthorne Domer</a></td>
+<td><a href="/wiki/Baroness_Miller_of_Chilthorne_Domer" class="mw-redirect" title="Baroness Miller of Chilthorne Domer">The Baroness Miller of Chilthorne Domer</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2887,7 +2887,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Millett" title="Lord Millett">The Lord Millett</a></td>
+<td><a href="/wiki/Lord_Millett" class="mw-redirect" title="Lord Millett">The Lord Millett</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -2899,7 +2899,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Molyneaux_of_Killead" title="Lord Molyneaux of Killead">The Lord Molyneaux of Killead</a></td>
+<td><a href="/wiki/Lord_Molyneaux_of_Killead" class="mw-redirect" title="Lord Molyneaux of Killead">The Lord Molyneaux of Killead</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2917,7 +2917,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Bernard_Montgomery" title="David Bernard Montgomery">The Viscount Montgomery of Alamein</a></td>
+<td><a href="/wiki/David_Bernard_Montgomery" class="mw-redirect" title="David Bernard Montgomery">The Viscount Montgomery of Alamein</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -2929,13 +2929,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lewis_Moonie" title="Lewis Moonie">The Lord Moonie</a></td>
+<td><a href="/wiki/Lewis_Moonie" class="mw-redirect" title="Lewis Moonie">The Lord Moonie</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Moore_of_Lower_Marsh" title="Lord Moore of Lower Marsh">The Lord Moore of Lower Marsh</a></td>
+<td><a href="/wiki/Lord_Moore_of_Lower_Marsh" class="mw-redirect" title="Lord Moore of Lower Marsh">The Lord Moore of Lower Marsh</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2947,13 +2947,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richard_McMoran_Wilson%2C_2nd_Baron_Moran" title="Richard McMoran Wilson, 2nd Baron Moran">The Lord Moran</a></td>
+<td><a href="/wiki/Richard_McMoran_Wilson%2C_2nd_Baron_Moran" class="mw-redirect" title="Richard McMoran Wilson, 2nd Baron Moran">The Lord Moran</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Morgan" title="Lord Morgan">The Lord Morgan</a></td>
+<td><a href="/wiki/Lord_Morgan" class="mw-redirect" title="Lord Morgan">The Lord Morgan</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2971,7 +2971,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Morris_of_Aberavon" title="Lord Morris of Aberavon">The Lord Morris of Aberavon</a></td>
+<td><a href="/wiki/Lord_Morris_of_Aberavon" class="mw-redirect" title="Lord Morris of Aberavon">The Lord Morris of Aberavon</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2989,7 +2989,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Morris_of_Manchester" title="Lord Morris of Manchester">The Lord Morris of Manchester</a></td>
+<td><a href="/wiki/Lord_Morris_of_Manchester" class="mw-redirect" title="Lord Morris of Manchester">The Lord Morris of Manchester</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3007,7 +3007,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Moser" title="Lord Moser">The Lord Moser</a></td>
+<td><a href="/wiki/Lord_Moser" class="mw-redirect" title="Lord Moser">The Lord Moser</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3025,13 +3025,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Murton_of_Lindisfarne" title="Lord Murton of Lindisfarne">The Lord Murton of Lindisfarne</a></td>
+<td><a href="/wiki/Lord_Murton_of_Lindisfarne" class="mw-redirect" title="Lord Murton of Lindisfarne">The Lord Murton of Lindisfarne</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Mustill" title="Lord Mustill">The Lord Mustill</a></td>
+<td><a href="/wiki/Lord_Mustill" class="mw-redirect" title="Lord Mustill">The Lord Mustill</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -3047,13 +3047,13 @@ var wgEnableWriteAPI = false;
 <th>Notes</th>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Naseby" title="Lord Naseby">The Lord Naseby</a></td>
+<td><a href="/wiki/Lord_Naseby" class="mw-redirect" title="Lord Naseby">The Lord Naseby</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Neill_of_Bladen" title="Lord Neill of Bladen">The Lord Neill of Bladen</a></td>
+<td><a href="/wiki/Lord_Neill_of_Bladen" class="mw-redirect" title="Lord Neill of Bladen">The Lord Neill of Bladen</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3065,7 +3065,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Julia_Neuberger" title="Julia Neuberger">The Baroness Neuberger</a></td>
+<td><a href="/wiki/Julia_Neuberger" class="mw-redirect" title="Julia Neuberger">The Baroness Neuberger</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3077,37 +3077,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Newby" title="Lord Newby">The Lord Newby</a></td>
+<td><a href="/wiki/Lord_Newby" class="mw-redirect" title="Lord Newby">The Lord Newby</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Newton_of_Braintree" title="Lord Newton of Braintree">The Lord Newton of Braintree</a></td>
+<td><a href="/wiki/Lord_Newton_of_Braintree" class="mw-redirect" title="Lord Newton of Braintree">The Lord Newton of Braintree</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Nicholls_of_Birkenhead" title="Lord Nicholls of Birkenhead">The Lord Nicholls of Birkenhead</a></td>
+<td><a href="/wiki/Lord_Nicholls_of_Birkenhead" class="mw-redirect" title="Lord Nicholls of Birkenhead">The Lord Nicholls of Birkenhead</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Nicholson_of_Winterbourne" title="Baroness Nicholson of Winterbourne">The Baroness Nicholson of Winterbourne</a></td>
+<td><a href="/wiki/Baroness_Nicholson_of_Winterbourne" class="mw-redirect" title="Baroness Nicholson of Winterbourne">The Baroness Nicholson of Winterbourne</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Nickson" title="Lord Nickson">The Lord Nickson</a></td>
+<td><a href="/wiki/Lord_Nickson" class="mw-redirect" title="Lord Nickson">The Lord Nickson</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Nicol" title="Baroness Nicol">The Baroness Nicol</a></td>
+<td><a href="/wiki/Baroness_Nicol" class="mw-redirect" title="Baroness Nicol">The Baroness Nicol</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3143,37 +3143,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Northfield" title="Lord Northfield">The Lord Northfield</a></td>
+<td><a href="/wiki/Lord_Northfield" class="mw-redirect" title="Lord Northfield">The Lord Northfield</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Northover" title="Baroness Northover">The Baroness Northover</a></td>
+<td><a href="/wiki/Baroness_Northover" class="mw-redirect" title="Baroness Northover">The Baroness Northover</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Norton_of_Louth" title="Lord Norton of Louth">The Lord Norton of Louth</a></td>
+<td><a href="/wiki/Lord_Norton_of_Louth" class="mw-redirect" title="Lord Norton of Louth">The Lord Norton of Louth</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Oakeshott_of_Seagrove_Bay" title="Lord Oakeshott of Seagrove Bay">The Lord Oakeshott of Seagrove Bay</a></td>
+<td><a href="/wiki/Lord_Oakeshott_of_Seagrove_Bay" class="mw-redirect" title="Lord Oakeshott of Seagrove Bay">The Lord Oakeshott of Seagrove Bay</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_O%27Cathain" title="Baroness O'Cathain">The Baroness O'Cathain</a></td>
+<td><a href="/wiki/Baroness_O%27Cathain" class="mw-redirect" title="Baroness O'Cathain">The Baroness O'Cathain</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_O%27Neill_of_Bengarve" title="Baroness O'Neill of Bengarve">The Baroness O'Neill of Bengarve</a></td>
+<td><a href="/wiki/Baroness_O%27Neill_of_Bengarve" class="mw-redirect" title="Baroness O'Neill of Bengarve">The Baroness O'Neill of Bengarve</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3191,25 +3191,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Oppenheim-Barnes" title="Baroness Oppenheim-Barnes">The Baroness Oppenheim-Barnes</a></td>
+<td><a href="/wiki/Baroness_Oppenheim-Barnes" class="mw-redirect" title="Baroness Oppenheim-Barnes">The Baroness Oppenheim-Barnes</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Ouseley" title="Lord Ouseley">The Lord Ouseley</a></td>
+<td><a href="/wiki/Lord_Ouseley" class="mw-redirect" title="Lord Ouseley">The Lord Ouseley</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Owen%2C_Baron_Owen" title="David Owen, Baron Owen">The Lord Owen</a></td>
+<td><a href="/wiki/David_Owen%2C_Baron_Owen" class="mw-redirect" title="David Owen, Baron Owen">The Lord Owen</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Oxburgh" title="Lord Oxburgh">The Lord Oxburgh</a></td>
+<td><a href="/wiki/Lord_Oxburgh" class="mw-redirect" title="Lord Oxburgh">The Lord Oxburgh</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3233,13 +3233,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Parekh" title="Lord Parekh">The Lord Parekh</a></td>
+<td><a href="/wiki/Lord_Parekh" class="mw-redirect" title="Lord Parekh">The Lord Parekh</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Park_of_Monmouth" title="Baroness Park of Monmouth">The Baroness Park of Monmouth</a></td>
+<td><a href="/wiki/Baroness_Park_of_Monmouth" class="mw-redirect" title="Baroness Park of Monmouth">The Baroness Park of Monmouth</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3257,7 +3257,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Patel_of_Blackburn" title="Lord Patel of Blackburn">The Lord Patel of Blackburn</a></td>
+<td><a href="/wiki/Lord_Patel_of_Blackburn" class="mw-redirect" title="Lord Patel of Blackburn">The Lord Patel of Blackburn</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3281,13 +3281,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Paul" title="Lord Paul">The Lord Paul</a></td>
+<td><a href="/wiki/Lord_Paul" class="mw-redirect" title="Lord Paul">The Lord Paul</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Pearson_of_Rannoch" title="Lord Pearson of Rannoch">The Lord Pearson of Rannoch</a></td>
+<td><a href="/wiki/Lord_Pearson_of_Rannoch" class="mw-redirect" title="Lord Pearson of Rannoch">The Lord Pearson of Rannoch</a></td>
 <td>Non affiliated</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3299,13 +3299,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Pendry" title="Lord Pendry">The Lord Pendry</a></td>
+<td><a href="/wiki/Lord_Pendry" class="mw-redirect" title="Lord Pendry">The Lord Pendry</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Perry_of_Southwark" title="Baroness Perry of Southwark">The Baroness Perry of Southwark</a></td>
+<td><a href="/wiki/Baroness_Perry_of_Southwark" class="mw-redirect" title="Baroness Perry of Southwark">The Baroness Perry of Southwark</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3317,19 +3317,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Phillips_of_Worth_Matravers" title="Lord Phillips of Worth Matravers">The Lord Phillips of Worth Matravers</a></td>
+<td><a href="/wiki/Lord_Phillips_of_Worth_Matravers" class="mw-redirect" title="Lord Phillips of Worth Matravers">The Lord Phillips of Worth Matravers</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Pilkington_of_Oxenford" title="Lord Pilkington of Oxenford">The Lord Pilkington of Oxenford</a></td>
+<td><a href="/wiki/Lord_Pilkington_of_Oxenford" class="mw-redirect" title="Lord Pilkington of Oxenford">The Lord Pilkington of Oxenford</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Pitkeathley" title="Baroness Pitkeathley">The Baroness Pitkeathley</a></td>
+<td><a href="/wiki/Baroness_Pitkeathley" class="mw-redirect" title="Baroness Pitkeathley">The Baroness Pitkeathley</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3347,13 +3347,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Plumb" title="Lord Plumb">The Lord Plumb</a></td>
+<td><a href="/wiki/Lord_Plumb" class="mw-redirect" title="Lord Plumb">The Lord Plumb</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Plummer_of_St_Marylebone" title="Lord Plummer of St Marylebone">The Lord Plummer of St Marylebone</a></td>
+<td><a href="/wiki/Lord_Plummer_of_St_Marylebone" class="mw-redirect" title="Lord Plummer of St Marylebone">The Lord Plummer of St Marylebone</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3365,13 +3365,13 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Ponsonby of Roehampton</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Powell_of_Bayswater" title="Lord Powell of Bayswater">The Lord Powell of Bayswater</a></td>
+<td><a href="/wiki/Lord_Powell_of_Bayswater" class="mw-redirect" title="Lord Powell of Bayswater">The Lord Powell of Bayswater</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Prashar" title="Baroness Prashar">The Baroness Prashar</a></td>
+<td><a href="/wiki/Baroness_Prashar" class="mw-redirect" title="Baroness Prashar">The Baroness Prashar</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3395,7 +3395,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Puttnam" title="Lord Puttnam">The Lord Puttnam</a></td>
+<td><a href="/wiki/Lord_Puttnam" class="mw-redirect" title="Lord Puttnam">The Lord Puttnam</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3407,55 +3407,55 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Quinton" title="Lord Quinton">The Lord Quinton</a></td>
+<td><a href="/wiki/Lord_Quinton" class="mw-redirect" title="Lord Quinton">The Lord Quinton</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Quirk" title="Lord Quirk">The Lord Quirk</a></td>
+<td><a href="/wiki/Lord_Quirk" class="mw-redirect" title="Lord Quirk">The Lord Quirk</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Radice" title="Lord Radice">The Lord Radice</a></td>
+<td><a href="/wiki/Lord_Radice" class="mw-redirect" title="Lord Radice">The Lord Radice</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Ramsay_of_Cartvale" title="Baroness Ramsay of Cartvale">The Baroness Ramsay of Cartvale</a></td>
+<td><a href="/wiki/Baroness_Ramsay_of_Cartvale" class="mw-redirect" title="Baroness Ramsay of Cartvale">The Baroness Ramsay of Cartvale</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Ramsbotham" title="David Ramsbotham">The Lord Ramsbotham</a></td>
+<td><a href="/wiki/David_Ramsbotham" class="mw-redirect" title="David Ramsbotham">The Lord Ramsbotham</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Diljit_Rana" title="Diljit Rana">The Lord Rana</a></td>
+<td><a href="/wiki/Diljit_Rana" class="mw-redirect" title="Diljit Rana">The Lord Rana</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Rawlings" title="Baroness Rawlings">The Baroness Rawlings</a></td>
+<td><a href="/wiki/Baroness_Rawlings" class="mw-redirect" title="Baroness Rawlings">The Baroness Rawlings</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Razzall" title="Lord Razzall">The Lord Razzall</a></td>
+<td><a href="/wiki/Lord_Razzall" class="mw-redirect" title="Lord Razzall">The Lord Razzall</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Rea%2C_3rd_Baron_Rea" title="John Rea, 3rd Baron Rea">The Lord Rea</a></td>
+<td><a href="/wiki/John_Rea%2C_3rd_Baron_Rea" class="mw-redirect" title="John Rea, 3rd Baron Rea">The Lord Rea</a></td>
 <td>Labour</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3479,13 +3479,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Martin_Rees" title="Martin Rees">The Lord Rees of Ludlow</a></td>
+<td><a href="/wiki/Martin_Rees" class="mw-redirect" title="Martin Rees">The Lord Rees of Ludlow</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rees-Mogg" title="Lord Rees-Mogg">The Lord Rees-Mogg</a></td>
+<td><a href="/wiki/Lord_Rees-Mogg" class="mw-redirect" title="Lord Rees-Mogg">The Lord Rees-Mogg</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3497,49 +3497,49 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Renfrew_of_Kaimsthorn" title="Lord Renfrew of Kaimsthorn">The Lord Renfrew of Kaimsthorn</a></td>
+<td><a href="/wiki/Lord_Renfrew_of_Kaimsthorn" class="mw-redirect" title="Lord Renfrew of Kaimsthorn">The Lord Renfrew of Kaimsthorn</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rennard" title="Lord Rennard">The Lord Rennard</a></td>
+<td><a href="/wiki/Lord_Rennard" class="mw-redirect" title="Lord Rennard">The Lord Rennard</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Timothy_Renton" title="Timothy Renton">The Lord Renton of Mount Harry</a></td>
+<td><a href="/wiki/Timothy_Renton" class="mw-redirect" title="Timothy Renton">The Lord Renton of Mount Harry</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Renwick_of_Clifton" title="Lord Renwick of Clifton">The Lord Renwick of Clifton</a></td>
+<td><a href="/wiki/Lord_Renwick_of_Clifton" class="mw-redirect" title="Lord Renwick of Clifton">The Lord Renwick of Clifton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Richard" title="Lord Richard">The Lord Richard</a></td>
+<td><a href="/wiki/Lord_Richard" class="mw-redirect" title="Lord Richard">The Lord Richard</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Richardson_of_Calow" title="Baroness Richardson of Calow">The Baroness Richardson of Calow</a></td>
+<td><a href="/wiki/Baroness_Richardson_of_Calow" class="mw-redirect" title="Baroness Richardson of Calow">The Baroness Richardson of Calow</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Richardson_of_Duntisbourne" title="Lord Richardson of Duntisbourne">The Lord Richardson of Duntisbourne</a></td>
+<td><a href="/wiki/Lord_Richardson_of_Duntisbourne" class="mw-redirect" title="Lord Richardson of Duntisbourne">The Lord Richardson of Duntisbourne</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rix" title="Lord Rix">The Lord Rix</a></td>
+<td><a href="/wiki/Lord_Rix" class="mw-redirect" title="Lord Rix">The Lord Rix</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3551,13 +3551,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Roger_Roberts" title="Roger Roberts">The Lord Roberts of Llandudno</a></td>
+<td><a href="/wiki/Roger_Roberts" class="mw-redirect" title="Roger Roberts">The Lord Roberts of Llandudno</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Robertson_of_Port_Ellen" title="Lord Robertson of Port Ellen">The Lord Robertson of Port Ellen</a></td>
+<td><a href="/wiki/Lord_Robertson_of_Port_Ellen" class="mw-redirect" title="Lord Robertson of Port Ellen">The Lord Robertson of Port Ellen</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3569,37 +3569,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rodgers_of_Quarry_Bank" title="Lord Rodgers of Quarry Bank">The Lord Rodgers of Quarry Bank</a></td>
+<td><a href="/wiki/Lord_Rodgers_of_Quarry_Bank" class="mw-redirect" title="Lord Rodgers of Quarry Bank">The Lord Rodgers of Quarry Bank</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rogan" title="Lord Rogan">The Lord Rogan</a></td>
+<td><a href="/wiki/Lord_Rogan" class="mw-redirect" title="Lord Rogan">The Lord Rogan</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rogers_of_Riverside" title="Lord Rogers of Riverside">The Lord Rogers of Riverside</a></td>
+<td><a href="/wiki/Lord_Rogers_of_Riverside" class="mw-redirect" title="Lord Rogers of Riverside">The Lord Rogers of Riverside</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Rooker" title="Lord Rooker">The Lord Rooker</a></td>
+<td><a href="/wiki/Lord_Rooker" class="mw-redirect" title="Lord Rooker">The Lord Rooker</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Roper" title="Lord Roper">The Lord Roper</a></td>
+<td><a href="/wiki/Lord_Roper" class="mw-redirect" title="Lord Roper">The Lord Roper</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richard_Rosser" title="Richard Rosser">The Lord Rosser</a></td>
+<td><a href="/wiki/Richard_Rosser" class="mw-redirect" title="Richard Rosser">The Lord Rosser</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3623,13 +3623,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Edward_Rowlands" title="Edward Rowlands">The Lord Rowlands</a></td>
+<td><a href="/wiki/Edward_Rowlands" class="mw-redirect" title="Edward Rowlands">The Lord Rowlands</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Janet_Royall" title="Janet Royall">The Baroness Royall of Blaisdon</a></td>
+<td><a href="/wiki/Janet_Royall" class="mw-redirect" title="Janet Royall">The Baroness Royall of Blaisdon</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3641,31 +3641,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richard_Andrew_Ryder" title="Richard Andrew Ryder">The Lord Ryder of Wensum</a></td>
+<td><a href="/wiki/Richard_Andrew_Ryder" class="mw-redirect" title="Richard Andrew Ryder">The Lord Ryder of Wensum</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Maurice_Saatchi" title="Maurice Saatchi">The Lord Saatchi</a></td>
+<td><a href="/wiki/Maurice_Saatchi" class="mw-redirect" title="Maurice Saatchi">The Lord Saatchi</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sainsbury_of_Preston_Candover" title="Lord Sainsbury of Preston Candover">The Lord Sainsbury of Preston Candover</a></td>
+<td><a href="/wiki/Lord_Sainsbury_of_Preston_Candover" class="mw-redirect" title="Lord Sainsbury of Preston Candover">The Lord Sainsbury of Preston Candover</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sainsbury_of_Turville" title="Lord Sainsbury of Turville">The Lord Sainsbury of Turville</a></td>
+<td><a href="/wiki/Lord_Sainsbury_of_Turville" class="mw-redirect" title="Lord Sainsbury of Turville">The Lord Sainsbury of Turville</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_St_John_of_Fawsley" title="Lord St John of Fawsley">The Lord St John of Fawsley</a></td>
+<td><a href="/wiki/Lord_St_John_of_Fawsley" class="mw-redirect" title="Lord St John of Fawsley">The Lord St John of Fawsley</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3701,31 +3701,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Saville_of_Newdigate" title="Lord Saville of Newdigate">The Lord Saville of Newdigate</a></td>
+<td><a href="/wiki/Lord_Saville_of_Newdigate" class="mw-redirect" title="Lord Saville of Newdigate">The Lord Saville of Newdigate</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sawyer" title="Lord Sawyer">The Lord Sawyer</a></td>
+<td><a href="/wiki/Lord_Sawyer" class="mw-redirect" title="Lord Sawyer">The Lord Sawyer</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Scotland_of_Asthal" title="Baroness Scotland of Asthal">The Baroness Scotland of Asthal</a></td>
+<td><a href="/wiki/Baroness_Scotland_of_Asthal" class="mw-redirect" title="Baroness Scotland of Asthal">The Baroness Scotland of Asthal</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Scott_of_Foscote" title="Lord Scott of Foscote">The Lord Scott of Foscote</a></td>
+<td><a href="/wiki/Lord_Scott_of_Foscote" class="mw-redirect" title="Lord Scott of Foscote">The Lord Scott of Foscote</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Scott_of_Needham_Market" title="Baroness Scott of Needham Market">The Baroness Scott of Needham Market</a></td>
+<td><a href="/wiki/Baroness_Scott_of_Needham_Market" class="mw-redirect" title="Baroness Scott of Needham Market">The Baroness Scott of Needham Market</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3743,7 +3743,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Selkirk_of_Douglas" title="Lord Selkirk of Douglas">The Lord Selkirk of Douglas</a></td>
+<td><a href="/wiki/Lord_Selkirk_of_Douglas" class="mw-redirect" title="Lord Selkirk of Douglas">The Lord Selkirk of Douglas</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3755,31 +3755,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sewel" title="Lord Sewel">The Lord Sewel</a></td>
+<td><a href="/wiki/Lord_Sewel" class="mw-redirect" title="Lord Sewel">The Lord Sewel</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sharman" title="Lord Sharman">The Lord Sharman</a></td>
+<td><a href="/wiki/Lord_Sharman" class="mw-redirect" title="Lord Sharman">The Lord Sharman</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Sharp_of_Guildford" title="Baroness Sharp of Guildford">The Baroness Sharp of Guildford</a></td>
+<td><a href="/wiki/Baroness_Sharp_of_Guildford" class="mw-redirect" title="Baroness Sharp of Guildford">The Baroness Sharp of Guildford</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Sharples" title="Baroness Sharples">The Baroness Sharples</a></td>
+<td><a href="/wiki/Baroness_Sharples" class="mw-redirect" title="Baroness Sharples">The Baroness Sharples</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Shaw_of_Northstead" title="Lord Shaw of Northstead">The Lord Shaw of Northstead</a></td>
+<td><a href="/wiki/Lord_Shaw_of_Northstead" class="mw-redirect" title="Lord Shaw of Northstead">The Lord Shaw of Northstead</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3791,19 +3791,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sheldon" title="Lord Sheldon">The Lord Sheldon</a></td>
+<td><a href="/wiki/Lord_Sheldon" class="mw-redirect" title="Lord Sheldon">The Lord Sheldon</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Gillian_Shepherd" title="Gillian Shepherd">The Baroness Shephard of Northwold</a></td>
+<td><a href="/wiki/Gillian_Shepherd" class="mw-redirect" title="Gillian Shepherd">The Baroness Shephard of Northwold</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Sheppard_of_Didgemere" title="Lord Sheppard of Didgemere">The Lord Sheppard of Didgemere</a></td>
+<td><a href="/wiki/Lord_Sheppard_of_Didgemere" class="mw-redirect" title="Lord Sheppard of Didgemere">The Lord Sheppard of Didgemere</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3821,7 +3821,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Jan_Simon%2C_3rd_Viscount_Simon" title="Jan Simon, 3rd Viscount Simon">The Viscount Simon</a></td>
+<td><a href="/wiki/Jan_Simon%2C_3rd_Viscount_Simon" class="mw-redirect" title="Jan Simon, 3rd Viscount Simon">The Viscount Simon</a></td>
 <td>Labour</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3833,7 +3833,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Skidelsky" title="Lord Skidelsky">The Lord Skidelsky</a></td>
+<td><a href="/wiki/Lord_Skidelsky" class="mw-redirect" title="Lord Skidelsky">The Lord Skidelsky</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3845,7 +3845,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Slynn_of_Hadley" title="Lord Slynn of Hadley">The Lord Slynn of Hadley</a></td>
+<td><a href="/wiki/Lord_Slynn_of_Hadley" class="mw-redirect" title="Lord Slynn of Hadley">The Lord Slynn of Hadley</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -3887,13 +3887,13 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Armstrong-Jones</td>
 </tr>
 <tr>
-<td><a href="/wiki/Clive_Soley" title="Clive Soley">The Lord Soley</a></td>
+<td><a href="/wiki/Clive_Soley" class="mw-redirect" title="Clive Soley">The Lord Soley</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Soulsby_of_Swaffham_Prior" title="Lord Soulsby of Swaffham Prior">The Lord Soulsby of Swaffham Prior</a></td>
+<td><a href="/wiki/Lord_Soulsby_of_Swaffham_Prior" class="mw-redirect" title="Lord Soulsby of Swaffham Prior">The Lord Soulsby of Swaffham Prior</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3905,7 +3905,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Leonard_Steinberg" title="Leonard Steinberg">The Lord Steinberg</a></td>
+<td><a href="/wiki/Leonard_Steinberg" class="mw-redirect" title="Leonard Steinberg">The Lord Steinberg</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3917,7 +3917,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Stern" title="Baroness Stern">The Baroness Stern</a></td>
+<td><a href="/wiki/Baroness_Stern" class="mw-redirect" title="Baroness Stern">The Baroness Stern</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3935,25 +3935,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Stevens_of_Ludgate" title="Lord Stevens of Ludgate">The Lord Stevens of Ludgate</a></td>
+<td><a href="/wiki/Lord_Stevens_of_Ludgate" class="mw-redirect" title="Lord Stevens of Ludgate">The Lord Stevens of Ludgate</a></td>
 <td>Conservative Independent</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Stevenson_of_Coddenham" title="Lord Stevenson of Coddenham">The Lord Stevenson of Coddenham</a></td>
+<td><a href="/wiki/Lord_Stevenson_of_Coddenham" class="mw-redirect" title="Lord Stevenson of Coddenham">The Lord Stevenson of Coddenham</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Stewartby" title="Lord Stewartby">The Lord Stewartby</a></td>
+<td><a href="/wiki/Lord_Stewartby" class="mw-redirect" title="Lord Stewartby">The Lord Stewartby</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Steyn" title="Lord Steyn">The Lord Steyn</a></td>
+<td><a href="/wiki/Lord_Steyn" class="mw-redirect" title="Lord Steyn">The Lord Steyn</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
@@ -3989,19 +3989,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Stewart_Ross_Sutherland" title="Stewart Ross Sutherland">The Lord Sutherland of Houndwood</a></td>
+<td><a href="/wiki/Stewart_Ross_Sutherland" class="mw-redirect" title="Stewart Ross Sutherland">The Lord Sutherland of Houndwood</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Roger_Mynors_Swinfen_Eady%2C_3rd_Baron_Swinfen" title="Roger Mynors Swinfen Eady, 3rd Baron Swinfen">The Lord Swinfen</a></td>
+<td><a href="/wiki/Roger_Mynors_Swinfen_Eady%2C_3rd_Baron_Swinfen" class="mw-redirect" title="Roger Mynors Swinfen Eady, 3rd Baron Swinfen">The Lord Swinfen</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Symons_of_Vernham_Dean" title="Baroness Symons of Vernham Dean">The Baroness Symons of Vernham Dean</a></td>
+<td><a href="/wiki/Baroness_Symons_of_Vernham_Dean" class="mw-redirect" title="Baroness Symons of Vernham Dean">The Baroness Symons of Vernham Dean</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4017,7 +4017,7 @@ var wgEnableWriteAPI = false;
 <th>Notes</th>
 </tr>
 <tr>
-<td><a href="/wiki/Simon_Brooke_Mackay%2C_Baron_Tanlaw" title="Simon Brooke Mackay, Baron Tanlaw">The Lord Tanlaw</a></td>
+<td><a href="/wiki/Simon_Brooke_Mackay%2C_Baron_Tanlaw" class="mw-redirect" title="Simon Brooke Mackay, Baron Tanlaw">The Lord Tanlaw</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4047,13 +4047,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Taylor_of_Warwick" title="Lord Taylor of Warwick">The Lord Taylor of Warwick</a></td>
+<td><a href="/wiki/Lord_Taylor_of_Warwick" class="mw-redirect" title="Lord Taylor of Warwick">The Lord Taylor of Warwick</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Tebbit" title="Lord Tebbit">The Lord Tebbit</a></td>
+<td><a href="/wiki/Lord_Tebbit" class="mw-redirect" title="Lord Tebbit">The Lord Tebbit</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4065,7 +4065,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Temple-Morris" title="Lord Temple-Morris">The Lord Temple-Morris</a></td>
+<td><a href="/wiki/Lord_Temple-Morris" class="mw-redirect" title="Lord Temple-Morris">The Lord Temple-Morris</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4089,25 +4089,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Thomas_of_Gresford" title="Lord Thomas of Gresford">The Lord Thomas of Gresford</a></td>
+<td><a href="/wiki/Lord_Thomas_of_Gresford" class="mw-redirect" title="Lord Thomas of Gresford">The Lord Thomas of Gresford</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Thomas_of_Macclesfield" title="Lord Thomas of Macclesfield">The Lord Thomas of Macclesfield</a></td>
+<td><a href="/wiki/Lord_Thomas_of_Macclesfield" class="mw-redirect" title="Lord Thomas of Macclesfield">The Lord Thomas of Macclesfield</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Thomas_of_Swynnerton" title="Lord Thomas of Swynnerton">The Lord Thomas of Swynnerton</a></td>
+<td><a href="/wiki/Lord_Thomas_of_Swynnerton" class="mw-redirect" title="Lord Thomas of Swynnerton">The Lord Thomas of Swynnerton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Thomas_of_Walliswood" title="Baroness Thomas of Walliswood">The Baroness Thomas of Walliswood</a></td>
+<td><a href="/wiki/Baroness_Thomas_of_Walliswood" class="mw-redirect" title="Baroness Thomas of Walliswood">The Baroness Thomas of Walliswood</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4119,13 +4119,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Thomson_of_Monifieth" title="Lord Thomson of Monifieth">The Lord Thomson of Monifieth</a></td>
+<td><a href="/wiki/Lord_Thomson_of_Monifieth" class="mw-redirect" title="Lord Thomson of Monifieth">The Lord Thomson of Monifieth</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Thornton" title="Baroness Thornton">The Baroness Thornton</a></td>
+<td><a href="/wiki/Baroness_Thornton" class="mw-redirect" title="Baroness Thornton">The Baroness Thornton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4149,19 +4149,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Tope" title="Lord Tope">The Lord Tope</a></td>
+<td><a href="/wiki/Lord_Tope" class="mw-redirect" title="Lord Tope">The Lord Tope</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Tordoff" title="Lord Tordoff">The Lord Tordoff</a></td>
+<td><a href="/wiki/Lord_Tordoff" class="mw-redirect" title="Lord Tordoff">The Lord Tordoff</a></td>
 <td>Liberal Democrats</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Garro_Trefgarne%2C_2nd_Baron_Trefgarne" title="David Garro Trefgarne, 2nd Baron Trefgarne">The Lord Trefgarne</a></td>
+<td><a href="/wiki/David_Garro_Trefgarne%2C_2nd_Baron_Trefgarne" class="mw-redirect" title="David Garro Trefgarne, 2nd Baron Trefgarne">The Lord Trefgarne</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4173,19 +4173,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Triesman" title="Lord Triesman">The Lord Triesman</a></td>
+<td><a href="/wiki/Lord_Triesman" class="mw-redirect" title="Lord Triesman">The Lord Triesman</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Trimble" title="David Trimble">The Lord Trimble</a></td>
+<td><a href="/wiki/David_Trimble" class="mw-redirect" title="David Trimble">The Lord Trimble</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Trumpington" title="Baroness Trumpington">The Baroness Trumpington</a></td>
+<td><a href="/wiki/Baroness_Trumpington" class="mw-redirect" title="Baroness Trumpington">The Baroness Trumpington</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4197,19 +4197,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Tugendhat" title="Lord Tugendhat">The Lord Tugendhat</a></td>
+<td><a href="/wiki/Lord_Tugendhat" class="mw-redirect" title="Lord Tugendhat">The Lord Tugendhat</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Denis_Tunnicliffe" title="Denis Tunnicliffe">The Lord Tunnicliffe</a></td>
+<td><a href="/wiki/Denis_Tunnicliffe" class="mw-redirect" title="Denis Tunnicliffe">The Lord Tunnicliffe</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Turnberg" title="Lord Turnberg">The Lord Turnberg</a></td>
+<td><a href="/wiki/Lord_Turnberg" class="mw-redirect" title="Lord Turnberg">The Lord Turnberg</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4227,19 +4227,19 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Adair_Turner" title="Adair Turner">The Lord Turner of Ecchinswell</a></td>
+<td><a href="/wiki/Adair_Turner" class="mw-redirect" title="Adair Turner">The Lord Turner of Ecchinswell</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Paul_Tyler" title="Paul Tyler">The Lord Tyler</a></td>
+<td><a href="/wiki/Paul_Tyler" class="mw-redirect" title="Paul Tyler">The Lord Tyler</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Uddin" title="Baroness Uddin">The Baroness Uddin</a></td>
+<td><a href="/wiki/Baroness_Uddin" class="mw-redirect" title="Baroness Uddin">The Baroness Uddin</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4263,7 +4263,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Iain_Vallance" title="Iain Vallance">The Lord Vallance of Tummel</a></td>
+<td><a href="/wiki/Iain_Vallance" class="mw-redirect" title="Iain Vallance">The Lord Vallance of Tummel</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4281,37 +4281,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Vincent_of_Coleshill" title="Lord Vincent of Coleshill">The Lord Vincent of Coleshill</a></td>
+<td><a href="/wiki/Lord_Vincent_of_Coleshill" class="mw-redirect" title="Lord Vincent of Coleshill">The Lord Vincent of Coleshill</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Vinson" title="Lord Vinson">The Lord Vinson</a></td>
+<td><a href="/wiki/Lord_Vinson" class="mw-redirect" title="Lord Vinson">The Lord Vinson</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Waddington" title="Lord Waddington">The Lord Waddington</a></td>
+<td><a href="/wiki/Lord_Waddington" class="mw-redirect" title="Lord Waddington">The Lord Waddington</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wade_of_Chorlton" title="Lord Wade of Chorlton">The Lord Wade of Chorlton</a></td>
+<td><a href="/wiki/Lord_Wade_of_Chorlton" class="mw-redirect" title="Lord Wade of Chorlton">The Lord Wade of Chorlton</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wakeham" title="Lord Wakeham">The Lord Wakeham</a></td>
+<td><a href="/wiki/Lord_Wakeham" class="mw-redirect" title="Lord Wakeham">The Lord Wakeham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Waldegrave_of_North_Hill" title="Lord Waldegrave of North Hill">The Lord Waldegrave of North Hill</a></td>
+<td><a href="/wiki/Lord_Waldegrave_of_North_Hill" class="mw-redirect" title="Lord Waldegrave of North Hill">The Lord Waldegrave of North Hill</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4323,25 +4323,25 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Walker_of_Gestingthorpe" title="Lord Walker of Gestingthorpe">The Lord Walker of Gestingthorpe</a></td>
+<td><a href="/wiki/Lord_Walker_of_Gestingthorpe" class="mw-redirect" title="Lord Walker of Gestingthorpe">The Lord Walker of Gestingthorpe</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Walker_of_Worcester" title="Lord Walker of Worcester">The Lord Walker of Worcester</a></td>
+<td><a href="/wiki/Lord_Walker_of_Worcester" class="mw-redirect" title="Lord Walker of Worcester">The Lord Walker of Worcester</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Margaret_Wall" title="Margaret Wall">The Baroness Wall of New Barnet</a></td>
+<td><a href="/wiki/Margaret_Wall" class="mw-redirect" title="Margaret Wall">The Baroness Wall of New Barnet</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wallace_of_Saltaire" title="Lord Wallace of Saltaire">The Lord Wallace of Saltaire</a></td>
+<td><a href="/wiki/Lord_Wallace_of_Saltaire" class="mw-redirect" title="Lord Wallace of Saltaire">The Lord Wallace of Saltaire</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4353,7 +4353,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Walmsley" title="Baroness Walmsley">The Baroness Walmsley</a></td>
+<td><a href="/wiki/Baroness_Walmsley" class="mw-redirect" title="Baroness Walmsley">The Baroness Walmsley</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4371,7 +4371,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Warner" title="Lord Warner">The Lord Warner</a></td>
+<td><a href="/wiki/Lord_Warner" class="mw-redirect" title="Lord Warner">The Lord Warner</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4389,7 +4389,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Warwick_of_Undercliffe" title="Baroness Warwick of Undercliffe">The Baroness Warwick of Undercliffe</a></td>
+<td><a href="/wiki/Baroness_Warwick_of_Undercliffe" class="mw-redirect" title="Baroness Warwick of Undercliffe">The Baroness Warwick of Undercliffe</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4401,7 +4401,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Watson_of_Richmond" title="Lord Watson of Richmond">The Lord Watson of Richmond</a></td>
+<td><a href="/wiki/Lord_Watson_of_Richmond" class="mw-redirect" title="Lord Watson of Richmond">The Lord Watson of Richmond</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4413,13 +4413,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wedderburn_of_Charlton" title="Lord Wedderburn of Charlton">The Lord Wedderburn of Charlton</a></td>
+<td><a href="/wiki/Lord_Wedderburn_of_Charlton" class="mw-redirect" title="Lord Wedderburn of Charlton">The Lord Wedderburn of Charlton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Weidenfeld" title="Lord Weidenfeld">The Lord Weidenfeld</a></td>
+<td><a href="/wiki/Lord_Weidenfeld" class="mw-redirect" title="Lord Weidenfeld">The Lord Weidenfeld</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4437,13 +4437,13 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Whitty" title="Lord Whitty">The Lord Whitty</a></td>
+<td><a href="/wiki/Lord_Whitty" class="mw-redirect" title="Lord Whitty">The Lord Whitty</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Wilcox" title="Baroness Wilcox">The Baroness Wilcox</a></td>
+<td><a href="/wiki/Baroness_Wilcox" class="mw-redirect" title="Baroness Wilcox">The Baroness Wilcox</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4455,37 +4455,37 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Williams_of_Crosby" title="Baroness Williams of Crosby">The Baroness Williams of Crosby</a></td>
+<td><a href="/wiki/Baroness_Williams_of_Crosby" class="mw-redirect" title="Baroness Williams of Crosby">The Baroness Williams of Crosby</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Williams_of_Elvel" title="Lord Williams of Elvel">The Lord Williams of Elvel</a></td>
+<td><a href="/wiki/Lord_Williams_of_Elvel" class="mw-redirect" title="Lord Williams of Elvel">The Lord Williams of Elvel</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Williamson_of_Horton" title="Lord Williamson of Horton">The Lord Williamson of Horton</a></td>
+<td><a href="/wiki/Lord_Williamson_of_Horton" class="mw-redirect" title="Lord Williamson of Horton">The Lord Williamson of Horton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Leopold_Verney%2C_21st_Baron_Willoughby_de_Broke" title="Leopold Verney, 21st Baron Willoughby de Broke">The Lord Willoughby de Broke</a></td>
+<td><a href="/wiki/Leopold_Verney%2C_21st_Baron_Willoughby_de_Broke" class="mw-redirect" title="Leopold Verney, 21st Baron Willoughby de Broke">The Lord Willoughby de Broke</a></td>
 <td>Non affiliated</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wilson_of_Dinton" title="Lord Wilson of Dinton">The Lord Wilson of Dinton</a></td>
+<td><a href="/wiki/Lord_Wilson_of_Dinton" class="mw-redirect" title="Lord Wilson of Dinton">The Lord Wilson of Dinton</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wilson_of_Tillyorn" title="Lord Wilson of Tillyorn">The Lord Wilson of Tillyorn</a></td>
+<td><a href="/wiki/Lord_Wilson_of_Tillyorn" class="mw-redirect" title="Lord Wilson of Tillyorn">The Lord Wilson of Tillyorn</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4497,7 +4497,7 @@ var wgEnableWriteAPI = false;
 <td>Sits as Baron Hennessey</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Winston" title="Lord Winston">The Lord Winston</a></td>
+<td><a href="/wiki/Lord_Winston" class="mw-redirect" title="Lord Winston">The Lord Winston</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4515,31 +4515,31 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Woolf" title="Lord Woolf">The Lord Woolf</a></td>
+<td><a href="/wiki/Lord_Woolf" class="mw-redirect" title="Lord Woolf">The Lord Woolf</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Woolmer_of_Leeds" title="Lord Woolmer of Leeds">The Lord Woolmer of Leeds</a></td>
+<td><a href="/wiki/Lord_Woolmer_of_Leeds" class="mw-redirect" title="Lord Woolmer of Leeds">The Lord Woolmer of Leeds</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Wright_of_Richmond" title="Lord Wright of Richmond">The Lord Wright of Richmond</a></td>
+<td><a href="/wiki/Lord_Wright_of_Richmond" class="mw-redirect" title="Lord Wright of Richmond">The Lord Wright of Richmond</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Young_of_Graffham" title="Lord Young of Graffham">The Lord Young of Graffham</a></td>
+<td><a href="/wiki/Lord_Young_of_Graffham" class="mw-redirect" title="Lord Young of Graffham">The Lord Young of Graffham</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lola_Young" title="Lola Young">The Baroness Young of Hornsey</a></td>
+<td><a href="/wiki/Lola_Young" class="mw-redirect" title="Lola Young">The Baroness Young of Hornsey</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4551,7 +4551,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Young_of_Old_Scone" title="Baroness Young of Old Scone">The Baroness Young of Old Scone</a></td>
+<td><a href="/wiki/Baroness_Young_of_Old_Scone" class="mw-redirect" title="Baroness Young of Old Scone">The Baroness Young of Old Scone</a></td>
 <td>Non affiliated</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4567,7 +4567,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Biffen%2C_Baron_Biffen" title="John Biffen, Baron Biffen">The Lord Biffen</a> (<a href="/wiki/August_14" title="August 14">August 14</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/John_Biffen%2C_Baron_Biffen" class="mw-redirect" title="John Biffen, Baron Biffen">The Lord Biffen</a> (<a href="/wiki/August_14" title="August 14">August 14</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4579,7 +4579,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Cockfield" title="Lord Cockfield">The Lord Cockfield</a> (<a href="/wiki/January_8" title="January 8">January 8</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Cockfield" class="mw-redirect" title="Lord Cockfield">The Lord Cockfield</a> (<a href="/wiki/January_8" title="January 8">January 8</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4603,7 +4603,7 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baron_Forte" title="Baron Forte">The Lord Forte</a> (<a href="/wiki/February_28" title="February 28">February 28</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Baron_Forte" class="mw-redirect" title="Baron Forte">The Lord Forte</a> (<a href="/wiki/February_28" title="February 28">February 28</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4615,61 +4615,61 @@ var wgEnableWriteAPI = false;
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Gilmour_of_Craigmillar" title="Lord Gilmour of Craigmillar">The Lord Gilmour of Craigmillar</a> (<a href="/wiki/September_21" title="September 21">September 21</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Gilmour_of_Craigmillar" class="mw-redirect" title="Lord Gilmour of Craigmillar">The Lord Gilmour of Craigmillar</a> (<a href="/wiki/September_21" title="September 21">September 21</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Jauncey_of_Tullichettle" title="Lord Jauncey of Tullichettle">The Lord Jauncey of Tullichettle</a> (<a href="/wiki/July_18" title="July 18">July 18</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Jauncey_of_Tullichettle" class="mw-redirect" title="Lord Jauncey of Tullichettle">The Lord Jauncey of Tullichettle</a> (<a href="/wiki/July_18" title="July 18">July 18</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Jeger" title="Baroness Jeger">The Baroness Jeger</a> (<a href="/wiki/February_26" title="February 26">February 26</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Baroness_Jeger" class="mw-redirect" title="Baroness Jeger">The Baroness Jeger</a> (<a href="/wiki/February_26" title="February 26">February 26</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/George_Patrick_John_Rushworth_Jellicoe%2C_2nd_Earl_Jellicoe" title="George Patrick John Rushworth Jellicoe, 2nd Earl Jellicoe">The Earl Jellicoe</a> (<a href="/wiki/February_22" title="February 22">February 22</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/George_Patrick_John_Rushworth_Jellicoe%2C_2nd_Earl_Jellicoe" class="mw-redirect" title="George Patrick John Rushworth Jellicoe, 2nd Earl Jellicoe">The Earl Jellicoe</a> (<a href="/wiki/February_22" title="February 22">February 22</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>Hereditary Peer given Life Peerage</td>
 <td>Sat as Baron Jellicoe of Southampton</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Kelvedon" title="Lord Kelvedon">The Lord Kelvedon</a> (<a href="/wiki/January_27" title="January 27">January 27</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Kelvedon" class="mw-redirect" title="Lord Kelvedon">The Lord Kelvedon</a> (<a href="/wiki/January_27" title="January 27">January 27</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Nolan" title="Lord Nolan">The Lord Nolan</a> (<a href="/wiki/January_22" title="January 22">January 22</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Nolan" class="mw-redirect" title="Lord Nolan">The Lord Nolan</a> (<a href="/wiki/January_22" title="January 22">January 22</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Oliver_of_Aylmerton" title="Lord Oliver of Aylmerton">The Lord Oliver of Aylmerton</a> (<a href="/wiki/October_17" title="October 17">October 17</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Oliver_of_Aylmerton" class="mw-redirect" title="Lord Oliver of Aylmerton">The Lord Oliver of Aylmerton</a> (<a href="/wiki/October_17" title="October 17">October 17</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Renton" title="David Renton">The Lord Renton</a> (<a href="/wiki/May_24" title="May 24">May 24</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/David_Renton" class="mw-redirect" title="David Renton">The Lord Renton</a> (<a href="/wiki/May_24" title="May 24">May 24</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Thomas_of_Gwydir" title="Lord Thomas of Gwydir">The Lord Thomas of Gwydir</a> (<a href="/wiki/February_4" title="February 4">February 4</a>, <a href="/wiki/2008" title="2008">2008</a>)</td>
+<td><a href="/wiki/Lord_Thomas_of_Gwydir" class="mw-redirect" title="Lord Thomas of Gwydir">The Lord Thomas of Gwydir</a> (<a href="/wiki/February_4" title="February 4">February 4</a>, <a href="/wiki/2008" title="2008">2008</a>)</td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Weatherill" title="Lord Weatherill">The Lord Weatherill</a> (<a href="/wiki/May_6" title="May 6">May 6</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td><a href="/wiki/Lord_Weatherill" class="mw-redirect" title="Lord Weatherill">The Lord Weatherill</a> (<a href="/wiki/May_6" title="May 6">May 6</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4678,20 +4678,20 @@ var wgEnableWriteAPI = false;
 <p><a name="Peers_on_leave_of_absence" id="Peers_on_leave_of_absence"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=7" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline">Peers on leave of absence</span></h2>
 <ul>
-<li><a href="/wiki/Baron_Blease" title="Baron Blease">The Lord Blease</a>, Labour</li>
-<li><a href="/wiki/Baron_Buxton_of_Alsa" title="Baron Buxton of Alsa">The Lord Buxton of Alsa</a>, Conservative</li>
-<li><a href="/wiki/Alun_Gwynne_Jones%2C_Baron_Chalfont" title="Alun Gwynne Jones, Baron Chalfont">The Lord Chalfont</a>, Crossbencher</li>
-<li><a href="/wiki/Baroness_Delacourt-Smith_of_Alteryn" title="Baroness Delacourt-Smith of Alteryn">The Baroness Delacourt-Smith of Alteryn</a>, Labour</li>
-<li><a href="/wiki/Lord_Habgood" title="Lord Habgood">The Lord Habgood</a>, Crossbencher</li>
-<li><a href="/wiki/Baron_Hunt_of_Tanworth" title="Baron Hunt of Tanworth">The Lord Hunt of Tanworth</a>, Crossbencher</li>
-<li><a href="/wiki/Lord_Hutchinson_of_Lullington" title="Lord Hutchinson of Lullington">The Lord Hutchinson of Lullington</a>, Liberal Democrat</li>
-<li><a href="/wiki/Irvine_Laidlaw" title="Irvine Laidlaw">The Lord Laidlaw</a>, Conservative</li>
-<li><a href="/wiki/Baron_Phillips_of_Sudbury" title="Baron Phillips of Sudbury">The Lord Phillips of Sudbury</a>, Liberal Democrat</li>
-<li><a href="/wiki/Baron_Pym" title="Baron Pym">The Lord Pym</a>, Conservative</li>
-<li><a href="/wiki/Lord_Randall_of_St_Budeaux" title="Lord Randall of St Budeaux">The Lord Randall of St Budeaux</a>, Labour</li>
+<li><a href="/wiki/Baron_Blease" class="mw-redirect" title="Baron Blease">The Lord Blease</a>, Labour</li>
+<li><a href="/wiki/Baron_Buxton_of_Alsa" class="mw-redirect" title="Baron Buxton of Alsa">The Lord Buxton of Alsa</a>, Conservative</li>
+<li><a href="/wiki/Alun_Gwynne_Jones%2C_Baron_Chalfont" class="mw-redirect" title="Alun Gwynne Jones, Baron Chalfont">The Lord Chalfont</a>, Crossbencher</li>
+<li><a href="/wiki/Baroness_Delacourt-Smith_of_Alteryn" class="mw-redirect" title="Baroness Delacourt-Smith of Alteryn">The Baroness Delacourt-Smith of Alteryn</a>, Labour</li>
+<li><a href="/wiki/Lord_Habgood" class="mw-redirect" title="Lord Habgood">The Lord Habgood</a>, Crossbencher</li>
+<li><a href="/wiki/Baron_Hunt_of_Tanworth" class="mw-redirect" title="Baron Hunt of Tanworth">The Lord Hunt of Tanworth</a>, Crossbencher</li>
+<li><a href="/wiki/Lord_Hutchinson_of_Lullington" class="mw-redirect" title="Lord Hutchinson of Lullington">The Lord Hutchinson of Lullington</a>, Liberal Democrat</li>
+<li><a href="/wiki/Irvine_Laidlaw" class="mw-redirect" title="Irvine Laidlaw">The Lord Laidlaw</a>, Conservative</li>
+<li><a href="/wiki/Baron_Phillips_of_Sudbury" class="mw-redirect" title="Baron Phillips of Sudbury">The Lord Phillips of Sudbury</a>, Liberal Democrat</li>
+<li><a href="/wiki/Baron_Pym" class="mw-redirect" title="Baron Pym">The Lord Pym</a>, Conservative</li>
+<li><a href="/wiki/Lord_Randall_of_St_Budeaux" class="mw-redirect" title="Lord Randall of St Budeaux">The Lord Randall of St Budeaux</a>, Labour</li>
 <li><a href="/wiki/Robert_Gascoyne-Cecil%2C_7th_Marquess_of_Salisbury" title="Robert Gascoyne-Cecil, 7th Marquess of Salisbury">The Marquess of Salisbury</a>, Conservative</li>
-<li><a href="/wiki/Baron_Simon_of_Highbury" title="Baron Simon of Highbury">The Lord Simon of Highbury</a>, Labour</li>
-<li><a href="/wiki/Baron_Simpson_of_Dunkeld" title="Baron Simpson of Dunkeld">The Lord Simpson of Dunkeld</a>, Labour</li>
+<li><a href="/wiki/Baron_Simon_of_Highbury" class="mw-redirect" title="Baron Simon of Highbury">The Lord Simon of Highbury</a>, Labour</li>
+<li><a href="/wiki/Baron_Simpson_of_Dunkeld" class="mw-redirect" title="Baron Simpson of Dunkeld">The Lord Simpson of Dunkeld</a>, Labour</li>
 <li><a href="/wiki/Albert_Stallard%2C_Baron_Stallard" title="Albert Stallard, Baron Stallard">The Lord Stallard</a>, Labour</li>
 </ul>
 <p><a name="See_also" id="See_also"></a></p>
@@ -4715,7 +4715,7 @@ Template argument size: 0/2048000 bytes
 #ifexist count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20080205203159 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20080220150455 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4763,7 +4763,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<h5>Interaction</h5>
 		<div class='pBody'>
 			<ul>
-				<li id="n-About-Wikipedia"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-aboutsite"><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
 				<li id="n-portal"><a href="/wiki/Wikipedia:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
@@ -4790,7 +4790,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=189334277" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=189334277">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=192807037" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=192807037">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4799,7 +4799,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 13:02, 24 January 2008.</li>
+				<li id="lastmod"> This page was last modified on 20 February 2008, at 15:02.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4810,4 +4810,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv106 in 0.065 secs. --></body></html>
+<!-- Served by srv88 in 0.068 secs. --></body></html>
