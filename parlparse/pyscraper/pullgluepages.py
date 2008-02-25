@@ -372,7 +372,7 @@ def CompareScrapedFiles(prevfile, nextfile):
 ##############################
 # For gluing together debates
 ##############################
-def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
+def PullGluePages(options, folder, typ):
 	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
 
 	# loop through the index file previously made by createhansardindex
@@ -380,7 +380,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		# implement date range
 		if not re.search(typ, commonsIndexRecord.recordType, re.I):
 			continue
-		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
+		if commonsIndexRecord.date < options.datefrom or commonsIndexRecord.date > options.dateto:
 			continue
 
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
@@ -391,15 +391,24 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
 			urla = [urlx]
 		else:
-			urla = ExtractAllLinks(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
+			urla = ExtractAllLinks(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
 		if not urla:
 			continue
 
 		if miscfuncs.IsNotQuiet():
 			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
-		# now we take out the local pointer and start the gluing
-		GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+		try:
+			# now we take out the local pointer and start the gluing
+			GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+		except Exception, e:
+			options.anyerrors = True
+			if options.quietc:
+				print e.description
+				print "\tERROR! %s failed to scrape on %s, quietly moving to next day" % (typ, commonsIndexRecord.date)
+				continue
+			else:
+				raise
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
 			if miscfuncs.IsNotQuiet():
