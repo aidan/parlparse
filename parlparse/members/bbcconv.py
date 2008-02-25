@@ -37,7 +37,7 @@ for i in range(12):
     content = ur.read()
     ur.close()
 
-    print i + 1
+    # print i + 1
     matcher = '<a\s*href="(/1/shared/mpdb/html/\d+.stm)" title="Profile of the MP for (.*?)(?: \(.*?\))?"><b>\s*([\s\S]*?)\s*</b></a></td>';
     matches = re.findall(matcher, content)
     for match in matches:
@@ -57,19 +57,20 @@ for i in range(12):
             print >>sys.stderr, "Failed to match %s %s %s" % (name, cons, date_today)
         url = urlparse.urljoin(bbc_index_url, url)
 
-        if id in bbcmembers:
-            print >>sys.stderr, "Ignored repeated entry for " , id
+        pid = memberList.membertoperson(id)
+        if pid in bbcmembers:
+            print >>sys.stderr, "Ignored repeated entry for " , pid
         else:
-            print '<memberinfo id="%s" bbc_profile_url="%s" />' % (id, url)
+            print '<personinfo id="%s" bbc_profile_url="%s" />' % (pid, url)
 
-        bbcmembers.add(id)
+        bbcmembers.add(pid)
 
     sys.stdout.flush()
 
 print '</publicwhip>'
 
 # Check we have everybody
-allmembers = sets.Set(memberList.currentmpslist())
+allmembers = sets.Set([ memberList.membertoperson(id) for id in memberList.currentmpslist() ])
 symdiff = allmembers.symmetric_difference(bbcmembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MPs, these ones in symmetric difference"
