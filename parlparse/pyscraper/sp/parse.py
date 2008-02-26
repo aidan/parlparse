@@ -1287,7 +1287,9 @@ for d in dates:
     urls_filename = or_prefix + "or" + str(d) + ".urls"
     fp = open(urls_filename)
     for line in fp.readlines():
-        url = line.rstrip()
+        line = line.rstrip()
+        fields = line.split("\0")
+        url = fields[0]
         if len(url) > 0:
             original_urls.append(url)
     fp.close()
