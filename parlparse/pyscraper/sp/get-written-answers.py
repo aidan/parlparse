@@ -6,6 +6,7 @@ import random
 import datetime
 import time
 import urllib
+import glob
 from optparse import OptionParser
 
 sys.path.append('../')
@@ -38,6 +39,14 @@ currentyear = datetime.date.today().year
 output_directory = "../../../parldata/cmpages/sp/written-answers/"
 written_answers_template = output_directory + "wa%s_%d.html"
 written_answers_urls_template = output_directory + "wa%s.urls"
+
+# Figure out which contents pages we already have, excluding those in
+# the 90s:
+
+existing_contents_pages = glob.glob( output_directory + "contents-wa-[0-8]*" )
+existing_contents_pages.sort()
+
+contents_pages_fetched = { }
 
 # Fetch the year indices that we either don't have
 # or is the current year's...
@@ -125,18 +134,25 @@ for year in range(options.year, currentyear+1):
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
         contents_url = written_answers_prefix + subdir + "/" + leaf
 
-        if not os.path.exists(contents_filename) or (currentdate - end_date).days < 4:
+        # Fetch the contents page if we don't already have it, or if
+        # it was the last one fetched:
+
+        if not os.path.exists(contents_filename) or (len(existing_contents_pages) > 0 and existing_contents_pages[-1] == contents_filename):
             ur = urllib.urlopen(contents_url)
             fp = open(contents_filename, 'w')
             fp.write(ur.read())
             fp.close()
             ur.close()
+            contents_pages_fetched[contents_filename] = True
                 
     # Now find all the daily pages from the contents pages...
 
     for (subdir,leaf,start_date,end_date) in contents_pages:
 
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
+
+        if not contents_filename in contents_pages_fetched:
+            continue
 
         fp = open(contents_filename)
         contents_html = fp.read()
@@ -162,4 +178,4 @@ for year in range(options.year, currentyear+1):
                 fp.close()
                 ur.close()
                 amount_to_sleep = int( 20 * random.random() )
-                time.sleep( amount_to_sleep )
+                # time.sleep( amount_to_sleep )
