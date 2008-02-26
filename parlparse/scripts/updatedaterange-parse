@@ -28,8 +28,8 @@ cd ~/parlparse/pyscraper/standing
 
 # Scottish Parliament
 cd ~/parlparse/pyscraper/sp
-./parse.py $4
-./parse-written-answers.py $4
+./parse.py --quiet $4
+./parse-written-answers.py --quiet $4
 
 # Return error code
 exit $RET

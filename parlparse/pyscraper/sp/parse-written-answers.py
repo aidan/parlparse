@@ -6,6 +6,7 @@ import random
 import datetime
 import time
 import traceback
+from optparse import OptionParser
 
 sys.path.append('../')
 import xml.sax
@@ -29,7 +30,11 @@ from time import strptime
 import re
 import glob
 
-verbose = False
+parser = OptionParser()
+parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
+                  default=True, help="don't print status messages")
+(options, args) = parser.parse_args()
+verbose = options.verbose
 
 wa_prefix = "../../../parldata/cmpages/sp/written-answers/"
 xml_output_directory = "../../../parldata/scrapedxml/sp-written/"

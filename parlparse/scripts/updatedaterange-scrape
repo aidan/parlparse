@@ -21,8 +21,8 @@ cd ~/parlparse/pyscraper/ni
 
 # XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
 cd ~/parlparse/pyscraper/sp
-./get-official-reports.py --year=2008
-./get-written-answers.py --year=2008
+./get-official-reports.py --quiet
+./get-written-answers.py --quiet
 
 # Return error code
 exit $RET

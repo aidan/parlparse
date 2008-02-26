@@ -30,6 +30,8 @@ import re
 parser = OptionParser()
 parser.add_option('-y', "--year", dest="year", default=1999,
                   help="year from which to fetch")
+parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
+                  default=True, help="don't print status messages")
 (options, args) = parser.parse_args()
 options.year = int(options.year)
 
@@ -58,6 +60,7 @@ for year in range(options.year, currentyear+1):
     index_page_url = written_answers_year_template % year
     output_filename = output_directory + str(year) + ".html"
     if (not os.path.exists(output_filename)) or (year == currentyear):
+        if options.verbose: print "Fetching %s" % index_page_url
         ur = urllib.urlopen(index_page_url)
         fp = open(output_filename, 'w')
         fp.write(ur.read())
@@ -138,6 +141,7 @@ for year in range(options.year, currentyear+1):
         # it was the last one fetched:
 
         if not os.path.exists(contents_filename) or (len(existing_contents_pages) > 0 and existing_contents_pages[-1] == contents_filename):
+            if options.verbose: print "Fetching %s" % contents_url
             ur = urllib.urlopen(contents_url)
             fp = open(contents_filename, 'w')
             fp.write(ur.read())

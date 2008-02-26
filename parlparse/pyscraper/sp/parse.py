@@ -5,6 +5,7 @@ import os
 import random
 import datetime
 import time
+from optparse import OptionParser
 
 sys.path.append('../')
 import xml.sax
@@ -38,7 +39,11 @@ from common import non_tag_data_in
 # If verbose is True then you'll get about a gigabyte of nonsense on
 # standard output.
 
-verbose = False
+parser = OptionParser()
+parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
+                  default=True, help="don't print status messages")
+(options, args) = parser.parse_args()
+verbose = options.verbose
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -1255,10 +1260,14 @@ for d in dates:
     xml_output_directory = "../../../parldata/scrapedxml/sp/"
     output_filename = xml_output_directory + "sp" + str(d) + ".xml"
 
+    if verbose: print "Examining %s %s" % (d, output_filename)
+
     if (not force) and os.path.exists(output_filename):
         continue
 
     contents_filename = or_prefix + "or" +str(d) + "_0.html"
+    if not os.path.exists(contents_filename):
+        continue
 
     filenames = glob.glob( or_prefix + "or" + str(d) + "_*.html" )
     filenames.sort(compare_filename)
