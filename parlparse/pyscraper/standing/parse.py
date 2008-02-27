@@ -7,6 +7,7 @@ import sys
 import tempfile
 import shutil
 import sets
+import time
 
 pardir = os.path.abspath(os.path.join(sys.path[0], '..'))
 sys.path.append(pardir)
@@ -1045,6 +1046,7 @@ patchtool = False
 debug_flag = False
 
 standing_dir = os.path.join(toppath, 'cmpages', 'standing')
+standing_xml_dir = os.path.join(toppath, 'scrapedxml', 'standing')
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
     patchtool = True
 
@@ -1058,7 +1060,7 @@ for file in g:
     mnums = re.match(".*(standing)(.*?)([a-z]*)\.html$", file)
     sitting_part = mnums.group(1) + mnums.group(2) + mnums.group(3)
     patch_part = mnums.group(2) + mnums.group(3)
-    outfile = os.path.join(toppath, 'scrapedxml', 'standing', '%s.xml' % sitting_part)
+    outfile = os.path.join(standing_xml_dir, '%s.xml' % sitting_part)
     parsefile = ((not os.path.isfile(outfile)) or force or os.path.getmtime(file) > os.path.getmtime(outfile))
     
     while parsefile:
@@ -1066,6 +1068,9 @@ for file in g:
             print("Standing committees parsing %s..." % sitting_part)
             # raise ContextException, "One off"
             parser.parse_sitting_part(sitting_part)
+            fil = open('%s/changedates.txt' % standing_xml_dir, 'a+')
+            fil.write('%d,%s.xml\n' % (time.time(), sitting_part))
+            fil.close()
             break
         except ContextException, ce:
             if patchtool:
