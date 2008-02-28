@@ -386,21 +386,22 @@ def PullGluePages(options, folder, typ):
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)
 
-		# hansard index page
-		urlx = commonsIndexRecord.url
-		if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
-			urla = [urlx]
-		else:
-			urla = ExtractAllLinks(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
-		if not urla:
-			continue
-
-		if miscfuncs.IsNotQuiet():
-			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
-
 		try:
+			# hansard index page
+			urlx = commonsIndexRecord.url
+			if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
+				urla = [urlx]
+			else:
+				urla = ExtractAllLinks(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
+			if not urla:
+				continue
+
+			if miscfuncs.IsNotQuiet():
+				print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+
 			# now we take out the local pointer and start the gluing
 			GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+
 		except Exception, e:
 			options.anyerrors = True
 			if options.quietc:
