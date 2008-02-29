@@ -107,6 +107,9 @@ class ParseDay:
 <!ENTITY deg     "&#176;">
 <!ENTITY middot  "&#183;">
 <!ENTITY ordm    "&#186;">
+<!ENTITY frac14  "&#188;">
+<!ENTITY frac12  "&#189;">
+<!ENTITY frac34  "&#190;">
 <!ENTITY ndash   "&#8211;">
 <!ENTITY mdash   "&#8212;">
 <!ENTITY lsquo   "&#8216;">
