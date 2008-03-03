@@ -119,6 +119,7 @@ ni_lord_matches = {
 # XXX: Should be possible to adapt manualmatches to do this sort of thing...
 ni_ni_matches = {
     "Mitchel McLaughlin [Foyle]":"Mitchel McLaughlin [South Antrim]",
+    "Alex Maskey [Belfast West]":"Alex Maskey [Belfast South]",
 }
 
 sp_lord_matches = {
