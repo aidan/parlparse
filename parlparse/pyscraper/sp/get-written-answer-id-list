@@ -1,3 +1,8 @@
 #!/bin/bash
 
-egrep '<ques.*spid' ../../../parldata/scrapedxml/sp-written/*.xml | sed 's/^.*id="uk.org.publicwhip.spwa.\([^\.]*\).*spid="\([^"]*\)".*$/\1:\2/g' | sort | uniq > ../../../parldata/cmpages/sp/written-answer-question-spids
+# Everyone loves sed because it's SED!
+
+egrep '<ques.*spid' ../../../parldata/scrapedxml/sp-written/*.xml | sed \
+  -e 's/^.*id="uk.org.publicwhip.spwa.\([^\.]*\).*spid="\([^"]*\)".*holdingdate="\(..........\)".*$/\1:\2:\3/g' \
+  -e 's/^.*id="uk.org.publicwhip.spwa.\([^\.]*\).*spid="\([^"]*\)".*$/\1:\2:/g' \
+  | sort | uniq > ../../../parldata/cmpages/sp/written-answer-question-spids

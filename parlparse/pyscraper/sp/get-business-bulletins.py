@@ -31,7 +31,8 @@ import re
 mention_type_order = { "business-today" : "1",
                        "business-oral" : "2",
                        "business-written" : "3",
-                       "answer" : "4" }
+                       "answer" : "4",
+                       "holding" : "5" }
 
 class Mention:
     def __init__(self,spid,iso_date,url,mention_type):
@@ -39,11 +40,13 @@ class Mention:
         self.iso_date = iso_date
         self.url = url
         self.mention_type = mention_type
-        if mention_type not in [ "business-oral", "business-written", "business-today", "answer" ]:
+        if mention_type not in [ "business-oral", "business-written", "business-today", "answer", "holding" ]:
             raise Exception, "Unknown mention_type: "+mention_type
         self.mention_index = mention_type_order[mention_type]
         if not self.mention_index:
             raise Exception, "Something was missing from mention_type_order ("+mention_type+")"
+    def __eq__(self,other):
+        return (self.spid == other.spid) and (self.iso_date == other.iso_date) and (self.mention_type == other.mention_type)
 
 # Make sure we have an up-to-date list of the written answers that are
 # known about (note this means that this script must be run after
@@ -55,13 +58,20 @@ id_to_mentions = { }
 
 fp = open("../../../parldata/cmpages/sp/written-answer-question-spids","r")
 for line in fp.readlines():
-    m = re.match("^(.*):(.*)$",line)
+    m = re.match("^(.*):(.*):(.*)$",line)
     if m:
         k = m.group(2)
-        value = Mention(k,m.group(1),None,"answer")
+        holding_date = m.group(3)
+        date = m.group(1)
+        value = Mention(k,date,None,"answer")
+        holding_value = None
+        if len(holding_date) > 0:
+            holding_value = Mention(k,holding_date,None,"holding")
         id_to_mentions.setdefault(k,[])
         if value not in id_to_mentions[k]:
             id_to_mentions[k].append(value)
+        if holding_value and (holding_value not in id_to_mentions[k]):
+            id_to_mentions[k].append(holding_value)
 
 currentdate = datetime.date.today()
 currentyear = datetime.date.today().year
@@ -271,20 +281,25 @@ keys = id_to_mentions.keys()
 keys.sort()
 keys = set(keys)
 
-fp = open( "../../../parldata/cmpages/sp/question-mentions.xml", "w" )
+fp = open( "../../../parldata/scrapedxml/sp-question-mentions.xml", "w" )
 
 fp.write( '<?xml version="1.0" encoding="utf-8"?>\n' )
 fp.write( '<publicwhip>\n' )
 for k in keys:
     mentions = id_to_mentions[k]
-    fp.write( '  <question spid="%s">\n' % k )
+    fp.write( '  <question gid="uk.org.publicwhip/spq/%s">\n' % k )
     mentions.sort( key = lambda m: m.iso_date + m.mention_index )
-    for mention in mentions: 
+    for mention in mentions:
         url_string = None
+        answer_gid = None
         if mention.url:
             url_string = ' url="%s"' % mention.url
         else:
             url_string = ''
-        fp.write( '    <mention date="%s" type="%s"%s/>\n' % ( mention.iso_date, mention.mention_type, url_string ) )
+        if mention.mention_type == 'answer':
+            answer_gid = ' spwrans="uk.org.publicwhip/spwa/%s.%s.q0"' % ( mention.iso_date, k )
+        else:
+            answer_gid = ''
+        fp.write( '    <mention date="%s" type="%s"%s%s/>\n' % ( mention.iso_date, mention.mention_type, url_string, answer_gid ) )
     fp.write( '  </question>\n\n' )
 fp.write( '</publicwhip>' )
