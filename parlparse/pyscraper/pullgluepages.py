@@ -405,7 +405,7 @@ def PullGluePages(options, folder, typ):
 		except Exception, e:
 			options.anyerrors = True
 			if options.quietc:
-				print e.description
+				print e
 				print "\tERROR! %s failed to scrape on %s, quietly moving to next day" % (typ, commonsIndexRecord.date)
 				continue
 			else:
