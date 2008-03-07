@@ -121,6 +121,8 @@ def GetReportProceedings(urlpage, year):
 				sdate = re.sub("7 February 2000", "18 January 2000", sdate)
 			if year == "2005" and re.match(".*?6062\ds01.htm$", res[-1][0]):
 				sdate = re.sub("2005", "2006", sdate)
+                        if re.search("080304", res[-1][0]):
+                                sdate = re.sub("February", "March", sdate)
 			res[-1][1] = mx.DateTime.DateTimeFrom(sdate).date
 			# firstdate is used to label the committee
 			if not firstdate or firstdate > res[-1][1]:
