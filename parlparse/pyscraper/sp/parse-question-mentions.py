@@ -17,30 +17,53 @@ from BeautifulSoup import Comment
 from common import month_name_to_int
 from common import non_tag_data_in
 from common import tidy_string
+from common import fix_spid
 
-# This is just for easy sorting in the order that seems sensible to me:
+from findquotation import ScrapedXMLParser
+from findquotation import find_quotation_from_text
+from findquotation import find_speech_with_trailing_spid
 
-mention_type_order = { "business-today" : "1",
-                       "business-oral" : "2",
-                       "business-written" : "3",
-                       "answer" : "4",
-                       "holding" : "5" }
+from mentions import Mention
+from mentions import add_mention_to_dictionary
+from mentions import load_question_mentions
+from mentions import save_question_mentions
 
-class Mention:
-    def __init__(self,spid,iso_date,url,mention_type):
-        self.spid = spid
-        self.iso_date = iso_date
-        self.url = url
-        self.mention_type = mention_type
-        if mention_type not in [ "business-oral", "business-written", "business-today", "answer", "holding" ]:
-            raise Exception, "Unknown mention_type: "+mention_type
-        self.mention_index = mention_type_order[mention_type]
-        if not self.mention_index:
-            raise Exception, "Something was missing from mention_type_order ("+mention_type+")"
-    def __eq__(self,other):
-        return (self.spid == other.spid) and (self.iso_date == other.iso_date) and (self.mention_type == other.mention_type)
+from optparse import OptionParser
 
-id_to_mentions = { }
+spid_re =                   '(S[0-9][A-LN-Z0-9]+\-[0-9]+)'
+spid_re_bracketed =         '\(\s*'+spid_re+'\s*\)'
+spid_re_at_start =          '^\s*'+spid_re
+spid_re_bracketed_at_end =  spid_re_bracketed+'\s*$'
+
+sxp = ScrapedXMLParser("../../../parldata/scrapedxml/sp/sp%s.xml")
+
+parser = OptionParser()
+parser.add_option('-f', "--force", dest="force", action="store_true",
+                  default=False, help="don't load the old file first, regenerate everything")
+parser.add_option('-v', "--verbose", dest="verbose", action="store_true",
+                  default=False, help="output verbose progress information")
+(options, args) = parser.parse_args()
+force = options.force
+verbose = options.verbose
+
+# The first Business Bulletin:
+last_bulletin_info_date = "1999-05-12"
+
+if force:
+    id_to_mentions = { }
+else:
+    id_to_mentions = load_question_mentions()
+    for k in id_to_mentions.keys():
+        mentions = id_to_mentions[k]
+        for m in mentions:
+            if m.mention_type == 'business-written' or m.mention_type == 'business-oral' or m.mention_type == 'business-today':
+                # Since they're all ISO 8601 dates we can just compare
+                # the strings...
+                if m.iso_date > last_bulletin_info_date:
+                    last_bulletin_info_date = m.iso_date
+    
+last_bulletin_info_date = datetime.date(*time.strptime(last_bulletin_info_date,"%Y-%m-%d")[:3])
+bulletins_after = last_bulletin_info_date - datetime.timedelta(days=14)
 
 fp = open("../../../parldata/cmpages/sp/written-answer-question-spids","r")
 for line in fp.readlines():
@@ -49,32 +72,36 @@ for line in fp.readlines():
         k = m.group(2)
         holding_date = m.group(3)
         date = m.group(1)
-        value = Mention(k,date,None,"answer")
-        holding_value = None
+        value = Mention(k,date,None,"answer",None)
+        add_mention_to_dictionary(k,value,id_to_mentions)
         if len(holding_date) > 0:
-            holding_value = Mention(k,holding_date,None,"holding")
-        id_to_mentions.setdefault(k,[])
-        if value not in id_to_mentions[k]:
-            id_to_mentions[k].append(value)
-        if holding_value and (holding_value not in id_to_mentions[k]):
-            id_to_mentions[k].append(holding_value)
+            holding_value = Mention(k,holding_date,None,"holding",None)
+            add_mention_to_dictionary(k,holding_value,id_to_mentions)
 
 bulletin_prefix = "http://www.scottish.parliament.uk/business/businessBulletin/"
 bulletins_directory = "../../../parldata/cmpages/sp/bulletins/"
 
 bulletin_filenames = glob.glob( bulletins_directory + "day-*" )
+bulletin_filenames.sort()
 
 for day_filename in bulletin_filenames:
 
-    m = re.search('(?i)day-(.*)_([ab]b-\d\d-\d\d-?(\w*)\.html?)$',day_filename)
+    m = re.search('(?i)day-(bb-(\d\d))_([ab]b-(\d\d)-(\d\d)-?(\w*)\.html?)$',day_filename)
 
     if not m:
-        print "Couldn't parse file %s" % ( day_filename )
+        if verbose: print "Couldn't parse file %s" % ( day_filename )
         continue
 
     subdir = m.group(1)
-    page = m.group(2)
-    section = m.group(3)
+    two_digit_year = m.group(2)
+    page = m.group(3)
+    two_digit_month = m.group(4)
+    two_digit_day = m.group(5)
+    section = m.group(6)
+
+    # if not (two_digit_year == '08' or two_digit_year == '07'):
+    # if not (two_digit_year == '08'):
+    #     continue
 
     day_url = bulletin_prefix + subdir + '/' + page
 
@@ -82,7 +109,7 @@ for day_filename in bulletin_filenames:
     todays_business = False
 
     if section == 'a':
-        oral_question = True
+        oral_question = False
         todays_business = True
     elif section == 'd':
         oral_question = True
@@ -93,25 +120,53 @@ for day_filename in bulletin_filenames:
     else:
         continue
 
+    if verbose: print "------------------------------"
+    if verbose: print "Parsing file: "+day_filename
+
     # Now we have the file, soup it:
 
     fp = open(day_filename)
     day_html = fp.read()
     fp.close()
-            
+
     day_html = re.sub('&nbsp;',' ',day_html)
+    day_html = fix_spid(day_html)
+    
+    filename_leaf = day_filename.split('/')[-1]
+
+    date = None
+
+    date_from_filename = None
+    date_from_filecontents = None
+
+    # First, guess the date from the filename:
+    filename_year = None
+    filename_month = int(two_digit_month,10)
+    filename_day = int(two_digit_day,10)
+    if two_digit_year == '99':
+        filename_year = 1999
+    else:
+        filename_year = int('20'+two_digit_year,10)
+    try:
+        date_from_filename = datetime.date(filename_year,filename_month,filename_day)
+    except ValueError:
+        date_from_filename = None
+        if verbose: print "Date in filename %s-%s-%s" % ( filename_year, filename_month, filename_day )
+
+    # Don't soup it if we don't have to:
+    if date_from_filename and date_from_filename < bulletins_after:
+        continue
+
     day_soup = MinimalSoup(day_html)
 
     day_body = day_soup.find('body')
     if day_body:
         page_as_text = non_tag_data_in(day_body)
     else:
-        print "File couldn't be parsed by MinimalSoup: "+day_filename
-        page_as_text = re.sub('(?ims)<[^>]+>','',day_html)
+        error = "File couldn't be parsed by MinimalSoup: "+day_filename
+        raise Exception, error
 
-    filename_leaf = day_filename.split('/')[-1]
-    date = None
-
+    # Now guess the date from the file contents as well:
     m = re.search('(?ims)((Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+)(\d+)\w*\s+(\w+)(\s+(\d+))?',page_as_text)
     if not m:
         m = re.search('(?ims)((Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+)?(\d+)\w*\s+(\w+)(\s+(\d+))?',page_as_text)
@@ -131,29 +186,100 @@ for day_filename in bulletin_filenames:
                     year = '1999'
                 else:
                     year = '20' + m.group(1)
-            date = datetime.date( int(year,10), month, int(day,10) )
-    else:
-        raise Exception, "No date found in file: "+day_filename
-            
-    matches = re.findall('S[0-9][A-Z0-9]+\-[0-9]+',page_as_text)
+            date_from_filecontents = datetime.date( int(year,10), month, int(day,10) )
 
-    for spid in matches:
-        id_to_mentions.setdefault(spid,[])
-        mention_type = None
-        if oral_question:
-            if todays_business:
-                mention_type = "business-today"
-            else:
-                mention_type = "business-oral"
+    if date_from_filename == date_from_filecontents:
+        date = date_from_filename
+    else:
+        # Sometimes one method works, sometime the other:
+        if date_from_filename and not date_from_filecontents:
+            date = date_from_filename
+        elif date_from_filecontents and not date_from_filename:
+            date = date_from_filecontents
         else:
-            mention_type = "business-written"
-        value = Mention(spid,str(date),day_url,mention_type)
-        if value not in id_to_mentions[spid]:
-            id_to_mentions[spid].append(value)
+            # So toss a coin here, more or less.  Let's go with the
+            # filename, since there many be many dates in the file
+            # itself.
+            date = date_from_filename
+        
+    if verbose: print "Date: "+str(date)
+
+    if date < bulletins_after:
+        continue
+
+    matches = []
+
+    ps = day_body.findAll( lambda t: t.name == 'p' or t.name == 'li' )
+    for p in ps:
+        plain = non_tag_data_in(p)
+        m_end_bracketed = re.search(spid_re_bracketed_at_end,plain)
+        m_start = re.search(spid_re_at_start,plain)
+        spid = None
+        if oral_question:
+            spid = m_end_bracketed and m_end_bracketed.group(1)
+        elif todays_business:
+            spid = (m_start and m_start.group(1)) or (m_end_bracketed and m_end_bracketed.group(1))
+        else:
+            spid = m_start and m_start.group(1)
+        plain = re.sub(spid_re_bracketed_at_end,'',plain)
+        plain = re.sub(spid_re_at_start,'',plain)
+        if m_start or m_end_bracketed:
+            if not spid:
+                print "SPID seemed to be at the wrong end of the paragraph:"
+                print "   oral_question was: "+str(oral_question)
+                print "   todays_business was: "+str(todays_business)
+                print "   m_start was: "+str(m_start)
+                print "   m_end_bracketed was: "+str(m_end_bracketed)
+                raise Exception("Problem.")
+            spid = fix_spid(spid)
+            matches.append(spid)
+            allusions = re.findall(spid_re,plain)
+            for a in allusions:
+                a = fix_spid(a)
+                mention = Mention(a,None,None,'referenced-in-question-text',spid)
+                add_mention_to_dictionary(a,mention,id_to_mentions)
+            if oral_question:
+                mention = Mention(spid,str(date),day_url,'business-oral',None)
+                add_mention_to_dictionary(spid,mention,id_to_mentions)
+            elif todays_business:
+                mention = Mention(spid,str(date),day_url,'business-today',None)
+                add_mention_to_dictionary(spid,mention,id_to_mentions)
+            else: 
+                mention = Mention(spid,str(date),day_url,'business-written',None)
+                add_mention_to_dictionary(spid,mention,id_to_mentions)
+
+    # If this is the oral question section, it'd be nice to find out
+    # if they were actually asked in the official report, and if so
+    # include that as a different type of mention.  We look in the
+    # next 10 days of official reports.  Fortunately, there always
+    # seems to be the spid in brackets at the end of the question
+    # being asked in the official reports.
+    
+    # (Note that this is pretty slow.)
+
+    if oral_question and day_body:
+        total_found = 0
+        for spid in matches:
+            found = False
+            for i in range(0,15):
+                later_date = date+datetime.timedelta(days=i)
+                gid = find_speech_with_trailing_spid(sxp,str(later_date),spid)
+                if gid:
+                    if verbose: print "Got %9s in %s, %d days later" % (spid,gid,i)
+                    found = True
+                    value = Mention(spid,str(later_date),None,"oral-asked-in-official-report",gid)
+                    add_mention_to_dictionary(spid,value,id_to_mentions)
+                    break
+            if found:
+                total_found += 1
+            else:
+                if verbose: print "Couldn't find: "+spid
+                pass
+        if total_found == 0 and (len(matches) > 0):
+            if verbose: print "None found from "+str(day_filename)
 
 keys = id_to_mentions.keys()
 keys.sort()
-keys = set(keys)
 
 fp = open( "../../../parldata/scrapedxml/sp-question-mentions.xml", "w" )
 
@@ -162,18 +288,8 @@ fp.write( '<publicwhip>\n' )
 for k in keys:
     mentions = id_to_mentions[k]
     fp.write( '  <question gid="uk.org.publicwhip/spq/%s">\n' % k )
-    mentions.sort( key = lambda m: m.iso_date + m.mention_index )
+    mentions.sort( key = lambda m: str(m.iso_date) + str(m.mention_index) )
     for mention in mentions:
-        url_string = None
-        answer_gid = None
-        if mention.url:
-            url_string = ' url="%s"' % mention.url
-        else:
-            url_string = ''
-        if mention.mention_type == 'answer':
-            answer_gid = ' spwrans="uk.org.publicwhip/spwa/%s.%s.q0"' % ( mention.iso_date, k )
-        else:
-            answer_gid = ''
-        fp.write( '    <mention date="%s" type="%s"%s%s/>\n' % ( mention.iso_date, mention.mention_type, url_string, answer_gid ) )
+        fp.write('    '+mention.to_xml_element(k))
     fp.write( '  </question>\n\n' )
 fp.write( '</publicwhip>' )

@@ -24,6 +24,7 @@ import re
 import glob
 
 from findquotation import ScrapedXMLParser
+from findquotation import find_quotation_from_text
 
 from common import month_name_to_int
 from common import non_tag_data_in
@@ -264,11 +265,7 @@ class Speech:
         m = re.search('Written Answers.*(S\d[A-Z]-\d+)',citation)
         if m:
             return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
-        substrings = re.split('\s*[,\.\[\]]+\s*',content)
-        long_enough_substrings = filter( lambda e: len(e) > 20, substrings )
-        regular_expressions = map( lambda e: re.compile(re.escape(e)), long_enough_substrings )
-        gid = self.parser.sxp.find_id_for_quotation( str(d), regular_expressions )
-        return gid
+        return find_quotation_from_text(self.parser.sxp,d,content)
 
     def to_xml(self):
 
@@ -1251,7 +1248,7 @@ def compare_filename(a,b):
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
-force = False
+force = True
 
 last_column_number = 0
     

@@ -7,6 +7,11 @@ from BeautifulSoup import Comment
 
 import re
 
+# A number of SPIDs have a 0 (zero) in place of an O (letter O), and
+# this converts a string containing them.
+def fix_spid(s):
+    return re.sub('(?ms)(S[0-9]+)0-([0-9]+)',r'\1O-\2',s)
+
 months = { "january"   : 1,
            "february"  : 2,
            "march"     : 3,
