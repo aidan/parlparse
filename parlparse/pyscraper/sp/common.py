@@ -1,6 +1,8 @@
 # A few functions that turn out to be useful in many of the Scottish
 # Parliament scraping scripts.
 
+import sys
+sys.path.append('../')
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
 from BeautifulSoup import Comment

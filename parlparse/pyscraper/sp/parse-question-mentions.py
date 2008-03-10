@@ -9,6 +9,7 @@ import urllib
 import glob
 import re
 
+sys.path.append('../')
 from BeautifulSoup import MinimalSoup
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
