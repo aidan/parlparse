@@ -41,10 +41,12 @@ from common import non_tag_data_in
 # standard output.
 
 parser = OptionParser()
-parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
-                  default=True, help="don't print status messages")
+parser.add_option('-q', "--quiet", dest="quiet", action="store_true",
+                  default=False, help="don't print status messages")
+parser.add_option('-f', '--force', dest='force', action="store_true",
+                  help='force reparse of everything')
 (options, args) = parser.parse_args()
-verbose = options.verbose
+verbose = False # XXX Very verbose, needs command line option
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -1248,8 +1250,6 @@ def compare_filename(a,b):
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
-force = True
-
 last_column_number = 0
     
 for d in dates:
@@ -1259,7 +1259,7 @@ for d in dates:
 
     if verbose: print "Examining %s %s" % (d, output_filename)
 
-    if (not force) and os.path.exists(output_filename):
+    if (not options.force) and os.path.exists(output_filename):
         continue
 
     contents_filename = or_prefix + "or" +str(d) + "_0.html"
@@ -1330,7 +1330,7 @@ for d in dates:
         elif re.search('2003-05-15',detail_filename):
             continue # That's 404
 
-        if verbose: print "Parsing: "+detail_filename
+        if not options.quiet: print "Parsing: "+detail_filename
 
         fp = open(detail_filename)
         html = fp.read()

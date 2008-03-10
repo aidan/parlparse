@@ -31,10 +31,10 @@ import re
 import glob
 
 parser = OptionParser()
-parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
-                  default=True, help="don't print status messages")
+parser.add_option('-q', "--quiet", dest="quiet", action="store_true",
+                  help="don't print status messages")
 (options, args) = parser.parse_args()
-verbose = options.verbose
+verbose = False # XXX This is /very/ verbose, add command line option for it
 
 wa_prefix = "../../../parldata/cmpages/sp/written-answers/"
 xml_output_directory = "../../../parldata/scrapedxml/sp-written/"
@@ -386,7 +386,7 @@ class Parser:
                     else:
                         year = '20' + m.group(1)
                 self.date = datetime.date( int(year,10), month, int(day,10) )
-                if verbose: "Adding file to date mapping to cache."
+                if not options.quiet: "Adding file to date mapping to cache."
                 add_file_to_date_mapping(filename_leaf,str(self.date))
             else:
                 raise Exception, "No date found in file: "+filename
@@ -395,10 +395,12 @@ class Parser:
         output_filename = xml_output_directory + "spwa" + str(self.date) + ".xml"
 
         if os.path.exists(output_filename):
-            error = "The output file "+output_filename+" already exists - skipping "+re.sub('^.*/','',filename)
+            #error = "The output file "+output_filename+" already exists - skipping "+re.sub('^.*/','',filename)
             # raise Exception, error
-            if verbose: print error
+            #if verbose: print error
             return
+
+        if not options.quiet: print "Parsing %s" % filename
 
         self.make_soup(filename)
 
