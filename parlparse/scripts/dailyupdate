@@ -13,6 +13,8 @@ cd ~/parlparse/pyscraper
 cd ~/parlparse/members
 svn -q update
 
+YEAR=`date +%Y`
+
 # Add any Hansard patch files we've made
 cd ~/parldata/patches
 svn -q add */*.patch 2>&1 | grep -v "is already under version control"

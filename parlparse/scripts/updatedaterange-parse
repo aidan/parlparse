@@ -26,10 +26,12 @@ cd ~/parlparse/pyscraper/ni
 cd ~/parlparse/pyscraper/standing
 ./parse.py $4
 
-# Scottish Parliament
+# Scottish Parliament - must be this order
 cd ~/parlparse/pyscraper/sp
-./parse.py --quiet $4
 ./parse-written-answers.py --quiet $4
+./parse.py --quiet $4
+./get-written-answer-id-list --quiet $4
+./parse-question-mentions.py --quiet $4
 
 # Return error code
 exit $RET

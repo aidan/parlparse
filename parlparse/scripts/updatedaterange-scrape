@@ -23,6 +23,7 @@ cd ~/parlparse/pyscraper/ni
 cd ~/parlparse/pyscraper/sp
 ./get-official-reports.py --quiet
 ./get-written-answers.py --quiet
+./get-business-bulletins.py --quiet
 
 # Return error code
 exit $RET

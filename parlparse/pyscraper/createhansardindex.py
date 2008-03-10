@@ -175,12 +175,18 @@ def CmIndexFromPage(urllinkpage):
         		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', linkhref))
         		typ = 'Written Answers'
 
+                uind = uind.replace('080227a', '080227')
+
                 # 21st July 2005 has a link, but there was none
                 if uind == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050721/hallindx/50721-x.htm':
                         continue
                 if uind == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071203/hallindx/71203-x.htm':
                         continue
                 if uind == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080218/hallindx/80218-x.htm':
+                        continue
+                if uind == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080225/hallindx/80225-x.htm':
+                        continue
+                if uind == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080229/hallindx/80229-x.htm':
                         continue
                 # 21st June 2005 WHall links to 22nd June
                 if sdate=='2005-06-21' and uind=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050622/hallindx/50622-x.htm':
