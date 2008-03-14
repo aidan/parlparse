@@ -199,14 +199,30 @@ def WriteWikiPage():
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
 
-    print '''<p>This website provides easy access to the official transcripts of the two main
-             political bodies of the <a href="http://en.wikipedia.org/wiki/United_Nations_System">United Nations System</a>
-             where the ambassadors from each nation are entitled to speak, sponsor resolutions, and vote 
-             on a variety of issues.
-             Some of these activities have been documented in <a href="/incoming">Wikipedia articles</a> that cite 
-             back into these
-             transcripts.  For more, read <a href="#aboutfooter">about us</a>, or 
-             look up the speeches on behalf of <a href="/nations">your own nation</a>.</p>'''
+    print '''<p style="background-color:#f9b5b5; border: thin red solid; margin-top:1em;">Some media coverage: 
+             <a href="http://www.guardian.co.uk/technology/2008/mar/13/internet.politics">Newspaper article 13 March</a>, 
+             <a href="http://video.google.com/videoplay?docid=5811193931753907681&hl=en-GB">4 minute video presentation</a>,
+             <a href="http://citizenreporter.org/2008/01/bm241-making-better-use-of-the-united-nations/">Podcast interview</a>.
+             <br/>
+             Some recent <a href="http://www.freesteel.co.uk/wpblog/2008/03/un-parsing-roundup/">work + ranting is also available</a>.</p>'''
+    
+    print '''<p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts of the 
+             <a href="http://en.wikipedia.org/wiki/United_Nations#General_Assembly"><b>General Assembly</b></a> and  
+             <a href="http://en.wikipedia.org/wiki/United_Nations#Security_Council"><b>Security Council</b></a> 
+             of the <i>United Nations</i>.
+             The General Assembly is in charge of directing the organization and 
+             recommending international treaties, while the Security Council deals with 
+             war and international sanctions. 
+             Find out what <a href="/nations">your nation</a> and others have been speaking about and voting for
+             in this international forum.</p>
+             
+             <p style="margin-top:1em; margin-bottom:1em"><b style="background:#b3f1d7;">The third column</b> lists 
+             wikipedia articles in which someone has recently clicked on a 
+             citation that has linked back to this site.  This is a good way of leading to interesting pages 
+             if you don't know where to look.
+             For more information, see <a href="#aboutfooter">about us</a>.</p>'''
+    
+    
     print '<div id="sectors">'
     print '<div id="securitycouncil">'
     print '<h2>Security Council</h2>'
@@ -270,8 +286,10 @@ def WriteFrontPage():
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/how-does-undemocracycom-work/">How?</a>, and finally
     <a href="http://www.freesteel.co.uk/wpblog/2007/09/undemocracy-needs-your-help/">What can I do to help?</a>.</p>
     <p>You can leave comments on some of those links, or email <a href="mailto:team@undemocracy.com">team@undemocracy.com</a>.
+    Don't be shy.  
     This project is a hobby begun by volunteers who recognized that the accessibility of these vital documents 
-    was so limited they had to do something about it themselves.</p>"""
+    was so limited they had to do something about it themselves because there was no evidence it was 
+    otherwise going to happen.</p>"""
 
     shortwikitable = ShortWikipediaTable(12)
     if True:

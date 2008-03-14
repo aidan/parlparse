@@ -8,6 +8,7 @@ import urllib
 cgitb.enable()
 
 from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGenHTMLfoot
+from db import LogIncomingDB
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage, WritePdfPreviewJpg
 from indextype import WriteFrontPage, WriteFrontPageError, WriteAboutPage, WriteWikiPage
@@ -29,13 +30,14 @@ if __name__ == "__main__":
     ipaddress = os.getenv("REMOTE_ADDR") or ''
     useragent = os.getenv("HTTP_USER_AGENT") or ''
 
-    print "Content-type: text/html\n"; 
-    print "<h1>UNDEMOCRACY.COM is on strike</h1>"
-    print '<h2>For the official source of documents, go <a href="http://www.un.org/documents/">here</a></h2>'
-    print '<h2>For the scraped and parsed data, go <a href="http://seagrass.goatchurch.org.uk/~undemocracy/undata/">here</a></h2>'
-    print '<h2>For the explanation, go <a href="http://www.freesteel.co.uk/wpblog/2007/11/undemocracycom-goes-on-strike/">here</a></h2>'
-    print '<p>Thank you.  (2007-11-20)</p>'
-    sys.exit()
+    if False: # on strike condition
+        print "Content-type: text/html\n"; 
+        print "<h1>UNDEMOCRACY.COM is on strike</h1>"
+        print '<h2>For the official source of documents, go <a href="http://www.un.org/documents/">here</a></h2>'
+        print '<h2>For the scraped and parsed data, go <a href="http://seagrass.goatchurch.org.uk/~undemocracy/undata/">here</a></h2>'
+        print '<h2>For the explanation, go <a href="http://www.freesteel.co.uk/wpblog/2007/11/undemocracycom-goes-on-strike/">here</a></h2>'
+        print '<p>Thank you.  (2007-11-20)</p>'
+        sys.exit()
 
     hmap = DecodeHref(pathparts, form)
 
@@ -58,56 +60,79 @@ if __name__ == "__main__":
         print "Location: %s\n" % remadeurl
         sys.exit()
 
+    pagefunc = hmap["pagefunc"]
     SetBodyID(hmap["pagefunc"])
 
-    if hmap["pagefunc"] == "front":
+    if pagefunc == "front":
+        LogIncomingDB("front", "", referrer, ipaddress, useragent, remadeurl)
         WriteFrontPage()
-    elif hmap["pagefunc"] == "about":
+    elif pagefunc == "about": # no longer exists
         WriteAboutPage()
-    elif hmap["pagefunc"] == "incoming":
+    elif pagefunc == "incoming":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteWikiPage()
-    elif hmap["pagefunc"] == "search":
+    elif pagefunc == "search":
+        LogIncomingDB(pagefunc, hmap["searchvalue"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexSearch(hmap["searchvalue"])
-    elif hmap["pagefunc"] == "nationlist":
+    elif pagefunc == "nationlist":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteAllNations()
-    elif hmap["pagefunc"] == "gasession":
+    
+    elif pagefunc == "gasession":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuff(hmap["gasession"])
-    elif hmap["pagefunc"] == "gatopics":
+    elif pagefunc == "gatopics":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffGA()
-    elif hmap["pagefunc"] == "agendanum":
+    elif pagefunc == "agendanum":
+        LogIncomingDB(pagefunc, hmap["agendanum"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffAgnum(hmap["agendanum"])
-    elif hmap["pagefunc"] == "gadocuments":
+    elif pagefunc == "gadocuments":
+        LogIncomingDB(pagefunc, hmap["docyearfile"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
-    elif hmap["pagefunc"] == "gameeting":
+    
+    elif pagefunc == "gameeting":
+        LogIncomingDB(hmap["docid"], hmap["gadice"] or "0", referrer, ipaddress, useragent, remadeurl)
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], hmap["gadice"], hmap["highlightdoclink"])
-        LogIncomingDoc(hmap["docid"], (hmap["gadice"] or "0"), referrer, ipaddress, useragent)
-    elif hmap["pagefunc"] == "agendanumexpanded":
+    elif pagefunc == "agendanumexpanded":
+        LogIncomingDB(pagefunc, hmap["agendanum"], referrer, ipaddress, useragent, remadeurl)
         aglist = LoadAgendaNames(hmap["agendanum"])
         WriteHTMLagnum(hmap["agendanum"], aglist)
-    elif hmap["pagefunc"] == "scmeeting":
+    elif pagefunc == "scmeeting":
+        LogIncomingDB(hmap["docid"], "0", referrer, ipaddress, useragent, remadeurl)
         WriteHTML(hmap["htmlfile"], hmap["pdfinfo"], "", hmap["highlightdoclink"])
-        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress, useragent)
-    elif hmap["pagefunc"] == "sctopics":
+    
+    elif pagefunc == "sctopics":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffSec()
-    elif hmap["pagefunc"] == "scyear":
+    elif pagefunc == "scyear":
+        LogIncomingDB(pagefunc, hmap["scyear"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffSecYear(hmap["scyear"])
-    elif hmap["pagefunc"] == "scdocuments":
+    elif pagefunc == "scdocuments":
+        LogIncomingDB(pagefunc, hmap["docyearfile"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
-    elif hmap["pagefunc"] == "pdf":
+    elif pagefunc == "pdf":
+        LogIncomingDB(pagefunc, "pdf", referrer, ipaddress, useragent, remadeurl)
         WritePDF(hmap["pdffile"])
-        LogIncomingDoc(hmap["docid"], "pdf", referrer, ipaddress, useragent)
-    elif hmap["pagefunc"] == "document":
+    elif pagefunc == "document":
+        LogIncomingDB(hmap["docid"], "0", referrer, ipaddress, useragent, remadeurl)
         WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
-        LogIncomingDoc(hmap["docid"], "0", referrer, ipaddress, useragent)
-    elif hmap["pagefunc"] == "documentlist":
+    elif pagefunc == "documentlist":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteDocumentListing(hmap["body"])
-    elif hmap["pagefunc"] == "pdfpage":  # this is the html doc containing the page
+    
+    elif pagefunc == "pdfpage":  # this is the html doc containing the page
+        LogIncomingDB(hmap["docid"], "page_%s" % hmap["page"], referrer, ipaddress, useragent, remadeurl)
         WritePDFpreviewpage(hmap["pdfinfo"], hmap["page"], hmap["highlightrects"], hmap["highlightedit"])
-        LogIncomingDoc(hmap["docid"], "page_" + str(hmap["page"]), referrer, ipaddress, useragent)
-    elif hmap["pagefunc"] == "nation":
+        #LogIncomingDoc(hmap["docid"], "page_" + str(hmap["page"]), referrer, ipaddress, useragent)
+    
+    elif pagefunc == "nation":
+        LogIncomingDB(pagefunc, hmap["nation"],  referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffNation(hmap["nation"], "")
-    elif hmap["pagefunc"] == "nationperson":
+    elif pagefunc == "nationperson":
+        LogIncomingDB(pagefunc, "%s/%s" % (hmap["nation"],hmap["person"]), referrer,ipaddress,useragent, remadeurl)
         WriteIndexStuffNation(hmap["nation"], hmap["person"])
+    
     elif hmap["pagefunc"] == "pagepng":  # this is the actual image bitmap of the page
         #print 'Content-type: text/html\n\n<h1>%s</h1>' % hmap["pngfile"]
         #sys.exit(0)

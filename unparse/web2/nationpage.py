@@ -79,7 +79,9 @@ def WriteNationHeading(nation, nationdata):
 
     if nation in scpermanentmembers:
         print '<p>%s is a <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Permanent_members">permanent member</a> of the Security Council.</p>' % nation
-    if nation in scelectedmembersyear[currentscyear]:
+    if currentscyear not in scelectedmembersyear:
+        print '<p>List of elected members not yet updated; please remind julian@goatchurch.org.uk to do it.</p>'
+    elif nation in scelectedmembersyear[currentscyear]:
         print '<p>%s is an <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Elected_members">elected member</a> of the Security Council.</p>' % nation
 
 def WriteMinorityVotes(nation, nationdata):

@@ -21,6 +21,7 @@ basehref = "http://www.undemocracy.com"
 scpermanentmembers = ["China", "France", "Russia", "United Kingdom", "United States"]
 scelectedmembersyear = { 
 2007:["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"],
+2008:["Burkina Faso", "Libya", "South Africa", "Vietnam", "Indonesia", "Costa Rica", "Panama", "Belgium", "Italy", "Croatia"],
 }
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -122,6 +123,8 @@ def LogIncomingDoc(docid, page, referrer, ipaddress, useragent):
         fflog = "logpages_cuill.txt"
     elif re.search("ysearch/slurp", useragent):
         fflog = "logpages_yahoo.txt"
+    elif page == "front":
+        fflog = "logpages_front.txt"
     else:
         fflog = "logpages_unknown.txt"
 
