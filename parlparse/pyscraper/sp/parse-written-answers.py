@@ -25,6 +25,9 @@ from common import month_name_to_int
 from common import non_tag_data_in
 from common import tidy_string
 
+from wransspidlist import load_wrans_spid_list
+from wransspidlist import save_wrans_spid_list
+
 from time import strptime
 
 import re
@@ -69,6 +72,12 @@ def add_file_to_date_mapping(filename,date_string):
         fp.write('  "%s": "%s"' % ( k, file_to_date[k] ) )
     fp.write( "\n}\n" )
     fp.close()
+
+# ------------------------------------------------------------------------
+
+# We want to update this hash with any new written answers parsed, and
+# write it out again at the end.
+spid_hash = load_wrans_spid_list()
 
 # ------------------------------------------------------------------------
 
@@ -699,6 +708,16 @@ class Parser:
                         raise Exception, "Nothing before the first question (no heading)"
                 if a.is_question:
                     subtype = "q" + str(index)
+                    # Make sure that this is in the spid_hash:
+                    holding_date_string = ''                    
+                    if a.holding_answer_was_issued:
+                        holding_date_string = str(a.holding_answer_was_issued)
+                        date_string = str(self.date)
+                        t = ( date_string, current_sp_id, holding_date_string )
+                        spid_hash.setdefault(current_sp_id,[])
+                        ta = spid_hash[current_sp_id]
+                        if t not in ta:
+                            ta.append(t)
                 else:
                     subtype = "r" + str(index)
                 if current_sp_id:
@@ -761,3 +780,5 @@ for filename in filenames:
 # if verbose: print "All exceptions:"
 # for e in files_and_exceptions:
 #     if verbose: print "%s: %s" % e
+
+save_wrans_spid_list(spid_hash)

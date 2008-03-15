@@ -29,6 +29,8 @@ from mentions import add_mention_to_dictionary
 from mentions import load_question_mentions
 from mentions import save_question_mentions
 
+from wransspidlist import load_wrans_spid_list
+
 from optparse import OptionParser
 
 spid_re =                   '(S[0-9][A-LN-Z0-9]+\-[0-9]+)'
@@ -66,13 +68,11 @@ else:
 last_bulletin_info_date = datetime.date(*time.strptime(last_bulletin_info_date,"%Y-%m-%d")[:3])
 bulletins_after = last_bulletin_info_date - datetime.timedelta(days=14)
 
-fp = open("../../../parldata/cmpages/sp/written-answer-question-spids","r")
-for line in fp.readlines():
-    m = re.match("^(.*):(.*):(.*)$",line)
-    if m:
-        k = m.group(2)
-        holding_date = m.group(3)
-        date = m.group(1)
+wrans_hash = load_wrans_spid_list()
+
+for k in wrans_hash.keys():
+    for t in h[k]:
+        date, k, holding_date = t
         value = Mention(k,date,None,"answer",None)
         add_mention_to_dictionary(k,value,id_to_mentions)
         if len(holding_date) > 0:
@@ -279,18 +279,4 @@ for day_filename in bulletin_filenames:
         if total_found == 0 and (len(matches) > 0):
             if verbose: print "None found from "+str(day_filename)
 
-keys = id_to_mentions.keys()
-keys.sort()
-
-fp = open( "../../../parldata/scrapedxml/sp-question-mentions.xml", "w" )
-
-fp.write( '<?xml version="1.0" encoding="utf-8"?>\n' )
-fp.write( '<publicwhip>\n' )
-for k in keys:
-    mentions = id_to_mentions[k]
-    fp.write( '  <question gid="uk.org.publicwhip/spq/%s">\n' % k )
-    mentions.sort( key = lambda m: str(m.iso_date) + str(m.mention_index) )
-    for mention in mentions:
-        fp.write('    '+mention.to_xml_element(k))
-    fp.write( '  </question>\n\n' )
-fp.write( '</publicwhip>' )
+save_question_mentions(id_to_mentions)

@@ -93,7 +93,6 @@ def load_question_mentions():
 def save_question_mentions(id_to_mentions):
     keys = id_to_mentions.keys()
     keys.sort()
-    keys = set(keys)
     filename_base = "../../../parldata/scrapedxml/sp-question-mentions.xml"
     tmp_filename = filename_base + ".tmp"
     fp = open( tmp_filename, "w" )
