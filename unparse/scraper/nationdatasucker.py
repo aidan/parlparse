@@ -51,8 +51,8 @@ def GetPermanentMission(unname, permmissions):
     if not permmiss:
         for lpermmiss in permmissions:
             if lpermmiss[:len(unname)] == unname:
-                #print "Matched %s to %s" % (unname, lpermmiss)
-                permmiss = lpermmiss
+                permmiss = permmissions[lpermmiss]
+                print "Matched %s to %s" % (unname, permmiss)
     if not permmiss:
         #print "No Permanent Mission found for", unname
         return ""
@@ -333,6 +333,7 @@ def NationDataSucker():
         geoip_name = geonamemap.get(unname, unname)
 
         permmiss = GetPermanentMission(unname, permmissions)
+        #print permmiss, "lll"
 
         if geoip_name in GeoIP_country_name:
             geoip_id = GeoIP_country_name.index(geoip_name)
@@ -352,9 +353,8 @@ def NationDataSucker():
         c.execute("""INSERT INTO un_nations 
                      (nation, date_entered, date_left, countrycode2, countrycode3, continent, missionurl, wikilink, fname)
                      VALUES ("%s", '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
-                  """ % (unname, date_from, date_to, iso2, iso3, continent, permmiss, wikilink, fname))
+                  """ % (unname, date_from, date_to, iso2, iso3, continent_name, permmiss, wikilink, fname))
             
-        print fname, "lll"
 
 
         # Write out data
