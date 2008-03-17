@@ -64,6 +64,8 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse, bcontinueoner
     undocnames = [ ]
     for undoc in os.listdir(pdfxmldir):
         undocname = os.path.splitext(undoc)[0]
+        if undoc[-1] == "~":
+            continue
         if not re.match(stem, undocname):
             continue
         if re.search("Corr", undocname): # skip corregendas

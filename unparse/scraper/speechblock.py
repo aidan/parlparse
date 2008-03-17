@@ -454,11 +454,19 @@ class SpeechBlock:
                 if not re.match(reboldline, tlc.paratext):
                     break
                 ptext = MarkupLinks(CleanupTags(tlc.paratext, self.typ, self.paranum), self.undocname, self.paranum)
+                
+                # a second agenda number gets found
                 if not self.bSecurityCouncil and re.match("Agenda(?: item)? \d+(?i)", ptext):
-                    assert re.search("misc|show", self.agendanum), self.agendanum
-                    self.agendanum = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
-                    print "agendanum from second line", self.agendanum
-                    assert self.agendanum, ptext
+                    agendanum2 = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
+                    print "agendanum from second line", agendanum2
+                    assert agendanum2, ptext # must detect it
+                    if re.search("misc|show", self.agendanum):
+                        self.agendanum = agendanum2   # a woolly agenda can be over-ridden
+                    elif self.undocname == "A-62-PV.74":
+                        self.agendanum = "%s,%s" % (self.agendanum, agendanum2)
+                    else:
+                        raise unexception(" unknown extra agendanum case", self.paranum)
+                    print "aaaa2aa  ", self.agendanum
                 self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))
                 self.i += 1
             return

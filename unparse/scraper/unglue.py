@@ -711,7 +711,7 @@ class GlueUnfile:
                 txpages[0].agenda = "%s %s" % (txpages[0].agenda, txpage.agenda) # ram it all into one paragraph (who cares)
                 continue
 
-            bmissingcolumns = undocname in ["A-61-PV.106"]
+            bmissingcolumns = undocname in ["A-61-PV.106", "A-52-PV.39"]
             if txpage.txlcol1:
                 AppendCluster(self.tlcall, txpage.txlcol1[0], "newpage")
                 for tlc in txpage.txlcol1[1:]:

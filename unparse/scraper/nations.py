@@ -466,3 +466,8 @@ for nonnation in nonnationlist.split("\n"):
 # further non-nations will get appended here during parsing, for later incorporation
 # it's a map because because it adds up how many of each one have occurred
 
+nonnationscount["International Institute for Democracy and Electoral Assistance"] = 0
+nonnationscount["Eurasian Economic Community"] = 0
+nonnationscount["Special Representative of the Secretary-General for Children and Armed Conflict"] = 0
+nonnationscount["Watchlist on Children and Armed Conflict"] = 0
+nonnationscount["PLAN International"] = 0

@@ -6,6 +6,7 @@ from nations import nationdates
 from unmisc import GetAllHtmlDocs, IsNotQuiet, pdfinfodir
 import datetime
 from pdfinfo import PdfInfo
+from db import GetDBcursor
 
 
 rdoc = '\((?:<a href[^>]*>[^<]*</a>|and|Add|L|para|Parts?|to|\([^\)]*\)|[IV\-\d\s,.:])+\)'
@@ -333,6 +334,15 @@ def AddAgendaGroups(agendagroups, sdate, docid, ftext):
 
     if agendaheading:  # end of final heading
         agendaheading.SeeTextForHeading(ftext[agendaheadingE:])
+
+
+def AddAgendasToDB(docid, htdoc):
+    fin = open(htdoc)
+    ftext = fin.read()
+    fin.close()
+    mdate = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', ftext)
+    sdate = mdate.group(1)
+    # not complete
 
 
 def WriteAgendaSummaries(htmldir, fout, agendaindexdir):

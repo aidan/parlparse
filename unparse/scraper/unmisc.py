@@ -63,6 +63,7 @@ reressplit = """(?x)(
                 HIV/AIDS/CRP.\d(?:/Add.\d)?|
                 E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
+                A/C\.\d/\d+/INF/1|
                 JIU/REP/\d+/\d+|
                 CS?D/\d+(?:/\d+)?|
                 ISBA/A/L.\d/Rev.\d|
@@ -85,6 +86,7 @@ reressplit = """(?x)(
                 (?:the\s)?resolution\s\(\d\d/\d+\)|
                 (?:Security\sCouncil\s)?(?:[Rr]esolutions?\s)?(?:S/RES/)?\d+\s\(\d\d\d\d\)|
                 Corr.\d|
+                Add.\d|
                 (?<=\s)[3-6]\d/\d{1,3}(?=[\s,\.])|
                 </b>\s*<b>|
                 </i>\s*<i>|
@@ -175,6 +177,7 @@ def MarkupLinks(paratext, undocname, paranum):
         msecres = re.match("(?:Security Council )?(?:[Rr]esolutions? )?(?:S/RES/)?(\d+) \((\d\d\d\d)\)", st)
         mcan = re.match("</b>\s*<b>|</i>\s*<i>", st)
         mcorr = re.match("Corr.(\d)", st)
+        madd = re.match("Add.(\d)", st)
         maltreg = re.match("(?:[Rr]egulation|presidential\sdecree)\s\d+/\d+", st)
         msecpress = re.match("(press (?:release|statement)) SC/(\d\d\d\d)", st)
         #print st, mdoc
@@ -188,6 +191,7 @@ def MarkupLinks(paratext, undocname, paranum):
                                  E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                                  S-\d+/\d|
                                  A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
+                                 A/C\.\d/\d+/INF/\d|
                                  C/E/RES.27|
                                  JIU/REP/\d+/\d+|
                                  NPT/CONF.\d+/(?:TC.\d/)?\d+|
@@ -260,7 +264,7 @@ def MarkupLinks(paratext, undocname, paranum):
             link = "S-PV-%s" % (mscpv.group(1))
             res.append(MakeCheckLink(link, st, undocname))
         elif msecres:
-            if not (1945 < int(msecres.group(2)) < 2008):  # should use current document year
+            if not (1945 < int(msecres.group(2)) < 2009):  # should use current document year
                 print st
                 raise unexception("year on resolution not possible", paranum)
             link = "S-RES-%s(%s)" % (msecres.group(1), msecres.group(2))
@@ -269,6 +273,11 @@ def MarkupLinks(paratext, undocname, paranum):
             if link and re.search("Corr", link):
                 link = re.sub("-Corr.\w$", "", link)
             link = "%s-Corr.%s" % (link, mcorr.group(1))
+            res.append(MakeCheckLink(link, st, undocname))
+        elif madd:
+            if link and re.search("Add", link):
+                link = re.sub("-Add.\w$", "", link)
+            link = "%s-Add.%s" % (link, madd.group(1))
             res.append(MakeCheckLink(link, st, undocname))
         elif mcan:
             res.append(' ')

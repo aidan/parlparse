@@ -111,7 +111,7 @@ if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexf
 if bScrape:
     if not options.stem and not options.scrapedoc:  # default case
         ScrapeContentsPageFromStem("A-62-PV")
-        ScrapeContentsPageFromStem("S-2007-PV")
+        ScrapeContentsPageFromStem("S-2008-PV")
     if options.scrapedoc:
         ScrapePDF(options.scrapedoc, bforce=False)
     if options.stem:

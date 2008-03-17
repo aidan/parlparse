@@ -99,7 +99,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
         macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d)$", undocname)
         maodoc = re.match("A-(\d+)(-?[\w\.\-]*)$", undocname)
-        mspv = re.match("S-PV.(\d+)", undocname)
+        mspv = re.match("S-PV.(\d+)(?:-Resu\.(\d+))?$", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
         mscodoc = re.match("S-(\d+)(-?[\w\.\-]*)$", undocname)
         #stdoc = re.match("ST-SGB-(\d+)$", undocname)  # experimental secretariat document
@@ -147,11 +147,12 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/RES/%s%%20(%s)&Lang=E&Area=%s" % (msres.group(1), msres.group(2), sarea)
             plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
         elif mspv:
-            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/PV.%s&Lang=E" % mspv.group(1)
+            tail = mspv.group(2) and ("(Resumption%s)" % mspv.group(2)) or ""
+            purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=S/PV.%s%s&Lang=E" % (mspv.group(1), tail)
             plenaryurl = "http://www.un.org/Docs/scres/2002/sc2002.htm"
         elif mapv:
-            if int(mapv.group(1)) < 40:  # limit the sessions we take these resolutions from
-                return False
+            #if int(mapv.group(1)) < 40:  # limit the sessions we take these resolutions from
+            #    return False
             tail = re.sub("-", "/", mapv.group(3))
             purl = "http://daccess-ods.un.org/access.nsf/Get?Open&DS=A/%s/PV.%s%s&Lang=E" % (mapv.group(1), mapv.group(2), tail)
         elif maodoc:
@@ -267,7 +268,8 @@ def ScrapeSCContentsPage(year, contentsurl):
         #print sci[1]
         # communique for an embargoed verbatim recording
         if re.match("Communiqu.", sci[1]):
-            assert sci[0] == pvlist[-1][2]  # same link
+            if sci[0] != pvlist[-1][2] and not re.search("PV.5794", sci[0]):
+                print "Communique doesn't have same link as it should:\n%s\n%s" % (sci[0], pvlist[-1][2])  # same link
             continue
 
         # security council resolutions
@@ -452,7 +454,7 @@ def ScrapeContentsPageFromStem(stem):
     # security council scrapage
     mspv = re.match("S-(\d+)-PV", stem)
     if mspv:
-        assert 1994 <= int(mspv.group(1)) <= 2007
+        assert 1994 <= int(mspv.group(1)) < 2009   # should use current yeaR
         ScrapeSCContentsPage(int(mspv.group(1)), "http://www.un.org/Depts/dhl/resguide/scact%s.htm" % mspv.group(1))
         return
 
@@ -474,8 +476,8 @@ def ConvertXML(stem, pdfdir, pdfxmldir, bForce):
         xmldest = os.path.join(pdfxmldir, sdn + ".xml")
         if os.path.isfile(xmldest):
             if not bForce:
-                if IsNotQuiet():
-                    print "skipping", sd
+                #if IsNotQuiet():
+                #    print "skipping", sd
                 continue
             os.remove(xmldest)
 
