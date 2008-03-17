@@ -460,6 +460,19 @@ img.smallflag_sca
     border: thin black solid;
     width:50;
 }
+
+td.smallflag_lis
+{
+    vertical-align: top;
+    text-align: right;
+}
+img.smallflag_lis
+{
+    border: thin black solid;
+    height: 1em;
+    margin-right: 3px;
+}
+
 img.nationpageflag
 {
     border: thick black solid;
@@ -580,6 +593,17 @@ ul.minorityvote
     padding:1em;
     background-color:#eeeeee;
 }
+
+table.minorityvote
+{
+    padding-left:1em;
+    background-color:#eeeeee;
+    font-size: 10pt;
+}
+table.minorityvote td.col1  { width:40% }
+table.minorityvote td.col2  { width:17% }
+table.minorityvote td.col3  { width:43% }
+
 ul.scminorityvote
 {
     padding:1em;
@@ -771,5 +795,14 @@ div#rightdoclinks
 margin: 1em;
 float: right;
 width: 15em;
+}
+
+
+
+ul.nationstats
+{
+    margin:0.5em;
+    padding-left:2em;
+    list-style-type: disc;
 }
 

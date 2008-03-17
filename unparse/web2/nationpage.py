@@ -8,6 +8,7 @@ from basicbits import indexstuffdir, currentgasession, currentscyear, scpermanen
 from basicbits import EncodeHref, LookupAgendaTitle, DownPersonName
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords
+from db import GetDBcursor
 
 
 def WriteSpeechInstances(snation, person, nationdata):
@@ -61,6 +62,26 @@ def GatherNationData(snation):
     return res
 
 def WriteNationHeading(nation, nationdata):
+    c = GetDBcursor()
+    c.execute("SELECT nation, date_entered, date_left, continent, missionurl, wikilink, fname FROM un_nations WHERE fname='%s'" % nation)
+    ns = c.fetchone()
+    if ns:
+        nation = ns[0]
+        print '<ul class="nationstats">'
+        print '<li>%s entered United Nations on %s</li>' % (ns[0], LongDate(ns[1].isoformat()))
+        print '<li><a href="%s">Webpage for %s at the UN</a></li>' % (ns[4], ns[0])
+        print '<li><a href="%s">Wikipedia page for %s</a></li>' % (ns[5], ns[0])
+        print '<li>%s is part of the %s block</li>' % (ns[0], ns[3])
+        
+        c.execute("""SELECT count(*), min(ldate) FROM un_votes 
+                   LEFT JOIN un_divisions ON un_divisions.docid=un_votes.docid AND un_divisions.href=un_votes.href
+                   WHERE nation=\"%s\" AND vote<>'absent'""" % nation)
+        a = c.fetchone()
+        if a:
+            print '<li>%s has participated in %d votes since %s</li>' % (nation, a[0], LongDate(a[1].isoformat()))
+        print '</ul>'
+
+
     csvdata = None
     for mp in nationdata:
         if mp["lntype"] == "csvdata":
@@ -84,7 +105,20 @@ def WriteNationHeading(nation, nationdata):
     elif nation in scelectedmembersyear[currentscyear]:
         print '<p>%s is an <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Elected_members">elected member</a> of the Security Council.</p>' % nation
 
+
+def MinorityVoteWordsOutOf(nwith, ntotal):
+    if nwith == 1:
+        return "<b>alone</b> (out of %d nations)" % ntotal
+    return "with <b>%s</b> other nation%s (out of %d)" % (nwith-1, nwith!=2 and "s" or "", ntotal)
+
 def WriteMinorityVotes(nation, nationdata):
+    c = GetDBcursor()
+    qsel = "SELECT un_divisions.docid, un_divisions.href, ldate, motiontext, vote, favour, against, abstain, absent FROM un_divisions "
+    qlj = "LEFT JOIN un_votes ON un_votes.docid=un_divisions.docid AND un_votes.href=un_divisions.href AND un_votes.nation=\"%s\"" % nation
+    c.execute("%s %s WHERE body='GA' ORDER BY minority_score LIMIT 20" % (qsel, qlj))
+
+    minority = c.fetchall()
+
     minorityvotes = [ ]
     scminorityvotes = [ ]
     for mp in nationdata:
@@ -95,13 +129,33 @@ def WriteMinorityVotes(nation, nationdata):
     if not minorityvotes and not scminorityvotes:
         return
 
-    # vts = [ int(v)  for v in mp["division"].split("/") ]
-    print '<h3 style="clear:both">Minority votes</h3>'
-    print '<p>General Assembly votes where %s was most in the minority, often highlighting issues in which it most greatly differs from the rest of the international community.</p>' % nation
-    print '<ul class="minorityvote">'
-    for mp in minorityvotes:
-        print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
-    print '</ul>'
+    print '<h3 style="clear:both">Minority votes in the General Assembly</h3>'
+    print '<p>Sometimes these votes highlight an issue where there is a difference from the majority of the international community.</p>'
+    print '<p style="margin-top: 1em"><b>%s...</b></p>' % nation
+    
+    print '<table class="minorityvote">'
+    for mp in minority:
+        print '<tr><td class="col1">'
+        (docid, href, ldate, motiontext, vote, favour, against, abstain, absent) = mp
+        mvotes = favour + against + abstain
+        if vote == "against":
+            print 'voted %s <b>against</b>' % MinorityVoteWordsOutOf(against, mvotes)
+        elif vote == "favour":
+            print 'voted %s <b>in favour</b> of ' % MinorityVoteWordsOutOf(favour, mvotes)
+        elif vote == "abstain":
+            print 'voted %s to <b>abstain</b> on' % MinorityVoteWordsOutOf(abstain, mvotes)
+        elif vote == "absent":
+            print 'was <b>absent</b> with <b>%d</b> other nation%s when %d voted' % (absent - 1 or "zero", absent!=2 and "s" or "", mvotes)
+        print '</td>'
+        print '<td class="col3"><a href="%s">%s</a></td>' % (EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":href}), motiontext)
+        print '<td class="col2"><i>%s</i></td>' % LongDate(ldate.strftime("%Y-%m-%d"))
+        print '</tr>'
+    print '</table>'
+
+    #print '<ul>'
+    #for mp in minorityvotes:
+    #    print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), mp["description"])
+    #print '</ul>'
 
     if not scminorityvotes:
         return
@@ -163,18 +217,27 @@ def WriteIndexStuffNation(nation, person):
 def WriteAllNations():
     WriteGenHTMLhead('List of all nations')
     nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
+    
+    res = [ ]
+    for nat in os.listdir(nationactivitydir):
+        if nat[0] != ".":
+            nation = re.sub("_", " ", nat[:-4])  # remove .txt
+            flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
+            href = EncodeHref({"pagefunc":"nation", "nation":nation})
+            res.append((nation, href, flaghref))
+    
+    res.sort()
+    ncols = 4
+    colleng = len(res) / (ncols )
     print '<table><tr>'
-    ns = 0
-    for nat in sorted(os.listdir(nationactivitydir)):
-        nation = re.sub("_", " ", nat[:-4])  # remove .txt
-        flaghref = EncodeHref({"pagefunc":"flagpng", "width":100, "flagnation":nation})
-        href = EncodeHref({"pagefunc":"nation", "nation":nation})
-        print '<td><a href="%s"><img class="smallflag" src="%s"></a>' % (href, flaghref)
-        print '<a href="%s">%s</a></td>' % (href, nation)
-        if ns == 5:
-            print '</tr><tr>'
-            ns = 0
-        else:
-            ns += 1
+    for j in range(ncols):
+        print '<td style="vertical-align:top;"><table>'
+        for k in range(j * colleng, min(len(res), (j + 1) * colleng)):
+            print '<tr>'
+            nation, href, flaghref = res[k]
+            print '<td class="smallflag_lis"><a href="%s"><img class="smallflag_lis" src="%s"></a></td>' % (href, flaghref)
+            print '<td><a href="%s">%s</a></td>' % (href, nation)
+            print '</tr>'
+        print '</table></td>'
     print '</tr></table>'
 
