@@ -40,7 +40,7 @@ for year in (1997, 2001, 2005):
 #<td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
 #<td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
 #<td>Labour</td>
-    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+<td>(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a></td>';
+    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+<td>(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+">([^<]+)</a></td>';
     matches = re.findall(matcher, content)
     for (cons, url, name) in matches:
         id = None
