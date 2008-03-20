@@ -37,7 +37,7 @@ def MakeTableVotes(c):
     c.execute("CREATE TABLE un_divisions (%s);" % ", ".join(tablecolsdivision))
 
     tablecolsvote = [ "docid VARCHAR(30)", "href VARCHAR(30)", 
-                      "nation VARCHAR(30)", "vote enum('favour', 'against', 'abstain', 'absent')",
+                      "nation VARCHAR(40)", "vote enum('favour', 'against', 'abstain', 'absent')",
                       "intended_vote enum('favour', 'against', 'abstain', 'absent')",
                       "minority_score FLOAT", 
                       "INDEX(docid)", "INDEX(href)", "INDEX(nation)", 

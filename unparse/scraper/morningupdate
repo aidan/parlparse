@@ -25,6 +25,10 @@ python2.4 ./unmain.py --quiet cxml
 # --scrape-links means it attempts to download referenced documents.
 python2.4 ./unmain.py --quiet --scrape-links --continue-on-error parse 
 
+# Scans through all unindexed.html files and puts votes and other stuff
+# into the new sql database.  Will replace much of what happens below.
+python2.4 ./unmain.py --quiet dbfill
+
 # Indexes undata/html/*.unindexed.html for full text search with Xapian.
 # Then renames these files to *.html
 python2.4 ./unmain.py --quiet xapdex 

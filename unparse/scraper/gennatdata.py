@@ -121,23 +121,12 @@ def GenerateNationData(nationactivitydir, htmldir):
                 motiontext = re.sub(" (?:was|were) (?:retained|adopted|rejected) by (?:.*? abstentions?|\d+ votes to \d+)", "", motiontext)
                 votesum = (docid, gid, tuple(vnum), sdate, motiontext)  # this 4-tuple identifies a vote
                 
-                print "adding to database", mvote.group(2)
-                c.execute("""REPLACE INTO un_divisions (docid, href, body, motiontext, ldate, favour, against, abstain, absent)
-                             VALUES ('%s', '%s', '%s', '%s', '%s', %d, %d, %d, %d);
-                          """ % (docid, gid, body, motiontext, sdate, vnum[0], vnum[1], vnum[2], vnum[3]))
-                totalv = float(vnum[0] + vnum[1] + vnum[2] + vnum[3])
-                minorityscores = { 'favour':vnum[0]/totalv, 'against':vnum[1]/float(vnum[0]+vnum[1]), 
-                                   'abstain':vnum[2]/totalv, 'absent':vnum[3]/totalv }
+                #print "adding to database", mvote.group(2)
 
                 for mvoten in re.finditer('<span class="([^"\-]*)-?([^"]*)">([^<]*)</span>', mvote.group(3)):
                     nation = mvoten.group(3)
                     vote = mvoten.group(1)
                     intendedvote = mvoten.group(2) or vote
-                    if mvoten.group(2):
-                        print "mmm", mvoten.group(0)
-                    c.execute("""REPLACE INTO un_votes (docid, href, nation, vote, intended_vote, minority_score)
-                                 VALUES ('%s', '%s', "%s", '%s', '%s', '%s')
-                              """ % (docid, gid, nation, vote, intendedvote, minorityscores[intendedvote]))
 
                     nationdict[nation].AddVoteMade(votesum, intendedvote)  # big mapping table
 

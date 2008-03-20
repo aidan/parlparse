@@ -18,6 +18,7 @@ from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from gennatdata import GenerateNationData
 from nationdatasucker import ScrapePermMissions, NationDataSucker
+from dbfill import DBfill
 
 parser = OptionParser()
 parser.set_usage("""
@@ -26,6 +27,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
   parse   do the parsing
+  dbfill  upload the parsed headings etc into database
   xapdex  call the xapian indexing system
   votedistances generate voting distances table for java applet
   docmeasurements generate measurements of quantities of documents;
@@ -73,6 +75,8 @@ parser.add_option("--scrape-links",
 parser.add_option("--doc",
                   dest="scrapedoc", metavar="scrapedoc", default="",
                   help="Causes a single document to be scraped")
+parser.add_option("--force-dbfill", action="store_true", dest="forcedbfill", default=False,
+                  help="Erases existing valies and adds them to table again")
 parser.add_option("--force-xap", action="store_true", dest="forcexap", default=False,
                   help="Erases existing database, and indexes all .html files")
 parser.add_option("--limit", dest="limit", default=None, type="int",
@@ -93,6 +97,7 @@ bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
 bXapdex = "xapdex" in args
+bDBfill = "dbfill" in args
 bDocMeasurements = "docmeasurements" in args
 bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
@@ -103,7 +108,7 @@ bGAsummaries = "gasummaries" in args
 bNationData = "nationdata" in args
 bVoteDistances = "votedistances" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bDBfill or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
     parser.print_help()
     sys.exit(1)
 
@@ -136,6 +141,9 @@ if bParse:
     else:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()
+
+if bDBfill:
+    DBfill(stem, options.forcedbfill, options.limit, options.continueonerror, htmldir)
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
