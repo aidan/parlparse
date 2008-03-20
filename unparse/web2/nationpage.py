@@ -63,40 +63,37 @@ def GatherNationData(snation):
 
 def WriteNationHeading(nation, nationdata):
     c = GetDBcursor()
-    c.execute("SELECT nation, date_entered, date_left, continent, missionurl, wikilink, fname FROM un_nations WHERE fname='%s'" % nation)
+    fnation = re.sub(" ", "_", nation)
+    c.execute("""SELECT nation, date_entered, date_left, continent, missionurl, wikilink, fname 
+                 FROM un_nations WHERE fname='%s' or nation="%s" """ % (fnation, nation))
     ns = c.fetchone()
     if ns:
         nation = ns[0]
         print '<ul class="nationstats">'
-        print '<li>%s entered United Nations on %s</li>' % (ns[0], LongDate(ns[1].isoformat()))
-        print '<li><a href="%s">Webpage for %s at the UN</a></li>' % (ns[4], ns[0])
-        print '<li><a href="%s">Wikipedia page for %s</a></li>' % (ns[5], ns[0])
-        print '<li>%s is part of the %s block</li>' % (ns[0], ns[3])
+        print '<li>%s has been a member of the United Nations since <em>%s</em></li>' % (nation, LongDate(ns[1].isoformat()))
+        if ns[2].year != 9999:
+            print '<li>%s left or was renamed in <em>%s</em></li>' % (nation, LongDate(ns[2].isoformat))
+        if ns[4]:
+            print '<li>Contact <a href="%s">the ambassador for %s</a></li>' % (ns[4], nation)
+        else:
+            print '<li>%s is not in <a href="http://www.un.int/index-en/index.html">the list of countries with webpages</a> at the UN.</li>' % nation
+        print '<li>Read the <a href="%s">Wikipedia page for %s</a></li>' % (ns[5], nation)
+        print '<li>%s is part of the <i>%s</i> block</li>' % (nation, ns[3])
         
-        c.execute("""SELECT count(*), min(ldate) FROM un_votes 
+        c.execute("""SELECT count(*), min(ldate), max(ldate) FROM un_votes 
                    LEFT JOIN un_divisions ON un_divisions.docid=un_votes.docid AND un_divisions.href=un_votes.href
                    WHERE nation=\"%s\" AND vote<>'absent'""" % nation)
         a = c.fetchone()
-        if a:
-            print '<li>%s has participated in %d votes since %s</li>' % (nation, a[0], LongDate(a[1].isoformat()))
+        if a and a[1]:
+            print '<li>%s has participated in %d votes since <em>%s</em>,' % (nation, a[0], LongDate(a[1].isoformat()))
+            print 'most recently on <em>%s</em></li>' % LongDate(a[2].isoformat())
+        
         print '</ul>'
-
 
     csvdata = None
     for mp in nationdata:
         if mp["lntype"] == "csvdata":
             csvdata = mp
-    if csvdata:
-        print '<p>%s (<i>%s</i>) joined the United Nations on %s' % (nation, csvdata["continent"], LongDate(csvdata["startdate"]))
-        if not re.match("9999", csvdata["enddate"]):
-            print 'and left the UN in %s' % LongDate(csvdata["enddate"])
-        print '</p>'
-        if csvdata["missionurl"]:
-            print '<p>See the <a href="%s">webpage of %s at the United Nations</a> for contact details and further information</p>' % (csvdata["missionurl"], nation)
-        else:
-            print '<p>There is no webpage for %s at the United Nations, according to <a href="http://www.un.int/index-en/index.html">the records</a>.</p>' % nation
-    else:
-        print "<p>No csv data</p>"
 
     if nation in scpermanentmembers:
         print '<p>%s is a <a href="http://en.wikipedia.org/wiki/United_Nations_Security_Council#Permanent_members">permanent member</a> of the Security Council.</p>' % nation
@@ -160,10 +157,18 @@ def WriteMinorityVotes(nation, nationdata):
     if not scminorityvotes:
         return
 
-    print '<p>Security Council votes where %s was most in the minority.  For a permanent member a vote against constitutes a veto.</p>' % nation
+    
+    print '<h3 style="clear:both">Minority votes in the Security Council</h3>'
+    print '<p>For a permanent member a vote against constitutes a veto.</p>'
     print '<ul class="scminorityvote">'
     for mp in scminorityvotes:
         sdesc = "Description"
+        c.execute("SELECT heading, ldate FROM un_scheadings WHERE docid='%s'" % mp["docid"])
+        a = c.fetchone()
+        if a:
+            sdesc = re.sub("<[^>]*>", "", a[0]).strip()
+            if not sdesc:
+                sdesc = "Ediscription"
         print '<li>%s - <a href="%s">%s</a></li>' % (LongDate(mp["date"]), EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]}), sdesc)
     print '</ul>'
 
