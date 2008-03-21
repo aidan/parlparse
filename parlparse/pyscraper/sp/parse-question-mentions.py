@@ -49,35 +49,37 @@ parser.add_option('-v', "--verbose", dest="verbose", action="store_true",
 force = options.force
 verbose = options.verbose
 
-# The first Business Bulletin:
-last_bulletin_info_date = "1999-05-12"
+# Look at the filenames to find the last time that this apparently
+# ran, and only consider the bulletins for a fortnight before that
+# point.
 
-if force:
-    id_to_mentions = { }
-else:
-    id_to_mentions = load_question_mentions()
-    for k in id_to_mentions.keys():
-        mentions = id_to_mentions[k]
-        for m in mentions:
-            if m.mention_type == 'business-written' or m.mention_type == 'business-oral' or m.mention_type == 'business-today':
-                # Since they're all ISO 8601 dates we can just compare
-                # the strings...
-                if m.iso_date > last_bulletin_info_date:
-                    last_bulletin_info_date = m.iso_date
-    
-last_bulletin_info_date = datetime.date(*time.strptime(last_bulletin_info_date,"%Y-%m-%d")[:3])
-bulletins_after = last_bulletin_info_date - datetime.timedelta(days=14)
+mentions_prefix = "../../../parldata/scrapedxml/sp-questions/"
+
+filenames = glob.glob( mentions_prefix + "up-to-*.xml" )
+filenames.sort()
+
+bulletins_after = datetime.date(1999,5,12)
+
+if filenames:
+    m = re.search('up-to-(\d{4}-\d{2}-\d{2}).xml',filenames[-1])
+    if not m:
+        raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
+    bulletins_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
+    bulletins_after = bulletins_after - datetime.timedelta(days=14)
+
+id_to_mentions = { }
 
 wrans_hash = load_wrans_spid_list()
 
 for k in wrans_hash.keys():
-    for t in h[k]:
+    for t in wrans_hash[k]:
         date, k, holding_date = t
-        value = Mention(k,date,None,"answer",None)
-        add_mention_to_dictionary(k,value,id_to_mentions)
-        if len(holding_date) > 0:
-            holding_value = Mention(k,holding_date,None,"holding",None)
-            add_mention_to_dictionary(k,holding_value,id_to_mentions)
+        if date >= str(bulletins_after):
+            value = Mention(k,date,None,"answer",None)
+            add_mention_to_dictionary(k,value,id_to_mentions)
+            if len(holding_date) > 0:
+                holding_value = Mention(k,holding_date,None,"holding",None)
+                add_mention_to_dictionary(k,holding_value,id_to_mentions)
 
 bulletin_prefix = "http://www.scottish.parliament.uk/business/businessBulletin/"
 bulletins_directory = "../../../parldata/cmpages/sp/bulletins/"
