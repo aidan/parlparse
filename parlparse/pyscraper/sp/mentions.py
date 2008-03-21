@@ -1,6 +1,8 @@
 import xml.sax
 import os
 import re
+import datetime
+import time
 
 def add_mention_to_dictionary(key,mention,dictionary):
     dictionary.setdefault(key,[])
@@ -91,9 +93,13 @@ def load_question_mentions():
     return mentions_parser.get_mentions_hash()
 
 def save_question_mentions(id_to_mentions):
+    xml_output_directory = "../../../parldata/scrapedxml/sp-questions/";
+    # Make sure it exists:
+    os.system("mkdir -p "+xml_output_directory)
     keys = id_to_mentions.keys()
     keys.sort()
-    filename_base = "../../../parldata/scrapedxml/sp-question-mentions.xml"
+    date_today = datetime.date.today()
+    filename_base = "%sup-to-%s.xml" % ( xml_output_directory, str(date_today) )
     tmp_filename = filename_base + ".tmp"
     fp = open( tmp_filename, "w" )
     fp.write( '<?xml version="1.0" encoding="utf-8"?>\n' )
@@ -108,6 +114,9 @@ def save_question_mentions(id_to_mentions):
     fp.write( '</publicwhip>' )
     fp.close()
     os.rename(tmp_filename,filename_base)
+    fil = open('%schangedates.txt' % xml_output_directory, 'a+')
+    fil.write('%d,up-to-%s.xml\n' % (time.time(), str(date_today)))
+    fil.close()
 
 class Mention:
     mention_type_order = { "business-today" : "1",
