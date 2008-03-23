@@ -29,10 +29,22 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         else:
             raise Exception, "Unknown type of parameter ("+str(file_template.__class__)+") passed to ScrapedXMLParser"
 
-    def find_id_for_quotation(self,date_string,regexp_list):
-        self.ids_with_quote = { }
+    def find_all_ids_for_quotation(self,date_string,regexp_list):
+        # Return an array of pairs, where the first of each pair is
+        # the gid and the second is the match object.
         self.regexp_list = regexp_list
-        # Look both in written answers and official reports...
+        self.ids_with_quote = { }
+        self.ids_with_matches = []
+        files_to_look_in = map( lambda t: t % date_string, self.file_templates )
+        for filename in files_to_look_in:
+            if os.path.exists(filename):
+                self.parser.parse(filename)
+        return self.ids_with_matches
+
+    def find_id_for_quotation(self,date_string,regexp_list):
+        self.regexp_list = regexp_list
+        self.ids_with_quote = { }
+        self.ids_with_matches = []
         files_to_look_in = map( lambda t: t % date_string, self.file_templates )
         for filename in files_to_look_in:
             if os.path.exists(filename):
@@ -53,10 +65,39 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
 
     def characters(self,c):
         for r in self.regexp_list:
-            if re.search(r,c):                
+            m = re.search(r,c)
+            if m:                
                 self.ids_with_quote.setdefault(self.element_id,0)
                 self.ids_with_quote[self.element_id] += 1
+                self.ids_with_matches.append( (self.element_id,m) )
 
 # sxp = ScrapedXMLParser()
 # sxp.find_id_for_quotation( "2004-02-25", [ re.compile("given that justice must be not only swift"),
 #                                            re.compile("He also said that justice must") ] )
+
+class WrittenAnswerParser(xml.sax.handler.ContentHandler):
+
+    def __init__(self):
+        self.parser = xml.sax.make_parser()
+        self.parser.setContentHandler(self)
+        self.file_template = "../../../parldata/scrapedxml/sp-written/spwa%s.xml"
+
+    def find_spids_and_holding_dates(self,date_string):
+        self.h = {}
+        self.current_date = date_string
+        filename = self.file_template % date_string
+        if os.path.exists(filename):
+            self.parser.parse(filename)
+        return self.h
+
+    def startElement(self,name,attr):
+        if name == "ques":
+            spid = attr["spid"]
+            holding_date_string = None
+            if attr.has_key("holdingdate"):
+                holding_date_string = attr["holdingdate"]
+            self.h.setdefault(spid,[])
+            v = (self.current_date,spid,holding_date_string)
+            a = self.h[spid]
+            if v not in self.h[spid]:
+                a.append(v)

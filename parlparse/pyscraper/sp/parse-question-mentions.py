@@ -21,6 +21,7 @@ from common import tidy_string
 from common import fix_spid
 
 from findquotation import ScrapedXMLParser
+from findquotation import WrittenAnswerParser
 from findquotation import find_quotation_from_text
 from findquotation import find_speech_with_trailing_spid
 
@@ -29,16 +30,12 @@ from mentions import add_mention_to_dictionary
 from mentions import load_question_mentions
 from mentions import save_question_mentions
 
-from wransspidlist import load_wrans_spid_list
-
 from optparse import OptionParser
 
 spid_re =                   '(S[0-9][A-LN-Z0-9]+\-[0-9]+)'
 spid_re_bracketed =         '\(\s*'+spid_re+'\s*\)'
 spid_re_at_start =          '^\s*'+spid_re
 spid_re_bracketed_at_end =  spid_re_bracketed+'\s*$'
-
-sxp = ScrapedXMLParser("../../../parldata/scrapedxml/sp/sp%s.xml")
 
 parser = OptionParser()
 parser.add_option('-f', "--force", dest="force", action="store_true",
@@ -58,28 +55,44 @@ mentions_prefix = "../../../parldata/scrapedxml/sp-questions/"
 filenames = glob.glob( mentions_prefix + "up-to-*.xml" )
 filenames.sort()
 
-bulletins_after = datetime.date(1999,5,12)
+all_after = datetime.date(1999,5,1)
 
 if filenames:
     m = re.search('up-to-(\d{4}-\d{2}-\d{2}).xml',filenames[-1])
     if not m:
         raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
-    bulletins_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
-    bulletins_after = bulletins_after - datetime.timedelta(days=14)
+    all_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
+
+# Build an array of dates to consider:
+
+dates = []
+currentdate = all_after
+
+enddate = datetime.date.today()
+while currentdate <= enddate:
+    dates.append( currentdate )
+    currentdate += datetime.timedelta(days=1)
+
+# This is the dictionary we are building up and will write out at the
+# end:
 
 id_to_mentions = { }
 
-wrans_hash = load_wrans_spid_list()
+# There are three stages to adding question mentions:
+# 
+#   (a) Look through each Business Bulletin in the date range
+#       (sections A, D and E) to look for questions that have been
+#       tabled and so on.
+# 
+#   (b) Look through the Written Answers for each day in the date
+#       range to find.
+#
+#   (c) Look through the Official Reports for questions that were
+#       actually asked in the parliament.
+# 
+# ------------------------------------------------------------------------
 
-for k in wrans_hash.keys():
-    for t in wrans_hash[k]:
-        date, k, holding_date = t
-        if date >= str(bulletins_after):
-            value = Mention(k,date,None,"answer",None)
-            add_mention_to_dictionary(k,value,id_to_mentions)
-            if len(holding_date) > 0:
-                holding_value = Mention(k,holding_date,None,"holding",None)
-                add_mention_to_dictionary(k,holding_value,id_to_mentions)
+# First (a) the Business Bulletins:
 
 bulletin_prefix = "http://www.scottish.parliament.uk/business/businessBulletin/"
 bulletins_directory = "../../../parldata/cmpages/sp/bulletins/"
@@ -157,7 +170,7 @@ for day_filename in bulletin_filenames:
         if verbose: print "Date in filename %s-%s-%s" % ( filename_year, filename_month, filename_day )
 
     # Don't soup it if we don't have to:
-    if date_from_filename and date_from_filename < bulletins_after:
+    if date_from_filename and date_from_filename < all_after:
         continue
 
     day_soup = MinimalSoup(day_html)
@@ -207,7 +220,7 @@ for day_filename in bulletin_filenames:
         
     if verbose: print "Date: "+str(date)
 
-    if date < bulletins_after:
+    if date < all_after:
         continue
 
     matches = []
@@ -251,34 +264,38 @@ for day_filename in bulletin_filenames:
                 mention = Mention(spid,str(date),day_url,'business-written',None)
                 add_mention_to_dictionary(spid,mention,id_to_mentions)
 
-    # If this is the oral question section, it'd be nice to find out
-    # if they were actually asked in the official report, and if so
-    # include that as a different type of mention.  We look in the
-    # next 10 days of official reports.  Fortunately, there always
-    # seems to be the spid in brackets at the end of the question
-    # being asked in the official reports.
-    
-    # (Note that this is pretty slow.)
+# Second (b) the Written Answers:
 
-    if oral_question and day_body:
-        total_found = 0
-        for spid in matches:
-            found = False
-            for i in range(0,15):
-                later_date = date+datetime.timedelta(days=i)
-                gid = find_speech_with_trailing_spid(sxp,str(later_date),spid)
-                if gid:
-                    if verbose: print "Got %9s in %s, %d days later" % (spid,gid,i)
-                    found = True
-                    value = Mention(spid,str(later_date),None,"oral-asked-in-official-report",gid)
-                    add_mention_to_dictionary(spid,value,id_to_mentions)
-                    break
-            if found:
-                total_found += 1
-            else:
-                if verbose: print "Couldn't find: "+spid
-                pass
-        if total_found == 0 and (len(matches) > 0):
-            if verbose: print "None found from "+str(day_filename)
+wap = WrittenAnswerParser()
+
+for d in dates:
+    h = wap.find_spids_and_holding_dates(str(d))
+    for k in h.keys():
+        for t in h[k]:
+            date, k, holding_date = t
+            if date >= str(all_after):
+                value = Mention(k,date,None,"answer",None)
+                add_mention_to_dictionary(k,value,id_to_mentions)
+                if holding_date:
+                    holding_value = Mention(k,holding_date,None,"holding",None)
+                    add_mention_to_dictionary(k,holding_value,id_to_mentions)
+
+# Third (c) look through the Official Reports for oral questions:
+
+sxp = ScrapedXMLParser("../../../parldata/scrapedxml/sp/sp%s.xml")
+
+for d in dates:
+    gids_and_matches = sxp.find_all_ids_for_quotation(str(d),[spid_re_bracketed_at_end])
+    for t in gids_and_matches:
+        gid, m = t
+        spid = m.group(1)
+        spid = fix_spid(spid)
+        value = Mention(spid,str(d),None,"oral-asked-in-official-report",gid)
+        add_mention_to_dictionary(spid,value,id_to_mentions)
+    # If we didn't find any, and this is a Thursday, that's suspicious:
+    if len(gids_and_matches) == 0 and d.isoweekday() == 4:
+        print "Didn't find any questions asked on "+str(d)
+
+# Finally, write out the updated file:
 
 save_question_mentions(id_to_mentions)

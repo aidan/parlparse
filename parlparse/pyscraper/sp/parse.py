@@ -1236,8 +1236,8 @@ def compare_filename(a,b):
     ma = re.search('_(\d+)\.html',a)
     mb = re.search('_(\d+)\.html',b)
     if ma and mb:
-        mai = int(ma.group(1))
-        mbi = int(mb.group(1))
+        mai = int(ma.group(1),10)
+        mbi = int(mb.group(1),10)
         if mai < mbi:
             return -1
         if mai > mbi:

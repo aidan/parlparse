@@ -10,9 +10,11 @@ from BeautifulSoup import Comment
 import re
 
 # A number of SPIDs have a 0 (zero) in place of an O (letter O), and
-# this converts a string containing them.
+# this converts a string containing them.  It also fixes leading 0s in
+# the number after the hyphen.
 def fix_spid(s):
-    return re.sub('(?ms)(S[0-9]+)0-([0-9]+)',r'\1O-\2',s)
+    result = re.sub('(S[0-9]+)0-([0-9]+)',r'\1O-\2',s)
+    return re.sub('(S[0-9]+\w+)-0*([0-9]+)',r'\1-\2',result)
 
 months = { "january"   : 1,
            "february"  : 2,
