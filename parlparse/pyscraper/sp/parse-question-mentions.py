@@ -215,8 +215,13 @@ for day_filename in bulletin_filenames:
         else:
             # So toss a coin here, more or less.  Let's go with the
             # filename, since there many be many dates in the file
-            # itself.
-            date = date_from_filename
+            # itself, except in 1999 since in that year the format of
+            # the filenames changes from DD-MM to MM-DD half way
+            # through (aarrgh!)
+            if filename_year == 1999:
+                date = date_from_filecontents
+            else:
+                date = date_from_filename
         
     if verbose: print "Date: "+str(date)
 
