@@ -69,7 +69,7 @@ dates = []
 currentdate = all_after
 
 enddate = datetime.date.today()
-while currentdate <= enddate:
+while currentdate < enddate:
     dates.append( currentdate )
     currentdate += datetime.timedelta(days=1)
 
