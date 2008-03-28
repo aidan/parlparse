@@ -93,11 +93,12 @@ class WrittenAnswerParser(xml.sax.handler.ContentHandler):
     def startElement(self,name,attr):
         if name == "ques":
             spid = attr["spid"]
+            gid = attr["id"]
             holding_date_string = None
             if attr.has_key("holdingdate"):
                 holding_date_string = attr["holdingdate"]
             self.h.setdefault(spid,[])
-            v = (self.current_date,spid,holding_date_string)
+            v = (self.current_date,spid,holding_date_string,gid)
             a = self.h[spid]
             if v not in self.h[spid]:
                 a.append(v)

@@ -169,7 +169,7 @@ class Mention:
         else:
             url_attribute = ''
         if self.mention_type == 'answer':
-            gid_attribute = ' spwrans="uk.org.publicwhip/spwa/%s.%s.q0"' % ( self.iso_date, spid )
+            gid_attribute = ' spwrans="%s"' % ( self.gid )
         elif self.mention_type == 'oral-asked-in-official-report':
             gid_attribute = ' orgid="%s"' % ( self.gid )
         elif self.mention_type == 'referenced-in-question-text':

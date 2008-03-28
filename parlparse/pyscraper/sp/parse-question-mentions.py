@@ -277,9 +277,9 @@ for d in dates:
     h = wap.find_spids_and_holding_dates(str(d))
     for k in h.keys():
         for t in h[k]:
-            date, k, holding_date = t
+            date, k, holding_date, gid = t
             if date >= str(all_after):
-                value = Mention(k,date,None,"answer",None)
+                value = Mention(k,date,None,"answer",gid)
                 add_mention_to_dictionary(k,value,id_to_mentions)
                 if holding_date:
                     holding_value = Mention(k,holding_date,None,"holding",None)
