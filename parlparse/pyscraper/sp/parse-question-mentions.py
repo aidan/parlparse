@@ -191,7 +191,7 @@ for day_filename in bulletin_filenames:
         day = m.group(3)
         month = month_name_to_int(m.group(4))
         if month == 0:
-            print "Whole match was '" + str(m.group(1)) + "'"
+            print "Whole match was '" + str(m.group(0)) + "'"
             raise Exception, "Month name '"+m.group(4)+"' not known in file: "+day_filename
         else:
             year = m.group(6)
