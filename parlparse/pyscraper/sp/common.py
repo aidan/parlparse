@@ -49,7 +49,10 @@ def non_tag_data_in(o):
     if o.__class__ == NavigableString:
         return re.sub('(?ms)[\r\n]',' ',o)
     elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
+        if o.name == 'script':
+            return ''
+        else:
+            return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
     elif o.__class__ == Comment:
         return ''
     else:
