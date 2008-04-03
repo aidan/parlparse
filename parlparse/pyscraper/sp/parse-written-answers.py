@@ -397,7 +397,7 @@ class Parser:
         if os.path.exists(output_filename):
             #error = "The output file "+output_filename+" already exists - skipping "+re.sub('^.*/','',filename)
             # raise Exception, error
-            #if verbose: print error
+            #if not options.quiet: print error
             return
 
         if not options.quiet: print "Parsing %s" % filename
@@ -675,7 +675,7 @@ class Parser:
                         if previous.__class__ == QuestionOrReply:
                             if previous.is_question:
                                 # If the one before is a question, that's fine.
-                                pass
+                                current_sp_id = a.sp_id
                             else:
                                 current_sp_id = a.sp_id
                                 # If the previous one was an answer
