@@ -271,7 +271,7 @@ for day_filename in bulletin_filenames:
             else:
                 mention = Mention(spid,str(date),day_url,'business-written',None)
                 add_mention_to_dictionary(spid,mention,id_to_mentions)
-    print "  Questions found: "+str(questions_found)
+    if verbose: print "  Questions found: "+str(questions_found)
 
 
 # Second (b) the Written Answers:
