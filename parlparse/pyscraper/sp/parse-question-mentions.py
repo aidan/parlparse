@@ -223,7 +223,7 @@ for day_filename in bulletin_filenames:
             else:
                 date = date_from_filename
         
-    if verbose: print "Date: "+str(date)
+    if verbose: print "Date: "+str(date)+" from "+day_filename
 
     if date < all_after:
         continue
@@ -231,6 +231,8 @@ for day_filename in bulletin_filenames:
     matches = []
 
     ps = day_body.findAll( lambda t: t.name == 'p' or t.name == 'li' )
+    if verbose and len(ps) == 0: print "  Found no paragraphs!"
+    questions_found = 0
     for p in ps:
         plain = non_tag_data_in(p)
         m_end_bracketed = re.search(spid_re_bracketed_at_end,plain)
@@ -252,6 +254,7 @@ for day_filename in bulletin_filenames:
                 print "   m_start was: "+str(m_start)
                 print "   m_end_bracketed was: "+str(m_end_bracketed)
                 raise Exception("Problem.")
+            questions_found += 1
             spid = fix_spid(spid)
             matches.append(spid)
             allusions = re.findall(spid_re,plain)
@@ -265,16 +268,18 @@ for day_filename in bulletin_filenames:
             elif todays_business:
                 mention = Mention(spid,str(date),day_url,'business-today',None)
                 add_mention_to_dictionary(spid,mention,id_to_mentions)
-            else: 
+            else:
                 mention = Mention(spid,str(date),day_url,'business-written',None)
                 add_mention_to_dictionary(spid,mention,id_to_mentions)
+    print "  Questions found: "+str(questions_found)
+
 
 # Second (b) the Written Answers:
 
 wap = WrittenAnswerParser()
 
 for d in dates:
-    h = wap.find_spids_and_holding_dates(str(d))
+    h = wap.find_spids_and_holding_dates(str(d),verbose)
     for k in h.keys():
         for t in h[k]:
             date, k, holding_date, gid = t
@@ -291,6 +296,9 @@ sxp = ScrapedXMLParser("../../../parldata/scrapedxml/sp/sp%s.xml")
 
 for d in dates:
     gids_and_matches = sxp.find_all_ids_for_quotation(str(d),[spid_re_bracketed_at_end])
+    if gids_and_matches == None:
+        # Then we just didn't find files for those dates:
+        continue
     for t in gids_and_matches:
         gid, m = t
         spid = m.group(1)
@@ -299,7 +307,7 @@ for d in dates:
         add_mention_to_dictionary(spid,value,id_to_mentions)
     # If we didn't find any, and this is a Thursday, that's suspicious:
     if len(gids_and_matches) == 0 and d.isoweekday() == 4:
-        print "Didn't find any questions asked on "+str(d)
+        print "Didn't find any question IDs in official report on "+str(d)
 
 # Finally, write out the updated file:
 

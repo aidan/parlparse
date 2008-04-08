@@ -39,7 +39,10 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         for filename in files_to_look_in:
             if os.path.exists(filename):
                 self.parser.parse(filename)
-        return self.ids_with_matches
+        if len(files_to_look_in) == 0:
+            return None
+        else:
+            return self.ids_with_matches
 
     def find_id_for_quotation(self,date_string,regexp_list):
         self.regexp_list = regexp_list
@@ -82,12 +85,14 @@ class WrittenAnswerParser(xml.sax.handler.ContentHandler):
         self.parser.setContentHandler(self)
         self.file_template = "../../../parldata/scrapedxml/sp-written/spwa%s.xml"
 
-    def find_spids_and_holding_dates(self,date_string):
+    def find_spids_and_holding_dates(self,date_string,verbose=False):
         self.h = {}
         self.current_date = date_string
         filename = self.file_template % date_string
         if os.path.exists(filename):
             self.parser.parse(filename)
+            if verbose and len(self.h) == 0:
+                print "  Warning: no questions found in "+filename            
         return self.h
 
     def startElement(self,name,attr):
