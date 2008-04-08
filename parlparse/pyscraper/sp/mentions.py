@@ -3,6 +3,7 @@ import os
 import re
 import datetime
 import time
+import glob
 
 def add_mention_to_dictionary(key,mention,dictionary):
     dictionary.setdefault(key,[])
@@ -60,7 +61,7 @@ class MentionsParser(xml.sax.handler.ContentHandler):
                             date,
                             None,
                             mention_type,
-                            None)
+                            spwrans)
             elif mention_type == "holding":
                 m = Mention(self.current_question_id,
                             date,
@@ -85,7 +86,11 @@ class MentionsParser(xml.sax.handler.ContentHandler):
 
     def get_mentions_hash(self):
         self.id_to_mentions = {}
-        self.parser.parse("../../../parldata/scrapedxml/sp-question-mentions.xml")
+        mentions_prefix = "../../../parldata/scrapedxml/sp-questions/"
+        filenames = glob.glob( mentions_prefix + "up-to-*.xml" )
+        filenames.sort()
+        for filename in filenames:
+            self.parser.parse(filename)
         return self.id_to_mentions
 
 def load_question_mentions():
@@ -158,6 +163,9 @@ class Mention:
         if not Mention.mention_type_order.has_key(mention_type):
             raise Exception, "Unknown mention_type: "+mention_type
         self.mention_index = Mention.mention_type_order[mention_type]
+    def __str__(self):
+        return "%s (%s) [%s] url: '%s', gid: '%s'" % ( self.spid, self.mention_type, self.iso_date, self.url, self.gid )
+            
     def __eq__(self,other):
         return (self.spid == other.spid) and (self.iso_date == other.iso_date) and (self.mention_type == other.mention_type) and (self.gid == other.gid)
     def to_xml_element(self,spid):
