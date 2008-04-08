@@ -72,7 +72,7 @@ def add_file_to_date_mapping(filename,date_string):
 
 # ------------------------------------------------------------------------
 
-filenames = glob.glob( wa_prefix + "day-*.htm" )
+filenames = glob.glob( wa_prefix + "day-*.htm*" )
 
 def paragraphs_in_tag(t):
     paragraphs = t.findAll('p',recursive=False)
