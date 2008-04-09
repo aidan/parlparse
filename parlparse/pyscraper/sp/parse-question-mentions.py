@@ -30,6 +30,9 @@ from mentions import add_mention_to_dictionary
 from mentions import load_question_mentions
 from mentions import save_question_mentions
 
+from mtimes import get_file_mtime
+from mtimes import most_recent_mtime
+
 from optparse import OptionParser
 
 spid_re =                   '(S[0-9][A-LN-Z0-9]+\-[0-9]+)'
@@ -39,12 +42,17 @@ spid_re_bracketed_at_end =  spid_re_bracketed+'\s*$'
 
 parser = OptionParser()
 parser.add_option('-f', "--force", dest="force", action="store_true",
-                  default=False, help="don't load the old file first, regenerate everything")
+                  default=False, help="don't load the old files first, regenerate everything")
 parser.add_option('-v', "--verbose", dest="verbose", action="store_true",
                   default=False, help="output verbose progress information")
+parser.add_option('-m', "--modified", dest="modified", action="store_true",
+                  default=False, help="parse only modified files")
 (options, args) = parser.parse_args()
 force = options.force
 verbose = options.verbose
+modified = options.modified
+if force and modified:
+    raise Exception, "It doesn't make sense to specify --force and --modified"
 
 # Look at the filenames to find the last time that this apparently
 # ran, and only consider the bulletins for a fortnight before that
@@ -56,12 +64,21 @@ filenames = glob.glob( mentions_prefix + "up-to-*.xml" )
 filenames.sort()
 
 all_after = datetime.date(1999,5,1)
+modified_after = None
 
-if filenames:
-    m = re.search('up-to-(\d{4}-\d{2}-\d{2}).xml',filenames[-1])
-    if not m:
-        raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
-    all_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
+if force:
+    # Just leave all_after as it is...
+    pass
+elif modified:
+    modified_after = most_recent_mtime(filenames)
+    if not modified_after:
+        modified_after = datetime.datetime(1999,5,1,0,0,0)
+else:
+    if filenames:
+        m = re.search('up-to-(\d{4}-\d{2}-\d{2}).xml',filenames[-1])
+        if not m:
+            raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
+        all_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
 
 # Build an array of dates to consider:
 
@@ -101,6 +118,9 @@ bulletin_filenames = glob.glob( bulletins_directory + "day-*" )
 bulletin_filenames.sort()
 
 for day_filename in bulletin_filenames:
+
+    if modified and get_file_mtime(day_filename) < modified_after:
+        continue
 
     m = re.search('(?i)day-(bb-(\d\d))_([ab]b-(\d\d)-(\d\d)-?(\w*)\.html?)$',day_filename)
 
@@ -279,7 +299,7 @@ for day_filename in bulletin_filenames:
 wap = WrittenAnswerParser()
 
 for d in dates:
-    h = wap.find_spids_and_holding_dates(str(d),verbose)
+    h = wap.find_spids_and_holding_dates(str(d),verbose,modified_after)
     for k in h.keys():
         for t in h[k]:
             date, k, holding_date, gid = t
@@ -295,7 +315,7 @@ for d in dates:
 sxp = ScrapedXMLParser("../../../parldata/scrapedxml/sp/sp%s.xml")
 
 for d in dates:
-    gids_and_matches = sxp.find_all_ids_for_quotation(str(d),[spid_re_bracketed_at_end])
+    gids_and_matches = sxp.find_all_ids_for_quotation(str(d),[spid_re_bracketed_at_end],modified_after)
     if gids_and_matches == None:
         # Then we just didn't find files for those dates:
         continue

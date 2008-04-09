@@ -26,7 +26,6 @@ class MentionsParser(xml.sax.handler.ContentHandler):
             if attr.has_key("type"):
                 mention_type = attr["type"]
             if attr.has_key("date"):
-
                 date = attr["date"]
             if attr.has_key("spwrans"):
                 spwrans = attr["spwrans"]

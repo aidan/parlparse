@@ -4,6 +4,9 @@ import xml.sax
 import re
 import os
 
+from mtimes import get_file_mtime
+from mtimes import filenames_modified_after
+
 def find_quotation_from_text(sxp,date,text,minimum_substring_length=20):
     substrings = re.split('\s*[,\.\[\]:]+\s*',text)
     long_enough_substrings = filter( lambda e: len(e) > minimum_substring_length, substrings )
@@ -29,13 +32,15 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         else:
             raise Exception, "Unknown type of parameter ("+str(file_template.__class__)+") passed to ScrapedXMLParser"
 
-    def find_all_ids_for_quotation(self,date_string,regexp_list):
+    def find_all_ids_for_quotation(self,date_string,regexp_list,mtime_after=None):
         # Return an array of pairs, where the first of each pair is
         # the gid and the second is the match object.
         self.regexp_list = regexp_list
         self.ids_with_quote = { }
         self.ids_with_matches = []
         files_to_look_in = map( lambda t: t % date_string, self.file_templates )
+        if mtime_after:
+            files_to_look_in = filenames_modified_after(files_to_look_in,mtime_after)
         files_that_existed = 0
         for filename in files_to_look_in:
             if os.path.exists(filename):
@@ -87,11 +92,13 @@ class WrittenAnswerParser(xml.sax.handler.ContentHandler):
         self.parser.setContentHandler(self)
         self.file_template = "../../../parldata/scrapedxml/sp-written/spwa%s.xml"
 
-    def find_spids_and_holding_dates(self,date_string,verbose=False):
+    def find_spids_and_holding_dates(self,date_string,verbose,mtime_after):
         self.h = {}
         self.current_date = date_string
         filename = self.file_template % date_string
         if os.path.exists(filename):
+            if mtime_after and get_file_mtime(filename) < mtime_after:
+                return self.h
             self.parser.parse(filename)
             if verbose and len(self.h) == 0:
                 print "  Warning: no questions found in "+filename            
