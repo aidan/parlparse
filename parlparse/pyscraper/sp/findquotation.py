@@ -36,10 +36,12 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         self.ids_with_quote = { }
         self.ids_with_matches = []
         files_to_look_in = map( lambda t: t % date_string, self.file_templates )
+        files_that_existed = 0
         for filename in files_to_look_in:
             if os.path.exists(filename):
+                files_that_existed += 1
                 self.parser.parse(filename)
-        if len(files_to_look_in) == 0:
+        if files_that_existed == 0:
             return None
         else:
             return self.ids_with_matches
