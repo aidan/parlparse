@@ -125,8 +125,8 @@ def save_question_mentions(id_to_mentions):
     keys = id_to_mentions.keys()
     keys.sort(compare_spids)
     # keys.sort()
-    date_today = datetime.date.today()
-    filename_base = "%sup-to-%s.xml" % ( xml_output_directory, str(date_today) )
+    now = datetime.datetime.now()
+    filename_base = "%sup-to-%s.xml" % ( xml_output_directory, now.isoformat() )
     tmp_filename = filename_base + ".tmp"
     fp = open( tmp_filename, "w" )
     fp.write( '<?xml version="1.0" encoding="utf-8"?>\n' )
@@ -142,7 +142,7 @@ def save_question_mentions(id_to_mentions):
     fp.close()
     os.rename(tmp_filename,filename_base)
     fil = open('%schangedates.txt' % xml_output_directory, 'a+')
-    fil.write('%d,up-to-%s.xml\n' % (time.time(), str(date_today)))
+    fil.write('%d,up-to-%s.xml\n' % (time.time(), now.isoformat()))
     fil.close()
 
 class Mention:

@@ -63,11 +63,11 @@ mentions_prefix = "../../../parldata/scrapedxml/sp-questions/"
 filenames = glob.glob( mentions_prefix + "up-to-*.xml" )
 filenames.sort()
 
-all_after = datetime.date(1999,5,1)
+all_after_date = datetime.date(1999,5,1)
 modified_after = None
 
 if force:
-    # Just leave all_after as it is...
+    # Just leave all_after_date as it is...
     pass
 elif modified:
     modified_after = most_recent_mtime(filenames)
@@ -75,15 +75,15 @@ elif modified:
         modified_after = datetime.datetime(1999,5,1,0,0,0)
 else:
     if filenames:
-        m = re.search('up-to-(\d{4}-\d{2}-\d{2}).xml',filenames[-1])
+        m = re.search('up-to-(\d{4}-\d{2}-\d{2})(.*)?.xml',filenames[-1])
         if not m:
             raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
-        all_after = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
+        all_after_date = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
 
 # Build an array of dates to consider:
 
 dates = []
-currentdate = all_after
+currentdate = all_after_date
 
 enddate = datetime.date.today()
 while currentdate < enddate:
@@ -190,7 +190,7 @@ for day_filename in bulletin_filenames:
         if verbose: print "Date in filename %s-%s-%s" % ( filename_year, filename_month, filename_day )
 
     # Don't soup it if we don't have to:
-    if date_from_filename and date_from_filename < all_after:
+    if date_from_filename and date_from_filename < all_after_date:
         continue
 
     day_soup = MinimalSoup(day_html)
@@ -245,7 +245,7 @@ for day_filename in bulletin_filenames:
         
     if verbose: print "Date: "+str(date)+" from "+day_filename
 
-    if date < all_after:
+    if date < all_after_date:
         continue
 
     matches = []
@@ -303,7 +303,7 @@ for d in dates:
     for k in h.keys():
         for t in h[k]:
             date, k, holding_date, gid = t
-            if date >= str(all_after):
+            if date >= str(all_after_date):
                 value = Mention(k,date,None,"answer",gid)
                 add_mention_to_dictionary(k,value,id_to_mentions)
                 if holding_date:
