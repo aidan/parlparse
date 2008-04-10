@@ -30,7 +30,7 @@ cd ~/parlparse/pyscraper/standing
 cd ~/parlparse/pyscraper/sp
 ./parse-written-answers.py --quiet $4
 ./parse.py --quiet $4
-./parse-question-mentions.py $4
+./parse-question-mentions.py --modified $4
 
 # Return error code
 exit $RET
