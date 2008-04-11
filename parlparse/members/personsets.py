@@ -127,8 +127,8 @@ sp_lord_matches = {
     "uk.org.publicwhip/member/80026": "uk.org.publicwhip/lord/100579",
     "uk.org.publicwhip/member/80261": "uk.org.publicwhip/lord/100579",
     # Sir David Steel
-    "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100597",
-    "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100597",
+    "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100608",
+    "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100608",
 }
 
 # Include in here changes of constituency, so those people are
