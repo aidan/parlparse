@@ -55,6 +55,7 @@ for i in range(12):
         id, canonname, canoncons =  memberList.matchfullnamecons(name, cons, date_today)
         if not id:
             print >>sys.stderr, "Failed to match %s %s %s" % (name, cons, date_today)
+            continue
         url = urlparse.urljoin(bbc_index_url, url)
 
         pid = memberList.membertoperson(id)
