@@ -432,7 +432,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
+paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
@@ -571,6 +571,8 @@ def SplitParaIndents(text, stampurl):
 					#if not bIndent:
 					#	raise Exception, ' already not-indentented '
 					bIndent = 0
+                                elif re.match('<p style="margin-left: 20px;">', sp):
+                                        bIndent = 1
 			continue
 
 		# we have the actual text between the spaces

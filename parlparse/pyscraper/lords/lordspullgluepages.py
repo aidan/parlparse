@@ -115,6 +115,10 @@ def GlueByNext(fout, urla, urlx, sdate):
                 if url == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm':
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
 
+                # post 2008-03, stupid duplication of <b>s
+                sr = re.sub('<b><a name="([^"]*)"></a><b>', '<a name="\\1"></a><b>', sr)
+                sr = re.sub('</b><!--[^>]*--></b>', '</b>', sr)
+
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
 
