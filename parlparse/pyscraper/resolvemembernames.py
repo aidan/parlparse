@@ -49,7 +49,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.retitles = re.compile('^(?:%s)' % self.titles)
         self.rejobs = re.compile('^%s$' % parlPhrases.regexpjobs)
 
-        self.honourifics = " MP| CBE| OBE| MBE| QC| BEM| rh| RH| Esq| QPM| JP| FSA| Bt| B.Ed \(Hons\)";
+        self.honourifics = " MP| CBE| OBE| KBE| DL| MBE| QC| BEM| rh| RH| Esq| QPM| JP| FSA| Bt| B.Ed \(Hons\)| TD";
         self.rehonourifics = re.compile('(?:%s)$' % self.honourifics)
 
         parser = xml.sax.make_parser()
@@ -448,6 +448,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def basicsubs(self, txt):
         txt = txt.replace("&#150;", "-")
         txt = txt.replace("&#039;", "'")
+        txt = txt.replace("&#39;", "'")
         txt = txt.replace("&#146;", "'")
         txt = txt.replace("&nbsp;", " ")
         txt = txt.replace("&rsquo;", "'")

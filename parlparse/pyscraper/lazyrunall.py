@@ -55,6 +55,7 @@ scrape          update Hansard page index, and download new raw pages
 parse           process scraped HTML into tidy XML files
 
 And choose at least one of these sections to apply them to:
+all             All normal daily things
 wrans           Written Answers
 debates         Debates
 westminhall     Westminster Hall
@@ -147,6 +148,13 @@ for arg in args:
         elif arg == "today":
                 options.today = True
         elif arg == "standing":
+                options.standing = True
+        elif arg == 'all':
+                options.wrans = True
+                options.debates = True
+                options.westminhall = True
+                options.wms = True
+                options.lords = True
                 options.standing = True
         else:
                 print >>sys.stderr, "error: no such option %s" % arg

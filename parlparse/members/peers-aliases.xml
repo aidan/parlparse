@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>
+
+<!-- 
+
+Alternative names for members of the House of Lords.
+Each entry represents an alternative.  There is one type of entry:
+
+1. fullname - the alternate text is another form of the full name, or any
+complete name used in sources (such as the office held).
+
+A date range can also be specified, for which the alias is valid.
+
+-->
+
+<!-- Offices (only those that are needed) -->
+<alias fullname="Baroness Hayman" alternate="Lord Speaker" from="2006-07-04" />
+
+<!-- Misspellings -->
+<alias fullname="Bishop of Southwell and Nottingham" alternate="Bishop of Southwell" from="2005-07-01" />
+<alias fullname="Bishop of Southwell and Nottingham" alternate="Bishop Southwell" from="2005-07-01" />
+<alias fullname="Lord Hunt of Kings Heath" alternate="Lord Hunt of King's Heath" />
+<alias fullname="Baroness Hogg" alternate="Viscountess Hailsham" />
+<alias fullname="Lord Rotherwick" alternate="Lord Rotherick" />
+
+<!-- offopp, don't give full name, tut tut -->
+<alias fullname="Lord Hodgson of Astley Abbotts" alternate="Lord Hodgson" />
+<alias fullname="Baroness Anelay of St Johns" alternate="Baroness Anelay" />
+
+<!--
+From an old file somewhere:
+<lordalias alternate="Lord De Mauley" fullname="Lord de Mauley"/>
+<lordalias alternate="Lady Darcy de Knayth" fullname="Baroness Darcy de Knayth"/>
+<lordalias alternate="Viscountess Eccles" fullname="Baroness Eccles of Moulton"/>
+-->
+
+</publicwhip>
+

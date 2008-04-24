@@ -632,7 +632,6 @@ def ParseOffOppPage(fr, gp):
         m = re.search('offoppose(\d+)_(\d+-\d+-\d+)', gp)
         (num, filedate) = m.groups()
         num = int(num)
-        print num, filedate
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
@@ -701,15 +700,15 @@ def ParseOffOppPage(fr, gp):
                                 pos = j
                                 inothermins = False
 
-                if not name or name == '&nbsp;':
+                if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
                         continue
 
+                name = re.sub('&nbsp;', ' ', name)
                 name = re.sub('\s+', ' ', re.sub('</?b>', '', name))
                 names = re.split('\s*<br>\s*(?i)', name)
                 names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
 
                 for name in names:
-                        print name, pos, dept, responsibility
 		        ec = protooffice()
         		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility)
         		res.append(ec)
@@ -794,7 +793,7 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 	# don't match names that are in the lords
         if cp.fullname == 'Dame Marion Roe DBE':
                 cp.fullname = 'Marion Roe'
-	if not re.search("Duke |Lord |Baroness |Dame |^Earl ", cp.fullname):
+	if not re.search("Duke |Lord |Baroness |Dame |^Earl |Viscount ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
                 if fullname == "Michael Foster" and not cons:
@@ -1014,12 +1013,13 @@ def ParseGovPosts():
 		moffidn += 1
 
 	# private secretaries, select committees, official opposition
-	for cp in cpressec, cpresselctee, cpresopp:
-		cpsdates = [cp.sdatestart, cp.sdateend]
-		SetNameMatch(cp, cpsdates, mpidmap)
-		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((cp.sortobj, cp))
-		moffidn += 1
+	for cpm in cpressec, cpresselctee, cpresopp:
+                for cp in cpm:
+	        	cpsdates = [cp.sdatestart, cp.sdateend]
+		        SetNameMatch(cp, cpsdates, mpidmap)
+        		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+        		rpcp.append((cp.sortobj, cp))
+        		moffidn += 1
 
 	# bring same to same places
 	# the sort object is by name, constituency, dateobject
