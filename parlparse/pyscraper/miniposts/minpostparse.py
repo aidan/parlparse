@@ -666,8 +666,8 @@ def ParseOffOppPage(fr, gp):
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
-        pos = None
-        dept = None
+        pos = ''
+        dept = ''
         inothermins = False
 	for row in list:
                 cells = re.search('<td[^>]*>\s*(.*?)\s*</td>\s*(?:<td[^>]*>\s*(.*?)\s*</td>\s*)?<td[^>]*>\s*(.*?)\s*</td>(?si)', row)
