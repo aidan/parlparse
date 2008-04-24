@@ -703,12 +703,23 @@ def ParseOffOppPage(fr, gp):
                 if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
                         continue
 
-                name = re.sub('&nbsp;', ' ', name)
-                name = re.sub('\s+', ' ', re.sub('</?b>', '', name))
+                # Don't care about non MP/Lord
+                if name == 'Michael Bates' or name == 'Kulveer Ranger':
+                        continue
+
+                name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
+                name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
+                name = re.sub('Rt Hon the |Professor the |The ', '', name)
                 names = re.split('\s*<br>\s*(?i)', name)
                 names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
 
                 for name in names:
+                        # Done here instead of alias because two Baroness Morrises
+                        if name == 'Baroness Morris':
+                                name = 'Baroness Morris of Bolton'
+		        if re.search('Sayeeda Warsi', name):
+                                name = 'Baroness Warsi'
+        
 		        ec = protooffice()
         		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility)
         		res.append(ec)
@@ -814,7 +825,7 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
 	else:
 		cp.remadename = cp.fullname
-		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
+		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename) # XXX Think this gets removed in about 3 places now!
 		cp.remadename = re.sub(" Kt ", " ", cp.remadename)
 		cp.remadename = re.sub(" [GKDCOM]BE$", "", cp.remadename)
 		cp.remadecons = ""
@@ -838,6 +849,9 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 			date = '2001-06-21'
 		if cp.remadename == 'Lord Grocott' and date=='2001-06-12':
 			date = '2001-07-03'
+                if (re.match('Baroness Warsi', cp.remadename) or cp.remadename == 'Dame Pauline Neville-Jones') and date < '2007-10-15':
+                        date = '2007-10-15'
+
 		if cp.remadename == 'Lord Davidson of Glen Cova':
 			cp.remadename = 'Lord Davidson of Glen Clova'
 		if cp.remadename == 'Lord Rooker of Perry Bar':
@@ -971,7 +985,7 @@ def ParseGovPosts():
 	cpres, sdatetlist = ParseChggdir("govposts", ParseGovPostsPage, True)
 
 	# parliamentary private secs
-	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
+        cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
 
 	# parliamentary Select Committees
 	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)

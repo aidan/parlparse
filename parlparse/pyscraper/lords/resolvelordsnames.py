@@ -27,7 +27,7 @@ hontitleso = string.join(hontitles, '|')
 
 honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
 
-rehonorifics = re.compile('(?: [CK]BE| DL)+$')
+rehonorifics = re.compile('(?: [CK]BE| DL| TD| QC| KCMG)+$')
 
 class LordsList(xml.sax.handler.ContentHandler):
 	def __init__(self):
@@ -205,6 +205,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		lplace = ""
 		if hom.group(4):
 			lplace = re.sub("  ", " ", hom.group(4))
+                        lplace = rehonorifics.sub("", lplace)
 
 		lname = re.sub("^De ", "de ", lname)
                 lname = rehonorifics.sub("", lname)
