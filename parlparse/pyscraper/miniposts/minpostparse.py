@@ -332,7 +332,7 @@ class protooffice:
                 self.cons = None
 		self.depts = [ (pos, dept) ]
 		self.pos = pos
-		self.dept = dept
+		self.dept = dept.replace('&amp;', '&') # XXX
 		self.responsibility = responsibility
 
 	# turns the protooffice into a part of a chain
@@ -630,6 +630,108 @@ def titleish(s):
 
 def ParseOffOppPage(fr, gp):
         m = re.search('offoppose(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num == 37 or num == 79:
+                return "SKIPTHIS", None # Reshuffling
+        #elif num == 38:
+        #        sdate = "2005-12-09" # Moved back to date of reshuffle
+        #elif num == 80:
+        #        sdate = "2007-07-03" # Moved back to date of reshuffle
+        elif num <= 64:
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
+                    sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        elif num <= 75:
+                sdate = filedate
+        else:
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                if not frdate:
+                        print num, filedate
+                        sys.exit()
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+
+	# extract the alphabetical list
+        table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
+	list = re.split("</?tr>(?i)", table.group(1))
+
+	res = [ ]
+        pos = ''
+        dept = ''
+        inothermins = False
+	for row in list:
+                cells = re.search('<td[^>]*>\s*(.*?)\s*</td>\s*(?:<td[^>]*>\s*(.*?)\s*</td>\s*)?<td[^>]*>\s*(.*?)\s*</td>(?si)', row)
+                if not cells:
+                        continue
+                j = cells.group(1)
+                name = cells.group(3)
+
+                responsibility = ''
+
+                if j and j != '&nbsp;':
+                        if re.match('\(Also in', j):
+                                continue
+                        if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
+                                if re.match('Opposition Whip', j):
+                                        j = 'Whips'
+                                j = j.replace(' (Lords)', '')
+                                dept = titleish(re.sub('</?b>', '', j))
+                                inothermins = False
+                                continue
+                        j = re.sub('<br>', ' ', j)
+                        j = re.sub('</?font[^>]*>', '', j)
+                        j = re.sub('&nbsp;', ' ', j)
+                        j = re.sub('\s+', ' ', j)
+                        j = titleish(re.sub('</?b>', '', j))
+                        j = j.strip()
+                        resp = re.match('Shadow Minister for (.*)', j)
+                        if resp and inothermins:
+                                responsibility = resp.group(1)
+                        elif re.match('(Other)?\s*Shadow Ministers?\s*\(', j):
+                                pos = 'Shadow Minister'
+                                inothermins = True
+                        else:
+                                pos = j
+                                inothermins = False
+
+                if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
+                        continue
+
+                # Don't care about non MP/Lord
+                if name == 'Michael Bates' or name == 'Kulveer Ranger':
+                        continue
+
+                name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
+                name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
+                name = re.sub('Rt Hon the |Professor the |The ', '', name)
+                names = re.split('\s*<br>\s*(?i)', name)
+                names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
+
+                for name in names:
+                        # Done here instead of alias because two Baroness Morrises
+                        if name == 'Baroness Morris':
+                                name = 'Baroness Morris of Bolton'
+		        if re.search('Sayeeda Warsi', name):
+                                name = 'Baroness Warsi'
+        
+		        ec = protooffice()
+        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility)
+        		res.append(ec)
+
+	return (sdate, stime), res
+
+def ParseLibDemPage(fr, gp):
+        m = re.search('libdem(\d+)_(\d+-\d+-\d+)', gp)
         (num, filedate) = m.groups()
         num = int(num)
 
@@ -996,6 +1098,9 @@ def ParseGovPosts():
         # Official Opposition (currently Conservatives)
         cpresopp, sdatelistoff = ParseChggdir('offoppose', ParseOffOppPage, False)
 
+        cpreslibdem, sdatelistlibdem = [], []
+        #cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
+
 	mpidmap = LoadMPIDmapping().mpidmap
 
 	# allocate ids and merge lists
@@ -1010,6 +1115,7 @@ def ParseGovPosts():
 
 		SetNameMatch(po, cpsdates, mpidmap)
 		po.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+                po.sortobj = (po.sortobj, po.moffid)
 		rpcp.append((po.sortobj, po, po.cmpobj))
 		moffidn += 1
 
@@ -1026,15 +1132,17 @@ def ParseGovPosts():
 
 		SetNameMatch(cp, cpsdates, mpidmap)
 		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+                cp.sortobj = (cp.sortobj, cp.moffid)
 		rpcp.append((cp.sortobj, cp, cp.cmpobj))
 		moffidn += 1
 
 	# private secretaries, select committees, official opposition
-	for cpm in cpressec, cpresselctee, cpresopp:
+	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem:
                 for cp in cpm:
 	        	cpsdates = [cp.sdatestart, cp.sdateend]
 		        SetNameMatch(cp, cpsdates, mpidmap)
         		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+                        cp.sortobj = (cp.sortobj, cp.moffid)
         		rpcp.append((cp.sortobj, cp, cp.cmpobj))
         		moffidn += 1
 
@@ -1068,7 +1176,7 @@ def ParseGovPosts():
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
-	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff:
+	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem:
                 for lsdatet in listofdates:
 		        fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
