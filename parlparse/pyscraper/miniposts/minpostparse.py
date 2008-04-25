@@ -603,7 +603,7 @@ def ParsePrivSecPage(fr, gp):
                         deptname = re.sub(" \(Team PPSs?\)", "", deptname)
 			continue
 		nameMatch = re.match("\s*<td[^>]*>\s*([^<]*)</td>\s*<td[^>]*>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
-		if nameMatch.group(1):
+		if nameMatch.group(1) and nameMatch.group(1) != '&nbsp;': 
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 			if ministername == 'Rt Hon Lord Rooker , Minister of State' or \
 			    ministername == 'Rt Hon Lord Rooker of Perry Bar , Minister of State':
@@ -681,19 +681,19 @@ def ParseOffOppPage(fr, gp):
                 if j and j != '&nbsp;':
                         if re.match('\(Also in', j):
                                 continue
+                        j = re.sub(' \((Lords|Commons)\)', '', j)
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
                                 if re.match('Opposition Whip', j):
                                         j = 'Whips'
-                                j = j.replace(' (Lords)', '')
                                 dept = titleish(re.sub('</?b>', '', j))
                                 inothermins = False
                                 continue
                         j = re.sub('<br>', ' ', j)
                         j = re.sub('</?font[^>]*>', '', j)
-                        j = re.sub('&nbsp;', ' ', j)
-                        j = re.sub('\s+', ' ', j)
+                        j = re.sub('&nbsp;|\s+', ' ', j)
                         j = titleish(re.sub('</?b>', '', j))
                         j = j.strip()
+                        if j=='Whips': j = 'Whip'
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp and inothermins:
                                 responsibility = resp.group(1)
