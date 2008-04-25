@@ -625,7 +625,7 @@ def ParsePrivSecPage(fr, gp):
 
 
 def titleish(s):
-        s = s.title().replace('&Amp;', '&amp;').replace(' And ',' and ').replace(' Of ', ' of ').replace(' The ',' the ').replace('Pps','PPS').replace(' For ',' for ')
+        s = s.title().replace('&Amp;', '&amp;').replace(' And ',' and ').replace(' Of ', ' of ').replace(' The ',' the ').replace('Pps','PPS').replace(' For ',' for ').strip()
         return s
 
 def ParseOffOppPage(fr, gp):
@@ -681,23 +681,22 @@ def ParseOffOppPage(fr, gp):
                 if j and j != '&nbsp;':
                         if re.match('\(Also in', j):
                                 continue
-                        j = re.sub(' \((Lords|Commons)\)', '', j)
+                        j = re.sub('(?i) \((Lords|Commons)\)', '', j)
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
-                                if re.match('Opposition Whip', j):
-                                        j = 'Whips'
                                 dept = titleish(re.sub('</?b>', '', j))
+                                if re.match('Opposition Whip', dept):
+                                        dept = 'Whips'
                                 inothermins = False
                                 continue
                         j = re.sub('<br>', ' ', j)
                         j = re.sub('</?font[^>]*>', '', j)
                         j = re.sub('&nbsp;|\s+', ' ', j)
                         j = titleish(re.sub('</?b>', '', j))
-                        j = j.strip()
                         if j=='Whips': j = 'Whip'
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp and inothermins:
                                 responsibility = resp.group(1)
-                        elif re.match('(Other)?\s*Shadow Ministers?\s*\(', j):
+                        elif re.match('(Other)?\s*Shadow Ministers?\s*(\(|$)', j):
                                 pos = 'Shadow Minister'
                                 inothermins = True
                         else:
@@ -792,11 +791,10 @@ def ParseLibDemPage(fr, gp):
                         j = re.sub('&nbsp;', ' ', j)
                         j = re.sub('\s+', ' ', j)
                         j = titleish(re.sub('</?b>', '', j))
-                        j = j.strip()
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp and inothermins:
                                 responsibility = resp.group(1)
-                        elif re.match('(Other)?\s*Shadow Ministers?\s*\(', j):
+                        elif re.match('(Other)?\s*Shadow Ministers?\s*(\(|$)', j):
                                 pos = 'Shadow Minister'
                                 inothermins = True
                         else:
