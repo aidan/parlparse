@@ -686,6 +686,7 @@ def ParseOffOppPage(fr, gp):
                                 inothermins = False
                                 continue
                         j = re.sub('<br>', ' ', j)
+                        j = re.sub('</?font[^>]*>', '', j)
                         j = re.sub('&nbsp;', ' ', j)
                         j = re.sub('\s+', ' ', j)
                         j = titleish(re.sub('</?b>', '', j))
@@ -864,11 +865,13 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 
 	# make the structure we will sort by.  Now uses the personids from people.xml (slightly backward.  It means for running from scratch you should execute personsets.py, this operation, and personsets.py again)
 	if cp.matchid in mpidmap:
-		cp.sortobj = mpidmap[cp.matchid]
+		cp.sortobj = (mpidmap[cp.matchid], cpsdates[0])
+                cp.cmpobj = mpidmap[cp.matchid]
 	else:
 		if not bnonlords:
 			print "mpid of", cp.remadename, "not found in people.xml; please run personsets.py and this command again"
-		cp.sortobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons)
+		cp.sortobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons, cpsdates[0])
+		cp.cmpobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons)
 
 
 
@@ -1007,7 +1010,7 @@ def ParseGovPosts():
 
 		SetNameMatch(po, cpsdates, mpidmap)
 		po.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((po.sortobj, po))
+		rpcp.append((po.sortobj, po, po.cmpobj))
 		moffidn += 1
 
 	# run through the offices in the new code
@@ -1023,7 +1026,7 @@ def ParseGovPosts():
 
 		SetNameMatch(cp, cpsdates, mpidmap)
 		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((cp.sortobj, cp))
+		rpcp.append((cp.sortobj, cp, cp.cmpobj))
 		moffidn += 1
 
 	# private secretaries, select committees, official opposition
@@ -1032,7 +1035,7 @@ def ParseGovPosts():
 	        	cpsdates = [cp.sdatestart, cp.sdateend]
 		        SetNameMatch(cp, cpsdates, mpidmap)
         		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-        		rpcp.append((cp.sortobj, cp))
+        		rpcp.append((cp.sortobj, cp, cp.cmpobj))
         		moffidn += 1
 
 	# bring same to same places
@@ -1048,7 +1051,7 @@ def ParseGovPosts():
 	prevrpm = None
 	for rp in rpcp:
 		if rp:
-			if not prevrpm or prevrpm[0] != rp[0]:
+			if not prevrpm or prevrpm[2] != rp[2]:
 				mofficegroups.append([ ])
 			mofficegroups[-1].append(rp)
 			prevrpm = rp
@@ -1065,12 +1068,9 @@ def ParseGovPosts():
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
-	for lsdatet in sdatetlist:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
-	for lsdatet in sdatelistsec:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
-	for lsdatet in sdatelistselctee:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
+	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff:
+                for lsdatet in listofdates:
+		        fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
 
 	# output the file, a tag round the groups of offices which form a single person
