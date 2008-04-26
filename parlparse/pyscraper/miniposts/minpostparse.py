@@ -736,13 +736,7 @@ def ParseLibDemPage(fr, gp):
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
-        if num == 37 or num == 79:
-                return "SKIPTHIS", None # Reshuffling
-        #elif num == 38:
-        #        sdate = "2005-12-09" # Moved back to date of reshuffle
-        #elif num == 80:
-        #        sdate = "2007-07-03" # Moved back to date of reshuffle
-        elif num <= 64:
+        if num <= 45 or num == 58 or num == 59:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
                     print "Failed to find lastupdated on:", gp
@@ -753,17 +747,17 @@ def ParseLibDemPage(fr, gp):
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                     y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
                     sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
-        elif num <= 75:
+        elif num <= 54:
                 sdate = filedate
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                frdate = re.search(">Th(is|e) list (below )?was last updated\s+on\s+<b>\s*(.*?)\s+<", fr)
                 if not frdate:
-                        print num, filedate
+                        print "A problem was found with", num, filedate
                         sys.exit()
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
 	# extract the alphabetical list
-        table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
+        table = re.search("(?s)>LIBERAL DEMOCRAT PARLIAMENTARY\s+SPOKES(?:MEN|PERSONS)<(.*?)</table>", fr)
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
@@ -801,16 +795,15 @@ def ParseLibDemPage(fr, gp):
                                 pos = j
                                 inothermins = False
 
-                if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
+                if not name or name == '&nbsp;' or re.search('vacant(?i)', name) or re.search('to be confirmed(?i)', name):
                         continue
 
-                # Don't care about non MP/Lord
-                if name == 'Michael Bates' or name == 'Kulveer Ranger':
-                        continue
-
-                name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
-                name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
+                name = re.sub("\s*\((until|also|as from) .*?\)", '', name)
+                name = re.sub('\s+', ' ', re.sub('</?(b|font|span)[^>]*>', '', name.replace('&nbsp;', ' '))).strip()
                 name = re.sub('Rt Hon the |Professor the |The ', '', name)
+
+                if re.match('Lord Dholakia &amp;\s+Lord Wallace of Saltaire \(shared position\)', name):
+                        name = 'Lord Dholakia<br>Lord Wallace of Saltaire'
                 names = re.split('\s*<br>\s*(?i)', name)
                 names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
 
@@ -1096,8 +1089,7 @@ def ParseGovPosts():
         # Official Opposition (currently Conservatives)
         cpresopp, sdatelistoff = ParseChggdir('offoppose', ParseOffOppPage, False)
 
-        cpreslibdem, sdatelistlibdem = [], []
-        #cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
+        cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
 
 	mpidmap = LoadMPIDmapping().mpidmap
 
