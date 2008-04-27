@@ -11,15 +11,15 @@
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>MPs elected in the United Kingdom general election, 2005 - Wikipedia, the free encyclopedia</title>
 		<style type="text/css" media="screen, projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?136";
-			@import "/skins-1.5/monobook/main.css?136";
+			@import "/skins-1.5/common/shared.css?139";
+			@import "/skins-1.5/monobook/main.css?139";
 		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?136" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?136";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?136";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?136";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?136";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?136"></script>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?139" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?139";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?139";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?139";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?139";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?139"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -44,17 +44,22 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "206445988";
+var wgCurRevisionId = "207324048";
 var wgVersion = "1.13alpha";
 var wgEnableAPI = true;
 var wgEnableWriteAPI = false;
+var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}";
+var wgDBname = "enwiki";
+var wgSearchNamespaces = [0];
+var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
 var wgRestrictionEdit = [];
 var wgRestrictionMove = [];
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?136"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?139"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?136"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?139"></script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?139"></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
@@ -111,7 +116,7 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 <tr>
 <td bgcolor="#0087DC"></td>
 <td><a href="/wiki/Conservative_Party_%28UK%29" title="Conservative Party (UK)">Conservative Party</a></td>
-<td align="right">197</td>
+<td align="right">196</td>
 </tr>
 <tr>
 <td bgcolor="#FFD700"></td>
@@ -159,6 +164,11 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 <td align="right">1</td>
 </tr>
 <tr>
+<td bgcolor="#993366"></td>
+<td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party">UK Independence</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
 <td bgcolor="#9999FF"></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 <td align="right">1</td>
@@ -180,7 +190,7 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 </tr>
 <tr>
 <td bgcolor="white"></td>
-<td>Vacancy (Crewe &amp; Nantwich)</td>
+<td>Vacancy (<a href="/wiki/Crewe_and_Nantwich_%28UK_Parliament_constituency%29" title="Crewe and Nantwich (UK Parliament constituency)">Crewe and Nantwich</a>)</td>
 <td align="right">1</td>
 </tr>
 <tr bgcolor="#CCCCCC">
@@ -5061,18 +5071,18 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 <p><a name="2006_2"></a></p>
 <h3><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;action=edit&amp;section=33" title="Edit section: 2006">edit</a>]</span> <span class="mw-headline"><a href="/wiki/2006" title="2006">2006</a></span></h3>
 <ul>
-<li><a href="/wiki/Clare_Short" title="Clare Short">Clare Short</a> (<a href="/wiki/Birmingham_Ladywood_%28UK_Parliament_constituency%29" title="Birmingham Ladywood (UK Parliament constituency)">Birmingham Ladywood</a>) - resigned the Labour whip on <a href="/wiki/October_20" title="October 20">20 October</a> <a href="/wiki/2006" title="2006">2006</a> and become <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a> <a href="/wiki/Labour_Party_%28UK%29" title="Labour Party (UK)">Labour</a></li>
+<li><a href="/wiki/Clare_Short" title="Clare Short">Clare Short</a> (<a href="/wiki/Birmingham_Ladywood_%28UK_Parliament_constituency%29" title="Birmingham Ladywood (UK Parliament constituency)">Birmingham Ladywood</a>) - resigned the Labour whip on <a href="/wiki/October_20" title="October 20">20 October</a> <a href="/wiki/2006" title="2006">2006</a> and became <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a> <a href="/wiki/Labour_Party_%28UK%29" title="Labour Party (UK)">Labour</a></li>
 </ul>
 <p><a name="2007_2"></a></p>
 <h3><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;action=edit&amp;section=34" title="Edit section: 2007">edit</a>]</span> <span class="mw-headline"><a href="/wiki/2007" title="2007">2007</a></span></h3>
 <ul>
 <li><a href="/wiki/Quentin_Davies" title="Quentin Davies">Quentin Davies</a> (<a href="/wiki/Grantham_and_Stamford_%28UK_Parliament_constituency%29" title="Grantham and Stamford (UK Parliament constituency)">Grantham and Stamford</a>) - defected from Conservatives to Labour on <a href="/wiki/June_26" title="June 26">26 June</a></li>
-<li><a href="/wiki/Bob_Wareing" title="Bob Wareing">Bob Wareing</a> (<a href="/wiki/Liverpool_West_Derby_%28UK_Parliament_constituency%29" title="Liverpool West Derby (UK Parliament constituency)">Liverpool West Derby</a>) - become a <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a> Labour from <a href="/wiki/September_16" title="September 16">16 September</a> <a href="/wiki/2007" title="2007">2007</a>.</li>
+<li><a href="/wiki/Bob_Wareing" title="Bob Wareing">Bob Wareing</a> (<a href="/wiki/Liverpool_West_Derby_%28UK_Parliament_constituency%29" title="Liverpool West Derby (UK Parliament constituency)">Liverpool West Derby</a>) - became an <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a> Labour from <a href="/wiki/September_16" title="September 16">16 September</a> <a href="/wiki/2007" title="2007">2007</a>.</li>
 </ul>
 <p><a name="2008"></a></p>
 <h3><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;action=edit&amp;section=35" title="Edit section: 2008">edit</a>]</span> <span class="mw-headline"><a href="/wiki/2008" title="2008">2008</a></span></h3>
 <ul>
-<li><a href="/wiki/Derek_Conway" title="Derek Conway">Derek Conway</a> (<a href="/wiki/Old_Bexley_and_Sidcup_%28UK_Parliament_constituency%29" title="Old Bexley and Sidcup (UK Parliament constituency)">Old Bexley and Sidcup</a>) - Conservative whip withdrawn on <a href="/wiki/January_29" title="January 29">29 January</a> after being found guilty of corruption <a href="http://news.bbc.co.uk/1/hi/uk_politics/7214573.stm" class="external autonumber" title="http://news.bbc.co.uk/1/hi/uk_politics/7214573.stm" rel="nofollow">[1]</a>.</li>
+<li><a href="/wiki/Derek_Conway" title="Derek Conway">Derek Conway</a> (<a href="/wiki/Old_Bexley_and_Sidcup_%28UK_Parliament_constituency%29" title="Old Bexley and Sidcup (UK Parliament constituency)">Old Bexley and Sidcup</a>) - Conservative whip withdrawn on <a href="/wiki/January_29" title="January 29">29 January</a> after allegations of corruption <a href="http://news.bbc.co.uk/1/hi/uk_politics/7214573.stm" class="external autonumber" title="http://news.bbc.co.uk/1/hi/uk_politics/7214573.stm" rel="nofollow">[1]</a>.</li>
 </ul>
 <p><a name="See_also" id="See_also"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;action=edit&amp;section=36" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
@@ -5104,7 +5114,7 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 </tr>
 <tr>
 <th style="white-space:nowrap;background:#ddddff;text-align:right;text-align:right;"><a href="/wiki/List_of_current_United_Kingdom_MPs_by_party" title="List of current United Kingdom MPs by party">By party</a></th>
-<td colspan="1" style="text-align:left;width:100%;font-size:0.95em;"><a href="/wiki/List_of_Conservative_Party_%28UK%29_MPs" title="List of Conservative Party (UK) MPs">Conservative</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Democratic_Unionist_Party_MPs" title="List of Democratic Unionist Party MPs">Democratic Unionist</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Labour_Party_%28UK%29_MPs" title="List of Labour Party (UK) MPs">Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Labour_Co-operative_Members_of_Parliament" title="List of Labour Co-operative Members of Parliament">Labour Co-op</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Liberal_Party_%28UK%29_MPs" title="List of Liberal Party (UK) MPs">Liberal</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Liberal_Democrat_MPs" title="List of Liberal Democrat MPs">Liberal Democrat</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_National_Labour_Party_%28UK%29_MPs" title="List of National Labour Party (UK) MPs">National Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_National_Liberal_Party_%28UK%29_MPs" title="List of National Liberal Party (UK) MPs">National Liberal</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Nationalist_Party_%28Ireland%29_MPs" title="List of Nationalist Party (Ireland) MPs">Nationalist (Ireland)</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Plaid_Cymru_MPs" title="List of Plaid Cymru MPs">Plaid Cymru</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Scottish_National_Party_MPs" title="List of Scottish National Party MPs">Scottish National</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Sinn_F%C3%A9in_MPs" title="List of Sinn Féin MPs">Sinn Féin</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Social_Democratic_Party_%28UK%29_MPs" title="List of Social Democratic Party (UK) MPs">Social Democratic</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Social_Democratic_and_Labour_Party_MPs" title="List of Social Democratic and Labour Party MPs">Social Democratic and Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Ulster_Unionist_Party_MPs" title="List of Ulster Unionist Party MPs">Ulster Unionist</a><br />
+<td colspan="1" style="text-align:left;width:100%;font-size:0.95em;"><a href="/wiki/List_of_Conservative_Party_%28UK%29_MPs" title="List of Conservative Party (UK) MPs">Conservative</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Democratic_Unionist_Party_MPs" title="List of Democratic Unionist Party MPs">Democratic Unionist</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Labour_Party_%28UK%29_MPs" title="List of Labour Party (UK) MPs">Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Labour_Co-operative_Members_of_Parliament" title="List of Labour Co-operative Members of Parliament">Labour Co-op</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Liberal_Party_%28UK%29_MPs" title="List of Liberal Party (UK) MPs">Liberal</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Liberal_Democrat_MPs" title="List of Liberal Democrat MPs">Liberal Democrat</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_National_Labour_Party_%28UK%29_MPs" title="List of National Labour Party (UK) MPs">National Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_National_Liberal_Party_%28UK%29_MPs" title="List of National Liberal Party (UK) MPs">National Liberal</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Nationalist_Party_%28Ireland%29_MPs" title="List of Nationalist Party (Ireland) MPs">Nationalist (Ireland)</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Plaid_Cymru_MPs" title="List of Plaid Cymru MPs">Plaid Cymru</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Scottish_National_Party_MPs" title="List of Scottish National Party MPs">Scottish National</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Sinn_F%C3%A9in_MPs" title="List of Sinn Féin MPs">Sinn Féin</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Social_Democratic_Party_%28UK%29_MPs" title="List of Social Democratic Party (UK) MPs">Social Democratic</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Social_Democratic_and_Labour_Party_MPs" title="List of Social Democratic and Labour Party MPs">Social Democratic and Labour</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_Ulster_Unionist_Party_MPs" title="List of Ulster Unionist Party MPs">Ulster Unionist</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/List_of_United_Kingdom_Independence_Party_MPs" title="List of United Kingdom Independence Party MPs">UKIP</a><br />
 <i><a href="/wiki/List_of_UK_minor_party_and_independent_MPs_elected" title="List of UK minor party and independent MPs elected">Independents and minor parties</a></i></td>
 </tr>
 </table>
@@ -5118,13 +5128,13 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 781/1000000
-Post-expand include size: 44700/2048000 bytes
-Template argument size: 25321/2048000 bytes
+Preprocessor node count: 789/1000000
+Post-expand include size: 45190/2048000 bytes
+Template argument size: 25630/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20080418074525 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20080422184652 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election%2C_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2005-" title="Category:Lists of UK MPs 2005-">Lists of UK MPs 2005-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span></div></div>			<!-- end content -->
@@ -5199,7 +5209,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/MPs_elected_in_the_United_Kingdom_general_election%2C_2005" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;oldid=206445988" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;id=206445988">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;oldid=207324048" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;id=207324048">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -5208,7 +5218,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified on 6 April 2008, at 22:16.</li>
+				<li id="lastmod"> This page was last modified on 22 April 2008, at 09:43.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -5219,4 +5229,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv76 in 0.066 secs. --></body></html>
+<!-- Served by srv97 in 0.101 secs. --></body></html>
