@@ -784,22 +784,24 @@ def ParseLibDemPage(fr, gp):
                                 boldhead = True
                         j = titleish(re.sub('</?b>', '', j))
 
+                        # Department headings in a line on their own, couple of exceptions
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j) \
                             and not re.search('Spokespersons? In the Lords', j):
                                 dept = j
                                 inothermins = False
                                 continue
-                        resp = re.match('Shadow Minister for (.*)', j) # Only happens once in LibDems
-                        if resp and inothermins:
+                        resp = re.match('Shadow Minister for (.*)', j)
+                        if resp:
                                 responsibility = resp.group(1)
-                        elif inothermins and not boldhead:
-                                responsibility = j
+                                pos = 'Shadow Minister'
                         elif re.match('\s*Shadow Ministers?\s*(\(|$)', j):
                                 pos = 'Shadow Minister'
                                 inothermins = True
                         elif re.match('\s*Spokespersons? In the Lords$', j):
                                 pos = 'Spokesperson in the Lords'
                                 inothermins = True
+                        elif inothermins and not boldhead:
+                                responsibility = j
                         else:
                                 pos = j
                                 inothermins = False
