@@ -835,6 +835,59 @@ def ParseLibDemPage(fr, gp):
 	return (sdate, stime), res
 
 
+def ParsePlaidSNPPage(fr, gp):
+        m = re.search('plaidsnp(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num == 8:
+                return "SKIPTHIS", None # Just shows constituencies
+        elif num <= 28:
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    sdate = "20%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        else:
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                if not frdate:
+                        print "A problem was found with", num, filedate
+                        sys.exit()
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+
+	# extract the alphabetical list
+        table = re.search('(?is)<b>Plaid Cymru</b>(.*?)</table>', fr).group(1)
+	res = [ ]
+
+        whips = re.findall('Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
+        for entry in whips:
+                for name in entry[0], entry[1]:
+        	        ec = protooffice()
+                        ec.OffOppproto((sdate, stime), name, 'Chief Whip', '', '', "chgpages/plaidsnp")
+                        res.append(ec)
+
+        list = re.findall('<tr><td>([^<]*?)(?:</td>)?<td>([^<]*?)(?:</td></tr>|(?=<tr>))', table)
+        for row in list:
+                resps = re.sub('\s+', ' ', re.sub('&nbsp;', ' ', row[0])).strip()
+                name = row[1].strip()
+                if not name or name == '&nbsp;':
+                        continue
+                ec = protooffice()
+                if re.match('Parliamentary Leader', resps):
+                        ec.OffOppproto((sdate, stime), name, resps, '', '', 'chgpages/plaidsnp')
+                else:
+                        ec.OffOppproto((sdate, stime), name, 'Spokesperson', '', resps, 'chgpages/plaidsnp')
+                res.append(ec)
+
+	return (sdate, stime), res
+
+
 # this goes through all the files and chains positions together
 def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 	fchgdir = os.path.join(chggdir, chgdirname)
@@ -863,7 +916,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 			continue
 
 		# all PPSs and committee memberships get cancelled when cross the general election.
-		if chgdirname != "govposts" and chgdirname != 'offoppose' and sdatet[0] > "2005-05-01" and sdatetprev[0] < "2005-05-01":
+		if (chgdirname == 'privsec' or chgdirname == 'selctee') and sdatet[0] > "2005-05-01" and sdatetprev[0] < "2005-05-01":
 			genelectioncuttoff = ("2005-04-11", "00:01")
 			#print "genelectioncuttoffgenelectioncuttoff", chgdirname
 
@@ -1100,10 +1153,10 @@ def ParseGovPosts():
 	# parliamentary Select Committees
 	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
 
-        # Official Opposition (currently Conservatives)
+        # Official Oppositions
         cpresopp, sdatelistoff = ParseChggdir('offoppose', ParseOffOppPage, False)
-
         cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
+        cpresplaidsnp, sdatelistplaidsnp = ParseChggdir('plaidsnp', ParsePlaidSNPPage, False)
 
 	mpidmap = LoadMPIDmapping().mpidmap
 
@@ -1141,7 +1194,7 @@ def ParseGovPosts():
 		moffidn += 1
 
 	# private secretaries, select committees, official opposition
-	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem:
+	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp:
                 for cp in cpm:
 	        	cpsdates = [cp.sdatestart, cp.sdateend]
 		        SetNameMatch(cp, cpsdates, mpidmap)
@@ -1180,7 +1233,7 @@ def ParseGovPosts():
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
-	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem:
+	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem, sdatelistplaidsnp:
                 for lsdatet in listofdates:
 		        fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
