@@ -323,9 +323,9 @@ class protooffice:
 		self.dept = self.depts[deptno][1]
 
 
-	def OffOppproto(self, lsdatet, name, pos, dept, responsibility):
+	def OffOppproto(self, lsdatet, name, pos, dept, responsibility, sourcedoc):
 		self.sdatet = lsdatet
-		self.sourcedoc = "chgpages/offoppose"
+		self.sourcedoc = sourcedoc
 		name = re.sub("^Rt Hon\s+|^Mrs?\s+", "", name)
 		name = re.sub("\s+(?:QC|[GKDCOM]BE)?$", "", name)
 		self.fullname = name
@@ -625,7 +625,7 @@ def ParsePrivSecPage(fr, gp):
 
 
 def titleish(s):
-        s = s.title().replace('&Amp;', '&amp;').replace(' And ',' and ').replace(' Of ', ' of ').replace(' The ',' the ').replace('Pps','PPS').replace(' For ',' for ').strip()
+        s = s.title().replace('&Amp;', '&amp;').replace(' And ',' and ').replace(' Of ', ' of ').replace(' The ',' the ').replace('Pps','PPS').replace(' For ',' for ').replace("'S", "'s").strip()
         return s
 
 def ParseOffOppPage(fr, gp):
@@ -724,7 +724,7 @@ def ParseOffOppPage(fr, gp):
                                 name = 'Baroness Warsi'
         
 		        ec = protooffice()
-        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility)
+        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility, "chgpages/offoppose")
         		res.append(ec)
 
 	return (sdate, stime), res
@@ -754,7 +754,7 @@ def ParseLibDemPage(fr, gp):
                 if not frdate:
                         print "A problem was found with", num, filedate
                         sys.exit()
-                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(3)).date
 
 	# extract the alphabetical list
         table = re.search("(?s)>LIBERAL DEMOCRAT PARLIAMENTARY\s+SPOKES(?:MEN|PERSONS)<(.*?)</table>", fr)
@@ -776,15 +776,14 @@ def ParseLibDemPage(fr, gp):
                 if j and j != '&nbsp;':
                         if re.match('\(Also in', j):
                                 continue
+                        j = re.sub('<br>|&nbsp;', ' ', j)
+                        j = re.sub('\s+', ' ', j)
+                        j = re.sub('</?(font|span)[^>]*>', '', j)
+                        j = titleish(re.sub('</?b>', '', j))
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
-                                dept = titleish(re.sub('</?b>', '', j))
+                                dept = j
                                 inothermins = False
                                 continue
-                        j = re.sub('<br>', ' ', j)
-                        j = re.sub('</?font[^>]*>', '', j)
-                        j = re.sub('&nbsp;', ' ', j)
-                        j = re.sub('\s+', ' ', j)
-                        j = titleish(re.sub('</?b>', '', j))
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp and inothermins:
                                 responsibility = resp.group(1)
@@ -802,10 +801,13 @@ def ParseLibDemPage(fr, gp):
                 name = re.sub('\s+', ' ', re.sub('</?(b|font|span)[^>]*>', '', name.replace('&nbsp;', ' '))).strip()
                 name = re.sub('Rt Hon the |Professor the |The ', '', name)
 
+                if name == 'Lord Garden KCB' and num>67: # He died
+                        continue
+
                 if re.match('Lord Dholakia &amp;\s+Lord Wallace of Saltaire \(shared position\)', name):
                         name = 'Lord Dholakia<br>Lord Wallace of Saltaire'
                 names = re.split('\s*<br>\s*(?i)', name)
-                names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
+                names = [ re.sub('^#', '', re.sub('\s*(\*|\*\*|#)+$', '', n)) for n in names ]
 
                 for name in names:
                         # Done here instead of alias because two Baroness Morrises
@@ -815,7 +817,7 @@ def ParseLibDemPage(fr, gp):
                                 name = 'Baroness Warsi'
         
 		        ec = protooffice()
-        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility)
+        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility, "chgpages/libdem")
         		res.append(ec)
 
 	return (sdate, stime), res

@@ -27,7 +27,7 @@ hontitleso = string.join(hontitles, '|')
 
 honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
 
-rehonorifics = re.compile('(?: [CK]BE| DL| TD| QC| KCMG)+$')
+rehonorifics = re.compile('(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$')
 
 class LordsList(xml.sax.handler.ContentHandler):
 	def __init__(self):
@@ -182,6 +182,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
 		name = re.sub("^The ", "", name)
+                name = name.replace(' Of ', ' of ')
 
                 if name in self.aliases:
                         name = self.aliases[name]
