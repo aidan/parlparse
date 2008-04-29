@@ -779,16 +779,26 @@ def ParseLibDemPage(fr, gp):
                         j = re.sub('<br>|&nbsp;', ' ', j)
                         j = re.sub('\s+', ' ', j)
                         j = re.sub('</?(font|span)[^>]*>', '', j)
+                        boldhead = False
+                        if re.search('<b>', j):
+                                boldhead = True
                         j = titleish(re.sub('</?b>', '', j))
-                        if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
+
+                        if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j) \
+                            and not re.search('Spokespersons? In the Lords', j):
                                 dept = j
                                 inothermins = False
                                 continue
-                        resp = re.match('Shadow Minister for (.*)', j)
+                        resp = re.match('Shadow Minister for (.*)', j) # Only happens once in LibDems
                         if resp and inothermins:
                                 responsibility = resp.group(1)
-                        elif re.match('(Other)?\s*Shadow Ministers?\s*(\(|$)', j):
+                        elif inothermins and not boldhead:
+                                responsibility = j
+                        elif re.match('\s*Shadow Ministers?\s*(\(|$)', j):
                                 pos = 'Shadow Minister'
+                                inothermins = True
+                        elif re.match('\s*Spokespersons? In the Lords$', j):
+                                pos = 'Spokesperson in the Lords'
                                 inothermins = True
                         else:
                                 pos = j
