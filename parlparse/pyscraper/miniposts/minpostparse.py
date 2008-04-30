@@ -778,7 +778,7 @@ def ParseLibDemPage(fr, gp):
                                 continue
                         j = re.sub('<br>|&nbsp;', ' ', j)
                         j = re.sub('\s+', ' ', j)
-                        j = re.sub('</?(font|span)[^>]*>', '', j)
+                        j = re.sub('</?(font|em|span)[^>]*>', '', j)
                         boldhead = False
                         if re.search('<b>', j):
                                 boldhead = True
