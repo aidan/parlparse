@@ -1,5 +1,18 @@
 #!/usr/bin/python
 
+# Copyright (c) 2008 Julian Todd. This file is part of UNDemocracy.
+# 
+# UNDemocracy is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
+# 
+# UNDemocracy is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+# 
+# There is a copy of the GNU Affero General Public License in LICENSE.txt at
+# the top of the directory tree. Or see <http://www.gnu.org/licenses/>.
 
 import sys, os, stat, re
 import cgi, cgitb
