@@ -98,6 +98,7 @@ class ParseDay:
 <!ENTITY auml    "&#228;">
 <!ENTITY euml    "&#235;">
 <!ENTITY iuml    "&#239;">
+<!ENTITY ntilde  "&#241;">
 <!ENTITY ouml    "&#246;">
 <!ENTITY uuml    "&#252;">
 <!ENTITY fnof    "&#402;">
