@@ -887,6 +887,21 @@ def ParsePlaidSNPPage(fr, gp):
 
 	return (sdate, stime), res
 
+def ParseDUPPage:
+        fp = open(membersdir + '../rawdata/dup_parl.bsv')
+        stime = 0
+        res = []
+        for line in fp:
+                if re.match('\d{4}-\d\d-\d\d', line):
+                        sdate = line.strip()
+                        stime = stime + 1
+                        continue
+                position, name = line.split('|')
+                ec = protooffice()
+                ec.OffOppproto((sdate, stime), name, position, '', '', 'chgpages/dup')
+                res.append(ec)
+        fp.close()
+        return (sdate, stime), res
 
 # this goes through all the files and chains positions together
 def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
@@ -1157,6 +1172,8 @@ def ParseGovPosts():
         cpresopp, sdatelistoff = ParseChggdir('offoppose', ParseOffOppPage, False)
         cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
         cpresplaidsnp, sdatelistplaidsnp = ParseChggdir('plaidsnp', ParsePlaidSNPPage, False)
+        cpresdup, sdatelistdup = [], []
+        #cpresdup, sdatelistdup = ParseChggdir('dup', ParseDUPPage, False)
 
 	mpidmap = LoadMPIDmapping().mpidmap
 
@@ -1194,7 +1211,7 @@ def ParseGovPosts():
 		moffidn += 1
 
 	# private secretaries, select committees, official opposition
-	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp:
+	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp, cpresdup:
                 for cp in cpm:
 	        	cpsdates = [cp.sdatestart, cp.sdateend]
 		        SetNameMatch(cp, cpsdates, mpidmap)
@@ -1233,7 +1250,7 @@ def ParseGovPosts():
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
-	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem, sdatelistplaidsnp:
+	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem, sdatelistplaidsnp, sdatelistdup:
                 for lsdatet in listofdates:
 		        fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
