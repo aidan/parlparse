@@ -887,7 +887,7 @@ def ParsePlaidSNPPage(fr, gp):
 
 	return (sdate, stime), res
 
-def ParseDUPPage:
+def ParseDUPPage(fr, gp):
         fp = open(membersdir + '../rawdata/dup_parl.bsv')
         stime = 0
         res = []
