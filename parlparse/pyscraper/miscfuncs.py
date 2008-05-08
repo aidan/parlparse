@@ -562,7 +562,7 @@ def SplitParaIndents(text, stampurl):
 		if (i % 2) == 0:
 			for sp in dell[i]:
 				if re.match('(?:<ul><ul>)?<ul>(?i)', sp):
-					if bIndent:
+					if bIndent==1:
 						print dell[i - 1: i + 1]
 						raise ContextException(' already indented ', stamp=stampurl, fragment=sp)
 					bIndent = 1
@@ -572,7 +572,9 @@ def SplitParaIndents(text, stampurl):
 					#	raise Exception, ' already not-indentented '
 					bIndent = 0
                                 elif re.match('<p style="margin-left: 20px;">', sp):
-                                        bIndent = 1
+                                        bIndent = 2
+                                elif bIndent == 2 and re.match('</p>', sp):
+                                        bIndent = 0
 			continue
 
 		# we have the actual text between the spaces
@@ -581,7 +583,7 @@ def SplitParaIndents(text, stampurl):
 
 		# separate out italics type paragraphs
 		tex = dell[i]
-		cindent = bIndent
+		cindent = bIndent > 0 and 1 or 0
 
 		qitbod = re.match('<i>([\s\S]*?)</i>[.:]?$', tex)
 		if qitbod:
