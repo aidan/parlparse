@@ -116,7 +116,7 @@ def GlueByNext(fout, urla, urlx, sdate):
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
-                sr = re.sub('<b><a name="([^"]*)"></a><b>', '<a name="\\1"></a><b>', sr)
+                sr = re.sub('<b>((?:<a name="[^"]*"></a>)+)<b>', '\\1<b>', sr)
                 sr = re.sub('</b><!--[^>]*--></b>', '</b>', sr)
 
 		# split by sections
