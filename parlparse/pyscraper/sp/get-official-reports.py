@@ -117,6 +117,7 @@ for year in range(options.year, currentyear+1):
                 fp.write(ur.read())
                 fp.close()
                 ur.close()
+                print str(d), 'scraped SP official report'
 
             fp = open(output_filename)
             contents_html = fp.read()
