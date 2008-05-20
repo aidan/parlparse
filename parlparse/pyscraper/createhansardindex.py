@@ -218,6 +218,9 @@ def CmIndexFromPage(urllinkpage):
                 if sdate=='2008-01-15' and uind=='http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080116/index/80115-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080115/index/80115-x.htm'
 
+                # 7th May 2008 debates links to 8th May
+                if sdate=='2008-05-07' and uind=='http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080508/debindx/80508-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080507/debindx/80507-x.htm'
                 if sdate>='2006-12-05' and sdate<='2006-12-14' and typ=='Westminster Hall':
                         uind = uind.replace('200506', '200607')
 
