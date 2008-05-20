@@ -208,7 +208,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "disagreedto"
 	if re.match('<p>On Motion, Question agreed to\.</p>', qpara):
 		return "agreedto"
-	if re.match('<p>Schedule agreed to\.</p>', qpara):
+	if re.match('<p>(The )?Schedule agreed to\.</p>', qpara):
 		return "agreedto"
 
 	if re.match('<p>Moved, That the .{0,120}? be (agreed to|approved)\.', qpara):
