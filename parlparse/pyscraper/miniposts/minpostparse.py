@@ -333,7 +333,7 @@ class protooffice:
 		self.depts = [ (pos, dept) ]
 		self.pos = pos
 		self.dept = dept.replace('&amp;', '&') # XXX
-		self.responsibility = responsibility
+		self.responsibility = responsibility.replace('&amp;', '&')
 
 	# turns the protooffice into a part of a chain
 	def SetChainFront(self, fn, bfrontopen):
