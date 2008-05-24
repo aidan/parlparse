@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 if [ "$1" == "0" ]
 then
     RET=0
