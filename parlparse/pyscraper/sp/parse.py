@@ -1433,6 +1433,7 @@ for d in dates:
 <!ENTITY pound   "&#163;">
 <!ENTITY euro    "&#8364;">
 
+<!ENTITY szlig   "&#223;">
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
 <!ENTITY egrave  "&#232;">
