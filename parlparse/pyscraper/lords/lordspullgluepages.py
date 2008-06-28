@@ -91,6 +91,7 @@ def GlueByNext(fout, urla, urlx, sdate):
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
 		url = urla[0]
+                print "*", url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
