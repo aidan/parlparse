@@ -19,7 +19,8 @@ YEAR=`date +%Y`
 cd ~/parldata/patches
 find . -name "*.patch" -exec svn -q add {} +
 # (we need native line feeds to apply the patches on Windows)
-find . -name "*.patch" -exec svn -q propset svn:eol-style native {} +
+# Commented out as it breaks NI patch. Not sure of correct solution
+# find . -name "*.patch" -exec svn -q propset svn:eol-style native {} +
 svn -q update
 
 # Add any new cmpages
