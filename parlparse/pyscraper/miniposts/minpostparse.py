@@ -442,6 +442,10 @@ def ParseSelCteePage(fr, gp):
                         ec = protooffice()
                         ec.SelCteeproto((sdate, stime), name, const, cteename)
                         res.append(ec)
+                if num>=181 and num<=185 and cteename=='Communities and Local Government':
+                        ec = protooffice()
+                        ec.SelCteeproto((sdate, stime), 'Mr Greg Hands', 'Hammersmith & Fulham', 'Communities and Local Government')
+                        res.append(ec)
         for i in committees:
                 if i not in found:
                         print "Argh:", gp, i
