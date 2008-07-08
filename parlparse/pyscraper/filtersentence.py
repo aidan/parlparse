@@ -46,11 +46,17 @@ refqnum = re.compile("\s*\[(\d+)\]\s*")
 
 redatephraseval = re.compile('(?:(?:%s),? )?(\d+ (?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
 def TokenDate(ldate, phrtok):
+	sdate_year = phrtok.sdate[0:4]
+	tdate = ldate.group(0)
+	noyear = False
+	if not ldate.group(2):
+		tdate += " %s" % sdate_year
+		noyear = True
 	try:
-		lldate = mx.DateTime.DateTimeFrom(ldate.group(0)).date
-		if lldate > mx.DateTime.now().date:
-			lldate = (mx.DateTime.DateTimeFrom(ldate) - mx.DateTime.RelativeDateTime(years=1)).date
-		ldate = lldate
+		lldate = mx.DateTime.DateTimeFrom(tdate)
+		#if noyear and lldate > mx.DateTime.now():
+		#	lldate = (lldate - mx.DateTime.RelativeDateTime(years=1))
+		ldate = lldate.date
 		phrtok.lastdate = ldate
 	except:
 		phrtok.lastdate = ''
@@ -102,13 +108,28 @@ def TokenOffRep(qoffrep, phrtok):
 
 	return ('phrase', ' class="offrep" id="%s"' % offrepid )
 
+# Date in the middle, so need to match before the date...
+reoffrepw1 = re.compile('<i> *official report(?:, Westminster Hall)</i>,? (.*?); Vol\. \d+, c\. (\d+([WHS]*))(?i)')
+def TokenOffRep1(qoffrep, phrtok):
+	date = mx.DateTime.DateTimeFrom(qoffrep.group(1)).date
+	qcolcode = qoffrep.group(2)
+	if (string.upper(qoffrep.group(3)) == 'WS'):
+		sectt = 'wms'
+	elif (string.upper(qoffrep.group(3)) == 'WH'):
+		sectt = 'westminhall'
+	elif (string.upper(qoffrep.group(3)) == 'W'):
+		sectt = 'wrans'
+	else:
+		sectt = 'debates'
+	offrepid = '%s/%s.%s' % (sectt, date, qcolcode)
+	return ('phrase', ' class="offrep" id="%s"' % offrepid )
 
 #my hon. Friend the Member for Regent's Park and Kensington, North (Ms Buck)
 # (sometimes there are spurious adjectives
 rehonfriend = re.compile('''(?x)
 				(?:[Mm]y|[Hh]er|[Hh]is|[Oo]ur|[Tt]he)
 				(\sright)?               # group 1 (privy counsellors)
-				(.{0,26}?)               # group 2 sometimes an extra adjective eg "relentlyessly inclusive"
+				### (.{0,26}?)               # group 2 sometimes an extra adjective eg "relentlyessly inclusive"
 				(?:\s|&nbsp;)*(?:hon\.)?
 				(\sand\slearned)?		 # group 3 used when MP is a barrister
 				(?:&.{4};and\sgallant&.{4};)?  # for such nonsense
@@ -144,6 +165,7 @@ def TokenHonFriend(mhonfriend, phrtok):
 # the array of tokens which we will detect on the way through
 tokenchain = [
 	( 'hreflink',       rehreflink,     None,               TokenHrefLink ),
+#	( "offrep1", 		reoffrepw1,		None, 				TokenOffRep1 ),
 	( "date",			redatephraseval,None, 				TokenDate ),
 	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
 	( "standing order", restandingo, 	restandingomarg, 	TokenStandingOrder ),
