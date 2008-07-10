@@ -109,7 +109,7 @@ def TokenOffRep(qoffrep, phrtok):
 	return ('phrase', ' class="offrep" id="%s"' % offrepid )
 
 # Date in the middle, so need to match before the date...
-reoffrepw1 = re.compile('<i> *official report(?:, Westminster Hall)</i>,? (.*?); Vol\. \d+, c\. (\d+([WHS]*))(?i)')
+reoffrepw1 = re.compile('<i> *official report(?:, (?:Westminster Hall|House of Lords))?,? *</i>,? *(.*?); Vol\. *\d+, +c\. *(\d+([WHS]*))(?i)')
 def TokenOffRep1(qoffrep, phrtok):
 	date = mx.DateTime.DateTimeFrom(qoffrep.group(1)).date
 	qcolcode = qoffrep.group(2)
@@ -170,9 +170,8 @@ tokenchain = [
 	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
 	( "standing order", restandingo, 	restandingomarg, 	TokenStandingOrder ),
 	( "httplink", 		rehtlink, 		None, 				TokenHttpLink ),
-	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
 	( "honfriend", 		rehonfriend, 	rehonfriendmarg, 	TokenHonFriend ),
-			  ]
+]
 
 
 # this handles the chain of tokenization of a paragraph
