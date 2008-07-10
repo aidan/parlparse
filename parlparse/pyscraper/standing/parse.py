@@ -480,14 +480,14 @@ class ParseCommittee:
         chairname = self.clean_text(chairname)
         # strip anything following a comma
         chairname = re.sub(",.*", "", chairname)
-        if re.search("&dagger;", tag.previousSibling.string): attending = True
+        if re.search("&(dagger|#134);", tag.previousSibling.string): attending = True
         return (chairname, attending)
 
     def parse_chair_string(self, text):
         """Parse the old-style committee chairman text. Return the member's
         name and whether or not they're in attendence"""
         attending = False
-        newtext = re.sub('&dagger;', '', text)
+        newtext = re.sub('&(dagger|#134);', '', text)
         if newtext != text: attending = True
         return (self.clean_text(newtext), attending)
         
@@ -499,7 +499,7 @@ class ParseCommittee:
         memberparty - second bracketed text if present 
         attending - bookean indicating if the member is attending"""
         attending = False
-        newtext = re.sub('&dagger;', '', text)
+        newtext = re.sub('&(dagger|#134);', '', text)
         if newtext != text: attending = True
         mMember = re.match('([^(]*?)\s*?(\([^)]*?\))?\s*?(\([^)]*?\))?\s*$', newtext)
         if not mMember: raise ContextException, "Couldn't parse committee member %s" % newtext 
@@ -677,7 +677,7 @@ class ParseCommittee:
         else:
             chairtext = re.sub(chairRe, "", chairTag)
             
-        while re.search("(&dagger;|,|and)\s*?$",chairtext):
+        while re.search("(&dagger;|&#134;|,|and)\s*?$",chairtext):
             chairTag = chairTag.findNext(text=re.compile("[a-z]"))
             chairtext += chairTag  
         chairs = []
