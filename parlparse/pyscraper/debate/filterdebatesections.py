@@ -379,10 +379,10 @@ def FilterDebateSections(text, sdate, typ):
 
 	        		# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
         			elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-        				mmm = re.match('\s*<p>((?:New )?[Cc]lause \d+\w?)</p>', flatb[-1].stext[-1])
+        				mmm = re.match('\s*<p>((?:New )?(?:clause|schedule) \d+\w?)</p>(?i)', flatb[-1].stext[-1])
         				if mmm:
         					if IsNotQuiet():
-        						print "Clause moving", flatb[-1].stext[-1]
+        						print "Clause/schedule moving", flatb[-1].stext[-1]
         					qbh.stext.insert(0, " &mdash; ")
         					qbh.stext.insert(0, mmm.group(1))
         					flatb[-1].stext = flatb[-1].stext[:-1]  # delete final value
@@ -390,13 +390,13 @@ def FilterDebateSections(text, sdate, typ):
         					# remove an empty speech
         					if not flatb[-1].stext:
         						if IsNotQuiet():
-        							print "removing empty speech after moving 'clause' out"
+        							print "removing empty speech after moving 'clause/schedule' out"
         						assert flatb[-1].speaker == 'nospeaker="true"'
         						del flatb[-1]
 
         				# converting a search into a match, for safety, and double checking
 	        			else:
-		        			if re.search('<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
+		        			if re.search('<p>\s*((?:New )?\s*(?:clause|schedule)\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
 			        			print flatb[-1].stext[-1]
 				       			assert False
 
