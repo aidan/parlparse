@@ -7,40 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
-<!ENTITY deg    "&#176;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="" latest="no">
@@ -1571,7 +1589,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204754.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204754.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204754.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204754.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204754.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204754.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204754.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1334W.6" nospeaker="True" inserted-heading="True" colnum="1334W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w01.htm#41220w01.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204754.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1334W.6" nospeaker="true" inserted-heading="true" colnum="1334W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w01.htm#41220w01.html_wqn6">
 	New Political Parties
 </minor-heading>
 
@@ -1611,7 +1629,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200873.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200873.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200873.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200873.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200873.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200873.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200873.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1336W.1" nospeaker="True" colnum="1336W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200873.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1336W.1" nospeaker="true" colnum="1336W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn0">
 	Departmental Costs
 </minor-heading>
 
@@ -1632,7 +1650,7 @@
 	<table>
 		<caption>DFID Programme: Bilateral Technical Co-operation &pound;000</caption>
 		<thead>
-			<tr pid=".1336W.3/11"> <th></th> <th>Personnel</th> </tr>
+			<tr pid=".1336W.3/11"> <th></th> <th colspan="2">Personnel</th> </tr>
 			<tr pid=".1336W.3/12"> <th></th> <th>Consultancies</th> <th>Previous figures published in Table 12 of SID</th> </tr>
 		</thead>
 		<tbody>
@@ -1656,7 +1674,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203302.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203302.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203302.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203302.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203302.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203302.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203302.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1337W.0" nospeaker="True" inserted-heading="True" colnum="1337W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203302.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1337W.0" nospeaker="true" inserted-heading="true" colnum="1337W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn2">
 	Departmental Files
 </minor-heading>
 
@@ -1681,7 +1699,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205115.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205115.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205115.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205115.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205115.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205115.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205115.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1337W.6" nospeaker="True" colnum="1337W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205115.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1337W.6" nospeaker="true" colnum="1337W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn4">
 	Iraq
 </minor-heading>
 
@@ -1703,7 +1721,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202394.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202394.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202394.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202394.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202394.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202394.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202394.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1338W.0" nospeaker="True" colnum="1338W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202394.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1338W.0" nospeaker="true" colnum="1338W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w02.htm#41220w02.html_wqn5">
 	Ministerial Meetings
 </minor-heading>
 
@@ -1743,7 +1761,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204552.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204552.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204552.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204552.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204552.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204552.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204552.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1342W.0" nospeaker="True" colnum="1342W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w04.htm#41220w04.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204552.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1342W.0" nospeaker="true" colnum="1342W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w04.htm#41220w04.html_wqn0">
 	Bee Disease
 </minor-heading>
 
@@ -1830,7 +1848,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202096.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202096.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202096.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202096.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202096.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202096.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202096.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1346W.9" nospeaker="True" inserted-heading="True" colnum="1346W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w05.htm#41220w05.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202096.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1346W.9" nospeaker="true" inserted-heading="true" colnum="1346W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w05.htm#41220w05.html_wqn3">
 	Document Shredding
 </minor-heading>
 
@@ -1885,7 +1903,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204288.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204288.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204288.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204288.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204288.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204288.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204288.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1350W.0" nospeaker="True" colnum="1350W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204288.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1350W.0" nospeaker="true" colnum="1350W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn1">
 	Special Advisers
 </minor-heading>
 
@@ -1896,7 +1914,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1350W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.204288.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.204288.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1350W.2" speakerid="uk.org.publicwhip/member/1111" speakername="Alun Michael" colnum="1350W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_spnew1">
-	<p pid=".1350W.2/1">I refer to the answer given by my hon. Friend, the then Minister of State for the Cabinet Office (Ruth Kelly) on <phrase class="date" code="">14 December</phrase>, <phrase class="offrep" id="wrans/.1004W"><i>Official Report</i>, column 1004W</phrase>.</p>
+	<p pid=".1350W.2/1">I refer to the answer given by my hon. Friend, the then Minister of State for the Cabinet Office (Ruth Kelly) on <phrase class="date" code="2004-12-14">14 December</phrase>, <phrase class="offrep" id="wrans/2004-12-14.1004"><i>Official Report</i>, column 1004W</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1350W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.204879.h" matchtype="oldwransgid"/>
@@ -1910,7 +1928,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203324.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203324.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203324.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203324.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203324.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203324.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203324.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1350W.7" nospeaker="True" colnum="1350W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203324.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1350W.7" nospeaker="true" colnum="1350W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn3">
 	Departmental Files
 </minor-heading>
 
@@ -1950,7 +1968,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205856.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205856.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205856.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205856.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205856.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205856.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205856.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1352W.0" nospeaker="True" colnum="1352W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205856.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1352W.0" nospeaker="true" colnum="1352W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w06.htm#41220w06.html_wqn7">
 	Departmental Staff
 </minor-heading>
 
@@ -2035,7 +2053,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202411.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202411.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202411.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202411.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202411.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202411.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202411.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.0" nospeaker="True" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w07.htm#41220w07.html_wqn10">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202411.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.0" nospeaker="true" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w07.htm#41220w07.html_wqn10">
 	Departmental Expenditure
 </minor-heading>
 
@@ -2050,7 +2068,7 @@
 	<table>
 		<thead>
 			<tr pid=".1356W.2/4"> <th></th> <th></th> <th></th> <th></th> <th></th> <th></th> <th>&pound; million</th> </tr>
-			<tr pid=".1356W.2/5"> <th></th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> </tr>
+			<tr pid=".1356W.2/5"> <th></th> <th colspan="3">2002&ndash;03</th> <th colspan="3">2003&ndash;04</th> </tr>
 			<tr pid=".1356W.2/6"> <th>DfT Unit</th> <th>New Build</th> <th>Demo Rebuild</th> <th>PFI<br/> Projects (m)</th> <th>New Build</th> <th>Demo Rebuild</th> <th>PFI<br/> Projects</th> </tr>
 		</thead>
 		<tbody>
@@ -2070,7 +2088,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202415.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202415.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202415.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202415.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202415.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202415.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202415.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.3" nospeaker="True" inserted-heading="True" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w07.htm#41220w07.html_wqn11">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202415.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.3" nospeaker="true" inserted-heading="true" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w07.htm#41220w07.html_wqn11">
 	Departmental Expenditure
 </minor-heading>
 
@@ -2119,7 +2137,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203346.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203346.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203346.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203346.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203346.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203346.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203346.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.12" nospeaker="True" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w08.htm#41220w08.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203346.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1356W.12" nospeaker="true" colnum="1356W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w08.htm#41220w08.html_wqn2">
 	M6 Toll Road
 </minor-heading>
 
@@ -2170,7 +2188,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204718.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204718.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204718.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204718.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204718.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204718.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204718.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1358W.3" nospeaker="True" colnum="1358W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w08.htm#41220w08.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204718.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1358W.3" nospeaker="true" colnum="1358W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w08.htm#41220w08.html_wqn8">
 	Railway Stations (Crime)
 </minor-heading>
 
@@ -2187,7 +2205,7 @@
 	<table>
 		<caption>Force wide</caption>
 		<thead>
-			<tr pid=".1358W.5/7"> <th></th> <th>Assaults</th> <th>Sexual offences</th> <th>Robbery</th> <th>Theft</th> </tr>
+			<tr pid=".1358W.5/7"> <th></th> <th colspan="2">Assaults</th> <th colspan="2">Sexual offences</th> <th colspan="2">Robbery</th> <th colspan="2">Theft</th> </tr>
 			<tr pid=".1358W.5/8"> <th></th> <th>Male</th> <th>Female</th> <th>Male</th> <th>Female</th> <th>Male</th> <th>Female</th> <th>Male</th> <th>Female</th> </tr>
 		</thead>
 		<tbody>
@@ -2234,7 +2252,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205188.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205188.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205188.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205188.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205188.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205188.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205188.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1361W.0" nospeaker="True" colnum="1361W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w09.htm#41220w09.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205188.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1361W.0" nospeaker="true" colnum="1361W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w09.htm#41220w09.html_wqn4">
 	Transport Council
 </minor-heading>
 
@@ -2245,7 +2263,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1361W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.205188.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.205188.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1361W.2" speakerid="uk.org.publicwhip/member/1082" speakername="Tony McNulty" colnum="1361W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w09.htm#41220w09.html_spnew4">
-	<p pid=".1361W.2/1">A transport session of the Transport, Telecommunications and Energy Council met in Brussels on 9 and <phrase class="date" code="">10 December</phrase>. I represented the UK, together with Nicol Stephen of the Scottish Executive.</p>
+	<p pid=".1361W.2/1">A transport session of the Transport, Telecommunications and Energy Council met in Brussels on 9 and <phrase class="date" code="2004-12-10">10 December</phrase>. I represented the UK, together with Nicol Stephen of the Scottish Executive.</p>
 	<p pid=".1361W.2/2">Following a debate on liability and compensation for damage from oil pollution at sea, the Presidency drew Conclusions. These incorporated wording which I had proposed, stressing the need to ensure that effective financial responsibility is exercised on the part of those involved in transportation of oil by sea, and the need for appropriate revision of the relevant provisions of the 1992 Civil Liability Convention (CLC) and the 1992 International Oil Pollution Compensation Fund (IOPCF). The UK wording was supported in the Council by several other member states.</p>
 	<p pid=".1361W.2/3">The Commission presented a revised proposal for a Directive on market access to port services. I joined a number of other Ministers in expressing strong reservations about this proposal, which replaces the one rejected by the European Parliament following Conciliation. I pointed out that, while the UK welcomes liberalisation and market opening, some aspects of this new proposal would not help the port sector's development. It is far less satisfactory than the Conciliation text in a number of key areas. The proposal will have a major impact on the ports and shipping sectors, and there is a compelling case for further consultation with stakeholders and an extended impact assessment. These issues will be pursued in the detailed negotiation by the Council Working Group, which will now begin.</p>
 	<p pid=".1361W.2/4">The Council reached Political Agreement on a Regulation introducing uniform application of the International Safety Management Code in EU member states, and reached a General Approach on a Directive on recognition of seafarers' certificates. Both are acceptable to the UK. The latter corrects an imbalance between EU member states' recognition of certificates issued by other member states and the procedure required under the Convention of the International Maritime Organization.</p>
@@ -2271,7 +2289,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202709.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202709.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202709.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202709.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202709.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202709.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202709.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1363W.1" nospeaker="True" colnum="1363W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w10.htm#41220w10.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202709.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1363W.1" nospeaker="true" colnum="1363W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w10.htm#41220w10.html_wqn1">
 	Child Care
 </minor-heading>
 
@@ -2348,7 +2366,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201104.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.201104.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201104.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201104.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201104.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201104.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.201104.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1364W.0" nospeaker="True" colnum="1364W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w10.htm#41220w10.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.201104.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1364W.0" nospeaker="true" colnum="1364W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w10.htm#41220w10.html_wqn2">
 	Education (Lewisham)
 </minor-heading>
 
@@ -2427,72 +2445,11 @@
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202656.h" newgid="uk.org.publicwhip/wrans/2004-12-20.202624.h" matchtype="altques"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.202624.q0" matchtype="oldwransgid"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.202624.r0" matchtype="oldwransgid"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204985.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1366W.3" nospeaker="True" colnum="1366W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w11.htm#41220w11.html_wqn1">
-	Faith Schools
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.204985.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.204985.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1366W.4" speakerid="uk.org.publicwhip/member/1168" speakername="Gordon Prentice" colnum="1366W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w11.htm#41220w11.html_wqn1">
-	<p pid=".1366W.4/1" qnum="204985">To ask the Secretary of State for Education and Skills how many faith schools there were in England in each year since 2000, broken down by religion.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.204985.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.204985.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1366W.5" speakerid="uk.org.publicwhip/member/1296" speakername="Stephen Twigg" colnum="1366W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w11.htm#41220w11.html_spnew1">
-	<p pid=".1366W.5/1">The requested information is given in the tables.</p>
-	<table>
-		<caption>Maintained primary schools<sup>(19)</sup>: Number of schools by religious character&mdash;position in January each year: 2000 to 2004&mdash;England</caption>
-		<thead>
-			<tr pid=".1366W.5/5"> <th></th> <th>Number of primary schools</th> </tr>
-			<tr pid=".1366W.5/6"> <th></th> <th>2000</th> <th>2001</th> <th>2002</th> <th>2003</th> <th>2004</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1366W.5/9"> <td>No religious character</td> <td>11,782</td> <td>11,708</td> <td>11,639</td> <td>11,536</td> <td>11,449</td> </tr>
-			<tr pid=".1366W.5/10"> <td>Church of England</td> <td>4,523</td> <td>4,509</td> <td>4,505</td> <td>4,493</td> <td>4,482</td> </tr>
-			<tr pid=".1366W.5/11"> <td>Roman Catholic</td> <td>1,752</td> <td>1,747</td> <td>1,733</td> <td>1,724</td> <td>1,723</td> </tr>
-			<tr pid=".1366W.5/12"> <td>Methodist</td> <td>28</td> <td>28</td> <td>28</td> <td>27</td> <td>26</td> </tr>
-			<tr pid=".1366W.5/13"> <td>Other Christian faith<sup>(20)</sup></td> <td>47</td> <td>47</td> <td>48</td> <td>49</td> <td>50</td> </tr>
-			<tr pid=".1366W.5/14"> <td>Jewish</td> <td>25</td> <td>26</td> <td>28</td> <td>28</td> <td>28</td> </tr>
-			<tr pid=".1366W.5/15"> <td>Muslim</td> <td>0</td> <td>2</td> <td>2</td> <td>2</td> <td>2</td> </tr>
-			<tr pid=".1366W.5/16"> <td>Sikh</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-			<tr pid=".1366W.5/17"> <td>Other</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-			<tr pid=".1366W.5/18"> <td>Total</td> <td>18,158</td> <td>18,069</td> <td>17,985</td> <td>17,861</td> <td>17,762</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1366W.5/21"><sup>(19)</sup> Includes middle schools as deemed.</p>
-	<p pid=".1366W.5/22"><sup>(20)</sup> Includes schools of mixed denomination or other Christian beliefs.</p>
-	<p pid=".1366W.5/23">Source:</p>
-	<p pid=".1366W.5/24">Annual Schools Census</p>
-	<table>
-		<caption>Maintained secondary schools<sup>(21)</sup>: Number of schools by religious character&mdash;position in January each year: 2000 to 2004&mdash;England</caption>
-		<thead>
-			<tr pid=".1366W.5/28"> <th></th> <th>Number of secondary schools</th> </tr>
-			<tr pid=".1366W.5/29"> <th></th> <th>2000</th> <th>2001</th> <th>2002</th> <th>2003</th> <th>2004</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1366W.5/32"> <td>No religious character</td> <td>2,967</td> <td>2,899</td> <td>2,871</td> <td>2,850</td> <td>2,819</td> </tr>
-			<tr pid=".1366W.5/33"> <td>Church of England</td> <td>193</td> <td>191</td> <td>192</td> <td>197</td> <td>199</td> </tr>
-			<tr pid=".1366W.5/34"> <td>Roman Catholic</td> <td>356</td> <td>357</td> <td>357</td> <td>352</td> <td>352</td> </tr>
-			<tr pid=".1366W.5/35"> <td>Methodist</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-			<tr pid=".1366W.5/36"> <td>Other Christian faith<sup>(22)</sup></td> <td>27</td> <td>27</td> <td>28</td> <td>28</td> <td>30</td> </tr>
-			<tr pid=".1366W.5/37"> <td>Jewish</td> <td>5</td> <td>5</td> <td>5</td> <td>5</td> <td>5</td> </tr>
-			<tr pid=".1366W.5/38"> <td>Muslim</td> <td>0</td> <td>0</td> <td>2</td> <td>2</td> <td>2</td> </tr>
-			<tr pid=".1366W.5/39"> <td>Sikh</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-			<tr pid=".1366W.5/40"> <td>Other</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-			<tr pid=".1366W.5/41"> <td>Total</td> <td>3,550</td> <td>3,481</td> <td>3,457</td> <td>3,436</td> <td>3,409</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1366W.5/44"><sup>(21)</sup> Includes middle schools as deemed.</p>
-	<p pid=".1366W.5/45"><sup>(22)</sup> Includes schools of mixed denomination or other Christian beliefs.</p>
-	<p pid=".1366W.5/46">Source:</p>
-	<p pid=".1366W.5/47">Annual Schools Census</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1367W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.203941.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204985.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204985.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.204985.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1366W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.204985.r0" matchtype="oldwransgid"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203941.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203941.h" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203941.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203941.q0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203941.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203941.r0" matchtype="perfectmatch"/>
@@ -2521,7 +2478,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205006.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205006.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205006.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205006.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205006.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205006.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205006.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1369W.0" nospeaker="True" colnum="1369W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w11.htm#41220w11.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205006.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1369W.0" nospeaker="true" colnum="1369W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w11.htm#41220w11.html_wqn6">
 	Sefton Education Authority
 </minor-heading>
 
@@ -2577,7 +2534,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205505.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205505.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205505.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205505.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205505.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205505.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205505.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.0" nospeaker="True" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205505.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.0" nospeaker="true" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn7">
 	Military Clothing
 </minor-heading>
 
@@ -2598,7 +2555,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205506.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205506.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205506.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205506.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205506.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205506.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205506.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.3" nospeaker="True" inserted-heading="True" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205506.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.3" nospeaker="true" inserted-heading="true" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn8">
 	Military Clothing
 </minor-heading>
 
@@ -2615,99 +2572,16 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1372W.6" newgid="uk.org.publicwhip/wrans/2004-12-20.204036.h" matchtype="oldwransgid"/>
 
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204036.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.6" nospeaker="True" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn9">
-	Personnel Survey
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1372W.7" newgid="uk.org.publicwhip/wrans/2004-12-20.204036.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.204036.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.7" speakerid="uk.org.publicwhip/member/937" speakername="Mike Hancock" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_wqn9">
-	<p pid=".1372W.7/1" qnum="204036">To ask the Secretary of State for Defence if he will list recent surveys he has conducted on bullying in the armed forces, broken down by the date <i>(a)</i> carried out and <i>(b)</i> results were published; and if he will make a statement.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1372W.8" newgid="uk.org.publicwhip/wrans/2004-12-20.204036.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.204036.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1372W.8" speakerid="uk.org.publicwhip/member/784" speakername="Ivor Caplin" colnum="1372W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w12.htm#41220w12.html_spnew9">
-	<p pid=".1372W.8/1">The details of surveys since 2002 by the three services which include questions on bullying are as follows:</p>
-	<p pid=".1372W.8/2" class="italic">Naval Service</p>
-	<p pid=".1372W.8/3">The Naval Service does not undertake a specific survey on bullying although the Naval Continuous Attitude Survey routinely carries questions on bullying along with issues concerning discrimination and harassment. These questions were agreed on a tri-service basis and have been common to all services since November 2002. Survey details are as follows:</p>
-	<table>
-		<thead>
-			<tr pid=".1372W.8/6"> <th>Conducted</th> <th>Results published</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1372W.8/9"> <td>June 2002</td> <td>September 2002</td> </tr>
-			<tr pid=".1372W.8/10"> <td>September 2002</td> <td>January 2003</td> </tr>
-			<tr pid=".1372W.8/11"> <td>January 2003</td> <td>May 2003</td> </tr>
-			<tr pid=".1372W.8/12"> <td>September 2003</td> <td>December 2003</td> </tr>
-			<tr pid=".1372W.8/13"> <td>September 2004</td> <td>Estimate March/April 2005</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1372W.8/16" class="italic">Army</p>
-	<p pid=".1372W.8/17">The Army conduct Serving Personnel (SP) Continuous Attitude Surveys which cover a range of questions including bullying. Survey details are as follows.</p>
-	<table>
-		<thead>
-			<tr pid=".1372W.8/20"> <th>Conducted</th> <th>Results published</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1372W.8/23"> <td>April/May 2002</td> <td>March 2003</td> </tr>
-			<tr pid=".1372W.8/24"> <td>December 2002</td> <td>December 2003</td> </tr>
-			<tr pid=".1372W.8/25"> <td>August 2003</td> <td>April 2004</td> </tr>
-			<tr pid=".1372W.8/26"> <td>December 2003</td> <td>August 2004</td> </tr>
-			<tr pid=".1372W.8/27"> <td>June 2004</td> <td>Report in progress</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1372W.8/30">The Army also recently carried out additional surveys as follows:</p>
-	<table>
-		<thead>
-			<tr pid=".1372W.8/33"> <th>Survey title</th> <th>Conducted</th> <th>Results Published</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1372W.8/36"> <td>TA personnel survey</td> <td>May 2003</td> <td>December 2003</td> </tr>
-			<tr pid=".1372W.8/37"> <td>TA personnel survey</td> <td>September 2004</td> <td>Report in progress</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1372W.8/40" class="italic">RAF</p>
-	<p pid=".1372W.8/41">Details of the RAF Continuous Attitude Surveys since 2002 are as follows:</p>
-	<table>
-		<thead>
-			<tr pid=".1372W.8/44"> <th>Conducted</th> <th>Results published</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1372W.8/47"> <td>2002</td> <td>February 2004</td> </tr>
-			<tr pid=".1372W.8/48"> <td>2003</td> <td>September 2004</td> </tr>
-			<tr pid=".1372W.8/49"> <td>2004</td> <td>Summer 2005</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1372W.8/52">The RAF also conducted the following specific surveys:</p>
-	<table>
-		<thead>
-			<tr pid=".1372W.8/55"> <th>Survey/survey dates</th> <th>Reporting dates</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1372W.8/58"> <td>Racial Harassment, Racial Discrimination and Bullying</td> </tr>
-			<tr pid=".1372W.8/59"> <td>1997</td> <td>February1998</td> </tr>
-			<tr pid=".1372W.8/60"> <td>2001</td> <td>May 2002</td> </tr>
-			<tr pid=".1372W.8/61"> <td>2003</td> <td>November 2003</td> </tr>
-			<tr pid=".1372W.8/62"> <td></td> <td></td> </tr>
-			<tr pid=".1372W.8/63"> <td>Sexual Harassment, Sexual Discrimination and Bullying</td> </tr>
-			<tr pid=".1372W.8/64"> <td>2000</td> <td>August 2000</td> </tr>
-			<tr pid=".1372W.8/65"> <td>2002</td> <td>June 2002</td> </tr>
-			<tr pid=".1372W.8/66"> <td>2004</td> <td>July 2004</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1372W.8/69">Although the numbers of complaints of ill treatment are now small, the armed forces see no room for complacency and aim to confront unacceptable behaviour at every opportunity. The services' policy is unequivocal: no form of harassment or intimidation will be tolerated and all allegations are investigated and appropriate action taken.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1373W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.206010.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204036.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204036.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1372W.7" newgid="uk.org.publicwhip/wrans/2004-12-20.204036.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1372W.8" newgid="uk.org.publicwhip/wrans/2004-12-20.204036.r0" matchtype="oldwransgid"/>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206010.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206010.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206010.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206010.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206010.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206010.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206010.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1373W.0" nospeaker="True" colnum="1373W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w13.htm#41220w13.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206010.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1373W.0" nospeaker="true" colnum="1373W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w13.htm#41220w13.html_wqn0">
 	RAF Buchan
 </minor-heading>
 
@@ -2756,60 +2630,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205381.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205381.r0" matchtype="perfectmatch"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1375W.8" newgid="uk.org.publicwhip/wrans/2004-12-20.205381.q0" matchtype="oldwransgid"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1375W.9" newgid="uk.org.publicwhip/wrans/2004-12-20.205381.r0" matchtype="oldwransgid"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204603.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1375W.10" nospeaker="True" colnum="1375W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w13.htm#41220w13.html_wqn7">
-	Coal Industry
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1375W.11" newgid="uk.org.publicwhip/wrans/2004-12-20.204603.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.204603.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1375W.11" speakerid="uk.org.publicwhip/member/934" speakername="David Hamilton" colnum="1375W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w13.htm#41220w13.html_wqn7">
-	<p pid=".1375W.11/1" qnum="204603">To ask the Secretary of State for Trade and Industry which 10 solicitors in <i>(a)</i> the UK and <i>(b)</i> Scotland have received most money from her Department in respect of coal industry compensation claims.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1376W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.204603.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.204603.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1376W.0" speakerid="uk.org.publicwhip/member/926" speakername="Nigel Griffiths" colnum="1376W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w13.htm#41220w13.html_spnew7">
-	<p pid=".1376W.0/1">As of <phrase class="date" code="2004-12-05">5 December 2004</phrase> the figures are:</p>
-	<table>
-		<thead>
-			<tr pid=".1376W.0/4"> <th>Solicitors&mdash;UK</th> <th>Costs paid (&pound; million)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1376W.0/7"> <td>1</td> <td>Thompsons</td> <td>60.0</td> </tr>
-			<tr pid=".1376W.0/8"> <td>2</td> <td>Hugh James Ford Simey</td> <td>51.3</td> </tr>
-			<tr pid=".1376W.0/9"> <td>3</td> <td>Raleys</td> <td>41.3</td> </tr>
-			<tr pid=".1376W.0/10"> <td>4</td> <td>Browell Smith</td> <td>29.0</td> </tr>
-			<tr pid=".1376W.0/11"> <td>5</td> <td>Mark Gilbert Morse</td> <td>23.4</td> </tr>
-			<tr pid=".1376W.0/12"> <td>6</td> <td>Beresfords</td> <td>20.5</td> </tr>
-			<tr pid=".1376W.0/13"> <td>7</td> <td>UDM</td> <td>17.4</td> </tr>
-			<tr pid=".1376W.0/14"> <td>8</td> <td>Graysons</td> <td>16.7</td> </tr>
-			<tr pid=".1376W.0/15"> <td>9</td> <td>Watson Burton</td> <td>14.9</td> </tr>
-			<tr pid=".1376W.0/16"> <td>10</td> <td>Towells</td> <td>11.7</td> </tr>
-		</tbody>
-	</table>
-	<table>
-		<thead>
-			<tr pid=".1376W.0/21"> <th>Solicitors&mdash;Scotland</th> <th>Costs paid (&pound; million)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1376W.0/24"> <td>1</td> <td>Thompsons</td> <td>17.0</td> </tr>
-			<tr pid=".1376W.0/25"> <td>2</td> <td>Corries</td> <td>4.1</td> </tr>
-			<tr pid=".1376W.0/26"> <td>3</td> <td>McLeish Carswell</td> <td>2.2</td> </tr>
-			<tr pid=".1376W.0/27"> <td>4</td> <td>Morisons</td> <td>1.7</td> </tr>
-			<tr pid=".1376W.0/28"> <td>5</td> <td>McConville O'Neill</td> <td>0.6</td> </tr>
-			<tr pid=".1376W.0/29"> <td>6</td> <td>Campbell Smith W.S.</td> <td>0.3</td> </tr>
-			<tr pid=".1376W.0/30"> <td>7</td> <td>Ross Harper</td> <td>0.2</td> </tr>
-			<tr pid=".1376W.0/31"> <td>8</td> <td>Accident and Injury Claims</td> <td>0.1</td> </tr>
-			<tr pid=".1376W.0/32"> <td>9</td> <td>John Y. Robertson</td> <td>0.1</td> </tr>
-			<tr pid=".1376W.0/33"> <td>10</td> <td>Carr and Co</td> <td>0.08</td> </tr>
-		</tbody>
-	</table>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1376W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.204604.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204603.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204603.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1375W.11" newgid="uk.org.publicwhip/wrans/2004-12-20.204603.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1376W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.204603.r0" matchtype="oldwransgid"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204604.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204604.h" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204604.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204604.q0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204604.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204604.r0" matchtype="perfectmatch"/>
@@ -2844,7 +2669,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199687.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.199687.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199687.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199687.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199687.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199687.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199687.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1377W.10" nospeaker="True" colnum="1377W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199687.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1377W.10" nospeaker="true" colnum="1377W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn1">
 	Departmental Websites
 </minor-heading>
 
@@ -2855,7 +2680,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1378W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.199687.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.199687.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1378W.0" speakerid="uk.org.publicwhip/member/960" speakername="Patricia Hewitt" colnum="1378W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_spnew1">
-	<p pid=".1378W.0/1">I refer the hon. Member to the reply I gave him on <phrase class="date" code="">1 December</phrase>, <phrase class="offrep" id="wrans/.134W"><i>Official Report,</i> column 134W</phrase>.</p>
+	<p pid=".1378W.0/1">I refer the hon. Member to the reply I gave him on <phrase class="date" code="2004-12-01">1 December</phrase>, <phrase class="offrep" id="wrans/2004-12-01.134"><i>Official Report,</i> column 134W</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1378W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.205383.h" matchtype="oldwransgid"/>
@@ -2874,7 +2699,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205362.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205362.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205362.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205362.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205362.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205362.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205362.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1378W.7" nospeaker="True" colnum="1378W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205362.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1378W.7" nospeaker="true" colnum="1378W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn4">
 	Energy Supply
 </minor-heading>
 
@@ -2896,7 +2721,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205540.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205540.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205540.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205540.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205540.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205540.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205540.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1378W.10" nospeaker="True" colnum="1378W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205540.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1378W.10" nospeaker="true" colnum="1378W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn5">
 	Fuel Poverty
 </minor-heading>
 
@@ -2912,7 +2737,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1379W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.205540.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.205540.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1379W.0" speakerid="uk.org.publicwhip/member/1138" speakername="Mike O'Brien" colnum="1379W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_spnew5">
 	<p pid=".1379W.0/1">We are unable to provide a breakdown of the number of households in fuel poverty by individual areas or towns.</p>
-	<p pid=".1379W.0/2">For the most recently available survey figures, I would refer the hon. Member to the response which I gave to <phrase class="honfriend" id="uk.org.publicwhip/member/760" name="Malcolm Bruce">the hon. Member for Gordon (Malcolm Bruce)</phrase> on <phrase class="date" code="2004-11-30">30 November 2004</phrase>, <phrase class="offrep" id="wrans/2004-11-30.78W"><i>Official Report,</i> column 78W</phrase>. This sets out how the Fuel Poverty figures for England are produced, and gives figures for each Government Office Region.</p>
+	<p pid=".1379W.0/2">For the most recently available survey figures, I would refer the hon. Member to the response which I gave to <phrase class="honfriend" id="uk.org.publicwhip/member/760" name="Malcolm Bruce">the hon. Member for Gordon (Malcolm Bruce)</phrase> on <phrase class="date" code="2004-11-30">30 November 2004</phrase>, <phrase class="offrep" id="wrans/2004-11-30.78"><i>Official Report,</i> column 78W</phrase>. This sets out how the Fuel Poverty figures for England are produced, and gives figures for each Government Office Region.</p>
 	<p pid=".1379W.0/3">That data also shows that the number of fuel poor households in England which include someone aged 60 or over has more than halved from 2.2 million in 1996 to 1 million in 2001. In 2001, it can be estimated that the number of households containing either someone with a disability or long term illness was 0.8 million, the same as for 1996. Data for the number of those households in receipt of disability benefit is not readily available.</p>
 	<p pid=".1379W.0/4">Due to the fact that 2002 figures are based on a modelled estimate, 2001 is the latest year for which it is possible to give these breakdowns.</p>
 	<p pid=".1379W.0/5">Data for 2003 will be published in 2005 in the UK Fuel Poverty Strategy Third Annual Progress Report.</p>
@@ -2924,7 +2749,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206085.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206085.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206085.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206085.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206085.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206085.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206085.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1379W.1" nospeaker="True" colnum="1379W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206085.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1379W.1" nospeaker="true" colnum="1379W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w14.htm#41220w14.html_wqn6">
 	Gangmasters
 </minor-heading>
 
@@ -3024,7 +2849,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201652.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.201652.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201652.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201652.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201652.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201652.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.201652.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1384W.5" nospeaker="True" colnum="1384W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w16.htm#41220w16.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.201652.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1384W.5" nospeaker="true" colnum="1384W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w16.htm#41220w16.html_wqn2">
 	&quot;Representative Claims: Proposed New Procedures&quot;
 </minor-heading>
 
@@ -3115,7 +2940,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204990.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204990.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204990.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204990.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204990.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204990.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204990.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1388W.7" nospeaker="True" colnum="1388W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w17.htm#41220w17.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204990.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1388W.7" nospeaker="true" colnum="1388W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w17.htm#41220w17.html_wqn5">
 	Legal Aid (Civil Cases)
 </minor-heading>
 
@@ -3131,7 +2956,7 @@
 	<table>
 		<thead>
 			<tr pid=".1388W.9/5"> <th></th> <th></th> <th></th> <th></th> <th></th> <th>&pound; million</th> </tr>
-			<tr pid=".1388W.9/6"> <th></th> <th>Total civil<br/> non-family</th> <th>Representation</th> <th>Advice and<br/> Assistance<sup>(23)</sup></th> </tr>
+			<tr pid=".1388W.9/6"> <th></th> <th>Total civil<br/> non-family</th> <th colspan="2">Representation</th> <th colspan="2">Advice and<br/> Assistance<sup>(23)</sup></th> </tr>
 			<tr pid=".1388W.9/7"> <th></th> <th>Expenditure</th> <th>Bill volume</th> <th>Average cost</th> <th>Bill volume</th> <th>Average cost</th> </tr>
 		</thead>
 		<tbody>
@@ -3191,7 +3016,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205464.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205464.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205464.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205464.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205464.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205464.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205464.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1390W.9" nospeaker="True" inserted-heading="True" colnum="1390W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205464.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1390W.9" nospeaker="true" inserted-heading="true" colnum="1390W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn3">
 	Prenuptial Agreement
 </minor-heading>
 
@@ -3216,7 +3041,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204505.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204505.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204505.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204505.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204505.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204505.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204505.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1391W.3" nospeaker="True" colnum="1391W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204505.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1391W.3" nospeaker="true" colnum="1391W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn5">
 	Sickness Absence
 </minor-heading>
 
@@ -3227,7 +3052,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1391W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.204505.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.204505.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1391W.5" speakerid="uk.org.publicwhip/member/1033" speakername="David Lammy" colnum="1391W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_spnew5">
-	<p pid=".1391W.5/1">The numbers of days lost to sickness absence are collected by the Department. The figures are contained in the annual report &quot;Analysis of Sickness Absence in the Civil Service&quot; published by the Cabinet Office. Table A of the report gives details of both the average working days absence per staff year and the number of staff years on which that calculation is based on. The most recent of which (for calendar year 2003) was announced by Written Ministerial Statement on <phrase class="date" code="2004-11-01">1 November 2004</phrase>, <phrase class="offrep" id="wms/2004-11-01.1WS"><i>Official Report,</i> column 1WS</phrase> and copies placed in the Libraries of the House. Reports for 1999, 2000, 2001 and 2002 are available on the Cabinet Office website at: <a href="http://www.civilservice.gov.uk/managementinformation/conditionsofservice/caje/publications/index.asp">http://www.civilservice.gov.uk/management information/conditions of service/caje/publications/index.asp</a>_sickness</p>
+	<p pid=".1391W.5/1">The numbers of days lost to sickness absence are collected by the Department. The figures are contained in the annual report &quot;Analysis of Sickness Absence in the Civil Service&quot; published by the Cabinet Office. Table A of the report gives details of both the average working days absence per staff year and the number of staff years on which that calculation is based on. The most recent of which (for calendar year 2003) was announced by Written Ministerial Statement on <phrase class="date" code="2004-11-01">1 November 2004</phrase>, <phrase class="offrep" id="wms/2004-11-01.1"><i>Official Report,</i> column 1WS</phrase> and copies placed in the Libraries of the House. Reports for 1999, 2000, 2001 and 2002 are available on the Cabinet Office website at: <a href="http://www.civilservice.gov.uk/managementinformation/conditionsofservice/caje/publications/index.asp">http://www.civilservice.gov.uk/management information/conditions of service/caje/publications/index.asp</a>_sickness</p>
 	<p pid=".1391W.5/2">The Department is committed to managing sickness absence effectively and in putting in place recommendations of the recently published 'Managing Sickness Absence in the Public Sector'.</p>
 </reply>
 
@@ -3258,7 +3083,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204311.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204311.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204311.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204311.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204311.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204311.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204311.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1392W.10" nospeaker="True" inserted-heading="True" colnum="1392W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn10">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204311.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1392W.10" nospeaker="true" inserted-heading="true" colnum="1392W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w18.htm#41220w18.html_wqn10">
 	Special Advisers
 </minor-heading>
 
@@ -3338,7 +3163,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204803.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204803.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204803.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204803.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204803.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204803.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204803.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1396W.6" nospeaker="True" colnum="1396W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w20.htm#41220w20.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204803.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1396W.6" nospeaker="true" colnum="1396W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w20.htm#41220w20.html_wqn1">
 	EU-China Arms Embargo
 </minor-heading>
 
@@ -3389,7 +3214,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204214.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204214.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204214.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204214.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204214.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204214.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204214.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1398W.6" nospeaker="True" colnum="1398W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w20.htm#41220w20.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204214.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1398W.6" nospeaker="true" colnum="1398W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w20.htm#41220w20.html_wqn8">
 	People's Republic of China
 </minor-heading>
 
@@ -3400,8 +3225,8 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1399W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.204214.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.204214.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1399W.0" speakerid="uk.org.publicwhip/member/1083" speakername="Denis MacShane" colnum="1399W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w20.htm#41220w20.html_spnew8">
-	<p pid=".1399W.0/1">The Government supports the decision of the European Council in December 2003 to review the EU Arms Embargo on China. This review is on-going&mdash;it was last discussed by EU Foreign Ministers at the <phrase class="date" code="">13 December</phrase> General Affairs and External Relations Council. The Government do not wish to exclude any options for the review, nor to pre-empt the conclusion of the review.</p>
-	<p pid=".1399W.0/2">In recent contacts with representatives of Her Majesty's Government, Chinese Ministers have expressed an interest in the review of the embargo. The Chinese Foreign Minister has raised the subject with my right hon. Friend the Foreign Secretary. I am unaware of any representations to him from business or Chinese NGOs on this question.The Government continue to implement the Arms Embargo as set out by the then Minister of State at the Foreign and Commonwealth Office, the late Derek Fatchett, in <phrase class="honfriend" id="uk.org.publicwhip/member/808" name="Vernon Coaker">his reply to my hon. Friend the Member for Gedling (Vernon Coaker)</phrase> on <phrase class="date" code="1998-06-03">3 June 1998</phrase>.</p>
+	<p pid=".1399W.0/1">The Government supports the decision of the European Council in December 2003 to review the EU Arms Embargo on China. This review is on-going&mdash;it was last discussed by EU Foreign Ministers at the <phrase class="date" code="2004-12-13">13 December</phrase> General Affairs and External Relations Council. The Government do not wish to exclude any options for the review, nor to pre-empt the conclusion of the review.</p>
+	<p pid=".1399W.0/2">In recent contacts with representatives of Her Majesty's Government, Chinese Ministers have expressed an interest in the review of the embargo. The Chinese Foreign Minister has raised the subject with my right hon. Friend the Foreign Secretary. I am unaware of any representations to him from business or Chinese NGOs on this question.The Government continue to implement the Arms Embargo as set out by the then Minister of State at the Foreign and Commonwealth Office, the late Derek Fatchett, in his reply to my hon. Friend <phrase class="honfriend" id="uk.org.publicwhip/member/808" name="Vernon Coaker">the Member for Gedling (Vernon Coaker)</phrase> on <phrase class="date" code="1998-06-03">3 June 1998</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1399W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.205523.h" matchtype="oldwransgid"/>
@@ -3445,7 +3270,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205547.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205547.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205547.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205547.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205547.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205547.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205547.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1401W.5" nospeaker="True" colnum="1401W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w21.htm#41220w21.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205547.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1401W.5" nospeaker="true" colnum="1401W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w21.htm#41220w21.html_wqn5">
 	Alcohol-related Deaths
 </minor-heading>
 
@@ -3464,7 +3289,7 @@
 	<table>
 		<caption>Alcohol-related deaths<sup>(24)</sup>for North Southwark and Bermondsey parliamentary constituency and the London borough of Southwark 2 1999 to 2003 3</caption>
 		<thead>
-			<tr pid=".1401W.7/9"> <th></th> <th>Number of deaths</th> </tr>
+			<tr pid=".1401W.7/9"> <th></th> <th colspan="2">Number of deaths</th> </tr>
 			<tr pid=".1401W.7/10"> <th></th> <th>North Southwark and Bermondsey</th> <th> Southwark</th> </tr>
 		</thead>
 		<tbody>
@@ -3516,7 +3341,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205050.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205050.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205050.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205050.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205050.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205050.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205050.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1403W.3" nospeaker="True" colnum="1403W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205050.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1403W.3" nospeaker="true" colnum="1403W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn1">
 	Coal Mining
 </minor-heading>
 
@@ -3551,7 +3376,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202500.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202500.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202500.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202500.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202500.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202500.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202500.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1404W.9" nospeaker="True" inserted-heading="True" colnum="1404W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202500.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1404W.9" nospeaker="true" inserted-heading="true" colnum="1404W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn5">
 	Departmental Expenditure
 </minor-heading>
 
@@ -3582,7 +3407,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206838.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206838.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206838.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206838.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206838.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206838.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206838.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1405W.0" nospeaker="True" colnum="1405W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206838.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1405W.0" nospeaker="true" colnum="1405W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w22.htm#41220w22.html_wqn6">
 	Departmental Policies
 </minor-heading>
 
@@ -3613,7 +3438,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206038.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206038.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206038.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206038.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206038.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206038.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206038.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1409W.0" nospeaker="True" colnum="1409W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206038.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1409W.0" nospeaker="true" colnum="1409W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn0">
 	Exports (Manufactured Goods)
 </minor-heading>
 
@@ -3628,7 +3453,7 @@
 	<p pid=".1409W.2/2" class="letterfrom">Letter from Colin Mowl to Mr. Brian Donohoe, dated <phrase class="date" code="2004-12-20">20 December 2004</phrase></p>
 	<p pid=".1409W.2/3" class="indent">The National Statistician has been asked to reply to your recent Parliamentary Question about exports of manufactured goods. I am replying in his absence. (206038)</p>
 	<p pid=".1409W.2/4" class="indent">The latest published information is for October 2004 when UK exports of manufactured goods were estimated at &pound;13.2 billion on a seasonally adjusted Balance of Payments basis. This represented 55% of total exports of goods and services for the same month, which were estimated at &pound;24.1 billion.</p>
-	<p pid=".1409W.2/5" class="indent">These estimates were published on <phrase class="date" code="">9 December</phrase>. They may be found in Tables A13 and Al of the Monthly Review of External Trade Statistics, which is available on the National Statistics website at: <a href="http://www.statistics.gov.uk/statbase/Product.asp?vlnk=61">http://www.statistics.gov.uk/statbase/Product.asp? vlnk=61</a></p>
+	<p pid=".1409W.2/5" class="indent">These estimates were published on <phrase class="date" code="2004-12-09">9 December</phrase>. They may be found in Tables A13 and Al of the Monthly Review of External Trade Statistics, which is available on the National Statistics website at: <a href="http://www.statistics.gov.uk/statbase/Product.asp?vlnk=61">http://www.statistics.gov.uk/statbase/Product.asp? vlnk=61</a></p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1409W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.206860.h" matchtype="oldwransgid"/>
@@ -3662,7 +3487,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205912.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205912.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205912.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205912.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205912.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205912.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205912.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1411W.0" nospeaker="True" colnum="1411W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205912.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1411W.0" nospeaker="true" colnum="1411W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn6">
 	Income Tax (Wandsworth)
 </minor-heading>
 
@@ -3703,7 +3528,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203919.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203919.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203919.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203919.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203919.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203919.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203919.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1412W.3" nospeaker="True" inserted-heading="True" colnum="1412W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn11">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203919.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1412W.3" nospeaker="true" inserted-heading="true" colnum="1412W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_wqn11">
 	Special Advisers
 </minor-heading>
 
@@ -3718,7 +3543,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1412W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.203919.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.203919.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1412W.5" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" colnum="1412W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w23.htm#41220w23.html_spnew11">
-	<p pid=".1412W.5/1">I refer the hon. member to <phrase class="honfriend" id="uk.org.publicwhip/member/1113" name="David Miliband">the answer given by my hon. Friend the Minister for the Cabinet Office (David Miliband)</phrase> on <phrase class="date" code="2004-12-16">16 December 2004</phrase>, <i>Official</i></p>
+	<p pid=".1412W.5/1">I refer the hon. member to the answer given by my hon. Friend the Minister for the Cabinet Office (David Miliband) on <phrase class="date" code="2004-12-16">16 December 2004</phrase>, <i>Official</i></p>
 	<p pid=".1412W.5/2"><i>Report</i>, columns 1258&ndash;1259W.</p>
 </reply>
 
@@ -3774,54 +3599,17 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203144.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203144.r0" matchtype="perfectmatch"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.203144.q0" matchtype="oldwransgid"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.203144.r0" matchtype="oldwransgid"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205538.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1414W.4" nospeaker="True" colnum="1414W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w24.htm#41220w24.html_wqn8">
-	Unemployment
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205539.h" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.h" matchtype="altques"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.205538.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1414W.5" speakerid="uk.org.publicwhip/member/850" speakername="Janet Dean" colnum="1414W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w24.htm#41220w24.html_wqn8">
-	<p pid=".1414W.5/1">To ask the Chancellor of the Exchequer </p>
-	<p pid=".1414W.5/2" class="numindent" qnum="205538">(1)  how many people under 25 years of age were unemployed and claiming benefit in Burton on 1 December <i>(a)</i> 1997 and <i>(b)</i> 2004;</p>
-	<p pid=".1414W.5/3" class="numindent" qnum="205539">(2)  how many long-term unemployed people aged <i>(a)</i> under 25 years and <i>(b)</i> over 25 years there were in Burton on 1st December (i) 1997 and (ii) 2004.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.6" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.205538.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1414W.6" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" colnum="1414W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w24.htm#41220w24.html_spnew8">
-	<p pid=".1414W.6/1">The information requested falls within the responsibility of the National Statistician, who has been asked to reply.</p>
-	<p pid=".1414W.6/2" class="letterfrom">Letter from Colin Mowl to Mrs. Janet Dean, dated <phrase class="date" code="2004-12-20">20 December 2004</phrase></p>
-	<p pid=".1414W.6/3" class="indent">The National Statistician has been asked to reply to your recent Parliamentary Questions about unemployment in Burton. I am replying in his absence. (205538 &amp; 205539)</p>
-	<p pid=".1414W.6/4" class="indent">The Office for National Statistics (ONS) compiles statistics of unemployment from the Labour Force Survey (LFS) following International Labour Organisation definitions. However, the LFS sample size is too small to give reliable estimates in reply to your particular questions about unemployment in the Burton Constituency.</p>
-	<p pid=".1414W.6/5" class="indent">ONS also compiles statistics of those claiming Jobseeker's Allowance (JSA) for local areas including parliamentary constituencies.</p>
-	<p pid=".1414W.6/6" class="indent">The attached table gives the number of people aged under 25 years old resident in the Burton constituency claiming JSA benefits. It also gives the numbers aged under 25 years and those aged over 25 years claiming for over 12 months for November 1997 and November 2004.</p>
-	<table>
-		<caption>JSA claimants resident in the Burton constituency</caption>
-		<thead>
-			<tr pid=".1414W.6/10"> <th></th> <th>All claimants</th> <th>People claiming for over 1 year<sup>(28)</sup></th> </tr>
-			<tr pid=".1414W.6/11"> <th>As at November each year</th> <th>Aged under 25</th> <th>Aged under 25</th> <th>Aged 25 and over</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1414W.6/14"> <td>1997</td> <td>520</td> <td>50</td> <td>425</td> </tr>
-			<tr pid=".1414W.6/15"> <td>2004</td> <td>260</td> <td>0</td> <td>60</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1414W.6/18"><sup>(28)</sup> Computerised claims only.</p>
-	<p pid=".1414W.6/19">Source:</p>
-	<p pid=".1414W.6/20">Jobcentre Plus Administrative system.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1415W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.205328.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205538.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205538.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205539.h" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1414W.6" newgid="uk.org.publicwhip/wrans/2004-12-20.205538.r0" matchtype="oldwransgid"/>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205328.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205328.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205328.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205328.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205328.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205328.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205328.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1415W.0" nospeaker="True" inserted-heading="True" colnum="1415W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w24.htm#41220w24.html_wqn9">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205328.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1415W.0" nospeaker="true" inserted-heading="true" colnum="1415W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w24.htm#41220w24.html_wqn9">
 	Unemployment
 </minor-heading>
 
@@ -3906,7 +3694,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205931.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205931.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205931.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205931.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205931.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205931.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205931.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.9" nospeaker="True" inserted-heading="True" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205931.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.9" nospeaker="true" inserted-heading="true" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_wqn3">
 	Working Tax Credit
 </minor-heading>
 
@@ -3917,7 +3705,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1416W.11" newgid="uk.org.publicwhip/wrans/2004-12-20.205931.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.205931.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.11" speakerid="uk.org.publicwhip/member/1171" speakername="Dawn Primarolo" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_spnew3">
-	<p pid=".1416W.11/1">The numbers benefiting up to April 2004 are shown in Table 8.3 of &quot;Child and Working Tax Credits. Quarterly Statistics&quot;. These publications appear on the Inland Revenue website, at <a href="http://www.inlandrevenue.gov.uk/stats/personal-tax-credits/menu.htm">www. inlandrevenue.gov.uk/stats/personal-tax-credits/menu. htm</a>. Figures for December 2004 will be published on <phrase class="date" code="">23 December</phrase>. No estimate is available of the number eligible to benefit.</p>
+	<p pid=".1416W.11/1">The numbers benefiting up to April 2004 are shown in Table 8.3 of &quot;Child and Working Tax Credits. Quarterly Statistics&quot;. These publications appear on the Inland Revenue website, at <a href="http://www.inlandrevenue.gov.uk/stats/personal-tax-credits/menu.htm">www. inlandrevenue.gov.uk/stats/personal-tax-credits/menu. htm</a>. Figures for December 2004 will be published on <phrase class="date" code="2004-12-23">23 December</phrase>. No estimate is available of the number eligible to benefit.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1416W.12" newgid="uk.org.publicwhip/wrans/2004-12-20.206770.h" matchtype="oldwransgid"/>
@@ -3926,7 +3714,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206770.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206770.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206770.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206770.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206770.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206770.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206770.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.12" nospeaker="True" inserted-heading="True" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206770.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.12" nospeaker="true" inserted-heading="true" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_wqn4">
 	Working Tax Credit
 </minor-heading>
 
@@ -3937,7 +3725,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1416W.14" newgid="uk.org.publicwhip/wrans/2004-12-20.206770.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.206770.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1416W.14" speakerid="uk.org.publicwhip/member/1171" speakername="Dawn Primarolo" colnum="1416W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w25.htm#41220w25.html_spnew4">
-	<p pid=".1416W.14/1">I refer the hon. Member to my reply to the hon. Members for Northavon (Mr. Webb) and Yeovil (Mr. Laws) on <phrase class="date" code="2004-11-15">15 November 2004</phrase>, <phrase class="offrep" id="wrans/2004-11-15.946W"><i>Official Report</i>, columns 946&ndash;48W</phrase>.</p>
+	<p pid=".1416W.14/1">I refer the hon. Member to my reply to the hon. Members for Northavon (Mr. Webb) and Yeovil (Mr. Laws) on <phrase class="date" code="2004-11-15">15 November 2004</phrase>, <phrase class="offrep" id="wrans/2004-11-15.946"><i>Official Report</i>, columns 946&ndash;48W</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1417W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.203718.mh" matchtype="oldwransgid"/>
@@ -3997,7 +3785,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204759.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204759.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204759.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204759.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204759.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204759.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204759.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1420W.1" nospeaker="True" colnum="1420W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w26.htm#41220w26.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204759.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1420W.1" nospeaker="true" colnum="1420W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w26.htm#41220w26.html_wqn3">
 	Blind and Partially Sighted Persons
 </minor-heading>
 
@@ -4012,7 +3800,7 @@
 	<p pid=".1420W.3/2">Information is, however, collected centrally on the number of registered or eligible to be registered blind and partially sighted adults who were in contact with Social Services staff during the financial year 2003&ndash;04, and is shown according to Health and Social Services Trust in the following table.</p>
 	<table>
 		<thead>
-			<tr pid=".1420W.3/5"> <th></th> <th>Number of adults in contact with<br/> Social Services, 2003&ndash;04</th> </tr>
+			<tr pid=".1420W.3/5"> <th></th> <th colspan="2">Number of adults in contact with<br/> Social Services, 2003&ndash;04</th> </tr>
 			<tr pid=".1420W.3/6"> <th>Health and Social Services<br/> Trust</th> <th>Blind</th> <th>Partially sighted</th> </tr>
 		</thead>
 		<tbody>
@@ -4045,7 +3833,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204888.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204888.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204888.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204888.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204888.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204888.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204888.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1421W.0" nospeaker="True" inserted-heading="True" colnum="1421W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w26.htm#41220w26.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204888.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1421W.0" nospeaker="true" inserted-heading="true" colnum="1421W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w26.htm#41220w26.html_wqn5">
 	Blind and Partially Sighted Persons
 </minor-heading>
 
@@ -4060,7 +3848,7 @@
 	<p pid=".1421W.2/2">Information is, however, collected centrally on the number of registered or eligible to be registered blind and partially sighted young persons who were in contact with Social Services staff during the financial year 2003&ndash;04, and is shown according to Health and Social Services Trust in the following table.</p>
 	<table>
 		<thead>
-			<tr pid=".1421W.2/5"> <th></th> <th>Number of young persons in<br/> contact with Social Services,<br/> 2003&ndash;04</th> </tr>
+			<tr pid=".1421W.2/5"> <th></th> <th colspan="2">Number of young persons in<br/> contact with Social Services,<br/> 2003&ndash;04</th> </tr>
 			<tr pid=".1421W.2/6"> <th>Health and Social Services<br/> Trust</th> <th>Blind</th> <th>Partially sighted</th> </tr>
 		</thead>
 		<tbody>
@@ -4108,7 +3896,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205673.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205673.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205673.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205673.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205673.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205673.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205673.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1423W.0" nospeaker="True" inserted-heading="True" colnum="1423W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w27.htm#41220w27.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205673.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1423W.0" nospeaker="true" inserted-heading="true" colnum="1423W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w27.htm#41220w27.html_wqn2">
 	Departmental Expenditure
 </minor-heading>
 
@@ -4184,7 +3972,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204623.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204623.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204623.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204623.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204623.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204623.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204623.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1426W.1" nospeaker="True" colnum="1426W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204623.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1426W.1" nospeaker="true" colnum="1426W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn3">
 	Roads (Expenditure)
 </minor-heading>
 
@@ -4226,7 +4014,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204988.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204988.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204988.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204988.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204988.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204988.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204988.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1427W.1" nospeaker="True" colnum="1427W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204988.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1427W.1" nospeaker="true" colnum="1427W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn5">
 	Accidents at Work
 </minor-heading>
 
@@ -4252,7 +4040,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200118.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200118.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200118.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200118.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200118.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200118.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200118.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1428W.0" nospeaker="True" colnum="1428W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200118.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1428W.0" nospeaker="true" colnum="1428W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn7">
 	Benefit Fraud
 </minor-heading>
 
@@ -4308,185 +4096,21 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1428W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.200160.h" matchtype="oldwransgid"/>
 
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200160.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1428W.3" nospeaker="True" inserted-heading="True" colnum="1428W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn8">
-	Benefit Fraud
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1428W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.200160.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.200160.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1428W.4" speakerid="uk.org.publicwhip/member/1311" speakername="Steve Webb" colnum="1428W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn8">
-	<p pid=".1428W.4/1" qnum="200160">To ask the Secretary of State for Work and Pensions what estimate he has made of <i>(a)</i> fraud and <i>(b)</i> error in social security benefits excluding jobseeker's allowance, income support and housing benefit since 1997; and if he will place the results in the Library.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1428W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.200160.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.200160.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1428W.5" speakerid="uk.org.publicwhip/member/1162" speakername="Chris Pond" colnum="1428W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_spnew8">
-	<p pid=".1428W.5/1">The measurement of fraud and error is complex and expensive and therefore it is concentrated on benefits with the highest expenditure and risk of loss, such as income support and jobseeker's allowance. The available information is as follows.</p>
-	<table>
-		<caption>Estimates of fraud and error in social security benefits, excluding jobseeker's allowance, income support and housing benefit since 1997</caption>
-		<thead>
-			<tr pid=".1428W.5/5"> <th></th> <th>Results of incapacity benefit review 2001</th> </tr>
-			<tr pid=".1428W.5/6"> <th>Category of<br/> overpayment</th> <th>Monetary value<br/> (&pound; million)</th> <th>Percentage of expenditure</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1428W.5/9"> <td>Fraud<sup>(34)</sup></td> <td>Up to 19</td> <td>Up to 0.3</td> </tr>
-			<tr pid=".1428W.5/10"> <td>Customer error</td> <td>16</td> <td>0.3</td> </tr>
-			<tr pid=".1428W.5/11"> <td>Official error</td> <td>22</td> <td>0.4</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1428W.5/14"><sup>(34)</sup> This is an upper limit, as insufficient cases of fraud were uncovered in the review to enable a robust central estimate to be made.</p>
-	<p pid=".1428W.5/15">Note:</p>
-	<p pid=".1428W.5/16">Results from a National Benefit Review of fraud and error in incapacity benefit were published in 2001. The following estimates were made and relate to the period April 2000 to March 2001.</p>
-	<table>
-		<caption>Short-term benefits official error overpayments</caption>
-		<thead>
-			<tr pid=".1428W.5/20"> <th></th> <th>Monetary value (&pound; million)</th> <th>Benefits covered</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1428W.5/23"> <td>April 2001 to March 2002</td> <td>43</td> <td><sup>(35)</sup>&mdash;</td> </tr>
-			<tr pid=".1428W.5/24"> <td>April 2002 to March 2003</td> <td>43</td> <td><sup>(35)</sup>&mdash;</td> </tr>
-			<tr pid=".1428W.5/25"> <td>April 2003 to March 2004</td> <td>53</td> <td><sup>(35)</sup>&mdash;</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1428W.5/28"><sup>(35)</sup> Incapacity benefit and severe disablement allowance.</p>
-	<p pid=".1428W.5/29">Notes:</p>
-	<p pid=".1428W.5/30">1. Annual estimates of official error only are made for short-term benefit overpayments (incapacity benefit and severe disablement allowance).</p>
-	<p pid=".1428W.5/31">2. Previous results were carried out using a different methodology and are not comparable.</p>
-	<p pid=".1428W.5/32">3. These estimates are subject to wide margins of error.</p>
-	<table>
-		<caption>Long-term benefits official error overpayments</caption>
-		<thead>
-			<tr pid=".1428W.5/36"> <th></th> <th>Monetary value (&pound; million)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1428W.5/39"> <td>April 2001 to March 2002</td> <td>43</td> </tr>
-			<tr pid=".1428W.5/40"> <td>April 2002 to March 2003</td> <td>14</td> </tr>
-			<tr pid=".1428W.5/41"> <td>April 2003 to March 2004</td> <td>26</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1428W.5/44">Notes:</p>
-	<p pid=".1428W.5/45">1. Annual estimates of official error only are made for long-term benefit overpayments (retirement pension, widow's benefit and bereavement benefit).</p>
-	<p pid=".1428W.5/46">2. Previous results were carried out using a different methodology and are not comparable.</p>
-	<p pid=".1428W.5/47">3. These estimates are subject to wide margins of error.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1429W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.200161.h" matchtype="oldwransgid"/>
-
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200161.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1429W.0" nospeaker="True" inserted-heading="True" colnum="1429W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn9">
-	Benefit Fraud
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1429W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.200161.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.200161.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1429W.1" speakerid="uk.org.publicwhip/member/1311" speakername="Steve Webb" colnum="1429W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_wqn9">
-	<p pid=".1429W.1/1" qnum="200161">To ask the Secretary of State for Work and Pensions how many interventions on benefit claims identified as high risk his Department carried out in each year since 1997.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1429W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.200161.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.200161.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1429W.2" speakerid="uk.org.publicwhip/member/1162" speakername="Chris Pond" colnum="1429W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w28.htm#41220w28.html_spnew9">
-	<p pid=".1429W.2/1">Extra checks known as interventions are carried out on benefit claims which are identified as carrying a higher risk of fraud and error at specified points of the claim. Gateway interventions take place at the outset of the claim, ensuring that benefit entitlement is properly paid. Further checks known as Caseload interventions occur periodically throughout the duration of claims allowing us to take any necessary early corrective action</p>
-	<p pid=".1429W.2/2">The information requested is not available for the period April 1997 to April 1999. The available information is in the following tables.</p>
-	<table>
-		<caption>Case interventions</caption>
-		<thead>
-			<tr pid=".1429W.2/6"> <th></th> <th>Total interventions</th> <th>Number of changed cases</th> <th>Percentage of cases changed</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1429W.2/9"> <td>1999&ndash;2000</td> <td>1,066,010</td> <td>89,529</td> <td>8.4</td> </tr>
-			<tr pid=".1429W.2/10"> <td>2000&ndash;01</td> <td>806,825</td> <td>121,585</td> <td>15.07</td> </tr>
-			<tr pid=".1429W.2/11"> <td>2001&ndash;02<sup>(36)</sup></td> <td>1,128,812</td> <td>177,735</td> <td>15.74</td> </tr>
-			<tr pid=".1429W.2/12"> <td>2002&ndash;03<sup>(36)</sup></td> <td>452,290</td> <td>84,189</td> <td>18.61</td> </tr>
-			<tr pid=".1429W.2/13"> <td>2003&ndash;04<sup>(36)</sup></td> <td>493,625</td> <td>184,082</td> <td>37.29</td> </tr>
-			<tr pid=".1429W.2/14"> <td>Current year to date<br/> 247,249</td> <td>93,129</td> <td>37.67</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1429W.2/17"><sup>(36)</sup> These figures do not include active case management interventions or interventions for Northern Ireland.</p>
-	<table>
-		<caption>Gateway interventions</caption>
-		<thead>
-			<tr pid=".1429W.2/21"> <th></th> <th>Total interventions</th> <th>Number of changed cases</th> <th>Percentage of cases changed</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1429W.2/24"> <td>1999&ndash;2000</td> <td>1,026,899</td> <td>56,803</td> <td>5.53</td> </tr>
-			<tr pid=".1429W.2/25"> <td>2000&ndash;01</td> <td>625,132</td> <td>64,207</td> <td>10.27</td> </tr>
-			<tr pid=".1429W.2/26"> <td>2001&ndash;02<sup>(37)</sup></td> <td>438,402</td> <td>60,191</td> <td>13.73</td> </tr>
-			<tr pid=".1429W.2/27"> <td>2002&ndash;03<sup>(37)</sup></td> <td>299,740</td> <td>46,216</td> <td>15.42</td> </tr>
-			<tr pid=".1429W.2/28"> <td>2003&ndash;04<sup>(37)</sup></td> <td>180,243</td> <td>36,552</td> <td>20.26</td> </tr>
-			<tr pid=".1429W.2/29"> <td>Current year to date<br/> 75,970</td> <td>16,855</td> <td>22.19</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1429W.2/32"><sup>(37)</sup> These figures do not include active case management interventions or interventions for Northern Ireland.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1430W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.204617.h" matchtype="oldwransgid"/>
-
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204617.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1430W.0" nospeaker="True" colnum="1430W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn0">
-	Benefit Payments (Newcastle)
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1430W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.204617.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.204617.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1430W.1" speakerid="uk.org.publicwhip/member/823" speakername="Jim Cousins" colnum="1430W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn0">
-	<p pid=".1430W.1/1" qnum="204617">To ask the Secretary of State for Work and Pensions how many <i>(a)</i> men and <i>(b)</i> women receiving (i) incapacity benefit and (ii) severe disablement allowance there were in each ward of the City of Newcastle upon Tyne.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1430W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.204617.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.204617.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1430W.2" speakerid="uk.org.publicwhip/member/872" speakername="Maria Eagle" colnum="1430W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_spnew0">
-	<p pid=".1430W.2/1">The information is not available in the format requested. The available information is in the table.</p>
-	<table>
-		<caption>Incapacity benefit and severe disablement allowance claimants in Newcastle upon Tyne by ward and sex</caption>
-		<thead>
-			<tr pid=".1430W.2/5"> <th></th> <th>Incapacity benefit and severe disablement<br/> allowance claimants</th> </tr>
-			<tr pid=".1430W.2/6"> <th>Ward name</th> <th>Male</th> <th>Female</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1430W.2/9"> <td>Benwell</td> <td>425</td> <td>285</td> </tr>
-			<tr pid=".1430W.2/10"> <td>Blakelaw</td> <td>615</td> <td>395</td> </tr>
-			<tr pid=".1430W.2/11"> <td>Byker</td> <td>715</td> <td>420</td> </tr>
-			<tr pid=".1430W.2/12"> <td>Castle</td> <td>270</td> <td>230</td> </tr>
-			<tr pid=".1430W.2/13"> <td>Dene</td> <td>320</td> <td>255</td> </tr>
-			<tr pid=".1430W.2/14"> <td>Denton</td> <td>400</td> <td>285</td> </tr>
-			<tr pid=".1430W.2/15"> <td>Elswick</td> <td>585</td> <td>320</td> </tr>
-			<tr pid=".1430W.2/16"> <td>Fawdon</td> <td>570</td> <td>365</td> </tr>
-			<tr pid=".1430W.2/17"> <td>Fenham</td> <td>460</td> <td>335</td> </tr>
-			<tr pid=".1430W.2/18"> <td>Grange</td> <td>365</td> <td>270</td> </tr>
-			<tr pid=".1430W.2/19"> <td>Heaton</td> <td>290</td> <td>225</td> </tr>
-			<tr pid=".1430W.2/20"> <td>Jesmond</td> <td>160</td> <td>115</td> </tr>
-			<tr pid=".1430W.2/21"> <td>Kenton</td> <td>470</td> <td>325</td> </tr>
-			<tr pid=".1430W.2/22"> <td>Lemington</td> <td>410</td> <td>285</td> </tr>
-			<tr pid=".1430W.2/23"> <td>Monkchester</td> <td>675</td> <td>440</td> </tr>
-			<tr pid=".1430W.2/24"> <td>Moorside</td> <td>550</td> <td>295</td> </tr>
-			<tr pid=".1430W.2/25"> <td>Newburn</td> <td>390</td> <td>245</td> </tr>
-			<tr pid=".1430W.2/26"> <td>Sandyford</td> <td>525</td> <td>240</td> </tr>
-			<tr pid=".1430W.2/27"> <td>Scotswood</td> <td>365</td> <td>205</td> </tr>
-			<tr pid=".1430W.2/28"> <td>South Gosforth</td> <td>110</td> <td>70</td> </tr>
-			<tr pid=".1430W.2/29"> <td>Walker</td> <td>660</td> <td>415</td> </tr>
-			<tr pid=".1430W.2/30"> <td>Walkergate</td> <td>450</td> <td>315</td> </tr>
-			<tr pid=".1430W.2/31"> <td>West City</td> <td>740</td> <td>330</td> </tr>
-			<tr pid=".1430W.2/32"> <td>Westerhope</td> <td>330</td> <td>255</td> </tr>
-			<tr pid=".1430W.2/33"> <td>Wingrove</td> <td>375</td> <td>260</td> </tr>
-			<tr pid=".1430W.2/34"> <td>Woolsington</td> <td>425</td> <td>290</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1430W.2/37">Notes:</p>
-	<p pid=".1430W.2/38">1. Wards are based on 2003 ward boundaries.</p>
-	<p pid=".1430W.2/39">2. All ward level benefit data is the latest currently available, August 2003.</p>
-	<p pid=".1430W.2/40">3. For data protection reasons we cannot give the gender breakdown for incapacity benefit and severe disablement allowance separately.</p>
-	<p pid=".1430W.2/41">4. All benefit counts have been rounded to a multiple of five to protect the confidentiality of individual claimants.</p>
-	<p pid=".1430W.2/42">Source:</p>
-	<p pid=".1430W.2/43">IAD Information Centre, DWP</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1431W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.206159.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200160.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200160.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1428W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.200160.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1428W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.200160.r0" matchtype="oldwransgid"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200161.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200161.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1429W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.200161.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1429W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.200161.r0" matchtype="oldwransgid"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204617.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204617.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1430W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.204617.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1430W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.204617.r0" matchtype="oldwransgid"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206159.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206159.h" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206159.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206159.q0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206159.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206159.r0" matchtype="perfectmatch"/>
@@ -4496,7 +4120,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204202.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204202.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204202.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204202.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204202.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204202.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204202.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1431W.3" nospeaker="True" colnum="1431W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204202.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1431W.3" nospeaker="true" colnum="1431W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn2">
 	Child Support Agency
 </minor-heading>
 
@@ -4535,7 +4159,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199594.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.199594.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199594.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199594.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199594.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199594.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199594.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1433W.0" nospeaker="True" colnum="1433W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199594.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1433W.0" nospeaker="true" colnum="1433W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w29.htm#41220w29.html_wqn6">
 	Departmental Establishments
 </minor-heading>
 
@@ -4598,7 +4222,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202431.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202431.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202431.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202431.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202431.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202431.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202431.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1434W.6" nospeaker="True" colnum="1434W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w30.htm#41220w30.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202431.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1434W.6" nospeaker="true" colnum="1434W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w30.htm#41220w30.html_wqn2">
 	Departmental Expenditure
 </minor-heading>
 
@@ -4677,7 +4301,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205930.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205930.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205930.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205930.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205930.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205930.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205930.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1440W.0" nospeaker="True" colnum="1440W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w31.htm#41220w31.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205930.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1440W.0" nospeaker="true" colnum="1440W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w31.htm#41220w31.html_wqn6">
 	Financial Assistance Scheme
 </minor-heading>
 
@@ -4722,7 +4346,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204602.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204602.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204602.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204602.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204602.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204602.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204602.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1442W.1" nospeaker="True" inserted-heading="True" colnum="1442W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w32.htm#41220w32.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204602.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1442W.1" nospeaker="true" inserted-heading="true" colnum="1442W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w32.htm#41220w32.html_wqn4">
 	Incapacity Benefit
 </minor-heading>
 
@@ -4775,7 +4399,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206185.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.206185.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206185.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206185.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.206185.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.206185.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206185.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1442W.7" nospeaker="True" inserted-heading="True" colnum="1442W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w32.htm#41220w32.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.206185.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1442W.7" nospeaker="true" inserted-heading="true" colnum="1442W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w32.htm#41220w32.html_wqn6">
 	Incapacity Benefit
 </minor-heading>
 
@@ -4841,7 +4465,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200502.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200502.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200502.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200502.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200502.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200502.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200502.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1444W.3" nospeaker="True" colnum="1444W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200502.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1444W.3" nospeaker="true" colnum="1444W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn1">
 	Jobcentre Plus (Lanarkshire)
 </minor-heading>
 
@@ -4899,57 +4523,16 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205399.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205399.r0" matchtype="perfectmatch"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1445W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.205399.q0" matchtype="oldwransgid"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.205399.r0" matchtype="oldwransgid"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203564.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1446W.1" nospeaker="True" colnum="1446W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn3">
-	New Deal
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.203564.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.203564.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1446W.2" speakerid="uk.org.publicwhip/member/785" speakername="Alistair Carmichael" colnum="1446W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn3">
-	<p pid=".1446W.2/1" qnum="203564">To ask the Secretary of State for Work and Pensions how many individuals have benefited from the <i>(a)</i> New Deal for Young People, <i>(b)</i> New Deal 25 plus, <i>(c)</i> New Deal 50 plus, <i>(d)</i> New Deal for Disabled People, <i>(e)</i> New Deal for lone parents, <i>(f)</i> New Deal for partners, <i>(g)</i> New Deal: self-employment and <i>(h)</i> New Deal for musicians in (i) Orkney, (ii) Shetland and (iii) the Highlands and Islands.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.203564.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.203564.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1446W.3" speakerid="uk.org.publicwhip/member/1017" speakername="Jane Kennedy" colnum="1446W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn3">
-	<p pid=".1446W.3/1">Information is not available at Local Authority level for New Deal for Disabled People, New Deal for Partners and New Deal for Musicians. Information on people starting and achieving jobs through the self-employment option of New Deal for Young People and New Deal 25 plus cannot be provided as the small numbers involved could result in the identification of individuals.</p>
-	<p pid=".1446W.3/2">The available information is in the table.</p>
-	<table>
-		<caption>New Deal&mdash; individual starts</caption>
-		<thead>
-			<tr pid=".1446W.3/6"> <th>Location</th> <th>Orkney Islands</th> <th>Shetland Islands</th> <th>Highlands</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1446W.3/9"> <td>New Deal for Young People</td> <td>200</td> <td>130</td> <td>2,820</td> </tr>
-			<tr pid=".1446W.3/10"> <td>New Deal 25 plus</td> <td>220</td> <td>120</td> <td>2,840</td> </tr>
-			<tr pid=".1446W.3/11"> <td>New Deal 50 plus</td> <td>50</td> <td>40</td> <td>640</td> </tr>
-			<tr pid=".1446W.3/12"> <td>New Deal for Lone Parents</td> <td>120</td> <td>60</td> <td>2,180</td> </tr>
-			<tr pid=".1446W.3/13"> <td>New Deal&mdash;individuals into jobs</td> </tr>
-			<tr pid=".1446W.3/14"> <td>New Deal for Young People</td> <td>140</td> <td>90</td> <td>1,940</td> </tr>
-			<tr pid=".1446W.3/15"> <td>New Deal 25 plus</td> <td>120</td> <td>50</td> <td>1,400</td> </tr>
-			<tr pid=".1446W.3/16"> <td>New Deal 50 plus</td> <td>50</td> <td>40</td> <td>640</td> </tr>
-			<tr pid=".1446W.3/17"> <td>New Deal for Lone Parents</td> <td>50</td> <td>40</td> <td>1,260</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1446W.3/20">Notes:</p>
-	<p pid=".1446W.3/21">1. New Deal information is available for the Highlands Local Authority but not 'Highlands and Islands'.</p>
-	<p pid=".1446W.3/22">2. All information provided is for Local Authority areas.</p>
-	<p pid=".1446W.3/23">3. Data is to June 2004, except New Deal 50 plus which is to March 2003 and relates to New Deal 50 plus Employment Credit starts.</p>
-	<p pid=".1446W.3/24">4. Information is not available for New Deal 50 plus at Local Authority level after March 2003.</p>
-	<p pid=".1446W.3/25">5. Figures are rounded to the nearest 10.</p>
-	<p pid=".1446W.3/26">Source:</p>
-	<p pid=".1446W.3/27">DWP Information and Analysis Directorate</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.204275.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203564.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203564.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.203564.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1446W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.203564.r0" matchtype="oldwransgid"/>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204275.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204275.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204275.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204275.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204275.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204275.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204275.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1446W.4" nospeaker="True" inserted-heading="True" colnum="1446W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204275.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1446W.4" nospeaker="true" inserted-heading="true" colnum="1446W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w33.htm#41220w33.html_wqn4">
 	New Deal
 </minor-heading>
 
@@ -4995,7 +4578,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202285.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202285.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202285.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202285.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202285.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202285.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202285.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1447W.0" nospeaker="True" colnum="1447W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202285.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1447W.0" nospeaker="true" colnum="1447W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn0">
 	New Deal for the Long-term Unemployed
 </minor-heading>
 
@@ -5078,7 +4661,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203175.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203175.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203175.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203175.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203175.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203175.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203175.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1449W.3" nospeaker="True" colnum="1449W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203175.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1449W.3" nospeaker="true" colnum="1449W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn5">
 	Pensions
 </minor-heading>
 
@@ -5120,7 +4703,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204506.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204506.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204506.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204506.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204506.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204506.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204506.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1449W.6" nospeaker="True" colnum="1449W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204506.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1449W.6" nospeaker="true" colnum="1449W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w34.htm#41220w34.html_wqn6">
 	Sickness Absence
 </minor-heading>
 
@@ -5240,7 +4823,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205766.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205766.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205766.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205766.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205766.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205766.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205766.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1454W.18" nospeaker="True" colnum="1454W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205766.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1454W.18" nospeaker="true" colnum="1454W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn1">
 	Conferences
 </minor-heading>
 
@@ -5275,7 +4858,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205665.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205665.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205665.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205665.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205665.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205665.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205665.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1456W.0" nospeaker="True" inserted-heading="True" colnum="1456W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205665.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1456W.0" nospeaker="true" inserted-heading="true" colnum="1456W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn5">
 	Departmental Expenditure
 </minor-heading>
 
@@ -5320,7 +4903,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205927.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205927.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205927.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205927.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205927.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205927.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205927.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1458W.0" nospeaker="True" colnum="1458W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn11">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205927.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1458W.0" nospeaker="true" colnum="1458W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn11">
 	International Sports Bodies
 </minor-heading>
 
@@ -5363,7 +4946,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205928.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205928.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205928.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205928.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205928.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205928.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205928.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1458W.3" nospeaker="True" inserted-heading="True" colnum="1458W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn12">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205928.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1458W.3" nospeaker="true" inserted-heading="true" colnum="1458W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w36.htm#41220w36.html_wqn12">
 	International Sports Bodies
 </minor-heading>
 
@@ -5408,7 +4991,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205052.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205052.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205052.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205052.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205052.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205052.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205052.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1459W.4" nospeaker="True" colnum="1459W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w37.htm#41220w37.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205052.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1459W.4" nospeaker="true" colnum="1459W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w37.htm#41220w37.html_wqn3">
 	Motor Racing
 </minor-heading>
 
@@ -5444,7 +5027,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204875.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204875.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204875.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204875.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204875.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204875.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204875.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1460W.4" nospeaker="True" colnum="1460W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w37.htm#41220w37.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204875.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1460W.4" nospeaker="true" colnum="1460W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w37.htm#41220w37.html_wqn7">
 	Task Forces
 </minor-heading>
 
@@ -5505,7 +5088,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204992.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204992.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204992.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204992.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204992.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204992.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204992.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1463W.7" nospeaker="True" colnum="1463W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w38.htm#41220w38.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204992.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1463W.7" nospeaker="true" colnum="1463W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w38.htm#41220w38.html_wqn2">
 	Acute Spinal Cord Injury
 </minor-heading>
 
@@ -5650,51 +5233,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203363.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203363.r0" matchtype="perfectmatch"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1471W.7" newgid="uk.org.publicwhip/wrans/2004-12-20.203363.q0" matchtype="oldwransgid"/>
 	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1471W.8" newgid="uk.org.publicwhip/wrans/2004-12-20.203363.r0" matchtype="oldwransgid"/>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.205001.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1472W.0" nospeaker="True" inserted-heading="True" colnum="1472W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w40.htm#41220w40.html_wqn7">
-	Dentistry
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1472W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.205001.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.205001.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1472W.1" speakerid="uk.org.publicwhip/member/907" speakername="Andrew George" colnum="1472W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w40.htm#41220w40.html_wqn7">
-	<p pid=".1472W.1/1" qnum="205001">To ask the Secretary of State for Health how many NHS registered dentists there were in <i>(a)</i> St. Ives constituency and <i>(b)</i> Cornwall in each of the past 10 years for which records are available.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1472W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.205001.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.205001.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1472W.2" speakerid="uk.org.publicwhip/member/1332" speakername="Rosie Winterton" colnum="1472W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w40.htm#41220w40.html_spnew7">
-	<p pid=".1472W.2/1" class="holdinganswer">holding answer <phrase class="date" code="2004-12-15">15 December 2004</phrase></p>
-	<p pid=".1472W.2/2">The number of general and personal dental service dentists in the Cornwall area by primary care trust at June each year from 1995 to 2004 is shown in the table.</p>
-	<table>
-		<caption>Number of general and personal dental service dentists in Cornwall PCTs at June each year: 1995 to 2004</caption>
-		<thead>
-			<tr pid=".1472W.2/6"> <th></th> <th>PCT</th> </tr>
-			<tr pid=".1472W.2/7"> <th></th> <th>Central Cornwall</th> <th>North and East Cornwall</th> <th>West of Cornwall</th> <th>Total</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1472W.2/10"> <td>1995</td> <td>68</td> <td>50</td> <td>48</td> <td>166</td> </tr>
-			<tr pid=".1472W.2/11"> <td>1996</td> <td>65</td> <td>51</td> <td>50</td> <td>166</td> </tr>
-			<tr pid=".1472W.2/12"> <td>1997</td> <td>69</td> <td>48</td> <td>52</td> <td>169</td> </tr>
-			<tr pid=".1472W.2/13"> <td>1998</td> <td>78</td> <td>51</td> <td>56</td> <td>185</td> </tr>
-			<tr pid=".1472W.2/14"> <td>1999</td> <td>94</td> <td>48</td> <td>47</td> <td>189</td> </tr>
-			<tr pid=".1472W.2/15"> <td>2000</td> <td>104</td> <td>51</td> <td>49</td> <td>204</td> </tr>
-			<tr pid=".1472W.2/16"> <td>2001</td> <td>115</td> <td>46</td> <td>53</td> <td>214</td> </tr>
-			<tr pid=".1472W.2/17"> <td>2002</td> <td>118</td> <td>50</td> <td>53</td> <td>221</td> </tr>
-			<tr pid=".1472W.2/18"> <td>2003</td> <td>124</td> <td>44</td> <td>56</td> <td>224</td> </tr>
-			<tr pid=".1472W.2/19"> <td>2004</td> <td>122</td> <td>45</td> <td>57</td> <td>224</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1472W.2/22">Notes:</p>
-	<p pid=".1472W.2/23">1. PCTs took responsibility for dental services from October 2002. Therefore, for the dates in the table up to 2002, dentists are assigned to areas using practice postcodes. The personal dental service affects the figures from June 1999 onwards; some dentists in the personal dental service switched from other national health service dental services.</p>
-	<p pid=".1472W.2/24">2. Dentists working in more than one PCT are counted in each PCT where they do dental work.</p>
-	<p pid=".1472W.2/25">Source:</p>
-	<p pid=".1472W.2/26">Dental Practice Board.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1472W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.201814.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.205001.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.205001.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1472W.1" newgid="uk.org.publicwhip/wrans/2004-12-20.205001.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1472W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.205001.r0" matchtype="oldwransgid"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201814.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.201814.h" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201814.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201814.q0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.201814.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.201814.r0" matchtype="perfectmatch"/>
@@ -5704,7 +5247,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200787.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200787.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200787.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200787.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200787.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200787.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200787.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1473W.0" nospeaker="True" colnum="1473W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w41.htm#41220w41.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200787.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1473W.0" nospeaker="true" colnum="1473W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w41.htm#41220w41.html_wqn0">
 	Departmental Costs
 </minor-heading>
 
@@ -5716,7 +5259,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1473W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.200787.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.200787.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1473W.2" speakerid="uk.org.publicwhip/member/1332" speakername="Rosie Winterton" colnum="1473W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w41.htm#41220w41.html_spnew0">
 	<p pid=".1473W.2/1">My hon. Friend, the former Minister for the Cabinet Office, Ruth Kelly, has asked Nick Matheson, chief executive of the Government Car and Despatch Agency to write to the hon. Member with details of the cost of ministerial vehicles provided to this Department in 2003&ndash;04.</p>
-	<p pid=".1473W.2/2">Information on ministerial vehicles for the financial year 2002&ndash;03 was similarly provided in a letter deposited in the Library, referred to in the response given on <phrase class="date" code="2003-11-13">13 November 2003</phrase>, <phrase class="offrep" id="wrans/2003-11-13.397W"><i>Official Report,</i> columns 397&ndash;98W</phrase> by the then Minister for the Cabinet Office.</p>
+	<p pid=".1473W.2/2">Information on ministerial vehicles for the financial year 2002&ndash;03 was similarly provided in a letter deposited in the Library, referred to in the response given on <phrase class="date" code="2003-11-13">13 November 2003</phrase>, <phrase class="offrep" id="wrans/2003-11-13.397"><i>Official Report,</i> columns 397&ndash;98W</phrase> by the then Minister for the Cabinet Office.</p>
 	<p pid=".1473W.2/3">The cost of taxis for the last two years was:</p>
 	<table>
 		<thead>
@@ -5782,7 +5325,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204427.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204427.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204427.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204427.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204427.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204427.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204427.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1476W.6" nospeaker="True" inserted-heading="True" colnum="1476W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w42.htm#41220w42.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204427.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1476W.6" nospeaker="true" inserted-heading="true" colnum="1476W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w42.htm#41220w42.html_wqn1">
 	Health Services
 </minor-heading>
 
@@ -5829,7 +5372,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204615.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204615.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204615.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204615.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204615.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204615.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204615.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1477W.0" nospeaker="True" inserted-heading="True" colnum="1477W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w42.htm#41220w42.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204615.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1477W.0" nospeaker="true" inserted-heading="true" colnum="1477W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w42.htm#41220w42.html_wqn2">
 	Health Services
 </minor-heading>
 
@@ -5893,7 +5436,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200752.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.200752.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200752.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200752.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.200752.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.200752.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200752.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1479W.7" nospeaker="True" inserted-heading="True" colnum="1479W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w43.htm#41220w43.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.200752.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1479W.7" nospeaker="true" inserted-heading="true" colnum="1479W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w43.htm#41220w43.html_wqn1">
 	Jobs Website
 </minor-heading>
 
@@ -6046,7 +5589,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204736.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204736.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204736.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204736.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204736.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204736.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204736.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1488W.0" nospeaker="True" colnum="1488W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w45.htm#41220w45.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204736.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1488W.0" nospeaker="true" colnum="1488W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w45.htm#41220w45.html_wqn2">
 	Departmental Budget/Expenditure
 </minor-heading>
 
@@ -6062,7 +5605,7 @@
 	<table>
 		<thead>
 			<tr pid=".1488W.2/5"> <th></th> <th></th> <th></th> <th></th> <th></th> <th></th> <th>&pound; million</th> </tr>
-			<tr pid=".1488W.2/6"> <th></th> <th>Housing and homelessness</th> <th>Neighbourhood renewal</th> <th>Sustainable communities</th> </tr>
+			<tr pid=".1488W.2/6"> <th></th> <th colspan="2">Housing and homelessness</th> <th colspan="2">Neighbourhood renewal</th> <th colspan="2">Sustainable communities</th> </tr>
 			<tr pid=".1488W.2/7"> <th></th> <th>Resource</th> <th>Capital</th> <th>Resource</th> <th>Capital</th> <th>Resource</th> <th>Capital</th> </tr>
 		</thead>
 		<tbody>
@@ -6083,69 +5626,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1488W.3" newgid="uk.org.publicwhip/wrans/2004-12-20.202453.h" matchtype="oldwransgid"/>
 
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.h" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.q0" matchtype="changes"/>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.202453.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1488W.3" nospeaker="True" inserted-heading="True" colnum="1488W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w45.htm#41220w45.html_wqn3">
-	Departmental Budget/Expenditure
-</minor-heading>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1488W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.202453.q0" matchtype="oldwransgid"/>
-<ques id="uk.org.publicwhip/wrans/2004-12-20.202453.q0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1488W.4" speakerid="uk.org.publicwhip/member/730" speakername="John Bercow" colnum="1488W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w45.htm#41220w45.html_wqn3">
-	<p pid=".1488W.4/1" qnum="202453">To ask the Deputy Prime Minister if he will make a statement on energy costs incurred by his Department in each of the last two years.</p>
-</ques>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1488W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.202453.r0" matchtype="oldwransgid"/>
-<reply id="uk.org.publicwhip/wrans/2004-12-20.202453.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1488W.5" speakerid="uk.org.publicwhip/member/971" speakername="Phil Hope" colnum="1488W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w45.htm#41220w45.html_spnew3">
-	<p pid=".1488W.5/1">Energy costs incurred by the Office of the Deputy Prime Minister for the years 2002&ndash;3 and 2003&ndash;4 are in the following table, along with the corresponding consumption data and average fuel prices. Figures are given separately for electricity and heating fuels, as well as for the total energy.</p>
-	<p pid=".1488W.5/2">The Office of the Deputy Prime Minister has traditionally reported energy figures separately for its central estate, the Queen Elizabeth II Conference Centre and the Government Office Network. For consistency this format has been retained and the data is presented in Tables la, b and c respectively.</p>
-	<table>
-		<caption>Table la: Energy costs, consumption and average prices&mdash;The Office of the Deputy Prime Minister</caption>
-		<thead>
-			<tr pid=".1488W.5/6"> <th></th> <th>Costs (&pound;k/y)</th> <th>Consumption (MWh/y)</th> <th>Average price (p/kWh)</th> </tr>
-			<tr pid=".1488W.5/7"> <th></th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1488W.5/10"> <td>Electricity</td> <td>941</td> <td>886</td> <td>-6</td> <td>16.862</td> <td>20.119</td> <td>19</td> <td>5.58</td> <td>4.40</td> <td>-21</td> </tr>
-			<tr pid=".1488W.5/11"> <td>Heating fuels</td> <td>370</td> <td>406</td> <td>10</td> <td>26.173</td> <td>30.265</td> <td>16</td> <td>1.41</td> <td>1.34</td> <td>-5</td> </tr>
-			<tr pid=".1488W.5/12"> <td>Total energy</td> <td>1301</td> <td>1292</td> <td>-1</td> <td>43.035</td> <td>50.384</td> <td>17</td> <td>3.05</td> <td>2.56</td> <td>-16</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1488W.5/15">The increase in electrical consumption is due mostly to a rise in occupational density throughout the estate, which has resulted in increased load on the air conditioning systems. Increased use of the two gas fired Combined Heat and Power installations has also resulted in an increased use of gas, which for the purpose of this answer has been included as a heating fuel.</p>
-	<table>
-		<caption>Table 1b: Energy costs, consumption and average prices&mdash;QEII Conference Centre</caption>
-		<thead>
-			<tr pid=".1488W.5/19"> <th></th> <th>Costs (&pound;k/y)</th> <th>Consumption (MWh/y)</th> <th>Average price (p/kWh)</th> </tr>
-			<tr pid=".1488W.5/20"> <th></th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change(%)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1488W.5/23"> <td>Electricity</td> <td>229</td> <td>330</td> <td>45</td> <td>6.532</td> <td>7.838</td> <td>20</td> <td>3.50</td> <td>4.22</td> <td>20</td> </tr>
-			<tr pid=".1488W.5/24"> <td>Heating fuels</td> <td>43</td> <td>62</td> <td>46</td> <td>4.754</td> <td>4.655</td> <td>-2</td> <td>0.90</td> <td>1.34</td> <td>49</td> </tr>
-			<tr pid=".1488W.5/25"> <td>Total energy</td> <td>271</td> <td>393</td> <td>45</td> <td>11.287</td> <td>12.494</td> <td>11</td> <td>2.41</td> <td>3.14</td> <td>31</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1488W.5/28">The energy used in the Conference Centre is dependent on the commercial activities undertaken. Recent refurbishment of the air-conditioning systems should improve the Centre's overall efficiency.</p>
-	<table>
-		<caption>Table 1c: Energy costs, consumption and average prices&mdash;Government Office Network</caption>
-		<thead>
-			<tr pid=".1488W.5/32"> <th></th> <th>Costs (&pound;M/y)</th> <th>Consumption (MWh/y)</th> <th>Average price (p/kWh)</th> </tr>
-			<tr pid=".1488W.5/33"> <th></th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> <th>2002&ndash;03</th> <th>2003&ndash;04</th> <th>Change (%)</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid=".1488W.5/36"> <td>Electricity</td> <td>238</td> <td>306</td> <td>29</td> <td>6.231</td> <td>5.213</td> <td>-16</td> <td>3.82</td> <td>5.88</td> <td>54</td> </tr>
-			<tr pid=".1488W.5/37"> <td>Heating fuels</td> <td>64</td> <td>81</td> <td>26</td> <td>6.670</td> <td>4.891</td> <td>-27</td> <td>0.96</td> <td>1.65</td> <td>72</td> </tr>
-			<tr pid=".1488W.5/38"> <td>Total energy</td> <td>302</td> <td>387</td> <td>28</td> <td>12.901</td> <td>10.105</td> <td>-22</td> <td>2.34</td> <td>3.83.</td> <td>64</td> </tr>
-		</tbody>
-	</table>
-	<p pid=".1488W.5/41">Government Offices have increased their usage of electricity from renewable sources, which carry a premium. This has led to an increase in the cost of their energy, despite a reduction in the amount used.</p>
-	<p pid=".1488W.5/42">The Office of the Deputy Prime Minister's electricity costs have risen by 8 per cent. overall, despite a small decrease in average price, due to a 12 per cent. rise in consumption. Heating fuel costs have risen by 15 per cent., mainly due to a 9 per cent. increase in price.</p>
-	<p pid=".1488W.5/43">The Office of the Deputy Prime Minister is investigating options for reducing energy consumption across the estate. Surveys of the Office of the Deputy Prime Minister's main office buildings are being undertaken and action plans for fuel reduction produced. Early indications from these reports confirm that increased use of IT along with higher staff occupation rates per sq. m and therefore higher IT and air conditioning loads are the main contributory factors.</p>
-	<p pid=".1488W.5/44">Although the Office of the Deputy Prime Minister has overall responsibility for the buildings occupied by Government Offices, they carry out functions on behalf of ten Government Departments.</p>
-</reply>
-
-<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1490W.0" newgid="uk.org.publicwhip/wrans/2004-12-20.202457.h" matchtype="oldwransgid"/>
-
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202453.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202453.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1488W.4" newgid="uk.org.publicwhip/wrans/2004-12-20.202453.q0" matchtype="oldwransgid"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1488W.5" newgid="uk.org.publicwhip/wrans/2004-12-20.202453.r0" matchtype="oldwransgid"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202457.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.202457.h" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202457.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202457.q0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.202457.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.202457.r0" matchtype="perfectmatch"/>
@@ -6160,7 +5645,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203306.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.203306.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203306.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203306.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.203306.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.203306.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203306.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1490W.6" nospeaker="True" colnum="1490W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w46.htm#41220w46.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.203306.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1490W.6" nospeaker="true" colnum="1490W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w46.htm#41220w46.html_wqn0">
 	Departmental Files
 </minor-heading>
 
@@ -6235,7 +5720,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204743.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204743.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204743.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204743.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204743.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204743.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204743.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1494W.3" nospeaker="True" inserted-heading="True" colnum="1494W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w47.htm#41220w47.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204743.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1494W.3" nospeaker="true" inserted-heading="true" colnum="1494W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w47.htm#41220w47.html_wqn2">
 	Homelessness
 </minor-heading>
 
@@ -6315,7 +5800,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204519.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.204519.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204519.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204519.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.204519.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.204519.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204519.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1498W.0" nospeaker="True" colnum="1498W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w48.htm#41220w48.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.204519.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1498W.0" nospeaker="true" colnum="1498W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w48.htm#41220w48.html_wqn3">
 	Sick Leave
 </minor-heading>
 
@@ -6327,7 +5812,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.1498W.2" newgid="uk.org.publicwhip/wrans/2004-12-20.204519.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2004-12-20.204519.r0" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1498W.2" speakerid="uk.org.publicwhip/member/971" speakername="Phil Hope" colnum="1498W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w48.htm#41220w48.html_spnew3">
 	<p pid=".1498W.2/1">I refer the hon. Member to the figures contained in the annual report &quot;Analysis of Sickness Absence in the Civil Service&quot; published by the Cabinet Office.</p>
-	<p pid=".1498W.2/2">Table A of this report gives details of both the average working days absence per staff year and the number of staff years on which that calculation is based. The most recent statistics (for calendar year 2003) were announced by written ministerial statement on <phrase class="date" code="2004-11-01">1 November 2004</phrase>, <phrase class="offrep" id="wms/2004-11-01.1WS"><i>Official Report,</i> column 1WS</phrase> and copies placed in the Libraries of the House.</p>
+	<p pid=".1498W.2/2">Table A of this report gives details of both the average working days absence per staff year and the number of staff years on which that calculation is based. The most recent statistics (for calendar year 2003) were announced by written ministerial statement on <phrase class="date" code="2004-11-01">1 November 2004</phrase>, <phrase class="offrep" id="wms/2004-11-01.1"><i>Official Report,</i> column 1WS</phrase> and copies placed in the Libraries of the House.</p>
 	<p pid=".1498W.2/3">Although the Office of the Deputy Prime Minister did not come into existence until 2002 the reports for the years 1999, 2000, 2001 and 2002 for all major Civil Service departments are available on the Cabinet Office website at: <a href="http://www.civilservice.gov.uk/managementinformation/conditionsofservice/caje/publications/index.asp">http://www.civilservice.gov.uk/management information/conditions of service/caje/publications/index.asp</a>_sickness</p>
 	<p pid=".1498W.2/4">I should also like to take this opportunity to reinforce our commitment to managing sickness absence effectively and to putting in place the recommendations of the recently published &quot;Managing Sickness Absence in the Public Sector&quot;.</p>
 </reply>
@@ -6495,7 +5980,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199906.h" newgid="uk.org.publicwhip/wrans/2004-12-20a.199906.h" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199906.q0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199906.q0" matchtype="changes"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2004-12-20.199906.r0" newgid="uk.org.publicwhip/wrans/2004-12-20a.199906.r0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199906.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1510W.0" nospeaker="True" colnum="1510W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w51.htm#41220w51.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2004-12-20.199906.h" oldstyleid="uk.org.publicwhip/wrans/2004-12-20.1510W.0" nospeaker="true" colnum="1510W"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/cm041220/text/41220w51.htm#41220w51.html_wqn7">
 	Press Releases
 </minor-heading>
 
@@ -6526,7 +6011,7 @@
 			<tr pid=".1510W.2/18"> <td>November</td> <td>31</td> <td>2</td> <td>1</td> </tr>
 		</tbody>
 	</table>
-	<p pid=".1510W.2/21"><sup>(48)</sup> To <phrase class="date" code="">25 November</phrase>.</p>
+	<p pid=".1510W.2/21"><sup>(48)</sup> To <phrase class="date" code="2004-11-25">25 November</phrase>.</p>
 	<p pid=".1510W.2/22"><sup>(49)</sup> Separate regional press notices were sent out to announce nominations for prison officer of the year.</p>
 </reply>
 

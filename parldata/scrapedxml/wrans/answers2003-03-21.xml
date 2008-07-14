@@ -7,35 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="" latest="yes">
@@ -46,7 +69,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.955W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103502.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103502.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.955W.1" nospeaker="True" colnum="955W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103502.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.955W.1" nospeaker="true" colnum="955W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn0">
 	Parliamentary Commissioner for Standards
 </minor-heading>
 
@@ -77,7 +100,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.955W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103305.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103305.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.955W.5" nospeaker="True" colnum="955W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103305.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.955W.5" nospeaker="true" colnum="955W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn1">
 	London Underground
 </minor-heading>
 
@@ -89,11 +112,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.955W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.103305.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103305.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.955W.7" speakerid="uk.org.publicwhip/member/995" speakername="David Jamieson" colnum="955W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_spnew1">
 	<p pid=".955W.7/1">The Government's proposals for amendments to the Greater London Authority Act 1999 are contained in clause 108 of the Railways and Transport Safety Bill as amended in Standing Committee D, which is available on the House website.</p>
-	<p pid=".955W.7/2">The Secretary of State told the House in his written statement, on <phrase class="date" code="2003-02-04">4 February 2003</phrase>,<phrase class="offrep" id="wms/2003-02-04.10WS"><i>Official Report</i>, column 10WS</phrase>, that the transfer of London Underground Ltd. to Transport for London will only take place ahead of such amendments to the Greater London Authority Act 1999 with the agreement of the PPP consortia and lenders.</p>
+	<p pid=".955W.7/2">The Secretary of State told the House in his written statement, on <phrase class="date" code="2003-02-04">4 February 2003</phrase>,<phrase class="offrep" id="wms/2003-02-04.10"><i>Official Report</i>, column 10WS</phrase>, that the transfer of London Underground Ltd. to Transport for London will only take place ahead of such amendments to the Greater London Authority Act 1999 with the agreement of the PPP consortia and lenders.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.956W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.98397.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.98397.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.956W.0" nospeaker="True" colnum="956W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.98397.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.956W.0" nospeaker="true" colnum="956W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn2">
 	South Central Electrostar Train
 </minor-heading>
 
@@ -113,7 +136,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.956W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.103844.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103844.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.956W.4" nospeaker="True" colnum="956W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103844.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.956W.4" nospeaker="true" colnum="956W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn3">
 	Children at Risk
 </minor-heading>
 
@@ -136,7 +159,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102001.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102001.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.0" nospeaker="True" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102001.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.0" nospeaker="true" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn4">
 	Fraud
 </minor-heading>
 
@@ -152,7 +175,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.104103.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104103.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.3" nospeaker="True" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104103.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.3" nospeaker="true" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn5">
 	Inland Revenue
 </minor-heading>
 
@@ -164,11 +187,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.104103.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.104103.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.5" speakerid="uk.org.publicwhip/member/1171" speakername="Dawn Primarolo" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_spnew5">
 	<p pid=".957W.5/1">The Inland Revenue do not keep records of the number of tax returns reported lost or mislaid.</p>
-	<p pid=".957W.5/2">Every year the Revenue receive and process around nine million self assessment tax returns. Over 99 per cent. of returns received by the due date (<phrase class="date" code="2005-01-31">31 January</phrase>) are processed by <phrase class="date" code="2005-03-31">31 March</phrase>.</p>
+	<p pid=".957W.5/2">Every year the Revenue receive and process around nine million self assessment tax returns. Over 99 per cent. of returns received by the due date (<phrase class="date" code="2003-01-31">31 January</phrase>) are processed by <phrase class="date" code="2003-03-31">31 March</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103915.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103915.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.6" nospeaker="True" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103915.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.6" nospeaker="true" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn6">
 	Personal Tax
 </minor-heading>
 
@@ -188,7 +211,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.10" newgid="uk.org.publicwhip/wrans/2003-03-21.102625.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102625.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.10" nospeaker="True" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102625.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.10" nospeaker="true" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_wqn7">
 	Civil Contingency Planning
 </minor-heading>
 
@@ -199,7 +222,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.957W.12" newgid="uk.org.publicwhip/wrans/2003-03-21.102625.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.102625.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.957W.12" speakerid="uk.org.publicwhip/member/693" speakername="Douglas Alexander" colnum="957W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w01.htm#30321w01.html_spnew7">
-	<p pid=".957W.12/1">I refer the hon. Member to the statement my hon. Friend the Home Secretary made on civil contingencies on <phrase class="date" code="2003-03-03">3 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-03.72WS"><i>Official Report,</i> column 72WS</phrase>, as part of the debates on the approval of the Anti-terrorism, Crime and Security Act 2001 Order 2003 and the Intelligence and Security Committee report on the Bali bombing. The statement refers to the Lead Government Department Paper which Cabinet Office placed in the Library of the House on <phrase class="date" code="2002-07-23">23 July 2002</phrase> and which sets out the role of the lead Government Departments in planning for and managing crises.</p>
+	<p pid=".957W.12/1">I refer the hon. Member to the statement my hon. Friend the Home Secretary made on civil contingencies on <phrase class="date" code="2003-03-03">3 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-03.72"><i>Official Report,</i> column 72WS</phrase>, as part of the debates on the approval of the Anti-terrorism, Crime and Security Act 2001 Order 2003 and the Intelligence and Security Committee report on the Bali bombing. The statement refers to the Lead Government Department Paper which Cabinet Office placed in the Library of the House on <phrase class="date" code="2002-07-23">23 July 2002</phrase> and which sets out the role of the lead Government Departments in planning for and managing crises.</p>
 	<p pid=".957W.12/2">The Civil Contingencies Secretariat, a part of the Cabinet Office, supports the Home Secretary in co-ordinating the work to enhance civil contingency planning.</p>
 	<p pid=".957W.12/3">Its current objectives are to:</p>
 	<p pid=".957W.12/4" class="indent">1. lead horizon scanning activity to identify and assess potential and imminent disruptive challenges to the domestic UK and assist in the development of an integrated response. Build partnerships with other organisations to develop and share best practice in horizon scanning and develop the knowledge of the UK's critical networks and infrastructure.</p>
@@ -210,7 +233,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.958W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103710.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103710.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.958W.0" nospeaker="True" colnum="958W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103710.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.958W.0" nospeaker="true" colnum="958W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn0">
 	External Reports
 </minor-heading>
 
@@ -225,7 +248,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.958W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103622.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103622.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.958W.3" nospeaker="True" colnum="958W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103622.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.958W.3" nospeaker="true" colnum="958W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn1">
 	Scotland
 </minor-heading>
 
@@ -241,7 +264,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.959W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103668.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103668.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.0" nospeaker="True" inserted-heading="True" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103668.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.0" nospeaker="true" inserted-heading="true" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn2">
 	Scotland
 </minor-heading>
 
@@ -252,7 +275,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.959W.2" newgid="uk.org.publicwhip/wrans/2003-03-21.103668.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103668.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.2" speakerid="uk.org.publicwhip/member/693" speakername="Douglas Alexander" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_spnew2">
-	<p pid=".959W.2/1">Departmental business during the campaign period preceding elections to the Scottish Parliament, will be conducted in accordance with the Guidance on Conduct for Civil Servants in UK Departments in respect of elections to the Scottish Parliament, National Assembly for Wales and English local authorities, published by the Cabinet Office on <phrase class="date" code="2005-03-10">10 March</phrase>.</p>
+	<p pid=".959W.2/1">Departmental business during the campaign period preceding elections to the Scottish Parliament, will be conducted in accordance with the Guidance on Conduct for Civil Servants in UK Departments in respect of elections to the Scottish Parliament, National Assembly for Wales and English local authorities, published by the Cabinet Office on <phrase class="date" code="2003-03-10">10 March</phrase>.</p>
 	<p pid=".959W.2/2">Copies were placed in the Libraries of the House.</p>
 </reply>
 
@@ -262,7 +285,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.959W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.102055.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102055.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.4" nospeaker="True" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102055.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.4" nospeaker="true" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn3">
 	Award Schemes
 </minor-heading>
 
@@ -277,7 +300,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.959W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.103760.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103760.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.7" nospeaker="True" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103760.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.7" nospeaker="true" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn4">
 	Eggs (Marking)
 </minor-heading>
 
@@ -293,7 +316,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.959W.10" newgid="uk.org.publicwhip/wrans/2003-03-21.103741.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103741.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.10" nospeaker="True" inserted-heading="True" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103741.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.959W.10" nospeaker="true" inserted-heading="true" colnum="959W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn5">
 	Eggs (Marking)
 </minor-heading>
 
@@ -308,7 +331,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.960W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103909.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103909.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.1" nospeaker="True" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103909.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.1" nospeaker="true" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn6">
 	National Parks
 </minor-heading>
 
@@ -328,7 +351,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.960W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103869.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103869.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.5" nospeaker="True" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103869.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.5" nospeaker="true" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn7">
 	European Security and Defence Policy
 </minor-heading>
 
@@ -343,7 +366,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.960W.8" newgid="uk.org.publicwhip/wrans/2003-03-21.104225.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104225.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.8" nospeaker="True" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104225.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.8" nospeaker="true" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn8">
 	HMS Nottingham
 </minor-heading>
 
@@ -354,11 +377,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.960W.10" newgid="uk.org.publicwhip/wrans/2003-03-21.104225.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.104225.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.10" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_spnew8">
-	<p pid=".960W.10/1">I refer the hon. Member to the answer I gave on <phrase class="date" code="2003-02-04">4 February 2003</phrase> <phrase class="offrep" id="wrans/2003-02-04.177W"><i>Official Report</i>, column 177W</phrase>, to <phrase class="honfriend" id="uk.org.publicwhip/member/752" name="Colin Breed">the hon. Member for Cornwall, South East (Mr. Breed)</phrase>.</p>
+	<p pid=".960W.10/1">I refer the hon. Member to the answer I gave on <phrase class="date" code="2003-02-04">4 February 2003</phrase> <phrase class="offrep" id="wrans/2003-02-04.177"><i>Official Report</i>, column 177W</phrase>, to <phrase class="honfriend" id="uk.org.publicwhip/member/752" name="Colin Breed">the hon. Member for Cornwall, South East (Mr. Breed)</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.960W.11" newgid="uk.org.publicwhip/wrans/2003-03-21.103922.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103922.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.11" nospeaker="True" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn9">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103922.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.960W.11" nospeaker="true" colnum="960W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn9">
 	Indonesia
 </minor-heading>
 
@@ -373,7 +396,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.961W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.104000.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104000.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.961W.1" nospeaker="True" colnum="961W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn10">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104000.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.961W.1" nospeaker="true" colnum="961W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn10">
 	Iraq
 </minor-heading>
 
@@ -385,11 +408,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.961W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.104000.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.104000.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.961W.3" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" colnum="961W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_spnew10">
 	<p pid=".961W.3/1" class="holdinganswer">holding answer <phrase class="date" code="2003-03-20">20 March 2003</phrase></p>
-	<p pid=".961W.3/2">I have not received any requests from the United States for additional infantry. However, I refer the hon. Member to my written ministerial statement on <phrase class="date" code="2003-03-13">13 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-13.20WS"><i>Official Report</i>, column 20WS</phrase>, in which I announced the deployment of the 1st Battalion The Duke of Wellington's Regiment and 202 Field Hospital (Volunteer). Respectively, these will provide additional infantry and medical capability to Headquarters 1 (UK) Armoured Division, so that it can respond to a range of potential tasks and circumstances.</p>
+	<p pid=".961W.3/2">I have not received any requests from the United States for additional infantry. However, I refer the hon. Member to my written ministerial statement on <phrase class="date" code="2003-03-13">13 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-13.20"><i>Official Report</i>, column 20WS</phrase>, in which I announced the deployment of the 1st Battalion The Duke of Wellington's Regiment and 202 Field Hospital (Volunteer). Respectively, these will provide additional infantry and medical capability to Headquarters 1 (UK) Armoured Division, so that it can respond to a range of potential tasks and circumstances.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.961W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.102611.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102611.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.961W.4" nospeaker="True" colnum="961W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn11">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102611.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.961W.4" nospeaker="true" colnum="961W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w02.htm#30321w02.html_wqn11">
 	Operational Performance Statements
 </minor-heading>
 
@@ -407,7 +430,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.962W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103978.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103978.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.0" nospeaker="True" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103978.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.0" nospeaker="true" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn0">
 	Transportable Surgical Facilities
 </minor-heading>
 
@@ -427,7 +450,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.962W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.103405.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103405.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.4" nospeaker="True" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103405.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.4" nospeaker="true" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn1">
 	Child Trafficking
 </minor-heading>
 
@@ -443,7 +466,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.962W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.101976.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101976.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.7" nospeaker="True" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101976.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.962W.7" nospeaker="true" colnum="962W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn2">
 	Care Homes
 </minor-heading>
 
@@ -462,7 +485,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.963W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103513.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103513.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.0" nospeaker="True" inserted-heading="True" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103513.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.0" nospeaker="true" inserted-heading="true" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn3">
 	Care Homes
 </minor-heading>
 
@@ -473,11 +496,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.963W.2" newgid="uk.org.publicwhip/wrans/2003-03-21.103513.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103513.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.2" speakerid="uk.org.publicwhip/member/1234" speakername="Jacqui Smith" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_spnew3">
-	<p pid=".963W.2/1">I refer the hon. Member to the response I gave the hon. Member on <phrase class="date" code="2002-03-26">26 March 2002</phrase>, <phrase class="offrep" id="wrans/2002-03-26.935W"><i>Official Report,</i> columns 935&ndash;36W</phrase>, in which I made it clear that four providers had been written to about this. Health authorities and primary care trusts will also have written to providers on this subject</p>
+	<p pid=".963W.2/1">I refer the hon. Member to the response I gave the hon. Member on <phrase class="date" code="2002-03-26">26 March 2002</phrase>, <phrase class="offrep" id="wrans/2002-03-26.935"><i>Official Report,</i> columns 935&ndash;36W</phrase>, in which I made it clear that four providers had been written to about this. Health authorities and primary care trusts will also have written to providers on this subject</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.963W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.99929.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99929.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.3" nospeaker="True" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99929.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.3" nospeaker="true" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn4">
 	Hearing Aids
 </minor-heading>
 
@@ -492,7 +515,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.963W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.104154.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104154.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.6" nospeaker="True" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104154.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.6" nospeaker="true" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn5">
 	Lymphoedema
 </minor-heading>
 
@@ -508,7 +531,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.963W.9" newgid="uk.org.publicwhip/wrans/2003-03-21.103474.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103474.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.9" nospeaker="True" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103474.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.963W.9" nospeaker="true" colnum="963W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn6">
 	Mencap
 </minor-heading>
 
@@ -523,7 +546,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.964W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103080.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103080.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.964W.0" nospeaker="True" colnum="964W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103080.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.964W.0" nospeaker="true" colnum="964W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn7">
 	Mental Health (Salisbury)
 </minor-heading>
 
@@ -556,7 +579,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.965W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103054.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103054.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.0" nospeaker="True" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103054.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.0" nospeaker="true" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w03.htm#30321w03.html_wqn8">
 	North Cumbria Acute Trust
 </minor-heading>
 
@@ -571,7 +594,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.965W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103385.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103385.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.3" nospeaker="True" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103385.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.3" nospeaker="true" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn0">
 	Prison Health Care
 </minor-heading>
 
@@ -587,7 +610,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.965W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103387.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103387.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.6" nospeaker="True" inserted-heading="True" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103387.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.6" nospeaker="true" inserted-heading="true" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn1">
 	Prison Health Care
 </minor-heading>
 
@@ -602,7 +625,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.965W.9" newgid="uk.org.publicwhip/wrans/2003-03-21.102470.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102470.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.9" nospeaker="True" inserted-heading="True" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102470.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.965W.9" nospeaker="true" inserted-heading="true" colnum="965W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn2">
 	Prison Health Care
 </minor-heading>
 
@@ -617,7 +640,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.966W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103569.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103569.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.1" nospeaker="True" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103569.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.1" nospeaker="true" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn3">
 	Reflex Sympathetic Dystrophy
 </minor-heading>
 
@@ -637,7 +660,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.966W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103414.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103414.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.5" nospeaker="True" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103414.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.5" nospeaker="true" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn4">
 	Security Service
 </minor-heading>
 
@@ -654,7 +677,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.966W.8" newgid="uk.org.publicwhip/wrans/2003-03-21.102254.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102254.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.8" nospeaker="True" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102254.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.966W.8" nospeaker="true" colnum="966W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn5">
 	Traffic Wardens
 </minor-heading>
 
@@ -681,7 +704,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.104239.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104239.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.0" nospeaker="True" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104239.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.0" nospeaker="true" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn6">
 	Asylum Application Processing Centres
 </minor-heading>
 
@@ -696,7 +719,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.102517.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102517.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.3" nospeaker="True" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102517.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.3" nospeaker="true" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn7">
 	Chemical Agent Monitors
 </minor-heading>
 
@@ -711,7 +734,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.100077.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.100077.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.6" nospeaker="True" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.100077.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.6" nospeaker="true" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn8">
 	Civil Defence
 </minor-heading>
 
@@ -722,11 +745,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.8" newgid="uk.org.publicwhip/wrans/2003-03-21.100077.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.100077.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.8" speakerid="uk.org.publicwhip/member/739" speakername="David Blunkett" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_spnew8">
-	<p pid=".967W.8/1">I refer my hon. Friend to the Written Ministerial Statements I made on <phrase class="date" code="2003-03-03">3 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-03.72WS"><i>Official Report</i>, column 72WS</phrase>, and <phrase class="date" code="2003-03-20">20 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-20.51WS"><i>Official Report</i>, column 51WS</phrase>.</p>
+	<p pid=".967W.8/1">I refer my hon. Friend to the Written Ministerial Statements I made on <phrase class="date" code="2003-03-03">3 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-03.72"><i>Official Report</i>, column 72WS</phrase>, and <phrase class="date" code="2003-03-20">20 March 2003</phrase>, <phrase class="offrep" id="wms/2003-03-20.51"><i>Official Report</i>, column 51WS</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.9" newgid="uk.org.publicwhip/wrans/2003-03-21.103745.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103745.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.9" nospeaker="True" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn9">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103745.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.9" nospeaker="true" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn9">
 	Correspondence
 </minor-heading>
 
@@ -741,7 +764,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.967W.12" newgid="uk.org.publicwhip/wrans/2003-03-21.104350.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104350.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.12" nospeaker="True" inserted-heading="True" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn10">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104350.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.967W.12" nospeaker="true" inserted-heading="true" colnum="967W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn10">
 	Correspondence
 </minor-heading>
 
@@ -756,7 +779,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.968W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102733.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102733.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.968W.0" nospeaker="True" colnum="968W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn11">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102733.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.968W.0" nospeaker="true" colnum="968W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn11">
 	Distraction Burglaries
 </minor-heading>
 
@@ -772,7 +795,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.968W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.102734.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102734.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.968W.3" nospeaker="True" inserted-heading="True" colnum="968W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn12">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102734.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.968W.3" nospeaker="true" inserted-heading="true" colnum="968W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn12">
 	Distraction Burglaries
 </minor-heading>
 
@@ -794,7 +817,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.969W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102735.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102735.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.0" nospeaker="True" inserted-heading="True" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn13">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102735.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.0" nospeaker="true" inserted-heading="true" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn13">
 	Distraction Burglaries
 </minor-heading>
 
@@ -811,7 +834,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.969W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103736.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103736.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.3" nospeaker="True" inserted-heading="True" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn14">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103736.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.3" nospeaker="true" inserted-heading="true" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w04.htm#30321w04.html_wqn14">
 	Distraction Burglaries
 </minor-heading>
 
@@ -827,7 +850,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.969W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.102445.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102445.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.6" nospeaker="True" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102445.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.6" nospeaker="true" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn0">
 	Immigration Appeals
 </minor-heading>
 
@@ -839,13 +862,13 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.969W.8" newgid="uk.org.publicwhip/wrans/2003-03-21.102445.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.102445.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.969W.8" speakerid="uk.org.publicwhip/member/980" speakername="Beverley Hughes" colnum="969W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_spnew0">
 	<p pid=".969W.8/1">Under provisions of the Nationality, Immigration and Asylum Act 2002 which came into force on <phrase class="date" code="2002-11-07">7 November 2002</phrase>, a claimant whose asylum or human rights claim has been refused and certified as &quot;clearly unfounded&quot; may not appeal that refusal until they are outside the United Kingdom. No such appeals had been lodged as at end December 2002 (the latest date for which data are available). However, for the small number of such cases for which appeals have since been received and determined, none has been successful.</p>
-	<p pid=".969W.8/2">Prior to <phrase class="date" code="">7 November</phrase>, no asylum applicants were required to appeal from outside the United Kingdom.</p>
+	<p pid=".969W.8/2">Prior to <phrase class="date" code="2003-11-07">7 November</phrase>, no asylum applicants were required to appeal from outside the United Kingdom.</p>
 	<p pid=".969W.8/3">There is no statutory right of appeal against a refusal to grant tourist visas or British nationality.</p>
 	<p pid=".969W.8/4">The number of successful non-statutory appeals made outside the United Kingdom for work permits in each of the last three years is as follows: 753 in 2000; 937 in 2001; and 2,123 in 2002. The issue of a work permit does not guarantee the issue of a visa and/or entry to the United Kingdom.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.970W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103584.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103584.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.0" nospeaker="True" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103584.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.0" nospeaker="true" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn1">
 	Ministerial Travel
 </minor-heading>
 
@@ -856,13 +879,13 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.970W.2" newgid="uk.org.publicwhip/wrans/2003-03-21.103584.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103584.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.2" speakerid="uk.org.publicwhip/member/739" speakername="David Blunkett" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_spnew1">
-	<p pid=".970W.2/1">I refer the hon. Member to <phrase class="honfriend" id="uk.org.publicwhip/member/693" name="Douglas Alexander">the answer provided by my hon. Friend the Member for Paisley, South (Mr. Alexander)</phrase> on <phrase class="date" code="2003-01-22">22 January 2003</phrase>, <phrase class="offrep" id="wrans/2003-01-22.334W"><i>Official Report,</i> column 334W</phrase>.</p>
-	<p pid=".970W.2/2">I also refer to <phrase class="honfriend" id="uk.org.publicwhip/member/767" name="Simon Burns">the answer provided to the hon. Member for West Chelmsford (Mr. Burns)</phrase> on <phrase class="date" code="2003-03-11">11 March 2003</phrase>, <phrase class="offrep" id="wrans/2003-03-11.207W"><i>Official Report</i>, column 207W</phrase>.</p>
+	<p pid=".970W.2/1">I refer the hon. Member to the answer provided by my hon. Friend <phrase class="honfriend" id="uk.org.publicwhip/member/693" name="Douglas Alexander">the Member for Paisley, South (Mr. Alexander)</phrase> on <phrase class="date" code="2003-01-22">22 January 2003</phrase>, <phrase class="offrep" id="wrans/2003-01-22.334"><i>Official Report,</i> column 334W</phrase>.</p>
+	<p pid=".970W.2/2">I also refer to the answer provided to <phrase class="honfriend" id="uk.org.publicwhip/member/767" name="Simon Burns">the hon. Member for West Chelmsford (Mr. Burns)</phrase> on <phrase class="date" code="2003-03-11">11 March 2003</phrase>, <phrase class="offrep" id="wrans/2003-03-11.207"><i>Official Report</i>, column 207W</phrase>.</p>
 	<p pid=".970W.2/3">Detailed information for all Ministers in respect of United Kingdom travel is not held centrally and could be provided only at disproportionate cost. All travel is undertaken fully in accordance with the rules set out in the Ministerial Code and Travel by Ministers, copies of which are in the Library.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.970W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103398.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103398.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.3" nospeaker="True" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103398.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.3" nospeaker="true" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn2">
 	On-the-spot Fines
 </minor-heading>
 
@@ -873,11 +896,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.970W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103398.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103398.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.5" speakerid="uk.org.publicwhip/member/691" speakername="Bob Ainsworth" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_spnew2">
-	<p pid=".970W.5/1">North Wales is one of five police forces piloting penalty notices for disorder in four police force areas. The pilot in North Wales commenced on <phrase class="date" code="2005-09-02">2 September</phrase> in its central division. Up to <phrase class="date" code="0100-01-05">5 January 100</phrase> penalty notices had been issued with 53 paid and only one request for a court hearing. 23 penalty notices were within the 21 day payment period with no recorded outcome. North Wales police have welcomed this new option for dealing with low-level disorderly offending and are now extending the pilot forcewide.</p>
+	<p pid=".970W.5/1">North Wales is one of five police forces piloting penalty notices for disorder in four police force areas. The pilot in North Wales commenced on <phrase class="date" code="2003-09-02">2 September</phrase> in its central division. Up to <phrase class="date" code="0100-01-05">5 January 100</phrase> penalty notices had been issued with 53 paid and only one request for a court hearing. 23 penalty notices were within the 21 day payment period with no recorded outcome. North Wales police have welcomed this new option for dealing with low-level disorderly offending and are now extending the pilot forcewide.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.970W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.100063.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.100063.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.6" nospeaker="True" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.100063.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.970W.6" nospeaker="true" colnum="970W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn3">
 	Police
 </minor-heading>
 
@@ -896,7 +919,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.971W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102762.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102762.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.971W.0" nospeaker="True" inserted-heading="True" colnum="971W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102762.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.971W.0" nospeaker="true" inserted-heading="true" colnum="971W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn4">
 	Police
 </minor-heading>
 
@@ -912,7 +935,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.971W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103394.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103394.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.971W.3" nospeaker="True" inserted-heading="True" colnum="971W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103394.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.971W.3" nospeaker="true" inserted-heading="true" colnum="971W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn5">
 	Police
 </minor-heading>
 
@@ -923,7 +946,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.971W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103394.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103394.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.971W.5" speakerid="uk.org.publicwhip/member/691" speakername="Bob Ainsworth" colnum="971W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_spnew5">
-	<p pid=".971W.5/1">Police forces were first invited to bid for funds for Community Support Officers (CSOs) on <phrase class="date" code="2002-07-31">31 July 2002</phrase>. 27 forces made successful bids. The table sets out the numbers of CSOs recruited up to <phrase class="date" code="2005-03-17">17 March</phrase> in 26 of these forces. Avon and Somerset have not, as yet, employed any CSOs although they hope to have 12 in place shortly.</p>
+	<p pid=".971W.5/1">Police forces were first invited to bid for funds for Community Support Officers (CSOs) on <phrase class="date" code="2002-07-31">31 July 2002</phrase>. 27 forces made successful bids. The table sets out the numbers of CSOs recruited up to <phrase class="date" code="2003-03-17">17 March</phrase> in 26 of these forces. Avon and Somerset have not, as yet, employed any CSOs although they hope to have 12 in place shortly.</p>
 	<table>
 		<thead>
 			<tr pid=".971W.5/4"> <th></th> <th><i>Numbers recruited by 17 March 2003</i></th> </tr>
@@ -963,7 +986,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.972W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.99643.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99643.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.0" nospeaker="True" inserted-heading="True" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99643.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.0" nospeaker="true" inserted-heading="true" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn6">
 	Police
 </minor-heading>
 
@@ -978,7 +1001,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.972W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.99648.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99648.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.3" nospeaker="True" inserted-heading="True" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99648.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.3" nospeaker="true" inserted-heading="true" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn7">
 	Police
 </minor-heading>
 
@@ -999,7 +1022,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.972W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.102859.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102859.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.6" nospeaker="True" inserted-heading="True" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102859.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.972W.6" nospeaker="true" inserted-heading="true" colnum="972W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w05.htm#30321w05.html_wqn8">
 	Police
 </minor-heading>
 
@@ -1023,7 +1046,7 @@
 	<p pid=".973W.0/5">Officials are in regular contact with the head of the Association of Chief Police Officers (ACPO) Road Policing Business Area and his colleagues.</p>
 	<table>
 		<thead>
-			<tr pid=".973W.0/8"> <th></th> <th></th> <th><i>Traffic police officers</i></th> </tr>
+			<tr pid=".973W.0/8"> <th></th> <th></th> <th colspan="3"><i>Traffic police officers</i></th> </tr>
 			<tr pid=".973W.0/9"> <th>Region and nation</th> <th><i>1999&ndash;2000</i></th> <th><i>2000&ndash;01</i></th> <th><i>2001&ndash;02</i></th> </tr>
 		</thead>
 		<tbody>
@@ -1085,7 +1108,7 @@
 	</table>
 	<table>
 		<thead>
-			<tr pid=".973W.0/70"> <th></th> <th>Percentage of total police</th> </tr>
+			<tr pid=".973W.0/70"> <th></th> <th colspan="3">Percentage of total police</th> </tr>
 			<tr pid=".973W.0/71"> <th>Region and nation</th> <th><i>1999&ndash;2000</i></th> <th><i>2000&ndash;01</i></th> <th><i>2001&ndash;02</i></th> </tr>
 		</thead>
 		<tbody>
@@ -1147,7 +1170,7 @@
 	</table>
 	<table>
 		<thead>
-			<tr pid=".973W.0/132"> <th></th> <th></th> <th><i>Number of police officers</i></th> </tr>
+			<tr pid=".973W.0/132"> <th></th> <th></th> <th colspan="3"><i>Number of police officers</i></th> </tr>
 			<tr pid=".973W.0/133"> <th>Region and nation</th> <th><i>1999&ndash;2000</i></th> <th><i>2000&ndash;01</i></th> <th><i>2001&ndash;02</i></th> </tr>
 		</thead>
 		<tbody>
@@ -1210,7 +1233,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.975W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103483.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103483.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.975W.0" nospeaker="True" colnum="975W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103483.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.975W.0" nospeaker="true" colnum="975W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn0">
 	RAF Fairford
 </minor-heading>
 
@@ -1226,7 +1249,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103605.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103605.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.1" nospeaker="True" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103605.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.1" nospeaker="true" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn1">
 	Scotland
 </minor-heading>
 
@@ -1237,12 +1260,12 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103605.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103605.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.3" speakerid="uk.org.publicwhip/member/739" speakername="David Blunkett" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew1">
-	<p pid=".976W.3/1">The rules relating to Special Advisers' political activities are set out in the Model Contract for Special Advisers. Further guidance in respect of elections for the Scottish Parliament is set out at paragraph 13 of the Guidance on Conduct for Civil Servants in United Kingdom Departments, published by the Cabinet Office on <phrase class="date" code="2005-03-10">10 March</phrase>.</p>
+	<p pid=".976W.3/1">The rules relating to Special Advisers' political activities are set out in the Model Contract for Special Advisers. Further guidance in respect of elections for the Scottish Parliament is set out at paragraph 13 of the Guidance on Conduct for Civil Servants in United Kingdom Departments, published by the Cabinet Office on <phrase class="date" code="2003-03-10">10 March</phrase>.</p>
 	<p pid=".976W.3/2">The reasons for a Special Adviser's resignation are a private matter between the Department and Adviser, and are therefore exempt from disclosure under paragraph 12 of the Code of Practice on Access to Information.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.103660.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103660.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.4" nospeaker="True" inserted-heading="True" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103660.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.4" nospeaker="true" inserted-heading="true" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn2">
 	Scotland
 </minor-heading>
 
@@ -1253,7 +1276,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103660.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103660.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.6" speakerid="uk.org.publicwhip/member/739" speakername="David Blunkett" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew2">
-	<p pid=".976W.6/1">All business undertaken by the Home Office during the campaign period preceding elections to the Scottish Parliament will be conducted in accordance with the Guidance on Conduct for Civil Servants in United Kingdom Departments in respect of elections to the Scottish Parliament and National Assembly for Wales, published by the Cabinet Office on <phrase class="date" code="2005-03-10">10 March</phrase>.</p>
+	<p pid=".976W.6/1">All business undertaken by the Home Office during the campaign period preceding elections to the Scottish Parliament will be conducted in accordance with the Guidance on Conduct for Civil Servants in United Kingdom Departments in respect of elections to the Scottish Parliament and National Assembly for Wales, published by the Cabinet Office on <phrase class="date" code="2003-03-10">10 March</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.103779.mh" matchtype="oldwransgid"/>
@@ -1262,7 +1285,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.8" newgid="uk.org.publicwhip/wrans/2003-03-21.103779.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103779.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.8" nospeaker="True" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103779.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.8" nospeaker="true" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn3">
 	Women's Portfolio Duties
 </minor-heading>
 
@@ -1281,7 +1304,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.976W.11" newgid="uk.org.publicwhip/wrans/2003-03-21.103779.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103779.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.976W.11" speakerid="uk.org.publicwhip/member/960" speakername="Patricia Hewitt" colnum="976W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew3">
 	<p pid=".976W.11/1">With women making up about half the workforce, setting up a third of new business start-ups and making the majority of decisions as consumers, my roles as Secretary of State for Trade and Industry and Minister for Women are inextricably linked. I do not therefore see the two as separate roles to which time should be specifically allocated or recorded.</p>
-	<p pid=".976W.11/2"><phrase class="honfriend" id="uk.org.publicwhip/member/1196" name="Barbara Roche">My hon. Friend the Member for Hornsey and Wood Green (Mrs. Roche)</phrase> also works on women and equality issues as part of her ministerial portfolio.</p>
+	<p pid=".976W.11/2">My hon. Friend <phrase class="honfriend" id="uk.org.publicwhip/member/1196" name="Barbara Roche">the Member for Hornsey and Wood Green (Mrs. Roche)</phrase> also works on women and equality issues as part of her ministerial portfolio.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103081.mh" matchtype="oldwransgid"/>
@@ -1290,7 +1313,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103081.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103081.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.1" nospeaker="True" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103081.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.1" nospeaker="true" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn5">
 	Burundi
 </minor-heading>
 
@@ -1302,11 +1325,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103081.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103081.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.3" speakerid="uk.org.publicwhip/member/1179" speakername="Bill Rammell" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew4">
 	<p pid=".977W.3/1" class="askedtoreply">I have been asked to reply.</p>
-	<p pid=".977W.3/2">With the international community we remain committed to supporting the Arusha process and the transitional government institutions. We have given extensive support to South African Vice President Zuma and his facilitation team. We and our EU partners have committed Euro1.23 million to finance the African Union Observer Mission in Burundi. We now stand ready to assist financially the deployment of the African Mission, which is central to the success of the <phrase class="date" code="">2 December</phrase> ceasefire. It is important that there is a smooth hand over of power in the Transitional National Government of Burundi. We will continue to monitor the situation closely.</p>
+	<p pid=".977W.3/2">With the international community we remain committed to supporting the Arusha process and the transitional government institutions. We have given extensive support to South African Vice President Zuma and his facilitation team. We and our EU partners have committed Euro1.23 million to finance the African Union Observer Mission in Burundi. We now stand ready to assist financially the deployment of the African Mission, which is central to the success of the <phrase class="date" code="2003-12-02">2 December</phrase> ceasefire. It is important that there is a smooth hand over of power in the Transitional National Government of Burundi. We will continue to monitor the situation closely.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.103104.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103104.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.4" nospeaker="True" inserted-heading="True" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103104.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.4" nospeaker="true" inserted-heading="true" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn6">
 	Burundi
 </minor-heading>
 
@@ -1318,11 +1341,11 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103104.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103104.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.6" speakerid="uk.org.publicwhip/member/1179" speakername="Bill Rammell" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew5">
 	<p pid=".977W.6/1" class="askedtoreply">I have been asked to reply.</p>
-	<p pid=".977W.6/2">The UK continues to monitor the situation in Burundi closely. With the international community, we remain committed to supporting the Arusha process and the transitional government institutions. We have given extensive support to South African Vice President Zuma and his facilitation team. We and EU partners have committed Euro1.23 million to finance the African Union Observer Mission in Burundi. We stand ready to assist financially the deployment of the African Mission, which is central to the success of the <phrase class="date" code="">2 December</phrase> ceasefire.</p>
+	<p pid=".977W.6/2">The UK continues to monitor the situation in Burundi closely. With the international community, we remain committed to supporting the Arusha process and the transitional government institutions. We have given extensive support to South African Vice President Zuma and his facilitation team. We and EU partners have committed Euro1.23 million to finance the African Union Observer Mission in Burundi. We stand ready to assist financially the deployment of the African Mission, which is central to the success of the <phrase class="date" code="2003-12-02">2 December</phrase> ceasefire.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.977W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.104954.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104954.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.7" nospeaker="True" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104954.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.977W.7" nospeaker="true" colnum="977W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn7">
 	Humanitarian Assistance
 </minor-heading>
 
@@ -1343,7 +1366,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.978W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.101554.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101554.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.978W.1" nospeaker="True" colnum="978W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101554.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.978W.1" nospeaker="true" colnum="978W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn8">
 	Benefit Fraud
 </minor-heading>
 
@@ -1358,7 +1381,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.978W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.92475.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.92475.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.978W.4" nospeaker="True" colnum="978W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn9">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.92475.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.978W.4" nospeaker="true" colnum="978W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn9">
 	Departmental Press Releases
 </minor-heading>
 
@@ -1369,7 +1392,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.978W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.92475.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.92475.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.978W.6" speakerid="uk.org.publicwhip/member/1064" speakername="Ian McCartney" colnum="978W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew8">
-	<p pid=".978W.6/1">I refer the hon. Member to <phrase class="honfriend" id="uk.org.publicwhip/member/895" name="Don Foster">the answer given to the hon. Member for Bath (Mr. Foster)</phrase> on <phrase class="date" code="2002-02-27">27 February 2002</phrase>, and <phrase class="honfriend" id="uk.org.publicwhip/member/1333" name="Pete Wishart">the answer given to the hon. Member for North Tayside (Pete Wishart)</phrase> on <phrase class="date" code="2002-06-17">17 June 2002</phrase>.</p>
+	<p pid=".978W.6/1">I refer the hon. Member to the answer given to <phrase class="honfriend" id="uk.org.publicwhip/member/895" name="Don Foster">the hon. Member for Bath (Mr. Foster)</phrase> on <phrase class="date" code="2002-02-27">27 February 2002</phrase>, and the answer given to <phrase class="honfriend" id="uk.org.publicwhip/member/1333" name="Pete Wishart">the hon. Member for North Tayside (Pete Wishart)</phrase> on <phrase class="date" code="2002-06-17">17 June 2002</phrase>.</p>
 	<p pid=".978W.6/2">The Department of Work and Pensions was formed in June 2001. This involved the amalgamation of parts of the Department for Education and Employment (including the Employment Service) with the Department of Social Security. In April 2000, the BA and CSA Press Offices merged with the DSS team, and consequently from that date all Press Releases were categorised as DSS.</p>
 	<p pid=".978W.6/3">It is not possible to dis-aggregate those press releases issued by DfEE relating solely to employment issues in the period requested. However, the press releases issued by the former DSS and the DWP are as follows.</p>
 	<table>
@@ -1401,7 +1424,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.979W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102212.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102212.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.979W.0" nospeaker="True" colnum="979W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn10">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102212.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.979W.0" nospeaker="true" colnum="979W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_wqn10">
 	Employment, Social Policy, Health andConsumer Affairs Council
 </minor-heading>
 
@@ -1413,7 +1436,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.979W.2" newgid="uk.org.publicwhip/wrans/2003-03-21.102212.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.102212.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.979W.2" speakerid="uk.org.publicwhip/member/1316" speakername="Malcolm Wicks" colnum="979W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w06.htm#30321w06.html_spnew9">
 	<p pid=".979W.2/1">I represented the UK at the Employment, Social Policy, Health and Consumer Affairs (ESPHCA) Council in Brussels on <phrase class="date" code="2003-03-06">6 March 2003</phrase>, together with my hon. Friend the Minister for Employment Relations, Industry and the Regions.</p>
-	<p pid=".979W.2/2">The main business of this Council was a discussion on the proposed Directive on working conditions for temporary workers and the preparation of the Spring European Council, to take place on <phrase class="date" code="2005-03-21">21 March</phrase>.</p>
+	<p pid=".979W.2/2">The main business of this Council was a discussion on the proposed Directive on working conditions for temporary workers and the preparation of the Spring European Council, to take place on <phrase class="date" code="2003-03-21">21 March</phrase>.</p>
 	<p pid=".979W.2/3">On the former, following lunchtime discussion, the Presidency concluded that the dossier was not ready for agreement at this point. The UK declared its readiness to reach agreement on a directive, but one with considerably more flexibility than the current draft, and joined the consensus for aiming for political agreement in June.</p>
 	<p pid=".979W.2/4">On the latter, the Council adopted without amendment the Joint Employment Report 2002 and its contribution to the Spring Council, &quot;Key messages on the future of the Employment Strategy&quot;. In a public debate, member states were in broad agreement on the priorities for the revised Employment Guidelines outlined in the paper: the Guidelines should be fewer in number, focused on outputs rather than inputs, and linked closely to the Lisbon employment rate targets.</p>
 	<p pid=".979W.2/5">The debate also revealed broad support for the idea of an Employment Task Force, as proposed by the UK, France and Germany. The Council agreed that the Task Force should be a one-off, independent analysis of the measures required to improve Europe's employment performance in the short term. The Task Force should complement the revised Employment Strategy, without creating any new processes.</p>
@@ -1429,7 +1452,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.980W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102755.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102755.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.980W.0" nospeaker="True" colnum="980W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102755.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.980W.0" nospeaker="true" colnum="980W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn0">
 	Medical Retirement
 </minor-heading>
 
@@ -1444,7 +1467,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.980W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.97439.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.97439.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.980W.3" nospeaker="True" colnum="980W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.97439.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.980W.3" nospeaker="true" colnum="980W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn1">
 	Online Sales/Purchases
 </minor-heading>
 
@@ -1461,7 +1484,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.981W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.99980.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99980.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.981W.0" nospeaker="True" colnum="981W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99980.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.981W.0" nospeaker="true" colnum="981W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn2">
 	Pensions
 </minor-heading>
 
@@ -1478,7 +1501,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.981W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.89290.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.89290.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.981W.3" nospeaker="True" colnum="981W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.89290.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.981W.3" nospeaker="true" colnum="981W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn3">
 	Return to Work (Benefits)
 </minor-heading>
 
@@ -1503,7 +1526,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.982W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.104351.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104351.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.982W.1" nospeaker="True" colnum="982W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104351.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.982W.1" nospeaker="true" colnum="982W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn4">
 	Correspondence
 </minor-heading>
 
@@ -1514,11 +1537,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.982W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.104351.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.104351.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.982W.3" speakerid="uk.org.publicwhip/member/1138" speakername="Mike O'Brien" colnum="982W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_spnew4">
-	<p pid=".982W.3/1">My noble Friend Baroness Amos, Minister responsible for nationality and passport matters arising overseas, sent a substantive reply to my hon. Friend on <phrase class="date" code="2005-03-19">19 March</phrase>.</p>
+	<p pid=".982W.3/1">My noble Friend Baroness Amos, Minister responsible for nationality and passport matters arising overseas, sent a substantive reply to my hon. Friend on <phrase class="date" code="2003-03-19">19 March</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.982W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.98379.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.98379.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.982W.4" nospeaker="True" colnum="982W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.98379.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.982W.4" nospeaker="true" colnum="982W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn5">
 	Departmental Properties
 </minor-heading>
 
@@ -1533,11 +1556,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.983W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.98379.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.98379.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.0" speakerid="uk.org.publicwhip/member/1179" speakername="Bill Rammell" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_spnew5">
-	<p pid=".983W.0/1">I refer the hon. Member to the answer I gave him on <phrase class="date" code="2003-02-25">25 February 2003</phrase>, <phrase class="offrep" id="wrans/2003-02-25.430W"><i>Official Report,</i> column 430W</phrase>.</p>
+	<p pid=".983W.0/1">I refer the hon. Member to the answer I gave him on <phrase class="date" code="2003-02-25">25 February 2003</phrase>, <phrase class="offrep" id="wrans/2003-02-25.430"><i>Official Report,</i> column 430W</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.983W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103808.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103808.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.1" nospeaker="True" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103808.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.1" nospeaker="true" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn6">
 	Iraq
 </minor-heading>
 
@@ -1552,7 +1575,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.983W.4" newgid="uk.org.publicwhip/wrans/2003-03-21.101708.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101708.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.4" nospeaker="True" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.101708.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.4" nospeaker="true" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn7">
 	Saudi Arabia
 </minor-heading>
 
@@ -1567,7 +1590,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.983W.7" newgid="uk.org.publicwhip/wrans/2003-03-21.103608.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103608.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.7" nospeaker="True" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103608.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.983W.7" nospeaker="true" colnum="983W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn8">
 	Scotland
 </minor-heading>
 
@@ -1582,7 +1605,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.984W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.102995.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102995.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.984W.1" nospeaker="True" colnum="984W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn9">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102995.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.984W.1" nospeaker="true" colnum="984W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w07.htm#30321w07.html_wqn9">
 	Sudan
 </minor-heading>
 
@@ -1602,7 +1625,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.984W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.99829.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99829.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.984W.5" nospeaker="True" colnum="984W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99829.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.984W.5" nospeaker="true" colnum="984W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn0">
 	Court Appearances
 </minor-heading>
 
@@ -1617,7 +1640,7 @@
 	<table>
 		<caption>Defendants appearing in the High Court (Queen's Bench), Crown, county and magistrates courts in England, 1992&ndash;2002</caption>
 		<thead>
-			<tr pid=".984W.7/5"> <th></th> <th>Defendants&mdash;Crown court</th> <th></th> <th>Defendants&mdash;County court</th> </tr>
+			<tr pid=".984W.7/5"> <th></th> <th colspan="4">Defendants&mdash;Crown court</th> <th></th> <th colspan="4">Defendants&mdash;County court</th> </tr>
 			<tr pid=".984W.7/6"> <th></th> <th>Trials</th> <th>Sentences</th> <th>Appeals</th> <th>Crown court total</th> <th>Magistrates court total</th> <th>Trials</th> <th>Small claims</th> <th>County court total</th> <th>High Court (Queen's Bench) trials</th> </tr>
 		</thead>
 		<tbody>
@@ -1642,7 +1665,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.985W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.99830.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99830.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.0" nospeaker="True" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.99830.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.0" nospeaker="true" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn1">
 	House of Lords Reform Unit
 </minor-heading>
 
@@ -1657,7 +1680,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.985W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103219.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103219.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.3" nospeaker="True" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103219.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.3" nospeaker="true" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn2">
 	Immigration Adjudicators
 </minor-heading>
 
@@ -1672,7 +1695,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.985W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103259.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103259.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.6" nospeaker="True" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103259.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.6" nospeaker="true" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn3">
 	Judicial Appointments
 </minor-heading>
 
@@ -1687,7 +1710,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.985W.9" newgid="uk.org.publicwhip/wrans/2003-03-21.102854.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102854.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.9" nospeaker="True" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102854.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.985W.9" nospeaker="true" colnum="985W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn4">
 	Legal Practitioners
 </minor-heading>
 
@@ -1702,7 +1725,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.986W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.96416.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.96416.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.0" nospeaker="True" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.96416.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.0" nospeaker="true" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn5">
 	Lord Chancellor's Apartments
 </minor-heading>
 
@@ -1719,7 +1742,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.986W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103582.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103582.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.3" nospeaker="True" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn6">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103582.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.3" nospeaker="true" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn6">
 	Ministerial Travel
 </minor-heading>
 
@@ -1730,11 +1753,11 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.986W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.103582.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.103582.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.5" speakerid="uk.org.publicwhip/member/1332" speakername="Rosie Winterton" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_spnew6">
-	<p pid=".986W.5/1">I refer the hon. Member to the answer given by the Minister of State, Cabinet Office on <phrase class="date" code="2003-01-22">22 January 2003</phrase>, <phrase class="offrep" id="wrans/2003-01-22.334W"><i>Official Report</i>, column 334W</phrase>.</p>
+	<p pid=".986W.5/1">I refer the hon. Member to the answer given by the Minister of State, Cabinet Office on <phrase class="date" code="2003-01-22">22 January 2003</phrase>, <phrase class="offrep" id="wrans/2003-01-22.334"><i>Official Report</i>, column 334W</phrase>.</p>
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.986W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.102804.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102804.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.6" nospeaker="True" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn7">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102804.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.986W.6" nospeaker="true" colnum="986W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn7">
 	Secret Societies
 </minor-heading>
 
@@ -1749,7 +1772,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.987W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.96420.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.96420.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.987W.0" nospeaker="True" colnum="987W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn8">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.96420.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.987W.0" nospeaker="true" colnum="987W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w08.htm#30321w08.html_wqn8">
 	Works of Art
 </minor-heading>
 
@@ -1772,7 +1795,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.988W.1" newgid="uk.org.publicwhip/wrans/2003-03-21.103729.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103729.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.988W.1" nospeaker="True" colnum="988W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103729.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.988W.1" nospeaker="true" colnum="988W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn0">
 	External Finance
 </minor-heading>
 
@@ -1837,7 +1860,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.989W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.104060.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104060.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.989W.0" nospeaker="True" colnum="989W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.104060.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.989W.0" nospeaker="true" colnum="989W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn1">
 	Grant Payments (Essex)
 </minor-heading>
 
@@ -1852,7 +1875,7 @@
 	<table>
 		<caption>Essex county council -- &pound; million</caption>
 		<thead>
-			<tr pid=".989W.2/5"> <th></th> <th></th> <th></th> <th>Central Government</th> </tr>
+			<tr pid=".989W.2/5"> <th></th> <th></th> <th></th> <th colspan="2">Central Government</th> </tr>
 			<tr pid=".989W.2/6"> <th></th> <th>Redistributed business rates</th> <th>Police grant</th> <th>Capital grants</th> <th>Specific grants inside AEF</th> <th>Total</th> </tr>
 		</thead>
 		<tbody>
@@ -1879,7 +1902,7 @@
 	<table>
 		<caption>Braintree district council -- &pound; million</caption>
 		<thead>
-			<tr pid=".989W.2/32"> <th></th> <th></th> <th></th> <th>Community Charge</th> <th>Central Government</th> </tr>
+			<tr pid=".989W.2/32"> <th></th> <th></th> <th></th> <th colspan="2">Community Charge</th> <th colspan="2">Central Government</th> </tr>
 			<tr pid=".989W.2/33"> <th></th> <th>Redistributed business rates</th> <th>SSA reduction grant</th> <th>Preparation grant</th> <th>Preparation costs grant</th> <th>Capital grants</th> <th>Specific grants inside AEF</th> <th>Total</th> </tr>
 		</thead>
 		<tbody>
@@ -1905,7 +1928,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.990W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103836.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103836.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.0" nospeaker="True" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103836.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.0" nospeaker="true" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn2">
 	Mass Decontamination
 </minor-heading>
 
@@ -1920,7 +1943,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.990W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.103838.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103838.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.3" nospeaker="True" inserted-heading="True" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103838.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.3" nospeaker="true" inserted-heading="true" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn3">
 	Mass Decontamination
 </minor-heading>
 
@@ -1935,7 +1958,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.990W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103837.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103837.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.6" nospeaker="True" inserted-heading="True" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103837.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.990W.6" nospeaker="true" inserted-heading="true" colnum="990W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w09.htm#30321w09.html_wqn4">
 	Mass Decontamination
 </minor-heading>
 
@@ -1950,7 +1973,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.991W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.102657.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102657.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.0" nospeaker="True" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102657.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.0" nospeaker="true" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn0">
 	New Deal for Communities
 </minor-heading>
 
@@ -1965,7 +1988,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.991W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.102680.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102680.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.3" nospeaker="True" inserted-heading="True" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102680.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.3" nospeaker="true" inserted-heading="true" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn1">
 	New Deal for Communities
 </minor-heading>
 
@@ -1980,7 +2003,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.991W.6" newgid="uk.org.publicwhip/wrans/2003-03-21.103176.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103176.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.6" nospeaker="True" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103176.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.991W.6" nospeaker="true" colnum="991W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn2">
 	Objective One
 </minor-heading>
 
@@ -2048,7 +2071,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.992W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103794.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103794.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.992W.0" nospeaker="True" inserted-heading="True" colnum="992W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103794.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.992W.0" nospeaker="true" inserted-heading="true" colnum="992W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn3">
 	Objective One
 </minor-heading>
 
@@ -2067,7 +2090,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.992W.3" newgid="uk.org.publicwhip/wrans/2003-03-21.102319.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102319.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.992W.3" nospeaker="True" colnum="992W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.102319.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.992W.3" nospeaker="true" colnum="992W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn4">
 	Social Housing Grant
 </minor-heading>
 
@@ -2078,7 +2101,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.992W.5" newgid="uk.org.publicwhip/wrans/2003-03-21.102319.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2003-03-21.102319.r0" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.992W.5" speakerid="uk.org.publicwhip/member/1082" speakername="Tony McNulty" colnum="992W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_spnew4">
-	<p pid=".992W.5/1">Estimated expenditure on local authority social housing grant (LASHG) in each region for 2002&ndash;03 (as at <phrase class="date" code="2005-03-12">12 March</phrase>) is shown as follows.</p>
+	<p pid=".992W.5/1">Estimated expenditure on local authority social housing grant (LASHG) in each region for 2002&ndash;03 (as at <phrase class="date" code="2003-03-12">12 March</phrase>) is shown as follows.</p>
 	<table>
 		<thead>
 			<tr pid=".992W.5/4"> <th></th> <th>&pound; million</th> </tr>
@@ -2101,7 +2124,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2003-03-21.993W.0" newgid="uk.org.publicwhip/wrans/2003-03-21.103234.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103234.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.993W.0" nospeaker="True" colnum="993W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn5">
+<minor-heading id="uk.org.publicwhip/wrans/2003-03-21.103234.h" oldstyleid="uk.org.publicwhip/wrans/2003-03-21.993W.0" nospeaker="true" colnum="993W"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/text/30321w10.htm#30321w10.html_wqn5">
 	Parliamentary Questions
 </minor-heading>
 
