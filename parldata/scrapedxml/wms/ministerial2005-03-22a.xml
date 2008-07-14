@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -56,7 +72,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2005-03-22a.47WS.2" speakerid="uk.org.publicwhip/member/741" speakername="Paul Boateng" speakeroffice="Chief Secretary to the Treasury" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo050322/wmstext/50322m01.htm#50322m01.html_spnew0">
-	<p pid="a.47WS.2/1">The House of Lords is shortly to purchase new accommodation. In lieu of completion, which is expected to take place shortly, the Treasury agreed a cash advance essential to the purchase from the Contingencies Fund on <phrase class="date" code="2006-03-16">16 March</phrase> in the sum of &pound;50,294,225. This advance was given prior to the Royal Assent to the Appropriation Act on <phrase class="date" code="2006-03-17">17 March</phrase> which gives parliamentary authority for the expenditure.</p>
+	<p pid="a.47WS.2/1">The House of Lords is shortly to purchase new accommodation. In lieu of completion, which is expected to take place shortly, the Treasury agreed a cash advance essential to the purchase from the Contingencies Fund on <phrase class="date" code="2005-03-16">16 March</phrase> in the sum of &pound;50,294,225. This advance was given prior to the Royal Assent to the Appropriation Act on <phrase class="date" code="2005-03-17">17 March</phrase> which gives parliamentary authority for the expenditure.</p>
 	<p pid="a.47WS.2/2">The advance will be repaid from the spring supplementary estimate.</p>
 </speech>
 
@@ -182,7 +198,7 @@
 	<p pid="a.51WS.2/12">Grant in order to inform future decisions on this. We will consult on full proposals for allocations before any final decisions are taken. The announcement of the grant for 2006&ndash;07 will be brought forward to later in 2005, following the consultation process. This is in line with other announcements of grant, and will help to increase certainty in budget setting processes.</p>
 	<p pid="a.51WS.2/13">A table showing the amounts payable will be made available in the Libraries of both Houses. This sets out the details of each recipient's grant.</p>
 	<p pid="a.51WS.2/14" class="italic">Planning Fees</p>
-	<p pid="a.51WS.2/15">Planning fees will be increased on <phrase class="date" code="2005-04-01">1 April 2005</phrase>, to enable authorities to move closer to recovery of costs on planning applications. The increases were consulted on in a paper I published on <phrase class="date" code="2004-12-15">15 December 2004</phrase>, <phrase class="offrep" id="wms/2004-12-15.135WS"><i>Official Report</i>, columns 135&ndash;37WS</phrase>. They will average 39 per cent. and raise an estimated &pound;68 million in additional revenue, will be spread proportionately to the types of applications. The fees for a householder extension will rise from &pound;110 to &pound;135, whilst the maximum fee for a major development will rise from &pound;11,000 to &pound;50,000.</p>
+	<p pid="a.51WS.2/15">Planning fees will be increased on <phrase class="date" code="2005-04-01">1 April 2005</phrase>, to enable authorities to move closer to recovery of costs on planning applications. The increases were consulted on in a paper I published on <phrase class="date" code="2004-12-15">15 December 2004</phrase>, <phrase class="offrep" id="wms/2004-12-15.135"><i>Official Report</i>, columns 135&ndash;37WS</phrase>. They will average 39 per cent. and raise an estimated &pound;68 million in additional revenue, will be spread proportionately to the types of applications. The fees for a householder extension will rise from &pound;110 to &pound;135, whilst the maximum fee for a major development will rise from &pound;11,000 to &pound;50,000.</p>
 	<p pid="a.51WS.2/16">Fee increases are part of the package of resources, along with Planning Delivery Grant, that are designed to improve the quality of planning services and support the changes which the government is introducing as part of its reform of the planning system. For some time, it has been the case that the costs of handling planning applications have been significantly higher than the fees associated with them. These increases address the imbalance and provide authorities with a level of resources which we expect to see leading to improvements in the quality of services.</p>
 </speech>
 
@@ -205,9 +221,9 @@
 	<p pid="a.54WS.1/1">I have today published two consultation papers on proposed secondary legislation and guidance to implement some of the development control provisions in the Planning and Compulsory Purchase Act 2004. The papers take forward provisions to simplify and speed up the planning system and to facilitate greater community involvement.</p>
 	<p pid="a.54WS.1/2">We are preparing to implement the development control provisions in Part 4 of the Act in stages. Where the provisions in the Act require secondary legislation we are proposing changes to the General Development Procedure Order (GDPO), the listed building regulations and the advertisement regulations. We are considering responses to our first consultation paper entitled &quot;Changes to the development control system&quot; published on <phrase class="date" code="2004-11-30">30 November 2004</phrase>. A further consultation paper &quot;Planning Control of Mezzanine and Other Internal Floorspace Additions&quot; was published on <phrase class="date" code="2005-03-03">3 March 2005</phrase>, <phrase class="offrep" id="debates/2005-03-03.93"><i>Official Report,</i> columns 93</phrase> and 94WS.</p>
 	<p pid="a.54WS.1/3"><i>&quot;Changes to the Development Control System Second Consultation Paper&quot;</i> covers local development orders (LDO's). Local authorities will be able to grant permission for the type of development specified in the order. There will be no need for a planning application. It is envisaged that there will be reduced costs and greater certainty for developers, whether they be householders or businesses. Local authorities may benefit by dealing with fewer routine applications thereby freeing resources for the consideration of more major applications. LDOs might potentially prove a useful tool for local authorities seeking to deliver high quality housing developments more quickly.</p>
-	<p pid="a.54WS.1/4">The paper covers the interrelated subjects of outline planning permission, reserved matters and design and access statements. I announced in a written statement on <phrase class="date" code="2004-03-23">23 March 2004</phrase>, <phrase class="offrep" id="wms/2004-03-23.48WS"><i>Official Report,</i> columns 48&ndash;50WS</phrase> during the passage of the Planning and Compulsory Purchase Bill that applications for outline planning permission must provide a level of information to assess all the significant environmental impacts. The paper proposes that applications should include information on use, quantum of development, indicative layout, scale parameters and indicative access points. It also proposes some amendments to reserved matters requiring further detailed information. The amendments include information on layout and scale. The new Act contains a requirement for both design and access statements. The Government now propose&mdash;for simplicity and efficiency&mdash;that one statement would cover both design and access. The purpose of the statement is to explain and justify the design and access principles and concepts on which a development proposal is based. Most applications for planning permission and all applications for listed building consent will need to be accompanied by a design and access statement. The length of statements should be proportional to the complexity of the application.</p>
+	<p pid="a.54WS.1/4">The paper covers the interrelated subjects of outline planning permission, reserved matters and design and access statements. I announced in a written statement on <phrase class="date" code="2004-03-23">23 March 2004</phrase>, <phrase class="offrep" id="wms/2004-03-23.48"><i>Official Report,</i> columns 48&ndash;50WS</phrase> during the passage of the Planning and Compulsory Purchase Bill that applications for outline planning permission must provide a level of information to assess all the significant environmental impacts. The paper proposes that applications should include information on use, quantum of development, indicative layout, scale parameters and indicative access points. It also proposes some amendments to reserved matters requiring further detailed information. The amendments include information on layout and scale. The new Act contains a requirement for both design and access statements. The Government now propose&mdash;for simplicity and efficiency&mdash;that one statement would cover both design and access. The purpose of the statement is to explain and justify the design and access principles and concepts on which a development proposal is based. Most applications for planning permission and all applications for listed building consent will need to be accompanied by a design and access statement. The length of statements should be proportional to the complexity of the application.</p>
 	<p pid="a.54WS.1/5">The paper covers procedures for determining major applications. We plan to change an outdated provision in the GDPO that allows applicants to appeal major applications for non-determination after only eight weeks. This is an unreasonable turnaround time for local authorities, not to mention being out of kilter with Government targets of 13 weeks. Our proposals would alter the period that an applicant must wait before appealing a major application to 13 weeks, harmonising Government best value targets and Government guidance with the relevant secondary legislation.</p>
-	<p pid="a.54WS.1/6">The best practice guidance on the validity of planning applications published on <phrase class="date" code="2006-03-07">7 March</phrase> was the first stage in clarifying planning practice in this area. The second stage, outlined in the consultation paper, is to clarify the idea of a valid application. We want to specify in secondary legislation that a planning application is valid only when it contains all the information required by local authorities and when accompanied by the correct fee. This measure would cut down on the number of applications that go to the planning inspectorate on appeal without ever having been accepted as valid by a local authority and would generally increase the accessibility and transparency of the planning application process.</p>
+	<p pid="a.54WS.1/6">The best practice guidance on the validity of planning applications published on <phrase class="date" code="2005-03-07">7 March</phrase> was the first stage in clarifying planning practice in this area. The second stage, outlined in the consultation paper, is to clarify the idea of a valid application. We want to specify in secondary legislation that a planning application is valid only when it contains all the information required by local authorities and when accompanied by the correct fee. This measure would cut down on the number of applications that go to the planning inspectorate on appeal without ever having been accepted as valid by a local authority and would generally increase the accessibility and transparency of the planning application process.</p>
 	<p pid="a.54WS.1/7">We also want to use this opportunity to establish in secondary legislation the exact period of determination: from the first full day after a valid planning application has been received until the day on which a decision notice is dispatched.</p>
 	<p pid="a.54WS.1/8">We intend that, after a 14 week consultation period and consideration of the responses received, the provisions would come into effect in the autumn.</p>
 	<p pid="a.54WS.1/9">The other paper I am publishing today contains proposals for a standard application form for planning applications and related consent regimes. The paper refers to a prototype electronic application form called 1 APP which can be tested on the Office of the Deputy Prime Minister's web-site. The prototype allows for householder applications, demolition in a conservation area and listed building consent. Our intention is to develop the electronic form to cover all related consent regimes including outline and full planning permission, trees, advertisements, minerals and waste. In finalising the form we will take account of work under the Office of the Deputy Prime Minister's householder development consents review. When the electronic form goes live, probably next year, people will be able to apply either on-line or on paper.</p>
@@ -255,7 +271,7 @@
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2005-03-22a.58WS.2" nospeaker="true" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo050322/wmstext/50322m04.htm#50322m04.html_dpthd0">
-	ENVIRONMENT, FOOD AND RURAL AFFAIRS
+	ENVIRONMENT FOOD AND RURAL AFFAIRS
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2005-03-22a.58WS.3" nospeaker="true" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo050322/wmstext/50322m04.htm#50322m04.html_sbhd1">
@@ -323,7 +339,7 @@
 <speech id="uk.org.publicwhip/wms/2005-03-22a.61WS.4" speakerid="uk.org.publicwhip/member/727" speakername="Hilary Benn" speakeroffice="The Secretary of State for International Development" colnum="61WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo050322/wmstext/50322m05.htm#50322m05.html_spmin1">
 	<p pid="a.61WS.4/1">On <phrase class="date" code="2005-03-17">17 March 2005</phrase> the Department for International Development hosted a high level conference on the extractive industries transparency initiative (EITI). The EITI was launched by my right hon. Friend the Prime Minister in September 2002. It seeks to increase the transparency of payments by oil, gas, and mining companies to governments, as well as the transparency of the revenues received by governments. The aim is to ensure that revenues from the extractive industries fulfil their potential as an important engine for economic growth and social development in developing countries, instead of leading to conflict, corruption, and poverty.</p>
 	<p pid="a.61WS.4/2">The conference follows on from an earlier EITI conference held at Lancaster House in June 2003. Since then implementation has begun in nine countries&mdash;Azerbaijan, Congo, Ghana, Kyrgyz Republic, Nigeria, Peru, Sao Tome e Principe, Timor Leste and Trinidad and Tobago. There has been considerable progress towards increased transparency across all nine countries, and two Azerbaijan and the Kyrgyz Republic have now published numbers under EITI.</p>
-	<p pid="a.61WS.4/3">The conference on <phrase class="date" code="2006-03-17">17 March</phrase> provided an opportunity to take stock of progress in implementation so far, agree a set of criteria and guidelines for implementing countries and companies and encourage practical steps to internationalise EITI. The UK launched the EITI Source book as guidance for countries and companies interested in supporting the initiative. The UK also announced the formation of an international advisory group which will agree an approach to the future management of international EITI support, incentives for implementation and a suitable process for validating implementation. A number of countries including Niger, Cameroon, Democratic Republic of Congo and Equatorial Guinea used the conference as an opportunity to announce their plans to implement EITI; and several countries and international organisations including the United Kingdom, France, Norway, the United States of America, the International Monetary Fund, the World Bank and the European Bank for Reconstruction and Development agreed to increase financial and technical support for EITI.</p>
+	<p pid="a.61WS.4/3">The conference on <phrase class="date" code="2005-03-17">17 March</phrase> provided an opportunity to take stock of progress in implementation so far, agree a set of criteria and guidelines for implementing countries and companies and encourage practical steps to internationalise EITI. The UK launched the EITI Source book as guidance for countries and companies interested in supporting the initiative. The UK also announced the formation of an international advisory group which will agree an approach to the future management of international EITI support, incentives for implementation and a suitable process for validating implementation. A number of countries including Niger, Cameroon, Democratic Republic of Congo and Equatorial Guinea used the conference as an opportunity to announce their plans to implement EITI; and several countries and international organisations including the United Kingdom, France, Norway, the United States of America, the International Monetary Fund, the World Bank and the European Bank for Reconstruction and Development agreed to increase financial and technical support for EITI.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2005-03-22a.62WS.0" nospeaker="true" colnum="62WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo050322/wmstext/50322m05.htm#50322m05.html_dpthd1">

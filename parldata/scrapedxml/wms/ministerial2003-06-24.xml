@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-24.33WS.0" nospeaker="true" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_dpthd0">
 	NORTHERN IRELAND
@@ -49,7 +72,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.33WS.2" speakerid="uk.org.publicwhip/member/1131" speakername="Paul Murphy" speakeroffice="The Secretary of State for Northern Ireland" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin0">
-	<p>I welcome the opportunity to say something about how I see the priorities of Government in Northern Ireland over the coming months. I have today placed in the Libraries of the House a document setting out our approach in greater detail.</p>
+	<p pid=".33WS.2/1">I welcome the opportunity to say something about how I see the priorities of Government in Northern Ireland over the coming months. I have today placed in the Libraries of the House a document setting out our approach in greater detail.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-24.33WS.3" nospeaker="true" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_sbhd1">
@@ -57,7 +80,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.33WS.4" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin1">
-	<p>Today I have placed in the Library of the House copies of the Insolvency Service Annual Report and Account for year ending 31 March 2002. This is in accordance with Articles 372 and 358(4) of the Insolvency (Northern Ireland) Order 1989.</p>
+	<p pid=".33WS.4/1">Today I have placed in the Library of the House copies of the Insolvency Service Annual Report and Account for year ending <phrase class="date" code="2002-03-31">31 March 2002</phrase>. This is in accordance with Articles 372 and 358(4) of the Insolvency (Northern Ireland) Order 1989.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-24.33WS.5" nospeaker="true" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_dpthd1">
@@ -69,14 +92,14 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.33WS.7" speakerid="uk.org.publicwhip/member/1316" speakername="Malcolm Wicks" speakeroffice="The Minister for Pensions" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin2">
-	<p>On behalf of my right hon. Friend the Secretary of State for Work and Pensions, the Benefit Fraud Inspectorate (BFI) inspection report on Crawley Borough Council was published today and copies of the report have been placed in the Library.</p>
-	<p>In its response to the Housing Green Paper of November 2000, the Department for Work and Pensions developed a performance framework for housing benefits. The Performance Standards for housing benefits allow local authorities to make a comprehensive self-assessment of whether they deliver benefit effectively and securely. They are the Standards that the Department for Work and Pensions expects local authorities to aspire to and achieve in time.</p>
-	<p>The BFI inspected Crawley Borough Council against the Performance Standards. The report finds that the council is not at Standard for any of the seven functional areas of the Performance Standards&mdash;strategic management, customer services, processing of claims, working with landlords, internal security, counter-fraud, and overpayments.</p>
-	<p>However, the council had strengths in all the seven functional areas and its overall level of performance for administering benefits and counter-fraud activities was fair. Claimants received a good service in terms of caller facilities and provisions for those with special needs. Evidence gathering to support a claim was generally thorough but the council was failing to adequately protect the benefits system due to processing delays. While improvement had been made, performance was still significantly below the clearance times required by the Standards. Overpayments were occurring because notified changes of circumstances were not being dealt with promptly.</p>
-	<p>The report finds that the council's Counter-fraud team was operating effectively. The number of administrative penalties and prosecutions was increasing year on year. Recovery of overpayments was effective but management information on the amount of benefits debt was generally lacking.</p>
-	<p>BFI noted a clear commitment to improve overall performance. A council wide change programme was having a positive effect on the benefit service. A longstanding backlog of work had been significantly reduced, additional staff resources had been recruited and a major upgrade to the benefits IT system had been successfully implemented. All were improving the benefit service's capacity to deal with work intake and more effectively manage its benefits workload.</p>
-	<p>In 2002&ndash;03, Crawley Borough Council administered some &pound;20.5 million in housing benefits, about 35 per cent. of its total gross revenue expenditure. The report makes recommendations to help the council address weaknesses and to further improve the administration of Housing Benefit and Council Tax Benefit, as well as counter-fraud activities.</p>
-	<p>My right hon. Friend the Secretary of State is now considering the report and will be asking the council for its proposals in response to the findings and recommendations of the BFI.</p>
+	<p pid=".33WS.7/1">On behalf of my right hon. Friend the Secretary of State for Work and Pensions, the Benefit Fraud Inspectorate (BFI) inspection report on Crawley Borough Council was published today and copies of the report have been placed in the Library.</p>
+	<p pid=".33WS.7/2">In its response to the Housing Green Paper of November 2000, the Department for Work and Pensions developed a performance framework for housing benefits. The Performance Standards for housing benefits allow local authorities to make a comprehensive self-assessment of whether they deliver benefit effectively and securely. They are the Standards that the Department for Work and Pensions expects local authorities to aspire to and achieve in time.</p>
+	<p pid=".33WS.7/3">The BFI inspected Crawley Borough Council against the Performance Standards. The report finds that the council is not at Standard for any of the seven functional areas of the Performance Standards&mdash;strategic management, customer services, processing of claims, working with landlords, internal security, counter-fraud, and overpayments.</p>
+	<p pid=".33WS.7/4">However, the council had strengths in all the seven functional areas and its overall level of performance for administering benefits and counter-fraud activities was fair. Claimants received a good service in terms of caller facilities and provisions for those with special needs. Evidence gathering to support a claim was generally thorough but the council was failing to adequately protect the benefits system due to processing delays. While improvement had been made, performance was still significantly below the clearance times required by the Standards. Overpayments were occurring because notified changes of circumstances were not being dealt with promptly.</p>
+	<p pid=".33WS.7/5">The report finds that the council's Counter-fraud team was operating effectively. The number of administrative penalties and prosecutions was increasing year on year. Recovery of overpayments was effective but management information on the amount of benefits debt was generally lacking.</p>
+	<p pid=".33WS.7/6">BFI noted a clear commitment to improve overall performance. A council wide change programme was having a positive effect on the benefit service. A longstanding backlog of work had been significantly reduced, additional staff resources had been recruited and a major upgrade to the benefits IT system had been successfully implemented. All were improving the benefit service's capacity to deal with work intake and more effectively manage its benefits workload.</p>
+	<p pid=".33WS.7/7">In 2002&ndash;03, Crawley Borough Council administered some &pound;20.5 million in housing benefits, about 35 per cent. of its total gross revenue expenditure. The report makes recommendations to help the council address weaknesses and to further improve the administration of Housing Benefit and Council Tax Benefit, as well as counter-fraud activities.</p>
+	<p pid=".33WS.7/8">My right hon. Friend the Secretary of State is now considering the report and will be asking the council for its proposals in response to the findings and recommendations of the BFI.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-24.34WS.0" nospeaker="true" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_dpthd2">
@@ -88,7 +111,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.34WS.2" speakerid="uk.org.publicwhip/member/926" speakername="Nigel Griffiths" speakeroffice="The Parliamentary Under-Secretary of State for Trade and Industry" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin3">
-	<p>The consultation on the draft orders to be made under the Export Control Act 2002 ended on 30 April. Two hundred and fifty eight consultation responses were received, many of which are extremely detailed. The secondary legislation is currently being finalised in the light of the responses. It is expected that the orders will be laid before Parliament in October 2003. A further announcement on the timetable for the coming into force of the secondary legislation will made after careful consideration of the responses on the proposed implementation periods.</p>
+	<p pid=".34WS.2/1">The consultation on the draft orders to be made under the Export Control Act 2002 ended on <phrase class="date" code="2003-04-30">30 April</phrase>. Two hundred and fifty eight consultation responses were received, many of which are extremely detailed. The secondary legislation is currently being finalised in the light of the responses. It is expected that the orders will be laid before Parliament in October 2003. A further announcement on the timetable for the coming into force of the secondary legislation will made after careful consideration of the responses on the proposed implementation periods.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-24.34WS.3" nospeaker="true" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_sbhd4">
@@ -96,11 +119,11 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.34WS.4" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" speakeroffice="The Minister for Energy, E-Commerce and Postal Services" colnum="34WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin4">
-	<p>The Government announced in the Queen's Speech that draft legislation for implementing the proposals in the White Paper &quot;Managing the Nuclear Legacy&mdash;A Strategy for Action&quot; (Cm 5552) would be published for comment in the course of this Session.</p>
-	<p>I am pleased to announce that the draft Bill is being published today together with explanatory notes outlining its effect and the objectives it is intended to achieve. Copies are available from the Vote and Printed Paper Offices.</p>
-	<p>The Government are publishing the Bill in draft in line with its commitment to openness and transparency and active engagement of stakeholders in implementation of its proposed new arrangements for managing the decommissioning and clean up of public sector civil nuclear liabilities. The deadline for comments is 16 September.</p>
-	<p>For the same reason, the DTI is also publishing other documents&mdash;in particular a draft management statement outlining the intended relationship between Government and the proposed Nuclear Decommissioning Authority (NDA) and a draft Memorandum of Understanding between the NDA and the nuclear regulators&mdash;so as to give stakeholders a better understanding of the overall framework within which the NDA will operate. Copies of these documents are also available from the Vote Office and Printed Paper Offices.</p>
-	<p>The draft Bill as published does not include two detailed Schedules dealing with successor companies and taxation. These will be added to the Bill prior to its introduction into Parliament. In each case, however, these notes explain the purpose of the Schedule and what they are expected to cover. Amendments will also be made to the draft Bill prior to introduction to reflect the fact that the NDA will have functions which relate to both reserved and devolved matters and so will be similar to cross border authorities designated under the terms of the Scotland Act 1998.</p>
+	<p pid=".34WS.4/1">The Government announced in the Queen's Speech that draft legislation for implementing the proposals in the White Paper &quot;Managing the Nuclear Legacy&mdash;A Strategy for Action&quot; (Cm 5552) would be published for comment in the course of this Session.</p>
+	<p pid=".34WS.4/2">I am pleased to announce that the draft Bill is being published today together with explanatory notes outlining its effect and the objectives it is intended to achieve. Copies are available from the Vote and Printed Paper Offices.</p>
+	<p pid=".34WS.4/3">The Government are publishing the Bill in draft in line with its commitment to openness and transparency and active engagement of stakeholders in implementation of its proposed new arrangements for managing the decommissioning and clean up of public sector civil nuclear liabilities. The deadline for comments is <phrase class="date" code="2003-09-16">16 September</phrase>.</p>
+	<p pid=".34WS.4/4">For the same reason, the DTI is also publishing other documents&mdash;in particular a draft management statement outlining the intended relationship between Government and the proposed Nuclear Decommissioning Authority (NDA) and a draft Memorandum of Understanding between the NDA and the nuclear regulators&mdash;so as to give stakeholders a better understanding of the overall framework within which the NDA will operate. Copies of these documents are also available from the Vote Office and Printed Paper Offices.</p>
+	<p pid=".34WS.4/5">The draft Bill as published does not include two detailed Schedules dealing with successor companies and taxation. These will be added to the Bill prior to its introduction into Parliament. In each case, however, these notes explain the purpose of the Schedule and what they are expected to cover. Amendments will also be made to the draft Bill prior to introduction to reflect the fact that the NDA will have functions which relate to both reserved and devolved matters and so will be similar to cross border authorities designated under the terms of the Scotland Act 1998.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-24.35WS.0" nospeaker="true" colnum="35WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_dpthd3">
@@ -112,9 +135,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.35WS.2" speakerid="uk.org.publicwhip/member/995" speakername="David Jamieson" speakeroffice="The Parliamentary Under-Secretary of State for Transport" colnum="35WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin5">
-	<p>The Department for Transport has today announced the results of public consultation on a proposal for a new offence of using a hand-held mobile phone while driving. The consultation was launched on 20 August last year and closed on 25 November 2002. Over 1,000 responses were received and some 88 per cent. were broadly in favour of the introduction of a new offence.</p>
-	<p>A regulation, subject to the negative resolution procedure, will be laid before Parliament as soon as possible to prohibit the use of a hand-held mobile phone while driving. It is intended that the new offence should take effect from 1 December 2003. Initially offenders will be subject to a &pound;30 fixed penalty notice, increased to a maximum fine of &pound;1,000 (or &pound;2,500 for drivers of lorries, buses and coaches) if the matter goes to court. When a suitable legislative opportunity arises the offence will be made subject to the endorsement of 3 penalty points.</p>
-	<p>Copies of the letter announcing the results and a summary of the points made during consultation have been placed in the Libraries of both Houses.</p>
+	<p pid=".35WS.2/1">The Department for Transport has today announced the results of public consultation on a proposal for a new offence of using a hand-held mobile phone while driving. The consultation was launched on <phrase class="date" code="2003-08-20">20 August</phrase> last year and closed on <phrase class="date" code="2002-11-25">25 November 2002</phrase>. Over 1,000 responses were received and some 88 per cent. were broadly in favour of the introduction of a new offence.</p>
+	<p pid=".35WS.2/2">A regulation, subject to the negative resolution procedure, will be laid before Parliament as soon as possible to prohibit the use of a hand-held mobile phone while driving. It is intended that the new offence should take effect from <phrase class="date" code="2003-12-01">1 December 2003</phrase>. Initially offenders will be subject to a &pound;30 fixed penalty notice, increased to a maximum fine of &pound;1,000 (or &pound;2,500 for drivers of lorries, buses and coaches) if the matter goes to court. When a suitable legislative opportunity arises the offence will be made subject to the endorsement of 3 penalty points.</p>
+	<p pid=".35WS.2/3">Copies of the letter announcing the results and a summary of the points made during consultation have been placed in the Libraries of both Houses.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-24.36WS.0" nospeaker="true" colnum="36WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_dpthd4">
@@ -126,11 +149,11 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-24.36WS.2" speakerid="uk.org.publicwhip/member/1127" speakername="Chris Mullin" speakeroffice="The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs" colnum="36WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030624/wmstext/30624m01.htm#30624m01.html_spmin6">
-	<p>While most visits abroad are trouble-free, the FCO is becoming increasingly aware of people being raped while they are overseas. In 2002, 129 cases of rape were reported to British consular staff overseas. It is likely that many cases go unreported.</p>
-	<p>Rape and sexual assault can, and do, happen to people from all walks of life &mdash;women, men, young and old. It is a very traumatic experience in any circumstance. That trauma can often be made even more difficult to deal with when the rape happens abroad.</p>
-	<p>The FCO is committed to helping victims. We want them to come forward and seek assistance from the nearest British Consulate. Equally, we want to give advice to travellers before they go to help ensure their personal safety. The new FCO information leaflet on 'Rape and Sexual Assault Overseas' was written in conjunction with NGOs and the Police and aims to provide advice on personal safety for travellers, information for victims of rape and sexual assault and their families and useful contact information.</p>
-	<p>The launch of the information leaflet forms part of the 'Know Before You Go' campaign which, working with travel industry partners, encourages travellers to be better prepared before travelling overseas. The FCO website <a href="http://www.fco.gov.uk/knowbeforeyougo">http://www.fco.gov.uk/knowbeforeyougo</a> provides advice for travel overseas including guidance on taking out travel insurance, country-specific travel information and checklists for specific groups such as backpackers and independent travellers, women travellers; those visiting friends and relatives overseas.</p>
-	<p>I hope colleagues will join in disseminating this information.</p>
+	<p pid=".36WS.2/1">While most visits abroad are trouble-free, the FCO is becoming increasingly aware of people being raped while they are overseas. In 2002, 129 cases of rape were reported to British consular staff overseas. It is likely that many cases go unreported.</p>
+	<p pid=".36WS.2/2">Rape and sexual assault can, and do, happen to people from all walks of life &mdash;women, men, young and old. It is a very traumatic experience in any circumstance. That trauma can often be made even more difficult to deal with when the rape happens abroad.</p>
+	<p pid=".36WS.2/3">The FCO is committed to helping victims. We want them to come forward and seek assistance from the nearest British Consulate. Equally, we want to give advice to travellers before they go to help ensure their personal safety. The new FCO information leaflet on 'Rape and Sexual Assault Overseas' was written in conjunction with NGOs and the Police and aims to provide advice on personal safety for travellers, information for victims of rape and sexual assault and their families and useful contact information.</p>
+	<p pid=".36WS.2/4">The launch of the information leaflet forms part of the 'Know Before You Go' campaign which, working with travel industry partners, encourages travellers to be better prepared before travelling overseas. The FCO website <a href="http://www.fco.gov.uk/knowbeforeyougo">http://www.fco.gov.uk/knowbeforeyougo</a> provides advice for travel overseas including guidance on taking out travel insurance, country-specific travel information and checklists for specific groups such as backpackers and independent travellers, women travellers; those visiting friends and relatives overseas.</p>
+	<p pid=".36WS.2/5">I hope colleagues will join in disseminating this information.</p>
 </speech>
 </publicwhip>
 

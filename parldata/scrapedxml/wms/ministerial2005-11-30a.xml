@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -35,7 +38,9 @@
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -52,18 +57,14 @@
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.0" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-30a.19WS.2" speakerid="uk.org.publicwhip/member/2010" speakername="Jim Murphy" speakeroffice="The Parliamentary Under-Secretary of State for the Cabinet Office" colnum="19WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m01.htm#51130m01.html_spmin0">
-	<p pid="a.19WS.2/1">The Government are committed to ensuring that regulations are necessary, give effective protection, balance cost and risk, are fair and command public confidence.</p>
-	<p pid="a.19WS.2/2">In accordance with this, we require Departments to produce and publish RIAs for all regulatory proposals likely to have an impact on business, charities or voluntary bodies.</p>
-	<p pid="a.19WS.2/3">I have today presented to Parliament a Command Paper listing RIAs published between <phrase class="date" code="2005-01-01">1 January</phrase> and <phrase class="date" code="2005-06-30">30 June 2005</phrase>. Copies of those listed have been placed in the Library. This is the 23rd such Command Paper.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.3" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.4" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.19WS.5" newgid="uk.org.publicwhip/wms/2005-11-30b.19WS.5" matchtype="changes"/>
@@ -87,7 +88,7 @@
 	<p pid="a.19WS.5/17" class="indent">Flexible working patterns and reconciliation of work-life balance.</p>
 	<p pid="a.19WS.5/18">During the Ministerial meeting a number of speakers also identified the need to increase the number of women in the labour market if Europe is to increase economic growth, productivity and competitiveness. The links between this and the EU &quot;Lisbon Strategy&quot; were made with particular reference to retaining women in the labour market.</p>
 	<p pid="a.19WS.5/19">Ministers agreed that the opportunity to share and exchange practical examples of good practice, which worked in their Member States, with other colleagues, had been extremely useful and hoped that it could be built on in the future.</p>
-	<p pid="a.19WS.5/20">At the end of the meeting, a presidency statement was issued which will be formally presented to the Employment, Social Policy, Health and Consumer Affairs Council on 8&ndash;<phrase class="date" code="">9 December</phrase>. I attach a copy to this Statement.</p>
+	<p pid="a.19WS.5/20">At the end of the meeting, a presidency statement was issued which will be formally presented to the Employment, Social Policy, Health and Consumer Affairs Council on 8&ndash;<phrase class="date" code="2005-12-09">9 December</phrase>. I attach a copy to this Statement.</p>
 	<p pid="a.19WS.5/21">Presidency Statement</p>
 	<p pid="a.19WS.5/22" class="italic">Statement made by the UK Presidency at the Conclusion of the Ministerial Meeting on Gender Equality in Birmingham on <phrase class="date" code="2005-11-09">9 November 2005</phrase></p>
 	<p pid="a.19WS.5/23">1. Ten years ago in Beijing the United Nations drew up a Declaration and a Platform for Action that has been the template for progress on gender equality ever since. The enthusiasm and commitment of the national delegates and representatives of civil society, who worked day and night on the text, helped to inspire the development within the European Union of a strong legislative base for gender equality and innovative policies for women's empowerment.</p>
@@ -97,93 +98,24 @@
 	<p pid="a.19WS.5/27">5. Alongside practical examples from many EU Member States, generously shared by representatives from governments, business, trade unions, academics and civil society, we also considered ideas that have been successful in the developing world. And Ministers, prior to their own very valuable discussions, visited community projects based in the West Midlands&mdash;several funded by the EU&mdash;to see how local initiatives can make a significant difference to the economic chances of disadvantaged women, particularly to those experiencing multiple discrimination. These projects working with the specific needs of Minority Ethnic women, women in business, training and education of women, young female entrepreneurs, women facing social exclusion and support for women in rural enterprise, represent a microcosm of the complexity and diversity of issues facing women in their everyday lives across Europe, and, highlight the challenges faced by policy and decision makers to achieving full gender equality.</p>
 	<p pid="a.19WS.5/28">6. We were strongly influenced in our work by the mid-term review of the EU Lisbon Strategy. This strategy recognises overtly that gender equality and the advancement of women are fundamental to the achievement of full employment, sustained economic growth and social cohesion, as well as the promotion of knowledge and innovation in Europe, the reinforcement of social protection and the eradication of poverty. We encourage all Member States to ensure that their future annual Lisbon implementation reports, (which will report on their National Reform Programmes for 2005&ndash;08), are fully mainstreamed&mdash;in particular that; any targets and data are disaggregated by gender; that the goals of women's employment and the provision of good childcare are properly resourced; and, that the Integrated Guidelines on Growth and Jobs for 2005&ndash;08, are heeded, (with particular reference to Guideline No 18 &quot;promoting a lifecycle approach to work&quot;). The EU Lisbon Strategy must be achieved by full acknowledgement of the importance of gender equality.</p>
 	<p pid="a.19WS.5/29">7. The EU made a firm commitment, renewed in Luxembourg in February, to continue its work on different aspects of the Beijing Platform for Action by the development and collection of helpful and relevant indicators. It was also agreed that this year no new specific indicators would be developed, so that Member States could focus on implementation of the Platform in its entirety. In 2006 this work will recommence under the leadership of the Austrian and Finnish Presidencies, including a focus on gender equality health indicators. However, in due course, this will be greatly assisted as a result of work done under Luxembourg and the UK this year on the establishment of the European Gender Institute. This, and the Recast Directive that simplifies and streamlines the existing gender equality acquis, have been the primary focus of our work in Council.</p>
-	<p pid="a.19WS.5/30">8. The Presidency is proud of the EU's record of achievements in the field of gender equality but is all too well aware of the work that remains to be done. We believe that our emphasis at the Presidency Conference and Ministerial in Birmingham, on women's economic empowerment, in the context of the Beijing Declaration and the Lisbon Strategy, is an important one, and has provided the opportunity for significant and purposeful conversations between practitioners from across the EU, and more widely. We are pleased that the European Commission plans to reprise the theme of women's employment and work-life balance as the central part of its Third Annual Report to Heads of State and Government, (to be presented at the Spring Council in March 2006). This UK Presidency Statement will be presented to the Employment, Health and Social Affairs Council for consideration on 8&ndash;<phrase class="date" code="">9 December</phrase>.</p>
+	<p pid="a.19WS.5/30">8. The Presidency is proud of the EU's record of achievements in the field of gender equality but is all too well aware of the work that remains to be done. We believe that our emphasis at the Presidency Conference and Ministerial in Birmingham, on women's economic empowerment, in the context of the Beijing Declaration and the Lisbon Strategy, is an important one, and has provided the opportunity for significant and purposeful conversations between practitioners from across the EU, and more widely. We are pleased that the European Commission plans to reprise the theme of women's employment and work-life balance as the central part of its Third Annual Report to Heads of State and Government, (to be presented at the Spring Council in March 2006). This UK Presidency Statement will be presented to the Employment, Health and Social Affairs Council for consideration on 8&ndash;<phrase class="date" code="2005-12-09">9 December</phrase>.</p>
 </speech>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.0" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-30a.23WS.2" speakerid="uk.org.publicwhip/member/1762" speakername="Yvette Cooper" speakeroffice="The Minister for Housing and Planning" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m02.htm#51130m02.html_spmin0">
-	<p pid="a.23WS.2/1">My right hon. Friend the Deputy Prime Minister will publish for public consultation on <phrase class="date" code="2005-11-30">30 November</phrase> a paper discussing secondary legislation to implement tenancy deposit protection for tenants.</p>
-	<p pid="a.23WS.2/2">During the passage of the Bill which became the Housing Act 2004 the Government introduced tenancy deposit protection provisions to safeguard deposits paid by tenants in relation to assured shorthold tenancies.</p>
-	<p pid="a.23WS.2/3">The consultation paper examines the information requirements to be placed on landlords and the handling of deposits at the beginning and end of the tenancy.</p>
-	<p pid="a.23WS.2/4">Copies of the paper are being sent to a wide range of interested parties including local authorities, tenant representative groups, landlord and letting agent associations, and others with an interest in this issue. The closing date for responses is <phrase class="date" code="">1 February 2006</phrase>.</p>
-	<p pid="a.23WS.2/5">Copies of the paper will also be placed in the Libraries of both Houses, and will be available on the Office of the Deputy Prime Minister's website at <a href="http://www.odpm.gov.uk">www.odpm.gov.uk</a>.</p>
-	<p pid="a.23WS.2/6">A summary of the responses to the consultation will be published on the ODPM website.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.3" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.23WS.4" newgid="uk.org.publicwhip/wms/2005-11-30b.23WS.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.0" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.0" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wms/2005-11-30a.24WS.0" nospeaker="true" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m02.htm#51130m02.html_sbhd2">
 	Additional Powers and Responsibilities for the Greater London Authority
 </minor-heading>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.1" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-30a.24WS.1" speakerid="uk.org.publicwhip/member/1826" speakername="David Miliband" speakeroffice="The Minister of Communities and Local Government" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m02.htm#51130m02.html_spmin2">
-	<p pid="a.24WS.1/1">The Government are today publishing a consultation paper on proposals for additional powers and responsibilities for the Greater London Authority&mdash;the Mayor of London and the London Assembly.</p>
-	<p pid="a.24WS.1/2">We believe the time is now right to look at giving the Mayor a greater say in the planning and delivery of London's strategic services while preserving the appropriate balance of power between the Mayor, Assembly and boroughs. We are opening the door to significant decentralisation of powers from Whitehall, while ensuring the GLA remains a focused and strategic authority. We believe the GLA has proven its worth, and that the time is right to shift power from Whitehall to London. How far will depend on the response to the consultation.</p>
-	<p pid="a.24WS.1/3">The Government's consultation paper outlines a number of proposals for additional powers for the Mayor across a range of policy areas, including housing, learning and skills, planning and waste management and waste planning. It also explores options for additional powers for the London Assembly and changes in appointments to the boards of the four functional bodies in the GLA Group.</p>
-	<p pid="a.24WS.1/4">We look forward to hearing the views of Londoners and those with an interest in London during the consultation period, which will run until <phrase class="date" code="2005-02-22">22 February</phrase>. After considering all the responses to this consultation exercise, the Government will announce a final package of proposals in spring 2006.</p>
-	<p pid="a.24WS.1/5">A copy of the consultation paper has been placed in the Library of the House.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.3" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.3" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wms/2005-11-30a.24WS.3" nospeaker="true" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m02.htm#51130m02.html_sbhd3">
 	UK Presidency of the European Union: General Affairs and External Relations Council 21&ndash;22 November 2005
 </minor-heading>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.4" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.4" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-30a.24WS.4" speakerid="uk.org.publicwhip/member/2008" speakername="Douglas Alexander" speakeroffice="The Minister for Europe" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m02.htm#51130m02.html_spmin3">
-	<p pid="a.24WS.4/1">The General Affairs and External Relations Council (GAERC) was held on 21&ndash;<phrase class="date" code="2005-11-22">22 November</phrase> in Brussels. My right hon. Friends the Foreign Secretary, the Defence Secretary, and the International Development Secretary chaired the Council as presidency. I also represented the UK on certain agenda items.</p>
-	<p pid="a.24WS.4/2">The agenda items are as follows:</p>
-	<p pid="a.24WS.4/3">Defence Ministers</p>
-	<p pid="a.24WS.4/4" class="italic">Capabilities</p>
-	<p pid="a.24WS.4/5">The Council approved the final Requirements Catalogue 05, which identifies the EU's military capability requirements and puts renewed emphasis on rapidly deployable, sustainable and interoperable armed forces. The catalogue was validated using computer-assisted operational analysis provided by NATO. Two further battlegroups were announced (Greece-Romania-Bulgaria-Cyprus and a Czech-Slovak group), which ensured the roster was filled to the end of 2008. Progress on capability development initiatives including battlegroups, the European Gendarmerie Force and the maritime dimension was welcomed. Council Conclusions were agreed.</p>
-	<p pid="a.24WS.4/6" class="italic">Civil-military co-ordination</p>
-	<p pid="a.24WS.4/7">The work of the UK presidency in improving civil-military co-ordination, notably on comprehensive planning and security sector reform, was widely welcomed as a step towards bringing all the EU's instruments into a more effective holistic response. The Commission also supported this approach. Ministers agreed that this work should be applied to comprehensive reviews of the EU's engagement in Bosnia, Democratic Republic of the Congo, Sudan and Aceh. The Council also discussed the importance of EU support to building African peacekeeping capacity, and the EU's ability to respond rapidly to disasters.</p>
-	<p pid="a.24WS.4/8" class="italic">European Defence Agency</p>
-	<p pid="a.24WS.4/9">The Council welcomed the report by the Head of the Agency and agreed guidelines for the Agency's work in 2006. Ministers exchanged views on the finalisation of Administrative Arrangements between the Agency and Norway and Turkey. The presidency undertook to consult with those countries and return to the issue at the next opportunity.</p>
-	<p pid="a.24WS.4/10" class="italic">Foreign and Defence Ministers: Bosnia</p>
-	<p pid="a.24WS.4/11">The Council reviewed the EU military and police missions in Bosnia and agreed Conclusions. It agreed that a continuing EU military presence was essential, with force levels broadly unchanged for the coming year. It established a follow-on police mission refocused to support police reform and the fight against organised crime, and agreed to strengthen the EU Special Representative's role in co-ordinating EU instruments. On the tenth anniversary of the initialling of the Dayton Agreement, Ministers welcomed the progress made by Bosnia and authorised the Commission to open negotiations on a Stabilisation and Association Agreement.</p>
-	<p pid="a.24WS.4/12">Foreign Ministers</p>
-	<p pid="a.24WS.4/13" class="italic">Preparation for the 15&ndash;<phrase class="date" code="">16 December</phrase> European Council</p>
-	<p pid="a.24WS.4/14">The presidency introduced a draft annotated agenda and explained that Ministers would have a chance to consider draft European Council Conclusions at the <phrase class="date" code="">12 December</phrase> GAERC.</p>
-	<p pid="a.24WS.4/15" class="italic">Financial Perspectives 2007&ndash;13</p>
-	<p pid="a.24WS.4/16">The presidency introduced this item and highlighted that it remained committed to reaching a deal in December. The presidency highlighted the need to make progress in three main areas: <i>(i)</i> the structure of EU spending; (ii) modernising the budget, including a timetable for review; and (iii) resources. Significant changes would be needed to the proposals made n June by the Luxembourg presidency. The presidency highlighted plans for a ministerial conclave on <phrase class="date" code="">7 December</phrase>, ahead of which the presidency would table comprehensive proposals.</p>
-	<p pid="a.24WS.4/17" class="italic">WTO</p>
-	<p pid="a.24WS.4/18">The Commission set out the latest developments in the Doha Round. On process, the Commission commented that they will continue to ensure transparency with Member States and would consult the Council fully at Hong Kong. short conclusions were agreed.</p>
-	<p pid="a.24WS.4/19" class="italic">Middle East Peace Process (MEPP)</p>
-	<p pid="a.24WS.4/20">The presidency and High Representative Solana welcomed the agreement on the EU mission to monitor the Palestinian operation of the Rafah crossing point on the Gaza-Egypt border. The parties' acceptance of an international role was significant. Commissioner Ferrero-Waldner highlighted that Commission capacity building programmes would work hand-in-glove with the ESDP monitors. In preparation for the <phrase class="date" code="2005-01-25">25 January</phrase> Palestine Legislative Council (PLC) elections, Commissioner Ferrero-Waldner said an Election Observation Mission would deploy in mid-December and would consist of 172 observers. Monitors would strictly limit their contacts to issues related to the observation of the elections. The presidency underlined the importance of the EU maintaining its position that observers should not enter into dialogue with Hamas until they renounced violence and recognised Israel. Council Conclusions were agreed.</p>
-	<p pid="a.24WS.4/21" class="italic">Iraq</p>
-	<p pid="a.24WS.4/22">The Foreign Secretary briefed on his recent visit to Iraq (10&ndash;<phrase class="date" code="2005-11-11">11 November</phrase>), highlighting that steady progress was being made. The Foreign Secretary emphasised the importance of the December elections, where the Iraqis were keen for international observers. The Council agreed that mounting a full EU Election Observation Mission (EOM) would not be possible in the time available, but would explore what additional assistance it could provide in support of the <phrase class="date" code="">15 December</phrase> elections. The Council also agreed that the EU should be considering now how to prepare for closer relations with the new government next year. The presidency thanked the Commission for their work on the opening of a Commission Delegation in Baghdad. Commissioner Ferrero-Waldner said they were currently looking for a Head of Mission and, in addition, would shortly be submitting a draft negotiating mandate to Member States for a Trade and Co-operation Agreement with Iraq by the end of the year.</p>
-	<p pid="a.24WS.4/23" class="italic">Iran</p>
-	<p pid="a.24WS.4/24">The presidency updated the Council on the <phrase class="date" code="2005-11-18">18 November</phrase> International Atomic Energy Agency (IAEA) Report. High Representative Solana highlighted the need to work closely with Mr El-Baradei and for the international community to stay firm and united. The presidency agreed that the issue remained difficult but it was important the European side actively supported a diplomatic solution.</p>
-	<p pid="a.24WS.4/25" class="italic">Migration in External Relations</p>
-	<p pid="a.24WS.4/26">The Council agreed council conclusions on migration in external relations and underlined their significance. The presidency noted the close interest taken by Heads of Government at Hampton Court on this issue. The Commission stressed the importance of better co-coordination of work between Justice and Home Affairs, External Relations and Development and of increasing partnership with countries of origin and transit on migration issues. They particularly highlighted the need to improve engagement with sub-Saharan countries and to reinforce dialogue with Neighbouring countries. The Commission also hoped that the reform of the financial instruments would enable them to respond more quickly and effectively to urgent migration related situations.</p>
-	<p pid="a.24WS.4/27" class="italic">EU Strategy for Africa</p>
-	<p pid="a.24WS.4/28">The Council agreed conclusions on the Commission Communication on the EU-Africa Strategy: Towards a Euro-African Pact to Accelerate Africa's Development. The Communication will form an integral part of the overall EU Strategy for Africa, which should be discussed and agreed by Foreign Ministers at the December GAERC and endorsed at the December European Council.</p>
-	<p pid="a.24WS.4/29">During separate exchanges of views in preparation for the EU-Africa Strategy, Foreign and Development ministers identified the following priorities for the strategy: African ownership; mechanisms to monitor implementation of the strategy; increasing support for peace and security, including through a long term commitment to the EU's African Peace Facility; good governance; trade and regional integration; establishing an EU-Africa infrastructure facility; meeting aid volume commitments and providing more assistance for health, education and the fight against AIDS; migration; environment; human rights; and Economic Partnership Agreements.</p>
-	<p pid="a.24WS.4/30" class="italic">AOB&mdash;ASEM/Burma</p>
-	<p pid="a.24WS.4/31">The presidency highlighted the issue of Burmese participation at the Asia-Europe Meeting (ASEM) meetings and agreed that officials should take work forward and revert in due course.</p>
-	<p pid="a.24WS.4/32" class="italic">AOB&mdash;Cyprus</p>
-	<p pid="a.24WS.4/33">Sweden requested the presidency update Member States on plans for the Cyprus Aid regulation. The presidency highlighted the urgency of agreeing the Regulation and invited officials to take forward work before the next GAERC.</p>
-	<p pid="a.24WS.4/34" class="italic">AOB&mdash;Bulgarian Medics</p>
-	<p pid="a.24WS.4/35">At the request of Bulgaria, who highlighted that the Libyan court of appeal was allowing a new hearing on the case of the Bulgarian and Palestinian medical staff at the end of January. This might herald a positive evolution. The Bulgaria Foreign Minister thanked the presidency, the Commission and the Member States for their efforts. The presidency offered continuing support to resolve this issue.</p>
-	<p pid="a.24WS.4/36" class="italic">AOB&mdash;Organisation for European Cooperation and Development (OECD) Secretary General</p>
-	<p pid="a.24WS.4/37">Poland asked for support for the candidature of ex-Prime Minister Belka.</p>
-	<p pid="a.24WS.4/38" class="italic">AOB&mdash;Ethiopia/Eritrea</p>
-	<p pid="a.24WS.4/39">At the request of the Netherlands, who highlighted the serious situation in the border region between these two countries and stressed the need for the EU to work closely with the UN. The presidency agreed to discuss this issue further at the December GAERC.</p>
-	<p pid="a.24WS.4/40">Development Ministers</p>
-	<p pid="a.24WS.4/41" class="italic">EU Strategy for Africa</p>
-	<p pid="a.24WS.4/42">Details of this item are set out in the paragraph above under Foreign Ministers' discussions.</p>
-	<p pid="a.24WS.4/43" class="italic">The European Consensus on Development</p>
-	<p pid="a.24WS.4/44">The Council and Commission agreed &quot;The European Consensus on Development&quot;. This will be a Joint Declaration between the Council, European Commission and European Parliament. It is divided into two parts: the first sets out common objectives and principles to guide the EU and its 25 Member States in development, focused on poverty eradication and partner country ownership; and the second sets out the revised EC Development Policy which clarifies the Community's role and added value and ensures that priority attention be given to least developed and low income countries in resource allocation; and development shall be taken into account in other policies that affect developing countries. The European Parliament is expected to formally adopt the Declaration in December.</p>
-	<p pid="a.24WS.4/45" class="italic">Orientation Debate: Effectiveness of EU External Assistance</p>
-	<p pid="a.24WS.4/46">The Council held its sixth annual &quot;Orientation Debate&quot; on improving the effectiveness of EU external action based on a presidency discussion paper. The Council adopted Conclusions which highlight the significant progress made by the Commission over the past five years and the concrete measures needed over the next year to improve the quality of aid and aid delivery at EU and Community levels, including: more joint multi-annual programming; lead donor arrangements at field-level; and more predictable long term funding.</p>
-	<p pid="a.24WS.4/47" class="italic">Post-Tsunami Follow-up</p>
-	<p pid="a.24WS.4/48">The Council adopted the presidency progress report on the implementation of the post-Tsunami Action Plan. There was no further discussion.</p>
-	<p pid="a.24WS.4/49" class="italic">Aid for Trade</p>
-	<p pid="a.24WS.4/50">The Council discussed the package of aid for trade measures proposed by the presidency, for agreement ahead of the WTO Ministerial in Hong Kong on 13&ndash;<phrase class="date" code="">18 December</phrase>. The Council welcomed the Commission's commitment at the G8 Summit in Gleneagles to increase aid for trade to 1 billion Euros annually and agreed to aim to adopt Conclusions at the <phrase class="date" code="">12 December</phrase> GAERC, which express its collective intention to increase aid for trade within rising aid volumes.</p>
-	<p pid="a.24WS.4/51" class="italic">AOB&mdash;Pakistan Earthquake</p>
-	<p pid="a.24WS.4/52">At the request of Denmark, the Council discussed the provision of aid to the victims of the recent earthquake in Pakistan. My hon. Friend the Parliamentary Under-Secretary of State for International Development reported back on the Reconstruction Conference held in Islamabad on <phrase class="date" code="2005-11-19">19 November</phrase> at which he represented the presidency. The Council also discussed wider reform of the international humanitarian system.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.24WS.4" newgid="uk.org.publicwhip/wms/2005-11-30b.24WS.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.28WS.0" newgid="uk.org.publicwhip/wms/2005-11-30b.28WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.28WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.28WS.1" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wms/2005-11-30a.28WS.1" nospeaker="true" colnum="28WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m03.htm#51130m03.html_sbhd0">
@@ -206,15 +138,6 @@
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.32WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.32WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.33WS.0" newgid="uk.org.publicwhip/wms/2005-11-30b.33WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.33WS.1" newgid="uk.org.publicwhip/wms/2005-11-30b.33WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.33WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.33WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-30a.33WS.2" speakerid="uk.org.publicwhip/member/1981" speakername="Alistair Darling" speakeroffice="The Secretary of State for Transport" colnum="33WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051130/wmstext/51130m04.htm#51130m04.html_spmin1">
-	<p pid="a.33WS.2/1">I am announcing today that Govia has been awarded the contract to run the integrated Kent rail franchise from <phrase class="date" code="2005-04-01">1 April</phrase> next year.</p>
-	<p pid="a.33WS.2/2">The contract my Department has signed commits Govia to introducing the high speed commuter trains that will use the channel tunnel rail link to serve the south-east from 2009.</p>
-	<p pid="a.33WS.2/3">Journey times for passengers who wish to travel from Ramsgate and east Kent, through the Medway towns and Thames Gateway to the centre of London will be reduced. It will be the first high speed commuter service this country has seen. In 2012 Govia will provide the flagship Olympic Javelin rail service that helped London secure the Olympic games. This will link St. Pancras and Stratford in less than eight minutes.</p>
-	<p pid="a.33WS.2/4">In addition Govia has committed to improve performance, invest around &pound;76 million in passenger and staff facilities, oversee the construction of two depots in East Kent to maintain the new and existing fleet of trains and add a number of off peak services to the current timetable. The franchise contract is for eight years with the final two years dependent on service performance achieving preset targets.</p>
-	<p pid="a.33WS.2/5">There has been significant investment in the franchise region in recent years. The taxpayer has invested more than &pound;600 million in new rolling stock in Kent in the last three years. In addition, Kent has seen &pound;93 million of investment in power supply, stations, depots and related infrastructure. Some &pound;250 million will be invested in the new high speed trains.</p>
-	<p pid="a.33WS.2/6">The total subsidy for IKF is &pound;585 million over the eight years. It is therefore justifiable for the new operator to increase fares by 3 per cent. above inflation from January 2007 for five years to ensure there is fair balance between the taxpayer and fare paying passenger.</p>
-	<p pid="a.33WS.2/7">I am satisfied that the competition for the franchise has resulted in a contract that represents very good value for taxpayer. It is a tough contract on which Govia will be expected to deliver. It will help support the new housing and economic opportunities in the Thames Gateway area and region beyond.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-30a.33WS.2" newgid="uk.org.publicwhip/wms/2005-11-30b.33WS.2" matchtype="perfectmatch"/>
 </publicwhip>
 

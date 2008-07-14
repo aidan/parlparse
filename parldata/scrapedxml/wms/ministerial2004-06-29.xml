@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.5WS.0" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_dpthd0">
 	PRIME MINISTER
@@ -49,8 +72,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.5WS.2" speakerid="uk.org.publicwhip/member/736" speakername="Tony Blair" speakeroffice="The Prime Minister" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_spmin0">
-	<p>I have laid before both Houses the annual report for 2003&ndash;04 of the Chief Surveillance Commissioner, the right hon. Sir Andrew Leggatt.</p>
-	<p>I am grateful to the Commissioner, and his office, for this report and the work that has gone into preparing it.</p>
+	<p pid=".5WS.2/1">I have laid before both Houses the annual report for 2003&ndash;04 of the Chief Surveillance Commissioner, the right hon. Sir Andrew Leggatt.</p>
+	<p pid=".5WS.2/2">I am grateful to the Commissioner, and his office, for this report and the work that has gone into preparing it.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.5WS.3" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_dpthd1">
@@ -62,8 +85,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.5WS.5" speakerid="uk.org.publicwhip/member/1131" speakername="Paul Murphy" speakeroffice="The Secretary of State for Northern Ireland" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_spmin1">
-	<p>I have received the annual report for 2003&ndash;04 of the chief constable of the police service of Northern Ireland which is being presented to Parliament today as a Command Paper.</p>
-	<p>Copies of the report are available from the Vote Office and the Library of the House.</p>
+	<p pid=".5WS.5/1">I have received the annual report for 2003&ndash;04 of the chief constable of the police service of Northern Ireland which is being presented to Parliament today as a Command Paper.</p>
+	<p pid=".5WS.5/2">Copies of the report are available from the Vote Office and the Library of the House.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2004-06-29.5WS.6" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_sbhd2">
@@ -71,7 +94,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.5WS.7" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_spmin2">
-	<p>I have today laid in Parliament the annual report for 2003 of Jim McDonald, the independent assessor of military complaints procedures. The report of the independent assessor continues to provide valuable reassurance to both the public and the Government that the army's complaints procedures stand scrutiny. I will consider Mr. McDonald's report carefully and respond in due course.</p>
+	<p pid=".5WS.7/1">I have today laid in Parliament the annual report for 2003 of Jim McDonald, the independent assessor of military complaints procedures. The report of the independent assessor continues to provide valuable reassurance to both the public and the Government that the army's complaints procedures stand scrutiny. I will consider Mr. McDonald's report carefully and respond in due course.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.5WS.8" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_dpthd2">
@@ -83,31 +106,31 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.5WS.10" speakerid="uk.org.publicwhip/member/1258" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m01.htm#40629m01.html_spmin3">
-	<p>In my written statement to the House on 10 December 2003, <phrase class="offrep" id="wms/2003-12-10.84WS"><i>Official Report</i> Column 84&ndash;86WS</phrase>, I announced an independent internal review to look at the balance between security and operational effectiveness in the work of the Foreign and Commonwealth Office (FCO) overseas. The review has now been completed. A summary of the reviewer's report is appended.</p>
-	<p class="italic">Introduction</p>
-	<p class="indent">The review was set up following the attack on the British Consulate General in Istanbul in November 2003. The terms of reference were: &quot;To review the basis for the FCO's Security Strategy. In particular to re-examine the balance between security and operational effectiveness&quot;. The review looked at the range of security threats facing the FCO's posts over the next five to 10 years but focused mainly on terrorism. The aim</p>
-	<p class="indent">is to ensure that the FCO's security strategy is on a consistently sound long-term basis that minimizes the risks, while enabling posts to function effectively in line with Government policies.</p>
-	<p class="italic">Methodology</p>
-	<p class="indent">The reviewer, Stuart Jack, consulted widely in the FCO and Whitehall, including with the trade union side; visited several overseas posts; met with a number of companies; and looked at the practice of some other governments, in particular the United States.</p>
-	<p class="italic">Background</p>
-	<p class="indent">The FCO's security measures are designed to protect most importantly its staff and their families, and also information, the integrity of IT systems, buildings, operations, and reputation. The FCO owes a legal duty of care to all its staff, UK-based and locally engaged.</p>
-	<p class="indent">The policy framework and therefore the operating context within which the FCO must seek to secure its security overseas is set out in the FCO Strategy (&quot;UK International Priorities. A Strategy for the FCO&quot;, published on 2 December 2003). British foreign policy is to be &quot;active and engaged around the world&quot;, with eight strategic policy priorities, including efforts against terrorism. Importance is attached to providing high quality public services, including consular and visa.</p>
-	<p class="indent">For the foreseeable future the greatest threat will be from terrorism, particularly but not exclusively from al-Qaeda and like-minded groups. The threat is global and dynamic. The vehicle-borne bomb will continue to be a weapon of choice for many terrorists. But the FCO must be prepared for other methods of attack, other locations and sources. There is a serious risk of threat displacement to British targets if they appear much softer targets than the Americans in particular.</p>
-	<p class="indent">There also remains a serious espionage threat. Particular care is needed over IT security. Crime is the most immediate threat for most staff overseas.</p>
-	<p class="italic">Findings and Recommendations</p>
-	<p class="indent">The review's main conclusion is that, while the FCO's existing security strategy does not need a fundamental overhaul, there is more that could be done to enhance security worldwide. The security strategy needs to be forward-looking, flexible and professional; with clear criteria and consistent standards, robust decision-making, audit trails, and good communication with staff; and adequately resourced.</p>
-	<p class="indent">The safety of staff and families comes first. Security should continue to be a factor when deciding what posts are tasked to do, and how and where.</p>
-	<p class="indent">Total risk avoidance&mdash;absolute security&mdash;is unrealistic. Overseas posts have an important job to do in protecting and furthering British interests, including in insecure countries. Risk management is fundamental to striking a balance between security and operational effectiveness and to the prioritisation of security resources. Better methods are needed to assess the vulnerabilities and threats facing each post. The FCO's Security Strategy Unit (SSU) have been developing a risk management matrix to inform security decisions along the lines suggested in the review.</p>
-	<p class="indent">The security awareness of FCO staff is generally good. The culture and resources dedicated to security understandably adapted to the lessening of some threats since the end of the cold war and the easing of the IRA threat. There is strong commitment from FCO senior management to security, and since Istanbul security efforts have been accelerated. But, in the light of the new and ever-changing threats, the FCO needs to devote more resources to security.</p>
-	<p class="indent">Final responsibility for security lies with the centre: the FCO Board and Ministers must remain regularly apprised of security issues. Heads of post and geographical directors in</p>
-	<p class="indent">the FCO are responsible for individual posts, working closely with the Security Strategy Unit (SSU). All staff share responsibility for their own and others' security.</p>
-	<p class="indent">All posts already have post security committees and designated post security officers. Lines of responsibility at each post, including Heads of post, must be clear and well understood. There should be more formal mechanisms for resolving any conflicts between professional security advice and operational or other requirements.</p>
-	<p class="indent">Security needs to be factored into decisions on the estate in an effective and consistent way. The review does not recommend a wholesale shift to &quot;fortresses&quot; or &quot;bunkers&quot;, which would involve operational drawbacks, considerable resources and many years. Physical defences need to be considered within a more robust and objective framework, and all posts should undergo a &quot;vulnerability audit&quot;. In some cases, this might result in a decision to relocate a post. Standards (for stand-off, glazing, etc) for new builds and acquisitions of offices and other accommodation should be readily understood. Enhanced standards should be applied to the highest risk posts. Decisions should be based on risk management.</p>
-	<p class="indent">The human dimension is as important as physical measures. The FCO needs more overseas security managers or locally engaged equivalents, in some cases possibly more armed guards. There should also be a small increase in the numbers of overseas security advisors and SSU staff and more done to plug into outside expertise.</p>
-	<p class="indent">The FCO has already increased its capacity to deliver security training and awareness to its staff. Formal security training should be mandatory. New staff at post should always be given a local security briefing on arrival in the job. Some staff with security responsibilities, such as management officers, need more comprehensive training before taking up their jobs and more time to carry out their security responsibilities when overseas.</p>
-	<p class="indent">The review makes almost 50 recommendations covering the areas mentioned above, many of them procedural or organisational and some related to resources, including buildings, security staff and training.</p>
-	<p class="italic">Conclusion</p>
-	<p class="indent">As the UK remains engaged across an uncertain world we must be prepared for considerable security challenges. On terrorism we are in for the long haul. To meet these challenges the FCO will need to continue to put a strong emphasis on security and ensure that the current efforts to enhance security can be fully implemented.</p>
+	<p pid=".5WS.10/1">In my written statement to the House on <phrase class="date" code="2003-12-10">10 December 2003</phrase>, <phrase class="offrep" id="wms/2003-12-10.84"><i>Official Report</i>, columns 84&ndash;86WS</phrase>, I announced an independent internal review to look at the balance between security and operational effectiveness in the work of the Foreign and Commonwealth Office (FCO) overseas. The review has now been completed. A summary of the reviewer's report is appended.</p>
+	<p pid=".5WS.10/2" class="italic">Introduction</p>
+	<p pid=".5WS.10/3" class="indent">The review was set up following the attack on the British Consulate General in Istanbul in November 2003. The terms of reference were: &quot;To review the basis for the FCO's Security Strategy. In particular to re-examine the balance between security and operational effectiveness&quot;. The review looked at the range of security threats facing the FCO's posts over the next five to 10 years but focused mainly on terrorism. The aim</p>
+	<p pid=".5WS.10/4" class="indent">is to ensure that the FCO's security strategy is on a consistently sound long-term basis that minimizes the risks, while enabling posts to function effectively in line with Government policies.</p>
+	<p pid=".5WS.10/5" class="italic">Methodology</p>
+	<p pid=".5WS.10/6" class="indent">The reviewer, Stuart Jack, consulted widely in the FCO and Whitehall, including with the trade union side; visited several overseas posts; met with a number of companies; and looked at the practice of some other governments, in particular the United States.</p>
+	<p pid=".5WS.10/7" class="italic">Background</p>
+	<p pid=".5WS.10/8" class="indent">The FCO's security measures are designed to protect most importantly its staff and their families, and also information, the integrity of IT systems, buildings, operations, and reputation. The FCO owes a legal duty of care to all its staff, UK-based and locally engaged.</p>
+	<p pid=".5WS.10/9" class="indent">The policy framework and therefore the operating context within which the FCO must seek to secure its security overseas is set out in the FCO Strategy (&quot;UK International Priorities. A Strategy for the FCO&quot;, published on <phrase class="date" code="2003-12-02">2 December 2003</phrase>). British foreign policy is to be &quot;active and engaged around the world&quot;, with eight strategic policy priorities, including efforts against terrorism. Importance is attached to providing high quality public services, including consular and visa.</p>
+	<p pid=".5WS.10/10" class="indent">For the foreseeable future the greatest threat will be from terrorism, particularly but not exclusively from al-Qaeda and like-minded groups. The threat is global and dynamic. The vehicle-borne bomb will continue to be a weapon of choice for many terrorists. But the FCO must be prepared for other methods of attack, other locations and sources. There is a serious risk of threat displacement to British targets if they appear much softer targets than the Americans in particular.</p>
+	<p pid=".5WS.10/11" class="indent">There also remains a serious espionage threat. Particular care is needed over IT security. Crime is the most immediate threat for most staff overseas.</p>
+	<p pid=".5WS.10/12" class="italic">Findings and Recommendations</p>
+	<p pid=".5WS.10/13" class="indent">The review's main conclusion is that, while the FCO's existing security strategy does not need a fundamental overhaul, there is more that could be done to enhance security worldwide. The security strategy needs to be forward-looking, flexible and professional; with clear criteria and consistent standards, robust decision-making, audit trails, and good communication with staff; and adequately resourced.</p>
+	<p pid=".5WS.10/14" class="indent">The safety of staff and families comes first. Security should continue to be a factor when deciding what posts are tasked to do, and how and where.</p>
+	<p pid=".5WS.10/15" class="indent">Total risk avoidance&mdash;absolute security&mdash;is unrealistic. Overseas posts have an important job to do in protecting and furthering British interests, including in insecure countries. Risk management is fundamental to striking a balance between security and operational effectiveness and to the prioritisation of security resources. Better methods are needed to assess the vulnerabilities and threats facing each post. The FCO's Security Strategy Unit (SSU) have been developing a risk management matrix to inform security decisions along the lines suggested in the review.</p>
+	<p pid=".5WS.10/16" class="indent">The security awareness of FCO staff is generally good. The culture and resources dedicated to security understandably adapted to the lessening of some threats since the end of the cold war and the easing of the IRA threat. There is strong commitment from FCO senior management to security, and since Istanbul security efforts have been accelerated. But, in the light of the new and ever-changing threats, the FCO needs to devote more resources to security.</p>
+	<p pid=".5WS.10/17" class="indent">Final responsibility for security lies with the centre: the FCO Board and Ministers must remain regularly apprised of security issues. Heads of post and geographical directors in</p>
+	<p pid=".5WS.10/18" class="indent">the FCO are responsible for individual posts, working closely with the Security Strategy Unit (SSU). All staff share responsibility for their own and others' security.</p>
+	<p pid=".5WS.10/19" class="indent">All posts already have post security committees and designated post security officers. Lines of responsibility at each post, including Heads of post, must be clear and well understood. There should be more formal mechanisms for resolving any conflicts between professional security advice and operational or other requirements.</p>
+	<p pid=".5WS.10/20" class="indent">Security needs to be factored into decisions on the estate in an effective and consistent way. The review does not recommend a wholesale shift to &quot;fortresses&quot; or &quot;bunkers&quot;, which would involve operational drawbacks, considerable resources and many years. Physical defences need to be considered within a more robust and objective framework, and all posts should undergo a &quot;vulnerability audit&quot;. In some cases, this might result in a decision to relocate a post. Standards (for stand-off, glazing, etc) for new builds and acquisitions of offices and other accommodation should be readily understood. Enhanced standards should be applied to the highest risk posts. Decisions should be based on risk management.</p>
+	<p pid=".5WS.10/21" class="indent">The human dimension is as important as physical measures. The FCO needs more overseas security managers or locally engaged equivalents, in some cases possibly more armed guards. There should also be a small increase in the numbers of overseas security advisors and SSU staff and more done to plug into outside expertise.</p>
+	<p pid=".5WS.10/22" class="indent">The FCO has already increased its capacity to deliver security training and awareness to its staff. Formal security training should be mandatory. New staff at post should always be given a local security briefing on arrival in the job. Some staff with security responsibilities, such as management officers, need more comprehensive training before taking up their jobs and more time to carry out their security responsibilities when overseas.</p>
+	<p pid=".5WS.10/23" class="indent">The review makes almost 50 recommendations covering the areas mentioned above, many of them procedural or organisational and some related to resources, including buildings, security staff and training.</p>
+	<p pid=".5WS.10/24" class="italic">Conclusion</p>
+	<p pid=".5WS.10/25" class="indent">As the UK remains engaged across an uncertain world we must be prepared for considerable security challenges. On terrorism we are in for the long haul. To meet these challenges the FCO will need to continue to put a strong emphasis on security and ensure that the current efforts to enhance security can be fully implemented.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_dpthd0">
@@ -119,12 +142,12 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.7WS.2" speakerid="uk.org.publicwhip/member/971" speakername="Phil Hope" speakeroffice="The Parliamentary Under-Secretary of State, Office of the Deputy Prime Minister" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_spmin0">
-	<p>It was announced in a written statement on 15 July 2003, <phrase class="offrep" id="wms/2003-07-15.23WS"><i>Official Report</i> Column 23WS</phrase>, that the Government had decided to amend the building regulations to include requirements on electrical safety in dwellings as part P of those regulations as soon as suitable competent person self-certification schemes were in place.</p>
-	<p>The Building Regulations Advisory Committee has considered a number of applications to run such schemes and has recommended five of them for approval. The Government have accepted the recommendation and have approved schemes to be operated by BRE Certification Ltd, British Standards Institution, ELECSA Ltd, NICEIC Certification Services Ltd and Zurich Certification Ltd. These schemes are aimed at those carrying out electrical installation work as the primary activity of their business.</p>
-	<p>The Building Regulations Advisory Committee are continuing to consider a number of applications for schemes aimed at those who carry out installation work only as an adjunct to or in connection with the primary activity of their business. The Committee hopes to be able to make recommendations for approval on these shortly.</p>
-	<p>As suitable competent person schemes will be in place. the Government will be laying regulations to amend the building regulations before Parliament on 22 July, to bring part P into effect on 1 January 2005. The regulations will authorise the approved competent person schemes which will begin operating also on 1 January 2005. The Government will also publish the approved document for part P, giving guidance on the requirements of part P, and the final regulatory impact assessment on 22 July.</p>
-	<p>The introduction of part P should result in a significant reduction in the number of deaths, injuries and fires caused by defective fixed electrical installations.</p>
-	<p>Other parts of the building regulations have been reviewed. Later this week revised approved documents to the building regulations for part A, structure, and part C site preparation and resistance to contaminants and moisture, will be published along with amendments to the approved document to part E, resistance to the passage of sound. These changes were enabled by amendments to the building regulations. The statutory instruments to effect these changes were laid before the House on 8 June, (SI 2004 No. 1465 and SI 2004 No. 1466).</p>
+	<p pid=".7WS.2/1">It was announced in a written statement on <phrase class="date" code="2003-07-15">15 July 2003</phrase>, <phrase class="offrep" id="wms/2003-07-15.23"><i>Official Report</i>, column 23WS</phrase>, that the Government had decided to amend the building regulations to include requirements on electrical safety in dwellings as part P of those regulations as soon as suitable competent person self-certification schemes were in place.</p>
+	<p pid=".7WS.2/2">The Building Regulations Advisory Committee has considered a number of applications to run such schemes and has recommended five of them for approval. The Government have accepted the recommendation and have approved schemes to be operated by BRE Certification Ltd, British Standards Institution, ELECSA Ltd, NICEIC Certification Services Ltd and Zurich Certification Ltd. These schemes are aimed at those carrying out electrical installation work as the primary activity of their business.</p>
+	<p pid=".7WS.2/3">The Building Regulations Advisory Committee are continuing to consider a number of applications for schemes aimed at those who carry out installation work only as an adjunct to or in connection with the primary activity of their business. The Committee hopes to be able to make recommendations for approval on these shortly.</p>
+	<p pid=".7WS.2/4">As suitable competent person schemes will be in place. the Government will be laying regulations to amend the building regulations before Parliament on <phrase class="date" code="2004-07-22">22 July</phrase>, to bring part P into effect on <phrase class="date" code="2005-01-01">1 January 2005</phrase>. The regulations will authorise the approved competent person schemes which will begin operating also on <phrase class="date" code="2005-01-01">1 January 2005</phrase>. The Government will also publish the approved document for part P, giving guidance on the requirements of part P, and the final regulatory impact assessment on <phrase class="date" code="2004-07-22">22 July</phrase>.</p>
+	<p pid=".7WS.2/5">The introduction of part P should result in a significant reduction in the number of deaths, injuries and fires caused by defective fixed electrical installations.</p>
+	<p pid=".7WS.2/6">Other parts of the building regulations have been reviewed. Later this week revised approved documents to the building regulations for part A, structure, and part C site preparation and resistance to contaminants and moisture, will be published along with amendments to the approved document to part E, resistance to the passage of sound. These changes were enabled by amendments to the building regulations. The statutory instruments to effect these changes were laid before the House on <phrase class="date" code="2004-06-08">8 June</phrase>, (SI 2004 No. 1465 and SI 2004 No. 1466).</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.8WS.0" nospeaker="true" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_dpthd1">
@@ -136,23 +159,23 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.8WS.2" speakerid="uk.org.publicwhip/member/1230" speakername="Andrew Smith" speakeroffice="The Secretary of State for Work and Pensions" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_spmin1">
-	<p>In the last two spending reviews my Department has received substantial extra sums to invest in the modernisation of its office network and better IT. As a result, I announced at the time of the Budget our aim to reduce the Department's workforce by 30,000 by 2008. Today we have outlined the first phase of that transformation.</p>
-	<p>The Department is changing in a number of ways:</p>
-	<p class="indent">Since 2001, the Department has been rationalising its office network. The creation of Jobcentre Plus and The Pension Service combined the old benefits agency and employment service networks into two new agencies in modern offices that are focused on actively helping our customers;</p>
-	<p class="indent">The Pension Service has centralised its processing work into bespoke, larger centres providing economies of scale;</p>
-	<p class="indent">The work of The Pension Service, including achieving the Department's PSA target of at least 3 million households in receipt of pension credit by 2006, can be delivered from a substantially smaller number of pension centres than the current 29, now that the initial take-up phase has been successfully completed;</p>
-	<p class="indent">Some of this pension centre capacity can be utilised to improve the efficiency of benefit processing in Jobcentre Plus. Previously this processing would have been carried out in some 650 sites. We can now plan to concentrate this in some 100 benefit processing centres.</p>
-	<p>All of these changes, together with the results of tackling significant performance variation between offices doing the same job, smarter business processes and increased investment in our IT systems, mean that we will need fewer staff to deliver our services.</p>
-	<p>Since the Budget announcement detailed planning has been taking place across the Department. This has included discussions on the future size and shape of The Pension Service, the scope to integrate benefit processing in larger centres in Jobcentre Plus, and the continued modernisation of the Child Support Agency and Appeals Service.</p>
-	<p>As a result, I can today confirm that:</p>
-	<p class="indent">a number of pension centres can be made available for other uses;</p>
-	<p class="indent">six pension centres (Derby, Norwich&mdash;Baltic House, Nottingham, Wolverhampton, Stockton and Wrexham) will transfer, together with staff, to Jobcentre Plus as part of their programme to modernise benefit processing. Jobcentre Plus will move, over time, from processing benefits in over 650 sites to 100 benefit processing centres;</p>
-	<p class="indent">The Appeals Service will take over Burnley and the Child Support Agency will take over Plymouth;</p>
-	<p class="indent">two pension centres, York and Liverpool, will no longer carry out pension service business from later this financial year and are not required by other parts of DWP. We will be actively seeking interest from the private sector an elsewhere in Government, taking into account planned relocation of civil</p>
-	<p class="indent">service work from London and the South East in line with the recent Lyons Review. Closure would follow if no interest can be found.</p>
-	<p>The implications of these decisions for staff are subject to formal consultation with the trade unions. We have already outlined to them our policy proposals for handling these changes via redeployment, voluntary release schemes and, as a last resort, compulsory redundancies. We will be providing a wide range of support for staff including using Jobcentre Plus services as appropriate.</p>
-	<p>With these substantial efficiency improvements, we can continue to invest in the new deal and other programmes to help children, pensioners and disabled people.</p>
-	<p>I am immensely proud of the work this Department does and our commitment to customer service. We are now entering a new phase of our journey, moving towards our goal of a leaner and fitter organisation delivering world-class services to our customers.</p>
+	<p pid=".8WS.2/1">In the last two spending reviews my Department has received substantial extra sums to invest in the modernisation of its office network and better IT. As a result, I announced at the time of the Budget our aim to reduce the Department's workforce by 30,000 by 2008. Today we have outlined the first phase of that transformation.</p>
+	<p pid=".8WS.2/2">The Department is changing in a number of ways:</p>
+	<p pid=".8WS.2/3" class="indent">Since 2001, the Department has been rationalising its office network. The creation of Jobcentre Plus and The Pension Service combined the old benefits agency and employment service networks into two new agencies in modern offices that are focused on actively helping our customers;</p>
+	<p pid=".8WS.2/4" class="indent">The Pension Service has centralised its processing work into bespoke, larger centres providing economies of scale;</p>
+	<p pid=".8WS.2/5" class="indent">The work of The Pension Service, including achieving the Department's PSA target of at least 3 million households in receipt of pension credit by 2006, can be delivered from a substantially smaller number of pension centres than the current 29, now that the initial take-up phase has been successfully completed;</p>
+	<p pid=".8WS.2/6" class="indent">Some of this pension centre capacity can be utilised to improve the efficiency of benefit processing in Jobcentre Plus. Previously this processing would have been carried out in some 650 sites. We can now plan to concentrate this in some 100 benefit processing centres.</p>
+	<p pid=".8WS.2/7">All of these changes, together with the results of tackling significant performance variation between offices doing the same job, smarter business processes and increased investment in our IT systems, mean that we will need fewer staff to deliver our services.</p>
+	<p pid=".8WS.2/8">Since the Budget announcement detailed planning has been taking place across the Department. This has included discussions on the future size and shape of The Pension Service, the scope to integrate benefit processing in larger centres in Jobcentre Plus, and the continued modernisation of the Child Support Agency and Appeals Service.</p>
+	<p pid=".8WS.2/9">As a result, I can today confirm that:</p>
+	<p pid=".8WS.2/10" class="indent">a number of pension centres can be made available for other uses;</p>
+	<p pid=".8WS.2/11" class="indent">six pension centres (Derby, Norwich&mdash;Baltic House, Nottingham, Wolverhampton, Stockton and Wrexham) will transfer, together with staff, to Jobcentre Plus as part of their programme to modernise benefit processing. Jobcentre Plus will move, over time, from processing benefits in over 650 sites to 100 benefit processing centres;</p>
+	<p pid=".8WS.2/12" class="indent">The Appeals Service will take over Burnley and the Child Support Agency will take over Plymouth;</p>
+	<p pid=".8WS.2/13" class="indent">two pension centres, York and Liverpool, will no longer carry out pension service business from later this financial year and are not required by other parts of DWP. We will be actively seeking interest from the private sector an elsewhere in Government, taking into account planned relocation of civil</p>
+	<p pid=".8WS.2/14" class="indent">service work from London and the South East in line with the recent Lyons Review. Closure would follow if no interest can be found.</p>
+	<p pid=".8WS.2/15">The implications of these decisions for staff are subject to formal consultation with the trade unions. We have already outlined to them our policy proposals for handling these changes via redeployment, voluntary release schemes and, as a last resort, compulsory redundancies. We will be providing a wide range of support for staff including using Jobcentre Plus services as appropriate.</p>
+	<p pid=".8WS.2/16">With these substantial efficiency improvements, we can continue to invest in the new deal and other programmes to help children, pensioners and disabled people.</p>
+	<p pid=".8WS.2/17">I am immensely proud of the work this Department does and our commitment to customer service. We are now entering a new phase of our journey, moving towards our goal of a leaner and fitter organisation delivering world-class services to our customers.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-29.10WS.0" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_dpthd2">
@@ -164,7 +187,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-29.10WS.2" speakerid="uk.org.publicwhip/member/755" speakername="Gordon Brown" speakeroffice="The Chancellor of the Exchequer" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040629/wmstext/40629m02.htm#40629m02.html_spmin2">
-	<p>I will be making a statement to the House on the 2004 spending review on Monday 12 July.</p>
+	<p pid=".10WS.2/1">I will be making a statement to the House on the 2004 spending review on <phrase class="date" code="2004-07-12">Monday 12 July</phrase>.</p>
 </speech>
 </publicwhip>
 

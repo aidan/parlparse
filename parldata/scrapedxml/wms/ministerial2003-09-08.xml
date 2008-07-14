@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.1WS.0" nospeaker="true" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_dpthd0">
 	DEFENCE
@@ -49,32 +72,32 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.1WS.2" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" speakeroffice="The Secretary of State for Defence" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_spmin0">
-	<p>The current estimate of the total acquisition cost of the Trident programme, with payments already made expressed at the prices and exchange rates actually incurred and future spend at the current financial year exchange rate (the hybrid) estimate, is now &pound;9,803 million. Leaving aside the effects of price inflation and exchange rate variation (+&pound;1 million), there has been a real cost increase of &pound;2 million. Expenditure on the Trident acquisition programme to 30 September 2002 represented over 99 per cent. of the total estimate. If all expenditure, past and projected, is brought up to this current year's economic conditions (the non-hybrid estimate) the estimate is &pound;14,913 million.</p>
-	<p>The programme continues to show an overall reduction in real terms on its original 1982 estimate. This reduction, including the savings resulting from the decision to process missiles at the United States facility at Kings Bay, Georgia, now stands at over &pound;3.6 billion at current prices.</p>
-	<p>The proportion of the estimate for work undertaken in the United Kingdom continues to be around 70 per cent.</p>
-	<p>Our four in-service Vanguard Class submarines are successfully maintaining continuous at-sea deterrence, with HMS Vanguard now undergoing a planned major overhaul.</p>
+	<p pid=".1WS.2/1">The current estimate of the total acquisition cost of the Trident programme, with payments already made expressed at the prices and exchange rates actually incurred and future spend at the current financial year exchange rate (the hybrid) estimate, is now &pound;9,803 million. Leaving aside the effects of price inflation and exchange rate variation (+&pound;1 million), there has been a real cost increase of &pound;2 million. Expenditure on the Trident acquisition programme to <phrase class="date" code="2002-09-30">30 September 2002</phrase> represented over 99 per cent. of the total estimate. If all expenditure, past and projected, is brought up to this current year's economic conditions (the non-hybrid estimate) the estimate is &pound;14,913 million.</p>
+	<p pid=".1WS.2/2">The programme continues to show an overall reduction in real terms on its original 1982 estimate. This reduction, including the savings resulting from the decision to process missiles at the United States facility at Kings Bay, Georgia, now stands at over &pound;3.6 billion at current prices.</p>
+	<p pid=".1WS.2/3">The proportion of the estimate for work undertaken in the United Kingdom continues to be around 70 per cent.</p>
+	<p pid=".1WS.2/4">Our four in-service Vanguard Class submarines are successfully maintaining continuous at-sea deterrence, with HMS Vanguard now undergoing a planned major overhaul.</p>
 	<table>
 		<caption>Estimate Table &pound;million</caption>
 		<thead>
-			<tr> <th></th> <th>US</th> <th>UK</th> <th>TOTAL</th> </tr>
+			<tr pid=".1WS.2/8"> <th></th> <th>US</th> <th>UK</th> <th>TOTAL</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td><i>Hybrid</i></td> <td></td> </tr>
-			<tr> <td>Previous estimate (2002) at 2001&ndash;02 economic conditions (&pound;1:$1.46)</td> <td>2,884</td> <td>6,916</td> <td>9,800</td> </tr>
-			<tr> <td>Real changes</td> <td>0</td> <td>+2</td> <td>+2</td> </tr>
-			<tr> <td>Price inflation on unspent balance</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-			<tr> <td>Exchange rate variation on unspent balance</td> <td>+1</td> <td></td> <td>+1</td> </tr>
-			<tr> <td>Revised estimate at 2002&ndash;03 economic conditions (&pound;1:$1.39)</td> <td>2,885</td> <td>6,918</td> <td>9,803</td> </tr>
-			<tr> <td></td> <td></td> </tr>
-			<tr> <td><i>Non-hybrid,</i></td> <td></td> </tr>
-			<tr> <td>Previous estimate (2002) at 2001&ndash;02 economic conditions</td> <td>4,059</td> <td>10,318</td> <td>14,377</td> </tr>
-			<tr> <td>Real changes</td> <td>0</td> <td>+2</td> <td>+2</td> </tr>
-			<tr> <td>Price inflation</td> <td>+69</td> <td>+258</td> <td>+327</td> </tr>
-			<tr> <td>Exchange rate variation</td> <td>+208</td> <td></td> <td>+208</td> </tr>
-			<tr> <td>Revised estimate at 2000&ndash;01 economic conditions (&pound;1:$1.39)</td> <td>4,336</td> <td>10,578</td> <td>14,913</td> </tr>
+			<tr pid=".1WS.2/11"> <td><i>Hybrid</i></td> <td></td> </tr>
+			<tr pid=".1WS.2/12"> <td>Previous estimate (2002) at 2001&ndash;02 economic conditions (&pound;1:$1.46)</td> <td>2,884</td> <td>6,916</td> <td>9,800</td> </tr>
+			<tr pid=".1WS.2/13"> <td>Real changes</td> <td>0</td> <td>+2</td> <td>+2</td> </tr>
+			<tr pid=".1WS.2/14"> <td>Price inflation on unspent balance</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+			<tr pid=".1WS.2/15"> <td>Exchange rate variation on unspent balance</td> <td>+1</td> <td></td> <td>+1</td> </tr>
+			<tr pid=".1WS.2/16"> <td>Revised estimate at 2002&ndash;03 economic conditions (&pound;1:$1.39)</td> <td>2,885</td> <td>6,918</td> <td>9,803</td> </tr>
+			<tr pid=".1WS.2/17"> <td></td> <td></td> </tr>
+			<tr pid=".1WS.2/18"> <td><i>Non-hybrid,</i></td> <td></td> </tr>
+			<tr pid=".1WS.2/19"> <td>Previous estimate (2002) at 2001&ndash;02 economic conditions</td> <td>4,059</td> <td>10,318</td> <td>14,377</td> </tr>
+			<tr pid=".1WS.2/20"> <td>Real changes</td> <td>0</td> <td>+2</td> <td>+2</td> </tr>
+			<tr pid=".1WS.2/21"> <td>Price inflation</td> <td>+69</td> <td>+258</td> <td>+327</td> </tr>
+			<tr pid=".1WS.2/22"> <td>Exchange rate variation</td> <td>+208</td> <td></td> <td>+208</td> </tr>
+			<tr pid=".1WS.2/23"> <td>Revised estimate at 2000&ndash;01 economic conditions (&pound;1:$1.39)</td> <td>4,336</td> <td>10,578</td> <td>14,913</td> </tr>
 		</tbody>
 	</table>
-	<p><i>Note:</i>Figures rounded to nearest &pound; million hence any apparent imbalances.</p>
+	<p pid=".1WS.2/26"><i>Note:</i>Figures rounded to nearest &pound; million hence any apparent imbalances.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.2WS.0" nospeaker="true" colnum="2WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_sbhd1">
@@ -82,13 +105,13 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.2WS.1" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" speakeroffice="The Secretary of State for Defence" colnum="2WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_spmin1">
-	<p>Real progress has been made in Iraq over the last few months. Coalition forces continue to support Iraqi leaders both nationally and at the local level. Political progress has been made, with the increasing effectiveness of the Iraqi Governing Council and the recent appointment of Iraqi departmental Ministers. We now seek to accelerate progress in other areas, including enhanced security across the country, and the reliable provision of basic utilities.</p>
-	<p>In the light of the evolving security situation in Iraq and the increasing military tasks arising out of the reconstruction efforts in the south of the country, the UK Divisional Commander in theatre has been conducting a formal review of UK forces and resources in Iraq. While the full scale of the requirement, which will be largely driven by initiatives of the Coalition Provisional Authority and the Department for International Development (DFID) to accelerate reconstruction activities in Iraq, has yet to be fully developed, there is an immediate requirement for two battalions and some additional specialist personnel, vehicles and equipment to allow him to fulfil the expanding range of tasks for UK forces in Multinational Division (South East) (MND(SE)).</p>
-	<p>Accordingly, we are deploying to Iraq the balance of 2nd Battalion The Light Infantry a company of which is already in theatre. This battalion will be involved in supporting current operations, and in offering additional protection to the Coalition Provisional Authority. They are currently based in Cyprus and were already identified as an &quot;Over the Horizon Reserve&quot; for Iraq. Their role in Cyprus will be filled by two batteries from 16 Regiment Royal Artillery.</p>
-	<p>In addition, 1st Battalion The Royal Green Jackets (1 RGJ) will deploy to Iraq immediately supported by some specialist personnel and equipment. This deployment will enable MND(SE) to increase force protection, accelerate training of the Iraqi Civil Defence Corps and to improve our information gathering capability in MND(SE). 1 RGJ are currently designated the Spearhead Land Element, are already at high readiness, and are therefore the most appropriate unit to call upon. They will be replaced as Spearhead Land Element by 42 Commando Royal Marines.</p>
-	<p>We plan to maintain the deployment of these units until around November, providing an interim additional capability to our commanders in theatre. Additional units would deploy to replace them in theatre if the requirement remained. We plan for some of the roles progressively to be conducted by Iraqi personnel.</p>
-	<p>In addition to the requirements that we have already fully identified, we anticipate additional tasks in the near future which will require military resources, in particular the provision of military support to critical infrastructure work planned by CPA(S) and DFID. This work will deliver a more stable power supply, improve fuel availability and significantly improve the delivery of water services to all sectors of the population in the MND(SE) area. The military capabilities needed will be identified as the detail of the plan's implementation takes shape. We will immediately take steps to identify and reduce notice to move for some additional headquarters and units, to allow further deployments as rapidly as possible in response to this accelerating programme of work.</p>
-	<p>These measures will give extra capabilities to our commanders in theatre, allowing them to increase their proactive efforts to improve wider security across the region, and allowing them to support the essential reconstruction and regeneration efforts in their area of operations. The commitment of the United Kingdom and its Armed Forces to Iraq remains undeterred by recent events. We are determined to help the Iraqi people to forge a new, peaceful and secure future for themselves and we will meet this commitment with appropriate forces in Iraq for as long as required, and no longer.</p>
+	<p pid=".2WS.1/1">Real progress has been made in Iraq over the last few months. Coalition forces continue to support Iraqi leaders both nationally and at the local level. Political progress has been made, with the increasing effectiveness of the Iraqi Governing Council and the recent appointment of Iraqi departmental Ministers. We now seek to accelerate progress in other areas, including enhanced security across the country, and the reliable provision of basic utilities.</p>
+	<p pid=".2WS.1/2">In the light of the evolving security situation in Iraq and the increasing military tasks arising out of the reconstruction efforts in the south of the country, the UK Divisional Commander in theatre has been conducting a formal review of UK forces and resources in Iraq. While the full scale of the requirement, which will be largely driven by initiatives of the Coalition Provisional Authority and the Department for International Development (DFID) to accelerate reconstruction activities in Iraq, has yet to be fully developed, there is an immediate requirement for two battalions and some additional specialist personnel, vehicles and equipment to allow him to fulfil the expanding range of tasks for UK forces in Multinational Division (South East) (MND(SE)).</p>
+	<p pid=".2WS.1/3">Accordingly, we are deploying to Iraq the balance of 2nd Battalion The Light Infantry a company of which is already in theatre. This battalion will be involved in supporting current operations, and in offering additional protection to the Coalition Provisional Authority. They are currently based in Cyprus and were already identified as an &quot;Over the Horizon Reserve&quot; for Iraq. Their role in Cyprus will be filled by two batteries from 16 Regiment Royal Artillery.</p>
+	<p pid=".2WS.1/4">In addition, 1st Battalion The Royal Green Jackets (1 RGJ) will deploy to Iraq immediately supported by some specialist personnel and equipment. This deployment will enable MND(SE) to increase force protection, accelerate training of the Iraqi Civil Defence Corps and to improve our information gathering capability in MND(SE). 1 RGJ are currently designated the Spearhead Land Element, are already at high readiness, and are therefore the most appropriate unit to call upon. They will be replaced as Spearhead Land Element by 42 Commando Royal Marines.</p>
+	<p pid=".2WS.1/5">We plan to maintain the deployment of these units until around November, providing an interim additional capability to our commanders in theatre. Additional units would deploy to replace them in theatre if the requirement remained. We plan for some of the roles progressively to be conducted by Iraqi personnel.</p>
+	<p pid=".2WS.1/6">In addition to the requirements that we have already fully identified, we anticipate additional tasks in the near future which will require military resources, in particular the provision of military support to critical infrastructure work planned by CPA(S) and DFID. This work will deliver a more stable power supply, improve fuel availability and significantly improve the delivery of water services to all sectors of the population in the MND(SE) area. The military capabilities needed will be identified as the detail of the plan's implementation takes shape. We will immediately take steps to identify and reduce notice to move for some additional headquarters and units, to allow further deployments as rapidly as possible in response to this accelerating programme of work.</p>
+	<p pid=".2WS.1/7">These measures will give extra capabilities to our commanders in theatre, allowing them to increase their proactive efforts to improve wider security across the region, and allowing them to support the essential reconstruction and regeneration efforts in their area of operations. The commitment of the United Kingdom and its Armed Forces to Iraq remains undeterred by recent events. We are determined to help the Iraqi people to forge a new, peaceful and secure future for themselves and we will meet this commitment with appropriate forces in Iraq for as long as required, and no longer.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.3WS.0" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_dpthd1">
@@ -100,7 +123,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.3WS.2" speakerid="uk.org.publicwhip/member/1171" speakername="Dawn Primarolo" speakeroffice="The Paymaster General" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_spmin2">
-	<p>A new comprehensive Double Taxation Convention with Australia (which will replace the existing Agreement) was signed on 21 August 2003. After signature, the text of the Convention was deposited in the Libraries of both Houses and made available on the Inland Revenue's website. The text of the Convention has been scheduled to a draft Order in Council and is today being laid before the House of Commons.</p>
+	<p pid=".3WS.2/1">A new comprehensive Double Taxation Convention with Australia (which will replace the existing Agreement) was signed on <phrase class="date" code="2003-08-21">21 August 2003</phrase>. After signature, the text of the Convention was deposited in the Libraries of both Houses and made available on the Inland Revenue's website. The text of the Convention has been scheduled to a draft Order in Council and is today being laid before the House of Commons.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.3WS.3" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_sbhd3">
@@ -108,8 +131,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.3WS.4" speakerid="uk.org.publicwhip/member/949" speakername="John Healey" speakeroffice="The Economic Secretary to the Treasury" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_spmin3">
-	<p>The report &quot;<i>Key Statistics for</i> <i>health areas in England and Wales</i>&quot;, containing results from the 2001 Census, was laid before Parliament and published on 31 July 2003.</p>
-	<p>This report contains results from the 2001 Census for the areas covered by the 26 Strategic Health Authorities, over 300 Primary Care Trusts in England and the 22 Local Health Boards in Wales. The tables present similar information to that previously published for local authorities on 13 February 2003 and for wards on 30 June 2003. The data are also available on the Neighbourhood Statistics section of the National Statistics website.</p>
+	<p pid=".3WS.4/1">The report &quot;<i>Key Statistics for</i> <i>health areas in England and Wales</i>&quot;, containing results from the 2001 Census, was laid before Parliament and published on <phrase class="date" code="2003-07-31">31 July 2003</phrase>.</p>
+	<p pid=".3WS.4/2">This report contains results from the 2001 Census for the areas covered by the 26 Strategic Health Authorities, over 300 Primary Care Trusts in England and the 22 Local Health Boards in Wales. The tables present similar information to that previously published for local authorities on <phrase class="date" code="2003-02-13">13 February 2003</phrase> and for wards on <phrase class="date" code="2003-06-30">30 June 2003</phrase>. The data are also available on the Neighbourhood Statistics section of the National Statistics website.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.3WS.5" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_sbhd4">
@@ -117,9 +140,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.3WS.6" speakerid="uk.org.publicwhip/member/741" speakername="Paul Boateng" speakeroffice="The Chief Secretary to the Treasury" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m01.htm#30908m01.html_spmin4">
-	<p>The Treasury has reviewed the normal recovery policy for services where fees and charges are set by central government. The Treasury has concluded that the cost of capital rate in fees and charges where the norm is full cost recovery (and in appropriate exceptions from the norm) should be reduced from 6 to 3.5 per cent. in real terms (keeping parity with the reduction in the discount rate for appraisal and evaluation of projects in central government and with the cost of capital in government resource accounts and budgets). For commercial services where there is or may be private sector competition, and a profit may be appropriate in the interests of fair competition, the required rate of return of at least 8 per cent. in real terms has been replaced with an illustrative range starting with 5.5 per cent. Departments will need to make their own assessment of the appropriate rate of return for commercial services, but the rate is expected to fall in a range 5.5 per cent. to 15 per cent. in real terms (pre-tax), depending on factors such as the level of risk. In practice, the upper end of the range will rarely be used, as it is unusual for public sector bodies to engage in such high-risk activities.</p>
-	<p>The revised policy applies to central government departments, including agencies and Trading Funds, NHS Trusts and other NHS bodies and appropriate non-departmental public bodies. It will be used in determining fees and charges in the next Fees Order to be presented, or the equivalent point for commercial or other charges. Where a consequent change in fees and charges is required, it should be effective no later than 1 April 2004. This timetable should allow for consultation about the new fee levels where the legislation or customary procedure provides for consultation. However, the words &quot;used in determining fees and charges&quot; have been used advisedly. Capital is often a relatively small factor in total costs and the effect may be rather to moderate the increase to statutory fees arising from changes to other costs rather than to reduce fees. There may also be services which are intended to recover full costs, but have not been achieving this objective and may therefore continue to experience increased fees and charges; or commercial services where the price charged in a competitive market may already be consistent with the revised policy and therefore require no reduction. The purpose of the revised policy is to put the cost of, and return on, capital on to a more current basis, not to make reductions in fees and charges unless they flow naturally from the revised policy (or unless there are other good reasons for a reduction such as a fall in other costs).</p>
-	<p>As a consequence-of the revised policy on fees and charges, the financial objectives of Government Trading Funds (the required rates of return) will also be reviewed. They will be adjusted where necessary by laying a Treasury Minute under the Government Trading Funds Act 1973 before the House during the financial year 2003&ndash;04. Trading Funds undertake a wide range of charging activities&mdash;statutory, commercial, inter- departmental or a mix of those. The further financial objective will therefore need to be determined individually for each Fund.</p>
+	<p pid=".3WS.6/1">The Treasury has reviewed the normal recovery policy for services where fees and charges are set by central government. The Treasury has concluded that the cost of capital rate in fees and charges where the norm is full cost recovery (and in appropriate exceptions from the norm) should be reduced from 6 to 3.5 per cent. in real terms (keeping parity with the reduction in the discount rate for appraisal and evaluation of projects in central government and with the cost of capital in government resource accounts and budgets). For commercial services where there is or may be private sector competition, and a profit may be appropriate in the interests of fair competition, the required rate of return of at least 8 per cent. in real terms has been replaced with an illustrative range starting with 5.5 per cent. Departments will need to make their own assessment of the appropriate rate of return for commercial services, but the rate is expected to fall in a range 5.5 per cent. to 15 per cent. in real terms (pre-tax), depending on factors such as the level of risk. In practice, the upper end of the range will rarely be used, as it is unusual for public sector bodies to engage in such high-risk activities.</p>
+	<p pid=".3WS.6/2">The revised policy applies to central government departments, including agencies and Trading Funds, NHS Trusts and other NHS bodies and appropriate non-departmental public bodies. It will be used in determining fees and charges in the next Fees Order to be presented, or the equivalent point for commercial or other charges. Where a consequent change in fees and charges is required, it should be effective no later than <phrase class="date" code="2004-04-01">1 April 2004</phrase>. This timetable should allow for consultation about the new fee levels where the legislation or customary procedure provides for consultation. However, the words &quot;used in determining fees and charges&quot; have been used advisedly. Capital is often a relatively small factor in total costs and the effect may be rather to moderate the increase to statutory fees arising from changes to other costs rather than to reduce fees. There may also be services which are intended to recover full costs, but have not been achieving this objective and may therefore continue to experience increased fees and charges; or commercial services where the price charged in a competitive market may already be consistent with the revised policy and therefore require no reduction. The purpose of the revised policy is to put the cost of, and return on, capital on to a more current basis, not to make reductions in fees and charges unless they flow naturally from the revised policy (or unless there are other good reasons for a reduction such as a fall in other costs).</p>
+	<p pid=".3WS.6/3">As a consequence-of the revised policy on fees and charges, the financial objectives of Government Trading Funds (the required rates of return) will also be reviewed. They will be adjusted where necessary by laying a Treasury Minute under the Government Trading Funds Act 1973 before the House during the financial year 2003&ndash;04. Trading Funds undertake a wide range of charging activities&mdash;statutory, commercial, inter- departmental or a mix of those. The further financial objective will therefore need to be determined individually for each Fund.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.4WS.0" nospeaker="true" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_dpthd0">
@@ -131,17 +154,17 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.4WS.2" speakerid="uk.org.publicwhip/member/1131" speakername="Paul Murphy" speakeroffice="The Secretary of State for Northern Ireland" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_spmin0">
-	<p>Under s73(2) of the Northern Ireland Act 1998, I have appointed nine new Commissioners to the Equality Commission for Northern Ireland. They are:</p>
-	<p>Anne O'Reilly (Deputy Chief Commissioner)</p>
-	<p>Annie Campbell</p>
-	<p>Brian Carlin</p>
-	<p>Eileen Evason</p>
-	<p>Tom Haverty</p>
-	<p>Michael Rea</p>
-	<p>Audrey Simpson</p>
-	<p>Daphne Trimble</p>
-	<p>Derick Wilson</p>
-	<p>The appointments took effect from 2 August 2003 and last for three years.</p>
+	<p pid=".4WS.2/1">Under s73(2) of the Northern Ireland Act 1998, I have appointed nine new Commissioners to the Equality Commission for Northern Ireland. They are:</p>
+	<p pid=".4WS.2/2">Anne O'Reilly (Deputy Chief Commissioner)</p>
+	<p pid=".4WS.2/3">Annie Campbell</p>
+	<p pid=".4WS.2/4">Brian Carlin</p>
+	<p pid=".4WS.2/5">Eileen Evason</p>
+	<p pid=".4WS.2/6">Tom Haverty</p>
+	<p pid=".4WS.2/7">Michael Rea</p>
+	<p pid=".4WS.2/8">Audrey Simpson</p>
+	<p pid=".4WS.2/9">Daphne Trimble</p>
+	<p pid=".4WS.2/10">Derick Wilson</p>
+	<p pid=".4WS.2/11">The appointments took effect from <phrase class="date" code="2003-08-02">2 August 2003</phrase> and last for three years.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.5WS.0" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_sbhd1">
@@ -149,21 +172,21 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.5WS.1" speakerid="uk.org.publicwhip/member/1131" speakername="Paul Murphy" speakeroffice="The Secretary of State for Northern Ireland" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_spmin1">
-	<p>On 5 August, we announced that there would be a short review in response to concerns expressed about the safety of prisoners and staff within Maghaberry Prison. The terms of reference for the review were as follows:</p>
-	<p class="indent">To consider, in consultation with prison management, staff, their unions, prisoners and other interested groups and taking account of relevant practice in other jurisdictions, the options for improving conditions at Maghaberry Prison, particularly as they relate to safety, for all prisoners and staff, remembering the Prison Service's statutory obligations as set out at section 75 of the Northern Ireland Act 1998, and bearing in mind the lessons of the past and the new environment created by the Good Friday Agreement, and to make recommendations to the Secretary of State for Northern Ireland.</p>
-	<p>We invited John Steele, a former head of the Northern Ireland Prison Service, to lead the review and he was assisted by Father Kevin Donaghy, a former chaplain at the Maze Prison, and Canon Barry Dodds, a former chaplain at the Crumlin Road Prison in Belfast.</p>
-	<p>We are very grateful to John Steele, Fr Donaghy and Canon Dodds for conducting this review during the month of August and providing us with a number of timely and informative recommendations. The Government received the Steele Group's recommendations at the end of August and, having given them the most careful consideration, has decided to accept them in principle and has asked the Northern Ireland Prison Service to establish an additional regime for eligible paramilitary prisoners.</p>
-	<p>It will take some time to develop and implement these recommendations: the review was designed to provide the Government with ideas on how the safety issue might be addressed rather than the precise working arrangements that would need to be put in place, and these will take some time to develop. We will take what immediate steps we can in the interim and it is expected that the new regime should be in place as quickly as possible.</p>
-	<p>The key recommendation is that republican and loyalist paramilitary prisoners should be accommodated separately from each other and from the rest of the prison population. This is a significant change from the fully integrated prison regime that has been running at Maghaberry Prison for nearly 20 years. That regime has been successful for those who have chosen to make the most of the opportunities offered to them but, like any prison regime, it requires the co-operation of prisoners.</p>
-	<p>The Government's decision is no reflection on the professionalism and dedication of Northern Ireland Prison Service staff in pursuing a normal integrated regime. We still believe that integration is the safest regime for prisoners and staff when prisoners conform and co-operate. But we have to deal with the small minority of prisoners who have now refused that co-operation.</p>
-	<p>In the face of that, the Government has a responsibility to respond to these changed circumstances. In order to help protect the safety of prisoners and staff working with them, a separate regime must be put in place for eligible paramilitary prisoners.</p>
-	<p>This does not constitute a return to the conditions that existed at the Maze Prison; nor can we allow it to become a staging post on the road to Maze-style segregation. No one wants a return to the conditions that pertained at Maze where staff were threatened, intimidated and subjected to brutal attacks and where prisoners could threaten and intimidate other prisoners with impunity. Indeed, by far the majority of the most serious incidents that have taken place in Northern Ireland's prisons have happened under segregated conditions.</p>
-	<p>The crucial difference between what John Steele has recommended and what happened at the Maze is that Prison Officers must remain in control and the Government will do all that it can to ensure that this is the case. As the review team recommended, the Northern Ireland Prison Service will draw up and publish a compact which will detail what the eligibility criteria will be, what type of regime separated prisoners can expect and what the Prison Service will expect in return.</p>
-	<p>The success of the new arrangements will require the Prison Service management and staff to be given the wholehearted backing of the community and their representatives. The Government looks forward to them receiving that support for what we all recognise is a very difficult task.</p>
-	<p>We intend that this arrangement should not be to the detriment of the remainder of the prison population. The Northern Ireland Prison Service has made major advances towards a 'normal' prison system since the closure of the Maze. The Government believes that the resettlement of prisoners and reducing the risk of their reoffending is what the community wants its Prison Service to do. The Government hopes that they continue to build on that progress and that the majority of prisoners, who I am sure will wish to continue under integrated conditions, will take advantage of the opportunities offered to them.</p>
-	<p>The Steele Group also made a number of other recommendations, which the Northern Ireland Prison Service has started to address.</p>
-	<p>On behalf of the Government, I would like to express our deepest gratitude for the work of the prisons staff and to commend them for the way in which they carry out their duties often under extremely demanding conditions, and in the face of serious provocation and intimidation. The new arrangements will throw up many challenges for staff, but we know there is a wealth of experience and commitment to be drawn upon in implementing these recommendations.</p>
-	<p>A copy of the Steele Group's recommendations has been placed in the Libraries of both Houses.</p>
+	<p pid=".5WS.1/1">On <phrase class="date" code="2003-08-05">5 August</phrase>, we announced that there would be a short review in response to concerns expressed about the safety of prisoners and staff within Maghaberry Prison. The terms of reference for the review were as follows:</p>
+	<p pid=".5WS.1/2" class="indent">To consider, in consultation with prison management, staff, their unions, prisoners and other interested groups and taking account of relevant practice in other jurisdictions, the options for improving conditions at Maghaberry Prison, particularly as they relate to safety, for all prisoners and staff, remembering the Prison Service's statutory obligations as set out at section 75 of the Northern Ireland Act 1998, and bearing in mind the lessons of the past and the new environment created by the Good Friday Agreement, and to make recommendations to the Secretary of State for Northern Ireland.</p>
+	<p pid=".5WS.1/3">We invited John Steele, a former head of the Northern Ireland Prison Service, to lead the review and he was assisted by Father Kevin Donaghy, a former chaplain at the Maze Prison, and Canon Barry Dodds, a former chaplain at the Crumlin Road Prison in Belfast.</p>
+	<p pid=".5WS.1/4">We are very grateful to John Steele, Fr Donaghy and Canon Dodds for conducting this review during the month of August and providing us with a number of timely and informative recommendations. The Government received the Steele Group's recommendations at the end of August and, having given them the most careful consideration, has decided to accept them in principle and has asked the Northern Ireland Prison Service to establish an additional regime for eligible paramilitary prisoners.</p>
+	<p pid=".5WS.1/5">It will take some time to develop and implement these recommendations: the review was designed to provide the Government with ideas on how the safety issue might be addressed rather than the precise working arrangements that would need to be put in place, and these will take some time to develop. We will take what immediate steps we can in the interim and it is expected that the new regime should be in place as quickly as possible.</p>
+	<p pid=".5WS.1/6">The key recommendation is that republican and loyalist paramilitary prisoners should be accommodated separately from each other and from the rest of the prison population. This is a significant change from the fully integrated prison regime that has been running at Maghaberry Prison for nearly 20 years. That regime has been successful for those who have chosen to make the most of the opportunities offered to them but, like any prison regime, it requires the co-operation of prisoners.</p>
+	<p pid=".5WS.1/7">The Government's decision is no reflection on the professionalism and dedication of Northern Ireland Prison Service staff in pursuing a normal integrated regime. We still believe that integration is the safest regime for prisoners and staff when prisoners conform and co-operate. But we have to deal with the small minority of prisoners who have now refused that co-operation.</p>
+	<p pid=".5WS.1/8">In the face of that, the Government has a responsibility to respond to these changed circumstances. In order to help protect the safety of prisoners and staff working with them, a separate regime must be put in place for eligible paramilitary prisoners.</p>
+	<p pid=".5WS.1/9">This does not constitute a return to the conditions that existed at the Maze Prison; nor can we allow it to become a staging post on the road to Maze-style segregation. No one wants a return to the conditions that pertained at Maze where staff were threatened, intimidated and subjected to brutal attacks and where prisoners could threaten and intimidate other prisoners with impunity. Indeed, by far the majority of the most serious incidents that have taken place in Northern Ireland's prisons have happened under segregated conditions.</p>
+	<p pid=".5WS.1/10">The crucial difference between what John Steele has recommended and what happened at the Maze is that Prison Officers must remain in control and the Government will do all that it can to ensure that this is the case. As the review team recommended, the Northern Ireland Prison Service will draw up and publish a compact which will detail what the eligibility criteria will be, what type of regime separated prisoners can expect and what the Prison Service will expect in return.</p>
+	<p pid=".5WS.1/11">The success of the new arrangements will require the Prison Service management and staff to be given the wholehearted backing of the community and their representatives. The Government looks forward to them receiving that support for what we all recognise is a very difficult task.</p>
+	<p pid=".5WS.1/12">We intend that this arrangement should not be to the detriment of the remainder of the prison population. The Northern Ireland Prison Service has made major advances towards a 'normal' prison system since the closure of the Maze. The Government believes that the resettlement of prisoners and reducing the risk of their reoffending is what the community wants its Prison Service to do. The Government hopes that they continue to build on that progress and that the majority of prisoners, who I am sure will wish to continue under integrated conditions, will take advantage of the opportunities offered to them.</p>
+	<p pid=".5WS.1/13">The Steele Group also made a number of other recommendations, which the Northern Ireland Prison Service has started to address.</p>
+	<p pid=".5WS.1/14">On behalf of the Government, I would like to express our deepest gratitude for the work of the prisons staff and to commend them for the way in which they carry out their duties often under extremely demanding conditions, and in the face of serious provocation and intimidation. The new arrangements will throw up many challenges for staff, but we know there is a wealth of experience and commitment to be drawn upon in implementing these recommendations.</p>
+	<p pid=".5WS.1/15">A copy of the Steele Group's recommendations has been placed in the Libraries of both Houses.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_dpthd1">
@@ -175,57 +198,57 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.7WS.2" speakerid="uk.org.publicwhip/member/737" speakername="Hazel Blears" speakeroffice="The Minister for Crime Reduction, Policing, and Community Safety" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m02.htm#30908m02.html_spmin2">
-	<p>I have today laid before Parliament copies of the Forensic Science Service's Annual Report and Accounts for 2002/ 2003.</p>
-	<p class="italic">Performance against Agency targets 2002/ 2003</p>
-	<p class="indent">The FSS met seven of its nine targets and put in a strong financial performance.</p>
-	<p class="italic">Financial targets</p>
-	<p class="indent">A 23.4 per cent. return on capital employed was produced against a minimum target of 10 per cent.</p>
-	<p class="indent">A three-year rolling efficiency gain of 13.8 per cent. was achieved against a target of 10 per cent. <i>Service Delivery</i></p>
-	<p class="indent">A 74 day turnround time in 90 per cent. standard jobs (violent and volume crime cases) was achieved against a target of 70 days.</p>
-	<p class="indent">Dispatch dates in 94 per cent. of urgent, 93 per cent. critical cases and 96 per cent. in persistent young offenders cases were met against targets of 98 per cent., 98 per cent. and 99 per cent. respectively.</p>
-	<p class="indent">Dispatch dates in 93 per cent. of all categories of cases were met against a target of 93 per cent.</p>
-	<p class="indent">An 11 per cent. increase on baseline in a transactional index of customer perception was achieved against a target of five per cent.</p>
-	<p class="indent">Service level agreements were put in place with 98 per cent. of police forces against a target of 92 per cent.</p>
-	<p class="indent">Application for 100 per cent. of Reporting Officers for accreditation to the Council for the Registration of Forensic Practitioners, where appropriate, was achieved against a target of 100 per cent.</p>
-	<p class="indent">External quality accreditation to ISO standards was maintained.</p>
-	<p>The main targets for 2003&ndash;04, the agency's fifth year of trading fund, are as follows. The targets are set out in full in Annex A.</p>
-	<p class="italic">Finance</p>
-	<p class="indent">Target: a minimum of 15 per cent. return on capital employed (three year rolling average)</p>
-	<p class="indent">Target: a real reduction in charges by limiting price increases to 75 per cent. of the Average Earnings Index.</p>
-	<p class="indent">Target: an increase in investment in development to 12 per cent. of turnover</p>
-	<p class="indent">Target: generate &pound;1 million external funding for research and development</p>
-	<p class="italic">Non-Finance</p>
-	<p class="indent">Target: 14 day average to inform customers of DNA crime scene stain result.</p>
-	<p class="indent">Target: six day average to inform customers of DNA suspect sample result.</p>
-	<p class="indent">Target: turnaround time for 95 per cent. of jobs to be 42 days by year end</p>
-	<p class="indent">Target: maintain ISO accreditation.</p>
-	<p class="indent">Target: maintain Investors in People accreditation.</p>
-	<p class="indent">Target: introduce new diversity programme. Annex A <i>The Forensic Science Service Agency targets for 2003/ 2004</i> Finance:</p>
-	<p class="indent">Target: a minimum of 15 per cent. return on capital employed (three year rolling average)</p>
-	<p class="indent">Target: a real reduction in charges by limiting price increases to 75 per cent. of the Average Earnings Index.</p>
-	<p class="indent">Target: an increase in investment in development to 12 per cent. of turnover.</p>
-	<p class="indent">Target: generate &pound;1 million external funding for research and development.</p>
-	<p>Non-Finance:</p>
-	<p class="indent">Target: establish an internal FSS end to end case ownership process.</p>
-	<p class="indent">Target: to have processes in place with 25 per cent.of police forces within six months and 60 per cent. by year end that agree new definitions of timeliness based on investigative and evidential contributions of forensic science.</p>
-	<p class="indent">Target: set up a pilot with customer to get agreement to devise a new process of end to end case ownership.</p>
-	<p class="indent">Target: sign up 60 per cent. of customers (Police and CPS) at force level to service agreements (timeliness and charging) in context of National Protocol.</p>
-	<p class="indent">Target: to have a process in place for 25 per cent. in six months and 60 per cent. by year end of cases to have a dedicated FSS case officer.</p>
-	<p class="indent">Target: develop training packages to support New Ways of Working by the year end.</p>
-	<p class="indent">Target: to engage training organisations to roll out training for Police and CPS.</p>
-	<p class="indent">Target: to design and develop a link between the National DNA Database and The National Automated Fingerprint Identification System (NAFIS).</p>
-	<p class="indent">Target: develop capability and capacity to deliver fast track processing of DNA samples within 48 hours.</p>
-	<p class="indent">Target: average time to analyse and inform customers of DNA crime scene stain results (normal track) of 14 days.</p>
-	<p class="indent">Target: 95 per cent. of DNA crime scene stain results to have a turnround time of 20 days</p>
-	<p class="indent">Target: average time to analyse and inform customers of DNA suspect sample results on The National DNA Database (normal track cases) of six days.</p>
-	<p class="indent">Target: 95 per cent. of DNA suspect sample results to have a turnround time of ten days</p>
-	<p class="indent">Target: increase forensic effectiveness by developing an index and benchmark with Police Standards Unit (PSU).</p>
-	<p class="indent">Target: turnround time for 95 per cent. of jobs to be 42 days by year end</p>
-	<p class="indent">Target: maintain ISO accreditation</p>
-	<p class="indent">Target: maintain Investors in People accreditation</p>
-	<p class="indent">Target: establish and implement a Diversity programme</p>
-	<p class="indent">Target: maintain Investors in People accreditation.</p>
-	<p class="indent">Target: introduce new diversity programme.</p>
+	<p pid=".7WS.2/1">I have today laid before Parliament copies of the Forensic Science Service's Annual Report and Accounts for 2002/ 2003.</p>
+	<p pid=".7WS.2/2" class="italic">Performance against Agency targets 2002/ 2003</p>
+	<p pid=".7WS.2/3" class="indent">The FSS met seven of its nine targets and put in a strong financial performance.</p>
+	<p pid=".7WS.2/4" class="italic">Financial targets</p>
+	<p pid=".7WS.2/5" class="indent">A 23.4 per cent. return on capital employed was produced against a minimum target of 10 per cent.</p>
+	<p pid=".7WS.2/6" class="indent">A three-year rolling efficiency gain of 13.8 per cent. was achieved against a target of 10 per cent. <i>Service Delivery</i></p>
+	<p pid=".7WS.2/7" class="indent">A 74 day turnround time in 90 per cent. standard jobs (violent and volume crime cases) was achieved against a target of 70 days.</p>
+	<p pid=".7WS.2/8" class="indent">Dispatch dates in 94 per cent. of urgent, 93 per cent. critical cases and 96 per cent. in persistent young offenders cases were met against targets of 98 per cent., 98 per cent. and 99 per cent. respectively.</p>
+	<p pid=".7WS.2/9" class="indent">Dispatch dates in 93 per cent. of all categories of cases were met against a target of 93 per cent.</p>
+	<p pid=".7WS.2/10" class="indent">An 11 per cent. increase on baseline in a transactional index of customer perception was achieved against a target of five per cent.</p>
+	<p pid=".7WS.2/11" class="indent">Service level agreements were put in place with 98 per cent. of police forces against a target of 92 per cent.</p>
+	<p pid=".7WS.2/12" class="indent">Application for 100 per cent. of Reporting Officers for accreditation to the Council for the Registration of Forensic Practitioners, where appropriate, was achieved against a target of 100 per cent.</p>
+	<p pid=".7WS.2/13" class="indent">External quality accreditation to ISO standards was maintained.</p>
+	<p pid=".7WS.2/14">The main targets for 2003&ndash;04, the agency's fifth year of trading fund, are as follows. The targets are set out in full in Annex A.</p>
+	<p pid=".7WS.2/15" class="italic">Finance</p>
+	<p pid=".7WS.2/16" class="indent">Target: a minimum of 15 per cent. return on capital employed (three year rolling average)</p>
+	<p pid=".7WS.2/17" class="indent">Target: a real reduction in charges by limiting price increases to 75 per cent. of the Average Earnings Index.</p>
+	<p pid=".7WS.2/18" class="indent">Target: an increase in investment in development to 12 per cent. of turnover</p>
+	<p pid=".7WS.2/19" class="indent">Target: generate &pound;1 million external funding for research and development</p>
+	<p pid=".7WS.2/20" class="italic">Non-Finance</p>
+	<p pid=".7WS.2/21" class="indent">Target: 14 day average to inform customers of DNA crime scene stain result.</p>
+	<p pid=".7WS.2/22" class="indent">Target: six day average to inform customers of DNA suspect sample result.</p>
+	<p pid=".7WS.2/23" class="indent">Target: turnaround time for 95 per cent. of jobs to be 42 days by year end</p>
+	<p pid=".7WS.2/24" class="indent">Target: maintain ISO accreditation.</p>
+	<p pid=".7WS.2/25" class="indent">Target: maintain Investors in People accreditation.</p>
+	<p pid=".7WS.2/26" class="indent">Target: introduce new diversity programme. Annex A <i>The Forensic Science Service Agency targets for 2003/ 2004</i> Finance:</p>
+	<p pid=".7WS.2/27" class="indent">Target: a minimum of 15 per cent. return on capital employed (three year rolling average)</p>
+	<p pid=".7WS.2/28" class="indent">Target: a real reduction in charges by limiting price increases to 75 per cent. of the Average Earnings Index.</p>
+	<p pid=".7WS.2/29" class="indent">Target: an increase in investment in development to 12 per cent. of turnover.</p>
+	<p pid=".7WS.2/30" class="indent">Target: generate &pound;1 million external funding for research and development.</p>
+	<p pid=".7WS.2/31">Non-Finance:</p>
+	<p pid=".7WS.2/32" class="indent">Target: establish an internal FSS end to end case ownership process.</p>
+	<p pid=".7WS.2/33" class="indent">Target: to have processes in place with 25 per cent.of police forces within six months and 60 per cent. by year end that agree new definitions of timeliness based on investigative and evidential contributions of forensic science.</p>
+	<p pid=".7WS.2/34" class="indent">Target: set up a pilot with customer to get agreement to devise a new process of end to end case ownership.</p>
+	<p pid=".7WS.2/35" class="indent">Target: sign up 60 per cent. of customers (Police and CPS) at force level to service agreements (timeliness and charging) in context of National Protocol.</p>
+	<p pid=".7WS.2/36" class="indent">Target: to have a process in place for 25 per cent. in six months and 60 per cent. by year end of cases to have a dedicated FSS case officer.</p>
+	<p pid=".7WS.2/37" class="indent">Target: develop training packages to support New Ways of Working by the year end.</p>
+	<p pid=".7WS.2/38" class="indent">Target: to engage training organisations to roll out training for Police and CPS.</p>
+	<p pid=".7WS.2/39" class="indent">Target: to design and develop a link between the National DNA Database and The National Automated Fingerprint Identification System (NAFIS).</p>
+	<p pid=".7WS.2/40" class="indent">Target: develop capability and capacity to deliver fast track processing of DNA samples within 48 hours.</p>
+	<p pid=".7WS.2/41" class="indent">Target: average time to analyse and inform customers of DNA crime scene stain results (normal track) of 14 days.</p>
+	<p pid=".7WS.2/42" class="indent">Target: 95 per cent. of DNA crime scene stain results to have a turnround time of 20 days</p>
+	<p pid=".7WS.2/43" class="indent">Target: average time to analyse and inform customers of DNA suspect sample results on The National DNA Database (normal track cases) of six days.</p>
+	<p pid=".7WS.2/44" class="indent">Target: 95 per cent. of DNA suspect sample results to have a turnround time of ten days</p>
+	<p pid=".7WS.2/45" class="indent">Target: increase forensic effectiveness by developing an index and benchmark with Police Standards Unit (PSU).</p>
+	<p pid=".7WS.2/46" class="indent">Target: turnround time for 95 per cent. of jobs to be 42 days by year end</p>
+	<p pid=".7WS.2/47" class="indent">Target: maintain ISO accreditation</p>
+	<p pid=".7WS.2/48" class="indent">Target: maintain Investors in People accreditation</p>
+	<p pid=".7WS.2/49" class="indent">Target: establish and implement a Diversity programme</p>
+	<p pid=".7WS.2/50" class="indent">Target: maintain Investors in People accreditation.</p>
+	<p pid=".7WS.2/51" class="indent">Target: introduce new diversity programme.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.8WS.0" nospeaker="true" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_dpthd0">
@@ -237,9 +260,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.8WS.2" speakerid="uk.org.publicwhip/member/960" speakername="Patricia Hewitt" speakeroffice="The Secretary of State for Trade and Industry" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin0">
-	<p>As part of a rolling programme of appointments, I have decided to appoint new Chairs to three of the Regional Development Agency boards outside London; the Mayor of London makes appointments to the LDA. The new Chair for EEDA will be Richard Ellis; for One NorthEast, Margaret Fay; and for Yorkshire Forward, Terry Hodgkinson.</p>
-	<p>The appointments will begin on the 14 December 2003 and are for three years, expiring on 13 December 2006. The rolling programme enables the boards to be refreshed and bring new talent and ideas to the boards on a regular basis. I have placed further details of the new appointees in the Libraries of both Houses.</p>
-	<p>Decisions on the appointments have been made following open competition and consultation with key national and regional players.</p>
+	<p pid=".8WS.2/1">As part of a rolling programme of appointments, I have decided to appoint new Chairs to three of the Regional Development Agency boards outside London; the Mayor of London makes appointments to the LDA. The new Chair for EEDA will be Richard Ellis; for One NorthEast, Margaret Fay; and for Yorkshire Forward, Terry Hodgkinson.</p>
+	<p pid=".8WS.2/2">The appointments will begin on the <phrase class="date" code="2003-12-14">14 December 2003</phrase> and are for three years, expiring on <phrase class="date" code="2006-12-13">13 December 2006</phrase>. The rolling programme enables the boards to be refreshed and bring new talent and ideas to the boards on a regular basis. I have placed further details of the new appointees in the Libraries of both Houses.</p>
+	<p pid=".8WS.2/3">Decisions on the appointments have been made following open competition and consultation with key national and regional players.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.9WS.0" nospeaker="true" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_sbhd1">
@@ -247,16 +270,16 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.9WS.1" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" speakeroffice="The Minister for Energy, E-Commerce and Postal Services" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin1">
-	<p>Her Majesty's Government have noted with concern the problems that have recently occurred on the National Grid. I would like to inform the House of the events of Thursday 28th August, when power was temporarily lost to an area of South East London and Kent, and of a further loss of power on Friday 5 September in the Birmingham area, and on the actions taken since.</p>
-	<p>In the early evening, on 28 August, electricity supply was lost to some 410,000 customers in South London and parts of Kent. Power was restored to the transmission system within 30 minutes and within another 11 minutes the local distribution system was re-energised and normal power was restored in all areas.</p>
-	<p>However, the consequences of the power failure were serious. There was disruption to surface rail, underground, street lights and traffic systems, water supply and sewerage systems as well as to electricity users in homes and workplaces. While London's critical infrastructure does have back-up arrangements, there was significant disruption, especially to the transport service. I understand that all of the back-up plans are under review by those agencies involved in the light of the difficulties caused to passengers after the power cut.</p>
-	<p>On 29 August I wrote to National Grid Transco (NOT) registering my grave concern about the power disruption and asking them to provide me with a full report explaining why it happened; what actions were taken; what the risks were of a similar action occurring in the future and what measures they would undertake to prevent a recurrence. On the 29 August I also met with the Chief Executive of NGT. My officials have been in close contact with NGT and EDF throughout. I expect a full report from NGT later this week, which I will place in the Libraries of the House.</p>
-	<p>My officials in the Engineering Inspectorate will need to consider the report carefully, liaising with the companies concerned. Ofgem will do likewise and will be reporting by the end of September on their initial assessment and will be considering the incident in light of National Grid's obligations. It may therefore be a number of weeks before we have a full understanding of the events. The DTI Engineering Inspectorate has power to mount a full investigation and make recommendations should that be required.</p>
-	<p>Initial reports from NGT indicate that the power cut was a result of a transformer fault followed by another fault on a high voltage cable. As a result, electricity supplies could no longer be maintained to the affected areas and a power blackout ensued. EDF (the local distribution company in the area) was also affected, losing power to parts of its network.</p>
-	<p>It has been suggested that a lack of investment caused the problem. The Chief Executive of National Grid Transco told my right hon. Friend the Secretary of State for Trade and Industry and myself, in a letter of 29 August, that this event &quot;cannot be attributed to under-investment or to resource issues on the network&quot;. This issue will of course be considered further.</p>
-	<p>There has also been speculation that the fault was related to a shortage of generating capacity. However there was no shortage of generating capacity at the time, and the transmission system in the area would normally have been adequate to carry the electricity flow required. On present evidence it appears that the problem was solely a transmission failure.</p>
-	<p>I am very concerned that between 10.10 and 10.52 on 5 September another power failure should have occurred in the Midlands, this time affecting some 200,000 consumers. Again although I understand power was quickly restored, this second incident does raise questions about the reliability of the Transmission network that I am pursing as a matter of urgency with NGT.</p>
-	<p>Of course risks to complex systems such as the supply of energy cannot be completely eliminated, but I am determined to use this experience so that together with other Government agencies, the Regulator and the companies involved, we can help minimise and where necessary, manage them. The Secretary of State and I are determined to ensure that the necessary lessons are learnt.</p>
+	<p pid=".9WS.1/1">Her Majesty's Government have noted with concern the problems that have recently occurred on the National Grid. I would like to inform the House of the events of Thursday 28th August, when power was temporarily lost to an area of South East London and Kent, and of a further loss of power on <phrase class="date" code="2003-09-05">Friday 5 September</phrase> in the Birmingham area, and on the actions taken since.</p>
+	<p pid=".9WS.1/2">In the early evening, on <phrase class="date" code="2003-08-28">28 August</phrase>, electricity supply was lost to some 410,000 customers in South London and parts of Kent. Power was restored to the transmission system within 30 minutes and within another 11 minutes the local distribution system was re-energised and normal power was restored in all areas.</p>
+	<p pid=".9WS.1/3">However, the consequences of the power failure were serious. There was disruption to surface rail, underground, street lights and traffic systems, water supply and sewerage systems as well as to electricity users in homes and workplaces. While London's critical infrastructure does have back-up arrangements, there was significant disruption, especially to the transport service. I understand that all of the back-up plans are under review by those agencies involved in the light of the difficulties caused to passengers after the power cut.</p>
+	<p pid=".9WS.1/4">On <phrase class="date" code="2003-08-29">29 August</phrase> I wrote to National Grid Transco (NOT) registering my grave concern about the power disruption and asking them to provide me with a full report explaining why it happened; what actions were taken; what the risks were of a similar action occurring in the future and what measures they would undertake to prevent a recurrence. On the <phrase class="date" code="2003-08-29">29 August</phrase> I also met with the Chief Executive of NGT. My officials have been in close contact with NGT and EDF throughout. I expect a full report from NGT later this week, which I will place in the Libraries of the House.</p>
+	<p pid=".9WS.1/5">My officials in the Engineering Inspectorate will need to consider the report carefully, liaising with the companies concerned. Ofgem will do likewise and will be reporting by the end of September on their initial assessment and will be considering the incident in light of National Grid's obligations. It may therefore be a number of weeks before we have a full understanding of the events. The DTI Engineering Inspectorate has power to mount a full investigation and make recommendations should that be required.</p>
+	<p pid=".9WS.1/6">Initial reports from NGT indicate that the power cut was a result of a transformer fault followed by another fault on a high voltage cable. As a result, electricity supplies could no longer be maintained to the affected areas and a power blackout ensued. EDF (the local distribution company in the area) was also affected, losing power to parts of its network.</p>
+	<p pid=".9WS.1/7">It has been suggested that a lack of investment caused the problem. The Chief Executive of National Grid Transco told my right hon. Friend the Secretary of State for Trade and Industry and myself, in a letter of <phrase class="date" code="2003-08-29">29 August</phrase>, that this event &quot;cannot be attributed to under-investment or to resource issues on the network&quot;. This issue will of course be considered further.</p>
+	<p pid=".9WS.1/8">There has also been speculation that the fault was related to a shortage of generating capacity. However there was no shortage of generating capacity at the time, and the transmission system in the area would normally have been adequate to carry the electricity flow required. On present evidence it appears that the problem was solely a transmission failure.</p>
+	<p pid=".9WS.1/9">I am very concerned that between 10.10 and 10.52 on <phrase class="date" code="2003-09-05">5 September</phrase> another power failure should have occurred in the Midlands, this time affecting some 200,000 consumers. Again although I understand power was quickly restored, this second incident does raise questions about the reliability of the Transmission network that I am pursing as a matter of urgency with NGT.</p>
+	<p pid=".9WS.1/10">Of course risks to complex systems such as the supply of energy cannot be completely eliminated, but I am determined to use this experience so that together with other Government agencies, the Regulator and the companies involved, we can help minimise and where necessary, manage them. The Secretary of State and I are determined to ensure that the necessary lessons are learnt.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.10WS.0" nospeaker="true" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_dpthd1">
@@ -268,9 +291,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.10WS.2" speakerid="uk.org.publicwhip/member/1179" speakername="Bill Rammell" speakeroffice="The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs" colnum="10WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin2">
-	<p>): I am pleased to be able to announce that, today, the UK has taken a significant step towards ratification of the Optional Protocol to the UN Convention Against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment (OPCAT). I am today laying before Parliament an Explanatory Memorandum, which explains how the UK meets the provisions of the Protocol.</p>
-	<p>We hope that the ratification process can be completed with the United Nations by the end of this year. This will make the UK one of the very first UN member states to have ratified the Optional Protocol. We signed the Protocol on 26 June, becoming one of only six countries worldwide to have done so.</p>
-	<p>The UK is committed to the fight against torture. The Foreign and Commonwealth Office's Anti Torture Initiative, launched in 1998, continues to provide a focus for us on this issue. The follow-up to our ratification of the OPCAT will be an important part of the current phase of the Initiative. We will undertake a lobbying campaign urging other countries to sign, ratify and implement both the Convention Against Torture and the Optional Protocol.</p>
+	<p pid=".10WS.2/1">): I am pleased to be able to announce that, today, the UK has taken a significant step towards ratification of the Optional Protocol to the UN Convention Against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment (OPCAT). I am today laying before Parliament an Explanatory Memorandum, which explains how the UK meets the provisions of the Protocol.</p>
+	<p pid=".10WS.2/2">We hope that the ratification process can be completed with the United Nations by the end of this year. This will make the UK one of the very first UN member states to have ratified the Optional Protocol. We signed the Protocol on <phrase class="date" code="2003-06-26">26 June</phrase>, becoming one of only six countries worldwide to have done so.</p>
+	<p pid=".10WS.2/3">The UK is committed to the fight against torture. The Foreign and Commonwealth Office's Anti Torture Initiative, launched in 1998, continues to provide a focus for us on this issue. The follow-up to our ratification of the OPCAT will be an important part of the current phase of the Initiative. We will undertake a lobbying campaign urging other countries to sign, ratify and implement both the Convention Against Torture and the Optional Protocol.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.11WS.0" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_sbhd3">
@@ -278,18 +301,18 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.11WS.1" speakerid="uk.org.publicwhip/member/1127" speakername="Chris Mullin" speakeroffice="The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin3">
-	<p>Wilton Park is an academically independent Executive Agency of the Foreign and Commonwealth Office. Its Annual Report and Accounts for 2002&ndash;03 were laid before the House on 17 July 2003.</p>
-	<p>Wilton Park's performance against agreed targets for the FY 2002&ndash;03, which work from framework targets for cost recovery, quality of conference programmes and standards of service, and the targets for the current year are shown in the table.</p>
+	<p pid=".11WS.1/1">Wilton Park is an academically independent Executive Agency of the Foreign and Commonwealth Office. Its Annual Report and Accounts for 2002&ndash;03 were laid before the House on <phrase class="date" code="2003-07-17">17 July 2003</phrase>.</p>
+	<p pid=".11WS.1/2">Wilton Park's performance against agreed targets for the FY 2002&ndash;03, which work from framework targets for cost recovery, quality of conference programmes and standards of service, and the targets for the current year are shown in the table.</p>
 	<table>
 		<thead>
-			<tr> <th></th> <th>2002&ndash;03Target</th> <th>2002&ndash;03 Performance</th> <th>2003&ndash;04Target</th> </tr>
+			<tr pid=".11WS.1/5"> <th></th> <th>2002&ndash;03Target</th> <th>2002&ndash;03 Performance</th> <th>2003&ndash;04Target</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Total Income</td> <td>&pound;3,314,000</td> <td>&pound;3,591,000</td> <td>&pound;3,372,000</td> </tr>
-			<tr> <td></td> <td></td> </tr>
-			<tr> <td>Excellent rating for programmes</td> <td>56.7</td> <td>57</td> <td>57</td> </tr>
-			<tr> <td></td> <td></td> </tr>
-			<tr> <td>Excellent rating for administration</td> <td>89</td> <td>87.4</td> <td>89</td> </tr>
+			<tr pid=".11WS.1/8"> <td>Total Income</td> <td>&pound;3,314,000</td> <td>&pound;3,591,000</td> <td>&pound;3,372,000</td> </tr>
+			<tr pid=".11WS.1/9"> <td></td> <td></td> </tr>
+			<tr pid=".11WS.1/10"> <td>Excellent rating for programmes</td> <td>56.7</td> <td>57</td> <td>57</td> </tr>
+			<tr pid=".11WS.1/11"> <td></td> <td></td> </tr>
+			<tr pid=".11WS.1/12"> <td>Excellent rating for administration</td> <td>89</td> <td>87.4</td> <td>89</td> </tr>
 		</tbody>
 	</table>
 </speech>
@@ -299,12 +322,12 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.11WS.3" speakerid="uk.org.publicwhip/member/1258" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin4">
-	<p>&quot;Dear Michael,</p>
-	<p>In our exchange on the floor of the House on 8 July I undertook to write to you to let you know when I first knew that the February briefing paper drew on the work of Dr Al-Marashi.</p>
-	<p>The first I knew of this was after the story was made public by Channel 4 on 6 February. This was after Colin Powell had spoken to the UN Security Council (5 February), and the Prime Minister's remarks to the House (3 February).</p>
-	<p>I am placing a copy of this in the Library, and in <i>Hansard</i> via a Written Ministerial Statement.</p>
-	<p>Yours ever,</p>
-	<p>Jack Straw&quot;</p>
+	<p pid=".11WS.3/1">&quot;Dear Michael,</p>
+	<p pid=".11WS.3/2">In our exchange on the floor of the House on <phrase class="date" code="2003-07-08">8 July</phrase> I undertook to write to you to let you know when I first knew that the February briefing paper drew on the work of Dr Al-Marashi.</p>
+	<p pid=".11WS.3/3">The first I knew of this was after the story was made public by Channel 4 on <phrase class="date" code="2003-02-06">6 February</phrase>. This was after Colin Powell had spoken to the UN Security Council (<phrase class="date" code="2003-02-05">5 February</phrase>), and the Prime Minister's remarks to the House (<phrase class="date" code="2003-02-03">3 February</phrase>).</p>
+	<p pid=".11WS.3/4">I am placing a copy of this in the Library, and in <i>Hansard</i> via a Written Ministerial Statement.</p>
+	<p pid=".11WS.3/5">Yours ever,</p>
+	<p pid=".11WS.3/6">Jack Straw&quot;</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.11WS.4" nospeaker="true" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_dpthd2">
@@ -316,9 +339,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.11WS.6" speakerid="uk.org.publicwhip/member/727" speakername="Hilary Benn" speakeroffice="The Minister of State, Department for International Development" colnum="11WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m03.htm#30908m03.html_spmin5">
-	<p>Following the most recent fighting in Liberia, between 200,000&ndash;300,000 people had to leave their homes and seek shelter in over 100 different locations in Monrovia. The International Committee of the Red Cross (ICRC) and a small number of NGOs have provided emergency humanitarian assistance throughout the crisis under extreme conditions, and in the last few weeks, the UN and additional NGOs have re-entered Liberia to increase the humanitarian effort. Malnutrition remains a major concern particularly amongst vulnerable groups, and safe drinking water as well as sanitation and basic hygiene remain critical issues, especially in the areas where refugees have moved to. Security remains a major concern for operational humanitarian agencies. Whilst the deployment of ECOWAS (ECOMIL) has stabilised a secure zone in and around central Monrovia, access is still very limited outside the city. Agencies are operating on the basis of ad-hoc negotiated access to rebel-controlled areas. In such difficult circumstances, it is crucial that the UN takes a strong lead in humanitarian co-ordination. After a difficult beginning, the agencies have reported that co-ordination with the UN has now dramatically improved.</p>
-	<p>On August 21 DFID committed an additional &pound;4.7 million to support humanitarian needs in Liberia. The funds are being allocated to UN agencies, NGOs and the ICRC to provide an immediate response, This brings the UK's total humanitarian assistance to Liberia to &pound;7.6 million this year. Our approach is to strengthen the UN system to take on a lead role in co-ordination and delivery of assistance, to support NGOs and the Red Cross in provision of immediate relief, and to ensure collaboration between the major donors in planning and monitoring of assistance. Last month we hosted a meeting of NGOs working in Liberia, or planning to do so, to discuss the situation and identify what help is needed on the ground. We have invited NGOs to put proposals to us and we have just agreed to fund a supplementary feeding programme for all refugee children under the age of five in Monrovia. Our strategy has been developed with advice from an assessment team who are currently based in Monrovia. This team will remain in the region to assess the evolving humanitarian situation in Liberia, and monitor DFID-funded operations.</p>
-	<p>The UK is committed to working closely with the international community to ensure that ECOMIL, and the UN Mission planned for Liberia, are successful in restoring peace and security. We have contributed &pound;1m to ECOMIL and have seconded a military adviser to ECOWAS. We have also offered military advisors to the UN planning mission and headquarters. The UK is also working in the UN Security Council to ensure that the forthcoming Resolution authorises the deployment of a UN mission with a strong mandate to: restore and maintain security; establish peace-building initiatives; and provide the conditions to allow the Transitional Government to operate effectively and work towards holding free and fair elections. We are monitoring developments in the region closely to ensure that ex-combatants do not cause problems in neighbouring countries. A regional approach to Disarmament, Demobilisation and Reintegration (DDR) will be important if the region is to eliminate the guns for hire culture that has developed. We are discussing options for DDR with the UN, ECOWAS and other interested parties, and are considering how we can best support this process.</p>
+	<p pid=".11WS.6/1">Following the most recent fighting in Liberia, between 200,000&ndash;300,000 people had to leave their homes and seek shelter in over 100 different locations in Monrovia. The International Committee of the Red Cross (ICRC) and a small number of NGOs have provided emergency humanitarian assistance throughout the crisis under extreme conditions, and in the last few weeks, the UN and additional NGOs have re-entered Liberia to increase the humanitarian effort. Malnutrition remains a major concern particularly amongst vulnerable groups, and safe drinking water as well as sanitation and basic hygiene remain critical issues, especially in the areas where refugees have moved to. Security remains a major concern for operational humanitarian agencies. Whilst the deployment of ECOWAS (ECOMIL) has stabilised a secure zone in and around central Monrovia, access is still very limited outside the city. Agencies are operating on the basis of ad-hoc negotiated access to rebel-controlled areas. In such difficult circumstances, it is crucial that the UN takes a strong lead in humanitarian co-ordination. After a difficult beginning, the agencies have reported that co-ordination with the UN has now dramatically improved.</p>
+	<p pid=".11WS.6/2">On August 21 DFID committed an additional &pound;4.7 million to support humanitarian needs in Liberia. The funds are being allocated to UN agencies, NGOs and the ICRC to provide an immediate response, This brings the UK's total humanitarian assistance to Liberia to &pound;7.6 million this year. Our approach is to strengthen the UN system to take on a lead role in co-ordination and delivery of assistance, to support NGOs and the Red Cross in provision of immediate relief, and to ensure collaboration between the major donors in planning and monitoring of assistance. Last month we hosted a meeting of NGOs working in Liberia, or planning to do so, to discuss the situation and identify what help is needed on the ground. We have invited NGOs to put proposals to us and we have just agreed to fund a supplementary feeding programme for all refugee children under the age of five in Monrovia. Our strategy has been developed with advice from an assessment team who are currently based in Monrovia. This team will remain in the region to assess the evolving humanitarian situation in Liberia, and monitor DFID-funded operations.</p>
+	<p pid=".11WS.6/3">The UK is committed to working closely with the international community to ensure that ECOMIL, and the UN Mission planned for Liberia, are successful in restoring peace and security. We have contributed &pound;1m to ECOMIL and have seconded a military adviser to ECOWAS. We have also offered military advisors to the UN planning mission and headquarters. The UK is also working in the UN Security Council to ensure that the forthcoming Resolution authorises the deployment of a UN mission with a strong mandate to: restore and maintain security; establish peace-building initiatives; and provide the conditions to allow the Transitional Government to operate effectively and work towards holding free and fair elections. We are monitoring developments in the region closely to ensure that ex-combatants do not cause problems in neighbouring countries. A regional approach to Disarmament, Demobilisation and Reintegration (DDR) will be important if the region is to eliminate the guns for hire culture that has developed. We are discussing options for DDR with the UN, ECOWAS and other interested parties, and are considering how we can best support this process.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-09-08.13WS.0" nospeaker="true" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m04.htm#30908m04.html_dpthd0">
@@ -330,10 +353,10 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.13WS.2" speakerid="uk.org.publicwhip/member/1029" speakername="Stephen Ladyman" speakeroffice="The Parliamentary Under-Secretary of State for Health" colnum="13WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m04.htm#30908m04.html_spmin0">
-	<p>The Department of Health is to meet an urgent cash requirement for new services from the Contingencies Fund. Parliamentary approval for additional resources of &pound;22 million for the set-up of these new services will be sought in a Supplementary Estimate for the Department. Pending that approval, urgent expenditure estimated at &pound;11.3 million will be met by repayable cash advances from the Contingencies Fund.</p>
-	<p>The expenditure is required to ensure the set-up of two new bodies detailed in the Health and Social Care (Community Health and Standards) Bill currently before Parliament. The Commission for Healthcare Audit and Inspection [CHAI] and the Commission for Social Care Inspection (CSCI) are planned to come into effect on 1 April 2004, subject to the successful passage of the Bill. This date is key for delivering operational effectiveness gains (including retention of valuable professional expertise and the goodwill of existing inspectors and staff) which would otherwise be lost or significantly delayed.</p>
-	<p>CHAI will take over the work of the Commission for Health Improvement (CHI), the Mental Health Act Commission (MHAC), the national NHS value for money work of the Audit Commission and the independent healthcare work of the National Care Standards Commission (NCSC). CSCI will take on the social care services work of NCSC, the work of the Social Services Inspectorate (SSI) and the Joint Review team of the SSI/Audit Commission. SSI is currently a part of the Department of Health. The speedy integration of these constituent bodies will provide a strengthened inspection and audit function and thus improvements in the commissioning and delivery of health and social services.</p>
-	<p>The Contingencies Fund allows for cash advances to departments for expenditure on urgent services in anticipation of parliamentary approval.</p>
+	<p pid=".13WS.2/1">The Department of Health is to meet an urgent cash requirement for new services from the Contingencies Fund. Parliamentary approval for additional resources of &pound;22 million for the set-up of these new services will be sought in a Supplementary Estimate for the Department. Pending that approval, urgent expenditure estimated at &pound;11.3 million will be met by repayable cash advances from the Contingencies Fund.</p>
+	<p pid=".13WS.2/2">The expenditure is required to ensure the set-up of two new bodies detailed in the Health and Social Care (Community Health and Standards) Bill currently before Parliament. The Commission for Healthcare Audit and Inspection [CHAI] and the Commission for Social Care Inspection (CSCI) are planned to come into effect on <phrase class="date" code="2004-04-01">1 April 2004</phrase>, subject to the successful passage of the Bill. This date is key for delivering operational effectiveness gains (including retention of valuable professional expertise and the goodwill of existing inspectors and staff) which would otherwise be lost or significantly delayed.</p>
+	<p pid=".13WS.2/3">CHAI will take over the work of the Commission for Health Improvement (CHI), the Mental Health Act Commission (MHAC), the national NHS value for money work of the Audit Commission and the independent healthcare work of the National Care Standards Commission (NCSC). CSCI will take on the social care services work of NCSC, the work of the Social Services Inspectorate (SSI) and the Joint Review team of the SSI/Audit Commission. SSI is currently a part of the Department of Health. The speedy integration of these constituent bodies will provide a strengthened inspection and audit function and thus improvements in the commissioning and delivery of health and social services.</p>
+	<p pid=".13WS.2/4">The Contingencies Fund allows for cash advances to departments for expenditure on urgent services in anticipation of parliamentary approval.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-09-08.14WS.0" nospeaker="true" colnum="14WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m04.htm#30908m04.html_sbhd1">
@@ -341,10 +364,10 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-09-08.14WS.1" speakerid="uk.org.publicwhip/member/1029" speakername="Stephen Ladyman" speakeroffice="The Parliamentary Under-Secretary of State for Health" colnum="14WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030908/wmstext/30908m04.htm#30908m04.html_spmin1">
-	<p>The National Care Standards Commission (NCSC) was established under the Care Standards Act 2000 as part of the Government's reforms to modernise the regulatory system for care services and independent healthcare. Its main aim is to drive up the quality of services and improve the level of protection for vulnerable people by the regulation of social care and independent health care services. It carries out regular inspections of services against national minimum standards set by the Secretary of State and has strong powers of enforcement to ensure that services meet the required standards. The NCSC is an independent, non-departmental public body, with its own chair, chief executive, board and inspection staff.</p>
-	<p>The NCSC's management statement sets out that, at the end of each financial year, the Commission shall publish an annual report, together with its audited annual accounts. The reports and accounts should outline the NCSC's main activities and performance during the previous financial year and set out a summary of its forward plans. The management statement also sets out that the report and accounts will be laid before Parliament.</p>
-	<p>The NCSC has just come to the end of its first year of operation. This will therefore be its first annual report.</p>
-	<p>Copies of the NCSC's annual report for 2002&ndash;03 have been placed in the Library.</p>
+	<p pid=".14WS.1/1">The National Care Standards Commission (NCSC) was established under the Care Standards Act 2000 as part of the Government's reforms to modernise the regulatory system for care services and independent healthcare. Its main aim is to drive up the quality of services and improve the level of protection for vulnerable people by the regulation of social care and independent health care services. It carries out regular inspections of services against national minimum standards set by the Secretary of State and has strong powers of enforcement to ensure that services meet the required standards. The NCSC is an independent, non-departmental public body, with its own chair, chief executive, board and inspection staff.</p>
+	<p pid=".14WS.1/2">The NCSC's management statement sets out that, at the end of each financial year, the Commission shall publish an annual report, together with its audited annual accounts. The reports and accounts should outline the NCSC's main activities and performance during the previous financial year and set out a summary of its forward plans. The management statement also sets out that the report and accounts will be laid before Parliament.</p>
+	<p pid=".14WS.1/3">The NCSC has just come to the end of its first year of operation. This will therefore be its first annual report.</p>
+	<p pid=".14WS.1/4">Copies of the NCSC's annual report for 2002&ndash;03 have been placed in the Library.</p>
 </speech>
 </publicwhip>
 

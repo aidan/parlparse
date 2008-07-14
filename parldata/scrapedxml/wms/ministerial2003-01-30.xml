@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.45WS.0" nospeaker="true" colnum="45WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd0">
 	TRANSPORT
@@ -49,51 +72,51 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.45WS.2" speakerid="uk.org.publicwhip/member/1242" speakername="John Spellar" speakeroffice="The Minister for Transport" colnum="45WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin0">
-	<p>I am pleased to announce today approval of the 46 projects listed below which were submitted as bids by local authorities in this competition. This follows careful consideration of the 105 bids totalling almost 3 times the funding available submitted by authorities</p>
+	<p pid=".45WS.2/1">I am pleased to announce today approval of the 46 projects listed below which were submitted as bids by local authorities in this competition. This follows careful consideration of the 105 bids totalling almost 3 times the funding available submitted by authorities</p>
 	<table>
 		<caption>&pound; </caption>
 		<thead>
-			<tr> <th>Authority</th> <th>Project</th> <th>Total Award</th> </tr>
+			<tr pid=".45WS.2/5"> <th>Authority</th> <th>Project</th> <th>Total Award</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Bath and NE Somerset</td> <td>Chew Valley Explorer</td> <td>396,000</td> </tr>
-			<tr> <td>Bedfordshire</td> <td>North East Beds Dart</td> <td>751,261</td> </tr>
-			<tr> <td>Buckinghamshire</td> <td>On Call</td> <td>350,000</td> </tr>
-			<tr> <td>Cheshire</td> <td>Taxi Rider TRACS</td> <td>300,000 320,000</td> </tr>
-			<tr> <td>Cornwall</td> <td>Penwith Corlink Transport Services</td> <td>455,000</td> </tr>
-			<tr> <td>Cumbria</td> <td>&quot;35 Furness Express Enhancement</td> <td>805,573</td> </tr>
-			<tr> <td>Derbyshire</td> <td>Derbyshire Integrated Rural Transport Buxton &amp; District Accessible Transport</td> <td>954,000 320,960</td> </tr>
-			<tr> <td>Devon</td> <td>The Jurassic Coast Line</td> <td>665,000</td> </tr>
-			<tr> <td>Durham</td> <td>County Durham&mdash;A Healthy Response</td> <td>743,000</td> </tr>
-			<tr> <td>East Riding</td> <td>My Bus</td> <td>358,000</td> </tr>
-			<tr> <td>Essex</td> <td>Viking Community Transport HEART scheme</td> <td>193,600</td> </tr>
-			<tr> <td></td> <td>Epping Forest Community Transport Brokerage</td> <td>99,900</td> </tr>
-			<tr> <td>Gloucestershire</td> <td>Gloucestershire Village Link</td> <td>631,750</td> </tr>
-			<tr> <td>Greater Manchester</td> <td>Hattersly Uppermill and Mossley Partington and Cadishead</td> <td>329,500 234,000 44,000</td> </tr>
-			<tr> <td>Hampshire</td> <td>Hampshire Cango Further</td> <td>735,732</td> </tr>
-			<tr> <td>Herefordshire</td> <td>Completing the Jigsaw</td> <td>794,000</td> </tr>
-			<tr> <td>Hertfordshire</td> <td>Health and Accessible Rural Transport</td> <td>265,900</td> </tr>
-			<tr> <td>Isle of Wight</td> <td>The East Wight Villager</td> <td>426,530</td> </tr>
-			<tr> <td>Kent</td> <td>Swale Unified Network Phase 2</td> <td>215,000</td> </tr>
-			<tr> <td>Lancashire</td> <td>Garstang Super 8</td> <td>476,873</td> </tr>
-			<tr> <td>Lincolnshire</td> <td>Interconnect Building a Flexible Future</td> <td>870,400</td> </tr>
-			<tr> <td>Medway</td> <td>Tackling Social Exclusion &amp; Isolation</td> <td>336,435</td> </tr>
-			<tr> <td>Merseyside</td> <td>Billinge Whiston Hospital Service</td> <td>24,000</td> </tr>
-			<tr> <td>Norfolk</td> <td>Broadshopper Fenland Connections</td> <td>473,580 393,570</td> </tr>
-			<tr> <td>North East Lincolnshire</td> <td>Demand Responsive Community Transport</td> <td>344,512    </td> </tr>
-			<tr> <td>North Yorkshire</td> <td>Hawes-Garsdale Stationlink Increase Rural Dial-a-ride Information Centre for Community Transport</td> <td>261,000 280,500 90,000</td> </tr>
-			<tr> <td>Nottinghamshire</td> <td>Demand Responsive Transport between Newark and Bingham</td> <td>479,000</td> </tr>
-			<tr> <td>Shropshire</td> <td>Wem Minibus Links</td> <td>355,694</td> </tr>
-			<tr> <td>South Yorkshire</td> <td>Southern Communities</td> <td>768,000</td> </tr>
-			<tr> <td>Somerset</td> <td>Somerset Inclusion Bus Buddy</td> <td>94,500</td> </tr>
-			<tr> <td>Stockton-on-Tees</td> <td>The Village Bus</td> <td>360,000</td> </tr>
-			<tr> <td>Staffordshire</td> <td>Staffordshire Border Car Weaver Ward Access Bus</td> <td>178,500 60,000</td> </tr>
-			<tr> <td>Suffolk</td> <td>Grass Routes</td> <td>190,720</td> </tr>
-			<tr> <td>Tyne &amp; Wear</td> <td>Western Links Stage 2</td> <td>721,216</td> </tr>
-			<tr> <td>West Sussex</td> <td>South Downs Route</td> <td>833,000</td> </tr>
-			<tr> <td>West Yorkshire</td> <td>Pennine Taxibus</td> <td>872,020</td> </tr>
-			<tr> <td>Wiltshire</td> <td>Wiltshire Taxi Link</td> <td>169,440</td> </tr>
-			<tr> <td>Worcestershire</td> <td>Malvern Matters</td> <td>992,000</td> </tr>
+			<tr pid=".45WS.2/8"> <td>Bath and NE Somerset</td> <td>Chew Valley Explorer</td> <td>396,000</td> </tr>
+			<tr pid=".45WS.2/9"> <td>Bedfordshire</td> <td>North East Beds Dart</td> <td>751,261</td> </tr>
+			<tr pid=".45WS.2/10"> <td>Buckinghamshire</td> <td>On Call</td> <td>350,000</td> </tr>
+			<tr pid=".45WS.2/11"> <td>Cheshire</td> <td>Taxi Rider TRACS</td> <td>300,000 320,000</td> </tr>
+			<tr pid=".45WS.2/12"> <td>Cornwall</td> <td>Penwith Corlink Transport Services</td> <td>455,000</td> </tr>
+			<tr pid=".45WS.2/13"> <td>Cumbria</td> <td>&quot;35 Furness Express Enhancement</td> <td>805,573</td> </tr>
+			<tr pid=".45WS.2/14"> <td>Derbyshire</td> <td>Derbyshire Integrated Rural Transport Buxton &amp; District Accessible Transport</td> <td>954,000 320,960</td> </tr>
+			<tr pid=".45WS.2/15"> <td>Devon</td> <td>The Jurassic Coast Line</td> <td>665,000</td> </tr>
+			<tr pid=".45WS.2/16"> <td>Durham</td> <td>County Durham&mdash;A Healthy Response</td> <td>743,000</td> </tr>
+			<tr pid=".45WS.2/17"> <td>East Riding</td> <td>My Bus</td> <td>358,000</td> </tr>
+			<tr pid=".45WS.2/18"> <td>Essex</td> <td>Viking Community Transport HEART scheme</td> <td>193,600</td> </tr>
+			<tr pid=".45WS.2/19"> <td></td> <td>Epping Forest Community Transport Brokerage</td> <td>99,900</td> </tr>
+			<tr pid=".45WS.2/20"> <td>Gloucestershire</td> <td>Gloucestershire Village Link</td> <td>631,750</td> </tr>
+			<tr pid=".45WS.2/21"> <td>Greater Manchester</td> <td>Hattersly Uppermill and Mossley Partington and Cadishead</td> <td>329,500 234,000 44,000</td> </tr>
+			<tr pid=".45WS.2/22"> <td>Hampshire</td> <td>Hampshire Cango Further</td> <td>735,732</td> </tr>
+			<tr pid=".45WS.2/23"> <td>Herefordshire</td> <td>Completing the Jigsaw</td> <td>794,000</td> </tr>
+			<tr pid=".45WS.2/24"> <td>Hertfordshire</td> <td>Health and Accessible Rural Transport</td> <td>265,900</td> </tr>
+			<tr pid=".45WS.2/25"> <td>Isle of Wight</td> <td>The East Wight Villager</td> <td>426,530</td> </tr>
+			<tr pid=".45WS.2/26"> <td>Kent</td> <td>Swale Unified Network Phase 2</td> <td>215,000</td> </tr>
+			<tr pid=".45WS.2/27"> <td>Lancashire</td> <td>Garstang Super 8</td> <td>476,873</td> </tr>
+			<tr pid=".45WS.2/28"> <td>Lincolnshire</td> <td>Interconnect Building a Flexible Future</td> <td>870,400</td> </tr>
+			<tr pid=".45WS.2/29"> <td>Medway</td> <td>Tackling Social Exclusion &amp; Isolation</td> <td>336,435</td> </tr>
+			<tr pid=".45WS.2/30"> <td>Merseyside</td> <td>Billinge Whiston Hospital Service</td> <td>24,000</td> </tr>
+			<tr pid=".45WS.2/31"> <td>Norfolk</td> <td>Broadshopper Fenland Connections</td> <td>473,580 393,570</td> </tr>
+			<tr pid=".45WS.2/32"> <td>North East Lincolnshire</td> <td>Demand Responsive Community Transport</td> <td>344,512    </td> </tr>
+			<tr pid=".45WS.2/33"> <td>North Yorkshire</td> <td>Hawes-Garsdale Stationlink Increase Rural Dial-a-ride Information Centre for Community Transport</td> <td>261,000 280,500 90,000</td> </tr>
+			<tr pid=".45WS.2/34"> <td>Nottinghamshire</td> <td>Demand Responsive Transport between Newark and Bingham</td> <td>479,000</td> </tr>
+			<tr pid=".45WS.2/35"> <td>Shropshire</td> <td>Wem Minibus Links</td> <td>355,694</td> </tr>
+			<tr pid=".45WS.2/36"> <td>South Yorkshire</td> <td>Southern Communities</td> <td>768,000</td> </tr>
+			<tr pid=".45WS.2/37"> <td>Somerset</td> <td>Somerset Inclusion Bus Buddy</td> <td>94,500</td> </tr>
+			<tr pid=".45WS.2/38"> <td>Stockton-on-Tees</td> <td>The Village Bus</td> <td>360,000</td> </tr>
+			<tr pid=".45WS.2/39"> <td>Staffordshire</td> <td>Staffordshire Border Car Weaver Ward Access Bus</td> <td>178,500 60,000</td> </tr>
+			<tr pid=".45WS.2/40"> <td>Suffolk</td> <td>Grass Routes</td> <td>190,720</td> </tr>
+			<tr pid=".45WS.2/41"> <td>Tyne &amp; Wear</td> <td>Western Links Stage 2</td> <td>721,216</td> </tr>
+			<tr pid=".45WS.2/42"> <td>West Sussex</td> <td>South Downs Route</td> <td>833,000</td> </tr>
+			<tr pid=".45WS.2/43"> <td>West Yorkshire</td> <td>Pennine Taxibus</td> <td>872,020</td> </tr>
+			<tr pid=".45WS.2/44"> <td>Wiltshire</td> <td>Wiltshire Taxi Link</td> <td>169,440</td> </tr>
+			<tr pid=".45WS.2/45"> <td>Worcestershire</td> <td>Malvern Matters</td> <td>992,000</td> </tr>
 		</tbody>
 	</table>
 </speech>
@@ -103,7 +126,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.46WS.1" speakerid="uk.org.publicwhip/member/839" speakername="Alistair Darling" speakeroffice="The Secretary of State for Transport" colnum="46WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin1">
-	<p>The Strategic Rail Authority has today published its second Strategic Plan. I have placed copies in the Libraries of the House and it is also available on the SRA website.</p>
+	<p pid=".46WS.1/1">The Strategic Rail Authority has today published its second Strategic Plan. I have placed copies in the Libraries of the House and it is also available on the SRA website.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.46WS.2" nospeaker="true" colnum="46WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd1">
@@ -115,18 +138,18 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.46WS.4" speakerid="uk.org.publicwhip/member/1316" speakername="Malcolm Wicks" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="46WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin2">
-	<p>On behalf of my right hon. Friend the Secretary of State for Work and Pensions, the Benefit Fraud Inspectorate (BFI) inspection report on Dover District Council was published today and copies of the report have been placed in the Library. This report finds that Dover District Council has some commendable performance while some areas are very poor.</p>
-	<p>The report identifies the positive aspects as a benefits claim form that complies with the BFI model claim form, achievement of good results from a customer survey, and Verification Framework compliance in most areas. Dover needs to: run benefit take-up campaigns; verify residency more vigorously and income in renewal claims; carry out visits to Verification Framework requirements; apply benefit periods in accordance with risk and apply the fit and proper person test before making payments to landlords.</p>
-	<p>Speed of processing is a distinct weakness, with only 25 per cent of claims sampled being processed within targets. Breaks in payments were found in 23 per cent of renewals sampled.</p>
-	<p>There were significant problems with all aspects of the overpayments regime. The council is undertaking a fundamental review of the overpayments service, which is to be completed and implemented by March 2003.</p>
-	<p>The report finds that the counter-fraud area gave the greatest concern. The council's investigators were poorly trained, and were overloaded with referrals, many of which were of spurious value. Sanctions were inadequate. The report also finds evidence of failure to comply with the laws governing investigation techniques.</p>
-	<p>In 2000&ndash;01, Dover District Council administered approximately &pound;27 million in housing benefits. This is approximately 40 per cent. of its total gross revenue expenditure.</p>
-	<p>The report makes recommendations to help the council address the remaining weaknesses and to further improve the administration of Housing Benefit and Council Tax Benefit, as well as counter-fraud activities.</p>
-	<p>My right hon. Friend the Secretary of State is now considering the report and will be asking the council for its proposals in response to the findings and recommendations of the BFI.</p>
+	<p pid=".46WS.4/1">On behalf of my right hon. Friend the Secretary of State for Work and Pensions, the Benefit Fraud Inspectorate (BFI) inspection report on Dover District Council was published today and copies of the report have been placed in the Library. This report finds that Dover District Council has some commendable performance while some areas are very poor.</p>
+	<p pid=".46WS.4/2">The report identifies the positive aspects as a benefits claim form that complies with the BFI model claim form, achievement of good results from a customer survey, and Verification Framework compliance in most areas. Dover needs to: run benefit take-up campaigns; verify residency more vigorously and income in renewal claims; carry out visits to Verification Framework requirements; apply benefit periods in accordance with risk and apply the fit and proper person test before making payments to landlords.</p>
+	<p pid=".46WS.4/3">Speed of processing is a distinct weakness, with only 25 per cent of claims sampled being processed within targets. Breaks in payments were found in 23 per cent of renewals sampled.</p>
+	<p pid=".46WS.4/4">There were significant problems with all aspects of the overpayments regime. The council is undertaking a fundamental review of the overpayments service, which is to be completed and implemented by March 2003.</p>
+	<p pid=".46WS.4/5">The report finds that the counter-fraud area gave the greatest concern. The council's investigators were poorly trained, and were overloaded with referrals, many of which were of spurious value. Sanctions were inadequate. The report also finds evidence of failure to comply with the laws governing investigation techniques.</p>
+	<p pid=".46WS.4/6">In 2000&ndash;01, Dover District Council administered approximately &pound;27 million in housing benefits. This is approximately 40 per cent. of its total gross revenue expenditure.</p>
+	<p pid=".46WS.4/7">The report makes recommendations to help the council address the remaining weaknesses and to further improve the administration of Housing Benefit and Council Tax Benefit, as well as counter-fraud activities.</p>
+	<p pid=".46WS.4/8">My right hon. Friend the Secretary of State is now considering the report and will be asking the council for its proposals in response to the findings and recommendations of the BFI.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.47WS.0" nospeaker="true" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd2">
-	CULTURE, MEDIA AND SPORT
+	CULTURE MEDIA AND SPORT
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-01-30.47WS.1" nospeaker="true" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_sbhd3">
@@ -134,7 +157,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.47WS.2" speakerid="uk.org.publicwhip/member/1007" speakername="Tessa Jowell" speakeroffice="The Secretary of State for Culture, Media and Sport" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin3">
-	<p>I have today placed in the Libraries of both Houses a Consultation Paper on a draft Order relating to the export of objects of cultural interest to be made under the Export Control Act 2002. The text is also available on the DCMS Departmental website at <a href="http://www.culture.gov.uk/heritage/export_controls.html">http://www.culture.gov.uk/heritage/export_controls.html</a>.</p>
+	<p pid=".47WS.2/1">I have today placed in the Libraries of both Houses a Consultation Paper on a draft Order relating to the export of objects of cultural interest to be made under the Export Control Act 2002. The text is also available on the DCMS Departmental website at <a href="http://www.culture.gov.uk/heritage/export_controls.html">http://www.culture.gov.uk/heritage/export_controls.html</a>.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.47WS.3" nospeaker="true" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd3">
@@ -146,13 +169,13 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.47WS.5" speakerid="uk.org.publicwhip/member/1332" speakername="Rosie Winterton" speakeroffice="The Parliamentary Secretary, Lord Chancellor's Department" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin4">
-	<p>My right hon. and noble Friend, The Lord Chancellor has appointed Dr. Zahida Manzoor as Legal Services Ombudsman.</p>
-	<p>The appointment is for a 3 year fixed term in the first instance and Dr. Manzoor is expected to take up post on 3 March 2003.</p>
-	<p>Dr. Manzoor is co-founder and marketing director of her own company. She was formerly a member of the NHS Policy Board, Regional Chair of the NHS Executive, Northern and Yorkshire Regions, Commissioner and Deputy Chair of the Commission for Racial Equality and Chair of the Bradford Health Authority.</p>
+	<p pid=".47WS.5/1">My right hon. and noble Friend, The Lord Chancellor has appointed Dr. Zahida Manzoor as Legal Services Ombudsman.</p>
+	<p pid=".47WS.5/2">The appointment is for a 3 year fixed term in the first instance and Dr. Manzoor is expected to take up post on <phrase class="date" code="2003-03-03">3 March 2003</phrase>.</p>
+	<p pid=".47WS.5/3">Dr. Manzoor is co-founder and marketing director of her own company. She was formerly a member of the NHS Policy Board, Regional Chair of the NHS Executive, Northern and Yorkshire Regions, Commissioner and Deputy Chair of the Commission for Racial Equality and Chair of the Bradford Health Authority.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.47WS.6" nospeaker="true" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd4">
-	ENVIRONMENT, FOOD AND RURAL AFFAIRS
+	ENVIRONMENT FOOD AND RURAL AFFAIRS
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-01-30.47WS.7" nospeaker="true" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_sbhd5">
@@ -160,8 +183,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.47WS.8" speakerid="uk.org.publicwhip/member/721" speakername="Margaret Beckett" speakeroffice="The Secretary of State for Environment, Food and Rural Affairs" colnum="47WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin5">
-	<p>Revised estimates of farm income, output and productivity of agriculture during 2002 were published on 30 January. These confirm the increase in farm incomes forecast last November, and indicate a rise of 15 per cent. (14 in real terms) compared to 2001.</p>
-	<p>Details have been placed in the Library of the House.</p>
+	<p pid=".47WS.8/1">Revised estimates of farm income, output and productivity of agriculture during 2002 were published on <phrase class="date" code="2003-01-30">30 January</phrase>. These confirm the increase in farm incomes forecast last November, and indicate a rise of 15 per cent. (14 in real terms) compared to 2001.</p>
+	<p pid=".47WS.8/2">Details have been placed in the Library of the House.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.48WS.0" nospeaker="true" colnum="48WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_dpthd5">
@@ -173,19 +196,19 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.48WS.2" speakerid="uk.org.publicwhip/member/851" speakername="John Denham" speakeroffice="The Minister for Policing, Crime Reduction and Community Safety" colnum="48WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m01.htm#30130m01.html_spmin6">
-	<p>I am pleased to be able to place in the Library a copy of the Police Complaints Authority's (PCA) Review of Shootings by Police in England and Wales between 1998 and 2001.</p>
-	<p>On behalf of my right hon. Friend the Home Secretary, I commissioned this Review under Section 79(1) of the Police Act 1996 which allows the Home Secretary to call for a report from the PCA on issues of concern. I announced the terms of reference to Parliament on 20 November 2001. They were:</p>
-	<p class="indent">&quot;The review will consider what lessons can be learnt from the investigations into police shootings, which have resulted in death or injury since January 1998.</p>
-	<p class="indent">In particular the review will look at:</p>
-	<p class="indent">The planning, control and conduct of operations;</p>
-	<p class="indent">The way in which the concerns of the bereaved families were addressed, and how they were kept informed of the progress of the investigation; and</p>
-	<p class="indent">The training and skill needs of the police officers involved in such operations, particularly at command level.&quot;</p>
-	<p>I am very grateful to the PCA, and, in particular, Mr. Alan Bailey, Dr. David Best and the two Deputy Chairs for the hard work and expertise they have brought to this report.</p>
-	<p>I welcome the report and its positive findings. It covers a very difficult and demanding area of police work where great professionalism is needed. Rightly, it gives credit to police forces for the small number of shots discharged by police officers in armed responses and praises much policing practice. The overall picture is very positive and it gives clear guidance on how best to manage firearms operations to minimise threat to life.</p>
-	<p>I commissioned the report in order to make sure that the lessons from each individual incident could be learned and shared by all forces. While there is always understandable public concern when someone who is shot turns out to be unarmed, we must recognise that armed police face enormously difficult decisions. Sometimes these decisions have tragic consequences, and it is nonetheless essential to ensure that operational procedures, training and support to officers minimises the number of avoidable deaths and injuries.</p>
-	<p>Our police officers are not routinely armed. The use of firearms is a rare last resort, considered only where there is a serious risk to public or police safety. When it is necessary for police officers to deploy firearms, it is vital that they are properly equipped and expertly trained, to respond effectively to the serious situations they have to face. Police use of firearms is subject to stringent guidelines from the Association of Chief Police Officers (ACPO), which govern training, control and the conduct of operations. This is reflected in their excellent record against international standards.</p>
-	<p>The PCA report makes a number of recommendations to further improve the management of firearms incidents. Many of these are already underway, and I have published an action plan today, which I will also place in the Library, which sets out how we will work with the police service and other agencies to build on existing good work, and take forward the recommendations in the report. We are determined to build on the good practice already in place by working closely with the police and others&mdash;including mental health professionals.</p>
-	<p>It is essential that our police have effective less lethal alternatives available to them. The search for suitable less lethal options is complex and requires in-depth consideration of a range of issues. After rigorous medical and operational trials, and at ACPO's request, we have agreed that pilots on taser use will go ahead. If any less lethal options are ultimately recommended to police these must provide real tactical solutions to disorder and violence.</p>
+	<p pid=".48WS.2/1">I am pleased to be able to place in the Library a copy of the Police Complaints Authority's (PCA) Review of Shootings by Police in England and Wales between 1998 and 2001.</p>
+	<p pid=".48WS.2/2">On behalf of my right hon. Friend the Home Secretary, I commissioned this Review under Section 79(1) of the Police Act 1996 which allows the Home Secretary to call for a report from the PCA on issues of concern. I announced the terms of reference to Parliament on <phrase class="date" code="2001-11-20">20 November 2001</phrase>. They were:</p>
+	<p pid=".48WS.2/3" class="indent">&quot;The review will consider what lessons can be learnt from the investigations into police shootings, which have resulted in death or injury since January 1998.</p>
+	<p pid=".48WS.2/4" class="indent">In particular the review will look at:</p>
+	<p pid=".48WS.2/5" class="indent">The planning, control and conduct of operations;</p>
+	<p pid=".48WS.2/6" class="indent">The way in which the concerns of the bereaved families were addressed, and how they were kept informed of the progress of the investigation; and</p>
+	<p pid=".48WS.2/7" class="indent">The training and skill needs of the police officers involved in such operations, particularly at command level.&quot;</p>
+	<p pid=".48WS.2/8">I am very grateful to the PCA, and, in particular, Mr. Alan Bailey, Dr. David Best and the two Deputy Chairs for the hard work and expertise they have brought to this report.</p>
+	<p pid=".48WS.2/9">I welcome the report and its positive findings. It covers a very difficult and demanding area of police work where great professionalism is needed. Rightly, it gives credit to police forces for the small number of shots discharged by police officers in armed responses and praises much policing practice. The overall picture is very positive and it gives clear guidance on how best to manage firearms operations to minimise threat to life.</p>
+	<p pid=".48WS.2/10">I commissioned the report in order to make sure that the lessons from each individual incident could be learned and shared by all forces. While there is always understandable public concern when someone who is shot turns out to be unarmed, we must recognise that armed police face enormously difficult decisions. Sometimes these decisions have tragic consequences, and it is nonetheless essential to ensure that operational procedures, training and support to officers minimises the number of avoidable deaths and injuries.</p>
+	<p pid=".48WS.2/11">Our police officers are not routinely armed. The use of firearms is a rare last resort, considered only where there is a serious risk to public or police safety. When it is necessary for police officers to deploy firearms, it is vital that they are properly equipped and expertly trained, to respond effectively to the serious situations they have to face. Police use of firearms is subject to stringent guidelines from the Association of Chief Police Officers (ACPO), which govern training, control and the conduct of operations. This is reflected in their excellent record against international standards.</p>
+	<p pid=".48WS.2/12">The PCA report makes a number of recommendations to further improve the management of firearms incidents. Many of these are already underway, and I have published an action plan today, which I will also place in the Library, which sets out how we will work with the police service and other agencies to build on existing good work, and take forward the recommendations in the report. We are determined to build on the good practice already in place by working closely with the police and others&mdash;including mental health professionals.</p>
+	<p pid=".48WS.2/13">It is essential that our police have effective less lethal alternatives available to them. The search for suitable less lethal options is complex and requires in-depth consideration of a range of issues. After rigorous medical and operational trials, and at ACPO's request, we have agreed that pilots on taser use will go ahead. If any less lethal options are ultimately recommended to police these must provide real tactical solutions to disorder and violence.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.49WS.0" nospeaker="true" colnum="49WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_dpthd0">
@@ -197,8 +220,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.49WS.2" speakerid="uk.org.publicwhip/member/1328" speakername="Brian Wilson" speakeroffice="The Minister for Energy and Construction" colnum="49WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_spmin0">
-	<p>The draft Electricity (Trading and Transmission) Bill, which will bring forward the British Electricity Transmission and Trading Arrangements (BETTA), is being published today. The Trade and Industry Committee will now undertake pre-legislative scrutiny of the Bill and will issue a report by Easter.</p>
-	<p>Copies of the draft Bill and draft Explanatory Notes are available in the House Library. A Regulatory Impact Assessment has been published on DTI and Ofgem's websites.</p>
+	<p pid=".49WS.2/1">The draft Electricity (Trading and Transmission) Bill, which will bring forward the British Electricity Transmission and Trading Arrangements (BETTA), is being published today. The Trade and Industry Committee will now undertake pre-legislative scrutiny of the Bill and will issue a report by Easter.</p>
+	<p pid=".49WS.2/2">Copies of the draft Bill and draft Explanatory Notes are available in the House Library. A Regulatory Impact Assessment has been published on DTI and Ofgem's websites.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-01-30.49WS.3" nospeaker="true" colnum="49WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_sbhd1">
@@ -206,7 +229,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.49WS.4" speakerid="uk.org.publicwhip/member/926" speakername="Nigel Griffiths" speakeroffice="The Parliamentary Under-Secretary of State for Trade and Industry" colnum="49WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_spmin1">
-	<p>I have today published a consultation document on the secondary legislation to be introduced under the Export Control Act 2002. This makes provision for new controls on the transfer abroad of military technology by electronic means; the transfer of technology by any means or provision of technical assistance overseas which may be used in connection with weapons of mass destruction programmes; and trade in military equipment between overseas countries. The consultation document contains the drafts of the orders, explains how the new controls are expected to operate in practice and invites views on their practical implementation. The partial Regulatory Impact Assessment provides an initial assessment of the impact of the new controls and invites views on the estimated compliance costs. The consultation period will last for 3 months, closing on 30 April 2003. Copies have been placed in the Libraries of both Houses.</p>
+	<p pid=".49WS.4/1">I have today published a consultation document on the secondary legislation to be introduced under the Export Control Act 2002. This makes provision for new controls on the transfer abroad of military technology by electronic means; the transfer of technology by any means or provision of technical assistance overseas which may be used in connection with weapons of mass destruction programmes; and trade in military equipment between overseas countries. The consultation document contains the drafts of the orders, explains how the new controls are expected to operate in practice and invites views on their practical implementation. The partial Regulatory Impact Assessment provides an initial assessment of the impact of the new controls and invites views on the estimated compliance costs. The consultation period will last for 3 months, closing on <phrase class="date" code="2003-04-30">30 April 2003</phrase>. Copies have been placed in the Libraries of both Houses.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-01-30.50WS.0" nospeaker="true" colnum="50WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_dpthd1">
@@ -218,9 +241,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-01-30.50WS.2" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" speakeroffice="The Secretary of State for Defence" colnum="50WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030130/wmstext/30130m02.htm#30130m02.html_spmin2">
-	<p>In my statement on 7 January 2003, <phrase class="offrep" id="wrans/2003-01-07.23"><i>Official Report</i> Column 23&ndash;25</phrase>. I informed the House that I had made an Order under Section 54(1) of the Reserve Forces Act 1996 to enable the call out of reservists for possible operations against Iraq. I explained that the overall scale of mobilisation would depend upon the continuing evolution of our contingency planning, that we envisaged initially sending out sufficient call-out notices to secure around 1,500 reservists, and that we would issue further notices as appropriate.</p>
-	<p>That process of calling out and mobilising reservists is underway. By 24 January 2003, the Services had issued 2,063 notices. As I explained in my statement on 7 January, the number of notices issued has to be significantly larger than the number of reservists required, to allow for the proportion who are likely to be genuinely unavailable.</p>
-	<p>Further contingency planning has now clarified the likely size and shape of our additional requirements, in particular in the light of the decision we reached recently on the size and composition of land forces that we plan to deploy, which I described in my statement on 20 January, <phrase class="offrep" id="wrans/2005-01-20.34"><i>Official Report</i> Column 34&ndash;35</phrase>. Our latest assessment is that our overall requirement for reservists is likely to be up to 6,000, including those currently in the process of mobilisation. We will now issue further call-out notices over the coming weeks to enable us to meet this requirement. The size of the requirement will remain under review as our planning continues.</p>
+	<p pid=".50WS.2/1">In my statement on <phrase class="date" code="2003-01-07">7 January 2003</phrase>, <phrase class="offrep" id="debates/2003-01-07.23"><i>Official Report</i>, columns 23&ndash;25</phrase>. I informed the House that I had made an Order under Section 54(1) of the Reserve Forces Act 1996 to enable the call out of reservists for possible operations against Iraq. I explained that the overall scale of mobilisation would depend upon the continuing evolution of our contingency planning, that we envisaged initially sending out sufficient call-out notices to secure around 1,500 reservists, and that we would issue further notices as appropriate.</p>
+	<p pid=".50WS.2/2">That process of calling out and mobilising reservists is underway. By <phrase class="date" code="2003-01-24">24 January 2003</phrase>, the Services had issued 2,063 notices. As I explained in my statement on <phrase class="date" code="2003-01-07">7 January</phrase>, the number of notices issued has to be significantly larger than the number of reservists required, to allow for the proportion who are likely to be genuinely unavailable.</p>
+	<p pid=".50WS.2/3">Further contingency planning has now clarified the likely size and shape of our additional requirements, in particular in the light of the decision we reached recently on the size and composition of land forces that we plan to deploy, which I described in my statement on <phrase class="date" code="2003-01-20">20 January</phrase>, <phrase class="offrep" id="debates/2003-01-20.34"><i>Official Report</i>, columns 34&ndash;35</phrase>. Our latest assessment is that our overall requirement for reservists is likely to be up to 6,000, including those currently in the process of mobilisation. We will now issue further call-out notices over the coming weeks to enable us to meet this requirement. The size of the requirement will remain under review as our planning continues.</p>
 </speech>
 </publicwhip>
 

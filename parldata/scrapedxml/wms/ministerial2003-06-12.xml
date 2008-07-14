@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-12.55WS.0" nospeaker="true" colnum="55WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_dpthd0">
 	HOME DEPARTMENT
@@ -49,166 +72,166 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.55WS.2" speakerid="uk.org.publicwhip/member/691" speakername="Bob Ainsworth" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="55WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_spmin0">
-	<p>The statistics for April 2001 to March 2002 show that the number of police operations in which firearms were issued was 13,991. The number of occasions on which firearms were discharged by police was 11.</p>
-	<p>Armed response vehicles were deployed on 11,572 occasions and there were 5,776 authorised firearms officers in England and Wales.</p>
-	<p>Full details are set out in the tables below:</p>
+	<p pid=".55WS.2/1">The statistics for April 2001 to March 2002 show that the number of police operations in which firearms were issued was 13,991. The number of occasions on which firearms were discharged by police was 11.</p>
+	<p pid=".55WS.2/2">Armed response vehicles were deployed on 11,572 occasions and there were 5,776 authorised firearms officers in England and Wales.</p>
+	<p pid=".55WS.2/3">Full details are set out in the tables below:</p>
 	<table>
 		<caption>Number of Operations in which Firearms were authorised</caption>
 		<thead>
-			<tr> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
+			<tr pid=".55WS.2/7"> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Total</td> <td>10,928</td> <td>10,915</td> <td>11,109</td> <td>13,991</td> </tr>
-			<tr> <td>Avon &amp; Somerset</td> <td>88</td> <td>90</td> <td>65</td> <td>195</td> </tr>
-			<tr> <td>Bedfordshire</td> <td>260</td> <td>190</td> <td>294</td> <td>237</td> </tr>
-			<tr> <td>Cambridgeshire</td> <td>43</td> <td>75</td> <td>71</td> <td>114</td> </tr>
-			<tr> <td>Cheshire</td> <td>299</td> <td>386</td> <td>545</td> <td>419</td> </tr>
-			<tr> <td>Cleveland</td> <td>35</td> <td>76</td> <td>28</td> <td>37</td> </tr>
-			<tr> <td>City of London</td> <td>147</td> <td>125</td> <td>3</td> <td>40</td> </tr>
-			<tr> <td>Cumbria</td> <td>52</td> <td>24</td> <td>30</td> <td>71</td> </tr>
-			<tr> <td>Derbyshire</td> <td>176</td> <td>178</td> <td>167</td> <td>275</td> </tr>
-			<tr> <td>Devon &amp; Cornwall</td> <td>61</td> <td>65</td> <td>151</td> <td>101</td> </tr>
-			<tr> <td>Dorset</td> <td>69</td> <td>79</td> <td>174</td> <td>184</td> </tr>
-			<tr> <td>Durham</td> <td>114</td> <td>114</td> <td>40</td> <td>89</td> </tr>
-			<tr> <td>Essex</td> <td>590</td> <td>497</td> <td>435</td> <td>323</td> </tr>
-			<tr> <td>Gloucestershire</td> <td>52</td> <td>52</td> <td>48</td> <td>165</td> </tr>
-			<tr> <td>Gtr Manchester</td> <td>160</td> <td>224</td> <td>357</td> <td>580</td> </tr>
-			<tr> <td>Hampshire</td> <td>129</td> <td>103</td> <td>114</td> <td>198</td> </tr>
-			<tr> <td>Hertfordshire</td> <td>75</td> <td>73</td> <td>86</td> <td>112</td> </tr>
-			<tr> <td>Humberside</td> <td>317</td> <td>193</td> <td>158</td> <td>297</td> </tr>
-			<tr> <td>Kent</td> <td>92</td> <td>85</td> <td>83</td> <td>115</td> </tr>
-			<tr> <td>Lancashire</td> <td>616</td> <td>267</td> <td>242</td> <td>232</td> </tr>
-			<tr> <td>Leicestershire</td> <td>109</td> <td>222</td> <td>217</td> <td>300</td> </tr>
-			<tr> <td>Lincolnshire</td> <td>57</td> <td>155</td> <td>336</td> <td>477</td> </tr>
-			<tr> <td>Merseyside</td> <td>484</td> <td>489</td> <td>825</td> <td>1,020</td> </tr>
-			<tr> <td>Metropolitan</td> <td>2,742</td> <td>2,862</td> <td>1,862</td> <td>2,447</td> </tr>
-			<tr> <td>Norfolk</td> <td>185</td> <td>239</td> <td>226</td> <td>175</td> </tr>
-			<tr> <td>Northamptonshire</td> <td>51</td> <td>57</td> <td>58</td> <td>43</td> </tr>
-			<tr> <td>Northumbria</td> <td>683</td> <td>465</td> <td>708</td> <td>1,440</td> </tr>
-			<tr> <td>North Yorkshire</td> <td>69</td> <td>61</td> <td>72</td> <td>92</td> </tr>
-			<tr> <td>Nottinghamshire</td> <td>266</td> <td>255</td> <td>233</td> <td>384</td> </tr>
-			<tr> <td>South Yorkshire</td> <td>135</td> <td>237</td> <td>127</td> <td>258</td> </tr>
-			<tr> <td>Staffordshire</td> <td>209</td> <td>174</td> <td>203</td> <td>232</td> </tr>
-			<tr> <td>Suffolk</td> <td>174</td> <td>165</td> <td>176</td> <td>163</td> </tr>
-			<tr> <td>Surrey</td> <td>60</td> <td>143</td> <td>221</td> <td>245</td> </tr>
-			<tr> <td>Sussex</td> <td>123</td> <td>185</td> <td>353</td> <td>248</td> </tr>
-			<tr> <td>Thames Valley</td> <td>158</td> <td>110</td> <td>153</td> <td>179</td> </tr>
-			<tr> <td>Warwickshire</td> <td>291</td> <td>194</td> <td>233</td> <td>130</td> </tr>
-			<tr> <td>West Mercia</td> <td>130</td> <td>110</td> <td>36</td> <td>117</td> </tr>
-			<tr> <td>West Midlands</td> <td>305</td> <td>362</td> <td>485</td> <td>822</td> </tr>
-			<tr> <td>West Yorkshire</td> <td>662</td> <td>813</td> <td>822</td> <td>757</td> </tr>
-			<tr> <td>Wiltshire</td> <td>24</td> <td>19</td> <td>66</td> <td>45</td> </tr>
-			<tr> <td>Dyfed Powys</td> <td>38</td> <td>37</td> <td>18</td> <td>28</td> </tr>
-			<tr> <td>Gwent</td> <td>64</td> <td>39</td> <td>30</td> <td>20</td> </tr>
-			<tr> <td>North Wales</td> <td>386</td> <td>371</td> <td>195</td> <td>302</td> </tr>
-			<tr> <td>South Wales</td> <td>148</td> <td>255</td> <td>363</td> <td>283</td> </tr>
+			<tr pid=".55WS.2/10"> <td>Total</td> <td>10,928</td> <td>10,915</td> <td>11,109</td> <td>13,991</td> </tr>
+			<tr pid=".55WS.2/11"> <td>Avon &amp; Somerset</td> <td>88</td> <td>90</td> <td>65</td> <td>195</td> </tr>
+			<tr pid=".55WS.2/12"> <td>Bedfordshire</td> <td>260</td> <td>190</td> <td>294</td> <td>237</td> </tr>
+			<tr pid=".55WS.2/13"> <td>Cambridgeshire</td> <td>43</td> <td>75</td> <td>71</td> <td>114</td> </tr>
+			<tr pid=".55WS.2/14"> <td>Cheshire</td> <td>299</td> <td>386</td> <td>545</td> <td>419</td> </tr>
+			<tr pid=".55WS.2/15"> <td>Cleveland</td> <td>35</td> <td>76</td> <td>28</td> <td>37</td> </tr>
+			<tr pid=".55WS.2/16"> <td>City of London</td> <td>147</td> <td>125</td> <td>3</td> <td>40</td> </tr>
+			<tr pid=".55WS.2/17"> <td>Cumbria</td> <td>52</td> <td>24</td> <td>30</td> <td>71</td> </tr>
+			<tr pid=".55WS.2/18"> <td>Derbyshire</td> <td>176</td> <td>178</td> <td>167</td> <td>275</td> </tr>
+			<tr pid=".55WS.2/19"> <td>Devon &amp; Cornwall</td> <td>61</td> <td>65</td> <td>151</td> <td>101</td> </tr>
+			<tr pid=".55WS.2/20"> <td>Dorset</td> <td>69</td> <td>79</td> <td>174</td> <td>184</td> </tr>
+			<tr pid=".55WS.2/21"> <td>Durham</td> <td>114</td> <td>114</td> <td>40</td> <td>89</td> </tr>
+			<tr pid=".55WS.2/22"> <td>Essex</td> <td>590</td> <td>497</td> <td>435</td> <td>323</td> </tr>
+			<tr pid=".55WS.2/23"> <td>Gloucestershire</td> <td>52</td> <td>52</td> <td>48</td> <td>165</td> </tr>
+			<tr pid=".55WS.2/24"> <td>Gtr Manchester</td> <td>160</td> <td>224</td> <td>357</td> <td>580</td> </tr>
+			<tr pid=".55WS.2/25"> <td>Hampshire</td> <td>129</td> <td>103</td> <td>114</td> <td>198</td> </tr>
+			<tr pid=".55WS.2/26"> <td>Hertfordshire</td> <td>75</td> <td>73</td> <td>86</td> <td>112</td> </tr>
+			<tr pid=".55WS.2/27"> <td>Humberside</td> <td>317</td> <td>193</td> <td>158</td> <td>297</td> </tr>
+			<tr pid=".55WS.2/28"> <td>Kent</td> <td>92</td> <td>85</td> <td>83</td> <td>115</td> </tr>
+			<tr pid=".55WS.2/29"> <td>Lancashire</td> <td>616</td> <td>267</td> <td>242</td> <td>232</td> </tr>
+			<tr pid=".55WS.2/30"> <td>Leicestershire</td> <td>109</td> <td>222</td> <td>217</td> <td>300</td> </tr>
+			<tr pid=".55WS.2/31"> <td>Lincolnshire</td> <td>57</td> <td>155</td> <td>336</td> <td>477</td> </tr>
+			<tr pid=".55WS.2/32"> <td>Merseyside</td> <td>484</td> <td>489</td> <td>825</td> <td>1,020</td> </tr>
+			<tr pid=".55WS.2/33"> <td>Metropolitan</td> <td>2,742</td> <td>2,862</td> <td>1,862</td> <td>2,447</td> </tr>
+			<tr pid=".55WS.2/34"> <td>Norfolk</td> <td>185</td> <td>239</td> <td>226</td> <td>175</td> </tr>
+			<tr pid=".55WS.2/35"> <td>Northamptonshire</td> <td>51</td> <td>57</td> <td>58</td> <td>43</td> </tr>
+			<tr pid=".55WS.2/36"> <td>Northumbria</td> <td>683</td> <td>465</td> <td>708</td> <td>1,440</td> </tr>
+			<tr pid=".55WS.2/37"> <td>North Yorkshire</td> <td>69</td> <td>61</td> <td>72</td> <td>92</td> </tr>
+			<tr pid=".55WS.2/38"> <td>Nottinghamshire</td> <td>266</td> <td>255</td> <td>233</td> <td>384</td> </tr>
+			<tr pid=".55WS.2/39"> <td>South Yorkshire</td> <td>135</td> <td>237</td> <td>127</td> <td>258</td> </tr>
+			<tr pid=".55WS.2/40"> <td>Staffordshire</td> <td>209</td> <td>174</td> <td>203</td> <td>232</td> </tr>
+			<tr pid=".55WS.2/41"> <td>Suffolk</td> <td>174</td> <td>165</td> <td>176</td> <td>163</td> </tr>
+			<tr pid=".55WS.2/42"> <td>Surrey</td> <td>60</td> <td>143</td> <td>221</td> <td>245</td> </tr>
+			<tr pid=".55WS.2/43"> <td>Sussex</td> <td>123</td> <td>185</td> <td>353</td> <td>248</td> </tr>
+			<tr pid=".55WS.2/44"> <td>Thames Valley</td> <td>158</td> <td>110</td> <td>153</td> <td>179</td> </tr>
+			<tr pid=".55WS.2/45"> <td>Warwickshire</td> <td>291</td> <td>194</td> <td>233</td> <td>130</td> </tr>
+			<tr pid=".55WS.2/46"> <td>West Mercia</td> <td>130</td> <td>110</td> <td>36</td> <td>117</td> </tr>
+			<tr pid=".55WS.2/47"> <td>West Midlands</td> <td>305</td> <td>362</td> <td>485</td> <td>822</td> </tr>
+			<tr pid=".55WS.2/48"> <td>West Yorkshire</td> <td>662</td> <td>813</td> <td>822</td> <td>757</td> </tr>
+			<tr pid=".55WS.2/49"> <td>Wiltshire</td> <td>24</td> <td>19</td> <td>66</td> <td>45</td> </tr>
+			<tr pid=".55WS.2/50"> <td>Dyfed Powys</td> <td>38</td> <td>37</td> <td>18</td> <td>28</td> </tr>
+			<tr pid=".55WS.2/51"> <td>Gwent</td> <td>64</td> <td>39</td> <td>30</td> <td>20</td> </tr>
+			<tr pid=".55WS.2/52"> <td>North Wales</td> <td>386</td> <td>371</td> <td>195</td> <td>302</td> </tr>
+			<tr pid=".55WS.2/53"> <td>South Wales</td> <td>148</td> <td>255</td> <td>363</td> <td>283</td> </tr>
 		</tbody>
 	</table>
 	<table>
 		<caption>Number of Authorised Firearms Officers (AFOs)</caption>
 		<thead>
-			<tr> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
+			<tr pid=".55WS.2/59"> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Total</td> <td>6,308</td> <td>6,262</td> <td>6,064</td> <td>5,776</td> </tr>
-			<tr> <td>Avon &amp; Somerset</td> <td>153</td> <td>150</td> <td>135</td> <td>116</td> </tr>
-			<tr> <td>Bedfordshire</td> <td>50</td> <td>46</td> <td>45</td> <td>48</td> </tr>
-			<tr> <td>Cambridgeshire</td> <td>80</td> <td>77</td> <td>73</td> <td>56</td> </tr>
-			<tr> <td>Cheshire</td> <td>70</td> <td>75</td> <td>74</td> <td>81</td> </tr>
-			<tr> <td>Cleveland</td> <td>78</td> <td>80</td> <td>75</td> <td>85</td> </tr>
-			<tr> <td>City of London</td> <td>55</td> <td>73</td> <td>74</td> <td>73</td> </tr>
-			<tr> <td>Cumbria</td> <td>98</td> <td>98</td> <td>94</td> <td>92</td> </tr>
-			<tr> <td>Derbyshire</td> <td>87</td> <td>77</td> <td>81</td> <td>80</td> </tr>
-			<tr> <td>Devon &amp; Cornwall</td> <td>82</td> <td>119</td> <td>100</td> <td>108</td> </tr>
-			<tr> <td>Dorset</td> <td>72</td> <td>66</td> <td>67</td> <td>57</td> </tr>
-			<tr> <td>Durham</td> <td>96</td> <td>101</td> <td>101</td> <td>86</td> </tr>
-			<tr> <td>Essex</td> <td>235</td> <td>228</td> <td>195</td> <td>180</td> </tr>
-			<tr> <td>Gloucestershire</td> <td>79</td> <td>77</td> <td>72</td> <td>71</td> </tr>
-			<tr> <td>Gtr Manchester</td> <td>217</td> <td>218</td> <td>240</td> <td>219</td> </tr>
-			<tr> <td>Hampshire</td> <td>110</td> <td>111</td> <td>100</td> <td>87</td> </tr>
-			<tr> <td>Hertfordshire</td> <td>43</td> <td>52</td> <td>44</td> <td>46</td> </tr>
-			<tr> <td>Humberside</td> <td>102</td> <td>97</td> <td>102</td> <td>96</td> </tr>
-			<tr> <td>Kent</td> <td>130</td> <td>136</td> <td>136</td> <td>113</td> </tr>
-			<tr> <td>Lancashire</td> <td>132</td> <td>143</td> <td>132</td> <td>138</td> </tr>
-			<tr> <td>Leicestershire</td> <td>90</td> <td>90</td> <td>85</td> <td>69</td> </tr>
-			<tr> <td>Lincolnshire</td> <td>75</td> <td>78</td> <td>80</td> <td>91</td> </tr>
-			<tr> <td>Merseyside</td> <td>121</td> <td>96</td> <td>103</td> <td>78</td> </tr>
-			<tr> <td>Metropolitan</td> <td>1,951</td> <td>1,977</td> <td>1,940</td> <td>1,805</td> </tr>
-			<tr> <td>Norfolk</td> <td>109</td> <td>110</td> <td>114</td> <td>104</td> </tr>
-			<tr> <td>Northamptonshire</td> <td>92</td> <td>75</td> <td>77</td> <td>51</td> </tr>
-			<tr> <td>Northumbria</td> <td>123</td> <td>114</td> <td>109</td> <td>125</td> </tr>
-			<tr> <td>North Yorkshire</td> <td>83</td> <td>59</td> <td>66</td> <td>66</td> </tr>
-			<tr> <td>Nottinghamshire</td> <td>120</td> <td>116</td> <td>137</td> <td>136</td> </tr>
-			<tr> <td>South Yorkshire</td> <td>90</td> <td>100</td> <td>98</td> <td>92</td> </tr>
-			<tr> <td>Staffordshire</td> <td>92</td> <td>81</td> <td>67</td> <td>71</td> </tr>
-			<tr> <td>Suffolk</td> <td>101</td> <td>98</td> <td>90</td> <td>90</td> </tr>
-			<tr> <td>Surrey</td> <td>69</td> <td>71</td> <td>72</td> <td>62</td> </tr>
-			<tr> <td>Sussex</td> <td>156</td> <td>131</td> <td>118</td> <td>120</td> </tr>
-			<tr> <td>Thames Valley</td> <td>179</td> <td>187</td> <td>185</td> <td>156</td> </tr>
-			<tr> <td>Warwickshire</td> <td>44</td> <td>54</td> <td>45</td> <td>50</td> </tr>
-			<tr> <td>West Mercia</td> <td>139</td> <td>129</td> <td>130</td> <td>125</td> </tr>
-			<tr> <td>West Midlands</td> <td>92</td> <td>93</td> <td>83</td> <td>111</td> </tr>
-			<tr> <td>West Yorkshire</td> <td>128</td> <td>110</td> <td>117</td> <td>116</td> </tr>
-			<tr> <td>Wiltshire</td> <td>88</td> <td>89</td> <td>71</td> <td>71</td> </tr>
-			<tr> <td>Dyfed Powys</td> <td>67</td> <td>65</td> <td>61</td> <td>77</td> </tr>
-			<tr> <td>Gwent</td> <td>64</td> <td>68</td> <td>66</td> <td>57</td> </tr>
-			<tr> <td>North Wales</td> <td>97</td> <td>92</td> <td>67</td> <td>83</td> </tr>
-			<tr> <td>South Wales</td> <td>169</td> <td>155</td> <td>143</td> <td>138</td> </tr>
+			<tr pid=".55WS.2/62"> <td>Total</td> <td>6,308</td> <td>6,262</td> <td>6,064</td> <td>5,776</td> </tr>
+			<tr pid=".55WS.2/63"> <td>Avon &amp; Somerset</td> <td>153</td> <td>150</td> <td>135</td> <td>116</td> </tr>
+			<tr pid=".55WS.2/64"> <td>Bedfordshire</td> <td>50</td> <td>46</td> <td>45</td> <td>48</td> </tr>
+			<tr pid=".55WS.2/65"> <td>Cambridgeshire</td> <td>80</td> <td>77</td> <td>73</td> <td>56</td> </tr>
+			<tr pid=".55WS.2/66"> <td>Cheshire</td> <td>70</td> <td>75</td> <td>74</td> <td>81</td> </tr>
+			<tr pid=".55WS.2/67"> <td>Cleveland</td> <td>78</td> <td>80</td> <td>75</td> <td>85</td> </tr>
+			<tr pid=".55WS.2/68"> <td>City of London</td> <td>55</td> <td>73</td> <td>74</td> <td>73</td> </tr>
+			<tr pid=".55WS.2/69"> <td>Cumbria</td> <td>98</td> <td>98</td> <td>94</td> <td>92</td> </tr>
+			<tr pid=".55WS.2/70"> <td>Derbyshire</td> <td>87</td> <td>77</td> <td>81</td> <td>80</td> </tr>
+			<tr pid=".55WS.2/71"> <td>Devon &amp; Cornwall</td> <td>82</td> <td>119</td> <td>100</td> <td>108</td> </tr>
+			<tr pid=".55WS.2/72"> <td>Dorset</td> <td>72</td> <td>66</td> <td>67</td> <td>57</td> </tr>
+			<tr pid=".55WS.2/73"> <td>Durham</td> <td>96</td> <td>101</td> <td>101</td> <td>86</td> </tr>
+			<tr pid=".55WS.2/74"> <td>Essex</td> <td>235</td> <td>228</td> <td>195</td> <td>180</td> </tr>
+			<tr pid=".55WS.2/75"> <td>Gloucestershire</td> <td>79</td> <td>77</td> <td>72</td> <td>71</td> </tr>
+			<tr pid=".55WS.2/76"> <td>Gtr Manchester</td> <td>217</td> <td>218</td> <td>240</td> <td>219</td> </tr>
+			<tr pid=".55WS.2/77"> <td>Hampshire</td> <td>110</td> <td>111</td> <td>100</td> <td>87</td> </tr>
+			<tr pid=".55WS.2/78"> <td>Hertfordshire</td> <td>43</td> <td>52</td> <td>44</td> <td>46</td> </tr>
+			<tr pid=".55WS.2/79"> <td>Humberside</td> <td>102</td> <td>97</td> <td>102</td> <td>96</td> </tr>
+			<tr pid=".55WS.2/80"> <td>Kent</td> <td>130</td> <td>136</td> <td>136</td> <td>113</td> </tr>
+			<tr pid=".55WS.2/81"> <td>Lancashire</td> <td>132</td> <td>143</td> <td>132</td> <td>138</td> </tr>
+			<tr pid=".55WS.2/82"> <td>Leicestershire</td> <td>90</td> <td>90</td> <td>85</td> <td>69</td> </tr>
+			<tr pid=".55WS.2/83"> <td>Lincolnshire</td> <td>75</td> <td>78</td> <td>80</td> <td>91</td> </tr>
+			<tr pid=".55WS.2/84"> <td>Merseyside</td> <td>121</td> <td>96</td> <td>103</td> <td>78</td> </tr>
+			<tr pid=".55WS.2/85"> <td>Metropolitan</td> <td>1,951</td> <td>1,977</td> <td>1,940</td> <td>1,805</td> </tr>
+			<tr pid=".55WS.2/86"> <td>Norfolk</td> <td>109</td> <td>110</td> <td>114</td> <td>104</td> </tr>
+			<tr pid=".55WS.2/87"> <td>Northamptonshire</td> <td>92</td> <td>75</td> <td>77</td> <td>51</td> </tr>
+			<tr pid=".55WS.2/88"> <td>Northumbria</td> <td>123</td> <td>114</td> <td>109</td> <td>125</td> </tr>
+			<tr pid=".55WS.2/89"> <td>North Yorkshire</td> <td>83</td> <td>59</td> <td>66</td> <td>66</td> </tr>
+			<tr pid=".55WS.2/90"> <td>Nottinghamshire</td> <td>120</td> <td>116</td> <td>137</td> <td>136</td> </tr>
+			<tr pid=".55WS.2/91"> <td>South Yorkshire</td> <td>90</td> <td>100</td> <td>98</td> <td>92</td> </tr>
+			<tr pid=".55WS.2/92"> <td>Staffordshire</td> <td>92</td> <td>81</td> <td>67</td> <td>71</td> </tr>
+			<tr pid=".55WS.2/93"> <td>Suffolk</td> <td>101</td> <td>98</td> <td>90</td> <td>90</td> </tr>
+			<tr pid=".55WS.2/94"> <td>Surrey</td> <td>69</td> <td>71</td> <td>72</td> <td>62</td> </tr>
+			<tr pid=".55WS.2/95"> <td>Sussex</td> <td>156</td> <td>131</td> <td>118</td> <td>120</td> </tr>
+			<tr pid=".55WS.2/96"> <td>Thames Valley</td> <td>179</td> <td>187</td> <td>185</td> <td>156</td> </tr>
+			<tr pid=".55WS.2/97"> <td>Warwickshire</td> <td>44</td> <td>54</td> <td>45</td> <td>50</td> </tr>
+			<tr pid=".55WS.2/98"> <td>West Mercia</td> <td>139</td> <td>129</td> <td>130</td> <td>125</td> </tr>
+			<tr pid=".55WS.2/99"> <td>West Midlands</td> <td>92</td> <td>93</td> <td>83</td> <td>111</td> </tr>
+			<tr pid=".55WS.2/100"> <td>West Yorkshire</td> <td>128</td> <td>110</td> <td>117</td> <td>116</td> </tr>
+			<tr pid=".55WS.2/101"> <td>Wiltshire</td> <td>88</td> <td>89</td> <td>71</td> <td>71</td> </tr>
+			<tr pid=".55WS.2/102"> <td>Dyfed Powys</td> <td>67</td> <td>65</td> <td>61</td> <td>77</td> </tr>
+			<tr pid=".55WS.2/103"> <td>Gwent</td> <td>64</td> <td>68</td> <td>66</td> <td>57</td> </tr>
+			<tr pid=".55WS.2/104"> <td>North Wales</td> <td>97</td> <td>92</td> <td>67</td> <td>83</td> </tr>
+			<tr pid=".55WS.2/105"> <td>South Wales</td> <td>169</td> <td>155</td> <td>143</td> <td>138</td> </tr>
 		</tbody>
 	</table>
 	<table>
 		<caption>Number of Operations involving Armed Response Vehicles (ARVs)</caption>
 		<thead>
-			<tr> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
+			<tr pid=".55WS.2/111"> <th></th> <th>1998&ndash;99</th> <th>1999&ndash;2000</th> <th>2000&ndash;01</th> <th>2001&ndash;02</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Total</td> <td>7,791</td> <td>8,276</td> <td>8,179</td> <td>11,574</td> </tr>
-			<tr> <td>Avon &amp; Somerset</td> <td>83</td> <td>78</td> <td>56</td> <td>173</td> </tr>
-			<tr> <td>Bedfordshire</td> <td>240</td> <td>172</td> <td>253</td> <td>172</td> </tr>
-			<tr> <td>Cambridgeshire</td> <td>27</td> <td>54</td> <td>36</td> <td>43</td> </tr>
-			<tr> <td>Cheshire</td> <td>247</td> <td>330</td> <td>441</td> <td>523</td> </tr>
-			<tr> <td>Cleveland</td> <td>29</td> <td>25</td> <td>16</td> <td>13</td> </tr>
-			<tr> <td>City of London</td> <td>32</td> <td>24</td> <td>30</td> <td>39</td> </tr>
-			<tr> <td>Cumbria</td> <td>38</td> <td>21</td> <td>27</td> <td>53</td> </tr>
-			<tr> <td>Derbyshire</td> <td>153</td> <td>167</td> <td>152</td> <td>253</td> </tr>
-			<tr> <td>Devon &amp; Cornwall</td> <td>43</td> <td>52</td> <td>121</td> <td>76</td> </tr>
-			<tr> <td>Dorset</td> <td>66</td> <td>69</td> <td>155</td> <td>182</td> </tr>
-			<tr> <td>Durham</td> <td>84</td> <td>67</td> <td>31</td> <td>57</td> </tr>
-			<tr> <td>Essex</td> <td>285</td> <td>244</td> <td>206</td> <td>165</td> </tr>
-			<tr> <td>Gloucestershire</td> <td>49</td> <td>44</td> <td>39</td> <td>140</td> </tr>
-			<tr> <td>Gtr Manchester</td> <td>43</td> <td>173</td> <td>302</td> <td>528</td> </tr>
-			<tr> <td>Hampshire</td> <td>114</td> <td>90</td> <td>84</td> <td>116</td> </tr>
-			<tr> <td>Hertfordshire</td> <td>26</td> <td>44</td> <td>65</td> <td>81</td> </tr>
-			<tr> <td>Humberside</td> <td>277</td> <td>181</td> <td>136</td> <td>273</td> </tr>
-			<tr> <td>Kent</td> <td>74</td> <td>58</td> <td>64</td> <td>89</td> </tr>
-			<tr> <td>Lancashire</td> <td>596</td> <td>250</td> <td>177</td> <td>192</td> </tr>
-			<tr> <td>Leicestershire</td> <td>109</td> <td>144</td> <td>195</td> <td>292</td> </tr>
-			<tr> <td>Lincolnshire</td> <td>42</td> <td>141</td> <td>324</td> <td>470</td> </tr>
-			<tr> <td>Merseyside</td> <td>396</td> <td>466</td> <td>75</td> <td>974</td> </tr>
-			<tr> <td>Metropolitan</td> <td>1,573</td> <td>1,812</td> <td>1,380</td> <td>1,667</td> </tr>
-			<tr> <td>Norfolk</td> <td>167</td> <td>210</td> <td>192</td> <td>157</td> </tr>
-			<tr> <td>Northamptonshire</td> <td>32</td> <td>21</td> <td>35</td> <td>25</td> </tr>
-			<tr> <td>Northumbria</td> <td>503</td> <td>397</td> <td>655</td> <td>1349</td> </tr>
-			<tr> <td>North Yorkshire</td> <td>30</td> <td>40</td> <td>54</td> <td>60</td> </tr>
-			<tr> <td>Nottinghamshire</td> <td>246</td> <td>232</td> <td>207</td> <td>333</td> </tr>
-			<tr> <td>South Yorkshire</td> <td>115</td> <td>214</td> <td>103</td> <td>221</td> </tr>
-			<tr> <td>Staffordshire</td> <td>185</td> <td>131</td> <td>136</td> <td>208    </td> </tr>
-			<tr> <td>Suffolk</td> <td>104</td> <td>101</td> <td>103</td> <td>116</td> </tr>
-			<tr> <td>Surrey</td> <td>46</td> <td>110</td> <td>192</td> <td>225</td> </tr>
-			<tr> <td>Sussex</td> <td>0*</td> <td>172</td> <td>245</td> <td>189</td> </tr>
-			<tr> <td>Thames Valley</td> <td>139</td> <td>108</td> <td>108</td> <td>174</td> </tr>
-			<tr> <td>Warwickshire</td> <td>220</td> <td>158</td> <td>194</td> <td>104</td> </tr>
-			<tr> <td>West Mercia</td> <td>99</td> <td>98</td> <td>26</td> <td>100</td> </tr>
-			<tr> <td>West Midlands</td> <td>129</td> <td>138</td> <td>243</td> <td>563</td> </tr>
-			<tr> <td>West Yorkshire</td> <td>630</td> <td>787</td> <td>785</td> <td>609</td> </tr>
-			<tr> <td>Wiltshire</td> <td>17</td> <td>15</td> <td>48</td> <td>43</td> </tr>
-			<tr> <td>Dyfed Powys</td> <td>30</td> <td>37</td> <td>18</td> <td>28</td> </tr>
-			<tr> <td>Gwent</td> <td>39</td> <td>27</td> <td>17</td> <td>16</td> </tr>
-			<tr> <td>North Wales</td> <td>298</td> <td>354</td> <td>155</td> <td>265</td> </tr>
-			<tr> <td>South Wales</td> <td>136</td> <td>220</td> <td>298</td> <td>218</td> </tr>
+			<tr pid=".55WS.2/114"> <td>Total</td> <td>7,791</td> <td>8,276</td> <td>8,179</td> <td>11,574</td> </tr>
+			<tr pid=".55WS.2/115"> <td>Avon &amp; Somerset</td> <td>83</td> <td>78</td> <td>56</td> <td>173</td> </tr>
+			<tr pid=".55WS.2/116"> <td>Bedfordshire</td> <td>240</td> <td>172</td> <td>253</td> <td>172</td> </tr>
+			<tr pid=".55WS.2/117"> <td>Cambridgeshire</td> <td>27</td> <td>54</td> <td>36</td> <td>43</td> </tr>
+			<tr pid=".55WS.2/118"> <td>Cheshire</td> <td>247</td> <td>330</td> <td>441</td> <td>523</td> </tr>
+			<tr pid=".55WS.2/119"> <td>Cleveland</td> <td>29</td> <td>25</td> <td>16</td> <td>13</td> </tr>
+			<tr pid=".55WS.2/120"> <td>City of London</td> <td>32</td> <td>24</td> <td>30</td> <td>39</td> </tr>
+			<tr pid=".55WS.2/121"> <td>Cumbria</td> <td>38</td> <td>21</td> <td>27</td> <td>53</td> </tr>
+			<tr pid=".55WS.2/122"> <td>Derbyshire</td> <td>153</td> <td>167</td> <td>152</td> <td>253</td> </tr>
+			<tr pid=".55WS.2/123"> <td>Devon &amp; Cornwall</td> <td>43</td> <td>52</td> <td>121</td> <td>76</td> </tr>
+			<tr pid=".55WS.2/124"> <td>Dorset</td> <td>66</td> <td>69</td> <td>155</td> <td>182</td> </tr>
+			<tr pid=".55WS.2/125"> <td>Durham</td> <td>84</td> <td>67</td> <td>31</td> <td>57</td> </tr>
+			<tr pid=".55WS.2/126"> <td>Essex</td> <td>285</td> <td>244</td> <td>206</td> <td>165</td> </tr>
+			<tr pid=".55WS.2/127"> <td>Gloucestershire</td> <td>49</td> <td>44</td> <td>39</td> <td>140</td> </tr>
+			<tr pid=".55WS.2/128"> <td>Gtr Manchester</td> <td>43</td> <td>173</td> <td>302</td> <td>528</td> </tr>
+			<tr pid=".55WS.2/129"> <td>Hampshire</td> <td>114</td> <td>90</td> <td>84</td> <td>116</td> </tr>
+			<tr pid=".55WS.2/130"> <td>Hertfordshire</td> <td>26</td> <td>44</td> <td>65</td> <td>81</td> </tr>
+			<tr pid=".55WS.2/131"> <td>Humberside</td> <td>277</td> <td>181</td> <td>136</td> <td>273</td> </tr>
+			<tr pid=".55WS.2/132"> <td>Kent</td> <td>74</td> <td>58</td> <td>64</td> <td>89</td> </tr>
+			<tr pid=".55WS.2/133"> <td>Lancashire</td> <td>596</td> <td>250</td> <td>177</td> <td>192</td> </tr>
+			<tr pid=".55WS.2/134"> <td>Leicestershire</td> <td>109</td> <td>144</td> <td>195</td> <td>292</td> </tr>
+			<tr pid=".55WS.2/135"> <td>Lincolnshire</td> <td>42</td> <td>141</td> <td>324</td> <td>470</td> </tr>
+			<tr pid=".55WS.2/136"> <td>Merseyside</td> <td>396</td> <td>466</td> <td>75</td> <td>974</td> </tr>
+			<tr pid=".55WS.2/137"> <td>Metropolitan</td> <td>1,573</td> <td>1,812</td> <td>1,380</td> <td>1,667</td> </tr>
+			<tr pid=".55WS.2/138"> <td>Norfolk</td> <td>167</td> <td>210</td> <td>192</td> <td>157</td> </tr>
+			<tr pid=".55WS.2/139"> <td>Northamptonshire</td> <td>32</td> <td>21</td> <td>35</td> <td>25</td> </tr>
+			<tr pid=".55WS.2/140"> <td>Northumbria</td> <td>503</td> <td>397</td> <td>655</td> <td>1349</td> </tr>
+			<tr pid=".55WS.2/141"> <td>North Yorkshire</td> <td>30</td> <td>40</td> <td>54</td> <td>60</td> </tr>
+			<tr pid=".55WS.2/142"> <td>Nottinghamshire</td> <td>246</td> <td>232</td> <td>207</td> <td>333</td> </tr>
+			<tr pid=".55WS.2/143"> <td>South Yorkshire</td> <td>115</td> <td>214</td> <td>103</td> <td>221</td> </tr>
+			<tr pid=".55WS.2/144"> <td>Staffordshire</td> <td>185</td> <td>131</td> <td>136</td> <td>208    </td> </tr>
+			<tr pid=".55WS.2/145"> <td>Suffolk</td> <td>104</td> <td>101</td> <td>103</td> <td>116</td> </tr>
+			<tr pid=".55WS.2/146"> <td>Surrey</td> <td>46</td> <td>110</td> <td>192</td> <td>225</td> </tr>
+			<tr pid=".55WS.2/147"> <td>Sussex</td> <td>0*</td> <td>172</td> <td>245</td> <td>189</td> </tr>
+			<tr pid=".55WS.2/148"> <td>Thames Valley</td> <td>139</td> <td>108</td> <td>108</td> <td>174</td> </tr>
+			<tr pid=".55WS.2/149"> <td>Warwickshire</td> <td>220</td> <td>158</td> <td>194</td> <td>104</td> </tr>
+			<tr pid=".55WS.2/150"> <td>West Mercia</td> <td>99</td> <td>98</td> <td>26</td> <td>100</td> </tr>
+			<tr pid=".55WS.2/151"> <td>West Midlands</td> <td>129</td> <td>138</td> <td>243</td> <td>563</td> </tr>
+			<tr pid=".55WS.2/152"> <td>West Yorkshire</td> <td>630</td> <td>787</td> <td>785</td> <td>609</td> </tr>
+			<tr pid=".55WS.2/153"> <td>Wiltshire</td> <td>17</td> <td>15</td> <td>48</td> <td>43</td> </tr>
+			<tr pid=".55WS.2/154"> <td>Dyfed Powys</td> <td>30</td> <td>37</td> <td>18</td> <td>28</td> </tr>
+			<tr pid=".55WS.2/155"> <td>Gwent</td> <td>39</td> <td>27</td> <td>17</td> <td>16</td> </tr>
+			<tr pid=".55WS.2/156"> <td>North Wales</td> <td>298</td> <td>354</td> <td>155</td> <td>265</td> </tr>
+			<tr pid=".55WS.2/157"> <td>South Wales</td> <td>136</td> <td>220</td> <td>298</td> <td>218</td> </tr>
 		</tbody>
 	</table>
-	<p>* these forces have changed the counting method for incidents to which ARVs are deployed.</p>
+	<p pid=".55WS.2/160">* these forces have changed the counting method for incidents to which ARVs are deployed.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-12.57WS.0" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_dpthd1">
@@ -220,8 +243,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.57WS.2" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" speakeroffice="The Secretary of State for Defence" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_spmin1">
-	<p>In a written statement on 5 February 2003, <phrase class="offrep" id="wrans/2003-02-05.11WS"><i>Official Report</i> Column 11&ndash;12WS</phrase>. I informed the House that the Government had agreed to a US request to upgrade the early warning radar at RAF Fylingdales as part of the US missile defence programme. Since then, we have been engaged in negotiating agreements with the US intended further to develop bilateral cooperation on aspects of the US missile defence programme. The United States Secretary of Defense and I have today signed a Framework Memorandum of Understanding on missile defence that facilitates bilateral information exchanges on missile defence matters, establishes a top-level management structure to oversee cooperative work, and prepares the way for fair opportunities to be given to UK industry to participate in the US programme. It also contains general provisions for security, personnel and other administrative matters. Further MOUs are being negotiated covering the detailed arrangements for the upgrade of the Fylingdales radar, and setting up specific UK/US technical cooperative programmes. The details of these bilateral arrangements are confidential between the respective Governments at this stage.</p>
-	<p>None of these agreements commits the UK Government to the acquisition or deployment of a missile defence system. But the Framework MOU is an important step forward that will enable us to improve our understanding of the capabilities of the US system, in order to inform any future decisions on missile defence for the UK or for Europe as a whole.</p>
+	<p pid=".57WS.2/1">In a written statement on <phrase class="date" code="2003-02-05">5 February 2003</phrase>, <phrase class="offrep" id="wms/2003-02-05.11"><i>Official Report</i>, columns 11&ndash;12WS</phrase>. I informed the House that the Government had agreed to a US request to upgrade the early warning radar at RAF Fylingdales as part of the US missile defence programme. Since then, we have been engaged in negotiating agreements with the US intended further to develop bilateral cooperation on aspects of the US missile defence programme. The United States Secretary of Defense and I have today signed a Framework Memorandum of Understanding on missile defence that facilitates bilateral information exchanges on missile defence matters, establishes a top-level management structure to oversee cooperative work, and prepares the way for fair opportunities to be given to UK industry to participate in the US programme. It also contains general provisions for security, personnel and other administrative matters. Further MOUs are being negotiated covering the detailed arrangements for the upgrade of the Fylingdales radar, and setting up specific UK/US technical cooperative programmes. The details of these bilateral arrangements are confidential between the respective Governments at this stage.</p>
+	<p pid=".57WS.2/2">None of these agreements commits the UK Government to the acquisition or deployment of a missile defence system. But the Framework MOU is an important step forward that will enable us to improve our understanding of the capabilities of the US system, in order to inform any future decisions on missile defence for the UK or for Europe as a whole.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.57WS.3" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_sbhd2">
@@ -229,12 +252,12 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.57WS.4" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_spmin2">
-	<p>The Chief Executive of the British Forces Post Office Agency has been set the following Key Targets for 2003&ndash;04:</p>
-	<p>Key Target 1:</p>
-	<p class="indent">To meet 95 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Postal Service (DPS) traffic from BFPO to the Theatre of Operations (TOO), Front Line Commands (FLCs) or on board ship. Key Target 2:</p>
-	<p class="indent">To meet 95 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Mail Service (DMS) traffic from BFPO to customers of Defence Mail Centres (DMCs). Key Target 3:</p>
-	<p class="indent">To meet 97.5 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Courier Service (DCS) traffic from BFPO to the customers/TOO. Key Target 4:</p>
-	<p class="indent">To achieve an overall 3 per cent. increase in efficiency.</p>
+	<p pid=".57WS.4/1">The Chief Executive of the British Forces Post Office Agency has been set the following Key Targets for 2003&ndash;04:</p>
+	<p pid=".57WS.4/2">Key Target 1:</p>
+	<p pid=".57WS.4/3" class="indent">To meet 95 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Postal Service (DPS) traffic from BFPO to the Theatre of Operations (TOO), Front Line Commands (FLCs) or on board ship. Key Target 2:</p>
+	<p pid=".57WS.4/4" class="indent">To meet 95 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Mail Service (DMS) traffic from BFPO to customers of Defence Mail Centres (DMCs). Key Target 3:</p>
+	<p pid=".57WS.4/5" class="indent">To meet 97.5 per cent. of the Customers' requirements as negotiated and agreed in Customer Supplier Agreements for the Transit of Defence Courier Service (DCS) traffic from BFPO to the customers/TOO. Key Target 4:</p>
+	<p pid=".57WS.4/6" class="indent">To achieve an overall 3 per cent. increase in efficiency.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.58WS.0" nospeaker="true" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_sbhd3">
@@ -242,23 +265,23 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.58WS.1" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m01.htm#30612m01.html_spmin3">
-	<p>The Chief Executive of the Defence Storage and Distribution Agency has been set the following Key Targets for 2003&ndash;04:</p>
-	<p>Key Target 1:</p>
-	<p class="indent">To meet the Customers' requirements as negotiated and agreed in Customer Supplier Agreements. (CSAs) Key Target 1a:</p>
-	<p class="indent">For explosive materiel: to supply 95 per cent. of available maintained munitions within demand timescales. Key Target 1b:</p>
-	<p class="indent">95 per cent. of all issues of non-explosive materiel to consumers to meet that element of the Supply Chain Pipeline Time (SCPT) for which DSDA has a responsibility.</p>
-	<p>Within the 95 per cent. target, for non-explosive materiel, the following subsidiary targets have been set in CSAs:</p>
-	<p class="indent">99 per cent. of issues to meet specified SCPT at Standard Priority Codes 01, 02 and 05;</p>
-	<p class="indent">98 per cent. of issues to meet specified SCPT at Standard Priority Code 06;</p>
-	<p class="indent">97 per cent. of issues to meet specified SCPT at Standard Priority Codes 03 and 07;</p>
-	<p class="indent">95 per cent. of issues to meet specified SCPT at Standard Priority Codes 04 and 08.</p>
-	<p>Key Target 1c:</p>
-	<p class="indent">98 per cent. of all receipts that conform to the specifications laid down in the contract and/or materiel regulations to be processed within time limits agreed with each individual customer. Key Target 2:</p>
-	<p class="indent">To achieve an average 5 per cent. reduction in the unit cost of output.</p>
-	<p>Key Target 3:</p>
-	<p class="indent">The value of inventory written off as a result of DSDA's actions to be less than the levels agreed within each Customer Supplier Agreement. Key Target 3a:</p>
-	<p class="indent">The value of explosive materiel written off as a result of DSDA's action to be less than the value of materiel written off during financial year 2002&ndash;03. Key Target 3b:</p>
-	<p class="indent">The value of non-explosive materiel written off as a result of DSDA's action to be less than levels agreed within each specific Customer Supplier Agreement.</p>
+	<p pid=".58WS.1/1">The Chief Executive of the Defence Storage and Distribution Agency has been set the following Key Targets for 2003&ndash;04:</p>
+	<p pid=".58WS.1/2">Key Target 1:</p>
+	<p pid=".58WS.1/3" class="indent">To meet the Customers' requirements as negotiated and agreed in Customer Supplier Agreements. (CSAs) Key Target 1a:</p>
+	<p pid=".58WS.1/4" class="indent">For explosive materiel: to supply 95 per cent. of available maintained munitions within demand timescales. Key Target 1b:</p>
+	<p pid=".58WS.1/5" class="indent">95 per cent. of all issues of non-explosive materiel to consumers to meet that element of the Supply Chain Pipeline Time (SCPT) for which DSDA has a responsibility.</p>
+	<p pid=".58WS.1/6">Within the 95 per cent. target, for non-explosive materiel, the following subsidiary targets have been set in CSAs:</p>
+	<p pid=".58WS.1/7" class="indent">99 per cent. of issues to meet specified SCPT at Standard Priority Codes 01, 02 and 05;</p>
+	<p pid=".58WS.1/8" class="indent">98 per cent. of issues to meet specified SCPT at Standard Priority Code 06;</p>
+	<p pid=".58WS.1/9" class="indent">97 per cent. of issues to meet specified SCPT at Standard Priority Codes 03 and 07;</p>
+	<p pid=".58WS.1/10" class="indent">95 per cent. of issues to meet specified SCPT at Standard Priority Codes 04 and 08.</p>
+	<p pid=".58WS.1/11">Key Target 1c:</p>
+	<p pid=".58WS.1/12" class="indent">98 per cent. of all receipts that conform to the specifications laid down in the contract and/or materiel regulations to be processed within time limits agreed with each individual customer. Key Target 2:</p>
+	<p pid=".58WS.1/13" class="indent">To achieve an average 5 per cent. reduction in the unit cost of output.</p>
+	<p pid=".58WS.1/14">Key Target 3:</p>
+	<p pid=".58WS.1/15" class="indent">The value of inventory written off as a result of DSDA's actions to be less than the levels agreed within each Customer Supplier Agreement. Key Target 3a:</p>
+	<p pid=".58WS.1/16" class="indent">The value of explosive materiel written off as a result of DSDA's action to be less than the value of materiel written off during financial year 2002&ndash;03. Key Target 3b:</p>
+	<p pid=".58WS.1/17" class="indent">The value of non-explosive materiel written off as a result of DSDA's action to be less than levels agreed within each specific Customer Supplier Agreement.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.59WS.0" nospeaker="true" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_sbhd0">
@@ -266,15 +289,15 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.59WS.1" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin0">
-	<p>The Chief Executive of the Defence Transport and Movements Agency has been set the following Key Targets for 2003&ndash;04:</p>
-	<p>Key Target 1:</p>
-	<p class="indent">To meet the Customers' requirements as negotiated and agreed in CSAs to deliver:</p>
-	<p class="indent">(a) 97 per cent. or more of Agency transactions and services provided under call-off contracts to be within agreed Time, Quantity, Quality and Cost (TQQC) criteria.</p>
-	<p class="indent">(b) At least 92 per cent. of transactions against each contract to be within agreed TQQC criteria.</p>
-	<p>Key Target 2:</p>
-	<p class="indent">To reduce the average unit cost of output by 2 per cent. in real terms.</p>
-	<p>Key Target 3:</p>
-	<p class="indent">To achieve at least a &quot;satisfactory&quot; rating in the provision of operational transport and movements support.</p>
+	<p pid=".59WS.1/1">The Chief Executive of the Defence Transport and Movements Agency has been set the following Key Targets for 2003&ndash;04:</p>
+	<p pid=".59WS.1/2">Key Target 1:</p>
+	<p pid=".59WS.1/3" class="indent">To meet the Customers' requirements as negotiated and agreed in CSAs to deliver:</p>
+	<p pid=".59WS.1/4" class="indent">(a) 97 per cent. or more of Agency transactions and services provided under call-off contracts to be within agreed Time, Quantity, Quality and Cost (TQQC) criteria.</p>
+	<p pid=".59WS.1/5" class="indent">(b) At least 92 per cent. of transactions against each contract to be within agreed TQQC criteria.</p>
+	<p pid=".59WS.1/6">Key Target 2:</p>
+	<p pid=".59WS.1/7" class="indent">To reduce the average unit cost of output by 2 per cent. in real terms.</p>
+	<p pid=".59WS.1/8">Key Target 3:</p>
+	<p pid=".59WS.1/9" class="indent">To achieve at least a &quot;satisfactory&quot; rating in the provision of operational transport and movements support.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-12.59WS.2" nospeaker="true" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_dpthd0">
@@ -286,9 +309,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.59WS.4" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" speakeroffice="The Minister for E-Commerce and Competitiveness" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin1">
-	<p>The Deputy UK Permanent Representative to the European Union, Anne Lambert, attended the Council on 5 June on my behalf.</p>
-	<p>The Council approved a General Agreement on the structure and tasks of a Regulation establishing a new European Network and Information Security Agency (ENISA). The Government supports this initiative but abstained from supporting the General Agreement on the grounds that the legal base proposed&mdash;Article 95&mdash;is inappropriate for this body.</p>
-	<p>Council Conclusions on the World Summit on the Information Society, being held in Geneva in December, were agreed without substantial debate.</p>
+	<p pid=".59WS.4/1">The Deputy UK Permanent Representative to the European Union, Anne Lambert, attended the Council on <phrase class="date" code="2003-06-05">5 June</phrase> on my behalf.</p>
+	<p pid=".59WS.4/2">The Council approved a General Agreement on the structure and tasks of a Regulation establishing a new European Network and Information Security Agency (ENISA). The Government supports this initiative but abstained from supporting the General Agreement on the grounds that the legal base proposed&mdash;Article 95&mdash;is inappropriate for this body.</p>
+	<p pid=".59WS.4/3">Council Conclusions on the World Summit on the Information Society, being held in Geneva in December, were agreed without substantial debate.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.60WS.0" nospeaker="true" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_sbhd2">
@@ -296,8 +319,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.60WS.1" speakerid="uk.org.publicwhip/member/960" speakername="Patricia Hewitt" speakeroffice="The Secretary of State for Trade and Industry" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin2">
-	<p>I am pleased to announce today the publication of the report, Delivering on Gender Equality: Supporting the PSA Objective on Gender Equality 2003&ndash;06, which sets out cross-government action to tackle gender inequality and includes a set of targets which will be the basis of measuring my Department's PSA objective on gender equality.</p>
-	<p>I have arranged for copies of the response document to be placed in the Library of the House.</p>
+	<p pid=".60WS.1/1">I am pleased to announce today the publication of the report, Delivering on Gender Equality: Supporting the PSA Objective on Gender Equality 2003&ndash;06, which sets out cross-government action to tackle gender inequality and includes a set of targets which will be the basis of measuring my Department's PSA objective on gender equality.</p>
+	<p pid=".60WS.1/2">I have arranged for copies of the response document to be placed in the Library of the House.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-06-12.60WS.2" nospeaker="true" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_dpthd1">
@@ -309,7 +332,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.60WS.4" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin3">
-	<p>The Industrial Research and Technology Unit's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
+	<p pid=".60WS.4/1">The Industrial Research and Technology Unit's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.60WS.5" nospeaker="true" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_sbhd4">
@@ -317,7 +340,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.60WS.6" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin4">
-	<p>The Local Enterprise Development Unit's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
+	<p pid=".60WS.6/1">The Local Enterprise Development Unit's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-06-12.60WS.7" nospeaker="true" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_sbhd5">
@@ -325,7 +348,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-06-12.60WS.8" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="60WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030612/wmstext/30612m02.htm#30612m02.html_spmin5">
-	<p>The Industrial Development Board's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
+	<p pid=".60WS.8/1">The Industrial Development Board's 2001&ndash;02 Annual Report and Accounts were deposited in the Libraries of both Houses today.</p>
 </speech>
 </publicwhip>
 

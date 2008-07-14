@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -35,7 +38,9 @@
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -52,6 +57,7 @@
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -88,7 +94,7 @@
 			<tr pid="a.129WS.1/5"> <th>Current Regimental/Battalion Title</th> <th>New Regimental/Battalion Titles</th> <th>Abbreviation</th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/8"> <td>The Guards Division</td> </tr>
+			<tr pid="a.129WS.1/8"> <td colspan="3">The Guards Division</td> </tr>
 			<tr pid="a.129WS.1/9"> <td>1st Battalion Grenadier Guards</td> <td>1st Battalion Grenadier Guards</td> <td>1 GRENGDS</td> </tr>
 			<tr pid="a.129WS.1/10"> <td>1st Battalion Coldstream Guards</td> <td>1st Battalion Coldstream Guards</td> <td>1 COLDMGDS</td> </tr>
 			<tr pid="a.129WS.1/11"> <td>1st Battalion Scots Guards</td> <td>1st Battalion Scots Guards</td> <td>1 SG</td> </tr>
@@ -102,16 +108,16 @@
 			<tr pid="a.129WS.1/19"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/22"> <td>The Royal Regiment of Scotland</td> </tr>
-			<tr pid="a.129WS.1/23"> <td>Formation Arrangements: Regimental formation by the end of March 2006, with The Royal Scots and The King's Own Scottish Borderers Battalions of The Royal Regiment of Scotland, amalgamating on 1 August 2006.</td> </tr>
-			<tr pid="a.129WS.1/24"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/22"> <td colspan="3">The Royal Regiment of Scotland</td> </tr>
+			<tr pid="a.129WS.1/23"> <td colspan="3">Formation Arrangements: Regimental formation by the end of March 2006, with The Royal Scots and The King's Own Scottish Borderers Battalions of The Royal Regiment of Scotland, amalgamating on 1 August 2006.</td> </tr>
+			<tr pid="a.129WS.1/24"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/25"> <td>1st Battalion The Royal Scots (The Royal Regiment)</td> <td>Amalgamates to become The Royal Scots Borderers, 1st Battalion The Royal Regiment of Scotland</td> <td>1 SCOTS</td> </tr>
 			<tr pid="a.129WS.1/26"> <td>1st Battalion The Royal Highland Fusiliers (Princess Margaret's Own Glasgow and Ayrshire Regiment)</td> <td>The Royal Highland Fusiliers, 2nd Battalion The Royal Regiment of Scotland</td> <td>2 SCOTS</td> </tr>
 			<tr pid="a.129WS.1/27"> <td>1st Battalion The King's Own Scottish Borderers</td> <td>Amalgamates to become The Royal Scots Borderers, 1st Battalion The Royal Regiment of Scotland as above</td> <td>1 SCOTS(as above)</td> </tr>
 			<tr pid="a.129WS.1/28"> <td>1st Battalion The Black Watch (Royal Highland Regiment)</td> <td>The Black Watch, 3rd Battalion The Royal Regiment of Scotland</td> <td>3 SCOTS</td> </tr>
 			<tr pid="a.129WS.1/29"> <td>1st Battalion The Highlanders (Seaforth, Gordons and Camerons)</td> <td>The Highlanders, 4th Battalion The Royal Regiment of Scotland</td> <td>4 SCOTS</td> </tr>
 			<tr pid="a.129WS.1/30"> <td>1st Battalion The Argyll and Sutherland Highlanders (Princess Louise's)</td> <td>The Argyll and Sutherland Highlanders, 5th Battalion The Royal Regiment of Scotland</td> <td>5 SCOTS</td> </tr>
-			<tr pid="a.129WS.1/31"> <td>Territorial Army Battalions</td> </tr>
+			<tr pid="a.129WS.1/31"> <td colspan="2">Territorial Army Battalions</td> </tr>
 			<tr pid="a.129WS.1/32"> <td>52nd Lowland Regiment</td> <td>52nd Lowland,</td> <td>6 SCOTS</td> </tr>
 			<tr pid="a.129WS.1/33"> <td></td> <td>6th Battalion The Royal Regiment of Scotland</td> </tr>
 			<tr pid="a.129WS.1/34"> <td>51st Highland Regiment</td> <td>51st Highland, 7th Battalion The Royal Regiment of Scotland</td> <td>7 SCOTS</td> </tr>
@@ -123,17 +129,17 @@
 			<tr pid="a.129WS.1/40"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/43"> <td>The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> </tr>
-			<tr pid="a.129WS.1/44"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/43"> <td colspan="3">The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> </tr>
+			<tr pid="a.129WS.1/44"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/45"> <td>1st Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>1st Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>1 PWRR</td> </tr>
 			<tr pid="a.129WS.1/46"> <td>2nd Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>2nd Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>2 PWRR</td> </tr>
 			<tr pid="a.129WS.1/47"> <td></td> <td>Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/48"> <td>3rd Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>3rd Battalion The Princess of Wales's Royal Regiment (Queen's and Royal Hampshires)</td> <td>3 PWRR</td> </tr>
-			<tr pid="a.129WS.1/49"> <td></td> <td>The Royal Regiment of Fusiliers</td> </tr>
-			<tr pid="a.129WS.1/50"> <td></td> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/49"> <td></td> <td colspan="2">The Royal Regiment of Fusiliers</td> </tr>
+			<tr pid="a.129WS.1/50"> <td></td> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/51"> <td>1st Battalion The Royal Regiment of Fusiliers</td> <td>1st Battalion The Royal Regiment of Fusiliers</td> <td>1 RRF</td> </tr>
 			<tr pid="a.129WS.1/52"> <td>2nd Battalion The Royal Regiment of Fusiliers</td> <td>2nd Battalion The Royal Regiment of Fusiliers</td> <td>2 RRF</td> </tr>
-			<tr pid="a.129WS.1/53"> <td></td> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/53"> <td></td> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/54"> <td>The Tyne Tees Regiment <sup>1</sup></td> <td>5th Battalion The Royal Regiment of Fusiliers</td> <td>5 RRF</td> </tr>
 		</tbody>
 	</table>
@@ -142,8 +148,8 @@
 			<tr pid="a.129WS.1/59"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/62"> <td></td> <td>The Royal Anglian Regiment</td> </tr>
-			<tr pid="a.129WS.1/63"> <td>Regular Army Battalions</td> </tr>
+			<tr pid="a.129WS.1/62"> <td></td> <td colspan="2">The Royal Anglian Regiment</td> </tr>
+			<tr pid="a.129WS.1/63"> <td colspan="2">Regular Army Battalions</td> </tr>
 			<tr pid="a.129WS.1/64"> <td>1st Battalion The Royal Anglian Regiment</td> <td>1st Battalion The Royal Anglian Regiment</td> <td>1 R ANGLIAN</td> </tr>
 			<tr pid="a.129WS.1/65"> <td>2nd Battalion The Royal Anglian Regiment</td> <td>2nd Battalion The Royal Anglian Regiment</td> <td>2 R ANGLIAN</td> </tr>
 			<tr pid="a.129WS.1/66"> <td>Territorial Army Battalion</td> </tr>
@@ -169,14 +175,14 @@
 			<tr pid="a.129WS.1/86"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/89"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/89"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/90"> <td>The Lancastrian and Cumbrian Volunteers</td> <td>4th Battalion The Duke of Lancaster's Regiment (King's, Lancashire and Border)</td> <td>4 LANCS <sup>3</sup></td> </tr>
 			<tr pid="a.129WS.1/91"> <td>The Yorkshire Regiment (14th / 15th, 19th and 33rd / 76th Foot)Formation Arrangements: Regimental formation 6 June 2006.</td> </tr>
-			<tr pid="a.129WS.1/92"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/92"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/93"> <td>1st Battalion Prince Of Wales's Own Regiment Of Yorkshire</td> <td>1st Battalion The Yorkshire Regiment(Prince Of Wales's Own)</td> <td>1 YORKS</td> </tr>
 			<tr pid="a.129WS.1/94"> <td>1st Battalion The Green Howards (Alexandra,Princess of Wales's Own Yorkshire Regiment)</td> <td>2nd Battalion TheYorkshire Regiment(Green Howards)</td> <td>2 YORKS</td> </tr>
 			<tr pid="a.129WS.1/95"> <td>1st Battalion The Duke of Wellington's Regiment(West Riding)</td> <td>3rd Battalion The Yorkshire Regiment (Duke of Wellington's)</td> <td>3 YORKS</td> </tr>
-			<tr pid="a.129WS.1/96"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/96"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/97"> <td>The East and West Riding Regiment</td> <td>4th Battalion The Yorkshire Regiment</td> <td>4 YORKS</td> </tr>
 		</tbody>
 	</table>
@@ -187,16 +193,16 @@
 		</thead>
 		<tbody>
 			<tr pid="a.129WS.1/106"> <td>The Mercian RegimentFormation Arrangements: The Mercian Regiment will form on 24 August 2007.</td> </tr>
-			<tr pid="a.129WS.1/107"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/107"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/108"> <td>1st Battalion The Cheshire Regiment</td> <td>1st Battalion TheMercian Regiment(Cheshire)</td> <td>1 MERCIAN</td> </tr>
 			<tr pid="a.129WS.1/109"> <td>1st Battalion TheWorcestershire andSherwood ForestersRegiment (26th/45th Foot)</td> <td>2nd Battalion TheMercian Regiment(Worcesters andForesters)</td> <td>2 MERCIAN</td> </tr>
 			<tr pid="a.129WS.1/110"> <td>1st Battalion TheStaffordshire Regiment (The Prince of Wales's)</td> <td>3rd Battalion TheMercian Regiment (Staffords)</td> <td>3 MERCIAN</td> </tr>
-			<tr pid="a.129WS.1/111"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/111"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/112"> <td>The West Midlands Regiment</td> <td>4th Battalion The Mercian Regiment</td> <td>4 MERCIAN</td> </tr>
 			<tr pid="a.129WS.1/113"> <td>The Royal WelshFormation Arrangements: Regimental formation 1 March 2006.</td> </tr>
 			<tr pid="a.129WS.1/114"> <td>1st Battalion The Royal Welch Fusiliers</td> <td>1st Battalion The Royal Welsh (The Royal Welch Fusiliers)</td> <td>1 R WELSH</td> </tr>
 			<tr pid="a.129WS.1/115"> <td>1st Battalion The Royal Regiment of Wales (24th/41st Foot)</td> <td>2nd Battalion The Royal Welsh (The Royal Regiment of Wales)</td> <td>2 R WELSH</td> </tr>
-			<tr pid="a.129WS.1/116"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/116"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/117"> <td>The Royal WelshRegiment</td> <td>3rd Battalion The Royal Welsh</td> <td>3 R WELSH</td> </tr>
 		</tbody>
 	</table>
@@ -206,14 +212,14 @@
 			<tr pid="a.129WS.1/123"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/126"> <td>The RiflesFormation Arrangements: Formed in 2007.</td> </tr>
-			<tr pid="a.129WS.1/127"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/126"> <td colspan="2">The RiflesFormation Arrangements: Formed in 2007.</td> </tr>
+			<tr pid="a.129WS.1/127"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/128"> <td>1st Battalion TheDevonshire and DorsetLight Infantry and 1st Battalion The Royal     Gloucestershire, Berkshire and Wiltshire Light Infantry</td> <td>1st Battalion The Rifles</td> <td>1 RIFLES</td> </tr>
 			<tr pid="a.129WS.1/129"> <td>1st Battalion The Royal Green Jackets</td> <td>2nd Battalion The Rifles</td> <td>2 RIFLES</td> </tr>
 			<tr pid="a.129WS.1/130"> <td>2nd Battalion The Light Infantry</td> <td>3rd Battalion The Rifles</td> <td>3 RIFLES</td> </tr>
 			<tr pid="a.129WS.1/131"> <td>2nd Battalion The Royal Green Jackets</td> <td>4th Battalion The Rifles</td> <td>4 RIFLES</td> </tr>
 			<tr pid="a.129WS.1/132"> <td>1st Battalion The Light Infantry</td> <td>5th Battalion The Rifles</td> <td>5 RIFLES</td> </tr>
-			<tr pid="a.129WS.1/133"> <td>Territorial Army Battalions</td> </tr>
+			<tr pid="a.129WS.1/133"> <td colspan="2">Territorial Army Battalions</td> </tr>
 			<tr pid="a.129WS.1/134"> <td>The Rifle Volunteers</td> <td>6th Battalion The Rifles</td> <td>6 RIFLES</td> </tr>
 			<tr pid="a.129WS.1/135"> <td>The Royal Rifle Volunteers</td> <td>7th Battalion The Rifles <sup>4</sup></td> <td>7 RIFLES</td> </tr>
 		</tbody>
@@ -224,9 +230,9 @@
 			<tr pid="a.129WS.1/141"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/144"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/144"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/145"> <td>1st Battalion The Royal Irish Regiment</td> <td>1st Battalion The Royal Irish Regiment</td> <td>1 RIRISH</td> </tr>
-			<tr pid="a.129WS.1/146"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/146"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/147"> <td>The Royal Irish Rangers</td> <td>The Royal Irish Rangers</td> <td>RANGERS</td> </tr>
 		</tbody>
 	</table>
@@ -236,11 +242,11 @@
 			<tr pid="a.129WS.1/153"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/156"> <td>Regular Battalions</td> </tr>
+			<tr pid="a.129WS.1/156"> <td colspan="2">Regular Battalions</td> </tr>
 			<tr pid="a.129WS.1/157"> <td>1st Battalion, The Parachute Regiment <sup>6</sup></td> <td>1st Battalion The Parachute Regiment</td> <td>1 PARA</td> </tr>
 			<tr pid="a.129WS.1/158"> <td>2nd Battalion, The Parachute Regiment</td> <td>2nd Battalion TheParachute Regiment</td> <td>2 PARA</td> </tr>
 			<tr pid="a.129WS.1/159"> <td>3rd Battalion, The Parachute Regiment</td> <td>3rd Battalion The Parachute Regiment</td> <td>3 PARA</td> </tr>
-			<tr pid="a.129WS.1/160"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/160"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/161"> <td>4th Battalion, The Parachute Regiment</td> <td>4th Battalion The Parachute Regiment</td> <td>4 PARA</td> </tr>
 		</tbody>
 	</table>
@@ -260,7 +266,7 @@
 			<tr pid="a.129WS.1/177"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.129WS.1/180"> <td>Territorial Army Battalion</td> </tr>
+			<tr pid="a.129WS.1/180"> <td colspan="2">Territorial Army Battalion</td> </tr>
 			<tr pid="a.129WS.1/181"> <td>The London Regiment <sup>7</sup></td> <td>The London Regiment</td> <td>LONDONS</td> </tr>
 		</tbody>
 	</table>
@@ -297,47 +303,10 @@
 </speech>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.0" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.1" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-24a.134WS.2" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="134WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051124/wmstext/51124m02.htm#51124m02.html_spmin1">
-	<p pid="a.134WS.2/1">On <phrase class="date" code="2005-04-06">6 April</phrase> I announced the database of parliamentarians' foreign affairs interests that the Foreign and Commonwealth Office had created.</p>
-	<p pid="a.134WS.2/2">Since then, the FCO has been working on a new Parliamentary Question (PQ) management system so that it can be compatible with the next generation of the FCO's desktop IT system which will be introduced next year. The new PQ management system will allow officials throughout the Department to see the FCO questions that hon. Members have asked. In order to concentrate parliamentary information in one place, this new system will also replace the database of parliamentary interests, and in addition to records of Parliamentary Questions hon. Members have asked, it will include records of their participation in foreign affairs debates.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.3" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.4" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.4" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.5" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.5" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-24a.134WS.5" speakerid="uk.org.publicwhip/member/1690" speakername="Jane Kennedy" speakeroffice="The Minister of State, Department of Health" colnum="134WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051124/wmstext/51124m02.htm#51124m02.html_spmin2">
-	<p pid="a.134WS.5/1">Today I am announcing referral to the National Institute for Health and Clinical Excellence (NICE) of topics for its 12th Wave work programme,</p>
-	<p pid="a.134WS.5/2">I am referring to NICE clinical guidelines in the following areas:</p>
-	<p pid="a.134WS.5/3">Low Back Pain;</p>
-	<p pid="a.134WS.5/4">Stroke;</p>
-	<p pid="a.134WS.5/5">Glaucoma;</p>
-	<p pid="a.134WS.5/6">Irritable bowel syndrome;</p>
-	<p pid="a.134WS.5/7">Investigation of children with suspected abuse;</p>
-	<p pid="a.134WS.5/8">Chronic Kidney Disease;</p>
-	<p pid="a.134WS.5/9">Spinal Cord Compression;</p>
-	<p pid="a.134WS.5/10">Borderline Personality Disorder; and</p>
-	<p pid="a.134WS.5/11">Antisocial (Dissocial) Personality Disorder.</p>
-	<p pid="a.134WS.5/12">I am also asking NICE to consult on the remit and scope for technology appraisals of the following:</p>
-	<p pid="a.134WS.5/13">Autologous tumour vaccine for stage i-iii renal cell carcinoma;</p>
-	<p pid="a.134WS.5/14">Idaraparinux sodium for the prevention of stroke in patients with atrial fibrillation and for the prevention of recurrent venous thromboembolism;</p>
-	<p pid="a.134WS.5/15">Neuro-imaging in the first onset atypical psychosis;</p>
-	<p pid="a.134WS.5/16">Cochlear Implants;</p>
-	<p pid="a.134WS.5/17">Recombinant factor Vila for traumatic bleeding;</p>
-	<p pid="a.134WS.5/18">Rimonabant for smoking cessation, weight loss and reduction of cardiovascular risk factors of overweight obesity;</p>
-	<p pid="a.134WS.5/19">Certolizumab pegol and natalizumab for the treatment of moderate to severe Crohn's disease;</p>
-	<p pid="a.134WS.5/20">Varenicline for smoking cessation;</p>
-	<p pid="a.134WS.5/21">Alteplase for acute ischaemic stroke;</p>
-	<p pid="a.134WS.5/22">Rituximab and abatacept for the treatment of refractory rheumatoid arthrits Adalimumab and leflunomide for the treatment of moderate to severe psoriatic arthritis;</p>
-	<p pid="a.134WS.5/23">Ruboxistaurin (LY333531) for diabetic eye disease;</p>
-	<p pid="a.134WS.5/24">Tegaserod maleate and cilansetron for Irritable Bowel Syndrome;</p>
-	<p pid="a.134WS.5/25">Continuous positive airways pressure (CPAP) for Sleep Apnoea; and</p>
-	<p pid="a.134WS.5/26">Muragiltazar and tesaglitazar for type II diabetes and associated lipid abnormalities.</p>
-	<p pid="a.134WS.5/27">Early referral of Herceptin (Trastuzumab) for early stage breast cancer and Velcade (Bortezomib) for multiple myeloma was made on <phrase class="date" code="2005-07-21">21 July</phrase>.</p>
-	<p pid="a.134WS.5/28">NICE will begin consultation with organisations representing patients, healthcare professionals and the healthcare industries on the remit and scope of these technology appraisals. I will consider the comments arising from the consultation when finalising the precise remit of the appraisal topics.</p>
-	<p pid="a.134WS.5/29">I will shortly be considering proposals for public health topics which will be included in this programme of work.</p>
-	<p pid="a.134WS.5/30">Further information including details of the remits of the topics may be found on the NICE website at <a href="http://www.nice.org.uk">www.nice.org.uk</a>.</p>
-	<p pid="a.134WS.5/31">NICE will be publishing indicative timescales for its work on these topics in due course.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.134WS.5" newgid="uk.org.publicwhip/wms/2005-11-24b.134WS.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.135WS.0" newgid="uk.org.publicwhip/wms/2005-11-24b.135WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.135WS.1" newgid="uk.org.publicwhip/wms/2005-11-24b.135WS.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.135WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.135WS.2" matchtype="perfectmatch"/>
@@ -345,14 +314,7 @@
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.135WS.4" newgid="uk.org.publicwhip/wms/2005-11-24b.135WS.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.138WS.0" newgid="uk.org.publicwhip/wms/2005-11-24b.138WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.138WS.1" newgid="uk.org.publicwhip/wms/2005-11-24b.138WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.138WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.138WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-11-24a.138WS.2" speakerid="uk.org.publicwhip/member/1669" speakername="Hilary Benn" speakeroffice="The Secretary of State for International Development" colnum="138WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051124/wmstext/51124m03.htm#51124m03.html_spmin0">
-	<p pid="a.138WS.2/1">I am today committing a further &pound;25 million to provide humanitarian assistance to those affected by the <phrase class="date" code="2005-10-08">8 October</phrase> earthquake in Pakistan. This will bring DFID's total contribution to the relief effort to &pound;58 million, which together with our pledge of &pound;70 million to the reconstruction effort over three years, means that the UK's total contribution to relief and reconstruction is &pound;128 million.</p>
-	<p pid="a.138WS.2/2">DFID has focused its initial &pound;33 million of relief support on practical assistance, including shelter and logistics, and funding for the relief programmes of the United Nations, the Red Cross Movement and non-governmental organisations. Although the relief effort has gathered pace, with the onset of harsh winter conditions the need to strengthen relief operations is now critical. In particular, we need to provide for those living above the snow line or in organised or spontaneous camps. Further support for logistics, shelter, camp management, health, water and sanitation, and nutrition is required.</p>
-	<p pid="a.138WS.2/3">The additional funds announced today will help do this. We will also be giving further support to the United Nations' helicopter operation. As part of this, &pound;5.5 million will go to the United Nations Humanitarian Air Service, as DFID takes on the contracts for four medium lift Mi-8 helicopters for a four month period. With the onset of winter the need is shifting away from heavy-lift helicopters like the UK CH-47 Chinooks&mdash;which are now completing their operations&mdash;towards medium-lift helicopters to ensure deliveries to remote and isolated communities. The Mi-8 helicopters are ideally suited to the environmental conditions and will be able to deliver relief to any location in the affected area throughout winter.</p>
-	<p pid="a.138WS.2/4">I can also report that this funding will help support an 86 strong team drawn from 59 Independent Commando Squadron Royal Engineers to be deployed under NATO command, to undertake emergency shelter building operations in remote high-altitude areas in the Bagh region. The Royal Engineers unit are highly specialist troops who are trained to operate in winter and mountainous conditions.</p>
-	<p pid="a.138WS.2/5">DFID will also be providing further support for: shelter and winter kits, including stoves, for high altitudes; management and servicing of camp sites; primary health care centres, mobile clinics, women's health and counselling; water and sanitation in camps, local communities and hospitals; and food in both camps and displaced communities in remote areas.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.138WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.138WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.139WS.0" newgid="uk.org.publicwhip/wms/2005-11-24b.139WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.139WS.1" newgid="uk.org.publicwhip/wms/2005-11-24b.139WS.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-11-24a.139WS.2" newgid="uk.org.publicwhip/wms/2005-11-24b.139WS.2" matchtype="perfectmatch"/>

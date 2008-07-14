@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-11-13.23WS.0" nospeaker="true" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_dpthd0">
 	HOME DEPARTMENT
@@ -49,22 +72,22 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-11-13.23WS.2" speakerid="uk.org.publicwhip/member/917" speakername="Paul Goggins" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_spmin0">
-	<p>The performance data for HMP Moorland and HMYOI Hatfield published in Appendix 1 of the Prison Service Annual Report and Accounts for 2002&ndash;03 are shown separately but should have been combined. In June 2002, HMYOI Hatfield became an integral part of HMP Moorland and it is not appropriate or accurate to show the figures separately. Indeed the figures for cost per prisoner and cost per place cannot be separated.</p>
-	<p>In Appendix 1 of the published Prison Service Annual Report and Accounts, establishments are categorised by their main role only. Establishments that have more than one role have been placed in the category that represents the primary or dominant function of the prison. For this reason, performance of prisons ostensibly within the same category cannot necessarily be compared on a like-for-like basis. Performance at the following establishments in particular during 2002&ndash;03 was affected by dual functionality:</p>
+	<p pid=".23WS.2/1">The performance data for HMP Moorland and HMYOI Hatfield published in Appendix 1 of the Prison Service Annual Report and Accounts for 2002&ndash;03 are shown separately but should have been combined. In June 2002, HMYOI Hatfield became an integral part of HMP Moorland and it is not appropriate or accurate to show the figures separately. Indeed the figures for cost per prisoner and cost per place cannot be separated.</p>
+	<p pid=".23WS.2/2">In Appendix 1 of the published Prison Service Annual Report and Accounts, establishments are categorised by their main role only. Establishments that have more than one role have been placed in the category that represents the primary or dominant function of the prison. For this reason, performance of prisons ostensibly within the same category cannot necessarily be compared on a like-for-like basis. Performance at the following establishments in particular during 2002&ndash;03 was affected by dual functionality:</p>
 	<table>
 		<thead>
-			<tr> <th></th> </tr>
+			<tr pid=".23WS.2/5"> <th></th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td>Brinsford (YO/Juvenile)</td> <td>Moorland (Closed/Open)</td> </tr>
-			<tr> <td>Castington (YO/Juvenile)</td> <td>Onley (YO/Juvenile)</td> </tr>
-			<tr> <td>Durham (Adult Male/Female)</td> <td>Stoke Heath (YO/Juvenile)</td> </tr>
-			<tr> <td>Feltham (YO/Juvenile)</td> <td>Thorn Cross (YO/Juvenile)</td> </tr>
-			<tr> <td>Highpoint (Adult Male/Female)</td> <td>Winchester (Adult Male/Female)</td> </tr>
-			<tr> <td>Lancaster Farms (YO/Juvenile)</td> <td>Wealstun (Closed/Open)</td> </tr>
+			<tr pid=".23WS.2/8"> <td>Brinsford (YO/Juvenile)</td> <td>Moorland (Closed/Open)</td> </tr>
+			<tr pid=".23WS.2/9"> <td>Castington (YO/Juvenile)</td> <td>Onley (YO/Juvenile)</td> </tr>
+			<tr pid=".23WS.2/10"> <td>Durham (Adult Male/Female)</td> <td>Stoke Heath (YO/Juvenile)</td> </tr>
+			<tr pid=".23WS.2/11"> <td>Feltham (YO/Juvenile)</td> <td>Thorn Cross (YO/Juvenile)</td> </tr>
+			<tr pid=".23WS.2/12"> <td>Highpoint (Adult Male/Female)</td> <td>Winchester (Adult Male/Female)</td> </tr>
+			<tr pid=".23WS.2/13"> <td>Lancaster Farms (YO/Juvenile)</td> <td>Wealstun (Closed/Open)</td> </tr>
 		</tbody>
 	</table>
-	<p>A correction to the Prison Service Annual Report and Accounts 2002&ndash;03 covering these issues has been placed in the Library.</p>
+	<p pid=".23WS.2/16">A correction to the Prison Service Annual Report and Accounts 2002&ndash;03 covering these issues has been placed in the Library.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-11-13.24WS.0" nospeaker="true" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_dpthd1">
@@ -76,8 +99,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-11-13.24WS.2" speakerid="uk.org.publicwhip/member/693" speakername="Douglas Alexander" speakeroffice="The Minister for the Cabinet Office and Chancellor of the Duchy of Lancaster" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_spmin1">
-	<p>The Government are committed to ensuring that regulations are necessary, give effective protection, balance cost and risk, are fair and command public confidence. In accordance with this, we require Departments to produce and publish RIAs for all regulatory proposals likely to have an impact on business, charities or voluntary bodies.</p>
-	<p>I have today presented to Parliament a Command Paper listing RIAs published between 1 January and 30 June 2003. Copies of those listed have been placed in the Libraries of both Houses. This is the 19th such Command Paper.</p>
+	<p pid=".24WS.2/1">The Government are committed to ensuring that regulations are necessary, give effective protection, balance cost and risk, are fair and command public confidence. In accordance with this, we require Departments to produce and publish RIAs for all regulatory proposals likely to have an impact on business, charities or voluntary bodies.</p>
+	<p pid=".24WS.2/2">I have today presented to Parliament a Command Paper listing RIAs published between <phrase class="date" code="2003-01-01">1 January</phrase> and <phrase class="date" code="2003-06-30">30 June 2003</phrase>. Copies of those listed have been placed in the Libraries of both Houses. This is the 19th such Command Paper.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-11-13.24WS.3" nospeaker="true" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_dpthd2">
@@ -89,8 +112,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-11-13.24WS.5" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo031113/wmstext/31113m01.htm#31113m01.html_spmin2">
-	<p>The Government launched their Defence Industrial Policy in October 2002. We sought to maximise the economic benefit to the United Kingdom from our investment in defence and to enhance the competitiveness and global sustainability of our defence industry. Since we launched the policy we have worked closely with industry to develop and pursue a joint implementation plan. We have completed a review of progress over the first year. During this time our close and productive relationship with industry has developed further and we have agreed how we will take forward our common aims over the next few years.</p>
-	<p>The policy has been a significant driver in bringing together Government and industry, resulting in better communication and access to information. We both recognise that the policy is for the long-term and that it will take some time to measure the full effects on defence programmes and the industry that supports them. We remain committed to the policy and will continue to monitor its effectiveness and to develop best practice in this area among the MOD acquisition community. We will also continue to work to improve access to overseas defence markets and to maximise the benefits from our investment in research and technology. We will conduct a further review of progress in a year's time. Copies of the review have been placed in the Libraries of both Houses and on the Ministry of Defence and DTI websites.</p>
+	<p pid=".24WS.5/1">The Government launched their Defence Industrial Policy in October 2002. We sought to maximise the economic benefit to the United Kingdom from our investment in defence and to enhance the competitiveness and global sustainability of our defence industry. Since we launched the policy we have worked closely with industry to develop and pursue a joint implementation plan. We have completed a review of progress over the first year. During this time our close and productive relationship with industry has developed further and we have agreed how we will take forward our common aims over the next few years.</p>
+	<p pid=".24WS.5/2">The policy has been a significant driver in bringing together Government and industry, resulting in better communication and access to information. We both recognise that the policy is for the long-term and that it will take some time to measure the full effects on defence programmes and the industry that supports them. We remain committed to the policy and will continue to monitor its effectiveness and to develop best practice in this area among the MOD acquisition community. We will also continue to work to improve access to overseas defence markets and to maximise the benefits from our investment in research and technology. We will conduct a further review of progress in a year's time. Copies of the review have been placed in the Libraries of both Houses and on the Ministry of Defence and DTI websites.</p>
 </speech>
 </publicwhip>
 

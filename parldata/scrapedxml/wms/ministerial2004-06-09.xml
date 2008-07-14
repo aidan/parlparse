@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-09.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040609/wmstext/40609m01.htm#40609m01.html_dpthd0">
 	NORTHERN IRELAND
@@ -49,7 +72,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-09.7WS.2" speakerid="uk.org.publicwhip/member/905" speakername="Barry Gardiner" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040609/wmstext/40609m01.htm#40609m01.html_spmin0">
-	<p>I have today announced the publication of the Annual Report 2002&ndash;03 of the Certification Officer for Northern Ireland and have placed copies in the Libraries of both Houses of Parliament.</p>
+	<p pid=".7WS.2/1">I have today announced the publication of the Annual Report 2002&ndash;03 of the Certification Officer for Northern Ireland and have placed copies in the Libraries of both Houses of Parliament.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-06-09.7WS.3" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040609/wmstext/40609m01.htm#40609m01.html_dpthd1">
@@ -61,149 +84,149 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-09.7WS.5" speakerid="unknown" error="No match" speakername="Fiona Mactaggart)" speakeroffice="The Parliamentary Under-Secretary of State for the Home Department" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040609/wmstext/40609m01.htm#40609m01.html_spmin1">
-	<p>I am pleased to report that this year's winners of the Queen's Awards for Voluntary Service (previously known as the Queen's Golden Jubilee Award) were announced on Wednesday 2 June.</p>
-	<p>This prestigious annual Award for groups of volunteers has been given this year to 110 groups whose outstanding voluntary activity has enhanced and improved the quality of life and opportunity for others in the community. The Government actively supports the work of the voluntary and community sector and are encouraging more people to participate in community activity. This Award will give some of those people the recognition they richly deserve. The details of the winning groups are as follows:</p>
+	<p pid=".7WS.5/1">I am pleased to report that this year's winners of the Queen's Awards for Voluntary Service (previously known as the Queen's Golden Jubilee Award) were announced on <phrase class="date" code="2004-06-02">Wednesday 2 June</phrase>.</p>
+	<p pid=".7WS.5/2">This prestigious annual Award for groups of volunteers has been given this year to 110 groups whose outstanding voluntary activity has enhanced and improved the quality of life and opportunity for others in the community. The Government actively supports the work of the voluntary and community sector and are encouraging more people to participate in community activity. This Award will give some of those people the recognition they richly deserve. The details of the winning groups are as follows:</p>
 	<table>
 		<thead>
-			<tr> <th></th> <th>Voluntary Group</th> <th>Activity Description</th> </tr>
+			<tr pid=".7WS.5/5"> <th></th> <th>Voluntary Group</th> <th>Activity Description</th> </tr>
 		</thead>
 		<tbody>
-			<tr> <td></td> <td>East Midlands</td> <td></td> </tr>
-			<tr> <td>1</td> <td>Derbyshire Dales Careline</td> <td>making a daily telephone call to vulnerable, isolated, elderly and housebound people to provide information and conversation.</td> </tr>
-			<tr> <td>2</td> <td>Inspiration FM</td> <td>encouraging BME communities and disadvantaged people in Northampton to get involved in community radio.</td> </tr>
-			<tr> <td>3</td> <td>Meridale Organisation</td> <td>Providing a community hall in Sutton-on-Sea for educational, leisure and charity fundraising activities.</td> </tr>
-			<tr> <td>4</td> <td>Radford Care Group</td> <td>supporting older people in Nottingham living at home independently.</td> </tr>
-			<tr> <td>5</td> <td>SOLVE IT</td> <td>promoting awareness of the consequences of volatile substance abuse to young people in Northamptonshire.</td> </tr>
-			<tr> <td>6</td> <td>TASC Grub Club</td> <td>providing Northampton young people, aged 8 upwards, with opportunities to improve their personal and life skills.</td> </tr>
-			<tr> <td>7</td> <td>The Winchester Club</td> <td>providing opportunities for adults with disabilities in Derby to interact and organise their own group outings.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>East of England</td> <td></td> </tr>
-			<tr> <td>8</td> <td>Colchester Rape Crisis Line</td> <td>Providing support services for women and young people in Colchester and surrounding areas who have experienced sexual violence.</td> </tr>
-			<tr> <td>9</td> <td>Community Meeting Point&mdash;Harpenden</td> <td>Providing recreational and leisure facilities and activities for People with mental health problems.</td> </tr>
-			<tr> <td>10</td> <td>Fledglings</td> <td>providing a unique nationwide information and practical support service for disabled people, particularly children, their families and carers.</td> </tr>
-			<tr> <td>11</td> <td>Hertfordshire MS Therapy Centre</td> <td>providing support, counselling, advice and therapeutic services to MS sufferers.</td> </tr>
-			<tr> <td>12</td> <td>Lowestoft Civic Society&mdash;Heritage Workshop Centre</td> <td>preserving the heritage of Lowestoft and district and providing employment for students, unemployed people and those with special needs.</td> </tr>
-			<tr> <td>13</td> <td>March and Chatteris Talking Newspaper Association</td> <td>providing recorded tapes and tactile reading matter to visually impaired and physically handicapped people in the local community</td> </tr>
-			<tr> <td>14</td> <td>Mind Resource Centre Volunteer Group</td> <td>Supporting people with severe and enduring mental illness in Norwich, enabling them to live self-supporting lives.</td> </tr>
-			<tr> <td>15</td> <td>Mitalee Youth Association</td> <td>Providing sports, arts and educational opportunities to young people in Luton from disadvantaged backgrounds.</td> </tr>
-			<tr> <td>16</td> <td>Stalham Brass Band</td> <td>Encouraging people of all ages to gain traditional skills as brass musicians and providing entertainment at local activities and charity events.</td> </tr>
-			<tr> <td>17</td> <td>The Fragile X Society</td> <td>Providing support and information to Fragile X families, raising awareness and encouraging research into the syndrome.</td> </tr>
-			<tr> <td>18</td> <td>Young Citizens Guild</td> <td>Encouraging young people in Great Yarmouth to become better citizens through participation in activities and local events.</td> </tr>
-			<tr> <td>19</td> <td>Youth Plus</td> <td>Encouraging and supporting young people with learning disabilities in Ongar to be actively involved in the community</td> </tr>
-			<tr> <td></td> <td>Guernsey</td> <td></td> </tr>
-			<tr> <td>20</td> <td>The Guernsey Society for the Physically Disabled</td> <td>assisting with the provision of facilities for the physically disabled and those with learning difficulties through activities and fund-raising.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>Isle of Man</td> <td></td> </tr>
-			<tr> <td>21</td> <td>Manx Blind Welfare Society Volunteer Services</td> <td>providing support and services for people with visual impairment.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>Jersey</td> <td></td> </tr>
-			<tr> <td>22</td> <td>Headway Jersey</td> <td>providing information and support for people with brain injuries, their relatives and carers.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>London</td> <td></td> </tr>
-			<tr> <td>23</td> <td>African Youth Organisation</td> <td>advancing the education of children and young people in Newham, including African culture and moral development.</td> </tr>
-			<tr> <td>24</td> <td>Age Exchange</td> <td>improving the quality of life of older people through emphasising the value of their reminiscences.</td> </tr>
-			<tr> <td>25</td> <td>Brent Indian Community Centre</td> <td>providing services to the Asian community in Brent and encouraging young people to appreciate their heritage.</td> </tr>
-			<tr> <td>26</td> <td>Genuine Empowerment of Mothers in Society</td> <td>providing advice, advocacy and support to women from disadvantaged and marginalised communities in London.</td> </tr>
-			<tr> <td>27</td> <td>NSF Sunrise&mdash;Greenwich group of 'Rethink'</td> <td>supporting through mutual self-help, seriously mentally ill people, their carers and relatives.</td> </tr>
-			<tr> <td>28</td> <td>Save the World Club</td> <td>encouraging people of all ages in Kingston-upon-Thames to take pride in their neighbourhood through civic awareness and the promotion of the sustainable use of resources.</td> </tr>
-			<tr> <td>29</td> <td>Somali Family Support Group</td> <td>providing information, advocacy and advice to Somalis and other East Africans living in London.</td> </tr>
-			<tr> <td>30</td> <td>The Cocktail Crew</td> <td>visiting oncology and orthopaedic patients in Charing Cross and Hammersmith Hospitals, serving them nutritional supplementary drinks.</td> </tr>
-			<tr> <td>31</td> <td>The Food Chain</td> <td>providing nutritious services for housebound London residents with AIDS related illnesses.</td> </tr>
-			<tr> <td>32</td> <td>The British Red Cross Skin Camouflage Service</td> <td>assisting people in London, coping with a disfigurement, and providing support and advice on skin camouflage techniques</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>North East</td> <td></td> </tr>
-			<tr> <td>33</td> <td>Barnados SECOS Project</td> <td>providing counselling to children aged 12&ndash;18 years in Middlesbrough, abused through prostitution, promoting their well-being and exit from that lifestyle</td> </tr>
-			<tr> <td>34</td> <td>Pennywell Community Association</td> <td>providing a full range of activities for local residents in Sunderland and addressing their needs.</td> </tr>
-			<tr> <td>35</td> <td>Stockton Blind People's Voice</td> <td>working to achieve equality for blind and visually impaired people in the Borough.</td> </tr>
-			<tr> <td>36</td> <td>Weardale Open Air Swimming Pool Association</td> <td>providing affordable water-based activities for the community and its visitors.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>North West</td> <td></td> </tr>
-			<tr> <td>37</td> <td>Bolton Hospice Volunteer Team</td> <td>achieving quality of life for patients and their families through administrative help, support, transport and fundraising.</td> </tr>
-			<tr> <td>38</td> <td>Connect</td> <td>improving services for disabled children and supporting their families in St Helens</td> </tr>
-			<tr> <td>39</td> <td>Mothers Against Violence</td> <td>addressing factors leading to gang involvement through an education programme in Manchester, supporting victims and offenders.</td> </tr>
-			<tr> <td>40</td> <td>Northern Fells Group</td> <td>organising services, events and activities to benefit the welfare of residents of seven rural parishes in Cumbria</td> </tr>
-			<tr> <td>41</td> <td>Sahara in Preston</td> <td>supporting Asian and African-Caribbean women to participate in the social/economic life of their community.</td> </tr>
-			<tr> <td>42</td> <td>Volunteers of St John's Hospice Lancaster</td> <td>maintaining the quality of life for those facing life threatening illnesses through a wide range of voluntary activities.</td> </tr>
-			<tr> <td>43</td> <td>Stockport Plaza Trust</td> <td>providing a venue for community arts and fundraising events and support for restoration of a Grade 2* listed super cinema.</td> </tr>
-			<tr> <td>44</td> <td>Sundowns</td> <td>supporting Downs Syndrome families in Wirrel and South Wirral through events, activities and a newsletter.</td> </tr>
-			<tr> <td>45</td> <td>The Blacon Project</td> <td>building a better Blacon through the active involvement of the community to find local solutions to local problems.</td> </tr>
-			<tr> <td>46</td> <td>The PIP Project</td> <td>working for the social inclusion of children and young people with special needs living in Blackpool and surrounding areas.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>Northern Ireland</td> <td></td> </tr>
-			<tr> <td>47</td> <td>Carnany Community Association</td> <td>enhancing the lives of residents through environmental projects, clubs and events.</td> </tr>
-			<tr> <td>48</td> <td>Moree Community Association</td> <td>developing and enhancing community spirit through cultural activities, education and support.</td> </tr>
-			<tr> <td>49</td> <td>Simon Community Outspoken Group</td> <td>raising awareness of homeless issues in Northern Ireland through peer education.</td> </tr>
-			<tr> <td>50</td> <td>The Bann Recorder</td> <td>providing a news service for visually impaired people in County Down.</td> </tr>
-			<tr> <td>51</td> <td>The Share Holiday Village Volunteer Team</td> <td>providing a centre for creative, recreational and educational programmes for disabled and non-disabled people.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>Scotland</td> <td></td> </tr>
-			<tr> <td>52</td> <td>Alness Environmental Group/Alness in Bloom</td> <td>undertaking environmental projects within community gardens and provision of floral displays to enhance Alness town centre.</td> </tr>
-			<tr> <td>53</td> <td>Deveron Stroke Club</td> <td>providing social and therapeutic help to stroke sufferers in Banff, Turriff and surrounding area, their families and carers.</td> </tr>
-			<tr> <td>54</td> <td>Envirokirn Action Group</td> <td>maintaining the local natural environment in Kirn, through projects and fundraising for the benefit of residents and tourists.</td> </tr>
-			<tr> <td>55</td> <td>Friends</td> <td>improving the local environment in Stevenston through creative projects for young people.</td> </tr>
-			<tr> <td>56</td> <td>GAIN (Guth Airson/Iarrtasan Nis)</td> <td>encouraging social and leisure activities on the Isle of Lewis including environmental awareness.</td> </tr>
-			<tr> <td>57</td> <td>Inverclyde Carers Council</td> <td>representing the interests and aspirations of local voluntary carers with training and support.</td> </tr>
-			<tr> <td>58</td> <td>Johnstone Credit Union Volunteers&mdash;People helping people</td> <td>providing not-for-profit financial services to the community in Renfrewshire .</td> </tr>
-			<tr> <td>59</td> <td>Orkney Talking Newspaper Association</td> <td>providing tapes of local newspaper articles for visually impaired and physically disabled residents in the community.</td> </tr>
-			<tr> <td>60</td> <td>The Food Train</td> <td>providing a low cost shopping delivery service for elderly and disabled people in Dumfries and Galloway.</td> </tr>
-			<tr> <td>61</td> <td>Samaritans of Glasgow</td> <td>providing emotional support to those in the community who have feelings of distress or despair, including those which may lead to suicide.</td> </tr>
-			<tr> <td>62</td> <td>The Yellow Teapot Club</td> <td>providing a club for children with special needs aged 6&ndash;16 years in West Lothian.</td> </tr>
-			<tr> <td>63</td> <td>Youth United</td> <td>campaigning and applying for funding for projects and facilities for young people in Airdrie.</td> </tr>
-			<tr> <td></td> <td>South East</td> <td></td> </tr>
-			<tr> <td>64</td> <td>Bucks Search and Rescue</td> <td>providing training, search and rescue and related emergency services for Buckinghamshire County Council and Thames Valley Police.</td> </tr>
-			<tr> <td>65</td> <td>Caring All Together on Romney Marsh</td> <td>supporting older and vulnerable people through friendship, support and advice.</td> </tr>
-			<tr> <td>66</td> <td>Court Meadow Group Riding for the Disabled Association</td> <td>providing riding as therapy for pupils aged 2&ndash;19 who have severe learning difficulties.</td> </tr>
-			<tr> <td>67</td> <td>Golden Lion Children's Trust</td> <td>supporting mentally and physically disabled and socially disadvantaged children in West Sussex, East Sussex, Kent and Surrey.</td> </tr>
-			<tr> <td>68</td> <td>Goring Gap News</td> <td>reporting on local news, events and featuring items of interest through a monthly magazine.</td> </tr>
-			<tr> <td>69</td> <td>Harmony Variety Group</td> <td>organising after school clubs in Kent for children of all abilities and needs, encouraging talent and confidence, through performing arts.</td> </tr>
-			<tr> <td>70</td> <td>Oakhaven Voluntary Services Group</td> <td>supporting hospice staff by providing a service to members of the community suffering from life limiting illnesses.</td> </tr>
-			<tr> <td>71</td> <td>Saturday Club for Deaf Children</td> <td>providing activities for children aged 5&ndash;18 living on the Isle of Wight to develop their social skills, language and confidence.</td> </tr>
-			<tr> <td>72</td> <td>Shepway Volunteer Centre Transport Service</td> <td>transporting housebound, disabled and elderly residents to appointments and social activities, improving their quality of life</td> </tr>
-			<tr> <td>73</td> <td>Starmaker Theatre Company</td> <td>providing a centre for young people to develop and gain stage skills through workshops and fundraising events in Reading.</td> </tr>
-			<tr> <td>74</td> <td>Surrey Witness Service</td> <td>providing an independent, free and confidential service to victims and witnesses at court.</td> </tr>
-			<tr> <td>75</td> <td>The Fountain Centre</td> <td>caring for physical, emotional, social and spiritual needs of patients and their families in the St Luke's Cancer Centre in Guildford.</td> </tr>
-			<tr> <td>76</td> <td>The Pitstop</td> <td>a daytime drop-in centre for the homeless, unemployed and socially isolated in Leatherhead and surrounding communities.</td> </tr>
-			<tr> <td>77</td> <td>Volunteer Bureau&mdash; Banbury and District</td> <td>placing volunteers with local organisations and providing the elderly with transport for appointments.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>South West</td> <td></td> </tr>
-			<tr> <td>78</td> <td>All Saints Church Community Centre</td> <td>creating a centre for excellence for statutory voluntary groups, especially those which are marginalized.</td> </tr>
-			<tr> <td>79</td> <td>Community Health Around Torpoint</td> <td>providing a focal point for community concerns, resources and information, run by volunteers.</td> </tr>
-			<tr> <td>80</td> <td>Disability Action Group in North Dorset</td> <td>providing direct action to help disabled persons overcome everyday problems.</td> </tr>
-			<tr> <td>81</td> <td>Friends and Residents of Grange Community Association</td> <td>enhancing the lives of residents and providing advice, social and recreational facilities.</td> </tr>
-			<tr> <td>82</td> <td>FORGE</td> <td>meeting the needs of visually impaired people in the Forest of Dean.</td> </tr>
-			<tr> <td>83</td> <td>Kennet Gateway Club</td> <td>providing a social meeting place in Pewsey for adults with learning difficulties.</td> </tr>
-			<tr> <td>84</td> <td>MARAH</td> <td>befriending and supporting homeless people and those with alcohol, drug and mental illness problems in Stroud.</td> </tr>
-			<tr> <td>85</td> <td>South Gloucestershire Asian Project</td> <td>improving the lives of Asian people through provision of services and a focus for events.</td> </tr>
-			<tr> <td>86</td> <td>The Home Furniture Service Trust</td> <td>supplying recycled furniture and household goods, offered at affordable prices, to low income residents in Taunton Deane.</td> </tr>
-			<tr> <td>87</td> <td>The North Devon Maritime Museum</td> <td>maintaining a museum for local residents and visitors to Appledore through fundraising and events.</td> </tr>
-			<tr> <td>88</td> <td>The Vassall Centre Trust</td> <td>providing accessible workspace for organisations of disabled people living in and around Bristol.</td> </tr>
-			<tr> <td>89</td> <td>The Villager Community Bus Service</td> <td>providing extensive, reliable and economical transport for residents of 65 villages in the North Cotswolds.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>Wales</td> <td></td> </tr>
-			<tr> <td>90</td> <td>Cymrod CLWB Teithio Dwyfor Travel Club</td> <td>providing a local community transport service for people unable to use public transport in Dwyfor.</td> </tr>
-			<tr> <td>91</td> <td>Fernhill Association of Residents</td> <td>representing the community in Mountain Ash and improving their quality of life and well-being.</td> </tr>
-			<tr> <td>92</td> <td>Powys Challenge</td> <td>reducing crime and the fear of crime, making Powys a safer place.</td> </tr>
-			<tr> <td>93</td> <td>St Kentigern Hospice Volunteers</td> <td>providing support to patients and families through friendship, transport assistance and community fund raising.</td> </tr>
-			<tr> <td>94</td> <td>Special Needs Activity Club</td> <td>providing a social club in Neath, Port Talbot for children with disabilities to include their siblings and support for parents.</td> </tr>
-			<tr> <td>95</td> <td>Swffryd Community Centre</td> <td>promoting the well-being of the community by furthering health, education and recreational activities.</td> </tr>
-			<tr> <td>96</td> <td>Treborth Riding for the Disabled</td> <td>providing disabled people with riding facilities to benefit their health and well-being.</td> </tr>
-			<tr> <td></td> <td></td> <td></td> </tr>
-			<tr> <td></td> <td>West Midlands</td> <td></td> </tr>
-			<tr> <td>97</td> <td>Birmingham Chinese Society</td> <td>assisting the integration of the Chinese and Oriental community into mainstream society.</td> </tr>
-			<tr> <td>98</td> <td>Cheadle and District Home Link Scheme</td> <td>assisting elderly and housebound people to maintain a dignified independence in their own homes.</td> </tr>
-			<tr> <td>99</td> <td>No Panic</td> <td>providing relief and rehabilitation for those with anxiety disorders in Shropshire through a confidential helpline and tele-conferencing.</td> </tr>
-			<tr> <td>100</td> <td>Shades of Black Community Family Project</td> <td>enhancing care in the community in Handsworth through social activities, including cultivation of an allotment for the benefit of senior citizens.</td> </tr>
-			<tr> <td>101</td> <td>St Giles Hospice Volunteers</td> <td>providing assistance with palliative care services and helping to improve the quality of patients' lives.</td> </tr>
-			<tr> <td>102</td> <td>Tamworth Handicapped Swimming Club (The Unicorns)</td> <td>providing recreational, teaching and competitive swimming opportunities for disabled people.</td> </tr>
-			<tr> <td>103</td> <td>The Bradby Club</td> <td>providing a safe meeting place for young people in Rugby with educational, social and cultural recreational opportunities.</td> </tr>
-			<tr> <td></td> <td>Yorkshire and the Humber</td> <td></td> </tr>
-			<tr> <td>104</td> <td>Age Concern Knaresborough</td> <td>providing care and support to disadvantaged and older people in the community.</td> </tr>
-			<tr> <td>105</td> <td>Calderdale Help in Bereavement Service</td> <td>providing a free and confidential befriending service for the bereaved.</td> </tr>
-			<tr> <td>106</td> <td>Indian Muslim Welfare Society (IMWS)</td> <td>providing a centre in Batley for interfaith events, helping to portray a positive image and address the needs of Muslims in British Society.</td> </tr>
-			<tr> <td>107</td> <td>Pooh Bear Reading Assistance Society</td> <td>providing trained volunteer support to build confidence and reading skills of local children through sharing and enjoying books.</td> </tr>
-			<tr> <td>108</td> <td>Pudsey Gateway Club</td> <td>offering social and leisure activities to people with learning difficulties.</td> </tr>
-			<tr> <td>109</td> <td>St Wilfrid's Day Centre</td> <td>providing community care for vulnerable people in Sheffield who can experience a sense of belonging and find practical help.</td> </tr>
-			<tr> <td>110</td> <td>The Carers' Resource</td> <td>providing information, advice and support to carers in Harrogate, Craven and Airedale districts.</td> </tr>
+			<tr pid=".7WS.5/8"> <td></td> <td>East Midlands</td> <td></td> </tr>
+			<tr pid=".7WS.5/9"> <td>1</td> <td>Derbyshire Dales Careline</td> <td>making a daily telephone call to vulnerable, isolated, elderly and housebound people to provide information and conversation.</td> </tr>
+			<tr pid=".7WS.5/10"> <td>2</td> <td>Inspiration FM</td> <td>encouraging BME communities and disadvantaged people in Northampton to get involved in community radio.</td> </tr>
+			<tr pid=".7WS.5/11"> <td>3</td> <td>Meridale Organisation</td> <td>Providing a community hall in Sutton-on-Sea for educational, leisure and charity fundraising activities.</td> </tr>
+			<tr pid=".7WS.5/12"> <td>4</td> <td>Radford Care Group</td> <td>supporting older people in Nottingham living at home independently.</td> </tr>
+			<tr pid=".7WS.5/13"> <td>5</td> <td>SOLVE IT</td> <td>promoting awareness of the consequences of volatile substance abuse to young people in Northamptonshire.</td> </tr>
+			<tr pid=".7WS.5/14"> <td>6</td> <td>TASC Grub Club</td> <td>providing Northampton young people, aged 8 upwards, with opportunities to improve their personal and life skills.</td> </tr>
+			<tr pid=".7WS.5/15"> <td>7</td> <td>The Winchester Club</td> <td>providing opportunities for adults with disabilities in Derby to interact and organise their own group outings.</td> </tr>
+			<tr pid=".7WS.5/16"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/17"> <td></td> <td>East of England</td> <td></td> </tr>
+			<tr pid=".7WS.5/18"> <td>8</td> <td>Colchester Rape Crisis Line</td> <td>Providing support services for women and young people in Colchester and surrounding areas who have experienced sexual violence.</td> </tr>
+			<tr pid=".7WS.5/19"> <td>9</td> <td>Community Meeting Point&mdash;Harpenden</td> <td>Providing recreational and leisure facilities and activities for People with mental health problems.</td> </tr>
+			<tr pid=".7WS.5/20"> <td>10</td> <td>Fledglings</td> <td>providing a unique nationwide information and practical support service for disabled people, particularly children, their families and carers.</td> </tr>
+			<tr pid=".7WS.5/21"> <td>11</td> <td>Hertfordshire MS Therapy Centre</td> <td>providing support, counselling, advice and therapeutic services to MS sufferers.</td> </tr>
+			<tr pid=".7WS.5/22"> <td>12</td> <td>Lowestoft Civic Society&mdash;Heritage Workshop Centre</td> <td>preserving the heritage of Lowestoft and district and providing employment for students, unemployed people and those with special needs.</td> </tr>
+			<tr pid=".7WS.5/23"> <td>13</td> <td>March and Chatteris Talking Newspaper Association</td> <td>providing recorded tapes and tactile reading matter to visually impaired and physically handicapped people in the local community</td> </tr>
+			<tr pid=".7WS.5/24"> <td>14</td> <td>Mind Resource Centre Volunteer Group</td> <td>Supporting people with severe and enduring mental illness in Norwich, enabling them to live self-supporting lives.</td> </tr>
+			<tr pid=".7WS.5/25"> <td>15</td> <td>Mitalee Youth Association</td> <td>Providing sports, arts and educational opportunities to young people in Luton from disadvantaged backgrounds.</td> </tr>
+			<tr pid=".7WS.5/26"> <td>16</td> <td>Stalham Brass Band</td> <td>Encouraging people of all ages to gain traditional skills as brass musicians and providing entertainment at local activities and charity events.</td> </tr>
+			<tr pid=".7WS.5/27"> <td>17</td> <td>The Fragile X Society</td> <td>Providing support and information to Fragile X families, raising awareness and encouraging research into the syndrome.</td> </tr>
+			<tr pid=".7WS.5/28"> <td>18</td> <td>Young Citizens Guild</td> <td>Encouraging young people in Great Yarmouth to become better citizens through participation in activities and local events.</td> </tr>
+			<tr pid=".7WS.5/29"> <td>19</td> <td>Youth Plus</td> <td>Encouraging and supporting young people with learning disabilities in Ongar to be actively involved in the community</td> </tr>
+			<tr pid=".7WS.5/30"> <td></td> <td>Guernsey</td> <td></td> </tr>
+			<tr pid=".7WS.5/31"> <td>20</td> <td>The Guernsey Society for the Physically Disabled</td> <td>assisting with the provision of facilities for the physically disabled and those with learning difficulties through activities and fund-raising.</td> </tr>
+			<tr pid=".7WS.5/32"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/33"> <td></td> <td>Isle of Man</td> <td></td> </tr>
+			<tr pid=".7WS.5/34"> <td>21</td> <td>Manx Blind Welfare Society Volunteer Services</td> <td>providing support and services for people with visual impairment.</td> </tr>
+			<tr pid=".7WS.5/35"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/36"> <td></td> <td>Jersey</td> <td></td> </tr>
+			<tr pid=".7WS.5/37"> <td>22</td> <td>Headway Jersey</td> <td>providing information and support for people with brain injuries, their relatives and carers.</td> </tr>
+			<tr pid=".7WS.5/38"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/39"> <td></td> <td>London</td> <td></td> </tr>
+			<tr pid=".7WS.5/40"> <td>23</td> <td>African Youth Organisation</td> <td>advancing the education of children and young people in Newham, including African culture and moral development.</td> </tr>
+			<tr pid=".7WS.5/41"> <td>24</td> <td>Age Exchange</td> <td>improving the quality of life of older people through emphasising the value of their reminiscences.</td> </tr>
+			<tr pid=".7WS.5/42"> <td>25</td> <td>Brent Indian Community Centre</td> <td>providing services to the Asian community in Brent and encouraging young people to appreciate their heritage.</td> </tr>
+			<tr pid=".7WS.5/43"> <td>26</td> <td>Genuine Empowerment of Mothers in Society</td> <td>providing advice, advocacy and support to women from disadvantaged and marginalised communities in London.</td> </tr>
+			<tr pid=".7WS.5/44"> <td>27</td> <td>NSF Sunrise&mdash;Greenwich group of 'Rethink'</td> <td>supporting through mutual self-help, seriously mentally ill people, their carers and relatives.</td> </tr>
+			<tr pid=".7WS.5/45"> <td>28</td> <td>Save the World Club</td> <td>encouraging people of all ages in Kingston-upon-Thames to take pride in their neighbourhood through civic awareness and the promotion of the sustainable use of resources.</td> </tr>
+			<tr pid=".7WS.5/46"> <td>29</td> <td>Somali Family Support Group</td> <td>providing information, advocacy and advice to Somalis and other East Africans living in London.</td> </tr>
+			<tr pid=".7WS.5/47"> <td>30</td> <td>The Cocktail Crew</td> <td>visiting oncology and orthopaedic patients in Charing Cross and Hammersmith Hospitals, serving them nutritional supplementary drinks.</td> </tr>
+			<tr pid=".7WS.5/48"> <td>31</td> <td>The Food Chain</td> <td>providing nutritious services for housebound London residents with AIDS related illnesses.</td> </tr>
+			<tr pid=".7WS.5/49"> <td>32</td> <td>The British Red Cross Skin Camouflage Service</td> <td>assisting people in London, coping with a disfigurement, and providing support and advice on skin camouflage techniques</td> </tr>
+			<tr pid=".7WS.5/50"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/51"> <td></td> <td>North East</td> <td></td> </tr>
+			<tr pid=".7WS.5/52"> <td>33</td> <td>Barnados SECOS Project</td> <td>providing counselling to children aged 12&ndash;18 years in Middlesbrough, abused through prostitution, promoting their well-being and exit from that lifestyle</td> </tr>
+			<tr pid=".7WS.5/53"> <td>34</td> <td>Pennywell Community Association</td> <td>providing a full range of activities for local residents in Sunderland and addressing their needs.</td> </tr>
+			<tr pid=".7WS.5/54"> <td>35</td> <td>Stockton Blind People's Voice</td> <td>working to achieve equality for blind and visually impaired people in the Borough.</td> </tr>
+			<tr pid=".7WS.5/55"> <td>36</td> <td>Weardale Open Air Swimming Pool Association</td> <td>providing affordable water-based activities for the community and its visitors.</td> </tr>
+			<tr pid=".7WS.5/56"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/57"> <td></td> <td>North West</td> <td></td> </tr>
+			<tr pid=".7WS.5/58"> <td>37</td> <td>Bolton Hospice Volunteer Team</td> <td>achieving quality of life for patients and their families through administrative help, support, transport and fundraising.</td> </tr>
+			<tr pid=".7WS.5/59"> <td>38</td> <td>Connect</td> <td>improving services for disabled children and supporting their families in St Helens</td> </tr>
+			<tr pid=".7WS.5/60"> <td>39</td> <td>Mothers Against Violence</td> <td>addressing factors leading to gang involvement through an education programme in Manchester, supporting victims and offenders.</td> </tr>
+			<tr pid=".7WS.5/61"> <td>40</td> <td>Northern Fells Group</td> <td>organising services, events and activities to benefit the welfare of residents of seven rural parishes in Cumbria</td> </tr>
+			<tr pid=".7WS.5/62"> <td>41</td> <td>Sahara in Preston</td> <td>supporting Asian and African-Caribbean women to participate in the social/economic life of their community.</td> </tr>
+			<tr pid=".7WS.5/63"> <td>42</td> <td>Volunteers of St John's Hospice Lancaster</td> <td>maintaining the quality of life for those facing life threatening illnesses through a wide range of voluntary activities.</td> </tr>
+			<tr pid=".7WS.5/64"> <td>43</td> <td>Stockport Plaza Trust</td> <td>providing a venue for community arts and fundraising events and support for restoration of a Grade 2* listed super cinema.</td> </tr>
+			<tr pid=".7WS.5/65"> <td>44</td> <td>Sundowns</td> <td>supporting Downs Syndrome families in Wirrel and South Wirral through events, activities and a newsletter.</td> </tr>
+			<tr pid=".7WS.5/66"> <td>45</td> <td>The Blacon Project</td> <td>building a better Blacon through the active involvement of the community to find local solutions to local problems.</td> </tr>
+			<tr pid=".7WS.5/67"> <td>46</td> <td>The PIP Project</td> <td>working for the social inclusion of children and young people with special needs living in Blackpool and surrounding areas.</td> </tr>
+			<tr pid=".7WS.5/68"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/69"> <td></td> <td>Northern Ireland</td> <td></td> </tr>
+			<tr pid=".7WS.5/70"> <td>47</td> <td>Carnany Community Association</td> <td>enhancing the lives of residents through environmental projects, clubs and events.</td> </tr>
+			<tr pid=".7WS.5/71"> <td>48</td> <td>Moree Community Association</td> <td>developing and enhancing community spirit through cultural activities, education and support.</td> </tr>
+			<tr pid=".7WS.5/72"> <td>49</td> <td>Simon Community Outspoken Group</td> <td>raising awareness of homeless issues in Northern Ireland through peer education.</td> </tr>
+			<tr pid=".7WS.5/73"> <td>50</td> <td>The Bann Recorder</td> <td>providing a news service for visually impaired people in County Down.</td> </tr>
+			<tr pid=".7WS.5/74"> <td>51</td> <td>The Share Holiday Village Volunteer Team</td> <td>providing a centre for creative, recreational and educational programmes for disabled and non-disabled people.</td> </tr>
+			<tr pid=".7WS.5/75"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/76"> <td></td> <td>Scotland</td> <td></td> </tr>
+			<tr pid=".7WS.5/77"> <td>52</td> <td>Alness Environmental Group/Alness in Bloom</td> <td>undertaking environmental projects within community gardens and provision of floral displays to enhance Alness town centre.</td> </tr>
+			<tr pid=".7WS.5/78"> <td>53</td> <td>Deveron Stroke Club</td> <td>providing social and therapeutic help to stroke sufferers in Banff, Turriff and surrounding area, their families and carers.</td> </tr>
+			<tr pid=".7WS.5/79"> <td>54</td> <td>Envirokirn Action Group</td> <td>maintaining the local natural environment in Kirn, through projects and fundraising for the benefit of residents and tourists.</td> </tr>
+			<tr pid=".7WS.5/80"> <td>55</td> <td>Friends</td> <td>improving the local environment in Stevenston through creative projects for young people.</td> </tr>
+			<tr pid=".7WS.5/81"> <td>56</td> <td>GAIN (Guth Airson/Iarrtasan Nis)</td> <td>encouraging social and leisure activities on the Isle of Lewis including environmental awareness.</td> </tr>
+			<tr pid=".7WS.5/82"> <td>57</td> <td>Inverclyde Carers Council</td> <td>representing the interests and aspirations of local voluntary carers with training and support.</td> </tr>
+			<tr pid=".7WS.5/83"> <td>58</td> <td>Johnstone Credit Union Volunteers&mdash;People helping people</td> <td>providing not-for-profit financial services to the community in Renfrewshire .</td> </tr>
+			<tr pid=".7WS.5/84"> <td>59</td> <td>Orkney Talking Newspaper Association</td> <td>providing tapes of local newspaper articles for visually impaired and physically disabled residents in the community.</td> </tr>
+			<tr pid=".7WS.5/85"> <td>60</td> <td>The Food Train</td> <td>providing a low cost shopping delivery service for elderly and disabled people in Dumfries and Galloway.</td> </tr>
+			<tr pid=".7WS.5/86"> <td>61</td> <td>Samaritans of Glasgow</td> <td>providing emotional support to those in the community who have feelings of distress or despair, including those which may lead to suicide.</td> </tr>
+			<tr pid=".7WS.5/87"> <td>62</td> <td>The Yellow Teapot Club</td> <td>providing a club for children with special needs aged 6&ndash;16 years in West Lothian.</td> </tr>
+			<tr pid=".7WS.5/88"> <td>63</td> <td>Youth United</td> <td>campaigning and applying for funding for projects and facilities for young people in Airdrie.</td> </tr>
+			<tr pid=".7WS.5/89"> <td></td> <td>South East</td> <td></td> </tr>
+			<tr pid=".7WS.5/90"> <td>64</td> <td>Bucks Search and Rescue</td> <td>providing training, search and rescue and related emergency services for Buckinghamshire County Council and Thames Valley Police.</td> </tr>
+			<tr pid=".7WS.5/91"> <td>65</td> <td>Caring All Together on Romney Marsh</td> <td>supporting older and vulnerable people through friendship, support and advice.</td> </tr>
+			<tr pid=".7WS.5/92"> <td>66</td> <td>Court Meadow Group Riding for the Disabled Association</td> <td>providing riding as therapy for pupils aged 2&ndash;19 who have severe learning difficulties.</td> </tr>
+			<tr pid=".7WS.5/93"> <td>67</td> <td>Golden Lion Children's Trust</td> <td>supporting mentally and physically disabled and socially disadvantaged children in West Sussex, East Sussex, Kent and Surrey.</td> </tr>
+			<tr pid=".7WS.5/94"> <td>68</td> <td>Goring Gap News</td> <td>reporting on local news, events and featuring items of interest through a monthly magazine.</td> </tr>
+			<tr pid=".7WS.5/95"> <td>69</td> <td>Harmony Variety Group</td> <td>organising after school clubs in Kent for children of all abilities and needs, encouraging talent and confidence, through performing arts.</td> </tr>
+			<tr pid=".7WS.5/96"> <td>70</td> <td>Oakhaven Voluntary Services Group</td> <td>supporting hospice staff by providing a service to members of the community suffering from life limiting illnesses.</td> </tr>
+			<tr pid=".7WS.5/97"> <td>71</td> <td>Saturday Club for Deaf Children</td> <td>providing activities for children aged 5&ndash;18 living on the Isle of Wight to develop their social skills, language and confidence.</td> </tr>
+			<tr pid=".7WS.5/98"> <td>72</td> <td>Shepway Volunteer Centre Transport Service</td> <td>transporting housebound, disabled and elderly residents to appointments and social activities, improving their quality of life</td> </tr>
+			<tr pid=".7WS.5/99"> <td>73</td> <td>Starmaker Theatre Company</td> <td>providing a centre for young people to develop and gain stage skills through workshops and fundraising events in Reading.</td> </tr>
+			<tr pid=".7WS.5/100"> <td>74</td> <td>Surrey Witness Service</td> <td>providing an independent, free and confidential service to victims and witnesses at court.</td> </tr>
+			<tr pid=".7WS.5/101"> <td>75</td> <td>The Fountain Centre</td> <td>caring for physical, emotional, social and spiritual needs of patients and their families in the St Luke's Cancer Centre in Guildford.</td> </tr>
+			<tr pid=".7WS.5/102"> <td>76</td> <td>The Pitstop</td> <td>a daytime drop-in centre for the homeless, unemployed and socially isolated in Leatherhead and surrounding communities.</td> </tr>
+			<tr pid=".7WS.5/103"> <td>77</td> <td>Volunteer Bureau&mdash; Banbury and District</td> <td>placing volunteers with local organisations and providing the elderly with transport for appointments.</td> </tr>
+			<tr pid=".7WS.5/104"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/105"> <td></td> <td>South West</td> <td></td> </tr>
+			<tr pid=".7WS.5/106"> <td>78</td> <td>All Saints Church Community Centre</td> <td>creating a centre for excellence for statutory voluntary groups, especially those which are marginalized.</td> </tr>
+			<tr pid=".7WS.5/107"> <td>79</td> <td>Community Health Around Torpoint</td> <td>providing a focal point for community concerns, resources and information, run by volunteers.</td> </tr>
+			<tr pid=".7WS.5/108"> <td>80</td> <td>Disability Action Group in North Dorset</td> <td>providing direct action to help disabled persons overcome everyday problems.</td> </tr>
+			<tr pid=".7WS.5/109"> <td>81</td> <td>Friends and Residents of Grange Community Association</td> <td>enhancing the lives of residents and providing advice, social and recreational facilities.</td> </tr>
+			<tr pid=".7WS.5/110"> <td>82</td> <td>FORGE</td> <td>meeting the needs of visually impaired people in the Forest of Dean.</td> </tr>
+			<tr pid=".7WS.5/111"> <td>83</td> <td>Kennet Gateway Club</td> <td>providing a social meeting place in Pewsey for adults with learning difficulties.</td> </tr>
+			<tr pid=".7WS.5/112"> <td>84</td> <td>MARAH</td> <td>befriending and supporting homeless people and those with alcohol, drug and mental illness problems in Stroud.</td> </tr>
+			<tr pid=".7WS.5/113"> <td>85</td> <td>South Gloucestershire Asian Project</td> <td>improving the lives of Asian people through provision of services and a focus for events.</td> </tr>
+			<tr pid=".7WS.5/114"> <td>86</td> <td>The Home Furniture Service Trust</td> <td>supplying recycled furniture and household goods, offered at affordable prices, to low income residents in Taunton Deane.</td> </tr>
+			<tr pid=".7WS.5/115"> <td>87</td> <td>The North Devon Maritime Museum</td> <td>maintaining a museum for local residents and visitors to Appledore through fundraising and events.</td> </tr>
+			<tr pid=".7WS.5/116"> <td>88</td> <td>The Vassall Centre Trust</td> <td>providing accessible workspace for organisations of disabled people living in and around Bristol.</td> </tr>
+			<tr pid=".7WS.5/117"> <td>89</td> <td>The Villager Community Bus Service</td> <td>providing extensive, reliable and economical transport for residents of 65 villages in the North Cotswolds.</td> </tr>
+			<tr pid=".7WS.5/118"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/119"> <td></td> <td>Wales</td> <td></td> </tr>
+			<tr pid=".7WS.5/120"> <td>90</td> <td>Cymrod CLWB Teithio Dwyfor Travel Club</td> <td>providing a local community transport service for people unable to use public transport in Dwyfor.</td> </tr>
+			<tr pid=".7WS.5/121"> <td>91</td> <td>Fernhill Association of Residents</td> <td>representing the community in Mountain Ash and improving their quality of life and well-being.</td> </tr>
+			<tr pid=".7WS.5/122"> <td>92</td> <td>Powys Challenge</td> <td>reducing crime and the fear of crime, making Powys a safer place.</td> </tr>
+			<tr pid=".7WS.5/123"> <td>93</td> <td>St Kentigern Hospice Volunteers</td> <td>providing support to patients and families through friendship, transport assistance and community fund raising.</td> </tr>
+			<tr pid=".7WS.5/124"> <td>94</td> <td>Special Needs Activity Club</td> <td>providing a social club in Neath, Port Talbot for children with disabilities to include their siblings and support for parents.</td> </tr>
+			<tr pid=".7WS.5/125"> <td>95</td> <td>Swffryd Community Centre</td> <td>promoting the well-being of the community by furthering health, education and recreational activities.</td> </tr>
+			<tr pid=".7WS.5/126"> <td>96</td> <td>Treborth Riding for the Disabled</td> <td>providing disabled people with riding facilities to benefit their health and well-being.</td> </tr>
+			<tr pid=".7WS.5/127"> <td></td> <td></td> <td></td> </tr>
+			<tr pid=".7WS.5/128"> <td></td> <td>West Midlands</td> <td></td> </tr>
+			<tr pid=".7WS.5/129"> <td>97</td> <td>Birmingham Chinese Society</td> <td>assisting the integration of the Chinese and Oriental community into mainstream society.</td> </tr>
+			<tr pid=".7WS.5/130"> <td>98</td> <td>Cheadle and District Home Link Scheme</td> <td>assisting elderly and housebound people to maintain a dignified independence in their own homes.</td> </tr>
+			<tr pid=".7WS.5/131"> <td>99</td> <td>No Panic</td> <td>providing relief and rehabilitation for those with anxiety disorders in Shropshire through a confidential helpline and tele-conferencing.</td> </tr>
+			<tr pid=".7WS.5/132"> <td>100</td> <td>Shades of Black Community Family Project</td> <td>enhancing care in the community in Handsworth through social activities, including cultivation of an allotment for the benefit of senior citizens.</td> </tr>
+			<tr pid=".7WS.5/133"> <td>101</td> <td>St Giles Hospice Volunteers</td> <td>providing assistance with palliative care services and helping to improve the quality of patients' lives.</td> </tr>
+			<tr pid=".7WS.5/134"> <td>102</td> <td>Tamworth Handicapped Swimming Club (The Unicorns)</td> <td>providing recreational, teaching and competitive swimming opportunities for disabled people.</td> </tr>
+			<tr pid=".7WS.5/135"> <td>103</td> <td>The Bradby Club</td> <td>providing a safe meeting place for young people in Rugby with educational, social and cultural recreational opportunities.</td> </tr>
+			<tr pid=".7WS.5/136"> <td></td> <td>Yorkshire and the Humber</td> <td></td> </tr>
+			<tr pid=".7WS.5/137"> <td>104</td> <td>Age Concern Knaresborough</td> <td>providing care and support to disadvantaged and older people in the community.</td> </tr>
+			<tr pid=".7WS.5/138"> <td>105</td> <td>Calderdale Help in Bereavement Service</td> <td>providing a free and confidential befriending service for the bereaved.</td> </tr>
+			<tr pid=".7WS.5/139"> <td>106</td> <td>Indian Muslim Welfare Society (IMWS)</td> <td>providing a centre in Batley for interfaith events, helping to portray a positive image and address the needs of Muslims in British Society.</td> </tr>
+			<tr pid=".7WS.5/140"> <td>107</td> <td>Pooh Bear Reading Assistance Society</td> <td>providing trained volunteer support to build confidence and reading skills of local children through sharing and enjoying books.</td> </tr>
+			<tr pid=".7WS.5/141"> <td>108</td> <td>Pudsey Gateway Club</td> <td>offering social and leisure activities to people with learning difficulties.</td> </tr>
+			<tr pid=".7WS.5/142"> <td>109</td> <td>St Wilfrid's Day Centre</td> <td>providing community care for vulnerable people in Sheffield who can experience a sense of belonging and find practical help.</td> </tr>
+			<tr pid=".7WS.5/143"> <td>110</td> <td>The Carers' Resource</td> <td>providing information, advice and support to carers in Harrogate, Craven and Airedale districts.</td> </tr>
 		</tbody>
 	</table>
 </speech>
@@ -217,7 +240,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-06-09.14WS.2" speakerid="uk.org.publicwhip/member/1179" speakername="Bill Rammell" speakeroffice="The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs" colnum="14WS"  url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040609/wmstext/40609m02.htm#40609m02.html_spmin0">
-	<p>Following consultation with the Foreign and Commonwealth Office and the Ministry of Defence, the Department of Trade and Industry recently approved a further licence to export Military List Goods to Iraq. The arms embargo against Iraq remains in place under United Nations Security Council resolution 1483(2003), with the exception of &quot;arms and other related material required by the (coalition provisional) authority to serve the purposes of this and other related resolutions&quot;. As this includes promoting the development of free and fair media, Her Majesty's Government consider it appropriate to grant exemptions for the export of body armour and helmets for use by media organisations working in Iraq. Such licences are issued with provisos that: items will be for the sole use by newsgathering staff and will remain under their control at all times, when in use or in storage and items must not be left in country or gifted to local organisations after newsgathering staff leave. The export is consistent with the Consolidated EU and National Arms Export Licensing Criteria. Future applications will continue to be assessed on a case by case basis against the UN Embargo and Consolidated Criteria, taking into account the circumstances prevailing at the time.</p>
+	<p pid=".14WS.2/1">Following consultation with the Foreign and Commonwealth Office and the Ministry of Defence, the Department of Trade and Industry recently approved a further licence to export Military List Goods to Iraq. The arms embargo against Iraq remains in place under United Nations Security Council resolution 1483(2003), with the exception of &quot;arms and other related material required by the (coalition provisional) authority to serve the purposes of this and other related resolutions&quot;. As this includes promoting the development of free and fair media, Her Majesty's Government consider it appropriate to grant exemptions for the export of body armour and helmets for use by media organisations working in Iraq. Such licences are issued with provisos that: items will be for the sole use by newsgathering staff and will remain under their control at all times, when in use or in storage and items must not be left in country or gifted to local organisations after newsgathering staff leave. The export is consistent with the Consolidated EU and National Arms Export Licensing Criteria. Future applications will continue to be assessed on a case by case basis against the UN Embargo and Consolidated Criteria, taking into account the circumstances prevailing at the time.</p>
 </speech>
 </publicwhip>
 

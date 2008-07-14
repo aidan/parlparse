@@ -7,41 +7,64 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-21.57WS.0" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_dpthd0">
-	FOREIGN AND COMMONWEALTH
+	FOREIGN AND COMMONWEALTH AFFAIRS
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-03-21.57WS.1" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_sbhd0">
@@ -49,7 +72,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-21.57WS.2" speakerid="uk.org.publicwhip/member/1258" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_spmin0">
-	<p>Changing strategic priorities require the Foreign and Commonwealth Office constantly to adapt and amend its pattern of representation overseas. In order to free up resources to strengthen the UK's diplomatic network in other parts of the world now more critical for UK interests, I have decided to make the following adjustments to our diplomatic representation in Central America. With effect from mid-summer, the Embassy in San Salvador will be closed. We intend to appoint an Honorary Consul and for HM Ambassador at Guatemala City to be simultaneously accredited to the Government of El Salvador. Later this year and early next year we intend to reorganise our representation in Honduras and Nicaragua. In each case, we propose to appoint a Charg&eacute; d'Affaires. The Ambassadors will at the same time be withdrawn, and HM Ambassador at Guatemala City will be simultaneously accredited to both capitals. The diplomatic representation in the other countries of the region will remain unchanged.</p>
+	<p pid=".57WS.2/1">Changing strategic priorities require the Foreign and Commonwealth Office constantly to adapt and amend its pattern of representation overseas. In order to free up resources to strengthen the UK's diplomatic network in other parts of the world now more critical for UK interests, I have decided to make the following adjustments to our diplomatic representation in Central America. With effect from mid-summer, the Embassy in San Salvador will be closed. We intend to appoint an Honorary Consul and for HM Ambassador at Guatemala City to be simultaneously accredited to the Government of El Salvador. Later this year and early next year we intend to reorganise our representation in Honduras and Nicaragua. In each case, we propose to appoint a Charg&eacute; d'Affaires. The Ambassadors will at the same time be withdrawn, and HM Ambassador at Guatemala City will be simultaneously accredited to both capitals. The diplomatic representation in the other countries of the region will remain unchanged.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-21.57WS.3" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_dpthd1">
@@ -61,8 +84,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-21.57WS.5" speakerid="uk.org.publicwhip/member/736" speakername="Tony Blair" speakeroffice="The Prime Minister" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_spmin1">
-	<p>In accordance with Section 59(1) of the Regulation of Investigatory Powers Act 2000, after consultation with the Foreign, Home and Defence Secretaries, I have decided to re-appoint Lord Justice Simon Brown as the Intelligence Services Commissioner from 1 April 2003 to 31 March 2006.</p>
-	<p>I am delighted that Lord Justice Simon Brown has agreed to continue to serve as the Intelligence Services Commissioner.</p>
+	<p pid=".57WS.5/1">In accordance with Section 59(1) of the Regulation of Investigatory Powers Act 2000, after consultation with the Foreign, Home and Defence Secretaries, I have decided to re-appoint Lord Justice Simon Brown as the Intelligence Services Commissioner from <phrase class="date" code="2003-04-01">1 April 2003</phrase> to <phrase class="date" code="2006-03-31">31 March 2006</phrase>.</p>
+	<p pid=".57WS.5/2">I am delighted that Lord Justice Simon Brown has agreed to continue to serve as the Intelligence Services Commissioner.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-21.57WS.6" nospeaker="true" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_dpthd2">
@@ -74,9 +97,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-21.57WS.8" speakerid="uk.org.publicwhip/member/1118" speakername="Lewis Moonie" speakeroffice="The Parliamentary Under-Secretary of State for Defence" colnum="57WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_spmin2">
-	<p>Further to my statement on 12 December 2002, <phrase class="offrep" id="wrans/2002-12-12.29WS"><i>Official Report</i> Column 29WS</phrase>, a contract has now been awarded to Landmark Support Services Limited. As a result of the contract the Ministry of Defence expects better support to training for the Armed Forces and more effective and sustainable management of the Army Training Estate through the introduction of this strategic commercial partner.</p>
-	<p>The contract will cost &pound;600 million over 10 years and will start on 1 April 2003. Approximately 1,300 Ministry of Defence civilian personnel will transfer to the private sector on 1 July on their current terms and conditions of employment. Departmental Trades Unions have been fully consulted throughout the process and formal consultation will take place before Ministry of Defence employees transfer.</p>
-	<p>This decision enables the Army to concentrate on its core purpose. It will bring best commercial practice to bear on non-military issues such as management information systems, estate investment and conservation, rationalisation and efficiency, all of which will provide better value for money and operational benefits.</p>
+	<p pid=".57WS.8/1">Further to my statement on <phrase class="date" code="2002-12-12">12 December 2002</phrase>, <phrase class="offrep" id="wms/2002-12-12.29"><i>Official Report</i>, column 29WS</phrase>, a contract has now been awarded to Landmark Support Services Limited. As a result of the contract the Ministry of Defence expects better support to training for the Armed Forces and more effective and sustainable management of the Army Training Estate through the introduction of this strategic commercial partner.</p>
+	<p pid=".57WS.8/2">The contract will cost &pound;600 million over 10 years and will start on <phrase class="date" code="2003-04-01">1 April 2003</phrase>. Approximately 1,300 Ministry of Defence civilian personnel will transfer to the private sector on <phrase class="date" code="2003-07-01">1 July</phrase> on their current terms and conditions of employment. Departmental Trades Unions have been fully consulted throughout the process and formal consultation will take place before Ministry of Defence employees transfer.</p>
+	<p pid=".57WS.8/3">This decision enables the Army to concentrate on its core purpose. It will bring best commercial practice to bear on non-military issues such as management information systems, estate investment and conservation, rationalisation and efficiency, all of which will provide better value for money and operational benefits.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-21.58WS.0" nospeaker="true" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_dpthd3">
@@ -88,11 +111,11 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-21.58WS.2" speakerid="uk.org.publicwhip/member/998" speakername="Alan Johnson" speakeroffice="The Minister for Employment Relations, Industry and the Regions" colnum="58WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_spmin3">
-	<p>On 27 February 2003 I laid before Parliament a minute about proposals to undertake liability in respect of compensation on certain health claims in respect of periods of employment with particular companies when they belonged to British Shipbuilders. The claims relate to subsidiaries which were subsequently sold on, taking with them responsibility for employment liability, then became defunct. My Department is today announcing compensation arrangements whereby it will meet the cost of the portions of these claims which relate to the period of public ownership. Claims will be handled by Iron Trades Management Services (ITMS), who manage claims relating to Chester Street Insurance Holdings Limited, the now insolvent insurer of these claims, who will bill DTI for the portion of claims it is responsible for. :</p>
-	<p>The relevant companies are:</p>
-	<p class="indent">Ayr Engineering Constructional Company LimitedBrook Marine LimitedConoley &amp; Company LimitedHall Russell LimitedBlackwall Engineering Limited (formerly R&amp;H Green &amp; Silley Weir Limited)Howard Doris Structures Limited (formerly Sir James Laing &amp; Sons Limited)Energy &amp; Marine (Wearside) Limited (formerly Sunderland Forge Limited)SHSEGL Realisations Limited (formerly Swan Hunter Shipbuilders Limited)Northumbrian Engineering Limited (formerly Tyne Shiprepair Limited)Vosper Shiprepairers LimitedBurnsmith Limited (formerly Wallsend Slipway &amp; Engineering Limited)</p>
-	<p>Queries should be addressed to the following contacts:</p>
-	<p class="indent">PricewaterhouseCoopers (PwC&mdash;on behalf of ITMS): Lorna Siddall: 020 7213 4731British Shipbuilders: Mr Alexander Dowie of Eversheds (solicitors): 0191 241 6050.</p>
+	<p pid=".58WS.2/1">On <phrase class="date" code="2003-02-27">27 February 2003</phrase> I laid before Parliament a minute about proposals to undertake liability in respect of compensation on certain health claims in respect of periods of employment with particular companies when they belonged to British Shipbuilders. The claims relate to subsidiaries which were subsequently sold on, taking with them responsibility for employment liability, then became defunct. My Department is today announcing compensation arrangements whereby it will meet the cost of the portions of these claims which relate to the period of public ownership. Claims will be handled by Iron Trades Management Services (ITMS), who manage claims relating to Chester Street Insurance Holdings Limited, the now insolvent insurer of these claims, who will bill DTI for the portion of claims it is responsible for. :</p>
+	<p pid=".58WS.2/2">The relevant companies are:</p>
+	<p pid=".58WS.2/3" class="indent">Ayr Engineering Constructional Company LimitedBrook Marine LimitedConoley &amp; Company LimitedHall Russell LimitedBlackwall Engineering Limited (formerly R&amp;H Green &amp; Silley Weir Limited)Howard Doris Structures Limited (formerly Sir James Laing &amp; Sons Limited)Energy &amp; Marine (Wearside) Limited (formerly Sunderland Forge Limited)SHSEGL Realisations Limited (formerly Swan Hunter Shipbuilders Limited)Northumbrian Engineering Limited (formerly Tyne Shiprepair Limited)Vosper Shiprepairers LimitedBurnsmith Limited (formerly Wallsend Slipway &amp; Engineering Limited)</p>
+	<p pid=".58WS.2/4">Queries should be addressed to the following contacts:</p>
+	<p pid=".58WS.2/5" class="indent">PricewaterhouseCoopers (PwC&mdash;on behalf of ITMS): Lorna Siddall: 020 7213 4731British Shipbuilders: Mr Alexander Dowie of Eversheds (solicitors): 0191 241 6050.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-21.59WS.0" nospeaker="true" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_dpthd4">
@@ -104,13 +127,13 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-21.59WS.2" speakerid="uk.org.publicwhip/member/1196" speakername="Barbara Roche" speakeroffice="The Minister for Social Exclusion and Deputy Minister for Women" colnum="59WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030321/wmstext/30321m01.htm#30321m01.html_spmin4">
-	<p>The Strategy Unit's report, &quot;Ethnic Minorities and the Labour Market&quot;, is being published today as agreed Government policy. The report contains a wide-ranging new Government strategy that aims to ensure that British ethnic minority groups no longer face unfair barriers to achievement in the labour market. The report demonstrates that the underlying causes of under achievement are complex, and that Government strategy should be targeted to address these varied obstacles to achievement.</p>
-	<p>The report contains actions in three areas:</p>
-	<p class="indent">In building employability&mdash;New incentives for schools to address gaps between ethnic groups, while redirecting existing resources to genuine need, and promoting greater take-up of best practice.</p>
-	<p class="indent">In connecting people with work&mdash;Making crucial adjustments to existing jobs and training programmes to get better employment outcomes, and connecting people more effectively to the world of work via childcare, transport and housing.</p>
-	<p class="indent">In improving equal opportunities in the workplace&mdash;Offering poorly-informed firms concrete support to become good equal opportunities employers; addressing unfair practices by discriminatory employers; and encouraging more public bodies to take account of race equality in public procurement contracts.</p>
-	<p>My right hon. Friend the Secretary of State for Work and Pensions will report on progress to the Cabinet Committee on Economic Affairs, Productivity and Competitiveness. The Government will set up a task force&mdash;chaired by the Minister for Work&mdash;to help departments work in more co-ordinated ways to deliver improved labour market outcomes for ethnic minorities. This task force will issue annual reports on progress, with a full review of progress after three years.</p>
-	<p>Copies of the report have been placed in the Vote Office and the Libraries.</p>
+	<p pid=".59WS.2/1">The Strategy Unit's report, &quot;Ethnic Minorities and the Labour Market&quot;, is being published today as agreed Government policy. The report contains a wide-ranging new Government strategy that aims to ensure that British ethnic minority groups no longer face unfair barriers to achievement in the labour market. The report demonstrates that the underlying causes of under achievement are complex, and that Government strategy should be targeted to address these varied obstacles to achievement.</p>
+	<p pid=".59WS.2/2">The report contains actions in three areas:</p>
+	<p pid=".59WS.2/3" class="indent">In building employability&mdash;New incentives for schools to address gaps between ethnic groups, while redirecting existing resources to genuine need, and promoting greater take-up of best practice.</p>
+	<p pid=".59WS.2/4" class="indent">In connecting people with work&mdash;Making crucial adjustments to existing jobs and training programmes to get better employment outcomes, and connecting people more effectively to the world of work via childcare, transport and housing.</p>
+	<p pid=".59WS.2/5" class="indent">In improving equal opportunities in the workplace&mdash;Offering poorly-informed firms concrete support to become good equal opportunities employers; addressing unfair practices by discriminatory employers; and encouraging more public bodies to take account of race equality in public procurement contracts.</p>
+	<p pid=".59WS.2/6">My right hon. Friend the Secretary of State for Work and Pensions will report on progress to the Cabinet Committee on Economic Affairs, Productivity and Competitiveness. The Government will set up a task force&mdash;chaired by the Minister for Work&mdash;to help departments work in more co-ordinated ways to deliver improved labour market outcomes for ethnic minorities. This task force will issue annual reports on progress, with a full review of progress after three years.</p>
+	<p pid=".59WS.2/7">Copies of the report have been placed in the Vote Office and the Libraries.</p>
 </speech>
 </publicwhip>
 

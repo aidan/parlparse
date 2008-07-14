@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-04-04.73WS.0" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_dpthd0">
 	NORTHERN IRELAND
@@ -49,16 +72,16 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-04-04.73WS.2" speakerid="uk.org.publicwhip/member/1154" speakername="Ian Pearson" speakeroffice="The Parliamentary Under-Secretary of State for Northern Ireland" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_spmin0">
-	<p>The ministerial targets for the Rate Collection Agency, Northern Ireland, for the period 1 April 2003&mdash;31 March 2004 are as follows:</p>
-	<p class="indent">to collect 98 per cent. (or the 2002&ndash;03 outturn if higher) of a forecast &pound;758 million Gross Collectable Rate (excluding Late Assessments) by 31 March 2004;</p>
-	<p class="indent">to deliver an efficiency saving of 2 per cent.;</p>
-	<p class="indent">to accurately calculate and advise District Councils of the Actual Penny Product outturn for 2002&ndash;03, and to forecast the Estimated Penny Product for 2004&ndash;05 by 1 November 2003;</p>
-	<p class="indent">to process 98 per cent. of Housing Benefit applications free from error;</p>
-	<p class="indent">to achieve an average turnaround time for processing regular, non-annual Housing Benefit applications of 25 working days;</p>
-	<p class="indent">to issue all eligible rate refunds within 14 working days of being identified as a rate refund;</p>
-	<p class="indent">to achieve, by 31 March 2004, an overall rating for service provision of 'satisfied' or above, from at least 95 per cent. of respondents;</p>
-	<p class="indent">to live within budget allocations for 2003&ndash;04.</p>
-	<p>Copies of the Rate Collection Agency's Corporate and Business Plan for 2003&ndash;06, which includes these targets, were deposited in the Northern Ireland Assembly on 1 April 2003. Copies will also be placed in the House of Commons Library and the House of Lords Library.</p>
+	<p pid=".73WS.2/1">The ministerial targets for the Rate Collection Agency, Northern Ireland, for the period <phrase class="date" code="2003-04-01">1 April 2003</phrase>&mdash;<phrase class="date" code="2004-03-31">31 March 2004</phrase> are as follows:</p>
+	<p pid=".73WS.2/2" class="indent">to collect 98 per cent. (or the 2002&ndash;03 outturn if higher) of a forecast &pound;758 million Gross Collectable Rate (excluding Late Assessments) by <phrase class="date" code="2004-03-31">31 March 2004</phrase>;</p>
+	<p pid=".73WS.2/3" class="indent">to deliver an efficiency saving of 2 per cent.;</p>
+	<p pid=".73WS.2/4" class="indent">to accurately calculate and advise District Councils of the Actual Penny Product outturn for 2002&ndash;03, and to forecast the Estimated Penny Product for 2004&ndash;05 by <phrase class="date" code="2003-11-01">1 November 2003</phrase>;</p>
+	<p pid=".73WS.2/5" class="indent">to process 98 per cent. of Housing Benefit applications free from error;</p>
+	<p pid=".73WS.2/6" class="indent">to achieve an average turnaround time for processing regular, non-annual Housing Benefit applications of 25 working days;</p>
+	<p pid=".73WS.2/7" class="indent">to issue all eligible rate refunds within 14 working days of being identified as a rate refund;</p>
+	<p pid=".73WS.2/8" class="indent">to achieve, by <phrase class="date" code="2004-03-31">31 March 2004</phrase>, an overall rating for service provision of 'satisfied' or above, from at least 95 per cent. of respondents;</p>
+	<p pid=".73WS.2/9" class="indent">to live within budget allocations for 2003&ndash;04.</p>
+	<p pid=".73WS.2/10">Copies of the Rate Collection Agency's Corporate and Business Plan for 2003&ndash;06, which includes these targets, were deposited in the Northern Ireland Assembly on <phrase class="date" code="2003-04-01">1 April 2003</phrase>. Copies will also be placed in the House of Commons Library and the House of Lords Library.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-04-04.73WS.3" nospeaker="true" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_dpthd1">
@@ -70,17 +93,17 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-04-04.73WS.5" speakerid="uk.org.publicwhip/member/990" speakername="Adam Ingram" speakeroffice="The Minister of State, Ministry of Defence" colnum="73WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_spmin1">
-	<p>Key targets have been set for the Chief Executive of the Defence Analytical Services Agency (DASA) for Financial Year 2003&ndash;04. The targets build on the Business Review of the Agency conducted last year and are as follows:</p>
-	<p>Delivering Services to Meet Customer Needs</p>
-	<p class="indent">To meet at least 95 per cent. of the timeliness and quality targets in the 36 Service Level Agreements with customers for continuing work, and Project Agreements for surveys, modelling and other one-off projects.</p>
-	<p class="indent">To meet at least 95 per cent. of the timeliness and quality targets for defence National Statistics publications.</p>
-	<p class="indent">To have at least 90 per cent. of customers saying, in the annual Customer Satisfaction Survey, that they are satisfied with the overall service they receive from DASA. Investing in Quality</p>
-	<p class="indent">To conduct a quality review of DASA's National Statistics on defence logistics, and recommend improvements in their quality and scope.</p>
-	<p class="indent">To implement the key recommendations from the National Statistics review of Armed Forces medical statistics conducted in 2001&ndash;02.</p>
-	<p>Developing People</p>
-	<p class="indent">To have at least 85 per cent. of staff saying, in the annual Staff Opinion Survey, that they are satisfied with working in DASA. Building a Better Business</p>
-	<p class="indent">To maintain a system of corporate governance within DASA which has no significant weaknesses.</p>
-	<p class="indent">To make efficiency gains of &pound;200,000.</p>
+	<p pid=".73WS.5/1">Key targets have been set for the Chief Executive of the Defence Analytical Services Agency (DASA) for Financial Year 2003&ndash;04. The targets build on the Business Review of the Agency conducted last year and are as follows:</p>
+	<p pid=".73WS.5/2">Delivering Services to Meet Customer Needs</p>
+	<p pid=".73WS.5/3" class="indent">To meet at least 95 per cent. of the timeliness and quality targets in the 36 Service Level Agreements with customers for continuing work, and Project Agreements for surveys, modelling and other one-off projects.</p>
+	<p pid=".73WS.5/4" class="indent">To meet at least 95 per cent. of the timeliness and quality targets for defence National Statistics publications.</p>
+	<p pid=".73WS.5/5" class="indent">To have at least 90 per cent. of customers saying, in the annual Customer Satisfaction Survey, that they are satisfied with the overall service they receive from DASA. Investing in Quality</p>
+	<p pid=".73WS.5/6" class="indent">To conduct a quality review of DASA's National Statistics on defence logistics, and recommend improvements in their quality and scope.</p>
+	<p pid=".73WS.5/7" class="indent">To implement the key recommendations from the National Statistics review of Armed Forces medical statistics conducted in 2001&ndash;02.</p>
+	<p pid=".73WS.5/8">Developing People</p>
+	<p pid=".73WS.5/9" class="indent">To have at least 85 per cent. of staff saying, in the annual Staff Opinion Survey, that they are satisfied with working in DASA. Building a Better Business</p>
+	<p pid=".73WS.5/10" class="indent">To maintain a system of corporate governance within DASA which has no significant weaknesses.</p>
+	<p pid=".73WS.5/11" class="indent">To make efficiency gains of &pound;200,000.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-04-04.74WS.0" nospeaker="true" colnum="74WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_dpthd2">
@@ -92,10 +115,10 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-04-04.74WS.2" speakerid="uk.org.publicwhip/member/1113" speakername="David Miliband" speakeroffice="The Minister for School Standards" colnum="74WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_spmin2">
-	<p>In November 2002, my Department conducted a Secondary Schools Curriculum and Staffing Survey. The last was held in November 1996. This survey is a periodic voluntary sample survey of maintained secondary schools in England intended to provide data on the breadth of curriculum offered by schools to different year groups, and the post A-level qualifications held by teachers at these schools and how these relate to the subjects that they teach. Provisional results from this survey have been scheduled for publication as national statistics on 16 April 2003, with final results due to be published in September.</p>
-	<p>Over 800 schools were invited to take part in the Survey and, to date, 174 positive responses have been received. Professional advice from officials of the Government Statistical Service is that, while this response provides sufficient data to allow representative results on curriculum coverage to be obtained, there are insufficient data to allow representative results on teachers' qualifications to be obtained at this point. This advice has been given to me in accordance with the national statistics code of practice, which also means that no results from any part of the survey have yet been disclosed to Ministers or policy officials of my Department.</p>
-	<p>Despite the survey form being designed to impose minimum burdens on participating schools, the response rate has been lower than anticipated. This is due to the voluntary nature of the survey. Government statisticians have made intensive efforts to support and encourage respondents and these efforts are meeting with some success. The Department will continue to make these efforts and to take all possible action to increase positive responses from schools in order to yield sufficient data on teachers' qualifications.</p>
-	<p>In view of these facts, I am advised that provisional results on curriculum coverage only will be included in the publication scheduled for 16 April 2003. It is now my Department's intention to include results on teachers' qualifications in the release of final data scheduled for September 2003, when sufficient data have been secured.</p>
+	<p pid=".74WS.2/1">In November 2002, my Department conducted a Secondary Schools Curriculum and Staffing Survey. The last was held in November 1996. This survey is a periodic voluntary sample survey of maintained secondary schools in England intended to provide data on the breadth of curriculum offered by schools to different year groups, and the post A-level qualifications held by teachers at these schools and how these relate to the subjects that they teach. Provisional results from this survey have been scheduled for publication as national statistics on <phrase class="date" code="2003-04-16">16 April 2003</phrase>, with final results due to be published in September.</p>
+	<p pid=".74WS.2/2">Over 800 schools were invited to take part in the Survey and, to date, 174 positive responses have been received. Professional advice from officials of the Government Statistical Service is that, while this response provides sufficient data to allow representative results on curriculum coverage to be obtained, there are insufficient data to allow representative results on teachers' qualifications to be obtained at this point. This advice has been given to me in accordance with the national statistics code of practice, which also means that no results from any part of the survey have yet been disclosed to Ministers or policy officials of my Department.</p>
+	<p pid=".74WS.2/3">Despite the survey form being designed to impose minimum burdens on participating schools, the response rate has been lower than anticipated. This is due to the voluntary nature of the survey. Government statisticians have made intensive efforts to support and encourage respondents and these efforts are meeting with some success. The Department will continue to make these efforts and to take all possible action to increase positive responses from schools in order to yield sufficient data on teachers' qualifications.</p>
+	<p pid=".74WS.2/4">In view of these facts, I am advised that provisional results on curriculum coverage only will be included in the publication scheduled for <phrase class="date" code="2003-04-16">16 April 2003</phrase>. It is now my Department's intention to include results on teachers' qualifications in the release of final data scheduled for September 2003, when sufficient data have been secured.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-04-04.75WS.0" nospeaker="true" colnum="75WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_dpthd3">
@@ -107,19 +130,19 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-04-04.75WS.2" speakerid="uk.org.publicwhip/member/1234" speakername="Jacqui Smith" speakeroffice="The Minister of State, Department of Health" colnum="75WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_spmin3">
-	<p>I regret that the written ministerial statement on children in care I gave on 31 March at columns 39&ndash;40WS was incorrect. It should have read as follows:</p>
-	<p>My Department's Public Service Agreement (PSA), published July 2002, included a commitment to review the target on the education of children in care, in light of the Social Exclusion Unit (SEU) project on that subject. Work on the SEU project is nearing completion, and I am now in a position to announce the new target, which is to:</p>
-	<p>Improve life chances for children, including by:</p>
-	<p class="indent">Substantially narrowing the gap between the educational attainment and participation of children in care and that of their peers by 2006.</p>
-	<p>This target will have been achieved if, by 2006:</p>
-	<p class="indent">outcomes for 11 year olds in English and maths are at least 60 per cent. as good as those of their peers;</p>
-	<p>the proportion who become disengaged from education is reduced, so that no more than 10 per cent reach school leaving age without having sat a General Certificate of Secondary Education (GCSE) equivalent exam; and</p>
-	<p class="indent">the proportion of those aged 16 who get qualifications equivalent to five GCSEs graded A*-C has risen on average by 4 percentage points each year since 2002; and in all authorities at least 15 per cent of young people in care achieve this level of qualifications.</p>
-	<p>The elements of the PSA target relating to the level of education, training and employment outcomes for care leavers aged 19, the proportion of children in care who are cautioned or convicted, and the under-18 conception rate, remain unchanged.</p>
-	<p>In developing the target I have been keen to encourage action to support attainment by all children in care. This includes younger children, those who are able and have the potential to achieve at a high level, and those with difficulties who need support to remain engaged with education at all.</p>
-	<p>I therefore welcome the SEU's proposal that as part of the existing planning process, individual education targets should be set for all children in care and local authorities should monitor both the appropriateness and the achievement of these targets. We will be consulting stakeholders on how best to achieve this.</p>
-	<p>In order that the target reflects the influence of the care system on attainment, it will apply only to children who have been in care for one year or more. Nonetheless, I believe that promoting the attainment of children who spend a shorter time in care is important. I have therefore agreed with my right hon. Friend the Secretary of State for Education and Skills that he will put in place arrangements to analyse data from the Pupil Level Annual School Census, in order to improve our understanding of outcomes for those young people who have spent any time in care. The results of this analysis will be used to inform the development of future policy.</p>
-	<p>Copies of the technical note accompanying the new PSA target have been placed in the Library.</p>
+	<p pid=".75WS.2/1">I regret that the written ministerial statement on children in care I gave on <phrase class="date" code="2003-03-31">31 March</phrase> at columns 39&ndash;40WS was incorrect. It should have read as follows:</p>
+	<p pid=".75WS.2/2">My Department's Public Service Agreement (PSA), published July 2002, included a commitment to review the target on the education of children in care, in light of the Social Exclusion Unit (SEU) project on that subject. Work on the SEU project is nearing completion, and I am now in a position to announce the new target, which is to:</p>
+	<p pid=".75WS.2/3">Improve life chances for children, including by:</p>
+	<p pid=".75WS.2/4" class="indent">Substantially narrowing the gap between the educational attainment and participation of children in care and that of their peers by 2006.</p>
+	<p pid=".75WS.2/5">This target will have been achieved if, by 2006:</p>
+	<p pid=".75WS.2/6" class="indent">outcomes for 11 year olds in English and maths are at least 60 per cent. as good as those of their peers;</p>
+	<p pid=".75WS.2/7">the proportion who become disengaged from education is reduced, so that no more than 10 per cent reach school leaving age without having sat a General Certificate of Secondary Education (GCSE) equivalent exam; and</p>
+	<p pid=".75WS.2/8" class="indent">the proportion of those aged 16 who get qualifications equivalent to five GCSEs graded A*-C has risen on average by 4 percentage points each year since 2002; and in all authorities at least 15 per cent of young people in care achieve this level of qualifications.</p>
+	<p pid=".75WS.2/9">The elements of the PSA target relating to the level of education, training and employment outcomes for care leavers aged 19, the proportion of children in care who are cautioned or convicted, and the under-18 conception rate, remain unchanged.</p>
+	<p pid=".75WS.2/10">In developing the target I have been keen to encourage action to support attainment by all children in care. This includes younger children, those who are able and have the potential to achieve at a high level, and those with difficulties who need support to remain engaged with education at all.</p>
+	<p pid=".75WS.2/11">I therefore welcome the SEU's proposal that as part of the existing planning process, individual education targets should be set for all children in care and local authorities should monitor both the appropriateness and the achievement of these targets. We will be consulting stakeholders on how best to achieve this.</p>
+	<p pid=".75WS.2/12">In order that the target reflects the influence of the care system on attainment, it will apply only to children who have been in care for one year or more. Nonetheless, I believe that promoting the attainment of children who spend a shorter time in care is important. I have therefore agreed with my right hon. Friend the Secretary of State for Education and Skills that he will put in place arrangements to analyse data from the Pupil Level Annual School Census, in order to improve our understanding of outcomes for those young people who have spent any time in care. The results of this analysis will be used to inform the development of future policy.</p>
+	<p pid=".75WS.2/13">Copies of the technical note accompanying the new PSA target have been placed in the Library.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-04-04.76WS.0" nospeaker="true" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_dpthd4">
@@ -131,12 +154,12 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-04-04.76WS.2" speakerid="uk.org.publicwhip/member/1196" speakername="Barbara Roche" speakeroffice="The Minister for Social Exclusion and Deputy Minister for Women" colnum="76WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030404/wmstext/30404m01.htm#30404m01.html_spmin4">
-	<p>As part of the Spending Review 2002, the Government announced that they would be making available an additional &pound;975 million for the Neighbourhood Renewal Fund (NRF) in 2004&ndash;05 and 2005&ndash;06 as part of their strategy to revitalise England's poorest neighbourhoods and create places where people want to live, not leave.</p>
-	<p>We have already provided &pound;900 million of NRF to the 88 most deprived local authority areas for the period 2001&ndash;02 to 2003&ndash;04. Already, good progress has been made by local authorities in collaboration with Local Strategic Partnerships in using NRF to help address some of the most serious problems in our most deprived neighbourhoods.</p>
-	<p>However, more needs to be done, particularly to support better tailoring and targeting of mainstream services to make sure they are reaching the people and places which need them most. To achieve this, we are committed to ensuring that these areas continue to receive both the resources and other forms of support needed to tackle postcode poverty and create thriving, sustainable communities.</p>
-	<p>That is why we are announcing today that we intend to use most of these additional NRF resources to continue funding the current 88 eligible local authority areas in 2004&ndash;05 and 2005&ndash;06 at the 2003&ndash;04 level. This will mean an additional &pound;800 million over the two-year period. We will confirm detailed figures of the allocations to individual local authorities shortly.</p>
-	<p>Engaging the community in the process of neighbourhood renewal is central to the National Strategy for Neighbourhood Renewal. We are therefore also announcing today that we intend to provide an additional &pound;86 million over the same period to support Community Participation programmes in the current 88 eligible areas for NRF.</p>
-	<p>There remains &pound;175 million of additional NRF resources still to be allocated. I will be making a further statement to the House shortly on how we intend to distribute these.</p>
+	<p pid=".76WS.2/1">As part of the Spending Review 2002, the Government announced that they would be making available an additional &pound;975 million for the Neighbourhood Renewal Fund (NRF) in 2004&ndash;05 and 2005&ndash;06 as part of their strategy to revitalise England's poorest neighbourhoods and create places where people want to live, not leave.</p>
+	<p pid=".76WS.2/2">We have already provided &pound;900 million of NRF to the 88 most deprived local authority areas for the period 2001&ndash;02 to 2003&ndash;04. Already, good progress has been made by local authorities in collaboration with Local Strategic Partnerships in using NRF to help address some of the most serious problems in our most deprived neighbourhoods.</p>
+	<p pid=".76WS.2/3">However, more needs to be done, particularly to support better tailoring and targeting of mainstream services to make sure they are reaching the people and places which need them most. To achieve this, we are committed to ensuring that these areas continue to receive both the resources and other forms of support needed to tackle postcode poverty and create thriving, sustainable communities.</p>
+	<p pid=".76WS.2/4">That is why we are announcing today that we intend to use most of these additional NRF resources to continue funding the current 88 eligible local authority areas in 2004&ndash;05 and 2005&ndash;06 at the 2003&ndash;04 level. This will mean an additional &pound;800 million over the two-year period. We will confirm detailed figures of the allocations to individual local authorities shortly.</p>
+	<p pid=".76WS.2/5">Engaging the community in the process of neighbourhood renewal is central to the National Strategy for Neighbourhood Renewal. We are therefore also announcing today that we intend to provide an additional &pound;86 million over the same period to support Community Participation programmes in the current 88 eligible areas for NRF.</p>
+	<p pid=".76WS.2/6">There remains &pound;175 million of additional NRF resources still to be allocated. I will be making a further statement to the House shortly on how we intend to distribute these.</p>
 </speech>
 </publicwhip>
 

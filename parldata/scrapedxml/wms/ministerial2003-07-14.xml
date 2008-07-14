@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.1WS.0" nospeaker="true" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_dpthd0">
 	TRANSPORT
@@ -49,9 +72,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.1WS.2" speakerid="uk.org.publicwhip/member/839" speakername="Alistair Darling" speakeroffice="The Secretary of State for Transport" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_spmin0">
-	<p>In my written statement of 4 June I said that I intended to transfer London Underground to Transport for London on or about 15 July, subject to the passage of the Railways and Transport Safety Bill which was then before Parliament. The Railways and Transport Safety Bill received Royal Assent on 10 July.</p>
-	<p>I have accordingly approved, with amendments, the transfer scheme for the transfer of London Underground Limited from London Regional Transport to Transport for London that London Regional Transport sealed and submitted to me on 4 June. The London Underground will transfer to Transport for London on 15 July 2003.</p>
-	<p>This transfer will give effect to the wish of Parliament originally set out in the Greater London Authority Act 1999. It will transfer all of London Regional Transport's remaining property, rights and liabilities to Transport for London. I intend to wind up London Regional Transport shortly afterwards.</p>
+	<p pid=".1WS.2/1">In my written statement of <phrase class="date" code="2003-06-04">4 June</phrase> I said that I intended to transfer London Underground to Transport for London on or about <phrase class="date" code="2003-07-15">15 July</phrase>, subject to the passage of the Railways and Transport Safety Bill which was then before Parliament. The Railways and Transport Safety Bill received Royal Assent on <phrase class="date" code="2003-07-10">10 July</phrase>.</p>
+	<p pid=".1WS.2/2">I have accordingly approved, with amendments, the transfer scheme for the transfer of London Underground Limited from London Regional Transport to Transport for London that London Regional Transport sealed and submitted to me on <phrase class="date" code="2003-06-04">4 June</phrase>. The London Underground will transfer to Transport for London on <phrase class="date" code="2003-07-15">15 July 2003</phrase>.</p>
+	<p pid=".1WS.2/3">This transfer will give effect to the wish of Parliament originally set out in the Greater London Authority Act 1999. It will transfer all of London Regional Transport's remaining property, rights and liabilities to Transport for London. I intend to wind up London Regional Transport shortly afterwards.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-07-14.1WS.3" nospeaker="true" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_sbhd1">
@@ -59,23 +82,23 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.1WS.4" speakerid="uk.org.publicwhip/member/839" speakername="Alistair Darling" speakeroffice="The Secretary of State for Transport" colnum="1WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_spmin1">
-	<p>I have now received from Cross London Rail Links (CLRL) their business case proposals for the East-West London Crossrail project. The House will find it helpful to have an indication of what these proposals involve and how the Government plan to take them forward.</p>
-	<p>The purpose of Crossrail is to provide a significant increase in the capacity of the present rail networks into and across London so as to relieve congestion and over-crowding, to cater for the expected substantial growth in demand for travel into and across the capital over the coming decades, and to improve accessibility.</p>
-	<p>I am grateful for all the work which has been done by CLRL and their shareholders, the SRA and TfL, in developing the latest proposals for Crossrail, and in refining the analysis in the interim business case which they submitted to me in February.</p>
-	<p>Following analysis of a range of route options, CLRL have now proposed the adoption of what they have termed the benchmark scheme, involving a central East-West tunnel across London, with services extending to two branches to the East and two to the West.</p>
-	<p>In more detail, CLRL's proposed route option would involve a central tunnel following closely the currently protected alignment across London, from west of Paddington to east of Liverpool Street. From Liverpool Street, the line would be extended through Whitechapel, beyond which it would divide into two branches both serving the Thames Gateway&mdash;one going to Stratford and joining the existing Great Eastern lines to Shenfield; the other going down through the Isle of Dogs and the Royal Docks, crossing the Thames to join the North Kent lines at Abbey Wood, with some services continuing to Ebbsfleet.</p>
-	<p>To the west of Paddington, the line would join the Great Western main line before dividing into two further branches. One would join up with the North London Line providing services to Richmond and Kingston. The other would be via Ealing and Hayes to Heathrow along the existing branch served by Heathrow Express. This would be subject to the Crossrail promoters securing a satisfactory agreement with BAA, which owns the Heathrow access rights to this branch.</p>
-	<p>CLRL have advised that they believe implementation of the benchmark scheme would cost some &pound;10 billion in 2002 prices, including an allowance for contingencies, although the actual cost will depend on final decisions on the route and construction phasing, following appraisal and public consultation. Their analysis indicates that the project should produce benefits significantly greater than this, taking account of the anticipated levels of growth in employment and population in London in the Mayor's draft London plan. CLRL's transport and economic case for the project rests on this positive assessment of likely benefits over costs. There are also potentially significant regeneration benefits, particularly to the east of London, and to the longer term development of the Thames Gateway.</p>
-	<p>The Government continue to support the principle of building a new East-West Crossrail link. We see merit in the arguments for such an increase in capacity to support London's continued growth and success.</p>
-	<p>CLRL itself suggests that an all public sector funded option is unlikely to be affordable. We agree that the very high cost of the Crossrail project has major resource implications at a time when there are many other pressures on the transport budget, and on the public purse in general.</p>
-	<p>So if the project were to go ahead there would need to be a very substantial contribution to its costs from those who would benefit most from it. First, we envisage that there would need to be a very substantial contribution from London's business community&mdash;indeed I welcome the indications already made by London First and others of their willingness to contribute. My right hon. Friend the Chancellor and I are examining options here and we intend to consult the various London interests in the autumn.</p>
-	<p>Secondly, we shall be looking to ensure that where there are specific development opportunities arising from the project, we take full advantage of these and secure an appropriate contribution to the cost of the project from the developers concerned and thirdly, there is an issue over the appropriate level of fares, given the benefits which will accrue not only to users of Crossrail itself, but also from the reduced congestion elsewhere on London's transport networks.</p>
-	<p>Given the importance and high cost of the project, the Government now need to evaluate the CLRL proposals for value and affordability. We need to be sure that we have a robust plan for delivering and funding the project, with effective mechanisms to ensure those who benefit from it contribute as fully as possible to meeting the costs and bearing the risks.</p>
-	<p>In order to give the project the best chance of success, I am assembling an expert team to assess the proposals so that I can be assured that they offer good value for London, and are deliverable to budget, to time and to scope. This assessment will be carried out as quickly as possible consistent with the scale and complexity of the proposals and the extent to which key components of them are still under development.</p>
-	<p>I have also been considering proposals for an alternative scheme for Crossrail put to me by the London Regional Metro (LRM) consortium. While their proposals have some attractions, it would not be appropriate to proceed with LRM without an open competition. So we will seek to ensure that if and when Crossrail proceeds, the terms of any competition for its development would allow scope for LRM and other interested parties to bring forward their innovative ideas.</p>
-	<p>I have also concluded that the most appropriate way to seek powers for the project would be by way of a Hybrid Bill which the Government would be willing in principle to promote at an appropriate point once the evaluation is completed and a comprehensive funding package agreed. I am asking CLRL to continue work on development of their detailed project proposals so that they would be ready to support a hybrid Bill.</p>
-	<p>I am also inviting CLRL to advise me on updating the safeguarding for the route, and to undertake a public consultation exercise in the autumn to explain in more detail their proposed scheme, and to canvass views on their route proposals.</p>
-	<p>I welcome the proposals for the East-West London Crossrail and want to move forward. When the Department has carried out a thorough review of the project, and we have the results of the consultation exercise by CLRL, as well as the outcome of the consultation with business on funding options, we will be in a position to take firm and soundly-based decisions on the way forward for the project.</p>
+	<p pid=".1WS.4/1">I have now received from Cross London Rail Links (CLRL) their business case proposals for the East-West London Crossrail project. The House will find it helpful to have an indication of what these proposals involve and how the Government plan to take them forward.</p>
+	<p pid=".1WS.4/2">The purpose of Crossrail is to provide a significant increase in the capacity of the present rail networks into and across London so as to relieve congestion and over-crowding, to cater for the expected substantial growth in demand for travel into and across the capital over the coming decades, and to improve accessibility.</p>
+	<p pid=".1WS.4/3">I am grateful for all the work which has been done by CLRL and their shareholders, the SRA and TfL, in developing the latest proposals for Crossrail, and in refining the analysis in the interim business case which they submitted to me in February.</p>
+	<p pid=".1WS.4/4">Following analysis of a range of route options, CLRL have now proposed the adoption of what they have termed the benchmark scheme, involving a central East-West tunnel across London, with services extending to two branches to the East and two to the West.</p>
+	<p pid=".1WS.4/5">In more detail, CLRL's proposed route option would involve a central tunnel following closely the currently protected alignment across London, from west of Paddington to east of Liverpool Street. From Liverpool Street, the line would be extended through Whitechapel, beyond which it would divide into two branches both serving the Thames Gateway&mdash;one going to Stratford and joining the existing Great Eastern lines to Shenfield; the other going down through the Isle of Dogs and the Royal Docks, crossing the Thames to join the North Kent lines at Abbey Wood, with some services continuing to Ebbsfleet.</p>
+	<p pid=".1WS.4/6">To the west of Paddington, the line would join the Great Western main line before dividing into two further branches. One would join up with the North London Line providing services to Richmond and Kingston. The other would be via Ealing and Hayes to Heathrow along the existing branch served by Heathrow Express. This would be subject to the Crossrail promoters securing a satisfactory agreement with BAA, which owns the Heathrow access rights to this branch.</p>
+	<p pid=".1WS.4/7">CLRL have advised that they believe implementation of the benchmark scheme would cost some &pound;10 billion in 2002 prices, including an allowance for contingencies, although the actual cost will depend on final decisions on the route and construction phasing, following appraisal and public consultation. Their analysis indicates that the project should produce benefits significantly greater than this, taking account of the anticipated levels of growth in employment and population in London in the Mayor's draft London plan. CLRL's transport and economic case for the project rests on this positive assessment of likely benefits over costs. There are also potentially significant regeneration benefits, particularly to the east of London, and to the longer term development of the Thames Gateway.</p>
+	<p pid=".1WS.4/8">The Government continue to support the principle of building a new East-West Crossrail link. We see merit in the arguments for such an increase in capacity to support London's continued growth and success.</p>
+	<p pid=".1WS.4/9">CLRL itself suggests that an all public sector funded option is unlikely to be affordable. We agree that the very high cost of the Crossrail project has major resource implications at a time when there are many other pressures on the transport budget, and on the public purse in general.</p>
+	<p pid=".1WS.4/10">So if the project were to go ahead there would need to be a very substantial contribution to its costs from those who would benefit most from it. First, we envisage that there would need to be a very substantial contribution from London's business community&mdash;indeed I welcome the indications already made by London First and others of their willingness to contribute. My right hon. Friend the Chancellor and I are examining options here and we intend to consult the various London interests in the autumn.</p>
+	<p pid=".1WS.4/11">Secondly, we shall be looking to ensure that where there are specific development opportunities arising from the project, we take full advantage of these and secure an appropriate contribution to the cost of the project from the developers concerned and thirdly, there is an issue over the appropriate level of fares, given the benefits which will accrue not only to users of Crossrail itself, but also from the reduced congestion elsewhere on London's transport networks.</p>
+	<p pid=".1WS.4/12">Given the importance and high cost of the project, the Government now need to evaluate the CLRL proposals for value and affordability. We need to be sure that we have a robust plan for delivering and funding the project, with effective mechanisms to ensure those who benefit from it contribute as fully as possible to meeting the costs and bearing the risks.</p>
+	<p pid=".1WS.4/13">In order to give the project the best chance of success, I am assembling an expert team to assess the proposals so that I can be assured that they offer good value for London, and are deliverable to budget, to time and to scope. This assessment will be carried out as quickly as possible consistent with the scale and complexity of the proposals and the extent to which key components of them are still under development.</p>
+	<p pid=".1WS.4/14">I have also been considering proposals for an alternative scheme for Crossrail put to me by the London Regional Metro (LRM) consortium. While their proposals have some attractions, it would not be appropriate to proceed with LRM without an open competition. So we will seek to ensure that if and when Crossrail proceeds, the terms of any competition for its development would allow scope for LRM and other interested parties to bring forward their innovative ideas.</p>
+	<p pid=".1WS.4/15">I have also concluded that the most appropriate way to seek powers for the project would be by way of a Hybrid Bill which the Government would be willing in principle to promote at an appropriate point once the evaluation is completed and a comprehensive funding package agreed. I am asking CLRL to continue work on development of their detailed project proposals so that they would be ready to support a hybrid Bill.</p>
+	<p pid=".1WS.4/16">I am also inviting CLRL to advise me on updating the safeguarding for the route, and to undertake a public consultation exercise in the autumn to explain in more detail their proposed scheme, and to canvass views on their route proposals.</p>
+	<p pid=".1WS.4/17">I welcome the proposals for the East-West London Crossrail and want to move forward. When the Department has carried out a thorough review of the project, and we have the results of the consultation exercise by CLRL, as well as the outcome of the consultation with business on funding options, we will be in a position to take firm and soundly-based decisions on the way forward for the project.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.3WS.0" nospeaker="true" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_dpthd1">
@@ -87,8 +110,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.3WS.2" speakerid="uk.org.publicwhip/member/1000" speakername="Melanie Johnson" speakeroffice="The Parliamentary Under-Secretary of State for Health" colnum="3WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_spmin2">
-	<p>The 2002&ndash;03 annual report and accounts for the Meat Hygiene Service was laid before Parliament today.</p>
-	<p>Copies will be placed in the Library, but formal printing and publication will not occur for another six to eight weeks, pending preparation of a version in Welsh as required by the Welsh Language Act 1993.</p>
+	<p pid=".3WS.2/1">The 2002&ndash;03 annual report and accounts for the Meat Hygiene Service was laid before Parliament today.</p>
+	<p pid=".3WS.2/2">Copies will be placed in the Library, but formal printing and publication will not occur for another six to eight weeks, pending preparation of a version in Welsh as required by the Welsh Language Act 1993.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.4WS.0" nospeaker="true" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_dpthd2">
@@ -100,20 +123,20 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.4WS.2" speakerid="uk.org.publicwhip/member/737" speakername="Hazel Blears" speakeroffice="The Minister for Crime Reduction, Policing, and Community Safety" colnum="4WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m01.htm#30714m01.html_spmin3">
-	<p>We have today published a consultation paper that looks at the origin and past operation of the Riot (Damages) Act 1886 (RDA) and seeks the views of stakeholders on the future of the RDA.</p>
-	<p>The RDA is more than 100 years old. Both society and the nature of policing have changed dramatically in that time. In particular, in the light of the Government's radical police reform programme, we need to look at whether the Act is still appropriate in the 21st century.</p>
-	<p>Currently the RDA makes a police authority in England and Wales liable to pay for damages to buildings and their contents when a riot has taken place. Police authorities, the police service and others have argued for some time that the principle underpinning the RDA&mdash;that a riot presents a culpable failure to provide adequate policing&mdash;is no longer appropriate to modern conditions. There is also concern that police authorities are subject to unlimited liability for riot damage under the RDA.</p>
-	<p>It is also argued that the RDA provides a safety net for businesses and households&mdash;particularly in inner city areas, which have traditionally been more at risk of civil disturbances&mdash;and where property owners may have difficulties obtaining insurance, at least at affordable rates. Without the protection provided by the RDA, vulnerable communities could be at risk of further economic decline.</p>
-	<p>At a time when the police service is engaged in a programme of major reform it seems appropriate to consider whether the RDA remains appropriate to 21st century needs. We are therefore inviting views on the future of the RDA and, specifically, whether the RDA should be</p>
-	<p class="indent">Retained as it stands;</p>
-	<p class="indent">Repealed entirely; or</p>
-	<p class="indent">Reformed to limit liability for claims</p>
-	<p>Comments and suggestions are requested on these specific issues but any alternative approaches or views to those outlined would be welcome.</p>
-	<p>The Government haVE an open mind on the options and look forward to hearing the views of interested parties.</p>
-	<p>We hope that the consultation will improve the evidence base to help develop a more detailed impact assessment.</p>
-	<p>Options 2 and 3 would require primary legislation.</p>
-	<p>Responses to the consultation paper are requested by 9 October 2003.</p>
-	<p>A copy of the document has been placed in the Library and is available at <a href="http://www.homeoffice.gov.uk/inside/consults/current/index.html">http://www.homeoffice.gov.uk/inside/consults/current/index.html</a>.</p>
+	<p pid=".4WS.2/1">We have today published a consultation paper that looks at the origin and past operation of the Riot (Damages) Act 1886 (RDA) and seeks the views of stakeholders on the future of the RDA.</p>
+	<p pid=".4WS.2/2">The RDA is more than 100 years old. Both society and the nature of policing have changed dramatically in that time. In particular, in the light of the Government's radical police reform programme, we need to look at whether the Act is still appropriate in the 21st century.</p>
+	<p pid=".4WS.2/3">Currently the RDA makes a police authority in England and Wales liable to pay for damages to buildings and their contents when a riot has taken place. Police authorities, the police service and others have argued for some time that the principle underpinning the RDA&mdash;that a riot presents a culpable failure to provide adequate policing&mdash;is no longer appropriate to modern conditions. There is also concern that police authorities are subject to unlimited liability for riot damage under the RDA.</p>
+	<p pid=".4WS.2/4">It is also argued that the RDA provides a safety net for businesses and households&mdash;particularly in inner city areas, which have traditionally been more at risk of civil disturbances&mdash;and where property owners may have difficulties obtaining insurance, at least at affordable rates. Without the protection provided by the RDA, vulnerable communities could be at risk of further economic decline.</p>
+	<p pid=".4WS.2/5">At a time when the police service is engaged in a programme of major reform it seems appropriate to consider whether the RDA remains appropriate to 21st century needs. We are therefore inviting views on the future of the RDA and, specifically, whether the RDA should be</p>
+	<p pid=".4WS.2/6" class="indent">Retained as it stands;</p>
+	<p pid=".4WS.2/7" class="indent">Repealed entirely; or</p>
+	<p pid=".4WS.2/8" class="indent">Reformed to limit liability for claims</p>
+	<p pid=".4WS.2/9">Comments and suggestions are requested on these specific issues but any alternative approaches or views to those outlined would be welcome.</p>
+	<p pid=".4WS.2/10">The Government haVE an open mind on the options and look forward to hearing the views of interested parties.</p>
+	<p pid=".4WS.2/11">We hope that the consultation will improve the evidence base to help develop a more detailed impact assessment.</p>
+	<p pid=".4WS.2/12">Options 2 and 3 would require primary legislation.</p>
+	<p pid=".4WS.2/13">Responses to the consultation paper are requested by <phrase class="date" code="2003-10-09">9 October 2003</phrase>.</p>
+	<p pid=".4WS.2/14">A copy of the document has been placed in the Library and is available at <a href="http://www.homeoffice.gov.uk/inside/consults/current/index.html">http://www.homeoffice.gov.uk/inside/consults/current/index.html</a>.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-07-14.5WS.0" nospeaker="true" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_sbhd0">
@@ -121,17 +144,17 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.5WS.1" speakerid="uk.org.publicwhip/member/739" speakername="David Blunkett" speakeroffice="The Secretary of State for the Home Department" colnum="5WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_spmin0">
-	<p>This morning, my right hon. Friend the Secretary of State for Health and I are publishing and laying before Parliament the Shipman Inquiry's Second and Third Reports: &quot;The Police Investigation of March 1998&quot;, and &quot;Death Certification and the Investigation of Deaths by Coroners&quot;. These follow the publication, last year, of the First Report, &quot;Death Disguised&quot;, which established the extent of Harold Shipman's activities. The Inquiry's final reports on controlled drugs and disciplinary systems and complaints are expected next year.</p>
-	<p>My right hon. Friend and I would like to thank Dame Janet Smith for the considerable work, care and attention that have obviously gone into the preparation of these reports. We also wish to reiterate our sympathy to the relatives and friends of Shipman's victims. For their sake and in the wider interest of the community, it is essential that lessons are learned from these dreadful events.</p>
-	<p>The Second Report covers the investigation conducted by the Greater Manchester Police in March and April 1998, five months before Harold Shipman was arrested. It makes it clear that, whilst the Inquiry does not blame police management systems, the conduct of those officers involved in this specific investigation fell below the standard which the community is entitled to expect of public servants in their position. There was a subsequent internal inquiry by Greater Manchester Police into the failure of the March 1998 investigation. In the words of Dame Janet this inquiry was &quot;quite inadequate&quot;.</p>
-	<p>I take the judgment of the Shipman Inquiry on the Greater Manchester Police extremely seriously. For the initial investigation to have failed is severe enough but for the subsequent investigation into their handling to have been so flawed requires the most urgent and strenuous efforts to ensure that such an event could never recur. It is for Greater Manchester Police to investigate but I await their report, and will expect rapid and effective action as well as lessons to be learnt by other forces in response.</p>
-	<p>I have asked my officials to work closely with the Greater Manchester Police to establish what can usefully be drawn from the report and to offer appropriate support and advice. We will help Greater Manchester Police to move forward. Through the Home Office Police Standards Unit and Her Majesty's Inspectorate of Constabulary we are already working with the force to deliver performance improvements for the benefits of those living and working in the Force area.</p>
-	<p>It will also be for Greater Manchester Police to decide what action may be appropriate in relation to any individual police officer. I have written to the Chief Constable to ask to be kept informed of how the criticism against individuals in the Force is being addressed.</p>
-	<p>The report recommends that guidance should be issued to those detective officers who have to undertake investigations into allegations of wrongdoing by health professionals. Work on this is already underway. The Association of Chief Police Officers and the Department of Health, with the advice of the Health and Safety Executive, are jointly developing a memorandum of understanding. This sets out the roles and responsibilities of both organisations when a serious incident takes place or is suspected of occurring, and principles for effective liaison when criminal investigations may be needed into such incidents involving NHS patients. The memorandum will also refer to other guidance on incidents of this type; for example, guidance to police Senior Investigating Officers, which the report identified as being developed.</p>
-	<p>The Third Report found systemic shortcomings within the cremation arrangements and coroner system. The report of the Fundamental Review of Coroner Services and Death Certification, published on 4 June, identified similar inadequacies, although the solutions proposed are slightly different.</p>
-	<p>As I announced when the earlier report was published, in order to assist the Government to develop a coherent long-term strategy for the future of our death investigation processes, I have asked the Chair of the Fundamental Review, Mr Tom Luce, to conduct some further work to link the review's recommendations to the findings of the Shipman Inquiry. This will enable us to formulate a comprehensive programme of reform later this year, taking into account both sets of observations and recommendations.</p>
-	<p>Dame Janet makes two recommendations for short-term improvement: that cremation certification procedures should be strengthened and that practices in coroners' offices should be improved. As a matter of urgency, my officials are discussing these proposals with the relevant agencies as part of our existing programme to take forward interim measures to improve these services. We shall ensure that guidance to deliver more robust procedures and practices is issued as soon as possible.</p>
-	<p>My hon. Friend the Financial Secretary to the Treasury last week published a consultation document on modernisation of the civil registration service, including death certification. Like the Fundamental Review of Coroner Services and Death Certification, this also presents an opportunity for comprehensive reform, this time specifically of the registration service and its interaction with related services.</p>
+	<p pid=".5WS.1/1">This morning, my right hon. Friend the Secretary of State for Health and I are publishing and laying before Parliament the Shipman Inquiry's Second and Third Reports: &quot;The Police Investigation of March 1998&quot;, and &quot;Death Certification and the Investigation of Deaths by Coroners&quot;. These follow the publication, last year, of the First Report, &quot;Death Disguised&quot;, which established the extent of Harold Shipman's activities. The Inquiry's final reports on controlled drugs and disciplinary systems and complaints are expected next year.</p>
+	<p pid=".5WS.1/2">My right hon. Friend and I would like to thank Dame Janet Smith for the considerable work, care and attention that have obviously gone into the preparation of these reports. We also wish to reiterate our sympathy to the relatives and friends of Shipman's victims. For their sake and in the wider interest of the community, it is essential that lessons are learned from these dreadful events.</p>
+	<p pid=".5WS.1/3">The Second Report covers the investigation conducted by the Greater Manchester Police in March and April 1998, five months before Harold Shipman was arrested. It makes it clear that, whilst the Inquiry does not blame police management systems, the conduct of those officers involved in this specific investigation fell below the standard which the community is entitled to expect of public servants in their position. There was a subsequent internal inquiry by Greater Manchester Police into the failure of the March 1998 investigation. In the words of Dame Janet this inquiry was &quot;quite inadequate&quot;.</p>
+	<p pid=".5WS.1/4">I take the judgment of the Shipman Inquiry on the Greater Manchester Police extremely seriously. For the initial investigation to have failed is severe enough but for the subsequent investigation into their handling to have been so flawed requires the most urgent and strenuous efforts to ensure that such an event could never recur. It is for Greater Manchester Police to investigate but I await their report, and will expect rapid and effective action as well as lessons to be learnt by other forces in response.</p>
+	<p pid=".5WS.1/5">I have asked my officials to work closely with the Greater Manchester Police to establish what can usefully be drawn from the report and to offer appropriate support and advice. We will help Greater Manchester Police to move forward. Through the Home Office Police Standards Unit and Her Majesty's Inspectorate of Constabulary we are already working with the force to deliver performance improvements for the benefits of those living and working in the Force area.</p>
+	<p pid=".5WS.1/6">It will also be for Greater Manchester Police to decide what action may be appropriate in relation to any individual police officer. I have written to the Chief Constable to ask to be kept informed of how the criticism against individuals in the Force is being addressed.</p>
+	<p pid=".5WS.1/7">The report recommends that guidance should be issued to those detective officers who have to undertake investigations into allegations of wrongdoing by health professionals. Work on this is already underway. The Association of Chief Police Officers and the Department of Health, with the advice of the Health and Safety Executive, are jointly developing a memorandum of understanding. This sets out the roles and responsibilities of both organisations when a serious incident takes place or is suspected of occurring, and principles for effective liaison when criminal investigations may be needed into such incidents involving NHS patients. The memorandum will also refer to other guidance on incidents of this type; for example, guidance to police Senior Investigating Officers, which the report identified as being developed.</p>
+	<p pid=".5WS.1/8">The Third Report found systemic shortcomings within the cremation arrangements and coroner system. The report of the Fundamental Review of Coroner Services and Death Certification, published on <phrase class="date" code="2003-06-04">4 June</phrase>, identified similar inadequacies, although the solutions proposed are slightly different.</p>
+	<p pid=".5WS.1/9">As I announced when the earlier report was published, in order to assist the Government to develop a coherent long-term strategy for the future of our death investigation processes, I have asked the Chair of the Fundamental Review, Mr Tom Luce, to conduct some further work to link the review's recommendations to the findings of the Shipman Inquiry. This will enable us to formulate a comprehensive programme of reform later this year, taking into account both sets of observations and recommendations.</p>
+	<p pid=".5WS.1/10">Dame Janet makes two recommendations for short-term improvement: that cremation certification procedures should be strengthened and that practices in coroners' offices should be improved. As a matter of urgency, my officials are discussing these proposals with the relevant agencies as part of our existing programme to take forward interim measures to improve these services. We shall ensure that guidance to deliver more robust procedures and practices is issued as soon as possible.</p>
+	<p pid=".5WS.1/11">My hon. Friend the Financial Secretary to the Treasury last week published a consultation document on modernisation of the civil registration service, including death certification. Like the Fundamental Review of Coroner Services and Death Certification, this also presents an opportunity for comprehensive reform, this time specifically of the registration service and its interaction with related services.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.6WS.0" nospeaker="true" colnum="6WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_dpthd0">
@@ -143,18 +166,18 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.6WS.2" speakerid="uk.org.publicwhip/member/1230" speakername="Andrew Smith" speakeroffice="The Secretary of State for Work and Pensions" colnum="6WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_spmin1">
-	<p>The Government are well advanced in their preparations for the delivery of Pension Credit from October 2003.</p>
-	<p>We have recruited extra staff and invested in new infrastructure to meet the additional demands of the new entitlement and we are making best use of the phased take-on during the advanced applications stage in the lead up to October. Not only will this prove our systems, but it will also ensure that we learn from experience before the main take-on begins.</p>
-	<p>An existing, tried and tested computer system will be used to process applications and to make payments from October. We are writing to pensioner households giving them information about Pension Credit and inviting them to apply for it. A freephone telephone application line is fully operational and is taking applications now.</p>
-	<p>We are also working with partner organisations, such as Help The Aged, Age Concern and Citizens Advice, amongst others, both at a national and local level, to encourage eligible people to take up their entitlement. I can now report the following progress on applications for Pension Credit. There are over 1.1 million pensioner households already on our systems, ready to be paid Pension Credit from October.</p>
-	<p>We are making good progress in transferring those receiving Minimum Income Guarantee automatically onto Pension Credit and will have transferred all these cases by October.</p>
-	<p>There is plenty of time for pensioners to apply for Pension Credit. To ensure pensioners do not lose out, there will be a twelve month backdating provision until October 2004. This will allow applications to be backdated to October 2003 where entitlement exists or to the date entitlement begins, if this is later.</p>
-	<p>In September we will be launching a major advertising campaign on TV and in the press ready for the main launch in October.</p>
-	<p>I am placing a chart showing progress so far in the Library.</p>
+	<p pid=".6WS.2/1">The Government are well advanced in their preparations for the delivery of Pension Credit from October 2003.</p>
+	<p pid=".6WS.2/2">We have recruited extra staff and invested in new infrastructure to meet the additional demands of the new entitlement and we are making best use of the phased take-on during the advanced applications stage in the lead up to October. Not only will this prove our systems, but it will also ensure that we learn from experience before the main take-on begins.</p>
+	<p pid=".6WS.2/3">An existing, tried and tested computer system will be used to process applications and to make payments from October. We are writing to pensioner households giving them information about Pension Credit and inviting them to apply for it. A freephone telephone application line is fully operational and is taking applications now.</p>
+	<p pid=".6WS.2/4">We are also working with partner organisations, such as Help The Aged, Age Concern and Citizens Advice, amongst others, both at a national and local level, to encourage eligible people to take up their entitlement. I can now report the following progress on applications for Pension Credit. There are over 1.1 million pensioner households already on our systems, ready to be paid Pension Credit from October.</p>
+	<p pid=".6WS.2/5">We are making good progress in transferring those receiving Minimum Income Guarantee automatically onto Pension Credit and will have transferred all these cases by October.</p>
+	<p pid=".6WS.2/6">There is plenty of time for pensioners to apply for Pension Credit. To ensure pensioners do not lose out, there will be a twelve month backdating provision until October 2004. This will allow applications to be backdated to October 2003 where entitlement exists or to the date entitlement begins, if this is later.</p>
+	<p pid=".6WS.2/7">In September we will be launching a major advertising campaign on TV and in the press ready for the main launch in October.</p>
+	<p pid=".6WS.2/8">I am placing a chart showing progress so far in the Library.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.7WS.0" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_dpthd1">
-	ENVIRONMENT, FOOD AND RURAL AFFAIRS
+	ENVIRONMENT FOOD AND RURAL AFFAIRS
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2003-07-14.7WS.1" nospeaker="true" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_sbhd2">
@@ -162,19 +185,19 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.7WS.2" speakerid="uk.org.publicwhip/member/721" speakername="Margaret Beckett" speakeroffice="The Secretary of State for Environment, Food and Rural Affairs" colnum="7WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m02.htm#30714m02.html_spmin2">
-	<p>Following the statement made on 20 January 2003, I wish to report further developments in respect of the restructuring of Horticulture Research International (HRI).</p>
-	<p>I am pleased to report that DEFRA has reached agreement with the University of Warwick about the future of HRI Wellesbourne and Kirton. We believe that the agreement will provide a stable and sustainable future for HRI and meet the core recommendations of the independent Quinquennial Review team.</p>
-	<p>Subject to finalising the details of the agreement and confirmation of the conclusion of a DEFRA business case that it represents best value, we expect the settlement with the University to contain the following key elements:</p>
-	<p class="indent">(a) HRI will continue to serve the horticulture industry as part of the University;</p>
-	<p class="indent">(b) DEFRA will grant the University a guaranteed research contract for an agreed programme of work. The contract will be for eight years at a total annual value of &pound;5 million in years 1 to 6, &pound;3.5 million in year 7 and &pound;2 million in year 8;</p>
-	<p class="indent">(c) DEFRA will transfer HRIfs sites at Wellesbourne, Warwickshire and Kirton, Lincolnshire to the University with effect from 1 April 2004, subject to &quot;clawback&quot; arrangements to protect the public purse;</p>
-	<p class="indent">(d) The University will make a financial contribution equivalent to the value of the dwellings and agricultural land at Wellesbourne as assessed by the Valuation Office Agency;</p>
-	<p class="indent">(e) Following a programme of redundancies, the remaining HRI staff at Wellesbourne and Kirton will transfer to the employment of the University on TUPE terms with effect from 1 April 2004;</p>
-	<p class="indent">(f) The University will inherit ongoing redundancy and pension liabilities of transferring staff; and</p>
-	<p class="indent">(g) DEFRA will make a financial contribution to outstanding works required in respect of the Wellesbourne and Kirton estates.</p>
-	<p>We plan to exchange letters of intent with the University as soon as practicable followed by a business transfer agreement in the autumn, subject to negotiations and the DEFRA business case.</p>
-	<p>The independent Quinquennial Review team recommended that HRI Efford should close. The University of Warwick has indicated that it does not wish to acquire the site. DEFRA and HRI have carefully considered the Review team's recommendation alongside other options and, regrettably, concluded that Efford should close in October. Staff at Efford will have access to the same support services as those similarly affected at other HRI sites and will receive redundancy compensation in line with agreed terms and procedures. The land and buildings at Efford are a valuable public asset which will be sold on the open market and the receipts invested in the wider restructuring of HRI. HRI will ensure that existing contracts at Efford are honoured. DEFRA will facilitate discussions with the horticulture industry and the research community about the need, if any, to make specific alternative provision for the research capability presently offered by Efford.</p>
-	<p>Negotiations are continuing between DEFRA and the East Mailing Trust for Horticultural Research about the establishment of East Mailing and Wye as an independent research station. The East Mailing Trust has made proposals which we plan to discuss with it later in July. It is in everyone's interests to ensure that the new research station would be financially viable on the basis of a mixed portfolio of funding as recommended by the Quinquennial Review team. We aim to decide the future of East Mailing and Wye by the end of September at the latest.</p>
+	<p pid=".7WS.2/1">Following the statement made on <phrase class="date" code="2003-01-20">20 January 2003</phrase>, I wish to report further developments in respect of the restructuring of Horticulture Research International (HRI).</p>
+	<p pid=".7WS.2/2">I am pleased to report that DEFRA has reached agreement with the University of Warwick about the future of HRI Wellesbourne and Kirton. We believe that the agreement will provide a stable and sustainable future for HRI and meet the core recommendations of the independent Quinquennial Review team.</p>
+	<p pid=".7WS.2/3">Subject to finalising the details of the agreement and confirmation of the conclusion of a DEFRA business case that it represents best value, we expect the settlement with the University to contain the following key elements:</p>
+	<p pid=".7WS.2/4" class="indent">(a) HRI will continue to serve the horticulture industry as part of the University;</p>
+	<p pid=".7WS.2/5" class="indent">(b) DEFRA will grant the University a guaranteed research contract for an agreed programme of work. The contract will be for eight years at a total annual value of &pound;5 million in years 1 to 6, &pound;3.5 million in year 7 and &pound;2 million in year 8;</p>
+	<p pid=".7WS.2/6" class="indent">(c) DEFRA will transfer HRIfs sites at Wellesbourne, Warwickshire and Kirton, Lincolnshire to the University with effect from <phrase class="date" code="2004-04-01">1 April 2004</phrase>, subject to &quot;clawback&quot; arrangements to protect the public purse;</p>
+	<p pid=".7WS.2/7" class="indent">(d) The University will make a financial contribution equivalent to the value of the dwellings and agricultural land at Wellesbourne as assessed by the Valuation Office Agency;</p>
+	<p pid=".7WS.2/8" class="indent">(e) Following a programme of redundancies, the remaining HRI staff at Wellesbourne and Kirton will transfer to the employment of the University on TUPE terms with effect from <phrase class="date" code="2004-04-01">1 April 2004</phrase>;</p>
+	<p pid=".7WS.2/9" class="indent">(f) The University will inherit ongoing redundancy and pension liabilities of transferring staff; and</p>
+	<p pid=".7WS.2/10" class="indent">(g) DEFRA will make a financial contribution to outstanding works required in respect of the Wellesbourne and Kirton estates.</p>
+	<p pid=".7WS.2/11">We plan to exchange letters of intent with the University as soon as practicable followed by a business transfer agreement in the autumn, subject to negotiations and the DEFRA business case.</p>
+	<p pid=".7WS.2/12">The independent Quinquennial Review team recommended that HRI Efford should close. The University of Warwick has indicated that it does not wish to acquire the site. DEFRA and HRI have carefully considered the Review team's recommendation alongside other options and, regrettably, concluded that Efford should close in October. Staff at Efford will have access to the same support services as those similarly affected at other HRI sites and will receive redundancy compensation in line with agreed terms and procedures. The land and buildings at Efford are a valuable public asset which will be sold on the open market and the receipts invested in the wider restructuring of HRI. HRI will ensure that existing contracts at Efford are honoured. DEFRA will facilitate discussions with the horticulture industry and the research community about the need, if any, to make specific alternative provision for the research capability presently offered by Efford.</p>
+	<p pid=".7WS.2/13">Negotiations are continuing between DEFRA and the East Mailing Trust for Horticultural Research about the establishment of East Mailing and Wye as an independent research station. The East Mailing Trust has made proposals which we plan to discuss with it later in July. It is in everyone's interests to ensure that the new research station would be financially viable on the basis of a mixed portfolio of funding as recommended by the Quinquennial Review team. We aim to decide the future of East Mailing and Wye by the end of September at the latest.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.8WS.0" nospeaker="true" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m03.htm#30714m03.html_dpthd0">
@@ -186,7 +209,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.8WS.2" speakerid="uk.org.publicwhip/member/1171" speakername="Dawn Primarolo" speakeroffice="The Paymaster General" colnum="8WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m03.htm#30714m03.html_spmin0">
-	<p>A comprehensive Double Taxation Convention with Chile was signed on 12 July 2003. After signature both texts were deposited in the Library of the House and made available on the Inland Revenue's website. The text of the Convention will be scheduled to a draft Order in Council and laid for consideration by the House at the earliest convenient opportunity.</p>
+	<p pid=".8WS.2/1">A comprehensive Double Taxation Convention with Chile was signed on <phrase class="date" code="2003-07-12">12 July 2003</phrase>. After signature both texts were deposited in the Library of the House and made available on the Inland Revenue's website. The text of the Convention will be scheduled to a draft Order in Council and laid for consideration by the House at the earliest convenient opportunity.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-07-14.9WS.0" nospeaker="true" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m03.htm#30714m03.html_dpthd1">
@@ -198,11 +221,11 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-07-14.9WS.2" speakerid="uk.org.publicwhip/member/1258" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="9WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030714/wmstext/30714m03.htm#30714m03.html_spmin1">
-	<p>As part of a wider review of how we make the most effective use of our Consular resources to help British nationals in distress overseas, the Foreign and Commonwealth Office has considered the issue of visiting British nationals in prison overseas.</p>
-	<p>The welfare of British nationals in foreign prisons is one of the key concerns of consular staff. Our staff seek to ensure that prisoners' rights are respected in accordance with international standards. This includes ensuring that they have access to legal representation and that their welfare needs are met during their detention.</p>
-	<p>Once a British national has been given a custodial sentence, our aim has been to visit them once a year, or more frequently if possible.</p>
-	<p>This approach does not however take account of the wide variation in prison conditions and practices between different countries. In European Union countries, Norway, Switzerland, Iceland, North America and Australasia, we are satisfied that, in general, prison conditions meet international standards and are comparable to those in the UK. From 1 September this year, our aim will therefore be to visit prisoners in these countries once after sentencing, and thereafter, only if the real need arises. In addition, consular staff can maintain contact with prisoners by telephone and fax and encourage local prison volunteer groups to visit them.</p>
-	<p>In all other countries, where prison conditions give us more cause for concern, the aim of consular staff will be to continue to visit prisoners on a regular basis. This is likely to be at least once a year, and as often as once a month where circumstances warrant it. The new policy will allow us to provide our consular services on the basis of greatest need and to concentrate on countries where our consular assistance can be most beneficial.</p>
+	<p pid=".9WS.2/1">As part of a wider review of how we make the most effective use of our Consular resources to help British nationals in distress overseas, the Foreign and Commonwealth Office has considered the issue of visiting British nationals in prison overseas.</p>
+	<p pid=".9WS.2/2">The welfare of British nationals in foreign prisons is one of the key concerns of consular staff. Our staff seek to ensure that prisoners' rights are respected in accordance with international standards. This includes ensuring that they have access to legal representation and that their welfare needs are met during their detention.</p>
+	<p pid=".9WS.2/3">Once a British national has been given a custodial sentence, our aim has been to visit them once a year, or more frequently if possible.</p>
+	<p pid=".9WS.2/4">This approach does not however take account of the wide variation in prison conditions and practices between different countries. In European Union countries, Norway, Switzerland, Iceland, North America and Australasia, we are satisfied that, in general, prison conditions meet international standards and are comparable to those in the UK. From <phrase class="date" code="2003-09-01">1 September</phrase> this year, our aim will therefore be to visit prisoners in these countries once after sentencing, and thereafter, only if the real need arises. In addition, consular staff can maintain contact with prisoners by telephone and fax and encourage local prison volunteer groups to visit them.</p>
+	<p pid=".9WS.2/5">In all other countries, where prison conditions give us more cause for concern, the aim of consular staff will be to continue to visit prisoners on a regular basis. This is likely to be at least once a year, and as often as once a month where circumstances warrant it. The new policy will allow us to provide our consular services on the basis of greatest need and to concentrate on countries where our consular assistance can be most beneficial.</p>
 </speech>
 </publicwhip>
 

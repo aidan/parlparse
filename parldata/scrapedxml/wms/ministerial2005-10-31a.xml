@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -35,7 +38,9 @@
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -52,18 +57,14 @@
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.21WS.2" speakerid="uk.org.publicwhip/member/1958" speakername="John Reid" speakeroffice="The Secretary of State for Defence" colnum="21WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m01.htm#51031m01.html_spmin0">
-	<p pid="a.21WS.2/1">On <phrase class="date" code="2005-10-28">28 October</phrase> I published the Ministry of Defence's Annual Report And Accounts 2004&ndash;05. It combines the Department's Annual Performance Report and Departmental Resource Accounts in a single document that provides a comprehensive overview of the MOD's financial and non-financial performance. For the second successive year the Comptroller and Auditor General has approved the accounts without qualification.</p>
-	<p pid="a.21WS.2/2">The report shows that once again the Armed Forces and the Ministry of Defence delivered what they were required and resourced to do during a busy and challenging year. It reflects the broad and diverse range of operations and tasks undertaken during the year, and the Armed Forces and Ministry of Defence's continuing vision of being a force for good in the world. It also details the sizeable progress the Ministry of Defence has made towards achieving the efficiency targets set by Her Majesty's Treasury in the 2002 and 2004 Spending Reviews, and the considerable progress already made in delivering the capabilities and reformed force structure set out in the July 2004 Command Paper &quot;Delivering Security in a Changing World: Future Capabilities&quot;.</p>
-	<p pid="a.21WS.2/3">Copies of the annual report and accounts have been placed in the Library of the House. It is also available online from the Department's internet site at <a href="http://www.mod.uk">www.mod.uk</a>.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.3" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.4" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.21WS.5" newgid="uk.org.publicwhip/wms/2005-10-31b.21WS.5" matchtype="perfectmatch"/>
@@ -78,215 +79,22 @@
 	<p pid="a.22WS.2/5">Also in relation to climate change, we heard a point from Poland under Other Business that suggested some issues for review in relation to the EU's emissions trading scheme.</p>
 	<p pid="a.22WS.2/6">At lunch we were joined by-the Chair of the European Parliament's Environment Committee, Karl-Heinz Florenz, and began our discussion of &quot;Better Regulation&quot;, which was continued in a formal Council debate after lunch. There was strong support within the Council for the view that better regulation tools, and in particular impact assessments, could help in delivering better environmental outcomes in the most effective way. It helps to provide a mechanism for the integration of environmental considerations into all Community policies, as the Treaties require. A number of delegations noted the importance of considering the costs of inaction in evaluating the options, and there was widespread agreement that impact assessment must assist in political decision-making, not replace or delay it.</p>
 	<p pid="a.22WS.2/7">A relatively short list of AOB points included, in addition to the emissions trading item above, information from the Commission on its communication on tackling the climate change impacts of aviation emissions, and on progress on its proposal for a review of the EU Sustainable Development Strategy. Spain and Portugal reported on the 5th meeting of the Ibero-American Forum of Environment Ministers, and the Netherlands raised the issue of the need for adequate funding for environmental matters in the 7th Research Framework Programme and the Competitiveness and Innovation Programme.</p>
-	<p pid="a.22WS.2/8">Denmark requested an urgent future discussion on the potential benefits of, and the need for further EU funded research on, genetically modified organisms (GMOs). Luxembourg submitted a paper calling for a discussion focused on the need for change to the EU's approvals regime for GMOs. The Commission suggested that a full debate would be best timed after a WTO hearing on GMOs expected early next year. The Presidency concluded that a significant number of delegations wanted a debate, and it was agreed that the Commission would produce a short paper as the basis for a short, initial discussion at the <phrase class="date" code="">2 December</phrase> Environment Council.</p>
+	<p pid="a.22WS.2/8">Denmark requested an urgent future discussion on the potential benefits of, and the need for further EU funded research on, genetically modified organisms (GMOs). Luxembourg submitted a paper calling for a discussion focused on the need for change to the EU's approvals regime for GMOs. The Commission suggested that a full debate would be best timed after a WTO hearing on GMOs expected early next year. The Presidency concluded that a significant number of delegations wanted a debate, and it was agreed that the Commission would produce a short paper as the basis for a short, initial discussion at the <phrase class="date" code="2005-12-02">2 December</phrase> Environment Council.</p>
 </speech>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.23WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.23WS.0" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.23WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.23WS.1" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.23WS.1" speakerid="uk.org.publicwhip/member/1533" speakername="Margaret Beckett" speakeroffice="The Secretary of State for Environment, Food and Rural Affairs" colnum="23WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m01.htm#51031m01.html_spmin3">
-	<p pid="a.23WS.1/1">In my oral statement to the House on <phrase class="date" code="2005-10-26">Wednesday 26 October</phrase> I said that the Chief Veterinary Officer and I had ordered a general review of our quarantine arrangements and procedures to be undertaken. I am pleased to announce today that Professor Nigel Dimmock, Emeritus Professor of Virology at Warwick University has agreed to chair the review.</p>
-	<p pid="a.23WS.1/2">The terms of reference for the review are:</p>
-	<p pid="a.23WS.1/3" class="indent">to review avian quarantine arrangements and procedures for captive birds; and</p>
-	<p pid="a.23WS.1/4" class="indent">to make recommendations on any changes needed to policies or procedures, including guidance, to improve biosecurity, compliance with relevant legislation and clarity of accountabilities</p>
-	<p pid="a.23WS.1/5">The review will be led by Professor Dimmock and the membership will be drawn from independent experts in a range of fields including virology, logistics, veterinary science and animal behaviour. The review team will examine the current arrangements for the quarantine of captive birds; they will be able to talk to practitioners and experts in the field as well as examining existing guidance and procedures. They may also want to visit quarantine premises.</p>
-	<p pid="a.23WS.1/6">Debby Reynolds, the Chief Vet, and I have asked Professor Dimmock to report his findings as speedily as possible. We hope to receive his report, which we will publish, within around one month.</p>
-	<p pid="a.23WS.1/7">I am most grateful to Professor Dimmock for taking on this important task. The advice of his expert review team will enable us to ensure that our avian quarantine arrangements are as up to date and effective as they can be in the face of the significant challenges we face from the rapid worldwide spread of highly pathogenic zoonotic disease.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.23WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.23WS.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.24WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.24WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.24WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.24WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.24WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.24WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.24WS.2" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Secretary of State for Foreign and Commonwealth Affairs" colnum="24WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m02.htm#51031m02.html_spmin0">
-	<p pid="a.24WS.2/1">On <phrase class="date" code="2005-10-26">26 October</phrase>, President Mahmud Ahmadinejad of Iran addressed a conference in Tehran on &quot;A World Without Zionism&quot;. In his speech, he is reported to have called for &quot;Israel to be wiped from the map&quot;, and said that &quot;the Islamic world will not let its historic enemy live in its heartland&quot;, &quot;the new wave of (attacks) in Palestine . . . will erase this stigma from the Islamic world&quot; and that &quot;anybody who recognises Israel will burn in the fire of the Islamic nation's fury&quot;.</p>
-	<p pid="a.24WS.2/2">As my right hon. Friend the Prime Minister said in his press conference at the European Council at Hampton Court on <phrase class="date" code="2005-10-27">27 October</phrase>, these sentiments are completely unacceptable. I welcome the clear condemnation by the United Nations Security Council on <phrase class="date" code="2005-10-28">28 October</phrase> and the statement by the UN Secretary-General, Kofi Annan, expressing his dismay. They have spoken for the world. Israel is a long-standing member of the United Nations with the same rights and obligations as every other. Under the United Nations Charter, Iran, like other members of the organisation, has undertaken to refrain from the threat or use of force against the territorial integrity or political independence of any state.</p>
-	<p pid="a.24WS.2/3">Mr Annan has also said he intends to place at the top of his agenda when he visits Iran in the next few weeks the Middle East Peace Process and the right of all states in the area to live in peace within secure and recognised boundaries free from threats or acts offered. I welcome that.</p>
-	<p pid="a.24WS.2/4">At the informal summit of European Union Heads of Government at Hampton Court on <phrase class="date" code="2005-10-27">27 October</phrase>, the Presidency issued the following statement:</p>
-	<p pid="a.24WS.2/5" class="indent">&quot;EU leaders meeting at Hampton Court today condemned in the strongest terms the comments in respect of the State of Israel attributed to President Ahmedinejad of Iran. Calls for violence, and for the destruction of any state, are manifestly inconsistent with any claim to be a mature and responsible member of the international community.</p>
-	<p pid="a.24WS.2/6" class="indent">Such comments will cause concern about Iran's role in the region, and its future intentions. The fact that these comments were made on the same day as a horrific attack on Israeli civilians should reinforce the lesson that incitement to violence, and the terrorism that it breeds, are despicable and unacceptable acts. For its part, the EU remains committed to a solution to the Arab-Israeli dispute based on the principle of two states living side-by-side in peace and security. It urges all parties in the region to do their utmost to bring that vision to fulfilment&quot;.</p>
-	<p pid="a.24WS.2/7">In addition, on <phrase class="date" code="2005-10-27">27 October</phrase>, the Foreign Office summoned the Iranian Charg&eacute; d'Affaires in London on behalf of the European Union to protest at the remarks. Many of our European partners and other countries have done likewise.</p>
-	<p pid="a.24WS.2/8">We welcome too the international community's forthright condemnation, and their reaffirmation of the right of Israel to exist. We welcome particularly the statements by officials of the Palestinian Authority and other governments in the region.</p>
-	<p pid="a.24WS.2/9">We remain profoundly concerned at Iran's links to groups trying to undermine peace in the Middle East through violence, including Palestinian Islamic Jihad which claimed responsibility for the horrific attack at Hadera in Israel on <phrase class="date" code="2005-10-26">26 October</phrase>. The EU has said that Iran's policies towards the Middle East Peace Process and terrorism are among the factors it will consider when formulating its policy towards Iran.</p>
-	<p pid="a.24WS.2/10">President Ahmadinejad's remarks also underline the imperative for Iran to take steps to address international concerns about the intentions of its nuclear programme, and to provide objective guarantees that that programme is for solely peaceful purposes. We call on Iran to meet urgently and in full the requests of the International Atomic Energy Agency's Board of Governors, to suspend fully all of its uranium enrichment-related and reprocessing activities, and return to talks with the E3/EU on the basis of the Paris Agreement.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.24WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.24WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.25WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.25WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.25WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.25WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.25WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.25WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.25WS.2" speakerid="uk.org.publicwhip/member/1544" speakername="Rosie Winterton" speakeroffice="The Minister of State, Department of Health" colnum="25WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m02.htm#51031m02.html_spmin1">
-	<p pid="a.25WS.2/1">The Canadian Minister of Health, Ujjal Dosanjh, convened an international meeting of Ministers of Health in Ottawa on 24&ndash;<phrase class="date" code="2005-10-25">25 October</phrase> to discuss global pandemic influenza readiness. I attended for the United Kingdom.</p>
-	<p pid="a.25WS.2/2">There were Health Ministers and delegates from 30 countries covering all parts of the world.</p>
-	<p pid="a.25WS.2/3">There was participation at the highest level from a number of UN and other international agencies dealing with various sectoral aspects of preparing for pandemic flu, including the World Health Organisation (WHO), the Food and Agriculture Organisation of the United Nations (FAO), World Organisation for Animal Health (OIE), World Bank, and the recently appointed UN Coordinator for pandemic influenza. The European Commission was also represented.</p>
-	<p pid="a.25WS.2/4">The purpose of the meeting was to raise the political priority attached to international collaboration in preparing for a human influenza pandemic, to stress the need for transparency between countries and institutions, and to give full support to the leading role of multilateral institutions.</p>
-	<p pid="a.25WS.2/5">Four themes were discussed:</p>
-	<p pid="a.25WS.2/6" class="indent">The need for inter-sectoral collaboration on animal and human health issues;</p>
-	<p pid="a.25WS.2/7" class="indent">Improving surveillance and capacity-building;</p>
-	<p pid="a.25WS.2/8" class="indent">Vaccine and anti-viral development, supply and access;</p>
-	<p pid="a.25WS.2/9" class="indent">Risk communication.</p>
-	<p pid="a.25WS.2/10">A communiqu&eacute; was agreed. A copy has been placed in the Library. It sets out in more detail the priority areas agreed on for further action, and lists some key current and forthcoming activities round the world. A list of all participating Ministers is attached to the communiqu&eacute;.</p>
-	<p pid="a.25WS.2/11">The main conclusions were:</p>
-	<p pid="a.25WS.2/12" class="indent">There is a need to distinguish between avian flu (birds), seasonal flu and pandemic flu;</p>
-	<p pid="a.25WS.2/13" class="indent">A call for increased research on avian influenza viruses, including their ability to spread from animals to humans;</p>
-	<p pid="a.25WS.2/14" class="indent">There is a need to increase capacity for early detection, diagnosis and response, and for exchange of information between the agriculture and health sectors at the local, national and international levels;</p>
-	<p pid="a.25WS.2/15" class="indent">The need for expansion and integration of the network of relevant WHO collaborating centres and FAO-OIE reference laboratories, for the rapid identification of virus strains;</p>
-	<p pid="a.25WS.2/16" class="indent">The need to develop bio-security guidelines for the poultry sector to help farming communities ensure appropriate animal and public health standards for the raising, handling and transporting of potentially flu-bearing animals;</p>
-	<p pid="a.25WS.2/17" class="indent">The need to develop effective partnerships with media and other key stakeholders for the exchange and dissemination of information.</p>
-	<p pid="a.25WS.2/18">Ministers recognised the need to build capacity and plan in all countries, facilitated by appropriate national and international investments and resource sharing. But all stressed the need to work through and with multi-lateral organisations. In particular, they welcomed the upcoming WHO/FAO/World Bank meeting on avian and pandemic influenza in Geneva from 7&ndash;<phrase class="date" code="">9 November</phrase>, where many of the issues they managed to highlight in a relatively short meeting will be looked at further.</p>
-	<p pid="a.25WS.2/19">The meeting was successful in raising political awareness and commitment across all WHO regions of the need both for avian influenza control measures as well as the need to strengthen preparedness for pandemic influenza in humans.</p>
-	<p pid="a.25WS.2/20">Ministers noted a number of activities already ongoing or planned in regions around the world, and some additional activities were proposed, including a meeting next year of Regulatory Authorities to address common regulatory challenges to expedite vaccine registration and availability.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.25WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.25WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.26WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.26WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.26WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.26WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.26WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.26WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.26WS.2" speakerid="uk.org.publicwhip/member/1802" speakername="Hazel Blears" speakeroffice="The Minister for Policing, Security and Community Safety" colnum="26WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m02.htm#51031m02.html_spmin2">
-	<p pid="a.26WS.2/1">I have today placed in the Library a copy of the draft Police Grant Report (England and Wales) 2004&ndash;05 (Amending Report 2005&ndash;06) and the draft Police Grant Report (England &amp; Wales) 2005&ndash;06 (Amending Report 2005&ndash;06). Last year we laid before the House an Amending Report for 2003&ndash;04 to take account of changes to Office of National Statistics (ONS) population data. I also announced that there would be a further Amending Report for 2004&ndash;05 this year that would similarly take account of changes to ONS population data. The purpose of the 2005&ndash;06 Amending Report is to take account of adjustments to pensions' projections for Derbyshire and Lancashire used to determine 2005&ndash;06 pension allocations.</p>
-	<p pid="a.26WS.2/2">The consultation period on the proposed Amending Reports will end on the same date as the consultation on proposals for the 2006&ndash;07 police and local government finance settlements to be put before Parliament later this year. This will allow local police authorities some additional time to consider the effects of the Amending Report in their budgeting proposals. My hon. Friend, the Minister for Local Government, will make a statement in due course about the Government's proposals for Local Government Finance in 2006&ndash;07. Authorities may wish to take this into account in considering their response to this consultation.</p>
-	<table>
-		<thead>
-			<tr pid="a.26WS.2/5"> <th>Police Authority</th> <th>2004&ndash;05 OriginalAllocation <sup>1</sup></th> <th>2004&ndash;05 AmendedAllocation <sup>1</sup></th> <th>Change between originaland amended 2004&ndash;05</th> </tr>
-			<tr pid="a.26WS.2/6"> <th></th> <th>&pound;m</th> <th>&pound;m</th> <th>&pound;m</th> <th>%</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid="a.26WS.2/9"> <td>English Shire forces</td> </tr>
-			<tr pid="a.26WS.2/10"> <td>Avon &amp; Somerset</td> <td>162.2</td> <td>162.2</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/11"> <td>Bedfordshire</td> <td>62.1</td> <td>61.9</td> <td>-0.2</td> <td>-0.3%</td> </tr>
-			<tr pid="a.26WS.2/12"> <td>Cambridgeshire</td> <td>73.4</td> <td>73.6</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/13"> <td>Cheshire</td> <td>107.2</td> <td>107.5</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/14"> <td>Cleveland</td> <td>86.8</td> <td>87.0</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/15"> <td>Cumbria</td> <td>59.6</td> <td>59.4</td> <td>-0.2</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/16"> <td>Derbyshire</td> <td>101.2</td> <td>101.2</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/17"> <td>Devon &amp; Cornwall</td> <td>166.7</td> <td>166.7</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/18"> <td>Dorset</td> <td>63.6</td> <td>63.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/19"> <td>Durham</td> <td>84.2</td> <td>83.7</td> <td>-0.5</td> <td>-0.5%</td> </tr>
-			<tr pid="a.26WS.2/20"> <td>Essex</td> <td>160.9</td> <td>160.9</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/21"> <td>Gloucestershire</td> <td>58.9</td> <td>58.9</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/22"> <td>Hampshire</td> <td>190.5</td> <td>190.5</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/23"> <td>Hertfordshire</td> <td>104.8</td> <td>104.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/24"> <td>Humberside</td> <td>114.6</td> <td>114.8</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/25"> <td>Kent</td> <td>182.6</td> <td>182.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/26"> <td>Lancashire</td> <td>182.9</td> <td>183.2</td> <td>0.4</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/27"> <td>Leicestershire</td> <td>102.0</td> <td>101.7</td> <td>-0.3</td> <td>-0.3%</td> </tr>
-			<tr pid="a.26WS.2/28"> <td>Lincolnshire</td> <td>60.6</td> <td>60.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/29"> <td>Norfolk</td> <td>82.2</td> <td>81.7</td> <td>-0.5</td> <td>-0.6%</td> </tr>
-			<tr pid="a.26WS.2/30"> <td>North Yorkshire</td> <td>72.7</td> <td>72.7</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/31"> <td>Northamptonshire</td> <td>64.3</td> <td>64.4</td> <td>0.1</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/32"> <td>Nottinghamshire</td> <td>127.6</td> <td>127.0</td> <td>-0.6</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/33"> <td>Staffordshire</td> <td>109.2</td> <td>109.2</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/34"> <td>Suffolk</td> <td>66.0</td> <td>66.0</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/35"> <td>Surrey</td> <td>88.2</td> <td>88.2</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/36"> <td>Sussex</td> <td>158.1</td> <td>158.1</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/37"> <td>Thames Valley</td> <td>212.6</td> <td>212.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/38"> <td>Warwickshire</td> <td>49.8</td> <td>49.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/39"> <td>West Mercia</td> <td>107.7</td> <td>107.7</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/40"> <td>Wiltshire</td> <td>60.6</td> <td>60.5</td> <td>-0.1</td> <td>-0.2%</td> </tr>
-			<tr pid="a.26WS.2/41"> <td>English Metropolitan forces</td> </tr>
-			<tr pid="a.26WS.2/42"> <td>Greater Manchester</td> <td>393.2</td> <td>394.0</td> <td>0.8</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/43"> <td>Merseyside</td> <td>248.4</td> <td>248.9</td> <td>0.5</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/44"> <td>Northumbria</td> <td>221.4</td> <td>221.8</td> <td>0.5</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/45"> <td>South Yorkshire</td> <td>178.0</td> <td>176.9</td> <td>-1.0</td> <td>-0.6%</td> </tr>
-			<tr pid="a.26WS.2/46"> <td>West Midlands</td> <td>399.3</td> <td>400.1</td> <td>0.8</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/47"> <td>West Yorkshire</td> <td>298.9</td> <td>299.5</td> <td>0.6</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/48"> <td>London forces</td> </tr>
-			<tr pid="a.26WS.2/49"> <td>GLA&mdash;Police</td> <td>1822.0</td> <td>1826.2</td> <td>4.3</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/50"> <td>City of London <sup>2</sup></td> <td>106.6</td> <td>106.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/51"> <td>English Total</td> <td>6991.6</td> <td>6997.0</td> <td>5.4</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/52"> <td>Welsh forces</td> </tr>
-			<tr pid="a.26WS.2/53"> <td>Dyfed-Powys <sup>3</sup></td> <td>50.9</td> <td>50.9</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/54"> <td>Gwent <sup>3</sup></td> <td>71.8</td> <td>71.5</td> <td>-0.3</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/55"> <td>North Wales3,</td> <td>76.4</td> <td>76.1</td> <td>-0.2</td> <td>-0.3%</td> </tr>
-			<tr pid="a.26WS.2/56"> <td>South Wales <sup>3</sup></td> <td>168.2</td> <td>168.3</td> <td>0.1</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/57"> <td>Welsh total</td> <td>367.3</td> <td>366.9</td> <td>-0.4</td> <td>-0.1%</td> </tr>
-			<tr pid="a.26WS.2/58"> <td>Total</td> <td>7358.9</td> <td>7363.8</td> <td>4.9</td> <td>0.1%</td> </tr>
-		</tbody>
-	</table>
-	<p pid="a.26WS.2/61">Notes:</p>
-	<p pid="a.26WS.2/62">1. Rounded to the nearest &pound;100,000. Grant as calculated under the Local Government Finance Report (England) and Local Government Finance Report (Wales). This includes the Metropolitan Police special payment, and the effects of floors and ceilings.</p>
-	<p pid="a.26WS.2/63">2. RSG figures for the City are allocated to the Common Council of the City of London as a whole in respect of all its functions.</p>
-	<p pid="a.26WS.2/64">3. Welsh figures are provisional. Allocation figures are inclusive of floor payments for Dyfed-Powys, Gwent, North Wales and South Wales.</p>
-	<table>
-		<thead>
-			<tr pid="a.26WS.2/67"> <th>Police Authority</th> <th>2005&ndash;06 OriginalAllocation <sup>1</sup></th> <th>2005&ndash;06 AmendedAllocation <sup>1</sup></th> <th>Change between originaland amended 2005&ndash;06</th> </tr>
-			<tr pid="a.26WS.2/68"> <th></th> <th>&pound;m</th> <th>&pound;m</th> <th>&pound;m</th> <th>%</th> </tr>
-		</thead>
-		<tbody>
-			<tr pid="a.26WS.2/71"> <td>English Shire forces</td> </tr>
-			<tr pid="a.26WS.2/72"> <td>Avon &amp; Somerset</td> <td>170.0</td> <td>169.9</td> <td>-0.1</td> <td>-0.1%</td> </tr>
-			<tr pid="a.26WS.2/73"> <td>Bedfordshire</td> <td>65.1</td> <td>65.0</td> <td>-0.2</td> <td>-0.2%</td> </tr>
-			<tr pid="a.26WS.2/74"> <td>Cambridgeshire</td> <td>77.9</td> <td>77.9</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/75"> <td>Cheshire</td> <td>111.3</td> <td>111.5</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/76"> <td>Cleveland</td> <td>90.9</td> <td>90.9</td> <td>0.1</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/77"> <td>Cumbria</td> <td>62.1</td> <td>61.9</td> <td>-0.2</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/78"> <td>Derbyshire</td> <td>105.0</td> <td>105.2</td> <td>0.3</td> <td>0.3%</td> </tr>
-			<tr pid="a.26WS.2/79"> <td>Devon &amp; Cornwall</td> <td>173.0</td> <td>173.0</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/80"> <td>Dorset</td> <td>66.0</td> <td>66.0</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/81"> <td>Durham</td> <td>87.8</td> <td>87.3</td> <td>-0.5</td> <td>-0.5%</td> </tr>
-			<tr pid="a.26WS.2/82"> <td>Essex</td> <td>167.0</td> <td>167.0</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/83"> <td>Gloucestershire</td> <td>61.1</td> <td>61.1</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/84"> <td>Hampshire</td> <td>197.7</td> <td>197.7</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/85"> <td>Hertfordshire</td> <td>108.8</td> <td>108.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/86"> <td>Humberside</td> <td>118.9</td> <td>119.1</td> <td>0.2</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/87"> <td>Kent</td> <td>189.5</td> <td>189.5</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/88"> <td>Lancashire</td> <td>190.8</td> <td>191.0</td> <td>0.2</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/89"> <td>Leicestershire</td> <td>107.7</td> <td>107.5</td> <td>-0.2</td> <td>-0.2%</td> </tr>
-			<tr pid="a.26WS.2/90"> <td>Lincolnshire</td> <td>63.4</td> <td>63.3</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/91"> <td>Norfolk</td> <td>85.9</td> <td>85.6</td> <td>-0.3</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/92"> <td>North Yorkshire</td> <td>75.4</td> <td>75.4</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/93"> <td>Northamptonshire</td> <td>67.8</td> <td>67.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/94"> <td>Nottinghamshire</td> <td>133.3</td> <td>133.0</td> <td>-0.4</td> <td>-0.3%</td> </tr>
-			<tr pid="a.26WS.2/95"> <td>Staffordshire</td> <td>113.3</td> <td>113.3</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/96"> <td>Suffolk</td> <td>68.5</td> <td>68.5</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/97"> <td>Surrey</td> <td>91.5</td> <td>91.5</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/98"> <td>Sussex</td> <td>164.0</td> <td>164.0</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/99"> <td>Thames Valley</td> <td>220.6</td> <td>220.6</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/100"> <td>Warwickshire</td> <td>51.8</td> <td>51.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/101"> <td>West Mercia</td> <td>111.8</td> <td>111.8</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/102"> <td>Wiltshire</td> <td>62.9</td> <td>62.8</td> <td>-0.1</td> <td>-0.2%</td> </tr>
-			<tr pid="a.26WS.2/103"> <td>English Metropolitan forces</td> </tr>
-			<tr pid="a.26WS.2/104"> <td>Greater Manchester</td> <td>412.5</td> <td>412.8</td> <td>0.3</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/105"> <td>Merseyside</td> <td>257.7</td> <td>258.3</td> <td>0.5</td> <td>0.2%</td> </tr>
-			<tr pid="a.26WS.2/106"> <td>Northumbria</td> <td>232.2</td> <td>232.3</td> <td>0.2</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/107"> <td>South Yorkshire</td> <td>185.7</td> <td>184.6</td> <td>-1.1</td> <td>-0.6%</td> </tr>
-			<tr pid="a.26WS.2/108"> <td>West Midlands</td> <td>426.5</td> <td>426.5</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/109"> <td>West Yorkshire</td> <td>313.6</td> <td>313.8</td> <td>0.2</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/110"> <td>London forces</td> </tr>
-			<tr pid="a.26WS.2/111"> <td>GLA&mdash;Police</td> <td>1927.8</td> <td>1928.8</td> <td>1.0</td> <td>0.1%</td> </tr>
-			<tr pid="a.26WS.2/112"> <td>City of London <sup>2</sup></td> <td>112.5</td> <td>112.5</td> <td>-0.1</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/113"> <td>English Total</td> <td>7329.1</td> <td>7329.2</td> <td>0.1</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/114"> <td>Welsh forces</td> </tr>
-			<tr pid="a.26WS.2/115"> <td>Dyfed-Powys <sup>3</sup></td> <td>52.2</td> <td>52.3</td> <td>0.0</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/116"> <td>Gwent <sup>3</sup></td> <td>74.1</td> <td>73.8</td> <td>-0.3</td> <td>-0.4%</td> </tr>
-			<tr pid="a.26WS.2/117"> <td>North Wales <sup>3</sup></td> <td>78.3</td> <td>78.0</td> <td>-0.2</td> <td>-0.3%</td> </tr>
-			<tr pid="a.26WS.2/118"> <td>South Wales <sup>3</sup></td> <td>174.5</td> <td>174.6</td> <td>0.1</td> <td>0.0%</td> </tr>
-			<tr pid="a.26WS.2/119"> <td>Welsh total</td> <td>379.1</td> <td>378.7</td> <td>-0.5</td> <td>-0.1%</td> </tr>
-			<tr pid="a.26WS.2/120"> <td>Total</td> <td>7708.2</td> <td>7707.8</td> <td>-0.4</td> <td>0.0%</td> </tr>
-		</tbody>
-	</table>
-	<p pid="a.26WS.2/123">Notes:</p>
-	<p pid="a.26WS.2/124">1. Rounded to the nearest &pound;100,000. Grant as calculated under the Local Government Finance Report (England) and Local Government Finance Report (Wales). This includes the Metropolitan Police special payment, and the effects of floors and ceilings.</p>
-	<p pid="a.26WS.2/125">2. RSG figures for the City are allocated to the Common Council of the City of London as a whole in respect of all its functions.</p>
-	<p pid="a.26WS.2/126">3. Welsh figures are provisional. Allocation figures are inclusive of floor payments for Dyfed-Powys, Gwent, North Wales and South Wales.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.26WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.26WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.29WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.29WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.29WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.29WS.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.29WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.29WS.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/wms/2005-10-31a.29WS.2" speakerid="uk.org.publicwhip/member/1806" speakername="Tony Blair" speakeroffice="The Prime Minister" colnum="29WS"  url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm051031/wmstext/51031m03.htm#51031m03.html_spmin0">
-	<p pid="a.29WS.2/1">The purpose of the Informal Meeting of EU Heads of State or Government on <phrase class="date" code="2005-10-27">27 October</phrase> was to set a clear direction on how Europe responds to the challenge of globalisation. There is a strong sense in the European Union that we need to reconnect Europe with the concerns of its citizens and a strong feeling among the leaders of the EU that we have to get Europe moving in the right direction.</p>
-	<p pid="a.29WS.2/2">The European Commission produced a paper for the meeting&mdash;European Values in the Globalised World&mdash;that sets out very clearly: the challenge facing Europe; what Member States should do in response; and, what might most effectively be done at European level. There was broad agreement to both the analysis in the paper and its ideas on the way forward.</p>
-	<p pid="a.29WS.2/3">The consensus was that while Europe sometimes needs to do more and sometimes needs to do less, in each case it needs to do it better.</p>
-	<p pid="a.29WS.2/4">There was strong support for the Commission proposals to reduce the amount of regulation and to ensure that future regulation does not damage the competitiveness of the European economy.</p>
-	<p pid="a.29WS.2/5">We also discussed the Commission's proposal for a globalisation adjustment fund. This is not about bailing-out failing firms or standing in the way of globalisation, but about helping those individuals affected by change to retrain and to acquire new skills. The Commission will now develop a full proposal on this.</p>
-	<p pid="a.29WS.2/6">EU leaders also agreed further work in some key areas for Europe's future competitiveness, economic prosperity and security. The Commission, the UK Presidency and the incoming Austrian Presidency will decide how to take work forward in the areas of:</p>
-	<p pid="a.29WS.2/7" class="indent">Research and Development: We need to encourage greater business and industrialinvestment in areas such as nanotechnology, biotechnology, and Pharmaceuticals so that Europecan have world-beating companies in the technologies of the future. And we need to look atpossible new ways of supporting innovation, for example through the venture capital market orexploring the scope for increased European Investment Bank funding.</p>
-	<p pid="a.29WS.2/8" class="indent">Universities: We need to find ways of raising the level of our universities, in particular by developing stronger links between universities and business.</p>
-	<p pid="a.29WS.2/9" class="indent">Addressing the demographic challenge: We need to share practical solutions for family-friendly policies, better child care, and work life balance provisions. We also need to tackle barriers to the greater participation of older workers in the labour market.</p>
-	<p pid="a.29WS.2/10" class="indent">Energy: The Commission paper makes clear that global demand is increasing while supply remains tight. We need to: diversify the sources of our energy; develop a properly integrated European Grid and a genuinely open energy market; ensure a coherent and operational approach to the EU's relationship with major energy suppliers, for example Russia and OPEC; and, put energy efficiency and clean technologies at the heart of our agenda.</p>
-	<p pid="a.29WS.2/11">We also agreed that the Commission, building on the Hague Programme, should look at further work on illegal immigration, crime and security. Taking account of recent Spanish and French ideas on tackling illegal immigration, we need to work more effectively in partnership with source and transit countries, particularly Sub-Saharan and North Africa. We shall: hold an EU-African Ministerial conference on migration issues; strengthen our border controls, including through the use of latest technology, for example biometrics; accelerate plans for a rapid reaction capability of immigration officers; and, make sure that EU funding and development aid are more strategically targeted.</p>
-	<p pid="a.29WS.2/12">On crime and security, we must work more effectively with countries outside the EU on Justice and Home Affairs issues, such as terrorism and human and drug trafficking. We shall develop an EU counter-terrorism strategy focused on: preventing radicalisation; protecting our infrastructure; and, ensuring better co-operation and exchange of information so that our law enforcement can effectively pursue terrorists and respond to attacks.</p>
-	<p pid="a.29WS.2/13">In these areas there will be an interim report to the December European Council, and final reports during the Austrian Presidency in the first half of next year.</p>
-	<p pid="a.29WS.2/14">Javier Solana, High Representative for the Common Foreign and Security Policy (CFSP) and Secretary-General of the Council of the European Union, working with the Presidency, will take forward work on the CFSP aspects of defence and security. We shall look to improve our capabilities by: increasing levels of research spending; exploiting opportunities for research collaboration; tackling capability gaps (air to air refuelling, heavy lift); and, collaborating as partners on training. We shall ensure that our crisis management structures can meet new demands on them including responding to natural disasters. We shall look to increase CFSP funding. We shall bring forward a comprehensive EU strategy for Africa in December.</p>
-	<p pid="a.29WS.2/15">As Presidency, the Government also made clear that agreeing a broad direction for Europe's economic development, and some priorities for action at a Community level, would help to set the context for agreeing the next financial perspective for Europe's budget from 2007 to 2013. We shall try to reach agreement on this at the December European Council.</p>
-	<p pid="a.29WS.2/16">Finally, EU Leaders agreed three statements at the meeting:</p>
-	<p pid="a.29WS.2/17" class="indent">Iran: We condemned in the strongest terms the comments in respect of the State of Israel attributed to President Ahmadinejad of Iran. Calls for violence, and for the destruction of any State, are manifestly inconsistent with any claim to be a mature and responsible member of the international community, and raise serious concerns about Iran's role in the region and its future intentions.</p>
-	<p pid="a.29WS.2/18" class="indent">Syria: We welcomed the report of the UN International Investigation Commission under Judge Detlev Mehlis and expressed our full support for the UN Security Council's determination to see justice done in this case.</p>
-	<p pid="a.29WS.2/19" class="indent">South Asian Earthquake: We expressed our sympathy and solidarity for all those affected by the South Asian earthquake, and pledged to do all that we can to help with this on-going tragedy as winter approaches.</p>
-	<p pid="a.29WS.2/20">I have placed copies of the Commission paper and the statements in the Libraries of both Houses.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.29WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.29WS.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.32WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.32WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.32WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.32WS.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.32WS.2" newgid="uk.org.publicwhip/wms/2005-10-31b.32WS.2" matchtype="perfectmatch"/>
@@ -323,8 +131,8 @@
 	<p pid="a.35WS.3/17" class="indent">Lancashire West</p>
 	<p pid="a.35WS.3/18" class="indent">Tees Valley.</p>
 	<p pid="a.35WS.3/19">The remaining Districts to follow next year are:</p>
-	<p pid="a.35WS.3/20" class="indent">From <phrase class="date" code="">24 April 2006</phrase>: Barnsley, Rotherham and Doncaster; City of Sunderland; County Durham; Lanarkshire and East Dunbartonshire; Liverpool and the Wirral; Greater Manchester Central; Swansea Bay and West Wales;</p>
-	<p pid="a.35WS.3/21" class="indent">From <phrase class="date" code="">30 October 2006</phrase>: Eastern Valleys; Greater Mersey; Staffordshire.</p>
+	<p pid="a.35WS.3/20" class="indent">From <phrase class="date" code="2006-04-24">24 April 2006</phrase>: Barnsley, Rotherham and Doncaster; City of Sunderland; County Durham; Lanarkshire and East Dunbartonshire; Liverpool and the Wirral; Greater Manchester Central; Swansea Bay and West Wales;</p>
+	<p pid="a.35WS.3/21" class="indent">From <phrase class="date" code="2006-10-30">30 October 2006</phrase>: Eastern Valleys; Greater Mersey; Staffordshire.</p>
 </speech>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.36WS.0" newgid="uk.org.publicwhip/wms/2005-10-31b.36WS.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wms/2005-10-31a.36WS.1" newgid="uk.org.publicwhip/wms/2005-10-31b.36WS.1" matchtype="perfectmatch"/>

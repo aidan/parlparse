@@ -7,38 +7,61 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
-<publicwhip>
+<publicwhip scrapeversion="" latest="yes">
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-06.85WS.0" nospeaker="true" colnum="85WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_dpthd0">
 	DEFENCE
@@ -49,9 +72,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-06.85WS.2" speakerid="uk.org.publicwhip/member/970" speakername="Geoff Hoon" speakeroffice="The Secretary of State for Defence" colnum="85WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_spmin0">
-	<p>In line with the main Armed Forces' Pay Review Body (AFPRB) recommendations for Armed Forces' Pay announced on 7 February, the Review Body has recommended an interim pay increase of 3.2 per cent. for all regular and reserve defence medical services medical and dental officers. The Review Body also recommends an interim 3.2 per cent. increase to the Sustained Quality Payments, General Medical and General Dental Practitioner Trainer pay and to the value of Distinction Awards. The AFPRB will submit their final recommendations following the announcement of the Doctors' and Dentists' Review Body report later this year and further written and oral evidence from the Ministry of Defence, the British Medical Association and the British Dental Association.</p>
-	<p>The additional cost to the Defence Budget will be some &pound;5 million. This will be met within existing Departmental expenditure limits.</p>
-	<p>The Review Body's interim recommendations are to be accepted in full, with implementation effective from 1 April 2003.</p>
+	<p pid=".85WS.2/1">In line with the main Armed Forces' Pay Review Body (AFPRB) recommendations for Armed Forces' Pay announced on <phrase class="date" code="2003-02-07">7 February</phrase>, the Review Body has recommended an interim pay increase of 3.2 per cent. for all regular and reserve defence medical services medical and dental officers. The Review Body also recommends an interim 3.2 per cent. increase to the Sustained Quality Payments, General Medical and General Dental Practitioner Trainer pay and to the value of Distinction Awards. The AFPRB will submit their final recommendations following the announcement of the Doctors' and Dentists' Review Body report later this year and further written and oral evidence from the Ministry of Defence, the British Medical Association and the British Dental Association.</p>
+	<p pid=".85WS.2/2">The additional cost to the Defence Budget will be some &pound;5 million. This will be met within existing Departmental expenditure limits.</p>
+	<p pid=".85WS.2/3">The Review Body's interim recommendations are to be accepted in full, with implementation effective from <phrase class="date" code="2003-04-01">1 April 2003</phrase>.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-06.85WS.3" nospeaker="true" colnum="85WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_dpthd1">
@@ -63,22 +86,22 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-06.85WS.5" speakerid="uk.org.publicwhip/member/872" speakername="Maria Eagle" speakeroffice="The Parliamentary Under-Secretary of State for Work and Pensions" colnum="85WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_spmin1">
-	<p>Following the Mid-Term Quinquennial Review of Remploy Limited, the final report has been published. The report has been distributed to those people formally consulted during the process and copies have been placed in the Library. It is also available on the Jobcentre Plus website <a href="http://www.jobcentreplus.gov.uk/Aboutus/Publication">http://www.jobcentreplus.gov.uk/Aboutus/Publication</a> in English and Welsh. Hard copies are also available in Welsh, Braille, audio and large print*. We have also agreed an additional &pound;17m to enable Remploy to strengthen its balance sheet and maintain its manufacturing operations. The Mid-Term Quinquennial concluded that: Remploy has been, and remains, the principal delivery agent for the Government's WORKSTEP programme;</p>
-	<p>The current model of providing Remploy with external finance through an annual grant in aid is appropriate;</p>
-	<p>The Company's Corporate Plan provides the best option for taking its agenda forward;</p>
-	<p>The remit, whilst not clearly expressed, is within the parameters of the Government's Welfare to Work strategy; and</p>
-	<p>Remploy's Non-Departmental Public Body status remains the most appropriate vehicle for Remploy to deliver Government policy, ensuring the necessary level of security for its disabled employees and allowing Remploy the freedom and flexibility to operate successfully in a commercial environment.</p>
-	<p>The recommendations of the Review are as follows:</p>
-	<p>A set of financing principles should underpin determination of the annual Remploy Financing Limit, together with a clearer framework for the relationship between Remploy and Government;</p>
-	<p>Remploy's remit needs to be clearly expressed and fully understood by all those involved in the management of Remploy both within the Company and within Government. This remit should be expressed in a new 'Main Agreement' between Remploy and Government; and</p>
-	<p>Remploy's status as a Non-Departmental Public Body should be retained but more explicit governance arrangements need to be implemented to ensure greater clarity in the relationship between the Company and Government.</p>
-	<p>In addition, I have, on behalf of my Right hon Friend the Secretary of State for Work and Pensions, written to the Chairman of Remploy approving the 2002&ndash;03 Annual Performance Agreement between the Department and the Company. This agreement covers the year from 1 April 2002. It has been negotiated by the Chief Executive of Jobcentre Plus on behalf of my Right Hon Friend the Secretary of State for Work and Pensions. The targets are:</p>
-	<p class="indent">the average number of progressions of disabled people will increase to 2,000, including a minimum of 1,400 to mainstream unsupported employment;</p>
-	<p>Remploy Ltd will maintain a total unit cost target (operating deficit per disabled worker) of &pound;10,173;</p>
-	<p class="indent">the Company will achieve Gross Margin of &pound;53.7m;</p>
-	<p class="indent">the Company will achieve employee development time of 5 per cent.</p>
-	<p>The text of the Annual Performance Agreement has been placed in the Library. Remploy published its Report and Accounts for 2001&ndash;02 in July 2002 and copies are available in the Library.</p>
-	<p class="indent">* Copies of this publication can be obtained from Disability Support Division, Level 3 East Wing, Rockingham House, Sheffield S1 4ER.</p>
+	<p pid=".85WS.5/1">Following the Mid-Term Quinquennial Review of Remploy Limited, the final report has been published. The report has been distributed to those people formally consulted during the process and copies have been placed in the Library. It is also available on the Jobcentre Plus website <a href="http://www.jobcentreplus.gov.uk/Aboutus/Publication">http://www.jobcentreplus.gov.uk/Aboutus/Publication</a> in English and Welsh. Hard copies are also available in Welsh, Braille, audio and large print*. We have also agreed an additional &pound;17m to enable Remploy to strengthen its balance sheet and maintain its manufacturing operations. The Mid-Term Quinquennial concluded that: Remploy has been, and remains, the principal delivery agent for the Government's WORKSTEP programme;</p>
+	<p pid=".85WS.5/2">The current model of providing Remploy with external finance through an annual grant in aid is appropriate;</p>
+	<p pid=".85WS.5/3">The Company's Corporate Plan provides the best option for taking its agenda forward;</p>
+	<p pid=".85WS.5/4">The remit, whilst not clearly expressed, is within the parameters of the Government's Welfare to Work strategy; and</p>
+	<p pid=".85WS.5/5">Remploy's Non-Departmental Public Body status remains the most appropriate vehicle for Remploy to deliver Government policy, ensuring the necessary level of security for its disabled employees and allowing Remploy the freedom and flexibility to operate successfully in a commercial environment.</p>
+	<p pid=".85WS.5/6">The recommendations of the Review are as follows:</p>
+	<p pid=".85WS.5/7">A set of financing principles should underpin determination of the annual Remploy Financing Limit, together with a clearer framework for the relationship between Remploy and Government;</p>
+	<p pid=".85WS.5/8">Remploy's remit needs to be clearly expressed and fully understood by all those involved in the management of Remploy both within the Company and within Government. This remit should be expressed in a new 'Main Agreement' between Remploy and Government; and</p>
+	<p pid=".85WS.5/9">Remploy's status as a Non-Departmental Public Body should be retained but more explicit governance arrangements need to be implemented to ensure greater clarity in the relationship between the Company and Government.</p>
+	<p pid=".85WS.5/10">In addition, I have, on behalf of my Right hon Friend the Secretary of State for Work and Pensions, written to the Chairman of Remploy approving the 2002&ndash;03 Annual Performance Agreement between the Department and the Company. This agreement covers the year from <phrase class="date" code="2002-04-01">1 April 2002</phrase>. It has been negotiated by the Chief Executive of Jobcentre Plus on behalf of my Right Hon Friend the Secretary of State for Work and Pensions. The targets are:</p>
+	<p pid=".85WS.5/11" class="indent">the average number of progressions of disabled people will increase to 2,000, including a minimum of 1,400 to mainstream unsupported employment;</p>
+	<p pid=".85WS.5/12">Remploy Ltd will maintain a total unit cost target (operating deficit per disabled worker) of &pound;10,173;</p>
+	<p pid=".85WS.5/13" class="indent">the Company will achieve Gross Margin of &pound;53.7m;</p>
+	<p pid=".85WS.5/14" class="indent">the Company will achieve employee development time of 5 per cent.</p>
+	<p pid=".85WS.5/15">The text of the Annual Performance Agreement has been placed in the Library. Remploy published its Report and Accounts for 2001&ndash;02 in July 2002 and copies are available in the Library.</p>
+	<p pid=".85WS.5/16" class="indent">* Copies of this publication can be obtained from Disability Support Division, Level 3 East Wing, Rockingham House, Sheffield S1 4ER.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-06.86WS.0" nospeaker="true" colnum="86WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_dpthd2">
@@ -90,7 +113,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-06.86WS.2" speakerid="uk.org.publicwhip/member/960" speakername="Patricia Hewitt" speakeroffice="The Secretary of State for Trade and Industry" colnum="86WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_spmin2">
-	<p>My Department is today, in conjunction with Her Majesty's Treasury and the Office of the Deputy Prime Minister, making proposals for a new European regional policy, and launching a public consultation on the future of the European Structural and Cohesion Funds. The consultation will run until 4 July. I have deposited copies of the consultation document in the House of Commons Library. Electronic versions are available on our Departments' websites.</p>
+	<p pid=".86WS.2/1">My Department is today, in conjunction with Her Majesty's Treasury and the Office of the Deputy Prime Minister, making proposals for a new European regional policy, and launching a public consultation on the future of the European Structural and Cohesion Funds. The consultation will run until <phrase class="date" code="2003-07-04">4 July</phrase>. I have deposited copies of the consultation document in the House of Commons Library. Electronic versions are available on our Departments' websites.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2003-03-06.87WS.0" nospeaker="true" colnum="87WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_dpthd3">
@@ -102,9 +125,9 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2003-03-06.87WS.2" speakerid="uk.org.publicwhip/member/1082" speakername="Tony McNulty" speakeroffice="The Parliamentary Under-Secretary of State, Office of the Deputy Prime Minister" colnum="87WS"  url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030306/wmstext/30306m01.htm#30306m01.html_spmin3">
-	<p>The Housing (Right to Buy) (Limits on Discount) (Amendment) Order 2003, reducing the maximum discounts available under the Right to Buy scheme in 41 areas in London and the south of England, has today been laid before Parliament.</p>
-	<p>To coincide with the laying of the Order, the Office of the Deputy Prime Minister (ODPM) has today published a report <i>Exploitation of the Right to Buy scheme by companies</i> by Professor Colin Jones of Heriot-Watt University. The full text of the report is available on the ODPM website. <a href="http://www.housing.odpm.gov.uk/information/rtb/index.htm">http://www.housing.odpm.gov.uk/information/rtb/index.htm</a></p>
-	<p>Hard copies of the report have been placed in the Vote Office, Printed Paper Office and the Libraries of the House.</p>
+	<p pid=".87WS.2/1">The Housing (Right to Buy) (Limits on Discount) (Amendment) Order 2003, reducing the maximum discounts available under the Right to Buy scheme in 41 areas in London and the south of England, has today been laid before Parliament.</p>
+	<p pid=".87WS.2/2">To coincide with the laying of the Order, the Office of the Deputy Prime Minister (ODPM) has today published a report <i>Exploitation of the Right to Buy scheme by companies</i> by Professor Colin Jones of Heriot-Watt University. The full text of the report is available on the ODPM website. <a href="http://www.housing.odpm.gov.uk/information/rtb/index.htm">http://www.housing.odpm.gov.uk/information/rtb/index.htm</a></p>
+	<p pid=".87WS.2/3">Hard copies of the report have been placed in the Vote Office, Printed Paper Office and the Libraries of the House.</p>
 </speech>
 </publicwhip>
 

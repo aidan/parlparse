@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -51,7 +72,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-12-02a.41WS.2" speakerid="uk.org.publicwhip/member/1281" speakername="Stephen Timms" speakeroffice="The Financial Secretary to the Treasury" colnum="41WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m01.htm#41202m01.html_spmin0">
-	<p pid="a.41WS.2/1">A paper giving details of the outcome of the two-year review of the Financial Services and Markets Act 2000, which the former Financial Secretary to the Treasury announced on <phrase class="date" code="2003-11-04">4 November 2003</phrase>, <phrase class="offrep" id="wms/2003-11-04.28WS"><i>Official Report,</i> column 28WS</phrase>, is available in the Vote Office and the Library of the House, and is accessible on: <a href="http://www.hm-treasury.gov.uk">www.hm-treasury.gov.uk</a>.</p>
+	<p pid="a.41WS.2/1">A paper giving details of the outcome of the two-year review of the Financial Services and Markets Act 2000, which the former Financial Secretary to the Treasury announced on <phrase class="date" code="2003-11-04">4 November 2003</phrase>, <phrase class="offrep" id="wms/2003-11-04.28"><i>Official Report,</i> column 28WS</phrase>, is available in the Vote Office and the Library of the House, and is accessible on: <a href="http://www.hm-treasury.gov.uk">www.hm-treasury.gov.uk</a>.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/wms/2004-12-02a.41WS.3" nospeaker="true" colnum="41WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m01.htm#41202m01.html_sbhd1">
@@ -117,7 +138,7 @@
 	<table>
 		<caption>Table 1: Departmental Estimate of Capital Spending by the Private Sector (signed deals)<sup>(001)</sup><sup>,</sup> <sup>(002)</sup></caption>
 		<thead>
-			<tr pid="a.43WS.1/8"> <th>Department</th> <th>Projections (&pound; millions)2004&ndash;052005&ndash;062006&ndash;07</th> </tr>
+			<tr pid="a.43WS.1/8"> <th>Department</th> <th colspan="3">Projections (&pound; millions)2004&ndash;052005&ndash;062006&ndash;07</th> </tr>
 		</thead>
 		<tbody>
 			<tr pid="a.43WS.1/11"> <td>Education and Skills<sup>(003)</sup><sup>,</sup> <sup>(004)</sup></td> <td>87</td> <td>4</td> <td>1</td> </tr>
@@ -149,7 +170,7 @@
 	<table>
 		<caption>Table 2: Estimated Aggregated Capital Value of Projects at Preferred Bidder Stage</caption>
 		<thead>
-			<tr pid="a.43WS.1/40"> <th>Department</th> <th>Projections (&pound; millions)2004&ndash;052005&ndash;062006&ndash;07</th> </tr>
+			<tr pid="a.43WS.1/40"> <th>Department</th> <th colspan="3">Projections (&pound; millions)2004&ndash;052005&ndash;062006&ndash;07</th> </tr>
 		</thead>
 		<tbody>
 			<tr pid="a.43WS.1/43"> <td>Education and Skills<sup>(7)</sup></td> <td>870</td> <td>0</td> <td>0</td> </tr>
@@ -334,7 +355,7 @@
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-12-02a.50WS.5" nospeaker="true" colnum="50WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m03.htm#41202m03.html_dpthd1">
-	ENVIRONMENT, FOOD AND RURAL AFFAIRS
+	ENVIRONMENT FOOD AND RURAL AFFAIRS
 </major-heading>
 
 <minor-heading id="uk.org.publicwhip/wms/2004-12-02a.50WS.6" nospeaker="true" colnum="50WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m03.htm#41202m03.html_sbhd3">
@@ -366,7 +387,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/wms/2004-12-02a.51WS.4" speakerid="uk.org.publicwhip/member/987" speakername="John Hutton" speakeroffice="The Minister of State, Department of Health" colnum="51WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m04.htm#41202m04.html_spmin0">
-	<p pid="a.51WS.4/1">The next meeting of the Employment, Social Policy, Health and Consumer Affairs Council will be on 6 and <phrase class="date" code="">7 December</phrase>. Items on the agenda relating to health will be covered on <phrase class="date" code="">6 December</phrase>.</p>
+	<p pid="a.51WS.4/1">The next meeting of the Employment, Social Policy, Health and Consumer Affairs Council will be on 6 and <phrase class="date" code="2004-12-07">7 December</phrase>. Items on the agenda relating to health will be covered on <phrase class="date" code="2004-12-06">6 December</phrase>.</p>
 	<p pid="a.51WS.4/2">Items for discussion are: a co-ordinated approach to combat HIV/AIDS in the European Union and its neighbourhood; European Commission proposals for a regulation of the European Parliament and of the Council on medicinal products for paediatric use; and the proposal for a regulation of the European Parliament and of the Council on nutrition and health claims made on foods.</p>
 	<p pid="a.51WS.4/3">I will attend for the United Kingdom.</p>
 	<p pid="a.51WS.4/4">Health Ministers will have a public debate on HIV/AIDS, where they will be asked to focus on next steps for both European Community and national level action.</p>
@@ -375,7 +396,7 @@
 	<p pid="a.51WS.4/7">Ministers will be asked to adopt the draft council conclusions on a European response to emerging zoonotic diseases. The UK can agree to adopt these conclusions as currently drafted.</p>
 	<p pid="a.51WS.4/8">Under any other business, the Dutch presidency will report on progress made to establish the council's public health working party meeting on a high official level, which had its first meeting on <phrase class="date" code="2004-11-23">23 November 2004</phrase>.</p>
 	<p pid="a.51WS.4/9">The European Commission will also present the interim report of the high level group on health care and medical services.</p>
-	<p pid="a.51WS.4/10">At lunch on <phrase class="date" code="">6 December</phrase>, Health Ministers will also discuss pandemic preparedness planning.</p>
+	<p pid="a.51WS.4/10">At lunch on <phrase class="date" code="2004-12-06">6 December</phrase>, Health Ministers will also discuss pandemic preparedness planning.</p>
 </speech>
 
 <major-heading id="uk.org.publicwhip/wms/2004-12-02a.52WS.0" nospeaker="true" colnum="52WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m04.htm#41202m04.html_dpthd1">
@@ -407,8 +428,8 @@
 <speech id="uk.org.publicwhip/wms/2004-12-02a.53WS.1" speakerid="uk.org.publicwhip/member/737" speakername="Hazel Blears" speakeroffice="The Minister for Crime Reduction, Policing and Community Safety" colnum="53WS"  url="http://www.publications.parliament.uk/pa/cm200405/cmhansrd/vo041202/wmstext/41202m04.htm#41202m04.html_spmin3">
 	<p pid="a.53WS.1/1">I have today placed in the Library a copy of the Home Secretary's proposals for allocation of police grant for England and Wales in 2005&ndash;06. The Home Secretary and I intend to implement the proposals subject to consideration of any representations and to the approval of the House.</p>
 	<p pid="a.53WS.1/2">This Government are continuing to deliver on law and order. Our programme of reform and improvement for the police service in England and Wales over the past four years has been matched by a significant increase in resources for policing. On a like for like basis, expenditure on policing supported by Government grant or spent centrally on services for the police has increased by 39 per cent. or over &pound;3.0 billion between 2000&ndash;01 and 2005&ndash;06. This substantial increase has helped to both support the reform agenda and deliver the things that we all want to see. Crime is down and there are record numbers of police officers, police staff and community support officers.</p>
-	<p pid="a.53WS.1/3">We have recently set out our programme for further change. On <phrase class="date" code="">9 November</phrase> we published &quot;<i>Building Communities, Beating Crime: A Better Police Service for the 21st Century</i>&quot;. This is an ambitious agenda for sustainable improvement in policing. We are aiming for the spread of neighbourhood policing, with improved responsiveness and customer service; further modernisation of the police workforce to ensure that the service is fully equipped and able to deliver these changes; and greater involvement of communities and citizens in determining how their communities are policed. We are committed to working with the service, police authorities and their partner agencies in delivering safer communities across our country.</p>
-	<p pid="a.53WS.1/4">The national policing plan for 2005&ndash;08 was published on <phrase class="date" code="">24 November</phrase>. This too puts the law abiding citizen at the heart of policing, with the police working in partnership to create and maintain secure and confident communities. Our key priorities are to reduce overall crime; provide a citizen-focused police service; take action with partners to increase sanction detection rates; reduce people's concerns about crime and anti-social behaviour; combat serious and organised crime and counter the increased risk from terrorism.</p>
+	<p pid="a.53WS.1/3">We have recently set out our programme for further change. On <phrase class="date" code="2004-11-09">9 November</phrase> we published &quot;<i>Building Communities, Beating Crime: A Better Police Service for the 21st Century</i>&quot;. This is an ambitious agenda for sustainable improvement in policing. We are aiming for the spread of neighbourhood policing, with improved responsiveness and customer service; further modernisation of the police workforce to ensure that the service is fully equipped and able to deliver these changes; and greater involvement of communities and citizens in determining how their communities are policed. We are committed to working with the service, police authorities and their partner agencies in delivering safer communities across our country.</p>
+	<p pid="a.53WS.1/4">The national policing plan for 2005&ndash;08 was published on <phrase class="date" code="2004-11-24">24 November</phrase>. This too puts the law abiding citizen at the heart of policing, with the police working in partnership to create and maintain secure and confident communities. Our key priorities are to reduce overall crime; provide a citizen-focused police service; take action with partners to increase sanction detection rates; reduce people's concerns about crime and anti-social behaviour; combat serious and organised crime and counter the increased risk from terrorism.</p>
 	<p pid="a.53WS.1/5">The police funding settlement will support the priorities outlined in the Plan. The police will receive sufficient resources to enable them to provide an efficient and effective service to the public. We have listened very carefully to the concerns raised by the policing community. The Association of Police Authorities and the Association of Chief Police Officers made available their own surveys of projected cost increases for 2005&ndash;06. These have been taken into account in determining Government increases in grant.</p>
 	<p pid="a.53WS.1/6">Total provision for policing to be supported by grant in 2005&ndash;06 will be &pound;11,833 million. Central Government revenue grant funding direct to police forces will increase by 5.1 per cent. This includes an increase of 4.8 per cent. in total formula grant and more than &pound;760 million in specific grants. Taken together with the increase in central funding for police communications, IT and support services, this provides an increase in supported spending of 6.7 per cent. overall.</p>
 	<p pid="a.53WS.1/7">The overall 6.7 per cent. increase or &pound;746 million includes police formula grants, specific grants, capital related grants, direct Home Office spending and the formula spending on which revenue support grant is based. It also includes counter-terrorism and security, and international and organised crime funding.</p>
@@ -425,11 +446,11 @@
 	<table>
 		<caption>Table 1: Police funding settlement for 2005&ndash;06compared to 2004&ndash;05</caption>
 		<thead>
-			<tr pid="a.53WS.1/21"> <th></th> <th>2004&ndash;05</th> <th>2005&ndash;06</th> <th>Increase</th> </tr>
+			<tr pid="a.53WS.1/21"> <th></th> <th>2004&ndash;05</th> <th>2005&ndash;06</th> <th colspan="2">Increase</th> </tr>
 			<tr pid="a.53WS.1/22"> <th></th> <th>&pound;m<sup>(1)</sup></th> <th>&pound;m<sup>(1)</sup></th> <th>&pound;m<sup>(1)</sup></th> <th>%</th> </tr>
 		</thead>
 		<tbody>
-			<tr pid="a.53WS.1/25"> <td>1. Direct funding for police authorities:</td> </tr>
+			<tr pid="a.53WS.1/25"> <td colspan="2">1. Direct funding for police authorities:</td> </tr>
 			<tr pid="a.53WS.1/26"> <td>Home Office Police Grant</td> <td>4,380</td> <td>4,574</td> <td>194</td> <td>4.4</td> </tr>
 			<tr pid="a.53WS.1/27"> <td>Revenue Support Grant/ Business Rates</td> <td>2,889</td> <td>3,045</td> <td>156</td> <td>5.4</td> </tr>
 			<tr pid="a.53WS.1/28"> <td>Total General Formula Grant</td> <td>7,269</td> <td>7,619</td> <td>350</td> <td>4.8</td> </tr>
@@ -451,7 +472,7 @@
 	<p pid="a.53WS.1/44">Police funding proposals within the Local Government finance system are being announced by the Minister for Local and Regional Government today, and by the Welsh Assembly Government.</p>
 	<p pid="a.53WS.1/45">Provisional general policing grants (i.e. Home Office Police Grant, Revenue Support Grant and National Non Domestic Rates) for English &amp; Welsh police authorities in 2005&ndash;06 compared with 2004&ndash;05 are given in Table 2.</p>
 	<p pid="a.53WS.1/46" class="italic">Amending Reports</p>
-	<p pid="a.53WS.1/47">The Amending Report for 2003&ndash;04, to take account of changes to ONS population data, was set out in my written statement of <phrase class="date" code="">18 November</phrase>. Amending the settlement requires 10 police authorities to pay back formula grant. We have therefore adjusted 2005&ndash;06 grants to ensure that any authority owing money under the Amending Report will be able to pay it back and still be left with at least the floor grant increase over 2004&ndash;05. The consultation period on the Amending Report 2003&ndash;04 will end on the same date as the consultation on the funding settlement proposals 2005&ndash;06 on <phrase class="date" code="2005-01-11">11 January 2005</phrase>.</p>
+	<p pid="a.53WS.1/47">The Amending Report for 2003&ndash;04, to take account of changes to ONS population data, was set out in my written statement of <phrase class="date" code="2004-11-18">18 November</phrase>. Amending the settlement requires 10 police authorities to pay back formula grant. We have therefore adjusted 2005&ndash;06 grants to ensure that any authority owing money under the Amending Report will be able to pay it back and still be left with at least the floor grant increase over 2004&ndash;05. The consultation period on the Amending Report 2003&ndash;04 will end on the same date as the consultation on the funding settlement proposals 2005&ndash;06 on <phrase class="date" code="2005-01-11">11 January 2005</phrase>.</p>
 	<p pid="a.53WS.1/48" class="italic">Welsh police authorities</p>
 	<p pid="a.53WS.1/49">The Home Secretary has for several years provided additional funding to ensure Welsh police authorities receive at least a minimum increase in grant in line with English authorities. This additional support (&pound;14m) will continue in 2005&ndash;2006 and is included in Table 2.</p>
 	<p pid="a.53WS.1/50">There are to be minor boundary changes affecting South Wales and Dyfed Powys, taking effect from <phrase class="date" code="2005-04-01">1 April 2005</phrase>. These changes are not yet reflected in the figures in Table 2 but will be incorporated into the final Police Grant Report put to the House.</p>
@@ -465,9 +486,9 @@
 	<p pid="a.53WS.1/58"><i>Counter Terrorism:</i> As last year, we will continue to provide additional funding to the Police Service to enable it to respond to the increased threat from international terrorism. We will be providing the Metropolitan Police with some &pound;61 million in 2005&ndash;06 for ring-fenced counter terrorism funding. Provincial forces in England and Wales will receive &pound;35 million of revenue and &pound;8 million of capital in 2005&ndash;06 for dedicated counter terrorism work. This will be allocated following full consultation with the Association of Chief Police Officers and individual forces. In total the Police Service of England and Wales (including the Metropolitan Police) will receive &pound;96 million of revenue and &pound;8 million of capital to enable it to counter the increased risk from international terrorism.</p>
 	<p pid="a.53WS.1/59"><i>Basic Command Unit (BCU) funds:</i> &pound;50 million will again be provided for BCUs. These are at the forefront of local policing. The grant is targeted towards forces with BCUs in high crime areas to help reduce crime in partnership with Crime and Disorder Reduction Partnerships. All forces in England and Wales receive a share of the grant. Next year will be the third year of the Fund. BCU Commanders will have discretion locally to pool their BCU allocations with the new Safer and Stronger Communities Fund if they wish.</p>
 	<p pid="a.53WS.1/60"><i>Special Priority Payments:</i> The pay and conditions package agreed by the Police Negotiating Board in May 2002 introduced new elements into police pay such as payments for the most experienced officers who can demonstrate a high level of professional competence and extra rewards for officers in the most difficult and demanding posts. For 2005&ndash;06 I have again split the allocation. A further &pound;9 million (making &pound;18 million) has been included in general grant. &pound;69 million will be available as a specific grant, an increase of &pound;9 million over the provision for 2004&ndash;05.</p>
-	<p pid="a.53WS.1/61"><i>Community Support Officers (CSOs):</i> CSOs free up police officer time, provide reassurance and have powers to deal with aspects of anti-social behaviour and low level crime. For 2005&ndash;06, we have allocated &pound;49.5 million for continuing support of CSOs recruited in the first three rounds from 2002 onwards. In addition to this, I announced on <phrase class="date" code="">24 November</phrase> the introduction of a Neighbourhood Policing Fund which would provide initially &pound;50 million to be spent on additional CSOs to bring us up to our target of 5,500 by <phrase class="date" code="2005-03-31">31 March 2005</phrase>. We have allocated &pound;13 million for the last quarter of this financial year and &pound;37 million for continuation funding in 2005&ndash;06.</p>
+	<p pid="a.53WS.1/61"><i>Community Support Officers (CSOs):</i> CSOs free up police officer time, provide reassurance and have powers to deal with aspects of anti-social behaviour and low level crime. For 2005&ndash;06, we have allocated &pound;49.5 million for continuing support of CSOs recruited in the first three rounds from 2002 onwards. In addition to this, I announced on <phrase class="date" code="2004-11-24">24 November</phrase> the introduction of a Neighbourhood Policing Fund which would provide initially &pound;50 million to be spent on additional CSOs to bring us up to our target of 5,500 by <phrase class="date" code="2005-03-31">31 March 2005</phrase>. We have allocated &pound;13 million for the last quarter of this financial year and &pound;37 million for continuation funding in 2005&ndash;06.</p>
 	<p pid="a.53WS.1/62"><i>Rural Policing Fund:</i> &pound;30 million is again provided for the particular needs of the 31 forces with the most widespread populations. There is no change to the formulae underpinning the fund.</p>
-	<p pid="a.53WS.1/63"><i>Airwave:</i> Specific revenue grant for Airwave locally determined or 'menu' services will be made available to ensure that all forces will have received the sums originally promised when Airwave was first introduced. Payments have been made as Airwave became 'Ready for Service' in each force. Delays in rollout in some areas have meant that some forces have not yet obtained the full amount of originally promised funding. A final &pound;17.3 million will be paid to 26 forces. Forces were notified of their allocations on <phrase class="date" code="">20 October</phrase>.</p>
+	<p pid="a.53WS.1/63"><i>Airwave:</i> Specific revenue grant for Airwave locally determined or 'menu' services will be made available to ensure that all forces will have received the sums originally promised when Airwave was first introduced. Payments have been made as Airwave became 'Ready for Service' in each force. Delays in rollout in some areas have meant that some forces have not yet obtained the full amount of originally promised funding. A final &pound;17.3 million will be paid to 26 forces. Forces were notified of their allocations on <phrase class="date" code="2004-10-20">20 October</phrase>.</p>
 	<p pid="a.53WS.1/64"><i>Street Crime Initiative:</i> This was launched by the Prime Minister in April 2002 and the initiative successfully brought down levels of robbery by 24 per cent. in its first two years. There has been a further 15 per cent. reduction across England and Wales in the first quarter of 2004&ndash;05. The aim of the initiative was to bring down levels of robbery which had climbed steeply. We have achieved this aim. Funding was due to cease at the end of 2004&ndash;05, however we have retained a residual specific grant in 2005&ndash;06 of &pound;6.5 million to ensure that the benefits of the initiative are not lost and that we retain our capability to tackle mobile phone theft and other robbery. This will be allocated to forces with the biggest challenges.</p>
 	<p pid="a.53WS.1/65" class="italic">Other specific grants</p>
 	<p pid="a.53WS.1/66">We will make available funding for the following: 75 per cent. of the cost of the London and South East Allowances (&pound;55 million).</p>
@@ -558,7 +579,7 @@
 	<table>
 		<caption>Table 3: Specific grant allocations in 2005&ndash;06compared with 2004&ndash;05</caption>
 		<thead>
-			<tr pid="a.53WS.1/154"> <th></th> <th>2004&ndash;05</th> <th>2005&ndash;06</th> <th>Variance</th> </tr>
+			<tr pid="a.53WS.1/154"> <th></th> <th>2004&ndash;05</th> <th>2005&ndash;06</th> <th colspan="2">Variance</th> </tr>
 			<tr pid="a.53WS.1/155"> <th></th> <th>&pound;m</th> <th>&pound;m</th> <th>&pound;m</th> <th>%</th> </tr>
 		</thead>
 		<tbody>
@@ -661,7 +682,7 @@
 	<p pid="a.64WS.2/1">Since the financial assistance scheme was announced in May we have made good progress in scoping what is an extremely complex problem, involving hundreds of pension schemes, with differing scheme rules and in different stages of winding up. Following an initial data-gathering exercise, we laid a report before the House in June, setting out an estimate of the numbers affected.</p>
 	<p pid="a.64WS.2/2">Ministers and officials have since consulted with scheme members, trade unions and industry experts to gather and analyse more data, and explore options for the best way to get assistance to those who need it most.</p>
 	<p pid="a.64WS.2/3">Obviously, the full extent of the problem can be known only once all potentially eligible schemes have been identified and information obtained on the individuals affected and the extent of their losses.</p>
-	<p pid="a.64WS.2/4">In September, we launched a second, more detailed data-gathering exercise to identify potentially eligible schemes. It is important that all scheme trustees and actuaries who think their schemes might be eligible respond by <phrase class="date" code="">10 December</phrase>. Data-gathering on the position of individuals will follow.</p>
+	<p pid="a.64WS.2/4">In September, we launched a second, more detailed data-gathering exercise to identify potentially eligible schemes. It is important that all scheme trustees and actuaries who think their schemes might be eligible respond by <phrase class="date" code="2004-12-10">10 December</phrase>. Data-gathering on the position of individuals will follow.</p>
 	<p pid="a.64WS.2/5">While we continue to seek industry contributions to the financial assistance scheme, full participation in this exercise is an immediate opportunity for the pensions industry to provide valuable practical help and assistance in kind.</p>
 	<p pid="a.64WS.2/6">As we have previously said, the scheme will not give everyone all of what they want. Nor will the scheme provide the same assistance levels as the pension protection fund, which provides cover going forward, funded by a levy. The primary objective is to provide significant help to those who have lost the most.</p>
 	<p pid="a.64WS.2/7">The available funding is set. People who are younger have more time to work and save for a pension to replace one that has been wholly or partially lost. Therefore we are minded to gear assistance levels with reference to the number of years an individual is from their retirement. To further focus resources, we are considering making payments for all individuals at age 65.</p>
