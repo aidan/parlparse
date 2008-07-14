@@ -7,35 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="" latest="yes">
@@ -46,7 +69,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.7W.1" newgid="uk.org.publicwhip/wrans/2001-06-22.777.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.777.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.7W.1" nospeaker="True" colnum="7W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.777.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.7W.1" nospeaker="true" colnum="7W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn0">
 	Departmental Expenditure Limits
 </minor-heading>
 
@@ -68,7 +91,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.7W.5" newgid="uk.org.publicwhip/wrans/2001-06-22.408.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.408.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.7W.5" nospeaker="True" colnum="7W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.408.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.7W.5" nospeaker="true" colnum="7W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn1">
 	Queen's Golden Jubilee
 </minor-heading>
 
@@ -79,40 +102,40 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.7W.7" newgid="uk.org.publicwhip/wrans/2001-06-22.408.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2001-06-22.408.r0" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.7W.7" speakerid="uk.org.publicwhip/member/736" speakername="Tony Blair" colnum="7W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_spmin0">
-	<p pid=".7W.7/1">I am pleased to be able to announce that Her Majesty the Queen has approved a number of recommendations for the programme of celebrations during 2002, the focal point of which will be the &quot;Jubilee weekend&quot; covering 1 to <phrase class="date" code="2005-06-04">4 June</phrase>. As I announced on <phrase class="date" code="2000-11-23">23 November 2000</phrase>, <phrase class="date" code="2005-06-04">Tuesday 4 June</phrase> will be a bank holiday in place of the spring bank holiday that would otherwise fall on <phrase class="date" code="2002-05-27">27 May 2002</phrase>, and <phrase class="date" code="2005-06-03">Monday 3 June</phrase> will be an additional bank holiday for the Golden Jubilee.</p>
+	<p pid=".7W.7/1">I am pleased to be able to announce that Her Majesty the Queen has approved a number of recommendations for the programme of celebrations during 2002, the focal point of which will be the &quot;Jubilee weekend&quot; covering 1 to <phrase class="date" code="2001-06-04">4 June</phrase>. As I announced on <phrase class="date" code="2000-11-23">23 November 2000</phrase>, <phrase class="date" code="2001-06-04">Tuesday 4 June</phrase> will be a bank holiday in place of the spring bank holiday that would otherwise fall on <phrase class="date" code="2002-05-27">27 May 2002</phrase>, and <phrase class="date" code="2001-06-03">Monday 3 June</phrase> will be an additional bank holiday for the Golden Jubilee.</p>
 	<p pid=".7W.7/2">Following the recent reorganisation of Government Departments, the Ministerial Committee set up last year to help co-ordinate arrangements with Buckingham Palace is now being chaired by the Secretary of State for Culture, Media and Sport.</p>
 	<p pid=".7W.7/3">This significant national anniversary of 50 years of the Queen's reign will offer people of all ages and cultures and from all walks of life the opportunity for celebration, and the events surrounding the Jubilee will provide numerous opportunities for voluntary and community service. It should be a time for looking forward as well as back--including at the great changes that have taken place in the nation's life during Her Majesty's reign.</p>
 	<p pid=".7W.7/4">The main features of the programme approved so far by Her Majesty are as listed. Further details will be announced later.</p>
 	<p pid=".7W.7/5">The Queen and the Duke of Edinburgh plan to travel as widely as possible around the United Kingdom during the year 2002, including visits to Scotland, Wales and Northern Ireland. These tours around the UK will be focused on the summer months. The Queen will visit each English region, although it will not be possible to visit all cities and counties. The outline itinerary is as follows:</p>
-	<p pid=".7W.7/6" class="indentitalic">1-<phrase class="date" code="2005-05-02">2 May</phrase></p>
+	<p pid=".7W.7/6" class="indentitalic">1-<phrase class="date" code="2001-05-02">2 May</phrase></p>
 	<p pid=".7W.7/7" class="indent">South West of England (including Cornwall, Devon and Somerset)</p>
-	<p pid=".7W.7/8" class="indentitalic">7-<phrase class="date" code="2005-05-08">8 May</phrase></p>
+	<p pid=".7W.7/8" class="indentitalic">7-<phrase class="date" code="2001-05-08">8 May</phrase></p>
 	<p pid=".7W.7/9" class="indent">North East of England (including Tyne and Wear and Durham)</p>
-	<p pid=".7W.7/10" class="indentitalic"><phrase class="date" code="2005-05-10">10 May</phrase></p>
+	<p pid=".7W.7/10" class="indentitalic"><phrase class="date" code="2001-05-10">10 May</phrase></p>
 	<p pid=".7W.7/11" class="indent">South East of England (Buckinghamshire and Berkshire)</p>
-	<p pid=".7W.7/12" class="indentitalic">23-<phrase class="date" code="2005-05-29">29 May</phrase></p>
+	<p pid=".7W.7/12" class="indentitalic">23-<phrase class="date" code="2001-05-29">29 May</phrase></p>
 	<p pid=".7W.7/13" class="indent">Scotland</p>
-	<p pid=".7W.7/14" class="indentitalic">1-<phrase class="date" code="2005-06-04">4 June</phrase></p>
+	<p pid=".7W.7/14" class="indentitalic">1-<phrase class="date" code="2001-06-04">4 June</phrase></p>
 	<p pid=".7W.7/15" class="indent">Jubilee Weekend in Windsor and London</p>
-	<p pid=".7W.7/16" class="indentitalic"><phrase class="date" code="2005-06-07">7 June</phrase></p>
+	<p pid=".7W.7/16" class="indentitalic"><phrase class="date" code="2001-06-07">7 June</phrase></p>
 	<p pid=".7W.7/17" class="indent">South East of England (West Sussex)</p>
-	<p pid=".7W.7/18" class="indentitalic">11-<phrase class="date" code="2005-06-13">13 June</phrase></p>
+	<p pid=".7W.7/18" class="indentitalic">11-<phrase class="date" code="2001-06-13">13 June</phrase></p>
 	<p pid=".7W.7/19" class="indent">Wales</p>
-	<p pid=".7W.7/20" class="indentitalic"><phrase class="date" code="2005-06-27">27 June</phrase></p>
+	<p pid=".7W.7/20" class="indentitalic"><phrase class="date" code="2001-06-27">27 June</phrase></p>
 	<p pid=".7W.7/21" class="indent">Visit to the Armed Forces, Portsmouth</p>
-	<p pid=".7W.7/22" class="indentitalic">2-<phrase class="date" code="2005-07-03">3 July</phrase></p>
+	<p pid=".7W.7/22" class="indentitalic">2-<phrase class="date" code="2001-07-03">3 July</phrase></p>
 	<p pid=".7W.7/23" class="indent">West Midlands (including Staffordshire and Warwickshire)</p>
-	<p pid=".7W.7/24" class="indentitalic">11-<phrase class="date" code="2005-07-12">12 July</phrase></p>
+	<p pid=".7W.7/24" class="indentitalic">11-<phrase class="date" code="2001-07-12">12 July</phrase></p>
 	<p pid=".7W.7/25" class="indent">Yorkshire and the Humber (including West Yorkshire and the East Riding)</p>
-	<p pid=".7W.7/26" class="indentitalic">17-<phrase class="date" code="2005-07-18">18 July</phrase></p>
+	<p pid=".7W.7/26" class="indentitalic">17-<phrase class="date" code="2001-07-18">18 July</phrase></p>
 	<p pid=".7W.7/27" class="indent">East of England (including Suffolk and Norfolk)</p>
-	<p pid=".7W.7/28" class="indentitalic">24-<phrase class="date" code="2005-07-26">26 July</phrase></p>
+	<p pid=".7W.7/28" class="indentitalic">24-<phrase class="date" code="2001-07-26">26 July</phrase></p>
 	<p pid=".7W.7/29" class="indent">North West of England (including Merseyside and opening the Commonwealth Games in Manchester)</p>
-	<p pid=".7W.7/30" class="indentitalic"><phrase class="date" code="2005-07-31">31 July</phrase>-<phrase class="date" code="2005-08-01">1 August</phrase></p>
+	<p pid=".7W.7/30" class="indentitalic"><phrase class="date" code="2001-07-31">31 July</phrase>-<phrase class="date" code="2001-08-01">1 August</phrase></p>
 	<p pid=".7W.7/31" class="indent">East Midlands (including Derbyshire, Nottinghamshire and Leicestershire), and Yorkshire and the Humber (North Lincolnshire)</p>
-	<p pid=".7W.7/32" class="indentitalic"><phrase class="date" code="2005-08-04">4 August</phrase></p>
+	<p pid=".7W.7/32" class="indentitalic"><phrase class="date" code="2001-08-04">4 August</phrase></p>
 	<p pid=".7W.7/33" class="indent">Close the Commonwealth Games in Manchester</p>
-	<p pid=".7W.7/34" class="indentitalic"><phrase class="date" code="2005-08-05">5 August</phrase></p>
+	<p pid=".7W.7/34" class="indentitalic"><phrase class="date" code="2001-08-05">5 August</phrase></p>
 	<p pid=".7W.7/35" class="indent">North West of England (Lancashire)</p>
 	<p pid=".7W.7/36">In addition, there will be a number of London visits.</p>
 	<p pid=".7W.7/37">To help local communities mark and celebrate the Jubilee, lottery funding will be available from the Arts Councils, the Sports Councils, the Heritage Lottery Fund, the Community Fund, and the New Opportunities Fund. Voluntary organisations and local groups in the community will be able to apply through the cross-distributor &quot;Awards for All&quot; for grants of between &pound;500 and &pound;5,000 for Jubilee-related projects. Projects must meet existing criteria and involve one or more of the lottery good causes of the arts, sport, heritage, charities, health, education or the environment. I hope people will take advantage of this opportunity to use lottery money as a means both of celebrating the Jubilee and providing a lasting legacy for their communities.</p>
@@ -127,7 +150,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.9W.1" newgid="uk.org.publicwhip/wrans/2001-06-22.398.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.398.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.9W.1" nospeaker="True" colnum="9W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.398.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.9W.1" nospeaker="true" colnum="9W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn2">
 	Teacher Training
 </minor-heading>
 
@@ -147,7 +170,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.10W.1" newgid="uk.org.publicwhip/wrans/2001-06-22.22.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.22.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.10W.1" nospeaker="True" colnum="10W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.22.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.10W.1" nospeaker="true" colnum="10W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w01.htm#10622w01.html_wqn3">
 	Housing Transfer
 </minor-heading>
 
@@ -194,7 +217,7 @@
 </reply>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.12W.0" newgid="uk.org.publicwhip/wrans/2001-06-22.775.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.775.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.12W.0" nospeaker="True" colnum="12W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.775.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.12W.0" nospeaker="true" colnum="12W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn0">
 	Departmental Expenditure Limits
 </minor-heading>
 
@@ -215,7 +238,7 @@
 	<p pid=".12W.2/8" class="indent">The anticipation of end year flexibility of &pound;14,500,000 to provide emergency financial assistance to local authorities of &pound;13,500,000 and Local Government Public Service Agreement Administration Grant of &pound;1,000,000.</p>
 	<p pid=".12W.2/9" class="indent">The transfer of &pound;25,000,000 from the non-Voted element of the DETR Local Government Departmental Expenditure Limit to provide for Local Government On Line Grant.</p>
 	<p pid=".12W.2/10" class="indent">(ii) Provision within the non-Voted element of the DETR Local Government Departmental Expenditure Limit will be reduced by &pound;25,000,000 from &pound;134,649,000 to &pound;109,649,000. This reflects the transfer of &pound;25,000,000 to Request for Resources 3 to provide for Local Government On Line Grant.</p>
-	<p pid=".12W.2/11">Following the Machinery of Government changes announced following the general election on <phrase class="date" code="2005-06-07">7 June</phrase>, the DETR Main DEL will require restructuring to reflect the new departmental boundaries. The restructuring will be effected later in the year when any necessary Transfers of Functions Orders and other administrative actions are in force.</p>
+	<p pid=".12W.2/11">Following the Machinery of Government changes announced following the general election on <phrase class="date" code="2001-06-07">7 June</phrase>, the DETR Main DEL will require restructuring to reflect the new departmental boundaries. The restructuring will be effected later in the year when any necessary Transfers of Functions Orders and other administrative actions are in force.</p>
 	<p pid=".12W.2/12">The net increase in the DETR Main Programme and Local Government Departmental Expenditure Limits will be a charge on the DEL Reserve and will not therefore add to the planned total of public expenditure.</p>
 </reply>
 
@@ -225,7 +248,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.13W.1" newgid="uk.org.publicwhip/wrans/2001-06-22.773.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.773.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.1" nospeaker="True" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn1">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.773.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.1" nospeaker="true" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn1">
 	Sub-post Offices
 </minor-heading>
 
@@ -245,7 +268,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.13W.5" newgid="uk.org.publicwhip/wrans/2001-06-22.774.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.774.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.5" nospeaker="True" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn2">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.774.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.5" nospeaker="true" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn2">
 	Financial Services Authority
 </minor-heading>
 
@@ -265,7 +288,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.13W.9" newgid="uk.org.publicwhip/wrans/2001-06-22.772.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.772.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.9" nospeaker="True" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn3">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.772.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.9" nospeaker="true" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn3">
 	Fisheries Council
 </minor-heading>
 
@@ -276,7 +299,7 @@
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.13W.11" newgid="uk.org.publicwhip/wrans/2001-06-22.772.r0" matchtype="oldwransgid"/>
 <reply id="uk.org.publicwhip/wrans/2001-06-22.772.r0" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.13W.11" speakerid="uk.org.publicwhip/member/1122" speakername="Elliot Morley" colnum="13W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_spnew3">
-	<p pid=".13W.11/1">I represented the UK at the Fisheries Council on <phrase class="date" code="2005-06-18">18 June</phrase> together with Ms Rhona Brankin, the Deputy Minister for Environment and Rural Development in the Scottish Executive, and Ms Brid Rogers, Northern Irish Minister for Agriculture and Rural Development.</p>
+	<p pid=".13W.11/1">I represented the UK at the Fisheries Council on <phrase class="date" code="2001-06-18">18 June</phrase> together with Ms Rhona Brankin, the Deputy Minister for Environment and Rural Development in the Scottish Executive, and Ms Brid Rogers, Northern Irish Minister for Agriculture and Rural Development.</p>
 	<p pid=".13W.11/2">The Council had a full discussion of the Commission's Green Paper on the 2002 Review of the Common Fisheries Policy. There was considerable support for the UK's major concerns: to work towards a policy which is economically and environmentally sustainable; to retain the system of total allowable catches and quotas distributed according to relative stability; to continue with existing restrictions on access, in particular the six and 12-mile limits which we argued should be established permanently; to provide for increased involvement of fishermen in developing fisheries policy, in particular through a regionalised approach; to address more effectively the environmental impacts of fishing, reducing discards, recognising the value of low impact fishing and angling, and minimising the adverse effects of fishing on non-target species such as small cetaceans; to ensure more consistent and effective enforcement across all member states; and to tackle more effectively the imbalance between fishing capacity and stocks, not least by ending the use of subsidies by grant aiding more powerful and efficient vessels.</p>
 	<p pid=".13W.11/3">The work on the Green Paper will continue under the Belgian Presidency and the Commission is expected to produce detailed legislative proposals later this year.</p>
 	<p pid=".13W.11/4">The Council agreed conclusions on the Commission's action plan on biodiversity. We welcomed these, in particular the commitment to give priority for action for the most sensitive species listed in the Habitats Directive.</p>
@@ -291,7 +314,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.14W.1" newgid="uk.org.publicwhip/wrans/2001-06-22.776.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.776.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.14W.1" nospeaker="True" colnum="14W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn4">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.776.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.14W.1" nospeaker="true" colnum="14W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w02.htm#10622w02.html_wqn4">
 	Departmental Expenditure Limits
 </minor-heading>
 
@@ -313,7 +336,7 @@
 </major-heading>
 
 <gidredirect oldgid="uk.org.publicwhip/wrans/2001-06-22.15W.2" newgid="uk.org.publicwhip/wrans/2001-06-22.770.h" matchtype="oldwransgid"/>
-<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.770.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.15W.2" nospeaker="True" colnum="15W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w03.htm#10622w03.html_wqn0">
+<minor-heading id="uk.org.publicwhip/wrans/2001-06-22.770.h" oldstyleid="uk.org.publicwhip/wrans/2001-06-22.15W.2" nospeaker="true" colnum="15W"  url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo010622/text/10622w03.htm#10622w03.html_wqn0">
 	Robert Thompson and Jon Venables
 </minor-heading>
 
