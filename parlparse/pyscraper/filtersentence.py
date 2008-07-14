@@ -44,10 +44,10 @@ rehreflink = re.compile('<a href="([^"]*)">(.*?)</a>')
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
 
-redatephraseval = re.compile('(?:(?:%s),? )?(\d+ (?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
+redatephraseval = re.compile('(?:(?:%s),? )?(\d+(?: |&nbsp;)*(?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
 def TokenDate(ldate, phrtok):
 	sdate_year = phrtok.sdate[0:4]
-	tdate = ldate.group(0)
+	tdate = ldate.group(0).replace('&nbsp;', ' ')
 	noyear = False
 	if not ldate.group(2):
 		tdate += " %s" % sdate_year
@@ -76,7 +76,7 @@ restandingo = re.compile('''(?x)
 restandingomarg = re.compile("Standing Order No")
 def TokenStandingOrder(mstandingo, phrtok):
 	if mstandingo.group(2):
-		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (FixHTMLEntities(mstandingo.group(1)), re.sub('<[^>]*>', '', mstandingo.group(2))))
+		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (FixHTMLEntities(mstandingo.group(1)), FixHTMLEntities(re.sub('<[^>]*>', '', mstandingo.group(2)))))
 	return ('phrase', ' class="standing-order" code="%s"' % mstandingo.group(1))
 
 def TokenHttpLink(mhttp, phrtok):
@@ -149,7 +149,7 @@ def TokenOffRepWDate(qoffrep, phrtok):
     #print qoffrep.group(0)
     loc1 = qoffrep.group(1)
     loc2 = qoffrep.group(2)
-    date = qoffrep.group(3)
+    date = qoffrep.group(3).replace('&nbsp;', ' ')
     qcolprefix = qoffrep.group(4)
     qcolnum = qoffrep.group(5)
     qcolsuffix = qoffrep.group(6)

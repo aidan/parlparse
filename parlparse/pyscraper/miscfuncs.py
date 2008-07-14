@@ -205,7 +205,7 @@ entitymap = {
         '&#239;':'&iuml;',  # this is i-double-dot, as in naive
 
         '&#231;':'&ccedil;',   # this is cedilla
-        '&#199;':'&Ccedil;',   # this is capital C-cedilla
+        '&#199;':'&#199;',   # this is capital C-cedilla
         '&#250;':'&uacute;',
         '&#252;':'&uuml;',   # this is u-double-dot
         '&#241;':'&ntilde;',   # spanish n as in Senor
