@@ -110,7 +110,8 @@ def FilterLordsColtime(fout, text, sdate):
 			if not re.match('(?:</h5>|</st>)(?i)', time):
 				time = TimeProcessing(time, previoustime, False, stampurl)
 				fout.write('<stamp time="%s"/>' % time)
-				previoustime.append(time)
+				if time:
+                                        previoustime.append(time)
 			continue
 
 		# special lift a time out of the heading
