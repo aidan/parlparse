@@ -7,9 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -26,13 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -44,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -177,41 +191,13 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1214.4" newgid="uk.org.publicwhip/debate/2006-11-30b.1214.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1215.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1215.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1215.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1215.1" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1215.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1215.2" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-30a.1215.2" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" speakeroffice="The Leader of the House of Commons"  colnum="1215"  time="011:35:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/debtext/61130-0004.htm#06113081001552">
-	<p pid="a.1215.2/1">The business for next week will be as follows:</p>
-	<p pid="a.1215.2/2"><phrase class="date" code="">Monday 4 December</phrase>&mdash;Remaining stages of the Corporate Manslaughter and Corporate Homicide Bill.</p>
-	<p pid="a.1215.2/3"><phrase class="date" code="">Tuesday 5 December</phrase>&mdash;Opposition Day [1st Allotted Day]. There will be a debate entitled &quot;Government failures on Public Health&quot;, followed by a debate entitled &quot;Failure of Government Transport Strategy and Mounting Capacity Crisis on British Roads and Railways&quot;. Both debates arise on an Opposition motion.</p>
-	<p pid="a.1215.2/4"><phrase class="date" code="">Wednesday 6 December</phrase>&mdash;A debate on European Affairs on a motion for the Adjournment of the House.</p>
-	<p pid="a.1215.2/5"><phrase class="date" code="">Thursday 7 December</phrase>&mdash;Estimates [1st Allotted Day]. There will be a debate on the provision of affordable housing followed by a debate on occupational pensions.</p>
-	<p pid="a.1215.2/6">Details will be given in the <i> Official Report.</i></p>
-	<p pid="a.1215.2/7">At 6 pm the House will be asked to agree all outstanding estimates.</p>
-	<p pid="a.1215.2/8"><phrase class="date" code="">Friday 8 December</phrase>&mdash;The House will not be sitting.</p>
-	<p pid="a.1215.2/9">The provisional business for the week commencing <phrase class="date" code="">11 December</phrase> will be:</p>
-	<p pid="a.1215.2/10">Monday 11 december&mdash;Second Reading of the Offender Management Bill, followed by proceedings on the Consolidated Fund Bill.</p>
-	<p pid="a.1215.2/11"><phrase class="date" code="">Tuesday 12 December</phrase>&mdash;Second Reading of the Greater London Authority Bill.</p>
-	<p pid="a.1215.2/12"><phrase class="date" code="">Wednesday 13 December</phrase>&mdash;Second Reading of the Justice and Security (Northern Ireland) Bill.</p>
-	<p pid="a.1215.2/13"><phrase class="date" code="">Thursday 14 December</phrase>&mdash;A debate on fisheries on a motion for the Adjournment of the House.</p>
-	<p pid="a.1215.2/14"><phrase class="date" code="">Friday 15 December</phrase>&mdash;The House will not be sitting.</p>
-	<p pid="a.1215.2/15">I should also like to inform the House that the business in Westminster Hall for <phrase class="date" code="">14 December</phrase> and <phrase class="date" code="2006-01-11">11 January</phrase> will be:</p>
-	<p pid="a.1215.2/16"><phrase class="date" code="">Thursday 14 December</phrase>&mdash;A debate on changes in medical and clinical practice.</p>
-	<p pid="a.1215.2/17"><phrase class="date" code="2006-01-11">Thursday 11 January</phrase>&mdash;A debate on the future of legal aid.</p>
-	<p pid="a.1215.2/18" class="italic"> The information is as follows:</p>
-	<p pid="a.1215.2/19" class="italic"> Communities and Local Government: in so far as it relates to the provision of affordable housing (Third Report of the Communities and Local Government Committee entitled &quot;Affordability and the Supply of Housing&quot;, Session 2005-06, (HC703-11).</p>
-	<p pid="a.1215.2/20" class="italic"> Work and Pensions: In so far as it relates to assistance for those who have lost their occupational pensions. (Sixth Report of Public Administration Committee entitled The Ombudsman in Question: The Ombudsman's Report on Pensions and its Constitutional Implications&quot;, Session 2005-06, (HC1081).</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1215.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1215.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1216.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1216.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1217.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1217.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1218.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1218.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1218.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1218.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1218.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1218.2" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1219.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1219.0" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-30a.1219.0" speakerid="uk.org.publicwhip/member/1423" speakername="Jack Straw" colnum="1219"  time="011:35:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/debtext/61130-0004.htm#06113081001558">
-	<p pid="a.1219.0/1">On the planned number of community support officers, some adjustments were made to CSO numbers, but since 1997 the hon. Gentleman's own police force area has had 400 extra police officers and 154 CSOs&mdash;a very big increase in the forces available to fight for better law and order.</p>
-	<p pid="a.1219.0/2">The hon. Gentleman mentioned fisheries. There was indeed an opportunity to discuss aspects of agriculture, which is what he asked about, during last week's debates on the Queen's Speech, but we will of course bear in mind his suggestion for a debate in Government time on agriculture.</p>
-	<p pid="a.1219.0/3">On waterways, on <phrase class="date" code="">Wednesday 6 December</phrase> in Westminster Hall there will be a 90-minute debate about the impact of grant reduction on the work of British Waterways.</p>
-	<p pid="a.1219.0/4">On guidance in respect of evidence-taking sessions under the new Public Bill arrangements, which the House agreed on <phrase class="date" code="2006-11-02">2 November</phrase>, the arrangements for the equivalent of Special Standing Committees do not and will not come into force until <phrase class="date" code="2006-01-01">1 January</phrase>. That was part of the decision made by the House to give the House authorities and Members on both sides time to get used to the arrangements and for there to be guidance laid down. While the name of the Committee has changed, that Committee will proceed under the old arrangements rather than the new.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1219.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1219.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1219.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1219.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1220.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1220.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1220.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1220.1" matchtype="perfectmatch"/>
@@ -234,12 +220,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1224.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1224.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1224.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1224.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1224.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1224.2" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1225.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1225.0" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-30a.1225.0" speakerid="uk.org.publicwhip/member/1438" speakername="John Butterfill" colnum="1225"  time="011:35:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/debtext/61130-0005.htm#06113081001581">
-	<p pid="a.1225.0/1">The Leader of the House will be aware that blind people are currently excluded from the higher-rate mobility component of disability living allowance. It is extremely difficult for them to use buses, trains and the underground unless they are accompanied, so they are forced to use taxis and private hire vehicles, which are far more expensive. The problem is highlighted in early-day motion 46, which stands in my name.</p>
-	<p pid="a.1225.0/2" class="italic"> [That this House expresses its concern that blind people are excluded from claiming the higher rate mobility component of disability living allowance; believes that blindness should be regarded as an impairment that has a severe impact on a person's independent mobility; notes the substantial extra costs that blind people have to pay to travel by taxi and private hire vehicle; and therefore calls on the Government to reconsider eligibility criteria which exclude blind people from being able to claim this important extra-cost benefit.]</p>
-	<p pid="a.1225.0/3">The Leader of the House will also be aware that a mass lobby of the House by the blind is proposed for <phrase class="date" code="">4 December</phrase>. Will he find an early opportunity for us to debate the issue?</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1225.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1225.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1225.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1225.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1225.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1225.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1225.3" newgid="uk.org.publicwhip/debate/2006-11-30b.1225.3" matchtype="perfectmatch"/>
@@ -420,18 +401,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1273.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1273.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1273.2" newgid="uk.org.publicwhip/debate/2006-11-30b.1273.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1273.3" newgid="uk.org.publicwhip/debate/2006-11-30b.1273.3" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1274.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1274.0" matchtype="changes"/>
-<speech id="uk.org.publicwhip/debate/2006-11-30a.1274.0" speakerid="uk.org.publicwhip/member/1470" speakername="Wayne David" colnum="1274"  time="014:56:00" url="http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061130/debtext/61130-0013.htm#06113081001758">
-	<p pid="a.1274.0/1">On the whole, I welcome the Hague programme. It offers a practical approach to many problems facing Britain and Europe today. I also welcome the action plan adopted by the Council of Europe in June 2005.</p>
-	<p pid="a.1274.0/2">The European Scrutiny Committee has studied four communications from the European Commission, one of which was the annual report on the Hague programme. It said that progress had been satisfactory, except with regard to the measures proposed under article 6 of the EU treaty. The main reason for that was the alleged lack of unanimity among Council members, which the European Commission believes makes the case for change to qualified majority voting and the adoption of the passerelle clause under article 42.</p>
-	<p pid="a.1274.0/3">As we have heard, the Government believe that the debate about the passerelle clause has come to an end, but <phrase class="honfriend" id="uk.org.publicwhip/member/1999" name="Michael Connarty">my hon. Friend the Member for Linlithgow and East Falkirk (Michael Connarty)</phrase> was right to point out that the Commission does not agree. Only the other day, Commissioner Frattini declared in a debate in Helsinki that the Commission believes that the debate is very much still going on. The Commission has not modified its position one iota: it still believes very firmly that the Council should adopt the passerelle clause.</p>
-	<p pid="a.1274.0/4">We must be clear about where Parliament stands on this matter. Although I believe that we should adopt the positive elements of the Hague programme, it is important that we reaffirm our opposition to the adoption of the passerelle clause. I have four concerns about this matter that I should like to set out for the House.</p>
-	<p pid="a.1274.0/5">First, opting in to the passerelle clause would have constitutional significance. We must be mindful that the clause could mean that it would not be possible for Britain to have bilateral extradition agreements with third countries. In other words, it might not be possible for us to have an agreement with a third country to extradite terrorists. Given that that is one of the main concerns for most British people, we need to be very careful about adopting such a provision.</p>
-	<p pid="a.1274.0/6">Secondly, it is important to stress that there is no provision for rescinding an opt in. If we decide to opt in to the passerelle process, we are in there for good&mdash;once in, always in. A linked problem is the extension into new areas of the jurisdiction of the European Court of Justice. In addition, more powers are implied for the European Commission, as it would be up to the Commission to bring infraction proceedings, and there would also be new measures for the European Parliament.</p>
-	<p pid="a.1274.0/7">Thirdly, the passerelle would put the UK in a weaker negotiating position, because other member states would not take our position seriously unless we had decided to opt in. If we are serious about influencing the European agenda on justice and home affairs, it will be far better for us to oppose the adoption of the passerelle clause.</p>
-	<p pid="a.1274.0/8">My fourth and final point is that if the passerelle clause is adopted, it will undoubtedly introduce a high degree of uncertainty in respect of the future of Europe and the treaties. A linked worry is that because the constitutional treaty has not been agreed&mdash;indeed, it was emphatically rejected by two electorates in the EU&mdash;measures will be brought in through the back door. The issues that the passerelle clause will open up need to be debated, but fully and frankly as part of treaty negotiations; we should not simply slip into adopting measures by the back door. I am worried about that uncertainty and pre-emption.</p>
-	<p pid="a.1274.0/9">This debate is timely. The Council of Ministers is meeting on 4 and <phrase class="date" code="">5 December</phrase> and as Commissioner Frattini made clear, the Commission is still arguing four-square for the measure, although it recognises that some member states, especially the UK, have strong reservations. Nevertheless, the Commission has not given up hope of agreement on a matter that it considers crucial. It is, therefore, important that we, as a national Parliament, send a clear message to the Government. There can be no question of equivocation and no suggestion of capitulation or compromise&mdash;we must stand four-square in our opposition. That is what we want and I hope that our position will be maintained by the Government.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1274.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1274.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1275.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1275.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1275.1" newgid="uk.org.publicwhip/debate/2006-11-30b.1275.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2006-11-30a.1276.0" newgid="uk.org.publicwhip/debate/2006-11-30b.1276.0" matchtype="perfectmatch"/>

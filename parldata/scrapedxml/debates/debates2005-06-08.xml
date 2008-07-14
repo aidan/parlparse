@@ -7,35 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
-
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="" latest="no">
@@ -460,7 +483,7 @@
 <gidredirect oldgid="uk.org.publicwhip/debate/2005-06-08.1349.0" newgid="uk.org.publicwhip/debate/2005-06-08a.1349.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2005-06-08.1349.1" newgid="uk.org.publicwhip/debate/2005-06-08a.1349.1" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2005-06-08.1349.2" newgid="uk.org.publicwhip/debate/2005-06-08a.1349.2" matchtype="changes"/>
-<division id="uk.org.publicwhip/debate/2005-06-08.1349.2" nospeaker="true" divdate="2005-06-08" divnumber="7" colnum="1349"  time="18:45:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050608/debtext/50608-33.htm#50608-33_div7">
+<division id="uk.org.publicwhip/debate/2005-06-08.1349.2" nospeaker="true" divdate="2005-06-08" divnumber="7" colnum="1349"  time="018:45:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050608/debtext/50608-33.htm#50608-33_div7">
 	<divisioncount ayes="186" noes="331" tellerayes="2" tellernoes="2"/>
 	<mplist vote="aye">
 		<mpname id="uk.org.publicwhip/member/1929" vote="aye">Afriyie, Adam</mpname>
@@ -498,9 +521,9 @@
 		<mpname id="uk.org.publicwhip/member/1768" vote="aye">Crabb, Stephen</mpname>
 		<mpname id="uk.org.publicwhip/member/1820" vote="aye">Curry, rh David</mpname>
 		<mpname id="uk.org.publicwhip/member/1598" vote="aye">Davies, Quentin</mpname>
-		<mpname id="uk.org.publicwhip/member/1719" vote="aye">Davies, David T.C. <i>(Monmouth)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1719" vote="aye">Davies, David T.C. (Monmouth)</mpname>
 		<mpname id="uk.org.publicwhip/member/1816" vote="aye">Davies, Philip</mpname>
-		<mpname id="uk.org.publicwhip/member/1608" vote="aye">Davis, rh David <i>(Haltemprice and Howden)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1608" vote="aye">Davis, rh David (Haltemprice and Howden)</mpname>
 		<mpname id="uk.org.publicwhip/member/1649" vote="aye">Djanogly, Jonathan</mpname>
 		<mpname id="uk.org.publicwhip/member/1401" vote="aye">Dodds, Nigel</mpname>
 		<mpname id="uk.org.publicwhip/member/1490" vote="aye">Dorrell, rh Stephen</mpname>
@@ -752,8 +775,8 @@
 		<mpname id="uk.org.publicwhip/member/1543" vote="no">Flint, Caroline</mpname>
 		<mpname id="uk.org.publicwhip/member/1733" vote="no">Flynn, Paul</mpname>
 		<mpname id="uk.org.publicwhip/member/1837" vote="no">Follett, Barbara</mpname>
-		<mpname id="uk.org.publicwhip/member/1622" vote="no">Foster, Michael Jabez <i>(Hastings)</i></mpname>
-		<mpname id="uk.org.publicwhip/member/1939" vote="no">Foster, Michael <i>(Worcester)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1622" vote="no">Foster, Michael Jabez (Hastings)</mpname>
+		<mpname id="uk.org.publicwhip/member/1939" vote="no">Foster, Michael (Worcester)</mpname>
 		<mpname id="uk.org.publicwhip/member/1368" vote="no">Francis, Dr. Hywel</mpname>
 		<mpname id="uk.org.publicwhip/member/1652" vote="no">Gapes, Mike</mpname>
 		<mpname id="uk.org.publicwhip/member/1446" vote="no">Gardiner, Barry</mpname>
@@ -934,7 +957,7 @@
 		<mpname id="uk.org.publicwhip/member/1721" vote="no">Smith, Geraldine</mpname>
 		<mpname id="uk.org.publicwhip/member/1755" vote="no">Smith, rh Andrew</mpname>
 		<mpname id="uk.org.publicwhip/member/1776" vote="no">Smith, rh Jacqui</mpname>
-		<mpname id="uk.org.publicwhip/member/1814" vote="no">Smith, Ms Angela, <i>(Sheffield, Hillsborough)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1814" vote="no">Smith, Ms Angela, (Sheffield, Hillsborough)</mpname>
 		<mpname id="uk.org.publicwhip/member/1895" vote="no">Smith, John</mpname>
 		<mpname id="uk.org.publicwhip/member/1866" vote="no">Snelgrove, Anne</mpname>
 		<mpname id="uk.org.publicwhip/member/1675" vote="no">Soulsby, Sir Peter</mpname>
@@ -979,8 +1002,8 @@
 		<mpname id="uk.org.publicwhip/member/1392" vote="no">Wood, Mike</mpname>
 		<mpname id="uk.org.publicwhip/member/1800" vote="no">Woodward, Shaun</mpname>
 		<mpname id="uk.org.publicwhip/member/1752" vote="no">Woolas, Phil</mpname>
-		<mpname id="uk.org.publicwhip/member/1478" vote="no">Wright, Dr. Tony <i>(Cannock Chase)</i></mpname>
-		<mpname id="uk.org.publicwhip/member/1601" vote="no">Wright, Anthony <i>(Great Yarmouth)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1478" vote="no">Wright, Dr. Tony (Cannock Chase)</mpname>
+		<mpname id="uk.org.publicwhip/member/1601" vote="no">Wright, Anthony (Great Yarmouth)</mpname>
 		<mpname id="uk.org.publicwhip/member/1620" vote="no">Wright, Iain</mpname>
 		<mpname id="uk.org.publicwhip/member/1871" vote="no">Wright, David</mpname>
 		<mpname id="uk.org.publicwhip/member/1819" vote="no">Wyatt, Derek</mpname>
@@ -990,7 +1013,7 @@
 </division>
 <gidredirect oldgid="uk.org.publicwhip/debate/2005-06-08.1349.3" newgid="uk.org.publicwhip/debate/2005-06-08a.1349.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/debate/2005-06-08.1353.0" newgid="uk.org.publicwhip/debate/2005-06-08a.1353.0" matchtype="changes"/>
-<division id="uk.org.publicwhip/debate/2005-06-08.1353.0" nospeaker="true" divdate="2005-06-08" divnumber="8" colnum="1353"  time="18:59:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050608/debtext/50608-34.htm#50608-34_div8">
+<division id="uk.org.publicwhip/debate/2005-06-08.1353.0" nospeaker="true" divdate="2005-06-08" divnumber="8" colnum="1353"  time="018:59:00" url="http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050608/debtext/50608-34.htm#50608-34_div8">
 	<divisioncount ayes="374" noes="189" tellerayes="2" tellernoes="2"/>
 	<mplist vote="aye">
 		<mpname id="uk.org.publicwhip/member/1604" vote="aye">Abbott, Ms Diane</mpname>
@@ -1111,8 +1134,8 @@
 		<mpname id="uk.org.publicwhip/member/1733" vote="aye">Flynn, Paul</mpname>
 		<mpname id="uk.org.publicwhip/member/1837" vote="aye">Follett, Barbara</mpname>
 		<mpname id="uk.org.publicwhip/member/1391" vote="aye">Foster, Don</mpname>
-		<mpname id="uk.org.publicwhip/member/1622" vote="aye">Foster, Michael Jabez <i>(Hastings)</i></mpname>
-		<mpname id="uk.org.publicwhip/member/1939" vote="aye">Foster, Michael <i>(Worcester)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1622" vote="aye">Foster, Michael Jabez (Hastings)</mpname>
+		<mpname id="uk.org.publicwhip/member/1939" vote="aye">Foster, Michael (Worcester)</mpname>
 		<mpname id="uk.org.publicwhip/member/1368" vote="aye">Francis, Dr. Hywel</mpname>
 		<mpname id="uk.org.publicwhip/member/1652" vote="aye">Gapes, Mike</mpname>
 		<mpname id="uk.org.publicwhip/member/1446" vote="aye">Gardiner, Barry</mpname>
@@ -1309,7 +1332,7 @@
 		<mpname id="uk.org.publicwhip/member/1721" vote="aye">Smith, Geraldine</mpname>
 		<mpname id="uk.org.publicwhip/member/1755" vote="aye">Smith, rh Andrew</mpname>
 		<mpname id="uk.org.publicwhip/member/1776" vote="aye">Smith, rh Jacqui</mpname>
-		<mpname id="uk.org.publicwhip/member/1814" vote="aye">Smith, Ms Angela, <i>(Sheffield, Hillsborough)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1814" vote="aye">Smith, Ms Angela, (Sheffield, Hillsborough)</mpname>
 		<mpname id="uk.org.publicwhip/member/1895" vote="aye">Smith, John</mpname>
 		<mpname id="uk.org.publicwhip/member/1866" vote="aye">Snelgrove, Anne</mpname>
 		<mpname id="uk.org.publicwhip/member/1675" vote="aye">Soulsby, Sir Peter</mpname>
@@ -1361,8 +1384,8 @@
 		<mpname id="uk.org.publicwhip/member/1392" vote="aye">Wood, Mike</mpname>
 		<mpname id="uk.org.publicwhip/member/1800" vote="aye">Woodward, Shaun</mpname>
 		<mpname id="uk.org.publicwhip/member/1752" vote="aye">Woolas, Phil</mpname>
-		<mpname id="uk.org.publicwhip/member/1478" vote="aye">Wright, Dr. Tony <i>(Cannock Chase)</i></mpname>
-		<mpname id="uk.org.publicwhip/member/1601" vote="aye">Wright, Anthony <i>(Great Yarmouth)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1478" vote="aye">Wright, Dr. Tony (Cannock Chase)</mpname>
+		<mpname id="uk.org.publicwhip/member/1601" vote="aye">Wright, Anthony (Great Yarmouth)</mpname>
 		<mpname id="uk.org.publicwhip/member/1620" vote="aye">Wright, Iain</mpname>
 		<mpname id="uk.org.publicwhip/member/1871" vote="aye">Wright, David</mpname>
 		<mpname id="uk.org.publicwhip/member/1819" vote="aye">Wyatt, Derek</mpname>
@@ -1406,9 +1429,9 @@
 		<mpname id="uk.org.publicwhip/member/1768" vote="no">Crabb, Stephen</mpname>
 		<mpname id="uk.org.publicwhip/member/1820" vote="no">Curry, rh David</mpname>
 		<mpname id="uk.org.publicwhip/member/1598" vote="no">Davies, Quentin</mpname>
-		<mpname id="uk.org.publicwhip/member/1719" vote="no">Davies, David T.C. <i>(Monmouth)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1719" vote="no">Davies, David T.C. (Monmouth)</mpname>
 		<mpname id="uk.org.publicwhip/member/1816" vote="no">Davies, Philip</mpname>
-		<mpname id="uk.org.publicwhip/member/1608" vote="no">Davis, rh David <i>(Haltemprice and Howden)</i></mpname>
+		<mpname id="uk.org.publicwhip/member/1608" vote="no">Davis, rh David (Haltemprice and Howden)</mpname>
 		<mpname id="uk.org.publicwhip/member/1649" vote="no">Djanogly, Jonathan</mpname>
 		<mpname id="uk.org.publicwhip/member/1401" vote="no">Dodds, Nigel</mpname>
 		<mpname id="uk.org.publicwhip/member/1490" vote="no">Dorrell, rh Stephen</mpname>
