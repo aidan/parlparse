@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,48 +56,311 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.145.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.145.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.146.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.146.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.147.9" newgid="uk.org.publicwhip/wrans/2005-07-13b.147.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.148.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.148.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.9" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.10" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.11" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.11" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.12" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.12" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.13" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.13" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.149.14" newgid="uk.org.publicwhip/wrans/2005-07-13b.149.14" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.150.9" newgid="uk.org.publicwhip/wrans/2005-07-13b.150.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.151.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.151.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-07-13a.152.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="152"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50713w03.htm#50713w03_spnew0">
+	<p pid="a.152.2/1">The per capita cost of a criminal conviction in Northern Ireland in terms of the Police Service of Northern Ireland's budget is set out in the following table.</p>
+	<table>
+		<tbody>
+			<tr pid="a.152.2/4"> <td><i>Financial year</i></td> <td><i>PSNI budget &pound; <sup>1</sup> </i></td> <td><i>Total number of convictions <sup>2</sup> </i></td> <td><i>Per capita cost &pound;</i></td> </tr>
+			<tr pid="a.152.2/5"> <td>2001&ndash;02</td> <td>641,760,000</td> <td>23,794</td> <td>26,972</td> </tr>
+			<tr pid="a.152.2/6"> <td>2002&ndash;03</td> <td>655,265,000</td> <td>24,596</td> <td>26,641</td> </tr>
+			<tr pid="a.152.2/7"> <td>2003&ndash;04</td> <td>669,770,000</td> <td>N/A</td> <td>&ndash;</td> </tr>
+			<tr pid="a.152.2/8"> <td>2004&ndash;05</td> <td>696,877,000</td> <td>N/A</td> <td>&ndash;</td> </tr>
+		</tbody>
+	</table>
+	<p pid="a.152.2/11">Conviction data beyond 2002&ndash;03 are not yet available.</p>
+	<p pid="a.152.2/12">NB</p>
+	<p pid="a.152.2/13"><sup>1</sup> Main police grant cash revenue and capital, excluding non-cash items, pensions, Patten severance and non-severance funding.</p>
+	<p pid="a.152.2/14"><sup>2</sup> Figures are based on a principal offence rule and include all criminal convictions (coverage excludes convictions stemming from departmental prosecutions, public bodies and private individuals).</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.152.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.152.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.153.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.153.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.154.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.154.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.154.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.154.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.154.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.154.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-07-13a.154.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="154"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50713w03.htm#50713w03_spnew5">
+	<p pid="a.154.2/1">The information requested is as detailed in the tables below. The schools identified for closure or amalgamation were all the subject of published development proposals. There were no proposals for the closure or amalgamation of integrated schools or Irish medium schools in the period prescribed. Of the total of 21 schools identified for closure, two were in Belfast and one in Londonderry. Twenty-eight amalgamations covering 65 schools are also identified below (including three amalgamations in 2000&ndash;01 which had been announced prior to that year). Nine of the schools were in Belfast.</p>
+	<p pid="a.154.2/2" class="italic">1. Closures </p>
+	<table>
+		<caption>2000&ndash;01 School Year - Controlled Schools</caption>
+		<tbody>
+			<tr pid="a.154.2/6"> <td>Board</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/7"> <td><i>Southern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/8"> <td></td> <td>Churchtown PS to close from 31 August 2001</td> <td>Decision taken not to close</td> </tr>
+			<tr pid="a.154.2/9"> <td></td> <td>Toberlane PS to close from 31 August 2001</td> <td>It was decided not to close the school in August 2001&mdash;the school was the subject of a further closure proposal in 2002-03 and closed in August 2003.</td> </tr>
+			<tr pid="a.154.2/10"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/11"> <td></td> <td>Cavanacaw PS to close from 31 August 2001</td> <td>Closed&mdash;31 August 2001</td> </tr>
+			<tr pid="a.154.2/12"> <td></td> <td>Glenagoorland PS to close from 31 August 2001.</td> <td>Closed&mdash;31 August 2001</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/18"> <td>Board area</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/19"> <td><i>Belfast</i></td> </tr>
+			<tr pid="a.154.2/20"> <td></td> <td>St Anthony's PS, Willowfield to close from 31 August 2001</td> <td>Closed&mdash;31 August 2001 </td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2001&ndash;02 School YearControlled Schools</caption>
+		<tbody>
+			<tr pid="a.154.2/26"> <td>Board</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/27"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/28"> <td></td> <td>Tullywhisker PS to close from 31 August 2002</td> <td>Closed&mdash;August 2002</td> </tr>
+			<tr pid="a.154.2/29"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/30"> <td></td> <td>Mosside PS to close from 31 August 2002</td> <td>Closed&mdash;31 August 2002</td> </tr>
+			<tr pid="a.154.2/31"> <td><i>South-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/32"> <td></td> <td>O'Neill Memorial PS to close from 31 August 2002</td> <td>Closed&mdash;31 August 2002</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2002&ndash;03 School Year - Controlled schools</caption>
+		<tbody>
+			<tr pid="a.154.2/38"> <td>Board</td> <td>Identified for Closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/39"> <td><i>Southern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/40"> <td></td> <td>Toberlane PS to close from 31 August 2003</td> <td>Closed&mdash;31 August 2003</td> </tr>
+			<tr pid="a.154.2/41"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/42"> <td></td> <td>Ballypriormore PS to close from 31 August 2003</td> <td>Closed&mdash;December 2003</td> </tr>
+			<tr pid="a.154.2/43"> <td><i>Western</i></td> <td>Templemore Secondary School, Londonderry to close from 31 August 2003</td> <td>Closed&mdash;31 August 2003</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/49"> <td>Board area</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/50"> <td><i>Belfast</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/51"> <td></td> <td>St Patrick's PS, North Queen Street to close from 31 August 2003</td> <td>Closed&mdash;31 August 2003</td> </tr>
+			<tr pid="a.154.2/52"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/53"> <td></td> <td>St Joseph's PS, Lisconrea to close from 31 August 2003</td> <td>Closed&mdash;31 August 2003</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2003&ndash;04 School YearControlled schools</caption>
+		<tbody>
+			<tr pid="a.154.2/59"> <td>Board</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/60"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/61"> <td></td> <td>Brackalislea PS to close from 31 August 2004</td> <td>Closed&mdash;31 August 2004</td> </tr>
+			<tr pid="a.154.2/62"> <td></td> <td>Ballyrock PS to close from 31 August 2004</td> <td>Closed&mdash;31 August 2004</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2004&ndash;05 School YearControlled schools</caption>
+		<tbody>
+			<tr pid="a.154.2/68"> <td>Board</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/69"> <td><i>Southern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/70"> <td></td> <td>Ardmore PS to close from 31 August 2006</td> <td>No decision yet</td> </tr>
+			<tr pid="a.154.2/71"> <td></td> <td>Granville PS to close from 31 August 2006</td> <td>No decision yet</td> </tr>
+			<tr pid="a.154.2/72"> <td></td> <td>Loughbrickland PS to close from 31 August 2006.</td> <td>No decision yet</td> </tr>
+			<tr pid="a.154.2/73"> <td></td> <td>Tullymacarette PS to close from 31 August 2006</td> <td>Closure approved from 31 August 2006</td> </tr>
+			<tr pid="a.154.2/74"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/75"> <td></td> <td>Antiville PS Larne to close from 31 August 2005.</td> <td>Closure approved from 31 August 2005.</td> </tr>
+			<tr pid="a.154.2/76"> <td></td> <td>Massereene Community College, Antrim to close from 31 August 2006.</td> <td>No decision yet</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/82"> <td>Board</td> <td>Identified for closure</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/83"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/84"> <td></td> <td>St Mary's PS, Laught, Omagh to close from 31 August 2005</td> <td>Closure approved for 31 August 2005</td> </tr>
+			<tr pid="a.154.2/85"> <td><i>South-eastern</i></td> <td>St Mary's Girls/St Mary's Boys PSs, Newcastle</td> <td>Amalgamation September 2001&mdash;both sites in operation pending new build</td> </tr>
+			<tr pid="a.154.2/86"> <td><i>Western</i></td> <td>St Michael's/St Theresa's PSs Enniskillen</td> <td>Amalgamated September 2001, using existing sites, pending new build</td> </tr>
+		</tbody>
+	</table>
+	<p pid="a.154.2/89" class="italic">2. Amalgamations of Two or More Schools</p>
+	<table>
+		<caption>2000&ndash;01 School YearControlled Schools</caption>
+		<tbody>
+			<tr pid="a.154.2/93"> <td>Board</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/94"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/95"> <td></td> <td>Ballygawley/Innismagh PSs</td> <td>Completed Jan 2004</td> </tr>
+			<tr pid="a.154.2/96"> <td></td> <td>Dungiven High School/Limavady High School</td> <td>Completed June 2002</td> </tr>
+			<tr pid="a.154.2/97"> <td><i>South-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/98"> <td></td> <td>Maze/St James/St John's PSs</td> <td>Completed August 2003</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/104"> <td>Board area</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/105"> <td><i>Belfast</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/106"> <td></td> <td>St John's/St Catherine's/ St Gall's PSs, Belfast</td> <td>Estimated completion date 2005</td> </tr>
+			<tr pid="a.154.2/107"> <td></td> <td>St Paul's/St Mary's, Belfast (identified 1998)</td> <td>Amalgamated September 2000</td> </tr>
+			<tr pid="a.154.2/108"> <td></td> <td>Holy Trinity Boys/Holy Trinity Girls, Belfast (identified 1999)</td> <td>Amalgamated September 2000&mdash;operating on both sites pending new build</td> </tr>
+			<tr pid="a.154.2/109"> <td><i>Southern</i></td> <td>Our Lady's/St Mochua's PSs, Keady</td> <td>Completed September 2003</td> </tr>
+			<tr pid="a.154.2/110"> <td></td> <td>Middletown Boys/St Louis Girls/Glassdrummond PSs (identified 1998)</td> <td>Completed June 2001</td> </tr>
+			<tr pid="a.154.2/111"> <td></td> <td>St Joseph's Infants', St Peter's Boys and Sacred Heart Girls PSs, Lurgan</td> <td>Amalgamated September 2001</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2001&ndash;02 School YearControlled Schools</caption>
+		<tbody>
+			<tr pid="a.154.2/117"> <td>Board</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/118"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/119"> <td></td> <td>Bready/Sandville PSs</td> <td>Amalgamated on Bready site August 2002</td> </tr>
+			<tr pid="a.154.2/120"> <td></td> <td>Dervaghroy/Hutton/Sixmilecross PSs</td> <td>Estimated completion 2005</td> </tr>
+			<tr pid="a.154.2/121"> <td><i>South-eastern</i></td> <td>Hillsborough/Newport PSs</td> <td>Due for completion September 2005</td> </tr>
+			<tr pid="a.154.2/122"> <td></td> <td>Clough/Downshire PSs</td> <td>Due for completion August 2005</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2002&ndash;03 School YearControlled schools</caption>
+		<tbody>
+			<tr pid="a.154.2/128"> <td>Board</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/129"> <td><i>South-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/130"> <td></td> <td>Charley Memorial/Lambeg/Hillhall/Drumbo PSs</td> <td>Estimated completion 2006</td> </tr>
+			<tr pid="a.154.2/131"> <td><i>Southern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/132"> <td></td> <td>Annaghmore/Tullyroan PSs</td> <td>Estimated completion 2006</td> </tr>
+			<tr pid="a.154.2/133"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/134"> <td></td> <td>Earl of Erne/Stragowna PSs</td> <td>Amalgamated in new school on Stragowna site March 2003</td> </tr>
+			<tr pid="a.154.2/135"> <td></td> <td>Duke of Westminster High School/Enniskillen High School</td> <td>Amalgamated September 2004, separate sites pending new build</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2003&ndash;04 School YearControlled schools</caption>
+		<tbody>
+			<tr pid="a.154.2/141"> <td>Board</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/142"> <td><i>Belfast</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/143"> <td></td> <td>Sydenham/Strand PSs Belfast</td> <td>Amalgamating September 2005, using existing sites pending new build.</td> </tr>
+			<tr pid="a.154.2/144"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/145"> <td></td> <td>Burnfoot/Dungiven/Largy PSs</td> <td>Estimated completion 2006</td> </tr>
+			<tr pid="a.154.2/146"> <td></td> <td>Heatherbank/Cranny Special</td> <td>Amalgamated September 2004, on split site pending new build</td> </tr>
+			<tr pid="a.154.2/147"> <td></td> <td>Limegrove/Glasvey Special</td> <td>Amalgamated September 2004, on split site pending new build&mdash;estimated completion 2006</td> </tr>
+			<tr pid="a.154.2/148"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/149"> <td></td> <td>Kilcoan/Mullaghdubh PSs (Islandmagee)</td> <td>September 2004&mdash;using existing sites pending new build.</td> </tr>
+			<tr pid="a.154.2/150"> <td><i>South-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/151"> <td></td> <td>Hollywood/Redburn PSs</td> <td>September 2004&mdash;Using existing sites pending new build.</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/157"> <td>Board area</td> <td>Identified for amalgamation</td> <td>Position</td> </tr>
+			<tr pid="a.154.2/158"> <td><i>North-eastern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/159"> <td></td> <td>Amalgamation of four schools: St Louis/St Joseph's/All Saints/St Mary's Ballymena PSs</td> <td>September 2004&mdash;using existing sites pending new build at St Louis and All Saints, estimated completion 2006</td> </tr>
+			<tr pid="a.154.2/160"> <td><i>Western</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/161"> <td></td> <td>Coranny/Cornagague PSs</td> <td>September 2004, amalgamation in new school at Aghadrumsee, estimated completion 2006</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>2004&ndash;05Maintained schools</caption>
+		<tbody>
+			<tr pid="a.154.2/167"> <td>Board area</td> <td>Identified for amalgamation</td> <td>    Position</td> </tr>
+			<tr pid="a.154.2/168"> <td><i>Southern</i></td> <td></td> <td></td> </tr>
+			<tr pid="a.154.2/169"> <td></td> <td>St Mar's Boys/Convent of Mercy PSs, Rostrevor</td> <td>Amalgamating September 2005,on split site pending new build&mdash;estimated completion date: September 2007</td> </tr>
+		</tbody>
+	</table>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.0" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wrans/2005-07-13a.158.0" nospeaker="true" colnum="158"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50713w04.htm#50713w04_wqn0">
 	Police Service of Northern Ireland: Public Processions
 </minor-heading>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.158.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.158.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.4" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.5" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.6" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.7" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.8" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.9" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.159.10" newgid="uk.org.publicwhip/wrans/2005-07-13b.159.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.160.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.160.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.160.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.160.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.160.2" newgid="uk.org.publicwhip/wrans/2005-07-13b.160.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.160.3" newgid="uk.org.publicwhip/wrans/2005-07-13b.160.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.161.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.161.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.161.1" newgid="uk.org.publicwhip/wrans/2005-07-13b.161.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-07-13a.162.0" newgid="uk.org.publicwhip/wrans/2005-07-13b.162.0" matchtype="perfectmatch"/>
 </publicwhip>
 

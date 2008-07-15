@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -54,7 +74,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2004-09-08a.157.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="157"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040908/text/40908w01.htm#40908w01_spnew0">
 	<p pid="a.157.2/1">The International Committee Red Cross (ICRC) has not yet produced a formal UK specific report though we expect it to do so in the near future.</p>
-	<p pid="a.157.2/2">As I said in my Written Answer of <phrase class="date" code="">7 July</phrase> (<i>WA 89&ndash;90</i>), the ICRC's report on the treatment by the coalition forces of prisoners of war and other protected persons by the Geneva Conventions in Iraq during arrest, internment and interrogation, dated <phrase class="date" code="2004-02-10">10 February 2004</phrase>, was a general document. It was formally passed to Ambassador Bremer and Lieutenant General Sanchez on <phrase class="date" code="2006-02-26">26 February</phrase>. The senior British military representative in Iraq passed a copy of the report to Headquarters Multinational Division (South-East) on <phrase class="date" code="2006-02-13">13 February</phrase> and to the permanent joint headquarters on <phrase class="date" code="2006-02-16">16 February</phrase>, and posted a copy to the MoD that arrived on <phrase class="date" code="2006-02-27">27 February</phrase>. A copy of the report was sent to defence Ministers' offices on <phrase class="date" code="2004-05-07">7 May 2004</phrase>.</p>
+	<p pid="a.157.2/2">As I said in my Written Answer of <phrase class="date" code="2004-07-07">7 July</phrase> (<i>WA 89&ndash;90</i>), the ICRC's report on the treatment by the coalition forces of prisoners of war and other protected persons by the Geneva Conventions in Iraq during arrest, internment and interrogation, dated <phrase class="date" code="2004-02-10">10 February 2004</phrase>, was a general document. It was formally passed to Ambassador Bremer and Lieutenant General Sanchez on <phrase class="date" code="2004-02-26">26 February</phrase>. The senior British military representative in Iraq passed a copy of the report to Headquarters Multinational Division (South-East) on <phrase class="date" code="2004-02-13">13 February</phrase> and to the permanent joint headquarters on <phrase class="date" code="2004-02-16">16 February</phrase>, and posted a copy to the MoD that arrived on <phrase class="date" code="2004-02-27">27 February</phrase>. A copy of the report was sent to defence Ministers' offices on <phrase class="date" code="2004-05-07">7 May 2004</phrase>.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2004-09-08a.157.3" nospeaker="true" colnum="157"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040908/text/40908w01.htm#40908w01_wqn1">
@@ -196,7 +216,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2004-09-08a.161.5" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040908/text/40908w02.htm#40908w02_spnew2">
-	<p pid="a.161.5/1">The detailed operation of the national reserve is still being finalised, following the public consultation which ended on <phrase class="date" code="">25 June</phrase>. We are considering the responses received, including representations concerning the position of commercial apple growers, and we will make an announcement on the decisions as soon as possible.</p>
+	<p pid="a.161.5/1">The detailed operation of the national reserve is still being finalised, following the public consultation which ended on <phrase class="date" code="2004-06-25">25 June</phrase>. We are considering the responses received, including representations concerning the position of commercial apple growers, and we will make an announcement on the decisions as soon as possible.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2004-09-08a.161.6" nospeaker="true" inserted-heading="true" colnum="161"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040908/text/40908w02.htm#40908w02_wqn3">

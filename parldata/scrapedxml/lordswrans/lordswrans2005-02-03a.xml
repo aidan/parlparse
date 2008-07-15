@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -227,7 +243,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2005-02-03a.59.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="59"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_spmin0">
-	<p pid="a.59.2/1">Mr Allen wrote to the Prime Minister on <phrase class="date" code="">17 December</phrase> on issues relating to Gulf veterans' illnesses. This letter has been passed to the Ministry of Defence, where the terms of a reply are currently under consideration.</p>
+	<p pid="a.59.2/1">Mr Allen wrote to the Prime Minister on <phrase class="date" code="2005-12-17">17 December</phrase> on issues relating to Gulf veterans' illnesses. This letter has been passed to the Ministry of Defence, where the terms of a reply are currently under consideration.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-03a.59.3" nospeaker="true" colnum="59"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_wqn1">
@@ -240,7 +256,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2005-02-03a.59.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="59"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_spnew0">
-	<p pid="a.59.5/1">We are aware that Russia launched an SS-18 Satan (Russian designation RS-20) ICBM from a silo at Dombarovskiy, southern Russia on <phrase class="date" code="">22 December</phrase>. The missile, which had a dummy payload, flew 6,000 km and impacted on a test range on the Kamchatka Peninsula.</p>
+	<p pid="a.59.5/1">We are aware that Russia launched an SS-18 Satan (Russian designation RS-20) ICBM from a silo at Dombarovskiy, southern Russia on <phrase class="date" code="2005-12-22">22 December</phrase>. The missile, which had a dummy payload, flew 6,000 km and impacted on a test range on the Kamchatka Peninsula.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-03a.60.0" nospeaker="true" inserted-heading="true" colnum="60"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_wqn2">
@@ -253,7 +269,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2005-02-03a.60.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="60"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_spnew1">
-	<p pid="a.60.2/1">We are aware that Russia launched a road-mobile version of the SS-27 ICBM (Topol-M) from the Plesetsk space launch site in northern Russia on <phrase class="date" code="">24 December</phrase>. The missile, which had a dummy payload, flew 6,500 km and impacted on a test range on the Kamchatka Peninsula.</p>
+	<p pid="a.60.2/1">We are aware that Russia launched a road-mobile version of the SS-27 ICBM (Topol-M) from the Plesetsk space launch site in northern Russia on <phrase class="date" code="2005-12-24">24 December</phrase>. The missile, which had a dummy payload, flew 6,500 km and impacted on a test range on the Kamchatka Peninsula.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-03a.60.3" nospeaker="true" colnum="60"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_wqn3">
@@ -266,7 +282,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2005-02-03a.60.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="60"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_spnew2">
-	<p pid="a.60.5/1">Russia routinely conducts test launches of intercontinental ballistic missiles (ICBMs), as part of its programme of maintaining a credible and significant strategic nuclear arsenal. The Russian strategic nuclear forces possess over 3,500 deployed strategic nuclear warheads, made up of some 600 silo-based and mobile ICBMs, armed with more than 2,000 warheads; 200 submarine-launched ballistic missiles (SLBMs) with some 800 warheads; and 700 single warhead air-launched cruise missiles. Under the terms of the Strategic Offensive Reductions Treaty (SORT&mdash;the Treaty of Moscow) ratified by the US and Russia in 2003, Russia will reduce its deployed strategic nuclear warheads from the current level of over 3,500 to between 1,700 and 2,200 by <phrase class="date" code="">31 December 2012</phrase>.</p>
+	<p pid="a.60.5/1">Russia routinely conducts test launches of intercontinental ballistic missiles (ICBMs), as part of its programme of maintaining a credible and significant strategic nuclear arsenal. The Russian strategic nuclear forces possess over 3,500 deployed strategic nuclear warheads, made up of some 600 silo-based and mobile ICBMs, armed with more than 2,000 warheads; 200 submarine-launched ballistic missiles (SLBMs) with some 800 warheads; and 700 single warhead air-launched cruise missiles. Under the terms of the Strategic Offensive Reductions Treaty (SORT&mdash;the Treaty of Moscow) ratified by the US and Russia in 2003, Russia will reduce its deployed strategic nuclear warheads from the current level of over 3,500 to between 1,700 and 2,200 by <phrase class="date" code="2012-12-31">31 December 2012</phrase>.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-03a.61.0" nospeaker="true" colnum="61"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050203/text/50203w02.htm#50203w02_wqn4">

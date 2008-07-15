@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,21 +56,51 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.3" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.4" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.95.5" newgid="uk.org.publicwhip/wrans/2005-06-09b.95.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.3" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.4" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.5" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.6" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.7" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.96.8" newgid="uk.org.publicwhip/wrans/2005-06-09b.96.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.97.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.97.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.97.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.97.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.97.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.97.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.98.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.98.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.98.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.98.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.98.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.98.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.98.3" newgid="uk.org.publicwhip/wrans/2005-06-09b.98.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.98.4" newgid="uk.org.publicwhip/wrans/2005-06-09b.98.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.99.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.99.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.99.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.99.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.99.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.99.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.99.3" newgid="uk.org.publicwhip/wrans/2005-06-09b.99.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.0" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.1" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.2" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.3" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.4" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.5" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.6" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.7" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.7" matchtype="changes"/>
+<ques id="uk.org.publicwhip/wrans/2005-06-09a.100.7" speakerid="uk.org.publicwhip/lord/100794" speakername="Lord Roberts of Llandudno" colon="" colnum="100"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50609w02.htm#50609w02_wqn4">
+	<p pid="a.100.7/1">asked Her Majesty's Government:</p>
+	<p pid="a.100.7/2" qnum="HL276">When the text of the proposed bill concerning changes to the powers of the National Assembly for Wales will be available.</p>
+</ques>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-09a.100.8" newgid="uk.org.publicwhip/wrans/2005-06-09b.100.8" matchtype="perfectmatch"/>
 </publicwhip>
 

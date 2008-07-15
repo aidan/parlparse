@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,44 +56,169 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.51.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.51.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.51.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.51.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.51.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.51.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.51.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.51.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.51.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.51.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.7" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.52.8" newgid="uk.org.publicwhip/wrans/2005-11-07b.52.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.53.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.53.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.54.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="54"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w02.htm#51107w02_spnew0">
+	<p pid="a.54.5/1">The previous consignment of birds in this quarantine facility was formally released on <phrase class="date" code="2005-03-09">9 March 2005</phrase>. The facility was cleansed and disinfected after use. The facility was then unused until the animal of the consignments from which the avian influenza virus was isolated.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.7" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.54.8" newgid="uk.org.publicwhip/wrans/2005-11-07b.54.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.55.5" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="55"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w02.htm#51107w02_spnew3">
+	<p pid="a.55.5/1">Data relating to the average number of days lost due to sick leave in the Civil Service have been collected centrally only since 1998. Copies of these are available in the Library. The published values for each calendar year since that time are shown in the table.</p>
+	<table>
+		<tbody>
+			<tr pid="a.55.5/4"> <td>Year</td> <td>Average Days lost</td> </tr>
+			<tr pid="a.55.5/5"> <td>1998</td> <td>9.8</td> </tr>
+			<tr pid="a.55.5/6"> <td>1999</td> <td>10.1</td> </tr>
+			<tr pid="a.55.5/7"> <td>2000</td> <td>9.9</td> </tr>
+			<tr pid="a.55.5/8"> <td>2001</td> <td>9.2</td> </tr>
+			<tr pid="a.55.5/9"> <td>2002</td> <td>9.8</td> </tr>
+			<tr pid="a.55.5/10"> <td>2003</td> <td>10.0</td> </tr>
+		</tbody>
+	</table>
+	<p pid="a.55.5/13">Results for 2004 are due to be published shortly, and will be available on the Cabinet Office website at <a href="http://www.civilservice.gov.uk/management-of-the-civil-service/conditions-of-service/caje/publications/index.asp">www.civilservice.gov.uk/management&ndash;of&ndash;the&ndash;civil&ndash;service/conditions&ndash;of&ndash;service/caje/publications/index.asp</a>#sickness.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.7" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.55.8" newgid="uk.org.publicwhip/wrans/2005-11-07b.55.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.7" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.8" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.9" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.10" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.56.11" newgid="uk.org.publicwhip/wrans/2005-11-07b.56.11" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.56.11" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="56"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w02.htm#51107w02_spnew7">
+	<p pid="a.56.11/1">The requirements for electrical efficiency were set out in the terms and conditions of the original competition; that is, 36 per cent. electrical efficiency, based on the lower heating value of the fuel as received at the installation, assuming a moisture content of 35 per cent. The output was defined in the grant application submitted by the project developer.</p>
+	<p pid="a.56.11/2">To ensure that the installation will be built according to the description in the proposal the offer letter contains requirements attached to the payment milestones. These are for the independent consultant to certify that the project has first been designed, and then built, essentially as described in the application.</p>
+	<p pid="a.56.11/3">Up to 85 per cent. of the total grant is payable on satisfactory completion of performance tests. Should the installation fail to reach the maximum rated output specified in the proposal, and in the opinion of the independent consultant is unlikely to do so, the department reserves the right to reduce the maximum grant pro-rata to reflect the actual output.</p>
+	<p pid="a.56.11/4">Requirements are amendable but consideration of any amendment would need to ensure that it is in line with the objectives of the scheme and that revisions are not likely to affect the original assessment of the competition and subsequent allocation of funding. We have no plans to amend the electrical efficiency requirement. No grant increase would be made if the applicant exceeds 36 per cent. electrical efficiency.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.57.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="57"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w02.htm#51107w02_spnew8">
+	<p pid="a.57.2/1">The Department for Trade and Industry has received a number of representations commenting on the electrical efficiency of the proposed bio-energy plant.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.57.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.57.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.57.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="57"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w02.htm#51107w02_spnew9">
+	<p pid="a.57.5/1">The inspection arrangements that will apply for the purposes of the licensing arrangements introduced under the Gangmasters (Licensing) Act 2004 have not been finalised. The Gangmasters Licensing Authority is currently consulting on the detailed licensing arrangements and a copy of their consultation paper is on their website (<a href="http://www.gla.gov.uk">www.gla.gov.uk</a>). Comments are required by <phrase class="date" code="2005-12-12">12 December</phrase>. Decisions on the level of inspection will be taken in the light of the responses to the consultation exercise.</p>
+	<p pid="a.57.5/2">The Gangmasters Licensing Authority has proposed that a risk-based approach should be adopted in relation to application and compliance inspections. However, the authority has acknowledged that there may not be sufficient evidence available initially, to move immediately to a risk-based approach for application inspections. The Gangmaster Licensing Authority board has recommended that if there is insufficient evidence to establish a meaningful risk profile from the outset, inspections should be conducted for all applicants for an initial period. A risk-based approach would be introduced at the earliest possible time, as agreed by the board.</p>
+	<p pid="a.57.5/3">The Gangmasters Licensing Authority has proposed that licences should be continuous unless revoked. Renewal will be an administrative process triggered by payment of a fee. The authority has suggested that there will be no need for a specific inspection at renewal although all licence holders will be subject to risk-based compliance checks.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.58.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.58.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.58.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.58.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.58.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.58.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.58.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="58"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w03.htm#51107w03_spmin0">
+	<p pid="a.58.2/1">The EU fully supports the work of Quartet Special Envoy Wolfensohn on the issues outstanding from disengagement. Mr Wolfensohn's rapid action plan includes arrangements for Gaza's borders and crossings and the Gaza seaport and airport. These issues are crucial for the economic development of the Occupied Territories. We have made this clear to the Israeli Government, as has Mr Wolfensohn.</p>
+	<p pid="a.58.2/2">In the context of agreements between the parties on these points, the European Commission is making available support for customs operations at the border, and has provided resources for infrastructure which could be used for the air or sea ports. The <phrase class="date" code="2005-10-03">3 October</phrase> EU General Affairs and External Relations Council re-affirmed the EU's readiness to support Mr Wolfensohn in his efforts and urged the parties to reach agreement on these issues.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.58.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.58.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.58.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.58.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.59.0" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="59"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w03.htm#51107w03_spnew0">
+	<p pid="a.59.0/1">The freeing up of movement between Gaza, the West Bank, Israel and Egypt is essential for Palestinian economic revival. Improved access for people and goods, while maintaining security for Israelis, is crucial for creating a sense of hope for the Palestinian people.</p>
+	<p pid="a.59.0/2">There has been some progress on interim measures for connectivity between Gaza and the West Bank, with agreement on guarded convoys for goods. However, there is not yet agreement for the movement of people or for any permanent arrangement. The Israeli Government and Palestinian Authority are continuing negotiations on the Rafah crossing on the Egypt/Gaza border through the good offices of Quartet Special Envoy Wolfensohn. We urge the Israeli and Palestinian leadership to co-operate in resolving these outstanding issues. Wolfensohn's engagement with the parties and with donors is making a big difference. We, along with the EU, are fully supporting his work. In the context of agreements, between the parties on these points, the European Commission is making available support for customs operations at the border, and has, provided resources for infrastructure which could be used for the air or sea ports.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.59.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.59.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.60.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.60.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.61.2" speakerid="uk.org.publicwhip/lord/100779" speakername="Lord Drayson" colon=":" colnum="61"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w03.htm#51107w03_spnew4">
+	<p pid="a.61.2/1">Acting on legal advice provided by an army legal service officer, Trooper Williams' commanding officer dismissed the charge against him, and did not refer the case to higher authority with a view to trial by court martial. That decision prevented the case being tried in the military justice system.</p>
+	<p pid="a.61.2/2">Following further consideration, and again with the benefit of legal advice from the Army Legal Service, senior army officers decided that the case should be referred to the Attorney-General for the question of a prosecution in a civilian court to be considered. This was possible given the concurrent statutory jurisdiction of the English civilian courts to try alleged homicide offences committed abroad by British subjects.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.61.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.61.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.61.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="61"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w03.htm#51107w03_spnew5">
+	<p pid="a.61.5/1">We acknowledge that the Palestinian Authority (PA) still needs considerable support post-disengagement, and we continue to do all we can to help it. A key Middle East peace process priority of our EU presidency is supporting disengagement and continued reform of Palestinian institutions. The EU is working closely with the Quartet Special Envoy for Disengagement, James Wolfensohn, in order to help realise plans to boost the Palestinian economy post-disengagement.</p>
+	<p pid="a.61.5/2">This financial year the UK plans to spend around &pound;60 million in support for the Palestinians. Around &pound;30 million of this will be in the form of bilateral assistance, with the remainder via our contribution to the EU. We will provide &pound;10 million to strengthen and promote further reform of the PA, through the World Bank Reform Trust Fund. This financial year, nearly &pound;1 million of funding from our global conflict prevention fund has been allocated to support projects aimed at promoting security sector reform. We are also committed to continued and enhanced support for Palestinian civil policing, through the EU Co-ordinating Office for Palestinian Police Support. We stand willing to assist with Legislative Council elections in January if requested by the Palestinians and we have already agreed to fund the supply of the ballot papers.</p>
+	<p pid="a.61.5/3">Stronger institutions are crucial to the success of a future Palestinian state, as is progress on the road map, which we continue to believe is the way forward for both sides.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.6" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.7" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.62.8" newgid="uk.org.publicwhip/wrans/2005-11-07b.62.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.63.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.63.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.3" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.4" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.64.5" newgid="uk.org.publicwhip/wrans/2005-11-07b.64.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-07a.64.5" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="64"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51107w04.htm#51107w04_spnew4">
+	<p pid="a.64.5/1">Our Ambassador in Tashkent, David Moran, has made regular representations on freedom of expression and the treatment of local and international journalists with the Ministry of Foreign Affairs at ministerial and official level. Our Embassy in Tashkent has also made specific representations in relation to the difficulties experienced by the BBC including immediately after the events in Andizhan on 12 and <phrase class="date" code="2005-05-13">13 May</phrase> which led to the deaths of hundreds of civilians, and at the time of Monica Whitlock's departure in June 2005. We have kept in close and active touch with the BBC in the period following Andizhan, both in Tashkent and London. It has been appreciative of our support. Our ambassador recently reassured the head of the BBC monitoring office, which remains in Tashkent, that the welfare of remaining BBC monitoring staff continues to be a high priority.</p>
+	<p pid="a.64.5/2">We issued a presidency statement on <phrase class="date" code="2005-10-25">25 October</phrase> calling on the Uzbek authorities to clarify the charges against Mr Umarov, leader of the opposition Sunshine Coalition, to allow full access by his lawyers and family and to ensure that Mr Umarov is treated according to international standards. Our ambassador also raised his case with First Deputy Minister Mustafayev on <phrase class="date" code="2005-10-26">26 October</phrase>. Our embassy continues to monitor Mr Umarov's case closely and remains in touch with Mr Umarov's family and his lawyer.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.66.0" newgid="uk.org.publicwhip/wrans/2005-11-07b.66.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.66.1" newgid="uk.org.publicwhip/wrans/2005-11-07b.66.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-07a.66.2" newgid="uk.org.publicwhip/wrans/2005-11-07b.66.2" matchtype="perfectmatch"/>
 </publicwhip>
 

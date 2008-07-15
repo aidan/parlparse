@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,47 +56,158 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.145.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.145.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.146.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.146.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.147.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.147.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.147.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.148.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.147.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.6" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-20a.149.6" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="149"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w02.htm#50620w02_spnew1">
+	<p pid="a.149.6/1">The Information Commissioner's target is to resolve 50 per cent of complaints within 60 working days of receipt. Of the 202 cases that had been determined on <phrase class="date" code="1997-06-16">16 June 97</phrase> per cent were dealt within 60 working days.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.8" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.149.9" newgid="uk.org.publicwhip/wrans/2005-06-20b.149.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-20a.150.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="150"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w02.htm#50620w02_spmin1">
+	<p pid="a.150.2/1">The department does not hold all of this information in the form requested. However, the following details will be placed in the House: (a) <a href="/pa/ld200506/ldlwa/050620wa2.pdf">a full list and details of existing designated specialist schools</a>; (b) <a href="/pa/ld200506/ldlwa/050620wa1.pdf">a list and details of those schools which have applied to the programme since October 2002 but have not yet been admitted</a>.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.4" matchtype="changes"/>
+<ques id="uk.org.publicwhip/wrans/2005-06-20a.150.4" speakerid="uk.org.publicwhip/lord/100460" speakername="Baroness Noakes" colon="" colnum="150"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w02.htm#50620w02_wqn5">
+	<p pid="a.150.4/1">asked Her Majesty's Government:</p>
+	<p pid="a.150.4/2" qnum="HL496">Whether the take-up of child trust fund vouchers to date is satisfactory;</p>
+	<p pid="a.150.4/3" qnum="HL497">What assumptions they have made about the number of child trust fund vouchers they expect to have been used to open child trust fund accounts by 30 June 2005, 30 September 2005, 31 December 2005 and 31 March 2006 stating in each case the proportion that such figures represent of the total potential child trust fund accounts.</p>
+</ques>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.150.8" newgid="uk.org.publicwhip/wrans/2005-06-20b.150.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.151.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.151.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-20a.151.5" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="151"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w02.htm#50620w02_spnew5">
+	<p pid="a.151.5/1">The Government regularly review their energy policy and our progress in meeting the four key goals set out in the 2003 Energy White Paper. The Government are currently reviewing the Climate Change Programme and the renewables obligation. The role of combined heat and power (CHP) is being considered as part of both reviews.</p>
+	<p pid="a.151.5/2">CHP plants that burn wood are eligible for support from both the renewables obligation and the climate change levy, reflecting the environmental benefits of this kind of technology.</p>
+	<p pid="a.151.5/3">The Government are undertaking a study on the scope for promoting heat from renewable sources and heat from CHP. In December 2004, DTI and DEFRA commissioned <i>Future Energy Solutions</i> from AEA Technology to estimate the costs of the various technologies used in this market and potential carbon savings. The Government hope to publish the study in due course.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.1" matchtype="changes"/>
+<ques id="uk.org.publicwhip/wrans/2005-06-20a.152.1" speakerid="uk.org.publicwhip/lord/100176" speakername="Lord Dixon-Smith" colon="" colnum="152"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w02.htm#50620w02_wqn9">
+	<p pid="a.152.1/1">asked Her Majesty's Government:</p>
+	<p pid="a.152.1/2" qnum="HL381">How much waste heat, expressed in kilowatt hours, was vented to the atmosphere in England from electricity generating plants during 2004;</p>
+	<p pid="a.152.1/3" qnum="HL382">How much waste heat, expressed in kilowatt hours, was vented to the atmosphere in Wales from electricity generating plants during 2004;</p>
+	<p pid="a.152.1/4" qnum="HL383">How much waste heat, expressed in kilowatt hours, was vented to the atmosphere in Scotland from electricity generating plants during 2004; and</p>
+	<p pid="a.152.1/5" qnum="HL384">How much waste heat, expressed in kilowatt hours, was vented to the atmosphere in Northern Ireland from electricity generating plants during 2004.</p>
+</ques>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.152.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.152.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.153.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.153.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-20a.153.0" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="153"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w03.htm#50620w03_spnew0">
+	<p pid="a.153.0/1">The Medicines and Healthcare products Regulatory Agency (MHRA) has corrected the summary document on its website which reported on the outcome of consultation on the proposal to allow simvastatin 10mg to be sold over the counter. An error occurred which led to the outcome being presented in the summary as two-thirds supporting the switch.</p>
+	<p pid="a.153.0/2">The corrected summary makes clear that about one-third of the responses were supportive, one-third opposed and one-third were not opposed but raised issues. This was the position put to the Committee on Safety of Medicines (CSM), which also had access to the full responses when giving its advice. The consultation raised no new issues not already considered by the CSM when their advice to make the medicine available over the counter was formulated. The error in the summary placed on the website following the announcement of the decision to allow simvastatin 10mg to be sold in pharmacies had no bearing on the robustness of the deliberations of the CSM.</p>
+	<p pid="a.153.0/3">The MHRA has reviewed the outcome of the simvastatin consultation, the handling of the particular exercise and of the internal procedures in place for such consultations. A correction has been made in respect of the website information on simvastatin and all the responses have been made available or summarised electronically on the website. To ensure complete transparency, the MHRA will publish on its website a full list of the responses received to all future reclassification consultations, together with links to the full text of those responses, except where a particular respondent withholds consent. The agency will also avoid summaries in terms of numbers of responses, reflecting the fact that the main purpose of consultation is to identify any new issues of substance not already considered to be addressed.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.153.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.153.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.153.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.153.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.153.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.153.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.154.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.154.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.8" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.9" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.10" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.155.11" newgid="uk.org.publicwhip/wrans/2005-06-20b.155.11" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.156.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.11" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.12" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.157.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.156.13" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-20a.158.0" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="158"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50620w04.htm#50620w04_spnew4">
+	<p pid="a.158.0/1">A scheme to dual the A303 running past Stonehenge in the form of a 2.1 kilometre tunnel, is in the targeted programme of trunk road improvements and was subject to a public inquiry in 2004. We are currently considering the inspector's report and will make an announcement in due course.</p>
+	<p pid="a.158.0/2">In our response to the London to south-west and south Wales multi-modal study in December 2002, we asked the Highways Agency to work up in more detail schemes to widen the other single carriageway sections of the A303 in Wiltshire and Dorset. A decision on the entry of these schemes into the targeted programme of improvements will be taken once we have received the south-west region's advice on its priorities for the funding of transport improvements in the south-west.</p>
+	<p pid="a.158.0/3">As with any major scheme, the Highways Agency has held discussions with regional partners, statutory environmental bodies, local authorities and other key stakeholders and individuals affected by these schemes as they have been progressed through preparatory stages.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.5" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.6" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.7" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.8" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.158.9" newgid="uk.org.publicwhip/wrans/2005-06-20b.158.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.159.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.159.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.159.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.159.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.159.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.159.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.159.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.159.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.159.4" newgid="uk.org.publicwhip/wrans/2005-06-20b.159.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.160.0" newgid="uk.org.publicwhip/wrans/2005-06-20b.160.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.160.1" newgid="uk.org.publicwhip/wrans/2005-06-20b.160.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.160.2" newgid="uk.org.publicwhip/wrans/2005-06-20b.160.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-20a.160.3" newgid="uk.org.publicwhip/wrans/2005-06-20b.160.3" matchtype="perfectmatch"/>
 </publicwhip>
 

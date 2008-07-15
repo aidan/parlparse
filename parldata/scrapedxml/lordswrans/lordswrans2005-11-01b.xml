@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,29 +56,118 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="b" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.9.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.9.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.6" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.7" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.8" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.9" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.10.10" newgid="uk.org.publicwhip/wrans/2005-11-01c.10.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.6" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.7" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.11.8" newgid="uk.org.publicwhip/wrans/2005-11-01c.11.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.12.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.12.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.12.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w01.htm#51101w01_spnew6">
+	<p pid="b.12.0/1">The Government are taking forward a number of reforms intended to minimise miscarriages of justice, both for defendants and victims. These include provisions in the Criminal Justice Act 2003 to ensure that the correct charges are brought, with the Crown Prosecution Service assuming the responsibility for determining the charge in cases other than routine offences. The 2003 Act also amended the provisions governing the disclosure to the defence of unused prosecution material to introduce a new single objective test for disclosure. This should assist in ensuring that relevant material is disclosed to the defence earlier. The independent Criminal Cases Review Comission (CCRC) recently announced that two academics have been given permission to review cases that the CCRC has considered dating back to 1997, when the commission was established. The research includes an examination of expert evidence, with specific reference as to whether changes might assist in avoiding future miscarriages of justice.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.12.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.12.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.12.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.12.2" matchtype="changes"/>
+<ques id="uk.org.publicwhip/wrans/2005-11-01b.12.2" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="12"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_wqn0">
+	<p pid="b.12.2/1">asked Her Majesty's Government:</p>
+	<p pid="b.12.2/2" qnum="HL1798">What progress has been made with the Department of Work and Pensions' feasibility study to determine the measurement of extra costs falling on people with long-term disabilities and their carers.</p>
+</ques>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.12.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.12.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.6" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.7" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.13.8" newgid="uk.org.publicwhip/wrans/2005-11-01c.13.8" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.13.8" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_spnew1">
+	<p pid="b.13.8/1">The Government do not have precise estimates of the cost of providing public services specifically to migrants. In 2002 the Home Office published research into the net fiscal contribution of migrants. This was based on figures for 1999&ndash;2000 and estimated that migrants (defined as foreign born) made a net fiscal contribution of &pound;2.5 billion. This research was recently updated by IPPR based on figures for 2003&ndash;04 (Sriskandarajah, Cooley and Reed: <i>Paying their way: the fiscal contribution of immigrants in the UK</i>, IPPR, London, 2005). This found that migrants (defined as the foreign born) accounted for 9.6 per cent. of the population, yet 1 per cent. of government revenue and only 9.1 percent of government expenditure. The Government do not calculate the capital cost of providing infrastructure as a means of determining the number of immigrants who should be admitted to the UK.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.14.2" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="14"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_spnew2">
+	<p pid="b.14.2/1">The Town and Country Planning (Major Infrastructure Project Inquiries Procedure) (England) Rules 2005 (SI 2005/2115) only came into force on <phrase class="date" code="2005-08-24">24 August</phrase>. Supporting guidance was issued in ODPM Circular 07/2005 which states the new arrangements will be monitored over a five year period and if necessary changes will be considered.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.6" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.14.7" newgid="uk.org.publicwhip/wrans/2005-11-01c.14.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.15.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_spnew3">
+	<p pid="b.15.0/1">The Metropolitan Police Authority has a general duty to secure and maintain an effective and efficient police force in the metropolis. It has a specific duty under the Police Reform Act 2002 to keep itself informed about the nature and handling of all complaints and conduct matters arising in the Metropolitan Police Service. If any disciplinary matters regarding an officer above the rank of chief superintendent arises from the IPCC investigation into the shooting of Jean Charles de Menezes, the Metropolitan Police Authority must deal with them under the Police (Conduct) Regulations 2004. In regards to the complaint against the commissioner of the metropolis, the Metropolitan Police Authority must deal with it, subject to the requirements of the Independent Police Complaints Commission, in accordance with its statutory responsibilities under the Police Reform Act 2002. If the IPCC determines that the complaint must be investigated by the Metropolitan Police Authority, then the authority must refer the matter to the Secretary of State for the Home Department who will nominate a person to conduct the investigation.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.3" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.15.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_spnew4">
+	<p pid="b.15.3/1">I would like to express my deep regret for the tragic death of Mrs Bates, who was killed by an offender subject to a curfew. The Home Office has issued new guidance to make sure that the electronic monitoring service providers respond to all future curfew violations and report them promptly in line with contractual obligations. The company that was responsible for monitoring the offender has altered its own procedures to bring them in to line with our requirements. The Scottish Executive manage a separate contract for electronic monitoring in Scotland. There are no electronic monitoring services in Northern Ireland.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.15.6" newgid="uk.org.publicwhip/wrans/2005-11-01c.15.6" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.15.6" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="15"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w03.htm#51101w03_spnew0">
+	<p pid="b.15.6/1">The information requested with respect to prisons in England and Wales and Northern Ireland is provided in the following table. For the information with respect to Scotland, I refer the noble Lord to the Scottish Executive.</p>
+	<table>
+		<caption>Number of apparent self-inflicted deaths* involving -- prisoners aged 15-17 inclusive)</caption>
+		<tbody>
+			<tr pid="b.15.6/5"> <td>Year</td> <td>Engand and Wales</td> <td>Northern Ireland</td> </tr>
+			<tr pid="b.15.6/6"> <td>1995</td> <td>1</td> <td></td> </tr>
+			<tr pid="b.15.6/7"> <td>1996</td> <td>1</td> <td></td> </tr>
+			<tr pid="b.15.6/8"> <td>1997</td> <td>1</td> <td></td> </tr>
+			<tr pid="b.15.6/9"> <td>1998</td> <td>3</td> <td></td> </tr>
+			<tr pid="b.15.6/10"> <td>1999</td> <td>2</td> <td></td> </tr>
+			<tr pid="b.15.6/11"> <td>2000</td> <td>3</td> <td>1</td> </tr>
+			<tr pid="b.15.6/12"> <td>2001</td> <td>3</td> <td></td> </tr>
+			<tr pid="b.15.6/13"> <td>2002</td> <td>2</td> <td></td> </tr>
+			<tr pid="b.15.6/14"> <td>2003</td> <td></td> <td></td> </tr>
+			<tr pid="b.15.6/15"> <td>2004</td> <td></td> <td></td> </tr>
+		</tbody>
+	</table>
+	<p pid="b.15.6/18">Note:</p>
+	<p pid="b.15.6/19">The term &quot;self-inflicted death&quot; is employed rather than suicide. This includes, all those deaths where it appears the person may have acted specifically to take his/her own life and not only those that receive a &quot;suicide&quot; verdict at inquest.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.0" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.1" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.2" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01b.16.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w03.htm#51101w03_spmin0">
+	<p pid="b.16.2/1">Higher education institutions are autonomous organisations responsible for their own academic direction and provision of courses in the light of student demand. Within that framework, we asked the Higher Education Funding Council for England for advice on how to secure and strengthen subjects of strategic national importance. After considering the views of the higher education sector and others with an interest, we responded formally to that advice on <phrase class="date" code="2005-10-28">28 October</phrase> indicating that we need to maintain national capacity in far eastern languages and areas' studies such as Korean studies. A <a href="/pa/ld200506/ldlwa/51101wa1.pdf">copy of that response</a> has been placed in the Library.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.3" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.4" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.4" matchtype="changes"/>
+<ques id="uk.org.publicwhip/wrans/2005-11-01b.16.4" speakerid="uk.org.publicwhip/lord/100541" speakername="Lord Roberts of Conwy" colon="" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w03.htm#51101w03_wqn2">
+	<p pid="b.16.4/1">asked Her Majesty's Government:</p>
+	<p pid="b.16.4/2" qnum="HL1907">Whether they propose to change the additional member system of proportional representation as it will apply to the elections for the National Assembly of Wales; and, if so, how.</p>
+</ques>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01b.16.5" newgid="uk.org.publicwhip/wrans/2005-11-01c.16.5" matchtype="perfectmatch"/>
 </publicwhip>
 

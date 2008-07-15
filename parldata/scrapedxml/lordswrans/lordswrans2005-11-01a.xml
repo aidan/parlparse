@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,29 +56,78 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.9.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.9.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.6" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.7" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.8" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.9" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.10.10" newgid="uk.org.publicwhip/wrans/2005-11-01b.10.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.6" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.7" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.11.8" newgid="uk.org.publicwhip/wrans/2005-11-01b.11.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.12.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.12.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.12.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.12.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.12.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.12.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.12.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.12.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01a.13.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="13"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w02.htm#51101w02_spmin1">
+	<p pid="a.13.2/1">The Government have not undertaken any studies into the relative merits of subterranean and overhead cables for connecting offshore generation.</p>
+	<p pid="a.13.2/2">To date all power transmission offshore has involved undersea cables. There are a number of severe technical difficulties, which would appear to preclude an overhead pylon system at sea and therefore the feasibility of such a system would be a matter for the electricity industry to consider.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.6" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.7" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.13.8" newgid="uk.org.publicwhip/wrans/2005-11-01b.13.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.6" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.14.7" newgid="uk.org.publicwhip/wrans/2005-11-01b.14.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.15.6" newgid="uk.org.publicwhip/wrans/2005-11-01b.15.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.0" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.1" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.2" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-01a.16.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="16"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51101w03.htm#51101w03_spmin0">
+	<p pid="a.16.2/1">Higher education institutions are autonomous organisations responsible for their own academic direction and provision of courses in the light of student demand. Within that framework, we asked the Higher Education Funding Council for England for advice on how to secure and strengthen subjects of strategic national importance. After considering the views of the higher education sector and others with an interest, we responded formally to that advice on <phrase class="date" code="2005-10-28">28 October</phrase> indicating that we need to maintain national capacity in far eastern languages and areas' studies such as Korean studies. A copy of that response has been placed in the Library.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.3" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.4" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-01a.16.5" newgid="uk.org.publicwhip/wrans/2005-11-01b.16.5" matchtype="perfectmatch"/>
 </publicwhip>
 

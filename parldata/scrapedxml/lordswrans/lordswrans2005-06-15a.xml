@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,44 +56,130 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.127.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.127.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.128.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.128.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.129.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.129.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.130.8" newgid="uk.org.publicwhip/wrans/2005-06-15b.130.8" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-15a.130.8" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="130"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w02.htm#50615w02_spnew0">
+	<p pid="a.130.8/1">The supplementary environmental statement provides additional information on the works and environmental impacts related to certain aspects of the Crossrail project in addition to those reported in the main environmental statement. These are either matters where it was considered necessary to consider variations to the assumptions in the environmental statement, or where further information had became available.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.131.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.131.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.131.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.131.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.131.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.131.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-15a.131.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="131"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w02.htm#50615w02_spnew1">
+	<p pid="a.131.2/1">Section 55 of the Road Traffic Regulation Act 1984, as amended by Section 95 of the Traffic Management Act 2004 and other legislation, sets out the purposes for which surplus income from on-street parking can be used. These are:</p>
+	<p pid="a.131.2/2" class="indent">the making good of any amount charged to the general fund in the four years immediately preceding the financial year in question;</p>
+	<p pid="a.131.2/3" class="indent">meeting all or any part of the cost of provision and maintenance of off-street parking facilities by the local authority; and</p>
+	<p pid="a.131.2/4" class="indent">making to other local authorities or other persons contributions towards the cost of the provision and maintenance by them of off-street parking facilities.</p>
+	<p pid="a.131.2/5">If it appears to the local authority that the provision in its area of further off-street parking accommodation is unnecessary or undesirable, the surplus may be used for following purposes:</p>
+	<p pid="a.131.2/6" class="indent">meeting costs incurred, whether by the local authority or by some other person, in the provision or operation of, or of facilities for, public passenger transport services;</p>
+	<p pid="a.131.2/7" class="indent">the purposes of a highway or road improvement project in the local authority's area;</p>
+	<p pid="a.131.2/8" class="indent">in the case of a London authority; meeting costs incurred by the authority in respect of the maintenance of roads maintained at the public expense by it;</p>
+	<p pid="a.131.2/9" class="indent">the purposes of environmental improvement in the local authority's area; and</p>
+	<p pid="a.131.2/10" class="indent">in the case of such local authorities as may be prescribed, any other purposes for which the authority may lawfully incur expenditure.</p>
+	<p pid="a.131.2/11">In the case of a London authority, meeting all or part of the cost of implementing the London transport strategy and making contributions to other London authorities to undertake works to the above purpose.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.131.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.131.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.131.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.131.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.132.8" newgid="uk.org.publicwhip/wrans/2005-06-15b.132.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.8" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.133.9" newgid="uk.org.publicwhip/wrans/2005-06-15b.133.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-15a.134.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="134"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w03.htm#50615w03_spnew0">
+	<p pid="a.134.2/1">LNG tankers are designed; constructed, maintained and operated in accordance with the code for the construction and equipment of ships carrying liquefied gases in bulk, which addresses safety considerations and practices identified at the International Maritime Organisation (IMO), the United Nations body responsible for international shipping. International safety requirements are reviewed as necessary by the IMO to reflect any changes in best practice or technology, including an assessment of risk. The Maritime and Coastguard Agency (MCA), an executive agency of the Department for Transport, surveys tankers registered in the United Kingdom and inspects foreign-registered tankers visiting UK ports. Parallel survey and inspection arrangements are in place across Europe. The safety of tanker movements within port areas is a matter for statutory harbour authorities.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.134.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.134.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-15a.135.0" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="135"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w03.htm#50615w03_spnew2">
+	<p pid="a.135.0/1">The schemes listed in the Written Answer to Earl Atlee on <phrase class="date" code="2005-05-26">26 May</phrase> (<i>WA 29&ndash;30</i>) predated the multi-modal studies and were not therefore study recommendations. As such I am unable to provide the information requested.</p>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.135.8" newgid="uk.org.publicwhip/wrans/2005-06-15b.135.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.136.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.136.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.136.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.136.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.136.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.136.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.136.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.136.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.137.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.136.3" matchtype="changes"/>
 <minor-heading id="uk.org.publicwhip/wrans/2005-06-15a.137.0" nospeaker="true" colnum="137"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w04.htm#50615w04_wqn0">
 	Government Departments: Open Source Software
 </minor-heading>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.137.0" matchtype="changes"/>
-<minor-heading id="uk.org.publicwhip/wrans/2005-06-15a.138.0" nospeaker="true" colnum="138"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w04.htm#50615w04_wqn1">
-	EU Constitutional Treaty
-</minor-heading>
-<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.137.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.137.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.137.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.137.2" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-06-15a.137.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="137"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/50615w04.htm#50615w04_spnew0">
+	<p pid="a.137.2/1">In July 2002, the Office of the e-envoy published a new policy on the use of open source software (OSS) titled <i>Open Source Software&mdash;Use within UK Government</i>. Among other conclusions, the policy stated that &quot;The UK Government will consider OSS solutions alongside proprietary ones in IT procurements.&quot; The Office of Government Commerce (OGC) published guidance on implementing the policy in September 2002. This recommended updating OGC procurement guidelines to reflect the policy; more advice being made available to all those involved in procurement exercises and discussion with academic research institutions about future research and development.</p>
+	<p pid="a.137.2/2">CSIA&mdash;as the central intelligent customer for information assurance (IA) capability development&mdash;sponsors work at CESG, the UK national technical authority for IA. Among a range of IA capabilities being investigated is the future &quot;trusted computing platform&quot;, including the open source Xen software in development by a team led from Cambridge University.</p>
+	<p pid="a.137.2/3">CSIA is also developing proof-of-concept systems using security enhanced Linux to support remote working and web services.</p>
+	<p pid="a.137.2/4">Funding of formal security evaluation is an issue for any suppliers&mdash;whether of open source or proprietary systems&mdash;as high assurance evaluation is expensive and time consuming by its nature. Nevertheless, Redhat&mdash;a leading supplier of open source software&mdash;has achieved common criteria certification on certain IBM and HP systems to EAL3 and is in evaluation to EAL4 (both for specific system configurations against a particular protection profile).</p>
+	<p pid="a.137.2/5">To address this problem, CSIA has introduced its claims tested mark scheme to achieve a basic level of assurance in a short time frame and at a much lower cost. This scheme will be of benefit to suppliers of open source or proprietary software.</p>
+</reply>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.0" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.1" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.2" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.3" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.4" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.5" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.6" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.7" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-06-15a.138.8" newgid="uk.org.publicwhip/wrans/2005-06-15b.138.8" matchtype="perfectmatch"/>
 </publicwhip>
 

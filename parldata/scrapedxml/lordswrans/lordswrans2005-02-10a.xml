@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -71,7 +87,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2005-02-10a.125.5" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="125"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w01.htm#50210w01_spnew0">
 	<p pid="a.125.5/1">Actions as a consequence of the report are being discussed with Waterways Ireland and until they are agreed it would be inappropriate to comment.</p>
-	<p pid="a.125.5/2">As stated in my Answer of <phrase class="date" code="2006-01-11">11 January</phrase> (<i>Official Report</i>, col. <i>WA 28</i>) the report contains personal information and information provided in confidence and therefore it would be inappropriate to place a copy in the Library.</p>
+	<p pid="a.125.5/2">As stated in my Answer of <phrase class="date" code="2005-01-11">11 January</phrase> (<phrase class="offrep" id="wrans/2005-01-11.28"><i>Official Report</i>, col. WA 28</phrase>) the report contains personal information and information provided in confidence and therefore it would be inappropriate to place a copy in the Library.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-10a.125.6" nospeaker="true" inserted-heading="true" colnum="125"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w01.htm#50210w01_wqn2">
@@ -328,8 +344,8 @@
 
 <reply id="uk.org.publicwhip/wrans/2005-02-10a.132.0" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="132"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w03.htm#50210w03_spnew0">
 	<p pid="a.132.0/1">Government departments collect information on those freedom of information requests (FoI) which are referred to their central practitioners for consideration. Departments are required to monitor such requests and provide details of how they have been dealt with, including whether they were answered in full or refused either in whole or in part, to my department on a quarterly basis. My department will publish its first report on these statistics in late spring 2005.</p>
-	<p pid="a.132.0/2">Because of the general public interest in the volume of FoI requests, my department has undertaken <i>ad hoc</i> surveys of departments on the volume of requests received. A survey carried out on <phrase class="date" code="2006-02-02">2 February</phrase> revealed that a total of 4,532 requests for information had been referred to practitioners within central government departments.</p>
-	<p pid="a.132.0/3">That survey did not ask for information on the numbers of requests refused. However, the FoI practitioner within my Department for Constitutional Affairs received 155 requests to <phrase class="date" code="2006-02-01">1 February</phrase>. Of those that had been answered by <phrase class="date" code="2006-02-01">1 February</phrase>, nine requests were refused either in whole or in part.</p>
+	<p pid="a.132.0/2">Because of the general public interest in the volume of FoI requests, my department has undertaken <i>ad hoc</i> surveys of departments on the volume of requests received. A survey carried out on <phrase class="date" code="2005-02-02">2 February</phrase> revealed that a total of 4,532 requests for information had been referred to practitioners within central government departments.</p>
+	<p pid="a.132.0/3">That survey did not ask for information on the numbers of requests refused. However, the FoI practitioner within my Department for Constitutional Affairs received 155 requests to <phrase class="date" code="2005-02-01">1 February</phrase>. Of those that had been answered by <phrase class="date" code="2005-02-01">1 February</phrase>, nine requests were refused either in whole or in part.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-10a.132.1" nospeaker="true" inserted-heading="true" colnum="132"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w03.htm#50210w03_wqn1">
@@ -343,8 +359,8 @@
 
 <reply id="uk.org.publicwhip/wrans/2005-02-10a.132.3" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="132"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w03.htm#50210w03_spnew1">
 	<p pid="a.132.3/1">Government departments collect information on those freedom of information (FOI) requests which are referred to their central practitioners for consideration. Departments are required to monitor such requests and provide details of how they have been dealt with, including whether the 20 working day deadline has been breached, to my department on a quarterly basis. The DCA will publish its first report on these statistics in late spring 2005.</p>
-	<p pid="a.132.3/2">Because of the general public interest in the volume of FoI requests, my department has undertaken <i>ad hoc</i> surveys of departments on the volume of requests received. A survey carried out on <phrase class="date" code="2006-02-02">2 February</phrase> revealed that a total of 4,532 requests for information had been referred to practitioners within central government departments.</p>
-	<p pid="a.132.3/3">Although that survey did not specifically ask departments for the number of requests where the 20 working day deadline was breached, the great majority of departments confirmed that they would meet the 20 day deadline in the vast majority of cases. None of the requests referred to the FoI practitioner within the Department for Constitutional Affairs and due for answer by <phrase class="date" code="2006-02-01">1 February</phrase> breached the 20 working day deadline, although in one case the deadline was extended to further consider the public interest.</p>
+	<p pid="a.132.3/2">Because of the general public interest in the volume of FoI requests, my department has undertaken <i>ad hoc</i> surveys of departments on the volume of requests received. A survey carried out on <phrase class="date" code="2005-02-02">2 February</phrase> revealed that a total of 4,532 requests for information had been referred to practitioners within central government departments.</p>
+	<p pid="a.132.3/3">Although that survey did not specifically ask departments for the number of requests where the 20 working day deadline was breached, the great majority of departments confirmed that they would meet the 20 day deadline in the vast majority of cases. None of the requests referred to the FoI practitioner within the Department for Constitutional Affairs and due for answer by <phrase class="date" code="2005-02-01">1 February</phrase> breached the 20 working day deadline, although in one case the deadline was extended to further consider the public interest.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-10a.133.0" nospeaker="true" inserted-heading="true" colnum="133"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w03.htm#50210w03_wqn2">
@@ -516,7 +532,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2005-02-10a.136.11" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="136"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w04.htm#50210w04_spnew3">
-	<p pid="a.136.11/1">I refer the noble Baroness to the reply I gave her on <phrase class="date" code="2005-02-02">2 February 2005</phrase> (<i>Official Report</i>, col. <i>WA 49</i>).</p>
+	<p pid="a.136.11/1">I refer the noble Baroness to the reply I gave her on <phrase class="date" code="2005-02-02">2 February 2005</phrase> (<phrase class="offrep" id="wrans/2005-02-02.49"><i>Official Report</i>, col. WA 49</phrase>).</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2005-02-10a.137.0" nospeaker="true" colnum="137"  url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050210/text/50210w04.htm#50210w04_wqn6">

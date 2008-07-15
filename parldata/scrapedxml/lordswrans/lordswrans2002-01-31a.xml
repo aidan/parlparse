@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -123,7 +143,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2002-01-31a.49.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="49"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_spmin3">
-	<p pid="a.49.2/1">I refer the noble Lord to the answer I gave him in the House on <phrase class="date" code="2006-01-24">24 January</phrase> (Official Report, col. 1572&ndash;73).</p>
+	<p pid="a.49.2/1">I refer the noble Lord to the answer I gave him in the House on <phrase class="date" code="2002-01-24">24 January</phrase> (Official Report, col. 1572&ndash;73).</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2002-01-31a.49.3" nospeaker="true" inserted-heading="true" colnum="49"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_wqn5">
@@ -136,7 +156,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2002-01-31a.49.5" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="49"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_spnew1">
-	<p pid="a.49.5/1">As at <phrase class="date" code="2006-01-22">22 January</phrase>, International Committee of the Red Cross (ICRC) delegates had obtained access to all (more than 4,800) detainees in approximately 40 places of detention throughout Afghanistan. On <phrase class="date" code="2006-01-18">18 January</phrase>, ICRC delegates began visiting detainees held at the US naval station at Guantanamo Bay, Cuba, and have since established an indefinite presence there.</p>
+	<p pid="a.49.5/1">As at <phrase class="date" code="2002-01-22">22 January</phrase>, International Committee of the Red Cross (ICRC) delegates had obtained access to all (more than 4,800) detainees in approximately 40 places of detention throughout Afghanistan. On <phrase class="date" code="2002-01-18">18 January</phrase>, ICRC delegates began visiting detainees held at the US naval station at Guantanamo Bay, Cuba, and have since established an indefinite presence there.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2002-01-31a.50.0" nospeaker="true" colnum="50"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_wqn6">
@@ -149,7 +169,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2002-01-31a.50.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="50"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_spnew2">
-	<p pid="a.50.2/1">Ideally, independent observers should be present for as much as possible of the campaign prior to the election, as well as for the voting and counting afterwards. We have been working hard to ensure access for independent observer teams. On <phrase class="date" code="2006-01-28">28 January</phrase>, EU Ministers agreed to impose targeted sanctions against the Government of Zimbabwe, which will be activated if: it prevents deployment of an EU observation mission starting by <phrase class="date" code="2006-02-03">3 February</phrase>; it prevents any such mission from operating effectively; it prevents the international media from having free access to cover the election; there is a serious deterioration in the situation on the ground; the election is assessed by the EU as not being free and fair.</p>
+	<p pid="a.50.2/1">Ideally, independent observers should be present for as much as possible of the campaign prior to the election, as well as for the voting and counting afterwards. We have been working hard to ensure access for independent observer teams. On <phrase class="date" code="2002-01-28">28 January</phrase>, EU Ministers agreed to impose targeted sanctions against the Government of Zimbabwe, which will be activated if: it prevents deployment of an EU observation mission starting by <phrase class="date" code="2002-02-03">3 February</phrase>; it prevents any such mission from operating effectively; it prevents the international media from having free access to cover the election; there is a serious deterioration in the situation on the ground; the election is assessed by the EU as not being free and fair.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2002-01-31a.50.3" nospeaker="true" colnum="50"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w01.htm#20131w01_wqn7">
@@ -200,7 +220,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2002-01-31a.51.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="51"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w02.htm#20131w02_spnew1">
-	<p pid="a.51.5/1">My right honourable friend the Home Secretary's meeting with Mme Guigou on <phrase class="date" code="2006-01-21">21 January</phrase> was extremely constructive and built on the close relationship which has developed on immigration matters between the United Kingdom and French Governments. Amongst the issues discussed was the situation at Sangatte. My right honourable friend made it clear that we were prepared to consider innovative approaches including possible joint initiatives. Bilateral discussions will continue, including at official level.</p>
+	<p pid="a.51.5/1">My right honourable friend the Home Secretary's meeting with Mme Guigou on <phrase class="date" code="2002-01-21">21 January</phrase> was extremely constructive and built on the close relationship which has developed on immigration matters between the United Kingdom and French Governments. Amongst the issues discussed was the situation at Sangatte. My right honourable friend made it clear that we were prepared to consider innovative approaches including possible joint initiatives. Bilateral discussions will continue, including at official level.</p>
 	<p pid="a.51.5/2">My right honourable friend the Home Secretary and Mme Guigou did not discuss the accidental deaths of several potential asylum seekers. Any death in such tragic circumstances is regrettable. However, we do not believe that there is any need for people to take such risks to reach the United Kingdom when, if they are in need of protection, they can apply for asylum in France.</p>
 </reply>
 
@@ -497,7 +517,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2002-01-31a.60.2" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="60"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020131/text/20131w03.htm#20131w03_spnew4">
-	<p pid="a.60.2/1">I refer the noble Lord to the Answer I gave on <phrase class="date" code="2006-01-16">16 January</phrase> (Official Report, WA 168) to the noble Lord, Lord Greaves.</p>
+	<p pid="a.60.2/1">I refer the noble Lord to the Answer I gave on <phrase class="date" code="2002-01-16">16 January</phrase> (Official Report, WA 168) to the noble Lord, Lord Greaves.</p>
 </reply>
 </publicwhip>
 

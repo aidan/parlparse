@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -53,7 +73,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.89.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="89"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w01.htm#41021w01_spmin0">
-	<p pid="a.89.2/1">I refer the noble Lord to the answers I gave him on <phrase class="date" code="2003-04-03">3 April 2003</phrase> (<i>Official Report, col. WA 148</i>) and <phrase class="date" code="2003-04-28">28 April 2003</phrase> (<i>Official Report, col. WA 65</i>). I am withholding the rules of engagement issued to United Kingdom forces in Iraq, in accordance with Exemption 1 (defence, security and international relations) of the Code of Practice on Access to Government Information).</p>
+	<p pid="a.89.2/1">I refer the noble Lord to the answers I gave him on <phrase class="date" code="2003-04-03">3 April 2003</phrase> (<phrase class="offrep" id="wrans/2003-04-03.148">Official Report, col. WA 148</phrase>) and <phrase class="date" code="2003-04-28">28 April 2003</phrase> (<phrase class="offrep" id="wrans/2003-04-28.65">Official Report, col. WA 65</phrase>). I am withholding the rules of engagement issued to United Kingdom forces in Iraq, in accordance with Exemption 1 (defence, security and international relations) of the Code of Practice on Access to Government Information).</p>
 	<p pid="a.89.2/2">I am not in a position to publish the rules of engagement issued to members of coalition armed forces. This is a matter for their governments. I have no doubt, however, that our coalition partners fully understand their obligations to work within the framework of international law.</p>
 </reply>
 
@@ -80,7 +100,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.89.8" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="89"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w01.htm#41021w01_spnew1">
-	<p pid="a.89.8/1">I refer the noble Lord to the answer I gave on <phrase class="date" code="2004-10-11">11 October 2004</phrase> (<i>Official Report, col. WA 10</i>).</p>
+	<p pid="a.89.8/1">I refer the noble Lord to the answer I gave on <phrase class="date" code="2004-10-11">11 October 2004</phrase> (<phrase class="offrep" id="wrans/2004-10-11.10">Official Report, col. WA 10</phrase>).</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2004-10-21a.90.0" nospeaker="true" colnum="90"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w01.htm#41021w01_wqn3">
@@ -106,7 +126,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.90.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="90"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w01.htm#41021w01_spnew3">
-	<p pid="a.90.5/1">We announced the extension to the assessment phase of the future aircraft carrier (CVF) programme and the agreement of the alliance principles with BAe systems and Thales UK on <phrase class="date" code="2004-07-19">19 July 2004</phrase> (<i>Official Report,</i> cols. WS3&ndash;4). Positive discussions with industry are ongoing to agree the detailed alliance arrangements and we are also drawing up a comprehesive plan for the CVF programme through to delivery, which will include the construction of the vessels. Our target in-service dates (ISD) remain 2012 and 2015. The main investment decision for the demonstration and manufacture phases is planned for 2005.</p>
+	<p pid="a.90.5/1">We announced the extension to the assessment phase of the future aircraft carrier (CVF) programme and the agreement of the alliance principles with BAe systems and Thales UK on <phrase class="date" code="2004-07-19">19 July 2004</phrase> (<phrase class="offrep" id="wms/2004-07-19.3"><i>Official Report,</i> cols. WS3&ndash;4</phrase>). Positive discussions with industry are ongoing to agree the detailed alliance arrangements and we are also drawing up a comprehesive plan for the CVF programme through to delivery, which will include the construction of the vessels. Our target in-service dates (ISD) remain 2012 and 2015. The main investment decision for the demonstration and manufacture phases is planned for 2005.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2004-10-21a.90.6" nospeaker="true" colnum="90"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w01.htm#41021w01_wqn5">
@@ -295,7 +315,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.95.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="95"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w02.htm#41021w02_spnew5">
 	<p pid="a.95.2/1">The Government accepted, subject to the security situation, the recommendation in the Patten report that &quot;the future police service should not include a Full Time Reserve&quot;.</p>
-	<p pid="a.95.2/2">Following a review by the Chief Constable, he announced his decision on the future of the full-time reserve on <phrase class="date" code="">9 September</phrase>, at a special meeting of the Northern Ireland Policing Board. 680 officers of the current establishment of 1,487 will be retained on a three year contract from <phrase class="date" code="2005-04-01">1 April 2005</phrase>. The remaining officers will be released in a phased manner across an 18-month period. The Chief Constable made entirely clear that his decision was taken on operational grounds. The Government fully support the decision.</p>
+	<p pid="a.95.2/2">Following a review by the Chief Constable, he announced his decision on the future of the full-time reserve on <phrase class="date" code="2004-09-09">9 September</phrase>, at a special meeting of the Northern Ireland Policing Board. 680 officers of the current establishment of 1,487 will be retained on a three year contract from <phrase class="date" code="2005-04-01">1 April 2005</phrase>. The remaining officers will be released in a phased manner across an 18-month period. The Chief Constable made entirely clear that his decision was taken on operational grounds. The Government fully support the decision.</p>
 	<p pid="a.95.2/3">The Government recognise the major contribution that members of the reserve have made to the maintenance of law and order in Northern Ireland and the high price that they and many of their families have had to pay in doing so.</p>
 	<p pid="a.95.2/4">The Government have agreed that officers who leave the reserve will be entitled to a generous severance package that will provide substantial financial benefits and access to extensive retraining opportunities. The provision of an extensive period of paid retraining will enable all officers to explore new opportunities more fully.</p>
 </reply>
@@ -323,7 +343,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.96.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="96"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w03.htm#41021w03_spnew0">
-	<p pid="a.96.3/1">Armagh Integrated College opened on <phrase class="date" code="">1 September</phrase>, in temporary premises on the second floor of the Old City Hospital Building in Armagh with an enrolment of 50. This fulfilled the minimum enrolment viability criteria for new grant-maintained post-primary schools (a minimum of 50 pupils taking up allocated places in year 8). Thirty-two per cent of the pupils are Protestant and 62 per cent are Roman Catholic. Schools in Northern Ireland are funded on a financial year basis and the school will receive recurrent (i.e. local management of schools (LMS)) funding of some &pound;150,000 for the period September 2004 to March 2005. The school will not be eligible for capital grant until it has established its longer-term viability, usually over a three-year period.</p>
+	<p pid="a.96.3/1">Armagh Integrated College opened on <phrase class="date" code="2004-09-01">1 September</phrase>, in temporary premises on the second floor of the Old City Hospital Building in Armagh with an enrolment of 50. This fulfilled the minimum enrolment viability criteria for new grant-maintained post-primary schools (a minimum of 50 pupils taking up allocated places in year 8). Thirty-two per cent of the pupils are Protestant and 62 per cent are Roman Catholic. Schools in Northern Ireland are funded on a financial year basis and the school will receive recurrent (i.e. local management of schools (LMS)) funding of some &pound;150,000 for the period September 2004 to March 2005. The school will not be eligible for capital grant until it has established its longer-term viability, usually over a three-year period.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2004-10-21a.96.4" nospeaker="true" colnum="96"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w03.htm#41021w03_wqn1">
@@ -499,7 +519,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2004-10-21a.100.5" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="100"  url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021w04.htm#41021w04_spnew2">
 	<p pid="a.100.5/1">In England, 15 recipients of whole blood products were notified in December 2003 of their possible increased risk of variant Creutzfeldt-Jakob disease.</p>
-	<p pid="a.100.5/2">For recipients of plasma products, the patient notification exercise was started on <phrase class="date" code="">21 September</phrase>, and is still in progress. For people with haemophilia, patient records need to be examined to see which plasma products they have received since 1980. Clinicians treating these patients are currently examining records for around 6,000 people. This will take some time to complete. There are no data available yet on how many of those people have been notified.</p>
+	<p pid="a.100.5/2">For recipients of plasma products, the patient notification exercise was started on <phrase class="date" code="2004-09-21">21 September</phrase>, and is still in progress. For people with haemophilia, patient records need to be examined to see which plasma products they have received since 1980. Clinicians treating these patients are currently examining records for around 6,000 people. This will take some time to complete. There are no data available yet on how many of those people have been notified.</p>
 	<p pid="a.100.5/3">It is estimated that there are currently about 3,000 people with haemophilia who are infected with hepatitis C through contaminated blood and blood products.</p>
 	<p pid="a.100.5/4">For people outside this group, individual risk assessments need to be completed once patients have been identified as being a recipient of an affected product. Trusts are working with the Health Protection Agency to trace recipients and complete risk assessments. This exercise is expected to take several months. There are no data available yet on numbers of people who may need to be notified.</p>
 </reply>

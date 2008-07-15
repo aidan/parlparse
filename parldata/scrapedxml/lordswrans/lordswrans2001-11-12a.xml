@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -254,7 +273,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.52.9" speakerid="uk.org.publicwhip/lord/100688" speakername="Lord Williams of Mostyn" colon=":" colnum="52"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w01.htm#11112w01_spnew3">
-	<p pid="a.52.9/1">The Northern Ireland Human Rights Commission issued an advance copy of the consultation document Making a Bill of Rights for Northern Ireland to the Secretary of State for Northern Ireland on <phrase class="date" code="">31 August</phrase> this year. The Government expect to receive the commission's formal proposals around March 2002.</p>
+	<p pid="a.52.9/1">The Northern Ireland Human Rights Commission issued an advance copy of the consultation document Making a Bill of Rights for Northern Ireland to the Secretary of State for Northern Ireland on <phrase class="date" code="2001-08-31">31 August</phrase> this year. The Government expect to receive the commission's formal proposals around March 2002.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-11-12a.53.0" nospeaker="true" inserted-heading="true" colnum="53"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w02.htm#11112w02_wqn0">
@@ -280,7 +299,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.53.5" speakerid="uk.org.publicwhip/lord/100688" speakername="Lord Williams of Mostyn" colon=":" colnum="53"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w02.htm#11112w02_spnew1">
-	<p pid="a.53.5/1">The social, economic and environmental rights to which the noble Lord refers appear in a consultation document published by the commission on <phrase class="date" code="">4 September</phrase> this year as part of the commission's consultation exercise to enable it to advise the Government on the scope for a Bill of Rights for Northern Ireland. The Government expect to receive formal recommendations from the commission next spring. Any such recommendations will be considered carefully by the Government in respect of the particular circumstances of Northern Ireland, as outlined in the Good Friday agreement.</p>
+	<p pid="a.53.5/1">The social, economic and environmental rights to which the noble Lord refers appear in a consultation document published by the commission on <phrase class="date" code="2001-09-04">4 September</phrase> this year as part of the commission's consultation exercise to enable it to advise the Government on the scope for a Bill of Rights for Northern Ireland. The Government expect to receive formal recommendations from the commission next spring. Any such recommendations will be considered carefully by the Government in respect of the particular circumstances of Northern Ireland, as outlined in the Good Friday agreement.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-11-12a.53.6" nospeaker="true" inserted-heading="true" colnum="53"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w02.htm#11112w02_wqn2">
@@ -408,7 +427,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.57.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="57"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_spnew0">
-	<p pid="a.57.2/1">Draft guidance, containing our proposals to implement free nursing care was issued for consultation, together with a press release, in July. The Department of Health has produced a leaflet, NHS Funded Nursing Care in Nursing Homes&mdash;What it means for you, a guide for people living in or going into nursing homes, their families and their carers to coincide with the implementation of free nursing care for those funding their own care from <phrase class="date" code="">1 October</phrase>. Primary care trusts, health authorities and councils are distributing these to nursing homes, residents, their families and carers. National Health Service nurses will also have the opportunity to explain the scheme face-to-face when individual determinations of the registered nursing care contribution are carried out. The public can also obtain information from NHS Direct and, in the south-west of England, from Care Direct.</p>
+	<p pid="a.57.2/1">Draft guidance, containing our proposals to implement free nursing care was issued for consultation, together with a press release, in July. The Department of Health has produced a leaflet, NHS Funded Nursing Care in Nursing Homes&mdash;What it means for you, a guide for people living in or going into nursing homes, their families and their carers to coincide with the implementation of free nursing care for those funding their own care from <phrase class="date" code="2001-10-01">1 October</phrase>. Primary care trusts, health authorities and councils are distributing these to nursing homes, residents, their families and carers. National Health Service nurses will also have the opportunity to explain the scheme face-to-face when individual determinations of the registered nursing care contribution are carried out. The public can also obtain information from NHS Direct and, in the south-west of England, from Care Direct.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-11-12a.57.3" nospeaker="true" colnum="57"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_wqn1">
@@ -434,7 +453,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.57.8" speakerid="uk.org.publicwhip/lord/100052" speakername="Baroness Blackstone" colon=":" colnum="57"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_spmin0">
-	<p pid="a.57.8/1">The abolition of the Welsh Sunday opening polls requires the repeal of Sections 67 and 68 of, and Schedule 8 to, the Licensing Act 1964. Polls only need to be held in 2003 if 500 electors in any Welsh district requisition one. It has been the policy of successive governments to abolish these polls and we have indicated our readiness to do so as part of the general reform and modernisation of alcohol licensing law. However, as it was not possible to include a licensing reform Bill in the legislative programme announced on <phrase class="date" code="">20 June</phrase> for this Session of Parliament, it may not be possible to abolish the polls by means of primary legislation before they are next due in 2003. The Government are therefore presently considering whether or not it would be lawful and appropriate to amend the law by means of a regulatory reform order under the terms of the Regulatory Reform Act 2001. However, no final decision has yet been made as to whether to seek such an order.</p>
+	<p pid="a.57.8/1">The abolition of the Welsh Sunday opening polls requires the repeal of Sections 67 and 68 of, and Schedule 8 to, the Licensing Act 1964. Polls only need to be held in 2003 if 500 electors in any Welsh district requisition one. It has been the policy of successive governments to abolish these polls and we have indicated our readiness to do so as part of the general reform and modernisation of alcohol licensing law. However, as it was not possible to include a licensing reform Bill in the legislative programme announced on <phrase class="date" code="2001-06-20">20 June</phrase> for this Session of Parliament, it may not be possible to abolish the polls by means of primary legislation before they are next due in 2003. The Government are therefore presently considering whether or not it would be lawful and appropriate to amend the law by means of a regulatory reform order under the terms of the Regulatory Reform Act 2001. However, no final decision has yet been made as to whether to seek such an order.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-11-12a.58.0" nospeaker="true" colnum="58"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_wqn3">
@@ -460,7 +479,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.58.5" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="58"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_spmin1">
-	<p pid="a.58.5/1">All Ministers in the department were made aware of the receipt of a near-final draft report from my noble friend Lord Haskins shortly after that draft was received on <phrase class="date" code="">2 October</phrase>. Lord Haskins continued to have meetings, such as with the regional development agencies, after that date and made subsequent changes in his draft report.</p>
+	<p pid="a.58.5/1">All Ministers in the department were made aware of the receipt of a near-final draft report from my noble friend Lord Haskins shortly after that draft was received on <phrase class="date" code="2001-10-02">2 October</phrase>. Lord Haskins continued to have meetings, such as with the regional development agencies, after that date and made subsequent changes in his draft report.</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-11-12a.58.6" nospeaker="true" colnum="58"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_wqn5">
@@ -536,7 +555,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2001-11-12a.61.0" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="61"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011112/text/11112w03.htm#11112w03_spnew7">
 	<p pid="a.61.0/1">(a) There are 42 designated UK border inspection posts (BIPs), 30 of which are approved to deal with food imports; 10 take only products not for human consumption and 2 only live animals.</p>
-	<p pid="a.61.0/2">(b) European Commission veterinary experts carry out inspections to border inspection posts in each member state on a regular basis, taking in a number (but not all) of the BIPs during any one visit. They completed an inspection of BIPs in the UK on <phrase class="date" code="">26 October</phrase> this year but have not yet produced a report.</p>
+	<p pid="a.61.0/2">(b) European Commission veterinary experts carry out inspections to border inspection posts in each member state on a regular basis, taking in a number (but not all) of the BIPs during any one visit. They completed an inspection of BIPs in the UK on <phrase class="date" code="2001-10-26">26 October</phrase> this year but have not yet produced a report.</p>
 	<p pid="a.61.0/3">(c) The Food Standards Agency's audit programme of local authorities commenced on <phrase class="date" code="2001-04-01">1 April 2001</phrase> and copies of reports on local authorities that have been audited are available on the agency's website (<a href="http://www.foodstandards.gov.uk">www.foodstandards.gov.uk</a>).</p>
 	<p pid="a.61.0/4">(d) All official veterinary surgeons responsible for border inspection posts undergo training organised by the Department for Environment, Food and Rural Affairs (DEFRA) on the import control requirements and we are currently setting up refresher courses. Checks at BIPs on legally presented consignments identify and prevent import of some 1,400 consignments a year (2.7 per cent of total consignments presented) that do not conform with Community requirements. DEFRA and the appropriate enforcement bodies are looking at the control measures to improve our ability to detect and prevent illegal imports of animal products outside BIPs. Amendments have been made to our national legislation to make it easier for local authorities to act when illegally imported animal products are found. Amendments to national legislation to provide enforcement authorities with wider powers to stop and inspect commercial consignments and personal baggage to reduce the risk of animal products being imported illegally are also being considered.</p>
 </reply>

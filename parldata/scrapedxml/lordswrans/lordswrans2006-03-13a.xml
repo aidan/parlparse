@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,62 +56,391 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="a" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.179.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.179.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.180.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.180.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.181.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.181.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.182.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.182.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.183.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.183.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.184.9" newgid="uk.org.publicwhip/wrans/2006-03-13b.184.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.185.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.185.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.186.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.186.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.187.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.187.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.188.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.188.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.189.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.189.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.189.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.189.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.189.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.189.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.189.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.189.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.189.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.189.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.190.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.190.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.191.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.191.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.192.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.192.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.192.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.192.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.192.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.192.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.192.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.192.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.192.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.192.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.193.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.193.0" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2006-03-13a.193.0" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="193"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60313w04.htm#60313w04_spmin7">
+	<p pid="a.193.0/1">Since 2001 additional and replacement cardiac catheter laboratories have been funded as part of the implementation of the national service framework through two main programmes:</p>
+	<p pid="a.193.0/2">The Big Lottery Fund programme: an allocation of &pound;125 million to fund 90 additional and replacement laboratories. This programme formally ended in December 2005.</p>
+	<p pid="a.193.0/3">Treasury-funded cardiac capital programme: a national cardiac capital programme of some &pound;600 million to achieve major capital developments&mdash;mainly in tertiary cardiac centres across the country. Capital developments generally include a range of facilities that may include catheter laboratories, cardiac theatres, critical care beds, ward beds and outpatients facilities.</p>
+	<p pid="a.193.0/4">The summary position for catheter laboratories for each of the programmes is as follows.</p>
+	<table>
+		<tbody>
+			<tr pid="a.193.0/7"> <td>Schemes which are:</td> <td>Big Lottery Fund</td> <td>Major Capital Programme</td> <td>Total&mdash;Both Programmes</td> </tr>
+			<tr pid="a.193.0/8"> <td>(a)   now in service (See Note A)</td> <td>90</td> <td>13</td> <td>103</td> </tr>
+			<tr pid="a.193.0/9"> <td>(b)   currently in the course of</td> </tr>
+			<tr pid="a.193.0/10"> <td>construction</td> <td>0</td> <td>16</td> <td>16</td> </tr>
+			<tr pid="a.193.0/11"> <td>(c)   yet to commence construction</td> <td>0</td> <td>18</td> <td>18</td> </tr>
+			<tr pid="a.193.0/12"> <td>Total Catheter Laboratories</td> <td>90</td> <td>47</td> <td>137</td> </tr>
+		</tbody>
+	</table>
+	<p pid="a.193.0/15">Note A: For some catheter laboratories construction is complete but the laboratories are still in the process of being commissioned.</p>
+	<p pid="a.193.0/16">The location of the catheter laboratories in each of the programmes is set out in the following tables (Table 1 for the Big Lottery Fund programme, Table 2 for the Treasury-funded cardiac capital programme).</p>
+	<table>
+		<caption>Table 1&mdash;Big Lottery Fund&mdash;Cardiac Catheter Laboratories&mdash;now in service (for some construction is complete but they are still being commissioned)</caption>
+		<tbody>
+			<tr pid="a.193.0/20"> <td>Strategic Health Authority</td> <td>Trust</td> <td>Total</td> </tr>
+			<tr pid="a.193.0/21"> <td>Avon, Gloucestershire and Wiltshire</td> <td>Gloucestershire Hospitals NHS Foundation Trust</td> <td>2</td> </tr>
+			<tr pid="a.193.0/22"> <td></td> <td>Royal United Hospital Bath NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/23"> <td></td> <td>Swindon and Marlborough NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/24"> <td>Avon, Gloucestershire and Wiltshire Total</td> <td></td> <td>4 </td> </tr>
+			<tr pid="a.193.0/25"> <td>Bedfordshire and Hertfordshire</td> <td>Bedford Hospital NHS Trust</td> </tr>
+			<tr pid="a.193.0/26"> <td>East and North Hertfordshire NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/27"> <td>1</td> </tr>
+			<tr pid="a.193.0/28"> <td></td> <td>West Hertfordshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/29"> <td>1</td> </tr>
+			<tr pid="a.193.0/30"> <td>Bedfordshire and Hertfordshire Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/31"> <td>3 </td> </tr>
+			<tr pid="a.193.0/32"> <td>Birmingham and the Black Country</td> <td>Birmingham Heartlands and Solihull NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/33"> <td></td> <td>Sandwell and West Birmingham Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/34"> <td>2</td> </tr>
+			<tr pid="a.193.0/35"> <td></td> <td>University Hospital Birmingham NHS Foundation Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/36"> <td></td> <td>Walsall Hospitals NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/37"> <td>Birmingham and the Black Country Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/38"> <td>5 </td> </tr>
+			<tr pid="a.193.0/39"> <td>Cheshire and Merseyside</td> <td>Aintree Hospitals NHS Trust Cardiothoracic Centre&mdash;Liverpool NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/40"> <td>1</td> </tr>
+			<tr pid="a.193.0/41"> <td></td> <td>Countess of Chester Hospital NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/42"> <td>1</td> </tr>
+			<tr pid="a.193.0/43"> <td></td> <td>North Cheshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/44"> <td>1</td> </tr>
+			<tr pid="a.193.0/45"> <td>Cheshire and Merseyside Total</td> <td></td> <td>4 </td> </tr>
+			<tr pid="a.193.0/46"> <td>County Durham and Tees Valley</td> <td>County Durham and Darlington NHS Trust</td> <td>2</td> </tr>
+			<tr pid="a.193.0/47"> <td></td> <td>North Tees and Hartlepool NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/48"> <td>County Durham and Tees Valley Total</td> <td></td> <td>3 </td> </tr>
+			<tr pid="a.193.0/49"> <td>Cumbria and Lancashire</td> <td>Blackburn Hyndburn and Ribble Valley Healthcare NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/50"> <td></td> <td>Blackpool, Fylde and Wyre Hospitals NHST</td> <td>1</td> </tr>
+			<tr pid="a.193.0/51"> <td></td> <td>Morecambe Bay Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/52"> <td>1</td> </tr>
+			<tr pid="a.193.0/53"> <td>Cumbria and Lancashire Total</td> <td></td> <td>3</td> </tr>
+			<tr pid="a.193.0/54"> <td>Essex</td> <td>Basildon and Thurrock University Hospital NHS Foundation Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/55"> <td></td> <td>Mid Essex Hospital Services NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/56"> <td></td> <td>Princess Alexandra Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/57"> <td>1</td> </tr>
+			<tr pid="a.193.0/58"> <td>Essex Total</td> <td></td> <td>3 </td> </tr>
+			<tr pid="a.193.0/59"> <td>Greater Manchester</td> <td>Central Manchester and Manchester Children's University Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/60"> <td>1</td> </tr>
+			<tr pid="a.193.0/61"> <td></td> <td>Pennine Acute NHS Trust</td> <td>2</td> </tr>
+			<tr pid="a.193.0/62"> <td></td> <td>Stockport NHS Foundation Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/63"> <td></td> <td>Wrightington, Wigan and Leigh NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/64"> <td>Greater Manchester Total</td> <td></td> <td>5 </td> </tr>
+			<tr pid="a.193.0/65"> <td>Hampshire and Isle of Wight</td> <td>Portsmouth Hospitals NHS Trust</td> </tr>
+			<tr pid="a.193.0/66"> <td>Southampton University Hospitals NHS Trust</td> <td>1<br/>    <br/>    1</td> </tr>
+			<tr pid="a.193.0/67"> <td>Hampshire and Isle of Wight Total</td> <td></td> <td>2 </td> </tr>
+			<tr pid="a.193.0/68"> <td>Kent and Medway</td> <td>East Kent Hospitals NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/69"> <td></td> <td>The Medway NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/70"> <td>Kent and Medway Total</td> <td></td> <td>2 </td> </tr>
+			<tr pid="a.193.0/71"> <td>Leicestershire, Northamptonshire and Rutland</td> <td></td> </tr>
+			<tr pid="a.193.0/72"> <td>University Hospitals of Leicester NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/73"> <td></td> </tr>
+			<tr pid="a.193.0/74"> <td>1</td> </tr>
+			<tr pid="a.193.0/75"> <td>Leicestershire, Northamptonshire and Rutland Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/76"> <td></td> </tr>
+			<tr pid="a.193.0/77"> <td>1 </td> </tr>
+			<tr pid="a.193.0/78"> <td>Norfolk, Suffolk and Cambridgeshire</td> <td>Papworth Hospital NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/79"> <td>1</td> </tr>
+			<tr pid="a.193.0/80"> <td></td> <td>Peterborough and Stamford Hospitals NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/81"> <td>1</td> </tr>
+			<tr pid="a.193.0/82"> <td></td> <td>The Ipswich Hospital NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/83"> <td>Norfolk, Suffolk and Cambridgeshire Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/84"> <td>3 </td> </tr>
+			<tr pid="a.193.0/85"> <td>North and East Yorkshire and Northern Lincolnshire</td> <td>Hull and East Yorkshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/86"> <td>2</td> </tr>
+			<tr pid="a.193.0/87"> <td></td> <td>Northern Lincolnshire and Goole Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/88"> <td>1</td> </tr>
+			<tr pid="a.193.0/89"> <td></td> <td>York Hospitals NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/90"> <td>North and East Yorkshire and Northern Lincolnshire Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/91"> <td></td> </tr>
+			<tr pid="a.193.0/92"> <td>4</td> </tr>
+			<tr pid="a.193.0/93"> <td>North East London</td> <td>Barking, Havering and Redbridge Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/94"> <td></td> <td>Barts and The London NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/95"> <td>1</td> </tr>
+			<tr pid="a.193.0/96"> <td></td> <td>Bart's and The London NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/97"> <td>1</td> </tr>
+			<tr pid="a.193.0/98"> <td></td> <td>Whipps Cross University Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/99"> <td>3</td> </tr>
+			<tr pid="a.193.0/100"> <td>North East London Total</td> <td></td> <td>6 </td> </tr>
+			<tr pid="a.193.0/101"> <td>North West London</td> <td>Ealing Hospital NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/102"> <td></td> <td>Royal Brompton and Harefield NHS Trust</td> <td>4</td> </tr>
+			<tr pid="a.193.0/103"> <td></td> <td>St Mary's Hospital NHS Trust</td> <td>2</td> </tr>
+			<tr pid="a.193.0/104"> <td>North West London Total</td> <td></td> <td>7 </td> </tr>
+			<tr pid="a.193.0/105"> <td>Northumberland, Tyne and Wear</td> <td>City Hospitals Sunderland NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/106"> <td>1</td> </tr>
+			<tr pid="a.193.0/107"> <td></td> <td>Northumbria Healthcare NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/108"> <td>1</td> </tr>
+			<tr pid="a.193.0/109"> <td>Northumberland, Tyne and Wear Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/110"> <td>2 </td> </tr>
+			<tr pid="a.193.0/111"> <td>Shropshire and Staffordshire</td> <td>Mid Staffordshire General Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/112"> <td>1</td> </tr>
+			<tr pid="a.193.0/113"> <td></td> <td>University Hospital of North Staffordshire NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/114"> <td>1</td> </tr>
+			<tr pid="a.193.0/115"> <td>Shropshire and Staffordshire Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/116"> <td>2 </td> </tr>
+			<tr pid="a.193.0/117"> <td>Somerset and Dorset</td> <td>Royal Bournemouth and Christchurch Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/118"> <td>1</td> </tr>
+			<tr pid="a.193.0/119"> <td></td> <td>West Dorset General Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/120"> <td>1</td> </tr>
+			<tr pid="a.193.0/121"> <td>Somerset and Dorset Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/122"> <td>2 </td> </tr>
+			<tr pid="a.193.0/123"> <td>South East London</td> <td>Guys and St Thomas's NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/124"> <td>1</td> </tr>
+			<tr pid="a.193.0/125"> <td></td> <td>King's College Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/126"> <td>2</td> </tr>
+			<tr pid="a.193.0/127"> <td>South East London Total</td> <td></td> <td>3 </td> </tr>
+			<tr pid="a.193.0/128"> <td>South West Peninsula</td> <td>Royal Cornwall Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/129"> <td>1</td> </tr>
+			<tr pid="a.193.0/130"> <td></td> <td>Royal Devon and Exeter Healthcare NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/131"> <td>1</td> </tr>
+			<tr pid="a.193.0/132"> <td></td> <td>South Devon Healthcare NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/133"> <td>1</td> </tr>
+			<tr pid="a.193.0/134"> <td>South West Peninsula Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/135"> <td>3 </td> </tr>
+			<tr pid="a.193.0/136"> <td>South Yorkshire</td> <td>Doncaster and Bassetlaw Hospitals NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/137"> <td>1</td> </tr>
+			<tr pid="a.193.0/138"> <td></td> <td>Rotherham General Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/139"> <td>1</td> </tr>
+			<tr pid="a.193.0/140"> <td></td> <td>Sheffield Teaching Hospitals NHS Foundation Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/141"> <td>1</td> </tr>
+			<tr pid="a.193.0/142"> <td>South Yorkshire Total</td> <td></td> <td>3 </td> </tr>
+			<tr pid="a.193.0/143"> <td>Surrey and Sussex</td> <td>East Sussex Hospitals NHS Trust</td> <td>2</td> </tr>
+			<tr pid="a.193.0/144"> <td></td> <td>Frimley Park Hospital NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/145"> <td></td> <td>Surrey and Sussex Healthcare NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/146"> <td>1</td> </tr>
+			<tr pid="a.193.0/147"> <td></td> <td>The Royal West Sussex NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/148"> <td>1</td> </tr>
+			<tr pid="a.193.0/149"> <td></td> <td>Worthing and Southlands Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/150"> <td>1</td> </tr>
+			<tr pid="a.193.0/151"> <td>Surrey and Sussex Total</td> <td></td> <td>6 </td> </tr>
+			<tr pid="a.193.0/152"> <td>Thames Valley</td> <td>Buckinghamshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/153"> <td>1</td> </tr>
+			<tr pid="a.193.0/154"> <td></td> <td>Heatherwood and Wexham Park Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/155"> <td>1</td> </tr>
+			<tr pid="a.193.0/156"> <td></td> <td>Milton Keynes General Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/157"> <td>1</td> </tr>
+			<tr pid="a.193.0/158"> <td></td> <td>Royal Berkshire and Battle Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/159"> <td>1</td> </tr>
+			<tr pid="a.193.0/160"> <td>Thames Valley Total</td> <td></td> <td>4 </td> </tr>
+			<tr pid="a.193.0/161"> <td>Trent</td> <td>Chesterfield and North Derbyshire Royal Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/162"> <td>1</td> </tr>
+			<tr pid="a.193.0/163"> <td></td> <td>Nottingham City Hospital NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/164"> <td>1</td> </tr>
+			<tr pid="a.193.0/165"> <td></td> <td>Sherwood Forest Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/166"> <td>1</td> </tr>
+			<tr pid="a.193.0/167"> <td></td> <td>The United Lincolnshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/168"> <td>1</td> </tr>
+			<tr pid="a.193.0/169"> <td>Trent Total</td> <td></td> <td>4 </td> </tr>
+			<tr pid="a.193.0/170"> <td>West Midlands South</td> <td>South Warwickshire General Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/171"> <td>1</td> </tr>
+			<tr pid="a.193.0/172"> <td></td> <td>Worcestershire Acute Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/173"> <td>1</td> </tr>
+			<tr pid="a.193.0/174"> <td>West Midlands South Total</td> <td></td> <td></td> </tr>
+			<tr pid="a.193.0/175"> <td>2 </td> </tr>
+			<tr pid="a.193.0/176"> <td>West Yorkshire</td> <td>Airedale NHS Trust</td> <td>1</td> </tr>
+			<tr pid="a.193.0/177"> <td></td> <td>The Leeds Teaching Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/178"> <td>1</td> </tr>
+			<tr pid="a.193.0/179"> <td></td> <td>The Mid Yorkshire Hospitals NHS Trust</td> <td></td> </tr>
+			<tr pid="a.193.0/180"> <td>2</td> </tr>
+			<tr pid="a.193.0/181"> <td>West Yorkshire Total</td> <td></td> <td>4 </td> </tr>
+			<tr pid="a.193.0/182"> <td>Grand Total</td> <td></td> <td>90</td> </tr>
+		</tbody>
+	</table>
+	<table>
+		<caption>Table 2&mdash;Treasury funded cardiac capital programme&mdash;cardiac catheter laboratories&mdash;now in service, in course of construction and yet to commence construction</caption>
+		<tbody>
+			<tr pid="a.193.0/188"> <td>Current Position</td> <td>Strategic Health Authority</td> <td>Location</td> <td>Total</td> </tr>
+			<tr pid="a.193.0/189"> <td><i>Now in Service</i></td> </tr>
+			<tr pid="a.193.0/190"> <td></td> <td>Birmingham &amp; Black Country</td> <td>Wolverhampton</td> <td>2</td> </tr>
+			<tr pid="a.193.0/191"> <td></td> <td>County Durham &amp; Tees Valley</td> <td>South Tees</td> <td>1</td> </tr>
+			<tr pid="a.193.0/192"> <td></td> <td>Dorset &amp; Somerset</td> <td>Bournemouth</td> <td>2</td> </tr>
+			<tr pid="a.193.0/193"> <td></td> <td>Greater Manchester</td> <td>Central Manchester</td> <td>1</td> </tr>
+			<tr pid="a.193.0/194"> <td></td> <td>Kent &amp; Medway</td> <td>Kent</td> <td>1</td> </tr>
+			<tr pid="a.193.0/195"> <td></td> <td>Leicester, Northants &amp; Rutland</td> <td>Leicester</td> <td>1</td> </tr>
+			<tr pid="a.193.0/196"> <td></td> <td>Norfolk, Suffolk &amp; Cambridgeshire</td> <td>Papworth Expansion</td> <td>2</td> </tr>
+			<tr pid="a.193.0/197"> <td></td> <td>Trent</td> <td>Nottingham City</td> <td>2</td> </tr>
+			<tr pid="a.193.0/198"> <td></td> <td>West Yorkshire</td> <td>Bradford</td> <td>1</td> </tr>
+			<tr pid="a.193.0/199"> <td><i>Now in Service Total</i></td> <td></td> <td></td> <td></td> <td>13 <br/>   <i>In course of construction</i></td> </tr>
+			<tr pid="a.193.0/200"> <td></td> <td>Cheshire &amp; Merseyside</td> <td>Liverpool</td> <td>1</td> </tr>
+			<tr pid="a.193.0/201"> <td></td> <td>Cumbria &amp; Lancashire</td> <td>Blackpool</td> <td>2</td> </tr>
+			<tr pid="a.193.0/202"> <td></td> <td>Essex</td> <td>Essex</td> <td>3</td> </tr>
+			<tr pid="a.193.0/203"> <td></td> <td>Hampshire &amp; Isle of Wight</td> <td>Southampton</td> <td>5</td> </tr>
+			<tr pid="a.193.0/204"> <td></td> <td>Kent &amp; Medway</td> <td>Kent</td> <td>3</td> </tr>
+			<tr pid="a.193.0/205"> <td></td> <td>South Yorkshire</td> <td>Sheffield</td> <td>2</td> </tr>
+			<tr pid="a.193.0/206"> <td><i>In course of construction Total</i></td> <td></td> <td></td> <td></td> <td>16 <br/>   <i>Yet to Commence Construction</i>      </td> </tr>
+			<tr pid="a.193.0/207"> <td></td> <td>Avon, Gloucestershire &amp; Wiltshire</td> <td>Bristol</td> <td>6</td> </tr>
+			<tr pid="a.193.0/208"> <td></td> <td>Dorset &amp; Somerset</td> <td>Taunton</td> <td>1</td> </tr>
+			<tr pid="a.193.0/209"> <td></td> <td>Greater Manchester</td> <td>South Manchester</td> <td>1</td> </tr>
+			<tr pid="a.193.0/210"> <td></td> <td>Leicester, Northants &amp; Rutland</td> <td>Northampton</td> <td>1</td> </tr>
+			<tr pid="a.193.0/211"> <td></td> <td>NE Yorkshire &amp;</td> </tr>
+			<tr pid="a.193.0/212"> <td>N Lincolnshire</td> <td>Hull Castlehill</td> <td>2</td> </tr>
+			<tr pid="a.193.0/213"> <td></td> <td>Northumberland Tyne &amp; Weir</td> <td>Newcastle</td> <td>2</td> </tr>
+			<tr pid="a.193.0/214"> <td></td> <td>Thames Valley</td> <td>Oxford</td> <td>4</td> </tr>
+			<tr pid="a.193.0/215"> <td></td> <td>West Yorkshire</td> <td>Leeds</td> <td>1</td> </tr>
+			<tr pid="a.193.0/216"> <td><i>Yet to Commence Construction Total</i></td> <td></td> <td></td> <td></td> <td>18 </td> </tr>
+			<tr pid="a.193.0/217"> <td>TOTAL</td> <td></td> <td></td> <td>47</td> </tr>
+		</tbody>
+	</table>
+</reply>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.197.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.197.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.9" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.198.10" newgid="uk.org.publicwhip/wrans/2006-03-13b.198.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.199.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.199.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.200.9" newgid="uk.org.publicwhip/wrans/2006-03-13b.200.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.201.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.201.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.201.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.201.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.201.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.201.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.202.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.202.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.202.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.202.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.202.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.202.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.202.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.202.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.202.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.202.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.2" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.3" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.4" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.5" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.5" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.6" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.7" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.8" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.8" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.203.9" newgid="uk.org.publicwhip/wrans/2006-03-13b.203.9" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.204.0" newgid="uk.org.publicwhip/wrans/2006-03-13b.204.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.204.1" newgid="uk.org.publicwhip/wrans/2006-03-13b.204.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2006-03-13a.204.2" newgid="uk.org.publicwhip/wrans/2006-03-13b.204.2" matchtype="perfectmatch"/>
 </publicwhip>
 

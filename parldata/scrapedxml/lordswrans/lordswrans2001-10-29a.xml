@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -86,10 +105,10 @@
 
 <reply id="uk.org.publicwhip/wrans/2001-10-29a.144.3" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="144"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029w01.htm#11029w01_spnew1">
 	<p pid="a.144.3/1">The United Kingdom already has stringent laws against money laundering and terrorist financing, as do the Crown dependencies, but is committed to further strengthening these.</p>
-	<p pid="a.144.3/2">The Proceeds of Crime Bill, introduced to Parliament on <phrase class="date" code="">18 October</phrase>, would consolidate and extend the current law on money laundering offences.</p>
-	<p pid="a.144.3/3">In his Statement on <phrase class="date" code="">15 October</phrase>, in another place, my right honourable friend the Home Secretary announced that the Government are looking urgently at a package of anti-terrorist measures, including measures to combat the financing of terrorism.</p>
-	<p pid="a.144.3/4">The Government are also taking action to strengthen anti-money laundering regulation. On <phrase class="date" code="">15 October</phrase>, my right honourable friend the Chancellor of the Exchequer announced measures for a new regulatory regime for bureaux de change and other money service businesses, designated to reduce the exploitation of that sector for money laundering.</p>
-	<p pid="a.144.3/5">Under the Financial Services and Markets Act 2000, the Financial Services Authority (FAS) will have the combating of financial crime as one of its four statutory objectives. In fulfilling this, the FSA has issued money laundering rules which will come into force on <phrase class="date" code="">30 November</phrase>.</p>
+	<p pid="a.144.3/2">The Proceeds of Crime Bill, introduced to Parliament on <phrase class="date" code="2001-10-18">18 October</phrase>, would consolidate and extend the current law on money laundering offences.</p>
+	<p pid="a.144.3/3">In his Statement on <phrase class="date" code="2001-10-15">15 October</phrase>, in another place, my right honourable friend the Home Secretary announced that the Government are looking urgently at a package of anti-terrorist measures, including measures to combat the financing of terrorism.</p>
+	<p pid="a.144.3/4">The Government are also taking action to strengthen anti-money laundering regulation. On <phrase class="date" code="2001-10-15">15 October</phrase>, my right honourable friend the Chancellor of the Exchequer announced measures for a new regulatory regime for bureaux de change and other money service businesses, designated to reduce the exploitation of that sector for money laundering.</p>
+	<p pid="a.144.3/5">Under the Financial Services and Markets Act 2000, the Financial Services Authority (FAS) will have the combating of financial crime as one of its four statutory objectives. In fulfilling this, the FSA has issued money laundering rules which will come into force on <phrase class="date" code="2001-11-30">30 November</phrase>.</p>
 	<p pid="a.144.3/6">The Crown dependencies and overseas territories have committed themselves to introduce appropriate measures against terrorist financing equivalent to those in the United Kingdom.</p>
 </reply>
 
@@ -124,7 +143,7 @@
 
 <reply id="uk.org.publicwhip/wrans/2001-10-29a.145.6" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="145"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029w01.htm#11029w01_spmin1">
 	<p pid="a.145.6/1">The Government intend to propose that a private sector company limited by guarantee should succeed Railtrack. The new company would be financially sound and structured so that it would achieve at least a BBB--and potentially higher--investment grade credit rating as the basis to raise debt finance.</p>
-	<p pid="a.145.6/2">The new company would be entitled to receive its revenue from track access payments from train operators, property income and the network grants from the SRA agreed as part of the Rail Regulator's October 2000 periodic review and the <phrase class="date" code="2006-04-02">2 April</phrase> agreement between Railtrack and government. We are confident that these income sources, combined with an investment grade credit rating of at least BBB--and potentially higher--would enable the new company to raise the necessary level of finance at reasonable cost.</p>
+	<p pid="a.145.6/2">The new company would be entitled to receive its revenue from track access payments from train operators, property income and the network grants from the SRA agreed as part of the Rail Regulator's October 2000 periodic review and the <phrase class="date" code="2001-04-02">2 April</phrase> agreement between Railtrack and government. We are confident that these income sources, combined with an investment grade credit rating of at least BBB--and potentially higher--would enable the new company to raise the necessary level of finance at reasonable cost.</p>
 	<p pid="a.145.6/3">The new company would operate with much lower risks than Railtrack, concentrating on the exisiting network. The company would also be provided with an adequate level of reserves to act as a buffer for performance risks. It is anticipated that these reserves would accumulate over time as the company makes surpluses, but that the company could also have access to a standby loan facility from the Government. This would be a contingent facility, use of which would be enshrined in a contract to provide support in specified circumstances and for a capped amount. It would not amount to a Government guarantee.</p>
 </reply>
 
@@ -166,7 +185,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-10-29a.148.0" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="148"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029w02.htm#11029w02_spnew1">
-	<p pid="a.148.0/1">I refer the noble Lord to my Answer of <phrase class="date" code="">24 October</phrase>, [Official Report, WA 130-31].</p>
+	<p pid="a.148.0/1">I refer the noble Lord to my Answer of <phrase class="date" code="2001-10-24">24 October</phrase>, [Official Report, WA 130-31].</p>
 </reply>
 
 <minor-heading id="uk.org.publicwhip/wrans/2001-10-29a.148.1" nospeaker="true" colnum="148"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029w02.htm#11029w02_wqn2">
@@ -179,7 +198,7 @@
 </ques>
 
 <reply id="uk.org.publicwhip/wrans/2001-10-29a.148.3" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="148"  url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029w02.htm#11029w02_spmin0">
-	<p pid="a.148.3/1">The Government's substantive response to the report of the BSE inquiry was published on <phrase class="date" code="">28 September</phrase>. A copy was deposited in the Library of the House. We refer the noble Lord to chapter 5 of the response which deals with openness, together with the issues of risk and uncertainty. The chapter sets out what the Government have done so far on openness, risk and uncertainty and includes a number of concrete examples. The chapter also outlines the Government's plans for future action.</p>
+	<p pid="a.148.3/1">The Government's substantive response to the report of the BSE inquiry was published on <phrase class="date" code="2001-09-28">28 September</phrase>. A copy was deposited in the Library of the House. We refer the noble Lord to chapter 5 of the response which deals with openness, together with the issues of risk and uncertainty. The chapter sets out what the Government have done so far on openness, risk and uncertainty and includes a number of concrete examples. The chapter also outlines the Government's plans for future action.</p>
 </reply>
 </publicwhip>
 

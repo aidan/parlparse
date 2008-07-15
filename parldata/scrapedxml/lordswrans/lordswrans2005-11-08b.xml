@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,20 +56,56 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
 <publicwhip scrapeversion="b" latest="no">
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.0" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.1" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.2" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.3" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.4" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.67.5" newgid="uk.org.publicwhip/wrans/2005-11-08c.67.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.0" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.1" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.2" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.3" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.4" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.5" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.6" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.68.7" newgid="uk.org.publicwhip/wrans/2005-11-08c.68.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.69.0" newgid="uk.org.publicwhip/wrans/2005-11-08c.69.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.0" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.1" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.2" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.3" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.4" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.5" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.6" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.6" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.7" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.7" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.8" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.8" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.9" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.9" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.10" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.10" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.70.11" newgid="uk.org.publicwhip/wrans/2005-11-08c.70.11" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.0" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.1" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.2" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.3" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.3" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.4" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.4" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2005-11-08b.71.5" newgid="uk.org.publicwhip/wrans/2005-11-08c.71.5" matchtype="changes"/>
+<reply id="uk.org.publicwhip/wrans/2005-11-08b.71.5" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="71"  url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds05/text/51108w02.htm#51108w02_spnew3">
+	<p pid="b.71.5/1">The United Kingdom ratified the United Nations Convention on the Rights of the Child on <phrase class="date" code="1991-12-16">16 December 1991</phrase>. It came into force in the UK on <phrase class="date" code="1992-01-15">15 January 1992</phrase>.</p>
+	<p pid="b.71.5/2">This Answer covers the UK's two reservations on immigration and the separation of young offenders as well as under-eighteens serving in the Armed Forces, which were the subject of discussion on <phrase class="date" code="2005-10-19">19 October</phrase>.</p>
+	<p pid="b.71.5/3">With regard to immigration, the Government have carefully reviewed the reservation in light of recent requests that it should be withdrawn. We believe that it is necessary to retain this reservation which makes it clear that nothing in the convention is to be interpreted as affecting the operation of UK immigration and nationality legislation. The UK has entered other, similar reservations in respect of other human rights instruments.</p>
+	<p pid="b.71.5/4">However, no child will be denied their human rights as guaranteed by the Human Rights Act when in the UK. We have also worked hard on proposing new measures to address some specific and practical issues relating to children. For example, a White Paper in 2002 proposed that specially trained immigration staff will be able to interview children about their asylum claims in a wider set of circumstances than at present. This will give officials a greater understanding of children's background and circumstances and help them better determine appropriate levels of care.</p>
+	<p pid="b.71.5/5">In addition, as I explained in the House of Lords on <phrase class="date" code="2005-10-19">19 October</phrase>, the level of support for children here as part of an asylum seeking family is equivalent to that provided for children in families on income support. The full support package includes fully furnished accommodation, associated utility bills and council tax is paid for centrally. The total support package is roughly equivalent to income support levels.</p>
+	<p pid="b.71.5/6">The dispersal of unaccompanied asylum seeking children is not automatic. The Government will not generally seek to disperse those who have been in care and for whom a decision on their asylum claim has not been made. The cases of other unaccompanied young asylum seekers are judged on merit&mdash;they may not, for example, be dispersed if they are already in full-time education or if they have younger siblings in care.</p>
+	<p pid="b.71.5/7">With regard to detaining under-eighteens in the same accommodation with adults, I should like to stress that we are doing all that we can to be in. a position to be able to withdraw the reservation about custody and accommodation, if following review, we decide that this is desirable. We have made good progress in this field. We are building four new separate facilities for 17 year-old girls; one opened in December 2004 and a second in September 2005. The other two are due to open shortly.</p>
+	<p pid="b.71.5/8">In terms of under-eighteens serving in the Armed Forces, we have made excellent progress since ratification of the UNCRC. The UK ratified the optional protocol (OP) to the UNCRC on the involvement of children in armed conflict on <phrase class="date" code="2003-06-24">24 June 2003</phrase>, subject to a declaration. The declaration states that the UK will take all feasible measures to ensure that members of its Armed Forces who are under 18 do not take a direct part in hostilities. However, the UK understands that the OP does not exclude the deployment of under-eighteens where there is a genuine military need to deploy a unit or ship to an area where hostilities are taking place or the urgency and nature of the situation merits their involvement.</p>
+	<p pid="b.71.5/9">Work has focused on reviewing the Armed Forces' policies and practice for the recruitment, employment and deployment of under-eighteens to ensure that they accord with the requirements of the OP. In addition, all possible steps are taken to ensure that no serviceman or servicewoman under 18 is deployed on operations unless it is purely for humanitarian reasons. No applicant under 18 years of age may join the Armed Forces unless the application is accompanied by the formal written consent of his/her parent or guardian.</p>
+	<p pid="b.71.5/10">Commanding Officers take their responsibilities towards all their people extremely seriously. They are well aware of the particular welfare needs of younger recruits and trainees, even if they are not formally in <i>loco parentis</i>. The Ministry of Defence (MoD) recognises the vital role parents play in support of their children both before and after they have joined the Armed Forces. The MoD makes continual efforts to engage with parents and encourage trainees to keep in touch with home.</p>
+</reply>
 </publicwhip>
 
