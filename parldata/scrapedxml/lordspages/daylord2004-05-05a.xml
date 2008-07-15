@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -47,7 +68,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1097.1" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1097"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_spmin0">
-	<p pid="a.1097.1/1">My Lords, before business begins, may I take this opportunity to inform the House that I shall be attending a ministerial visit to Jersey on <phrase class="date" code="">Monday 10 May</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
+	<p pid="a.1097.1/1">My Lords, before business begins, may I take this opportunity to inform the House that I shall be attending a ministerial visit to Jersey on <phrase class="date" code="2004-05-10">Monday 10 May</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-05-05a.1097.2" nospeaker="true" colnum="1097"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_head1">
@@ -56,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1097.3" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="1097"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_spopq0">
 	<p pid="a.1097.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1097.3/2" class="indent">How The Medicines for Human Use (Clinical Trials) Regulations 2004 (S.I. 2004/1031), laid before the House on <phrase class="date" code="">1 April</phrase>, will change the law in relation to the protection of patients and their right to decline to be used in clinical trials.</p>
+	<p pid="a.1097.3/2" class="indent" pwmotiontext="asked">How The Medicines for Human Use (Clinical Trials) Regulations 2004 (S.I. 2004/1031), laid before the House on <phrase class="date" code="2004-04-01">1 April</phrase>, will change the law in relation to the protection of patients and their right to decline to be used in clinical trials.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1097.4" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="1097"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_spmin1">
@@ -127,7 +148,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1099.6" speakerid="uk.org.publicwhip/lord/100641" speakername="Lord Tombs" colon="" colnum="1099"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_spopq1">
 	<p pid="a.1099.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1099.6/2" class="indent">What is their estimate of the likely total cumulative cost to electricity customers, by the end of 2010, 2015 and 2020 respectively, of the Government's renewable energy strategy, assuming that the target for 2010 and the aspiration for 2020 are both met.</p>
+	<p pid="a.1099.6/2" class="indent" pwmotiontext="asked">What is their estimate of the likely total cumulative cost to electricity customers, by the end of 2010, 2015 and 2020 respectively, of the Government's renewable energy strategy, assuming that the target for 2010 and the aspiration for 2020 are both met.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1099.7" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="1099"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-01.htm#40505-01_spmin2">
@@ -217,7 +238,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1102.5" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="1102"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-02.htm#40505-02_spopq0">
 	<p pid="a.1102.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1102.5/2" class="indent">Whether the security and crowd control arrangements being made for the Euro 2004 football championships in Portugal are expected to be sufficient.</p>
+	<p pid="a.1102.5/2" class="indent" pwmotiontext="asked">Whether the security and crowd control arrangements being made for the Euro 2004 football championships in Portugal are expected to be sufficient.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1102.6" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1102"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-02.htm#40505-02_spnew17">
@@ -265,7 +286,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1104.3" speakerid="uk.org.publicwhip/lord/100389" speakername="Lord Lyell" colon=":" colnum="1104"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spnew5">
-	<p pid="a.1104.3/1">My Lords, how long does the banning order last&mdash;as long as England's participation or until <phrase class="date" code="">4 July</phrase>?</p>
+	<p pid="a.1104.3/1">My Lords, how long does the banning order last&mdash;as long as England's participation or until <phrase class="date" code="2004-07-04">4 July</phrase>?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1104.4" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1104"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spnew6">
@@ -294,7 +315,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1105.2" speakerid="uk.org.publicwhip/lord/100261" speakername="Lord Grenfell" colon="" colnum="1105"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spopq0">
 	<p pid="a.1105.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1105.2/2" class="indent">Whether, in light of the enlargement of the European Union to 25 member states, they will now press for reform of the Union's institutions as a matter of urgency.</p>
+	<p pid="a.1105.2/2" class="indent" pwmotiontext="asked">Whether, in light of the enlargement of the European Union to 25 member states, they will now press for reform of the Union's institutions as a matter of urgency.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1105.3" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1105"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spmin0">
@@ -306,7 +327,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1105.5" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1105"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spnew12">
-	<p pid="a.1105.5/1">My Lords, we are placing in the Library of the House copies of the presidency's proposals that were issued last week. I understand and hope that they are being copied and placed there this afternoon. They include provisions on the formation of the Council. We also expect that there will be a wider-ranging discussion on the institutional proposals and, I hope, a further presidency paper in the context of the General Affairs Council on 17 and <phrase class="date" code="">18 June</phrase>. We will make those documents available to Parliament and I hope that they will be available in advance of the Council meeting in June.</p>
+	<p pid="a.1105.5/1">My Lords, we are placing in the Library of the House copies of the presidency's proposals that were issued last week. I understand and hope that they are being copied and placed there this afternoon. They include provisions on the formation of the Council. We also expect that there will be a wider-ranging discussion on the institutional proposals and, I hope, a further presidency paper in the context of the General Affairs Council on 17 and <phrase class="date" code="2004-06-18">18 June</phrase>. We will make those documents available to Parliament and I hope that they will be available in advance of the Council meeting in June.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1105.6" speakerid="uk.org.publicwhip/lord/100417" speakername="Lord Marsh" colon=":" colnum="1105"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spnew13">
@@ -326,7 +347,7 @@
 	<p pid="a.1106.1/2" class="indent">&quot;shift from the Commission to member states&quot;.</p>
 	<p pid="a.1106.1/3">It also said that the treaty would reform the European Parliament and,</p>
 	<p pid="a.1106.1/4" class="indent">&quot;make a contribution to democratic accountability&quot;.</p>
-	<p pid="a.1106.1/5">The fact is that judgments differ on this draft treaty, as the noble Lord well knows. I suggest to him that those judgments will continue to differ for some considerable time, but we will have a terrific opportunity to debate the matter on <phrase class="date" code="">11 May</phrase>. I have no doubt that the noble Lord will be there to make his points.</p>
+	<p pid="a.1106.1/5">The fact is that judgments differ on this draft treaty, as the noble Lord well knows. I suggest to him that those judgments will continue to differ for some considerable time, but we will have a terrific opportunity to debate the matter on <phrase class="date" code="2004-05-11">11 May</phrase>. I have no doubt that the noble Lord will be there to make his points.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1106.2" speakerid="uk.org.publicwhip/lord/100686" speakername="Baroness Williams of Crosby" colon=":" colnum="1106"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-03.htm#40505-03_spnew17">
@@ -374,7 +395,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1108.1" speakerid="uk.org.publicwhip/lord/100094" speakername="Baroness Buscombe" colon="" colnum="1108"  time="015:10:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-04.htm#40505-04_spopq0">
 	<p pid="a.1108.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1108.1/2" class="indent">What steps they are taking to inform the public about recent terrorist threats and how to react in the event of an emergency.</p>
+	<p pid="a.1108.1/2" class="indent" pwmotiontext="asked">What steps they are taking to inform the public about recent terrorist threats and how to react in the event of an emergency.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1108.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1108"  time="015:10:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-04.htm#40505-04_spnew4">
@@ -662,7 +683,7 @@
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1138.0" speakerid="uk.org.publicwhip/lord/100603" speakername="Lord Smith of Leigh" colon=":" colnum="1138"  time="016:57:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-06.htm#40505-06_spnew4">
 	<p pid="a.1138.0/1">My Lords, I wonder whether when my noble friend Lady Thornton tabled this topic for debate she expected such a wide-ranging discussion. I congratulate my noble friend Lord Hoyle on the success of Warrington Wolves on their community activities. I am only relieved that they are not as successful on the pitch, which is why I shall be attending the Rugby League Cup Final with Wigan rather than he with Warrington.</p>
 	<p pid="a.1138.0/2">I begin by declaring my interest as the leader of Wigan local authority. Your Lordships will not be surprised to learn that I am a committed localist and a strong advocate of supporting local communities through local government. It is essential that local government works in partnership with local communities, local and other agencies and central government. We all use the word &quot;partnership&quot;. It is easy to use but difficult to achieve because it means that everyone has to give up a little. But the result is success and we need to learn that.</p>
-	<p pid="a.1138.0/3">I want to celebrate the fact that there are local variations. We are not a unitary state and people are different in different parts of the country. Local and central government have a shared objective in improving public services to hard-pressed local communities and local authorities are key in achieving that for three reasons. First, they are accountable to local people. Their accountability is partly through the ballot box. The mind is sharpened by the approach of <phrase class="date" code="">10 June</phrase>&mdash;or in my case perhaps <phrase class="date" code="">26 May</phrase> when, as your Lordships agreed to a postal ballot for the North West, the ballot papers will be issued. Accountability is more than through the ballot box. It means that we must be available to our local communities throughout the year and we must ensure that we can work in partnership.</p>
+	<p pid="a.1138.0/3">I want to celebrate the fact that there are local variations. We are not a unitary state and people are different in different parts of the country. Local and central government have a shared objective in improving public services to hard-pressed local communities and local authorities are key in achieving that for three reasons. First, they are accountable to local people. Their accountability is partly through the ballot box. The mind is sharpened by the approach of <phrase class="date" code="2004-06-10">10 June</phrase>&mdash;or in my case perhaps <phrase class="date" code="2004-05-26">26 May</phrase> when, as your Lordships agreed to a postal ballot for the North West, the ballot papers will be issued. Accountability is more than through the ballot box. It means that we must be available to our local communities throughout the year and we must ensure that we can work in partnership.</p>
 	<p pid="a.1138.0/4">The second reason is that local government is committed to its local area and understands their needs. Councillors must live in the area. They are part of those communities and understand what local areas need.</p>
 	<p pid="a.1138.0/5">Thirdly, local government can take a holistic and strategic approach to tackling local problems. My noble friend Lady Massey talked about drugs. Locally, there are so many different facets to the drugs problem. It affects health&mdash;my noble friend's particular concern&mdash;crime and anti-social behaviour and family stability. Locally, only the local authority can pull all of those issues together. As the leader of a local authority I have always believed that local government has a duty to do what we are supposed to be doing&mdash;to deliver as well as we can the services for which we have direct responsibilities.</p>
 	<p pid="a.1138.0/6">I have to acknowledge the Government's contribution to improving the relationship with local authorities. As I was elected to local government in 1978, I experienced the period which began in 1979 of the Thatcher and Major governments. I know what it was like then and what their attitudes were to local government, particularly to Labour local government.</p>
@@ -963,7 +984,7 @@
 	<p pid="a.1177.0/1">My Lords, it is always a great pleasure to follow the noble Lord, Lord Desai, particularly when he is in one of his philosophical moods. He epitomises the non-deferential society to which the noble Viscount, Lord Chandos, referred in opening and which government Whips will affirm as their experience of the noble Lord, Lord Desai.</p>
 	<p pid="a.1177.0/2">For some it has been a nostalgic debate. The noble Lord, Lord Dean of Harptree, reminded us of those wonderful days when the Young Conservatives was the greatest marriage bureau in the country. And he was wrong&mdash;it was unique because no other political party could match it. Furthermore, in my part of the country much Conservative recruitment depended on the fact that the Conservative clubs inevitably had the best snooker tables.</p>
 	<p pid="a.1177.0/3">The noble Viscount, Lord Chandos, subtly tried to emphasise his comparative youth by attributing the words, &quot;He would, wouldn't he?&quot; to Christine Keeler. Those of us who are old enough to have been around at the time know that that was Mandy Rice Davies. We certainly would not like to see that misattribution rest in Hansard. And we had a good old romp around BBC paranoia from the noble Lord, Lord Patten, and we were all the better for it.</p>
-	<p pid="a.1177.0/4">But we are grateful to the noble Viscount, Lord Chandos, for the timeliness of the debate because the party machines are gearing up for <phrase class="date" code="">10 June</phrase>. Those of us who will go out on the doorstep know what we will hear: &quot;You're all as bad as each other&quot;; &quot;You're only in it for what you get out of it&quot;; &quot;I never vote&quot;. I have to tell your Lordships that when I receive those responses I make the noble Lord, Lord Rooker, sound almost diplomatic. I do not accept them. I have been in politics for 40 years. It was said of Elizabeth Taylor that she must believe in the institution of marriage because she got married eight times. Well, I must believe in political parties because I have been in three of them. I have not found those responses to be the image of party activists because most are committed to their communities and beliefs.</p>
+	<p pid="a.1177.0/4">But we are grateful to the noble Viscount, Lord Chandos, for the timeliness of the debate because the party machines are gearing up for <phrase class="date" code="2004-06-10">10 June</phrase>. Those of us who will go out on the doorstep know what we will hear: &quot;You're all as bad as each other&quot;; &quot;You're only in it for what you get out of it&quot;; &quot;I never vote&quot;. I have to tell your Lordships that when I receive those responses I make the noble Lord, Lord Rooker, sound almost diplomatic. I do not accept them. I have been in politics for 40 years. It was said of Elizabeth Taylor that she must believe in the institution of marriage because she got married eight times. Well, I must believe in political parties because I have been in three of them. I have not found those responses to be the image of party activists because most are committed to their communities and beliefs.</p>
 	<p pid="a.1177.0/5">But there is a cynicism and an apathy, which is worrying. They were evident in the fall in party membership, the low turnout in elections and the lack of involvement by the young. As we all recognise, democracy needs active democrats to make it work and we need political parties to channel activism into public service. I am not as admiring of Cross-Benchers as the noble Viscount. I like many of them but I have never accepted that not having a party-political affiliation gives one some higher state of grace to opine on politics of the day. As has been emphasised, party politics makes our system work. It is often the party politicians who stand, as my noble friend Lord Shutt said, against extremism in places such as Burnley. It was the party politicians who took a stand when militant Trotskyism was abroad in the Labour Party.</p>
 	<p pid="a.1177.0/6">So how do we breathe fresh life into party politics? I am not sure that the answer lies simply in making it easier to vote. We have to ensure that these experiments and new systems are both corruption and intimidation-free. Anyway, I am old fashioned enough to see my active voting as a commitment and tribute to the sacrifices of those who went before me. For the time being at least, leave me with a stubby pencil. Every time I go to vote I think that I am benefiting from the sacrifices of the suffragettes and the Chartists and everyone else. Unless voting has some kind of civic commitment it becomes meaningless. That is why I agree with the noble Baroness, Lady Gould, about the need for better civic education in schools and why I pay tribute to the work done in that field over the years by the Rowntree trust. I think that there should be more informational programmes on television about how parties work.</p>
 	<p pid="a.1177.0/7">I am not sure that PR is the panacea that some of us thought it might be. The hard truth is that where it has been introduced it has not produced a dramatic increase in turnout. It is no worse than first-past-the-post elections, but thus far it has been no better. I agree with the noble Viscount, Lord Chandos, on state aid for political parties. I think that a lot of humbug and hypocrisy is talked about that issue. All the political parties have been taking state aid for well over 25 years and it is no use dressing it up in other words.</p>
@@ -1175,7 +1196,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-05a.1201.0" speakerid="uk.org.publicwhip/lord/100597" speakername="Lord Skelmersdale" colon=":" colnum="1201"  time="021:01:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040505/text/40505-10.htm#40505-10_spnew7">
 	<p pid="a.1201.0/1">My Lords, the House will not only be grateful, it will be delighted that the noble Lord, Lord Morris of Manchester, has returned to a theme that has, as he reminded us, come up from time to time throughout his long and distinguished political career. Most of us knew him in another place as the first Minister of the Disabled, a title that now&mdash;alas&mdash;has become politically incorrect. These days we have Ministers for disabled people and I learnt very early on in my career at the now defunct DHSS that the disabled are people first and disabled second.</p>
-	<p pid="a.1201.0/2">Having&mdash;to mix my metaphors&mdash;got that red herring off my chest, I recall that the subject of nutrition interested the noble Lord long before he came to your Lordships' House. I agree with almost everything he said, but I cannot agree with either him or the noble Lord, Lord Brookman, that legislation will be of much use, at least in the immediate future. I will come to that point in a minute. I assume that because bad nutrition leads to obesity the noble Lord instigated a short debate on the subject on <phrase class="date" code="2006-01-08">8 January</phrase> last year. Alas, he was unable to take part in a more specific debate on obesity introduced by the noble Baroness, Lady Finlay of Llandaff, in October. However, I suppose that I must say that honours are even on that score because the noble Baroness is not in her place today.</p>
+	<p pid="a.1201.0/2">Having&mdash;to mix my metaphors&mdash;got that red herring off my chest, I recall that the subject of nutrition interested the noble Lord long before he came to your Lordships' House. I agree with almost everything he said, but I cannot agree with either him or the noble Lord, Lord Brookman, that legislation will be of much use, at least in the immediate future. I will come to that point in a minute. I assume that because bad nutrition leads to obesity the noble Lord instigated a short debate on the subject on <phrase class="date" code="2004-01-08">8 January</phrase> last year. Alas, he was unable to take part in a more specific debate on obesity introduced by the noble Baroness, Lady Finlay of Llandaff, in October. However, I suppose that I must say that honours are even on that score because the noble Baroness is not in her place today.</p>
 	<p pid="a.1201.0/3">Among a mass of interesting information, the noble Baroness told us that, in the United Kingdom, obesity has trebled in the past 20 years. Perhaps more relevant to today's debate, she said that more than 10 per cent of 10 year-olds and more than 17 per cent of 15 year-olds are obese. Obesity is defined as when the body mass index&mdash;weight in kilograms divided by height in metres squared&mdash;is more than 30 grams per metre squared. The Minister, the noble Lord, Lord Warner, did not dispute either of those facts. Neither did he say that the body mass index is little understood by anyone outside the medical profession. Even they, I note from yesterday's Evening Standard, are beginning to argue among themselves about whether it is the shape rather than the bulk of the body that causes the problems.</p>
 	<p pid="a.1201.0/4">In both debates the conclusion was that increasing obesity, leading as the noble Lord, Lord Fyfe, reminded us, to massive increases in the incidence of diabetes, coronary disease and stroke, is a time bomb waiting to explode.</p>
 	<p pid="a.1201.0/5">The noble Lord, Lord Warner, hoped to convince me on the last occasion that the Government had a strategy to deal with the problem. I am afraid that he failed. What he called a strategy, I would have to call some modest although hopefully effective tinkering round the edges. His noble friend Lord Morris called it &quot;adhocracy&quot;. It included the cross-government food and health action plan. The thinking on that is so advanced that only tomorrow is the Secretary of State to launch it department-wide. Considering that the Chief Medical Officer raised the problem of obesity again last year, that we have known about it for at least five years and that the Government have been seven years in office, even the Prime Minister can hardly call that &quot;speedy progress&quot;.</p>

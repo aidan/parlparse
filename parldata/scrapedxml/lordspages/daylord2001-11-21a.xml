@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -54,7 +73,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1123.2" speakerid="uk.org.publicwhip/lord/100577" speakername="Baroness Seccombe" colon="" colnum="1123"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-01.htm#11121-01_spopq0">
 	<p pid="a.1123.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1123.2/2" class="indent">Whether the contents of the Animal Health Bill were agreed prior to the Statement by the Lord Whitty on 22nd October that tests for BSE had been made on the brains of cows and not of sheep [Official Report, 22/10/01; cols. 826-30.]</p>
+	<p pid="a.1123.2/2" class="indent" pwmotiontext="asked">Whether the contents of the Animal Health Bill were agreed prior to the Statement by the Lord Whitty on 22nd October that tests for BSE had been made on the brains of cows and not of sheep [Official Report, 22/10/01; cols. 826-30.]</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1123.3" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1123"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-01.htm#11121-01_spmin0">
@@ -127,7 +146,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1125.6" speakerid="uk.org.publicwhip/lord/100179" speakername="Lord Dormand of Easington" colon="" colnum="1125"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-01.htm#11121-01_spopq1">
 	<p pid="a.1125.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1125.6/2" class="indent">Whether they will call a referendum on the abolition of the monarchy.</p>
+	<p pid="a.1125.6/2" class="indent" pwmotiontext="asked">Whether they will call a referendum on the abolition of the monarchy.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1125.7" speakerid="uk.org.publicwhip/lord/100325" speakername="Lord Irvine of Lairg" colon=":" colnum="1125"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-01.htm#11121-01_spmin1">
@@ -224,7 +243,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1128.2" speakerid="uk.org.publicwhip/lord/100012" speakername="Lord Alton of Liverpool" colon="" colnum="1128"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-02.htm#11121-02_spopq0">
 	<p pid="a.1128.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1128.2/2" class="indent">Whether they intend to lay primary legislation before Parliament to prohibit human cloning, and, if so, when.</p>
+	<p pid="a.1128.2/2" class="indent" pwmotiontext="asked">Whether they intend to lay primary legislation before Parliament to prohibit human cloning, and, if so, when.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1128.3" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="1128"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-02.htm#11121-02_spmin8">
@@ -298,7 +317,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1131.1" speakerid="uk.org.publicwhip/lord/100601" speakername="Lord Smith of Clifton" colon="" colnum="1131"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-03.htm#11121-03_spopq0">
 	<p pid="a.1131.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1131.1/2" class="indent">What are the specific terms of reference of the review of public bodies announced on 16th November and to be headed by Ms Pam Alexander; and when it will be expected to report.</p>
+	<p pid="a.1131.1/2" class="indent" pwmotiontext="asked">What are the specific terms of reference of the review of public bodies announced on 16th November and to be headed by Ms Pam Alexander; and when it will be expected to report.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-11-21a.1131.2" speakerid="uk.org.publicwhip/lord/100688" speakername="Lord Williams of Mostyn" colon=":" colnum="1131"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011121/text/11121-03.htm#11121-03_spmin0">

@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -49,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.881.1" speakerid="uk.org.publicwhip/lord/100133" speakername="Lord Cobbold" colon="" colnum="881"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-01.htm#41110-01_spopq0">
 	<p pid="a.881.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.881.1/2" class="indent">Whether they support the proposed accession of Turkey to the European Union.</p>
+	<p pid="a.881.1/2" class="indent" pwmotiontext="asked">Whether they support the proposed accession of Turkey to the European Union.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.881.2" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="881"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-01.htm#41110-01_spmin0">
@@ -62,7 +82,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.881.4" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="881"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-01.htm#41110-01_spnew1">
 	<p pid="a.881.4/1">My Lords, as the noble Lord will know, the question of time for a debate is a matter for the usual channels and is very much in the hands of noble Lords, should they choose to suggest such a debate.</p>
-	<p pid="a.881.4/2">This has, indeed, been a controversial subject and the discussion about it has continued over a number of years. But I remind the noble Lord, Lord Cobbold, that the European Commission recommendation to the European Council on <phrase class="date" code="">6 October</phrase> concluded that Turkey has,</p>
+	<p pid="a.881.4/2">This has, indeed, been a controversial subject and the discussion about it has continued over a number of years. But I remind the noble Lord, Lord Cobbold, that the European Commission recommendation to the European Council on <phrase class="date" code="2004-10-06">6 October</phrase> concluded that Turkey has,</p>
 	<p pid="a.881.4/3" class="indent">&quot;sufficiently fulfilled the Copenhagen political criteria and that accession negotiations should be opened&quot;.</p>
 	<p pid="a.881.4/4">Therefore, the question is whether the criteria have been sufficiently fulfilled to begin those negotiations.</p>
 </speech>
@@ -129,7 +149,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.884.1" speakerid="uk.org.publicwhip/lord/100642" speakername="Lord Tomlinson" colon="" colnum="884"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-01.htm#41110-01_spopq1">
 	<p pid="a.884.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.884.1/2" class="indent">Whether, in the light of the proposal in the draft Hague programme to begin work on the establishment of a European public prosecutor's office, they now consider that such an office should be established; and what arrangements they have made for parliamentary scrutiny of this and other proposals contained in the draft programme.</p>
+	<p pid="a.884.1/2" class="indent" pwmotiontext="asked">Whether, in the light of the proposal in the draft Hague programme to begin work on the establishment of a European public prosecutor's office, they now consider that such an office should be established; and what arrangements they have made for parliamentary scrutiny of this and other proposals contained in the draft programme.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.884.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="884"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-01.htm#41110-01_spmin2">
@@ -183,11 +203,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.885.6" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="885"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-02.htm#41110-02_spopq0">
 	<p pid="a.885.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.885.6/2" class="indent">Whether the monitoring by United Kingdom defence officials of the deployment of British Army units in central Iraq since <phrase class="date" code="">27 October</phrase> has produced satisfactory results in terms of the security and protection of civil society.</p>
+	<p pid="a.885.6/2" class="indent" pwmotiontext="asked">Whether the monitoring by United Kingdom defence officials of the deployment of British Army units in central Iraq since <phrase class="date" code="2004-10-27">27 October</phrase> has produced satisfactory results in terms of the security and protection of civil society.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.885.7" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="885"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-02.htm#41110-02_spmin0">
-	<p pid="a.885.7/1">My Lords, the Black Watch battle group deployed to north Babil in central Iraq on <phrase class="date" code="">27 October</phrase>. That deployment supports the Iraqi Interim Government strategy of building a free, stable and secure Iraq in which ordinary Iraqis can live their lives free from the constant fear of violence, economic hardship and from political repression and tyranny. Above all, the Iraqi Interim Government are seeking to provide a stable environment under which domestic elections can take place throughout Iraq in January 2005.</p>
+	<p pid="a.885.7/1">My Lords, the Black Watch battle group deployed to north Babil in central Iraq on <phrase class="date" code="2004-10-27">27 October</phrase>. That deployment supports the Iraqi Interim Government strategy of building a free, stable and secure Iraq in which ordinary Iraqis can live their lives free from the constant fear of violence, economic hardship and from political repression and tyranny. Above all, the Iraqi Interim Government are seeking to provide a stable environment under which domestic elections can take place throughout Iraq in January 2005.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.886.0" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon=":" colnum="886"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-02.htm#41110-02_spnew10">
@@ -284,7 +304,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.888.8" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon="" colnum="888"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-03.htm#41110-03_spopq0">
 	<p pid="a.888.8/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.888.8/2" class="indent">What they consider to be the value of school trips and their contribution to the curriculum.</p>
+	<p pid="a.888.8/2" class="indent" pwmotiontext="asked">What they consider to be the value of school trips and their contribution to the curriculum.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.888.9" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="888"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-03.htm#41110-03_spnew13">
@@ -363,7 +383,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.891.5" speakerid="uk.org.publicwhip/lord/100460" speakername="Baroness Noakes" colon="" colnum="891"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-04.htm#41110-04_spopq0">
 	<p pid="a.891.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.891.5/2" class="indent">Whether they are satisfied with the administrative procedures and integrity of the Inland Revenue's information technology systems.</p>
+	<p pid="a.891.5/2" class="indent" pwmotiontext="asked">Whether they are satisfied with the administrative procedures and integrity of the Inland Revenue's information technology systems.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.892.0" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="892"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-04.htm#41110-04_spmin0">
@@ -488,7 +508,7 @@
 	<p pid="a.896.2/11">The first derives from not very clear logic. We move from one type of business, subject to one set of procedural rules, to a completely different type, subject to other rules. Neither the Leader's Group nor the Procedure Committee appears to have given any thought to the procedures that would be applied in debating committee reports. I am not sure what the criteria are for determining &quot;success&quot; in debating Northern Ireland orders&mdash;we are not told&mdash;but I simply do not see how one can derive from observation of the way in which Northern Ireland orders are considered that Select Committee reports can be similarly considered. One is not comparing like with like.</p>
 	<p pid="a.896.2/12">The same would apply if we were to look at the Committee stage of Bills being taken in Grand Committee. The procedure is different. In any event, Bills taken in Grand Committee come to the House for Report stage. If Select Committee reports are debated in the Moses Room, the link with the Chamber is lost.</p>
 	<p pid="a.896.2/13">The second argument appears superficially attractive but is simply not supported by the data. We are invited to accept that debating Select Committee reports takes up the time of the House to the extent that this is a problem&mdash;otherwise this proposal would not be before us&mdash;and that this time could be devoted to other, presumably more important, business.</p>
-	<p pid="a.896.2/14">How much time is taken up debating Select Committee reports? So far this year, from <phrase class="date" code="2006-01-01">1 January</phrase> to the end of last month, the House has devoted 2.16 per cent of its time debating &quot;take note&quot; Motions on Select Committee reports. Nor is this year exceptional. One has only to look at the data contained in the annual report, just published, to see the figures for the past four financial years. How much time is taken up debating reports from the European Union Committee? In 2003&ndash;04 it was 1.8 per cent; the previous year it was 1.4 per cent. How much time was taken up debating reports from the Science and Technology Committee? In 2003&ndash;04 it was 0.2 per cent and the previous year it was 0.6 per cent.</p>
+	<p pid="a.896.2/14">How much time is taken up debating Select Committee reports? So far this year, from <phrase class="date" code="2004-01-01">1 January</phrase> to the end of last month, the House has devoted 2.16 per cent of its time debating &quot;take note&quot; Motions on Select Committee reports. Nor is this year exceptional. One has only to look at the data contained in the annual report, just published, to see the figures for the past four financial years. How much time is taken up debating reports from the European Union Committee? In 2003&ndash;04 it was 1.8 per cent; the previous year it was 1.4 per cent. How much time was taken up debating reports from the Science and Technology Committee? In 2003&ndash;04 it was 0.2 per cent and the previous year it was 0.6 per cent.</p>
 	<p pid="a.896.2/15">Is it not the case though that too many reports are being put down for debate? Looking at the Order Paper, one might believe that to be the case. However, when one looks at the dates that they were published, one sees a very different picture. One of the reports was published in April. Another, the report of my committee, the Constitution Committee, on the regulatory state, was published in May. We had the Government's response within two months, but we are still waiting for a debate. The reports on the Order Paper were published over a span of nine months, which basically averages one report a month.</p>
 	<p pid="a.896.2/16">There is no evidence that Select Committees are not exercising restraint in recommending reports for debate. They already exercise the rigour called for in paragraph 11 of the Procedure Committee report. In the case of my own committee, we have published 31 reports since we were appointed in February 2001. How many of those have we recommended for debate? The number is three. For anyone with a slim grasp of maths, that averages out at one a year. The topics of the three reports&mdash;devolution, the regulatory state and the legislative process&mdash;can hardly be deemed to be marginal.</p>
 	<p pid="a.896.2/17">Why the need to free up time, little though it will be, on the Floor of the House? After all, we now have the option of referring Bills to Grand Committee. The annual report shows that in the financial year 2003&ndash;04, there were 63 days of Grand Committee sittings, totalling 225 hours. That represents a considerable, indeed an unprecedented, saving of time on the Floor of the House. Given those figures, there is no obvious reason why the demands on the time of the House are such as to justify this recommendation.</p>
@@ -537,8 +557,8 @@
 	<p pid="a.901.0/8">The draft legislation scrutinised in these European committee reports has a significant impact on the citizens of this country. The majority of them address what I would call citizens' issues&mdash;for example, gender equality in access to services; fighting illegal immigration; the future of our fishing industry; our environmental responsibilities; and procedural rights in criminal proceedings, to name but a few. They need a proper airing and the Floor of your Lordships' House is where they should be aired, as transparently as possible and before the widest possible audience.</p>
 	<p pid="a.901.0/9">That is one of the reasons why I have repeatedly opposed the idea of diverting debates on Select Committee reports to the Moses Room. At the same time, we as a committee, as opponents of the Moses Room option, felt it our duty and incumbent upon us to propose at least one constructive alternative. That, too, is set out in my letter. It is a modest request. It is for a guaranteed two-hour debate on one Wednesday per month for a period of approximately six months of the year. Yet even this modest suggestion seems, inexplicably, to be opposed by the usual channels as cutting into the time traditionally allotted to balloted Back-Bench debates&mdash;as if what we are discussing in our European committee reports is of little interest to Back-Benchers.</p>
 	<p pid="a.901.0/10">Yes, it would cut into that time, I admit, to the extent that while there would still be two balloted Back-Bench debates on that Wednesday, they would each be of two hours rather than two-and-a-half hours and the House would therefore sit for an extra hour to accommodate all three debates. That, apparently, is a price too high to pay to ensure more certainty and transparency in the progress of European Union scrutiny through your Lordships' House.</p>
-	<p pid="a.901.0/11">We are all agreed that there need to be additional arrangements for Select Committee debates, and this modest Wednesday proposal should be considered alongside other modernising proposals. We discussed this at some length in the Procedure Committee on <phrase class="date" code="">20 October</phrase>, but the report, while reflecting my opposition to the Moses Room option, made no mention of the fact that the alternative that I proposed was also discussed. But my recommendation was proposed in good faith as a practical alternative to the Moses Room option of the Leader's Group and was therefore very relevant to the discussion then as it is relevant to the discussion today.</p>
-	<p pid="a.901.0/12">I left the Procedure Committee on <phrase class="date" code="">20 October</phrase> convinced that as I had made it plain once more that I and my committee could not accept the Moses Room option, and had not been without some support in the committee, there would be further discussion of the alternatives at a later date. However, the report as it stands in paragraph 10 appears to make it clear that the Leader's Group recommendation has been endorsed and the matter is therefore closed. The Moses Room option remains, to be used with the concurrence of those concerned.</p>
+	<p pid="a.901.0/11">We are all agreed that there need to be additional arrangements for Select Committee debates, and this modest Wednesday proposal should be considered alongside other modernising proposals. We discussed this at some length in the Procedure Committee on <phrase class="date" code="2004-10-20">20 October</phrase>, but the report, while reflecting my opposition to the Moses Room option, made no mention of the fact that the alternative that I proposed was also discussed. But my recommendation was proposed in good faith as a practical alternative to the Moses Room option of the Leader's Group and was therefore very relevant to the discussion then as it is relevant to the discussion today.</p>
+	<p pid="a.901.0/12">I left the Procedure Committee on <phrase class="date" code="2004-10-20">20 October</phrase> convinced that as I had made it plain once more that I and my committee could not accept the Moses Room option, and had not been without some support in the committee, there would be further discussion of the alternatives at a later date. However, the report as it stands in paragraph 10 appears to make it clear that the Leader's Group recommendation has been endorsed and the matter is therefore closed. The Moses Room option remains, to be used with the concurrence of those concerned.</p>
 	<p pid="a.901.0/13">I feel that I have a duty to inform your Lordships that, as long as I am in the chair of the European Union Select Committee, I foresee no circumstances in which I would recommend a report for debate off the Floor of the House. Existing and maybe new proposals for alternatives therefore must be discussed. The door must not be closed today. I look to the noble Lord the Chairman of Committees to give an assurance that alternatives will be discussed in a future meeting of the Procedure Committee. If he can give me that assurance, I shall be happy to sit down and say no more.</p>
 </speech>
 
@@ -646,7 +666,7 @@
 	<p pid="a.911.0/5" class="indent">&quot;Other measures will be laid before you&quot;.</p>
 	<p pid="a.911.0/6">But my own antennae became sensitised when on the morrow of the State Opening, the Gender Recognition Bill, unheralded the day before, received its First Reading.</p>
 	<p pid="a.911.0/7">The Government's business managers in both Houses have the benefit of the advice of seven special advisers in order to do their work. Perhaps it was those advisers who opined, either unanimously or by a majority, that the Bill was sufficiently uncontroversial to go into Grand Committee. Go into Grand Committee it did&mdash;and subsequent events have cast doubt on that verdict of uncontroversiality.</p>
-	<p pid="a.911.0/8">For the majority of your Lordships' House, the story then moved on to the object of second regard&mdash;the issue of Thursday morning sittings, on which the reports that we have before us were broadly content. But those of your Lordships who were in the Chamber on <phrase class="date" code="">24 June</phrase>, on the day of Report on the Civil Partnership Bill, will recall the debate on my noble friend Lady O'Cathain's amendment, which blew out of the water any suggestion that the Bill was anything other than highly controversial. It was possible that the Government's business managers were so lulled into a spirit of uncontroversiality that they did not appreciate how untimely the Report stage was likely to be on a Thursday morning, with party meetings going on. But the mien of the Government Front Bench during the remaining proceedings after the amendment had been carried was an index of the disaster of the way in which the Bill had been managed.</p>
+	<p pid="a.911.0/8">For the majority of your Lordships' House, the story then moved on to the object of second regard&mdash;the issue of Thursday morning sittings, on which the reports that we have before us were broadly content. But those of your Lordships who were in the Chamber on <phrase class="date" code="2004-06-24">24 June</phrase>, on the day of Report on the Civil Partnership Bill, will recall the debate on my noble friend Lady O'Cathain's amendment, which blew out of the water any suggestion that the Bill was anything other than highly controversial. It was possible that the Government's business managers were so lulled into a spirit of uncontroversiality that they did not appreciate how untimely the Report stage was likely to be on a Thursday morning, with party meetings going on. But the mien of the Government Front Bench during the remaining proceedings after the amendment had been carried was an index of the disaster of the way in which the Bill had been managed.</p>
 	<p pid="a.911.0/9">What does all this amount to? Like the Procedure Committee, I broadly agree with the Leader's Group's conclusions. But&mdash;and it is a large but&mdash;there needs to be a massive improvement in the Government's case-by-case handling and steering if the show is to be kept on the road.</p>
 	<p pid="a.911.0/10">I indicated at the start of this speech that I had a second point, which relates to the amendment to the Motion. I agree profoundly that the European Union Committee is one of the glories of your Lordships' House. As my noble friend Lady Park said, at this moment in our history we should reinforce our interest in European Union developments, not downgrade them. But I am equally aware that the underlying Back-Bench principle in what in another place would be called &quot;supply days&quot; is a further glory of your Lordships' House. We maintain a high standard of debate on Wednesdays, on specific or generic topics, and whatever we do to preserve either of these notable features of our affairs should not be at the expense of the other.</p>
 </speech>
@@ -831,13 +851,13 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.928.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="928"  time="015:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-13.htm#41110-13_spnew9">
 	<p pid="a.928.3/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="a.928.3/2">I hope that noble Lords will not find this and the following Motions controversial. These Motions cover all of the recommendations about Members' allowances which were made in the report of the independent Senior Salaries Review Body, published on <phrase class="date" code="">21 October</phrase>. The SSRB adopted the principle that Members of this House should not be out of pocket as a result of carrying out parliamentary duties. It proposed increases to a number of allowances and one reduction.</p>
+	<p pid="a.928.3/2">I hope that noble Lords will not find this and the following Motions controversial. These Motions cover all of the recommendations about Members' allowances which were made in the report of the independent Senior Salaries Review Body, published on <phrase class="date" code="2004-10-21">21 October</phrase>. The SSRB adopted the principle that Members of this House should not be out of pocket as a result of carrying out parliamentary duties. It proposed increases to a number of allowances and one reduction.</p>
 	<p pid="a.928.3/3">The first Motion for consideration proposes an increase to the office costs allowance to a maximum of &pound;65 a day. That would be payable on the days a Member carries out official parliamentary duties as well as for a maximum of a further 40 days where expenses have been incurred.</p>
 	<p pid="a.928.3/4">The Motion also proposes an increase to day and overnight subsistence. The day subsistence allowance is to cover meals, refreshments and incidental travel costs, including car parking. Evidence to the SSRB suggested that the current rate was not sufficient as such costs have increased significantly above the rate of inflation. The SSRB recommended that this allowance should be increased to a maximum of &pound;75 per day.</p>
 	<p pid="a.928.3/5">The cost of accommodation and hotels in London has also increased significantly, so the SSRB recommended increasing the maximum for the night subsistence allowance to &pound;150.</p>
 	<p pid="a.928.3/6">Noble Lords who have a second home in London can claim night subsistence allowance for each night when they use that home before or after each session of this House that they attend. The basis of the current allowance is attendance at the House. Noble Lords who are absent from the House on official parliamentary business, such as Select Committee visits, have not been able to claim the overnight subsistence allowance. The SSRB has recommended that noble Lords in this position should be able to claim up to two-thirds of the night subsistence allowance when absent from the House on official parliamentary business.</p>
 	<p pid="a.928.3/7">The second Motion relates to travel expenses for spouses and children. The SSRB has recommended that noble Lords should be able to claim reimbursement for up to six visits a year by either spouses, or children up to the age of 18, to Parliament.</p>
-	<p pid="a.928.3/8">I turn now to the Motion that deals with recommendations about car, motorcycle and bicycle expenses. The SSRB noted that the rates of motor mileage allowance for noble Lords are very generous&mdash;57.6 pence per mile for the first 20,000 miles and 26.6 pence thereafter. That is significantly higher than the Inland Revenue approved rates of 40 pence per mile for the first 10,000 miles and 25 pence per mile thereafter. These rates were set in their present form in 1996 and have been uprated on <phrase class="date" code="">1 April</phrase> each year by the retail price index. The SSRB takes the view that the current rates are unjustifiable and should be reduced.</p>
+	<p pid="a.928.3/8">I turn now to the Motion that deals with recommendations about car, motorcycle and bicycle expenses. The SSRB noted that the rates of motor mileage allowance for noble Lords are very generous&mdash;57.6 pence per mile for the first 20,000 miles and 26.6 pence thereafter. That is significantly higher than the Inland Revenue approved rates of 40 pence per mile for the first 10,000 miles and 25 pence per mile thereafter. These rates were set in their present form in 1996 and have been uprated on <phrase class="date" code="2004-04-01">1 April</phrase> each year by the retail price index. The SSRB takes the view that the current rates are unjustifiable and should be reduced.</p>
 	<p pid="a.928.3/9">The review body also recommends that the bicycle allowance, should be increased to the Inland Review approved rate. That would go up from 7.5 pence a mile to 20 pence per mile. It also proposes a motorcycle allowance at the Inland Revenue approved rate of 24 pence per mile.</p>
 	<p pid="a.928.3/10">The recommendations are entirely a matter for noble Lords. I commend the Motion to the House.</p>
 	<p pid="a.928.3/11">Moved to resolve, That this House approves the following proposals with respect to expenses incurred by Members of this House&mdash;</p>
@@ -900,7 +920,7 @@
 	<p pid="a.932.5/3">(1) The Resolution of <phrase class="date" code="1996-11-27">27 November 1996</phrase> is amended as follows.</p>
 	<p pid="a.932.5/4">(2) In paragraph (1) after &quot;spouse of a Member&quot; insert &quot;or by any child aged under 18 of a Member&quot;.</p>
 	<p pid="a.932.5/5">(3) For paragraph (2) substitute&mdash;</p>
-	<p pid="a.932.5/6">&quot;(2) Claims under this Resolution as it applies to journeys made by any person may be made by a Member in relation to attendance by that person at no more than 6 Parliamentary occasions in any year (beginning with <phrase class="date" code="2006-01-01">1 January</phrase>).&quot;</p>
+	<p pid="a.932.5/6">&quot;(2) Claims under this Resolution as it applies to journeys made by any person may be made by a Member in relation to attendance by that person at no more than 6 Parliamentary occasions in any year (beginning with <phrase class="date" code="2004-01-01">1 January</phrase>).&quot;</p>
 	<p pid="a.932.5/7">(4) In paragraph (3) after &quot;spouse of a Member&quot; insert &quot;or by any child aged under 18 of a Member&quot;.&mdash;(<i>Baroness Amos</i>.)</p>
 </speech>
 
@@ -1056,7 +1076,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.947.0" speakerid="uk.org.publicwhip/lord/100680" speakername="Baroness Whitaker" colon=":" colnum="947"  time="015:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-17.htm#41110-17_spnew2">
 	<p pid="a.947.0/1">My Lords, I too am puzzled by the government amendments with regard to rights. I should like to ask my noble friend in what way is the commissioner to have regard to the United Nations Convention on the Rights of the Child, which is entirely about rights? In another place, our honourable friend Margaret Hodge said that,</p>
-	<p pid="a.947.0/2" class="indent">&quot;we do not wish to establish in England a commissioner whose primary purpose is to police individual rights&quot;.&mdash;[<i>Official Report</i>, Commons, 2/11/04; col. 204.]</p>
+	<p pid="a.947.0/2" class="indent">&quot;we do not wish to establish in England a commissioner whose primary purpose is to police individual rights&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-02.204"><i>Official Report</i>, Commons, 2/11/04; col. 204</phrase>.]</p>
 	<p pid="a.947.0/3">That is fair enough. But after these amendments, the commissioner may not promote, safeguard, encourage the taking account of, or advise the Secretary of State about or review and report on. She or he may not even consider what the rights of children are. In what way, therefore, is the commissioner to have regard to the articles of the United Nations convention, the only purpose of which is to assert specific rights?</p>
 </speech>
 
@@ -1642,7 +1662,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.970.0" speakerid="uk.org.publicwhip/lord/100213" speakername="Baroness Finlay of Llandaff" colon=":" colnum="970"  time="019:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-24.htm#41110-24_spnew1">
-	<p pid="a.970.0/1">My Lords, I add my voice from Wales to the request to think again. The Assembly debated this matter fully on <phrase class="date" code="">4 May</phrase> and voted unanimously for the powers of the Welsh commissioner not to be eroded. There is a concern in Wales that the English commissioner is being viewed as having a role &quot;over and above&quot; that will interfere with the role of the Welsh commissioner and undermine confidence in that role.</p>
+	<p pid="a.970.0/1">My Lords, I add my voice from Wales to the request to think again. The Assembly debated this matter fully on <phrase class="date" code="2004-05-04">4 May</phrase> and voted unanimously for the powers of the Welsh commissioner not to be eroded. There is a concern in Wales that the English commissioner is being viewed as having a role &quot;over and above&quot; that will interfere with the role of the Welsh commissioner and undermine confidence in that role.</p>
 	<p pid="a.970.0/2">The devolution settlement certainly was not fixed in time. We have seen things being moved across to Wales when they had not previously been there, as happened, for example, with the Fire Services Act. Therefore, if the powers are not left principally with the commissioner in Wales, that will be counter to the whole principle of devolution, of managing services locally and of ensuring that the local services meet the needs of the local population.</p>
 	<p pid="a.970.0/3">Another concern is that we may not always have a government of the same colour in Westminster and in Wales. While there may be a memorandum of agreement at this stage and therefore, because we have government of the same colour in both areas, there may be agreement over the way forward, the political pressures may change enormously. Sadly, the people who will suffer will be the weakest and the most vulnerable. They will not be the politicians; they will be the very children that the Bill is designed to help.</p>
 </speech>
@@ -2195,7 +2215,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.984.0" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon=":" colnum="984"  time="019:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-28.htm#41110-28_spnew0">
 	<p pid="a.984.0/1">My Lords, I very much echo the words of the noble Earl, Lord Howe. We are broadly supportive of the need to improve information-sharing to ensure that children are better safeguarded. We would have liked a database, if we have it, to cover all children. However, we retain concerns about the type of information to be recorded, particularly the recording of &quot;cause for concern&quot; and the lack of professional discretion about when to record information, particularly in relation to sensitive services.</p>
-	<p pid="a.984.0/2">We are concerned that while the noble Baroness, Lady Ashton of Upholland, made a commitment to hold a public consultation about causes for concern on <phrase class="date" code="">5 July</phrase>, the long-awaited consultation document was not finally produced until <phrase class="date" code="">27 October</phrase>, five days after the final Commons Standing Committee sitting. There was very little debate on Clause 9 on Report in the Commons.</p>
+	<p pid="a.984.0/2">We are concerned that while the noble Baroness, Lady Ashton of Upholland, made a commitment to hold a public consultation about causes for concern on <phrase class="date" code="2004-07-05">5 July</phrase>, the long-awaited consultation document was not finally produced until <phrase class="date" code="2004-10-27">27 October</phrase>, five days after the final Commons Standing Committee sitting. There was very little debate on Clause 9 on Report in the Commons.</p>
 	<p pid="a.984.0/3">While we welcome the consultation and are pleased by the recognition of the concerns that we have raised since the proposals were announced in <i>Every Child Matters</i> and throughout the passage of the Bill, we are very concerned by the contradiction that has been created between the statute and the Government's stated intention in the consultation document. The views expressed there would appear to reinforce the view that the Bill is in need of amendment, yet we have now lost the opportunity to make amendments. If the Government take consultation seriously, it is hard to see why they are insisting on creating a new legal term while at the same time suggesting that it may be altered or replaced. That seems totally illogical.</p>
 	<p pid="a.984.0/4">Among the portfolio of amendments before us, we are pleased to see &quot;emotional well-being&quot; in its proper place. We echo the feelings of the noble Lord, Lord Northbourne. We are delighted to see it alongside &quot;physical and mental health&quot; and not, as it was originally, associated with social and economic well-being.</p>
 	<p pid="a.984.0/5">We welcome, too, and thank the Government for, the amendments which relate to the British Transport Police and NHS Direct. We are sorry that throughout the passage of the Bill, the Government have resisted our attempts to include the refugee agencies alongside others who have responsibilities for safeguarding and promoting welfare. Wearing my hat as education spokesperson, I regret also that schools are excluded from those responsibilities. At a time when so many schools are moving out of local education authority purview, it should be right that schools are included.</p>
@@ -2493,7 +2513,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-10a.997.2" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="997"  time="019:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041110/text/41110-31.htm#41110-31_spnew5">
 	<p pid="a.997.2/1">My Lords, I beg to move that the House do agree with the Commons in their Amendment No. 67.</p>
-	<p pid="a.997.2/2">The amendment addresses an issue that has become more apparent over recent times, regarding the context within which privacy in children's matters can be addressed. As the House may recall, a judgment was handed down in the High Court by Mr Justice Munby on <phrase class="date" code="2006-03-19">19 March</phrase> on the strictness of interpretation of the privacy aspects of the family courts.</p>
+	<p pid="a.997.2/2">The amendment addresses an issue that has become more apparent over recent times, regarding the context within which privacy in children's matters can be addressed. As the House may recall, a judgment was handed down in the High Court by Mr Justice Munby on <phrase class="date" code="2004-03-19">19 March</phrase> on the strictness of interpretation of the privacy aspects of the family courts.</p>
 	<p pid="a.997.2/3">The effect of that judgment is that publication of any information about a children case, whether or not it would identify the child, is almost always prohibited without the direct permission of the court. Mr Justice Munby held that &quot;publication&quot; covered almost all forms of communication, whether by word of mouth or in writing. That means that Members of this House or of the other place who receive details about family court cases from constituents or others, and who then pass them on, for example to government departments, may, potentially, be committing a criminal offence and/or contempt of court.</p>
 	<p pid="a.997.2/4">It goes wider. It also affects the police, the Crown Prosecution Service, social services and others who may be equally unclear about their ability to access and use information about family court proceedings.</p>
 	<p pid="a.997.2/5">This leaves us in a difficult situation. Clearly, children and families going through family proceedings should be able to obtain reasonable support and information by, for example, contacting others&mdash;MPs or voluntary organisations&mdash;when they think it appropriate. On the other hand, Mr Justice Munby's judgment says that if those bodies do not pass on the information&mdash;that is, if they do not do something about it&mdash;they are in breach.</p>

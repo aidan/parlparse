@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1241.1" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon="" colnum="1241"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-01.htm#01128-01_spopq0">
 	<p pid="a.1241.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1241.1/2" class="indent">When they will publish details of requirements governing the admission to the United Kingdom of special skills applicants.</p>
+	<p pid="a.1241.1/2" class="indent" pwmotiontext="asked">When they will publish details of requirements governing the admission to the United Kingdom of special skills applicants.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1241.2" speakerid="uk.org.publicwhip/lord/100052" speakername="Baroness Blackstone" colon=":" colnum="1241"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-01.htm#01128-01_spmin0">
@@ -119,7 +138,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1243.7" speakerid="uk.org.publicwhip/lord/100738" speakername="Baroness Young" colon="" colnum="1243"  time="014:43:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-01.htm#01128-01_spopq1">
 	<p pid="a.1243.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1243.7/2" class="indent">Whether they have undertaken any assessment of the impact on ACP producers of rice, sugar, rum and bananas of the European Commission's &quot;Everything but Arms&quot; initiative, which seeks to extend duty and quota free access to the European Union market to 48 Least Developed Countries.</p>
+	<p pid="a.1243.7/2" class="indent" pwmotiontext="asked">Whether they have undertaken any assessment of the impact on ACP producers of rice, sugar, rum and bananas of the European Commission's &quot;Everything but Arms&quot; initiative, which seeks to extend duty and quota free access to the European Union market to 48 Least Developed Countries.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1244.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="1244"  time="014:43:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-01.htm#01128-01_spmin1">
@@ -181,7 +200,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1246.4" speakerid="uk.org.publicwhip/lord/100534" speakername="Lord Renton of Mount Harry" colon="" colnum="1246"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-02.htm#01128-02_spopq0">
 	<p pid="a.1246.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1246.4/2" class="indent">What recompense they propose to offer to those in flooded areas who have lost homes or businesses in cases where warnings from the Environment Agency and other public bodies have not been heeded.</p>
+	<p pid="a.1246.4/2" class="indent" pwmotiontext="asked">What recompense they propose to offer to those in flooded areas who have lost homes or businesses in cases where warnings from the Environment Agency and other public bodies have not been heeded.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1246.5" speakerid="uk.org.publicwhip/lord/100284" speakername="Baroness Hayman" colon=":" colnum="1246"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-02.htm#01128-02_spmin0">
@@ -230,7 +249,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1249.1" speakerid="uk.org.publicwhip/lord/100279" speakername="Lord Harrison" colon="" colnum="1249"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-03.htm#01128-03_spopq0">
 	<p pid="a.1249.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1249.1/2" class="indent">What steps they are taking, through the European Union, to prevent faulty domestic electrical appliances manufactured outside the European Union and carrying forged trade marks from entering the United Kingdom by means of the Single European Market.</p>
+	<p pid="a.1249.1/2" class="indent" pwmotiontext="asked">What steps they are taking, through the European Union, to prevent faulty domestic electrical appliances manufactured outside the European Union and carrying forged trade marks from entering the United Kingdom by means of the Single European Market.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-28a.1249.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="1249"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001128/text/01128-03.htm#01128-03_spnew4">

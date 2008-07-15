@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.707.1" speakerid="uk.org.publicwhip/lord/100498" speakername="Lord Peyton of Yeovil" colon="" colnum="707"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-01.htm#21106-01_spopq0">
 	<p pid="a.707.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.707.1/2" class="indent">Whether the way in which the National Care Standards Commission performs its duties is satisfactory.</p>
+	<p pid="a.707.1/2" class="indent" pwmotiontext="asked">Whether the way in which the National Care Standards Commission performs its duties is satisfactory.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.707.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="707"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-01.htm#21106-01_spmin0">
@@ -96,9 +115,9 @@
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.709.1" speakerid="uk.org.publicwhip/lord/100392" speakername="Lord McCarthy" colon="" colnum="709"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-01.htm#21106-01_spopq1">
 	<p pid="a.709.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.709.1/2" class="indent">What proportion of private finance initiative deals completed since 1997 have been:</p>
-	<p pid="a.709.1/3" class="indent">(i) examined by the National Audit Office;</p>
-	<p pid="a.709.1/4" class="indent">(ii) found to provide equal or better value for money than their appropriate public sector comparator.</p>
+	<p pid="a.709.1/2" class="indent" pwmotiontext="asked">What proportion of private finance initiative deals completed since 1997 have been:</p>
+	<p pid="a.709.1/3" class="indent" pwmotiontext="asked">(i) examined by the National Audit Office;</p>
+	<p pid="a.709.1/4" class="indent" pwmotiontext="asked">(ii) found to provide equal or better value for money than their appropriate public sector comparator.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.709.2" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="709"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-01.htm#21106-01_spnew8">
@@ -199,7 +218,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.712.3" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="712"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-02.htm#21106-02_spopq0">
 	<p pid="a.712.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.712.3/2" class="indent">What is their response to allegations of political manipulation of food aid in Zimbabwe.</p>
+	<p pid="a.712.3/2" class="indent" pwmotiontext="asked">What is their response to allegations of political manipulation of food aid in Zimbabwe.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.712.4" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="712"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-02.htm#21106-02_spnew15">
@@ -260,7 +279,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.714.4" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon="" colnum="714"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-03.htm#21106-03_spopq0">
 	<p pid="a.714.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.714.4/2" class="indent">Whether they will review the circumstances surrounding the prosecution of Paul Burrell and report to Parliament.</p>
+	<p pid="a.714.4/2" class="indent" pwmotiontext="asked">Whether they will review the circumstances surrounding the prosecution of Paul Burrell and report to Parliament.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-11-06a.714.5" speakerid="uk.org.publicwhip/lord/100245" speakername="Lord Goldsmith" colon=":" colnum="714"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-03.htm#21106-03_spmin0">
@@ -2736,23 +2755,9 @@
 	<p pid="a.856.4/1" pwmotiontext="agreedto">On Question, Motion agreed to.</p>
 	<p pid="a.856.4/2" pwmotiontext="unrecognized">Commons Amendments in Lieu of Lords Amendments to which the Commons Insist on their Disagreement and Commons Further Amendment in Lieu of a Commons Amendment Not Insisted Upon</p>
 	<p pid="a.856.4/3" pwmotiontext="misc">[The page and line refer to HL Bill 92 as first printed for the Lords.]</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/lords/2002-11-06a.856.5" nospeaker="true" colnum="856"  time="023:10:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-34.htm#21106-34_para2">
-	LORDS AMENDMENT
-</minor-heading>
-
-<speech id="uk.org.publicwhip/lords/2002-11-06a.856.6" nospeaker="true" colnum="856"  time="023:10:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-34.htm#21106-34_para2">
-	<p pid="a.856.6/1" pwmotiontext="lines">1 Clause 1, page 1, line 5, after &quot;corporate&quot; insert &quot;with both a chairman and a chief executive&quot;</p>
-</speech>
-
-<minor-heading id="uk.org.publicwhip/lords/2002-11-06a.856.7" nospeaker="true" colnum="856"  time="023:10:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-34.htm#21106-34_para2">
-	LORDS REASON
-</minor-heading>
-
-<speech id="uk.org.publicwhip/lords/2002-11-06a.856.8" nospeaker="true" colnum="856"  time="023:10:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-34.htm#21106-34_para2">
-	<p pid="a.856.8/1" pwmotiontext="bill">The Lords insist on their amendment to which the Commons have disagreed, for the following reason&mdash;</p>
-	<p pid="a.856.8/2" class="indent" pwmotiontext="unrecognized">Because it is appropriate to make provision for two roles for a Chairman and a Chief Executive which should be performed by two people.</p>
+	<p pid="a.856.4/4" pwmotiontext="unrecognized">LORDS AMENDMENT: 1Clause 1, page 1, line 5, after &quot;corporate&quot; insert &quot;with both a chairman and a chief executive&quot;</p>
+	<p pid="a.856.4/5" pwmotiontext="unrecognized">LORDS REASON: The Lords insist on their amendment to which the Commons have disagreed, for the following reason&mdash;</p>
+	<p pid="a.856.4/6" class="indent" pwmotiontext="unrecognized">Because it is appropriate to make provision for two roles for a Chairman and a Chief Executive which should be performed by two people.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2002-11-06a.857.0" nospeaker="true" colnum="857"  time="023:10:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021106/text/21106-34.htm#21106-34_para4">

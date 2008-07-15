@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.745.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon="" colnum="745"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-01.htm#00113-01_spopq0">
 	<p pid="a.745.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.745.1/2" class="indent">What policies are being developed to reduce the number of child deaths caused by road accidents.</p>
+	<p pid="a.745.1/2" class="indent" pwmotiontext="asked">What policies are being developed to reduce the number of child deaths caused by road accidents.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.745.2" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="745"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-01.htm#00113-01_spmin0">
@@ -118,7 +139,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.747.7" speakerid="uk.org.publicwhip/lord/100326" speakername="Lord Islwyn" colon="" colnum="747"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-01.htm#00113-01_spopq1">
 	<p pid="a.747.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.747.7/2" class="indent">What further consideration they are giving to the transport needs of Wales.</p>
+	<p pid="a.747.7/2" class="indent" pwmotiontext="asked">What further consideration they are giving to the transport needs of Wales.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.747.8" speakerid="uk.org.publicwhip/lord/100206" speakername="Baroness Farrington of Ribbleton" colon=":" colnum="747"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-01.htm#00113-01_spnew14">
@@ -174,7 +195,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.749.6" speakerid="uk.org.publicwhip/lord/100037" speakername="Lord Barnett" colon="" colnum="749"  time="015:20:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-02.htm#00113-02_spopq0">
 	<p pid="a.749.6/1" pwmotiontext="asked">asked the Chairman of Committees:</p>
-	<p pid="a.749.6/2" class="indent">When the House of Lords committee on the Monetary Policy Committee of the Bank of England will be set up again.</p>
+	<p pid="a.749.6/2" class="indent" pwmotiontext="asked">When the House of Lords committee on the Monetary Policy Committee of the Bank of England will be set up again.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.749.7" speakerid="uk.org.publicwhip/lord/100644" speakername="Lord Tordoff" colon=":" colnum="749"  time="015:20:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-02.htm#00113-02_spmin0">
@@ -247,7 +268,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.752.4" speakerid="uk.org.publicwhip/lord/100738" speakername="Baroness Young" colon="" colnum="752"  time="015:29:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-03.htm#00113-03_spopq0">
 	<p pid="a.752.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.752.4/2" class="indent">Whether they consider that the English are a violent nation.</p>
+	<p pid="a.752.4/2" class="indent" pwmotiontext="asked">Whether they consider that the English are a violent nation.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-13a.752.5" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="752"  time="015:29:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000113/text/00113-03.htm#00113-03_spmin0">

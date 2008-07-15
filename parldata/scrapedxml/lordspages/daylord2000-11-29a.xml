@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1313.1" speakerid="uk.org.publicwhip/lord/100427" speakername="Baroness Miller of Chilthorne Domer" colon="" colnum="1313"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-01.htm#01129-01_spopq0">
 	<p pid="a.1313.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1313.1/2" class="indent">What importance they attach to the recommendations in the Competition Commission's report on supermarkets, published in October, that a code of practice should be drawn up to counter adverse practices that supermarkets inflict on suppliers and that an independent third party should be established to report breaches to the Office of Fair Trading.</p>
+	<p pid="a.1313.1/2" class="indent" pwmotiontext="asked">What importance they attach to the recommendations in the Competition Commission's report on supermarkets, published in October, that a code of practice should be drawn up to counter adverse practices that supermarkets inflict on suppliers and that an independent third party should be established to report breaches to the Office of Fair Trading.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1313.2" speakerid="uk.org.publicwhip/lord/100284" speakername="Baroness Hayman" colon=":" colnum="1313"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-01.htm#01129-01_spmin0">
@@ -93,7 +114,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1315.3" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="1315"  time="014:38:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-01.htm#01129-01_spopq1">
 	<p pid="a.1315.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1315.3/2" class="indent">Whether they will postpone instructions to the National Health Service to incur expenditure on preparations for Britain joining the euro until such time as Britain decides to do so.</p>
+	<p pid="a.1315.3/2" class="indent" pwmotiontext="asked">Whether they will postpone instructions to the National Health Service to incur expenditure on preparations for Britain joining the euro until such time as Britain decides to do so.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1315.4" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="1315"  time="014:38:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-01.htm#01129-01_spmin1">
@@ -163,7 +184,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1318.1" speakerid="uk.org.publicwhip/lord/100658" speakername="Lord Waddington" colon="" colnum="1318"  time="014:47:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-02.htm#01129-02_spopq0">
 	<p pid="a.1318.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1318.1/2" class="indent">Whether, after the adoption of the European Union Charter of Fundamental Rights, the European Court of Justice will take account of its provisions in interpreting and considering the scope of Community law.</p>
+	<p pid="a.1318.1/2" class="indent" pwmotiontext="asked">Whether, after the adoption of the European Union Charter of Fundamental Rights, the European Court of Justice will take account of its provisions in interpreting and considering the scope of Community law.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1318.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="1318"  time="014:47:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-02.htm#01129-02_spmin0">
@@ -234,7 +255,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1320.3" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon="" colnum="1320"  time="014:54:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-03.htm#01129-03_spopq0">
 	<p pid="a.1320.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1320.3/2" class="indent">Whether the latest monthly figures for asylum applications shed any light on the progress of their attempt to deter applicants from applying for asylum in the United Kingdom by changing the way they are treated when they arrive.</p>
+	<p pid="a.1320.3/2" class="indent" pwmotiontext="asked">Whether the latest monthly figures for asylum applications shed any light on the progress of their attempt to deter applicants from applying for asylum in the United Kingdom by changing the way they are treated when they arrive.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-11-29a.1320.4" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1320"  time="014:54:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo001129/text/01129-03.htm#01129-03_spmin0">

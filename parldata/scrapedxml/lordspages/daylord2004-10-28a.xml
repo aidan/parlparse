@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -67,7 +87,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1395.4" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="1395"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-01.htm#41028-01_spmin1">
-	<p pid="a.1395.4/1">My Lords, in England 15 recipients of whole blood were notified in December 2003 of their possible increased risk of variant CJD. For recipients of plasma products, the patient notification exercise started on <phrase class="date" code="">21 September</phrase>, and will run for a few months. Patient records are being examined currently. Until completed, it is not possible to say how many more people will be notified as a result of this exercise.</p>
+	<p pid="a.1395.4/1">My Lords, in England 15 recipients of whole blood were notified in December 2003 of their possible increased risk of variant CJD. For recipients of plasma products, the patient notification exercise started on <phrase class="date" code="2004-09-21">21 September</phrase>, and will run for a few months. Patient records are being examined currently. Until completed, it is not possible to say how many more people will be notified as a result of this exercise.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1395.5" speakerid="uk.org.publicwhip/lord/100444" speakername="Lord Morris of Manchester" colon=":" colnum="1395"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-01.htm#41028-01_spnew0">
@@ -166,7 +186,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1399.5" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="1399"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-02.htm#41028-02_spopq0">
 	<p pid="a.1399.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1399.5/2" class="indent">What action they intend to take following reports that the British Pregnancy Advisory Service had referred women abroad for abortions after the United Kingdom legal limit of 24 weeks.</p>
+	<p pid="a.1399.5/2" class="indent" pwmotiontext="asked">What action they intend to take following reports that the British Pregnancy Advisory Service had referred women abroad for abortions after the United Kingdom legal limit of 24 weeks.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1400.0" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="1400"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-02.htm#41028-02_spnew8">
@@ -229,7 +249,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1401.7" speakerid="uk.org.publicwhip/lord/100778" speakername="Lord Garden" colon="" colnum="1401"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-03.htm#41028-03_spopq0">
 	<p pid="a.1401.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1401.7/2" class="indent">What is the current operating capability of the Civil Contingencies Reaction Force (CCRF); and what assessment they have made of the effect of current deployments of reserve forces to overseas theatres on CCRF units.</p>
+	<p pid="a.1401.7/2" class="indent" pwmotiontext="asked">What is the current operating capability of the Civil Contingencies Reaction Force (CCRF); and what assessment they have made of the effect of current deployments of reserve forces to overseas theatres on CCRF units.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-28a.1402.0" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1402"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041028/text/41028-03.htm#41028-03_spmin0">
@@ -1228,7 +1248,7 @@
 	<p pid="a.1449.0/2">I shall use my time to refer to one matter and then to reflect on the general situation. I shall not rehearse the statistics already set out by the noble Baroness and the noble Lord, Lord Dholakia, save to say that whichever figures you look at and from whichever base you start, the position of women in prison is not getting better. That is not because the Government and the Prison Service do not want it to do so. Rather, it is due to other pressures, and it is from those that the first part of what I want to say arises.</p>
 	<p pid="a.1449.0/3">Earlier this month I went to a meeting of West Midlands chaplains at Her Majesty's Prison, Brockhill. We received a welcome address from the governor of the prison which all those present regarded as in a class of its own. I have visited the prison on a number of occasions because it is in my diocese. It has been through the most terrible period during which there were numerous instances of self-harm and suicide. When I have visited the prison in the context of those suicides, I felt that it was a beleaguered institution in which terrible things were being suffered. However, the most terrible suffering arose when someone committed suicide. The staff and the governor all felt that they were being inspected and blamed, when in fact the situation was extraordinarily difficult to handle.</p>
 	<p pid="a.1449.0/4">The present governor and her staff have really turned the situation around. We were deeply impressed both by her understanding of the circumstances of the people with whom she had to deal and how she addressed us about them. Most of those present were either not working in the Prison Service, like myself, or they worked in male institutions.</p>
-	<p pid="a.1449.0/5">Imagine my feelings when I returned home from addressing a deanery synod about prison work to find a message saying that on <phrase class="date" code="">14 October</phrase>, Brockhill prison was informed that it was to be re-roled as a male institution; that expertise&mdash;there are 200 staff working there, excluding education and health workers&mdash;was to be dispersed; and that the 167 prisoners would be dispersed. Brockhill is the only women's prison in the country that is full. All the others have spare places. I was filled with a sense of all that work going to waste, not the least of which would be the prison health centre which has cost the taxpayer &pound;6 million to construct. It will almost certainly not be required anything like as much once the prison is re-roled. A prison inspection by HM Chief Inspector of Prisons and her team is about to go ahead, which will report long after the institution has actually ceased to exist.</p>
+	<p pid="a.1449.0/5">Imagine my feelings when I returned home from addressing a deanery synod about prison work to find a message saying that on <phrase class="date" code="2004-10-14">14 October</phrase>, Brockhill prison was informed that it was to be re-roled as a male institution; that expertise&mdash;there are 200 staff working there, excluding education and health workers&mdash;was to be dispersed; and that the 167 prisoners would be dispersed. Brockhill is the only women's prison in the country that is full. All the others have spare places. I was filled with a sense of all that work going to waste, not the least of which would be the prison health centre which has cost the taxpayer &pound;6 million to construct. It will almost certainly not be required anything like as much once the prison is re-roled. A prison inspection by HM Chief Inspector of Prisons and her team is about to go ahead, which will report long after the institution has actually ceased to exist.</p>
 	<p pid="a.1449.0/6">That represents a terribly serious waste, and in the context of the situation set out for us by the noble Baroness, Lady Gale, I have to say that I think that it is a very great shame. However, it is not because the Government wish women in prison particularly ill, or because the Prison Service does so. Rather, it is because the general pressure of overcrowding is leading to a situation in which decisions like this have to be taken, but which will result in increasing precisely the kind of distress referred to by the noble Lord, Lord Dholakia. Women prisoners are to be relocated to Peterborough when their homes are in the West Midlands. Those on remand will have to make long daily journeys to court. If they are convicted and held in Peterborough, their families will find it almost impossible to keep up proper and regular contact.</p>
 	<p pid="a.1449.0/7">The noble Lord, Lord Dholakia, ended his remarks by stating that when we sentence a woman to prison, we are actually sentencing a whole family, and it is to that point that I direct my more general comments. Of course I know that the Minister, his colleagues and those in the Prison Service have a sense of compassion about women in this situation, but as a society we have not addressed the fact that a sentence of six months in prison for a 19 year-old woman is not the same as a six-month sentence for a 19 year-old man. It will almost certainly be completely different.</p>
 	<p pid="a.1449.0/8">The family connection of these young women is of particular importance in this respect. Without it, they are being deprived of precisely the influences, opportunities and possibilities which might help them to achieve a more stable life.</p>
@@ -1248,7 +1268,7 @@
 	<p pid="a.1451.0/7">In a speech to the Prison Reform Trust the following year, the Lord Chief Justice advocated the same approach. He said:</p>
 	<p pid="a.1451.0/8" class="indent">&quot;There should be a board responsible for women in the criminal justice system. Its responsibilities in relation to women should be similar to that of the Youth Justice Board. It should regard its primary responsibility to be to contain the growth of the women prison population&quot;.</p>
 	<p pid="a.1451.0/9">The introduction of a woman's justice board has on several occasions been put to Ministers in debates and Questions in your Lordships' House. They have invariably responded favourably; however, the Government have yet to establish the women's justice board. The Government now have an action plan for women in prison, but missing is the key ingredient of a board to take positive action and make that action a priority.</p>
-	<p pid="a.1451.0/10">The spending review published on <phrase class="date" code="">12 July</phrase> stated:</p>
+	<p pid="a.1451.0/10">The spending review published on <phrase class="date" code="2004-07-12">12 July</phrase> stated:</p>
 	<p pid="a.1451.0/11" class="indent">&quot;Over the 2004 Spending Review period the Government will pilot radical new approaches to meet the specific needs of women offenders, to tackle the causes of crime and reoffending among this group and reduce the need for custody&quot;.</p>
 	<p pid="a.1451.0/12">The women's justice board should be set up as soon as possible to make sure that all that happens. It would have the necessary determination, experience and influence to put those plans into practice. When my noble friend the Minister reports to the Home Office on this debate, will he use his well known determination, expertise and influence to promote the speedy launching of a women's justice board?</p>
 </speech>
@@ -1362,7 +1382,7 @@
 	<p pid="a.1465.0/7">I want to raise specific issues on which the Minister might be able to comment. On the previous occasion when I spoke on the issue, I welcomed the closer working relationships instigated by the Government last year between the Prison Service and the NHS, and looked forward to hearing how it was working. Some of us had been pressing for it for a long time. Like other noble Lords, particularly the noble Baroness, Lady Stern, I believe that this is the way forward.</p>
 	<p pid="a.1465.0/8">However, I have a question on one element of the initiative. According to the Prison Officers' Association, the initiative is not working as it should. As overcrowding continues, the POA maintains that healthcare is getting worse, suicides are increasing and untrained operational support-grade staff are being employed as what they describe as &quot;suicide watchers&quot; instead of trained prison staff, who may have the expertise to assist a prisoner. The Prison Officers' Association also believes that there is a lack of clear direction from the joint Prison Service/Department of Health unit. My noble friend Lord Rosser outlined the needs in that area most powerfully. Knowing that women are more likely to self-harm and more likely to depend on medicinal care than men, that worries me greatly. I hope that my noble friend can set my mind at rest on where our healthcare in prisons is going.</p>
 	<p pid="a.1465.0/9">A second special issue is women who have not been sentenced but who are on remand. Women on remand are entitled to daily visits. But, again, bureaucracy bites; institutional factors step in. They suffer constant moves, and obviously that mitigates against family contacts and exacerbates an already stressful and often disorientating situation. I know quite well of one instance where remand prisoners have been sent to a prison in Suffolk from as far away as Shrewsbury and Bournemouth. Is that really necessary?</p>
-	<p pid="a.1465.0/10">Lastly, I want to draw attention to women in Northern Ireland. I wish to highlight an article that appeared on <phrase class="date" code="">19 October</phrase> in the <i>Belfast Telegraph</i> about a public inquiry into,</p>
+	<p pid="a.1465.0/10">Lastly, I want to draw attention to women in Northern Ireland. I wish to highlight an article that appeared on <phrase class="date" code="2004-10-19">19 October</phrase> in the <i>Belfast Telegraph</i> about a public inquiry into,</p>
 	<p pid="a.1465.0/11" class="indent">&quot;'endemic failures' in the imprisonment of women in Northern Ireland&quot;.</p>
 	<p pid="a.1465.0/12">It referred to a report written by Professor Phil Scraton, of the Institute of Criminology and Criminal Justice at Queen's University, and Dr Linda Moore, an investigations worker with the Northern Ireland Human Rights Commission. It described what were said to be,</p>
 	<p pid="a.1465.0/13" class="indent">&quot;appalling conditions faced by women and girls . . . imprisoned at Mourne House in the high-security Maghaberry prison&quot;.</p>
@@ -1405,7 +1425,7 @@
 	<p pid="a.1470.0/10">I do hope that the Minister can confirm that this is going ahead and that he can give us chapter and verse on how the Government plan to do this, and in what time-frame.</p>
 	<p pid="a.1470.0/11">My second overarching point is that the impact on families, in particular children, of incarceration is incalculable, but must be taken into account. Of the different statistics from which noble Lords have quoted, I have today chosen to cite the fact that 17,700 children are affected each year by their mother being in prison. The figure rises to something in the order of 125,000 when fathers are included. At any one time, two-thirds of women prisoners have dependent children under the age of 18. Such separation is hugely damaging to both mother and child. It inevitably affects the mother's ability to be a good parent. Children's experience of parenting is undermined and it has implications for their own parenting in the future.</p>
 	<p pid="a.1470.0/12">Having myself set up the first visitor centre some 30 years ago, I have seen at first hand the ripples of distress caused to families and their children, 30 per cent of whom now suffer from significant mental health problems. I repeat: 30 per cent of these children have mental health problems. They also experience difficulties at school in the form of bullying, being ostracised and, for the duration of the prison sentence, are unlikely even to be able to stay in their own homes. On top of that, as we have heard, the mother is often imprisoned miles away from home.</p>
-	<p pid="a.1470.0/13">Visitor centres can at least provide some succour and support when they are properly manned and managed. I should like to put the record straight on a point. On <phrase class="date" code="">14 October</phrase> I said in your Lordships' House that the newest women's prison, Bronzefield, did not have a centre. It does in fact have an unmanned waiting room. While the Prison Service has no real targets to maintain family ties, the least it could do is to ensure that every prison has a proper centre, not merely a waiting room, so that the quality of visits and their crucial value in maintaining family contact can be supported as far as possible. Can the Minister give us any assurances on that?</p>
+	<p pid="a.1470.0/13">Visitor centres can at least provide some succour and support when they are properly manned and managed. I should like to put the record straight on a point. On <phrase class="date" code="2004-10-14">14 October</phrase> I said in your Lordships' House that the newest women's prison, Bronzefield, did not have a centre. It does in fact have an unmanned waiting room. While the Prison Service has no real targets to maintain family ties, the least it could do is to ensure that every prison has a proper centre, not merely a waiting room, so that the quality of visits and their crucial value in maintaining family contact can be supported as far as possible. Can the Minister give us any assurances on that?</p>
 	<p pid="a.1470.0/14">But my more fundamental point is that the implications for society are that each time we imprison a mother we are punishing innocent children, where our duty of care as adults is most profound. Is this right or what these children deserve? Should we not be looking at ways to manage and treat their mothers that does not involve incarceration and separation?</p>
 	<p pid="a.1470.0/15">Even more disturbingly, research shows that the chances of these innocent children being themselves drawn into the criminal justice system are significantly increased. In other words, we are actually creating the conditions from which the next generation of disaffected, anti-social or offending young people may come. The ripples of distress go wider and wider.</p>
 	<p pid="a.1470.0/16">That is why I say that how we manage women offenders and their range of problems is not only a reflection of how we deal with the most needy and the most vulnerable&mdash;their children&mdash;but also impacts on the very nature of our society in the future. We really must think again.</p>
@@ -1461,11 +1481,11 @@
 	<p pid="a.1474.0/25">We have made arrangements for mothers and babies. We have around 120 places for mothers and babies up to 18 months. At the moment, only some 50 are being used and they are being used for the reasons that the courts have decided. Mothers with babies can be temporarily accommodated in prison. The situation is not completely satisfactory, but work is being done to improve it.</p>
 	<p pid="a.1474.0/26">I shall speak about some of the issues relating to the Women's Team before moving on briefly to the Women's Offending Reduction Programme, which has seen some positive results. Among the key achievements of the Prison Service's Women's Team is the publication of a women's prison allocation strategy that aims to ensure the effective allocation of prisoners based on the length of sentence and their identified needs, including family ties. Housing advisers have been recruited for all women's local prisons. Four prisons have been supported in the transfer of health services to primary care trusts. The national service framework for healthcare of women in custody has been completed. Methadone maintenance programmes will be in place in all women's prisons by the end of the year. At present, they are in place in all but two prisons; Cookham Wood and East Sutton Park. Lead substance misuse nurse posts now exist in all women's prisons. The mental health in-reach teams have been funded and developed in all women's prisons. Research into factors that increase the risk of offending among women has been commissioned. This research, being carried out by the University of Leicester, will explore pathways into offending and include the role of early family experiences.</p>
 	<p pid="a.1474.0/27">Obviously, there remains much to be done in the second half of the year, but work is already going on into the plan for 2005&ndash;06. Among the issues that will have particular focus are family networks, financial support and debt and institutionalisation and life skills. I am confident that these improvements will continue to be made in meeting the needs of the women in prisons.</p>
-	<p pid="a.1474.0/28">In terms of wider initiatives, there is no simple answer: I do not make excuses. The Prison Service is one part of the chain. As I said, the Prison Service does not send women to prison. But to that end, the Women's Offending Reduction Programme has been developed and was published on <phrase class="date" code="2006-03-11">11 March</phrase> this year, as my noble friend Lady Gale said. This is a three-year programme of work that encourages joint working between departments, agencies and other organisations to tackle the range of factors that impact on the reasons why women offend.</p>
+	<p pid="a.1474.0/28">In terms of wider initiatives, there is no simple answer: I do not make excuses. The Prison Service is one part of the chain. As I said, the Prison Service does not send women to prison. But to that end, the Women's Offending Reduction Programme has been developed and was published on <phrase class="date" code="2004-03-11">11 March</phrase> this year, as my noble friend Lady Gale said. This is a three-year programme of work that encourages joint working between departments, agencies and other organisations to tackle the range of factors that impact on the reasons why women offend.</p>
 	<p pid="a.1474.0/29">It aims to reduce the number of women in custody by focusing on the greater use of community disposals that offer appropriate packages and interventions that are better tailored to address the complex range of factors that impact on women's offending. I fully agree with what has been said. Women are affected by prison in a different way from men. There is no question about that, and it does not matter what age one is. Women are affected differently, and we have to take that into account.</p>
 	<p pid="a.1474.0/30">Two key target groups are women with mental health problems and women with substance misuse problems. In order to meet their needs, the programme operates in tandem with the Department of Health's women's mental health strategy and the national drug strategy.</p>
 	<p pid="a.1474.0/31">The Home Office and the Department of Health have been working together closely to ensure that the needs of women offenders with mental health problems are properly met, with a focus on diversion from custody and getting them into appropriate community-based mental health services and interventions as early as possible. The programme includes &quot;Accommodation Plus&quot; pilots for young women. The National Probation Directorate, the Prison Service and the Youth Justice Board are jointly funding innovative housing-related pilot schemes that aim to meet the housing needs of young women involved in, or at risk of, offending, while, at the same time, providing access to a range of additional support services that can respond to other risk factors, including mental health problems and substance misuse problems.</p>
-	<p pid="a.1474.0/32">The publication of <phrase class="date" code="2006-01-06">6 January</phrase> this year, <i>Reducing Crime&mdash;Changing Lives</i>, which has already been referred to, contains the Government's plans for transforming the management of offenders, including the creation of the National Offender Management Service. The emphasis will be on greater use of community sentences for lower-risk offenders. By definition, women pose a lower risk than men; we know that. The use of case management will also be a key feature of the new service, with end-to-end management ensuring a co-ordinated and joined-up response.</p>
+	<p pid="a.1474.0/32">The publication of <phrase class="date" code="2004-01-06">6 January</phrase> this year, <i>Reducing Crime&mdash;Changing Lives</i>, which has already been referred to, contains the Government's plans for transforming the management of offenders, including the creation of the National Offender Management Service. The emphasis will be on greater use of community sentences for lower-risk offenders. By definition, women pose a lower risk than men; we know that. The use of case management will also be a key feature of the new service, with end-to-end management ensuring a co-ordinated and joined-up response.</p>
 	<p pid="a.1474.0/33">In order to reduce the number of women in custody and increase the potential for diversion, the programme will focus on improving sentencers' confidence in community disposals that offer appropriate packages and interventions and are better tailored to meet the particular needs of women offenders.</p>
 	<p pid="a.1474.0/34">When noble Lords read this debate in <i>Hansard</i>, they will see that what I am basically describing is the women's justice board, which was advocated but has not yet been created by the Home Office. I supported it from this Dispatch Box when I was a Home Office Minister. It has still not been brought about, but I think that we are doing it in all but name. The proof will be in the pudding. It is not my job to make policy on the hoof. Nevertheless, that recommendation was made and it has widespread support, but it has not been put into operation by the Home Office.</p>
 	<p pid="a.1474.0/35">The offenders' management programme will focus on reducing the number of women in custody and increasing the potential for diversion. It will improve sentencers' confidence&mdash;that is, the courts' confidence&mdash;that the other alternatives will work. Therefore, we are bringing about the board in all but name.</p>

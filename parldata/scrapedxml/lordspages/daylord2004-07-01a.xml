@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.357.1" speakerid="uk.org.publicwhip/lord/100180" speakername="Lord Dubs" colon="" colnum="357"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-01.htm#40701-01_spopq0">
 	<p pid="a.357.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.357.1/2" class="indent">How many spoilt ballot papers, expressed as a percentage of total votes cast, there were in the recent elections in London for the Mayor, the London Assembly and for the European Parliament respectively; and what assessment they have made of this.</p>
+	<p pid="a.357.1/2" class="indent" pwmotiontext="asked">How many spoilt ballot papers, expressed as a percentage of total votes cast, there were in the recent elections in London for the Mayor, the London Assembly and for the European Parliament respectively; and what assessment they have made of this.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.357.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="357"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-01.htm#40701-01_spnew0">
@@ -100,7 +119,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.359.4" speakerid="uk.org.publicwhip/lord/100644" speakername="Lord Tordoff" colon=":" colnum="359"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-01.htm#40701-01_spnew11">
 	<p pid="a.359.4/1">My Lords, will the Minister take the opportunity to correct a statement made by his noble friend Lord Filkin yesterday in answer to my noble friend Lord Greaves? He said that the Asian lady who was being discussed,</p>
-	<p pid="a.359.4/2" class="indent">&quot;had to get her cross on her ballot witnessed, most probably by a member of her family&quot;.&mdash;[<i>Official Report</i>, 30/6/04; col. 263.]</p>
+	<p pid="a.359.4/2" class="indent">&quot;had to get her cross on her ballot witnessed, most probably by a member of her family&quot;.&mdash;[<phrase class="offrep" id="lords/2004-06-30.263"><i>Official Report</i>, 30/6/04; col. 263</phrase>.]</p>
 	<p pid="a.359.4/3">It is not true that the cross had to be witnessed, merely the identification of the person. It would be helpful if the Government would correct that statement.</p>
 </speech>
 
@@ -122,7 +141,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.360.1" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="360"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-01.htm#40701-01_spopq1">
 	<p pid="a.360.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.360.1/2" class="indent">In the light of the report on homeless households in remote rural areas, <i>State of the Countryside</i>, how such households not housed in temporary accommodation are provided for.</p>
+	<p pid="a.360.1/2" class="indent" pwmotiontext="asked">In the light of the report on homeless households in remote rural areas, <i>State of the Countryside</i>, how such households not housed in temporary accommodation are provided for.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.360.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="360"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-01.htm#40701-01_spnew15">
@@ -193,11 +212,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.362.5" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="362"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-02.htm#40701-02_spopq0">
 	<p pid="a.362.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.362.5/2" class="indent">What plans there are for a NATO force to be deployed to Iraq to support the new government after the handover of power on <phrase class="date" code="">30 June</phrase>.</p>
+	<p pid="a.362.5/2" class="indent" pwmotiontext="asked">What plans there are for a NATO force to be deployed to Iraq to support the new government after the handover of power on <phrase class="date" code="2004-06-30">30 June</phrase>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.362.6" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="362"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-02.htm#40701-02_spmin0">
-	<p pid="a.362.6/1">My Lords, there are no plans to deploy NATO troops as part of, or in place of, the multinational force in Iraq. However, in a letter of <phrase class="date" code="">2 June</phrase>, Prime Minister Allawi specifically asked for NATO help in training Iraqi security forces. It was agreed at the NATO summit in Istanbul that NATO would respond positively to this request.</p>
+	<p pid="a.362.6/1">My Lords, there are no plans to deploy NATO troops as part of, or in place of, the multinational force in Iraq. However, in a letter of <phrase class="date" code="2004-06-02">2 June</phrase>, Prime Minister Allawi specifically asked for NATO help in training Iraqi security forces. It was agreed at the NATO summit in Istanbul that NATO would respond positively to this request.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.363.0" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon=":" colnum="363"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-02.htm#40701-02_spnew14">
@@ -218,7 +237,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.363.4" speakerid="uk.org.publicwhip/lord/100778" speakername="Lord Garden" colon=":" colnum="363"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spnew0">
-	<p pid="a.363.4/1">My Lords, does the noble Baroness agree with the call made by the NATO Secretary-General, Jaap de Hoop Scheffer, at the Royal United Services Institute on <phrase class="date" code="">26 June</phrase> for nations to consider common funding for such operations? We cannot expect volunteers if they also have to pay the costs disproportionately. Should we not be pushing that agenda forward now?</p>
+	<p pid="a.363.4/1">My Lords, does the noble Baroness agree with the call made by the NATO Secretary-General, Jaap de Hoop Scheffer, at the Royal United Services Institute on <phrase class="date" code="2004-06-26">26 June</phrase> for nations to consider common funding for such operations? We cannot expect volunteers if they also have to pay the costs disproportionately. Should we not be pushing that agenda forward now?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.364.0" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="364"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spnew1">
@@ -230,7 +249,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.364.2" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="364"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spnew3">
-	<p pid="a.364.2/1">My Lords, I associate the United Kingdom Government with the desire of the wider world, as my noble friend puts it, to acknowledge that what is now happening in Iraq is happening under the authority of the United Nations Security Council Resolution 1546. So I hope that in making that point my noble friend is not excluding Her Majesty's Government. The important point for us to concentrate on is that the training and discussions around it, has been triggered not by NATO, but by a specific request from Dr Allawi. Dr Allawi's letter of <phrase class="date" code="">20 June</phrase> is clear on that point; it is clearly a letter to the NATO Secretary-General; it has been responded to in the positive manner that I have already described to your Lordships.</p>
+	<p pid="a.364.2/1">My Lords, I associate the United Kingdom Government with the desire of the wider world, as my noble friend puts it, to acknowledge that what is now happening in Iraq is happening under the authority of the United Nations Security Council Resolution 1546. So I hope that in making that point my noble friend is not excluding Her Majesty's Government. The important point for us to concentrate on is that the training and discussions around it, has been triggered not by NATO, but by a specific request from Dr Allawi. Dr Allawi's letter of <phrase class="date" code="2004-06-20">20 June</phrase> is clear on that point; it is clearly a letter to the NATO Secretary-General; it has been responded to in the positive manner that I have already described to your Lordships.</p>
 	<p pid="a.364.2/2">I do not think that we can say that NATO has direct responsibility to the United Nations on the matter, but we can say that the multinational force operates under the auspices of the United Nations and we hope that that will all be done with the maximum of international co-operation.</p>
 </speech>
 
@@ -253,11 +272,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.365.2" speakerid="uk.org.publicwhip/lord/100498" speakername="Lord Peyton of Yeovil" colon="" colnum="365"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spopq0">
 	<p pid="a.365.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.365.2/2" class="indent">Whether they propose to reverse any of the taxation measures which they have taken in relation to pensions.</p>
+	<p pid="a.365.2/2" class="indent" pwmotiontext="asked">Whether they propose to reverse any of the taxation measures which they have taken in relation to pensions.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.365.3" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="365"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spnew6">
-	<p pid="a.365.3/1">My Lords, the Government propose, from <phrase class="date" code="">6 April 2006</phrase>, radically to simplify the current taxation rules for pensions. The new rules, set out in the Finance Bill currently before Parliament, will make it easier for individuals to plan with confidence for a comfortable retirement by creating a simpler and more flexible environment for pension saving.</p>
+	<p pid="a.365.3/1">My Lords, the Government propose, from <phrase class="date" code="2006-04-06">6 April 2006</phrase>, radically to simplify the current taxation rules for pensions. The new rules, set out in the Finance Bill currently before Parliament, will make it easier for individuals to plan with confidence for a comfortable retirement by creating a simpler and more flexible environment for pension saving.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.365.4" speakerid="uk.org.publicwhip/lord/100498" speakername="Lord Peyton of Yeovil" colon=":" colnum="365"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-03.htm#40701-03_spnew7">
@@ -445,7 +464,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.375.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="375"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-06.htm#40701-06_spnew3">
 	<p pid="a.375.2/1">My Lords, it was kind of the noble Lord, Lord Forsyth of Drumlean, to toast my health. I could not agree more with him about the work of the noble Baroness, Lady Sharp of Guildford. I referred to it, but obviously not clearly enough. I also agree with him about the role of your Lordships' House. On this subject in particular, it has a substantial role to play. I am also grateful for the acknowledgement of the work that I have done, although I should say that my colleagues in another place have listened and have been extremely helpful.</p>
-	<p pid="a.375.2/2">The noble Lord, Lord Forsyth of Drumlean, asked me about a couple of specific points. The date of <phrase class="date" code="">1 August</phrase> mirrors what was in the amendment that the noble Lord and the noble Baroness tabled, which was the same date as provided in 1998. In another place, they discussed different scenarios with regard to clearing. Rather than go through all of those, it is right, as the noble Lord indicated, that we do not plan to cover clearing students at this stage. That is mainly because it would, at best, be unusual for a student to take up an unfilled place through clearing and then seek to defer entry. That is not the purpose of clearing.</p>
+	<p pid="a.375.2/2">The noble Lord, Lord Forsyth of Drumlean, asked me about a couple of specific points. The date of <phrase class="date" code="2004-08-01">1 August</phrase> mirrors what was in the amendment that the noble Lord and the noble Baroness tabled, which was the same date as provided in 1998. In another place, they discussed different scenarios with regard to clearing. Rather than go through all of those, it is right, as the noble Lord indicated, that we do not plan to cover clearing students at this stage. That is mainly because it would, at best, be unusual for a student to take up an unfilled place through clearing and then seek to defer entry. That is not the purpose of clearing.</p>
 	<p pid="a.375.2/3">As I said, universities still have the right to exercise discretion in such cases. We have not taken that away; indeed, it is where we began. They could offer exemption in a particular case, if they felt that that was right. However, we will carry on talking about the issue with Universities UK and with UCAS. Noble Lords will probably know that we can do something about gap years without primary legislation, because of the way in which the Bill is structured. If those deliberations and discussions lead us to a view that we should do something more, we can. For the moment, we do not plan to, and we will carry on the discussions. I am sure that we would be interested to hear anything more that the noble Lord, Lord Forsyth of Drumlean, has to say on the issue.</p>
 	<p pid="a.375.2/4">I was asked about the number of gap-year students who will be directly affected. Some 19,000 18 year-olds in the UK deferred entry from 2003&ndash;04 to 2004&ndash;05. About 26,000 students of all ages deferred entry. Taking the proportion of students in England from the UK figures, we estimate that about 28,000 students might defer entry and would be covered by the noble Lord's amendment. That is a significant figure. It may sound like a joke, but actually my babysitter is covered too.</p>
 </speech>
@@ -474,8 +493,8 @@
 	<p pid="a.377.0/1">My Lords, I beg to move that the House do not insist on its Amendment No. 4, to which the Commons have disagreed for their reason numbered 4A.</p>
 	<p pid="a.377.0/2">The amendment raises the issue of parliamentary privilege, which is why those in another place have chosen to reject it. For that reason, I hope that it will not be pressed. Nevertheless, the issues raised are important, and I am glad of the opportunity to refer to them again. We debated the issue at some length during the passage of the Bill in Committee, on Report and again at Third Reading. It was a wide-ranging debate, which reflected well on the expertise of noble Lords who spoke. In particular, there were valuable and heartfelt contributions from the noble Lords, Lord Phillips, Lord Dearing, Lord Baker and Lord Forsyth, the noble Baronesses, Lady Sharp and Lady O'Neill, and my noble friends Lady Warwick and Lady Blackstone. I am grateful to them all and to all other noble Lords who made contributions to this important debate.</p>
 	<p pid="a.377.0/3">The key issue, and the reason that this amendment was rejected in another place on grounds of privilege, is the fact that we believe that it would be inappropriate for legislation to tie the hands of future governments and prevent them determining their spending priorities in the light of circumstances at the time. However, I recognise the strength of feeling in your Lordships' House that this fee income should be genuinely additional. I have said quite clearly that the Government are committed to that. But primary legislation is not the right place for such commitments. Noble Lords will appreciate that that is a precedent I do not wish to set.</p>
-	<p pid="a.377.0/4">While I do not believe that the amendment should be pressed, I hope that I can again go some way to assuring noble Lords that we are doing all that we can to meet their concerns. When we discussed this matter previously, I said that, following discussions with Universities UK and the noble Lord, Lord Phillips, my right honourable friend the Minister responsible for higher education had written to Universities UK proposing the establishment of a working group to produce a new definition of unit cost. I am pleased to say that the first meeting of that group will be on <phrase class="date" code="">5 July</phrase>. That definition would, of course, be published in the annual departmental report, which is laid before Parliament in the usual way.</p>
-	<p pid="a.377.0/5">I can also confirm that I shall be meeting the noble Baroness, Lady O'Neill, and the noble Lord, Lord Wilson of Dinton, on <phrase class="date" code="">Tuesday 20 July</phrase> with colleagues from the Higher Education Funding Council for England to discuss how information about the levels of funding can be presented in the most helpful and transparent way for the benefit of both institutions and their students. I know that that is what the noble Baroness, Lady O'Neill, was seeking when she spoke at Third Reading.</p>
+	<p pid="a.377.0/4">While I do not believe that the amendment should be pressed, I hope that I can again go some way to assuring noble Lords that we are doing all that we can to meet their concerns. When we discussed this matter previously, I said that, following discussions with Universities UK and the noble Lord, Lord Phillips, my right honourable friend the Minister responsible for higher education had written to Universities UK proposing the establishment of a working group to produce a new definition of unit cost. I am pleased to say that the first meeting of that group will be on <phrase class="date" code="2004-07-05">5 July</phrase>. That definition would, of course, be published in the annual departmental report, which is laid before Parliament in the usual way.</p>
+	<p pid="a.377.0/5">I can also confirm that I shall be meeting the noble Baroness, Lady O'Neill, and the noble Lord, Lord Wilson of Dinton, on <phrase class="date" code="2004-07-20">Tuesday 20 July</phrase> with colleagues from the Higher Education Funding Council for England to discuss how information about the levels of funding can be presented in the most helpful and transparent way for the benefit of both institutions and their students. I know that that is what the noble Baroness, Lady O'Neill, was seeking when she spoke at Third Reading.</p>
 	<p pid="a.377.0/6">It is important that we have had a further chance to reflect on those issues. The Government have done so. So, too, have the other place. On grounds of privilege, they have decided that they cannot accept this amendment. In view of that, for the reasons that I have set out and with the reassurances that I have given, I hope that the amendment will not be pressed.</p>
 	<p pid="a.377.0/7">Moved, That the House do not insist on its Amendment No. 4, to which the Commons have disagreed for their reason numbered 4A.&mdash;(<i>Baroness Ashton of Upholland</i>.)</p>
 </speech>
@@ -758,7 +777,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.396.4" speakerid="uk.org.publicwhip/lord/100437" speakername="The Duke of Montrose" colon=":" colnum="396"  time="012:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-11.htm#40701-11_spmin0">
-	<p pid="a.396.4/1">My Lords, I hope that your Lordships will understand why I have tabled this amendment again. It was tabled as Amendment No. 5 on Report. The arguments that I put forward today are exactly the same as the ones that I put forward on Report. They can be found at col. 1415 of <i>Hansard</i> of <phrase class="date" code="">24 June</phrase>. I put forward the same arguments today as we had a sense that the Government were slightly gagged in terms of what they were able to say on Report. I beg to move.</p>
+	<p pid="a.396.4/1">My Lords, I hope that your Lordships will understand why I have tabled this amendment again. It was tabled as Amendment No. 5 on Report. The arguments that I put forward today are exactly the same as the ones that I put forward on Report. They can be found at col. 1415 of <i>Hansard</i> of <phrase class="date" code="2004-06-24">24 June</phrase>. I put forward the same arguments today as we had a sense that the Government were slightly gagged in terms of what they were able to say on Report. I beg to move.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.396.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="396"  time="012:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-11.htm#40701-11_spnew3">
@@ -950,7 +969,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.410.0" speakerid="uk.org.publicwhip/lord/100286" speakername="Lord Henley" colon=":" colnum="410"  time="012:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-15.htm#40701-15_spnew0">
-	<p pid="a.410.0/1">My Lords, I am grateful to the noble Baroness for that explanation. I am in a particularly benign mood after the Minister announced that we are a grown-up House and the Government have withdrawn from their fit of pique as described by the right revered Prelate last week and tabled their own amendments. Therefore, on this occasion I shall not seek from the Minister a detailed explanation of those amendments because I appreciate that we have received some explanation in one of the mysterious, undated letters&mdash;one of which I believe should have been dated <phrase class="date" code="">17 May</phrase>&mdash;that the Minister kindly sent to us on an earlier occasion.</p>
+	<p pid="a.410.0/1">My Lords, I am grateful to the noble Baroness for that explanation. I am in a particularly benign mood after the Minister announced that we are a grown-up House and the Government have withdrawn from their fit of pique as described by the right revered Prelate last week and tabled their own amendments. Therefore, on this occasion I shall not seek from the Minister a detailed explanation of those amendments because I appreciate that we have received some explanation in one of the mysterious, undated letters&mdash;one of which I believe should have been dated <phrase class="date" code="2004-05-17">17 May</phrase>&mdash;that the Minister kindly sent to us on an earlier occasion.</p>
 	<p pid="a.410.0/2">I wonder whether she can help me a little. I am rather intrigued about the grouping. As the Minister will remember, when the little local difficulties arose last week I moved what was then government amendment No. 13, which was in a group of seven other amendments. No Tellers were appointed by either side on that occasion and Amendment No. 13 was therefore lost. I understand that government Amendment No. 4 is the second from that group; which was Amendment No. 15 last week. Presumably some of the others belong in that group and some in other groups. I appreciate that those are all very minor amendments, but it is very difficult to work out exactly which ones are from Report stage as opposed to those that are now before us at Third Reading.</p>
 	<p pid="a.410.0/3">I wonder whether it might be good practice for the Home Office in terms of getting their letters right&mdash;perhaps they would remember to date them on this occasion&mdash;if the Minister were to write to me and to other noble Lords setting out which amendments these are so that I can follow in slightly greater detail what it is the Government have put before us. I have no intention of opposing the amendments on this occasion.</p>
 	<p pid="a.410.0/4">As I said, I am in a benign mood and therefore I shall not move my Amendments Nos. 7, 8, 25 and 26, which were originally government amendments. It might be that if the Government still wish to go ahead with those amendments, if they are valid, that they could move them. However, if they do not want to go ahead with them, I shall not move them and shall leave things in that position. Perhaps the Minister could give me the assurance of another brief letter from the Home Office.</p>
@@ -1280,7 +1299,7 @@
 <speech id="uk.org.publicwhip/lords/2004-07-01a.424.0" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="424"  time="012:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-19.htm#40701-19_spnew2">
 	<p pid="a.424.0/1">My Lords, again, as I said to the noble Lord, Lord Higgins, my response to that point, as opposed to the other point raised by the noble Baroness, is exactly the same. This amendment seeks to alter provisions of the Inheritance Tax Act relating to transfers of value so that civil partners will enjoy the same inheritance tax relief as enjoyed by a married couple.</p>
 	<p pid="a.424.0/2">The scope of the Bill is now entirely different from that which was originally envisaged as a result of the amendment tabled by the noble Baroness, Lady O'Cathain. The categories of civil partners presently extend to those within the specified degrees of family relationship who meet the conditions imposed by the amendment. If the amendment is retained throughout the legislative process, in order to deal with and reflect those changes to the scope of the Bill, the Government will be required to undergo a considerable review of the tax consequences which follow from those changes. That will be dealt with as part of the normal budget process.</p>
-	<p pid="a.424.0/3">In so far as the noble Baroness seeks clarification, I repeat what I said to the noble Lord, Lord Higgins. When the Civil Partnership Bill was published on <phrase class="date" code="2006-03-30">30 March</phrase>, the Government announced that for tax purposes same-sex couples who form a civil partnership would be treated the same as married couples for inheritance tax and other related purposes.</p>
+	<p pid="a.424.0/3">In so far as the noble Baroness seeks clarification, I repeat what I said to the noble Lord, Lord Higgins. When the Civil Partnership Bill was published on <phrase class="date" code="2004-03-30">30 March</phrase>, the Government announced that for tax purposes same-sex couples who form a civil partnership would be treated the same as married couples for inheritance tax and other related purposes.</p>
 	<p pid="a.424.0/4">The Government's intentions regarding the fiscal consequences of the Civil Partnership Bill as presented to this House on <phrase class="date" code="2004-03-30">30 March 2004</phrase> were, in my view, crystal clear. The Government had already announced that for all tax purposes, including inheritance tax, same-sex civil partners were to be treated the same as married couples. Nothing could be clearer than that. The Government had also gone further and clarified that all tax consequences of the Civil Partnership Bill would be addressed and debated at the appropriate time, once the Bill had become, or should it become, an Act, in the first available finance Bill following the completion of parliamentary scrutiny.</p>
 	<p pid="a.424.0/5">However, as I said to the noble Lord, Lord Higgins, if the Bill remains in its present form, tax changes will be considered as part of the normal budget process. I would urge the noble Baroness to withdraw her amendment.</p>
 </speech>
@@ -1467,7 +1486,7 @@
 	<p pid="a.435.0/5">The noble Lord, Lord Newby, asked about the balance of funding review. That review has received a series of presentations by experts on the pros and cons of the various options which were thrown up by the public consultation, which include reform of council tax, relocalisation of business rates, local income tax and a mixed option of a number of smaller changes in taxes. The review has been hearing evidence on a range of different options, but that should not be taken as evidence that the Government accept that the balance of funding must be changed or that they favour any of the options. To answer more closely the noble Lord's point, the review, I believe, is due to report in the summer. I shall not speculate on the outcome, but no decisions have been made. That may give the noble Lord some sense of the timetable.</p>
 	<p pid="a.435.0/6">Finally, the noble Lord, Lord Newby, raised some questions about Clause 7 and its use. I accept that the Delegated Powers and Regulatory Reform Committee and the Constitution Committee have made those points, but as I am sure that the noble Lord would accept and as I hope to have established in my opening remarks, the clause is useful and benign. I cannot think that the noble Lord, Lord Newby, even if he had the power, would wish to stand in the way of any future government directing more resources to pensioners, particularly those in hardship. On that basis, I hope that I have responded to all but the highly party political remarks which the noble Lord, Lord Higgins, made with relish in his speech.</p>
 	<p pid="a.435.0/7">On Question, Bill read a second time; Committee negatived.</p>
-	<p pid="a.435.0/8">Then, Standing Order 47 having been dispensed with (pursuant to Resolution of <phrase class="date" code="">17 June</phrase>), Bill read a third time, and passed.</p>
+	<p pid="a.435.0/8">Then, Standing Order 47 having been dispensed with (pursuant to Resolution of <phrase class="date" code="2004-06-17">17 June</phrase>), Bill read a third time, and passed.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-07-01a.437.0" nospeaker="true" colnum="437"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-23.htm#40701-23_head0">
@@ -1475,7 +1494,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.437.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="437"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-23.htm#40701-23_spnew0">
-	<p pid="a.437.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="">24 June</phrase> be approved.</p>
+	<p pid="a.437.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2004-06-24">24 June</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.437.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="437"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-23.htm#40701-23_spnew0">
@@ -1485,7 +1504,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.437.3" nospeaker="true" colnum="437"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-23.htm#40701-23_spnew0">
-	<p pid="a.437.3/1" pwmotiontext="considered">Moved, That the order laid before the House on <phrase class="date" code="">24 June</phrase> be approved.&mdash;(<i>Baroness Hollis of Heigham</i>.)</p>
+	<p pid="a.437.3/1" pwmotiontext="considered">Moved, That the order laid before the House on <phrase class="date" code="2004-06-24">24 June</phrase> be approved.&mdash;(<i>Baroness Hollis of Heigham</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-07-01a.438.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="438"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040701/text/40701-23.htm#40701-23_spnew1">

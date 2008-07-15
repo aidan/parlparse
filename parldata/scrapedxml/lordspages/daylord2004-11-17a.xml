@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -127,7 +147,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1432.1" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="1432"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-01.htm#41117-01_spopq0">
 	<p pid="a.1432.1/1" pwmotiontext="asked">asked the Chairman of Committees:</p>
-	<p pid="a.1432.1/2" class="indent">Whether he will issue instructions to security staff that they require all Members and officials of the House to wear their passes upon entering and whilst in the building.</p>
+	<p pid="a.1432.1/2" class="indent" pwmotiontext="asked">Whether he will issue instructions to security staff that they require all Members and officials of the House to wear their passes upon entering and whilst in the building.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1432.2" speakerid="uk.org.publicwhip/lord/100067" speakername="Lord Brabazon of Tara" colon=":" colnum="1432"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-01.htm#41117-01_spmin1">
@@ -181,11 +201,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1434.1" speakerid="uk.org.publicwhip/lord/100092" speakername="Lord Burnham" colon="" colnum="1434"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-02.htm#41117-02_spopq0">
 	<p pid="a.1434.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1434.1/2" class="indent">Whether it is intended that the Ministry of Defence <i>Major Projects Report</i> will include a full updating on the Bowman project as on <phrase class="date" code="2004-03-31">31 March 2004</phrase> and details of subsequent progress.</p>
+	<p pid="a.1434.1/2" class="indent" pwmotiontext="asked">Whether it is intended that the Ministry of Defence <i>Major Projects Report</i> will include a full updating on the Bowman project as on <phrase class="date" code="2004-03-31">31 March 2004</phrase> and details of subsequent progress.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1434.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1434"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-02.htm#41117-02_spmin5">
-	<p pid="a.1434.2/1">My Lords, the Ministry of Defence <i>Major Projects Report</i> 2004 was submitted to Parliament on <phrase class="date" code="2004-11-01">1 November 2004</phrase> and included a full update on the Bowman project as at <phrase class="date" code="2004-03-31">31 March 2004</phrase>. Details of progress subsequent to <phrase class="date" code="">31 March</phrase> were not included due to the report period end date. A further progress report on the Bowman project will be forthcoming in the <i>Major Projects Report</i> 2005.</p>
+	<p pid="a.1434.2/1">My Lords, the Ministry of Defence <i>Major Projects Report</i> 2004 was submitted to Parliament on <phrase class="date" code="2004-11-01">1 November 2004</phrase> and included a full update on the Bowman project as at <phrase class="date" code="2004-03-31">31 March 2004</phrase>. Details of progress subsequent to <phrase class="date" code="2004-03-31">31 March</phrase> were not included due to the report period end date. A further progress report on the Bowman project will be forthcoming in the <i>Major Projects Report</i> 2005.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1434.3" speakerid="uk.org.publicwhip/lord/100092" speakername="Lord Burnham" colon=":" colnum="1434"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-02.htm#41117-02_spnew5">
@@ -243,7 +263,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1436.1" speakerid="uk.org.publicwhip/lord/100667" speakername="Baroness Walmsley" colon="" colnum="1436"  time="014:57:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-03.htm#41117-03_spopq0">
 	<p pid="a.1436.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1436.1/2" class="indent">What are their plans to reduce the pregnancy rate in 16 and 17 year-old girls.</p>
+	<p pid="a.1436.1/2" class="indent" pwmotiontext="asked">What are their plans to reduce the pregnancy rate in 16 and 17 year-old girls.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1436.2" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="1436"  time="014:57:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-03.htm#41117-03_spnew3">
@@ -323,7 +343,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1439.2" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon="" colnum="1439"  time="015:07:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-04.htm#41117-04_spopq0">
 	<p pid="a.1439.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1439.2/2" class="indent">What plans they have to review the electoral system.</p>
+	<p pid="a.1439.2/2" class="indent" pwmotiontext="asked">What plans they have to review the electoral system.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1439.3" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="1439"  time="015:07:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-04.htm#41117-04_spmin0">
@@ -488,7 +508,7 @@
 	<p pid="a.1444.0/1">My Lords, I am naturally disappointed that the Government have yet again rejected my amendment. The issue of post-retirement marriages is long standing and continues to create hardship for elderly and vulnerable widows. I should like to take the opportunity to thank the honourable Member for Aldershot, Mr Gerald Howarth, for his assiduous support of my amendment in another place. In addition, I express my thanks to noble Lords from all sides of the House who have supported me on this issue during the passage of the Bill, and the Minister for his forbearance.</p>
 	<p pid="a.1444.0/2">At this late stage, I do not plan to take the matter any further. It has never been my intention to impede the progress of the Bill or the pension improvements that will shortly follow. However, pension matters relating to particularly hard-done-by military widows are rarely brought to your Lordships' attention, so it was right to ask the Government to think again. Moreover, in rejecting the amendment, the Government have given the impression that when past injustices have occurred, they are not willing to correct them. I am sure that that is not the case, but that is certainly how many will now perceive it.</p>
 	<p pid="a.1444.0/3">The Minister in another place, Mr Ivor Caplin, on Monday repeated his offer to meet me and the Forces Pension Society to re-examine this matter after the Bill has passed. I look forward to taking up this invitation, and have taken some solace from what he said&mdash;namely:</p>
-	<p pid="a.1444.0/4" class="indent">&quot;I am open-minded on the possibility of a measure that might make further improvements for especially vulnerable groups of armed forces widows, and in particular some of those who are older and less well provided for&quot;.&mdash;[<i>Official Report</i>, Commons, 15/11/04; col. 1053.]</p>
+	<p pid="a.1444.0/4" class="indent">&quot;I am open-minded on the possibility of a measure that might make further improvements for especially vulnerable groups of armed forces widows, and in particular some of those who are older and less well provided for&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-15.1053"><i>Official Report</i>, Commons, 15/11/04; col. 1053</phrase>.]</p>
 	<p pid="a.1444.0/5">As the Government know, they do not need a Bill to correct past pension anomalies. I therefore hope that, even at this late stage, and especially given the strength of feeling expressed in both Houses, we might still be able to find a way forward to help these elderly, vulnerable and unfairly penalised widows.</p>
 </speech>
 
@@ -543,7 +563,7 @@
 	<p pid="a.1447.1/5">However, let me say that the Government recognise that the issue under debate is not a trivial one. The noble Lord, Lord Freyberg, has been a longstanding campaigner on this particular issue. I hope he will forgive me if I refer to the debate that this House had in 1995, which is when the noble Lord raised this issue previously. Looking at the voting lists on that Bill at that time it is remarkable to note that a number of noble Lords on both sides seem to have changed their positions since 1995. One person who has not is the noble Lord, Lord Freyberg. I pay tribute to him for that. He has been a longstanding campaigner on this issue and has powerfully and compassionately represented the case for addressing the needs of those widows whose entitlement to a pension is affected by the fact that they married their spouse after he left the Armed Forces. I take the opportunity, as have other noble Lords in this debate, of acknowledging the commitment and passion with which the noble Lord and others have argued this case.</p>
 	<p pid="a.1447.1/6">Only the most hard-hearted would not feel sympathy for such widows. We recognise that, in a world free of spending constraints, it would be desirable to do something for this and other pension legacy groups. However, those who continue to support a change on these lines must address&mdash;indeed, they and the noble Lord have addressed this issue&mdash;responsibly the very considerable financial implications. In short, our own conclusion is that the costs are not affordable and that it would be wrong for the Bill to fall because of this issue. I am grateful to the noble Lord for taking the attitude that he has today.</p>
 	<p pid="a.1447.1/7">There was a suggestion in the other place&mdash;not in this place, I am happy to say&mdash;that the Government's refusal to concede on this amendment was evidence of some lack of recognition of the needs of deserving widows of those who have served in our Armed Forces. That is an unjustified slur. I would like to remind this House that the Government have already clearly demonstrated their sensitivity to the needs of older veterans.</p>
-	<p pid="a.1447.1/8">Indeed, the House has just been reminded of the announcement made on <phrase class="date" code="">8 September</phrase> in this House of a concession to the benefit of pre-1973 war widows. That was an entirely non-retrospective measure, reflecting the very special circumstances of a group of generally elderly and relatively poorly off war pensioners. That concession was targeted on a particularly deserving group, highlighted by the War Widows Association as meriting special treatment, whose case has long been championed by the noble Baroness, Lady Strange, along with many other noble Lords in this House. The measure will cost the Government more than &pound;20 million. Far from begrudging that, I am proud to have been able to announce it. Taken with earlier measures which we have introduced allowing retention of attributable pensions following post-retirement marriages and extending attributable benefits to unmarried partners, I argue that our record stands comparison with that of any other party which has been in government over the past few years.</p>
+	<p pid="a.1447.1/8">Indeed, the House has just been reminded of the announcement made on <phrase class="date" code="2004-09-08">8 September</phrase> in this House of a concession to the benefit of pre-1973 war widows. That was an entirely non-retrospective measure, reflecting the very special circumstances of a group of generally elderly and relatively poorly off war pensioners. That concession was targeted on a particularly deserving group, highlighted by the War Widows Association as meriting special treatment, whose case has long been championed by the noble Baroness, Lady Strange, along with many other noble Lords in this House. The measure will cost the Government more than &pound;20 million. Far from begrudging that, I am proud to have been able to announce it. Taken with earlier measures which we have introduced allowing retention of attributable pensions following post-retirement marriages and extending attributable benefits to unmarried partners, I argue that our record stands comparison with that of any other party which has been in government over the past few years.</p>
 	<p pid="a.1447.1/9">Finally, and importantly, I want to repeat today the commitment given by my colleague, the Veterans Minister, Ivor Caplin, in another place on Monday. The noble Lord, Lord Freyberg, referred to his words. Recognising the strength of feeling in this area, MoD Ministers remain open-minded on the possibility of a measure that might make further improvements for particularly vulnerable groups of Armed Forces widows, and in particular some of those who are older and less well provided for. We are prepared to meet the noble Lord, Lord Freyberg, and the Forces Pension Society, once this Bill has received Royal Assent, to consider the issues raised in this area.</p>
 	<p pid="a.1447.1/10">Once again I thank noble Lords who have taken part in this debate. This issue, and the issues surrounding it&mdash;other widows issues are involved&mdash;have aroused a great deal of interest in this House, not to say, a huge amount of sympathy.</p>
 </speech>
@@ -812,7 +832,7 @@
 	<p pid="a.1470.0/3">The noble Baroness gave me her Answer:</p>
 	<p pid="a.1470.0/4" class="indent">&quot;There are a number of differences between civil partnership and civil marriage; for example&quot;&mdash;</p>
 	<p pid="a.1470.0/5">this is the sole example that she gave&mdash;</p>
-	<p pid="a.1470.0/6" class="indent">&quot;a civil partnership is formed when the second civil partner signs the civil partnership document, a civil marriage is formed when the couple exchange spoken word&quot;.&mdash;[<i>Official Report</i>, 16/7/04; col. WA 161.]</p>
+	<p pid="a.1470.0/6" class="indent">&quot;a civil partnership is formed when the second civil partner signs the civil partnership document, a civil marriage is formed when the couple exchange spoken word&quot;.&mdash;[<phrase class="offrep" id="wrans/2004-07-16.161"><i>Official Report</i>, 16/7/04; col. WA 161</phrase>.]</p>
 	<p pid="a.1470.0/7">I leave noble Lords to decide whether that is a very clear and emphatic distinction between the two.</p>
 	<p pid="a.1470.0/8">I want to say something immensely personal about this amendment. Twenty years ago my wife and I were severely injured. Had the IRA been a little more successful, and had I died, I have no doubt whatever that one of my children would have put aside their life and career to care for my wife. Under the law as it is and under the law as the Government intend to leave it, there would be no option, when my wife then died, but for that child of ours to be forced out of the family home by the need to sell it in order to pay inheritance tax.</p>
 	<p pid="a.1470.0/9">Had I been so deeply affected by that bombing, and had my wife died, that I should have chosen to enter into a civil partnership with someone I had known for only a few weeks, when I died my civil partner would not be in the position in which one of children would have been put. That answers the question of whether there is any injustice in this Bill.</p>
@@ -840,7 +860,7 @@
 	<p pid="a.1472.1/2">In the other place, the previous amendment moved by the noble Baroness, Lady O'Cathain, which the noble Lord, Lord Tebbit, powerfully supported, was removed by a majority of five to one, with firm and welcome leadership from the Opposition Front Bench. We share some of the stated aims of the noble Baroness, Lady O'Cathain, but not her means of achieving them, for reasons that have been repeated again and again throughout the House.</p>
 	<p pid="a.1472.1/3">The new amendments are narrower than the original version, which was overwhelmingly rejected by all political parties in the Commons, but, if enacted, they would still be wrecking amendments, as the noble Baroness, Lady Howarth of Breckland, in particular, has so clearly explained. They are alien to the central purpose of the Bill and would make it impossible for the Bill to come into force.</p>
 	<p pid="a.1472.1/4">The new amendments would prevent the Bill coming into force until a voluntary registration scheme, or schemes, had been established by the Secretary of State which would entitle only relatives over 30 years of age who had lived together for 12 years to be treated in the same way as same-sex civil partners as regards what the noble Baroness describes as &quot;four crisis areas&quot;.</p>
-	<p pid="a.1472.1/5">Last <phrase class="date" code="">Tuesday, 9 November</phrase>, the <i>Times</i> published an advertisement by the Christian Institute under the banner headline,</p>
+	<p pid="a.1472.1/5">Last <phrase class="date" code="2004-11-09">Tuesday, 9 November</phrase>, the <i>Times</i> published an advertisement by the Christian Institute under the banner headline,</p>
 	<p pid="a.1472.1/6" class="indent">&quot;I have lived with my sister for 15 years. When she died I had to sell our home to pay the inheritance tax. Why should I have less house-sharing rights than a gay couple?&quot;.</p>
 	<p pid="a.1472.1/7">The advertisement carried a photograph of a sad lady with a wistful expression. But in the fine print it emerged that she was not a real person but what was described as,</p>
 	<p pid="a.1472.1/8" class="indent">&quot;an image posed by model for illustrative purposes only&quot;.</p>
@@ -865,7 +885,7 @@
 	<p pid="a.1474.1/5">That great court also rightly observed that the message of the denial of equal rights to same-sex as to opposite-sex partners is that,</p>
 	<p pid="a.1474.1/6" class="indent">&quot;gays and lesbians lack the inherent humanity to have their families . . . respected or protected. It serves in addition to perpetuate and reinforce existing prejudices and stereotypes&quot;.</p>
 	<p pid="a.1474.1/7">The right reverend Prelate the Bishop of Chelmsford has spoken eloquently and compassionately from a Christian tradition of true humanity, as one would expect. In the other place, my honourable friend Alistair Carmichael&mdash;speaking as a Christian, which I cannot&mdash;said:</p>
-	<p pid="a.1474.1/8" class="indent">&quot;To my mind, the fundamental factor in Christianity is love. The tremendous thing about Christian love is that it knows no discrimination. That is why, when Jesus told us in the New Testament to love our neighbour, he did not qualify that by saying that we need not love those of our neighbours who are black, gay, fat, thin, tall or short . . . That is why I feel passionately that it would be wrong for us to prolong, in the name of Christianity, the discrimination and disadvantage that some people suffer&quot;.&mdash;[<i>Official Report</i>, Commons, 9/11/04; col. 805.]</p>
+	<p pid="a.1474.1/8" class="indent">&quot;To my mind, the fundamental factor in Christianity is love. The tremendous thing about Christian love is that it knows no discrimination. That is why, when Jesus told us in the New Testament to love our neighbour, he did not qualify that by saying that we need not love those of our neighbours who are black, gay, fat, thin, tall or short . . . That is why I feel passionately that it would be wrong for us to prolong, in the name of Christianity, the discrimination and disadvantage that some people suffer&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-09.805"><i>Official Report</i>, Commons, 9/11/04; col. 805</phrase>.]</p>
 	<p pid="a.1474.1/9">The amendments would prolong, unintentionally perhaps, the discrimination and disadvantage suffered by gay and lesbian couples. We very much hope that they will be withdrawn or, if not withdrawn, firmly rejected.</p>
 </speech>
 
@@ -2884,7 +2904,7 @@
 	<p pid="a.1531.0/1">My Lords, it may be worth taking stock before we engage in the details of the individual amendments. We enter in effect a final sprint of what has most certainly been a marathon, with the prospect of a photo finish as we approach the finishing line of the Queen's Speech, and with some danger of a dead heat because unresolved matters still remain and there is some danger that one will lose the Bill. However, the prospect of going through the whole thing again in the next Session of Parliament is not one which I view with equanimity.</p>
 	<p pid="a.1531.0/2">The Bill arrived in this House in a deplorable state for the simple reason that the programming Motion in the other place had not given the Commons the opportunity to sort out many problems in the Bill before it arrived here. Noble Lords spent some 40 hours debating improvements to this Bill. We can look back with some satisfaction at the improvements that we have made. However, the Bill most certainly ought not to have arrived in this House in this state. There is a growing tendency for the other place not to scrutinise legislation and to leave it for us to do.</p>
 	<p pid="a.1531.0/3">What I considered quite sickening yesterday was the fact that the Minister in the Commons moved a programming Motion on the consideration of our amendments&mdash;which had been discussed for 90 hours in this place&mdash;to conclude the business within four hours and to split it up into individual chunks. Having moved that Motion, the Minister had the nerve to say, on the first debate which took place, that he could not give a proper answer due to shortage of time. This really is a totally unsatisfactory situation. It constitutes a growing danger that Parliament generally needs to take very carefully into account.</p>
-	<p pid="a.1531.0/4">When the Bill arrived from the Commons there were 248 clauses, 12 schedules and 235 pages. By <phrase class="date" code="">10 June</phrase> it had grown to 310 clauses, 13 schedules, 316 pages and two volumes. By Third Reading it had grown to 326 clauses, 13 schedules and 366 pages, albeit still in two volumes. The growth of the Bill was quite extraordinary. Up to Third Reading 442 amendments were agreed in your Lordships' House. Many of them were amendments tabled by the official Opposition which the Government accepted, for example, the one tabled by my noble friend Lady Noakes a few days ago. Indeed, the Government accepted one of the amendments on which we divided the House limiting the initial period in which the levy would be introduced. The Government accepted a number of other amendments which we shall discuss in a moment.</p>
+	<p pid="a.1531.0/4">When the Bill arrived from the Commons there were 248 clauses, 12 schedules and 235 pages. By <phrase class="date" code="2004-06-10">10 June</phrase> it had grown to 310 clauses, 13 schedules, 316 pages and two volumes. By Third Reading it had grown to 326 clauses, 13 schedules and 366 pages, albeit still in two volumes. The growth of the Bill was quite extraordinary. Up to Third Reading 442 amendments were agreed in your Lordships' House. Many of them were amendments tabled by the official Opposition which the Government accepted, for example, the one tabled by my noble friend Lady Noakes a few days ago. Indeed, the Government accepted one of the amendments on which we divided the House limiting the initial period in which the levy would be introduced. The Government accepted a number of other amendments which we shall discuss in a moment.</p>
 	<p pid="a.1531.0/5">As regards Amendment No. 283, and the related amendments, we suggested fairly late in the proceedings on the Bill that if there was a likelihood of an insolvency event occurring in relation to an employer, it should be a compulsory rather than optional factor to take into account when assessing the risk based nature of a scheme. I see that, while accepting that amendment, the other place has amended it slightly to read,</p>
 	<p pid="a.1531.0/6" class="indent">&quot;except in relation to any prescribed scheme or scheme of a prescribed description&quot;,</p>
 	<p pid="a.1531.0/7">which we can see very clearly means that almost anything can be done. However, what I believe is intended is to exclude small firms.</p>
@@ -2998,7 +3018,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1539.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="1539"  time="018:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-26.htm#41117-26_spnew0">
 	<p pid="a.1539.0/1">My Lords, I thank the noble Baroness for giving way. Has she noticed that in the final paragraphs in col. 1235 of yesterday's Commons <i>Hansard</i>, immediately before a vote was taken on the issue that we are discussing, the Parliamentary Under-Secretary of State and Mr Webb refer to the figure of 250,000, which we agree is the amount in pounds which would be sufficient to take someone off means-tested benefit? Malcolm Wicks then says:</p>
-	<p pid="a.1539.0/2" class="indent">&quot;Yes. The point is that we are talking about a quarter of a million people who are way above means-tested levels&quot;.&mdash;[<i>Official Report, </i>Commons, 16/11/04; col. 1235.]</p>
+	<p pid="a.1539.0/2" class="indent">&quot;Yes. The point is that we are talking about a quarter of a million people who are way above means-tested levels&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-16.1235"><i>Official Report, </i>Commons, 16/11/04; col. 1235</phrase>.]</p>
 	<p pid="a.1539.0/3">It is an indication of the total failure to comprehend what we are talking about that he should switch from a figure of &pound;250,000 to a figure of 250,000 people.</p>
 </speech>
 
@@ -5252,7 +5272,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-17a.1596.5" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1596"  time="020:38:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041117/text/41117-39.htm#41117-39_spnew1">
-	<p pid="a.1596.5/1">My Lords, we have covered much of the ground relating to this matter. The suggested amendment would defer commencement of the ban on hunting with dogs but not the ban on hare coursing until <phrase class="date" code="">31 July 2006</phrase>. The amendment therefore relates to the banning Bill rather than to the Bill on which we have just passed the amendment with the year 2007. This is the Commons position in terms of the timing of the banning Bill.</p>
+	<p pid="a.1596.5/1">My Lords, we have covered much of the ground relating to this matter. The suggested amendment would defer commencement of the ban on hunting with dogs but not the ban on hare coursing until <phrase class="date" code="2006-07-31">31 July 2006</phrase>. The amendment therefore relates to the banning Bill rather than to the Bill on which we have just passed the amendment with the year 2007. This is the Commons position in terms of the timing of the banning Bill.</p>
 	<p pid="a.1596.5/2">I think we know where we are. We have just completed the proceedings on a Bill which your Lordships are sending back to the Commons for reconsideration, but it is also the second insistence on the Lords' position. We therefore know that it is likely that the Commons will not accept that Bill and that the Parliament Act will come into play. That would mean that the date of commencement of a banning Bill would be in February next year.</p>
 	<p pid="a.1596.5/3">The Commons propose that there should be a delay in the implementation of the Bill until July 2006. It has a number of merits. First, it will allow some degree of adjustment. Secondly, it will allow the welfare and other arrangements to be made. Thirdly, it will allow the democratic will of the people to be declared when it is quite clear that an alternative government would be committed to repealing this likely Bill.</p>
 	<p pid="a.1596.5/4">For those reasons, I think that the House should support the suggested amendment, recognising that it is a contingency arrangement and that the Bill that goes back for now to the Commons has a 2007 commencement date. I beg to move.</p>

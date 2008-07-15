@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -49,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.643.1" speakerid="uk.org.publicwhip/lord/100674" speakername="Lord Watson of Richmond" colon="" colnum="643"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-01.htm#41019-01_spopq0">
 	<p pid="a.643.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.643.1/2" class="indent">Whether they accept the judgment of the United Nations Secretary-General that the war in Iraq was illegal under the United Nations Charter.</p>
+	<p pid="a.643.1/2" class="indent" pwmotiontext="asked">Whether they accept the judgment of the United Nations Secretary-General that the war in Iraq was illegal under the United Nations Charter.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.643.2" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="643"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-01.htm#41019-01_spmin0">
@@ -91,7 +111,7 @@
 	<p pid="a.645.0/2">I also remind the noble Lord, given that he mentioned his right honourable friend Mr Major, that the legality that justified the action taken in 1993 is the same legality as I cite in respect of 2003&mdash;that is, UNSCR 678 and 687. It was also the same justification we used in relation to the Desert Fox campaign in 1998, when those on the Liberal Democrat Benches went out of their way to support the Government's action. The noble Lord, Lord Wallace of Saltaire, said:</p>
 	<p pid="a.645.0/3" class="indent">&quot;I rise to support the Statement on behalf of the Liberal Democrat Benches. In the circumstances, it was unavoidable that Britain should take action with the United States. Clearly&quot;&mdash;</p>
 	<p pid="a.645.0/4">this is the important bit&mdash;</p>
-	<p pid="a.645.0/5" class="indent">&quot;Saddam Hussein has broken all the terms of the UN conditions attached to his regime. Under those circumstances, we had no choice but to intervene&quot;.&mdash;[<i>Official Report</i>, 17/12/98; col. 1528.]</p>
+	<p pid="a.645.0/5" class="indent">&quot;Saddam Hussein has broken all the terms of the UN conditions attached to his regime. Under those circumstances, we had no choice but to intervene&quot;.&mdash;[<phrase class="offrep" id="lords/1998-12-17.1528"><i>Official Report</i>, 17/12/98; col. 1528</phrase>.]</p>
 	<p pid="a.645.0/6">Why was a breach enough in 1998, but not enough in 2003?</p>
 </speech>
 
@@ -111,7 +131,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.646.1" speakerid="uk.org.publicwhip/lord/100317" speakername="Lord Hurd of Westwell" colon="" colnum="646"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-01.htm#41019-01_spopq1">
 	<p pid="a.646.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.646.1/2" class="indent">To what extent their representatives in Baghdad are consulted on the operational decisions of the multinational forces in Iraq.</p>
+	<p pid="a.646.1/2" class="indent" pwmotiontext="asked">To what extent their representatives in Baghdad are consulted on the operational decisions of the multinational forces in Iraq.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.646.2" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="646"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-01.htm#41019-01_spnew10">
@@ -173,7 +193,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.648.3" speakerid="uk.org.publicwhip/lord/100359" speakername="Lord Laming" colon="" colnum="648"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-02.htm#41019-02_spopq0">
 	<p pid="a.648.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.648.3/2" class="indent">What action they are taking to secure an improvement in the education of children and young people in the care of local authorities.</p>
+	<p pid="a.648.3/2" class="indent" pwmotiontext="asked">What action they are taking to secure an improvement in the education of children and young people in the care of local authorities.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.648.4" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="648"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-02.htm#41019-02_spmin0">
@@ -232,7 +252,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.651.2" speakerid="uk.org.publicwhip/lord/100313" speakername="Lord Hunt of Chesterton" colon="" colnum="651"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-03.htm#41019-03_spopq0">
 	<p pid="a.651.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.651.2/2" class="indent">Whether their policy objectives at the forthcoming conference on disaster reduction in Kobe, Japan, in January 2005 will include the improvement of the international exchange of predictions and warnings, and the provision of assistance to developing countries most at risk.</p>
+	<p pid="a.651.2/2" class="indent" pwmotiontext="asked">Whether their policy objectives at the forthcoming conference on disaster reduction in Kobe, Japan, in January 2005 will include the improvement of the international exchange of predictions and warnings, and the provision of assistance to developing countries most at risk.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.651.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="651"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-03.htm#41019-03_spmin0">
@@ -271,7 +291,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.652.5" speakerid="uk.org.publicwhip/lord/100782" speakername="Baroness Falkner of Margravine" colon="" colnum="652"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-04.htm#41019-04_spopq0">
 	<p pid="a.652.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.652.5/2" class="indent">What representations they have made to the Government of Pakistan about the restoration of democracy in that country, in the light of recent announcements on the military role of the president.</p>
+	<p pid="a.652.5/2" class="indent" pwmotiontext="asked">What representations they have made to the Government of Pakistan about the restoration of democracy in that country, in the light of recent announcements on the military role of the president.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.653.0" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="653"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-04.htm#41019-04_spmin0">
@@ -317,12 +337,12 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.655.1" speakerid="uk.org.publicwhip/lord/100067" speakername="Lord Brabazon of Tara" colon=":" colnum="655"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-04.htm#41019-04_spmin1">
 	<p pid="a.655.1/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="a.655.1/2">Moved, that, pursuant to the order of <phrase class="date" code="">7 September</phrase>, a Select Committee be appointed to consider the matters complained of in the petitions against the order and that, as proposed by the Committee of Selection, the following Lords be named of the committee:</p>
+	<p pid="a.655.1/2">Moved, that, pursuant to the order of <phrase class="date" code="2004-09-07">7 September</phrase>, a Select Committee be appointed to consider the matters complained of in the petitions against the order and that, as proposed by the Committee of Selection, the following Lords be named of the committee:</p>
 	<p pid="a.655.1/3">Boston of Faversham, L. (<i>Chairman</i>) Brougham and Vaux, L. Corbett of Castle Vale, L. Dykes, L. Sandwich, E.;</p>
 	<p pid="a.655.1/4">That the proceedings of the committee be conducted as if they were a committee on an opposed private Bill;</p>
 	<p pid="a.655.1/5">That the order and the petitions stand referred to the committee;</p>
 	<p pid="a.655.1/6">That the committee have power to adjourn from place to place;</p>
-	<p pid="a.655.1/7">That the committee do meet on <phrase class="date" code="">Monday 25 October</phrase> at half-past ten o'clock.&mdash;(<i>The Chairman of Committees</i>.)</p>
+	<p pid="a.655.1/7">That the committee do meet on <phrase class="date" code="2004-10-25">Monday 25 October</phrase> at half-past ten o'clock.&mdash;(<i>The Chairman of Committees</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.655.2" nospeaker="true" colnum="655"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-04.htm#41019-04_spmin1">
@@ -402,7 +422,7 @@
 	<p pid="a.658.0/1">My Lords, this is a curious debate. On the one hand the noble Baroness wants to be helpful in improving the quality of the drafting; on the other I fear that the noble Earl and I shall have to beg to differ on his particular amendment, for the reasons that we set out in Committee.</p>
 	<p pid="a.658.0/2">For the purpose of convenience I shall deal first with the amendment tabled by the noble Earl because I think that might assist. Amendment No. 144D would disapply the definition from properties that are not yet on the market. I am sure that the amendment is probably intended to protect people who mention around the dinner table that they are thinking of selling their house from being under a duty to have a pack. However, the amendment is not necessary to prevent such &quot;conversational marketing&quot; being caught by the duties. It will not be caught by the Bill as it stands.</p>
 	<p pid="a.658.0/3">If passed, the amendment would have other unwelcome effects. The noble Earl does not agree with us, but we are confident that it would open up a loophole which would enable estate agents to engage in supposed pre-marketing activities that would amount to actual marketing in all but name without triggering the home information pack duties. It would, for example, enable someone to evade the duty to have a pack when marketing begins by advertising a property as becoming available for sale shortly knowing full well that potential buyers would see that as a marketing gambit.</p>
-	<p pid="a.658.0/4">Noble Lords expressed concern in Committee that the reference to when a home may become available for sale could lead to people who were merely contemplating selling a house being under a duty to have a pack. As we made clear in correspondence on <phrase class="date" code="">11 October</phrase> on issues arising from Committee, we are satisfied that the Bill imposes no duty to have a pack when someone is just considering putting a home on the market. I am happy to make that clear and put it on the record once again.</p>
+	<p pid="a.658.0/4">Noble Lords expressed concern in Committee that the reference to when a home may become available for sale could lead to people who were merely contemplating selling a house being under a duty to have a pack. As we made clear in correspondence on <phrase class="date" code="2004-10-11">11 October</phrase> on issues arising from Committee, we are satisfied that the Bill imposes no duty to have a pack when someone is just considering putting a home on the market. I am happy to make that clear and put it on the record once again.</p>
 	<p pid="a.658.0/5">Clauses 145(1) and 146(1) identify when the duty to have a home information pack in Clause 148(1) arises and whether the responsibility is the estate agent's or the seller's. The responsibility arises when an action takes place that either puts the property on the market or makes public the fact that it is on the market. There is no responsibility and hence no duty at the &quot;just considering&quot; stage.</p>
 	<p pid="a.658.0/6">Under Clause 152, estate agents must also have a pack when they take a qualifying action. That duty will apply even where a property is not on the market or the estate agent does not qualify as a responsible person. This is defined in Clause 152(3) as:</p>
 	<p pid="a.658.0/7" class="indent">&quot;action taken with the intention of marketing the property which&mdash;</p>
@@ -821,8 +841,8 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.670.0" speakerid="uk.org.publicwhip/lord/100316" speakername="Lord Hunt of Wirral" colon=":" colnum="670"  time="015:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-09.htm#41019-09_spnew0">
 	<p pid="a.670.0/1">My Lords, I have watched, listened and read with great interest the debates on this subject. Looking around the Chamber, I see many of your Lordships who have sat through quite a number of those debates. So it must be with a sense of <i>d&eacute;j&agrave; vu</i> that we approach another debate, but it is of enormous importance.</p>
-	<p pid="a.670.0/2">I was stimulated to speak to support my noble friends by&mdash;dare I say&mdash;a stray comment made by the noble Lord, Lord Bassam, when he spoke on <phrase class="date" code="">14 September</phrase>. In response to some very real concerns voiced by the noble Lord, Lord Phillips of Sudbury, and a number of your Lordships, the noble Lord, Lord Bassam, said that it is,</p>
-	<p pid="a.670.0/3" class="indent">&quot;about ironing out wrinkles&quot;.&mdash;[<i>Official Report</i>, 14/9/04; col. 1070.]</p>
+	<p pid="a.670.0/2">I was stimulated to speak to support my noble friends by&mdash;dare I say&mdash;a stray comment made by the noble Lord, Lord Bassam, when he spoke on <phrase class="date" code="2004-09-14">14 September</phrase>. In response to some very real concerns voiced by the noble Lord, Lord Phillips of Sudbury, and a number of your Lordships, the noble Lord, Lord Bassam, said that it is,</p>
+	<p pid="a.670.0/3" class="indent">&quot;about ironing out wrinkles&quot;.&mdash;[<phrase class="offrep" id="lords/2004-09-14.1070"><i>Official Report</i>, 14/9/04; col. 1070</phrase>.]</p>
 	<p pid="a.670.0/4">He was referring to a comment made by a number of noble Lords about the proposed system being immensely bureaucratic and introducing a whole series of measures that would waste an enormous amount of time and money. I just think that the noble Lord, Lord Bassam, had it completely wrong.</p>
 	<p pid="a.670.0/5">We are very grateful to the Government for stimulating an important debate about the whole question of <i>caveat emptor</i>; being able to purchase a property with some notice of local authority charges or general structural defects. It has been a very valuable debate, but I completely agree with my noble friend Lord Hanningfield. What has gone wrong is the element of compulsion. It infects the whole measure now to such a degree that I agree with my noble friend Lady Hanham that it would be best just to cut it out of the Bill altogether.</p>
 	<p pid="a.670.0/6">I recognise that I have a later amendment for discussion, which seeks to introduce a voluntary principle. But, for the reasons that I want to set out, it would be better to cut it out of the Bill altogether. Of course, as your Lordships know, I should declare my interest as senior partner of a firm of solicitors&mdash;Beachcroft Wansbroughs&mdash;which has a strong property department. I have drawn on not only the views of my partners and our fee earners but also a number of other people in the legal profession.</p>
@@ -898,7 +918,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.679.0" speakerid="uk.org.publicwhip/lord/100499" speakername="Lord Phillips of Sudbury" colon=":" colnum="679"  time="015:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-11.htm#41019-11_spnew0">
 	<p pid="a.679.0/1">My Lords, I was flattered by the remarks of the noble Lord, Lord Borrie the&mdash; Government's one loyal Back-Bencher on this Bill&mdash;but even he will not provoke me into unqualified support for this set of amendments. They are a little too incendiary. They would blow up Part 5 altogether. Those of us&mdash;not only on this side of the House&mdash;who have serious reservations about this part of the Bill are not remotely acting on doctrinaire grounds but on the grounds of sheer practicality. It is fair to say that nearly all those who have spoken on this part at various stages of the Bill have been practitioners in the field&mdash;either solicitors or estate agents. There is a genuine, deep lack of conviction within the legal profession and the estate agency profession about the efficacy of the measures put forward, especially in relation to the aspirations that the Government have for them. We will not be deterred&mdash;at least I know that my colleagues and I will not&mdash;from continuing to oppose those aspects of Part 5 that are over confident.</p>
-	<p pid="a.679.0/2">For two reasons, however, I for one will not vote to eliminate these clauses. First, I believe that there may be substantial merit in the home packs arrangement, which deserves the opportunity to show itself. That is why we have tabled amendments on voluntarism and piloting. It is very important for the House to recollect what the noble Lord, Lord Bassam, said when we debated this on <phrase class="date" code="">14 September</phrase>, which can be found in <i>Hansard </i>at column 1070. He made it absolutely clear that there will be a national &quot;dry run&quot; as we called it. So long as that national pilot is objectively put together, thoroughly carried out, objectively analysed and then acted upon, I say, &quot;Fair dos, let's give it a go&quot;. However, very few would accept anything short of that.</p>
+	<p pid="a.679.0/2">For two reasons, however, I for one will not vote to eliminate these clauses. First, I believe that there may be substantial merit in the home packs arrangement, which deserves the opportunity to show itself. That is why we have tabled amendments on voluntarism and piloting. It is very important for the House to recollect what the noble Lord, Lord Bassam, said when we debated this on <phrase class="date" code="2004-09-14">14 September</phrase>, which can be found in <i>Hansard </i>at column 1070. He made it absolutely clear that there will be a national &quot;dry run&quot; as we called it. So long as that national pilot is objectively put together, thoroughly carried out, objectively analysed and then acted upon, I say, &quot;Fair dos, let's give it a go&quot;. However, very few would accept anything short of that.</p>
 	<p pid="a.679.0/3">We will return to that matter later. I merely wanted to say at this stage that, although potent reasons were advanced for eliminating this set of clauses, we should give a combination of voluntarism and a thorough-going pilot the opportunity to show the merits of this proposal.</p>
 </speech>
 
@@ -918,7 +938,7 @@
 	<p pid="a.680.0/13">I was surprised by the comments of the noble Lord, Lord Phillips of Sudbury, as I always thought that he was a Liberal&mdash;and this is a highly illiberal measure being proposed by the Government. I should have thought that he would be one of the first to support his colleagues in another place. The honourable Member Mr Davey, who leads for the Liberal Democrats in another place, said:</p>
 	<p pid="a.680.0/14" class="indent">&quot;We believe that the home information packs represent a totally unnecessary regulation&quot;.</p>
 	<p pid="a.680.0/15">I thought that the noble Lord, Lord Phillips, had written that for him&mdash;and was disappointed to hear that he had not. Mr Davey went on to say:</p>
-	<p pid="a.680.0/16" class="indent">&quot;This is a market that the Government should leave well alone&quot;.&mdash;[<i>Official Report</i>, Commons, 11/5/04; col. 281.]</p>
+	<p pid="a.680.0/16" class="indent">&quot;This is a market that the Government should leave well alone&quot;.&mdash;[<phrase class="offrep" id="lords/2004-05-11.281"><i>Official Report</i>, Commons, 11/5/04; col. 281</phrase>.]</p>
 	<p pid="a.680.0/17">I agree with that. Yes, we all want to improve the buying and selling of houses, but this is really not the way in which to do it.</p>
 </speech>
 
@@ -1448,7 +1468,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.706.0" speakerid="uk.org.publicwhip/lord/100099" speakername="The Earl of Caithness" colon=":" colnum="706"  time="015:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-18.htm#41019-18_spnew0">
 	<p pid="a.706.0/1">My Lords, I wish to take a small tangent to support what the noble Lord, Lord Rooker, said about the press. I have just been handed an article from today's <i>Evening Standard</i>. Apparently, I am leading a rebellion with Liberal Peers to defeat a section of the Housing Bill which requires agents to belong to an approved ombudsman scheme. The ombudsman scheme is not my favourite scheme. To use the words of the noble Lord, Lord Bassam of Brighton, it is second best to regulating estate agents. Certainly, I would like to regulate estate agents. The article goes on to say that I am a former director of Knight Frank. I never worked for Knight Frank in my life. That reinforces what complete rubbish the press is these days.</p>
-	<p pid="a.706.0/2">I now have a copy of the letter of <phrase class="date" code="">11 October</phrase> that the noble Lord wrote. I am sorry that I did not get it earlier; I made my remark in good faith, as I had not received the letter. The Minister's officials have kindly given me a copy.</p>
+	<p pid="a.706.0/2">I now have a copy of the letter of <phrase class="date" code="2004-10-11">11 October</phrase> that the noble Lord wrote. I am sorry that I did not get it earlier; I made my remark in good faith, as I had not received the letter. The Minister's officials have kindly given me a copy.</p>
 	<p pid="a.706.0/3">I want to pick up the dry run point, and I am glad to see the noble Lord, Lord Phillips of Sudbury, in his place. It is not a dry run as most people would anticipate it; it is a dry run as a pre-entry to the scheme. All the regulations will have been laid. As I said earlier and the noble Baroness, Lady Hamwee, has just said, we will not be able to amend the regulations. They will be a hammer to crack a chestnut, and they will be hard to understand. Having got all that, all that the Government are going to do is have a six-month introduction scheme before it becomes law at the beginning of 2007.</p>
 	<p pid="a.706.0/4">In the short time in which I have been able to skim through the letter, I have seen nothing to suggest that the regulations could be amended. There will be no assessment, and nothing will be debated. Nothing will alter the Government's mind, which is firmly set, as it has always been, on this course. The only change that they have made is the change from criminal penalties to civil penalties. That is not good enough. We need a voluntary scheme of some sort.</p>
 	<p pid="a.706.0/5">It was difficult for me to speak to my earlier amendments because I wanted to hear what the noble Baroness had to say to what my noble friend Lord Hunt of Wirral said. I have tabled amendments in Committee and on Report in support of a voluntary scheme for home information packs. I have got nowhere, but I hope that we will get somewhere at a later stage.</p>
@@ -1954,7 +1974,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.736.10" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="736"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-26.htm#41019-26_spnew13">
-	<p pid="a.736.10/1">I thought that Amendment No. 93A had already been debated. I was going to move it formally. I thought that it was debated on <phrase class="date" code="">14 October</phrase> with Amendment No. 86C.</p>
+	<p pid="a.736.10/1">I thought that Amendment No. 93A had already been debated. I was going to move it formally. I thought that it was debated on <phrase class="date" code="2004-10-14">14 October</phrase> with Amendment No. 86C.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.736.11" speakerid="uk.org.publicwhip/lord/100385" speakername="Lord Lucas" colon=":" colnum="736"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-26.htm#41019-26_spnew14">
@@ -1962,7 +1982,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.736.12" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="736"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-26.htm#41019-26_spnew15">
-	<p pid="a.736.12/1">I hear the noble Lord, Lord Lucas, affirming that Amendment No. 86C was debated with Amendment No. 93A on <phrase class="date" code="">Thursday, 14 October</phrase>. It was the last group. That is why I was proposing to move the amendment formally. I beg to move.</p>
+	<p pid="a.736.12/1">I hear the noble Lord, Lord Lucas, affirming that Amendment No. 86C was debated with Amendment No. 93A on <phrase class="date" code="2004-10-14">Thursday, 14 October</phrase>. It was the last group. That is why I was proposing to move the amendment formally. I beg to move.</p>
 	<p pid="a.736.12/2" class="indent">Page 13, line 18, leave out subsection (4).</p>
 </speech>
 
@@ -2248,7 +2268,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-19a.753.2" speakerid="uk.org.publicwhip/lord/100616" speakername="Lord Stoddart of Swindon" colon=":" colnum="753"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041019/text/41019-31.htm#41019-31_spnew5">
 	<p pid="a.753.2/1">I agree with that. I think that, bearing in mind that these are important emergency powers, the provision may very well have to go rather wider than that. Our government does not simply exist on the Government. There are other parties to be considered. In matters of emergency we might start thinking about the right of the Opposition to be consulted as well when emergencies are in the offing. That is something I throw out which we might like to consider.</p>
-	<p pid="a.753.2/2">However, I am intrigued by these three people who will exercise the power. I spoke about it on <phrase class="date" code="">14 October</phrase> when we discussed the Bill. I am intrigued in the first place because I find that when I was a Lord Commissioner I was a senior Minister. I have been promoted to a senior Minister. I think that I have a claim for some back pay because it is quite clear that the amount of money the Treasury paid me as a Lord Commissioner did not warrant my duties being considered to be senior. I would have had considerably more money than I did, so perhaps I have a long-term claim against the Treasury for underpayment.</p>
+	<p pid="a.753.2/2">However, I am intrigued by these three people who will exercise the power. I spoke about it on <phrase class="date" code="2004-10-14">14 October</phrase> when we discussed the Bill. I am intrigued in the first place because I find that when I was a Lord Commissioner I was a senior Minister. I have been promoted to a senior Minister. I think that I have a claim for some back pay because it is quite clear that the amount of money the Treasury paid me as a Lord Commissioner did not warrant my duties being considered to be senior. I would have had considerably more money than I did, so perhaps I have a long-term claim against the Treasury for underpayment.</p>
 	<p pid="a.753.2/3">I am also intrigued as to how this Lord Commissioner, who is a glorified senior sort of Whip, will exercise his power. He will exercise it on behalf of the Treasury. Why on earth he will exercise it when we already have the First Lord of the Treasury able to exercise it, I simply do not know.</p>
 	<p pid="a.753.2/4">What are the circumstances? A Lord Commissioner has no departmental responsibility, no department and no office in Whitehall&mdash;other than, perhaps, No. 12 Downing Street; but I do not know whether the Chief Whip still has an office in No. 12 Downing Street; I think that it has been filched by No. 10 by now. As far as I know, he receives no advice&mdash;he is not entitled to receive advice&mdash;from civil servants, or anyone else, for that matter. So how will this Lord Commissioner exercise this extreme power of agreeing that a matter is an emergency? I simply do not understand it.</p>
 	<p pid="a.753.2/5">I cannot for the life of me understand why the Commissioners of the Treasury are to be given that enormous power. No Minister of State, such as the noble Baroness, will be given such power. But a mere Lord Commissioner will have more power than the noble Baroness, who is a Minister of State.</p>

@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -62,11 +78,11 @@
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1431.3" speakerid="uk.org.publicwhip/lord/100638" speakername="Baroness Thomas of Walliswood" colon="" colnum="1431"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-01.htm#50317-01_spopq0">
 	<p pid="b.1431.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1431.3/2" class="indent">What action they are taking in response to the verdict in the inquest on the death of Sarah Campbell.</p>
+	<p pid="b.1431.3/2" class="indent" pwmotiontext="asked">What action they are taking in response to the verdict in the inquest on the death of Sarah Campbell.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1431.4" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="1431"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-01.htm#50317-01_spmin1">
-	<p pid="b.1431.4/1">My Lords, there have been continuous improvements made at Styal prison and young offender institution since Sarah Campbell's tragic death on <phrase class="date" code="2003-01-18">18 January 2003</phrase>. The inquest into Sarah's death was heard by the coroner for Cheshire, Nicholas Rheinberg, and was concluded on <phrase class="date" code="2006-01-24">24 January</phrase> this year. After the inquest, Mr Rheinberg wrote under coroners' rule 43 and the Minister for Correctional Services, Paul Goggins, will be replying.</p>
+	<p pid="b.1431.4/1">My Lords, there have been continuous improvements made at Styal prison and young offender institution since Sarah Campbell's tragic death on <phrase class="date" code="2003-01-18">18 January 2003</phrase>. The inquest into Sarah's death was heard by the coroner for Cheshire, Nicholas Rheinberg, and was concluded on <phrase class="date" code="2005-01-24">24 January</phrase> this year. After the inquest, Mr Rheinberg wrote under coroners' rule 43 and the Minister for Correctional Services, Paul Goggins, will be replying.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1431.5" speakerid="uk.org.publicwhip/lord/100638" speakername="Baroness Thomas of Walliswood" colon=":" colnum="1431"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-01.htm#50317-01_spnew0">
@@ -110,7 +126,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1433.3" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon="" colnum="1433"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-01.htm#50317-01_spopq1">
 	<p pid="b.1433.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1433.3/2" class="indent">What steps they are taking to ensure that people aged over 50 have local access to education courses.</p>
+	<p pid="b.1433.3/2" class="indent" pwmotiontext="asked">What steps they are taking to ensure that people aged over 50 have local access to education courses.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1433.4" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="1433"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-01.htm#50317-01_spnew8">
@@ -133,7 +149,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1434.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="1434"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-02.htm#50317-02_spnew2">
-	<p pid="b.1434.2/1">My Lords, I accept that in the past there have been distortions of these processes. The House is aware of those. Indeed, my noble friend Lady Ashton agreed to set up a special working party to consider age restrictions in a number of areas. I know that the noble Baroness served on that body. It made its recommendations to Dr Kim Howells on <phrase class="date" code="2006-01-19">19 January</phrase>. I am not in a position to make the announcements that I believe he will make within the next couple of days, but I think that its recommendations were extremely influential in the areas the noble Baroness has just drawn to our attention.</p>
+	<p pid="b.1434.2/1">My Lords, I accept that in the past there have been distortions of these processes. The House is aware of those. Indeed, my noble friend Lady Ashton agreed to set up a special working party to consider age restrictions in a number of areas. I know that the noble Baroness served on that body. It made its recommendations to Dr Kim Howells on <phrase class="date" code="2005-01-19">19 January</phrase>. I am not in a position to make the announcements that I believe he will make within the next couple of days, but I think that its recommendations were extremely influential in the areas the noble Baroness has just drawn to our attention.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1434.3" speakerid="uk.org.publicwhip/lord/100252" speakername="Lord Graham of Edmonton" colon=":" colnum="1434"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-02.htm#50317-02_spnew3">
@@ -161,7 +177,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1436.1" speakerid="uk.org.publicwhip/lord/100255" speakername="Lord Greaves" colon="" colnum="1436"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-02.htm#50317-02_spopq0">
 	<p pid="b.1436.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1436.1/2" class="indent">What arrangements will be made for the appointment of international observers during the next general election campaign.</p>
+	<p pid="b.1436.1/2" class="indent" pwmotiontext="asked">What arrangements will be made for the appointment of international observers during the next general election campaign.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1436.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="1436"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-02.htm#50317-02_spmin0">
@@ -239,7 +255,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1438.5" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon="" colnum="1438"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-03.htm#50317-03_spopq0">
 	<p pid="b.1438.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1438.5/2" class="indent">What consideration they have given to the application of powers under the Prevention of Terrorism Act 2005 to those individuals suspected or identified by the Police Service of Northern Ireland or the security services of acts of terrorism within the Northern Ireland context.</p>
+	<p pid="b.1438.5/2" class="indent" pwmotiontext="asked">What consideration they have given to the application of powers under the Prevention of Terrorism Act 2005 to those individuals suspected or identified by the Police Service of Northern Ireland or the security services of acts of terrorism within the Northern Ireland context.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1438.6" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1438"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-03.htm#50317-03_spmin0">
@@ -305,7 +321,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1441.4" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1441"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-04.htm#50317-04_spnew3">
 	<p pid="b.1441.4/1">My Lords, I beg to move the four Motions standing in my name on the Order Paper.</p>
-	<p pid="b.1441.4/2">Moved, That the draft orders laid before the House on <phrase class="date" code="2006-02-09">9 February</phrase>, <phrase class="date" code="2006-02-22">22 February</phrase>, <phrase class="date" code="2006-02-24">24 February</phrase> and <phrase class="date" code="2006-03-07">7 March</phrase> be approved [<i>11th Report from the Joint Committee</i>].&mdash;(<i>Baroness Amos</i>.)</p>
+	<p pid="b.1441.4/2">Moved, That the draft orders laid before the House on <phrase class="date" code="2005-02-09">9 February</phrase>, <phrase class="date" code="2005-02-22">22 February</phrase>, <phrase class="date" code="2005-02-24">24 February</phrase> and <phrase class="date" code="2005-03-07">7 March</phrase> be approved [<i>11th Report from the Joint Committee</i>].&mdash;(<i>Baroness Amos</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1441.5" nospeaker="true" colnum="1441"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-04.htm#50317-04_spnew3">
@@ -426,12 +442,12 @@
 	<p pid="b.1447.1/6">It is well known that the main promoter of advance decisions is the Voluntary Euthanasia Society. The society has been ominously and curiously quiet about the Bill, knowing how it can be exploited. I know that the Government might now regret it, but it is a fact that the VES advised the Government on the preparation of an earlier consultation document, <i>Making Decisions</i>, which paved the way for this Bill. Is it any wonder, in the light of that and in the light of previous experience, that we now have our suspicions about where the Bill might lead?</p>
 	<p pid="b.1447.1/7">My noble friend's amendment and her speech remind us that a great many people outside this House who are following our proceedings fear being inappropriately denied nutrition and hydration, the very basics of life itself. And in the light of the eugenic abortion at seven months' gestation of a baby with a cleft palate, please let no one accuse my noble friend, myself, or Professor Finnis of &quot;pure scaremongering&quot;, or threaten us with the Bar Council or some other professional body. This House may dismiss their fears as ill founded, but I should like to stress a point I have made before in your Lordships' House. We are not legislating for some Utopia where decision-makers will always have the best interests of incapacitated persons at heart.</p>
 	<p pid="b.1447.1/8">During the 1990 debate, the noble and learned Lord, Lord Brightman, said that, &quot;it would be unthinkable&quot; for a doctor who was carrying out a termination to preserve the mother's life or health to gratuitously terminate the life of the child:</p>
-	<p pid="b.1447.1/9" class="indent">&quot;A doctor does not need an Act of Parliament to teach him that elementary duty&quot;.&mdash;[<i>Official Report</i>, 18/10/90; col. 1065.]</p>
+	<p pid="b.1447.1/9" class="indent">&quot;A doctor does not need an Act of Parliament to teach him that elementary duty&quot;.&mdash;[<phrase class="offrep" id="lords/1990-10-18.1065"><i>Official Report</i>, 18/10/90; col. 1065</phrase>.]</p>
 	<p pid="b.1447.1/10">But sadly, as the noble Baroness, Lady Knight, has just said, what was once unthinkable can rapidly become normative if we do not put the necessary safeguards in our legislation. What was once a heinous crime can rapidly become standard medical procedure. It is not enough to leave it to good intentions and, yes, it is sometimes the role of Parliament to legislate not just to spell out duties, but also to protect the weak and the vulnerable.</p>
 	<p pid="b.1447.1/11">Some individuals, perhaps not many, will seek to use this legislation to end prematurely the lives of those who lack mental capacity. Denial of nutrition and hydration is one of the ways in which this could be done.</p>
 	<p pid="b.1447.1/12">Many people's fears were compounded when we learnt that the Secretary of State for Health has argued in his submission to the Court of Appeal in the Burke case that resource considerations need to be brought to bear on the decision on whether artificial nutrition and hydration should be provided. My noble friend Lord Maginnis of Drumglass has been pursuing this point in Questions put to the Minister, the noble Baroness, Lady Ashton of Upholland.</p>
 	<p pid="b.1447.1/13">This amendment does not oblige medical professionals to do everything to keep alive patients who are clearly dying and for whom the provision of nutrition and hydration would have no benefit or would be harmful, futile or burdensome. On Tuesday, I listened with great interest to the moving speech of the noble Lord, Lord Carter. He told us that,</p>
-	<p pid="b.1447.1/14" class="indent">&quot;we are all entitled to follow the dictates of our conscience, but not perhaps by attempting to impose them on others through legislation&quot;.&mdash;[<i>Official Report</i>, 15/3/05; col. 1289.]</p>
+	<p pid="b.1447.1/14" class="indent">&quot;we are all entitled to follow the dictates of our conscience, but not perhaps by attempting to impose them on others through legislation&quot;.&mdash;[<phrase class="offrep" id="lords/2005-03-15.1289"><i>Official Report</i>, 15/3/05; col. 1289</phrase>.]</p>
 	<p pid="b.1447.1/15">Neither this amendment nor the amendments debated in your Lordships' House on Tuesday are an attempt to impose anything on anyone. Rather, they represent an attempt to improve the legislation. They do not necessarily represent perfection, and we are all open to further dialogue and discussion with the Government between now and Third Reading to get this right. These amendments represent an attempt to ensure that the Bill cannot be used as a vehicle for intentional killing. I believe that that objective is shared by everyone in the House who has contributed to these debates.</p>
 	<p pid="b.1447.1/16">On Tuesday the Minister helpfully answered the seven questions posed by the noble Lord, Lord Carlile. I shall end with just two further questions. First, will the Minister tell us quite explicitly today, in answer to a question raised with her last Tuesday by the right reverend Prelate the Bishop of Oxford and myself, whether Clause 58 covers advance directives? Secondly, do the Government support the legalisation of euthanasia or physician-assisted suicide? They are two straightforward questions that need to be recorded in our debates. They are different questions from those that have been asked so far. We have received the Government's assurance that the Bill does not legalise euthanasia or physician-assisted suicide, but suspicions will linger for so long as the Government fail to commit themselves to opposing any attempts in Parliament to legalise either euthanasia or assisted suicide.</p>
 	<p pid="b.1447.1/17">Many of us would like to see the Bill enacted, but its fate is now in the hands of the Government. Unless the fears raised by my noble friend Lady Chapman are properly addressed between now and Third Reading, the Government will&mdash;I know and they know&mdash;be in deep trouble with their own supporters as well as the Opposition Members in another place. I hope that, between now and Third Reading, they will seize the initiative and re-engage with Professor Finnis and others to seek a mature political resolution of these complex issues. I support the amendment.</p>
@@ -855,7 +871,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1476.1" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon="" colnum="1476"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-13.htm#50317-13_spnew4">
-	<p pid="b.1476.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].</p>
+	<p pid="b.1476.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-01-20">20 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1476.2" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="1476"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-13.htm#50317-13_spnew4">
@@ -873,7 +889,7 @@
 	<p pid="b.1476.2/12">Using the same network of contacts, we will also be able to monitor changes in policy which might cause us to withdraw a country or territory from the approved list. However, as countries which appear in this order recognise gender change in law it would be unusual for there to be any resiling from this position.</p>
 	<p pid="b.1476.2/13">The order has been consulted on and has received the support of the transsexual community.</p>
 	<p pid="b.1476.2/14">In summary, the order provides clarity as to those countries or territories with a process for legal recognition which we can trust. A transsexual person who has been recognised in any of the countries or territories on this list will have undergone a process of gender reassignment with the intention of living permanently in their acquired gender. I commend the order to the House.</p>
-	<p pid="b.1476.2/15">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(<i>Lord Evans of Temple Guiting</i>.)</p>
+	<p pid="b.1476.2/15">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(<i>Lord Evans of Temple Guiting</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1477.0" speakerid="uk.org.publicwhip/lord/100286" speakername="Lord Henley" colon=":" colnum="1477"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-13.htm#50317-13_spnew5">
@@ -904,7 +920,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1479.3" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon="" colnum="1479"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-14.htm#50317-14_spnew2">
-	<p pid="b.1479.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-02-09">9 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].</p>
+	<p pid="b.1479.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-02-09">9 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1479.4" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="1479"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-14.htm#50317-14_spnew2">
@@ -917,7 +933,7 @@
 	<p pid="b.1479.4/7">From <phrase class="date" code="2005-04-01">1 April 2005</phrase>, references to justices' chief executives and petty session areas will be redundant. It is therefore necessary to change the references mentioned, respectively, to read &quot;designated officer for any local justice area&quot;. Paragraph 38 of the schedule to the order does that. The effect will be that the procedure described in the Late Night Refreshment Houses Act 1969 can continue undisturbed.</p>
 	<p pid="b.1479.4/8">That is a typical example of the minor and consequential changes which comprise this order. The order ensures that the obsolete references previously mentioned are removed by the time of the coming into force of the relevant sections of the Courts Act 2003 on <phrase class="date" code="2005-04-01">1 April 2005</phrase>. The policies on these matters were fully discussed during the passage of the Courts Act 2003.</p>
 	<p pid="b.1479.4/9">Although I am confident that searches to identify the obsolete references in legislation have been comprehensive, I cannot be certain that all references have been captured in the order. If any other reference is found in future, it will be considered and the necessary amendment made. The provisions of the order have no impact on the rights set out in the European Convention on Human Rights. I can advise the House that to complete this necessary updating exercise, a further order dealing with secondary legislation, and subject to negative resolution procedure, has also been prepared. Copies of the secondary order are available from the Printed Paper Office. I beg to move.</p>
-	<p pid="b.1479.4/10">Moved, That the draft order laid before the House on <phrase class="date" code="2006-02-09">9 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].&mdash;(<i>Lord Evans of Temple Guiting</i>.)</p>
+	<p pid="b.1479.4/10">Moved, That the draft order laid before the House on <phrase class="date" code="2005-02-09">9 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].&mdash;(<i>Lord Evans of Temple Guiting</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1480.0" speakerid="uk.org.publicwhip/lord/100286" speakername="Lord Henley" colon=":" colnum="1480"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-14.htm#50317-14_spnew3">
@@ -943,7 +959,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1481.4" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon="" colnum="1481"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-14.htm#50317-14_spnew6">
-	<p pid="b.1481.4/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-02-23">23 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].</p>
+	<p pid="b.1481.4/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-02-23">23 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1481.5" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="1481"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-14.htm#50317-14_spnew6">
@@ -955,7 +971,7 @@
 	<p pid="b.1481.5/6">It may help noble Lords if I mention the main features of the regulations. Regulation 2 changes a number of definitions in the 1999 regulations; for example the definition of &quot;appeal tribunal&quot; is broadened to include a &quot;Pensions Appeal Tribunal&quot;. Sub-paragraph (g) of Regulation 2 also provides that a commissioner hearing appeals from the Pensions Appeal Tribunal is to be known as a &quot;Pensions Appeal Commissioner&quot;. That recognises the special status of armed service appellants. We felt it appropriate for their appeals to be distinguished from the general matters of social security. The ex-service organisations supported that approach in consultation on the Bill.</p>
 	<p pid="b.1481.5/7">Regulations 3 to 7 insert appropriate references to the Pensions Appeal Tribunal Act 1943 into the regulations. That ensures that regulations on matters such as hearings, decisions of a commissioner and so on deal with appeals from the Pensions Appeal Tribunal. Regulation 8 establishes the procedure for onward appeal of decisions of the social security commissioners to an appellate court. A person dissatisfied with a decision of a commissioner may appeal on a point of law to the Court of Appeal in England and Wales or the Court of Session in Scotland.</p>
 	<p pid="b.1481.5/8">I should mention that this instrument is subject to the affirmative procedure because appeals from the Pensions Appeal Tribunal will be subject to the existing strike-out and reinstatement provisions of the Social Security (Procedure) Regulations. We are not changing the operation of those strike-out procedures, merely extending them to include appeals from the Pensions Appeal Tribunal. I beg to move.</p>
-	<p pid="b.1481.5/9">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-23">23 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].&mdash;(<i>Lord Evans of Temple Guiting.</i>)</p>
+	<p pid="b.1481.5/9">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-02-23">23 February</phrase> be approved [<i>10th Report from the Joint Committee</i>].&mdash;(<i>Lord Evans of Temple Guiting.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1482.0" speakerid="uk.org.publicwhip/lord/100286" speakername="Lord Henley" colon=":" colnum="1482"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-15.htm#50317-15_spnew0">
@@ -1046,7 +1062,7 @@
 	<p pid="b.1487.2/3">I turn to my second point. The removal of the words,</p>
 	<p pid="b.1487.2/4" class="indent">&quot;unless the instrument contains express provision to that effect&quot;,</p>
 	<p pid="b.1487.2/5">from Clause 11(7)(a) would give the doctor the opportunity to override the attorney. If the words remain, an attorney can override that doctor. That strikes me as being bad in principle and bad in practice and not to be in the best interests of doctors and patients.</p>
-	<p pid="b.1487.2/6">My third point is in response to the advice, related to this issue, that has been issued by Peter Smith, the Archbishop of Cardiff, who, as the House will know, is chairman of the Department for Christian Responsibility and Citizenship of the Catholic Bishops' Conference of England and Wales. I know that no one in this House would therefore dismiss this as being a Roman Catholic issue. It ain't; it is a general issue of humanity in the increasingly eugenic society in which we exist. The Archbishop, in a letter to Jim Dobbin MP on <phrase class="date" code="2006-03-03">3 March</phrase>, wrote:</p>
+	<p pid="b.1487.2/6">My third point is in response to the advice, related to this issue, that has been issued by Peter Smith, the Archbishop of Cardiff, who, as the House will know, is chairman of the Department for Christian Responsibility and Citizenship of the Catholic Bishops' Conference of England and Wales. I know that no one in this House would therefore dismiss this as being a Roman Catholic issue. It ain't; it is a general issue of humanity in the increasingly eugenic society in which we exist. The Archbishop, in a letter to Jim Dobbin MP on <phrase class="date" code="2005-03-03">3 March</phrase>, wrote:</p>
 	<p pid="b.1487.2/7" class="indent">&quot;As you know, we have welcomed the Government's amendment to clause 4(5) of the Bill. In our view this provides an important safeguard which, provided the courts interpret it as it is intended, will ensure that doctors, proxies and other third parties are given no authority by the Bill to make decisions with the intention of bringing about a person's death&quot;.</p>
 	<p pid="b.1487.2/8">So far so good&mdash;His Grace the Archbishop is perfectly satisfied. But he continues: &quot;But&quot;&mdash;the &quot;but&quot; is very important&mdash;</p>
 	<p pid="b.1487.2/9" class="indent">&quot;this amendment still leaves a major gap. It does not cover advance decisions. The clauses dealing with advance decisions, although tightened up, still leave open the possibility that an expressly suicidal advance decision is binding&quot;.</p>
@@ -1117,7 +1133,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-03-17b.1492.4" speakerid="uk.org.publicwhip/lord/100258" speakername="Baroness Greengross" colon=":" colnum="1492"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050317/text/50317-17.htm#50317-17_spnew7">
-	<p pid="b.1492.4/1">My Lords, in moving Amendment No. 39&mdash;which stands in my name and those of my noble friend Lady Howarth and the noble Baroness, Lady Barker, who is not here&mdash;I shall speak also to Amendment No. 49. These amendments touch on issues that we debated in Committee in amendments moved by my noble friend Lady Howarth, on <phrase class="date" code="2006-01-27">27 January</phrase>, about putting in place better protection for vulnerable people. I have tabled these amendments having consideration to that debate.</p>
+	<p pid="b.1492.4/1">My Lords, in moving Amendment No. 39&mdash;which stands in my name and those of my noble friend Lady Howarth and the noble Baroness, Lady Barker, who is not here&mdash;I shall speak also to Amendment No. 49. These amendments touch on issues that we debated in Committee in amendments moved by my noble friend Lady Howarth, on <phrase class="date" code="2005-01-27">27 January</phrase>, about putting in place better protection for vulnerable people. I have tabled these amendments having consideration to that debate.</p>
 	<p pid="b.1492.4/2">The amendments would restrict any staff member, manager or owner of a service registered by the Commission for Social Care Inspection from acting as a lasting power of attorney or a court-appointed deputy. I should add that the restriction applies only to paid staff. However, it will apply to all paid staff.</p>
 	<p pid="b.1492.4/3">The amendments have the support of CSCI. I understand that Dame Denise Platt raised the issue with the Minister. She certainly raised it personally with me and my colleagues. It also has the support of other bodies with an interest in these matters, such as Age Concern and Action on Elder Abuse, both of which organisations I am involved with.</p>
 	<p pid="b.1492.4/4">I believe that the amendments are necessary because, as your Lordships know, we have to clamp down on all potential avenues for abuse in care homes, and especially in domiciliary care services. We have heard about people who have been robbed by their care givers and, worse, about those who have perpetrated these crimes but have got away with it because they were registered as holders of enduring power of attorney or as deputies.</p>
@@ -1302,7 +1318,7 @@
 	<p pid="b.1499.2/4">We listened carefully to the views put forward then and also those put forward by research organisations. We have already clarified the intention of this clause by an amendment in another place. To refine the concept in the way that we were invited to do has proved difficult, although we have done it: we have laid it out as best we can, and we have met the considerations. We intended to give effect to the Law Commission's recommendation that the research should be linked to a condition with which the person concerned is, or may be, affected.</p>
 	<p pid="b.1499.2/5">Amendment No. 58 requires that the research be connected with an &quot;impairing condition&quot; affecting the person without capacity, or its treatment. &quot;Impairing condition&quot; is defined as a condition that is or may be connected, or cause or contribute to, the impairment or disturbance in the functioning of the mind or the brain. The amendment does not significantly affect the practical impact of the research clauses, but rather clarifies their scope. The emphasis is now more clearly on the requirement that the research must be connected to an impairing condition that the person has. It concedes that the relationship between the impairing condition and the impairment of, or disturbance in, the functioning of the mind or brain is sometimes not perfectly understood. It makes it clearer that it may be valid to conduct properly designed research to see whether the condition and the impairment or the disturbance are linked.</p>
 	<p pid="b.1499.2/6">The amendment makes it clear that research, for example, to prevent kidney failure in a person in a coma following a car accident or heart attack, as raised by my noble friend, would be permissible if the other safeguards are met. The impairing condition would be the trauma or shock following the sudden crash or heart attack. The research ethics committee would have to be satisfied that there was a good case for believing that the research into kidney failure was connected to the impairing condition, or its treatment. That would be the task of the research group involved. The REC must also take into account all aspects of the requirement for approval in Clauses 31(2) to 31(5).</p>
-	<p pid="b.1499.2/7">Amendment No. 59 is on a different point, which further reflects our decisions on the recommendation made by the Joint Committee on Human Rights in its report of <phrase class="date" code="2006-01-24">24 January</phrase>, which considers in turn the Government's response to the report of <phrase class="date" code="">1 November</phrase>. The Joint Committee paid careful attention to the wording used in Clause 31(3), which requires the research ethics committee to have,</p>
+	<p pid="b.1499.2/7">Amendment No. 59 is on a different point, which further reflects our decisions on the recommendation made by the Joint Committee on Human Rights in its report of <phrase class="date" code="2005-01-24">24 January</phrase>, which considers in turn the Government's response to the report of <phrase class="date" code="2005-11-01">1 November</phrase>. The Joint Committee paid careful attention to the wording used in Clause 31(3), which requires the research ethics committee to have,</p>
 	<p pid="b.1499.2/8" class="indent">&quot;reasonable grounds for believing that the research would not be as effective if carried out only on . . . persons who have capacity&quot;.</p>
 	<p pid="b.1499.2/9">In January, the second report concluded in paragraph 4.60 that the use of the phrase &quot;reasonable grounds for believing&quot; was a departure from the international standard applied. It commended to us the approach used in Scotland in the Adults with Incapacity (Scotland) Act 2000, that research of a similar nature cannot be carried out on an adult who is capable in relation to the decision. It placed the emphasis on the word &quot;cannot&quot; because it felt that it was closer to the accepted international standard.</p>
 	<p pid="b.1499.2/10">We have taken the Joint Committee's comments to heart, although we do not entirely agree with its conclusions. Nevertheless, we have looked again at the wording of the biomedicine convention. We agree that it is possible to reformulate the requirement in Clause 31(3) in a way that makes that intention clear and comes closer to the view of the Joint Committee. The amendment replaces the former wording to the effect that the research would not be as effective. It now states that there must be reasonable grounds for believing that,</p>
@@ -1897,7 +1913,7 @@
 	<p pid="b.1534.5/5">However, these amendments are perhaps a compromise that the Minister could consider accepting. They would require the Office of the Public Guardian (OPG) to hold a register on behalf of the DWP of all the appointeeships. They seek to ensure that appointees, monitored by the DWP, have to follow the code of practice which the Mental Capacity Bill will introduce.</p>
 	<p pid="b.1534.5/6">Cross-referencing is important because at present it would be perfectly possible for a person to have his or her appointeeship revoked on the grounds of misspending benefit income and later to become the receiver for someone else. As the noble Earl, Lord Howe, said in Committee, the OPG would not necessarily know of any problems identified by the DWP. The same could also follow for the DWP appointing people who have had their powers revoked by the OPG.</p>
 	<p pid="b.1534.5/7">The OPG would be in the position of either investigating cases itself, where the individual is a registered donee or deputy, or informing the DWP of the need to investigate cases of appointeeship. That would give the OPG&mdash;the body charged with protecting people who lack capacity&mdash;a much fuller picture of cases of abuse. It would also mean that the OPG would be able to cross-reference easily to ensure people whose powers were revoked because of concerns were not put in a similar position with another individual.</p>
-	<p pid="b.1534.5/8">The other point relates to monitoring. It is welcome that the DWP recognises that some kind of monitoring system is necessary. That was agreed on <phrase class="date" code="2006-01-27">27 January</phrase> in this House. But that will cost both money and time. The amendment would require such monitoring to take place.</p>
+	<p pid="b.1534.5/8">The other point relates to monitoring. It is welcome that the DWP recognises that some kind of monitoring system is necessary. That was agreed on <phrase class="date" code="2005-01-27">27 January</phrase> in this House. But that will cost both money and time. The amendment would require such monitoring to take place.</p>
 	<p pid="b.1534.5/9">Finally, it is essential that appointees should be required to adhere to the code of practice, in the same way as deputies and lasting power of attorney donees will be required to do. Appointees should know that although they have been appointed to deal with the person's claims and payments for benefits, they should still help the person retain as much control as possible over his or her money and decisions about how he or she wishes to spend it.</p>
 	<p pid="b.1534.5/10">All too often appointees make assumptions about the capacity of someone and take control of all the financial aspects of that person's life, which means that the individual has personal decisions made about him or her, perhaps unnecessarily. Many of the appointees, as we have previously said, will be carers of the individuals and as such should be working to the principles of the Bill. However, where the carer has been given the extra responsibility of managing the person's benefits, it would be an excellent opportunity to make clear to him or her that there is a code of practice that should also be followed.</p>
 	<p pid="b.1534.5/11">I have been advised by Age Concern that an amendment to the Social Security Claims and Payment Regulations on appointeeship placing a condition on appointees to follow the Mental Capacity Bill's code of practice would be sufficient, thereby ensuring that such people are placed on a par with anyone else who has a donee or a deputy. I beg to move.</p>

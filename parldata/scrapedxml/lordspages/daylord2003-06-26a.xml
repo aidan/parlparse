@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -727,7 +746,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.426.7" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon="" colnum="426"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-12.htm#30626-12_spopq0">
 	<p pid="a.426.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.426.7/2" class="indent">Why they have agreed to an extradition treaty with the United States which, on a non-reciprocal basis, authorises extradition of a person to the United States without the need to produce supporting information which would provide a reasonable basis to believe that the person committed the offence for which extradition is requested.</p>
+	<p pid="a.426.7/2" class="indent" pwmotiontext="asked">Why they have agreed to an extradition treaty with the United States which, on a non-reciprocal basis, authorises extradition of a person to the United States without the need to produce supporting information which would provide a reasonable basis to believe that the person committed the offence for which extradition is requested.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.426.8" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="426"  time="015:01:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-12.htm#30626-12_spmin1">
@@ -812,7 +831,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.429.4" speakerid="uk.org.publicwhip/lord/100321" speakername="Lord Hylton" colon="" colnum="429"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-12.htm#30626-12_spopq2">
 	<p pid="a.429.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.429.4/2" class="indent">Whether they will increase their contribution to the United Nations Voluntary Fund for the Victims of Torture and ask the European Union and the United States to do the same.</p>
+	<p pid="a.429.4/2" class="indent" pwmotiontext="asked">Whether they will increase their contribution to the United Nations Voluntary Fund for the Victims of Torture and ask the European Union and the United States to do the same.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.429.5" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="429"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-12.htm#30626-12_spmin2">
@@ -858,7 +877,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.431.2" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon="" colnum="431"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-13.htm#30626-13_spopq0">
 	<p pid="a.431.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.431.2/2" class="indent">How they intend to deal with the increased demand for diagnosis and treatment of sexually transmitted diseases.</p>
+	<p pid="a.431.2/2" class="indent" pwmotiontext="asked">How they intend to deal with the increased demand for diagnosis and treatment of sexually transmitted diseases.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.431.3" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="431"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-13.htm#30626-13_spmin0">
@@ -923,7 +942,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.434.1" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="434"  time="015:24:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-14.htm#30626-14_spopq0">
 	<p pid="a.434.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.434.1/2" class="indent">What research is being done into the effect which genetically modified crops might have on human health.</p>
+	<p pid="a.434.1/2" class="indent" pwmotiontext="asked">What research is being done into the effect which genetically modified crops might have on human health.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-06-26a.434.2" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="434"  time="015:24:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030626/text/30626-14.htm#30626-14_spmin0">

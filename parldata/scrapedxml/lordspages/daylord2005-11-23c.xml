@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -53,11 +69,11 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1615.1" speakerid="uk.org.publicwhip/lord/100270" speakername="Lord Hannay of Chiswick" colon="" colnum="1615"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew0">
 	<p pid="c.1615.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.1615.1/2">What steps they are taking to encourage the emergence of a regional security organisation in the Gulf area which would include Iran, Iraq and the members of the Gulf Cooperation Council.</p>
+	<p pid="c.1615.1/2" pwmotiontext="asked">What steps they are taking to encourage the emergence of a regional security organisation in the Gulf area which would include Iran, Iraq and the members of the Gulf Cooperation Council.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1615.2" speakerid="uk.org.publicwhip/lord/100828" speakername="Baroness Royall of Blaisdon" colon=":" colnum="1615"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew1">
-	<p pid="c.1615.2/1">My Lords, the Government support a number of initiatives in the region, such as the International Institute of Strategic Studies' regional Gulf dialogue. A Cabinet-level delegation will attend the next conference in Bahrain on 2 to <phrase class="date" code="">4 December</phrase>. Officials in London and at posts have assisted this initiative by encouraging engagement from the region. If they are to be successful, leadership of regional security initiatives must come from the region.</p>
+	<p pid="c.1615.2/1">My Lords, the Government support a number of initiatives in the region, such as the International Institute of Strategic Studies' regional Gulf dialogue. A Cabinet-level delegation will attend the next conference in Bahrain on 2 to <phrase class="date" code="2005-12-04">4 December</phrase>. Officials in London and at posts have assisted this initiative by encouraging engagement from the region. If they are to be successful, leadership of regional security initiatives must come from the region.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1615.3" speakerid="uk.org.publicwhip/lord/100270" speakername="Lord Hannay of Chiswick" colon=":" colnum="1615"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew2">
@@ -65,7 +81,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1615.4" speakerid="uk.org.publicwhip/lord/100828" speakername="Baroness Royall of Blaisdon" colon=":" colnum="1615"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew3">
-	<p pid="c.1615.4/1">My Lords, regional security discussions, and for the region to take on its security implications itself, are extremely important. I understand that Iran has been invited to participate in the meeting on <phrase class="date" code="">2 December</phrase>, but it is not yet clear whether it is going to attend.</p>
+	<p pid="c.1615.4/1">My Lords, regional security discussions, and for the region to take on its security implications itself, are extremely important. I understand that Iran has been invited to participate in the meeting on <phrase class="date" code="2005-12-02">2 December</phrase>, but it is not yet clear whether it is going to attend.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1615.5" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1615"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew4">
@@ -122,7 +138,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1617.4" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="1617"  time="014:41:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew16">
 	<p pid="c.1617.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.1617.4/2">What steps they are taking to continue dialogue with the other European Union Governments on the matters discussed at Hampton Court on <phrase class="date" code="">27 October</phrase>, in advance of the December European Council.</p>
+	<p pid="c.1617.4/2" pwmotiontext="asked">What steps they are taking to continue dialogue with the other European Union Governments on the matters discussed at Hampton Court on <phrase class="date" code="2005-10-27">27 October</phrase>, in advance of the December European Council.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1617.5" speakerid="uk.org.publicwhip/lord/100828" speakername="Baroness Royall of Blaisdon" colon=":" colnum="1617"  time="014:41:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-01.htm#51123-01_spnew17">
@@ -207,7 +223,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1620.4" speakerid="uk.org.publicwhip/lord/100427" speakername="Baroness Miller of Chilthorne Domer" colon="" colnum="1620"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-02.htm#51123-02_spnew13">
 	<p pid="c.1620.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.1620.4/2">Whether progress on addressing the issue of bio-accumulative, toxic and persistent chemicals in the environment will be adequately addressed by the proposed Registration, Evaluation and Authorisation of Chemicals agreement.</p>
+	<p pid="c.1620.4/2" pwmotiontext="asked">Whether progress on addressing the issue of bio-accumulative, toxic and persistent chemicals in the environment will be adequately addressed by the proposed Registration, Evaluation and Authorisation of Chemicals agreement.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1620.5" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1620"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-02.htm#51123-02_spmin0">
@@ -219,7 +235,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1621.0" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1621"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-02.htm#51123-02_spnew15">
-	<p pid="c.1621.0/1">My Lords, I am delighted that the noble Baroness has asked this question because if we succeed at a special meeting of the council on <phrase class="date" code="">19 December</phrase> in getting the REACH proposals accepted by the member states, that will be a considerable achievement. The current regime for chemicals is flawed, bureaucratic and slow. In too many circumstances, it is ineffective. More than 40 laws, more than 100,000 substances and almost 40 years after the EU started to address the issue of chemicals, we still have not got there. We must get there by <phrase class="date" code="">19 December</phrase>&mdash;</p>
+	<p pid="c.1621.0/1">My Lords, I am delighted that the noble Baroness has asked this question because if we succeed at a special meeting of the council on <phrase class="date" code="2005-12-19">19 December</phrase> in getting the REACH proposals accepted by the member states, that will be a considerable achievement. The current regime for chemicals is flawed, bureaucratic and slow. In too many circumstances, it is ineffective. More than 40 laws, more than 100,000 substances and almost 40 years after the EU started to address the issue of chemicals, we still have not got there. We must get there by <phrase class="date" code="2005-12-19">19 December</phrase>&mdash;</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1621.1" speakerid="uk.org.publicwhip/lord/100578" speakername="The Earl of Selborne" colon=":" colnum="1621"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-02.htm#51123-02_spnew16">
@@ -284,7 +300,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1623.1" speakerid="uk.org.publicwhip/lord/100181" speakername="The Earl of Dundee" colon="" colnum="1623"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-03.htm#51123-03_spnew11">
 	<p pid="c.1623.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.1623.1/2">When they expect their current proposals for further reform of the system of agricultural subsidies and food import tariffs to be implemented.</p>
+	<p pid="c.1623.1/2" pwmotiontext="asked">When they expect their current proposals for further reform of the system of agricultural subsidies and food import tariffs to be implemented.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1623.2" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1623"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-03.htm#51123-03_spnew12">
@@ -305,8 +321,8 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1623.6" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="1623"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-03.htm#51123-03_spnew16">
-	<p pid="c.1623.6/1">My Lords, I can only repeat what my noble friend Lady Royall said from the Front Bench a few minutes ago. We agree that the abatement is an anomaly, but it arises because of another anomaly caused by the imbalances on the expenditure side of the current budget. The Prime Minister has made it clear that if there were a serious effort to correct those imbalances the abatement would be on the table. I cannot do better than to quote my right honourable friend the Foreign Secretary who said, on <phrase class="date" code="">1 November</phrase>:</p>
-	<p pid="c.1623.6/2" class="indent">&quot;The current abatement is an anomaly, but it is an anomaly on an anomaly, and the most profound anomaly is the structure and funding of the common agricultural policy&quot;.&mdash;[<i>Official Report</i>, Commons, 1/11/05; col. 708.]</p>
+	<p pid="c.1623.6/1">My Lords, I can only repeat what my noble friend Lady Royall said from the Front Bench a few minutes ago. We agree that the abatement is an anomaly, but it arises because of another anomaly caused by the imbalances on the expenditure side of the current budget. The Prime Minister has made it clear that if there were a serious effort to correct those imbalances the abatement would be on the table. I cannot do better than to quote my right honourable friend the Foreign Secretary who said, on <phrase class="date" code="2005-11-01">1 November</phrase>:</p>
+	<p pid="c.1623.6/2" class="indent">&quot;The current abatement is an anomaly, but it is an anomaly on an anomaly, and the most profound anomaly is the structure and funding of the common agricultural policy&quot;.&mdash;[<phrase class="offrep" id="lords/2005-11-01.708"><i>Official Report</i>, Commons, 1/11/05; col. 708</phrase>.]</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1624.0" speakerid="uk.org.publicwhip/lord/100378" speakername="Lord Livsey of Talgarth" colon=":" colnum="1624"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-03.htm#51123-03_spnew17">
@@ -407,7 +423,7 @@
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1626.4" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="1626"  time="015:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-04.htm#51123-04_spnew10">
 	<p pid="c.1626.4/1">I assure the noble Lord, Lord Peyton, that there is never a reason for him to seek to ingratiate himself with the Government. His stock, as all noble Lords know, is already incredibly high.</p>
 	<p pid="c.1626.4/2">The noble Lord's amendment touches on the drafting of Clause 1(6), which I understand is to enable us to have an opportunity to clarify the situation. Clause 1 was really designed to prevent any number being added to the national identity register&mdash;such as a police national computer reference number&mdash;which would tend to reveal sensitive personal data. The noble Baroness, Lady Anelay, is right to say that we did that in an attempt to respond to concerns helpfully.</p>
-	<p pid="c.1626.4/3">We touched on the issue of sensitive personal data in the last group of amendments on our second day in Committee on <phrase class="date" code="">16 November</phrase>. That was the group led by Amendment No. 36, tabled in the name of the noble Baroness, Lady Anelay. I have undertaken to write to the noble Baroness before Report to deal with some of the points that she raised, and I will do so. However, in replying to the amendment of the noble Lord, Lord Peyton, it may help if I set out some of that background now, so that your Lordships can better understand these issues.</p>
+	<p pid="c.1626.4/3">We touched on the issue of sensitive personal data in the last group of amendments on our second day in Committee on <phrase class="date" code="2005-11-16">16 November</phrase>. That was the group led by Amendment No. 36, tabled in the name of the noble Baroness, Lady Anelay. I have undertaken to write to the noble Baroness before Report to deal with some of the points that she raised, and I will do so. However, in replying to the amendment of the noble Lord, Lord Peyton, it may help if I set out some of that background now, so that your Lordships can better understand these issues.</p>
 	<p pid="c.1626.4/4">The &quot;registrable facts&quot; set out in Clause 1(5) may look like a long list, but they are all relevant in helping to identify an individual, and will allow cross-referencing with other departments' databases during the application process. Holding the numbers on the register, as listed in paragraph (4) of Schedule 1, will also make it easier to derive joined-up government benefits from the identity card scheme. If I may give an example, it might be useful, in relation to a benefit or pension application, for the Department for Work and Pensions to be able to check someone's national insurance number against their identity card.</p>
 	<p pid="c.1626.4/5">The Bill was amended on Report in another place by a government amendment to respond to a point made and taken up in Committee. There had been a number of questions raised about the need to ensure that information about criminal records would not be held on the national identity register. The Government have always made it clear that they do not intend to hold medical or criminal records on that register, and the Bill achieves this by linking the statutory purposes of the scheme at Clause 1(3) to the registrable facts as defined at Clause 1(5). These registrable facts do not cover criminal or medical records, other than any voluntary information recorded at the request of the cardholder as allowed for at Clause 1(5)(i) which might, for example, include organ donor status, or matters of that sort.</p>
 	<p pid="c.1626.4/6">So &quot;registrable facts&quot; can be amended only&mdash;and I emphasise &quot;only&quot;&mdash;by further primary legislation. Therefore, the Bill provides a major safeguard against claims that the scope of the national identity register might be expanded in the future without proper parliamentary scrutiny. Thus it would not be possible to add criminal or medical records to the &quot;registrable facts&quot; at Clause 1(5) by secondary legislation. Nor would it be possible to add criminal or medical records to the list of items in Schedule 1 by secondary legislation, because Clause 3(6) requires that anything added to Schedule 1 is consistent with the statutory purposes and those, as I have just said, link back directly to the &quot;registrable facts&quot;.</p>
@@ -1098,7 +1114,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1665.3" speakerid="uk.org.publicwhip/lord/100465" speakername="The Earl of Northesk" colon=":" colnum="1665"  time="017:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-16.htm#51123-16_spnew0">
 	<p pid="c.1665.3/1">I shall add one small point about commercial access to the register. The noble Lord, Lord Bassam, told us that,</p>
-	<p pid="c.1665.3/2" class="indent">&quot;there will be no open access to information held on the register. Private companies will not be able to access or buy national identity register entries. However, it is right to spell it out that only with the consent of the ID card holder will banks or other approved businesses be able to verify identity by checking an ID card against the national identity register&quot;.&mdash;[<i>Official Report</i>, 15/11/05; col. 1025.]</p>
+	<p pid="c.1665.3/2" class="indent">&quot;there will be no open access to information held on the register. Private companies will not be able to access or buy national identity register entries. However, it is right to spell it out that only with the consent of the ID card holder will banks or other approved businesses be able to verify identity by checking an ID card against the national identity register&quot;.&mdash;[<phrase class="offrep" id="lords/2005-11-15.1025"><i>Official Report</i>, 15/11/05; col. 1025</phrase>.]</p>
 	<p pid="c.1665.3/3">The noble Lord, Lord Phillips, earlier referred to this point. That is all fair enough. I merely observe that, as I understand it, the Home Office's procurement strategy documentation estimates that 265 government departments and agencies and 44,000 private sector organisations will have access to the register.</p>
 	<p pid="c.1665.3/4">I do not necessarily suggest that there is any inconsistency here, but it is important that we are given the opportunity to understand the scope of commercial access to the register that the Government envisage. Is that the content of the procurement strategy documents?</p>
 </speech>
@@ -1232,7 +1248,7 @@
 	<p pid="c.1673.2/1">I fundamentally disagree with the noble Lord's view. The scheme is aimed at UK residents irrespective of their nationality. We should not exclude foreign nationals who may have lived here lawfully for many years. They may have businesses or employment. They will have paid taxes and be entitled to public services, and many make huge and valuable contributions to the well-being and richness of this country. By richness I do not mean simply financial richness, but also the cultural depth, breadth and excitement that we now have in our country. It is the envy of many other countries and has given us great stability.</p>
 	<p pid="c.1673.2/2">The identity card overview published in June this year, which is available in the Library, outlines the level of take-up required to gain maximum benefit from the scheme. In its early years, the main areas of benefit are more efficient administration in both the private and public sector and immigration control. I say that in response to the noble and learned Lord, Lord Lyell of Markyate. These two benefit areas build gradually in proportion to the take-up. Fraud reduction and crime benefits would increase considerably when a high proportion of the resident population is enrolled. Once the move to compulsion came, and organisations were empowered to use the ID card or NIR as the only means of identification, fraudsters and criminals would find it increasingly difficult to commit crime where identity was an issue.</p>
 	<p pid="c.1673.2/3">If the noble Baroness were to proceed with her amendment&mdash;and I know that she raises it so that we can discuss these issues&mdash;it would severely impact on the effectiveness of the scheme. The benefits that would be achieved in relation to immigration, illegal working and access to public services under the ID card scheme would, quite frankly, be lost. We cannot see why, if I may respectfully say so, we would want to introduce an ID card scheme and then limit ourselves to being able to register only a number of the resident population.</p>
-	<p pid="c.1673.2/4">Before I leave Amendment No. 46, it may be appropriate to seek to correct an answer that I gave to the noble Earl, Lord Onslow, who I see in his place. On the first day in Committee, <phrase class="date" code="">15 November</phrase>, I made a response to the noble Earl which indicated that an EU national would not have nationality recorded on an ID card. At that stage we were talking of British nationality. I want to clarify so that I have not conflated the two. Only British citizens will have an identity card showing their British nationality, which would then be valid as a travel document for use in Europe. That identity card will either be issued as a standalone card on its own, or as a package with the identity card and British passport. A plain ID card, showing no nationality and not being valid for travel, would also be available for British and Irish nationals.</p>
+	<p pid="c.1673.2/4">Before I leave Amendment No. 46, it may be appropriate to seek to correct an answer that I gave to the noble Earl, Lord Onslow, who I see in his place. On the first day in Committee, <phrase class="date" code="2005-11-15">15 November</phrase>, I made a response to the noble Earl which indicated that an EU national would not have nationality recorded on an ID card. At that stage we were talking of British nationality. I want to clarify so that I have not conflated the two. Only British citizens will have an identity card showing their British nationality, which would then be valid as a travel document for use in Europe. That identity card will either be issued as a standalone card on its own, or as a package with the identity card and British passport. A plain ID card, showing no nationality and not being valid for travel, would also be available for British and Irish nationals.</p>
 	<p pid="c.1673.2/5">The intention is that ID cards for foreign nationals will be based on designating residence permits for non-EU foreign nationals and for EU nationals on registration certificates. These would confirm the holder's own nationality and, in the case of a non-EU national, the terms and conditions on their stay in the United Kingdom. However, because these documents would not show British nationality they would not be valid for travel in Europe. That is the distinction; British nationality is a travel document&mdash;it is on the face&mdash;while foreign nationality will be there but will not be capable of being used as a travel document. I thought it right to correct any misunderstanding now, just in case; maybe I was clearer than I think I was.</p>
 	<p pid="c.1673.2/6">Amendment No. 47 would require an entry to be made on the register for those who enter the United Kingdom, legally or otherwise, from countries which could be deemed to be some sort of terrorist risk as defined in the amendment. I want to make it absolutely clear that the ID card scheme is not a border control project. It is an identity verification system which will allow those legitimately here to prove their identity, which will then confirm their leave to remain.</p>
 	<p pid="c.1673.2/7">It has been suggested that we are leaving the ID card scheme open to abuse by allowing people to come here for up to three months without the formality of registering and being issued with an ID card. That seemed to be implicit in some of the comments being made. I fail to see it as any kind of loophole. If people are determined to try to stay here illegally, I am afraid that they are likely to do so whether we admit them for one, three or six months as short-term visitors.</p>
@@ -1417,7 +1433,7 @@
 	<p pid="c.1689.1/1">I can assure the noble Lord, Lord Stoddart, that we want to take Parliament with us. Indeed, we do not think that this provision should necessarily be a contentious one. Perhaps I can explain why I say that.</p>
 	<p pid="c.1689.1/2">Taken together, Amendments Nos. 50 and 65 would make any subordinate legislation under Clause 2(3) subject to the affirmative resolution procedure, which would require a draft order to be laid before and approved by Parliament before the order was made. I hope I have indicated that the Government's view is that in a number of areas the affirmative procedure is correct. In particular, we did that in relation to the previous amendment that we debated. However, we are not convinced that the affirmative procedure is required for this power, which is just to exclude categories of persons from an entitlement to register.</p>
 	<p pid="c.1689.1/3">The power is limited to the categories described in subsection (3); namely, those who have resided in the UK for less than the prescribed period. I have already indicated that we propose that the period to be prescribed should be about three months. Anyone who has been here for fewer than three months, and those who reside here unlawfully, would not be entitled to register. In relation to those two groups of people, we believe that it is appropriate for any change in relation to paragraphs (a), (b) or (c) to subsection (3) to be by negative resolution. It cannot be used for other cases.</p>
-	<p pid="c.1689.1/4">The delegated powers in this clause were scrutinised by the Delegated Powers and Regulatory Reform Committee in its report on <phrase class="date" code="">10 November</phrase>. It made no comment about the level of scrutiny in this clause. We therefore have to accept that it was content with it. We have listened to the concerns previously expressed and have changed the order-making power in relation to modifying the age of registration to an affirmative resolution process, which reflects the fact that this would not be done lightly and would not cause significant public debate. I am not convinced that the other regulation-making powers under this clause relating to entitlement to registration require the affirmative procedure. Therefore, we are of the view that the negative procedure is appropriate.</p>
+	<p pid="c.1689.1/4">The delegated powers in this clause were scrutinised by the Delegated Powers and Regulatory Reform Committee in its report on <phrase class="date" code="2005-11-10">10 November</phrase>. It made no comment about the level of scrutiny in this clause. We therefore have to accept that it was content with it. We have listened to the concerns previously expressed and have changed the order-making power in relation to modifying the age of registration to an affirmative resolution process, which reflects the fact that this would not be done lightly and would not cause significant public debate. I am not convinced that the other regulation-making powers under this clause relating to entitlement to registration require the affirmative procedure. Therefore, we are of the view that the negative procedure is appropriate.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1690.0" speakerid="uk.org.publicwhip/lord/100499" speakername="Lord Phillips of Sudbury" colon=":" colnum="1690"  time="019:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-23.htm#51123-23_spnew2">
@@ -1559,7 +1575,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1697.1" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="1697"  time="019:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-25.htm#51123-25_spmin0">
-	<p pid="c.1697.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="">24 October</phrase> be approved.</p>
+	<p pid="c.1697.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-10-24">24 October</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1697.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="1697"  time="019:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-25.htm#51123-25_spmin0">
@@ -1570,7 +1586,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1697.3" nospeaker="true" colnum="1697"  time="019:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-25.htm#51123-25_spmin0">
-	<p pid="c.1697.3/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="">24 October</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="c.1697.3/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2005-10-24">24 October</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1697.4" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="1697"  time="019:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-25.htm#51123-25_spnew9">
@@ -1625,7 +1641,7 @@
 <speech id="uk.org.publicwhip/lords/2005-11-23c.1698.7" speakerid="uk.org.publicwhip/lord/100016" speakername="Baroness Anelay of St Johns" colon=":" colnum="1698"  time="019:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051123/text/51123-26.htm#51123-26_spnew0">
 	<p pid="c.1698.7/1">In moving Amendment No. 55, I shall speak also to Amendments Nos. 167 and 187. Amendment No. 55 is simplicity itself. It guarantees that details of any entry made in the register must be provided to the person in respect of whom that entry is made. What could be unreasonable about that? Without such clarification&mdash;without such assurances that information about an individual will not be stored, added to or removed without his knowledge&mdash;the citizen would be in a position of insecurity.</p>
 	<p pid="c.1698.7/2">Amendment No. 167 inserts a new subsection into Clause 12. That clause sets out how we shall have to notify changes in circumstances to keep the national identity register up to date. If we fail to do that, we face a civil penalty of up to &pound;1,000. It is therefore important that systems are in place to enable us to carry out that duty effectively and easily without facing the threat of a penalty&mdash;or a fine. As my noble friend Lord Onslow said earlier today, whatever one calls it, it will feel like a fine. Amendment No. 167 gives every individual entered on the register the right to be sent a copy of the information held on him by the Secretary of State.</p>
-	<p pid="c.1698.7/3">I emphasise that Amendment No. 167 is a probing amendment because I realise the cost implications of doing what it requires. The purpose of the amendment is to probe how the process will take place, particularly because when my honourable friend Patrick Mercer moved this amendment in another place on <phrase class="date" code="2006-07-14">14 July</phrase>, he did not get a reply from the Minister because the Government had put in the knives. So this is the first opportunity for the Government to answer the question.</p>
+	<p pid="c.1698.7/3">I emphasise that Amendment No. 167 is a probing amendment because I realise the cost implications of doing what it requires. The purpose of the amendment is to probe how the process will take place, particularly because when my honourable friend Patrick Mercer moved this amendment in another place on <phrase class="date" code="2005-07-14">14 July</phrase>, he did not get a reply from the Minister because the Government had put in the knives. So this is the first opportunity for the Government to answer the question.</p>
 	<p pid="c.1698.7/4">Amendment No. 187 is in a similar vein to Amendment No. 55. It inserts a requirement in Clause 14 for the Secretary of State to supply an individual with all or any of the information recorded about him on the register, if that individual asks for it. I beg to move.</p>
 </speech>
 

@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -35,7 +38,9 @@
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -52,6 +57,7 @@
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -71,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.669.3" speakerid="uk.org.publicwhip/lord/100435" speakername="Lord Monson" colon="" colnum="669"  time="014:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-01.htm#51018-01_spopq0">
 	<p pid="c.669.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.669.3/2" class="indent">Whether, during the remaining weeks of the United Kingdom's presidency of the European Union, they will seek to secure fairer treatment for whistleblowers who reveal corruption and financial irregularities in European Union institutions.</p>
+	<p pid="c.669.3/2" class="indent" pwmotiontext="asked">Whether, during the remaining weeks of the United Kingdom's presidency of the European Union, they will seek to secure fairer treatment for whistleblowers who reveal corruption and financial irregularities in European Union institutions.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.669.4" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="669"  time="014:43:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-01.htm#51018-01_spmin0">
@@ -132,7 +138,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.672.1" speakerid="uk.org.publicwhip/lord/100375" speakername="The Earl of Listowel" colon="" colnum="672"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-01.htm#51018-01_spopq1">
 	<p pid="c.672.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.672.1/2" class="indent">What is their assessment of the joint report by the British Association for Adoption and Fostering and the Fostering Network, <i>The Cost of Foster Care</i>.</p>
+	<p pid="c.672.1/2" class="indent" pwmotiontext="asked">What is their assessment of the joint report by the British Association for Adoption and Fostering and the Fostering Network, <i>The Cost of Foster Care</i>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.672.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="672"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-01.htm#51018-01_spmin1">
@@ -209,7 +215,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.674.8" speakerid="uk.org.publicwhip/lord/100444" speakername="Lord Morris of Manchester" colon="" colnum="674"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-02.htm#51018-02_spopq0">
 	<p pid="c.674.8/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.674.8/2" class="indent">Further to the Answer by the Baroness Royall of Blaisdon on <phrase class="date" code="">23 June</phrase> (HL Deb, cols. 1725&ndash;27), what expenditure is involved in their current policy decisions to address the threat of an avian flu pandemic.</p>
+	<p pid="c.674.8/2" class="indent" pwmotiontext="asked">Further to the Answer by the Baroness Royall of Blaisdon on <phrase class="date" code="2005-06-23">23 June</phrase> (HL Deb, cols. 1725&ndash;27), what expenditure is involved in their current policy decisions to address the threat of an avian flu pandemic.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.674.9" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="674"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-02.htm#51018-02_spmin0">
@@ -218,9 +224,9 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.675.0" speakerid="uk.org.publicwhip/lord/100444" speakername="Lord Morris of Manchester" colon=":" colnum="675"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-02.htm#51018-02_spnew16">
 	<p pid="c.675.0/1">My Lords, I am grateful to my noble friend. Does he recall that when I first raised the threat in this House, last spring, his department had only 100,000 antiviral drug doses, France having bought 13 million? With a potentially deadly strain of the virus confirmed in the Danube delta, and today in Greece, is he aware that it is still not clear from his Written Answer to me last Friday, or yesterday's Statement, that until next autumn we will have enough to treat the predicted,</p>
-	<p pid="c.675.0/2" class="indent">&quot;quarter of the population who may become ill&quot;.&mdash;[<i>Official Report</i>, 14/10/05; col. <i>WA 106</i>.]</p>
+	<p pid="c.675.0/2" class="indent">&quot;quarter of the population who may become ill&quot;.&mdash;[<phrase class="offrep" id="wrans/2005-10-14.106"><i>Official Report</i>, 14/10/05; col. WA 106</phrase>.]</p>
 	<p pid="c.675.0/3">So on what assumption on the timing of a pandemic does he base his figure of in Britain,</p>
-	<p pid="c.675.0/4" class="indent">&quot;at least 50,000 deaths&quot;.&mdash;[<i>Official Report</i>, 17/10/05; col. 566.]</p>
+	<p pid="c.675.0/4" class="indent">&quot;at least 50,000 deaths&quot;.&mdash;[<phrase class="offrep" id="lords/2005-10-17.566"><i>Official Report</i>, 17/10/05; col. 566</phrase>.]</p>
 	<p pid="c.675.0/5">We are told that over 1 million vulnerable children need jabs now. When will they get them and what liaison is there with head teachers on preparations as they affect children?</p>
 </speech>
 
@@ -282,7 +288,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.677.3" speakerid="uk.org.publicwhip/lord/100804" speakername="Lord Dykes" colon="" colnum="677"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-03.htm#51018-03_spopq0">
 	<p pid="c.677.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.677.3/2" class="indent">What was the outcome of the discussions on climate change held at the European Union Council of Environment Ministers held on <phrase class="date" code="">17 October</phrase>.</p>
+	<p pid="c.677.3/2" class="indent" pwmotiontext="asked">What was the outcome of the discussions on climate change held at the European Union Council of Environment Ministers held on <phrase class="date" code="2005-10-17">17 October</phrase>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.677.4" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="677"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-03.htm#51018-03_spmin0">
@@ -337,7 +343,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.679.3" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="679"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-04.htm#51018-04_spnew4">
-	<p pid="c.679.3/1">My Lords, the report of Sir Ben Gill that is expected on <phrase class="date" code="">25 October</phrase> is on the subject of biomass. However, it may be slightly difficult to separate the two subjects. We shall have to read Sir Ben's report to see the way forward. The Government set great store by the work that Sir Ben and his team have done in this important field. However, as I said a moment or two ago, there is a great deal more to be done quickly on the issue.</p>
+	<p pid="c.679.3/1">My Lords, the report of Sir Ben Gill that is expected on <phrase class="date" code="2005-10-25">25 October</phrase> is on the subject of biomass. However, it may be slightly difficult to separate the two subjects. We shall have to read Sir Ben's report to see the way forward. The Government set great store by the work that Sir Ben and his team have done in this important field. However, as I said a moment or two ago, there is a great deal more to be done quickly on the issue.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2005-10-18c.679.4" nospeaker="true" colnum="679"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-04.htm#51018-04_head0">
@@ -457,8 +463,8 @@
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.682.3" speakerid="uk.org.publicwhip/lord/100623" speakername="Lord Swinfen" colon=":" colnum="682"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-05.htm#51018-05_spnew1">
 	<p pid="c.682.3/1">My Lords, the purpose of the amendment is to require the Charity Commission to publish with its inquiry reports the agreement or otherwise of the affected parties. The proposal is necessary because the commission's reports are often very one-sided and leave a burning sense of injustice in the people referred to in the reports, giving them no opportunity to refute unbalanced information. In too many of the commission's cases, the victims have suffered unjust treatment and then have had to further suffer a one-sided account published on the Charity Commission's much-visited website where it remains, I understand, for two years.</p>
-	<p pid="c.682.3/2">On <phrase class="date" code="">12 July</phrase>, at col. 1054 of <i>Hansard, </i>I quoted the Minister as saying that anyone affected by an inquiry is free to publish his own account of it however he wishes. That is of course true, but I do not believe that it is good enough. The Minister also said that maligned trustees would already have had the opportunity to put evidence to the commission during an inquiry. So they would, but that does not help them to feel better if the commission publishes a one-sided account justifying its own behaviour. The Minister added that the trustees were asked to comment on the draft before it was published. That is true, but they are often given only a few days to comment on a document that has taken months to prepare and are confined to commenting only on factual content. They may well feel that the playing field is tilted towards the vertical.</p>
-	<p pid="c.682.3/3">I have seen a recent case in which an inquiry was closed, but the charity, its lawyers, and its trustees were not told. I understand that the Charity Commission prepared a report on the charity on <phrase class="date" code="2007-02-11">11 February</phrase> that was not sent to the charity until <phrase class="date" code="">13 July</phrase>&mdash;at any rate that is the date on the covering letter. It was received by first class post on <phrase class="date" code="">15 July</phrase>, with the reply to the report required by <phrase class="date" code="">25 July</phrase>. That allowed, as there were two weekends in between, a pure six working days for it to arrive not by <phrase class="date" code="">25 July</phrase> but on <phrase class="date" code="">25 July</phrase>. Really that gave only five working days if one was to take first class postage into account as guaranteed by Royal Mail.</p>
+	<p pid="c.682.3/2">On <phrase class="date" code="2005-07-12">12 July</phrase>, at col. 1054 of <i>Hansard, </i>I quoted the Minister as saying that anyone affected by an inquiry is free to publish his own account of it however he wishes. That is of course true, but I do not believe that it is good enough. The Minister also said that maligned trustees would already have had the opportunity to put evidence to the commission during an inquiry. So they would, but that does not help them to feel better if the commission publishes a one-sided account justifying its own behaviour. The Minister added that the trustees were asked to comment on the draft before it was published. That is true, but they are often given only a few days to comment on a document that has taken months to prepare and are confined to commenting only on factual content. They may well feel that the playing field is tilted towards the vertical.</p>
+	<p pid="c.682.3/3">I have seen a recent case in which an inquiry was closed, but the charity, its lawyers, and its trustees were not told. I understand that the Charity Commission prepared a report on the charity on <phrase class="date" code="2005-02-11">11 February</phrase> that was not sent to the charity until <phrase class="date" code="2005-07-13">13 July</phrase>&mdash;at any rate that is the date on the covering letter. It was received by first class post on <phrase class="date" code="2005-07-15">15 July</phrase>, with the reply to the report required by <phrase class="date" code="2005-07-25">25 July</phrase>. That allowed, as there were two weekends in between, a pure six working days for it to arrive not by <phrase class="date" code="2005-07-25">25 July</phrase> but on <phrase class="date" code="2005-07-25">25 July</phrase>. Really that gave only five working days if one was to take first class postage into account as guaranteed by Royal Mail.</p>
 	<p pid="c.682.3/4">Bearing in mind that many people, trustees included, can be away for a fortnight at that time of year on holiday, that is not good enough, and it is not fair and reasonable. It is because of that cavalier attitude of the commission that I move the amendment. I hope that noble Lords will agree it. I beg to move.</p>
 </speech>
 
@@ -467,7 +473,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.684.0" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="684"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-05.htm#51018-05_spnew3">
-	<p pid="c.684.0/1">My Lords, the noble Lord, Lord Swinfen, has steadfastly raised the issue at every stage of the Bill's progress, and I congratulate him on his persistence in arguing the case. I gave the Government's clear view on the amendment, as the noble Lord said, when we last discussed the amendment on <phrase class="date" code="">12 July</phrase>, as recorded at col. 1054.</p>
+	<p pid="c.684.0/1">My Lords, the noble Lord, Lord Swinfen, has steadfastly raised the issue at every stage of the Bill's progress, and I congratulate him on his persistence in arguing the case. I gave the Government's clear view on the amendment, as the noble Lord said, when we last discussed the amendment on <phrase class="date" code="2005-07-12">12 July</phrase>, as recorded at col. 1054.</p>
 	<p pid="c.684.0/2">For the benefit of those who were not in the House on that occasion and who have not had the opportunity to peruse <i>Hansard</i> I will briefly reiterate our case. First, it must be understood that anyone who does not agree with all or part of an inquiry or report published by the commission is, as I have made plain and as the noble Lord has also explained to the House, entirely at liberty to publish their own account. Secondly, trustees have the opportunity to express their views to the commission throughout the course of any inquiry that is conducted. Finally, the commission routinely sends inquiry reports to persons affected for comments on factual issues.</p>
 	<p pid="c.684.0/3">The commission has a statutory duty to undertake inquiries, and the inquiry report reflects the commission's view and the commission's conclusions. It is entirely right to express those views and draw conclusions from its own inquiry. It is a neutral body and is entirely independent. It does not take sides in inquiries but aims to take an objective view on the best interests of the charity. There are a number of internal quality checks on the report before it is published. Once the caseworker has drafted the report, it is checked by a senior manager and additionally by legal advisers. It is then sent to those who are affected by the inquiry. If substantive comments are received, the report could be rewritten, and the checking mechanisms would be processed again.</p>
 	<p pid="c.684.0/4">At the commission's recent open AGM, it was made plain through an announcement that it was reviewing the form and content of inquiry reports, although the review itself does not extend to including a right of reply on inquiry reports. It is also reviewing how long inquiry reports remain on its website&mdash;the point that the noble Lord, Lord Swinfen, raised in moving the amendment.</p>
@@ -788,7 +794,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.703.4" speakerid="uk.org.publicwhip/lord/100293" speakername="Lord Hodgson of Astley Abbotts" colon=":" colnum="703"  time="016:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-11.htm#51018-11_spnew5">
-	<p pid="c.703.4/1">My Lords, I shall speak extraordinarily briefly to Amendments Nos. 80 and 81, which are concerned with Clause 39 on the power to transfer all property. We have discussed on several occasions, most recently in Committee on <phrase class="date" code="">12 July</phrase>, the problem of a small charity wishing to wind itself up having to find a single charity with precisely matching charitable objectives to merge with. The Minister gave an encouraging reply then, as a result of which I withdrew my amendment. I understand that the tectonic plates are about to shift but have not yet done so. Perhaps the Minister could update us. I beg to move.</p>
+	<p pid="c.703.4/1">My Lords, I shall speak extraordinarily briefly to Amendments Nos. 80 and 81, which are concerned with Clause 39 on the power to transfer all property. We have discussed on several occasions, most recently in Committee on <phrase class="date" code="2005-07-12">12 July</phrase>, the problem of a small charity wishing to wind itself up having to find a single charity with precisely matching charitable objectives to merge with. The Minister gave an encouraging reply then, as a result of which I withdrew my amendment. I understand that the tectonic plates are about to shift but have not yet done so. Perhaps the Minister could update us. I beg to move.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.704.0" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="704"  time="016:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-11.htm#51018-11_spnew6">
@@ -1902,7 +1908,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.734.1" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon="" colnum="734"  time="018:24:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-20.htm#51018-20_spmin0">
-	<p pid="c.734.1/1" pwmotiontext="moved">rose to move, That the rules laid before the House on <phrase class="date" code="">27 June</phrase> be approved [<i>2nd report from the Joint Committee</i>].</p>
+	<p pid="c.734.1/1" pwmotiontext="moved">rose to move, That the rules laid before the House on <phrase class="date" code="2005-06-27">27 June</phrase> be approved [<i>2nd report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.734.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="734"  time="018:24:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-20.htm#51018-20_spmin0">
@@ -1916,7 +1922,7 @@
 	<p pid="c.734.2/8">Part II deals with applications to the High Court relating to derogating control orders. Part III deals with leave applications, references and appeals to the High Court relating to non-derogating control orders. Part IV deals with onward appeals to the Northern Ireland Court of Appeal. Part V contains general provisions that apply to all proceedings in the High Court and Court of Appeal brought under the Prevention of Terrorism Act. This includes provision in Rules 25 to 28 for closed hearings and the use of special advocates.</p>
 	<p pid="c.734.2/9">Finally, Part V also includes provisions in Rules 30 to 32 which require the Secretary of State to disclose to the court all the material available to him and which is relevant to the matter under consideration. The Secretary of State must also disclose all such material to the other party,. except where the court permits him to withhold material on the grounds that disclosure would be contrary to the public interest. If the Secretary of State withholds material from the other party without the permission of the court, the court may prevent the Secretary of State from relying on such material himself, or it may withdraw the matter from its consideration. These rules reflect the requirements of paragraph 4(3) of the schedule to the Prevention of Terrorism Act 2005, which was inserted by an amendment to the Bill to meet concerns about the need to establish a procedure for the disclosure of exculpatory material.</p>
 	<p pid="c.734.2/10">That is an outline of the substantive provisions of the Rules of the Supreme Court (Northern Ireland) (Amendment No. 4) 2005.</p>
-	<p pid="c.734.2/11">Moved, That the rules laid before the House on <phrase class="date" code="">27 June</phrase> be approved [<i>2nd report from the Joint Committee</i>].&mdash;(<i>Baroness Ashton of Upholland</i>.)</p>
+	<p pid="c.734.2/11">Moved, That the rules laid before the House on <phrase class="date" code="2005-06-27">27 June</phrase> be approved [<i>2nd report from the Joint Committee</i>].&mdash;(<i>Baroness Ashton of Upholland</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-10-18c.736.0" speakerid="uk.org.publicwhip/lord/100278" speakername="Baroness Harris of Richmond" colon=":" colnum="736"  time="018:24:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051018/text/51018-21.htm#51018-21_spnew0">
@@ -1951,7 +1957,7 @@
 	<p pid="c.738.0/4">The noble Baroness asked me about the special advocates. She will know that the special advocates are currently drawn from the Attorney-General's panel of senior counsel. It is envisaged that that will remain the case for the foreseeable future, which I hope addresses that particular point.</p>
 	<p pid="c.738.0/5">Both the noble Baroness and the noble Lord, Lord Kingsland, raised the question of the delay in the rules being brought before the House. As noble Lords will know, the rules were originally made by the Lord Chancellor in consultation with the Lord Chief Justice of Northern Ireland on <phrase class="date" code="2005-04-05">5 April 2005</phrase>, shortly after the Act received Royal Assent. The rules came into force immediately after being made, but ceased to have effect 40 days thereafter as a result of not having been approved by Parliament within the affirmative resolution period. The reason for the delay was largely because the general election intervened and, as the noble Baroness said, there was a subsequent delay in establishing the membership of the Joint Committee on Statutory Instruments, which must consider the rules before they can be considered by this House.</p>
 	<p pid="c.738.0/6">However, the Lord Chancellor used his powers under paragraph 3 (6) of the Schedule to the Act to make the rules again on <phrase class="date" code="2005-06-26">26 June 2005</phrase> and it is these rules that I now move before the House, this being the earliest opportunity to do so after the Summer Recess. I understand that the Summer Recess does not count for the purposes of the 40 days, in case noble Lords&mdash;as I did&mdash;added the days up and found that there were too many.</p>
-	<p pid="c.738.0/7">The controls were continuous over the period between the first set of rules that were made by the Lord Chancellor having ceased to have effect and the present set of rules coming into operation. The first set of rules ceased to have effect when the requisite 40-day affirmative resolution period expired on <phrase class="date" code="2005-06-26">26 June 2005</phrase>. The present set of rules were made on 26 of June 2005, came into operation on <phrase class="date" code="">27 June</phrase> and, in accordance with Section 4(A) of the Interpretation Act 1978, came into force at the beginning of <phrase class="date" code="2005-06-27">27 June 2005</phrase>, the previous ones having expired at 12 o'clock midnight on <phrase class="date" code="">26 June</phrase>. Consequently, there was no gap in the provision made by the first and the second set of rules.</p>
+	<p pid="c.738.0/7">The controls were continuous over the period between the first set of rules that were made by the Lord Chancellor having ceased to have effect and the present set of rules coming into operation. The first set of rules ceased to have effect when the requisite 40-day affirmative resolution period expired on <phrase class="date" code="2005-06-26">26 June 2005</phrase>. The present set of rules were made on 26 of June 2005, came into operation on <phrase class="date" code="2005-06-27">27 June</phrase> and, in accordance with Section 4(A) of the Interpretation Act 1978, came into force at the beginning of <phrase class="date" code="2005-06-27">27 June 2005</phrase>, the previous ones having expired at 12 o'clock midnight on <phrase class="date" code="2005-06-26">26 June</phrase>. Consequently, there was no gap in the provision made by the first and the second set of rules.</p>
 	<p pid="c.738.0/8">The noble Lord, Lord Kingsland, specifically asked about the disapplication of certain parts of the principal rules. Due to the nature of these proceedings, it was considered that it was appropriate to make some modifications to the application of the principal rules. However, we believe that they are limited to what is considered to be necessary. As the noble Lord, Lord Kingsland, said, Order 1, Rule 1A, the overriding objective, is amended so that it is subject to Order 116A, Rule 2(1). The overriding objective is to enable the courts to deal with cases justly, which includes, among other matters, ensuring that the parties are on an equal footing, dealing with cases in a way that is proportionate, expeditious and fair, and allotting each case an appropriate share of the court's resources.</p>
 	<p pid="c.738.0/9">Although proceedings under the 2005 Act should be subject to the overriding objective, such cases are based on sensitive intelligence material. Of course, it is important to ensure that information is not disclosed contrary to the public interest. Therefore, for that reason, the overriding objective has been modified for the purposes of the new order by placing on the court a duty to ensure that information is not disclosed contrary to the public interest and requiring that the overriding objective be read and given effect in a way that is compatible with that duty.</p>
 	<p pid="c.738.0/10">The noble Lord, Lord Kingsland, also asked me about the new Rule 24(2)(c). The intention of that rule is to prevent the court being required to hold a hearing when that would serve no purpose. However, it does not fetter the court's discretion to hold a hearing in any case in which it considers it appropriate to do so. Moreover, the exercise of that discretion will be subject to the overriding objective to deal with cases justly and, of course, in accordance with the rights protected by the Human Rights Act 1998; in particular Article 6, the right to a fair trial.</p>

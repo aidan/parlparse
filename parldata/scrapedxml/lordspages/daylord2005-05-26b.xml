@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -64,7 +80,7 @@
 <speech id="uk.org.publicwhip/lords/2005-05-26b.567.3" speakerid="uk.org.publicwhip/lord/100444" speakername="Lord Morris of Manchester" colon=":" colnum="567"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-01.htm#50526-01_spnew1">
 	<p pid="b.567.3/1">My Lords, is my noble friend aware that contaminated NHS blood products have now caused the deaths of 1,137 haemophilia patients, 896 after being infected with HIV and 241 with hepatitis C, making this much the worst treatment disaster in the history of the National Health Service?</p>
 	<p pid="b.567.3/2">My noble friend Lord Winston, vice-president of the Haemophilia Society, has said of HIV and hepatitis C:</p>
-	<p pid="b.567.3/3" class="indent">&quot;The cause is the same, a virus, and it comes from the same source, blood products&quot;.&mdash;[<i>Official Report</i>, 5/6/98; col. 672.]</p>
+	<p pid="b.567.3/3" class="indent">&quot;The cause is the same, a virus, and it comes from the same source, blood products&quot;.&mdash;[<phrase class="offrep" id="lords/1998-06-05.672"><i>Official Report</i>, 5/6/98; col. 672</phrase>.]</p>
 	<p pid="b.567.3/4">For the wives of those who have died the result too is the same: devastated lives and widowhood.</p>
 	<p pid="b.567.3/5">Why, then, by ministerial decree, are hepatitis C widows denied financial help available to HIV widows? What social justice or morality is there in denying parity of treatment to widows in identically the same tragic position?</p>
 </speech>
@@ -159,7 +175,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.569.10" speakerid="uk.org.publicwhip/lord/100055" speakername="Lord Blaker" colon="" colnum="569"  time="011:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-01.htm#50526-01_spopq0">
 	<p pid="b.569.10/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.569.10/2" class="indent">What progress they expect to make in the near future in implementing the road map for peace in the Middle East.</p>
+	<p pid="b.569.10/2" class="indent" pwmotiontext="asked">What progress they expect to make in the near future in implementing the road map for peace in the Middle East.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.570.0" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="570"  time="011:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-01.htm#50526-01_spmin2">
@@ -208,7 +224,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.572.1" speakerid="uk.org.publicwhip/lord/100541" speakername="Lord Roberts of Conwy" colon="" colnum="572"  time="011:16:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-02.htm#50526-02_spopq0">
 	<p pid="b.572.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.572.1/2" class="indent">Whether the Chancellor of the Exchequer's forecasts for growth are still achievable.</p>
+	<p pid="b.572.1/2" class="indent" pwmotiontext="asked">Whether the Chancellor of the Exchequer's forecasts for growth are still achievable.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.572.2" speakerid="uk.org.publicwhip/lord/100802" speakername="Lord McKenzie of Luton" colon=":" colnum="572"  time="011:16:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-02.htm#50526-02_spnew8">
@@ -277,7 +293,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.574.6" speakerid="uk.org.publicwhip/lord/100686" speakername="Baroness Williams of Crosby" colon="" colnum="574"  time="011:24:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-03.htm#50526-03_spopq0">
 	<p pid="b.574.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.574.6/2" class="indent">Whether it is now their policy to deport non-British citizens charged with terrorist offences, even when, as in the recent ricin case, the courts have found them innocent of the charges.</p>
+	<p pid="b.574.6/2" class="indent" pwmotiontext="asked">Whether it is now their policy to deport non-British citizens charged with terrorist offences, even when, as in the recent ricin case, the courts have found them innocent of the charges.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.574.7" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="574"  time="011:24:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-03.htm#50526-03_spnew9">
@@ -411,7 +427,7 @@
 	<p pid="b.587.0/11">Professor Dunleavy cites the findings of Dr Josep Colomer who, using comparative data, shows that popular demand will force political leaders to concede proportional elections, albeit reluctantly. That may well come about, and I quote Professor Dunleavy for the last time,</p>
 	<p pid="b.587.0/12" class="indent">&quot;if the fragmentation of alignments persists then the risk of the incumbents losing elections catastrophically will grow&quot;.</p>
 	<p pid="b.587.0/13">The present simple plurality system cannot be sustained; popular alienation with it is clear. Modern electoral methods that focus on targeting the relatively small numbers of swing voters in marginal constituencies are the logical consequence of first past the post. Such methods, by definition, exclude the vast majority of the electorate from having any effective influence on events. As a consequence, there are an awful lot of wasted votes, and that cannot be good for democracy.</p>
-	<p pid="b.587.0/14">The POWER inquiry, headed by the noble Baroness, Lady Kennedy of The Shaws, and Mr Ferdinand Mount, commissioned a poll of non-voters at the recent election held on <phrase class="date" code="2006-05-05">5 May</phrase> to elicit their reasons for not voting. The results are instructive and overturn the stereotype explanation that it is all down to apathy. When asked why they did not vote, 36 per cent gave political reasons as against 19 per cent who admitted to being apathetic. The main reason given for abstaining was a lack of trust in politicians and what they say, and a lack of significant difference between the parties' programmes. A significant finding was that more than 90 per cent of non-voters identified three or more political issues that &quot;really mattered&quot; to them, despite the fact that 66 per cent declared themselves as disinterested in politics. That suggests that many non-voters do not connect the issues that concern them to parliamentary politics, which presents a challenge to political parties.</p>
+	<p pid="b.587.0/14">The POWER inquiry, headed by the noble Baroness, Lady Kennedy of The Shaws, and Mr Ferdinand Mount, commissioned a poll of non-voters at the recent election held on <phrase class="date" code="2005-05-05">5 May</phrase> to elicit their reasons for not voting. The results are instructive and overturn the stereotype explanation that it is all down to apathy. When asked why they did not vote, 36 per cent gave political reasons as against 19 per cent who admitted to being apathetic. The main reason given for abstaining was a lack of trust in politicians and what they say, and a lack of significant difference between the parties' programmes. A significant finding was that more than 90 per cent of non-voters identified three or more political issues that &quot;really mattered&quot; to them, despite the fact that 66 per cent declared themselves as disinterested in politics. That suggests that many non-voters do not connect the issues that concern them to parliamentary politics, which presents a challenge to political parties.</p>
 	<p pid="b.587.0/15">When asked what would encourage non-voters to vote, 72 per cent said they would participate in referendums&mdash;that is interesting&mdash;and other participatory devices such as meetings with local councillors to help to set municipal budgets. Much needs to be done to re-engage the people with Parliament, and that will require a broad spectrum of remedies. One of those will be the introduction of a fairer voting system for Westminster. The Secretary of State for Constitutional Affairs, the Foreign Secretary and the Deputy Prime Minister may try to resist it, but it will come and they will be forced to yield to public opinion.</p>
 	<p pid="b.587.0/16">I shall return to the position adopted by the noble Lord, Lord Norton, and most of his fellow Conservatives, with notable exceptions such as the noble Lord, Lord Alexander of Weedon, whom we all miss during his absence from the House. I find it inconceivable that the Tories will not come to realise that PR is in their best interests. Were it not for the top-up provisions in Scotland and Wales, they would virtually have ceased to exist in those regions. They were flatlining at around 30 per cent before 1997&mdash;as the noble Lord, Lord Lipsey, said&mdash;so it looks very unlikely that they will gain office in the foreseeable future without PR. Whether they come round to support PR for Westminster or not, they will nevertheless benefit when public demand is acceded to. It will be the electors, not the elected, who will enforce the change to a fair voting system.</p>
 </speech>
@@ -462,26 +478,26 @@
 <speech id="uk.org.publicwhip/lords/2005-05-26b.595.2" speakerid="uk.org.publicwhip/lord/100144" speakername="Lord Corbett of Castle Vale" colon=":" colnum="595"  time="012:40:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-07.htm#50526-07_spnew2">
 	<p pid="b.595.2/1">With great respect, my Lords, they are not the noble Lord's Members of the European Parliament. We do not have constituency Members of the European Parliament; we have swept away that link. There are six or seven Members in the west Midlands, and I would be hard put to name the two who happen to be Labour. I certainly cannot name the others. That is immensely damaging to the process.</p>
 	<p pid="b.595.2/2">At every other election, we knock on doors, mention the name of the candidate and ask whether the person will support that individual. In the European elections, we stand all this on its head and say, &quot;No, you can't do that. You don't have an MEP in that sense because there is a heap of them and you get whoever turns up&quot;. That is very wrong. Voting for individuals and not for parties is at the core of an electoral system.</p>
-	<p pid="b.595.2/3">I kept a scrapbook during the election to look back on what the pundits, political editors and others who under the present electoral arrangements so confidently forecast the result of the election that took place just three weeks ago. The experienced and distinguished Simon Hoggart in the <i>Guardian</i> of <phrase class="date" code="2006-02-26">Saturday 26 February</phrase>, in his diary column gave it as his opinion that,</p>
+	<p pid="b.595.2/3">I kept a scrapbook during the election to look back on what the pundits, political editors and others who under the present electoral arrangements so confidently forecast the result of the election that took place just three weeks ago. The experienced and distinguished Simon Hoggart in the <i>Guardian</i> of <phrase class="date" code="2005-02-26">Saturday 26 February</phrase>, in his diary column gave it as his opinion that,</p>
 	<p pid="b.595.2/4" class="indent">&quot;it could be a victory so marginal that it looks closer to defeat&quot;.</p>
-	<p pid="b.595.2/5">Thank you, Mr Hoggart. Bruce Anderson wrote in the <i>Independent</i> on <phrase class="date" code="2006-02-28">28 February</phrase> under the headline, which I know he did not write:</p>
+	<p pid="b.595.2/5">Thank you, Mr Hoggart. Bruce Anderson wrote in the <i>Independent</i> on <phrase class="date" code="2005-02-28">28 February</phrase> under the headline, which I know he did not write:</p>
 	<p pid="b.595.2/6" class="indent">&quot;The Tories have recovered their nerve and could yet make this a close-run election&quot;.</p>
 	<p pid="b.595.2/7">He went on to say:</p>
 	<p pid="b.595.2/8" class="indent">&quot;But it is not inconceivable that there could be a hung parliament&quot;.</p>
-	<p pid="b.595.2/9">That view is shared, incidentally, by my former colleague and friend, Mo Mowlam. In the same paper on <phrase class="date" code="2006-05-04">4 May</phrase>, the very eve of the election, she said:</p>
+	<p pid="b.595.2/9">That view is shared, incidentally, by my former colleague and friend, Mo Mowlam. In the same paper on <phrase class="date" code="2005-05-04">4 May</phrase>, the very eve of the election, she said:</p>
 	<p pid="b.595.2/10" class="indent">&quot;I cannot go along with the view . . . that the Blair government is set for a 50&ndash;100 majority . . . we could be facing a hung parliament&quot;.</p>
 	<p pid="b.595.2/11">Let us not overlook another soothsayer: the noble Lord, Lord Thomas of Gresford. In a letter to the <i>Guardian</i>, modestly signed &quot;Martin Thomas&quot;, he said that,</p>
 	<p pid="b.595.2/12" class="indent">&quot;the Liberal Democrats will win a mass of Labour seats&quot;.</p>
 	<p pid="b.595.2/13">More accurately, he might have said that voting Liberal Democrat would hand Labour seats to Conservative Members of Parliament, which happened in so many unhappy cases.</p>
-	<p pid="b.595.2/14">There are other soothsayers whom we should not overlook. On <phrase class="date" code="2006-04-06">6 April</phrase>, Patrick O'Flynn wrote as political editor of the <i>Daily Express.</i> This is the political editor and not just some political hack jobbing it on the odd afternoon in the Gallery down the other end. He wrote that,</p>
+	<p pid="b.595.2/14">There are other soothsayers whom we should not overlook. On <phrase class="date" code="2005-04-06">6 April</phrase>, Patrick O'Flynn wrote as political editor of the <i>Daily Express.</i> This is the political editor and not just some political hack jobbing it on the odd afternoon in the Gallery down the other end. He wrote that,</p>
 	<p pid="b.595.2/15" class="indent">&quot;for Mr Howard to win a Commons majority would be a sensational feat. But the momentum is with him now and it is possible he could do so&quot;.</p>
-	<p pid="b.595.2/16">The very distinguished W F Deedes said in the <i>Daily Telegraph</i> of <phrase class="date" code="2006-04-06">6 April</phrase>:</p>
-	<p pid="b.595.2/17" class="indent">&quot;It's so long since we had a proper hung parliament . . . the most recent polls suggest it could very well be the outcome on <phrase class="date" code="2006-05-05">5 May</phrase>&quot;.</p>
+	<p pid="b.595.2/16">The very distinguished W F Deedes said in the <i>Daily Telegraph</i> of <phrase class="date" code="2005-04-06">6 April</phrase>:</p>
+	<p pid="b.595.2/17" class="indent">&quot;It's so long since we had a proper hung parliament . . . the most recent polls suggest it could very well be the outcome on <phrase class="date" code="2005-05-05">5 May</phrase>&quot;.</p>
 	<p pid="b.595.2/18">Frank Nelson of <i>The</i> <i>Business </i>predicted,</p>
 	<p pid="b.595.2/19" class="indent">&quot;a minority Labour government&quot;.</p>
-	<p pid="b.595.2/20">Simon Heffer of the <i>Daily Mail</i> of <phrase class="date" code="2006-04-15">15 April</phrase> told us:</p>
+	<p pid="b.595.2/20">Simon Heffer of the <i>Daily Mail</i> of <phrase class="date" code="2005-04-15">15 April</phrase> told us:</p>
 	<p pid="b.595.2/21" class="indent">&quot;Coupled with the rise in Tory fortunes, this means that the hung parliament scenario is increasingly possible&quot;.</p>
-	<p pid="b.595.2/22">Just to show that it works the other way round, Ian Kirby, in the <i>News of the World</i> of <phrase class="date" code="2006-04-17">17 April</phrase>, confidently told readers that,</p>
+	<p pid="b.595.2/22">Just to show that it works the other way round, Ian Kirby, in the <i>News of the World</i> of <phrase class="date" code="2005-04-17">17 April</phrase>, confidently told readers that,</p>
 	<p pid="b.595.2/23" class="indent">&quot;Tony Blair is on course for a massive 152-seat majority&quot;.</p>
 	<p pid="b.595.2/24">Well now, I wonder what any of those will say in the coming weeks about how they made those mistakes and misled their readers to such a grievous extent. It is a good job that none of them is on the team led by Michel Howard, Tory leader, because they, like him, would have been fired for not doing their job properly.</p>
 	<p pid="b.595.2/25">So why did the election lead to such comments about its outcome? Goodness gracious me, I have noticed the clock. I am sorry, I will finish now. I believe that one of the main reasons for cynicism about politics is what I call the &quot;<i>Daily Mail</i> syndrome&quot;, the attitude that anyone in public life is doing it only to feather their own nest; the system does not work; it is all falling to pieces; and you cannot do anything about it. That all-pervasive cynicism, reflected, I am sad to say, by those in the BBC and elsewhere in the media, eats away at people's belief in the system, and we must do something to change that before the next election.</p>
@@ -754,9 +770,9 @@
 	<p pid="b.630.0/1">My Lords, in the first debate today, I declared an interest as an <i>ex officio</i> member of the board of the Conservative Party. It may be more relevant to make that declaration now as, shortly before the previous debate ended and this debate began, I was summoned to join a conference call of the board at two o'clock.</p>
 	<p pid="b.630.0/2">I was conscious of infringing the rubric of your Lordships' House by not being present when the opening speaker&mdash;my noble friend Lady Hooper&mdash;began the debate. I made my peace with her and gained some insight into what she would say. In those circumstances, I hope that the House will recall the definition in Blackstone's law dictionary of an act of God as an act that no reasonable man would expect God to commit, and forgive me for speaking in the debate not having been present at the beginning. I apologise especially to the noble Lord, Lord Lea of Crondall, most of whose speech I also missed.</p>
 	<p pid="b.630.0/3">I congratulate my noble friend on winning the ballot and introducing the subject, which is eminently worth while. I heard the remarks of my noble friend Lady Gardner and the noble Baroness, Lady D'Souza, whose speech I much enjoyed. My background to speaking is more modest than theirs, but perhaps worth recounting in the spirit not only of this debate, but of Latin American affairs.</p>
-	<p pid="b.630.0/4">In 1964, I became engaged to my late first wife. When I announced it at breakfast, my brother&mdash;a lawyer and now a judge&mdash;said, &quot;Ah yes; Brazil is one of the few countries where you can be married by proxy&quot;. It so happened that a proxy marriage was convenient, as my late first wife wished to leave the country on a Brazilian passport and travel thereafter on a British one; she was Anglo-Brazilian. We arranged that the civic ceremony, which is the critical one in Brazil, should take place on <phrase class="date" code="2006-03-03">3 March</phrase>&mdash;my birthday, and therefore a date that we were likely to remember.</p>
-	<p pid="b.630.0/5">On <phrase class="date" code="2006-03-04">4 March</phrase> when I went to my office, fastening my seatbelt believing myself to be a married man, there was a telegram from the British consul-general in Sao Paulo, who was supposed to be representing me, to say that he had completely forgotten to go. I was therefore not married. We then had to devise another date between that and the church wedding in Sao Paulo that I would also be likely to remember. We chose St Patrick's Day on the grounds that the British consul-general was not likely to be taking part in Irish celebrations on that day. I was then married, and due to go out to be married in church on <phrase class="date" code="2006-04-06">6 April</phrase>.</p>
-	<p pid="b.630.0/6">In the week before <phrase class="date" code="2006-04-06">6 April</phrase>, a coup occurred in Brazil against the then president, President Goulart. My late noble kinsman was at that stage Home Secretary, and the Foreign Office said that under no circumstances could the Home Secretary go into a war zone. The British consul-general in Sao Paulo, clearly anxious to make amends for the fact that he had not turned up at the initial civic ceremony, sent us a telegram that said, &quot;All aviation gasoline commandeered. Have secured final place on final BOAC flight out of Sao Paulo for Mrs Brooke&quot;, as she then was. We sent back a stiff-upper-lip telegram that simply said, &quot;Continuing to pack&quot;.</p>
+	<p pid="b.630.0/4">In 1964, I became engaged to my late first wife. When I announced it at breakfast, my brother&mdash;a lawyer and now a judge&mdash;said, &quot;Ah yes; Brazil is one of the few countries where you can be married by proxy&quot;. It so happened that a proxy marriage was convenient, as my late first wife wished to leave the country on a Brazilian passport and travel thereafter on a British one; she was Anglo-Brazilian. We arranged that the civic ceremony, which is the critical one in Brazil, should take place on <phrase class="date" code="2005-03-03">3 March</phrase>&mdash;my birthday, and therefore a date that we were likely to remember.</p>
+	<p pid="b.630.0/5">On <phrase class="date" code="2005-03-04">4 March</phrase> when I went to my office, fastening my seatbelt believing myself to be a married man, there was a telegram from the British consul-general in Sao Paulo, who was supposed to be representing me, to say that he had completely forgotten to go. I was therefore not married. We then had to devise another date between that and the church wedding in Sao Paulo that I would also be likely to remember. We chose St Patrick's Day on the grounds that the British consul-general was not likely to be taking part in Irish celebrations on that day. I was then married, and due to go out to be married in church on <phrase class="date" code="2005-04-06">6 April</phrase>.</p>
+	<p pid="b.630.0/6">In the week before <phrase class="date" code="2005-04-06">6 April</phrase>, a coup occurred in Brazil against the then president, President Goulart. My late noble kinsman was at that stage Home Secretary, and the Foreign Office said that under no circumstances could the Home Secretary go into a war zone. The British consul-general in Sao Paulo, clearly anxious to make amends for the fact that he had not turned up at the initial civic ceremony, sent us a telegram that said, &quot;All aviation gasoline commandeered. Have secured final place on final BOAC flight out of Sao Paulo for Mrs Brooke&quot;, as she then was. We sent back a stiff-upper-lip telegram that simply said, &quot;Continuing to pack&quot;.</p>
 	<p pid="b.630.0/7">Our faith in the oscillation of Latin American affairs was wholly confirmed, because Goulart moved to either Paraguay or Uruguay on the Wednesday. We flew out on the Thursday night, and I arrived in Sao Paulo on the Friday. The streets were still lined with tanks, which made for a new interpretation of a shotgun wedding. The rest of my family arrived at the weekend. The stock exchange, which had been shut for the whole of Friday, reopened on Monday and rose vertically by 85 per cent in the course of the day. In the index of a stock exchange, 85 per cent is a considerable amount of money. That greatly enhanced the celebrations of our church wedding, which occurred at six o'clock that evening. We honeymooned in Brazil and Peru but I fear that, before my first wife's death, I went back to Brazil on only a couple of occasions. Therefore, my credentials for speaking at large in this debate are extremely modest.</p>
 	<p pid="b.630.0/8">On the other hand, in an international development debate in the last Session of the previous Parliament, I indicated that I had for 20 years chaired a British charity operating at 7,000 feet in the Andes in Peru. It started out as an archaeological charity working on Inca forts, and then became by way of the Inca canals a developmental charity as well. I shall not go over ground that I covered in that debate, however. After my wife's death, all three of my sons travelled widely in Latin America, wanting to know more about their mother's background; they were children or young people when she died. They travelled to at least two-thirds of the Latin American countries and, as a consequence, I acquired vicarious knowledge through them.</p>
 	<p pid="b.630.0/9">I think that I am right in saying that the first reference to &quot;Latin America&quot; occurred as late as 1836. That would be later than the Monroe doctrine or the death of Canning. Yet, it coincided with the liberation movements and my former constituency in Westminster is studded with blue plaques to the liberators of various Latin American countries and who briefly lived in London during that time. Admiral Lord Cochrane, a British liberator of several Latin American countries and a predecessor of mine as the Member of Parliament for Westminster, is buried in the central nave of Westminster Abbey.</p>
@@ -839,7 +855,7 @@
 	<p pid="b.640.0/10">The Government believe that the development of Bolivia's oil and gas sectors could and should play a significant role in Bolivia's future economic growth and development. But potential can be unlocked only if the legislative framework does not endanger existing or future investor confidence. We hope that Bolivian plans to hold a constituent assembly and extend decentralisation will strengthen social integration within the country. We have encouraged President Mesa to deliver sustainable political and economic reform and to resolve those social issues.</p>
 	<p pid="b.640.0/11">Of course, we have our part to play, as the noble Baroness, Lady Rawlings, pointed out. We can hardly help people in their agricultural exports under the present CAP regime, so we shall work hard to ensure that it is fully reformed.</p>
 	<p pid="b.640.0/12">I welcome the visit of my noble friend Lord Lea, the noble Baroness, Lady Hooper, and, I believe, the noble Lord, Lord Lamont, to that country and wish them success.</p>
-	<p pid="b.640.0/13">Ecuador has also gone through a difficult period of instability, as noble Lords have mentioned. The former president's removal from office on <phrase class="date" code="2006-04-20">20 April</phrase> following mass demonstrations calmed the situation on the ground. However, the reason for the protests remain. There is real public dissatisfaction with state institutions, including the congress. The new president, Alfredo Palacio, has an onerous task, as the noble Baroness, Lady Miller, so adequately illustrated, in strengthening democracy and state institutions, and in engendering confidence among the people of Ecuador in their elected officials. We shall help in any way that we can.</p>
+	<p pid="b.640.0/13">Ecuador has also gone through a difficult period of instability, as noble Lords have mentioned. The former president's removal from office on <phrase class="date" code="2005-04-20">20 April</phrase> following mass demonstrations calmed the situation on the ground. However, the reason for the protests remain. There is real public dissatisfaction with state institutions, including the congress. The new president, Alfredo Palacio, has an onerous task, as the noble Baroness, Lady Miller, so adequately illustrated, in strengthening democracy and state institutions, and in engendering confidence among the people of Ecuador in their elected officials. We shall help in any way that we can.</p>
 	<p pid="b.640.0/14">The noble Baroness, Lady Rawlings, and others mentioned Colombia, which is also important to us. We have not seen the same kind of political instability in Colombia, but the situation there is one that needs constant attention. I have seen the Colombian ambassador this week to discuss some of those issues. Colombia has suffered from over 40 years of internal armed conflict and, more recently, from the evils of the drugs trade.</p>
 	<p pid="b.640.0/15">We support the Government of Alvaro Uribe and the efforts that he is making to tackle the inter-connected problems of armed conflict, illegal trade in drugs and human rights violations. We note that under his presidency a state presence has been restored to most areas of the country whereas, previously, large tracts were under the control of illegal armed groups.</p>
 	<p pid="b.640.0/16">However, we have made it plain that in tackling the country's severe problems, human rights and international humanitarian law must be respected. I can tell my noble friend Lord Lea that it was in that light that I raised questions with the ambassador, not only about trade union rights, which are very important, but about the rights of all other organisations in civil society.</p>
@@ -882,7 +898,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.647.3" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="647"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew1">
-	<p pid="b.647.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-01-24">24 January</phrase> be approved.</p>
+	<p pid="b.647.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-01-24">24 January</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.647.4" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="647"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew1">
@@ -892,7 +908,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.647.5" nospeaker="true" colnum="647"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew1">
-	<p pid="b.647.5/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-24">24 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="b.647.5/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-24">24 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.647.6" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon=":" colnum="647"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew2">
@@ -900,7 +916,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.648.0" speakerid="uk.org.publicwhip/lord/100278" speakername="Baroness Harris of Richmond" colon=":" colnum="648"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew3">
-	<p pid="b.648.0/1">My Lords, I, too, welcome the Minister to his post, but I shall reserve a little more to say about him when we debate Northern Ireland on <phrase class="date" code="2006-06-09">9 June</phrase>. We look forward very much to a good working relationship and I am sure that we will move forward in that spirit.</p>
+	<p pid="b.648.0/1">My Lords, I, too, welcome the Minister to his post, but I shall reserve a little more to say about him when we debate Northern Ireland on <phrase class="date" code="2005-06-09">9 June</phrase>. We look forward very much to a good working relationship and I am sure that we will move forward in that spirit.</p>
 	<p pid="b.648.0/2">We also welcome the order and the consultation process that resulted in the change to Article 17(6) so that it defines a pre-commencement bankrupt in terms of bankruptcy rather than the presentation of a bankruptcy petition, having occurred before the coming into operation of paragraph (1) of that article. There is also a change to paragraph 8 of Schedule 5, which has been amended to refer to interim bankruptcy restrictions orders.</p>
 	<p pid="b.648.0/3">Although it is helpful to bring Northern Ireland into line with the rest of the UK, we must continue to take into account the different experiences in different parts of the United Kingdom and make changes where appropriate.</p>
 </speech>
@@ -912,7 +928,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.648.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="648"  time="016:01:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew5">
-	<p pid="b.648.2/1">My Lords, I thank noble Lords for their kind words of welcome. I am very grateful and have been touched by supportive comments all around the House and on my four quick visits so far&mdash;they will always be quick&mdash;to Northern Ireland. I will do my best. I have made clear that it is not an area that I know in detail. If I get things wrong, people will point it out to me. I do not carry much baggage with me but I will bring to bear what experience and goodwill I can in the issues that I have to deal with. I very much look forward to the debate of substance on <phrase class="date" code="2006-06-09">9 June</phrase>. Obviously, that would be the better time.</p>
+	<p pid="b.648.2/1">My Lords, I thank noble Lords for their kind words of welcome. I am very grateful and have been touched by supportive comments all around the House and on my four quick visits so far&mdash;they will always be quick&mdash;to Northern Ireland. I will do my best. I have made clear that it is not an area that I know in detail. If I get things wrong, people will point it out to me. I do not carry much baggage with me but I will bring to bear what experience and goodwill I can in the issues that I have to deal with. I very much look forward to the debate of substance on <phrase class="date" code="2005-06-09">9 June</phrase>. Obviously, that would be the better time.</p>
 	<p pid="b.648.2/2">I am very grateful for the acceptance of the order. The answer to the question of the noble Lord, Lord Brooke, is &quot;Yes&quot;.</p>
 </speech>
 
@@ -925,7 +941,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.1" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="649"  time="016:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew6">
-	<p pid="b.649.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved.</p>
+	<p pid="b.649.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-01-20">20 January</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="649"  time="016:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew6">
@@ -934,7 +950,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.3" nospeaker="true" colnum="649"  time="016:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew6">
-	<p pid="b.649.3/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="b.649.3/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-20">20 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.4" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon=":" colnum="649"  time="016:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew7">
@@ -958,7 +974,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.9" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="649"  time="016:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew10">
-	<p pid="b.649.9/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-02-07">7 February</phrase> be approved.</p>
+	<p pid="b.649.9/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-02-07">7 February</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.10" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="649"  time="016:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew10">
@@ -973,7 +989,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.649.11" nospeaker="true" colnum="649"  time="016:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-18.htm#50526-18_spnew10">
-	<p pid="b.649.11/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-07">7 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="b.649.11/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-07">7 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.651.0" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon=":" colnum="651"  time="016:09:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-19.htm#50526-19_spnew0">
@@ -1013,7 +1029,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.652.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="652"  time="016:17:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-19.htm#50526-19_spnew6">
-	<p pid="b.652.5/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-01-26">26 January</phrase> be approved.</p>
+	<p pid="b.652.5/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2005-01-26">26 January</phrase> be approved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.652.6" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="652"  time="016:17:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-19.htm#50526-19_spnew6">
@@ -1032,7 +1048,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.652.7" nospeaker="true" colnum="652"  time="016:17:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-19.htm#50526-19_spnew6">
-	<p pid="b.652.7/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-26">26 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="b.652.7/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-26">26 January</phrase> be approved.&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-05-26b.654.0" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon=":" colnum="654"  time="016:17:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050526/text/50526-20.htm#50526-20_spnew0">

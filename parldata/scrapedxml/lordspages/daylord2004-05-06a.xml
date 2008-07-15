@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1211.1" speakerid="uk.org.publicwhip/lord/100279" speakername="Lord Harrison" colon="" colnum="1211"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-01.htm#40506-01_spopq0">
 	<p pid="a.1211.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1211.1/2" class="indent">How they respond to the report published by Libri, a charity for libraries, concerning the well-being of public libraries in the United Kingdom.</p>
+	<p pid="a.1211.1/2" class="indent" pwmotiontext="asked">How they respond to the report published by Libri, a charity for libraries, concerning the well-being of public libraries in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1211.2" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="1211"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-01.htm#40506-01_spmin0">
@@ -119,7 +138,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1213.6" speakerid="uk.org.publicwhip/lord/100068" speakername="Lord Bradshaw" colon="" colnum="1213"  time="011:08:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-01.htm#40506-01_spopq1">
 	<p pid="a.1213.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1213.6/2" class="indent">What effect the opening of BT's directory inquiry service to competition has had on the number of inquiries made by telephone customers.</p>
+	<p pid="a.1213.6/2" class="indent" pwmotiontext="asked">What effect the opening of BT's directory inquiry service to competition has had on the number of inquiries made by telephone customers.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1214.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="1214"  time="011:08:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-01.htm#40506-01_spmin1">
@@ -182,11 +201,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1216.3" speakerid="uk.org.publicwhip/lord/100004" speakername="Lord Addington" colon="" colnum="1216"  time="011:17:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-02.htm#40506-02_spopq0">
 	<p pid="a.1216.3/1" pwmotiontext="asked">asked the Chairman of Committees:</p>
-	<p pid="a.1216.3/2" class="indent">Whether the House will implement forthcoming changes in disability law that do not automatically apply to the Palace of Westminster.</p>
+	<p pid="a.1216.3/2" class="indent" pwmotiontext="asked">Whether the House will implement forthcoming changes in disability law that do not automatically apply to the Palace of Westminster.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1216.4" speakerid="uk.org.publicwhip/lord/100067" speakername="Lord Brabazon of Tara" colon=":" colnum="1216"  time="011:17:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-02.htm#40506-02_spmin0">
-	<p pid="a.1216.4/1">My Lords, the House of Lords is committed to meeting all its obligations under the Disability Discrimination Act 1995 as amended by the Disability Discrimination (Providers of Services) (Adjustment of Premises) Regulations 2001 which come into force on <phrase class="date" code="">1 October</phrase>. The House will also take all reasonable steps to implement in practice provisions in legislation which do not automatically apply to the Palace to facilitate access for disabled Members, staff and members of the public.</p>
+	<p pid="a.1216.4/1">My Lords, the House of Lords is committed to meeting all its obligations under the Disability Discrimination Act 1995 as amended by the Disability Discrimination (Providers of Services) (Adjustment of Premises) Regulations 2001 which come into force on <phrase class="date" code="2004-10-01">1 October</phrase>. The House will also take all reasonable steps to implement in practice provisions in legislation which do not automatically apply to the Palace to facilitate access for disabled Members, staff and members of the public.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1216.5" speakerid="uk.org.publicwhip/lord/100004" speakername="Lord Addington" colon=":" colnum="1216"  time="011:17:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-02.htm#40506-02_spnew11">
@@ -317,7 +336,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1226.0" speakerid="uk.org.publicwhip/lord/100463" speakername="Lord Northbourne" colon=":" colnum="1226"  time="011:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-05.htm#40506-05_spnew0">
 	<p pid="a.1226.0/1">I support Amendments Nos. 27 and 29. With great respect to the noble Lord, Lord Pendry, in whose name Amendment No. 27 stands, I suggest that play and recreation are education. They are a fundamental and essential part of education. I refer to play and recreation for children not only before they go to school but during the whole time that they are growing up. It would be helpful if the noble Baroness could confirm that that is the view of the Department for Education and Skills. None the less, I support the amendment because many people do not understand that, and it is important that we should have it in the Bill.</p>
-	<p pid="a.1226.0/2">With regard to Amendment No. 29, I endorse the importance of the advertising issue. I draw to the Committee's attention the excellent debate introduced by my noble friend Lady Howe of Idlicote on <phrase class="date" code="2006-01-14">14 January</phrase>. The arguments were well set out in that debate.</p>
+	<p pid="a.1226.0/2">With regard to Amendment No. 29, I endorse the importance of the advertising issue. I draw to the Committee's attention the excellent debate introduced by my noble friend Lady Howe of Idlicote on <phrase class="date" code="2004-01-14">14 January</phrase>. The arguments were well set out in that debate.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1226.1" speakerid="uk.org.publicwhip/lord/100193" speakername="Lord Elton" colon=":" colnum="1226"  time="011:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-05.htm#40506-05_spnew1">
@@ -554,7 +573,7 @@
 	<p pid="a.1246.2/1">I support the thrust of the amendments and, to my great sorrow, disagree profoundly with my noble friend Lord Laming. I should like to make a comment about what is in the Bill and the law and its meaning. The law does not just set out the law, it also gives messages about our values and about who is in and who is out, who has been thought about and who has not.</p>
 	<p pid="a.1246.2/2">I think that we would all agree, either from personal knowledge or from being generally well informed, that the parents of disabled children face intolerable hurdles in getting what they need. Their lives are very difficult and a constant struggle. For them to see their situation mentioned in the Bill would be an important recognition by us that we understand and appreciate what they are doing and what their lives are like.</p>
 	<p pid="a.1246.2/3">Without spelling it out, the same applies to children in care&mdash;looked-after children. They know that in many ways they are at the bottom of the heap. Perhaps what is even more important, the people who look after them know that their status is low and that they are not valued. It is important that we think about the meaning of the law to people who work in those services. They face many difficult situations in their work and it is sometimes hard for them to decide what is the right thing to do.</p>
-	<p pid="a.1246.2/4">Members of the Committee who have had the time to read the coroner's verdict in the inquest on Joseph Scholes, which was issued on <phrase class="date" code="">30 April</phrase>, will understand how public servants are sometimes placed in intolerable situations. Some of us remember the matter raised by the noble Lord, Lord Elton&mdash;the death of Gareth Mayatt. Similarly, that involved people placed in a very difficult position. In my view, staff working in such situations need the clear and unambiguous support of the law in words that everyone can understand when they have to decide what is the right thing to do.</p>
+	<p pid="a.1246.2/4">Members of the Committee who have had the time to read the coroner's verdict in the inquest on Joseph Scholes, which was issued on <phrase class="date" code="2004-04-30">30 April</phrase>, will understand how public servants are sometimes placed in intolerable situations. Some of us remember the matter raised by the noble Lord, Lord Elton&mdash;the death of Gareth Mayatt. Similarly, that involved people placed in a very difficult position. In my view, staff working in such situations need the clear and unambiguous support of the law in words that everyone can understand when they have to decide what is the right thing to do.</p>
 	<p pid="a.1246.2/5">I would very much support thought being given to Amendment No. 42, tabled by the noble Earl, Lord Listowel, because it could help the Government to rectify their unfortunate drafting in response to the Joint Committee on the Rights of the Child, when they said that children who commit crimes are not just children.</p>
 </speech>
 
@@ -707,7 +726,7 @@
 	<p pid="a.1260.0/8" class="indent">&quot;Why it is expected that the Committee on Radioactive Waste Management will not now report until 2006, when it had previously been announced that the Committee would report before the end of 2005&quot;.</p>
 	<p pid="a.1260.0/9">The noble Lord replied:</p>
 	<p pid="a.1260.0/10" class="indent">&quot;CoRWM is scheduled to deliver its work programme proposals by the end of March 2004&quot;.&mdash;[Official Report, 31/3/04; col. WA 173.]</p>
-	<p pid="a.1260.0/11">I then wrote to the noble Lord to ask what was the problem. I have not yet received a reply. I rang his private office this morning to ask when I would get a reply. My letter was dated <phrase class="date" code="2006-04-06">6 April</phrase>, today is <phrase class="date" code="">6 May</phrase>, and I have still not had a reply. I find that rather shabby treatment. This morning I asked the Library to search the web again. Shortly after 11.30 a.m. I got a response: in CoRWM's 36-page Programme of Work 2004&ndash;2006, at page 11 the final schedule states that the fifth key output is &quot;reporting and closure&quot;, and that the target date for the final output of &quot;recommendations to Ministers&quot; is 2006. That will have been nearly 10 years since the failure of the NIREX planning application in 1997. I share the indignation of the noble Lord, Lord Tombs. It simply is not good enough. Far too much time has been wasted in shilly-shallying.</p>
+	<p pid="a.1260.0/11">I then wrote to the noble Lord to ask what was the problem. I have not yet received a reply. I rang his private office this morning to ask when I would get a reply. My letter was dated <phrase class="date" code="2004-04-06">6 April</phrase>, today is <phrase class="date" code="2004-05-06">6 May</phrase>, and I have still not had a reply. I find that rather shabby treatment. This morning I asked the Library to search the web again. Shortly after 11.30 a.m. I got a response: in CoRWM's 36-page Programme of Work 2004&ndash;2006, at page 11 the final schedule states that the fifth key output is &quot;reporting and closure&quot;, and that the target date for the final output of &quot;recommendations to Ministers&quot; is 2006. That will have been nearly 10 years since the failure of the NIREX planning application in 1997. I share the indignation of the noble Lord, Lord Tombs. It simply is not good enough. Far too much time has been wasted in shilly-shallying.</p>
 	<p pid="a.1260.0/12">Perhaps there is hope that it need not go as far as that. This morning there arrived on my desk the Nuclear Industry Association newsletter Industry Link, which states:</p>
 	<p pid="a.1260.0/13" class="indent">&quot;With waste being seen as one of the primary obstacles to new nuclear build, CoRWM's recommendations could profoundly influence the future of the industry. Time is of the essence&quot;.</p>
 	<p pid="a.1260.0/14">It further states that CoRWM,</p>
@@ -747,7 +766,7 @@
 	<p pid="a.1264.0/11" class="indent">&quot;UK participations totalled 266 and these received 21.6 million euros&quot;.&mdash;[Official Report, 22/1/04; col. GC 380.]</p>
 	<p pid="a.1264.0/12">Not exactly a huge sum. That boast will not stand up when the lights go out.</p>
 	<p pid="a.1264.0/13">There is a most important point that seems to be disregarded by the Government, and it would be very practical to rectify this problem; namely, that nuclear is a renewable method of producing electricity. We could and would easily meet our emission targets if there were an increase in electricity generated by nuclear power. Conversely, if we allow our current nuclear capacity to close down without replacement, we shall never meet any of the emission targets.</p>
-	<p pid="a.1264.0/14">I was one of the 2.8 million viewers of the BBC2 drama-documentary, &quot;If . . . the lights go out&quot;, broadcast on <phrase class="date" code="2006-03-10">10 March</phrase>. That programme cannot be shrugged off as scaremongering; UK audiences are more intelligent than that. It served a useful purpose in highlighting the problems. The website asked viewers whether Britain should keep nuclear power, and 76 per cent said, &quot;Yes&quot;. That means that another practical measure would be to undertake a knowledge and information exercise to inform the country of the benefits of nuclear power. Safety has increased immeasurably, and, in other countries, that is recognised. It would be a practical measure to ensure that it is recognised here.</p>
+	<p pid="a.1264.0/14">I was one of the 2.8 million viewers of the BBC2 drama-documentary, &quot;If . . . the lights go out&quot;, broadcast on <phrase class="date" code="2004-03-10">10 March</phrase>. That programme cannot be shrugged off as scaremongering; UK audiences are more intelligent than that. It served a useful purpose in highlighting the problems. The website asked viewers whether Britain should keep nuclear power, and 76 per cent said, &quot;Yes&quot;. That means that another practical measure would be to undertake a knowledge and information exercise to inform the country of the benefits of nuclear power. Safety has increased immeasurably, and, in other countries, that is recognised. It would be a practical measure to ensure that it is recognised here.</p>
 	<p pid="a.1264.0/15">It has been an interesting but brief debate. The noble Lord, Lord Tombs, stressed the importance of confidence and leadership. I would add joined-up government to that list. The noble Lord has done a great service in bringing the matter before the House. I thank him.</p>
 </speech>
 
@@ -1303,7 +1322,7 @@
 	<p pid="a.1306.1/5">The commissioner should have these powers in exceptional circumstances. He or she should be equipped with the necessary tools, and also the right of access to documents, the power to enter institutions and to meet children in private, as well as the right to summon witnesses. The Bill currently gives the commissioner such powers only when she or he is carrying out an inquiry directed by the Secretary of State. It will be the Secretary of State and not the commissioner who determines the terms of reference for such an investigation. It will be the Secretary of State&mdash;again, not the commissioner&mdash;who determines if, when and how the report from such an inquiry will be published.</p>
 	<p pid="a.1306.1/6">Ministers have stated categorically that the commissioner will be an independent champion for children. I do not think I have repeated myself so much as I have today, but those of us who disagree with the Minister still do not think that he or she is an independent champion as the Bill currently stands. We believe it is difficult to reconcile the Government's stated aims for the commissioner with the reality of the Bill. We whole-heartedly agree that the commissioner must not be swamped with individual complaints. In my earlier amendment, I said I foresee everything going to the director locally, and not coming straight to the commissioner. Only in exceptional circumstances would it come to the commissioner because we do not want him to be swamped. We are all agreed on that.</p>
 	<p pid="a.1306.1/7">England's population of children is, as we have said, 11 million&mdash;significantly higher than other countries within the UK. Without safeguards, the potential is indeed here for the commissioner to lose her or his strategic role. These safeguards must be written into legislation, rather than handing over the decision-making powers to the Minister. The current provisions suggest that the Government do not believe the commissioner will act in the best interests of children without close ministerial supervision. The noble Baroness may say, &quot;I am not sure&quot;, but she will have a chance to follow me. It is clear to those of us who have read the Bill that that is how we see it being interpreted and why we have had such a long late-morning and afternoon session on these very important issues.</p>
-	<p pid="a.1306.1/8">I understand that the Commissioner for Children and Young People in Scotland said, in evidence to the Joint Committee on Human Rights on <phrase class="date" code="">20 April</phrase>, that she would not be able to maintain her position were she subject to such restrictions. That is actually quite a statement and I urge the Minister to consider it.</p>
+	<p pid="a.1306.1/8">I understand that the Commissioner for Children and Young People in Scotland said, in evidence to the Joint Committee on Human Rights on <phrase class="date" code="2004-04-20">20 April</phrase>, that she would not be able to maintain her position were she subject to such restrictions. That is actually quite a statement and I urge the Minister to consider it.</p>
 	<p pid="a.1306.1/9">Also, before I formally move these amendments, what contact has the Minister had with the Children's Rights Alliance? Has that organisation raised some of the concerns that I have raised this afternoon with her directly? If it has, and the matter has been taken further than I understand, then the Minister may be able to bring me up to date regarding pur original conversations.</p>
 	<p pid="a.1306.1/10">I cannot stress strongly enough our belief that the Children's Commissioner for England should be independent&mdash;though, clearly as the Minister stated earlier, I accept that he or she will only be used in exceptional circumstances. I beg to move.</p>
 </speech>
@@ -1422,7 +1441,7 @@
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1315.4" speakerid="uk.org.publicwhip/lord/100667" speakername="Baroness Walmsley" colon=":" colnum="1315"  time="017:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-24.htm#40506-24_spnew7">
 	<p pid="a.1315.4/1">I shall speak to Amendments Nos. 64 and 131 in this group.</p>
 	<p pid="a.1315.4/2">There are two purposes to Amendment No. 64, which is a probing amendment. The first is to give the Minister an opportunity to confirm that, under the current wording in the Bill, local government will pay for the cost of inquiries, rather than, as my amendment suggests, the Children's Commissioner and the Secretary of State. The second purpose is to find out whether the Minister envisages more inquires. Currently there are one or two major inquiries a year into child deaths and child abuse. The remit in Clause 4(1) is wider. Inquiries can be held when an individual case raises issues of relevance to other children.</p>
-	<p pid="a.1315.4/3">So, does the Minister expect more inquiries to be held across a much wider range of subjects? For example, could an inquiry be held into the reasons for the exclusion of a pupil or a group of pupils from school? The Independent newspaper estimated in an editorial last <phrase class="date" code="">Thursday, 29 April</phrase>, that there have been no fewer than 70 public inquiries into child deaths since the end of the Second World War. There are concerns about the mounting costs of inquiries. Clearly, no one is expecting something on the scale of the Bloody Sunday inquiry. Inquiries should be short, specific and achieve results in order to affect practice in as short a time as possible. Can the Minister enlighten us a little about, for example, the scope? An inquiry could be called if issues about an individual child raised issues of relevance to other children. Is it likely that inquiries will fall outside the relatively discrete area of inquiries into child deaths in care, which has been the main reason for such inquiries until now?</p>
+	<p pid="a.1315.4/3">So, does the Minister expect more inquiries to be held across a much wider range of subjects? For example, could an inquiry be held into the reasons for the exclusion of a pupil or a group of pupils from school? The Independent newspaper estimated in an editorial last <phrase class="date" code="2004-04-29">Thursday, 29 April</phrase>, that there have been no fewer than 70 public inquiries into child deaths since the end of the Second World War. There are concerns about the mounting costs of inquiries. Clearly, no one is expecting something on the scale of the Bloody Sunday inquiry. Inquiries should be short, specific and achieve results in order to affect practice in as short a time as possible. Can the Minister enlighten us a little about, for example, the scope? An inquiry could be called if issues about an individual child raised issues of relevance to other children. Is it likely that inquiries will fall outside the relatively discrete area of inquiries into child deaths in care, which has been the main reason for such inquiries until now?</p>
 	<p pid="a.1315.4/4">What about frequency? How many inquiries each year does the Minister envisage? What does the Minister think that they will cost? Does the Minister envisage that local government will pay for such inquiries? If the costs fall significantly on a single local authority, even though the issues relate to children all over the country, will the Secretary of State meet part of the cost?</p>
 	<p pid="a.1315.4/5">Amendment No. 131 has appeared in the wrong place in the Marshalled List and relates not to Clause 7, but to paragraph 7 of Schedule 1. It should really have been debated when we debated Schedule 1, because noble Lords will see that it is part of the debate that we had the other day when I was promoting the idea that the Children's Commissioner should be appointed not by the Secretary of State, but by Her Majesty the Queen, on the recommendation of Parliament. The amendment falls perfectly in line with that suggestion. If Parliament is to appoint the commissioner, the payment should also come from it.</p>
 	<p pid="a.1315.4/6">If the Minister was puzzled by the mistaken thought that I wished to delete Clause 7 entirely, I hope that I have clarified the situation. I hope that the Minister will consider the amendment in the light of that explanation. It would add to the independence of the Children's Commissioner from the executive, which I advocated a few days ago. In the light of our debate on Tuesday, I hope that the Minister will consider the amendment.</p>
@@ -1698,7 +1717,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-06a.1337.1" speakerid="uk.org.publicwhip/lord/100643" speakername="Lord Tope" colon=":" colnum="1337"  time="018:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040506/text/40506-30.htm#40506-30_spnew3">
-	<p pid="a.1337.1/1">I support the amendments. I declare an interest as a member of the London Assembly and the Greater London Authority; I hope to be so again after <phrase class="date" code="">10 June</phrase>. I am also a member of the Metropolitan Police Authority and a London borough councillor.</p>
+	<p pid="a.1337.1/1">I support the amendments. I declare an interest as a member of the London Assembly and the Greater London Authority; I hope to be so again after <phrase class="date" code="2004-06-10">10 June</phrase>. I am also a member of the Metropolitan Police Authority and a London borough councillor.</p>
 	<p pid="a.1337.1/2">In moving the amendment, the noble Baroness was careful, and proper, to say that there was no special pleading for London. However, in view of the interests that I have just declared, perhaps I might be forgiven for making a little special pleading for London. The case has been made very well. We have an existing structure of regional government of sorts in London, and we have such aspirations for the rest of the country. I am sure that that will need to be considered when the time comes.</p>
 	<p pid="a.1337.1/3">London has a very large population of young people. Not only is it large in number, but, as other Members of the Committee have said, it is very diverse. In inner London more than half the population of young people is from a black or ethnic minority background. The case has been made for particular consideration to be given to London's particular circumstances at present, in the complex structure of governance, the size and, in particular, diversity of the population of young people. We all look forward to the Minister's response.</p>
 </speech>

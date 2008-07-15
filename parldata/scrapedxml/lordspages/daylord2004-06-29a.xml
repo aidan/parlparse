@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -66,7 +85,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.125.5" speakerid="uk.org.publicwhip/lord/100658" speakername="Lord Waddington" colon="" colnum="125"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-01.htm#40629-01_spopq0">
 	<p pid="a.125.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.125.5/2" class="indent">Why voters in the London mayoral elections were instructed on the reverse side of the declaration of identity to, &quot;Vote once for your first choice and once for your second choice&quot;, when there is no obligation to exercise a second choice.</p>
+	<p pid="a.125.5/2" class="indent" pwmotiontext="asked">Why voters in the London mayoral elections were instructed on the reverse side of the declaration of identity to, &quot;Vote once for your first choice and once for your second choice&quot;, when there is no obligation to exercise a second choice.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.125.6" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="125"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-01.htm#40629-01_spnew0">
@@ -74,8 +93,8 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.125.7" speakerid="uk.org.publicwhip/lord/100658" speakername="Lord Waddington" colon=":" colnum="125"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-01.htm#40629-01_spnew1">
-	<p pid="a.125.7/1">My Lords, I am only partially grateful for that reply. Is the Minister aware that I first raised this matter as long ago as 2000 during the mayoral election? I pointed out then that voters were being wrongly instructed that they had to vote twice. Is the Minister aware that I returned to the charge at the beginning of 2003 and I raised the matter again in good time for the matter to be put right for the mayoral election in 2004? However, on <phrase class="date" code="2006-03-04">4 March</phrase> this year a series of orders came before the House. Tucked away in one of them was the same wholly improper instruction to voters.</p>
-	<p pid="a.125.7/2">Is it not obvious from the <i>Hansard</i> report of the proceedings on <phrase class="date" code="2006-03-04">4 March</phrase> that no one&mdash;the Minister, the noble Lord, Lord Rooker, included&mdash;noticed that the order contained the improper instruction? In the debate the noble Lord, Lord Campbell-Savours, suggested various forms of wording to bring home to the voter that he had a choice regarding whether to vote once or twice and no one suggested that the noble Lord was wasting his breath, although the matter was cut and dried in the regulations.</p>
+	<p pid="a.125.7/1">My Lords, I am only partially grateful for that reply. Is the Minister aware that I first raised this matter as long ago as 2000 during the mayoral election? I pointed out then that voters were being wrongly instructed that they had to vote twice. Is the Minister aware that I returned to the charge at the beginning of 2003 and I raised the matter again in good time for the matter to be put right for the mayoral election in 2004? However, on <phrase class="date" code="2004-03-04">4 March</phrase> this year a series of orders came before the House. Tucked away in one of them was the same wholly improper instruction to voters.</p>
+	<p pid="a.125.7/2">Is it not obvious from the <i>Hansard</i> report of the proceedings on <phrase class="date" code="2004-03-04">4 March</phrase> that no one&mdash;the Minister, the noble Lord, Lord Rooker, included&mdash;noticed that the order contained the improper instruction? In the debate the noble Lord, Lord Campbell-Savours, suggested various forms of wording to bring home to the voter that he had a choice regarding whether to vote once or twice and no one suggested that the noble Lord was wasting his breath, although the matter was cut and dried in the regulations.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.126.0" speakerid="unknown" speakername="Noble Lords" colnum="126"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-01.htm#40629-01_spnew2">
@@ -188,7 +207,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.128.8" speakerid="uk.org.publicwhip/lord/100279" speakername="Lord Harrison" colon="" colnum="128"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-02.htm#40629-02_spopq0">
 	<p pid="a.128.8/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.128.8/2" class="indent">What are the rules governing the application of the United Kingdom minimum wage for ratings on British-registered merchant ships; and what is the effect of these rules on the recruitment of British ratings.</p>
+	<p pid="a.128.8/2" class="indent" pwmotiontext="asked">What are the rules governing the application of the United Kingdom minimum wage for ratings on British-registered merchant ships; and what is the effect of these rules on the recruitment of British ratings.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.128.9" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="128"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-02.htm#40629-02_spnew3">
@@ -235,7 +254,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.130.1" speakerid="uk.org.publicwhip/lord/100588" speakername="Lord Sheldon" colon="" colnum="130"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-02.htm#40629-02_spopq1">
 	<p pid="a.130.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.130.1/2" class="indent">What representations they have made to the United States Government concerning the holding of prisoners at Guantanamo Bay.</p>
+	<p pid="a.130.1/2" class="indent" pwmotiontext="asked">What representations they have made to the United States Government concerning the holding of prisoners at Guantanamo Bay.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.130.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="130"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-02.htm#40629-02_spnew12">
@@ -335,7 +354,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.133.3" speakerid="uk.org.publicwhip/lord/100269" speakername="Baroness Hanham" colon="" colnum="133"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-03.htm#40629-03_spopq0">
 	<p pid="a.133.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.133.3/2" class="indent">When the Bill on the powers and responsibilities of the regional assemblies will be introduced.</p>
+	<p pid="a.133.3/2" class="indent" pwmotiontext="asked">When the Bill on the powers and responsibilities of the regional assemblies will be introduced.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.133.4" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="133"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-03.htm#40629-03_spnew14">
@@ -428,7 +447,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.136.5" speakerid="uk.org.publicwhip/lord/100002" speakername="Lord Ackner" colon="" colnum="136"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-04.htm#40629-04_spopq0">
 	<p pid="a.136.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.136.5/2" class="indent">Whether the comments made by the Home Secretary about Mr Garry Mann on Mr Mann's return from Portugal and after his appearance before the Uxbridge magistrates were in accordance with government policy, and in particular the reported comment that the Home Secretary intended to &quot;nail this individual&quot;.</p>
+	<p pid="a.136.5/2" class="indent" pwmotiontext="asked">Whether the comments made by the Home Secretary about Mr Garry Mann on Mr Mann's return from Portugal and after his appearance before the Uxbridge magistrates were in accordance with government policy, and in particular the reported comment that the Home Secretary intended to &quot;nail this individual&quot;.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.136.6" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="136"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-04.htm#40629-04_spmin0">
@@ -2266,19 +2285,19 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.209.5" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="209"  time="018:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-27.htm#40629-27_spnew4">
-	<p pid="a.209.5/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="">13 May</phrase>, be annulled (S.I. 2004/1313).</p>
+	<p pid="a.209.5/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-05-13">13 May</phrase>, be annulled (S.I. 2004/1313).</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.209.6" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon=":" colnum="209"  time="018:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-27.htm#40629-27_spnew4">
 	<p pid="a.209.6/1">My Lords, the regulations abolish the six-monthly single additional payments of &pound;50 to NASS-supported asylum seekers. When the SAPs were introduced, the argument was that support was provided largely in the form of vouchers with only a small cash element, making it difficult for the recipients to save for larger purchases and limiting where they could shop. At the end of the six months, the &pound;50 was to make up for that disadvantage.</p>
 	<p pid="a.209.6/2">The scheme was ended in April 2002 when the vouchers were replaced by cash payments equal to 70 per cent of income support&mdash;&pound;38.96 for a single person over 25, and &pound;61.11 for a married couple&mdash;plus their accommodation and utility bills. When the order abolishing the vouchers was debated in March 2002, my noble friend Lord Dholakia asked the noble Lord, Lord Bassam&mdash;I am glad to see that he will reply this evening&mdash;to explain the arithmetic. The Minister then said:</p>
-	<p pid="a.209.6/3" class="indent">&quot;The calculation has been made that the discount, the 30 per cent, is approximate to the value of housing accommodation which is fully furnished and has all the necessary utensils and furniture in place. It is felt that 70 per cent is a fair reflection of the true cash needs of asylum seekers and that the 30 per cent covers utility payments such as rent and so on. It is assumed that that is all included&quot;.&mdash;[<i>Official Report</i>, 14/3/02; col. 1018.]</p>
+	<p pid="a.209.6/3" class="indent">&quot;The calculation has been made that the discount, the 30 per cent, is approximate to the value of housing accommodation which is fully furnished and has all the necessary utensils and furniture in place. It is felt that 70 per cent is a fair reflection of the true cash needs of asylum seekers and that the 30 per cent covers utility payments such as rent and so on. It is assumed that that is all included&quot;.&mdash;[<phrase class="offrep" id="lords/2002-03-14.1018"><i>Official Report</i>, 14/3/02; col. 1018</phrase>.]</p>
 	<p pid="a.209.6/4">The Minister was evidently confused by the difference between utility payments and rents, so can we get that straight from the start? From the initiation of the voucher scheme in the 1999 Act, both the rent and the furnished accommodation were provided, and the utilities were paid for separately. It was calculated that the support provided was equivalent to 90 per cent of income support, as was explained by the Home Secretary at the time, Mr Jack Straw, in another place on <phrase class="date" code="1999-06-16">16 June 1999</phrase>.</p>
 	<p pid="a.209.6/5">When the vouchers were scrapped in 2002 because the Government finally conceded that cash benefits did not after all provide an incentive to come here for non-genuine claimants&mdash;as Mr Straw said that he strongly believed less than three years before&mdash;the value of the package remained unchanged. Therefore, people on NASS support still received 10 per cent less than if they had been entitled to ordinary income support and housing benefit. For a single person, that comes to &pound;434 over the six months before which he becomes entitled to the SAP &pound;50.</p>
 	<p pid="a.209.6/6">In response to the representations made by my noble friend Lady Williams of Crosby about the hardship felt by people who had been on NASS support for more than six months, Lord Williams of Mostyn explained that the Government had,</p>
-	<p pid="a.209.6/7" class="indent">&quot;decided to introduce a discretionary payment to asylum seekers who stay in the support system through no fault of their own for more than six months&quot;.&mdash;[<i>Official Report</i>, 2/11/99; col. 824.]</p>
+	<p pid="a.209.6/7" class="indent">&quot;decided to introduce a discretionary payment to asylum seekers who stay in the support system through no fault of their own for more than six months&quot;.&mdash;[<phrase class="offrep" id="lords/1999-11-02.824"><i>Official Report</i>, 2/11/99; col. 824</phrase>.]</p>
 	<p pid="a.209.6/8">It was acknowledged that long-term asylum seekers would not have the money to replace essential household durables, or buy expensive replacement items such as children's shoes. In that respect, they were different from natives or persons settled here, who were entitled to income support. No one suggested, as the Government do in the Explanatory Memorandum attached to the order, that the &pound;50 would actually make asylum seekers better off than UK citizens. That is a specious argument worthy of the <i>Sun </i>or <i>Daily Mail</i>.</p>
-	<p pid="a.209.6/9">Utility bills were always paid from the inception of the national scheme in 2000. It was that, together with the value of fully furnished accommodation, that took the NASS-supported asylum seeker up to 90 per cent of the level of those on income support. Now the Government come along and say&mdash;as the noble Lord, Lord Rooker, did on <phrase class="date" code="">15 June</phrase> when we debated the ending of back-payments&mdash;that the value of those items comes to 30 per cent, not the 20 per cent of the income support with which it is compared. NASS pays for the bare necessities, and the model contract does not specify, as some malign commentators have suggested, that telephones, TVs, new cookers or washing machines would be provided. For a married couple, it is assumed that basic utilities and household durables will come to 30 per cent of income support of &pound;87.30 a week or &pound;681 over six months, the difference between the NASS payments and income support.</p>
+	<p pid="a.209.6/9">Utility bills were always paid from the inception of the national scheme in 2000. It was that, together with the value of fully furnished accommodation, that took the NASS-supported asylum seeker up to 90 per cent of the level of those on income support. Now the Government come along and say&mdash;as the noble Lord, Lord Rooker, did on <phrase class="date" code="2004-06-15">15 June</phrase> when we debated the ending of back-payments&mdash;that the value of those items comes to 30 per cent, not the 20 per cent of the income support with which it is compared. NASS pays for the bare necessities, and the model contract does not specify, as some malign commentators have suggested, that telephones, TVs, new cookers or washing machines would be provided. For a married couple, it is assumed that basic utilities and household durables will come to 30 per cent of income support of &pound;87.30 a week or &pound;681 over six months, the difference between the NASS payments and income support.</p>
 	<p pid="a.209.6/10">I want the Minister to listen carefully to my arithmetic, because it is the basis of my challenge to the regulations. Comparing the &pound;87.30 with the detailed household expenditure figures for the bottom 10 per cent of households by income in table 1.3 of <i>Family Spending&mdash;a report on the Expenditure and Food survey</i>, for 2002&mdash;03, published this month by the Office for National Statistics, household goods and services less routine maintenance, such as cleaning materials, came to &pound;9 per week and electricity, gas and water to &pound;11.80 per week. The total of those items for six months was &pound;540.80, compared with the difference of &pound;681, which I have calculated before, between NASS payments and income support. So the payments made on behalf of the asylum seeker couple leaves them short of &pound;140 at the end of the six months, compared with their counterparts on income support. The continuation of this payment of SAP&mdash;&pound;50 to each&mdash;would still leave the couple out of pocket to the tune of &pound;40.</p>
 	<p pid="a.209.6/11">In the debate on back payments, the noble Lord, Lord Rooker, said that, on the basis of the number granted asylum and the average wait for decisions of six months, the cost of back payments came to about &pound;11 million per year. I worked out a cost of &pound;1 million on 16,000 successful appeals and on an average wait of three months. I took the number of successful appeals dealt with by the IAA in the first quarter of 2004 and multiplied that by four, which is likely to be an overestimate given that the rate of appeals is declining and will be reduced still further as the backlog is cleared and non-suspensive appeals kick in.</p>
 	<p pid="a.209.6/12">Regarding the wait, the Government are to be congratulated on speeding up initial decisions so that 80 per cent of cases are now dealt with inside two months. In 2002&ndash;03, 87 per cent were dealt with within six months. If one took 13 per cent of the 575 favourable decisions on initial applications in the first quarter of this year, it would come to 75 per cent. If those 4,000 successful appellants had been waiting for an average of six months, as the noble Lord, Lord Rooker, suggested, it could be assumed that half of those would have qualified for that payment. That is also an overestimate, given that the average figure is weighted by the small proportion of appellants whose cases take much longer to resolve. The total cost would then be about &pound;100,000 per quarter and falling. That is a small amount, but not insignificant in the budgets of people who have been trying to exist for the previous six months on levels lower than income support.</p>
@@ -2287,10 +2306,10 @@
 	<p pid="a.209.6/15">Two months after beginning of the financial year, NASS did not even have a budget for the current year, 2003&ndash;04. That was because the IND was still engaged in discussions with the Treasury about its own budget. A figure of &pound;35 million as its running costs was mentioned in the review, but that did not include payments to the asylum seekers.</p>
 	<p pid="a.209.6/16">The review gave some statistics on the applications for NASS support and the numbers receiving subsistence only and, respectively, full support, but there was no indication of the length of time for which they were receiving that support. If the original targets in the White Paper are reached, the majority of asylum seekers would not be in receipt of NASS support for more than six months; and a diminishing number of SAP claims would then be made.</p>
 	<p pid="a.209.6/17">I hope that the Minister can assist the House, first, by telling us what the NASS budget is for 2004&ndash;05 and, secondly, by telling us the calculations on which that budget is based. There are no figures whatever on the NASS website, which is one of the least informative that I have looked at of any public sector organisation. In the past year I must have looked at several hundred websites relating to local and national government. How many people, is it assumed, will be on subsistence-only benefit and how many will be on full support during the year and for what average time? The Minister must have had those figures, otherwise it would have been impossible to construct the budget. If we knew the figures we could assess the Minister's claim that the value of utility payments and household expenses amounted to 30 per cent of income level and not to the 20 per cent originally stated by Jack Straw.</p>
-	<p pid="a.209.6/18">Two further reasons were given by the Government for abolishing the SAPs in an e-mail to stakeholders on <phrase class="date" code="">11 May</phrase>. First, the Government said that it would be difficult to continue to make the payments given that UK citizens receiving income support had no access to additional payments. That is wrong. In fact, people on income support have access to Social Fund payments, which depend on individual circumstances and needs; and they may also apply for community care grants if, say, they have an unsettled way of life or their households face exceptional pressure. That grant could be used to pay for the same article or service every 26 weeks, which is the same interval between successive payments of SAP. Asylum seekers have an unsettled way of life, by definition, and face exceptional pressure. Unlike most people on income support, they left behind them when they fled their countries a lifetime of possessions and usually arrived in the UK with few clothes, household items or standard belongings, such as radios and TVs.</p>
+	<p pid="a.209.6/18">Two further reasons were given by the Government for abolishing the SAPs in an e-mail to stakeholders on <phrase class="date" code="2004-05-11">11 May</phrase>. First, the Government said that it would be difficult to continue to make the payments given that UK citizens receiving income support had no access to additional payments. That is wrong. In fact, people on income support have access to Social Fund payments, which depend on individual circumstances and needs; and they may also apply for community care grants if, say, they have an unsettled way of life or their households face exceptional pressure. That grant could be used to pay for the same article or service every 26 weeks, which is the same interval between successive payments of SAP. Asylum seekers have an unsettled way of life, by definition, and face exceptional pressure. Unlike most people on income support, they left behind them when they fled their countries a lifetime of possessions and usually arrived in the UK with few clothes, household items or standard belongings, such as radios and TVs.</p>
 	<p pid="a.209.6/19">Secondly, it was said that the administrative costs of processing the SAP claims was disproportionate. I do agree with the Government in that matter. The solution is to make the payments automatic, like, say, winter fuel allowances for pensioners. Even if the Government's 100 per cent claim was correct, it would not apply to those who opt for NASS subsistence-only support or who receive cash payments amounting to 70 per cent of income support. That was confirmed in a Home Office fact sheet, published in May. Nor does the 100 per cent claim apply to asylum seekers who fail to apply within three days of arriving in the country. Whatever the reasons for the delay, they receive nothing at all and have to live on thin air while they wait for their applications to be decided.</p>
 	<p pid="a.209.6/20">This is a mean proposal to save taxpayers a small amount of money at the expense of some of the worst-off people in this country and I am sorry that the Government brought it forward. I beg to move.</p>
-	<p pid="a.209.6/21">Moved, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="">13 May</phrase>, be annulled (S.I. 2004/1313).&mdash;(<i>Lord Avebury</i>.)</p>
+	<p pid="a.209.6/21">Moved, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-05-13">13 May</phrase>, be annulled (S.I. 2004/1313).&mdash;(<i>Lord Avebury</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-29a.213.0" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="213"  time="018:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040629/text/40629-28.htm#40629-28_spnew0">
@@ -2311,7 +2330,7 @@
 	<p pid="a.214.0/7">The purpose of paragraph 2 of the Asylum Support (Amendment)(No. 2) Regulations is to remove the now obsolete references to vouchers in the Asylum Support Regulations 2000. That has been broadly welcomed. This amendment is solely aimed at tidying up the regulations as vouchers have not been issued for over two years. It is therefore appropriate to remove references in the 2000 regulations to voucher support and to replace them with terms relating to the provision of cash support.</p>
 	<p pid="a.214.0/8">Paragraph 4 of the same regulations revokes Regulation 11 of the Asylum Support Regulations 2000. This provided that asylum seekers and their dependants in receipt of support for a continuous period of six months could apply for a single additional payment of &pound;50. That has caused the noble Lord, Lord Avebury, to table this Motion.</p>
 	<p pid="a.214.0/9">As the noble Lord acknowledged, asylum support is set at 70 per cent of the income support levels for adults and 100 per cent for children. The level of asylum support is intended to reflect the fact that NASS-supported asylum seekers do not have to meet the cost of accommodation, furnishings or utility bills. Single additional payments have previously been payable to asylum seekers after six months if their claim was still outstanding and thereafter at six-monthly periods to asylum seekers whose claims were awaiting a final determination.</p>
-	<p pid="a.214.0/10">On <phrase class="date" code="2006-03-25">25 March</phrase> this year, Beverley Hughes, the then Minister, announced in a Written Statement that single additional payments to asylum seekers and their dependants supported by NASS were to cease. Single additional payments were introduced when support was provided mostly in the form of vouchers exchangeable for goods, with only a small cash element. The six-monthly payments of &pound;50 in cash were intended for the purchase of renewable items such as clothing. Now that support is provided entirely in cash, asylum seekers are no longer limited to where they can shop and can get better value for their money by visiting markets and charity shops. That point was argued in discussions and debates on the need to replace vouchers.</p>
+	<p pid="a.214.0/10">On <phrase class="date" code="2004-03-25">25 March</phrase> this year, Beverley Hughes, the then Minister, announced in a Written Statement that single additional payments to asylum seekers and their dependants supported by NASS were to cease. Single additional payments were introduced when support was provided mostly in the form of vouchers exchangeable for goods, with only a small cash element. The six-monthly payments of &pound;50 in cash were intended for the purchase of renewable items such as clothing. Now that support is provided entirely in cash, asylum seekers are no longer limited to where they can shop and can get better value for their money by visiting markets and charity shops. That point was argued in discussions and debates on the need to replace vouchers.</p>
 	<p pid="a.214.0/11">The payment of support in cash gives those who receive asylum support a greater amount of flexibility and choice in how they spend their support and allows them to shop at a wider range of outlets. As a result, they can budget more effectively and shop at the most competitive retailers.</p>
 	<p pid="a.214.0/12">Asylum seekers can still apply for a &pound;300 maternity payment and since March 2003 additional support for pregnant women and children under three has meant that the level of asylum support has increased overall for these more vulnerable groups.</p>
 	<p pid="a.214.0/13">We intend to phase out these payments over six months following their abolition to ensure that final payment is received by all of those eligible up to the date of abolition. The changed effected by the Asylum Support (Amendment) (No. 2) Regulations 2004 are intended to improve the Government's system of asylum support.</p>

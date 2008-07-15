@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.765.1" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon="" colnum="765"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-01.htm#40519-01_spopq0">
 	<p pid="a.765.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.765.1/2" class="indent">What plans they have to ensure that funding for school sixth forms matches that for further education colleges.</p>
+	<p pid="a.765.1/2" class="indent" pwmotiontext="asked">What plans they have to ensure that funding for school sixth forms matches that for further education colleges.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.765.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="765"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-01.htm#40519-01_spmin0">
@@ -112,7 +131,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.767.3" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="767"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-01.htm#40519-01_spopq1">
 	<p pid="a.767.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.767.3/2" class="indent">What their reasons are for not giving BAe Systems plc preferred contractor status for defence procurement projects.</p>
+	<p pid="a.767.3/2" class="indent" pwmotiontext="asked">What their reasons are for not giving BAe Systems plc preferred contractor status for defence procurement projects.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.767.4" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="767"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-01.htm#40519-01_spmin2">
@@ -135,7 +154,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.768.1" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="768"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-02.htm#40519-02_spnew0">
 	<p pid="a.768.1/1">My Lords, the noble Lord is certainly right in one thing: that is certainly wide of the Question that I was asked. I think he knows that I cannot answer those questions today, even if they were absolutely on the ball, which, for once, they are not.</p>
-	<p pid="a.768.1/2">As far as CVF is concerned, the noble Lord knows that my right honourable friend the Secretary of State announced on <phrase class="date" code="2006-01-30">30 January</phrase> that we believe that the best means of delivery in the carrier programme is by an alliance approach involving BAe Systems, Thales UK and the Ministry of Defence. As regards shipyards, at this stage that is a matter for the private companies involved.</p>
+	<p pid="a.768.1/2">As far as CVF is concerned, the noble Lord knows that my right honourable friend the Secretary of State announced on <phrase class="date" code="2004-01-30">30 January</phrase> that we believe that the best means of delivery in the carrier programme is by an alliance approach involving BAe Systems, Thales UK and the Ministry of Defence. As regards shipyards, at this stage that is a matter for the private companies involved.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.768.2" speakerid="uk.org.publicwhip/lord/100102" speakername="Lord Campbell of Alloway" colon=":" colnum="768"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-02.htm#40519-02_spnew1">
@@ -185,7 +204,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.770.1" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon="" colnum="770"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-02.htm#40519-02_spopq0">
 	<p pid="a.770.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.770.1/2" class="indent">Whether the degree of access for patients to National Health Service dental services is satisfactory.</p>
+	<p pid="a.770.1/2" class="indent" pwmotiontext="asked">Whether the degree of access for patients to National Health Service dental services is satisfactory.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.770.2" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="770"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-02.htm#40519-02_spmin1">
@@ -262,11 +281,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.772.7" speakerid="uk.org.publicwhip/lord/100564" speakername="The Lord Bishop of Salisbury" colon="" colnum="772"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-03.htm#40519-03_spopq0">
 	<p pid="a.772.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.772.7/2" class="indent">Whether they plan to introduce further legislation in this Parliament to control the export of arms.</p>
+	<p pid="a.772.7/2" class="indent" pwmotiontext="asked">Whether they plan to introduce further legislation in this Parliament to control the export of arms.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.772.8" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="772"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-03.htm#40519-03_spmin0">
-	<p pid="a.772.8/1">My Lords, no further legislation is currently planned. The three orders that implemented the Export Control Act 2002 came into force only this year, on <phrase class="date" code="2006-03-03">3 March</phrase> and <phrase class="date" code="">1 May</phrase>. The Export Control Act 2002 was the most comprehensive review of strategic export controls for more than 60 years. It introduced significant controls into new areas such as the intangible transfer of technology and the trafficking and brokering of overseas military equipment. The Government are committed to review their operation after three years and will bring forward any necessary changes at that point.</p>
+	<p pid="a.772.8/1">My Lords, no further legislation is currently planned. The three orders that implemented the Export Control Act 2002 came into force only this year, on <phrase class="date" code="2004-03-03">3 March</phrase> and <phrase class="date" code="2004-05-01">1 May</phrase>. The Export Control Act 2002 was the most comprehensive review of strategic export controls for more than 60 years. It introduced significant controls into new areas such as the intangible transfer of technology and the trafficking and brokering of overseas military equipment. The Government are committed to review their operation after three years and will bring forward any necessary changes at that point.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.773.0" speakerid="uk.org.publicwhip/lord/100564" speakername="The Lord Bishop of Salisbury" colon=":" colnum="773"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-03.htm#40519-03_spmin1">
@@ -323,7 +342,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.775.1" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon="" colnum="775"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-04.htm#40519-04_spopq0">
 	<p pid="a.775.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.775.1/2" class="indent">What information they have about the progress of negotiations on a lasting peace settlement in Somalia.</p>
+	<p pid="a.775.1/2" class="indent" pwmotiontext="asked">What information they have about the progress of negotiations on a lasting peace settlement in Somalia.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.775.2" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="775"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-04.htm#40519-04_spnew3">
@@ -502,7 +521,7 @@
 	<p pid="a.788.0/5">My noble friend Lord Monro raised an important point, when he referred to &quot;volunteers&quot;, and what I call &quot;people to supervise&quot;. In the late 1970s, the noble Lord, Lord Monro, and I visited the Sobell Sports Centre in Islington, where we met that wonderful gold medallist David Hemery, who was more or less running it. Within 10 years&mdash;even within five years&mdash;the centre had difficulties. They resulted not from the investment and arrangements made but because not enough men and women gave their time to assist all the participants.</p>
 	<p pid="a.788.0/6">Sport&mdash;even the Olympic Games&mdash;is not necessarily about age. Indeed, we can think of elderly people who take part in sport. Your Lordships, even the noble Lord, Lord St John of Bletso, may know that the late Lord Orr-Ewing participated in a complicated skiing slalom at the age of 80. And at the age of 62, Lord Digby was the best British skier two years running. So even at that restricted level, age is no bar to participation.</p>
 	<p pid="a.788.0/7">My noble friend Lord Monro spoke of achieving the impossible. I thought that, too. Although in 1959 I broke my leg in three places and spent two years in plaster, even I manage to participate in sport. Indeed, in January this year I broke my shoulder for the second time and it is still on the mend. That shows that participation can be dangerous.</p>
-	<p pid="a.788.0/8">Having put my name down to speak in the debate, I went to my rack and found a note from the Minister's colleague, Mr Caborn. It was an invitation to join the Westminster Mile on <phrase class="date" code="2004-06-16">16 June 2004</phrase>. There are paragraphs inviting us to take part in &quot;movement&quot; through St James's Park. The third paragraph expresses the hope that Roger Bannister will be there to start it off, together with persons such as Steve Cram, Tessa Sanderson, and a gentleman called Gordon Ramsay&mdash;I thought that he put weight on you rather than took it off&mdash;who will be there to cheer people on. I have a message for the noble Lord, Lord McIntosh of Haringey: &quot;You, too, Minister&quot;. I am looking forward to hearing him say that he will be skipping on <phrase class="date" code="">16 June</phrase>.</p>
+	<p pid="a.788.0/8">Having put my name down to speak in the debate, I went to my rack and found a note from the Minister's colleague, Mr Caborn. It was an invitation to join the Westminster Mile on <phrase class="date" code="2004-06-16">16 June 2004</phrase>. There are paragraphs inviting us to take part in &quot;movement&quot; through St James's Park. The third paragraph expresses the hope that Roger Bannister will be there to start it off, together with persons such as Steve Cram, Tessa Sanderson, and a gentleman called Gordon Ramsay&mdash;I thought that he put weight on you rather than took it off&mdash;who will be there to cheer people on. I have a message for the noble Lord, Lord McIntosh of Haringey: &quot;You, too, Minister&quot;. I am looking forward to hearing him say that he will be skipping on <phrase class="date" code="2004-06-16">16 June</phrase>.</p>
 	<p pid="a.788.0/9">Sport exists not only for participation&mdash;not just at Olympic standard&mdash;but also for watching. It is of great importance. For my noble friends Lord Moynihan and Lord Glentoran, for all sportsmen, and for me, it is for making friends. Nothing has done more for me than sport. I was lucky when crossing Abingdon Green and I heard a television cameraman speaking French. I replied to him in French. I have since struck up a fairly effective working relationship with the French television channel, Antenne 2. In 1996, as a reward for various things I had done, they took me in their car from Dover to Brighton to watch the Tour de France. I read <i>L'Equipe</i>, the daily sporting paper, which does an enormous amount for my French. Your Lordships will know that in the Salisbury Room there are various other foreign newspapers. In them, one can read about Swiss skiing, for instance. There is <i>Gazzetta dello Sport </i>on cycling<i>, </i>which I can understand. And M. Oliver, who used to feed us so well, will be taking no calls as he watches the Giro d'Italia cycle race every day in May.</p>
 	<p pid="a.788.0/10">Sport can build great relationships. It has done it for me and it does it for countless other young men and women. It is an enormous benefit to us all. You can make lasting friends, whatever standard you are. Indeed, you have only to see the conclusion of the Olympic or Commonwealth Games, or others, to see athletes from all countries mixing together. There is no problem. Occasionally, as in 1972 in Munich, a hideous shadow passes over the games, but I believe those Olympic Games were an enormous success.</p>
 	<p pid="a.788.0/11">I take little part in sport, apart from a little in Scotland. Indeed, last Saturday, for the 21st year running, I had the good fortune to sponsor my local football team, Forfar Athletic,</p>
@@ -555,8 +574,8 @@
 	<p pid="a.795.0/3">Early in his speech my noble friend Lord Monro said that the bid was something that we all welcome. I have to confess that in a low voice I said, &quot;Oh no we don't&quot;, to which one of my noble friends next to me said, &quot;You're quite right&quot;. Over the months when I have expressed any reservations about the Olympic Games coming to London in 2012 I have been astonished by the number of people who have said, &quot;I am glad that someone is saying that&quot;.</p>
 	<p pid="a.795.0/4">If we are to make the bid, so be it. However, I believe that it is necessary to point out early on that nowadays to have the Olympic Games almost anywhere is a sure recipe for bombs, bullets, bloodshed, boycott, blackmail and bogus budgets. It amounts to that. But if it is what everyone wants, so be it.</p>
 	<p pid="a.795.0/5">Reading today's newspapers I see that it is true that the IOC is not especially enthusiastic about London. It demonstrated that from its own survey: only 62 per cent of London's citizens expressed themselves in favour of London being the venue in 2012. My guess is that that figure will be dramatically reduced when the penny drops and the citizens of London realise that they will have to find &pound;652 million of the projected budget of &pound;2.375 billion of which the London Development Agency will find another &pound;250 million with the balance made up by &pound;1.5 billion from the National Lottery, a good deal of which will be raised by the poor old citizens of London once more.</p>
-	<p pid="a.795.0/6">I have asked a raft of questions over the past few weeks on this topic. The Government tell us that there are no special plans for Londoners to have preferential rights to tickets, having paid the bulk of the money to have the events in London. That seems a little unreasonable. The situation for Londoners is all pay and no gain. Many people have suggested that the budget of &pound;2.375 billion is very likely to be doubled. I am interested to know what would happen if that budget were doubled and another &pound;2.375 billion had to be found. In a Written Answer to me on <phrase class="date" code="2006-04-05">5 April</phrase>, the noble Lord, Lord McIntosh of Haringey, said,</p>
-	<p pid="a.795.0/7" class="indent">&quot;the Government, as stated in the memorandum of understanding and reiterated in a departmental minute presented to Parliament on <phrase class="date" code="2003-12-02">2 December 2003</phrase>, have given a commitment to be the ultimate guarantor for the Games. On current contingency plans, the Government would expect to discharge this responsibility, should it arise, in a sharing arrangement to be agreed as appropriate with the Mayor of London and for their part seeking additional National Lottery funding&quot;.&mdash;[<i>Official Report</i>, 5/4/04; col. <i>WA 215</i>.]</p>
+	<p pid="a.795.0/6">I have asked a raft of questions over the past few weeks on this topic. The Government tell us that there are no special plans for Londoners to have preferential rights to tickets, having paid the bulk of the money to have the events in London. That seems a little unreasonable. The situation for Londoners is all pay and no gain. Many people have suggested that the budget of &pound;2.375 billion is very likely to be doubled. I am interested to know what would happen if that budget were doubled and another &pound;2.375 billion had to be found. In a Written Answer to me on <phrase class="date" code="2004-04-05">5 April</phrase>, the noble Lord, Lord McIntosh of Haringey, said,</p>
+	<p pid="a.795.0/7" class="indent">&quot;the Government, as stated in the memorandum of understanding and reiterated in a departmental minute presented to Parliament on <phrase class="date" code="2003-12-02">2 December 2003</phrase>, have given a commitment to be the ultimate guarantor for the Games. On current contingency plans, the Government would expect to discharge this responsibility, should it arise, in a sharing arrangement to be agreed as appropriate with the Mayor of London and for their part seeking additional National Lottery funding&quot;.&mdash;[<phrase class="offrep" id="wrans/2004-04-05.215"><i>Official Report</i>, 5/4/04; col. WA 215</phrase>.]</p>
 	<p pid="a.795.0/8">So if the budget doubles, which a good many people have been saying, and the noble Lord, Lord Moynihan, suggested in Committee on the Lottery Bill, as I recall, then the poor old citizens of London will again have to put their hands in their pockets in order to honour what amounts to a blank cheque.</p>
 	<p pid="a.795.0/9">The Government are supporting the bid for 2012, but they are not proposing to put their hand in their own pocket in order to finance it. I do not believe that that is fair to London ratepayers. It is hardly surprising that there is little enthusiasm, or a good deal of apathy, referred to by noble Lords of whom I spoke earlier, among the people of London. For many years the citizens of London will be charged an extra &pound;13 to &pound;40 per year on their council tax. If there is a 100 per cent overrun those figures will increase to &pound;26 to &pound;80 per year for many years for Londoners.</p>
 	<p pid="a.795.0/10">The truth of the matter is that only a few of the citizens of London will see the events. If they bother to go, some will be able to see something like the marathon, but it will be a fairly expensive outing for those people who merely go to watch that and do not buy tickets to attend the various events. For the huge majority of Londoners who will watch most, parts of, or none of the events on television, it will not much matter whether the Games are in London, Paris, Madrid, New York or Moscow.</p>
@@ -598,7 +617,7 @@
 	<p pid="a.800.0/12">Critically, the Government, by the actions that I have outlined, must ensure that London and Londoners have ownership of that bid, particularly after the IOC found only 67 per cent support for the bid among London residents. It is essential that all Londoners feel the benefit of hosting the Games.</p>
 	<p pid="a.800.0/13">To date, the Government and the 2012 Committee have focused on touring the regions to outline the benefits to those regions. Indeed, such benefits are manifold. But it is Londoners who are being asked by Government to foot the bill, not only for the sites in London, but also for the rowing and flat-water canoeing events at Dorney Lake in Eton; for the shooting events at Bisley; for mountain biking at Swinley Forest; for sailing in Weymouth; and for the use of football venues from Glasgow to Cardiff to Newcastle to Belfast, for which the local residents will pay nothing.</p>
 	<p pid="a.800.0/14">If Londoners are to be asked to pay for all of that at an annual cost of up to &pound;40 a head for the foreseeable future, the Government must demonstrate tangible benefits for them. That is all the more important when, as has been pointed out, the Treasury has designed a formula that demands additional precepts on Londoners for every pound overspend. There has never been an Olympic Games in the modern era which has not been overspent.</p>
-	<p pid="a.800.0/15">When that was discussed in detail at a meeting with the Minister for Sport on <phrase class="date" code="">5 May</phrase>, he told us that the rate precept formula for Londoners was a &quot;discipline&quot; on Londoners. The idea that the Government need to discipline Londoners is unacceptable. Together&mdash;as the noble Lord, Lord St John of Bletso, stated&mdash;we need to win the hearts and minds of Londoners, not to discipline them through open-ended precepts when the Treasury is paying nothing towards the cost of staging the Games.</p>
+	<p pid="a.800.0/15">When that was discussed in detail at a meeting with the Minister for Sport on <phrase class="date" code="2004-05-05">5 May</phrase>, he told us that the rate precept formula for Londoners was a &quot;discipline&quot; on Londoners. The idea that the Government need to discipline Londoners is unacceptable. Together&mdash;as the noble Lord, Lord St John of Bletso, stated&mdash;we need to win the hearts and minds of Londoners, not to discipline them through open-ended precepts when the Treasury is paying nothing towards the cost of staging the Games.</p>
 	<p pid="a.800.0/16">I appreciate that the current Minister for Sport is from Sheffield. Surely he has learnt from the experience of the Sheffield student games in 1991, which is still costing the local taxpayers more than &pound;20 million a year. When asked about this aspect of the Olympic bid, the leader of the Conservative Party, Michael Howard, said:</p>
 	<p pid="a.800.0/17" class="indent">&quot;To describe Gordon Brown as a little half hearted is possibly a compliment&quot;.</p>
 	<p pid="a.800.0/18">The current position of the Government is clear. In the event of any overrun in costs, the extra money will be raised through a split between the lottery, the GLA and the London council tax payer. As my noble friend Lord Jopling said, there will not be just one hit on the lottery and Londoners, but a potentially unlimited number of hits. The funding formula for the bid must be reviewed. We stand ready to sit down with the Government to find an equitable solution.</p>
@@ -610,7 +629,7 @@
 	<p pid="a.800.0/24">Even when the Government spend money, it is not all plain sailing. The Minister for Sport admitted that in another place when he said:</p>
 	<p pid="a.800.0/25" class="indent">&quot;We have spent just over &pound;1.5 billion during the period of the lottery&quot;&mdash;</p>
 	<p pid="a.800.0/26">I repeat, &pound;1.5 billion during the period of the lottery&mdash;</p>
-	<p pid="a.800.0/27" class="indent">&quot;and have increased participation by just 0.3 per cent. One has to start looking at where things have gone wrong&quot;.&mdash;[<i>Official Report</i>, Commons, 13/4/04; col. 247WH.]</p>
+	<p pid="a.800.0/27" class="indent">&quot;and have increased participation by just 0.3 per cent. One has to start looking at where things have gone wrong&quot;.&mdash;[<phrase class="offrep" id="westminhall/2004-04-13.247"><i>Official Report</i>, Commons, 13/4/04; col. 247WH</phrase>.]</p>
 	<p pid="a.800.0/28">He is absolutely right.</p>
 	<p pid="a.800.0/29">As we have heard already, the case for restructuring the delivery mechanism to our governing bodies and to the sportsmen and women that they represent is urgent. A national system is needed to identify the sporting talent in all our children and a support structure to nurture and develop that talent. We strive for that goal in academia. We have a duty to strive for that goal in sport too.</p>
 	<p pid="a.800.0/30">In conclusion, there remains much work to be done in bringing the Olympic and Paralympic Games to London in 2012. The fundamentals are in place. The bid team is doing a great job. The House continues to encourage and support the bid. However, it is right that today we take notice&mdash;not of Conservative Party views or politicians' views inside or outside this House&mdash;of the IOC report. To come eighth out of nine in the criteria of government support, legal issues and public opinion is unacceptable. Now is the time for each and every Minister, from the Minister for Sport up to the Prime Minister, to face up to that half-time rap over the knuckles and to go back out and win the bid for London.</p>
@@ -619,7 +638,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.804.0" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="804"  time="016:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-10.htm#40519-10_spmin0">
 	<p pid="a.804.0/1">My Lords, I join with all other noble Lords who have expressed their gratitude to the noble Lord, Lord Monro, for finding this opportunity to debate sporting issues. I congratulate him, as others have, on his excellent timing, in that he added the London Olympic bid to the subject for debate precisely a day after the announcement that we had been successful in what has been described as the &quot;first hurdle&quot;.</p>
-	<p pid="a.804.0/2">I am grateful for the expressions of support from everybody&mdash;except of course the noble Lord, Lord Jopling&mdash; for our bid for the Olympic Games. I am grateful for a very large amount of what has been said in this debate, because there has been a degree of unanimity and common purpose, which is immensely encouraging. The only issue&mdash;other than the views of the noble Lord, Lord Jopling, of course&mdash;about which I am a little nervous is the challenge set for me by the noble Lord, Lord Lyell, to turn up on <phrase class="date" code="">16 June</phrase> and &quot;skip&quot; a mile from No. 10 Downing Street. Since he will know that I am already under pressure from Richard Caborn, I shall have to think of some very good excuses to be somewhere else on <phrase class="date" code="">16 June</phrase> if I am going to maintain my reputation in this House as a sporting atheist.</p>
+	<p pid="a.804.0/2">I am grateful for the expressions of support from everybody&mdash;except of course the noble Lord, Lord Jopling&mdash; for our bid for the Olympic Games. I am grateful for a very large amount of what has been said in this debate, because there has been a degree of unanimity and common purpose, which is immensely encouraging. The only issue&mdash;other than the views of the noble Lord, Lord Jopling, of course&mdash;about which I am a little nervous is the challenge set for me by the noble Lord, Lord Lyell, to turn up on <phrase class="date" code="2004-06-16">16 June</phrase> and &quot;skip&quot; a mile from No. 10 Downing Street. Since he will know that I am already under pressure from Richard Caborn, I shall have to think of some very good excuses to be somewhere else on <phrase class="date" code="2004-06-16">16 June</phrase> if I am going to maintain my reputation in this House as a sporting atheist.</p>
 	<p pid="a.804.0/3">However, that does not mean that there are not serious issues of public policy to be debated. Those issues have been debated with an excellent degree of knowledge, understanding and good humour. When the noble Lord, Lord Moynihan, disparaged the Government's commitment to sport and to the Olympic Games in his closing remarks, he should have recognised that although Londoners are indeed significantly sceptical, as they are on a large number of issues, the Olympic committee concluded that all of the five candidate cities are either 0.8 or 0.9 in government support. There is no significant difference between us. There is indeed a difference in public support in London. The noble Lords, Lord Glentoran and Lord St John, among others, were right to say that one of the objectives of the 2012 committee in the coming months and years&mdash;particularly in the coming months&mdash;will be to enthuse Londoners and to rouse them from what I would call their scepticism rather than apathy. Even so, it is fair to remark that Londoners' support for the Olympic Games is 67 to 13. That is a five-to-one ratio in favour. There are not many public policy objectives that enjoy that degree of support in this country at this time.</p>
 	<p pid="a.804.0/4">I shall of course say something about the more general sporting issues that have been debated, but I sense that the House really wants to speak more about the Olympic Games than about the other sporting issues, which have been debated before and can be debated again. At the heart of our Olympic bid is the Government's belief that sport is good for communities, good for individuals and good for the country. It is a good health policy; it is a good education policy; and it is a good anti-crime policy. The Government have invested more than &pound;3 billion of government and lottery money in sport since 1997. The noble Lord, Lord Addington, doubted whether there was a vision or strategy. We have a clear strategy for achieving a fitter nation and world-class success. I could send him a pile of documents in evidence, but I can do better than that. I can indicate the effect that those documents have had.</p>
 </speech>
@@ -962,7 +981,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.845.1" speakerid="uk.org.publicwhip/lord/100305" speakername="Earl Howe" colon="" colnum="845"  time="018:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-19.htm#40519-19_spnew1">
-	<p pid="a.845.1/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2006-04-01">1 April</phrase>, be annulled (S.I. 2004/1031) [<i>4th Report from the Merits Committee</i>].</p>
+	<p pid="a.845.1/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-04-01">1 April</phrase>, be annulled (S.I. 2004/1031) [<i>4th Report from the Merits Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.845.2" speakerid="uk.org.publicwhip/lord/100305" speakername="Earl Howe" colon=":" colnum="845"  time="018:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-19.htm#40519-19_spnew1">
@@ -995,7 +1014,7 @@
 	<p pid="a.845.2/27">It is an approach that has the potential not only to curtail and destabilise clinical trial work in this country, but on top of that to place patients at unnecessary risk. But when RECs have tried to put this point of view to COREC, their letters have either not been answered or been dismissed out of hand. That cannot be the way to carry on.</p>
 	<p pid="a.845.2/28">I view these regulations with deep misgivings. In the words of one ethics committee that has written to me, they represent hasty, poorly consulted and poorly drafted legislation. By and large this is not the fault of the European directive. The fault lies at home.</p>
 	<p pid="a.845.2/29">If they act quickly, Ministers can still put things right. But time is now of the essence. I beg to move.</p>
-	<p pid="a.845.2/30">Moved, That an Humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2006-04-01">1 April</phrase>, be annulled (S.I. 2004/1031). [<i>4th Report from the Merits Committee</i>]&mdash;(<i>Earl Howe</i>.)</p>
+	<p pid="a.845.2/30">Moved, That an Humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-04-01">1 April</phrase>, be annulled (S.I. 2004/1031). [<i>4th Report from the Merits Committee</i>]&mdash;(<i>Earl Howe</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.849.0" speakerid="uk.org.publicwhip/lord/100130" speakername="Lord Clement-Jones" colon=":" colnum="849"  time="018:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-20.htm#40519-20_spnew0">
@@ -1081,8 +1100,8 @@
 	<p pid="a.855.0/13">I remember, too, that they said &quot;Why do you worry the House in this way? Of course abortion will not be carried out for minor medical deficiencies in the child.&quot; Remember the case of the child recently aborted because he had a cleft palate? That is not the first case. Members opposite may frown, but I am only telling the truth. These things were told to us when we were debating that Bill and, because of the promises made, the Bill was passed. Every single promise has been broken. This experience teaches me that, however well intentioned, such promises, I am afraid, are made to be broken.</p>
 	<p pid="a.855.0/14">We should not be muddled about what we mean by &quot;research&quot;. If an Alzheimer's sufferer has been given all available medicines for that condition and is still no better, and then another medicine comes on to the market, it cannot be called research to offer that medicine to him or her, suggesting that the new tablet might help. That is not research. That is trying a new tablet, and maybe it will help. But it was research when a group went to Porton Down, having volunteered to be tested in an endeavour to find a cure for the common cold, and were subsequently given sarin.</p>
 	<p pid="a.855.0/15">It is incorrect to claim that scientists will be able to do research only if we permit these changes. Only last week, doctors at the Brain Research Institute at the University of California announced that they had made a significant breakthrough in the treatment of Alzheimer's, achieved without any of the changes now before us. It was an extremely important and interesting development of the knowledge of what happens to the brain in Alzheimer's, so it is not the case that only these researches are going to help.</p>
-	<p pid="a.855.0/16">I invite the Minister to alter slightly the reply he gave to me on <phrase class="date" code="">5 May</phrase>. He said:</p>
-	<p pid="a.855.0/17" class="indent">&quot;Those conducting trials must obtain informed consent from all participants&quot;.&mdash;[<i>Official Report</i>, 5/5/04; col. 1097]</p>
+	<p pid="a.855.0/16">I invite the Minister to alter slightly the reply he gave to me on <phrase class="date" code="2004-05-05">5 May</phrase>. He said:</p>
+	<p pid="a.855.0/17" class="indent">&quot;Those conducting trials must obtain informed consent from all participants&quot;.&mdash;[<phrase class="offrep" id="lords/2004-05-05.1097"><i>Official Report</i>, 5/5/04; col. 1097</phrase>]</p>
 	<p pid="a.855.0/18">Would that it were so. If this were the case, your Lordships would be blessed by my silence. It is the crux of my case that the statutory instrument says exactly the opposite.</p>
 	<p pid="a.855.0/19">Finally, I found it rather sneaky to introduce this statutory instrument&mdash;initially, as my noble friend Earl Howe has said, clearly part of the draft Mental Incapacity Bill&mdash;on the very day the House rose for the Easter Recess. If the Government hoped that that subterfuge would mean it would not be noticed in the plethora of bonnets, eggs and 10 days off, they were wrong. But it so easily could have slipped through because of the way it was introduced. I was informed in an Answer to a Written Question that this happened because there was a directive from our masters, the EU. Well, in my eyes, that does not improve it.</p>
 </speech>
@@ -1158,8 +1177,8 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-05-19a.865.0" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon=":" colnum="865"  time="018:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040519/text/40519-24.htm#40519-24_spnew0">
-	<p pid="a.865.0/1">My Lords, perhaps I may intervene before the noble Lord sits down. To my certain knowledge, he has never been impolite in any way and I know that he would never wish to mislead the House. Can I not ask him again to reconsider his Answer to me on <phrase class="date" code="">5 May</phrase>? He said:</p>
-	<p pid="a.865.0/2" class="indent">&quot;Those conducting trials must obtain informed consent from all participants. Patients are provided with detailed information on the nature of the trial and have the right to withdraw at any time&quot;.&mdash;[<i>Official Report</i>, 5/5/04; col. 1097.]</p>
+	<p pid="a.865.0/1">My Lords, perhaps I may intervene before the noble Lord sits down. To my certain knowledge, he has never been impolite in any way and I know that he would never wish to mislead the House. Can I not ask him again to reconsider his Answer to me on <phrase class="date" code="2004-05-05">5 May</phrase>? He said:</p>
+	<p pid="a.865.0/2" class="indent">&quot;Those conducting trials must obtain informed consent from all participants. Patients are provided with detailed information on the nature of the trial and have the right to withdraw at any time&quot;.&mdash;[<phrase class="offrep" id="lords/2004-05-05.1097"><i>Official Report</i>, 5/5/04; col. 1097</phrase>.]</p>
 	<p pid="a.865.0/3">Is that not true only of some of the people who undergo those clinical trials? Is it not the case&mdash;we have seen it again and again throughout our discussion of the S.I.&mdash;that some people will undergo clinical trials who have not given permission? I am sure that the noble Lord would wish to make that clear.</p>
 </speech>
 

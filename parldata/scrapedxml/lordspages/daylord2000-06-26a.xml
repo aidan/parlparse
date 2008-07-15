@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -57,7 +78,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.619.3" speakerid="uk.org.publicwhip/lord/100336" speakername="Lord Jenkins of Putney" colon="" colnum="619"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-01.htm#00626-01_spopq0">
 	<p pid="a.619.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.619.3/2" class="indent">What are the circumstances which prevent them from adopting and advocating an international convention outlawing nuclear weapons, as is the case with chemical and biological weapons.</p>
+	<p pid="a.619.3/2" class="indent" pwmotiontext="asked">What are the circumstances which prevent them from adopting and advocating an international convention outlawing nuclear weapons, as is the case with chemical and biological weapons.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.619.4" speakerid="uk.org.publicwhip/lord/100519" speakername="Baroness Ramsay of Cartvale" colon=":" colnum="619"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-01.htm#00626-01_spnew0">
@@ -126,8 +147,8 @@
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.622.1" speakerid="uk.org.publicwhip/lord/100360" speakername="Lord Lamont of Lerwick" colon="" colnum="622"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-01.htm#00626-01_spopq1">
 	<p pid="a.622.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.622.1/2" class="indent">What action they intend to take following the ruling of Mr Justice Kerr on 2nd May in relation to the declaration which Queen's Counsel in Northern Ireland have since 1995 been required to make that they will,</p>
-	<p pid="a.622.1/3" class="indent">&quot;well and truly serve Queen Elizabeth II&quot;.</p>
+	<p pid="a.622.1/2" class="indent" pwmotiontext="asked">What action they intend to take following the ruling of Mr Justice Kerr on 2nd May in relation to the declaration which Queen's Counsel in Northern Ireland have since 1995 been required to make that they will,</p>
+	<p pid="a.622.1/3" class="indent" pwmotiontext="asked">&quot;well and truly serve Queen Elizabeth II&quot;.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.622.2" speakerid="uk.org.publicwhip/lord/100325" speakername="Lord Irvine of Lairg" colon=":" colnum="622"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-01.htm#00626-01_spmin1">
@@ -185,7 +206,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.624.1" speakerid="uk.org.publicwhip/lord/100520" speakername="Lord Randall of St Budeaux" colon="" colnum="624"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-02.htm#00626-02_spopq0">
 	<p pid="a.624.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.624.1/2" class="indent">What plans they have to reduce graffiti in the United Kingdom significantly.</p>
+	<p pid="a.624.1/2" class="indent" pwmotiontext="asked">What plans they have to reduce graffiti in the United Kingdom significantly.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.624.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="624"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-02.htm#00626-02_spmin4">
@@ -256,7 +277,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.626.4" speakerid="uk.org.publicwhip/lord/100751" speakername="Lord Morris of Castle Morris" colon="" colnum="626"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-03.htm#00626-03_spopq0">
 	<p pid="a.626.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.626.4/2" class="indent">When they propose to implement the 1991 National Parks Review Panel and Countryside Agency recommendation that national parks funding should increase by &pound;10 million.</p>
+	<p pid="a.626.4/2" class="indent" pwmotiontext="asked">When they propose to implement the 1991 National Parks Review Panel and Countryside Agency recommendation that national parks funding should increase by &pound;10 million.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-06-26a.626.5" speakerid="uk.org.publicwhip/lord/100206" speakername="Baroness Farrington of Ribbleton" colon=":" colnum="626"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000626/text/00626-03.htm#00626-03_spnew2">

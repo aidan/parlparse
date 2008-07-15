@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -52,7 +68,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.1.1" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-01.htm#50228-01_spmin0">
-	<p pid="b.1.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I am to undertake a ministerial visit to Bristol on <phrase class="date" code="2006-03-01">Tuesday 1 March</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
+	<p pid="b.1.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I am to undertake a ministerial visit to Bristol on <phrase class="date" code="2005-03-01">Tuesday 1 March</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2005-02-28b.1.2" nospeaker="true" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-01.htm#50228-01_head1">
@@ -61,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.1.3" speakerid="uk.org.publicwhip/lord/100329" speakername="Lord Janner of Braunstone" colon="" colnum="1"  time="014:35:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-01.htm#50228-01_spopq0">
 	<p pid="b.1.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1.3/2" class="indent">In the last year for which figures are available, how many and what percentage of people killed or injured in road traffic accidents involving passenger vehicles in the United Kingdom were not wearing seat belts.</p>
+	<p pid="b.1.3/2" class="indent" pwmotiontext="asked">In the last year for which figures are available, how many and what percentage of people killed or injured in road traffic accidents involving passenger vehicles in the United Kingdom were not wearing seat belts.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.1.4" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="1"  time="014:35:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-01.htm#50228-01_spnew0">
@@ -201,7 +217,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.7.1" speakerid="uk.org.publicwhip/lord/100313" speakername="Lord Hunt of Chesterton" colon="" colnum="7"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-02.htm#50228-02_spopq0">
 	<p pid="b.7.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.7.1/2" class="indent">What practical conclusions they have drawn from the climate change conferences in Exeter and in Houston, Texas, and how these conclusions will influence their climate change policy and G8 diplomacy in 2005.</p>
+	<p pid="b.7.1/2" class="indent" pwmotiontext="asked">What practical conclusions they have drawn from the climate change conferences in Exeter and in Houston, Texas, and how these conclusions will influence their climate change policy and G8 diplomacy in 2005.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.7.2" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="7"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-02.htm#50228-02_spnew12">
@@ -262,11 +278,11 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.9.3" speakerid="uk.org.publicwhip/lord/100334" speakername="Lord Jenkin of Roding" colon="" colnum="9"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-03.htm#50228-03_spopq0">
 	<p pid="b.9.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.9.3/2" class="indent">When they will publish their response to the report of the House of Lords Select Committee on Science and Technology on <i>Radioactive Waste Management</i> (5th Report, Session 2003&ndash;04, HL Paper 200).</p>
+	<p pid="b.9.3/2" class="indent" pwmotiontext="asked">When they will publish their response to the report of the House of Lords Select Committee on Science and Technology on <i>Radioactive Waste Management</i> (5th Report, Session 2003&ndash;04, HL Paper 200).</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.9.4" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="9"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-03.htm#50228-03_spnew7">
-	<p pid="b.9.4/1">My Lords, the Government's response to the report of the House of Lords Select Committee on Science and Technology on <i>Radioactive Waste Management</i> was sent to the committee on <phrase class="date" code="2006-02-23">23 February</phrase>. The response addresses specifically each of the Select Committee's conclusions, and I hope is in a manner that will be helpful and informative.</p>
+	<p pid="b.9.4/1">My Lords, the Government's response to the report of the House of Lords Select Committee on Science and Technology on <i>Radioactive Waste Management</i> was sent to the committee on <phrase class="date" code="2005-02-23">23 February</phrase>. The response addresses specifically each of the Select Committee's conclusions, and I hope is in a manner that will be helpful and informative.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.9.5" speakerid="uk.org.publicwhip/lord/100334" speakername="Lord Jenkin of Roding" colon=":" colnum="9"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-03.htm#50228-03_spnew8">
@@ -1277,7 +1293,7 @@
 	<p pid="b.38.3/3">Those of your Lordships who read the article in Friday's <i>Times</i> and the first leader in Saturday's edition will be aware of the issue between him and the Government: should the Executive have the power, after a public inquiry has commenced, to exclude the public and/or evidence before such an inquiry?</p>
 	<p pid="b.38.3/4">As a sitting Law Lord&mdash;a Lord of Appeal in Ordinary&mdash;the noble and learned Lord, Lord Saville, is party to the current decision of the Law Lords not to take part in the legislative process. I, with little other than alphabetical merit in this matter, have been asked to be the fall guy&mdash;hence my appearance before your Lordships.</p>
 	<p pid="b.38.3/5">In a sentence, the point of the noble and learned Lord, Lord Saville, is that the power given to the Minister under Clause 19 will fatally compromise the independence of the inquiry and damage public confidence in the independence of that inquiry and in its decision. Extensive correspondence was initiated by the noble and learned Lord, Lord Saville, between him and the noble Baroness, Lady Ashton, which commenced last January and ended today. Last Friday, I caused copies of that correspondence, with the exception of today's letter, which has been dealt with by the noble Baroness, Lady Ashton, to be placed in the Library.</p>
-	<p pid="b.38.3/6">I can sum up the rival contentions in that correspondence briefly. I begin with the letter of the noble and learned Lord, Lord Saville, of <phrase class="date" code="2006-01-26">26 January</phrase>. He says:</p>
+	<p pid="b.38.3/6">I can sum up the rival contentions in that correspondence briefly. I begin with the letter of the noble and learned Lord, Lord Saville, of <phrase class="date" code="2005-01-26">26 January</phrase>. He says:</p>
 	<p pid="b.38.3/7" class="indent">&quot;There is . . . one matter that seems to me to be of such importance that I should write to you. This concerns the present provisions of Clause 17&quot;&mdash;</p>
 	<p pid="b.38.3/8">which is now Clause 19&mdash;</p>
 	<p pid="b.38.3/9" class="indent">&quot;of the Bill, giving the relevant Minister the power to impose restrictions at any time before the end of the inquiry on attendance at the inquiry, or on the disclosure or publication of any evidence or documents given to the inquiry&quot;.</p>
@@ -1294,7 +1310,7 @@
 	<p pid="b.38.3/20">The Lord Chief Justice wrote to the noble Baroness in these terms:</p>
 	<p pid="b.38.3/21" class="indent">&quot;I thought it would be of assistance to you to know that I support the views that he [the noble and learned Lord, Lord Saville] expresses. As I understand it those views do not mean that, in appropriate circumstances, the Inquiry would not take steps to ensure the protection of the public interest.</p>
 	<p pid="b.38.3/22" class="indent">&quot;If there are likely to be problems involving disclosure, the answer is to appoint Inquiry members who have sufficient experience and ability to deal with those problems&quot;.</p>
-	<p pid="b.38.3/23">The Minister replied on <phrase class="date" code="2006-02-01">1 February</phrase> and I can briefly take her response. She said that it was quite wrong to think that the actual work of the inquiry would be restricted at all and that the independence and impartiality of its report would not be compromised in anyway.</p>
+	<p pid="b.38.3/23">The Minister replied on <phrase class="date" code="2005-02-01">1 February</phrase> and I can briefly take her response. She said that it was quite wrong to think that the actual work of the inquiry would be restricted at all and that the independence and impartiality of its report would not be compromised in anyway.</p>
 	<p pid="b.38.3/24">The noble Baroness said that Ministers being able to restrict public access to an inquiry was not a new idea and that it had occurred in a number of recent inquiries, which she itemised. She pointed out that for certain reasons Ministers decided that recent health inquiries should be held on a partially private basis.</p>
 	<p pid="b.38.3/25">The Minister stated:</p>
 	<p pid="b.38.3/26" class="indent">&quot;The purpose of the restriction notice procedure set out in clauses 17 and 18 [now Clauses 19 and 20] . . . is to provide a menu of options, starting from fully public which is recognised as the aim to be achieved where possible, and allowing suitable degrees of privacy to be specified for any part of the proceedings&quot;.</p>
@@ -1307,7 +1323,7 @@
 	<p pid="b.38.3/33">She could see the point that while that had some attractions,</p>
 	<p pid="b.38.3/34" class="indent">&quot;it would result in the panel becoming formally associated with the Minister's decisions&quot;.</p>
 	<p pid="b.38.3/35">I do not think that I need go further into the various other matters in the Minister's letter, which the noble Baroness will bring out if she thinks I have unduly shortened them.</p>
-	<p pid="b.38.3/36">The reply to that letter was on <phrase class="date" code="2006-02-23">23 February</phrase>. From that I will quote a very small part. The noble and learned Lord, Lord Saville, pointed out that the noble Baroness suggested that a restriction notice issued by a Minister would be incapable of restricting,</p>
+	<p pid="b.38.3/36">The reply to that letter was on <phrase class="date" code="2005-02-23">23 February</phrase>. From that I will quote a very small part. The noble and learned Lord, Lord Saville, pointed out that the noble Baroness suggested that a restriction notice issued by a Minister would be incapable of restricting,</p>
 	<p pid="b.38.3/37" class="indent">&quot;'the actual work of the inquiry' or compromising the independence and impartiality of its report&quot;.</p>
 	<p pid="b.38.3/38">The noble and learned Lord said that,</p>
 	<p pid="b.38.3/39" class="indent">&quot;the difficulty is that the imposition of restrictions by a Minister is likely in many instances to have a seriously damaging effect on public confidence in the independence of the inquiry, which in turn could lead to interested parties or witnesses withholding their co-operation, thereby distorting the evidence or submissions available to the inquiry and thus both diminishing the ability of the inquiry to reach unbiased conclusions and damaging the credibility of those conclusions&quot;.</p>
@@ -2030,7 +2046,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.72.1" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="72"  time="019:02:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-20.htm#50228-20_spnew2">
 	<p pid="b.72.1/1">My Lords, in moving this amendment, it will also be convenient to discuss Amendment No. 13. There is uncertainty now that the government amendment has been carried because the latter part gives the Government continued powers to make exemptions after 2020 so the deadline is nowhere near as firm as we would have liked to have seen it. However, of course we accept the opinion of the House in that respect.</p>
-	<p pid="b.72.1/2">I move this amendment to ask the Government two questions. First, as far as concerns the situation after 2020, is it the Government's intention that exemptions made before 2020&mdash;which are in operation when that date arrives&mdash;all have a limit of <phrase class="date" code="">1 January 2020</phrase>? Alternatively, under the procedures that they have now carried, could the Government continue to make exemptions&mdash;for example, in November 2019&mdash;that could run on for five years after that date?</p>
+	<p pid="b.72.1/2">I move this amendment to ask the Government two questions. First, as far as concerns the situation after 2020, is it the Government's intention that exemptions made before 2020&mdash;which are in operation when that date arrives&mdash;all have a limit of <phrase class="date" code="2020-01-01">1 January 2020</phrase>? Alternatively, under the procedures that they have now carried, could the Government continue to make exemptions&mdash;for example, in November 2019&mdash;that could run on for five years after that date?</p>
 	<p pid="b.72.1/3">It would be helpful to know whether the Government intend&mdash;no doubt the Minister can assure us&mdash;that all exemptions shall not run beyond 2020, in the sense that they may have been granted in 2019 for a five-year period, or something of that sort. Am I right in assuming that it is the Government's intention that they should not do so?</p>
 	<p pid="b.72.1/4">The second part of this amendment is concerned, as indeed is Amendment No. 13, with the position of heritage railways. In the light of the Government's amendment having been carried, I presume that it is their intention to continue seeking exemptions for heritage railways. To that extent, my Amendment No. 13 would not be necessary. However, as far as concerns what one might call &quot;running exemptions&quot;, it is important to establish whether they will stop in 2020 or whether they could be granted before 2020 for a period that expires after that time. I beg to move.</p>
 </speech>
@@ -2210,7 +2226,7 @@
 	<p pid="b.81.1/1">My Lords, Amendment No. 17 is a paving amendment to part of Amendment No. 19. A vast proportion of your Lordships and all the disability groups to which I have spoken during the passage of this Bill through your Lordships' House have welcomed the Government's intention to include cancer among the diseases that are deemed to be disabling. As the Bill puts it,</p>
 	<p pid="b.81.1/2" class="indent">&quot;a person who has cancer . . . is to be deemed to have a disability&quot;.</p>
 	<p pid="b.81.1/3">As the noble Lord, Lord Ashley of Stoke, said on Report:</p>
-	<p pid="b.81.1/4" class="indent">&quot;In my experience, people still are as terrified of cancer, and it is still as much of a bombshell of a word that stops all thought, all arguments, and raises fear and apprehension among anyone who is told&quot;.&mdash;[<i>Official Report</i>, 8/2/05; col. 684.]</p>
+	<p pid="b.81.1/4" class="indent">&quot;In my experience, people still are as terrified of cancer, and it is still as much of a bombshell of a word that stops all thought, all arguments, and raises fear and apprehension among anyone who is told&quot;.&mdash;[<phrase class="offrep" id="lords/2005-02-08.684"><i>Official Report</i>, 8/2/05; col. 684</phrase>.]</p>
 	<p pid="b.81.1/5">I most certainly agree, adding that it is not only&mdash;perhaps even not so much&mdash;a fear for oneself, but also a fear for one's loved ones and relatives, which is not necessarily the same thing. It is, after all, this country's largest single cause of death, accounting for just over a quarter of all deaths in 2003.</p>
 	<p pid="b.81.1/6">New paragraph 6A(1) of Schedule 1, in Clause 17, is therefore a good thing. Major worries have been expressed regarding sub-paragraph (2) which allows the Government to exclude cancers. Again, I quote from the Bill:</p>
 	<p pid="b.81.1/7" class="indent">&quot;in the case of a person who has cancer if he has cancer of a prescribed description&quot;.</p>
@@ -2250,8 +2266,8 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.84.0" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="84"  time="019:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-23.htm#50228-23_spnew5">
 	<p pid="b.84.0/1">My Lords, I am very glad that the extent to which the Government have moved, which I think has been considerable, has been welcomed all round the House. We have reached a position in which most people feel that if there is a case for excluding those cancers we will have that evidence. If there is a case for including those cancers in the coverage of the DDA then we will be able to examine that evidence. That seems to me to be a sound and proper basis on which to proceed.</p>
-	<p pid="b.84.0/2">I shall not rehearse all the arguments that we explored at great length in Committee and on Report any more than your Lordships have done, but I will deal with the specific points. First, the amendments ask for full and fair consultation involving outside organisations such as the DRC. We are doing that. I gave an undertaking about that. That review is under way. We had a preliminary meeting on <phrase class="date" code="2006-02-25">Friday, 25 February</phrase> between officials and the DRC. We are pressing ahead with the review. We hope to invite all the leading cancer charities and other organisations, which we and the DRC might consider have evidence, to a meeting shortly.</p>
-	<p pid="b.84.0/3">Our aim is to complete the review in time for the results to be considered with the results of the main consultation which is currently under way and ends on <phrase class="date" code="2006-03-18">18 March</phrase>. We hope that as a result we will be able to proceed with the coverage for HIV and the other cancers and so on as expeditiously as we can, and certainly by the end of the year.</p>
+	<p pid="b.84.0/2">I shall not rehearse all the arguments that we explored at great length in Committee and on Report any more than your Lordships have done, but I will deal with the specific points. First, the amendments ask for full and fair consultation involving outside organisations such as the DRC. We are doing that. I gave an undertaking about that. That review is under way. We had a preliminary meeting on <phrase class="date" code="2005-02-25">Friday, 25 February</phrase> between officials and the DRC. We are pressing ahead with the review. We hope to invite all the leading cancer charities and other organisations, which we and the DRC might consider have evidence, to a meeting shortly.</p>
+	<p pid="b.84.0/3">Our aim is to complete the review in time for the results to be considered with the results of the main consultation which is currently under way and ends on <phrase class="date" code="2005-03-18">18 March</phrase>. We hope that as a result we will be able to proceed with the coverage for HIV and the other cancers and so on as expeditiously as we can, and certainly by the end of the year.</p>
 	<p pid="b.84.0/4">So the substance of what the noble Lord, Lord Skelmersdale, is asking for has already begun to take place. The only problem with using the word &quot;formal&quot; consultation is that you have to meet Cabinet requirements about three months' consultation, timetables and so on, which might result in delay. But I can promise him that the spirit of what he is asking for has already been met as a statement of good faith. We are having full and fairer consultation involving outside organisations, including Macmillan's and any other organisation that it and others feels are appropriate.</p>
 	<p pid="b.84.0/5">Secondly, the affirmative procedure will apply to any regulations subsequently before your Lordships. Again, that is a check on the Government's position. If there is evidence that these cancers should be excluded, as is the view of the noble Lord, Lord Oakeshott, that view obviously would weigh with the Government. However, if new evidence emerges, either from the organisations or in the future, those cancers can come within the coverage of the DDA.</p>
 	<p pid="b.84.0/6">The DRC has welcomed our proposal for a further review of the evidence. It has welcomed our amendment to subject these regulations to the affirmative procedure. Its view is that this matter can now be resolved without further amendment to the Bill. That is also the view of the Disability Charities Consortium and the noble Baroness, Lady Darcy de Knayth, empowered me to say that, subject to my comments on consultation, that would now also be her view. She apologised for not being able to give it in person.</p>
@@ -2350,7 +2366,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.86.9" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="86"  time="019:46:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-24.htm#50228-24_spnew11">
-	<p pid="b.86.9/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-02-02">2 February</phrase> be approved [<i>8th Report from the Joint Committee</i>].</p>
+	<p pid="b.86.9/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-02-02">2 February</phrase> be approved [<i>8th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.86.10" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="86"  time="019:46:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-24.htm#50228-24_spnew11">
@@ -2372,13 +2388,13 @@
 	<p pid="b.86.10/16">Paragraph (5)(b) substitutes the existing threshold position. It limits the new variation to cases where the income that I have described is over &pound;100 per week or an aggregate of over &pound;100 where a combination of existing and new provisions applies.</p>
 	<p pid="b.86.10/17">Paragraph (5)(c) provides for a variation where that type of income is diverted to other persons or for other purposes; for example, invested in the company. It also removes the provision that allows a variation on the grounds of diversion of income to be given only where the diversion has taken place in order to reduce child support liability.</p>
 	<p pid="b.86.10/18">In conclusion, the regulations before us make amendments to ensure that new and old schemes operate as fairly and effectively as possible. Most of those regulations are in direct response to issues raised either by MPs or the Child Support Commissioner, suggesting that there was some ambiguity in our proceedings. They underpin our continuing commitment to making sure that child support produces the intentions of Parliament. I am satisfied that the regulations are compatible with the European Convention on Human Rights and I commend them to the House.</p>
-	<p pid="b.86.10/19">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-02">2 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
+	<p pid="b.86.10/19">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-02-02">2 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.90.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="90"  time="019:46:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-25.htm#50228-25_spnew0">
-	<p pid="b.90.0/1">My Lords, this can best be described as a &quot;fiddling while Rome burns&quot; regulation. It is extraordinary that the Government should come forward with these proposals when we do not even know who is in charge of the Child Support Agency. On <phrase class="date" code="">17 November</phrase> Mr Alan Johnson, the Secretary of State, announced to the Work and Pensions Select Committee,</p>
+	<p pid="b.90.0/1">My Lords, this can best be described as a &quot;fiddling while Rome burns&quot; regulation. It is extraordinary that the Government should come forward with these proposals when we do not even know who is in charge of the Child Support Agency. On <phrase class="date" code="2005-11-17">17 November</phrase> Mr Alan Johnson, the Secretary of State, announced to the Work and Pensions Select Committee,</p>
 	<p pid="b.90.0/2" class="indent">&quot;I should tell you that Doug has decided that now is the time to stand aside and to allow a new chief executive to tackle the challenges ahead&quot;.</p>
-	<p pid="b.90.0/3">Yet apparently as of <phrase class="date" code="2006-02-17">17 February</phrase> he was still in place. It is all very well to describe people in charming and informal &quot;Doug&quot; terms, but what is happening with regard to the head of the Child Support Agency? We cannot judge whether the proposals in the regulations are going to do anything to reduce rather than increase the general confusion and chaos in the Child Support Agency.</p>
+	<p pid="b.90.0/3">Yet apparently as of <phrase class="date" code="2005-02-17">17 February</phrase> he was still in place. It is all very well to describe people in charming and informal &quot;Doug&quot; terms, but what is happening with regard to the head of the Child Support Agency? We cannot judge whether the proposals in the regulations are going to do anything to reduce rather than increase the general confusion and chaos in the Child Support Agency.</p>
 	<p pid="b.90.0/4">If one looks at the latest figures, there is still confusion between the old and new schemes. We still do not have any clear indication from the Government when those on the old scheme are going to switch over to the new scheme. In all events, of the 478,000 applications for the new scheme since April 2003, only 61,000 non-resident parents have made the first payment; that is only 13 per cent.</p>
 </speech>
 
@@ -2426,18 +2442,18 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.94.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="94"  time="020:08:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew0">
-	<p pid="b.94.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-01-26">26 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].</p>
+	<p pid="b.94.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-01-26">26 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.94.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="94"  time="020:08:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew0">
 	<p pid="b.94.2/1">My Lords, in moving the regulations, I confirm my view that they are compatible with the European Convention on Human Rights. The regulations are being made under the Pneumoconiosis etc. (Workers' Compensation) Act of 1979. They simply increase by 3.1 per cent the compensation paid to people who first satisfy all the conditions for payment on or after <phrase class="date" code="2005-04-01">1 April 2005</phrase>. The increase is in line with the general increase in RPI. It is the same as the increase being applied to the general uprating order for other social security benefits.</p>
 	<p pid="b.94.2/2">The scheme pays compensation to people who are suffering mainly from certain dust-related diseases where the relevant employer is no longer in business. More than 70 per cent of the compensation payments made are for people suffering from the particularly fast-acting disease, mesothelioma, which is a terminal lung cancer caused by asbestos fibres. I think I am right in saying that of 6,500 deaths from industrial diseases last year, more than 50 per cent were asbestos-related. Asbestos is a fast killer.</p>
 	<p pid="b.94.2/3">An increasing number of people are now successfully claiming under the scheme. The scheme makes a major contribution to the support provided to people suffering from these dreadful diseases. In an ideal world, the matter would be addressed in primary legislation, and this would be part of the uprating statement. That it is not is due to the fact that we would need primary powers to do it. Therefore, I bring the matter before your Lordships separately. However, the regulations seek merely to uprate payments in line with RPI. I beg to move.</p>
-	<p pid="b.94.2/4">Moved, that the draft regulations laid before the House on <phrase class="date" code="2006-01-26">26 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
+	<p pid="b.94.2/4">Moved, that the draft regulations laid before the House on <phrase class="date" code="2005-01-26">26 January</phrase> be approved [<i>7th Report from the Joint Committee</i>].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.94.3" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="94"  time="020:08:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew1">
-	<p pid="b.94.3/1">My Lords, the Minister is right in saying that the diseases covered by the regulations are terrible. Of the eight orders and regulations that we are debating, this is the only one which has already been debated in the Commons&mdash;on <phrase class="date" code="2006-02-22">22 February</phrase>. An extensive debate took place, and it received an appropriate ministerial reply, which dealt with nearly all the main issues involved.</p>
+	<p pid="b.94.3/1">My Lords, the Minister is right in saying that the diseases covered by the regulations are terrible. Of the eight orders and regulations that we are debating, this is the only one which has already been debated in the Commons&mdash;on <phrase class="date" code="2005-02-22">22 February</phrase>. An extensive debate took place, and it received an appropriate ministerial reply, which dealt with nearly all the main issues involved.</p>
 	<p pid="b.94.3/2">It was pointed out during that debate that an undertaking was given last year that the various payments&mdash;I do not say &quot;benefits&quot;&mdash;that are made to this tragic group would be uprated year by year. The regulations fulfil that undertaking, and I most certainly welcome them.</p>
 	<p pid="b.94.3/3">As the Minister mentioned, one of the most unfortunate groups of workers comprises those who suffer from mesothelioma. The tragedy is that the number of people who are dying from this disease, with absolutely no hope of reprieve, is likely to go on increasing for many years.</p>
 	<p pid="b.94.3/4">It is intended that the increase in payments should offset inflation. I am not entirely clear on two points. First, does the uprating cover all cases of people suffering from these diseases? In one case of which I have personal knowledge, the person concerned was unaware of where the illness had been acquired. There was no specific occupation in which it was thought he might have picked up the disease, although various occupations where he might have done so were considered. Do the regulations cover everyone, or do they depend on the disease being related to some previous occupation?</p>
@@ -2466,13 +2482,13 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.96.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="96"  time="020:16:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew4">
-	<p pid="b.96.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].</p>
+	<p pid="b.96.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.96.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="96"  time="020:16:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew4">
 	<p pid="b.96.2/1">My Lords, I can be very brief, or take a little longer. Let me try being very brief and see if that is enough, and if necessary I could return to the matter in a wind-up.</p>
 	<p pid="b.96.2/2">Under the Pensions Act we are introducing a lump sum as an alternative to increments. This set of regulations applies the same option to those with inherited SERPS rights. That is all. I can go into the regulations more fully, but that is all they do&mdash;they apply to SERPS what your Lordships have already agreed will apply to the basic state pension. This will now apply to the additional pension as well. I beg to move.</p>
-	<p pid="b.96.2/3">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
+	<p pid="b.96.2/3">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.96.3" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="96"  time="020:16:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew5">
@@ -2493,13 +2509,13 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.97.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="97"  time="020:17:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew7">
-	<p pid="b.97.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-02-02">2 February</phrase> be approved. [<i>8th Report from the Joint Committee</i>].</p>
+	<p pid="b.97.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-02-02">2 February</phrase> be approved. [<i>8th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.97.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="97"  time="020:17:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-26.htm#50228-26_spnew7">
 	<p pid="b.97.2/1">My Lords, again, I can be equally brief or more extended, as your Lordships wish.</p>
 	<p pid="b.97.2/2">Basically, we are running pilots to ensure, as far as we can, that men and women in the age group 50 to 59 remain within the labour market by increasing what we call their intensive activity. We brought regulations for pilots to the House a year ago. We are dealing with small numbers. As we said at the time, we need to run these pilot schemes for two years to see whether the intensive activity style that we are introducing is as effective as we hope it will be at keeping people within the labour market. Regulations could be made for only one year at a time, therefore we need your Lordships' consent to extend those same powers for a further year. I beg to move.</p>
-	<p pid="b.97.2/3">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-02">2 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
+	<p pid="b.97.2/3">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-02-02">2 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(<i>Baroness Hollis of Heigham.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.97.3" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="97"  time="020:17:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spnew0">
@@ -2530,7 +2546,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.98.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="98"  time="020:21:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spnew4">
 	<p pid="b.98.1/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="b.98.1/2">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-02">2 February</phrase> be approved [<i>8th report from the Joint Committee</i>].&mdash;(<i>Baroness Hollis of Heigham</i>.)</p>
+	<p pid="b.98.1/2">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-02-02">2 February</phrase> be approved [<i>8th report from the Joint Committee</i>].&mdash;(<i>Baroness Hollis of Heigham</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.98.2" nospeaker="true" colnum="98"  time="020:21:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spnew4">
@@ -2542,7 +2558,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.98.4" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon="" colnum="98"  time="020:21:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spmin0">
-	<p pid="b.98.4/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [<i>8th report from the Joint Committee</i>].</p>
+	<p pid="b.98.4/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [<i>8th report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.98.5" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="98"  time="020:21:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spmin0">
@@ -2552,7 +2568,7 @@
 	<p pid="b.98.5/4">Alongside the child tax credit, the working tax credit provides support to low income working people including people who do not have children. The Child Benefit and Guardian's Allowance Up-rating Order 2005 will increase rates in line with inflation for 2005&ndash;06. From <phrase class="date" code="2005-04-11">11 April 2005</phrase>, child benefit will be worth &pound;17 a week for the first child and &pound;11.40 for subsequent children. For the first child, that represents a 25 per cent increase in real terms since 1997.</p>
 	<p pid="b.98.5/5">We estimate that the full-year cost of up-rating child tax credits alone to be &pound;700 million; the full-year cost of up-rating child benefit and guardian's allowance is in the region of &pound;304 million. As a result of this new investment, the Government are on track to meet their PSA target to reduce by a quarter the number of children in low income households by 2004&ndash;05 on a before-housing-costs basis. Some 3.5 million families and 6.65 million children will benefit from the increases in the child element of child tax credit&mdash;approximately half of all families with children in the UK. Some 7 million families will benefit from the increases in child benefit.</p>
 	<p pid="b.98.5/6">Overall, 5.9 million families are benefiting from tax credits; the take-up of tax credits is a great success, and they are reaching the families whom they are meant to help. With the increases affected by the instruments that we are now considering, we will be delivering more support next year. I commend the tax credits regulations to the House. I beg to move.</p>
-	<p pid="b.98.5/7">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [<i>8th report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
+	<p pid="b.98.5/7">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [<i>8th report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.99.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="99"  time="020:21:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-27.htm#50228-27_spnew5">
@@ -2610,7 +2626,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.104.1" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="104"  time="020:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-28.htm#50228-28_spnew6">
 	<p pid="b.104.1/1">My Lords, I beg to move.</p>
-	<p pid="b.104.1/2">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
+	<p pid="b.104.1/2">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.104.2" nospeaker="true" colnum="104"  time="020:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-28.htm#50228-28_spnew6">
@@ -2623,7 +2639,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.104.4" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="104"  time="020:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-28.htm#50228-28_spnew7">
 	<p pid="b.104.4/1">My Lords, I beg to move.</p>
-	<p pid="b.104.4/2">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
+	<p pid="b.104.4/2">Moved, That the draft order laid before the House on <phrase class="date" code="2005-01-31">31 January</phrase> be approved [<i>8th Report from the Joint Committee</i>].&mdash;(<i>Lord McIntosh of Haringey</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-02-28b.104.5" nospeaker="true" colnum="104"  time="020:30:00" url="http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo050228/text/50228-28.htm#50228-28_spnew7">

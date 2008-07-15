@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1163.1" speakerid="uk.org.publicwhip/lord/100498" speakername="Lord Peyton of Yeovil" colon="" colnum="1163"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-01.htm#11029-01_spopq0">
 	<p pid="a.1163.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1163.1/2" class="indent">What prospects they see of an early improvement in the state of London Underground.</p>
+	<p pid="a.1163.1/2" class="indent" pwmotiontext="asked">What prospects they see of an early improvement in the state of London Underground.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1163.2" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1163"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-01.htm#11029-01_spmin0">
@@ -119,7 +138,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1165.5" speakerid="uk.org.publicwhip/lord/100517" speakername="Lord Quirk" colon="" colnum="1165"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-01.htm#11029-01_spopq1">
 	<p pid="a.1165.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1165.5/2" class="indent">In the current European Year of Languages, whether they are developing new initiatives to promote the learning of foreign languages.</p>
+	<p pid="a.1165.5/2" class="indent" pwmotiontext="asked">In the current European Year of Languages, whether they are developing new initiatives to promote the learning of foreign languages.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1165.6" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="1165"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-01.htm#11029-01_spmin1">
@@ -205,7 +224,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1169.1" speakerid="uk.org.publicwhip/lord/100336" speakername="Lord Jenkins of Putney" colon="" colnum="1169"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-02.htm#11029-02_spopq0">
 	<p pid="a.1169.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1169.1/2" class="indent">What steps they are taking to avoid further non-combatant casualties from air attacks in Afghanistan.</p>
+	<p pid="a.1169.1/2" class="indent" pwmotiontext="asked">What steps they are taking to avoid further non-combatant casualties from air attacks in Afghanistan.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1169.2" speakerid="uk.org.publicwhip/lord/100264" speakername="Lord Grocott" colon=":" colnum="1169"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-02.htm#11029-02_spnew16">
@@ -244,7 +263,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1170.3" speakerid="uk.org.publicwhip/lord/100421" speakername="Baroness Massey of Darwen" colon="" colnum="1170"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-03.htm#11029-03_spopq0">
 	<p pid="a.1170.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1170.3/2" class="indent">How they have implemented consultation on the document Draft National Strategy for Sexual Health and HIV.</p>
+	<p pid="a.1170.3/2" class="indent" pwmotiontext="asked">How they have implemented consultation on the document Draft National Strategy for Sexual Health and HIV.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-29a.1170.4" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="1170"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011029/text/11029-03.htm#11029-03_spmin0">

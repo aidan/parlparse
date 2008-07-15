@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.681.1" speakerid="uk.org.publicwhip/lord/100541" speakername="Lord Roberts of Conwy" colon="" colnum="681"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spopq0">
 	<p pid="a.681.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.681.1/2" class="indent">When the draft protocol between them and the National Assembly for Wales relating to legislation and published in February 2000 is to be finalised.</p>
+	<p pid="a.681.1/2" class="indent" pwmotiontext="asked">When the draft protocol between them and the National Assembly for Wales relating to legislation and published in February 2000 is to be finalised.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.681.2" speakerid="uk.org.publicwhip/lord/100206" speakername="Baroness Farrington of Ribbleton" colon=":" colnum="681"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spnew0">
@@ -80,7 +99,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.682.2" speakerid="uk.org.publicwhip/lord/100103" speakername="Lord Campbell of Croy" colon="" colnum="682"  time="014:40:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spopq1">
 	<p pid="a.682.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.682.2/2" class="indent">Whether large amounts of Scotch whisky have been taken from bond, without payment of tax, and fraudulently delivered to the home market instead of being exported.</p>
+	<p pid="a.682.2/2" class="indent" pwmotiontext="asked">Whether large amounts of Scotch whisky have been taken from bond, without payment of tax, and fraudulently delivered to the home market instead of being exported.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.682.3" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="682"  time="014:40:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spnew5">
@@ -142,7 +161,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.684.2" speakerid="uk.org.publicwhip/lord/100055" speakername="Lord Blaker" colon="" colnum="684"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spopq2">
 	<p pid="a.684.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.684.2/2" class="indent">What is their current policy towards Zimbabwe.</p>
+	<p pid="a.684.2/2" class="indent" pwmotiontext="asked">What is their current policy towards Zimbabwe.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.684.3" speakerid="uk.org.publicwhip/lord/100519" speakername="Baroness Ramsay of Cartvale" colon=":" colnum="684"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-01.htm#10313-01_spnew18">
@@ -246,7 +265,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.688.4" speakerid="uk.org.publicwhip/lord/100534" speakername="Lord Renton of Mount Harry" colon="" colnum="688"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-03.htm#10313-03_spopq0">
 	<p pid="a.688.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.688.4/2" class="indent">What was the total cost to public funds in the last financial year of the Government's special advisers, compared with the cost in 1991-92.</p>
+	<p pid="a.688.4/2" class="indent" pwmotiontext="asked">What was the total cost to public funds in the last financial year of the Government's special advisers, compared with the cost in 1991-92.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-13a.688.5" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="688"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010313/text/10313-03.htm#10313-03_spmin0">

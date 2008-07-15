@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -49,7 +68,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1311.1" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1311"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spmin0">
-	<p pid="a.1311.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I will be undertaking a ministerial visit to Leicester on <phrase class="date" code="">Monday 19 April</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
+	<p pid="a.1311.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I will be undertaking a ministerial visit to Leicester on <phrase class="date" code="2004-04-19">Monday 19 April</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-03-31a.1311.2" nospeaker="true" colnum="1311"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_head1">
@@ -58,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1311.3" speakerid="uk.org.publicwhip/lord/100414" speakername="The Countess of Mar" colon="" colnum="1311"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spopq0">
 	<p pid="a.1311.3/1" pwmotiontext="asked">asked the Leader of the House:</p>
-	<p pid="a.1311.3/2" class="indent">How she will ensure that adequate and suitable time is made available for the House to debate Select Committee reports.</p>
+	<p pid="a.1311.3/2" class="indent" pwmotiontext="asked">How she will ensure that adequate and suitable time is made available for the House to debate Select Committee reports.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1311.4" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1311"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spmin1">
@@ -105,7 +124,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1313.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1313"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spnew9">
-	<p pid="a.1313.2/1">My Lords, I do not think that we have a bad record on debates this Session. We have had two full days on Select Committee debates, plus two part-time, prime-time debates on Select Committee reports, with another one planned for <phrase class="date" code="">22 April</phrase>. I am aware that if you look at the Minute, there can be a perception that some Select Committee reports have been waiting for a long time. But in at least one case, the committee does not want the report to be debated until it has done some further work.</p>
+	<p pid="a.1313.2/1">My Lords, I do not think that we have a bad record on debates this Session. We have had two full days on Select Committee debates, plus two part-time, prime-time debates on Select Committee reports, with another one planned for <phrase class="date" code="2004-04-22">22 April</phrase>. I am aware that if you look at the Minute, there can be a perception that some Select Committee reports have been waiting for a long time. But in at least one case, the committee does not want the report to be debated until it has done some further work.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1313.3" speakerid="uk.org.publicwhip/lord/100689" speakername="Lord Williamson of Horton" colon=":" colnum="1313"  time="014:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spnew10">
@@ -130,7 +149,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1314.3" speakerid="uk.org.publicwhip/lord/100419" speakername="Baroness Masham of Ilton" colon="" colnum="1314"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spopq1">
 	<p pid="a.1314.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1314.3/2" class="indent">What information is given to patients and carers to enable them to identify drug interactions and interaction between drugs and certain foods.</p>
+	<p pid="a.1314.3/2" class="indent" pwmotiontext="asked">What information is given to patients and carers to enable them to identify drug interactions and interaction between drugs and certain foods.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1314.4" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="1314"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-01.htm#40331-01_spnew14">
@@ -201,7 +220,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1317.1" speakerid="uk.org.publicwhip/lord/100473" speakername="The Earl of Onslow" colon="" colnum="1317"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-02.htm#40331-02_spopq0">
 	<p pid="a.1317.1/1" pwmotiontext="asked">asked the Leader of the House:</p>
-	<p pid="a.1317.1/2" class="indent">Whether the House of Lords has broken any conventions between the two Houses of Parliament on the consideration of legislation over the past two Sessions; if so, on what occasions; and what were the conventions.</p>
+	<p pid="a.1317.1/2" class="indent" pwmotiontext="asked">Whether the House of Lords has broken any conventions between the two Houses of Parliament on the consideration of legislation over the past two Sessions; if so, on what occasions; and what were the conventions.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1317.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1317"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-02.htm#40331-02_spnew12">
@@ -287,7 +306,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1320.1" speakerid="uk.org.publicwhip/lord/100408" speakername="Lord McNally" colon="" colnum="1320"  time="015:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-03.htm#40331-03_spopq0">
 	<p pid="a.1320.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1320.1/2" class="indent">Who will have direct ministerial responsibility for the newly appointed Permanent Under-Secretary of State for Communications and where the post will be located.</p>
+	<p pid="a.1320.1/2" class="indent" pwmotiontext="asked">Who will have direct ministerial responsibility for the newly appointed Permanent Under-Secretary of State for Communications and where the post will be located.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1320.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1320"  time="015:03:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-03.htm#40331-03_spnew8">
@@ -308,7 +327,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1320.6" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon="" colnum="1320"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-03.htm#40331-03_spopq1">
 	<p pid="a.1320.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1320.6/2" class="indent">What lessons they have learnt from the repeated imprisonment of Patricia Amos for failing to prevent the truancy of her daughters from school.</p>
+	<p pid="a.1320.6/2" class="indent" pwmotiontext="asked">What lessons they have learnt from the repeated imprisonment of Patricia Amos for failing to prevent the truancy of her daughters from school.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1321.0" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="1321"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-03.htm#40331-03_spmin0">
@@ -411,7 +430,7 @@
 	<p pid="a.1324.1/4">That the committee have power to appoint specialist advisers;</p>
 	<p pid="a.1324.1/5">That the committee have power to adjourn from place to place;</p>
 	<p pid="a.1324.1/6">That the minutes of evidence taken before the committee from time to time shall, if the committee think fit, be printed; and</p>
-	<p pid="a.1324.1/7">That the committee do meet on <phrase class="date" code="">Wednesday 7 July</phrase>.&mdash;(The Chairman of Committees.)</p>
+	<p pid="a.1324.1/7">That the committee do meet on <phrase class="date" code="2004-07-07">Wednesday 7 July</phrase>.&mdash;(The Chairman of Committees.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1324.2" speakerid="uk.org.publicwhip/lord/100012" speakername="Lord Alton of Liverpool" colon=":" colnum="1324"  time="015:14:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-04.htm#40331-04_spnew14">
@@ -662,7 +681,7 @@
 	<p pid="a.1342.0/7">There is an international war on terrorism and Israel must be allowed to fight it. Prosecution of the war is not confined to the United States of America and western democratic powers. Israel has to fight it, for it is surely in the front line. Its civilian population is targeted by Hamas and the other terrorist groups.</p>
 	<p pid="a.1342.0/8">Yassin and his like stand in the way of any peace process. His position was impossible to achieve. Israel cannot be eliminated from the map either as a geo-physical entity or as a people. The world community will not wear that ever and at last there are signs&mdash;the noble Baroness, Lady Williams, made reference to this&mdash;that more moderate counsels are beginning to make themselves heard within the Palestinian community. We must pray that they prevail.</p>
 	<p pid="a.1342.0/9">Last week my right honourable friend the Chancellor of the Exchequer instructed the Bank of England to direct financial institutions to freeze any funds they hold on behalf of five senior members of Hamas. Those people are believed to facilitate acts of terrorism. Mr Brown is to be congratulated on that action which, it is to be hoped, will be replicated in the financial capitals of the free world. For too long we have differentiated between the military and political wings of Hamas. The Foreign Secretary played a key role in ensuring that both wings were outlawed in EU policy determined last September, and now we have frozen the financial assets of those whom we believe are involved in terrorism. At least three of those individuals would be classified as members of the political wing of Hamas.</p>
-	<p pid="a.1342.0/10">The time has come for us to take the additional step of including Hamas in its entirety in the list of terrorist organisations outlawed by the Terrorism Act 2000. We must take that action as a matter of haste, before those who support the goals of Hamas find further British men or women&mdash;I mean British men or women&mdash;who are willing to follow in the footsteps of the two British suicide bombers who killed three and injured 55 in a bar in Tel Aviv on <phrase class="date" code="">30 April</phrase> last year.</p>
+	<p pid="a.1342.0/10">The time has come for us to take the additional step of including Hamas in its entirety in the list of terrorist organisations outlawed by the Terrorism Act 2000. We must take that action as a matter of haste, before those who support the goals of Hamas find further British men or women&mdash;I mean British men or women&mdash;who are willing to follow in the footsteps of the two British suicide bombers who killed three and injured 55 in a bar in Tel Aviv on <phrase class="date" code="2004-04-30">30 April</phrase> last year.</p>
 	<p pid="a.1342.0/11">Her Majesty's Government have a record to be proud of in working for a peaceful, just and lasting settlement to the Israeli/Palestinian conflict. Last week I chaired a meeting of the Britain-Israel All-Party Parliamentary Group here in your Lordships' House. The speaker was His Excellency Her Majesty's Ambassador to Israel, Simon McDonald. He gave an upbeat, optimistic and hopeful expose of the problems facing the world community in seeking to resolve the conflict. It was an encouraging experience to hear him. We are fortunate indeed to have such an outstanding diplomat in such a difficult and sensitive posting. I wish to place on record the thanks and appreciation of our group for the time that he gave to us.</p>
 	<p pid="a.1342.0/12">The arguments surrounding the Middle East and in particular the Palestinian/Israeli conflict have been well rehearsed in this Chamber over many years&mdash;probably from the time of the Balfour declaration onwards. We know, as the world knows, what needs to be done. The two-state solution that gives each state secure borders and a viable infrastructure, most notably in the provision of water supply, can be achieved. The way forward is clear, but without an end to Palestinian terror little can be achieved. Prime Minister Sharon has stated his willingness to withdraw fully from Gaza. The Government should welcome that plan, support it in every way possible, and encourage the Palestinian leadership to work with the Israelis to make this move an opportunity for peace, within the road map, and not an opportunity for terrorists like Hamas.</p>
 	<p pid="a.1342.0/13">This country has a history in the region and now must make history again by encouraging an end to terror and every possible route to peace. Fences, walls and settlements are removable; human lives lost to terror are irreplaceable.</p>
@@ -713,7 +732,7 @@
 	<p pid="a.1348.0/2">It seems fashionable just now to speak about a vague entity known as the &quot;wider Middle East&quot;. I have never heard it precisely defined: does it stop at Iran or Afghanistan or Pakistan in the East? Does it include Central Asia? How far does it go into Africa? It sounds all too much like one of those Washington speechwriter's constructs&mdash;&quot;the axis of evil&quot; was one&mdash;which cause more friction and trouble than they bring enlightenment, focus and precision. Let us hope that if the G8 summit this summer is to focus on the Middle East, it will do so with its feet planted firmly on the ground of reality, and will deal with the region as it is, and not as we might wish it to be.</p>
 	<p pid="a.1348.0/3">Realism surely tells us that if we are to address the overall problems of the Middle East with any prospect of success, we must face squarely two inescapable challenges; the need to see Iraq through its present travails, and the need to return without delay and with determination to the search for a peaceful, two-state solution to the problem of Palestine and Israel. If we try to proceed without addressing those challenges, if we try to brush them aside or ignore them, any words that are written about the future of the Middle East will be written in sand.</p>
 	<p pid="a.1348.0/4">The Iraqi challenge will not be easy to resolve, but it is not impossible. No one can watch the fortitude with which most Iraqis are facing up to the dangers and insecurity of their daily lives, no one can hear of the optimism with which they seem to be looking to the future, and of their joy at being rid of Saddam Hussein, without a feeling of admiration and a realisation that the course on which we are set, of bringing that country to a prosperous, democratic and stable future, is the right one, and one of which we must not tire. To leave Iraq to slip back into anarchy, perhaps to split up, or to fall back into the hands of another egregious dictator, would be unpardonable.</p>
-	<p pid="a.1348.0/5">That is what makes the recent change of heart in Spain so worrying. It is not that the Spaniards do not have every right to change their government, and we every need to respect that change. But the proponents of withdrawal from Iraq are, like so many here in London, still fighting battles over last year's war, and they, like those who do so here, risk doing that at the expense of the future of Iraq. Certainly, the Spanish demand that the UN be established as a central player in the phase which will follow the return of Iraq's sovereignty, planned for <phrase class="date" code="">1 July</phrase>, is an entirely legitimate one. Let us hope that it can be met. The failure to involve the UN at the heart of the political future of Iraq from the moment the war ended, as it was involved in Afghanistan, was, I believe, a major error, and one for which we and the UN too have paid dearly.</p>
+	<p pid="a.1348.0/5">That is what makes the recent change of heart in Spain so worrying. It is not that the Spaniards do not have every right to change their government, and we every need to respect that change. But the proponents of withdrawal from Iraq are, like so many here in London, still fighting battles over last year's war, and they, like those who do so here, risk doing that at the expense of the future of Iraq. Certainly, the Spanish demand that the UN be established as a central player in the phase which will follow the return of Iraq's sovereignty, planned for <phrase class="date" code="2004-07-01">1 July</phrase>, is an entirely legitimate one. Let us hope that it can be met. The failure to involve the UN at the heart of the political future of Iraq from the moment the war ended, as it was involved in Afghanistan, was, I believe, a major error, and one for which we and the UN too have paid dearly.</p>
 	<p pid="a.1348.0/6">The sanguinary stand off between the Israelis and the Palestinians will be even more difficult to bring to an end, and is even more necessary to remedy. It will not be done by building walls on territory that international law says does not belong to Israel. It will not be done by extra-judicial killings, nor by suicide bombers. It may be helped by unilateral withdrawals, both of Israeli troops and settlers; but even that will not in itself amount to a solution. A solution will be found only by returning to the negotiating table, and doing so without giving the men of violence a veto on any such negotiating process, and without trying to pick and choose with whom one will negotiate. It is truly tragic to see the Israeli people, in whose predicament and suffering we would be wrong to lose interest or sympathy, being led into a dead end. It may be that a further major international effort to resume negotiations will now have to await the outcome of the US elections, but it is crucial that thereafter it should become the first order of business for whoever is elected. The British Government and the EU should surely set that as a key objective of our foreign policy.</p>
 	<p pid="a.1348.0/7">So much for the two essential components of any broader approach that we may take towards the region. But what should we be working for in the Middle East? Last year's human rights report on the region was a salutary reminder of how much is wrong and how much needs to be righted. It was all the more salutary in that the report was written by Arabs, for Arabs, and about Arabs&mdash;that is a fundamental point. We should not be seeking to impose some Western, democratic template on the region. We will anyway not succeed, even if we try. Look what happened in Iran after the fall of the Shah: a reminder, if ever we needed one, of the law of unintended consequences. So we should be working for evolutionary change, not mighty upheavals, and we should be working for peaceful change, which will take time and patience, and which will need to be brought about by the peoples of the region, not by outsiders.</p>
 	<p pid="a.1348.0/8">Nor should we ignore the security policy dimension of what has been for decades a singularly insecure region. There is, I would argue, a golden opportunity to remedy in the Gulf region the absence so far of any sub-regional security arrangements. So long as Saddam Hussein ruled in Baghdad, that was inconceivable. Now that he is gone, it should be possible to negotiate regional confidence-building measures and security guarantees based on the triangle of key players in the Gulf: Iran, Iraq and Saudi Arabia. Later, if there were an Arab-Israel peace settlement, it should be possible to go wider, but we should not wait for that in the Gulf. Will the Minister say something about the Government's thinking and plans in that respect?</p>
@@ -775,7 +794,7 @@
 	<p pid="a.1358.0/5">The second aspect is more idealistic. It is to westernise the Middle East, starting with Iraq, by spreading the western values of democracy, free markets and the rule of law throughout the region. This is the Wilsonian side of the project. I am not saying that idealism is simply a cloak for realpolitik. The two motives co-existed in different proportions in the minds and hearts of all of those who undertook this audacious adventure. In fact, the two aspects are connected. As the Prime Minister said in a speech in Chicago in April 1999:</p>
 	<p pid="a.1358.0/6" class="indent">&quot;The spread of our values makes us safer&quot;.</p>
 	<p pid="a.1358.0/7">To anyone with a sense of history, this combination of motives recalls nothing so much as late 19th century imperialism. There is the same mixture of commerce, security and moralism and, I should add, adventure. Moreover, in the ethical version of imperialism, to which the Prime Minister is heir, forcible interventions were not ends in themselves, but merely the means to spread western standards, a form of trusteeship later made explicit in the League of Nations mandates established in the Middle East and elsewhere after the First World War. Ethical imperialism was to be a preparation for independence.</p>
-	<p pid="a.1358.0/8">The question is whether a project of this kind makes sense at the start of our own century; whether, in the modern phrase, it is sustainable. I do not think so. Let me consider first the idealistic aspect of the project of forced westernisation. America has never had an imperial vocation. The United States was born in an anti-colonial war, and the identity forged in that struggle has shaped its outlook ever since. In fact the agreement signed by the Iraqi interim governing council and the US-UK Coalition Provisional Authority stipulates the restoration of full sovereignty for Iraq on <phrase class="date" code="">30 June</phrase> of this year, with a coalition contingent remaining,</p>
+	<p pid="a.1358.0/8">The question is whether a project of this kind makes sense at the start of our own century; whether, in the modern phrase, it is sustainable. I do not think so. Let me consider first the idealistic aspect of the project of forced westernisation. America has never had an imperial vocation. The United States was born in an anti-colonial war, and the identity forged in that struggle has shaped its outlook ever since. In fact the agreement signed by the Iraqi interim governing council and the US-UK Coalition Provisional Authority stipulates the restoration of full sovereignty for Iraq on <phrase class="date" code="2004-06-30">30 June</phrase> of this year, with a coalition contingent remaining,</p>
 	<p pid="a.1358.0/9" class="indent">&quot;at the request of the transitional administration&quot;,</p>
 	<p pid="a.1358.0/10">solely to help to guarantee stability. Yesterday's imperialists never thought that democracy could be brought about in one year.</p>
 	<p pid="a.1358.0/11">The second point is that in its idealistic form imperialism was a failure. With the notable exception of India, the post-colonial world filled up not with the peace-loving democracies of the liberal imagination but with unstable dictatorships and failing states, which exhibit a rich patchwork of repression and revolt, war and civil war, brigandage and random violence. We run a huge risk of recreating this cycle by our intervention in the Middle East.</p>
@@ -847,7 +866,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1369.0" speakerid="uk.org.publicwhip/lord/100678" speakername="Lord Weidenfeld" colon=":" colnum="1369"  time="018:09:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-05.htm#40331-05_spnew19">
 	<p pid="a.1369.0/1">My Lords, I am grateful to the noble Baroness, Lady Williams of Crosby, for an opportunity for plain talk&mdash;plain talk about the Middle East. The catastrophe of these events on the Israeli-Palestinian front no longer brooks evasion and half truths. Cobwebs of cliches and stereotypes must be removed. After listening to the noble Earl, Lord Sandwich, I submit, more convinced than ever, that the constant demonising of Israel, the Israeli Government and General Sharon&mdash;and the very view that there is a moral equivalence between barbaric terrorist attacks of suicide bombers and self-protective actions of retaliation&mdash;is not only unfair, it is also injudicious and unhelpful. It is unhelpful if you want the Israeli electorate overwhelmingly to press for negotiations and make major sacrifices.</p>
-	<p pid="a.1369.0/2">Let us take the reaction to the killing of Sheikh Yassin. If British Intelligence and Czech resistance could justly earn their laurels for killing Reinhardt Heydrich, the Gestapo leader; if Special British Forces, commandos and SAS in successive wars can be justly praised for their lethal sorties behind enemy lines; if Prime Minister Blair and President Bush can urge their forces to get Saddam and bin Laden alive or dead, why are the people of Israel denied their basic right of self-defence? Yassin was the plotter and planner of a thousand deaths of men, women and children&mdash;Jewish and Arab children; Arab children, whom he sent into voluntary death, and Arab women. On <phrase class="date" code="2006-01-14">14 January</phrase> this year Yassin issued a decree that entreated women to join the menfolk and become suicide martyrs.</p>
+	<p pid="a.1369.0/2">Let us take the reaction to the killing of Sheikh Yassin. If British Intelligence and Czech resistance could justly earn their laurels for killing Reinhardt Heydrich, the Gestapo leader; if Special British Forces, commandos and SAS in successive wars can be justly praised for their lethal sorties behind enemy lines; if Prime Minister Blair and President Bush can urge their forces to get Saddam and bin Laden alive or dead, why are the people of Israel denied their basic right of self-defence? Yassin was the plotter and planner of a thousand deaths of men, women and children&mdash;Jewish and Arab children; Arab children, whom he sent into voluntary death, and Arab women. On <phrase class="date" code="2004-01-14">14 January</phrase> this year Yassin issued a decree that entreated women to join the menfolk and become suicide martyrs.</p>
 	<p pid="a.1369.0/3">I assure your Lordships that I have no doubt that there are many cases of gross injustice and utter folly committed by successive Israeli governments, but I submit to you the words of Chaim Weizmann, that moderate and wise first President of Israel, when addressing a British Royal Commission in 1935. He said:</p>
 	<p pid="a.1369.0/4" class="indent">&quot;The Jewish/Arab conflict is not a conflict between a right and wrong but between two rights and two wrongs. However&quot;,</p>
 	<p pid="a.1369.0/5">he continued,</p>
@@ -1066,7 +1085,7 @@
 	<p pid="a.1396.0/4">We have a general problem about the training of engineers in this country. Traditionally, there have been two routes into the profession: first, via a university degree, followed by membership of the appropriate chartered institute. Often in the past, students were sponsored by firms, especially by the nationalised industries or by the Armed Forces. The Armed Forces also had their own dedicated colleges: the Royal Naval Engineering College at Manuden in Plymouth&mdash;now closed&mdash;the Royal Military College of Science at Shrivenham and the Royal Air Force College Cranwell. Many firms have withdrawn their sponsorship packages or limit them to paying the upfront &pound;1,125 tuition fee. Sandwich courses are much less frequent than of old; I certainly benefited from doing such a course, as a practical hands-on engineer.</p>
 	<p pid="a.1396.0/5">The second route into the profession is via the work-based apprenticeship starting at 16 or 17, with day release to the appropriate further education college, followed by a part-time college-based training for an HND for those who had the capability and wished to pursue a higher qualification. In due course, this could lead to a further full-time course and to membership of a chartered institute.</p>
 	<p pid="a.1396.0/6">While both routes still exist, neither is attracting the number of entrants we need. The number of engineering students was down by 7 per cent between 1995 and 2000, a period when university enrolments went up by 12 per cent. Perhaps the Minister has more up-to-date figures. I hope they show an improvement.</p>
-	<p pid="a.1396.0/7">As I said in column 734 of Hansard in the debate on British industry and the global economy on <phrase class="date" code="2006-03-03">3 March</phrase>, smaller university departments are closing. In replying, the noble Lord, Lord Sainsbury, acknowledged the seriousness of the situation.</p>
+	<p pid="a.1396.0/7">As I said in column 734 of Hansard in the debate on British industry and the global economy on <phrase class="date" code="2004-03-03">3 March</phrase>, smaller university departments are closing. In replying, the noble Lord, Lord Sainsbury, acknowledged the seriousness of the situation.</p>
 	<p pid="a.1396.0/8">Traditional apprenticeships have largely disappeared and been replaced by the modern apprenticeship. The Government are trying to build this up so that about 28 per cent of school leavers are trained under the scheme. A foundation modern apprenticeship requires one to two years' training and achieves a level 2 NVQ. The Advanced Modern Apprenticeship is the craftsman equivalent; it requires three to four years' training and achieves a level 3 NVQ.</p>
 	<p pid="a.1396.0/9">While the Government claim they are close to achieving their 28 per cent target, many participants drop out before completion and, in particular, relatively few continue through to complete the full craft qualification, the Advanced Modern Apprenticeship. Most AMA course are college-based and many colleges have great difficulty in finding suitable industrial employers to take on the apprentices for work experience. Notable exceptions are large employers such as Ford, BAe Systems and Rolls-Royce. Far too many companies rely on someone else to do the training and then poach them by offering them higher salaries which those who do the training cannot afford.</p>
 	<p pid="a.1396.0/10">The problem is, how do we attract more young people into the engineering field? There are fundamental difficulties which prevail in our education system. Science and mathematics are seen as difficult subjects, tough A-levels. Maths is an essential prerequisite for engineering, but its teaching is in crisis in our schools, with an ageing workforce and insufficient recruitment to replace those leaving or retiring. Increasing numbers of pupils&mdash;now over 30 per cent in maintained secondary schools&mdash;are being taught by non-graduates and/or those with no specialist qualification. The whole thing is becoming a vicious circle. To quote Ray d'Inverno in a recent TES article:</p>
@@ -1147,7 +1166,7 @@
 	<p pid="a.1405.2/16">The regulations provide for the selection of a chair for each board by applying further criteria to interested lay and magistrate members, with the Minister taking a final decision. It has been agreed with the judiciary that the judge member will not chair. Assessing potential chairs against objective criteria will ensure that the chair is competent to undertake that role and provides a transparent process by which the best person is chosen.</p>
 	<p pid="a.1405.2/17">The regulations also set the maximum number of members at 12 and allow the boards to set their own quorum, subject to a minimum of four people. They provide that members may sit on the courts board for a maximum of three terms of three years although two terms will be the norm. They also provide for circumstances in which a member may be suspended or dismissed.</p>
 	<p pid="a.1405.2/18">These regulations set out an open and transparent system of appointment for courts boards members and the order sets out courts boards areas that are in line with the wishes expressed by this House during the passage of the Courts Act. I commend both orders to the House. I beg to move.</p>
-	<p pid="a.1405.2/19">Moved, That the draft order laid before the House on <phrase class="date" code="2006-02-26">26 February</phrase> be approved [11th report from the Joint Committee].&mdash;(Lord Filkin.)</p>
+	<p pid="a.1405.2/19">Moved, That the draft order laid before the House on <phrase class="date" code="2004-02-26">26 February</phrase> be approved [11th report from the Joint Committee].&mdash;(Lord Filkin.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1407.0" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon=":" colnum="1407"  time="020:16:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-07.htm#40331-07_spnew0">
@@ -1208,7 +1227,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1411.1" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="1411"  time="020:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-08.htm#40331-08_spnew2">
 	<p pid="a.1411.1/1">My Lords, I beg to move the second Motion standing in my name on the Order Paper.</p>
-	<p pid="a.1411.1/2">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-26">26 February</phrase> be approved [11th Report from the Joint Committee].&mdash;(Lord Filkin.)</p>
+	<p pid="a.1411.1/2">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-02-26">26 February</phrase> be approved [11th Report from the Joint Committee].&mdash;(Lord Filkin.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1411.2" nospeaker="true" colnum="1411"  time="020:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-08.htm#40331-08_spnew2">
@@ -1226,7 +1245,7 @@
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1411.5" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="1411"  time="020:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-08.htm#40331-08_spnew3">
 	<p pid="a.1411.5/1">My Lords, I beg to move that the draft Community Legal Service (Scope) Regulations 2004 be approved. The regulations are made under section 6(7) of the Access to Justice Act 1999, which enables the Secretary of State to make regulations to amend Schedule 2 to the Act. These regulations will remove,</p>
 	<p pid="a.1411.5/2" class="indent">&quot;attending an interview conducted on behalf of the Secretary of State with a view to his reaching a decision on a claim for asylum&quot;</p>
-	<p pid="a.1411.5/3">from the scope of the Community Legal Service. The regulations are subject to parliamentary approval under the affirmative resolution procedure. They were debated in Committee in another place on <phrase class="date" code="2006-03-08">8 March</phrase> and were agreed without opposition.</p>
+	<p pid="a.1411.5/3">from the scope of the Community Legal Service. The regulations are subject to parliamentary approval under the affirmative resolution procedure. They were debated in Committee in another place on <phrase class="date" code="2004-03-08">8 March</phrase> and were agreed without opposition.</p>
 	<p pid="a.1411.5/4">I should explain to your Lordships why we are making these regulations. This change is part of a wider package of reforms to asylum legal aid that we first consulted on in June last year, in our &quot;Public Consultation on Proposed Changes to Publicly Funded Immigration and Asylum Work&quot;. We proposed changes because of concern over the rising cost of asylum legal aid, which had risen from &pound;81.3 million in 2000&ndash;01 to &pound;174 million in 2002&ndash;03. At the same time, there was general concern about the level of control over quality, duplication and waste within the asylum legal aid system. Too many unmeritorious claims were being made and being pursued. There were, frankly, too many suppliers of insufficient quality doing the work. This had contributed to an increase in cost per case and an unsustainable level of expenditure.</p>
 	<p pid="a.1411.5/5">We announced our response to the consultation on <phrase class="date" code="2003-11-27">27 November 2003</phrase>. We made some significant changes to our original proposals; for example, introducing variable thresholds where we had initially proposed fixed caps on the amount of time that could be spent on cases. Our new proposals on thresholds and the accreditation of suppliers and the unique client number are being introduced from April this year by changes to the Legal Services Commission's contract with suppliers and by administrative changes. The regulations that we are considering are concerned only with removing the attendance of a representative at the substantive asylum interview. Perhaps I may explain why we are doing that.</p>
 	<p pid="a.1411.5/6">At present, funding is available for a representative, who, in practice, is usually an agent or outdoor clerk working for a legally aided organisation representing an asylum seeker, to attend the substantive interview with the Home Office. However, as we said in our consultation paper, we believe that, in the majority of cases, attendance by the representative at those interviews is unnecessary, of no benefit to the client and, as a consequence, a waste of public funds. In reality, in most cases, the role played by the person accompanying the asylum seeker is simply that of a note-taker.</p>
@@ -1249,7 +1268,7 @@
 	<p pid="a.1413.1/7" class="indent">&quot;A person who lacks capacity in relation to a matter if, at the material time, he is unable to make a decision for himself in relation to the matter because of an impairment of, or a disturbance in, the functioning of the mind or brain&quot;.</p>
 	<p pid="a.1413.1/8">That definition is taken from the draft Mental Incapacity Bill, Volume 1.</p>
 	<p pid="a.1413.1/9">I confirm to the House that, in my view, the regulations are compatible with rights under the European Convention on Human Rights, and I commend them to the House.</p>
-	<p pid="a.1413.1/10">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-02-12">12 February</phrase> be approved [9th Report from the Joint Committee].&mdash;(Lord Filkin.)</p>
+	<p pid="a.1413.1/10">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-02-12">12 February</phrase> be approved [9th Report from the Joint Committee].&mdash;(Lord Filkin.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1414.0" speakerid="uk.org.publicwhip/lord/100352" speakername="Lord Kingsland" colon=":" colnum="1414"  time="020:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-09.htm#40331-09_spnew0">
@@ -1261,7 +1280,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-31a.1414.1" speakerid="uk.org.publicwhip/lord/100499" speakername="Lord Phillips of Sudbury" colon=":" colnum="1414"  time="020:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040331/text/40331-09.htm#40331-09_spnew1">
 	<p pid="a.1414.1/1">My Lords, I should declare an interest. My firm&mdash;at least until tomorrow&mdash;has always been a legal aid provider of immigration and asylum services.</p>
-	<p pid="a.1414.1/2">Sadly, when the new regime comes into effect on <phrase class="date" code="2006-04-01">1 April</phrase>, we will cease to do legal aid work for the first time since I started the firm 34 years ago. That is because the present regime has become bureaucratically heavy-handed. It is implemented by conscientious staff, but none of them has first-hand appreciation of the realities and problems of the processes which currently provide a system of application by claimants.</p>
+	<p pid="a.1414.1/2">Sadly, when the new regime comes into effect on <phrase class="date" code="2004-04-01">1 April</phrase>, we will cease to do legal aid work for the first time since I started the firm 34 years ago. That is because the present regime has become bureaucratically heavy-handed. It is implemented by conscientious staff, but none of them has first-hand appreciation of the realities and problems of the processes which currently provide a system of application by claimants.</p>
 	<p pid="a.1414.1/3">That is a good starting point&mdash;and a good example of the generalisation that I have just made&mdash;for pondering for a moment on the Government's repeated assertion that legal representation is not needed at what the Explanatory Note to the order correctly calls &quot;the substantive interview&quot;.</p>
 	<p pid="a.1414.1/4">Many organisations have briefed Members of the House on the order, including the Refugee Legal Council, the Law Society, the Coalition Against Legal Aid Cuts, the Churches Commission for Racial Justice and, of course, ILPA, the Immigration Law Practitioners' Association.</p>
 	<p pid="a.1414.1/5">I particularly commend the briefing by the Refugee Legal Centre, because it derives from as deep and impartial an experience of the workings of this part of our legal system as is owned by any organisation in the land. It is an extremely clear and persuasive explanation of why the passage of the order will, first, achieve both significant and important unfairness&mdash;which will blemish this country's record&mdash;and, secondly, be self-defeating in legal aid savings.</p>

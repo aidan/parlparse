@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -53,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.269.1" speakerid="uk.org.publicwhip/lord/100677" speakername="Lord Wedderburn of Charlton" colon="" colnum="269"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spopq0">
 	<p pid="c.269.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.269.1/2" class="indent">What consultations they will hold with relevant governments and the World Health Organisation on the levels of advertisement for, and sale of, cigarettes in Asia and the Far East.</p>
+	<p pid="c.269.1/2" class="indent" pwmotiontext="asked">What consultations they will hold with relevant governments and the World Health Organisation on the levels of advertisement for, and sale of, cigarettes in Asia and the Far East.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.269.2" speakerid="uk.org.publicwhip/lord/100828" speakername="Baroness Royall of Blaisdon" colon=":" colnum="269"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spnew0">
@@ -89,7 +105,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.270.4" speakerid="uk.org.publicwhip/lord/100828" speakername="Baroness Royall of Blaisdon" colon=":" colnum="270"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spnew8">
-	<p pid="c.270.4/1">My Lords, I am sure that my colleagues will have very vigorous discussions with their counterparts in those member states to ensure that they ban advertising. An EU directive came into force on <phrase class="date" code="2006-07-31">31 July</phrase> that requires them to ban it.</p>
+	<p pid="c.270.4/1">My Lords, I am sure that my colleagues will have very vigorous discussions with their counterparts in those member states to ensure that they ban advertising. An EU directive came into force on <phrase class="date" code="2005-07-31">31 July</phrase> that requires them to ban it.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.270.5" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon=":" colnum="270"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spnew9">
@@ -114,7 +130,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.271.2" speakerid="uk.org.publicwhip/lord/100279" speakername="Lord Harrison" colon="" colnum="271"  time="011:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spopq1">
 	<p pid="c.271.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.271.2/2" class="indent">What benefits they expect from the proposed reform of the law concerning the flying of national and non-national flags from public buildings, particularly with regard to the tourism industry and the twinning of towns.</p>
+	<p pid="c.271.2/2" class="indent" pwmotiontext="asked">What benefits they expect from the proposed reform of the law concerning the flying of national and non-national flags from public buildings, particularly with regard to the tourism industry and the twinning of towns.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.271.3" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="271"  time="011:07:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-01.htm#51103-01_spmin1">
@@ -191,7 +207,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.274.1" speakerid="uk.org.publicwhip/lord/100042" speakername="Lord Berkeley" colon="" colnum="274"  time="011:15:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-02.htm#51103-02_spopq0">
 	<p pid="c.274.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.274.1/2" class="indent">Under what circumstances a Metropolitan Police officer is authorised to shoot to kill.</p>
+	<p pid="c.274.1/2" class="indent" pwmotiontext="asked">Under what circumstances a Metropolitan Police officer is authorised to shoot to kill.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.274.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="274"  time="011:15:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-02.htm#51103-02_spmin0">
@@ -268,7 +284,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.276.3" speakerid="uk.org.publicwhip/lord/100269" speakername="Baroness Hanham" colon="" colnum="276"  time="011:22:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-03.htm#51103-03_spopq0">
 	<p pid="c.276.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="c.276.3/2" class="indent">When the detailed commentary to accompany the draft regulations on home packs, which were published on <phrase class="date" code="">31 October</phrase>, will be available.</p>
+	<p pid="c.276.3/2" class="indent" pwmotiontext="asked">When the detailed commentary to accompany the draft regulations on home packs, which were published on <phrase class="date" code="2005-10-31">31 October</phrase>, will be available.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.276.4" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="276"  time="011:22:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-03.htm#51103-03_spnew10">
@@ -945,7 +961,7 @@
 	<p pid="c.359.0/20">I agree with the noble and learned Lord, Lord Howe, and the noble Lord, Lord Jopling, that tradition and history can lend our proceedings dignity and, indeed, a quirky charm. However, I think that we could be more rigorous in thinking about what works and what does not. I agree with my noble friend Lady Morris about the importance of considering change as a way of facing the future.</p>
 	<p pid="c.359.0/21">Many noble Lords, including my noble friend Lord Puttnam and the noble Lords, Lord Currie, Lord Norton of Louth, Lord Tyler, Lord Greaves and Lord McNally, talked about the importance of using new technology. An improved website to engage people, especially young people, and draw them into our work is achievable. I understand that plans for that are already under way. There is no reason why our website should not be interactive, looking outwards not inwards and drawing in views as well as putting out information. Many organisations, including other parliaments, already take advantage of new technology to reach people in new and innovative ways. This House could learn much from practices elsewhere.</p>
 	<p pid="c.359.0/22">I should like to pick up on four final points&mdash;I may have lost count as I have been dealing with each point as I go through my speech. The first is accountability and our overall effectiveness as an organisation. I agree with the noble Lords, Lord Norton of Louth, Lord Jopling and Lord Tyler, the noble and learned Lord, Lord Howe, and the noble Baroness, Lady Shephard, who talked about the importance of the substance of what we do and communicating that to the public. My noble friend Lord Sawyer also talked about the importance of what we communicate.</p>
-	<p pid="c.359.0/23">In response to the noble Lord, Lord Jopling, who keeps me on my toes with Questions for Written Answer, I agree that the Government need to improve but I remind him that, since <phrase class="date" code="2006-05-17">17 May</phrase> this year, 2,068 Questions for Written Answer have been tabled and the majority have been answered. Sometimes in talking about a lack of accountability of government, Members of this House and the other place forget that, despite lapses in responding to Questions for Written Answer within 14 days, for example, the number of times that Ministers from this Government come to the Dispatch Box, give Statements about what we do and open ourselves up to scrutiny and accountability should be recognised. I am in no way saying that Members of the Opposition or the Cross Benches do not have a right to hold us more rigorously to account and to ask us why we have not done certain things within certain time frames. But I feel very strongly that part of the malaise that grips us about the way our Parliament works stems from how almost everything is used in party-political terms rather than in looking more broadly at enhancing our political institutions.</p>
+	<p pid="c.359.0/23">In response to the noble Lord, Lord Jopling, who keeps me on my toes with Questions for Written Answer, I agree that the Government need to improve but I remind him that, since <phrase class="date" code="2005-05-17">17 May</phrase> this year, 2,068 Questions for Written Answer have been tabled and the majority have been answered. Sometimes in talking about a lack of accountability of government, Members of this House and the other place forget that, despite lapses in responding to Questions for Written Answer within 14 days, for example, the number of times that Ministers from this Government come to the Dispatch Box, give Statements about what we do and open ourselves up to scrutiny and accountability should be recognised. I am in no way saying that Members of the Opposition or the Cross Benches do not have a right to hold us more rigorously to account and to ask us why we have not done certain things within certain time frames. But I feel very strongly that part of the malaise that grips us about the way our Parliament works stems from how almost everything is used in party-political terms rather than in looking more broadly at enhancing our political institutions.</p>
 	<p pid="c.359.0/24">The noble Baroness, Lady Shephard, mentioned the importance of government being more accessible and communicating more effectively. I feel that the Government have a track record of seeking the views of the public on policy issues. We have consulted them on a wide range of policy issues relevant to individuals in society, including GM crops, disability, sustainable development and NHS services. The House may not realise that earlier this year the Home Office launched a cross-departmental initiative called Together We Can, which commits the Government to help citizens to work with public bodies to set and achieve common goals. As part of that initiative there are specific plans to increase democratic participation by raising understanding of political processes. The Department for Constitutional Affairs, in partnership with the Hansard Society and the Association for Citizenship Teaching, has just commissioned the development of a teaching resource dedicated to explaining Parliament and its work, to be used in schools. I agree with the noble Lord, Lord Phillips of Sudbury, who reminded the House that it was this Government who introduced citizenship teaching. He did it by reference to David Blunkett, but it is a reference that I will pick up because it is important to value the role that my right honourable friend played in that.</p>
 	<p pid="c.359.0/25">The noble Baroness, Lady Shephard, mentioned that the explosion in methods of communication made it much harder for us as a parliament to communicate. I agree with that. But, even in recognising that, we have a responsibility to look at whether we can use those new and different methods to enhance our relationship to the wider public. A point about accessibility and security was made by my noble friend Lord Puttnam and the noble Lord, Lord Phillips of Sudbury. I think that we are all agreed that while we have to be conscious of security, particularly given our responsibilities to staff who work here, we need to find the right balance between security and accessibility.</p>
 	<p pid="c.359.0/26">I have to say to the noble Baroness, Lady Wilcox, that I was a little surprised, because I felt her speech was slightly outside the spirit of our debate. I believe that Parliament and government have a common interest in strengthening post-legislative scrutiny. From the Government's point of view, it could help to ensure that our aims are delivered in practice and that the considerable resources devoted to legislation are committed to good effect. We have therefore been giving very close consideration to how post-legislative scrutiny can best be achieved. We have asked the Law Commission to undertake a study of the options. I have to say to the noble Baroness, who mentioned a whole raft of Bills, some of which are not even yet operative, that in order to carry out post-legislative scrutiny effectively it would be sensible to wait to see what impact those Bills have.</p>
@@ -982,7 +998,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.367.1" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon="" colnum="367"  time="017:02:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-22.htm#51103-22_spnew1">
-	<p pid="c.367.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="">10 October</phrase> be approved [<i>5th Report from the Joint Committee</i>].</p>
+	<p pid="c.367.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2005-10-10">10 October</phrase> be approved [<i>5th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.367.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="367"  time="017:02:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-22.htm#51103-22_spnew1">
@@ -995,7 +1011,7 @@
 	<p pid="c.367.2/7">We are committed to biometric fingerprint collection in all countries by 2008. I appreciate concerns over proportionality and data protection, but consider that the safeguards built into the regime, established in the 2003 and 2004 regulations, are adequate to address any such concerns. These safeguards are designed to deal with the collection of data and their subsequent use. With regard to data collection, any applicant who is under 16 years of age will have their fingerprints taken only in the presence of a responsible adult who is over 18 years old and not employed by the United Kingdom Government.</p>
 	<p pid="c.367.2/8">Turning to data usage, fingerprints collected in the Democratic Republic of Congo, the Netherlands and Vietnam will be added to the immigrant and asylum fingerprint system database. That will allow for the identification of any visa applicant who subsequently makes either an asylum or immigration application in a different identity. This, in turn, will help establish the nationality of those who no longer have a basis on which to remain in the United Kingdom and so assist with securing their removal. In common with other fingerprints collected in respect of immigration and asylum applications, data will be shared with the police and other law enforcement agencies in the prevention or investigation of crime. All such exchanges will be in compliance with the relevant data protection provisions. In terms of data retention, Regulations 7 and 8 of the 2003 regulations require these records to be retained for a maximum of 10 years, after which period they are destroyed.</p>
 	<p pid="c.367.2/9">Any entry clearance application which is not accompanied by the necessary fingerprint data may be treated as invalid. There may be exceptions, including applicants who, because of physical disability or injury, cannot provide a record of their fingerprints. However, it is anticipated that the majority of applications that are not accompanied by a record of fingerprints will be treated as invalid. As with all entry clearance applications, regardless of whether the regulations apply to them, if an application is incomplete it may be treated as invalid, and the applicant will enjoy no right of appeal. The system will be operated in a reasonable way, however, to limit the impact on applicants. I commend the regulations to your Lordships' House.</p>
-	<p pid="c.367.2/10">Moved, That the draft regulations laid before the House on <phrase class="date" code="">10 October</phrase> be approved [<i>5th Report from the Joint Committee</i>].&mdash;(<i>Lord Bassam of Brighton</i>.)</p>
+	<p pid="c.367.2/10">Moved, That the draft regulations laid before the House on <phrase class="date" code="2005-10-10">10 October</phrase> be approved [<i>5th Report from the Joint Committee</i>].&mdash;(<i>Lord Bassam of Brighton</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-11-03c.369.0" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="369"  time="017:02:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo051103/text/51103-23.htm#51103-23_spnew0">

@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -66,7 +85,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1371.5" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon="" colnum="1371"  time="014:48:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-01.htm#10717-01_spopq0">
 	<p pid="a.1371.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1371.5/2" class="indent">In the light of the &pound;117 million shortfall faced by the police in Northern Ireland revealed in the final annual report of the Chief Constable of the Royal Ulster Constabulary, how they propose to maintain law and order in Northern Ireland.</p>
+	<p pid="a.1371.5/2" class="indent" pwmotiontext="asked">In the light of the &pound;117 million shortfall faced by the police in Northern Ireland revealed in the final annual report of the Chief Constable of the Royal Ulster Constabulary, how they propose to maintain law and order in Northern Ireland.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1371.6" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1371"  time="014:48:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-01.htm#10717-01_spmin0">
@@ -130,7 +149,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1373.6" speakerid="uk.org.publicwhip/lord/100534" speakername="Lord Renton of Mount Harry" colon="" colnum="1373"  time="014:55:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-01.htm#10717-01_spopq1">
 	<p pid="a.1373.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1373.6/2" class="indent">Whether they intend to move forward on proposals to tax cars on entering traffic-congested urban areas.</p>
+	<p pid="a.1373.6/2" class="indent" pwmotiontext="asked">Whether they intend to move forward on proposals to tax cars on entering traffic-congested urban areas.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1373.7" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1373"  time="014:55:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-01.htm#10717-01_spnew12">
@@ -218,7 +237,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1377.1" speakerid="uk.org.publicwhip/lord/100102" speakername="Lord Campbell of Alloway" colon="" colnum="1377"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-02.htm#10717-02_spopq0">
 	<p pid="a.1377.1/1" pwmotiontext="asked">asked the Leader of the House:</p>
-	<p pid="a.1377.1/2" class="indent">Whether the Register of Interests now to be prepared is to be made available for public comment; and whether entries relating to spouses, relatives or friends are to be made without written consent of those concerned.</p>
+	<p pid="a.1377.1/2" class="indent" pwmotiontext="asked">Whether the Register of Interests now to be prepared is to be made available for public comment; and whether entries relating to spouses, relatives or friends are to be made without written consent of those concerned.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1377.2" speakerid="uk.org.publicwhip/lord/100688" speakername="Lord Williams of Mostyn" colon=":" colnum="1377"  time="015:05:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-02.htm#10717-02_spmin0">
@@ -308,7 +327,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1380.1" speakerid="uk.org.publicwhip/lord/100055" speakername="Lord Blaker" colon="" colnum="1380"  time="015:13:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-03.htm#10717-03_spopq0">
 	<p pid="a.1380.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1380.1/2" class="indent">Whether they expect any change to be made at the forthcoming Commonwealth Heads of Government Meeting to the core values and principles of the Commonwealth.</p>
+	<p pid="a.1380.1/2" class="indent" pwmotiontext="asked">Whether they expect any change to be made at the forthcoming Commonwealth Heads of Government Meeting to the core values and principles of the Commonwealth.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-07-17a.1380.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1380"  time="015:13:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo010717/text/10717-03.htm#10717-03_spmin0">

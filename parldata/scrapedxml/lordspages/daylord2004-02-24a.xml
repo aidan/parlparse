@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.107.1" speakerid="uk.org.publicwhip/lord/100355" speakername="Baroness Knight of Collingtree" colon="" colnum="107"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-01.htm#40224-01_spopq0">
 	<p pid="a.107.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.107.1/2" class="indent">What welfare payments will be available for persons entering the United Kingdom from the 10 new European Union countries after <phrase class="date" code="">1 May</phrase>; and how these provisions compare with those offered by other European Union countries.</p>
+	<p pid="a.107.1/2" class="indent" pwmotiontext="asked">What welfare payments will be available for persons entering the United Kingdom from the 10 new European Union countries after <phrase class="date" code="2004-05-01">1 May</phrase>; and how these provisions compare with those offered by other European Union countries.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.107.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="107"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-01.htm#40224-01_spmin0">
@@ -121,7 +142,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.109.5" speakerid="uk.org.publicwhip/lord/100036" speakername="Baroness Barker" colon="" colnum="109"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-01.htm#40224-01_spopq1">
 	<p pid="a.109.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.109.5/2" class="indent">What plans they have to support the continuation of research using primates in the United Kingdom.</p>
+	<p pid="a.109.5/2" class="indent" pwmotiontext="asked">What plans they have to support the continuation of research using primates in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.110.0" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="110"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-01.htm#40224-01_spmin1">
@@ -176,7 +197,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.112.1" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon="" colnum="112"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-02.htm#40224-02_spopq0">
 	<p pid="a.112.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.112.1/2" class="indent">How many deaths due to fire occurred in 2003; how many of these were in private residences and how many were in other buildings; and, of the latter, how many buildings were fitted with a sprinkler system.</p>
+	<p pid="a.112.1/2" class="indent" pwmotiontext="asked">How many deaths due to fire occurred in 2003; how many of these were in private residences and how many were in other buildings; and, of the latter, how many buildings were fitted with a sprinkler system.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.112.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="112"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-02.htm#40224-02_spmin0">
@@ -185,7 +206,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.112.3" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon=":" colnum="112"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-02.htm#40224-02_spnew9">
-	<p pid="a.112.3/1">My Lords, I thank the Minister for that Answer. Is he aware that the Answer that I was given when I raised the matter of sprinklers in relation to schools on <phrase class="date" code="2006-01-07">7 January</phrase> has been acknowledged as wrong by the Lancashire Fire Brigade, which plays a leading role in the National Fire Sprinkler Network? That brigade wrote to the Minister at that time on that question. We were told that sprinklers would not have saved a particular school, whereas the sprinkler people say that it definitely would.</p>
+	<p pid="a.112.3/1">My Lords, I thank the Minister for that Answer. Is he aware that the Answer that I was given when I raised the matter of sprinklers in relation to schools on <phrase class="date" code="2004-01-07">7 January</phrase> has been acknowledged as wrong by the Lancashire Fire Brigade, which plays a leading role in the National Fire Sprinkler Network? That brigade wrote to the Minister at that time on that question. We were told that sprinklers would not have saved a particular school, whereas the sprinkler people say that it definitely would.</p>
 	<p pid="a.112.3/2">Does the Minister agree that, whatever numbers have died, there would have been fewer deaths if sprinklers had been available? Would they not be particularly important in buildings where people are so vulnerable that they are incapable of getting themselves out, such as in the Scottish incident? I hope that the Minister will not tell me that that is a devolved matter, as it is the principle that I am talking about. A number of people have died very recently in those circumstances.</p>
 </speech>
 
@@ -241,11 +262,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.114.6" speakerid="uk.org.publicwhip/lord/100173" speakername="Lord Dholakia" colon="" colnum="114"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-03.htm#40224-03_spopq0">
 	<p pid="a.114.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.114.6/2" class="indent">What are the latest available figures for the prison population.</p>
+	<p pid="a.114.6/2" class="indent" pwmotiontext="asked">What are the latest available figures for the prison population.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.114.7" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="114"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-03.htm#40224-03_spnew7">
-	<p pid="a.114.7/1">My Lords, the prison population as of <phrase class="date" code="2006-02-20">Friday, 20 February</phrase> was 74,594. Of that total the number of sentenced prisoners was 61,365, and the number of remand prisoners 13,224.</p>
+	<p pid="a.114.7/1">My Lords, the prison population as of <phrase class="date" code="2004-02-20">Friday, 20 February</phrase> was 74,594. Of that total the number of sentenced prisoners was 61,365, and the number of remand prisoners 13,224.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.114.8" speakerid="uk.org.publicwhip/lord/100173" speakername="Lord Dholakia" colon=":" colnum="114"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-03.htm#40224-03_spnew8">
@@ -407,7 +428,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.121.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="121"  time="015:19:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-05.htm#40224-05_spnew0">
 	<p pid="a.121.1/1">My Lords, with the leave of the House, I should like to repeat a Statement on the British citizens detained at Guantanamo Bay which is being made in another place by my right honourable friend the Foreign Secretary. The Statement is as follows:</p>
-	<p pid="a.121.1/2" class="indent">&quot;Agreement with the United States Government on the return of five of the nine UK detainees was reached on Thursday last, <phrase class="date" code="2006-02-19">19 February</phrase>. Although the House was in recess, I judged that it was only fair to the families of all nine detainees that they should be informed immediately. We therefore made every effort to contact the families and their parliamentary representatives and I made a public announcement late on Thursday afternoon. I could not report to the House yesterday as I had to attend the General Affairs Council in Brussels.</p>
+	<p pid="a.121.1/2" class="indent">&quot;Agreement with the United States Government on the return of five of the nine UK detainees was reached on Thursday last, <phrase class="date" code="2004-02-19">19 February</phrase>. Although the House was in recess, I judged that it was only fair to the families of all nine detainees that they should be informed immediately. We therefore made every effort to contact the families and their parliamentary representatives and I made a public announcement late on Thursday afternoon. I could not report to the House yesterday as I had to attend the General Affairs Council in Brussels.</p>
 	<p pid="a.121.1/3" class="indent">&quot;The attacks of <phrase class="date" code="2001-09-11">11 September 2001</phrase> were the most appalling terrorist atrocity the world has ever seen. They killed more than 3,000 people, including 67 British citizens. In response to those attacks, a coalition of countries came together to launch a military campaign against Al'Qaeda and its Taliban supporters to remove them from their strongholds in Afghanistan.</p>
 	<p pid="a.121.1/4" class="indent">&quot;In these operations thousands of individuals believed to be Al'Qaeda or Taliban fighters, or their supporters, were detained by coalition forces. The vast majority of these individuals were released. But those who were deemed to pose a substantial risk of returning to the conflict&mdash;to date, around 800&mdash;were sent by the United States to its naval base in Guantanamo Bay to be detained and to be questioned about their knowledge of Al'Qaeda activities. As a result, valuable information has been gained which has helped to protect the international community from further Al'Qaeda and related terrorist attacks.</p>
 	<p pid="a.121.1/5" class="indent">&quot;The Government have been in frequent and regular contact with the United States authorities concerning the British detainees at Guantanamo Bay. From the outset, the Government have sought to ensure their welfare and have actively encouraged the US Government to resolve the position of the British detainees. British officials have visited Guantanamo Bay six times. We have kept their families and Parliament informed of the detainees' circumstances and of developments.</p>
@@ -451,7 +472,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.126.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="126"  time="015:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-05.htm#40224-05_spnew3">
-	<p pid="a.126.0/1">My Lords, first, I thank both noble Lords for the welcome that they have given the Statement. I say to the noble Lord, Lord Howell, that we particularly welcome the context in which he started his comments. However, I think it is only fair to say that none of us envisaged the possibility of two armed aeroplanes being flown into buildings in the way that occurred on <phrase class="date" code="">11 September</phrase>. That was a dramatic shock to the international community.</p>
+	<p pid="a.126.0/1">My Lords, first, I thank both noble Lords for the welcome that they have given the Statement. I say to the noble Lord, Lord Howell, that we particularly welcome the context in which he started his comments. However, I think it is only fair to say that none of us envisaged the possibility of two armed aeroplanes being flown into buildings in the way that occurred on <phrase class="date" code="2004-09-11">11 September</phrase>. That was a dramatic shock to the international community.</p>
 	<p pid="a.126.0/2">The noble Lord, Lord Howell, asked a number of questions. I hope that I made it clear in the Statement that I cannot go into the detail of the operational issues relating to the return of those who have now been identified to be returned to the UK. However, I can reassure the noble Lord that each case will be looked at on an individual basis. It will be considered rigorously and properly to ensure that all that should be done is done.</p>
 	<p pid="a.126.0/3">I note the noble Lord's comments concerning the statements made by my right honourable friend the Home Secretary. But, of course, the Home Secretary was correct because, following the investigations, either these individuals will be arrested and dealt with if they form a threat or, if the evidence does not justify such an act, they will not. Therefore, in those circumstances, our protection of national security will be maintained.</p>
 	<p pid="a.126.0/4">Before questioning by the police, the individuals will be examined to see whether they are medically fit to be interviewed. They also have a right to access to a defence lawyer. They can be questioned for an initial period of 48 hours, after which a court must approve further detention. Detention is, of course, a matter for the police. The men were interviewed in Guantanamo Bay by the security services on matters relevant to national security and not for prosecution purposes. Therefore, the decision will and must be left to the police authorities acting on any appropriate and proper advice given to them by the Crown Prosecution Service.</p>
@@ -1006,7 +1027,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.143.2" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon=":" colnum="143"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-10.htm#40224-10_spnew1">
-	<p pid="a.143.2/1">My Lords, could I take up with the Minister a question which I raised by means of a Written Question on <phrase class="date" code="2006-02-12">12 February</phrase>? That is, the mismatch between the policy of the Home Office on burial law in the 21st century&mdash;which suggests that an assessment should be made of community needs every 10 years&mdash;and the draft PPS11, which provides that the regional spatial strategy should develop a strategy for the region of at least 15 years.</p>
+	<p pid="a.143.2/1">My Lords, could I take up with the Minister a question which I raised by means of a Written Question on <phrase class="date" code="2004-02-12">12 February</phrase>? That is, the mismatch between the policy of the Home Office on burial law in the 21st century&mdash;which suggests that an assessment should be made of community needs every 10 years&mdash;and the draft PPS11, which provides that the regional spatial strategy should develop a strategy for the region of at least 15 years.</p>
 	<p pid="a.143.2/2">In her reply, the noble Baroness, Lady Scotland, said,</p>
 	<p pid="a.143.2/3" class="indent">&quot;For planning purposes, the provision of land for burial is currently considered to be a local, rather than regional, land use issue&quot;.</p>
 	<p pid="a.143.2/4">She also said that the consultation paper which has now been issued by the Government,</p>
@@ -1926,7 +1947,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.188.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon="" colnum="188"  time="019:33:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-20.htm#40224-20_spnew8">
-	<p pid="a.188.3/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].</p>
+	<p pid="a.188.3/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2004-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.188.4" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="188"  time="019:33:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-20.htm#40224-20_spnew8">
@@ -1934,7 +1955,7 @@
 	<p pid="a.188.4/2">There are two statutory instruments to be considered. The first is the draft Immigration (Provision of Physical Data) (Amendment) Regulations 2004 which are made in exercise of the powers conferred on the Secretary of State by Section 126 of the Nationality, Immigration and Asylum Act 2002. Section 126 enables the Secretary of State, by the making of regulations, to require that an immigration application be accompanied by physical data of an external characteristic or to enable an authorised person to require an entrant to provide information of this sort. One set of regulations has already been made under this power&mdash;the Immigration (Provision of Physical Data) Regulations 2003. The 2003 regulations required the provision of a record of fingerprints by entry clearance applicants in Colombo.</p>
 	<p pid="a.188.4/3">The second statutory instrument is the draft Immigration (Leave to Enter and Remain) (Amendment) Order 2004, which is made in exercise of the powers conferred by Section 3A of the Immigration Act 1971, as inserted by Section 1 of the Immigration and Asylum Act 1999. Section 3A (3) enables the Secretary of State by order to prescribe the circumstances in which an entry clearance is to have effect as leave to enter the United Kingdom.</p>
 	<p pid="a.188.4/4">The purpose of these statutory instruments is to expand the current fingerprinting power in the 2003 regulations to encompass new categories of immigration application. The new provision will require those applying for entry clearance in Djibouti, Ethiopia, Eritrea, Tanzania and Uganda to provide fingerprint data. Holders of 1951 convention travel documents issued outside the UK will also be required to provide fingerprints on making an application for leave to enter the UK. We are amending the Immigration (Leave to Enter and Remain) Order so that this application has to be made on arrival in the UK. This ensures that any 1951 convention document holders who refuse to provide their fingerprints can be refused leave to enter.</p>
-	<p pid="a.188.4/5">Fingerprinting in Colombo will continue. The initial six-month pilot has been concluded and the results were reported to the House in the letter from my right honourable friend Beverley Hughes of <phrase class="date" code="2006-02-05">5 February</phrase> to the chair of the Seventh Standing Committee on Delegated Legislation, a copy of which was placed in the Library of the House. The results of the pilot are encouraging and the Government remain convinced that greater use of biometric technology will support efforts to prevent document and identity fraud. It will enable those who have an entitlement to enter the UK to do so without hindrance while preventing those who seek to circumvent our controls from doing so.</p>
+	<p pid="a.188.4/5">Fingerprinting in Colombo will continue. The initial six-month pilot has been concluded and the results were reported to the House in the letter from my right honourable friend Beverley Hughes of <phrase class="date" code="2004-02-05">5 February</phrase> to the chair of the Seventh Standing Committee on Delegated Legislation, a copy of which was placed in the Library of the House. The results of the pilot are encouraging and the Government remain convinced that greater use of biometric technology will support efforts to prevent document and identity fraud. It will enable those who have an entitlement to enter the UK to do so without hindrance while preventing those who seek to circumvent our controls from doing so.</p>
 	<p pid="a.188.4/6">There will be no change to the procedural safeguards already provided as part of the existing fingerprint requirement. Applicants who are under 16 years of age will have their fingerprints taken only in the presence of a responsible adult who is over 18 years of age and not employed by the Government. Those safeguards also apply to the new categories of applicant who will be subject to the fingerprint requirement. Fingerprints collected in Colombo and east Africa will be added to the immigration and asylum fingerprint system database. That will allow for the identification of any visa applicant who subsequently makes either an asylum or immigration application in a different identity. That will, in turn, help establish the nationality of those who no longer have a basis on which to remain in the UK, and so assist with securing their removal.</p>
 	<p pid="a.188.4/7">In common with other data collected in respect of immigration and asylum applications, fingerprints will be shared with the police and other law enforcement agencies for the purposes of the prevention or investigation of crime. All such exchanges will be carried out in compliance with the Data Protection Act 1998. That means that data may only be disclosed when it is necessary for one of the specified purposes set out in the data protection legislation, such as the exercise of statutory, departmental or police functions, and that the disclosure must be conducted in accordance with the data protection principles. An additional safeguard is that, under the regulations, any fingerprints stored on the database are required to be destroyed no more than 10 years from the day on which they were provided.</p>
 	<p pid="a.188.4/8">Any entry clearance application that is not accompanied by the necessary fingerprint data may be treated as invalid. There may be exceptions, including applicants who, because of physical disability or injury, cannot provide fingerprints. The system will be operated in a reasonable way to limit the impact on applicants.</p>
@@ -1942,7 +1963,7 @@
 	<p pid="a.188.4/10">The Immigration (Leave to Enter and Remain) Order 2000 is being amended because, at present, an entry clearance will act as leave to enter. Without this amendment any convention travel document holder with an entry clearance would enjoy a right of entry to the UK. To require such a person to provide fingerprints at the entry clearance stage would require the installation of fingerprinting equipment at every entry clearance post world-wide, as we do not want the fingerprint requirement imposed on convention travel document holders to be limited to those applying in certain countries. To do that would involve vastly disproportionate expense. The order needs to be amended to make clear that the holder of a convention travel document must apply for leave to enter on arrival in the UK even when he or she is in possession of a valid entry clearance. If a convention document holder refuses to provide fingerprint data when seeking entry to the UK, that application for leave can be refused and the individual can, if appropriate, be removed.</p>
 	<p pid="a.188.4/11">We are working with the authorities in relevant east African countries to effect a smooth introduction to the fingerprinting operation. The support and co-operation received is much appreciated by this Government. The UNHCR is also being consulted about these proposals.</p>
 	<p pid="a.188.4/12">As I have said, we believe that the use of biometric technology in the immigration field is an important development that will provide greater certainty over people's identity than has been possible in the past. We are not alone in that view. We are working with our EU partners on proposals for the inclusion of biometric identifiers in visas and residence permits, and noble Lords will be aware that the US authorities are already making greater use of fingerprint data. Those measures will of course provide benefits for us and our controls, but they also provide reassurance to legitimate travellers. By reducing the scope for identity fraud, we reduce the risk that legitimate travellers will have their identity stolen or, because of similar details, will be mistaken for someone else. It is for those reasons we believe that it is essential that we make appropriate use of biometrics. I commend the regulations and the order to the House.</p>
-	<p pid="a.188.4/13">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
+	<p pid="a.188.4/13">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.191.0" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="191"  time="019:33:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-21.htm#40224-21_spnew0">
@@ -1956,7 +1977,7 @@
 	<p pid="a.191.1/2">We do not have the letter referring to proportionality that the Minister said was sent by her colleague in another place to the committee. I asked in the Printed Paper Office and in the Library, and I can tell the Minister that it was not on POLIS. Therefore, I have come into the Chamber without full knowledge of the report made by the Minister in another place, although I have had the opportunity of studying what she said before the Standing Committee on Delegated Legislation.</p>
 	<p pid="a.191.1/3">The Minister in another place explained that the purpose was to extend the use of biometric controls to the countries mentioned today. She also gave some information about the results from the letter; she said that 14,000 fingerprints had been taken in Colombo and that the result was that seven people were positively identified and two of them received prison sentences. In reply to a question from Mr Boswell, she said that if one considered the decline in applications from Colombo and compared it with the equivalents from India and Pakistan, there was a more than proportionate reduction. Therefore, fingerprinting had been effective, not only in catching people who committed offences but in deterring unjustified applications from Colombo. I would very much like to have seen the coloured graphs that the right honourable Lady mentioned in her speech to the Standing Committee; I hope that copies of them can be placed in your Lordships' Library.</p>
 	<p pid="a.191.1/4">The Minister in another place also made the point that sharing the data had to be consistent in all respects with the Data Protection Act 1998, the Human Rights Act 1998 and the common law of confidence. I should like to ask the noble Baroness, when she comes to reply, what consultation she has had with the Information Commissioner on the matter. It is not only what the Government say about the use that is to be made of the data that matters, but what the statutory body set up for the protection of individuals under the Data Protection Act has to say. Personally, I should like there to be a certificate in the legislation, when major extensions are being contemplated in the use of biometric data, saying that the Government have consulted the Information Commissioner and that he has raised no objections to the proposals.</p>
-	<p pid="a.191.1/5">The noble Baroness referred indirectly to the European Union draft directive on the use of biometrics on all passengers arriving at ports of entry into the EU. The report from Sub-Committee F on the proposal, which was published on <phrase class="date" code="2006-02-12">12 February</phrase>, found that an adequate case had not been made out for that proposal, which was of course much more far-reaching than what is in front of us now, because of the considerable burden it would place on carriers and the disproportionate cost in comparison with the results hoped to be achieved. It is unfortunate that we have had no opportunity of debating that report, as we are faced with a creeping extension&mdash;although it may be perfectly justified&mdash;of the use of physical data without the opportunity to consider the order in the context of the more far-reaching proposals that will be coming down the track. However, that may simply be an accident of our timetable, which could not have been avoided.</p>
+	<p pid="a.191.1/5">The noble Baroness referred indirectly to the European Union draft directive on the use of biometrics on all passengers arriving at ports of entry into the EU. The report from Sub-Committee F on the proposal, which was published on <phrase class="date" code="2004-02-12">12 February</phrase>, found that an adequate case had not been made out for that proposal, which was of course much more far-reaching than what is in front of us now, because of the considerable burden it would place on carriers and the disproportionate cost in comparison with the results hoped to be achieved. It is unfortunate that we have had no opportunity of debating that report, as we are faced with a creeping extension&mdash;although it may be perfectly justified&mdash;of the use of physical data without the opportunity to consider the order in the context of the more far-reaching proposals that will be coming down the track. However, that may simply be an accident of our timetable, which could not have been avoided.</p>
 	<p pid="a.191.1/6">Both the UK and the European Union have taken their cue on these matters from the US, where all visitors from non-visa waiver countries must already provide biometric data on arrival. I understand that that is to be extended to everybody who enters the United States, even those who possess standing visas, from October this year. Perhaps we do not have any discretion in this matter, when airlines will be compelled to accept US regulations. There will be very practical reasons for Europe to adopt the same rules. However, we should at least know what it is going to cost, what new obligations are being loaded on to carriers and whether the Government and the Information Commissioner are fully satisfied that adequate steps are being taken to ensure that our data protection legislation is being observed.</p>
 	<p pid="a.191.1/7">I should like to say a word on the imposition of the new requirements on the holders of convention travel documents. I understand what the noble Baroness said about not requiring everyone to obtain fingerprints before they set off, as that would entail an enormous extension of the fingerprinting system to every country from which a CTD holder might arrive. Presumably, however, when CTD holders from the main countries in east Africa&mdash;and from Kenya if it is added to the list, as was discussed in the Standing Committee in another place&mdash;apply at those posts for an entry certificate, they will automatically be fingerprinted before they set off and will not have to be fingerprinted again on arrival. I also assume that when CTD holders apply for an entry certificate in other countries that are not in east Africa or in Sri Lanka they will be told specifically that they will be asked to give a fingerprint on arrival in the United Kingdom. I hope that the noble Baroness can give those assurances. I welcome this order and these regulations.</p>
 </speech>
@@ -1977,7 +1998,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.194.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="194"  time="019:33:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-21.htm#40224-21_spnew3">
 	<p pid="a.194.1/1">My Lords, I beg to move.</p>
-	<p pid="a.194.1/2">Moved, That the draft order laid before the House on <phrase class="date" code="2006-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
+	<p pid="a.194.1/2">Moved, That the draft order laid before the House on <phrase class="date" code="2004-01-21">21 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.194.2" nospeaker="true" colnum="194"  time="019:33:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-21.htm#40224-21_spnew3">
@@ -1989,7 +2010,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.194.4" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon="" colnum="194"  time="019:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-21.htm#40224-21_spnew4">
-	<p pid="a.194.4/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-02-05">5 February</phrase> be approved [8th Report from the Joint Committee].</p>
+	<p pid="a.194.4/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2004-02-05">5 February</phrase> be approved [8th Report from the Joint Committee].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.194.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="194"  time="019:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-21.htm#40224-21_spnew4">
@@ -1997,7 +2018,7 @@
 	<p pid="a.194.5/2">Where there is an allegation of criminal conduct by a person serving with the police, there is a real need for an independent alternative to an investigation by the police. Part 2 of the Police Reform Act 2002 envisages that the IPCC will itself conduct investigations only in the most serious cases. The IPCC investigators will need to operate in the same way as the police and will need the same capabilities and the same powers in order, for example, to interfere with property, to engage in surveillance or to use human intelligence sources. The order will give the IPCC the necessary powers to conduct investigations independently from the police into allegations of serious criminal conduct by any person serving with the police.</p>
 	<p pid="a.194.5/3">The modifications made by this order are about setting appropriate levels within the IPCC in regard to authorisation to use specific powers for specific purposes; ensuring that the IPCC is subject to equivalent controls as apply to the police; and handling of complaints against the IPCC in exercising its powers under the order.</p>
 	<p pid="a.194.5/4">The provisions in the Police Act 1997 and RIPA were drafted to ensure sufficient certainty in the mechanisms for safeguarding against the misuse of the powers contained in them. Such safeguards are required to comply with the duty under Section 6 of the Human Rights Act. Existing mechanisms provided by the Police Act 1997 and RIPA are compatible with the convention rights. This order slots the IPCC into the existing mechanism. There has been consultation on the order with the independent Police Complaints Commission, the IPCC, the Crown Prosecution Service and the Police Advisory Board for England and Wales. I should like to reassure the House that these provisions will be used with the most stringent compliance with the rules and will address the most serious cases. I commend the order to the House.</p>
-	<p pid="a.194.5/5">Moved, That the draft order laid before the House on <phrase class="date" code="2006-02-05">5 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
+	<p pid="a.194.5/5">Moved, That the draft order laid before the House on <phrase class="date" code="2004-02-05">5 February</phrase> be approved [8th Report from the Joint Committee].&mdash;(Baroness Scotland of Asthal.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.195.0" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="195"  time="019:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-22.htm#40224-22_spnew0">
@@ -2543,7 +2564,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-02-24a.224.3" nospeaker="true" colnum="224"  time="022:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040224/text/40224-29.htm#40224-29_head0">
-	<p pid="a.224.3/1" pwmotiontext="message">A message was brought from the Commons that they have ordered the committee appointed by them to meet with the Lords committee on <phrase class="date" code="2006-03-01">Monday, 1 March</phrase> at half-past four o'clock, as proposed by this House.</p>
+	<p pid="a.224.3/1" pwmotiontext="message">A message was brought from the Commons that they have ordered the committee appointed by them to meet with the Lords committee on <phrase class="date" code="2004-03-01">Monday, 1 March</phrase> at half-past four o'clock, as proposed by this House.</p>
 	<p pid="a.224.3/2" class="indent" pwmotiontext="adjourned">House adjourned at nine minutes past ten o'clock.</p>
 </speech>
 </publicwhip>

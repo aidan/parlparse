@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.691.1" speakerid="uk.org.publicwhip/lord/100463" speakername="Lord Northbourne" colon="" colnum="691"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-01.htm#40324-01_spopq0">
 	<p pid="a.691.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.691.1/2" class="indent">What actions they are taking to close the academic achievement gap between boys and girls at school, given that in 2002 44 per cent of boys compared with 55 per cent of girls achieved five or more GCSE/GNVQ passes at grades A to C.</p>
+	<p pid="a.691.1/2" class="indent" pwmotiontext="asked">What actions they are taking to close the academic achievement gap between boys and girls at school, given that in 2002 44 per cent of boys compared with 55 per cent of girls achieved five or more GCSE/GNVQ passes at grades A to C.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.691.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="691"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-01.htm#40324-01_spmin0">
@@ -109,7 +130,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.693.5" speakerid="uk.org.publicwhip/lord/100498" speakername="Lord Peyton of Yeovil" colon="" colnum="693"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-01.htm#40324-01_spopq1">
 	<p pid="a.693.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.693.5/2" class="indent">Whether they believe that the office of Secretary of State for Constitutional Affairs will command the same degree of public respect as that of Lord Chancellor; and, if so, what grounds they have for so believing.</p>
+	<p pid="a.693.5/2" class="indent" pwmotiontext="asked">Whether they believe that the office of Secretary of State for Constitutional Affairs will command the same degree of public respect as that of Lord Chancellor; and, if so, what grounds they have for so believing.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.694.0" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="694"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-01.htm#40324-01_spmin1">
@@ -188,7 +209,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.696.4" speakerid="uk.org.publicwhip/lord/100686" speakername="Baroness Williams of Crosby" colon="" colnum="696"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spopq0">
 	<p pid="a.696.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.696.4/2" class="indent">When the inquiry by the Prisons Ombudsman on the allegations of bullying and intimidation of detainees at Yarl's Wood immigration removal centre will be published.</p>
+	<p pid="a.696.4/2" class="indent" pwmotiontext="asked">When the inquiry by the Prisons Ombudsman on the allegations of bullying and intimidation of detainees at Yarl's Wood immigration removal centre will be published.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.696.5" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="696"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew15">
@@ -196,12 +217,12 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.696.6" speakerid="uk.org.publicwhip/lord/100686" speakername="Baroness Williams of Crosby" colon=":" colnum="696"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew16">
-	<p pid="a.696.6/1">My Lords, I believe that the report reached the Minister some time towards the end of February. On <phrase class="date" code="">11 December</phrase>, he pledged to the House that it would be published as soon as possible. Can he give us any indication of when it will be published?</p>
+	<p pid="a.696.6/1">My Lords, I believe that the report reached the Minister some time towards the end of February. On <phrase class="date" code="2004-12-11">11 December</phrase>, he pledged to the House that it would be published as soon as possible. Can he give us any indication of when it will be published?</p>
 	<p pid="a.696.6/2">Secondly, why did the Prisons Ombudsman, who conducted the review, interview no past detainees, only current detainees? Past detainees would be freer to speak their mind and give evidence than current detainees, who might be concerned about their status.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.696.7" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="696"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew17">
-	<p pid="a.696.7/1">My Lords, I cannot be more specific about the publication of Stephen Shaw's report. As I indicated, a draft was submitted earlier this year&mdash;on <phrase class="date" code="2006-02-24">24 February</phrase>. With regard to the interviews, my understanding is that detainees spoke to the inquiry team, as did members of staff. The inquiry team spent two weeks at Yarl's Wood, making sure that it had the opportunity to speak to those who had been detained and to staff as well. A fairly lengthy time and great care were taken to record as much as possible during the inquiry.</p>
+	<p pid="a.696.7/1">My Lords, I cannot be more specific about the publication of Stephen Shaw's report. As I indicated, a draft was submitted earlier this year&mdash;on <phrase class="date" code="2004-02-24">24 February</phrase>. With regard to the interviews, my understanding is that detainees spoke to the inquiry team, as did members of staff. The inquiry team spent two weeks at Yarl's Wood, making sure that it had the opportunity to speak to those who had been detained and to staff as well. A fairly lengthy time and great care were taken to record as much as possible during the inquiry.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.696.8" speakerid="uk.org.publicwhip/lord/100144" speakername="Lord Corbett of Castle Vale" colon=":" colnum="696"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew18">
@@ -209,7 +230,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.697.0" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="697"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew19">
-	<p pid="a.697.0/1">My Lords, the first phase of Yarl's Wood has already reopened and provides accommodation for 60 single females. It reopened on <phrase class="date" code="">28 September</phrase> last year. I understand that there will be a progressive reopening of the undamaged part of the centre, which will eventually accommodate up to 400 people, comprising single females and families. That should be complete by December of this year.</p>
+	<p pid="a.697.0/1">My Lords, the first phase of Yarl's Wood has already reopened and provides accommodation for 60 single females. It reopened on <phrase class="date" code="2004-09-28">28 September</phrase> last year. I understand that there will be a progressive reopening of the undamaged part of the centre, which will eventually accommodate up to 400 people, comprising single females and families. That should be complete by December of this year.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.697.1" speakerid="uk.org.publicwhip/lord/100074" speakername="Viscount Bridgeman" colon=":" colnum="697"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-02.htm#40324-02_spnew20">
@@ -282,16 +303,16 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.699.2" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon="" colnum="699"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-03.htm#40324-03_spopq0">
 	<p pid="a.699.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.699.2/2" class="indent">Whether they will suspend the return of asylum seekers to Kosovo until the situation is clearer.</p>
+	<p pid="a.699.2/2" class="indent" pwmotiontext="asked">Whether they will suspend the return of asylum seekers to Kosovo until the situation is clearer.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.699.3" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="699"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-03.htm#40324-03_spnew10">
-	<p pid="a.699.3/1">My Lords, the situation in Kosovo developed quickly last week. The United Nations Interim Administration in Kosovo which oversees flights of returned asylum seekers advised us on <phrase class="date" code="2006-03-18">18 March</phrase> that due to the security situation it would not be able to accept forced repatriation flights until further notice.</p>
+	<p pid="a.699.3/1">My Lords, the situation in Kosovo developed quickly last week. The United Nations Interim Administration in Kosovo which oversees flights of returned asylum seekers advised us on <phrase class="date" code="2004-03-18">18 March</phrase> that due to the security situation it would not be able to accept forced repatriation flights until further notice.</p>
 	<p pid="a.699.3/2">In the light of that, flights returning failed asylum seekers to Kosovo have been temporarily suspended. We shall continue to monitor the situation closely in conjunction with the Foreign and Commonwealth Office with a view to resuming flights as soon as is practical and possible.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.699.4" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon=":" colnum="699"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-03.htm#40324-03_spnew11">
-	<p pid="a.699.4/1">My Lords, I thank the Minister for that reply. In considering how long the duration of this policy should be, will he take account of the remarks made by Ruud Lubbers of UNHCR on <phrase class="date" code="2006-03-18">18 March</phrase>, in which he referred to,</p>
+	<p pid="a.699.4/1">My Lords, I thank the Minister for that reply. In considering how long the duration of this policy should be, will he take account of the remarks made by Ruud Lubbers of UNHCR on <phrase class="date" code="2004-03-18">18 March</phrase>, in which he referred to,</p>
 	<p pid="a.699.4/2" class="indent">&quot;the fragile character of the situation in Kosovo&quot;?</p>
 	<p pid="a.699.4/3">After all, we are dealing with people's lives, about which we ought not to take too many chances.</p>
 </speech>
@@ -338,7 +359,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.700.6" speakerid="uk.org.publicwhip/lord/100098" speakername="Baroness Byford" colon="" colnum="700"  time="015:04:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-03.htm#40324-03_spopq1">
 	<p pid="a.700.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.700.6/2" class="indent">Why the evidence of the Department for Environment, Food and Rural Affairs veterinary officer Jim Dring was not forwarded to Dr Anderson's &quot;Lessons Learned&quot; inquiry into foot and mouth disease.</p>
+	<p pid="a.700.6/2" class="indent" pwmotiontext="asked">Why the evidence of the Department for Environment, Food and Rural Affairs veterinary officer Jim Dring was not forwarded to Dr Anderson's &quot;Lessons Learned&quot; inquiry into foot and mouth disease.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.700.7" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="700"  time="015:04:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-03.htm#40324-03_spnew21">
@@ -487,7 +508,7 @@
 	<p pid="a.708.0/1">My Lords, I thank the noble Lord, Lord King, for introducing this debate and setting the scene for the very wide issues that we face. I should also like to comment on the earlier remark about there being only one speaker from the Labour Benches; my noble friend the Chief Whip said that the Minister would answer every point and we would all support him. I do not want it to be thought in any way that I do not support the Government. As a colleague said to me, &quot;Brenda, you're playing left-wing, right-wing and centre-forward today for the party&quot;.</p>
 	<p pid="a.708.0/2">This is a very difficult and wide issue and I am pleased that we are debating it today. No doubt we will continue to debate it, because, as the noble Lord, Lord King, said, this is not a five-minute wonder. It is with us; it is about life today. I should like to concentrate on the Armed Forces, accepting that perhaps today, more than ever, the integrated working of not only the Armed Forces but our security services generally is essential.</p>
 	<p pid="a.708.0/3">I predicate everything I say against the background that our Armed Forces like to work. They like to do what they are trained for, and if that means being posted into an operational field more than once, sometimes several times, over a two-year cycle, they will face that. But it is a question of what comes with it and what we as a nation give them to carry out that role and to recognise the impact on their lives and families as well.</p>
-	<p pid="a.708.0/4">In the debate on the White Paper of <phrase class="date" code="">11 December</phrase> last year, Delivering Security in a Changing World, Nicholas Soames, leading for the Opposition in the other place, said that he generally agreed with the thrust of the paper. I think that most people would, although there would be great differences on the detail. Chapter 5 of the White Paper deals with personnel. It announced that in April this year, the Government would publish a personnel plan. Essay 5, which accompanied the White Paper&mdash;I do not always follow the terminology&mdash;talked about the increasing competition and cost of personnel because of the Armed Forces having to compete with other parts of our community. That is essential. Will that personnel paper be published, as a policy, in April, on time? It has to be integral with the overall defence policy.</p>
+	<p pid="a.708.0/4">In the debate on the White Paper of <phrase class="date" code="2004-12-11">11 December</phrase> last year, Delivering Security in a Changing World, Nicholas Soames, leading for the Opposition in the other place, said that he generally agreed with the thrust of the paper. I think that most people would, although there would be great differences on the detail. Chapter 5 of the White Paper deals with personnel. It announced that in April this year, the Government would publish a personnel plan. Essay 5, which accompanied the White Paper&mdash;I do not always follow the terminology&mdash;talked about the increasing competition and cost of personnel because of the Armed Forces having to compete with other parts of our community. That is essential. Will that personnel paper be published, as a policy, in April, on time? It has to be integral with the overall defence policy.</p>
 	<p pid="a.708.0/5">The National Audit Office report and the report of the Select Committee on Defence referred to by the noble Lord have criticisms but they also recognise what has been achieved. The reports are very positive. The House of Commons Defence Committee report refers to the impact of Operation FRESCO. The firefighters' dispute came out of nowhere&mdash;who would have thought it would have had an impact on how our Armed Forces, all 19,000 of them, would be expected to cover in that industrial situation at the same time as preparing to go to war in Iraq? That was an enormous challenge that had a side effect we must consider.</p>
 	<p pid="a.708.0/6">The report referred to lost leave. I gather the situation is improving considerably, but it has an impact on retention. Recommendation 86 talks about the key effectiveness of our services based upon their training. If we do not have the resources available, whether it is time or physical support, that will affect training. If there is anything that helps the professionalism of our Armed Forces, it is the good training that personnel receive.</p>
 	<p pid="a.708.0/7">On the reliance on reserves, the problem over the years is that the reserves, and their employers in particular, probably thought that they would never be deployed. In some skill areas, such as medicine, as much as 10 per cent of the overall cover is provided by the reserves. That has presented problems, and it is covered in Recommendation 29 of the Defence Committee report. It certainly reflects what I heard, going around talking to Armed Forces personnel. They talked about people having lost their jobs when they come back, which confirms what I heard.</p>
@@ -536,7 +557,7 @@
 	<p pid="a.715.0/7">In all the reorganisation that rightly goes on in our Armed Forces, it is important that we are aware of the need for high morale among our service personnel, as the noble Baroness, Lady Dean, said earlier.</p>
 	<p pid="a.715.0/8">That brings me to the question of security. Security processes are now far tighter. As we know well, that affects civilians. We are getting used to living in a far less predictable and far more dangerous world than the one in which my generation grew up during the Cold War, which was stark and resented but was, in some strange ways, manageable; at least it was more manageable than the situation that we are in now. In the presence of the noble Lord, Lord Campbell-Savours, I am not sure whether I am allowed to admit to being the son of a former MI6 officer, but since he has died I am perhaps allowed to do so.</p>
 	<p pid="a.715.0/9">Our new climate of &quot;controlled fear&quot; places new burdens on many of our institutions and intelligence, as a concept, often has to carry additional burdens that may make us confuse it with fact. When the facts, as we experience them, do not match the intelligence that we may maintain we have received, it is assumed that something must be wrong with the system and heads must roll. That is not always a helpful way to operate. All knowledge is partial because it is incomplete. We cannot always know and express the whole picture. In being aware of what we come to know and in trying to communicate it, we are limited by our attitudes, which are formed by education, experience and country of origin, as witnessed by possible changes in policy towards the Iraq conflict and its aftermath in Spain.</p>
-	<p pid="a.715.0/10">That brings me to terrain that noble Lords might expect to be covered by someone speaking from these Benches. In the major speech given by the Prime Minister on <phrase class="date" code="2006-03-05">5 March</phrase>, he referred to,</p>
+	<p pid="a.715.0/10">That brings me to terrain that noble Lords might expect to be covered by someone speaking from these Benches. In the major speech given by the Prime Minister on <phrase class="date" code="2004-03-05">5 March</phrase>, he referred to,</p>
 	<p pid="a.715.0/11" class="indent">&quot;the poison of religious extremism,&quot;</p>
 	<p pid="a.715.0/12">and the need for the peoples of Iraq and Afghanistan&mdash;I am glad that he mentioned both and not just Iraq&mdash;to be enabled to triumph over that kind of oppression. Since 9/11, religion has re-entered the world map with a new force that cannot be dismissed by the western, secularist agenda. If we follow that tack we shall be storing up a great deal of trouble for ourselves and the next generation.</p>
 	<p pid="a.715.0/13">As my friend the most reverend Primate the Archbishop of Canterbury has said in some recent public contexts, religious extremism needs to be countered with religious language, knowledge and understanding. He said that more work needs to be done in order to find the right kind of language, not only for dialogue with religious leaders and between them, but for really effective religious education in our schools. Religious education should be about more than exploring rites of passage and festivals, important as these are. It should be about much more basic questions, such as why people believe certain things and what makes them act in a particular way. The challenge that I, as a theologian and a bishop, have to live with is how those two relate to each other, if they do so at all. The word for actor in the original Greek is a hypocrite and all men and women of faith are challenged all the time as to whether they are actors, even when they are dressed in rochet and chimere in your Lordships' House.</p>
@@ -783,7 +804,7 @@
 	<p pid="a.749.0/6">From my perspective, a pension is not just another financial commodity for which we pay now to use later. Millions of men and women employees, along with their employers, pay contributions to occupational pensions that build up entitlements. Such entitlements are part of their pay. They are not something special to them: but their pay. Their own money goes into the pension scheme. I suggest that it is part of the deal that resulted in their being employed in the first place. A company pension scheme is a good selling point for any company wishing to employ people.</p>
 	<p pid="a.749.0/7">Indeed, the law&mdash;many noble Lords are expert in this area&mdash;recognises that there is something special about wages. If a company becomes insolvent, employees' pay has the first claim on assets, and it is my understanding&mdash;I shall be corrected by the Minister if I am wrong&mdash;that the state steps in to make up shortfalls. Fortunately, as a general secretary, I never had to face such a situation, but I believe it to be the case.</p>
 	<p pid="a.749.0/8">A colleague of mine who follows these issues more assiduously than myself makes a valid point. He says that this is a case of basic morality. As a religious man, he quoted Leviticus and the epistle of St James as an injunction on employers to pay labourer's wages at the end of the day on pain of incurring heaven's wrath. It is a moral responsibility. It is a moral responsibility for banks and bankers. We read and hear about vast profits, mind-boggling salaries and, at the same time, the withdrawing of credit from companies such as Allied Steel and Wire, which eventually led to the current dilemma. Dilemma it is, because it now seems that the key unions at Allied Steel and Wire have started a legal claim against my Government stating that they are in breach of a European Union directive. The directive refers to governments having a formal obligation to establish and maintain arrangements to guarantee payments of pensions when companies go bust with debts to pension funds. That directive has been in effect since 1980. I need say no more.</p>
-	<p pid="a.749.0/9">The proposed pension protection fund is to be welcomed. However, it cannot be right that workers such as those in Cardiff and Sheerness will be hung out to dry. Some months ago, my noble friend the Minister indicated to me in reply to a question that there would be no retrospective legislation. Much has happened since then however. There has been much activity in another place. The Western Mail, a leading newspaper in south Wales, published an article on <phrase class="date" code="2006-03-16">16 March</phrase> that referred to an &quot;encouraging meeting&quot; between the Prime Minister and Mr Kevin Brennan, MP for Cardiff West, which is welcome. I am also pleased to hear that, at Question Time today in another place, the Deputy Prime Minister gave a positive response to a similar question from the Floor.</p>
+	<p pid="a.749.0/9">The proposed pension protection fund is to be welcomed. However, it cannot be right that workers such as those in Cardiff and Sheerness will be hung out to dry. Some months ago, my noble friend the Minister indicated to me in reply to a question that there would be no retrospective legislation. Much has happened since then however. There has been much activity in another place. The Western Mail, a leading newspaper in south Wales, published an article on <phrase class="date" code="2004-03-16">16 March</phrase> that referred to an &quot;encouraging meeting&quot; between the Prime Minister and Mr Kevin Brennan, MP for Cardiff West, which is welcome. I am also pleased to hear that, at Question Time today in another place, the Deputy Prime Minister gave a positive response to a similar question from the Floor.</p>
 	<p pid="a.749.0/10">This injustice should be addressed. Companies are winding up defined benefit schemes. Employees at Allied Steel and Wire in Cardiff are suffering. Some companies are using dreadful tactics whereby 12-month contracts are imposed, with employees incurring no benefits at all. The Pensions Bill is good news, but I want it to be stronger. I want it, as do many other noble Lords, I am sure, to safeguard workers' interests and help those who are currently suffering as a result of their companies going into liquidation.</p>
 </speech>
 
@@ -990,18 +1011,18 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.779.1" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon="" colnum="779"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-07.htm#40324-07_spnew0">
-	<p pid="a.779.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2006-02-25">25 February</phrase> be approved [11th Report from the Joint Committee].</p>
+	<p pid="a.779.1/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2004-02-25">25 February</phrase> be approved [11th Report from the Joint Committee].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.779.2" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="779"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-07.htm#40324-07_spnew0">
 	<p pid="a.779.2/1">My Lords, with the permission of the House, I shall take the two orders together and&mdash;also with the permission of the House&mdash;speak to them in the reverse order from how they appear on the Order Paper.</p>
-	<p pid="a.779.2/2">The instruments are to be made under Section 104 of the Scotland Act 1998. Where such instruments amend primary legislation, as both do, the Scotland Act requires them to be subject to affirmative resolution in both Houses. The instruments were considered and approved in the other place on <phrase class="date" code="2006-03-16">16 March</phrase>.</p>
+	<p pid="a.779.2/2">The instruments are to be made under Section 104 of the Scotland Act 1998. Where such instruments amend primary legislation, as both do, the Scotland Act requires them to be subject to affirmative resolution in both Houses. The instruments were considered and approved in the other place on <phrase class="date" code="2004-03-16">16 March</phrase>.</p>
 	<p pid="a.779.2/3">As is usual with affirmative instruments of this type, copies of the explanatory memorandums on each are available in the Printed Paper Office. Instruments under Section 104 are used when changes that would be outside the legislative competence of the Scottish Parliament need to be made. I should like to stress to noble Lords that these changes are consequential. They are a matter of good housekeeping by ensuring that the relevant statutes are up to date after the Scottish Parliament has exercised its legitimate power to legislate in areas of devolved competence.</p>
 	<p pid="a.779.2/4">The instruments before us are two in a series of consequential amendments being made in relation to the Primary Medical Services (Scotland) Act 2004 and the Local Government in Scotland Act 2003. The Scottish Executive has been making its way through these consequential changes and agreed with the relevant Whitehall departments&mdash;in this instance, the Department of Health and the Treasury&mdash;that these orders be laid for consideration so as to come into force by <phrase class="date" code="2004-04-01">1 April 2004</phrase>. The orders are an example of the partnership between the Government and the Scottish Executive that continues to make devolution work so successfully.</p>
 	<p pid="a.779.2/5">The draft primary medical services order is being made in consequence of the Primary Medical Services (Scotland) Act 2004. As set out in the explanatory memorandum accompanying the instrument, the services provided by general practitioners to the NHS in Scotland are provided at present in one of two ways: either by way of a statutory arrangement between the health service bodies and the GPs called &quot;general medical services&quot; under Section 19 of the National Health Service (Scotland) Act 1978 or by way of an arrangement called &quot;personal medical services&quot; under Section 17C of the 1978 Act. These services are in substance the same, but are given different labels according to the arrangements under which they are provided.</p>
 	<p pid="a.779.2/6">That old regime is being replaced by amendment of the 1978 Act as set out in the 2004 Act of the Scottish Parliament, which brings all these services under a single label&mdash;primary medical services. It puts a duty on health boards to provide or secure what are to be known as primary medical services. The boards will be able to provide these themselves or secure the services by making arrangements with a GP or GP practice. The boards can choose which arrangements they make if they wish to secure the services from others. They are not limited to the particular arrangements for which detailed provision will be made in the 1978 Act.</p>
 	<p pid="a.779.2/7">However, two sorts of arrangement are set out for their use. These are, first, a general medical services contract under new Section 17J of the 1978 Act, inserted by the 2004 Act and replacing the current Section 19 arrangements, or, secondly, arrangements under Section 17C of the 1978 Act, as amended by the 2004 Act. Sections 17C and 17J of the 1978 Act, along with all the provisions about primary medical services, will be found in Part I of the 1978 Act. Previously the provisions about general medical services were found in Part II of the 1978 Act.</p>
-	<p pid="a.779.2/8">The new primary medical services regime for Scotland will come into force on <phrase class="date" code="">1 April</phrase>. Therefore, the references in legislation to the existing regime, including general medical services under Part II of the 1978 Act, and personal medical services under Section 17C of the 1978 Act require to be dealt with. Otherwise the legislation that contains them will either refer to the incorrect regime or contain spent references to a redundant regime.</p>
+	<p pid="a.779.2/8">The new primary medical services regime for Scotland will come into force on <phrase class="date" code="2004-04-01">1 April</phrase>. Therefore, the references in legislation to the existing regime, including general medical services under Part II of the 1978 Act, and personal medical services under Section 17C of the 1978 Act require to be dealt with. Otherwise the legislation that contains them will either refer to the incorrect regime or contain spent references to a redundant regime.</p>
 	<p pid="a.779.2/9">The exercise could not be undertaken in the 2004 Act of the Scottish Parliament as it involves the modification of the law of England and Wales (and Northern Ireland, where appropriate) as well as modifications of reserved law. Accordingly, it would have been outside the legislative competence of the Scottish Parliament to make such modifications. Therefore, in order to ensure that the statutes continue to work and to remove references to the old regimes from the statute book, the amendments set out in the schedule are required.</p>
 	<p pid="a.779.2/10">The second instrument is being made in consequence of the Local Government in Scotland Act 2003. This instrument provides for a simple, technical amendment to Section 95 of the Road Traffic Offenders Act 1988.</p>
 	<p pid="a.779.2/11">Section 95 concerns the destination of fines imposed in respect of certain road traffic offences committed in Scotland. This order will amend Section 95 to provide for fixed penalties imposed for the offences listed in Section 46(2) of the Local Government in Scotland Act 2003 to be paid into the Scottish consolidated fund. Section 46(2) of the 2003 Act concerns speeding and red light offences in Scotland.</p>
@@ -1011,7 +1032,10 @@
 	<p pid="a.779.2/15">Secondly, as a consequence of the Local Government in Scotland Act, clarification that the moneys from these fixed penalty notices should be paid into the Scottish consolidated fund. This amendment was necessary because at present there is no provision in the Road Traffic Offenders Act 1988 requiring fixed penalty receipts to be paid into the Scottish consolidated fund. The subject matter of the Road Traffic Offenders Act is reserved by the Scotland Act 1998 and it would therefore be outside the legislative competence of the Scottish Parliament to amend it. The proposed order before the House will make this amendment to the reserved 1988 enactment.</p>
 	<p pid="a.779.2/16">Thirdly, an order under Section 64(5) of the Scotland Act 1998 would allow the Scottish Executive to keep the moneys from the safety camera partnerships. This order is necessary because at present the Scotland Act 1998 (Designation of Receipts) Order 2000 designates all fines, forfeitures and fixed penalties for the purposes of Section 64 of the Scotland Act. This has the effect of requiring Scottish Ministers to pay such receipts to the UK consolidated fund. The new Section 64(5) order will allow the receipts from these fixed penalty notices to be excluded from this requirement. Scottish Ministers will therefore be able to distribute the receipts retained in the Scottish consolidated fund in terms of Section 46 of the Local Government in Scotland Act.</p>
 	<p pid="a.779.2/17">The Section 104 instrument is therefore part of a three-part package to enable the funding of Scottish road safety partnerships to be constituted on a statutory basis. As noble Lords will have noted, this would have been outside the legislative competence of the Scottish Parliament and the Government therefore wish to make this technical amendment to support the work of the Scottish Executive in this area. I commend the order to the House.</p>
-	<p pid="a.779.2/18">Moved, That the draft order laid before the House on <phrase class="date" code="2006-02-25">25 February</phrase> be approved. [11th report from the Joint Committee.]&mdash;(Lord Evans of Temple Guiting.)</p>
+</speech>
+
+<speech id="uk.org.publicwhip/lords/2004-03-24a.779.3" nospeaker="true" colnum="779"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-07.htm#40324-07_spnew0">
+	<p pid="a.779.3/1" pwmotiontext="considered">Moved, That the draft order laid before the House on <phrase class="date" code="2004-02-25">25 February</phrase> be approved. [11th report from the Joint Committee.]&mdash;(Lord Evans of Temple Guiting.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.782.0" speakerid="uk.org.publicwhip/lord/100644" speakername="Lord Tordoff" colon=":" colnum="782"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-07.htm#40324-07_spmin0">
@@ -1058,7 +1082,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.785.1" speakerid="uk.org.publicwhip/lord/100199" speakername="Lord Evans of Temple Guiting" colon=":" colnum="785"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-08.htm#40324-08_spnew2">
 	<p pid="a.785.1/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="a.785.1/2">Moved, That the Primary Medical Services (Scotland) Act 2004 (Consequential Modifications) Order 2004 laid before the House on <phrase class="date" code="2006-02-25">25 February</phrase> be approved [11th Report from the Joint Committee].&mdash;(Lord Evans of Temple Guiting.)</p>
+	<p pid="a.785.1/2">Moved, That the Primary Medical Services (Scotland) Act 2004 (Consequential Modifications) Order 2004 laid before the House on <phrase class="date" code="2004-02-25">25 February</phrase> be approved [11th Report from the Joint Committee].&mdash;(Lord Evans of Temple Guiting.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.785.2" nospeaker="true" colnum="785"  time="020:23:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-08.htm#40324-08_spnew2">
@@ -1101,7 +1125,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.786.1" speakerid="uk.org.publicwhip/lord/100068" speakername="Lord Bradshaw" colon="" colnum="786"  time="020:50:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-08.htm#40324-08_spnew5">
-	<p pid="a.786.1/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2006-02-27">27 February</phrase>, be annulled (S.I. 2004/462).</p>
+	<p pid="a.786.1/1" pwmotiontext="moved">rose to move, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-02-27">27 February</phrase>, be annulled (S.I. 2004/462).</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.786.2" speakerid="uk.org.publicwhip/lord/100068" speakername="Lord Bradshaw" colon=":" colnum="786"  time="020:50:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-08.htm#40324-08_spnew5">
@@ -1114,11 +1138,11 @@
 	<p pid="a.786.2/7">Knowing the Minister's background, I wonder to what extent he believes that the low wages in the countries on the fringe of eastern Europe, where wage rates are very low, and possibly the low standards of vehicles of those foreign-based operators&mdash;the maintenance of vehicles, the operation of tachographs, the use of untaxed fuel and so on&mdash;undermine our own laws relating to wages, vehicle suitability and so on.</p>
 	<p pid="a.786.2/8">Is there any evidence that vehicles such as heavy lorries driven from the left-hand side are involved in more or fewer accidents than those driven from the right? I am not sure that that is recorded, but it appears to be a subject that should be recorded, because it is a matter of concern.</p>
 	<p pid="a.786.2/9">Lastly, I understand that it is a fact that in the accession countries&mdash;although I accept that some of the countries mentioned in the regulations are not accession countries&mdash;the average fatality risk that is attributed to heavy lorries is three times greater than the EU average and five times greater than that in the UK. One's chances of being killed by a lorry from one of those countries appears to me to be very substantial. Are the Government right in exposing UK citizens and road users to those risks, when I am sure such things would be unimaginable in aviation or the railway industry? I beg to move.</p>
-	<p pid="a.786.2/10">Moved, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2006-02-27">27 February</phrase>, be annulled (S.I. 2004/462).&mdash;(Lord Bradshaw.)</p>
+	<p pid="a.786.2/10">Moved, That an humble Address be presented to Her Majesty praying that the regulations, laid before the House on <phrase class="date" code="2004-02-27">27 February</phrase>, be annulled (S.I. 2004/462).&mdash;(Lord Bradshaw.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-24a.788.0" speakerid="uk.org.publicwhip/lord/100042" speakername="Lord Berkeley" colon=":" colnum="788"  time="020:56:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040324/text/40324-08.htm#40324-08_spnew6">
-	<p pid="a.788.0/1">My Lords, I have a lot of sympathy with the comments made by the noble Lord, Lord Bradshaw. I see why the regulations might be necessary to apply to accession countries&mdash;the 10 that will be joining the European Union on <phrase class="date" code="">1 May</phrase>. The figures that the noble Lord gave for road accidents applicable to those countries, saying that there is a five times greater risk of an accident than in the UK, are very serious. I suspect that if one extended that comparison to Macedonia, Georgia, Croatia and Moldova, which are the four countries listed in the regulations that are not among the accession countries, one would find that the accident rate was even greater there. That is pretty serious.</p>
+	<p pid="a.788.0/1">My Lords, I have a lot of sympathy with the comments made by the noble Lord, Lord Bradshaw. I see why the regulations might be necessary to apply to accession countries&mdash;the 10 that will be joining the European Union on <phrase class="date" code="2004-05-01">1 May</phrase>. The figures that the noble Lord gave for road accidents applicable to those countries, saying that there is a five times greater risk of an accident than in the UK, are very serious. I suspect that if one extended that comparison to Macedonia, Georgia, Croatia and Moldova, which are the four countries listed in the regulations that are not among the accession countries, one would find that the accident rate was even greater there. That is pretty serious.</p>
 	<p pid="a.788.0/2">I cannot understand why we have to have these agreements with those four countries, which are not joining the European Union in the next month. Have all the other member states of the European Union brought forward similar regulations with respect to drivers from Macedonia, Georgia, Croatia and Moldova? If not, why have they not? Is it the usual business that we are complying with perceived European regulations and nobody else is?</p>
 	<p pid="a.788.0/3">I support what the noble Lord, Lord Bradshaw, said about the industry offering to pay for more checks to ensure safer lorries here. It is a serious problem, and I hope that my noble friend the Minister can put our minds at rest, particularly with regard to the countries that are not accession countries. Frankly, one could easily extend that list to the rest of the world. No doubt they all have equally efficient DVLAs as we have in Swansea. Where do we stop?</p>
 	<p pid="a.788.0/4">There is also the question of driver rates. It is unfair on UK drivers when people coming from these countries not only come here with loads but then probably play cabotage for quite a long time, whether they are allowed to or not. I know that this was a big problem in Germany a couple of years ago when a company called Willi Betz apparently more or less decimated the German truckers market. There are some serious questions to be answered and I look forward to my noble friend's response.</p>

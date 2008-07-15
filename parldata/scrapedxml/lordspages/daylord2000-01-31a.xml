@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,9 +69,9 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.1.1" speakerid="uk.org.publicwhip/lord/100666" speakername="Lord Wallace of Saltaire" colon="" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-01.htm#00131-01_spopq0">
 	<p pid="a.1.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1.1/2" class="indent">Whether the Prime Minister's declaration to the United Kingdom's universities in the Romanes Lecture, delivered on 13th December 1999, that,</p>
-	<p pid="a.1.1/3" class="indent">&quot;the future is as much in your hands as ours&quot;,</p>
-	<p pid="a.1.1/4" class="indent">foreshadows a relaxation in government controls over the higher education sector.</p>
+	<p pid="a.1.1/2" class="indent" pwmotiontext="asked">Whether the Prime Minister's declaration to the United Kingdom's universities in the Romanes Lecture, delivered on 13th December 1999, that,</p>
+	<p pid="a.1.1/3" class="indent" pwmotiontext="asked">&quot;the future is as much in your hands as ours&quot;,</p>
+	<p pid="a.1.1/4" class="indent" pwmotiontext="asked">foreshadows a relaxation in government controls over the higher education sector.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.1.2" speakerid="uk.org.publicwhip/lord/100052" speakername="Baroness Blackstone" colon=":" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-01.htm#00131-01_spmin0">
@@ -121,7 +142,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.4.5" speakerid="uk.org.publicwhip/lord/100336" speakername="Lord Jenkins of Putney" colon="" colnum="4"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-01.htm#00131-01_spopq1">
 	<p pid="a.4.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.4.5/2" class="indent">What is their response to the reported statement of the Chinese Government that the NATO attack on Yugoslavia showed that the alliance would not respect any country without nuclear weapons.</p>
+	<p pid="a.4.5/2" class="indent" pwmotiontext="asked">What is their response to the reported statement of the Chinese Government that the NATO attack on Yugoslavia showed that the alliance would not respect any country without nuclear weapons.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.4.6" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="4"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-01.htm#00131-01_spmin1">
@@ -183,7 +204,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.6.5" speakerid="uk.org.publicwhip/lord/100453" speakername="Lord Newby" colon="" colnum="6"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-02.htm#00131-02_spopq0">
 	<p pid="a.6.5/1" pwmotiontext="asked">asked the Leader of the House:</p>
-	<p pid="a.6.5/2" class="indent">What steps she plans to take to implement Conclusions 28 and 29 of Wiring it Up, the January report of the Performance and Innovation Unit, in so far as they relate to the House of Lords.</p>
+	<p pid="a.6.5/2" class="indent" pwmotiontext="asked">What steps she plans to take to implement Conclusions 28 and 29 of Wiring it Up, the January report of the Performance and Innovation Unit, in so far as they relate to the House of Lords.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.6.6" speakerid="uk.org.publicwhip/lord/100331" speakername="Baroness Jay of Paddington" colon=":" colnum="6"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-02.htm#00131-02_spmin0">
@@ -244,7 +265,7 @@
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.9.3" speakerid="uk.org.publicwhip/lord/100608" speakername="Lord Steel of Aikwood" colon="" colnum="9"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-03.htm#00131-03_spopq0">
 	<p pid="a.9.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.9.3/2" class="indent">When they intend to establish the independent appointments commission, promised before the report of the Royal Commission on the House of Lords, to deal with nominations to the House of Lords.</p>
+	<p pid="a.9.3/2" class="indent" pwmotiontext="asked">When they intend to establish the independent appointments commission, promised before the report of the Royal Commission on the House of Lords, to deal with nominations to the House of Lords.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2000-01-31a.9.4" speakerid="uk.org.publicwhip/lord/100331" speakername="Baroness Jay of Paddington" colon=":" colnum="9"  time="014:58:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/vo000131/text/00131-03.htm#00131-03_spnew4">
@@ -578,7 +599,7 @@
 	<p pid="a.45.0/1">My Lords, while I am happy to give a general welcome to the Bill, I have two objections to state at the outset. First, the format of the Bill superimposes new clauses--or sections, as they will be--on top of the Representation of the People Acts 1983 and 1985. I know it is convenient for all governments to do this--it probably enables them to take earlier action than might otherwise be the case--but it means that it is virtually impossible, on any subject that one cares to mention, to pick up one Act of Parliament and say, &quot;This is the law on this subject&quot;. I hope that in future more attention will be given to providing Bills which we, as it were, consolidate as we go along rather than waiting to consolidate by a lengthy process some years later.</p>
 	<p pid="a.45.0/2">My second objection is more serious. It was touched on by the noble and learned Lord, Lord Mayhew, during the Minister's opening speech. It concerns the question of using secondary legislation orders to roll out a pilot scheme which the Minister has thought successful. I should say in passing that &quot;rolling out a scheme&quot; is a rather curious expression. It sounds as though one is making pastry and rolling it out on a piece of marble. That is by the by--I do not know where the expression comes from--but I am very concerned about such use of secondary legislation. Frankly, I would go so far as to describe it as an abuse and misuse of secondary legislation. In my view, orders should be used in only two circumstances. The first is where the subject matter has been the subject of a policy decision but where many technical arrangements are to be made. I take an example close to my heart: that of animal welfare. I quite see that having decided that the welfare of animals kept on farms is a concern, it should be left to experts to work out regulations specifying what kind of bedding should be used, what size of pen the animals should be kept in, and so forth. In the second instance, where circumstances are changing so fast, it is virtually impossible for Parliament to keep up.</p>
 	<p pid="a.45.0/3">I believe that those are the only two sets of circumstances where secondary legislation is feasible. That is not the case here. We should be dealing with making policy about various pilot schemes. I believe strongly that that should be a subject for primary legislation.</p>
-	<p pid="a.45.0/4">As to the details of the Bill, I give a warm welcome to the rolling register. I cannot quite match the record of my noble friend Lord Jopling, who has now left the Chamber; however, I fought seven general elections and eight local government elections. I have seen it all from the point of view of the candidate rather than that of the agent, described in the notable maiden speech of the noble Lord, Lord Rennard. It is certainly true that the greatest nightmare is trying to find out who has the right to vote from a register which will already be out of date when it comes into force on <phrase class="date" code="2006-02-16">16 February</phrase>. The position becomes worse as time passes. If one has to fight an election in, say, January or February of next year, the register is by then woefully out of date. Using modern technology to bring it up to date is one of the best ways in which we can encourage people who want to vote to do so.</p>
+	<p pid="a.45.0/4">As to the details of the Bill, I give a warm welcome to the rolling register. I cannot quite match the record of my noble friend Lord Jopling, who has now left the Chamber; however, I fought seven general elections and eight local government elections. I have seen it all from the point of view of the candidate rather than that of the agent, described in the notable maiden speech of the noble Lord, Lord Rennard. It is certainly true that the greatest nightmare is trying to find out who has the right to vote from a register which will already be out of date when it comes into force on <phrase class="date" code="2000-02-16">16 February</phrase>. The position becomes worse as time passes. If one has to fight an election in, say, January or February of next year, the register is by then woefully out of date. Using modern technology to bring it up to date is one of the best ways in which we can encourage people who want to vote to do so.</p>
 	<p pid="a.45.0/5">Coupled with that, I greatly welcome the absent voting procedures which in effect do away with all the criteria. Somehow, individual people never fitted into them, so either one had to forgo the right to vote or massage the criteria in order to fit in. The change is sensible. I suspect that the rolling register and absent voting procedures may make some of the other suggestions mooted less important than they otherwise would be.</p>
 	<p pid="a.45.0/6">On the question of whether the register should be open to other organisations and whether it should be edited, I personally have found no way of squaring the circle. I suspect that if, as my noble friend Lord Norton suggested, one sought not to allow it to be sold at all, there would be unfortunate repercussions. The register is, after all, a public document. It will be circulating publicly for perfectly good and acceptable reasons. If, however, organisations are forbidden to buy it at all, I am sure that they will seek to obtain it in other ways. Therefore, much though I dislike the idea, some kind of sensible compromise must be reached. I cannot offer any complete solution to the problem; no doubt, if I could, I should be sitting on the Front Bench rather than a Back Bench.</p>
 	<p pid="a.45.0/7">I turn to the various pilot schemes suggested. I am all for pilot schemes taking place. It is simply the method by which they may be rolled out to which I take objection. One of the most sensible schemes would be to enable someone to vote at any polling station within his constituency. That seems eminently sensible. In the case of a commuter returning tired from a long journey, perhaps rather late, the polling station which would appear the most suitable for him may not be; it may be easier for him to go to the one immediately outside the station where he arrives.</p>

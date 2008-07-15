@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.1.1" speakerid="uk.org.publicwhip/lord/100530" speakername="Baroness Rendell of Babergh" colon="" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-01.htm#40223-01_spopq0">
 	<p pid="a.1.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1.1/2" class="indent">What proportion of the population of the United Kingdom is illiterate.</p>
+	<p pid="a.1.1/2" class="indent" pwmotiontext="asked">What proportion of the population of the United Kingdom is illiterate.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.1.2" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="1"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-01.htm#40223-01_spmin0">
@@ -236,7 +255,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.7.4" speakerid="uk.org.publicwhip/lord/100308" speakername="Lord Howell of Guildford" colon="" colnum="7"  time="014:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-02.htm#40223-02_spopq0">
 	<p pid="a.7.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.7.4/2" class="indent">What plans they now have for operating transitional restrictions on migrants from those nation states due to join the European Union on <phrase class="date" code="2004-05-01">1 May 2004</phrase>, as permitted under the European Union (Accessions) Act 2003.</p>
+	<p pid="a.7.4/2" class="indent" pwmotiontext="asked">What plans they now have for operating transitional restrictions on migrants from those nation states due to join the European Union on <phrase class="date" code="2004-05-01">1 May 2004</phrase>, as permitted under the European Union (Accessions) Act 2003.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.7.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="7"  time="014:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-02.htm#40223-02_spmin1">
@@ -297,11 +316,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.9.6" speakerid="uk.org.publicwhip/lord/100460" speakername="Baroness Noakes" colon="" colnum="9"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-03.htm#40223-03_spopq0">
 	<p pid="a.9.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.9.6/2" class="indent">What is their view of the European Commission's plans to increase European Union spending by 25 per cent.</p>
+	<p pid="a.9.6/2" class="indent" pwmotiontext="asked">What is their view of the European Commission's plans to increase European Union spending by 25 per cent.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.9.7" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="9"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-03.htm#40223-03_spnew9">
-	<p pid="a.9.7/1">My Lords, the Government do not support the Commission's proposals for large increases in EU budget expenditure over the period 2007&ndash;13, which the Commission presented on <phrase class="date" code="2006-02-10">10 February</phrase>. The Prime Minister has made clear, in a joint letter sent to Commission President, Mr Prodi, on <phrase class="date" code="2003-12-15">15 December 2003</phrase>, along with the heads of government of Austria, France, Germany, the Netherlands and Sweden, that average expenditure during the next financial perspective should be stabilised at around current expenditure levels and should not exceed 1 per cent of EU gross national income.</p>
+	<p pid="a.9.7/1">My Lords, the Government do not support the Commission's proposals for large increases in EU budget expenditure over the period 2007&ndash;13, which the Commission presented on <phrase class="date" code="2004-02-10">10 February</phrase>. The Prime Minister has made clear, in a joint letter sent to Commission President, Mr Prodi, on <phrase class="date" code="2003-12-15">15 December 2003</phrase>, along with the heads of government of Austria, France, Germany, the Netherlands and Sweden, that average expenditure during the next financial perspective should be stabilised at around current expenditure levels and should not exceed 1 per cent of EU gross national income.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.10.0" speakerid="uk.org.publicwhip/lord/100460" speakername="Baroness Noakes" colon=":" colnum="10"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-03.htm#40223-03_spnew10">
@@ -359,7 +378,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.11.7" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="11"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-03.htm#40223-03_spnew21">
 	<p pid="a.11.7/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="a.11.7/2">Moved, That Standing Order 41 (Arrangement of the Order Paper) be dispensed with on <phrase class="date" code="2006-03-04">4 March</phrase> to allow the Motion standing in the name of the Baroness Scotland of Asthal to be taken as first business.&mdash;(Baroness Amos.)</p>
+	<p pid="a.11.7/2">Moved, That Standing Order 41 (Arrangement of the Order Paper) be dispensed with on <phrase class="date" code="2004-03-04">4 March</phrase> to allow the Motion standing in the name of the Baroness Scotland of Asthal to be taken as first business.&mdash;(Baroness Amos.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.11.8" nospeaker="true" colnum="11"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-03.htm#40223-03_spnew21">
@@ -375,7 +394,7 @@
 	<p pid="a.12.1/2">Moved, that, pursuant to Standing Order 52, the following Lords be appointed to join with a committee of the Commons as the Joint Committee on Consolidation Bills: L. Acton, L. Brightman, L. Campbell of Alloway, L. Christopher, V. Colville of Culross, E. Dundee, B. Fookes, L. Janner of Braunstone, B. Mallalieu, L. Phillips of Sudbury, L. Razzall, L. Rodger of Earlsferry;</p>
 	<p pid="a.12.1/3">That the committee have the power to agree with the committee of the Commons in the appointment of a chairman;</p>
 	<p pid="a.12.1/4">That the minutes of evidence taken before the committee shall, if the committee think fit, be printed; and</p>
-	<p pid="a.12.1/5">That a message be sent to the Commons to propose that the Joint Committee do meet on <phrase class="date" code="2006-03-01">Monday 1 March</phrase> at half-past four o'clock.&mdash;(Lord Falconer of Thoroton.)</p>
+	<p pid="a.12.1/5">That a message be sent to the Commons to propose that the Joint Committee do meet on <phrase class="date" code="2004-03-01">Monday 1 March</phrase> at half-past four o'clock.&mdash;(Lord Falconer of Thoroton.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.12.2" speakerid="uk.org.publicwhip/lord/100533" speakername="Lord Renton" colon=":" colnum="12"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-04.htm#40223-04_spnew0">
@@ -438,7 +457,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.15.0" speakerid="uk.org.publicwhip/lord/100532" speakername="Lord Rennard" colon=":" colnum="15"  time="015:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-04.htm#40223-04_spnew4">
 	<p pid="a.15.0/1">My Lords, I rise in support of Amendment No. 3. A number of your Lordships have expressed considerable reservations about all-postal voting&mdash;or compulsory voting by post, as I prefer to call it. I shall not dwell in detail on all those reservations but they fall into three broad areas. First, there are concerns about lack of secrecy and privacy in voting, which some people believe undermine the basic principles of the Secret Ballot Act of 1872. Secondly, there are considerable concerns about potential fraud with all-postal voting, particularly in relation to homes in multi-occupation where people are not at all sure who will receive the ballot papers that are put through the letter box and who will return them.</p>
-	<p pid="a.15.0/2">There are also concerns about the timing of all-postal voting mechanisms. We now understand that in these all-postal voting pilots in June, the ballot papers will be delivered between 25 and <phrase class="date" code="">29 May</phrase>, some two weeks before the official polling day and two weeks before many people have made up their minds, considered the arguments put by the parties, seen the television news, and so on. I am concerned about people voting so far ahead of proper examination of the issues.</p>
+	<p pid="a.15.0/2">There are also concerns about the timing of all-postal voting mechanisms. We now understand that in these all-postal voting pilots in June, the ballot papers will be delivered between 25 and <phrase class="date" code="2004-05-29">29 May</phrase>, some two weeks before the official polling day and two weeks before many people have made up their minds, considered the arguments put by the parties, seen the television news, and so on. I am concerned about people voting so far ahead of proper examination of the issues.</p>
 	<p pid="a.15.0/3">Notwithstanding all those reservations about some of the problems associated with postal voting, it seems to me right to consider that there should be an element of pilot experiments to see whether the concerns are valid. So perhaps the idea of having the two pilots in the north-east region and the east Midlands should be supported. However, I believe that no case whatever has been made for having more than two experiments. If there is a case for experimentation, why should it occur in more than two regions?</p>
 	<p pid="a.15.0/4">The Government have given us no explanation for their fundamental change of heart on the issue. Only a few months ago, their view was that there should be no all-postal pilot experiments and that the only experiment this June should be the combining of the local and the European elections. The Government's position then changed from no all-postal pilots to three all-postal pilots. They had to ask the independent Electoral Commission, given its expertise and various criteria, to recommend three regions for such experimentation. The Electoral Commission said that it could positively support only a proposal for two regions and that only that would be suitable. We therefore assumed that only two pilots would go forward. Now, however, the Government seem to be opting for four pilots. I believe that operating four pilots&mdash;effectively four of the eight regions in England, and almost half the local authorities that will vote in June&mdash;amounts to rolling out all-postal voting rather than &quot;experimenting&quot; with it. It is a fundamental change to voting mechanisms.</p>
 	<p pid="a.15.0/5">Of course, there is time for progress in deciding how voting mechanisms should be changed. However, if changes are to be made, they should not be made unilaterally by one party which imposes change on all the other parties without the support of the independent Electoral Commission&mdash;which itself was established to avoid accusations that parties were changing voting systems for purely partisan advantage.</p>
@@ -878,11 +897,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.29.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="29"  time="016:14:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-08.htm#40223-08_spnew0">
 	<p pid="a.29.1/1">My Lords, with the leave of the House, I shall now repeat a Statement made in another place by my right honourable friend the Home Secretary. The Statement is as follows:</p>
-	<p pid="a.29.1/2" class="indent">&quot;With permission, I wish to make a Statement on the Government's approach to the accession of 10 countries into the European Union from <phrase class="date" code="">1 May</phrase>.</p>
+	<p pid="a.29.1/2" class="indent">&quot;With permission, I wish to make a Statement on the Government's approach to the accession of 10 countries into the European Union from <phrase class="date" code="2004-05-01">1 May</phrase>.</p>
 	<p pid="a.29.1/3" class="indent">&quot;EU enlargement is extremely welcome and important for our country. It is something to celebrate. All parties in this House are in favour of enlargement. John Major played an important role in launching the process. My right honourable friend the Prime Minister was instrumental in calling for early accession of the 10 countries.</p>
-	<p pid="a.29.1/4" class="indent">&quot;After <phrase class="date" code="">1 May</phrase>, citizens of the accession states will be free to travel across all EU borders. Our position has always been clear&mdash;that the United Kingdom would benefit from all new EU citizens working legally, paying taxes and national insurance. This is an alternative to illegal working, which would fuel the sub-economy and undermine existing conditions of work. But we will take every step to ensure that our benefit system is not open to abuse.</p>
+	<p pid="a.29.1/4" class="indent">&quot;After <phrase class="date" code="2004-05-01">1 May</phrase>, citizens of the accession states will be free to travel across all EU borders. Our position has always been clear&mdash;that the United Kingdom would benefit from all new EU citizens working legally, paying taxes and national insurance. This is an alternative to illegal working, which would fuel the sub-economy and undermine existing conditions of work. But we will take every step to ensure that our benefit system is not open to abuse.</p>
 	<p pid="a.29.1/5" class="indent">&quot;We have already tackled benefit tourism by tightening the habitual residence test. Today we are building on that by announcing measures which will ensure that those who come here from the accession countries but do not work will not be able to claim benefits.</p>
-	<p pid="a.29.1/6" class="indent">&quot;It is important to remember the positive aspects of migration. The United Kingdom is already benefiting from more than 20,000 accession nationals who have been granted work permits in the past two years. From <phrase class="date" code="">1 May</phrase> this requirement will be replaced by a workers registration scheme.</p>
+	<p pid="a.29.1/6" class="indent">&quot;It is important to remember the positive aspects of migration. The United Kingdom is already benefiting from more than 20,000 accession nationals who have been granted work permits in the past two years. From <phrase class="date" code="2004-05-01">1 May</phrase> this requirement will be replaced by a workers registration scheme.</p>
 	<p pid="a.29.1/7" class="indent">&quot;The United Kingdom has one of the most dynamic and successful economies in the world. Since 1997 our economy has experienced growth and prosperity greater than any other large state. Growth has been higher, we have created more sustainable jobs, we have a lower level of unemployment&mdash;almost half the level of France and Germany&mdash;which is a tribute to my right honourable friend the Chancellor, and to the creativity and flexibility of the British labour market.</p>
 	<p pid="a.29.1/8" class="indent">&quot;We currently have more than half a million vacancies and will benefit from the skills, flexibility and willingness to work of these new migrant workers as we have in the past.</p>
 	<p pid="a.29.1/9" class="indent">&quot;To say that we welcome legal migration is not new. We set out our policy in our White Paper two years ago, Secure Borders, Safe Haven. We have consistently developed legitimate and legal routes for managed migration, including issuing 175,000 work permits this year, compared to 40,000 in 1997.</p>
@@ -1010,7 +1029,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.40.1" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon=":" colnum="40"  time="016:43:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-09.htm#40223-09_spnew11">
 	<p pid="a.40.1/1">My Lords, we have read a good deal recently about benefit tourism. Can the Minister quote to us any year in the past 10 for which the Eurostat figures put our benefit levels above the third quartile? Until she can, will she agree that the phrase &quot;benefit tourism&quot; is grossly mistaken?</p>
-	<p pid="a.40.1/2">Am I right in believing that the central basis of EU law on migrant workers is that the right to benefits depends on someone actively seeking work, a principle well known to British law? The Minister now proposes to base it on success in obtaining work, which is not under the applicant's control. What thought has she given to the consequences for the applicant of that loss of entitlement to benefits? Will her department, in particular, examine the report published on <phrase class="date" code="2006-02-05">5 February</phrase> by the Department for Work and Pensions on loss of benefit for breach of a community service order? It shows that, in return for a measly 1.8 per cent increase in compliance, there has been an increase in severe hardship and an increase in crime. Is not the attempt to ask people to live without benefit for two years likely to benefit no one but the gang masters of Morecambe Bay?</p>
+	<p pid="a.40.1/2">Am I right in believing that the central basis of EU law on migrant workers is that the right to benefits depends on someone actively seeking work, a principle well known to British law? The Minister now proposes to base it on success in obtaining work, which is not under the applicant's control. What thought has she given to the consequences for the applicant of that loss of entitlement to benefits? Will her department, in particular, examine the report published on <phrase class="date" code="2004-02-05">5 February</phrase> by the Department for Work and Pensions on loss of benefit for breach of a community service order? It shows that, in return for a measly 1.8 per cent increase in compliance, there has been an increase in severe hardship and an increase in crime. Is not the attempt to ask people to live without benefit for two years likely to benefit no one but the gang masters of Morecambe Bay?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.40.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="40"  time="016:43:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-10.htm#40223-10_spnew0">
@@ -1028,7 +1047,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.41.2" speakerid="uk.org.publicwhip/lord/100416" speakername="Lord Marlesford" colon=":" colnum="41"  time="016:43:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-10.htm#40223-10_spnew3">
-	<p pid="a.41.2/1">My Lords, does the Minister remember that on <phrase class="date" code="2006-02-12">12 February</phrase> she gave the Government's estimate that there are between 5 million and 7 million Roma people in the accession countries? Does she agree that the majority of these live in very miserable and often deprived conditions and that many of them are persecuted? Does she recognise that if only 5 per cent of those were to come here and have difficulty fitting in and getting jobs, at an average cost of benefit and services of some &pound;10,000 a head&mdash;the sort of figure generally mentioned nationally&mdash;it would cost &pound;2.5 billion to &pound;3 billion a year, which is the entire GDP growth forecast for next year?</p>
+	<p pid="a.41.2/1">My Lords, does the Minister remember that on <phrase class="date" code="2004-02-12">12 February</phrase> she gave the Government's estimate that there are between 5 million and 7 million Roma people in the accession countries? Does she agree that the majority of these live in very miserable and often deprived conditions and that many of them are persecuted? Does she recognise that if only 5 per cent of those were to come here and have difficulty fitting in and getting jobs, at an average cost of benefit and services of some &pound;10,000 a head&mdash;the sort of figure generally mentioned nationally&mdash;it would cost &pound;2.5 billion to &pound;3 billion a year, which is the entire GDP growth forecast for next year?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.41.3" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="41"  time="016:43:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-10.htm#40223-10_spnew4">
@@ -1133,7 +1152,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.48.0" speakerid="uk.org.publicwhip/lord/100532" speakername="Lord Rennard" colon=":" colnum="48"  time="017:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-12.htm#40223-12_spnew0">
 	<p pid="a.48.0/1">My Lords, I thank the Minister for that reply. I understand the sincerity of his argument about various measures to overcome fraud with postal voting. However, I still believe that the witness signature on the declaration of identity is a necessary weapon in the armoury against fraud at this stage, until such time as there is individual voter registration.</p>
-	<p pid="a.48.0/2">I understand that there may be concerns about the secrecy of the ballot. However, as the ballot paper is inserted into one envelope and can be sealed and seen by nobody else and the declaration of identity then accompanies it, there should be no problem with secrecy. I accept that there may be some problems for some people in acquiring a witness to sign that they are who they say they are. However, we are now at a point at which the all-postal pilot votes may not require that, while in any other region in England, Scotland and Wales, if one votes by post on <phrase class="date" code="">10 June</phrase>, one will require a declaration of identity. I do not see why there should be that difference. On that basis&mdash;</p>
+	<p pid="a.48.0/2">I understand that there may be concerns about the secrecy of the ballot. However, as the ballot paper is inserted into one envelope and can be sealed and seen by nobody else and the declaration of identity then accompanies it, there should be no problem with secrecy. I accept that there may be some problems for some people in acquiring a witness to sign that they are who they say they are. However, we are now at a point at which the all-postal pilot votes may not require that, while in any other region in England, Scotland and Wales, if one votes by post on <phrase class="date" code="2004-06-10">10 June</phrase>, one will require a declaration of identity. I do not see why there should be that difference. On that basis&mdash;</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.48.1" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="48"  time="017:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-12.htm#40223-12_spnew1">
@@ -1526,7 +1545,7 @@
 	<p pid="a.55.4/3">Secondly, it is equally important that in Clause 4, which covers the report produced by the Electoral Commission, there is a specific duty on the commission to assess the extent to which the manner of elections facilitated voting for those with disabilities, having consulted such organisations or individuals representing disabled people as the commission considers appropriate.</p>
 	<p pid="a.55.4/4">There was much discussion on those issues in Committee, and I was encouraged by the Minister's commitment to ensure that all necessary provisions would be made to allow those with disabilities to vote in an all-postal ballot. It is clear that there has been extensive consultation between the Government, the Disability Rights Commission and the RNIB. Both organisations set out a detailed briefing specifying their minimum requirements for providing for those with disabilities.</p>
 	<p pid="a.55.4/5">They proposed that all electoral information must comply with RNIB's clear print guidelines. Information and instructions should be in a minimum of 14 point in plain English with clear information about access arrangements. Returning officers must be in a position to provide formats in large print, tape, Easy Read, Braille, disc and e-mail. The ballot paper must be compatible with the tactile voting device. Home visits or one-to-one assistance must be provided to disabled voters on request. Signature guides and other aids are to be provided to assist voters to sign the declaration of identity, and staffed delivery points must be accessible to disabled voters.</p>
-	<p pid="a.55.4/6">There are many detailed requirements, and I thank the Minister for his letter of <phrase class="date" code="2006-02-06">6 February</phrase> giving some commitment to meet the majority of those specifications. I thought that it might, however, be of benefit if the Minister could let us know whether there has been any further progress in facilitating voting for those with disabilities. For instance, there are several provisions mentioned in the policy paper&mdash;notably on page 18&mdash;which it would be helpful to have on record.</p>
+	<p pid="a.55.4/6">There are many detailed requirements, and I thank the Minister for his letter of <phrase class="date" code="2004-02-06">6 February</phrase> giving some commitment to meet the majority of those specifications. I thought that it might, however, be of benefit if the Minister could let us know whether there has been any further progress in facilitating voting for those with disabilities. For instance, there are several provisions mentioned in the policy paper&mdash;notably on page 18&mdash;which it would be helpful to have on record.</p>
 	<p pid="a.55.4/7">We know that all-postal voting is an evolutionary process. It is designed to generate evidence and to test the waters to see if the method works. We therefore fully believe that our amendment, which specifies that the Electoral Commission must have regard to the accessibility of the election for those with disabilities, is vital in promoting best practice and gathering feedback from groups who represent disabled voters. I am sure that the Minister will assure us that this will go without saying. However, I prefer that it should be specified on the face of the Bill. I beg to move.</p>
 </speech>
 
@@ -1604,7 +1623,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.62.1" speakerid="uk.org.publicwhip/lord/100269" speakername="Baroness Hanham" colon=":" colnum="62"  time="018:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-15.htm#40223-15_spnew1">
-	<p pid="a.62.1/1">My Lords, the amendment is about how many supported delivery points there are in a region holding a pilot election. The Government will be pleased to see that we have dropped our original amendment incorporated in our new clause in Committee on the administration of the pilot election. There we endeavoured to specify that there should be an obligation on local authorities and returning officers to ensure that any elector who wished to do so could vote in the traditional way in a ballot box at a polling station on <phrase class="date" code="">10 June</phrase>. We have listened to the Government's detailed description on the proposed supported delivery points and we thank the Minister for the extra detail spelt out in the policy paper on pages 12 and 13.</p>
+	<p pid="a.62.1/1">My Lords, the amendment is about how many supported delivery points there are in a region holding a pilot election. The Government will be pleased to see that we have dropped our original amendment incorporated in our new clause in Committee on the administration of the pilot election. There we endeavoured to specify that there should be an obligation on local authorities and returning officers to ensure that any elector who wished to do so could vote in the traditional way in a ballot box at a polling station on <phrase class="date" code="2004-06-10">10 June</phrase>. We have listened to the Government's detailed description on the proposed supported delivery points and we thank the Minister for the extra detail spelt out in the policy paper on pages 12 and 13.</p>
 	<p pid="a.62.1/2">We are happy in principle with the current proposals. We have been told by the Government that,</p>
 	<p pid="a.62.1/3" class="indent">&quot;at a supported delivery point it will be possible to return a completed ballot paper; complete a ballot paper in a private area&mdash;with some form of assistance if required; and view the explanatory literature about the elections&quot;.</p>
 	<p pid="a.62.1/4">Our concerns focus on how many SDPs will be provided. In Committee we specified in an amendment that every local government ward in each region piloting the elections should have a facility for posting a ballot form in person on the main day of polling. We have had a rethink after reading the Minister's response to that amendment and the subsequent comments of other noble Lords during the debate. Somehow we wish to channel the discretion of the electoral administrators in the number of delivery points that there should be in each local government area.</p>
@@ -1670,7 +1689,7 @@
 <speech id="uk.org.publicwhip/lords/2004-02-23a.65.8" speakerid="uk.org.publicwhip/lord/100468" speakername="Lord Norton of Louth" colon=":" colnum="65"  time="018:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-16.htm#40223-16_spnew4">
 	<p pid="a.65.8/1">My Lords, this amendment stems from the discussion in Committee on clause stand part. On that occasion I raised the issue of whether or not providing polling progress information to political parties, as required under subsection (4), was compatible with the European convention.</p>
 	<p pid="a.65.8/2">The Minister will be aware that the Electoral Commission sought counsel's opinion on the provision to the parties of a marked register. The advice was that disclosing information in the way intended altered the balance between the party and the elector to the extent that it might constitute an invasion of privacy. The provision may thus amount to a disproportionate infringement of Article 8 and/or Article 3 of Protocol I of the convention.</p>
-	<p pid="a.65.8/3">I appreciate that the Government have taken advice. The noble Lord, Lord Filkin, included some details in his letter to my noble friend Lady Hanham on <phrase class="date" code="2006-02-06">6 February</phrase>. That advice is that postal voting is compatible with the convention. I have no difficulty with that. The issue here is not postal voting but the provision to political parties of a marked register. The issue is specific and independent of the method of voting. Indeed, the opinion provided to the Electoral Commission raises a question about the post-election accessibility of a marked register under the existing arrangements.</p>
+	<p pid="a.65.8/3">I appreciate that the Government have taken advice. The noble Lord, Lord Filkin, included some details in his letter to my noble friend Lady Hanham on <phrase class="date" code="2004-02-06">6 February</phrase>. That advice is that postal voting is compatible with the convention. I have no difficulty with that. The issue here is not postal voting but the provision to political parties of a marked register. The issue is specific and independent of the method of voting. Indeed, the opinion provided to the Electoral Commission raises a question about the post-election accessibility of a marked register under the existing arrangements.</p>
 	<p pid="a.65.8/4">The nub of the problem can be put very briefly. Under the traditional method of voting&mdash;voting in person at a polling booth&mdash;a voter can refuse to disclose his or her identity to party tellers standing outside the polling booth. Under the provisions of this clause, the voters have no right to withhold their identity. The information is disclosed by virtue of subsection (4). Electors could, of course, opt to cast a ballot in person at an SDP on polling day, but that does not solve the problem: it will already have been disclosed to the parties that they have not voted.</p>
 	<p pid="a.65.8/5">At Second Reading, the noble Lord, Lord Filkin, suggested that voting is a public act. I appreciate that point. However, as I pointed out in Committee, if postal voting is a public act, then so, too, is voting in person at a polling booth. The rights exercised by voters must be the same in both situations.</p>
 	<p pid="a.65.8/6">There is therefore a problem. I fully appreciate why this provision was introduced. I recognise the convenience to political parties of acquiring such information in fulfilling their vital role in the electoral process. We should be doing what we can to assist political parties as essential actors in the political process. However, doing so in this way may fall foul of the provisions of the convention.</p>
@@ -1855,7 +1874,7 @@
 	<p pid="a.75.4/25" class="indent">&quot;the secrecy of the ballot&quot;.</p>
 	<p pid="a.75.4/26">Given the many ECHR concerns in relation to secrecy which were discussed in Committee and today, it is vital that secrecy is included as a separate point for consideration.</p>
 	<p pid="a.75.4/27">Liberal Democrat Amendment No. 35 lies within this group. That would require the Electoral Commission to carry out something like a market research exercise after the elections to research whether personation or electoral offences had taken place. It may be necessary because some might feel that such research techniques might contravene the principle of secrecy without legislative authority.</p>
-	<p pid="a.75.4/28">From the Minister's comments at cols. GC208&ndash;09 of Hansard for <phrase class="date" code="2006-01-29">29 January</phrase>, the Government may concede on this amendment now it has been revised since Committee stage.</p>
+	<p pid="a.75.4/28">From the Minister's comments at cols. GC208&ndash;09 of Hansard for <phrase class="date" code="2004-01-29">29 January</phrase>, the Government may concede on this amendment now it has been revised since Committee stage.</p>
 	<p pid="a.75.4/29">We support the amendment entirely. I beg to move.</p>
 </speech>
 
@@ -2015,7 +2034,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.83.0" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon=":" colnum="83"  time="019:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-20.htm#40223-20_spnew8">
-	<p pid="a.83.0/1">My Lords, is it not correct that the Delegated Powers Committee took the view that, in that case, it would not insist on a form of parliamentary procedure for the pilots order, not because it was unimportant but because it was assumed at that point that it applied only to two regions of the United Kingdom and only for one election? That order was to cease to have effect after <phrase class="date" code="">10 June</phrase>. I think there is a strong case for using, at any rate, the negative procedure. I am not sure I would go quite as far as the noble Baroness, Lady Hanham, in saying that it would be appropriate here to have the affirmative procedure, but perhaps that could be considered at Third Reading.</p>
+	<p pid="a.83.0/1">My Lords, is it not correct that the Delegated Powers Committee took the view that, in that case, it would not insist on a form of parliamentary procedure for the pilots order, not because it was unimportant but because it was assumed at that point that it applied only to two regions of the United Kingdom and only for one election? That order was to cease to have effect after <phrase class="date" code="2004-06-10">10 June</phrase>. I think there is a strong case for using, at any rate, the negative procedure. I am not sure I would go quite as far as the noble Baroness, Lady Hanham, in saying that it would be appropriate here to have the affirmative procedure, but perhaps that could be considered at Third Reading.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.83.1" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="83"  time="019:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-20.htm#40223-20_spnew9">
@@ -2099,7 +2118,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.87.1" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon="" colnum="87"  time="019:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-21.htm#40223-21_spmin0">
-	<p pid="a.87.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].</p>
+	<p pid="a.87.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2004-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.87.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="87"  time="019:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-21.htm#40223-21_spmin0">
@@ -2124,7 +2143,7 @@
 	<p pid="a.87.2/19">In preparing the regulations, the DTI has carried out full and extensive public consultation. That process began with some six months of informal pre-consultation, including consultation with key organisations that represent employees and employers. A four-month formal public consultation took place between July and October 2003 on draft regulations. Before, during and after that consultation, discussions took place with an advisory group of 19 interested stakeholders established specifically for the purpose. There were also numerous bilateral discussions with stakeholders. In addition, a &quot;roadshow&quot; seminar event was held in various locations around the country to promote engagement in the consultation. Some focus groups were also held with representatives of small firms and others.</p>
 	<p pid="a.87.2/20">That was one of the most thorough and far-reaching consultations to have been conducted by the DTI, and we are satisfied that, having taken account of the many comments and representations received, we have here a set of regulations that will operate effectively. But that is only part of the picture. We recognise that employers and employees need to be aware of the new rights and responsibilities placed upon them. To ensure that they are, over the coming months, the DTI, along with ACAS, will carry out a well targeted publicity campaign aimed at all businesses and their employees, and in particular those in the small business sector.</p>
 	<p pid="a.87.2/21">A critical element of the campaign will be the provision of user-friendly guidance both for employers and employees. To allow time for that, the Government has laid these regulations before Parliament well before their intended coming into effect date of <phrase class="date" code="2004-10-01">1 October 2004</phrase>. Also coming into effect on that date, to form a coherent package of measures, will be the revised rules of procedure for employment tribunals, revised Employment Appeal Tribunal rules, and a revised ACAS code. Together, that package of measures will, we believe, bring about the biggest improvement in the handling of workplace disputes in decades. I commend the regulations to the House, and beg to move.</p>
-	<p pid="a.87.2/22">Moved, That the draft regulations laid before the House on <phrase class="date" code="2006-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Lord Sainsbury of Turville.)</p>
+	<p pid="a.87.2/22">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-01-20">20 January</phrase> be approved [7th Report from the Joint Committee].&mdash;(Lord Sainsbury of Turville.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.91.0" speakerid="uk.org.publicwhip/lord/100428" speakername="Baroness Miller of Hendon" colon=":" colnum="91"  time="019:42:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-22.htm#40223-22_spnew0">
@@ -2223,7 +2242,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.101.1" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon="" colnum="101"  time="020:36:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-24.htm#40223-24_spnew0">
-	<p pid="a.101.1/1" pwmotiontext="moved">rose to move, That the draft regulatory reform order laid before the House on <phrase class="date" code="2006-01-22">22 January</phrase> be approved [6th Report from the Regulatory Reform Committee].</p>
+	<p pid="a.101.1/1" pwmotiontext="moved">rose to move, That the draft regulatory reform order laid before the House on <phrase class="date" code="2004-01-22">22 January</phrase> be approved [6th Report from the Regulatory Reform Committee].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.101.2" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="101"  time="020:36:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-24.htm#40223-24_spnew0">
@@ -2241,7 +2260,7 @@
 	<p pid="a.101.2/12">In your Lordships' House the Select Committee on Delegated Powers and Regulatory Reform concluded that the proposals remove burdens, within the meaning of the Regulatory Reform Act 2001, and do not create any new burdens. The department also demonstrated to the satisfaction of the committee that the proposals will neither confound any reasonable expectations nor reduce any necessary protection.</p>
 	<p pid="a.101.2/13">I thank members of the Select Committee on Delegated Powers and Regulatory Reform for the time that they spent scrutinising the proposals and for recommending the proposals to the House.</p>
 	<p pid="a.101.2/14">The committee in the other place also concluded that the proposals removed a legal burden and would not remove any necessary protections or any rights or freedoms, which a person might reasonably expect to continue to exercise. The committee unanimously recommended that the order be approved. I commend the order to the House.</p>
-	<p pid="a.101.2/15">Moved, That the draft regulatory reform order laid before the House on <phrase class="date" code="2006-01-22">22 January</phrase> be approved [6th Report from the Regulatory Reform Committee].&mdash;(Lord Triesman.)</p>
+	<p pid="a.101.2/15">Moved, That the draft regulatory reform order laid before the House on <phrase class="date" code="2004-01-22">22 January</phrase> be approved [6th Report from the Regulatory Reform Committee].&mdash;(Lord Triesman.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-23a.103.0" speakerid="uk.org.publicwhip/lord/100428" speakername="Baroness Miller of Hendon" colon=":" colnum="103"  time="020:36:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040223/text/40223-24.htm#40223-24_spnew1">

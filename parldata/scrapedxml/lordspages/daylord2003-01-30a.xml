@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -847,7 +866,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1277.1" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="1277"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-08.htm#30130-08_spopq0">
 	<p pid="a.1277.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1277.1/2">What proposals they have to address the increasing number of elderly patients who are readmitted to hospital within a month of being discharged.</p>
+	<p pid="a.1277.1/2" pwmotiontext="asked">What proposals they have to address the increasing number of elderly patients who are readmitted to hospital within a month of being discharged.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1277.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="1277"  time="012:45:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-08.htm#30130-08_spmin0">
@@ -938,7 +957,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1280.1" speakerid="uk.org.publicwhip/lord/100055" speakername="Lord Blaker" colon="" colnum="1280"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-09.htm#30130-09_spopq0">
 	<p pid="a.1280.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1280.1/2" class="indent">Whether they expect to make any change in policy towards Israel in light of the result of the election there.</p>
+	<p pid="a.1280.1/2" class="indent" pwmotiontext="asked">Whether they expect to make any change in policy towards Israel in light of the result of the election there.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1280.2" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="1280"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-09.htm#30130-09_spnew19">
@@ -991,7 +1010,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1282.2" speakerid="uk.org.publicwhip/lord/100378" speakername="Lord Livsey of Talgarth" colon="" colnum="1282"  time="015:17:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-10.htm#30130-10_spopq0">
 	<p pid="a.1282.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1282.2/2" class="indent">When they intend to publish the first annual report on combating the illegal imports of animal products required by Section 17 of the Animal Health Act 2002, and whether they will publish the service level agreement between Her Majesty's Customs and Excise and the Department for Environment, Food and Rural Affairs on the detection of smuggled imports.</p>
+	<p pid="a.1282.2/2" class="indent" pwmotiontext="asked">When they intend to publish the first annual report on combating the illegal imports of animal products required by Section 17 of the Animal Health Act 2002, and whether they will publish the service level agreement between Her Majesty's Customs and Excise and the Department for Environment, Food and Rural Affairs on the detection of smuggled imports.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1282.3" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1282"  time="015:17:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-10.htm#30130-10_spmin0">
@@ -1052,7 +1071,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1284.3" speakerid="uk.org.publicwhip/lord/100499" speakername="Lord Phillips of Sudbury" colon="" colnum="1284"  time="015:22:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-11.htm#30130-11_spopq0">
 	<p pid="a.1284.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1284.3/2" class="indent">Whether in the event of a merger of the Community Fund with the New Opportunities Fund they will protect the independence, devolved structure and funding of the Community Fund.</p>
+	<p pid="a.1284.3/2" class="indent" pwmotiontext="asked">Whether in the event of a merger of the Community Fund with the New Opportunities Fund they will protect the independence, devolved structure and funding of the Community Fund.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-01-30a.1284.4" speakerid="uk.org.publicwhip/lord/100052" speakername="Baroness Blackstone" colon=":" colnum="1284"  time="015:22:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030130/text/30130-11.htm#30130-11_spmin0">

@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -56,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.259.3" speakerid="uk.org.publicwhip/lord/100129" speakername="Lord Clarke of Hampstead" colon="" colnum="259"  time="014:40:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-01.htm#40317-01_spopq0">
 	<p pid="a.259.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.259.3/2" class="indent">What action is being taken to combat anti-Semitism in the United Kingdom.</p>
+	<p pid="a.259.3/2" class="indent" pwmotiontext="asked">What action is being taken to combat anti-Semitism in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.259.4" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="259"  time="014:40:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-01.htm#40317-01_spmin0">
@@ -127,7 +148,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.262.1" speakerid="uk.org.publicwhip/lord/100601" speakername="Lord Smith of Clifton" colon="" colnum="262"  time="014:49:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-01.htm#40317-01_spopq1">
 	<p pid="a.262.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.262.1/2" class="indent">Whether they intend to continue to pay the salaries of Members of the Northern Ireland Legislative Assembly and those of their support staff after 9th April 2004 if by that date the Assembly has not been convened.</p>
+	<p pid="a.262.1/2" class="indent" pwmotiontext="asked">Whether they intend to continue to pay the salaries of Members of the Northern Ireland Legislative Assembly and those of their support staff after 9th April 2004 if by that date the Assembly has not been convened.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.262.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="262"  time="014:49:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-01.htm#40317-01_spmin1">
@@ -151,7 +172,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.263.0" speakerid="uk.org.publicwhip/lord/100211" speakername="Earl Ferrers" colon=":" colnum="263"  time="014:49:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-02.htm#40317-02_spnew1">
-	<p pid="a.263.0/1">My Lords, would the Leader of the House be good enough to have another shot at answering the Question that was put to her? Do the Government intend to continue to pay the salaries of Members from <phrase class="date" code="">9 April</phrase>, which is in about four weeks' time? As I understood it, the noble Baroness said that the matter was continuously under review, but will salaries continue to be paid or not?</p>
+	<p pid="a.263.0/1">My Lords, would the Leader of the House be good enough to have another shot at answering the Question that was put to her? Do the Government intend to continue to pay the salaries of Members from <phrase class="date" code="2004-04-09">9 April</phrase>, which is in about four weeks' time? As I understood it, the noble Baroness said that the matter was continuously under review, but will salaries continue to be paid or not?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.263.1" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="263"  time="014:49:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-02.htm#40317-02_spnew2">
@@ -289,7 +310,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.268.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="268"  time="015:04:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-03.htm#40317-03_spnew13">
-	<p pid="a.268.3/1">My Lords, in relation to the issue of military intervention and increasing numbers, there are two different strategies. The provincial reconstruction teams are a mix of the military and development specialists who are working not only in terms of the security environment but to bring development in key areas of Afghanistan. Of course, there remains a concern with respect to security, particularly in the south-east where there is a re-emergence of the Taliban, and a different strategy has to be deployed in those areas. On the specific issue of the elections, some 1.466 million were registered by <phrase class="date" code="2006-03-15">15 March</phrase>. We are receiving daily updates on that, and they hope to complete the registration of some 10 million before the elections. There are eight regional centres, and there will be a focus on rural areas from May.</p>
+	<p pid="a.268.3/1">My Lords, in relation to the issue of military intervention and increasing numbers, there are two different strategies. The provincial reconstruction teams are a mix of the military and development specialists who are working not only in terms of the security environment but to bring development in key areas of Afghanistan. Of course, there remains a concern with respect to security, particularly in the south-east where there is a re-emergence of the Taliban, and a different strategy has to be deployed in those areas. On the specific issue of the elections, some 1.466 million were registered by <phrase class="date" code="2004-03-15">15 March</phrase>. We are receiving daily updates on that, and they hope to complete the registration of some 10 million before the elections. There are eight regional centres, and there will be a focus on rural areas from May.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.268.4" speakerid="uk.org.publicwhip/lord/100502" speakername="Lord Pilkington of Oxenford" colon=":" colnum="268"  time="015:04:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-03.htm#40317-03_spnew14">
@@ -322,7 +343,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.269.4" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="269"  time="015:13:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-04.htm#40317-04_spopq0">
 	<p pid="a.269.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.269.4/2" class="indent">What additional resources they are making available to the British Transport Police to enable the force to enhance security and surveillance in areas within its jurisdiction.</p>
+	<p pid="a.269.4/2" class="indent" pwmotiontext="asked">What additional resources they are making available to the British Transport Police to enable the force to enhance security and surveillance in areas within its jurisdiction.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-03-17a.269.5" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="269"  time="015:13:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-04.htm#40317-04_spnew0">
@@ -429,7 +450,7 @@
 <speech id="uk.org.publicwhip/lords/2004-03-17a.277.1" speakerid="uk.org.publicwhip/lord/100280" speakername="Lord Haskel" colon=":" colnum="277"  time="015:37:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040317/text/40317-05.htm#40317-05_spnew1">
 	<p pid="a.277.1/1">My Lords, I apologise if the noble Lord, Lord Northbourne, feels I am trespassing on his debate, but I put my name down to speak and prepared this when the Motion on the Order Paper was just a debate about marriage. So I felt that it was relevant then. I would like to continue making this point because I have come to a point the noble Lord, Lord Northbourne, mentioned in his speech.</p>
 	<p pid="a.277.1/2">These benefits were not available because his companion was male, and the home that they shared had to be sold because death duties and pension arrangements did not recognise the surviving partner. This is the injustice to which I refer. Does my noble friend the Minister not find this discriminatory, intolerant, lacking in humanity and perhaps a little bit mean spirited? Because I do. But it is not difficult to put it right.</p>
-	<p pid="a.277.1/3">The noble Lord, Lord Northbourne, told us that the noble Lord, Lord Lester, introduced a Civil Partnerships Bill. It had its Second Reading in your Lordships' House on <phrase class="date" code="2002-01-25">25 January 2002</phrase>. The Government indicated that they would introduce their own Bill, and so the Bill of the noble Lord, Lord Lester, did not proceed. As the noble Lord, Lord Northbourne, said, there was some discussion about whether the Government's Bill would apply to same-sex partnerships or heterosexual partnerships, or both. I have established that the Department of Trade and Industry is handling the Bill, and it did briefly surface on <phrase class="date" code="2006-02-05">5 February</phrase> this year in response to a Written Question to the Minster in another place, Jacqui Smith. She said that the Government hope to introduce the civil partnerships Bill into Parliament in this Session. The purpose of my intervention is simple. It is to try to speed it up.</p>
+	<p pid="a.277.1/3">The noble Lord, Lord Northbourne, told us that the noble Lord, Lord Lester, introduced a Civil Partnerships Bill. It had its Second Reading in your Lordships' House on <phrase class="date" code="2002-01-25">25 January 2002</phrase>. The Government indicated that they would introduce their own Bill, and so the Bill of the noble Lord, Lord Lester, did not proceed. As the noble Lord, Lord Northbourne, said, there was some discussion about whether the Government's Bill would apply to same-sex partnerships or heterosexual partnerships, or both. I have established that the Department of Trade and Industry is handling the Bill, and it did briefly surface on <phrase class="date" code="2004-02-05">5 February</phrase> this year in response to a Written Question to the Minster in another place, Jacqui Smith. She said that the Government hope to introduce the civil partnerships Bill into Parliament in this Session. The purpose of my intervention is simple. It is to try to speed it up.</p>
 	<p pid="a.277.1/4">I congratulate the noble Lord, Lord Northbourne, on moving this debate. He has raised matters of enormous importance. Perhaps it might have been apt if I had said something about children who have been adopted by, or who are living with, same-sex couples. But my purpose is to try to shame the Government into speeding up the introduction of the civil partnerships Bill, because delay means that the injustice continues.</p>
 </speech>
 
@@ -587,7 +608,7 @@
 	<p pid="a.298.0/1">My Lords, I join all noble Lords in thanking the noble Lord, Lord Northbourne, for initiating this debate. I cannot compete with the longevity of your Lordships' marriages, but I declare an interest as a married woman, a parent and a step-parent. I hope that to that extent I bring a little experience to the debate.</p>
 	<p pid="a.298.0/2">The noble Lord, Lord Northbourne, covered a great deal of ground and, as always, he focused on his desire to support children. I pay tribute to him for that. Like him, the Government and I recognise that marriage is the surest foundation for raising children. The stability, love and support for children that we wish to see in all relationships between adults who have children should be paramount and we recognise the importance of marriage in that.</p>
 	<p pid="a.298.0/3">However, I noticed that the noble Lord also seemed to be saying that, on the one hand, the state needs to be part of the solution by providing the support while, on the other hand, criticising the state for taking away responsibility. I do not believe that we have taken away responsibility, but I accept that the support we provide is critical to enable our children to flourish.</p>
-	<p pid="a.298.0/4">My noble friend Lord Haskel spoke with passion and I will ensure that his comments are passed on. He will be aware that we announced in the Queen's Speech on <phrase class="date" code="">26 November</phrase> our intention to bring forward a civil partnership Bill. I will ensure that his comments are taken forward.</p>
+	<p pid="a.298.0/4">My noble friend Lord Haskel spoke with passion and I will ensure that his comments are passed on. He will be aware that we announced in the Queen's Speech on <phrase class="date" code="2004-11-26">26 November</phrase> our intention to bring forward a civil partnership Bill. I will ensure that his comments are taken forward.</p>
 	<p pid="a.298.0/5">The noble Lord, Lord Lucas, who described himself as an addict, is a good example of someone who recognises the importance of marriage and I will pay regard to his comments about education as I continue my remarks.</p>
 	<p pid="a.298.0/6">The noble Earl, Lord Listowel, talked about the need to engage parents. That is a critical part of the agenda, and one we have neglected in terms of our development and thinking, which I am sure we will be able to debate more fully. The right reverent Prelate the Bishop of Oxford talked interestingly about the good value for money, with which I agree, that marriage brings. But there is also the recognition of marriage and relationship support and the role and work of the voluntary sector in particular. The right reverent Prelate asked me how we are going to make clear what we are doing in relation to the regulatory reform order on registrars. We are considering the consultation responses and we are putting proposals before Parliament to be in place before the Summer Recess.</p>
 	<p pid="a.298.0/7">The noble Baroness, Lady Howe, reminded us of the extended families and the work of Michael Young, taking us through the changes that have taken place since the 1950s and the vast range of experience that we now have of family relationships. She spoke also in the context of her own experience.</p>
@@ -715,7 +736,7 @@
 	<p pid="a.316.0/5" class="indent">&quot;comprehensive and efficient&quot;</p>
 	<p pid="a.316.0/6">library service. The public library service is administered by local authorities and funded through what was once the Department of the Environment, Transport and the Regions. Would the Minister tell me why it is that the public library service is the responsibility of the DCMS, but it appears that the funding of the service is the responsibility of a different department? Is this not illogical?</p>
 	<p pid="a.316.0/7">When the new public library standards were issued in April 2001, it was stated that these standards would be reviewed from time to time, partly to ensure that the administrative burden placed on local authorities required to achieve these standards does not become disproportionate. As I have already said, it appears that these standards are not working. Is this because the administrative burden is, perhaps, excessive?</p>
-	<p pid="a.316.0/8">The DCMS publish an appraisal of the annual library plan, as submitted by each library authority, every year. This appraisal forms a key planning tool, and facilitates the assessment of each authority's performance against locally set standards and targets. Would the Minster explain why an annual appraisal has now been substituted by a Public Libraries Position Statement? Perhaps he could also explain to me, because I do not understand it, the reference to a &quot;post steering group discussion&quot; on <phrase class="date" code="2006-01-26">26 January</phrase> this year.</p>
+	<p pid="a.316.0/8">The DCMS publish an appraisal of the annual library plan, as submitted by each library authority, every year. This appraisal forms a key planning tool, and facilitates the assessment of each authority's performance against locally set standards and targets. Would the Minster explain why an annual appraisal has now been substituted by a Public Libraries Position Statement? Perhaps he could also explain to me, because I do not understand it, the reference to a &quot;post steering group discussion&quot; on <phrase class="date" code="2004-01-26">26 January</phrase> this year.</p>
 	<p pid="a.316.0/9">I notice that the 2003 DCMS appraisal of annual library plans clearly states that it is unlikely that the targets will be met by the authorities in March 2004 as planned. Thus the performance of public libraries will fall beneath standards set by the Government. This appraisal, published in February 2003 and now updated by the position statement, details a number of strategic failures. For example, the first DCMS objective was to ensure that,</p>
 	<p pid="a.316.0/10" class="indent">&quot;library authorities must enable convenient and suitable access for users of libraries&quot;.</p>
 	<p pid="a.316.0/11">This target has not been met. We want the potential in all our public libraries to be utilised, to ensure that everyone has access to resources, knowledge and information&mdash;particularly the groups in society that would otherwise be disadvantaged by not being able to do this. Again in February 2003, the report A Framework for the future was published, and it offered,</p>
@@ -730,7 +751,7 @@
 	<p pid="a.316.0/20">I now return to the debate on <phrase class="date" code="2003-05-08">8 May 2003</phrase> when Her Majesty's Government were asked:</p>
 	<p pid="a.316.0/21" class="indent">&quot;what measures are being taken to remove all barriers to literature for those who have difficulties accessing books in traditional print formats&quot;.&mdash;[Official Report, 8/5/03; col. 1295.]</p>
 	<p pid="a.316.0/22">In that debate, I referred to the report Framework for the Future, the subject of this debate. In the report, the Government argue passionately&mdash;and rightly&mdash;for the importance of reading and access to literature. While detailing a number of ways in which problems of illiteracy and increasing skills can be addressed, there is no mention of any strategy to assist the blind or visually impaired. With today's increased technology, would it not be appropriate for the Government to consider addressing the issues that the visually impaired face by setting targets for public libraries to carry a selection of audio books which meet the demands of the general public?</p>
-	<p pid="a.316.0/23">It has been established that audio books are by far the most popular method by which visually impaired people can access literature. The drawback, as is so often the case, is the cost. Has there been any progress since the debate on <phrase class="date" code="">8 May</phrase>? In that debate, the noble Lord, Lord Davies of Oldham, said, when referring to VAT on audio books:</p>
+	<p pid="a.316.0/23">It has been established that audio books are by far the most popular method by which visually impaired people can access literature. The drawback, as is so often the case, is the cost. Has there been any progress since the debate on <phrase class="date" code="2004-05-08">8 May</phrase>? In that debate, the noble Lord, Lord Davies of Oldham, said, when referring to VAT on audio books:</p>
 	<p pid="a.316.0/24" class="indent">&quot;I hope that I can give a slightly more positive response this year&quot;&mdash;</p>
 	<p pid="a.316.0/25">that was last May&mdash;</p>
 	<p pid="a.316.0/26" class="indent">&quot;although I cannot promise to solve all the problems of British taxation in regard to the European Community&quot;.</p>

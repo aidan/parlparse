@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -164,7 +183,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.13.1" speakerid="uk.org.publicwhip/lord/100588" speakername="Lord Sheldon" colon="" colnum="13"  time="015:18:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-04.htm#31006-04_spopq0">
 	<p pid="a.13.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.13.1/2" class="indent">How they propose to reinforce the impartiality of the Civil Service.</p>
+	<p pid="a.13.1/2" class="indent" pwmotiontext="asked">How they propose to reinforce the impartiality of the Civil Service.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.13.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="13"  time="015:18:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-04.htm#31006-04_spnew2">
@@ -227,7 +246,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.15.4" speakerid="uk.org.publicwhip/lord/100173" speakername="Lord Dholakia" colon="" colnum="15"  time="015:26:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-04.htm#31006-04_spopq1">
 	<p pid="a.15.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.15.4/2" class="indent">Whether they intend to review the role and functions of Her Majesty's inspectors in the criminal justice system.</p>
+	<p pid="a.15.4/2" class="indent" pwmotiontext="asked">Whether they intend to review the role and functions of Her Majesty's inspectors in the criminal justice system.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.15.5" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="15"  time="015:26:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-04.htm#31006-04_spmin0">
@@ -296,7 +315,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.18.1" speakerid="uk.org.publicwhip/lord/100115" speakername="Lord Chalfont" colon="" colnum="18"  time="015:34:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-05.htm#31006-05_spopq0">
 	<p pid="a.18.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.18.1/2" class="indent">Whether the activities of the Palestine Relief and Development Fund&mdash;Interpal&mdash;are consistent with its charitable status.</p>
+	<p pid="a.18.1/2" class="indent" pwmotiontext="asked">Whether the activities of the Palestine Relief and Development Fund&mdash;Interpal&mdash;are consistent with its charitable status.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.18.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="18"  time="015:34:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-05.htm#31006-05_spnew14">
@@ -349,7 +368,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.19.6" speakerid="uk.org.publicwhip/lord/100130" speakername="Lord Clement-Jones" colon="" colnum="19"  time="015:39:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-06.htm#31006-06_spopq0">
 	<p pid="a.19.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.19.6/2" class="indent">Whether they will establish an independent inquiry into the circumstances of the closure and relocation of the London Foot Hospital of Podiatric Medicine, in particular the role played by the North East London Workforce Development Confederation and the Camden Primary Care Trust.</p>
+	<p pid="a.19.6/2" class="indent" pwmotiontext="asked">Whether they will establish an independent inquiry into the circumstances of the closure and relocation of the London Foot Hospital of Podiatric Medicine, in particular the role played by the North East London Workforce Development Confederation and the Camden Primary Care Trust.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-10-06a.19.7" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="19"  time="015:39:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo031006/text/31006-06.htm#31006-06_spmin0">

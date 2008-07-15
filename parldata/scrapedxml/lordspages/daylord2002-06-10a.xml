@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -58,7 +77,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-06-10a.1.3" speakerid="uk.org.publicwhip/lord/100517" speakername="Lord Quirk" colon="" colnum="1"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020610/text/20610-01.htm#20610-01_spopq0">
 	<p pid="a.1.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1.3/2" class="indent">What is their assessment so far of experiments with language testing to expose false claims by asylum seekers.</p>
+	<p pid="a.1.3/2" class="indent" pwmotiontext="asked">What is their assessment so far of experiments with language testing to expose false claims by asylum seekers.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-06-10a.1.4" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="1"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020610/text/20610-01.htm#20610-01_spmin1">
@@ -182,7 +201,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-06-10a.6.6" speakerid="uk.org.publicwhip/lord/100533" speakername="Lord Renton" colon="" colnum="6"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020610/text/20610-02.htm#20610-02_spopq0">
 	<p pid="a.6.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.6.6/2" class="indent">What action they can take with regard to the unused building on the island site east of Westminster Bridge, which used to be occupied by the Greater London Council.</p>
+	<p pid="a.6.6/2" class="indent" pwmotiontext="asked">What action they can take with regard to the unused building on the island site east of Westminster Bridge, which used to be occupied by the Greater London Council.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-06-10a.6.7" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="6"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo020610/text/20610-02.htm#20610-02_spmin0">
@@ -442,16 +461,16 @@
 	<p pid="a.18.5/4" class="indent" pwmotiontext="unrecognized">On <phrase class="date" code="2001-12-18">18 December 2001</phrase> the House of Commons decided to grant full access to Commons facilities to Members of that House who have not taken the oath. As a result the four MPs directly concerned have been issued with full Members' passes, and enjoy exactly the same rights of access to the Palace of Westminster as any other MP, with the exception that they may not enter the Chamber of the House of Commons or otherwise participate in proceedings.</p>
 	<p pid="a.18.5/5" class="indent" pwmotiontext="unrecognized">It has long been a convention of both Houses that certain courtesies should be extended to Members of the other House. The courtesies extended by this House to MPs are as follows: they may stand at the Bar of the House to listen to debates; they may use the Library reading rooms; and they may use the Members' Gallery.</p>
 	<p pid="a.18.5/6" class="indent" pwmotiontext="unrecognized">In addition, MPs may sponsor tours of the Line of Route, part of which passes through the House of Lords.</p>
-	<p pid="a.18.5/7" class="indent" pwmotiontext="unrecognized">Since <phrase class="date" code="">18 December</phrase> the four MPs who have not taken the oath have enjoyed the same privileges that have been granted by the House of Lords to MPs as a whole. However, as an interim measure staff have been instructed not to permit them either to enter the Chamber to stand at the Bar of the House or to use the Library. Should they request entry into the Chamber they will be directed to the Members' Gallery. Given that as ordinary members of the public they enjoy an absolute right of access to the Strangers' Gallery, the House authorities have taken the view that there is nothing to be gained in barring them from the Members' Gallery. However, none of these interim arrangements has any formal standing: it is for the House to decide whether they should be formalised and put on a permanent footing, or changed.</p>
+	<p pid="a.18.5/7" class="indent" pwmotiontext="unrecognized">Since <phrase class="date" code="2002-12-18">18 December</phrase> the four MPs who have not taken the oath have enjoyed the same privileges that have been granted by the House of Lords to MPs as a whole. However, as an interim measure staff have been instructed not to permit them either to enter the Chamber to stand at the Bar of the House or to use the Library. Should they request entry into the Chamber they will be directed to the Members' Gallery. Given that as ordinary members of the public they enjoy an absolute right of access to the Strangers' Gallery, the House authorities have taken the view that there is nothing to be gained in barring them from the Members' Gallery. However, none of these interim arrangements has any formal standing: it is for the House to decide whether they should be formalised and put on a permanent footing, or changed.</p>
 	<p pid="a.18.5/8" class="indent" pwmotiontext="unrecognized">The Committee has taken account of the strong feelings within the House, but has also weighed up what is achievable in practice. We understand that there may be Members who feel, as a matter of principle, that the four MPs should not be entitled to have access to any of the premises of the House of Lords. But regardless of abstract entitlement the House has to acknowledge that all passholders, Members as well as staff of both Houses, do as a matter of fact have access to most areas within the Palace of Westminster. Such a ban on the four MPs would not be enforceable except at wholly prohibitive cost.</p>
 	<p pid="a.18.5/9" class="indent" pwmotiontext="unrecognized">In contrast, we believe that the House authorities can control access both to the Bar of the House and the Library effectively, and at minimal cost. Access to the Bar of the House is a practical as well as a symbolic privilege for MPs&mdash;it allows them to listen to debates in the House of Lords that are relevant to and may influence their own parliamentary work. MPs who have not taken the oath may not participate in any proceedings of the House of Commons, and we therefore see no reason why they should be granted the privilege of standing at the Bar.</p>
-	<p pid="a.18.5/10" class="indent" pwmotiontext="unrecognized">The authorities of both Houses monitor security constantly, and we understand that all aspects of security have been reviewed since <phrase class="date" code="">11 September</phrase>. One element of security within Parliament is the screening process that takes place before any individual is granted a pass. We look to the authorities of both Houses to ensure that the security of all Members and staff in the Parliamentary Estate is protected.</p>
+	<p pid="a.18.5/10" class="indent" pwmotiontext="unrecognized">The authorities of both Houses monitor security constantly, and we understand that all aspects of security have been reviewed since <phrase class="date" code="2002-09-11">11 September</phrase>. One element of security within Parliament is the screening process that takes place before any individual is granted a pass. We look to the authorities of both Houses to ensure that the security of all Members and staff in the Parliamentary Estate is protected.</p>
 	<p pid="a.18.5/11" class="indent" pwmotiontext="unrecognized">The Committee therefore supports the interim measures taken by the House authorities, and recommends to the House that the privilege of access to the Bar of the House and to the Library should not be extended to Members of the House of Commons who have not taken the oath.</p>
 	<p pid="a.18.5/12" class="indent" pwmotiontext="lines">2. International Telephone Calls</p>
 	<p pid="a.18.5/13" class="indent" pwmotiontext="unrecognized">The Committee took note of the decision of the Administration and Works Sub-Committee that Members should be able to make international telephone calls free of charge. Each Member will be invited to nominate one convenient extension which will be &quot;enabled&quot; to make direct international calls. Members will also be able to make international calls from any other telephone within the House by calling the Operator Bureau, as at present, with the difference that they will no longer be charged. Fax machines in facilities rooms will be similarly &quot;enabled&quot;, as will equipment in each of the Whips' Offices.</p>
 	<p pid="a.18.5/14" class="indent" pwmotiontext="unrecognized">These arrangements will be for a 12 months trial period in the first instance, with an initial review after 6 months to assess take-up and cost implications.</p>
 	<p pid="a.18.5/15" class="indent" pwmotiontext="lines">3. Restoration of Old Palace Yard</p>
-	<p pid="a.18.5/16" class="indent" pwmotiontext="unrecognized">The Committee was informed that the third and final phase of the project to restore Old Palace Yard, involving the granite paving of the carriage-way itself, will be carried out during the summer recess of 2002. The highway authorities have agreed in principle to a temporary closure of the road through Old Palace Yard while the work is carried out from <phrase class="date" code="">1 August</phrase> to early October 2002, Through-traffic will be diverted via Horseferry Road, Marsham Street and Great Smith Street.</p>
+	<p pid="a.18.5/16" class="indent" pwmotiontext="unrecognized">The Committee was informed that the third and final phase of the project to restore Old Palace Yard, involving the granite paving of the carriage-way itself, will be carried out during the summer recess of 2002. The highway authorities have agreed in principle to a temporary closure of the road through Old Palace Yard while the work is carried out from <phrase class="date" code="2002-08-01">1 August</phrase> to early October 2002, Through-traffic will be diverted via Horseferry Road, Marsham Street and Great Smith Street.</p>
 	<p pid="a.18.5/17" class="indent" pwmotiontext="unrecognized">Normal vehicle access to Parliament will continue via Carriage Gates and Black Rod's Garden and pedestrian entrances will remain open as normal. It will not be possible to use Peers' Car Park during the period. However, the Abingdon Street car park will be available, and as in 2001, 30 spaces will be made available in the House of Commons underground car park.</p>
 	<p pid="a.18.5/18" class="indent" pwmotiontext="lines">4. Lords' Reimbursement Allowances</p>
 	<p pid="a.18.5/19" class="indent" pwmotiontext="unrecognized">The Committee was informed of the annual uprating of the motor and bicycle allowances, in line with the increase in the retail price index, with effect from <phrase class="date" code="2002-04-01">1 April 2002</phrase>.</p>

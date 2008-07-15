@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -151,7 +170,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-03-17a.5.5" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="5"  time="014:48:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030317/text/30317-02.htm#30317-02_spopq0">
 	<p pid="a.5.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.5.5/2" class="indent">What progress they have made to ensure that service users have 24-hour access to mental health services.</p>
+	<p pid="a.5.5/2" class="indent" pwmotiontext="asked">What progress they have made to ensure that service users have 24-hour access to mental health services.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-03-17a.5.6" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="5"  time="014:48:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030317/text/30317-02.htm#30317-02_spnew4">
@@ -188,7 +207,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-03-17a.6.4" speakerid="uk.org.publicwhip/lord/100103" speakername="Lord Campbell of Croy" colon="" colnum="6"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030317/text/30317-02.htm#30317-02_spopq1">
 	<p pid="a.6.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.6.4/2" class="indent">Whether they intend to withdraw from parts of the European Convention on Human Rights in view of the number of asylum seekers arriving in the United Kingdom.</p>
+	<p pid="a.6.4/2" class="indent" pwmotiontext="asked">Whether they intend to withdraw from parts of the European Convention on Human Rights in view of the number of asylum seekers arriving in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-03-17a.6.5" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="6"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030317/text/30317-02.htm#30317-02_spmin0">
@@ -2667,7 +2686,7 @@
 	<p pid="a.117.0/14">Although almost 12 years have elapsed since SCR 687 was adopted, Iraq has never taken the steps required of it by the council. Throughout that period the council has repeatedly condemned Iraq for violations of SCR 687 and has adopted numerous resolutions on the subject. In 1993 and again in 1998 the coalition took military action under the revived authority of SCR 678 to deal with the threat to international peace and security posed by those violations.</p>
 	<p pid="a.117.0/15">The right reverend Prelate the Bishop of Salisbury was right to say that I would say something about 12 years being a long time. Indeed, 12 years is a long time for Iraq to comply. More particularly, I say to the right reverend Prelate that 17 resolutions is a great number for Iraq to have failed to comply with.</p>
 	<p pid="a.117.0/16">In relation to the action in 1993 the Minister of State at the Foreign and Commonwealth Office, Douglas Hogg, wrote:</p>
-	<p pid="a.117.0/17" class="indent">&quot;The Security Council determined in its statements of 8 and <phrase class="date" code="2006-01-11">11 January</phrase> that Iraq was in material breach of resolution 687 and its related resolutions, and warned Iraq that serious consequences would ensue from continued failure to comply with its obligations. Resolution 687 lays down the terms for the formal ceasefire between the coalition states and Iraq at the end of hostilities mandated by the Security Council in resolution 678. These terms are binding in themselves but also have been specifically accepted by Iraq as a condition&mdash;</p>
+	<p pid="a.117.0/17" class="indent">&quot;The Security Council determined in its statements of 8 and <phrase class="date" code="2003-01-11">11 January</phrase> that Iraq was in material breach of resolution 687 and its related resolutions, and warned Iraq that serious consequences would ensue from continued failure to comply with its obligations. Resolution 687 lays down the terms for the formal ceasefire between the coalition states and Iraq at the end of hostilities mandated by the Security Council in resolution 678. These terms are binding in themselves but also have been specifically accepted by Iraq as a condition&mdash;</p>
 	<p pid="a.117.0/18">the point made by the noble and learned Lord, Lord Mayhew&mdash;</p>
 	<p pid="a.117.0/19" class="indent">&quot;for the formal ceasefire to come into effect. In the light of Iraq's continued breaches of Security Council resolution 687 and thus of the ceasefire terms, and the repeated warnings given by the Security Council and members of the coalition, their forces were entitled to take necessary and proportionate action in order to ensure that Iraq complies with those terms&quot;.</p>
 	<p pid="a.117.0/20">Again, on 14th January 1993 in relation to UK and US military action of the previous day, the then UN Secretary-General, Dr Boutros Ghali, said:</p>

@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.437.1" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="437"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-01.htm#40202-01_spopq0">
 	<p pid="a.437.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.437.1/2" class="indent">When they will set up their review of the law on prostitution; and what will be its terms of reference.</p>
+	<p pid="a.437.1/2" class="indent" pwmotiontext="asked">When they will set up their review of the law on prostitution; and what will be its terms of reference.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.437.2" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="437"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-01.htm#40202-01_spnew0">
@@ -139,7 +158,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.440.1" speakerid="uk.org.publicwhip/lord/100421" speakername="Baroness Massey of Darwen" colon="" colnum="440"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-01.htm#40202-01_spopq1">
 	<p pid="a.440.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.440.1/2" class="indent">What initiatives they propose to tackle obesity in children.</p>
+	<p pid="a.440.1/2" class="indent" pwmotiontext="asked">What initiatives they propose to tackle obesity in children.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.440.2" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="440"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-01.htm#40202-01_spnew20">
@@ -179,11 +198,11 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.441.4" speakerid="uk.org.publicwhip/lord/100047" speakername="Baroness Billingham" colon=":" colnum="441"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-02.htm#40202-02_spnew6">
-	<p pid="a.441.4/1">My Lords, will the Minister be supporting Sport Relief 2004 this year? Sport Relief is a combination of Comic Relief and the BBC. It intends to raise millions of pounds for this purpose, both in the UK and internationally. I have just come from a meeting and I am very excited about it. Will the Minister say what prospect there is of getting a huge party from this Chamber to go on the Westminster Mile on <phrase class="date" code="">21 July</phrase> to raise money for it? We can jog, cycle, skateboard or get out our Zimmers; we can all raise money for a thoroughly worthwhile cause.</p>
+	<p pid="a.441.4/1">My Lords, will the Minister be supporting Sport Relief 2004 this year? Sport Relief is a combination of Comic Relief and the BBC. It intends to raise millions of pounds for this purpose, both in the UK and internationally. I have just come from a meeting and I am very excited about it. Will the Minister say what prospect there is of getting a huge party from this Chamber to go on the Westminster Mile on <phrase class="date" code="2004-07-21">21 July</phrase> to raise money for it? We can jog, cycle, skateboard or get out our Zimmers; we can all raise money for a thoroughly worthwhile cause.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.442.0" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="442"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-02.htm#40202-02_spnew7">
-	<p pid="a.442.0/1">My Lords, the noble Baroness has made an irresistible argument. I shall be sitting on the Whip's chair later this afternoon, if people want to volunteer. I am sure the date of <phrase class="date" code="">10 July</phrase> will be marked in all noble Lords' diaries.</p>
+	<p pid="a.442.0/1">My Lords, the noble Baroness has made an irresistible argument. I shall be sitting on the Whip's chair later this afternoon, if people want to volunteer. I am sure the date of <phrase class="date" code="2004-07-10">10 July</phrase> will be marked in all noble Lords' diaries.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.442.1" speakerid="uk.org.publicwhip/lord/100307" speakername="Baroness Howe of Idlicote" colon=":" colnum="442"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-02.htm#40202-02_spnew8">
@@ -191,7 +210,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.442.2" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="442"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-02.htm#40202-02_spnew9">
-	<p pid="a.442.2/1">Yes, my Lords. We are putting a lot of pressure on the industry to do just that. The Food Standards Agency is looking at the whole field of promotions for foods, particularly those aimed at young people and children. There was a good and lively debate on <phrase class="date" code="2006-01-27">27 January</phrase>, which the noble Baroness will know about. The Food Standards Agency will be making recommendations at its March meeting and will issue a document for formal consultation later this year. At the same time, Ofcom is making it one of its first priorities to make a fast-track review of this, looking at the best approach to take to any changes to the Code for Broadcast Advertising. A great deal is happening in this field.</p>
+	<p pid="a.442.2/1">Yes, my Lords. We are putting a lot of pressure on the industry to do just that. The Food Standards Agency is looking at the whole field of promotions for foods, particularly those aimed at young people and children. There was a good and lively debate on <phrase class="date" code="2004-01-27">27 January</phrase>, which the noble Baroness will know about. The Food Standards Agency will be making recommendations at its March meeting and will issue a document for formal consultation later this year. At the same time, Ofcom is making it one of its first priorities to make a fast-track review of this, looking at the best approach to take to any changes to the Code for Broadcast Advertising. A great deal is happening in this field.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.442.3" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon=":" colnum="442"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-02.htm#40202-02_spnew10">
@@ -240,7 +259,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.444.1" speakerid="uk.org.publicwhip/lord/100042" speakername="Lord Berkeley" colon="" colnum="444"  time="014:57:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-03.htm#40202-03_spopq0">
 	<p pid="a.444.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.444.1/2" class="indent">What obligations local authorities have to de-ice footpaths and roads.</p>
+	<p pid="a.444.1/2" class="indent" pwmotiontext="asked">What obligations local authorities have to de-ice footpaths and roads.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.444.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="444"  time="014:57:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-03.htm#40202-03_spnew1">
@@ -419,7 +438,7 @@
 	<p pid="a.450.3/9" class="indent">&quot;Whilst there may be many examples of new public and commercial spaces and buildings that have reached the highest standards of inclusiveness, this has often been achieved by one of the parties . . . taking a leading role, with others having to follow. However, there are still many inaccessible environments throughout the UK. In many cases this is because schemes have been granted planning consent without any party in the process properly assessing whether the scheme would result in an accessible environment&quot;.</p>
 	<p pid="a.450.3/10">The example to which I want to refer is one that is very close to home in the Office of the Deputy Prime Minister&mdash;that is, City Hall on the south bank of the Thames. It is near Tower Bridge but not very near a public place where those with any kind of mobility difficulty can be dropped off by cab or by car unless they are among the happy four, I believe, who have taken their place in the queue to obtain a parking space underneath the building. That is the number of disabled user spaces available.</p>
 	<p pid="a.450.3/11">On the day that Her Majesty the Queen opened City Hall, I took as a guest a lady who admitted to being 86 years old, although I am not sure how old she is. She had considerable difficulty. Until then, I had not realised just what a long way the building was from the highway. Once one is inside City Hall, one tramps a long way up gradients even to reach the lifts. I consider it a disgrace that London's newest government building has been designed with those inherent difficulties. I believe that the Mayor is considering extreme action and I hope that he finds a way to deal with the problem. However, it is difficult to see how it can be rectified after the event.</p>
-	<p pid="a.450.3/12">Having said all that, I shall return to my script. The amendment would enable the Government to meet their manifesto commitment to revise Section 76, to which I have already referred. On <phrase class="date" code="2006-01-22">22 January</phrase>, when debating another amendment concerning disability, the Minister said:</p>
+	<p pid="a.450.3/12">Having said all that, I shall return to my script. The amendment would enable the Government to meet their manifesto commitment to revise Section 76, to which I have already referred. On <phrase class="date" code="2004-01-22">22 January</phrase>, when debating another amendment concerning disability, the Minister said:</p>
 	<p pid="a.450.3/13" class="indent">&quot;Believe you me, there is no attempt whatever to marginalise the issue, make it an add-on or regard it as an afterthought. The whole thrust of the way we intend to approach this issue is that nothing gets built unless these issues have been considered&quot;.</p>
 	<p pid="a.450.3/14">At that point, we were talking about regional spatial strategy, but I believe that the same thing applies. He went on to say that the Government,</p>
 	<p pid="a.450.3/15" class="indent">&quot;want to be wholly positive about this matter&quot;,</p>
@@ -732,7 +751,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.472.5" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="472"  time="016:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-10.htm#40202-10_spnew8">
-	<p pid="a.472.5/1">Notwithstanding what the noble Lord, Lord Marlesford, has said, things have changed in the past few years. The amendment is unnecessary as there is already a provision within the Town and Country Planning (Major Infrastructure Project Inquiries Procedure) (England) (Rules) 2002 to allow the Secretary of State to set a date by which the inspector must make his report to him. That provision is carried through to the revised draft major infrastructure project inquiries procedure rules which we published for consultation on <phrase class="date" code="">18 October</phrase> last year. That consultation has just ended, and officials are analysing the responses. Early indications are that the revised rules are welcome. Quite separately, we have also set our own departmental targets for ministerial responses to these inquiries.</p>
+	<p pid="a.472.5/1">Notwithstanding what the noble Lord, Lord Marlesford, has said, things have changed in the past few years. The amendment is unnecessary as there is already a provision within the Town and Country Planning (Major Infrastructure Project Inquiries Procedure) (England) (Rules) 2002 to allow the Secretary of State to set a date by which the inspector must make his report to him. That provision is carried through to the revised draft major infrastructure project inquiries procedure rules which we published for consultation on <phrase class="date" code="2004-10-18">18 October</phrase> last year. That consultation has just ended, and officials are analysing the responses. Early indications are that the revised rules are welcome. Quite separately, we have also set our own departmental targets for ministerial responses to these inquiries.</p>
 	<p pid="a.472.5/2">In other words, the amendment is unnecessary as there are procedures to ensure that this happens, and we have just conducted a consultation. So I hope that we can meet the spirit and the practicality behind the amendment.</p>
 	<p pid="a.472.5/3">Regarding all the pressures on local authorities, the note says &quot;not true&quot;. Clause 53, which we have not yet reached, introduces timetables on the Secretary of State to make decisions. We have made it clear that all players in the planning system have a role to play, including the Secretary of State.</p>
 </speech>
@@ -1011,7 +1030,7 @@
 	<p pid="a.486.8/1">The Bill may have been long in gestation, but there is a danger that its birth might be so quick that it will be damaged in the process. We move with this amendment to the issue of planning obligations and planning contributions.</p>
 	<p pid="a.486.8/2">The Government announced a consultation on the reform of planning obligations in November and gave consultees a nine-week period for responses. I have written down at this point &quot;whinge&quot;. The Minister will be aware that a statement from the Office of the Deputy Prime Minister was published on Friday. He may not be aware of the difficulty for Members of this House who do not have a quick and immediate line to the ODPM, not only in seeing that statement but even knowing of its existence.</p>
 	<p pid="a.486.8/3">I became aware of the statement on Friday afternoon because the Royal Institute of Chartered Surveyors was good enough to e-mail it to me. I discovered this morning that planning officers at the Greater London Authority had inquired, I think on Thursday, whether a statement on the issue was going to be made. We were told, yes, it was coming. The institute was sent a copy I think on Friday&mdash;I may be wrong; it may have been this morning. This House was not sitting on Friday, so Members of the Committee may not be aware that there was a statement.</p>
-	<p pid="a.486.8/4">Today the Government published a summary of consultation responses. In Friday's statement the Government said that they prefer where possible to offer a 12-week consultation and regret it was not possible on this occasion, but they believe that having decided to take the opportunity to legislate on planning obligations provided by the carry-over of this Bill, it was better to supply Parliament with an output from that consultation as soon as possible and while the Bill is still under consideration than to have the consultation still going on as they consider it. Therefore they are publishing on <phrase class="date" code="2006-02-02">2 February</phrase> a summary of the consultation responses. The document is intended to inform debate on the Bill's clauses and goes on to say that it contains a summary.</p>
+	<p pid="a.486.8/4">Today the Government published a summary of consultation responses. In Friday's statement the Government said that they prefer where possible to offer a 12-week consultation and regret it was not possible on this occasion, but they believe that having decided to take the opportunity to legislate on planning obligations provided by the carry-over of this Bill, it was better to supply Parliament with an output from that consultation as soon as possible and while the Bill is still under consideration than to have the consultation still going on as they consider it. Therefore they are publishing on <phrase class="date" code="2004-02-02">2 February</phrase> a summary of the consultation responses. The document is intended to inform debate on the Bill's clauses and goes on to say that it contains a summary.</p>
 	<p pid="a.486.8/5">I am flattered that the Government think that we are all so competent that we can absorb and assess all this in the time available, despite our being part-time Members of the House, difficulties of getting here, our doing other jobs, and so on, but I wonder whether my next move should not be a Motion to adjourn the Committee to give Members an opportunity to read the statement.</p>
 </speech>
 
@@ -1485,7 +1504,7 @@
 	<p pid="a.516.0/2">One must consider the regulations. I start at Regulation 5. This requires the Environment Agency,</p>
 	<p pid="a.516.0/3" class="indent">&quot;in accordance with Annex II . . . by 22nd December 2004 . . . [to] carry out an analysis of the characteristics of each river basin district and . . . conduct a review of the impact of human activity on the status of surface water and ground water in each river basin district&quot;.</p>
 	<p pid="a.516.0/4">The first, and obvious, question is whether the Environment Agency is equipped and funded to do that at the present time. I assume that it has not been doing this work in the past, but that may be incorrect. It may well be that this is subsumed into work that it already does. If that is so, then the additional employment burden would be commensurately less. If this is an additional burden, then it is one for a short period of time. Are the arrangements in place to enable qualified people to be taken on on a temporary basis to do this work? If so, for how long? That is an important issue and it goes to the heart of the noble Baroness's concerns.</p>
-	<p pid="a.516.0/5">It is the agency that has to do this, not the water companies, which actually make use of the water. The agency must also carry out an economic analysis of water use in each river basin district by <phrase class="date" code="">22 December</phrase>. I have an awful feeling that a piece of elastic ought to be attached to that date. It will be very difficult for the agency to attain it.</p>
+	<p pid="a.516.0/5">It is the agency that has to do this, not the water companies, which actually make use of the water. The agency must also carry out an economic analysis of water use in each river basin district by <phrase class="date" code="2004-12-22">22 December</phrase>. I have an awful feeling that a piece of elastic ought to be attached to that date. It will be very difficult for the agency to attain it.</p>
 	<p pid="a.516.0/6">In Regulation 7:</p>
 	<p pid="a.516.0/7" class="indent">&quot;The agency must identify any bodies of water within each river basin district which . . . are used for the abstraction of water intended for human consumption and either . . . provide&quot;,</p>
 	<p pid="a.516.0/8">here we get into difficulties,</p>
@@ -1500,7 +1519,7 @@
 	<p pid="a.516.0/17" class="indent">&quot;programmes must cover . . . in relation to surface water . . . the volume and level or rate of flow to the extent relevant to ecological and chemical status and ecological potential&quot;.</p>
 	<p pid="a.516.0/18">What does that mean? It sounds wonderful but, as far as I can see, it is jargon. It goes on about,</p>
 	<p pid="a.516.0/19" class="indent">&quot;the ecological and chemical status and ecological potential . . . in relation to groundwater, chemical and quantitative status&quot;.</p>
-	<p pid="a.516.0/20">Again, these are gloriously imprecise terms. The monitoring programmes must be operational by <phrase class="date" code="">22 December</phrase>, but 2006 this time. There is a little bit more time on that one.</p>
+	<p pid="a.516.0/20">Again, these are gloriously imprecise terms. The monitoring programmes must be operational by <phrase class="date" code="2004-12-22">22 December</phrase>, but 2006 this time. There is a little bit more time on that one.</p>
 	<p pid="a.516.0/21">It goes on&mdash;and this is where I became completely lost:</p>
 	<p pid="a.516.0/22" class="indent">&quot;the relevant monitoring provisions of the Directive referred to . . . are set out in the following provisions of Annex V to the Directive&quot;.</p>
 	<p pid="a.516.0/23">So I turned to the directive to see what it says. What it says is:</p>
@@ -1526,7 +1545,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.519.0" speakerid="uk.org.publicwhip/lord/100176" speakername="Lord Dixon-Smith" colon=":" colnum="519"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-23.htm#40202-23_spnew0">
-	<p pid="a.519.0/1">My Lords, I am grateful to the Minister for giving way. Can he be a little more explicit on the matter of funding? He said that the funding had increased from some &pound;600 million in 2000 to &pound;800 million at the end of this financial year and that much of the money is allocated for water management purposes. The problem is that the end of this financial year is <phrase class="date" code="2006-03-31">31 March</phrase>. We do not know what the provision is for next year. The question I want to ask, which it may not be entirely possible for the Minister to answer, is whether the provision that ends in the current financial year is sufficient for, or, indeed, could have taken account of, the potential additional costs that arise from the order.</p>
+	<p pid="a.519.0/1">My Lords, I am grateful to the Minister for giving way. Can he be a little more explicit on the matter of funding? He said that the funding had increased from some &pound;600 million in 2000 to &pound;800 million at the end of this financial year and that much of the money is allocated for water management purposes. The problem is that the end of this financial year is <phrase class="date" code="2004-03-31">31 March</phrase>. We do not know what the provision is for next year. The question I want to ask, which it may not be entirely possible for the Minister to answer, is whether the provision that ends in the current financial year is sufficient for, or, indeed, could have taken account of, the potential additional costs that arise from the order.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.520.0" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="520"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-23.htm#40202-23_spnew1">
@@ -1581,7 +1600,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-02-02a.524.1" nospeaker="true" colnum="524"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-24.htm#40202-24_spnew1">
 	<p pid="a.524.1/1" pwmotiontext="agreedto">Moved accordingly, and, on Question, Motion agreed to.</p>
-	<p pid="a.524.1/2" pwmotiontext="unrecognized">[The sitting was suspended from 8.23 to 8.35 p.m.]</p>
+	<p pid="a.524.1/2" pwmotiontext="suspended">[The sitting was suspended from 8.23 to 8.35 p.m.]</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-02-02a.524.2" nospeaker="true" colnum="524"  time="020:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040202/text/40202-24.htm#40202-24_head0">

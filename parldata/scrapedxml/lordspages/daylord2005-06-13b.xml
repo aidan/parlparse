@@ -7,8 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -25,12 +33,18 @@
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
 <!ENTITY oacute "&#243;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
 <!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
 <!ENTITY plusmn "&#177;" >
@@ -42,6 +56,8 @@
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -53,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1061.1" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon="" colnum="1061"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-01.htm#50613-01_spopq0">
 	<p pid="b.1061.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1061.1/2" class="indent">Whether they are satisfied that the universities' access regulator has fulfilled his remit of promoting access for part-time as well as full-time students.</p>
+	<p pid="b.1061.1/2" class="indent" pwmotiontext="asked">Whether they are satisfied that the universities' access regulator has fulfilled his remit of promoting access for part-time as well as full-time students.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1061.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="1061"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-01.htm#50613-01_spmin0">
@@ -125,7 +141,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1064.3" speakerid="uk.org.publicwhip/lord/100180" speakername="Lord Dubs" colon="" colnum="1064"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-02.htm#50613-02_spopq0">
 	<p pid="b.1064.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1064.3/2" class="indent">What percentage of the United Kingdom's future electricity needs they expect to be generated in the longer term by (a) land-based and (b) sea-based wind farms.</p>
+	<p pid="b.1064.3/2" class="indent" pwmotiontext="asked">What percentage of the United Kingdom's future electricity needs they expect to be generated in the longer term by (a) land-based and (b) sea-based wind farms.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1064.4" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="1064"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-02.htm#50613-02_spmin0">
@@ -194,7 +210,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1066.6" speakerid="uk.org.publicwhip/lord/100647" speakername="Baroness Trumpington" colon="" colnum="1066"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-02.htm#50613-02_spopq1">
 	<p pid="b.1066.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1066.6/2" class="indent">Whether they have taken account of possible water shortages arising from current and planned housing programmes in Kent and Sussex; and, if so, what action they propose to take.</p>
+	<p pid="b.1066.6/2" class="indent" pwmotiontext="asked">Whether they have taken account of possible water shortages arising from current and planned housing programmes in Kent and Sussex; and, if so, what action they propose to take.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1066.7" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="1066"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-02.htm#50613-02_spmin1">
@@ -257,7 +273,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1069.2" speakerid="uk.org.publicwhip/lord/100638" speakername="Baroness Thomas of Walliswood" colon="" colnum="1069"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-03.htm#50613-03_spopq0">
 	<p pid="b.1069.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="b.1069.2/2" class="indent">Why the appointment of Ms Meg Munn MP as Minister for Women was delayed for two days after other ministerial appointments had been announced.</p>
+	<p pid="b.1069.2/2" class="indent" pwmotiontext="asked">Why the appointment of Ms Meg Munn MP as Minister for Women was delayed for two days after other ministerial appointments had been announced.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1069.3" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1069"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-03.htm#50613-03_spmin0">
@@ -336,8 +352,8 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1071.7" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1071"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-04.htm#50613-04_spnew8">
 	<p pid="b.1071.7/1">My Lords, I beg to move the Motion standing in my name on the Order Paper.</p>
-	<p pid="b.1071.7/2">Perhaps I may give a brief word of explanation. The Joint Committee on Statutory Instruments has not yet been reappointed and the direction made by the Secretary of State for Northern Ireland will lapse if it is not agreed to by <phrase class="date" code="2006-06-23">23 June</phrase>. This is an unusual situation and I am grateful for the agreement of the usual channels to this Motion being tabled.</p>
-	<p pid="b.1071.7/3">Moved, That Standing Order 73 (Affirmative Instruments) be dispensed with to enable the direction given on <phrase class="date" code="2006-04-01">1 April</phrase> by the Secretary of State for Northern Ireland under the Northern Ireland Act 1998, regarding Reduction of Financial Assistance, to be taken on <phrase class="date" code="2006-06-14">Tuesday 14 June</phrase> notwithstanding that no report from the Joint Committee on Statutory Instruments on the instrument has been laid before the House.&mdash;(<i>Baroness Amos</i>.)</p>
+	<p pid="b.1071.7/2">Perhaps I may give a brief word of explanation. The Joint Committee on Statutory Instruments has not yet been reappointed and the direction made by the Secretary of State for Northern Ireland will lapse if it is not agreed to by <phrase class="date" code="2005-06-23">23 June</phrase>. This is an unusual situation and I am grateful for the agreement of the usual channels to this Motion being tabled.</p>
+	<p pid="b.1071.7/3">Moved, That Standing Order 73 (Affirmative Instruments) be dispensed with to enable the direction given on <phrase class="date" code="2005-04-01">1 April</phrase> by the Secretary of State for Northern Ireland under the Northern Ireland Act 1998, regarding Reduction of Financial Assistance, to be taken on <phrase class="date" code="2005-06-14">Tuesday 14 June</phrase> notwithstanding that no report from the Joint Committee on Statutory Instruments on the instrument has been laid before the House.&mdash;(<i>Baroness Amos</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1071.8" nospeaker="true" colnum="1071"  time="015:06:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-04.htm#50613-04_spnew8">
@@ -483,7 +499,7 @@
 	<p pid="b.1085.2/1">My Lords, the noble Lord will not be surprised that I, too, found that when I read the answer. However, that is the answer that I have been given. If it is incorrect, I will correct it. I felt that it was better to give a proper answer than not to give an answer at all. I am sure that the answer I have been given is correct.</p>
 	<p pid="b.1085.2/2">Noble Lords have raised the issue of regulations. I do not think that any noble Lord will be surprised to hear that when I was first invited to address this legislation, my first question was whether we have the draft regulations. The main reason why I felt that it was appropriate to bring the Bill forward without those regulations is that we believe&mdash;I certainly believe&mdash;that within the framework document we have better explained the impact and effect of the Bill than the technical regulations would have done.</p>
 	<p pid="b.1085.2/3">My speaking note, which I shall read out in order to invite your Lordships to chuckle with me, states that the nature of the regulations would be incomprehensible by any but the most erudite legal minds. I read that because, of course, in your Lordships' House we have the most erudite legal minds. I am very mindful of that but I was very clear that, in the generality of the framework document, we explain extremely well what the regulations will do.</p>
-	<p pid="b.1085.2/4">It is our plan to produce regulations. They will not be available until after the Summer Recess on <phrase class="date" code="">10 October</phrase>. I have already given the commitment to noble Lords to whom I managed to speak earlier that, in our deliberations in Committee and at Report, I will be crystal clear on what the regulations contain. I hope that noble Lords will feel comfortable that when the regulations come forward, they will do so on that basis. I am also very happy to discuss with the noble Lord, Lord Goodhart&mdash;</p>
+	<p pid="b.1085.2/4">It is our plan to produce regulations. They will not be available until after the Summer Recess on <phrase class="date" code="2005-10-10">10 October</phrase>. I have already given the commitment to noble Lords to whom I managed to speak earlier that, in our deliberations in Committee and at Report, I will be crystal clear on what the regulations contain. I hope that noble Lords will feel comfortable that when the regulations come forward, they will do so on that basis. I am also very happy to discuss with the noble Lord, Lord Goodhart&mdash;</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1086.0" speakerid="uk.org.publicwhip/lord/100246" speakername="Lord Goodhart" colon=":" colnum="1086"  time="015:58:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-07.htm#50613-07_spnew3">
@@ -526,7 +542,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1090.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon="" colnum="1090"  time="016:14:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-08.htm#50613-08_spmin0">
-	<p pid="b.1090.1/1" pwmotiontext="moved">rose to move, That the draft rules laid before the House on <phrase class="date" code="2006-02-28">28 February</phrase> be approved [<i>11th Report from the Joint Committee, Session 2004&ndash;05</i>].</p>
+	<p pid="b.1090.1/1" pwmotiontext="moved">rose to move, That the draft rules laid before the House on <phrase class="date" code="2005-02-28">28 February</phrase> be approved [<i>11th Report from the Joint Committee, Session 2004&ndash;05</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1090.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="1090"  time="016:14:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-08.htm#50613-08_spmin0">
@@ -538,7 +554,7 @@
 	<p pid="b.1090.2/6">The second rule prevents the court from making a direction that would have the effect of counting the same remand day twice. This could happen if consecutive sentences were given for an old and a new offence and there was shared remand time. The rules as drafted would prevent the court from counting remand time in relation to days that would already fall to be counted under Section 67 of the 1967 Act. Again, the purpose is to stop a prisoner from benefiting from a technicality.</p>
 	<p pid="b.1090.2/7">The rules maintain the principle that remand time served at the same time as a sentence of imprisonment does not count towards time served; and also that a day of shared remand time should count only once towards time served. While the court is able to deliver the same effect simply through using its discretion, it is desirable to put these matters beyond doubt, as any decisions by the court to allow time in these circumstances would, perhaps inadvertently, undermine public confidence in the provisions.</p>
 	<p pid="b.1090.2/8">As I said at the beginning, the rules maintain the principle that remand time served at the same time as a sentence of imprisonment does not count towards time served. We are just preserving the position in a way I think we all recognise. I hope that with that full explanation I have pre-empted some of the questions that might otherwise have been asked. I beg to move.</p>
-	<p pid="b.1090.2/9">Moved, That the draft rules laid before the House on <phrase class="date" code="2006-02-28">28 February</phrase> be approved [<i>11th Report from the Joint Committee, Session 2004&ndash;05</i>].&mdash;(<i>Baroness Scotland of Asthal</i>.)</p>
+	<p pid="b.1090.2/9">Moved, That the draft rules laid before the House on <phrase class="date" code="2005-02-28">28 February</phrase> be approved [<i>11th Report from the Joint Committee, Session 2004&ndash;05</i>].&mdash;(<i>Baroness Scotland of Asthal</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1091.0" speakerid="uk.org.publicwhip/lord/100029" speakername="Lord Avebury" colon=":" colnum="1091"  time="016:14:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-08.htm#50613-08_spnew2">
@@ -632,7 +648,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1102.0" speakerid="uk.org.publicwhip/lord/100313" speakername="Lord Hunt of Chesterton" colon=":" colnum="1102"  time="016:59:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-11.htm#50613-11_spnew1">
-	<p pid="b.1102.0/1">My Lords, the Asian tsunami on <phrase class="date" code="">26 December</phrase> was a terrible tragedy. As other noble Lords have reminded us, there are huge effects on the economies, as well as the life and limb. The economies of all countries of the world were affected, as the insurance industry is well aware&mdash;and, indeed, that industry can also help. I should like to speak about what could be done further by using science and engineering to reduce the impact of such events and to help the countries to ensure that, if such events recur, they will be better protected.</p>
+	<p pid="b.1102.0/1">My Lords, the Asian tsunami on <phrase class="date" code="2005-12-26">26 December</phrase> was a terrible tragedy. As other noble Lords have reminded us, there are huge effects on the economies, as well as the life and limb. The economies of all countries of the world were affected, as the insurance industry is well aware&mdash;and, indeed, that industry can also help. I should like to speak about what could be done further by using science and engineering to reduce the impact of such events and to help the countries to ensure that, if such events recur, they will be better protected.</p>
 	<p pid="b.1102.0/2">I declare an interest as a member of the UK Advisory Committee for Natural Disaster Reduction. I am also chair of an NGO called ACOPS. As director of the Institute of Mathematics at University College and the Institution of Civil Engineers, we had a meeting with experts from Sri Lanka, Europe and the USA. I have placed a report of that in the Library for those of you who like studying waves and other complex problems.</p>
 	<p pid="b.1102.0/3">As the noble Lord, Lord Giddens, has reminded us, this natural disaster had much in common with other natural disasters, in that many of the deaths were preventable and happened in greater numbers in the least developed countries. More developed countries have demonstrated time and again that through the use of science and technology, planning and resources, many of the effects of natural disasters can be mitigated. Progress is being made through international collaboration, through the United Nations system, at which I was pleased to represent the UK with the World Meteorological Organisation. Through such collaboration, many developing countries have also learned the lessons that technology, planning and emergency response can be applied, often at modest cost. For example, a centre of coastal environment set up in Kenya, partly through the help of our NGO in the UK, provided warnings in that country. When the tsunami reached Kenya, which was about six hours later than it reached Sri Lanka, warnings had been given and there was some reduction in the amount of damage.</p>
 	<p pid="b.1102.0/4">It is important to recall that each type of natural disaster has its own features, but there are broad types of response. Whereas in the UK we have different types of response for every type of disaster, in Japan, for example, there is one centre where all the information and decisions are taken. India also has more of a unified response. Nevertheless, the UK with its expertise and its governmental departments can be involved; I refer not only to DfID, but to many specialised departments that can provide help. The noble Lord, Lord Naseby, made some further suggestions.</p>
@@ -645,7 +661,7 @@
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1104.0" speakerid="uk.org.publicwhip/lord/100188" speakername="Lord Eden of Winton" colon=":" colnum="1104"  time="017:06:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-12.htm#50613-12_spnew0">
 	<p pid="b.1104.0/1">My Lords, the noble Lord, Lord Hunt, has given us some very interesting information. As the House knows, he speaks with great knowledge of this subject.</p>
-	<p pid="b.1104.0/2">I join with other noble Lords in expressing gratitude to my noble friend Lord Naseby for enabling us to have this short debate. In a memorable speech, he was extremely constructive in his observations. I shall be a little more critical than him, and I am encouraged in my criticisms by an article that appeared in prime position in the <i>Daily Telegraph</i> just over two weeks ago, on <phrase class="date" code="2006-05-28">28 May</phrase>. I shall quote a couple of brief commentaries from Peter Foster's report from Colombo, in Sri Lanka. The article states:</p>
+	<p pid="b.1104.0/2">I join with other noble Lords in expressing gratitude to my noble friend Lord Naseby for enabling us to have this short debate. In a memorable speech, he was extremely constructive in his observations. I shall be a little more critical than him, and I am encouraged in my criticisms by an article that appeared in prime position in the <i>Daily Telegraph</i> just over two weeks ago, on <phrase class="date" code="2005-05-28">28 May</phrase>. I shall quote a couple of brief commentaries from Peter Foster's report from Colombo, in Sri Lanka. The article states:</p>
 	<p pid="b.1104.0/3" class="indent">&quot;Despite almost unlimited resources&mdash;the relief fund stands at more than &pound;1.75 billion for Sri Lanka alone&mdash;victims are cooped up in camps waiting for news of progress that never seems to come&quot;.</p>
 	<p pid="b.1104.0/4">Later on, the article quotes the comments of the Sri Lankan-born director of the Irish Sri Lanka Trust Fund, who said:</p>
 	<p pid="b.1104.0/5" class="indent">&quot;This hard-earned money was raised by schoolchildren and old folk to help the people of Sri Lanka. It was not raised for the Sri Lankan government to swipe 15 per cent for itself&quot;.</p>
@@ -672,7 +688,7 @@
 	<p pid="b.1106.0/11">Some of the difficulties that have been faced have been mentioned. Some are due to the political, ethnic and religious differences in parts of the affected area. The tensions in Sri Lanka between the government and the Tamil Tiger rebels over the distribution of aid has caused and still is causing problems. On the southern coast of India the right-wing Hindu groups are angry with the local Christian organisations which are involved in the reconstruction programme. They are afraid that the Christian organisations are using this in order to try to make converts in that part of the continent, but the Church denies that there is any intention, in any way at all, of using relief operations to try to win Christian converts.</p>
 	<p pid="b.1106.0/12">The Andaman and Nicobar islands have been mentioned, but the anger there is different. It is that the central government have received millions of dollars and are paying out paltry sums to the people who suffered most. I have an instance of one person being offered 2 rupees as compensation. I might not be good on currency exchange but that is about 3 pence in our money. We must make sure that the tension between central government and local administration does not impede the flow of aid to where it is needed most.</p>
 	<p pid="b.1106.0/13">In Africa, the coast of Somalia was the place most affected; it was one of the few African countries that was affected. Between 150 and 200 people are thought to have died there, but thousands more were rendered homeless and many fishermen are still unaccounted for. But the tsunami could well have affected Africa indirectly in a different way, because it has focused our attention on the desperate need of so many people&mdash;on the poverty level of so many. This new awareness may have led to some of the increasing sensitivity in these past few weeks to the needs of Africa as well as of other parts of the world. When do we last remember newspaper after newspaper daily headlining the needs of the third world and the needs of the desperately poor? The tsunami might indirectly have led to that awareness and the new response to that need.</p>
-	<p pid="b.1106.0/14">Finally, this is an opportunity to build bridges between the rich countries and the poor countries. They have seen our response; we have seen their need. We must make sure that that confidence is maintained, that the pledges of aid and help are fulfilled, that the pledges are not forgotten or watered down. If people have confidence that we can be relied on to keep our word and to fulfil our promises, despite the horror of the tsunami some good might come out of it. They will say that there is the possibility of a new understanding. That, in its way, could be the main reconstruction following the devastating effects of <phrase class="date" code="">26 December</phrase>.</p>
+	<p pid="b.1106.0/14">Finally, this is an opportunity to build bridges between the rich countries and the poor countries. They have seen our response; we have seen their need. We must make sure that that confidence is maintained, that the pledges of aid and help are fulfilled, that the pledges are not forgotten or watered down. If people have confidence that we can be relied on to keep our word and to fulfil our promises, despite the horror of the tsunami some good might come out of it. They will say that there is the possibility of a new understanding. That, in its way, could be the main reconstruction following the devastating effects of <phrase class="date" code="2005-12-26">26 December</phrase>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2005-06-13b.1107.0" speakerid="uk.org.publicwhip/lord/100521" speakername="Baroness Rawlings" colon=":" colnum="1107"  time="017:23:00" url="http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050613/text/50613-13.htm#50613-13_spnew0">
@@ -685,7 +701,7 @@
 	<p pid="b.1107.0/7">However, there is a need to fight&mdash;or at least to try to limit&mdash;corruption and ensure that money is spent effectively. These latter issues are not ones that we in the West can organise for recipients. The recipient countries have to do more to help themselves if we are to see a return of momentum to this response.</p>
 	<p pid="b.1107.0/8">Local chiefs have to be persuaded not to siphon off their own shares of the aid budget, or insist that aid agencies use certain suppliers. There is also a vital need to address the fundamental disconnection between bureaucrats and reality. In Sri Lanka, new homes have been held up by a decree forbidding any rebuilding within 100 yards of the coastline, as described by the noble Earl, Lord Sandwich. I find it absurd that fishermen are being offered houses five miles inland.</p>
 	<p pid="b.1107.0/9">My sources inform me that much of the new accommodation is in 1960s tower-block style, despite the problems that we have seen in our own country regarding the effects that these can have on communities and civil society. But perhaps the story of construction of temporary shelters in Sri Lanka provides the best insight into the failings of the relief operation. With your Lordships' patience I will outline the situation.</p>
-	<p pid="b.1107.0/10">The temporary, single-room wooden huts with tin roofs, about the size of a garden shed, despite alleged consultation with those supposed to live in them are almost universally loathed. The tin roofs turn the huts into ovens by day and sieves by night. Yet the Government persisted, despite warnings from aid agency engineers that these problems would occur. An internal memo seen by the <i>Daily Telegraph</i> on <phrase class="date" code="2006-05-28">28 May</phrase>&mdash;as mentioned by my noble friend Lord Eden of Winton&mdash;admits that many of the shelters are substandard and will have to be upgraded, doubling work and resources to be used on a project that should have been completed.</p>
+	<p pid="b.1107.0/10">The temporary, single-room wooden huts with tin roofs, about the size of a garden shed, despite alleged consultation with those supposed to live in them are almost universally loathed. The tin roofs turn the huts into ovens by day and sieves by night. Yet the Government persisted, despite warnings from aid agency engineers that these problems would occur. An internal memo seen by the <i>Daily Telegraph</i> on <phrase class="date" code="2005-05-28">28 May</phrase>&mdash;as mentioned by my noble friend Lord Eden of Winton&mdash;admits that many of the shelters are substandard and will have to be upgraded, doubling work and resources to be used on a project that should have been completed.</p>
 	<p pid="b.1107.0/11">On top of this problem, many also complain that they have received only two out of five instalments of the monthly living allowance that the government promised them. In fact, it is my understanding that the majority of victims are still waiting for news of their entitlements as their cases are suspended due to the lack of relevant documents&mdash;documents, which, of course, were destroyed in the tsunami.</p>
 	<p pid="b.1107.0/12">Can the Minister inform me what steps Her Majesty's Government are taking to offer advice and to persuade the governments of the countries hit by the tsunami that they need to look to themselves as well as to the West and to reform their systems and methods of working to overcome what may become an impasse in the recovery of their increasingly frustrated and angry people?</p>
 	<p pid="b.1107.0/13">Although this change is needed, we must not neglect the steps we can take. A report by an international team of researchers that was released at the start of this month highlights that significant human rights problems persist in areas affected by the tidal wave. Vulnerable groups, particularly women, children and migrants, are suffering from violence and exploitation. In Aceh, Indonesia, and Sri Lanka there is armed conflict. Children are forced to fight and people are living in fear. In Thailand, drought had led to a decline in agricultural production, which compounded the problems caused by the tidal wave. What is the Minister's response to the report? What steps are the Government planning to help to implement their recommendations for the protection of vulnerable groups, aid distribution and increased community participation?</p>

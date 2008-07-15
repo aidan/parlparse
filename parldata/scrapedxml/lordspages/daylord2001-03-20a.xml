@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1279.1" speakerid="uk.org.publicwhip/lord/100531" speakername="Lord Renfrew of Kaimsthorn" colon="" colnum="1279"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-01.htm#10320-01_spopq0">
 	<p pid="a.1279.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1279.1/2" class="indent">When they propose to accede to the 1970 UNESCO Convention on Means of Preventing the Illicit Traffic in Cultural Property, and to implement the other recommendations made last December by the Ministerial Advisory Panel on Illicit Trade, chaired by Professor Norman Palmer.</p>
+	<p pid="a.1279.1/2" class="indent" pwmotiontext="asked">When they propose to accede to the 1970 UNESCO Convention on Means of Preventing the Illicit Traffic in Cultural Property, and to implement the other recommendations made last December by the Ministerial Advisory Panel on Illicit Trade, chaired by Professor Norman Palmer.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1279.2" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="1279"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-01.htm#10320-01_spnew0">
@@ -96,7 +115,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1280.6" speakerid="uk.org.publicwhip/lord/100405" speakername="Lord Mackie of Benshie" colon="" colnum="1280"  time="014:41:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-01.htm#10320-01_spopq1">
 	<p pid="a.1280.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1280.6/2" class="indent">What plans they have to compensate British fishermen who can no longer make a living as a result of government action.</p>
+	<p pid="a.1280.6/2" class="indent" pwmotiontext="asked">What plans they have to compensate British fishermen who can no longer make a living as a result of government action.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1280.7" speakerid="uk.org.publicwhip/lord/100112" speakername="Lord Carter" colon=":" colnum="1280"  time="014:41:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-01.htm#10320-01_spnew9">
@@ -174,7 +193,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1284.2" speakerid="uk.org.publicwhip/lord/100202" speakername="Lord Ezra" colon="" colnum="1284"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-02.htm#10320-02_spopq0">
 	<p pid="a.1284.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1284.2/2" class="indent">What has been the outcome of recent talks with the Commissioner for Transport for London on future responsibility for the London Underground.</p>
+	<p pid="a.1284.2/2" class="indent" pwmotiontext="asked">What has been the outcome of recent talks with the Commissioner for Transport for London on future responsibility for the London Underground.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1284.3" speakerid="uk.org.publicwhip/lord/100395" speakername="Lord Macdonald of Tradeston" colon=":" colnum="1284"  time="014:51:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-02.htm#10320-02_spmin0">
@@ -243,7 +262,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1287.1" speakerid="uk.org.publicwhip/lord/100453" speakername="Lord Newby" colon="" colnum="1287"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-03.htm#10320-03_spopq0">
 	<p pid="a.1287.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1287.1/2" class="indent">What is their estimate of the cost savings to be made by relocating the Meteorological Office to Exeter.</p>
+	<p pid="a.1287.1/2" class="indent" pwmotiontext="asked">What is their estimate of the cost savings to be made by relocating the Meteorological Office to Exeter.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-03-20a.1287.2" speakerid="uk.org.publicwhip/lord/100091" speakername="Lord Burlison" colon=":" colnum="1287"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010320/text/10320-03.htm#10320-03_spnew6">
@@ -1498,7 +1517,7 @@
 	<p pid="a.1335.3/3" class="indent">&quot;I must commend the response of the public who have been very anxious to avoid spreading the disease. But large parts of the country are not affected and people wrongly believe that the whole countryside is out of bounds. This has had a devastating and unnecessary impact on many of the businesses which depend on visitors to rural areas. The best way to help rural business is to encourage its customers to return as quickly as possible to the many places where it is safe to do so.</p>
 	<p pid="a.1335.3/4" class="indent">&quot;So the task force has agreed on a number of actions to achieve this.</p>
 	<p pid="a.1335.3/5" class="indent">&quot;First, last Friday we issued new guidance to the public on what they can do safely in the countryside - and what they must not do. The basic message is that the public should stay away from livestock and their pastures, but that there are still plenty of things to do and places to visit in the country without risking spreading the disease.</p>
-	<p pid="a.1335.3/6" class="indent">&quot;Secondly, an increasing number of rural properties will be opening to the public again very shortly. English Heritage are announcing today that over 200 properties will be open from <phrase class="date" code="2006-04-01">1 April</phrase>. The National Trust will announce shortly that they will be opening around 150 properties between now and <phrase class="date" code="2006-04-01">1 April</phrase>. British Waterways will be reopening many of their canals, starting next week. In all cases this follows a very careful in-depth review agreed with MAFF.</p>
+	<p pid="a.1335.3/6" class="indent">&quot;Secondly, an increasing number of rural properties will be opening to the public again very shortly. English Heritage are announcing today that over 200 properties will be open from <phrase class="date" code="2001-04-01">1 April</phrase>. The National Trust will announce shortly that they will be opening around 150 properties between now and <phrase class="date" code="2001-04-01">1 April</phrase>. British Waterways will be reopening many of their canals, starting next week. In all cases this follows a very careful in-depth review agreed with MAFF.</p>
 	<p pid="a.1335.3/7" class="indent">&quot;Thirdly, local authorities and National Park Authorities will be considering where footpaths can be safely opened, and I hope that there will shortly be a much wider availability of footpaths for the public outside the infected areas.</p>
 	<p pid="a.1335.3/8" class="indent">&quot;Fourthly, we are mounting a public information campaign to ensure the message gets through to the public about what they can and cannot do, and the benefits that they can bring to rural businesses by their visits to the countryside, and, in particular, to rural and seaside towns and villages, hotels, guest houses and tourist attractions in rural areas. The Government, in conjunction with the tourism industry, are setting up a public information phone. This will steer callers to more detailed help on what attractions are open. Extra funding will be made available to the tourist boards to promote rural attractions.</p>
 	<p pid="a.1335.3/9" class="indent">&quot;We are also developing a preliminary package of measures to alleviate the immediate financial hardship of small businesses in rural areas which have been badly hit by the sudden drop in visitors and other knock-on effects of the foot and mouth disease. In preparing this package we have met with, and listened to, a wide range of rural interests. The first stage measures are as follows.</p>

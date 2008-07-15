@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -49,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.919.1" speakerid="uk.org.publicwhip/lord/100701" speakername="Lord Wright of Richmond" colon="" colnum="919"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spopq0">
 	<p pid="a.919.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.919.1/2" class="indent">What are the prospects for the Palestinian road map and for a viable two-state solution to the Israeli-Palestinian dispute.</p>
+	<p pid="a.919.1/2" class="indent" pwmotiontext="asked">What are the prospects for the Palestinian road map and for a viable two-state solution to the Israeli-Palestinian dispute.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.919.2" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="919"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spmin0">
@@ -57,7 +77,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.919.3" speakerid="uk.org.publicwhip/lord/100701" speakername="Lord Wright of Richmond" colon=":" colnum="919"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spnew0">
-	<p pid="a.919.3/1">My Lords, I thank the Minister for that reply, but is she aware of an interview, published in the Israeli newspaper <i>Ha'aretz</i> on <phrase class="date" code="">8 October</phrase>, with a senior adviser to Prime Minister Sharon in which he claimed that any withdrawal from the West Bank would be a purely token one; that the larger settlements in the West Bank will remain part of Israel indefinitely; that while 10,000 settlers may be evacuated from Gaza, the hold of 200,000 settlers on the West Bank will be strengthened; and that the whole political process&mdash;that is, the road map&mdash;has now been frozen? The adviser concluded that the whole package&mdash;that is, a Palestinian state&mdash;has been removed from Israel's agenda indefinitely with the blessing of President Bush and the ratification (I am not sure what this refers to) of both Houses of Congress.</p>
+	<p pid="a.919.3/1">My Lords, I thank the Minister for that reply, but is she aware of an interview, published in the Israeli newspaper <i>Ha'aretz</i> on <phrase class="date" code="2004-10-08">8 October</phrase>, with a senior adviser to Prime Minister Sharon in which he claimed that any withdrawal from the West Bank would be a purely token one; that the larger settlements in the West Bank will remain part of Israel indefinitely; that while 10,000 settlers may be evacuated from Gaza, the hold of 200,000 settlers on the West Bank will be strengthened; and that the whole political process&mdash;that is, the road map&mdash;has now been frozen? The adviser concluded that the whole package&mdash;that is, a Palestinian state&mdash;has been removed from Israel's agenda indefinitely with the blessing of President Bush and the ratification (I am not sure what this refers to) of both Houses of Congress.</p>
 	<p pid="a.919.3/2">How does the Minister reconcile those apparently authoritative but unsurprising statements with the view expressed by both President Bush and the Prime Minister in April this year that the proposed Israeli withdrawal from Gaza represented an opportunity to inject new life into the peace process in accordance with the road map? Is it not time for Europe to play a more active and positive role in the quartet?</p>
 </speech>
 
@@ -79,7 +99,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.920.3" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="920"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spnew5">
-	<p pid="a.920.3/1">My Lords, the quartet met in New York on <phrase class="date" code="">22 September</phrase> and reaffirmed the principles on which a two-state solution would be based, with the road map as the way of getting there. The quartet expressed disappointment in the failure of phase 1 of the road map. I had the opportunity to discuss the matter with Marc Otte, the EU representative, when I was in New York recently. But I am bound to say that it would be unrealistic to suggest that a tremendous amount of activity is taking place in the two weeks before the American election.</p>
+	<p pid="a.920.3/1">My Lords, the quartet met in New York on <phrase class="date" code="2004-09-22">22 September</phrase> and reaffirmed the principles on which a two-state solution would be based, with the road map as the way of getting there. The quartet expressed disappointment in the failure of phase 1 of the road map. I had the opportunity to discuss the matter with Marc Otte, the EU representative, when I was in New York recently. But I am bound to say that it would be unrealistic to suggest that a tremendous amount of activity is taking place in the two weeks before the American election.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.920.4" speakerid="uk.org.publicwhip/lord/100519" speakername="Baroness Ramsay of Cartvale" colon=":" colnum="920"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spnew6">
@@ -124,7 +144,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.921.7" speakerid="uk.org.publicwhip/lord/100378" speakername="Lord Livsey of Talgarth" colon="" colnum="921"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spopq1">
 	<p pid="a.921.7/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.921.7/2" class="indent">Whether they will legislate to ensure that milk producer co-operatives can be created in the United Kingdom to compete effectively with their counterparts in the rest of the European Union and in the home marketplace.</p>
+	<p pid="a.921.7/2" class="indent" pwmotiontext="asked">Whether they will legislate to ensure that milk producer co-operatives can be created in the United Kingdom to compete effectively with their counterparts in the rest of the European Union and in the home marketplace.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.922.0" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="922"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-01.htm#41021-01_spmin1">
@@ -185,7 +205,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.924.1" speakerid="uk.org.publicwhip/lord/100414" speakername="The Countess of Mar" colon="" colnum="924"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-02.htm#41021-02_spopq0">
 	<p pid="a.924.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.924.1/2" class="indent">Whether the current measures to control the incidence of tuberculosis in cattle are effective; and, if not, whether they have any alternative proposals.</p>
+	<p pid="a.924.1/2" class="indent" pwmotiontext="asked">Whether the current measures to control the incidence of tuberculosis in cattle are effective; and, if not, whether they have any alternative proposals.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.924.2" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="924"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-02.htm#41021-02_spnew11">
@@ -432,7 +452,7 @@
 <speech id="uk.org.publicwhip/lords/2004-10-21a.934.0" speakerid="uk.org.publicwhip/lord/100094" speakername="Baroness Buscombe" colon=":" colnum="934"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-05.htm#41021-05_spnew0">
 	<p pid="a.934.0/1">My noble friend has touched on an incredibly important aspect of the Bill. I want to question the Minister on a matter to which I will return until I feel satisfied that the Minister can reassure me. That matter is judicial review.</p>
 	<p pid="a.934.0/2">I have a feeling that the Minister will respond by saying that my noble friend's amendments are not necessary because, at the end of the day, there is always judicial review. But what happens if a Secretary of State or the Prime Minister of the day has disapplied the legislation enabling those who believe that a Minister has taken or is taking unreasonable action under this legislation to seek judicial review? As far as I can see, judicial review is the only real safeguard in the Bill. I think that my noble friend is seeking to ensure that certain actions are taken quickly so that we do not lose the possibility of judicial review.</p>
-	<p pid="a.934.0/3">On <phrase class="date" code="">19 July</phrase>&mdash;</p>
+	<p pid="a.934.0/3">On <phrase class="date" code="2004-07-19">19 July</phrase>&mdash;</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.934.1" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="934"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-05.htm#41021-05_spnew1">
@@ -524,8 +544,8 @@
 	<p pid="a.939.3/1">We move on from the major issue of the constitutional relationship between this Bill and all existing law and constitutional practice to the rather more insignificant but nonetheless important matter of how it is to work in practice. To that end, I would suggest that the words in subsection (2) are unnecessary.</p>
 	<p pid="a.939.3/2">The subsection states:</p>
 	<p pid="a.939.3/3" class="indent">&quot;The first condition [for making emergency regulations] is that an emergency has occurred, is occurring or is about to occur&quot;.</p>
-	<p pid="a.939.3/4">I shall put those words in conjunction with a comment made during consideration of the Bill by the Minister at col. 512 on <phrase class="date" code="">14 October</phrase>:</p>
-	<p pid="a.939.3/5" class="indent">&quot;If, for example, we were to receive warnings that a nuclear device had been planted in major cities, we might wish to take powers to find and neutralise them and to evacuate areas, even if there were a degree of doubt about the credibility of the threat&quot;.&mdash;[<i>Official Report</i>, 14/10/04; col. 512.]</p>
+	<p pid="a.939.3/4">I shall put those words in conjunction with a comment made during consideration of the Bill by the Minister at col. 512 on <phrase class="date" code="2004-10-14">14 October</phrase>:</p>
+	<p pid="a.939.3/5" class="indent">&quot;If, for example, we were to receive warnings that a nuclear device had been planted in major cities, we might wish to take powers to find and neutralise them and to evacuate areas, even if there were a degree of doubt about the credibility of the threat&quot;.&mdash;[<phrase class="offrep" id="lords/2004-10-14.512"><i>Official Report</i>, 14/10/04; col. 512</phrase>.]</p>
 	<p pid="a.939.3/6">It seems to me that this presents the possibility of a new form of terrorism; that is, the creation of the illusion of a terrorist act.</p>
 	<p pid="a.939.3/7">One can conceive of a scenario. Let us consider a carefully leaked dribble of intelligence from somewhere in the Middle East or perhaps from one of the more rebellious parts of Pakistan which suggests that a group had succeeded in devising a dirty nuclear bomb or bombs. The intelligence would continue to leak over a period of some months, hinting that teams are being put together to deliver those bombs. That intelligence continues to build until it finishes up with the delivery of the mythical weapon. At that point we would create the actuality of the effect of terrorism by ordering, say, the evacuation of a large part of London or another city. That would seem to be all of the joys with none of the responsibilities.</p>
 	<p pid="a.939.3/8">While that may sound absolutely fictional, I am afraid that the record over recent years on the use of intelligence seems to permit the possibility. It would worry me a great deal if we were to leave in the Bill the words that I suggest should be removed.</p>
@@ -978,7 +998,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.962.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="962"  time="011:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-12.htm#41021-12_spnew13">
 	<p pid="a.962.2/1">My Lords, I beg to move that the House do agree with the Commons in their Amendments Nos. 1 and 2. I shall also refer to Amendment No. 6, which is grouped with them.</p>
-	<p pid="a.962.2/2">The two new clauses proposed in Amendments Nos. 1 and 2 address the important issue of directors' liability. The Government consulted in December last year on a range of options for the reform of the law in this area, and the Secretary of State for Trade and Industry made a Written Statement on <phrase class="date" code="">7 September</phrase> setting out the Government's response. I know that a number of noble Lords have a keen interest in the Government's proposals in this area. Perhaps I may, first, by way of introduction, set out the two main conclusions from the consultation.</p>
+	<p pid="a.962.2/2">The two new clauses proposed in Amendments Nos. 1 and 2 address the important issue of directors' liability. The Government consulted in December last year on a range of options for the reform of the law in this area, and the Secretary of State for Trade and Industry made a Written Statement on <phrase class="date" code="2004-09-07">7 September</phrase> setting out the Government's response. I know that a number of noble Lords have a keen interest in the Government's proposals in this area. Perhaps I may, first, by way of introduction, set out the two main conclusions from the consultation.</p>
 	<p pid="a.962.2/3">Respondents were clear that reform to the law on directors' liability needs to strike a careful balance: on the one hand, we need a diverse pool of high-quality individuals willing to assume the role of company director and a willingness by directors to take informed and rational risks; on the other, the law must be firm and robust in order to deal fairly with cases where something has gone wrong as a result of either negligence or dishonesty. The Government very much agree.</p>
 	<p pid="a.962.2/4">Secondly, the consultation provided strong anecdotal evidence that concerns about liability are affecting the recruitment and behaviour of directors, particularly in struggling companies and in sectors such as financial services. There appear to be two main concerns: exposure to third party liabilities, particularly in the US; and the cost of lengthy court proceedings. The two new clauses address those concerns as part of a balanced and carefully targeted package of reforms which also clarifies a technically difficult area of law. I shall look briefly at each in turn.</p>
 	<p pid="a.962.2/5">The first new clause amends the existing provisions in the Companies Act 1985 relating to directors' liability. It does two things. First, it inserts into the Companies Act 1985 three new sections&mdash;309A, 309B and 309C&mdash;which replace the existing provisions on directors' liability, but not auditors' liability, in Section 310 of that Act. Secondly, it disapplies existing Section 310 from directors and other officers.</p>
@@ -1016,14 +1036,14 @@
 	<p pid="a.966.0/7">Instead of beginning a comprehensive overhaul of company law the Bill is being used by the Government as a Christmas tree upon which they can hang bits and pieces of reform&mdash;a bauble here and a bit of tinsel there; whatever catches the Government's eye and might provide a good headline or sound bite. The reality is that company law reform is about not headlines or sound bites but hard graft&mdash;potentially with a lot of criticism and not much thanks. But it needs to be done and if the Government really understood the needs of business and commerce they would get on with it.</p>
 	<p pid="a.966.0/8">The addition of the Government's two new clauses in the other place further confirms this Christmas-tree approach to company law reform. I have previously mentioned that this Bill represents a clear case of carts before horses; this is another cart before the horse.</p>
 	<p pid="a.966.0/9">The cumbersome manner in which company law is being reformed is already contributing to delays and dissatisfaction. The introduction of the operating and financial review, which we discussed at length in Committee, was expected on <phrase class="date" code="2005-01-01">1 January 2005</phrase> but as a result of pressure is now to be introduced later in the year.</p>
-	<p pid="a.966.0/10">New subsection (4A) of Clause 13, entitled &quot;Power to specify bodies who may issue reporting standards&quot;, was intended as a paving device. However, the implementation of this new review has been delayed. I suppose that there must be more pressing matters at hand. The Minister may have read the letter in the <i>Financial Times</i> of <phrase class="date" code="">Friday 15 October</phrase> entitled,</p>
+	<p pid="a.966.0/10">New subsection (4A) of Clause 13, entitled &quot;Power to specify bodies who may issue reporting standards&quot;, was intended as a paving device. However, the implementation of this new review has been delayed. I suppose that there must be more pressing matters at hand. The Minister may have read the letter in the <i>Financial Times</i> of <phrase class="date" code="2004-10-15">Friday 15 October</phrase> entitled,</p>
 	<p pid="a.966.0/11" class="indent">&quot;A better way to reform company law&quot;.</p>
 	<p pid="a.966.0/12">The letter is signed by Mr Eric Anstee, chief executive of the Institute of Chartered Accountants in England and Wales, Mr Alan Blewitt, chief executive of the Association of Chartered Certified Accountants, Mr Pat Costello, chief executive of the Institute of Chartered Accountants in Ireland, Mr Steve Freer, chief executive of the Chartered Institute of Public Finance and Accountancy, Mr Ian Marrian, chief executive of the Institute of Chartered Accountants in Scotland, and Mr Charles Tilley, chief executive of the Chartered Institute of Management Accountants. The letter reads:</p>
 	<p pid="a.966.0/13" class="indent">&quot;A revised timetable for the introduction of the Operating Financial Review is to be welcomed. It should afford the Government the opportunity to deal with director and auditor liability reform to allow the OFR to be the bold and meaningful document that we are all seeking. Company law reform must take place in the round&quot;&mdash;</p>
 	<p pid="a.966.0/14">&quot;in the round&quot; are the words used&mdash;</p>
 	<p pid="a.966.0/15" class="indent">&quot;if we are to improve the quality of financial and non-financial information available to investors and ensure UK capital markets remain fit for purpose&quot;.</p>
 	<p pid="a.966.0/16">When the Minister introduced the Bill on Second Reading, nearly a year ago, he said:</p>
-	<p pid="a.966.0/17" class="indent">&quot;The company is more popular than ever, and this Government are committed to reforming current companies legislation. We are taking forward the work of the independent Company Law Review in order to remove unnecessary regulation in the current law, to simplify the law, particularly as it affects smaller firms, and to make the law as a whole more flexible for the needs of the 21st century.&quot;.&mdash;[<i>Official Report</i>, 8/01/04; col. 258.]</p>
+	<p pid="a.966.0/17" class="indent">&quot;The company is more popular than ever, and this Government are committed to reforming current companies legislation. We are taking forward the work of the independent Company Law Review in order to remove unnecessary regulation in the current law, to simplify the law, particularly as it affects smaller firms, and to make the law as a whole more flexible for the needs of the 21st century.&quot;.&mdash;[<phrase class="offrep" id="lords/2004-01-08.258"><i>Official Report</i>, 8/01/04; col. 258</phrase>.]</p>
 	<p pid="a.966.0/18">Is it not extraordinary that, nine months later, the senior representatives of the chartered accountancy profession seem to think that the Government's policy is taking us backwards? Introducing a new mandatory review for listed companies to display strategic plans and environmental concerns may seem progressive, but without director and auditor liability reform, it is just another cart before the horse&mdash;which, of course, is exactly why the OFR has been delayed.</p>
 	<p pid="a.966.0/19">Turning specifically to the amendments from the other place, I am, as ever, grateful to the Minister for his careful introduction and explanation. As I understand it, new Clause 19, entitled,</p>
 	<p pid="a.966.0/20" class="indent">&quot;Relaxation of prohibition on provisions protecting directors etc. from liability&quot;,</p>
@@ -1801,13 +1821,13 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.1014.1" speakerid="uk.org.publicwhip/lord/100094" speakername="Baroness Buscombe" colon=":" colnum="1014"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-26.htm#41021-26_spnew1">
-	<p pid="a.1014.1/1">This is an important amendment and one about which we feel extremely strongly. It touches on an issue that I raised, among others, at Second Reading. The noble Lord, Lord Bassam, wrote to me, for which I am grateful, concerning this point in a letter dated <phrase class="date" code="">19 July</phrase>. Unfortunately, the contents of the letter did not satisfy me; hence this amendment.</p>
-	<p pid="a.1014.1/2">The amendment concerns Clause 23, which deals with the limitation of emergency regulations. Other than not being able to require a person to take part in military service, the only other thing that the Government are not allowed to do is interfere with strike action. We find that a most peculiar exception. Why are those on strike afforded such protection from these provisions when no one else has such immunity afforded to them? In his letter of <phrase class="date" code="">19 July</phrase>, the Minister said:</p>
+	<p pid="a.1014.1/1">This is an important amendment and one about which we feel extremely strongly. It touches on an issue that I raised, among others, at Second Reading. The noble Lord, Lord Bassam, wrote to me, for which I am grateful, concerning this point in a letter dated <phrase class="date" code="2004-07-19">19 July</phrase>. Unfortunately, the contents of the letter did not satisfy me; hence this amendment.</p>
+	<p pid="a.1014.1/2">The amendment concerns Clause 23, which deals with the limitation of emergency regulations. Other than not being able to require a person to take part in military service, the only other thing that the Government are not allowed to do is interfere with strike action. We find that a most peculiar exception. Why are those on strike afforded such protection from these provisions when no one else has such immunity afforded to them? In his letter of <phrase class="date" code="2004-07-19">19 July</phrase>, the Minister said:</p>
 	<p pid="a.1014.1/3" class="indent">&quot;Existing criminal law and employment relations law already contain appropriate provisions so as to ensure that industrial action does not endanger human life. Under the Trade Union and Labour Relations (Consolidation) Act 1992, a person who wilfully and maliciously breaks a contract of service, knowing or having reasonable cause to believe that the probable consequences of his doing so, will be to endanger human life or cause serious bodily injury, or to expose valuable property to destruction or serious injury, commits an offence. The Government considers that these provisions hold good in emergency and non-emergency situations and that there is no need for emergency powers to be used for these purposes. The 1920 Act prohibits such use and the Bill continues this prohibition&quot;.</p>
 	<p pid="a.1014.1/4">I am sorry, but that is not good enough for us. We cannot conceive why the Government, unless for political reasons, have chosen to except those who wish to take part in strike action from the clauses of this enormously powerful Bill.</p>
 	<p pid="a.1014.1/5">I will refer again to the point I made at Second Reading. I recalled that a short while before Second Reading there had been a Tube strike in London which had caused absolute chaos on the roads and in terms of people being able to go about their business. I am not sure of the extent to which it hampered emergency services, but one can only imagine, given the daily jams that we endure in London, notwithstanding the congestion charge which makes not a jot of difference.</p>
 	<p pid="a.1014.1/6">If in addition to that Tube strike an unprecedented act had taken place in Westminster, for example, how on earth does this legislation make sense? This is the legislation to which all Ministers would turn in the event of an emergency. How would it help to say that those undergoing strike action are excepted? Are Ministers then supposed to search out all other legislation that exists on the statute book to decide, &quot;Actually, we had better stop those guys on strike&quot;, or decide, &quot;No, it's fine&quot;? That just does not make sense. I can only deduce that this is a sop to the trade unions. What else could it be? It is such a peculiar exception to this enormous power in the Bill.</p>
-	<p pid="a.1014.1/7">Since the letter of <phrase class="date" code="">19 July</phrase> and having seen our amendment on this point, I hope that the Government have had pause for further thought and will accept my amendment. I beg to move.</p>
+	<p pid="a.1014.1/7">Since the letter of <phrase class="date" code="2004-07-19">19 July</phrase> and having seen our amendment on this point, I hope that the Government have had pause for further thought and will accept my amendment. I beg to move.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.1015.0" speakerid="uk.org.publicwhip/lord/100616" speakername="Lord Stoddart of Swindon" colon=":" colnum="1015"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-26.htm#41021-26_spnew2">
@@ -1906,7 +1926,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.1020.1" speakerid="uk.org.publicwhip/lord/100094" speakername="Baroness Buscombe" colon=":" colnum="1020"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-28.htm#41021-28_spnew4">
-	<p pid="a.1020.1/1">I remind the Minister of an example I used at Second Reading. On <phrase class="date" code="">21 June</phrase> of this year the London Fire Brigades Union chose to hold industrial action on the grounds of health and safety&mdash;very good grounds as it happens. It was deeply frustrated because it felt that it had not been given enough chance to practice, prepare and train for an emergency. The resultant consequence was that only two out of the 10 immediate response units remained active. In other words, the response units that should have been available if there had that night been an unprecedented act, the kind of which we are trying to envisage in this legislation. Is that something that we have to accept?</p>
+	<p pid="a.1020.1/1">I remind the Minister of an example I used at Second Reading. On <phrase class="date" code="2004-06-21">21 June</phrase> of this year the London Fire Brigades Union chose to hold industrial action on the grounds of health and safety&mdash;very good grounds as it happens. It was deeply frustrated because it felt that it had not been given enough chance to practice, prepare and train for an emergency. The resultant consequence was that only two out of the 10 immediate response units remained active. In other words, the response units that should have been available if there had that night been an unprecedented act, the kind of which we are trying to envisage in this legislation. Is that something that we have to accept?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-10-21a.1020.2" speakerid="uk.org.publicwhip/lord/100408" speakername="Lord McNally" colon=":" colnum="1020"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041021/text/41021-28.htm#41021-28_spnew5">

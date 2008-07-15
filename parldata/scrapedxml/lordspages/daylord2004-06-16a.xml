@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -66,7 +85,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.743.5" speakerid="uk.org.publicwhip/lord/100107" speakername="Lord Carlile of Berriew" colon="" colnum="743"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-01.htm#40616-01_spopq0">
 	<p pid="a.743.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.743.5/2" class="indent">Whether they intend to bring in legislation to implement the Carter review on the proposed national offender management service.</p>
+	<p pid="a.743.5/2" class="indent" pwmotiontext="asked">Whether they intend to bring in legislation to implement the Carter review on the proposed national offender management service.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.743.6" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="743"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-01.htm#40616-01_spmin0">
@@ -144,7 +163,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.746.1" speakerid="uk.org.publicwhip/lord/100567" speakername="Lord Sandberg" colon="" colnum="746"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-01.htm#40616-01_spopq1">
 	<p pid="a.746.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.746.1/2" class="indent">What discussions they have had with the United States or coalition authorities about the whereabouts and status of Saddam Hussein and the legal procedures envisaged for bringing him to trial.</p>
+	<p pid="a.746.1/2" class="indent" pwmotiontext="asked">What discussions they have had with the United States or coalition authorities about the whereabouts and status of Saddam Hussein and the legal procedures envisaged for bringing him to trial.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.746.2" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="746"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-01.htm#40616-01_spnew16">
@@ -169,7 +188,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.747.0" speakerid="uk.org.publicwhip/lord/100666" speakername="Lord Wallace of Saltaire" colon=":" colnum="747"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew4">
-	<p pid="a.747.0/1">My Lords, does the noble Baroness recognise that as Britain is part of the Coalition Provisional Authority, we have some standing regarding the future of Saddam Hussein? Are we happy for the decision on what happens to him to be left purely to the Iraqi Government after <phrase class="date" code="">30 June</phrase>, or do we think that since this was international intervention in Iraq, international law and the law of the UN need to be taken into account?</p>
+	<p pid="a.747.0/1">My Lords, does the noble Baroness recognise that as Britain is part of the Coalition Provisional Authority, we have some standing regarding the future of Saddam Hussein? Are we happy for the decision on what happens to him to be left purely to the Iraqi Government after <phrase class="date" code="2004-06-30">30 June</phrase>, or do we think that since this was international intervention in Iraq, international law and the law of the UN need to be taken into account?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.747.1" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="747"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew5">
@@ -193,11 +212,11 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.747.6" speakerid="uk.org.publicwhip/lord/100308" speakername="Lord Howell of Guildford" colon=":" colnum="747"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew10">
-	<p pid="a.747.6/1">My Lords, it appears that there is some difference of view between Mr Iyad Allawi and the Iraqi Government designate on the one hand and the Coalition Provisional Authority on the other as to whether he should be handed over by <phrase class="date" code="">30 June</phrase>. One side says that he should be, and we understand that the Americans are saying that he should not be. Further to the question of the noble Lord, Lord Wallace of Saltaire, what is our view? We are a key member of the coalition; we must have a view on that rather sensitive and immediate matter. What is it?</p>
+	<p pid="a.747.6/1">My Lords, it appears that there is some difference of view between Mr Iyad Allawi and the Iraqi Government designate on the one hand and the Coalition Provisional Authority on the other as to whether he should be handed over by <phrase class="date" code="2004-06-30">30 June</phrase>. One side says that he should be, and we understand that the Americans are saying that he should not be. Further to the question of the noble Lord, Lord Wallace of Saltaire, what is our view? We are a key member of the coalition; we must have a view on that rather sensitive and immediate matter. What is it?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.747.7" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="747"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew11">
-	<p pid="a.747.7/1">My Lords, there is no difference between what the Iraqi Prime Minister and the US President are saying on handing over Saddam Hussein. The Iraqi Prime Minister has confirmed that criminal proceedings will be brought against Saddam Hussein and President Bush has confirmed that the US will pass Saddam Hussein to the Iraqi authorities to face criminal prosecution. We believe, speaking for our own UK prisoners of war, that in accordance with the third Geneva Convention, the obligation to release and repatriate prisoners of war arises with the end of active hostilities, which we believe will be <phrase class="date" code="">30 June</phrase>.</p>
+	<p pid="a.747.7/1">My Lords, there is no difference between what the Iraqi Prime Minister and the US President are saying on handing over Saddam Hussein. The Iraqi Prime Minister has confirmed that criminal proceedings will be brought against Saddam Hussein and President Bush has confirmed that the US will pass Saddam Hussein to the Iraqi authorities to face criminal prosecution. We believe, speaking for our own UK prisoners of war, that in accordance with the third Geneva Convention, the obligation to release and repatriate prisoners of war arises with the end of active hostilities, which we believe will be <phrase class="date" code="2004-06-30">30 June</phrase>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.747.8" speakerid="uk.org.publicwhip/lord/100042" speakername="Lord Berkeley" colon=":" colnum="747"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew12">
@@ -221,7 +240,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.748.1" speakerid="uk.org.publicwhip/lord/100634" speakername="Lord Thomas of Gresford" colon=":" colnum="748"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew17">
-	<p pid="a.748.1/1">My Lords, will there be a new criminal code and a new criminal process in position on <phrase class="date" code="">1 July</phrase>, or will Saddam Hussein be tried under the criminal code and process of his own regime?</p>
+	<p pid="a.748.1/1">My Lords, will there be a new criminal code and a new criminal process in position on <phrase class="date" code="2004-07-01">1 July</phrase>, or will Saddam Hussein be tried under the criminal code and process of his own regime?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.748.2" speakerid="uk.org.publicwhip/lord/100152" speakername="Baroness Crawley" colon=":" colnum="748"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew18">
@@ -242,7 +261,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.748.6" speakerid="uk.org.publicwhip/lord/100279" speakername="Lord Harrison" colon="" colnum="748"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spopq0">
 	<p pid="a.748.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.748.6/2" class="indent">Whether their late payment of commercial debt legislation is assisting small companies; and whether they are enforcing the requirement for large companies to publish payment particulars in their annual reports.</p>
+	<p pid="a.748.6/2" class="indent" pwmotiontext="asked">Whether their late payment of commercial debt legislation is assisting small companies; and whether they are enforcing the requirement for large companies to publish payment particulars in their annual reports.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.748.7" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="748"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-02.htm#40616-02_spnew21">
@@ -323,7 +342,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.751.3" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon="" colnum="751"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-03.htm#40616-03_spopq0">
 	<p pid="a.751.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.751.3/2" class="indent">Whether recruitment to the Army has been capped for a six-month period; and, if so, whether this is justified when the Army is under strength.</p>
+	<p pid="a.751.3/2" class="indent" pwmotiontext="asked">Whether recruitment to the Army has been capped for a six-month period; and, if so, whether this is justified when the Army is under strength.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.751.4" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="751"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-03.htm#40616-03_spmin0">
@@ -337,7 +356,7 @@
 <speech id="uk.org.publicwhip/lords/2004-06-16a.751.6" speakerid="uk.org.publicwhip/lord/100030" speakername="Lord Bach" colon=":" colnum="751"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-03.htm#40616-03_spnew12">
 	<p pid="a.751.6/1">My Lords, before I reply, on behalf of the House may I wish the Lord many happy returns of the day? There must be better ways of spending his birthday than asking me this Question, but I shall do my best to answer it.</p>
 	<p pid="a.751.6/2">The noble Lord should be wary of believing all reports that he reads in newspapers, particularly the <i>Daily Telegraph </i>on military matters. Some measures are being imposed, including restrictions on extensions to full-time reserve service engagements, continuance&mdash;service over 22 years&mdash;and re-joins of officers and soldiers.</p>
-	<p pid="a.751.6/3">A measure was also implemented to allow some of those who had submitted notice to leave the Army to bring forward their exit date to this financial year, 2003&ndash;04. Additionally, there is a pause on some recruits starting their phase one basic training courses. That is likely to be in place until October. However, there is no ban on recruitment. The Army has an enlistment target figure of 11,318 for this financial year, 2004&ndash;05. Since <phrase class="date" code="2006-04-01">1 April</phrase> this year, more than 1,500 have been enlisted.</p>
+	<p pid="a.751.6/3">A measure was also implemented to allow some of those who had submitted notice to leave the Army to bring forward their exit date to this financial year, 2003&ndash;04. Additionally, there is a pause on some recruits starting their phase one basic training courses. That is likely to be in place until October. However, there is no ban on recruitment. The Army has an enlistment target figure of 11,318 for this financial year, 2004&ndash;05. Since <phrase class="date" code="2004-04-01">1 April</phrase> this year, more than 1,500 have been enlisted.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.752.0" speakerid="uk.org.publicwhip/lord/100527" speakername="Lord Redesdale" colon=":" colnum="752"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-03.htm#40616-03_spnew13">
@@ -410,7 +429,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.754.1" speakerid="uk.org.publicwhip/lord/100205" speakername="Viscount Falkland" colon="" colnum="754"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-04.htm#40616-04_spopq0">
 	<p pid="a.754.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.754.1/2" class="indent">What benefits will result from the power given to magistrates' courts by the Criminal Justice Act 2003 to impose driving bans for offences outside normal traffic infringements.</p>
+	<p pid="a.754.1/2" class="indent" pwmotiontext="asked">What benefits will result from the power given to magistrates' courts by the Criminal Justice Act 2003 to impose driving bans for offences outside normal traffic infringements.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.754.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="754"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-04.htm#40616-04_spnew12">
@@ -549,7 +568,7 @@
 	<p pid="a.760.0/9">In conclusion, I turn briefly to the two important clarifications that I seek. First, what does the Procedure Committee mean when it says that,</p>
 	<p pid="a.760.0/10" class="indent">&quot;The Chairmanship should reflect the joint nature of the Committee&quot;?</p>
 	<p pid="a.760.0/11">If this is a proper Joint Committee, as your Lordships have pressed for, the chairmanship should be equally shared between appropriate Members of both Houses. But first we have to know what the committee is for. If it is to be a debating forum, a panel of specially selected deputy chairmen from the two Houses will probably do the trick. But in that case we are left with the question of who would set the agenda for the committee. Would it be the Government? Alternatively, is it envisaged that each House will appoint a chairman for the committee who will jointly propose an agenda? I do not know. For that reason I seek clarification.</p>
-	<p pid="a.760.0/12">Finally, it is perfectly obvious that a Joint Committee, as described in the Procedure Committee's report, could never conduct the kind of detailed scrutiny undertaken by our own sub-committees. But that it might eventually try to do so is a fear that some noble Lords have, and not without grounds, given the official briefing, for example, prepared for the United Kingdom delegation to a recent conference on subsidiarity at the Committee of the Regions which I attended a couple of weeks ago in Berlin, and which seems to go entirely in the other direction. May we therefore have reiterated today the assurance given us by the Deputy Leader of the House on <phrase class="date" code="2006-02-11">11 February</phrase> that the new committee would not in any way trespass on our scrutiny work? Can the Chairman of Committees say whether such a provision could be written into the Standing Orders of the new committee, which I would wholeheartedly advocate?</p>
+	<p pid="a.760.0/12">Finally, it is perfectly obvious that a Joint Committee, as described in the Procedure Committee's report, could never conduct the kind of detailed scrutiny undertaken by our own sub-committees. But that it might eventually try to do so is a fear that some noble Lords have, and not without grounds, given the official briefing, for example, prepared for the United Kingdom delegation to a recent conference on subsidiarity at the Committee of the Regions which I attended a couple of weeks ago in Berlin, and which seems to go entirely in the other direction. May we therefore have reiterated today the assurance given us by the Deputy Leader of the House on <phrase class="date" code="2004-02-11">11 February</phrase> that the new committee would not in any way trespass on our scrutiny work? Can the Chairman of Committees say whether such a provision could be written into the Standing Orders of the new committee, which I would wholeheartedly advocate?</p>
 	<p pid="a.760.0/13">Subject to satisfactory clarification of the chairmanship question and assurances on no trespassing, and particularly an assurance that the Procedure Committee will put to the House a considered proposal once detailed discussions with the Modernisation Committee are concluded, I would be minded to advise the House to support the Procedure Committee.</p>
 </speech>
 
@@ -651,9 +670,9 @@
 	<p pid="a.769.1/9">That in short is a legal aid scheme, or community legal service, where demoralisation among solicitors and other legal advisers who serve it is now very general; where the provision of legal advice and assistance is very patchy and the talk is of deserts; where the eligibility criteria for help are too stringent; and where the whole scheme is dominated by criminal legal aid to the detriment of the civil sphere.</p>
 	<p pid="a.769.1/10">Perhaps I may give a few statistics which are relevant to the debate. I have already mentioned the growth in the legal aid budget over those seven years. However, in view of the massive increase in laws, crimes and the rest of it, the &pound;1.5 billion to &pound;2 billion might be thought not enough let alone too much. Some &pound;1.1 billion of the &pound;2 billion is spent on the criminal legal aid budget, leaving less than &pound;900 million for the civil budget. That budget is split 93:7 between solicitors in private practice and not-for-profit entities. One million people were helped last year by legal aid, compared with 3.5 million in 1997, when the green form advice scheme was still available. The number of civil cases is 8 per cent down; criminal cases, 18 per cent up. The cost per civil case is 3.4 per cent up; per criminal Crown Court case, 9 per cent up. In 1990, 30 per cent of solicitors' income derived from legal aid. That figure is now down to 13 per cent and falling.</p>
 	<p pid="a.769.1/11">The other point that I would briefly mention is that there are 70,000 solicitors in private practice today, 85 per cent of them in firms of four partners or fewer, comprising more than 9,000 firms and nearly 13,000 offices. The budget for legal aid is about 5 per cent of the budget for the National Health Service.</p>
-	<p pid="a.769.1/12">I turn briefly to the very recent independent review&mdash;published on <phrase class="date" code="2006-04-01">1 April</phrase>&mdash;of the Community Legal Service, commissioned by the DCA and done by Matrix/Sheffield University and Richard Moorhead. To be fair, they said they were &quot;impressed with progress made&quot; in establishing and developing the Community Legal Service. However, they pointed to five areas where improvement is badly needed, one of which was clarification of the aims and strategy of the CLS, particularly in relation to social exclusion. They called for an evidence base for the Legal Services Commission policy on, for example, its selection of not-for-profit providers as compared with private practice providers, and specialist providers as compared with generalist ones.</p>
+	<p pid="a.769.1/12">I turn briefly to the very recent independent review&mdash;published on <phrase class="date" code="2004-04-01">1 April</phrase>&mdash;of the Community Legal Service, commissioned by the DCA and done by Matrix/Sheffield University and Richard Moorhead. To be fair, they said they were &quot;impressed with progress made&quot; in establishing and developing the Community Legal Service. However, they pointed to five areas where improvement is badly needed, one of which was clarification of the aims and strategy of the CLS, particularly in relation to social exclusion. They called for an evidence base for the Legal Services Commission policy on, for example, its selection of not-for-profit providers as compared with private practice providers, and specialist providers as compared with generalist ones.</p>
 	<p pid="a.769.1/13">The reviewers called for much better processes, to which I shall return. They concentrated on quality, which they found severely lacking&mdash;an issue to which I shall refer later. They then looked at the localised impact of the work of the legal aid scheme and had a lot to say about community legal service partnerships, which are in a bad way.</p>
-	<p pid="a.769.1/14">If there is one problem above all others that needs to be urgently addressed it is that of withdrawal of solicitors from the Community Legal Service. As I have explained, they are the predominant suppliers. As of <phrase class="date" code="2006-04-01">1 April</phrase>, according to the independent review, there had been an 18 per cent drop in the number of contracts awarded under the Community Legal Service since the first award three years ago. In the latest tendering round there was a 10 per cent reduction in the number of contractors applying for contracts. Although the Legal Services Commission states that it will be able to find suppliers for all the contracts it needs, the fact remains, as Keith Vaz MP put it to the Constitutional Affairs Committee on <phrase class="date" code="2006-02-24">24 February</phrase>:</p>
+	<p pid="a.769.1/14">If there is one problem above all others that needs to be urgently addressed it is that of withdrawal of solicitors from the Community Legal Service. As I have explained, they are the predominant suppliers. As of <phrase class="date" code="2004-04-01">1 April</phrase>, according to the independent review, there had been an 18 per cent drop in the number of contracts awarded under the Community Legal Service since the first award three years ago. In the latest tendering round there was a 10 per cent reduction in the number of contractors applying for contracts. Although the Legal Services Commission states that it will be able to find suppliers for all the contracts it needs, the fact remains, as Keith Vaz MP put it to the Constitutional Affairs Committee on <phrase class="date" code="2004-02-24">24 February</phrase>:</p>
 	<p pid="a.769.1/15" class="indent">&quot;We have a legal aid crisis . . . solicitors are deserting legal aid in droves. It simply does not pay for them&quot;.</p>
 	<p pid="a.769.1/16">Mr Vaz was, of course, involved in the Access to Justice Bill as a Minister.</p>
 	<p pid="a.769.1/17">A very telling section in the forceful written evidence by the Law Society to the same committee, which is inquiring into legal aid and will shortly publish, I believe, was this:</p>
@@ -702,7 +721,7 @@
 	<p pid="a.775.0/4">Was it? In a Statement to your Lordships' House the noble and learned Lord sought to provide further reassurance. He said:</p>
 	<p pid="a.775.0/5" class="indent">&quot;I am committed to local justice. Many decisions, for example about providing court-houses to match need, will properly remain to be taken at local level&quot;.</p>
 	<p pid="a.775.0/6">But here comes the rub. He continued:</p>
-	<p pid="a.775.0/7" class="indent">&quot;But justice delivered locally is not the same as justice organised locally&quot;.&mdash;[<i>Official Report</i>, 29/10/97; col. 1059.]</p>
+	<p pid="a.775.0/7" class="indent">&quot;But justice delivered locally is not the same as justice organised locally&quot;.&mdash;[<phrase class="offrep" id="lords/1997-10-29.1059"><i>Official Report</i>, 29/10/97; col. 1059</phrase>.]</p>
 	<p pid="a.775.0/8">Clearly, he did not intend that locals be entrusted with such organisation. He would leave that to be decided centrally, organised by the Lord Chancellor's Department.</p>
 	<p pid="a.775.0/9">I have two examples of the problems that have arisen. I shall quote from an article by Mr D Cwyfan Hughes of a well-known firm of solicitors in Holyhead, who pointed out that the North Wales Magistrates' Courts Committee published a draft strategic plan in August 1996. Its overall aim was to,</p>
 	<p pid="a.775.0/10" class="indent">&quot;provide an effective system of local justice&quot;.</p>
@@ -734,7 +753,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.778.0" speakerid="uk.org.publicwhip/lord/100687" speakername="Lord Williams of Elvel" colon=":" colnum="778"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-10.htm#40616-10_spnew1">
 	<p pid="a.778.0/1">My Lords, I am grateful to the noble Lord, Lord Phillips, for introducing the debate. I am afraid that my noble friend Lord Filkin may find himself in some crossfire from mid-Wales. The noble Lord, Lord Hooson, spoke about the problems of mid-Wales and I believe that the noble Lord, Lord Livsey, will address them. I, too, will do so because the problem in mid-Wales is possibly a paradigm for how magistrates' courts shut down all over England and Wales are depriving access to justice for those who cannot afford to pay. It is a problem which my noble friend must address.</p>
-	<p pid="a.778.0/2">First, I want to declare a non-financial interest. I am patron of the Llandrindod Wells Spa Town Trust and as such I have an interest in Llandrindod Wells. I gave my noble friend notice of the points I would make and I wrote to my noble and learned friend Lord Falconer on <phrase class="date" code="">6 June</phrase> this year explaining what I was about and what I would say. I therefore hope that he has considered all those points and will have a substantive response to those of us who object to the closure of the Llandrindod Wells magistrates' court.</p>
+	<p pid="a.778.0/2">First, I want to declare a non-financial interest. I am patron of the Llandrindod Wells Spa Town Trust and as such I have an interest in Llandrindod Wells. I gave my noble friend notice of the points I would make and I wrote to my noble and learned friend Lord Falconer on <phrase class="date" code="2004-06-06">6 June</phrase> this year explaining what I was about and what I would say. I therefore hope that he has considered all those points and will have a substantive response to those of us who object to the closure of the Llandrindod Wells magistrates' court.</p>
 	<p pid="a.778.0/3">The noble Lord, Lord Hooson, expressed the problems perfectly well. The first is the geographical distance that defendants and witnesses may have to travel if the court is closed down&mdash;namely, to Brecon or to Newtown&mdash;is such as to deny them access to primary justice. There is no convenient public transport and there is no private transport of any convenience. Some time ago that difficulty was put to Yvette Cooper by a delegation from the town council of Llandrindod Wells.</p>
 	<p pid="a.778.0/4">I hope my second point is recognised by my noble friend. I believe that a considered view of our party&mdash;it is perhaps one of those views that I would support more than others&mdash;is that we should encourage local community spirit. As Llandrindod Wells is the site of the main office of the Powys County Council and as it has been designated as one of the towns in mid-Wales that is to be developed and enlarged, the spirit of the community is all the more important.</p>
 	<p pid="a.778.0/5">To be perfectly honest with my noble friend, I have been surprised how strong the feeling is about the magistrates' court in Llandrindod Wells. People come up to me in the street, as I am sure they do to the noble Lord, Lord Livsey, and say, &quot;Why is the court being closed down?&quot;. It is a matter of community. It is a central mark of status in an important regional centre.</p>
@@ -794,7 +813,7 @@
 	<p pid="a.784.0/8">Of course, the Act also removed almost entirely standard personal injury work from legal aid funding. Its contracting system was designed to shift legal aid expenditure away from civil representation towards areas of social welfare law that are associated with the fight against social exclusion. In fact, in recent years, there have been reductions in the contracts let by the CLS in family welfare benefits, housing, debt, employment and consumer issues. The independent review of the CLS that reported in April 2004 said:</p>
 	<p pid="a.784.0/9" class="indent">&quot;As welfare benefits, debt and housing are numerically the most significant and are more closely associated with social exclusion, the overall picture does not support the view that contracting has refocused LSC funding by directing it towards social exclusion&quot;.</p>
 	<p pid="a.784.0/10">So the policy of moving legal aid funding away from personal injury cases and court cases towards areas that involve social exclusion has failed. On the one hand, the aims of the Government are not being met. On the other hand, in the past year, funding for personal injury cases has disappeared and the number of contracts that are awarded regarding family, consumer, mental health and clinical negligence has been significantly reduced.</p>
-	<p pid="a.784.0/11">This highly critical report that was published last month was greeted by the Legal Services Commission with a press release on <phrase class="date" code="">29 April</phrase>, which was headed, &quot;Community Legal Service in Good Health&quot;. That was directly contrary to that which the review had said. Clare Dodgson, chief executive of the LSC, said:</p>
+	<p pid="a.784.0/11">This highly critical report that was published last month was greeted by the Legal Services Commission with a press release on <phrase class="date" code="2004-04-29">29 April</phrase>, which was headed, &quot;Community Legal Service in Good Health&quot;. That was directly contrary to that which the review had said. Clare Dodgson, chief executive of the LSC, said:</p>
 	<p pid="a.784.0/12" class="indent">&quot;The good health of the Community Legal Service is a result of us ensuring that we spend taxpayers' money only on quality solicitors' firms and advisers, and that legal aid meets the needs of communities throughout England and Wales&quot;.</p>
 	<p pid="a.784.0/13">That was the blah that was put forward in answer to the critical review.</p>
 	<p pid="a.784.0/14">What did the review say? It found a lack of leadership and aims in the Community Legal Service. The partnerships that were set up under the scheme were regarded by a majority of the participants as less than effective in improving access to justice; that is, the local authorities, the not-for-profit organisations and so forth which played a part.</p>
@@ -816,7 +835,7 @@
 <speech id="uk.org.publicwhip/lords/2004-06-16a.787.0" speakerid="uk.org.publicwhip/lord/100626" speakername="Lord Taverne" colon=":" colnum="787"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-12.htm#40616-12_spnew0">
 	<p pid="a.787.0/1">My Lords, the effects on justice for the citizen of the decline of the legal aid system were vividly described by my noble friend Lord Phillips, and I was much impressed by the speeches of the noble Lord, Lord Brennan, and my colleague and noble friend Lord Thomas of Gresford about the lack of imagination shown in the organisation trials. But I want to deal with a rather different point. As part of our concern that citizens have access to justice when they need it, we should be concerned about the way legal aid is spent. When money is wasted on legal aid, the amount available for deserving cases is reduced.</p>
 	<p pid="a.787.0/2">I want to draw attention to one particular case in which some &pound;15 million was spent on legal aid that should never have been sanctioned. It happened before the passing of the Access to Justice Act 1999 but, as the Legal Services Commission has acknowledged, some salutary lessons should be drawn.</p>
-	<p pid="a.787.0/3">I refer to the action brought against some pharmaceutical companies in a claim that MMR was the cause of autism. The case has been very carefully documented in a book called <i>MMR and Autism</i> by Dr Michael Fitzpatrick, to be published on <phrase class="date" code="">29 June</phrase>. I have been personally interested in the MMR dispute as part of a more general interest in the increasingly fashionable rejection of the evidence-based approach to scientific and medical issues.</p>
+	<p pid="a.787.0/3">I refer to the action brought against some pharmaceutical companies in a claim that MMR was the cause of autism. The case has been very carefully documented in a book called <i>MMR and Autism</i> by Dr Michael Fitzpatrick, to be published on <phrase class="date" code="2004-06-29">29 June</phrase>. I have been personally interested in the MMR dispute as part of a more general interest in the increasingly fashionable rejection of the evidence-based approach to scientific and medical issues.</p>
 	<p pid="a.787.0/4">Let me start with the background. For many years before the MMR vaccine became a matter of public controversy, there has been a campaign against vaccination. Immunisation is one of the success stories of modern medicine, and it is a huge success story. It has virtually eradicated a large number of serious diseases such as whooping cough and measles.</p>
 	<p pid="a.787.0/5">Yet a group of people who believe in homeopathy and alternative medicine has long campaigned against vaccines, and has taken that campaign to the courts. These are people who distrust modern scientific medicine and seem to believe that we should go back to nature and pre-Enlightenment days, preferring remedies sanctioned by centuries of use, as if medical treatment is like some kind of antique furniture whose value increases with age.</p>
 	<p pid="a.787.0/6">A case claiming that the pertussis vaccine caused brain damage was considered by the High Court in 1988. The court found conclusively against the plaintiffs. However, the anti-vaccine campaign recently became a prominent public issue after Dr Wakefield's notorious paper was published in the<i> Lancet</i> in February 1998. It argued that some eight cases of autistic children that he had examined suggested a link between the MMR vaccine and autism.</p>
@@ -834,7 +853,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-06-16a.790.0" speakerid="uk.org.publicwhip/lord/100002" speakername="Lord Ackner" colon=":" colnum="790"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo040616/text/40616-12.htm#40616-12_spnew1">
 	<p pid="a.790.0/1">My Lords, on the fourth day of the debate on the Address on <phrase class="date" code="2003-12-02">2 December 2003</phrase>, in cols. 217 to 219 of <i>Hansard</i>, I referred to the statement of Tony Blair just before becoming Prime Minister in 1997, when he said:</p>
-	<p pid="a.790.0/2" class="indent">&quot;Labour's goal of improving access to justice is an essential part of our commitment to social justice&quot;.&mdash;[<i>Official Report</i>, 2/12/03; col. 217.]</p>
+	<p pid="a.790.0/2" class="indent">&quot;Labour's goal of improving access to justice is an essential part of our commitment to social justice&quot;.&mdash;[<phrase class="offrep" id="lords/2003-12-02.217"><i>Official Report</i>, 2/12/03; col. 217</phrase>.]</p>
 	<p pid="a.790.0/3">I then identified four headings designed to show that that commitment had been seriously eroded. Those headings were asylum and immigration; crime; civil claims; and the rapidly diminishing facilities for advice&mdash;the advice deserts.</p>
 	<p pid="a.790.0/4">I do not for one moment expect your Lordships to have any recall of such an unstimulating event. But I shall not profit by repeating what I said in order to fill up time in this debate. Instead, I will concentrate upon the position of the Bar as it stands at the moment. Next to my wife, the Bar has always been my first love. The position which has now been reached, in which the Bar and the Government are at loggerheads, is terrible.</p>
 	<p pid="a.790.0/5">Before dealing with the Government's action following their publication entitled <i>Delivering Value for Money in the Criminal Defence Service</i>, I stress that the Bar has always considered that it is a referral service that must be judged by its competence and its ability to deliver. The Bar has long recognised the need to demonstrate that continuation of an independent specialist referral Bar is in the public interest and that the Government must achieve value for money in the purchasing of legal aid cases.</p>
@@ -1056,8 +1075,8 @@
 	<p pid="a.812.1/8">But at the end of the day, there is one thing that we and the Liberal Benches can agree on; that there is little excuse for the Government's failure to say clearly what powers they intend regional assemblies to have. One leaflet put out by the Office of the Deputy Prime Minister seems to confirm my worst fears. It tells us what members of assemblies are most likely to be up to. The pamphlet reads:</p>
 	<p pid="a.812.1/9" class="indent">&quot;An Assembly could represent the Regions in Brussels, lobbying for the Region at European level&quot;.</p>
 	<p pid="a.812.1/10">In plain words, the Deputy Prime Minister seems to believe that it will be in Britain's interests for assembly members to go off to Brussels to try to screw more out of the Commission than the region next door. If anyone thinks that that sort of activity will be good for amity and make for a happier country, he must have taken leave of his senses. To adopt the elegant phraseology of the Prime Minister, we really need that like a hole in the head.</p>
-	<p pid="a.812.1/11">We are all waiting anxiously to hear what the Minister has to say and I want to ask him just one question. Does he stand by the statement he made on <phrase class="date" code="2006-03-05">5 March</phrase> last year at col. 813? On that occasion, the noble Lord, Lord Morgan, suggested that there would be more enthusiasm for regional government if there were a statement on the powers and functions of the assemblies before the referendum. The noble Lord, Lord Rooker, replied with his customary candour:</p>
-	<p pid="a.812.1/12" class="indent">&quot;We could do that, my Lords. However, I think that the penny dropped during the Second Reading of the legislation that there are no new powers and no new funds&quot;.&mdash;[<i>Official Report</i>, 5/3/03; col. 813.]</p>
+	<p pid="a.812.1/11">We are all waiting anxiously to hear what the Minister has to say and I want to ask him just one question. Does he stand by the statement he made on <phrase class="date" code="2004-03-05">5 March</phrase> last year at col. 813? On that occasion, the noble Lord, Lord Morgan, suggested that there would be more enthusiasm for regional government if there were a statement on the powers and functions of the assemblies before the referendum. The noble Lord, Lord Rooker, replied with his customary candour:</p>
+	<p pid="a.812.1/12" class="indent">&quot;We could do that, my Lords. However, I think that the penny dropped during the Second Reading of the legislation that there are no new powers and no new funds&quot;.&mdash;[<phrase class="offrep" id="lords/2003-03-05.813"><i>Official Report</i>, 5/3/03; col. 813</phrase>.]</p>
 	<p pid="a.812.1/13">Does the Minister stand by that statement now?</p>
 </speech>
 

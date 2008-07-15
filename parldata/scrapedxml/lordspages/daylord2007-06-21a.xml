@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -66,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.309.1" speakerid="uk.org.publicwhip/lord/100584" speakername="Baroness Sharples" colon="" colnum="309"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000024">
 	<p pid="a.309.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.309.1/2" class="indent">What recent assessment they have made of the effectiveness of anti-social behaviour orders.</p>
+	<p pid="a.309.1/2" class="indent" pwmotiontext="asked">What recent assessment they have made of the effectiveness of anti-social behaviour orders.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.309.2" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="309"  url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000025">
@@ -159,7 +162,7 @@
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.312.1" speakerid="uk.org.publicwhip/lord/100588" speakername="Lord Sheldon" colon="" colnum="312"  time="011:14:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000046">
 	<p pid="a.312.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.312.1/2" class="indent">What assessment has been made of the change in the number of unskilled jobs in the United Kingdom since 1997.</p>
+	<p pid="a.312.1/2" class="indent" pwmotiontext="asked">What assessment has been made of the change in the number of unskilled jobs in the United Kingdom since 1997.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.312.2" speakerid="uk.org.publicwhip/lord/100839" speakername="Lord Adonis" colon=":" colnum="312"  time="011:14:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000047">
@@ -228,7 +231,7 @@
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.314.5" speakerid="uk.org.publicwhip/lord/100629" speakername="Lord Tebbit" colon="" colnum="314"  time="011:21:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000062">
 	<p pid="a.314.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.314.5/2" class="indent">How many persons who have been convicted of terrorist offences are currently serving as Ministers in government within the United Kingdom?</p>
+	<p pid="a.314.5/2" class="indent" pwmotiontext="asked">How many persons who have been convicted of terrorist offences are currently serving as Ministers in government within the United Kingdom?</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.314.6" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="314"  time="011:21:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0001.htm#07062149000063">
@@ -273,7 +276,7 @@
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.316.2" speakerid="uk.org.publicwhip/lord/100432" speakername="Lord Mitchell" colon="" colnum="316"  time="011:26:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0002.htm#07062149000072">
 	<p pid="a.316.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.316.2/2" class="indent">Whether they have any plans to change the regulations governing the tax status of non-domiciled residents in the United Kingdom.</p>
+	<p pid="a.316.2/2" class="indent" pwmotiontext="asked">Whether they have any plans to change the regulations governing the tax status of non-domiciled residents in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2007-06-21a.316.3" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="316"  time="011:26:00" url="http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70621-0002.htm#07062149000073">
@@ -921,15 +924,15 @@
 	<p pid="a.390.0/8">Enormous changes have taken place in Defra. The move away from food subsidies to the single farm payment constitutes the biggest challenge and change that the farming community has experienced in recent years. Therefore, it is not surprising that I have submitted a bevy of Written and Oral Questions, some of which I draw to the Minister's attention. Back in January I asked:</p>
 	<p pid="a.390.0/9" class="indent">&quot;Who was responsible for drawing up and agreeing the specifications against which contractors, whether internal or external, worked to set up the information technology systems used for the single farm payments by the Rural Payments Agency&quot;.</p>
 	<p pid="a.390.0/10">The Answer was:</p>
-	<p pid="a.390.0/11" class="indent">&quot;The original specification was intended to replace the software supporting the CAP schemes at that time and new elements such as a rural land register and integrated customer register&quot;.&mdash;[<I>Official Report</I>, 23/1/07; col. <I>WA 231</I>.]</p>
+	<p pid="a.390.0/11" class="indent">&quot;The original specification was intended to replace the software supporting the CAP schemes at that time and new elements such as a rural land register and integrated customer register&quot;.&mdash;[<phrase class="offrep" id="wrans/2007-01-23.231"><I>Official Report</I>, 23/1/07; col. WA 231</phrase>.]</p>
 	<p pid="a.390.0/12">It became clear that all was not well. The RPA established a CAP reform implementation project, which included representatives of the Defra policy team negotiating the regulatory changes. That in turn led to major changes to the specification for that IT work, which was already under way. The changes involved additional tenders to extract data from legacy systems so that they could be used to inform customers about their historical claims and support the migration of the data into the Accenture-built systems. How many changes were made from the original specifications?</p>
 	<p pid="a.390.0/13">In December 2006, I asked how many permanent staff were involved in setting up and running the IT system. The answer was 184. The RPA had contracted Accenture to develop its IT systems, required under the change programme. That covers development support and ongoing maintenance for the system. The total cost of the contract was expected to be &pound;55.4 million over seven years. Did that include the consultants who were also involved?</p>
 	<p pid="a.390.0/14">The noble Lord, Lord Livsey of Talgarth, asked a Question in October 2006 on the RPA. Later, I asked the Minister whether he accepted the findings of the National Audit Office that there were no checks, matrices or proper management in the arrangements for bringing in the single farm payment. I gavehim some examples. The Accenture contract was estimated in November 2003 as being worth&pound;27.5 million, but it turned out by March 2006 to be worth &pound;50 million. The land register contract was estimated at &pound;6.8 million but eventually turnedout to be &pound;16 million. The customer communications contract, originally estimated in 2003 at &pound;1.2 million, turned out to be &pound;9.8 million. That is not satisfactory. When the noble Lord, Lord Rooker, responded to my question, he started by saying:</p>
-	<p pid="a.390.0/15" class="indent">&quot;My Lords, this is not a happy tale&quot;.&mdash;[<I>Official Report</I>, 30/10/06; col. 8.]</p>
+	<p pid="a.390.0/15" class="indent">&quot;My Lords, this is not a happy tale&quot;.&mdash;[<phrase class="offrep" id="lords/2006-10-30.8"><I>Official Report</I>, 30/10/06; col. 8</phrase>.]</p>
 	<p pid="a.390.0/16">Clearly it is not.</p>
 	<p pid="a.390.0/17">I moved on to look at the IT consultancy that Natural England is using. It was asked to producea communications strategy, and it went out to consultation, which cost a mere &pound;69,000, not a lot of money. However, have the information that it came up with and the findings that it recommended been adopted, or has &pound;69,000 been wasted?</p>
 	<p pid="a.390.0/18">I had a reply to a Question about the project Enabling IT system, which was awarded in the financial year 2004-05 in respect of some &pound;850 million. I asked how much of that was spent from 2004-05 to 2006-07. The answer was that in 2004-05 some &pound;28.26 million was spent; in 2005-06 some &pound;111.12 million was spent and in 2006-07 some &pound;147.56 million was spent. The note at the end of the Answer from the noble Lord, Lord Rooker, said:</p>
-	<p pid="a.390.0/19" class="indent">&quot;The outturn costs have been higher than the initial estimated yearly costs due to the increased demand for IBM services by projects in delivering Defra's strategic objectives&quot;.&mdash;[<I>Official Report</I>, 13/6/07; col. <I>WA 257</I>.]</p>
+	<p pid="a.390.0/19" class="indent">&quot;The outturn costs have been higher than the initial estimated yearly costs due to the increased demand for IBM services by projects in delivering Defra's strategic objectives&quot;.&mdash;[<phrase class="offrep" id="wrans/2007-06-13.257"><I>Official Report</I>, 13/6/07; col. WA 257</phrase>.]</p>
 	<p pid="a.390.0/20">That is not a happy tale, and I wonder whether other departments have struggled equally with the minutiae that have made these systems not work as they should have done.</p>
 	<p pid="a.390.0/21">Finally, when there is failure in a department, why are bonuses then paid to its employees? How many of those involved in the Rural Payments Agency were beneficiaries of bonuses for the years in which that department failed? It is a tale of incompetence, andI am only sorry to have to reflect it again this afternoon.</p>
 </speech>

@@ -7,13 +7,16 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
-<!ENTITY euro    "&#8364;" >
+<!ENTITY euro    "&#8364;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY bull    "&#8226;">
-<!ENTITY lsquo   "&#8216;" >
-<!ENTITY rsquo   "&#8217;" >
-<!ENTITY ldquo   "&#8220;" >
-<!ENTITY rdquo   "&#8221;" >
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
@@ -35,7 +38,9 @@
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
 <!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
 <!ENTITY pound  "&#163;" >
 <!ENTITY sect   "&#167;" >
@@ -52,6 +57,7 @@
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
 <!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
 ]>
 
@@ -124,12 +130,9 @@
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.9.3" newgid="uk.org.publicwhip/lords/2006-04-24b.9.3" matchtype="changes"/>
 <speech id="uk.org.publicwhip/lords/2006-04-24a.9.3" speakerid="uk.org.publicwhip/lord/100229" speakername="Baroness Gardner of Parkes" colon="" colnum="9"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60424-03.htm#60424-03_spopq0">
 	<p pid="a.9.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.9.3/2" class="indent">What progress has been made on the introduction of housing information packs; and whether, prior to their introduction for all home sales, there will be a full assessment of their effectiveness and benefits based on the results of the pilot scheme?</p>
+	<p pid="a.9.3/2" class="indent" pwmotiontext="asked">What progress has been made on the introduction of housing information packs; and whether, prior to their introduction for all home sales, there will be a full assessment of their effectiveness and benefits based on the results of the pilot scheme?</p>
 </speech>
-<gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.9.4" newgid="uk.org.publicwhip/lords/2006-04-24b.9.4" matchtype="changes"/>
-<speech id="uk.org.publicwhip/lords/2006-04-24a.9.4" speakerid="uk.org.publicwhip/lord/100015" speakername="Baroness Andrews" colon=":" colnum="9"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60424-03.htm#60424-03_spmin0">
-	<p pid="a.9.4/1">My Lords, a timeline showing the key events and milestones leading to the introduction of home information packs on <phrase class="date" code="">1 June 2007</phrase> was published on <phrase class="date" code="2006-04-07">7 April</phrase>. We have made it clear that all aspects of the pack need to be tried and tested through a dry run before the mandatory scheme is introduced. That will include an evaluation of each of the three phases of the dry run.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.9.4" newgid="uk.org.publicwhip/lords/2006-04-24b.9.4" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.9.5" newgid="uk.org.publicwhip/lords/2006-04-24b.9.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.9.6" newgid="uk.org.publicwhip/lords/2006-04-24b.9.6" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.10.0" newgid="uk.org.publicwhip/lords/2006-04-24b.10.0" matchtype="perfectmatch"/>
@@ -290,7 +293,7 @@
 	<p pid="a.34.3/1">My Lords, in Committee, we had a fair degree of debate about the provisions of Clause 11, which has various purposes, but is essentially designed to ensure that the National Lottery distributors take a greater part in publicising aspects of the National Lottery. When the Minister described this in Committee, he said:</p>
 	<p pid="a.34.3/2" class="indent">&quot;We have made it clear many times that distributors will not be in the business of promoting the National Lottery games&quot;.</p>
 	<p pid="a.34.3/3">He continued:</p>
-	<p pid="a.34.3/4" class="indent">&quot;Clause 11 will ensure that all lottery distributors can take part fully in the activities of the National Lottery Promotions Unit, which seeks to raise positive awareness of, and support for, the benefits of National Lottery good cause funding across the country&quot;.&mdash;[<i>Official Report</i>, 13/3/06; col. 1043.]</p>
+	<p pid="a.34.3/4" class="indent">&quot;Clause 11 will ensure that all lottery distributors can take part fully in the activities of the National Lottery Promotions Unit, which seeks to raise positive awareness of, and support for, the benefits of National Lottery good cause funding across the country&quot;.&mdash;[<phrase class="offrep" id="lords/2006-03-13.1043"><i>Official Report</i>, 13/3/06; col. 1043</phrase>.]</p>
 	<p pid="a.34.3/5">I do not think that anybody would disagree with that. It is only when you turn to the provisions of the Bill that any doubt arises. Clause 11(c) mentions,</p>
 	<p pid="a.34.3/6" class="indent">&quot;encouraging participation in activities relating to the National Lottery in general&quot;.</p>
 	<p pid="a.34.3/7">That is when doubts begin to creep in. Those words are very broad. It does not say &quot;encouraging participation in projects funded by the National Lottery in general&quot; or something more specific. It really does not reflect the Minister's assurance.</p>
@@ -326,36 +329,7 @@
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.42.2" newgid="uk.org.publicwhip/lords/2006-04-24b.42.2" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.42.3" newgid="uk.org.publicwhip/lords/2006-04-24b.42.3" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.42.4" newgid="uk.org.publicwhip/lords/2006-04-24b.42.4" matchtype="perfectmatch"/>
-<gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.42.5" newgid="uk.org.publicwhip/lords/2006-04-24b.42.5" matchtype="changes"/>
-<speech id="uk.org.publicwhip/lords/2006-04-24a.42.5" speakerid="uk.org.publicwhip/lord/100592" speakername="Lord Shutt of Greetland" colon=":" colnum="42"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60424-13.htm#60424-13_spnew6">
-	<p pid="a.42.5/1">My Lords, this series of amendments addresses the regional dimension. I referred to this at Second Reading and again in Committee and I return to it today. Why? Well, first, regionalism worked with the Community Fund, and this is going backwards. It is even part of the strapline of the Community Fund, which is a decentralised organisation working in every part of the UK.</p>
-	<p pid="a.42.5/2">Secondly, administrative devolution is to remain. We have been told that there are to be regional offices all over England, but regional governance is missing. Thirdly, there is no evidence that there has been any failure with the Community Fund under the existing structure. Fourthly, there is a concentration of power concerning well over &pound;600 million. I believe that it is wrong to have such concentration of power in so few hands and that we should devolve that power within England. Fifthly, if the system is good enough for Scotland, Wales and Northern Ireland and, indeed, for the Isle of Man, Guernsey and Jersey, it is good enough for the English regions.</p>
-	<p pid="a.42.5/3">I listened at the time and have had a chance to reflect on what the Minister said to me. At Second Reading I referred to the committee of the Big Lottery Fund being out of balance. Of its 17 members, three are from Northern Ireland, three are from Wales, three are from Scotland&mdash;indeed, one of the English members arrived from Scotland only in 2004&mdash;and all but two of the English members represent London and the south-east. At Second Reading the Minister said to me:</p>
-	<p pid="a.42.5/4" class="indent">&quot;The noble Lord also mentioned the issue of representation. We are in an interim stage at the present time. The current arrangement is a temporary measure, and we intend to provide for the final Big Lottery Fund board to have 12 members: one member each to represent England, Scotland, Wales and Northern Ireland, the other members general UK members. I think that addresses what he regarded as somewhat over-representation of the communities of the United Kingdom and the under-representation of the regions of England&quot;.&mdash;[<i>Official Report</i>, 6/2/06; col. 500.]</p>
-	<p pid="a.42.5/5">But the more I ponder that, the more I think that is the problem. Normally, when you get temps in, you do not make principles and policies. We have been told that the 17 are temps and that eventually we are to have 12 members, yet they are laying the plans. I am afraid that that has been the problem.</p>
-	<p pid="a.42.5/6">In Committee I considered the regional dimension again. The Minister said to me:</p>
-	<p pid="a.42.5/7" class="indent">&quot;Devolution to the regions of England is of course a different matter. While it is often a good thing for policy reasons, as the noble Lord will recognise, because he knows how much we have enthused about aspects of regional policy in this Government, there is no statutory framework&quot;.</p>
-	<p pid="a.42.5/8">But that is why we are here. This is a Humpty-Dumpty Bill in that the Big Lottery was set up in 2004 and we are only now legislating for it, but legislation can make a statutory framework.</p>
-	<p pid="a.42.5/9">The Minister continued:</p>
-	<p pid="a.42.5/10" class="indent">&quot;We believe that decisions on how best to ensure that there is an English regional dimension to its work are best made by the Big Lottery Fund itself&quot;.</p>
-	<p pid="a.42.5/11">But that Big Lottery Fund has been set up so that that does not happen. The Minister further said that,</p>
-	<p pid="a.42.5/12" class="indent">&quot;the fund has decided it will not have general English regional committees. English programmes will be national&quot;.&mdash;[<i>Official Report</i>, 13/3/06; col. 1091.]</p>
-	<p pid="a.42.5/13">My view is that it should be for Parliament and not the fund to decide that. I shall refer later in detail to the fund and its decision-making, but in my view it is for Parliament to decide whether that should be the case.</p>
-	<p pid="a.42.5/14">The Minister further stated:</p>
-	<p pid="a.42.5/15" class="indent">&quot;I hope the noble Lord will recognise that we have not ignored the regional element with regard to the structure of the fund, but we think a small focused fund concerned with strategy is right&quot;.&mdash;[<i>Official Report</i>, 13/3/06; col. 1092.]</p>
-	<p pid="a.42.5/16">But this is not a small, focused fund; it is a huge fund. It has huge sums of money with a variety of programmes. Of course, committees are lined up for Northern Ireland, Wales and Scotland.</p>
-	<p pid="a.42.5/17">It is easy to give crumbs to the Isle of Man, Jersey and Guernsey. Perhaps the civil servants assisting the board do not mind too much because it involves only a tiny sum of money relative to the whole, which would be excluded from their powers.</p>
-	<p pid="a.42.5/18">I shall now consider the temporary board and its work. It these days of openness, the temporary board has placed some of its minutes and agendas on the internet. For example, five of the board agendas from October 2004 to May 2005 and eight of the minutes are on the internet. For some reason October 2004 is missing, but they go up to January 2006. March 2006 has not yet arrived on the internet, but I am not complaining particularly about that.</p>
-	<p pid="a.42.5/19">I have no idea how many meetings were held prior to October 2004. There is reference to a meeting in September 2004, so clearly the board met earlier. The Minister said in Committee that the fund had decided that it would not have regional committees. I have been through all the minutes and see no reference other than one at minute 19.4 of <phrase class="date" code="2004-11-16">16 November 2004</phrase>, which states:</p>
-	<p pid="a.42.5/20" class="indent">&quot;It was commented that, during discussions, very little mention has been made of the English regions and their needs&quot;.</p>
-	<p pid="a.42.5/21">So it remained. There is no information at the next or any other meeting. I have looked carefully through the minutes. In March 2005, minute 24.8(d) states</p>
-	<p pid="a.42.5/22" class="indent">&quot;that the Board should debate the role of the Country Committees in the context of the Big Lottery Fund as a UK-wide organisation before the re-introduction of any draft legislation&quot;.</p>
-	<p pid="a.42.5/23">The board was clearly interested in the legislation&mdash;and the issue was picked up again on <phrase class="date" code="2006-05-17">17 May</phrase>, but there was still no reference to the English regions. It then decided to look at the committee structure. It got three from Northern Ireland, three from Wales, three from Scotland, one from England and the chairman and the vice-chairman to look at the structure. Is it any wonder that discussions got nowhere when there is no vested interest for the regions of England?</p>
-	<p pid="a.42.5/24">On <phrase class="date" code="2005-07-19">19 July 2005</phrase> the chair highlighted the considerable officer time and effort involved in preparing the Committee stage of the Bill. There may have been officer time, but there is no reference in the minutes to the board considering the Bill or anything about the regions of England. The board was asked to note the report. One concludes that any work that has been done in this area has been done by lottery servants, not the board.</p>
-	<p pid="a.42.5/25">Eventually on <phrase class="date" code="2005-11-15">15 November 2005</phrase> the board considered the country committees, and decided that it will have a committee of five in Northern Ireland, a committee of 12 in Scotland and a committee of six in Wales. England awaits. It clearly struggled with England, but eventually it decided on <phrase class="date" code="2006-01-17">17 January 2006</phrase> that there would be a committee of 10 in England. The board then scratched its head and thought that it had better have a committee of 10 in Scotland as well, as it could not have 12.</p>
-	<p pid="a.42.5/26">It has placed eight separate sets of minutes on the internet, and it is clear that there has been no consideration of the English regions. It seems to me that that temporary committee has not been suitable for the purpose of looking at what is right for the regions of England. Indeed, it is not surprising in those circumstances&mdash;seeing that the noble Lord, Lord Barnett, is present&mdash;that they had a splendid Barnett formula carve-up of resources which, at a later stage, they reaffirmed.</p>
-	<p pid="a.42.5/27">To conclude, the Minister says that it is not in the legislation. But that is why we have come; to make legislation. The Minister says to me, &quot;It's up to the Big Lottery Fund. They can make their own arrangements&quot;. Well, they have not done so, not being set up or equipped to look at the English regions. We can and we should. I beg to move.</p>
-</speech>
+<gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.42.5" newgid="uk.org.publicwhip/lords/2006-04-24b.42.5" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.45.0" newgid="uk.org.publicwhip/lords/2006-04-24b.45.0" matchtype="perfectmatch"/>
 <gidredirect oldgid="uk.org.publicwhip/lords/2006-04-24a.45.1" newgid="uk.org.publicwhip/lords/2006-04-24b.45.1" matchtype="changes"/>
 <speech id="uk.org.publicwhip/lords/2006-04-24a.45.1" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="45"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/60424-14.htm#60424-14_spnew1">
@@ -453,7 +427,7 @@
 	<p pid="a.61.0/3">Under the interim arrangements which applied from 2001 to last year, bananas from the ACP producing countries could be imported free of duty up to a quota limit of 750,000 tonnes each year. Bananas from elsewhere were subject to a tariff rate of &euro;75 per tonne against a quota limit of 2.65 million tonnes; over-quota bananas were subject to higher tariffs&mdash;&euro;680&mdash;which were generally prohibitive.</p>
 	<p pid="a.61.0/4">Last year saw important developments as the EU sought to honour its obligations arising from the 2001 understanding&mdash;in other words, to end the MFN quota and move to a tariff-only system. The EU secured a broad negotiating mandate from the Council, such that its aim was to maintain existing levels of protection and preferences for ACP countries, while respecting the Community's obligations and commitments to other trading partners, EU producers and EU consumers. Acting on that negotiating mandate, the EU Commission notified the WTO in January 2005 that it intended to replace its concessionary tariff quotas on MFN bananas with a bound duty of &euro;230 per tonne.</p>
 	<p pid="a.61.0/5">After limited negotiations, the MFNs invoked arbitration. In August, the arbitrator ruled that the Commission's proposals would not maintain MFN market access. Further attempts at negotiation were fruitless and, in the absence of agreement, the Commission itself invoked a second round of arbitration in late September on a revised proposal for a tariff level of &euro;187 per tonne, together with a duty free quota for imports from ACP producer countries. Late October, the arbitrator ruled again that the EU had failed to rectify the matter, thus exhausting the procedures agreed in 2001. So we were in uncharted WTO waters, and it then fell to the Community to decide how to meet its tariff-only commitment. Please remember that it had to have a new arrangement in place by <phrase class="date" code="2006-01-01">1 January 2006</phrase>.</p>
-	<p pid="a.61.0/6">On <phrase class="date" code="">29 November</phrase> last year, under our presidency, the EU agreed&mdash;by a narrow qualified majority&mdash;a new import tariff of &euro;176 per tonne to apply to imports of bananas from most favoured nation countries. It was also agreed that the new import regime would include a duty free annual import quota of 775,000 tonnes for ACP bananas, also to apply from <phrase class="date" code="2006-01-01">1 January</phrase>.</p>
+	<p pid="a.61.0/6">On <phrase class="date" code="2006-11-29">29 November</phrase> last year, under our presidency, the EU agreed&mdash;by a narrow qualified majority&mdash;a new import tariff of &euro;176 per tonne to apply to imports of bananas from most favoured nation countries. It was also agreed that the new import regime would include a duty free annual import quota of 775,000 tonnes for ACP bananas, also to apply from <phrase class="date" code="2006-01-01">1 January</phrase>.</p>
 	<p pid="a.61.0/7">Of course, I am well aware that ACP suppliers would have favoured a higher tariff than &euro;176 or even an extension of existing arrangements. However, most favoured nations have equivalent weight on the other end of the rope calling for a lower tariff. Given the EU's obligations in WTO and after two arbitration decisions found against the EU, we believe that this was the best achievable result. Frankly, a result was needed&mdash;<phrase class="date" code="2006-01-01">1 January 2006</phrase> loomed.</p>
 	<p pid="a.61.0/8">Hitherto the ACP quota had been managed through the complex allocation of licences to traditional and non-traditional operators. As we have always imported the largest quantity of ACP bananas into the EU, its operators held the biggest share of the licences. However, as part of last November's agreement to move to a tariff-only regime, the Council of Ministers decided that the licence system for the ACP quota should be changed to provide access on a &quot;first come first served&quot; basis for at least 50 per cent of ACP imports. That change followed lobbying from production and trading interests based in West African and Caribbean countries with a less established history of exporting to the EU, from accession countries and from some longer established member states which favour freer trade mechanisms.</p>
 	<p pid="a.61.0/9">In February this year, the bananas management committee adopted new rules for quota management. Sixty per cent of the quota will be made available on a &quot;first come first served&quot; basis. The remaining 40 per cent of the quota is still reserved for operators who previously held a licence. Importantly, those operators, mostly in this country, that hold such licences will also be able to take advantage of the &quot;first come first served&quot; share of the quota. Moreover, they should be able to manage their licences in such a way that they can use them at the end of each two month tranche of &quot;first come first served&quot; to offset the duty which would otherwise be payable. This is an option which is not available to non-traditional operators. I believe that it was a significant concession to the UK on the part of the Commission, as all other member states generally favoured a larger share for &quot;first come first served&quot;, or, indeed, wanted to do away with historical licences altogether.</p>

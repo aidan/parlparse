@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -66,7 +85,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1057.3" speakerid="uk.org.publicwhip/lord/100103" speakername="Lord Campbell of Croy" colon="" colnum="1057"  time="011:07:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-01.htm#10410-01_spopq0">
 	<p pid="a.1057.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1057.3/2" class="indent">What progress has been made in reducing fraud in the system of housing benefit.</p>
+	<p pid="a.1057.3/2" class="indent" pwmotiontext="asked">What progress has been made in reducing fraud in the system of housing benefit.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1057.4" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="1057"  time="011:07:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-01.htm#10410-01_spmin1">
@@ -104,7 +123,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1059.1" speakerid="uk.org.publicwhip/lord/100553" speakername="Earl Russell" colon="" colnum="1059"  time="011:11:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-01.htm#10410-01_spopq1">
 	<p pid="a.1059.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1059.1/2" class="indent">What proportion of the reduction in the claimant count for unemployment since 1997 is the result of people entering employment.</p>
+	<p pid="a.1059.1/2" class="indent" pwmotiontext="asked">What proportion of the reduction in the claimant count for unemployment since 1997 is the result of people entering employment.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1059.2" speakerid="uk.org.publicwhip/lord/100052" speakername="Baroness Blackstone" colon=":" colnum="1059"  time="011:11:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-01.htm#10410-01_spmin2">
@@ -157,7 +176,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1060.6" speakerid="uk.org.publicwhip/lord/100102" speakername="Lord Campbell of Alloway" colon="" colnum="1060"  time="011:16:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-02.htm#10410-02_spopq0">
 	<p pid="a.1060.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1060.6/2">Whether they agree with the Chief of the Defence Staff, Admiral Sir Michael Boyce, that junior ranks acting on orders believed to be proper are liable to be impleaded to stand trial for war crimes; and, if so, whether in the exercise of the treaty-making power of the Crown, a declaration (under Article 124) excluding application of Article 8 to the Armed Forces should be made on ratification of the International Criminal Court statute.</p>
+	<p pid="a.1060.6/2" pwmotiontext="asked">Whether they agree with the Chief of the Defence Staff, Admiral Sir Michael Boyce, that junior ranks acting on orders believed to be proper are liable to be impleaded to stand trial for war crimes; and, if so, whether in the exercise of the treaty-making power of the Crown, a declaration (under Article 124) excluding application of Article 8 to the Armed Forces should be made on ratification of the International Criminal Court statute.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1061.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="1061"  time="011:16:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-02.htm#10410-02_spmin0">
@@ -248,7 +267,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1064.5" speakerid="uk.org.publicwhip/lord/100248" speakername="Viscount Goschen" colon="" colnum="1064"  time="011:29:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-03.htm#10410-03_spopq0">
 	<p pid="a.1064.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1064.5/2" class="indent">Whether they consider that the use of unattributed briefings to the media represents an appropriate mechanism for announcing Government policy.</p>
+	<p pid="a.1064.5/2" class="indent" pwmotiontext="asked">Whether they consider that the use of unattributed briefings to the media represents an appropriate mechanism for announcing Government policy.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-04-10a.1064.6" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1064"  time="011:29:00" url="http://www.publications.parliament.uk/pa/ld200001/ldhansrd/vo010410/text/10410-03.htm#10410-03_spmin0">

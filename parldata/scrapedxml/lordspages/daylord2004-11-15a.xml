@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +68,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1185.1" speakerid="uk.org.publicwhip/lord/100203" speakername="Lord Falconer of Thoroton" colon=":" colnum="1185"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_spmin0">
-	<p pid="a.1185.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I will be undertaking a ministerial visit to Cambridgeshire on <phrase class="date" code="">Tuesday, 16 November</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
+	<p pid="a.1185.1/1">My Lords, before business begins, may I take the opportunity to inform the House that I will be undertaking a ministerial visit to Cambridgeshire on <phrase class="date" code="2004-11-16">Tuesday, 16 November</phrase>? Accordingly, I trust that the House will grant me leave of absence.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-11-15a.1185.2" nospeaker="true" colnum="1185"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_head1">
@@ -69,7 +89,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1185.5" speakerid="uk.org.publicwhip/lord/100638" speakername="Baroness Thomas of Walliswood" colon="" colnum="1185"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_spopq0">
 	<p pid="a.1185.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1185.5/2" class="indent">What progress has been made in the four years since the relevant resolutions were passed in the United Nations Security Council and the European Parliament to involve women in conflict management, peace-building and post-conflict reconstruction in the Balkans, the Middle East, Afghanistan and Africa.</p>
+	<p pid="a.1185.5/2" class="indent" pwmotiontext="asked">What progress has been made in the four years since the relevant resolutions were passed in the United Nations Security Council and the European Parliament to involve women in conflict management, peace-building and post-conflict reconstruction in the Balkans, the Middle East, Afghanistan and Africa.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1185.6" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1185"  time="014:36:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_spmin2">
@@ -90,7 +110,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1186.3" speakerid="uk.org.publicwhip/lord/100421" speakername="Baroness Massey of Darwen" colon="" colnum="1186"  time="014:39:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_spopq1">
 	<p pid="a.1186.3/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1186.3/2" class="indent">What progress has been made on their anti-bullying strategy.</p>
+	<p pid="a.1186.3/2" class="indent" pwmotiontext="asked">What progress has been made on their anti-bullying strategy.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1186.4" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="1186"  time="014:39:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-01.htm#41115-01_spmin3">
@@ -214,7 +234,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1190.8" speakerid="uk.org.publicwhip/lord/100042" speakername="Lord Berkeley" colon="" colnum="1190"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-02.htm#41115-02_spopq0">
 	<p pid="a.1190.8/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1190.8/2" class="indent">What appraisal process has taken place to compare the Crossrail and London Regional Metro schemes in order to create an east-west rail line across London.</p>
+	<p pid="a.1190.8/2" class="indent" pwmotiontext="asked">What appraisal process has taken place to compare the Crossrail and London Regional Metro schemes in order to create an east-west rail line across London.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1191.0" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="1191"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-02.htm#41115-02_spnew16">
@@ -278,11 +298,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1193.2" speakerid="uk.org.publicwhip/lord/100467" speakername="Baroness Northover" colon="" colnum="1193"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-03.htm#41115-03_spopq0">
 	<p pid="a.1193.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1193.2/2" class="indent">What action they propose to take in the light of attacks by the Sudanese police force on refugee camps in Sudan.</p>
+	<p pid="a.1193.2/2" class="indent" pwmotiontext="asked">What action they propose to take in the light of attacks by the Sudanese police force on refugee camps in Sudan.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1193.3" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1193"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-03.htm#41115-03_spnew10">
-	<p pid="a.1193.3/1">My Lords, we have strongly condemned these forced relocations, and we have repeatedly made it clear that all returns must be voluntary and carried out after full international consultation. Our ambassador immediately protested about the relocations on 3 and <phrase class="date" code="">10 November</phrase>. We have pressed both sides to uphold their security and humanitarian obligations. We have funded and expanded the African Union monitoring mission. We are pressing for a strong United Nations Security Council resolution to restrain violence and to maintain the threat of sanctions as set out in earlier resolutions. The Prime Minister has announced &pound;100 million in aid next year, subject to a comprehensive peace agreement.</p>
+	<p pid="a.1193.3/1">My Lords, we have strongly condemned these forced relocations, and we have repeatedly made it clear that all returns must be voluntary and carried out after full international consultation. Our ambassador immediately protested about the relocations on 3 and <phrase class="date" code="2004-11-10">10 November</phrase>. We have pressed both sides to uphold their security and humanitarian obligations. We have funded and expanded the African Union monitoring mission. We are pressing for a strong United Nations Security Council resolution to restrain violence and to maintain the threat of sanctions as set out in earlier resolutions. The Prime Minister has announced &pound;100 million in aid next year, subject to a comprehensive peace agreement.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1193.4" speakerid="uk.org.publicwhip/lord/100467" speakername="Baroness Northover" colon=":" colnum="1193"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-03.htm#41115-03_spnew11">
@@ -299,7 +319,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1194.1" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1194"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-03.htm#41115-03_spnew14">
-	<p pid="a.1194.1/1">My Lords, the discussions in Nairobi will be conducted on the north/south conflict, while in Darfur the AU has expanded its monitoring force from 500 to some 3,000 plus, as the noble Lord indicated. We have done a great deal to help with the financing of that monitoring presence. The noble Lord asked whether this is adequate. We have alas seen what has happened over recent days. Monitors are not necessarily able to intervene in the sort of difficulties described by the noble Lord. I am bound to say to him that the key to this is not AU monitoring; rather it is that the Government of Sudan and the rebel forces really must live up to the protocols in relation to security and humanitarian assistance to those who are suffering that they signed on <phrase class="date" code="">9 November</phrase>.</p>
+	<p pid="a.1194.1/1">My Lords, the discussions in Nairobi will be conducted on the north/south conflict, while in Darfur the AU has expanded its monitoring force from 500 to some 3,000 plus, as the noble Lord indicated. We have done a great deal to help with the financing of that monitoring presence. The noble Lord asked whether this is adequate. We have alas seen what has happened over recent days. Monitors are not necessarily able to intervene in the sort of difficulties described by the noble Lord. I am bound to say to him that the key to this is not AU monitoring; rather it is that the Government of Sudan and the rebel forces really must live up to the protocols in relation to security and humanitarian assistance to those who are suffering that they signed on <phrase class="date" code="2004-11-09">9 November</phrase>.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1194.2" speakerid="uk.org.publicwhip/lord/100026" speakername="Lord Astor of Hever" colon=":" colnum="1194"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-03.htm#41115-03_spnew15">
@@ -599,7 +619,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1208.7" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="1208"  time="015:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-07.htm#41115-07_spnew14">
-	<p pid="a.1208.7/1">My Lords, I apologise profoundly, because I checked and was told that the draft regulations had certainly been sent to Members on the Front Benches and to those who had participated in our discussions. I made a particular point of checking and I was told that they had been sent on <phrase class="date" code="">11 November</phrase>. I am therefore somewhat puzzled that they appear not to have reached your Lordships, given that today is <phrase class="date" code="">15 November</phrase>. I am sorry, but we have now re-checked&mdash;I am assured that they were sent on <phrase class="date" code="">11 November</phrase>. I apologise, because I had hoped that the draft regulations would have addressed noble Lords' concerns. There cannot have been an error by the department. I must assume that somehow they have been lost in the delivery system. I made a particular effort in trying to ensure that noble Lords received them by Third Reading, as I had promised. I shall try to obtain extra copies and ask the Doorkeepers to distribute them, if that is permitted, so that noble Lords can examine them before we finish today. I am distressed by this failure, which should not have happened.</p>
+	<p pid="a.1208.7/1">My Lords, I apologise profoundly, because I checked and was told that the draft regulations had certainly been sent to Members on the Front Benches and to those who had participated in our discussions. I made a particular point of checking and I was told that they had been sent on <phrase class="date" code="2004-11-11">11 November</phrase>. I am therefore somewhat puzzled that they appear not to have reached your Lordships, given that today is <phrase class="date" code="2004-11-15">15 November</phrase>. I am sorry, but we have now re-checked&mdash;I am assured that they were sent on <phrase class="date" code="2004-11-11">11 November</phrase>. I apologise, because I had hoped that the draft regulations would have addressed noble Lords' concerns. There cannot have been an error by the department. I must assume that somehow they have been lost in the delivery system. I made a particular effort in trying to ensure that noble Lords received them by Third Reading, as I had promised. I shall try to obtain extra copies and ask the Doorkeepers to distribute them, if that is permitted, so that noble Lords can examine them before we finish today. I am distressed by this failure, which should not have happened.</p>
 	<p pid="a.1208.7/2">Clause 115 establishes the requirement that the board must prepare, maintain and review a statement of its investment principles. This has long been a requirement for the trustees of occupational pension schemes. The amendment seeks to remove the power for regulations to set out procedures that the PPF board must adhere to before preparing or revising that statement. I had hoped that our previous debates on this subject had provided reassurance that the provisions in this clause were not designed to give the Government unfettered control over the board's investment principles. In our previous debates I offered to circulate a draft copy of the regulations which I had hoped that noble Lords would have had the opportunity to consider. As I say, I am distressed by the failure and will ensure that noble Lords reveive photocopies today.</p>
 	<p pid="a.1208.7/3">During our most recent discussion of this clause, I was asked whether the intentions of subsection (3) could be met by the provisions in subsection (4). Regulations under subsection (4) will be concerned with the form and contents of the statement of investment principles and could not be used to require that the board considers relevant expert advice. That is why we wish to retain subsection (3) to provide for this important regulatory check.</p>
 	<p pid="a.1208.7/4">I believe that it is reasonable for the board to be required to follow certain procedures in producing its statement of investment principles. This paragraph is about procedures rather than principles. We have provided the board with appropriate powers covering investment and statements of investment principles. I hope that we have demonstrated that we intend to use the provisions of this subsection in an entirely reasonable manner. Given that this matter relates only to procedures, not to policy control, I hope that the noble Lord, Lord Lucas, will withdraw the amendment.</p>
@@ -678,19 +698,19 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1213.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="1213"  time="015:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-09.htm#41115-09_spnew0">
 	<p pid="a.1213.0/1">My Lords, as the noble Baroness rightly pointed out, the genesis of this amendment arises from the Written Statement that was made to the House last Monday but that, generally speaking, did not become available to the public or ourselves until the Tuesday morning. It was a matter of some astonishment when we discovered that. The noble Baroness did, of course, repeat the Statement made by her right honourable friend in another place. The final section of it read:</p>
-	<p pid="a.1213.0/2" class="indent">&quot;The Pensions Bill provides a power that could be used to exclude schemes that have an insolvency event before the PPF is launched. We wish to make clear that we have no plans to use this power&quot;.&mdash;[<i>Official Report</i>, 8/11/04; col. WS17.]</p>
+	<p pid="a.1213.0/2" class="indent">&quot;The Pensions Bill provides a power that could be used to exclude schemes that have an insolvency event before the PPF is launched. We wish to make clear that we have no plans to use this power&quot;.&mdash;[<phrase class="offrep" id="wms/2004-11-08.17"><i>Official Report</i>, 8/11/04; col. WS17</phrase>.]</p>
 	<p pid="a.1213.0/3">Both the noble Baroness's amendment and ours therefore knock out the clause that the Government do not wish to use. That seems appropriate, although I understand that we have had representations today saying, quite the contrary, that we ought to leave it in in case it is needed. But at all events, the Government do not propose to use it. It seems sensible, therefore, to knock it out.</p>
 	<p pid="a.1213.0/4">What gave us great cause for concern, however, was that this information was not available to us during our debates last Monday. Moreover, the other place did not have it ahead of oral Parliamentary Questions. I think that it would have been helpful if it had been available.</p>
 	<p pid="a.1213.0/5">Another apparent point of substance which gave us cause for concern was that the Government seemed to be moving the boundaries. We come in a later group of amendments to the question of whether there is a gap between the FAS coming in and the PPF coming in&mdash;or whether, indeed, instead of a gap there is an overlap. In those amendments, we are seeking to have one of them in place precisely at the moment when the other begins. However, the Written Statement seemed to move the dividing line&mdash;assuming that it was neither an overlap nor a gap&mdash;to a later date than we had originally expected. The consequence of that would be to shift the responsibility for, for want of a better expression, &quot;bailing out&quot; the pension scheme from the FAS, financed by the Treasury. There is a division of opinion on this; there are nods and shakes of heads on the other side of the House, no doubt recorded faithfully on television, which show a degree of confusion.</p>
 	<p pid="a.1213.0/6">The impression was that the dividing line had been moved later in time&mdash;for example, in the particular case of, I think, Turner &amp; Newell, and so on. The effect would be to remove the burden and strain on what is undoubtedly a totally inadequate sum for the FAS&mdash;&pound;400 million spread over 20 years&mdash;and to place that strain on to the PPF. Indeed, all the way through, ever since the Chancellor was pushed into giving the &pound;400 million figure, with no basis for calculating such a figure, the impression has been that he is trying to get out of as much of that as possible.</p>
-	<p pid="a.1213.0/7">When we saw the Written Statement, belatedly as I say, our impression was that the Minister was effectively shifting the cost of bailing out such schemes from the taxpayer to the levy payers, who are already suffering severely. That was rather borne out by reports&mdash;for example, one in the <i>Times </i>of <phrase class="date" code="">12 November</phrase> which stated:</p>
+	<p pid="a.1213.0/7">When we saw the Written Statement, belatedly as I say, our impression was that the Minister was effectively shifting the cost of bailing out such schemes from the taxpayer to the levy payers, who are already suffering severely. That was rather borne out by reports&mdash;for example, one in the <i>Times </i>of <phrase class="date" code="2004-11-12">12 November</phrase> which stated:</p>
 	<p pid="a.1213.0/8" class="indent">&quot;The NAPF were infuriated earlier this week when the Minister appeared to break his promise to the industry that the PPF would not be open to companies that became insolvent before April 2005&quot;.</p>
 	<p pid="a.1213.0/9">If the noble Baroness says all of this is a complete misunderstanding and that there is no such shift, we shall be reassured that the fears expressed by the NAPF, and others, are groundless. However, it is still my impression that what is happening as a result of this Statement is what we supposed; namely, the dividing line did not apply to the date that we thought it did, but was moved to a later date with the consequent adjustment of costs from the FAS to the PPF.</p>
 	<p pid="a.1213.0/10">If the noble Baroness assures me that the NAPF and others have misunderstood the situation, we shall need to consider very carefully the way in which she explains that misunderstanding. The Written Statement, which is an unsatisfactory form of announcement in any case in my view, appears to have created considerable confusion and concern. Be that as it may, certainly the case for knocking out the clause that will not be used, and which we and the Government want to knock out, constitutes a good amendment. We are happy to go along with the Government's version of it.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1215.0" speakerid="uk.org.publicwhip/lord/100469" speakername="Lord Oakeshott of Seagrove Bay" colon=":" colnum="1215"  time="016:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-09.htm#41115-09_spnew1">
-	<p pid="a.1215.0/1">My Lords, I wish to put one matter on the record as a matter of clarification and simplification, of which we are a little short. I have now been handed a copy of the Minister's letter of <phrase class="date" code="">11 November</phrase> to the noble Lord, Lord Higgins, copied to me and others, which I have received. I am bound to say that it includes a draft regulation so to that extent clearly there has been a misunderstanding. The letter concerned various matters. I am happy to confirm that I have received it.</p>
+	<p pid="a.1215.0/1">My Lords, I wish to put one matter on the record as a matter of clarification and simplification, of which we are a little short. I have now been handed a copy of the Minister's letter of <phrase class="date" code="2004-11-11">11 November</phrase> to the noble Lord, Lord Higgins, copied to me and others, which I have received. I am bound to say that it includes a draft regulation so to that extent clearly there has been a misunderstanding. The letter concerned various matters. I am happy to confirm that I have received it.</p>
 	<p pid="a.1215.0/2">I have listened carefully to the Minister's comments on this amendment and the Written Statement. No doubt she will tell me that it is all there somewhere, but, given the confusion and the concern that have arisen in industry, if she could tell us in words of one or very few syllables what the qualifications are for an employer's qualifying insolvency event, as she described it, I think we would all be clearer.</p>
 </speech>
 
@@ -707,7 +727,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1217.0" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon=":" colnum="1217"  time="016:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-10.htm#41115-10_spnew0">
 	<p pid="a.1217.0/1">My Lords, before the noble Baroness sits down, I think that we are agreed on knocking out this clause. However, on the wider issue that we are discussing, the noble Baroness seemed to say that there was a danger that schemes delayed proceedings in order to enter the PPF instead of the FAS because the terms of the former were more advantageous. It seems to us that the Written Statement achieved precisely that. It enabled some schemes to delay proceedings in order to enter the PPF rather than the FAS. We came to that view in part due to the Written Statement, which said that,</p>
-	<p pid="a.1217.0/2" class="indent">&quot;eligible schemes, whose sponsoring employer has already entered into insolvency proceedings may still be able to receive PPF compensation&quot;.&mdash;[<i>Official Report</i>, Commons, 8/11/04; col. WS 17.]</p>
+	<p pid="a.1217.0/2" class="indent">&quot;eligible schemes, whose sponsoring employer has already entered into insolvency proceedings may still be able to receive PPF compensation&quot;.&mdash;[<phrase class="offrep" id="wms/2004-11-08.17"><i>Official Report</i>, Commons, 8/11/04; col. WS 17</phrase>.]</p>
 	<p pid="a.1217.0/3">It looked as though the crucial date was the beginning of insolvency proceedings. The noble Baroness is now saying that we have all misunderstood that, and that it is actually the wind-up. If so, why are we dealing with the insolvency proceedings at the beginning at all? It certainly has not been clear, in Committee or at Report, that the crucial date is the wind-up. It will then be easier for companies to delay that procedure in order to get the PPF, and the Government seem to be encouraging that.</p>
 </speech>
 
@@ -841,13 +861,13 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1223.1" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon="" colnum="1223"  time="016:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-11.htm#41115-11_spnew13">
 	<p pid="a.1223.1/1" pwmotiontext="moved">moved Amendment No. 51:</p>
-	<p pid="a.1223.1/2" class="indent" pwmotiontext="moved">Page 136, line 6, leave out paragraph (a).The noble Baroness said: My Lords, the Opposition tabled the amendments in this group on Report. The amendments required that the initial period would start on the appointed day and end on the following <phrase class="date" code="">31 March</phrase> or 12 months after the appointed day and that the board must set both a risk-based pension protection levy and a scheme-based levy for each financial year falling after the initial period, subject to modifications by Clause 181.</p>
+	<p pid="a.1223.1/2" class="indent" pwmotiontext="moved">Page 136, line 6, leave out paragraph (a).The noble Baroness said: My Lords, the Opposition tabled the amendments in this group on Report. The amendments required that the initial period would start on the appointed day and end on the following <phrase class="date" code="2004-03-31">31 March</phrase> or 12 months after the appointed day and that the board must set both a risk-based pension protection levy and a scheme-based levy for each financial year falling after the initial period, subject to modifications by Clause 181.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1223.2" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="1223"  time="016:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-11.htm#41115-11_spnew13">
 	<p pid="a.1223.2/1">My Lords, the effect of the amendments&mdash;this goes back to my previous discussion with the noble Lord, Lord Oakeshott&mdash;was that the initial period could not be any longer than 12 months and that from the end of the transitional period the board would be obliged to set both a risk-based and a scheme-based pension protection levy in respect of all schemes.</p>
 	<p pid="a.1223.2/2">That created two problems. First, the possibility that the initial period could end 12 months after it began meant that the initial period could end after the start of a financial year&mdash;for example, if the initial period began in June. Secondly, the amendment to require the board to set both levies left a number of references to a single levy in the Bill. Some further technical consequential amendments are therefore necessary.</p>
-	<p pid="a.1223.2/3">The amendments introduce a regulation-making power to Clause 181, which concerns pension protection levies during the transitional period. This is a power to modify the clause in the event that the transitional period does not begin on <phrase class="date" code="">1 April</phrase>. The modifications would alter references so that the provisions under Clause 181 could apply to a period which began part way through the financial year&mdash;for example, the regulations would change references to &quot;financial year&quot; to &quot;financial year or part year&quot;. Such modifications could apply only for a limited period of time. They would apply to the period from the start of the transitional period to the following <phrase class="date" code="">31 March</phrase>, and then everything would be back on track again.</p>
+	<p pid="a.1223.2/3">The amendments introduce a regulation-making power to Clause 181, which concerns pension protection levies during the transitional period. This is a power to modify the clause in the event that the transitional period does not begin on <phrase class="date" code="2004-04-01">1 April</phrase>. The modifications would alter references so that the provisions under Clause 181 could apply to a period which began part way through the financial year&mdash;for example, the regulations would change references to &quot;financial year&quot; to &quot;financial year or part year&quot;. Such modifications could apply only for a limited period of time. They would apply to the period from the start of the transitional period to the following <phrase class="date" code="2004-03-31">31 March</phrase>, and then everything would be back on track again.</p>
 	<p pid="a.1223.2/4">The other amendments in the group delete references to a single levy throughout Clauses 176, 177 and 179. In view of what I have just said, which delivers on opposition amendments, I encourage noble Lords to accept the amendments, unless they wish to revisit the issue in its entirety. I beg to move.</p>
 </speech>
 
@@ -1457,7 +1477,7 @@
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1242.3" speakerid="uk.org.publicwhip/lord/100298" speakername="Baroness Hollis of Heigham" colon=":" colnum="1242"  time="017:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-17.htm#41115-17_spnew5">
 	<p pid="a.1242.3/1">My Lords, I am not sure I shall be able to do that. Amendment No. 69 seeks to ensure that assistance from the financial assistance scheme may be given in respect of members of pension schemes with solvent employers. We had an extensive and helpful debate at Report stage on this point. The debate underlined that there are real and important principles at stake which are not easily reconciled.</p>
 	<p pid="a.1242.3/2">The noble Lord, Lord Higgins, made some apposite remarks at the time. He said:</p>
-	<p pid="a.1242.3/3" class="indent">&quot;it is highly deplorable for a company which is perfectly solvent to renege on its pension promises, a classic moral hazard argument would ensue if the company concerned believes that the FAS will pick up the pieces&quot;.&mdash;[<i>Official Report</i>, 8/11/04; col. 707.]</p>
+	<p pid="a.1242.3/3" class="indent">&quot;it is highly deplorable for a company which is perfectly solvent to renege on its pension promises, a classic moral hazard argument would ensue if the company concerned believes that the FAS will pick up the pieces&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-08.707"><i>Official Report</i>, 8/11/04; col. 707</phrase>.]</p>
 	<p pid="a.1242.3/4">Further, if all solvent employers renege on their promises, the cost on the financial assistance scheme will be considerable and the taxpayer would be picking up the tab. That was the argument and I agree with every word.</p>
 	<p pid="a.1242.3/5">Noble Lords also discussed cases where a company may be insolvent but has a parent company or other connected company which is solvent and well able to contribute to the pension scheme. On the other hand, the noble Lord, Lord Oakeshott, also drew the House's attention to the situation where an employer is technically solvent but still in a very weak financial position in respect of funding the pension liabilities.</p>
 	<p pid="a.1242.3/6">The range of views expressed shows how complex the issue is. The Government's starting point is the principle that solvent employers should be responsible for the occupational pension schemes they provide. If they make that promise they should, if their finances permit because they are solvent, deliver it. They should not ask other people, whether as taxpayers through FAS or levy payers through the PPF, to deliver it on their behalf because the pension promise is now inconvenient to some degree.</p>
@@ -2111,7 +2131,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-15a.1260.1" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1260"  time="018:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041115/text/41115-22.htm#41115-22_spmin0">
 	<p pid="a.1260.1/1">My Lords, I would like to repeat a Statement made in another place by my right honourable friend the Secretary of State for Northern Ireland. The Statement is as follows:</p>
-	<p pid="a.1260.1/2" class="indent">&quot;With permission, Mr Speaker, I wish to make a Statement. I announced on <phrase class="date" code="">Friday 12 November</phrase> my intention to despecify the UDA, incorporating the UFF. I signalled my intention to lay an order before this House to give effect to that decision and today I have taken the earliest opportunity to do so. This House will also be aware of the statement made yesterday by the Ulster Political Research Group on behalf of the UDA. I welcome that development, which I think is positive, and will say more about the detail in due course.</p>
+	<p pid="a.1260.1/2" class="indent">&quot;With permission, Mr Speaker, I wish to make a Statement. I announced on <phrase class="date" code="2004-11-12">Friday 12 November</phrase> my intention to despecify the UDA, incorporating the UFF. I signalled my intention to lay an order before this House to give effect to that decision and today I have taken the earliest opportunity to do so. This House will also be aware of the statement made yesterday by the Ulster Political Research Group on behalf of the UDA. I welcome that development, which I think is positive, and will say more about the detail in due course.</p>
 	<p pid="a.1260.1/3" class="indent">&quot;First, I want to explain my actions in terms of despecifying the UDA. I have reviewed the status of all specified and other paramilitary organisations, as I am obliged to do under legislation, and concluded that there are sufficient grounds to despecify the UDA/UFF. For some time now, there has been contact between my officials and their political representatives. I, too, have recently met them. I view this as part and parcel of an overall strategy to bring final closure to the problems that have hindered progress in Northern Ireland and to set in place an inclusive future for all, based on an enduring political settlement.</p>
 	<p pid="a.1260.1/4" class="indent">&quot;The UPRG announced a 12-month period of 'military inactivity' by the UDA/UFF, known as the Gregg initiative, on <phrase class="date" code="2003-02-23">23 February 2003</phrase> and announced an 'indefinite extension' of the Gregg initiative on <phrase class="date" code="2004-02-24">24 February 2004</phrase>. I have taken advice from the chief constable and others and, as I am obliged to do under the terms of the Northern Ireland (Sentences) Act 1998, I have reviewed the status of all specified and other paramilitary organisations. It is my judgment, made in the round and having regard to the Act and other relevant issues, that the UDA ceasefire is now holding and is genuine.</p>
 	<p pid="a.1260.1/5" class="indent">&quot;I appreciate that some may question this decision in light of negative comments in recent IMC reports. I have carefully studied both relevant IMC reports and support the strong language directed against a range of paramilitary organisations. But it is clear, between the first and second relevant reports, that there has been a reduction in UDA activity. Other material provided to me would endorse that view.</p>
@@ -2413,9 +2433,9 @@
 	<p pid="a.1283.0/5">Changes have been made to the Bill, as the Minister knows. But Members around the House have decided that these improve the regulatory Bill which is before us. The whole issue of animal welfare is hugely important, and the inclusion of wildlife management is something for which the Minister was looking.</p>
 	<p pid="a.1283.0/6">I should like to raise three issues. The rural affairs Minister, Alun Michael, said originally, quite rightly, that the future of hunting with dogs,</p>
 	<p pid="a.1283.0/7" class="indent">&quot;should not be decided on personal taste, but on evidence on the principles of whether or not it is serving an effective purpose in managing wildlife and whether it is more or less cruel than the alternative methods currently available&quot;.</p>
-	<p pid="a.1283.0/8">His words are all on the record. He said on the &quot;Today&quot; programme on <phrase class="date" code="">28 September</phrase> that it was for the Lords to consider, to amend and to send something back constructively. I think your Lordships have done just that. I am sure that the Minister will not agree, but we cannot be accused of not doing that.</p>
+	<p pid="a.1283.0/8">His words are all on the record. He said on the &quot;Today&quot; programme on <phrase class="date" code="2004-09-28">28 September</phrase> that it was for the Lords to consider, to amend and to send something back constructively. I think your Lordships have done just that. I am sure that the Minister will not agree, but we cannot be accused of not doing that.</p>
 	<p pid="a.1283.0/9">Alun Michael went on to say that he hoped that the House of Lords would engage with the Bill and seek to improve and amend it. We have done that. He said in the Commons:</p>
-	<p pid="a.1283.0/10" class="indent">&quot;I will approach their amendments with an open mind and consider whether they are serious ones&quot;.&mdash;[<i>Official Report</i>, Commons, 15/9/94; col. 1326.]</p>
+	<p pid="a.1283.0/10" class="indent">&quot;I will approach their amendments with an open mind and consider whether they are serious ones&quot;.&mdash;[<phrase class="offrep" id="lords/1994-09-15.1326"><i>Official Report</i>, Commons, 15/9/94; col. 1326</phrase>.]</p>
 	<p pid="a.1283.0/11">He said that if they were serious amendments, they would look at them seriously.</p>
 	<p pid="a.1283.0/12">Does the Minister think that there is a hope of that happening, or will this be shoved under the carpet and rushed through?</p>
 	<p pid="a.1283.0/13">There is much more that I could say but at this stage it is not for me to do so. I hope that I have reinforced what noble Lords have said. I hope that I have shown that the Minister who is dealing with the Bill in another place clearly stated that he wanted us to consider the Bill, complete it and let it pass to another House. We have done that. It is a compromise Bill. We are all waiting to hear from the Minister what the Government's compromise is.</p>

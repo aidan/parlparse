@@ -7,38 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -49,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1291.1" speakerid="uk.org.publicwhip/lord/100231" speakername="Lord Gavron" colon="" colnum="1291"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spopq0">
 	<p pid="a.1291.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1291.1/2" class="indent">How successful the plan to charge rent to organisations involved in digging holes in the road has been in the pilot areas.</p>
+	<p pid="a.1291.1/2" class="indent" pwmotiontext="asked">How successful the plan to charge rent to organisations involved in digging holes in the road has been in the pilot areas.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1291.2" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="1291"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spnew0">
@@ -105,7 +125,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1293.3" speakerid="uk.org.publicwhip/lord/100164" speakername="Lord Davies of Oldham" colon=":" colnum="1293"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spnew12">
-	<p pid="a.1293.3/1">My Lords, the eloquence of my noble friend in asking his questions has been matched only by the noble Lord, Lord Peyton, in his persistence on this issue. Of course he is right to point out that thus far the Government have only legislated. Nevertheless, the passage of the Bill took several months. We now have the legislation in place and we have conducted the necessary consultation with local authorities and others to implement it. As I have said, from <phrase class="date" code="2006-01-04">4 January</phrase> next, when the network management duty on local authorities becomes established as a consequence of the Act, we shall see progress follow from that.</p>
+	<p pid="a.1293.3/1">My Lords, the eloquence of my noble friend in asking his questions has been matched only by the noble Lord, Lord Peyton, in his persistence on this issue. Of course he is right to point out that thus far the Government have only legislated. Nevertheless, the passage of the Bill took several months. We now have the legislation in place and we have conducted the necessary consultation with local authorities and others to implement it. As I have said, from <phrase class="date" code="2004-01-04">4 January</phrase> next, when the network management duty on local authorities becomes established as a consequence of the Act, we shall see progress follow from that.</p>
 </speech>
 
 <minor-heading id="uk.org.publicwhip/lords/2004-11-16a.1293.4" nospeaker="true" colnum="1293"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_head1">
@@ -114,11 +134,11 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1293.5" speakerid="uk.org.publicwhip/lord/100959" speakername="Baroness Cox" colon="" colnum="1293"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spopq1">
 	<p pid="a.1293.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1293.5/2" class="indent">What action they will take in view of the apparent continuation of the violation of human rights of ethnic minority groups in Burma.</p>
+	<p pid="a.1293.5/2" class="indent" pwmotiontext="asked">What action they will take in view of the apparent continuation of the violation of human rights of ethnic minority groups in Burma.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1293.6" speakerid="uk.org.publicwhip/lord/100624" speakername="Baroness Symons of Vernham Dean" colon=":" colnum="1293"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spmin0">
-	<p pid="a.1293.6/1">My Lords, as we have in previous years, the Government are working to ensure that human rights and the treatment of ethnic minority groups in Burma are fully addressed at the autumn United Nations General Assembly. We support the UN Special Rapporteur for Human Rights in Burma, Sergio Pinheiro, and at the ASEM meeting in Hanoi on <phrase class="date" code="">8 October</phrase>, my right honourable friend the Deputy Prime Minister called for the release of Aung San Suu Kyi, the lifting of restrictions on the National League for Democracy, the start of a genuine dialogue and an early visit by the United Nations Secretary-General's Special Representative, Razali Ismail.</p>
+	<p pid="a.1293.6/1">My Lords, as we have in previous years, the Government are working to ensure that human rights and the treatment of ethnic minority groups in Burma are fully addressed at the autumn United Nations General Assembly. We support the UN Special Rapporteur for Human Rights in Burma, Sergio Pinheiro, and at the ASEM meeting in Hanoi on <phrase class="date" code="2004-10-08">8 October</phrase>, my right honourable friend the Deputy Prime Minister called for the release of Aung San Suu Kyi, the lifting of restrictions on the National League for Democracy, the start of a genuine dialogue and an early visit by the United Nations Secretary-General's Special Representative, Razali Ismail.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1294.0" speakerid="uk.org.publicwhip/lord/100959" speakername="Baroness Cox" colon=":" colnum="1294"  time="014:46:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-01.htm#41116-01_spnew13">
@@ -167,7 +187,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1296.1" speakerid="uk.org.publicwhip/lord/100241" speakername="Lord Glentoran" colon="" colnum="1296"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-02.htm#41116-02_spopq0">
 	<p pid="a.1296.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1296.1/2" class="indent">What is their policy on the future of ministerial accountability in the Northern Ireland Assembly.</p>
+	<p pid="a.1296.1/2" class="indent" pwmotiontext="asked">What is their policy on the future of ministerial accountability in the Northern Ireland Assembly.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1296.2" speakerid="uk.org.publicwhip/lord/100013" speakername="Baroness Amos" colon=":" colnum="1296"  time="014:53:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-02.htm#41116-02_spmin1">
@@ -220,7 +240,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1298.2" speakerid="uk.org.publicwhip/lord/100307" speakername="Baroness Howe of Idlicote" colon="" colnum="1298"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-03.htm#41116-03_spopq0">
 	<p pid="a.1298.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1298.2/2" class="indent">Whether they intend to retain the Office of the Commissioner for Public Appointments in its present form and with its current responsibilities, once the present commissioner's term of office expires.</p>
+	<p pid="a.1298.2/2" class="indent" pwmotiontext="asked">Whether they intend to retain the Office of the Commissioner for Public Appointments in its present form and with its current responsibilities, once the present commissioner's term of office expires.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1298.3" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1298"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-03.htm#41116-03_spnew5">
@@ -289,7 +309,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1301.2" speakerid="uk.org.publicwhip/lord/100465" speakername="The Earl of Northesk" colon="" colnum="1301"  time="015:10:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-04.htm#41116-04_spopq0">
 	<p pid="a.1301.2/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1301.2/2" class="indent">What are the implications for the economy of the recent rise in the number of personal bankruptcies.</p>
+	<p pid="a.1301.2/2" class="indent" pwmotiontext="asked">What are the implications for the economy of the recent rise in the number of personal bankruptcies.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1301.3" speakerid="uk.org.publicwhip/lord/100817" speakername="Lord Triesman" colon=":" colnum="1301"  time="015:10:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-04.htm#41116-04_spnew4">
@@ -488,7 +508,7 @@
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1316.0" speakerid="uk.org.publicwhip/lord/100004" speakername="Lord Addington" colon=":" colnum="1316"  time="015:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-08.htm#41116-08_spnew1">
-	<p pid="a.1316.0/1">My Lords, I congratulate the Minister on presenting a document which draws attention to the link between sporting activity and health. Does he have a firm figure on the extent to which the Government want to increase sporting activity? Does he have any idea yet of the amount of resources required for physical facilities and trained personnel? On <phrase class="date" code="">4 November</phrase>, I asked the noble Lord, Lord McIntosh, a similar question but he declined to give me any form of answer.</p>
+	<p pid="a.1316.0/1">My Lords, I congratulate the Minister on presenting a document which draws attention to the link between sporting activity and health. Does he have a firm figure on the extent to which the Government want to increase sporting activity? Does he have any idea yet of the amount of resources required for physical facilities and trained personnel? On <phrase class="date" code="2004-11-04">4 November</phrase>, I asked the noble Lord, Lord McIntosh, a similar question but he declined to give me any form of answer.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1316.1" speakerid="uk.org.publicwhip/lord/100670" speakername="Lord Warner" colon=":" colnum="1316"  time="015:54:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-08.htm#41116-08_spnew2">
@@ -640,7 +660,7 @@
 	<p pid="a.1323.1/6">Having looked at the issue again with parliamentary counsel, we can see the benefit, certainly as regards clarity and consistency, of harmonising the drafting for each category of damage. So the government amendments in this group would define emergency as an event or situation which threatens serious damage to human welfare, an event or situation which threatens serious damage to the environment, or war or terrorism which threatens serious damage to security. I hope that noble Lords see that that clarifies the definition. Certainly the noble Baroness, Lady Hamwee, sees that; as she says, it is more about consequences.</p>
 	<p pid="a.1323.1/7">Before we move on to the next group of amendments, it is perhaps worth re-emphasising that the purpose of the definition of &quot;emergency&quot; is to set out the threshold of events, should they come to pass, that could trigger emergency powers. It is then the job of the triple-lock test, which is very important, to ensure that the threat of the events occurring is credible and that emergency powers are necessary to deal with those consequences. That is the important way to look at the issues. I hope that my remarks have covered the points raised in our short debate, but I wish to deal with specific issues not covered.</p>
 	<p pid="a.1323.1/8">I wish to respond first to the noble Lord, Lord Pearson of Rannoch. As the noble Baroness, Lady Buscombe, suggested, we have been over these issues several times. Let us remind ourselves of the application of the legislation in Scotland. Emergency powers are a reserved matter, as I am sure the noble Lord will be aware, and are therefore outwith the competence of the Scottish Parliament. Part 2 will therefore apply to the whole of the United Kingdom. Civil protection, on the other hand, is largely devolved to Scotland, and quite rightly so. Following their own review of civil protection arrangements, consultation exercise and discussions with their stakeholders, the Scottish Executive concluded that it was appropriate to update the legislation as it applies to Scotland. The Bill is the most effective and efficient way of doing that, given that the arrangements that the Executive wish to put in place are more or less identical to those originally proposed for England and Wales.</p>
-	<p pid="a.1323.1/9">The Scottish Parliament, as a consequence, agreed a similar Motion on <phrase class="date" code="2006-03-04">4 March</phrase> this year, giving its agreement that the United Kingdom should consider the provisions of the Bill. The Bill reflects the devolution settlement. Following Royal Assent, Scottish Ministers will make regulations and issue guidance for bodies under their jurisdiction. The Scottish Executive will also conduct a public consultation following Royal Assent. The issues that concern the noble Lord, Lord Pearson of Rannoch, should be dealt with in that respect.</p>
+	<p pid="a.1323.1/9">The Scottish Parliament, as a consequence, agreed a similar Motion on <phrase class="date" code="2004-03-04">4 March</phrase> this year, giving its agreement that the United Kingdom should consider the provisions of the Bill. The Bill reflects the devolution settlement. Following Royal Assent, Scottish Ministers will make regulations and issue guidance for bodies under their jurisdiction. The Scottish Executive will also conduct a public consultation following Royal Assent. The issues that concern the noble Lord, Lord Pearson of Rannoch, should be dealt with in that respect.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1325.0" speakerid="uk.org.publicwhip/lord/100491" speakername="Lord Pearson of Rannoch" colon=":" colnum="1325"  time="016:30:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-10.htm#41116-10_spnew5">
@@ -758,7 +778,7 @@
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1329.2" speakerid="uk.org.publicwhip/lord/100094" speakername="Baroness Buscombe" colon=":" colnum="1329"  time="016:45:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-12.htm#41116-12_spnew2">
 	<p pid="a.1329.2/1">My Lords, I thank the Minister for his response and I am grateful in particular to the noble Lord, Lord Walton of Detchant, for contributing to the debate. He came to my rescue, pointing out that these amendments relate to the terminology.</p>
 	<p pid="a.1329.2/2">I shall repeat the closing words of my noble friend Lord Jopling in the debate on Report because I want to emphasise why this amendment is so important and why the main amendment was so important on Report. My noble friend said:</p>
-	<p pid="a.1329.2/3" class="indent">&quot;It is essential that the Government have powers to direct local authorities and other public bodies to obtain that equipment in adequate quantities, to ensure&mdash;although this is not stated in the amendment&mdash;that a sufficient number of properly trained operatives is available to work it and find out whether this hazard exists. This is a crucial amendment. I hope very much that your Lordships will accept it&quot;.&mdash;[<i>Official Report</i>, 9/11/04; col. 777.]</p>
+	<p pid="a.1329.2/3" class="indent">&quot;It is essential that the Government have powers to direct local authorities and other public bodies to obtain that equipment in adequate quantities, to ensure&mdash;although this is not stated in the amendment&mdash;that a sufficient number of properly trained operatives is available to work it and find out whether this hazard exists. This is a crucial amendment. I hope very much that your Lordships will accept it&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-09.777"><i>Official Report</i>, 9/11/04; col. 777</phrase>.]</p>
 	<p pid="a.1329.2/4">Those were the words of my noble friend and we continue to support the amendment. I commend it to the House.</p>
 </speech>
 
@@ -1301,7 +1321,7 @@
 	<p pid="a.1341.1/7">We firmly believe that it is our duty, as Her Majesty's Opposition, to persuade the Minister that, given Clause 22(3)(j), we must safeguard those core enactments which protect the constitution of Parliament, the activities of Parliament and access to justice&mdash;in other words, our core freedoms and our democracy.</p>
 	<p pid="a.1341.1/8">In her letter addressed to me regarding a similar amendment on Report, the Minister stated that the Government are convinced that the absence of an express power to amend constitutionally important legislation, coupled with the clear expression of the purposes for which regulations can be made and the safeguards set out in the Bill, ensure that substantive amendment to such legislation is not possible by way of emergency regulations. I am sorry, but I simply do not accept that as a convincing argument for standing back and allowing Clause 22(3)(j) to sit on the statute book without further safeguards.</p>
 	<p pid="a.1341.1/9">In addition, in introducing an amendment on Report expressly to exempt the Human Rights Act from Clause 22(3)(j), the Minister stated that notwithstanding the Government's belief that it is not strictly necessary expressly to protect the Human Rights Act,</p>
-	<p pid="a.1341.1/10" class="indent">&quot;in the light of concerns expressed by civil liberties groups and in Parliament, the Government believe that an express provision to the effect that emergency regulations cannot disapply or modify any provision of the Human Rights Act would offer the certainty and reassurances that some seek&quot;.&mdash;[<i>Official Report</i>, 9/11/04; col. 867.]</p>
+	<p pid="a.1341.1/10" class="indent">&quot;in the light of concerns expressed by civil liberties groups and in Parliament, the Government believe that an express provision to the effect that emergency regulations cannot disapply or modify any provision of the Human Rights Act would offer the certainty and reassurances that some seek&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-09.867"><i>Official Report</i>, 9/11/04; col. 867</phrase>.]</p>
 	<p pid="a.1341.1/11">I urge the Minister to accept our amendment. In so doing, she would be responding to the many who have expressed their alarm and serious disquiet with regard to the extraordinarily wide powers which this enabling legislation confers upon individuals in government.</p>
 	<p pid="a.1341.1/12">I was struck by the byline attached to the Home Office letterhead, which is:</p>
 	<p pid="a.1341.1/13" class="indent">&quot;Building a safe, just and tolerant society&quot;.</p>
@@ -1800,7 +1820,7 @@
 	<p pid="a.1356.2/3">My noble friend Lord McNally said that,</p>
 	<p pid="a.1356.2/4" class="indent">&quot;we should not leave this kind of legislation on the statute book without an opportunity for Parliament to check on it&quot;.</p>
 	<p pid="a.1356.2/5">He went on to say that,</p>
-	<p pid="a.1356.2/6" class="indent">&quot;a sunset clause is well worth considering&quot;.&mdash;[<i>Official Report</i>, 9/11/04; col. 878.]</p>
+	<p pid="a.1356.2/6" class="indent">&quot;a sunset clause is well worth considering&quot;.&mdash;[<phrase class="offrep" id="lords/2004-11-09.878"><i>Official Report</i>, 9/11/04; col. 878</phrase>.]</p>
 	<p pid="a.1356.2/7">Since then we have given further thought to how Parliament should best exercise the kind of oversight envisaged by my noble friend. We reached the conclusion that the sunset clause would not be the ideal way to achieve that objective. If, at the end of the three years, or whatever period is considered most appropriate, no amendments are seen to be necessary to the legislation, we do not want to force Parliament to re-enact the present Bill as that would be a nonsensical waste of time. Instead we are attracted to the idea of a review and a report which would enable Parliament, as the noble Baroness suggested, to debate the operation of the whole Act, including Part I, without occupying legislative time unless it proved to be necessary at that point.</p>
 	<p pid="a.1356.2/8">There are precedents for that. The precedent I looked at was under Section 126 of the Terrorism Act 2000 under which my noble friend Lord Carlile reports to Parliament, having had access to all relevant information, including sensitive material and intelligence. In his last report to Parliament in April of this year, my noble friend said that the Terrorism Act was necessary and fit for the purpose, so there has been no need for a debate on the matter. We have not requested time for a debate on the Terrorism Act, and I do not think that any of your Lordships would suggest that we should occupy parliamentary time unnecessarily to look at that legislation.</p>
 	<p pid="a.1356.2/9">My noble friend also carries out an entirely separate review, which is non-statutory, on the operation of Part VII of the Act, which refers to Northern Ireland. So there is a precedent for having a non-statutory review as well as the statutory review of the Terrorism Act that I have already mentioned.</p>
@@ -2410,7 +2430,7 @@
 	<p pid="a.1374.0/1">My Lords, I welcomed the Minister's comments about the dry run. However, that was tempered by a conversation I had today with the Council of Mortgage Lenders. It said that if there is to be a compulsory dry run in one area of the country while there is a voluntary one in the rest of it, it will not use the home condition reports at all in the compulsory area. I therefore wish the Minister good luck in trying to sort out the incredibly good mess that he has got the Council of Mortgage Lenders and agents into.</p>
 	<p pid="a.1374.0/2">I do not take the same rosy opinion of Amendment No. 128C as the noble Baroness, Lady Hamwee. It is the softer sop: the Government knew that they would have to give something at the end and that is the easiest because it is rather meaningless as it stands.</p>
 	<p pid="a.1374.0/3">We have not discussed Amendment No. 140C at all. This amendment got off to a bad start on Report and was not moved at Third Reading. I should like to ask the Minister three questions about it. Can he tell the House who will have access to the register? What about firms, such as builders or damp-proofing companies, that decide to employ home inspectors? They will have an unfair advantage because they will know the condition of houses and will be able to benefit from that. What will happen when inspectors put in different reports about houses? If those reports are to be filed, will there be action taken against an inspector who got it wrong?</p>
-	<p pid="a.1374.0/4">On <phrase class="date" code="">2 November</phrase>, 16 highly experienced surveyors were taught how to fill in the home condition report. It was a department training exercise. Those 16 people have an enormous number of years of experience, including one person with 45 years' experience of surveys. The exercise degenerated into a complete farce. The group were asked what they should do about the roof of a property on which the felt tiles were coming off. Half of the group said that the whole roof needed to be repaired. The other half said that the roof needed to be renewed. The consequence was a vast difference in cost between the two different groups of surveyors. Just like lawyers, surveyors will give different opinions.</p>
+	<p pid="a.1374.0/4">On <phrase class="date" code="2004-11-02">2 November</phrase>, 16 highly experienced surveyors were taught how to fill in the home condition report. It was a department training exercise. Those 16 people have an enormous number of years of experience, including one person with 45 years' experience of surveys. The exercise degenerated into a complete farce. The group were asked what they should do about the roof of a property on which the felt tiles were coming off. Half of the group said that the whole roof needed to be repaired. The other half said that the roof needed to be renewed. The consequence was a vast difference in cost between the two different groups of surveyors. Just like lawyers, surveyors will give different opinions.</p>
 	<p pid="a.1374.0/5">If surveyor A says that the roof of a property needs to be repaired, and it is in the home condition report, that will cost one figure. If surveyor B says that the roof needs to be renewed, that figure would be multiplied by about 10, which would be totally different. If one of your Lordships tries to buy a house and is faced with a home condition report that is inaccurate in that way, goodness knows in what other ways it will be inaccurate. I now understand that the home condition report will not allow surveyors any room for free text. It has been dumbed down to the lowest common denominator: one size fits all.</p>
 	<p pid="a.1374.0/6">In tabling Amendments Nos. 128H and 128J, I support government Amendment No. 128C, but would like to amend the Bill so that we can have first-day marketing. I really want to help the Government on that. This was an amendment that the noble Baroness, Lady Maddock, moved on Report. I supported her then because I had a somewhat similar amendment.</p>
 	<p pid="a.1374.0/7">But if we are to have speedier marketing of houses, which everyone wants, we must be allowed to market at day one. All that Amendment No. 128H says is, &quot;If we are going to have a compulsory pack, let us market on day one and let us have the pack within 14 days of marketing&quot;.</p>
@@ -3090,7 +3110,7 @@
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1390.4" speakerid="uk.org.publicwhip/lord/100038" speakername="Lord Bassam of Brighton" colon=":" colnum="1390"  time="020:25:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-29.htm#41116-29_spnew0">
 	<p pid="a.1390.4/1">My Lords, I beg to move that the House do not insist on its Amendment No. 190 to which the Commons have disagreed for their reason numbered 190A.</p>
-	<p pid="a.1390.4/2">The new clause proposed by the amendment would require the Secretary of State to ensure that, by 2016, all existing social housing stock shall, as far as is reasonably practicable, achieve a standard assessment procedure rating of no lower than 65. The amendment and an earlier variation on it have been extensively discussed. I have little to add, save for one point. When the House last discussed the amendment, the Government had estimated that it could cost the public purse an additional &pound;3 billion to &pound;5 billion in extra work. The House will already be aware that, in the light of further analysis, that estimate has increased considerably. As my right honourable friend the Minister for Housing and Planning said in the other place on <phrase class="date" code="">8 November</phrase>, we estimate that additional works to existing housing will cost some &pound;8.5 billion. On top of that, we estimate that the cost of demolition and rebuild, where that is the only way of achieving a SAP rating of 65, would be some &pound;20 billion. The figures rather speak for themselves. In the light of that further explanation, I invite the House, in accordance with the reason which appears on the Marshalled List as Amendment No. 190A, not to insist on Amendment No. 190.</p>
+	<p pid="a.1390.4/2">The new clause proposed by the amendment would require the Secretary of State to ensure that, by 2016, all existing social housing stock shall, as far as is reasonably practicable, achieve a standard assessment procedure rating of no lower than 65. The amendment and an earlier variation on it have been extensively discussed. I have little to add, save for one point. When the House last discussed the amendment, the Government had estimated that it could cost the public purse an additional &pound;3 billion to &pound;5 billion in extra work. The House will already be aware that, in the light of further analysis, that estimate has increased considerably. As my right honourable friend the Minister for Housing and Planning said in the other place on <phrase class="date" code="2004-11-08">8 November</phrase>, we estimate that additional works to existing housing will cost some &pound;8.5 billion. On top of that, we estimate that the cost of demolition and rebuild, where that is the only way of achieving a SAP rating of 65, would be some &pound;20 billion. The figures rather speak for themselves. In the light of that further explanation, I invite the House, in accordance with the reason which appears on the Marshalled List as Amendment No. 190A, not to insist on Amendment No. 190.</p>
 	<p pid="a.1390.4/3">Moved, That the House do not insist on its Amendment No. 190, to which the Commons have disagreed for their reason numbered 190A.&mdash;(Lord Bassam of Brighton.)</p>
 </speech>
 
@@ -4017,7 +4037,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1419.3" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon="" colnum="1419"  time="021:05:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-32.htm#41116-32_spnew0">
-	<p pid="a.1419.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="">21 July</phrase> be approved [<i>28th Report from the Joint Committee</i>].</p>
+	<p pid="a.1419.3/1" pwmotiontext="moved">rose to move, That the draft order laid before the House on <phrase class="date" code="2004-07-21">21 July</phrase> be approved [<i>28th Report from the Joint Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1419.4" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="1419"  time="021:05:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-32.htm#41116-32_spnew0">
@@ -4029,7 +4049,7 @@
 	<p pid="a.1419.4/6">An important feature of the new order is that it is intended to facilitate joint working between authorities and their partners. In relation to the code of conduct investigations, indemnities will be permitted only in circumstances where there is no finding of failure to comply with the code. This position is a change from the proposals consulted on which suggested that authorities would have discretion to provide indemnities where there was a breach of the code, but no action was taken. This provides a very clear dividing line which removes the possibility of accusations of bias, for example, depending on the party allegiances of the member involved.</p>
 	<p pid="a.1419.4/7">The order makes clear that the terms on which any indemnity or guarantee is granted must require the repayment of any sums expended in the defence of a case where the defendant is later found guilty of a criminal offence or found to be in breach of the code of conduct. As a result of the responses to the consultation we have made provision in the order for sums expended, but which must be repaid to be recoverable as a civil debt.</p>
 	<p pid="a.1419.4/8">I want to make a final point. The order is discretionary; it permits but does not oblige relevant authorities to provide indemnities for a member or officer. I commend the order to the House.</p>
-	<p pid="a.1419.4/9">Moved, That the draft order laid before the House on <phrase class="date" code="">21 July</phrase> be approved [<i>28th Report from the Joint Committee</i>].&mdash;(<i>Lord Rooker</i>.)</p>
+	<p pid="a.1419.4/9">Moved, That the draft order laid before the House on <phrase class="date" code="2004-07-21">21 July</phrase> be approved [<i>28th Report from the Joint Committee</i>].&mdash;(<i>Lord Rooker</i>.)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1420.0" speakerid="uk.org.publicwhip/lord/100269" speakername="Baroness Hanham" colon=":" colnum="1420"  time="021:05:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-32.htm#41116-32_spnew1">
@@ -4087,7 +4107,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1422.8" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon="" colnum="1422"  time="021:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-33.htm#41116-33_spnew1">
-	<p pid="a.1422.8/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>] [<i>21st Report from Merits Committee</i>].</p>
+	<p pid="a.1422.8/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2004-10-13">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>] [<i>21st Report from Merits Committee</i>].</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1422.9" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1422"  time="021:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-33.htm#41116-33_spnew1">
@@ -4100,9 +4120,9 @@
 	<p pid="a.1422.9/7">The trading scheme is not intended to inflict major costs on local authorities either by imposing unnecessary penalties or forcing them to engage in trading against their will. In fact, it will allow local authorities to share the burden of meeting their reduction targets.</p>
 	<p pid="a.1422.9/8">If a local authority exceeds its allowances, it will be given the opportunity in the reconciliation period to trade or borrow allowances to balance the figures, therefore avoiding the imposition of a penalty. The Secretary of State also has the power to waive the penalty if the reason an authority has breached its allowances is largely beyond its control.</p>
 	<p pid="a.1422.9/9">A full operational review of the scheme is planned for 2007 that will consider how the scheme has gone in the first two years and whether any changes are necessary.</p>
-	<p pid="a.1422.9/10">With the indulgence of the House, I shall refer briefly to the next set of regulations relating to Northern Ireland. This instrument specifies the amount of biodegradable municipal waste that may be sent to landfills from Northern Ireland in the scheme years which will begin on <phrase class="date" code="">1 April 2010</phrase> and <phrase class="date" code="">1 April 2011</phrase>.</p>
+	<p pid="a.1422.9/10">With the indulgence of the House, I shall refer briefly to the next set of regulations relating to Northern Ireland. This instrument specifies the amount of biodegradable municipal waste that may be sent to landfills from Northern Ireland in the scheme years which will begin on <phrase class="date" code="2010-04-01">1 April 2010</phrase> and <phrase class="date" code="2011-04-01">1 April 2011</phrase>.</p>
 	<p pid="a.1422.9/11">These instruments are a positive step in enabling the UK to meet its landfill directive targets, and I commend them to the House. I beg to move.</p>
-	<p pid="a.1422.9/12">Moved, That the draft regulations laid before the House on <phrase class="date" code="">13 October</phrase> be approved [<i>31st Report from the </i>Joint Committee] [<i>21st Report from Merits Committee</i>].&mdash;(<i>Lord Whitty.</i>)</p>
+	<p pid="a.1422.9/12">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-10-13">13 October</phrase> be approved [<i>31st Report from the </i>Joint Committee] [<i>21st Report from Merits Committee</i>].&mdash;(<i>Lord Whitty.</i>)</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1424.0" speakerid="uk.org.publicwhip/lord/100176" speakername="Lord Dixon-Smith" colon=":" colnum="1424"  time="021:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-33.htm#41116-33_spnew2">
@@ -4143,8 +4163,8 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2004-11-16a.1428.1" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon="" colnum="1428"  time="021:15:00" url="http://www.publications.parliament.uk/pa/ld200304/ldhansrd/vo041116/text/41116-34.htm#41116-34_spnew1">
-	<p pid="a.1428.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>].</p>
-	<p pid="a.1428.1/2" pwmotiontext="moved">Moved, That the draft regulations laid before the House on <phrase class="date" code="">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>].&mdash;(<i>Lord Whitty</i>.)</p>
+	<p pid="a.1428.1/1" pwmotiontext="moved">rose to move, That the draft regulations laid before the House on <phrase class="date" code="2004-10-13">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>].</p>
+	<p pid="a.1428.1/2" pwmotiontext="moved">Moved, That the draft regulations laid before the House on <phrase class="date" code="2004-10-13">13 October</phrase> be approved [<i>31st Report from the Joint Committee</i>].&mdash;(<i>Lord Whitty</i>.)</p>
 	<p pid="a.1428.1/3" pwmotiontext="moved">On Question, Motion agreed to.</p>
 </speech>
 

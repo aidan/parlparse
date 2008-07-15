@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -50,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1289.1" speakerid="uk.org.publicwhip/lord/100313" speakername="Lord Hunt of Chesterton" colon="" colnum="1289"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-01.htm#11030-01_spopq0">
 	<p pid="a.1289.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1289.1/2" class="indent">What are their policies for guiding the United Kingdom and the international community in adapting to the likely consequences of climate change; and whether they will publish such policies for consultation before the World Summit on Sustainable Development in September 2002.</p>
+	<p pid="a.1289.1/2" class="indent" pwmotiontext="asked">What are their policies for guiding the United Kingdom and the international community in adapting to the likely consequences of climate change; and whether they will publish such policies for consultation before the World Summit on Sustainable Development in September 2002.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1289.2" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1289"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-01.htm#11030-01_spmin0">
@@ -113,7 +132,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1292.1" speakerid="uk.org.publicwhip/lord/100103" speakername="Lord Campbell of Croy" colon="" colnum="1292"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-01.htm#11030-01_spopq1">
 	<p pid="a.1292.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1292.1/2" class="indent">What action they are taking concerning identifiable members of terrorist organisations at present in the United Kingdom.</p>
+	<p pid="a.1292.1/2" class="indent" pwmotiontext="asked">What action they are taking concerning identifiable members of terrorist organisations at present in the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1292.2" speakerid="uk.org.publicwhip/lord/100549" speakername="Lord Rooker" colon=":" colnum="1292"  time="014:45:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-01.htm#11030-01_spmin1">
@@ -191,7 +210,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1294.6" speakerid="uk.org.publicwhip/lord/100207" speakername="Lord Faulkner of Worcester" colon="" colnum="1294"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-02.htm#11030-02_spopq0">
 	<p pid="a.1294.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1294.6/2" class="indent">What representations they have received from the Government of Norway about the discharge of nuclear waste from the Sellafield plant, and the decision to start the commercial manufacturing of Mox.</p>
+	<p pid="a.1294.6/2" class="indent" pwmotiontext="asked">What representations they have received from the Government of Norway about the discharge of nuclear waste from the Sellafield plant, and the decision to start the commercial manufacturing of Mox.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1294.7" speakerid="uk.org.publicwhip/lord/100681" speakername="Lord Whitty" colon=":" colnum="1294"  time="014:52:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-02.htm#11030-02_spnew13">
@@ -247,7 +266,7 @@
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1297.1" speakerid="uk.org.publicwhip/lord/100541" speakername="Lord Roberts of Conwy" colon="" colnum="1297"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-03.htm#11030-03_spopq0">
 	<p pid="a.1297.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.1297.1/2" class="indent">How many private sector industrial and commercial redundancies have been announced in the United Kingdom since the general election.</p>
+	<p pid="a.1297.1/2" class="indent" pwmotiontext="asked">How many private sector industrial and commercial redundancies have been announced in the United Kingdom since the general election.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2001-10-30a.1297.2" speakerid="uk.org.publicwhip/lord/100399" speakername="Lord McIntosh of Haringey" colon=":" colnum="1297"  time="015:00:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo011030/text/11030-03.htm#11030-03_spnew4">

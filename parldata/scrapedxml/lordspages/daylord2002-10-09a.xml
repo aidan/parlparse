@@ -7,37 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -48,7 +69,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.253.1" speakerid="uk.org.publicwhip/lord/100179" speakername="Lord Dormand of Easington" colon="" colnum="253"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-01.htm#21009-01_spopq0">
 	<p pid="a.253.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.253.1/2" class="indent">Whether they will introduce legislation, and, if so, when, to prevent excessive payments being made to chief executives and chairmen of private companies.</p>
+	<p pid="a.253.1/2" class="indent" pwmotiontext="asked">Whether they will introduce legislation, and, if so, when, to prevent excessive payments being made to chief executives and chairmen of private companies.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.253.2" speakerid="uk.org.publicwhip/lord/100559" speakername="Lord Sainsbury of Turville" colon=":" colnum="253"  time="014:30:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-01.htm#21009-01_spmin0">
@@ -101,7 +122,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.255.4" speakerid="uk.org.publicwhip/lord/100289" speakername="Lord Higgins" colon="" colnum="255"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-01.htm#21009-01_spopq1">
 	<p pid="a.255.4/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.255.4/2" class="indent">What progress has been made in preventing the practice of credit rating agencies releasing personal financial information about an individual to family members and others thought to have a financial connection with that individual; and what steps have been taken to ensure that individuals are not denied credit because of inaccurate or inadequate information provided by those agencies.</p>
+	<p pid="a.255.4/2" class="indent" pwmotiontext="asked">What progress has been made in preventing the practice of credit rating agencies releasing personal financial information about an individual to family members and others thought to have a financial connection with that individual; and what steps have been taken to ensure that individuals are not denied credit because of inaccurate or inadequate information provided by those agencies.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.256.0" speakerid="uk.org.publicwhip/lord/100574" speakername="Baroness Scotland of Asthal" colon=":" colnum="256"  time="014:44:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-01.htm#21009-01_spmin1">
@@ -141,7 +162,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.258.1" speakerid="uk.org.publicwhip/lord/100130" speakername="Lord Clement-Jones" colon="" colnum="258"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-02.htm#21009-02_spopq0">
 	<p pid="a.258.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.258.1/2" class="indent">What they consider the public safety benefits will be of transferring the national network of Public Health Laboratory Service laboratories into local National Health Service trusts.</p>
+	<p pid="a.258.1/2" class="indent" pwmotiontext="asked">What they consider the public safety benefits will be of transferring the national network of Public Health Laboratory Service laboratories into local National Health Service trusts.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.258.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="258"  time="014:50:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-02.htm#21009-02_spmin0">
@@ -215,7 +236,7 @@
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.260.6" speakerid="uk.org.publicwhip/lord/100583" speakername="Baroness Sharp of Guildford" colon="" colnum="260"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-03.htm#21009-03_spopq0">
 	<p pid="a.260.6/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.260.6/2" class="indent">What measures they intend to put in place to restore confidence in A-levels.</p>
+	<p pid="a.260.6/2" class="indent" pwmotiontext="asked">What measures they intend to put in place to restore confidence in A-levels.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2002-10-09a.260.7" speakerid="uk.org.publicwhip/lord/100024" speakername="Baroness Ashton of Upholland" colon=":" colnum="260"  time="014:59:00" url="http://www.publications.parliament.uk/pa/ld200102/ldhansrd/vo021009/text/21009-03.htm#21009-03_spmin0">

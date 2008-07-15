@@ -7,39 +7,58 @@
 <!ENTITY mdash   "&#8212;">
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
 
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
 <!ENTITY egrave "&#232;" >
 <!ENTITY eacute "&#233;" >
 <!ENTITY ecirc  "&#234;" >
 <!ENTITY euml   "&#235;" >
-<!ENTITY agrave "&#224;" >
-<!ENTITY aacute "&#225;" >
-<!ENTITY acirc  "&#226;" >
-<!ENTITY ocirc  "&#244;" >
-<!ENTITY ouml   "&#246;" >
-<!ENTITY Ouml   "&#214;" >
-<!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
 <!ENTITY iuml	"&#239;" >
-<!ENTITY ccedil "&#231;" >
-<!ENTITY Ccedil "&#199;" >
-<!ENTITY uuml   "&#252;" >
 <!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
 
-<!ENTITY plusmn "&#177;" >
 <!ENTITY pound  "&#163;" >
-<!ENTITY middot "&#183;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
 <!ENTITY para   "&#182;" >
-
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
-<!ENTITY micro "&#181;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
 
-<!ENTITY euro "&#8364;" >
-<!ENTITY sup2 "&#178;" >
 ]>
 
 <publicwhip scrapeversion="a" latest="yes">
@@ -412,7 +431,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-02-06a.361.1" speakerid="uk.org.publicwhip/lord/100419" speakername="Baroness Masham of Ilton" colon="" colnum="361"  time="013:30:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030206/text/30206-05.htm#30206-05_spopq0">
 	<p pid="a.361.1/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.361.1/2" class="indent">Whether they will consider making the treatment of sexually transmitted infections and other infectious diseases a national service framework.</p>
+	<p pid="a.361.1/2" class="indent" pwmotiontext="asked">Whether they will consider making the treatment of sexually transmitted infections and other infectious diseases a national service framework.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-02-06a.361.2" speakerid="uk.org.publicwhip/lord/100314" speakername="Lord Hunt of Kings Heath" colon=":" colnum="361"  time="013:30:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030206/text/30206-05.htm#30206-05_spnew2">
@@ -481,7 +500,7 @@
 
 <speech id="uk.org.publicwhip/lords/2003-02-06a.363.5" speakerid="uk.org.publicwhip/lord/100103" speakername="Lord Campbell of Croy" colon="" colnum="363"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030206/text/30206-05.htm#30206-05_spopq1">
 	<p pid="a.363.5/1" pwmotiontext="asked">asked Her Majesty's Government:</p>
-	<p pid="a.363.5/2" class="indent">How many induction centres for asylum seekers are planned for the United Kingdom.</p>
+	<p pid="a.363.5/2" class="indent" pwmotiontext="asked">How many induction centres for asylum seekers are planned for the United Kingdom.</p>
 </speech>
 
 <speech id="uk.org.publicwhip/lords/2003-02-06a.363.6" speakerid="uk.org.publicwhip/lord/100212" speakername="Lord Filkin" colon=":" colnum="363"  time="015:09:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030206/text/30206-05.htm#30206-05_spmin0">
@@ -753,7 +772,7 @@
 </minor-heading>
 
 <speech id="uk.org.publicwhip/lords/2003-02-06a.372.2" nospeaker="true" colnum="372"  time="015:31:00" url="http://www.publications.parliament.uk/pa/ld200203/ldhansrd/vo030206/text/30206-08.htm#30206-08_para5">
-	<p pid="a.372.2/1" pwmotiontext="unrecognized">In the run-up to Christmas, Lords interested in Northern Ireland affairs complained that Orders in Council under paragraph 1 of the Schedule to the Northern Ireland Act 2000 were receiving inadequate scrutiny in the Lords. These are the Orders which do the work of NI Assembly Bills while the Assembly is suspended. I agreed at the Despatch Box on <phrase class="date" code="">16 December</phrase> to the proposition that &quot;the usual channels should look at this matter with a degree of urgency&quot;.</p>
+	<p pid="a.372.2/1" pwmotiontext="unrecognized">In the run-up to Christmas, Lords interested in Northern Ireland affairs complained that Orders in Council under paragraph 1 of the Schedule to the Northern Ireland Act 2000 were receiving inadequate scrutiny in the Lords. These are the Orders which do the work of NI Assembly Bills while the Assembly is suspended. I agreed at the Despatch Box on <phrase class="date" code="2003-12-16">16 December</phrase> to the proposition that &quot;the usual channels should look at this matter with a degree of urgency&quot;.</p>
 	<p pid="a.372.2/2" class="indent" pwmotiontext="unrecognized">Having consulted the usual channels and other interested members, I now invite the Procedure Committee to recommend the creation of a &quot;Northern Ireland Orders Committee&quot;.</p>
 	<p pid="a.372.2/3" class="indent" pwmotiontext="unrecognized">The Committee would be of open membership, like a Grand Committee. If it was considered that a particular Order warranted its attention, then following discussion in the usual channels I would move a formal motion referring the Order to the Committee. The Committee would, I hope, be able to meet at any convenient time and at fairly short notice. I accept that resource constraints apply, and in particular that it should not meet at the same time as a Grand Committee. It would meet in the Moses Room if this was available.</p>
 	<p pid="a.372.2/4" class="indent" pwmotiontext="unrecognized">The Committee's proceedings would be the same as in Grand Committee, with the Chairman of Committees or a Deputy in the Chair, a Minister speaking for the Government, and a section in Hansard. Its only business would be &quot;to consider the So-and-So Order&quot;, and its report would say only that it had done so.</p>
