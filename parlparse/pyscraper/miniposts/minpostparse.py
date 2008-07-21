@@ -606,7 +606,7 @@ def ParsePrivSecPage(fr, gp):
 		deptMatch = re.match('\s*<td[^>]*>(?:<font[^>]*>|<b>){2,}([^<]*)(?:(?:</b>|</font>){2,}</td>)?\s*$(?i)', e1)
 		if deptMatch:
 			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
-			deptname = re.sub("\s+", " ", deptname)
+			deptname = re.sub("\s+", " ", deptname).strip()
                         deptname = re.sub(" \(Team PPSs?\)", "", deptname)
 			continue
 		nameMatch = re.match("\s*<td[^>]*>\s*([^<]*)</td>\s*<td[^>]*>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
