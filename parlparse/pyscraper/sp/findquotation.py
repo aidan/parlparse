@@ -99,6 +99,7 @@ class WrittenAnswerParser(xml.sax.handler.ContentHandler):
         if os.path.exists(filename):
             if mtime_after and get_file_mtime(filename) < mtime_after:
                 return self.h
+            print filename
             self.parser.parse(filename)
             if verbose and len(self.h) == 0:
                 print "  Warning: no questions found in "+filename            
