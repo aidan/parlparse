@@ -16,7 +16,7 @@ my $search;
 {
     &setup;
 
-    my $q= $dbh->prepare("select * from rsscache where search=?");
+    my $q= $dbh->prepare("select * from rsscache where term=?");
     $q->execute($search);
     if (my $r= $q->fetchrow_hashref) {
         print "Content-Type: text/xml\n\n";
@@ -55,7 +55,7 @@ sub output {
     }
 
 
-    $dbh->do("insert into rsscache set search=?, content=?, generated=now()", undef, $search, $rss->as_string);
+    $dbh->do("insert into rsscache set term=?, content=?, generated=now()", undef, $search, $rss->as_string);
     print "Content-Type: text/xml\n\n";
     print $rss->as_string;
     
@@ -87,7 +87,7 @@ sub setup {
 
 
 sub process {
-    my @yesterday= localtime(time - 60*60*24 * 2); 
+    my @yesterday= localtime(time - 60*60*24); 
     my $yesterday= join '', $yesterday[5]+1900 , '-' , $yesterday[4]+1 , '-' , $yesterday[3];
     #print "svn diff -r {$yesterday} ~/undata/html/\n";
     my $output= `svn diff -r {$yesterday} ~undemocracy/undata/html/`;
