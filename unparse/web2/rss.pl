@@ -112,8 +112,11 @@ sub process {
             $file=basename($1, '.html');
             $id='';
         } elsif ($line =~ m#class="boldline-\w+"\s*id="([^"]+)">(.{1,50}.*?)\b#) {
-            $counts->{$file}->{'headline'}=$1; 
-            if ($search eq '') { $counts->{$file}->{$2}->{'count'}=1; }
+            $counts->{$file}->{'headline'}=$2; 
+            if ($search eq '') {
+                $counts->{$file}->{$1}->{'count'}=1;
+                $counts->{$file}->{$1}->{'content'}->[0] = '';
+            }
 
         }
 
