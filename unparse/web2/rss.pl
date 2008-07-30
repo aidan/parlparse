@@ -16,7 +16,7 @@ my $search;
 {
     &setup;
 
-    my $q= $dbh->prepare("select * from rsscache where term=?");
+    my $q= $dbh->prepare("select * from rsscache where term=? and generated  >= date_sub(now(), interval 24 hour)");
     $q->execute($search);
     if (my $r= $q->fetchrow_hashref) {
         print "Content-Type: text/xml\n\n";
@@ -78,7 +78,7 @@ sub setup {
     }
     close (CONFIG) ;
 
-    $search= param('search') || 'Excellency'; 
+    $search= param('search') || '';
 
     my $wtt_dsn = "DBI:mysql:$Config{'db_name'}:localhost"; # DSN connection string
     $dbh=DBI->connect($wtt_dsn, $Config{'db_user'}, $Config{'db_password'}, {RaiseError => 1});
@@ -108,15 +108,19 @@ sub process {
     my ($id, $file)=('','');;
     foreach my $line (split /\n/, $output) {
         
-        if ($line =~ m#class="boldline-\w+"[^>]*>(.{1,50}.*?) #) {
-            $counts->{$file}->{'headline'}=$1; 
-        }
-
-
         if ($line =~ m#^\+\+\+ (.*?\.html)\s#) {
             $file=basename($1, '.html');
             $id='';
-        } elsif ($line =~ m#^---#) {
+        } elsif ($line =~ m#class="boldline-\w+"\s*id="([^"]+)">(.{1,50}.*?)\b#) {
+            $counts->{$file}->{'headline'}=$1; 
+            if ($search eq '') { $counts->{$file}->{$2}->{'count'}=1; }
+
+        }
+
+
+        next if ($search eq '');
+
+        if ($line =~ m#^---#) {
             # skip it
         }elsif ($line =~ m#^@@#) {
             # skip it
