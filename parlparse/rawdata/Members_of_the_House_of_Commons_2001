@@ -12,62 +12,59 @@
 		<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 		<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>MPs elected in the United Kingdom general election, 2001 - Wikipedia, the free encyclopedia</title>
-		<style type="text/css" media="screen, projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?164";
-			@import "/skins-1.5/monobook/main.css?164";
-		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?164" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?164";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?164";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?164";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?164";</style><![endif]-->
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?164" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?164" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?164" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?164" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?164" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?164" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?164" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?164" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="screen" />
 		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?164"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
-var skin = "monobook";
-var stylepath = "/skins-1.5";
-var wgArticlePath = "/wiki/$1";
-var wgScriptPath = "/w";
-var wgScript = "/w/index.php";
-var wgVariantArticlePath = false;
-var wgActionPaths = [];
-var wgServer = "http://en.wikipedia.org";
-var wgCanonicalNamespace = "";
-var wgCanonicalSpecialPageName = false;
-var wgNamespaceNumber = 0;
-var wgPageName = "MPs_elected_in_the_United_Kingdom_general_election,_2001";
-var wgTitle = "MPs elected in the United Kingdom general election, 2001";
-var wgAction = "view";
-var wgArticleId = "78984";
-var wgIsArticle = true;
-var wgUserName = null;
-var wgUserGroups = null;
-var wgUserLanguage = "en";
-var wgContentLanguage = "en";
-var wgBreakFrames = false;
-var wgCurRevisionId = "222296165";
-var wgVersion = "1.14alpha";
-var wgEnableAPI = true;
-var wgEnableWriteAPI = false;
-var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}";
-var wgDBname = "enwiki";
-var wgSearchNamespaces = [0];
-var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
-var wgRestrictionEdit = [];
-var wgRestrictionMove = [];
-/*]]>*/</script>
+		var skin = "monobook";
+		var stylepath = "/skins-1.5";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = [];
+		var wgServer = "http://en.wikipedia.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "MPs_elected_in_the_United_Kingdom_general_election,_2001";
+		var wgTitle = "MPs elected in the United Kingdom general election, 2001";
+		var wgAction = "view";
+		var wgArticleId = "78984";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = "222296165";
+		var wgVersion = "1.14alpha";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = false;
+		var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}";
+		var wgDBname = "enwiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?164"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
 		<script type="text/javascript" src="/skins-1.5/common/ajax.js?164"></script>
 		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?164"></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
-		<style type="text/css">/*<![CDATA[*/
-@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
-@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
-@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
-/*]]>*/</style>
 	</head>
 <body class="mediawiki ns-0 ltr page-MPs_elected_in_the_United_Kingdom_general_election_2001">
 	<div id="globalWrapper">
@@ -3665,7 +3662,7 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 <tr>
 <th style=";" colspan="2" class="navbox-title">
 <div style="float:left; width:6em;text-align:left;">
-<div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; white-space:nowrap; font-weight:normal; font-size:xx-small;&#160;;;border:none;;"><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span title="View this template" style=";;border:none;;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/w/index.php?title=Template_talk:UnitedKingdomMPs&amp;action=edit&amp;redlink=1" class="new" title="Template talk:UnitedKingdomMPs (page does not exist)"><span style="color:#002bb8;;;border:none;;" title="Discussion about this template">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" rel="nofollow"><span style="color:#002bb8;;;border:none;;" title="You can edit this template. Please use the preview button before saving.">e</span></a></div>
+<div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; white-space:nowrap; font-weight:normal; font-size:xx-small;&#160;;;border:none;;"><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span title="View this template" style=";;border:none;;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:UnitedKingdomMPs" title="Template talk:UnitedKingdomMPs"><span style="color:#002bb8;;;border:none;;" title="Discussion about this template">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" rel="nofollow"><span style="color:#002bb8;;;border:none;;" title="You can edit this template. Please use the preview button before saving.">e</span></a></div>
 </div>
 <span style="font-size:110%;"><a href="/wiki/List_of_United_Kingdom_MPs" title="List of United Kingdom MPs">List of United Kingdom MPs</a></span></th>
 </tr>
@@ -3684,7 +3681,7 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 <tr>
 <td class="navbox-group" style=";text-align:right;;">By year elected</td>
 <td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;font-size:0.95em;;;" class="navbox-list navbox-even">
-<div style="padding:0em 0.25em"><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1852" title="MPs elected in the United Kingdom general election, 1852">1852</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1857&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1857 (page does not exist)">57</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1859&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1859 (page does not exist)">59</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1865&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1865 (page does not exist)">65</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1868&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1868 (page does not exist)">68</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1874" title="MPs elected in the United Kingdom general election, 1874">74</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1880" title="MPs elected in the United Kingdom general election, 1880">80</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1885" title="MPs elected in the United Kingdom general election, 1885">85</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1886" title="MPs elected in the United Kingdom general election, 1886">86</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1892" title="MPs elected in the United Kingdom general election, 1892">92</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1895" title="MPs elected in the United Kingdom general election, 1895">95</a><br />
+<div style="padding:0em 0.25em"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1801&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1801 (page does not exist)">1801</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1802&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1802 (page does not exist)">02</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1806&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1806 (page does not exist)">06</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1807&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1807 (page does not exist)">07</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1812&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1812 (page does not exist)">12</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1818&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1818 (page does not exist)">18</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1820&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1820 (page does not exist)">20</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1826&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1826 (page does not exist)">26</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1830&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1830 (page does not exist)">30</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1831&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1831 (page does not exist)">31</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1835&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1835 (page does not exist)">35</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1837&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1837 (page does not exist)">37</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1841&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1841 (page does not exist)">41</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1847&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1847 (page does not exist)">47</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1852" title="MPs elected in the United Kingdom general election, 1852">52</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1857&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1857 (page does not exist)">57</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1859&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1859 (page does not exist)">59</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1865&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1865 (page does not exist)">65</a><span style="font-weight:bold;">&#160;·</span> <a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1868&amp;action=edit&amp;redlink=1" class="new" title="MPs elected in the United Kingdom general election, 1868 (page does not exist)">68</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1874" title="MPs elected in the United Kingdom general election, 1874">74</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1880" title="MPs elected in the United Kingdom general election, 1880">80</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1885" title="MPs elected in the United Kingdom general election, 1885">85</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1886" title="MPs elected in the United Kingdom general election, 1886">86</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1892" title="MPs elected in the United Kingdom general election, 1892">92</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1895" title="MPs elected in the United Kingdom general election, 1895">95</a><br />
 <p><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1900" title="MPs elected in the United Kingdom general election, 1900">1900</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1906" title="MPs elected in the United Kingdom general election, 1906">06</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_January_1910" title="MPs elected in the United Kingdom general election, January 1910">Jan 10</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_December_1910" title="MPs elected in the United Kingdom general election, December 1910">Dec 10</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1918" title="MPs elected in the United Kingdom general election, 1918">18</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1922" title="MPs elected in the United Kingdom general election, 1922">22</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1923" title="MPs elected in the United Kingdom general election, 1923">23</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1924" title="MPs elected in the United Kingdom general election, 1924">24</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1929" title="MPs elected in the United Kingdom general election, 1929">29</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1931" title="MPs elected in the United Kingdom general election, 1931">31</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1935" title="MPs elected in the United Kingdom general election, 1935">35</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1945" title="MPs elected in the United Kingdom general election, 1945">45</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1950" title="MPs elected in the United Kingdom general election, 1950">50</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1951" title="MPs elected in the United Kingdom general election, 1951">51</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1955" title="MPs elected in the United Kingdom general election, 1955">55</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1959" title="MPs elected in the United Kingdom general election, 1959">59</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1964" title="MPs elected in the United Kingdom general election, 1964">64</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1966" title="MPs elected in the United Kingdom general election, 1966">66</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1970" title="MPs elected in the United Kingdom general election, 1970">70</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_February_1974" title="MPs elected in the United Kingdom general election, February 1974">Feb 74</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_October_1974" title="MPs elected in the United Kingdom general election, October 1974">Oct 74</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1979" title="MPs elected in the United Kingdom general election, 1979">79</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1983" title="MPs elected in the United Kingdom general election, 1983">83</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1987" title="MPs elected in the United Kingdom general election, 1987">87</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1992" title="MPs elected in the United Kingdom general election, 1992">92</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1997" title="MPs elected in the United Kingdom general election, 1997">97</a><br /></p>
 <strong class="selflink">2001</strong><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005" title="MPs elected in the United Kingdom general election, 2005">05</a></div>
 </td>
@@ -3712,13 +3709,13 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 695/1000000
-Post-expand include size: 29066/2048000 bytes
-Template argument size: 33236/2048000 bytes
+Preprocessor node count: 737/1000000
+Post-expand include size: 32864/2048000 bytes
+Template argument size: 39508/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20080724111021 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20080801113835 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2001">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2001</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:2001_elections_in_the_United_Kingdom" title="Category:2001 elections in the United Kingdom">2001 elections in the United Kingdom</a></span></div></div>			<!-- end content -->
@@ -3821,4 +3818,4 @@ Please use the preview button before saving. [e]" accesskey="e">Edit this page</
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv154 in 0.088 secs. --></body></html>
+<!-- Served by srv40 in 0.087 secs. --></body></html>
