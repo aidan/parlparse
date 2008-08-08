@@ -40,12 +40,19 @@ sub output {
 
 
         foreach my $file (keys %$results) {
+            my $web_link= $file;
+
+            if ($web_link=~ m#S\-PV-(.*)#) {
+                $web_link= "securitycouncil/meeting_" . $1;
+            } elsif ($web_link =~ m#A-(\d+)-PV\.(.*)#) {
+                $web_link= "generalassembly_$1/meeting_$2"
+            }
+
             foreach my $id (sort keys %{$results->{$file}}) {
                 next if $id eq 'headline';
-
                 foreach my $r (sort @{$results->{$file}->{$id}->{'content'}} ){
                     $rss->add_item(title => $results->{$file}->{'headline'},
-                       link  => "http://www.undemocracy.com/$file#$id",
+                       link  => "http://www.undemocracy.com/$web_link#$id",
                        description =>  $r
                        );
                 }
@@ -90,8 +97,10 @@ sub process {
     my @yesterday= localtime(time - 60*60*24); 
     my $yesterday= join '', $yesterday[5]+1900 , '-' , $yesterday[4]+1 , '-' , $yesterday[3];
     #print "svn diff -r {$yesterday} ~/undata/html/\n";
-    my $output= `svn diff -r {$yesterday} ~undemocracy/undata/html/`;
+    my $output= `echo t | /usr/bin/svn diff -r {$yesterday} /home/undemocracy/undata/html/ 2>&1`;
+    # $output.= "echo t | /usr/bin/svn diff -r {$yesterday} /home/undemocracy/undata/html/ 2>&1";
 
+#print "Content-Type: text/plain\n\n$output;";
 #===================================================================
 ##--- /home/undemocracy/undata/html/S-PV-5941.html        (revision 0)
 #+++ /home/undemocracy/undata/html/S-PV-5941.html        (revision 3902)
