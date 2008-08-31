@@ -12,18 +12,18 @@
 		<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 		<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>Members of the Northern Ireland Assembly elected in 2007 - Wikipedia, the free encyclopedia</title>
-		<link rel="stylesheet" href="/skins-1.5/common/shared.css?165" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?165" type="text/css" media="print" />
-		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?165" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/chick/main.css?165" type="text/css" media="handheld" />
-		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?165" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?165" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?165" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?165" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?169" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?169" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?169" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?169" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?169" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?169" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?169" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?169" type="text/css" media="screen" /><![endif]-->
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
-		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="screen" />
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?165"></script>
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
+		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?169"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -33,7 +33,7 @@
 		var wgScriptPath = "/w";
 		var wgScript = "/w/index.php";
 		var wgVariantArticlePath = false;
-		var wgActionPaths = [];
+		var wgActionPaths = {};
 		var wgServer = "http://en.wikipedia.org";
 		var wgCanonicalNamespace = "";
 		var wgCanonicalSpecialPageName = false;
@@ -51,7 +51,7 @@
 		var wgCurRevisionId = "223997481";
 		var wgVersion = "1.14alpha";
 		var wgEnableAPI = true;
-		var wgEnableWriteAPI = false;
+		var wgEnableWriteAPI = true;
 		var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}";
 		var wgDBname = "enwiki";
 		var wgSearchNamespaces = [0];
@@ -60,13 +60,13 @@
 		var wgRestrictionMove = [];
 		/*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?165"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?169"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?165"></script>
-		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?165"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?169"></script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?169"></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
-<body class="mediawiki ns-0 ltr page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007">
+<body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-monobook">
 	<div id="globalWrapper">
 		<div id="column-content">
 	<div id="content">
@@ -80,14 +80,14 @@ document.writeln("\x3cp\x3e\x3c/p\x3e\n");
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub"></div>
 									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
-			<table class="infobox" style="text-align: center; font-size:90%;">
+			<table class="infobox vcard" style="text-align: center; font-size:90%;">
 <tr>
-<td style="text-align: center;"><b><a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a></b></td>
+<td class="adr" style="text-align: center;"><b><span class="fn org country-name"><a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a></span></b></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a href="/wiki/Image:Politicsofnorthernirelandlogo.svg" class="image" title="Politicsofnorthernirelandlogo.svg"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Politicsofnorthernirelandlogo.svg/175px-Politicsofnorthernirelandlogo.svg.png" width="175" height="140" border="0" /></a><br />
+<td style="text-align: center;"><a href="/wiki/Image:Politicsofnorthernirelandlogo.svg" class="image" title="Politicsofnorthernirelandlogo.svg"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Politicsofnorthernirelandlogo.svg/165px-Politicsofnorthernirelandlogo.svg.png" width="165" height="132" border="0" /></a><br />
 <p><small>This article is part of the series:</small><br />
-<b><a href="/wiki/Politics_of_Northern_Ireland" class="mw-redirect" title="Politics of Northern Ireland">Politics and government of<br />
+<b><a href="/wiki/Politics_of_Northern_Ireland" title="Politics of Northern Ireland" class="mw-redirect">Politics and government of<br />
 Northern Ireland</a></b></p>
 </td>
 </tr>
@@ -96,95 +96,132 @@ Northern Ireland</a></b></p>
 <hr /></td>
 </tr>
 <tr>
-<th align="center" style="background:#ccccff" width="192px">In <a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a></th>
-</tr>
-<tr>
-<td>
-<p><b><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">Northern Ireland Assembly</a></b></p>
-<p><a href="/wiki/Member_of_the_Legislative_Assembly_%28Northern_Ireland%29" title="Member of the Legislative Assembly (Northern Ireland)">MLA</a><br />
-<a href="/wiki/List_of_committees_of_the_Northern_Ireland_Assembly" title="List of committees of the Northern Ireland Assembly">Committees</a><br />
-<a href="/wiki/List_of_Acts_of_the_Northern_Ireland_Assembly" title="List of Acts of the Northern Ireland Assembly">List of Acts</a><br />
-Members: <strong class="selflink">2007</strong> - <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2003" title="Members of the Northern Ireland Assembly elected in 2003">2003</a> - <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1998" title="Members of the Northern Ireland Assembly elected in 1998">1998</a><br />
-Elections: <a href="/wiki/Northern_Ireland_Assembly_election%2C_2007" title="Northern Ireland Assembly election, 2007">2007</a> - <a href="/wiki/Northern_Ireland_Assembly_election%2C_2003" title="Northern Ireland Assembly election, 2003">2003</a> - <a href="/wiki/Northern_Ireland_Assembly_election%2C_1998" title="Northern Ireland Assembly election, 1998">1998</a></p>
-<hr />
+<td align="left">
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">Government</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">First Minister</a>: <a href="/wiki/Peter_Robinson_(politician)" title="Peter Robinson (politician)">Peter Robinson</a></li>
+<li><a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">Deputy First Minister</a>: <a href="/wiki/Martin_McGuinness" title="Martin McGuinness">Martin McGuinness</a></li>
+<li><a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Northern Ireland Ministers</a></li>
+</ul>
 <p><b><a href="/wiki/Northern_Ireland_Executive" title="Northern Ireland Executive">Northern Ireland Executive</a></b></p>
-<p><a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">First Minister</a>: <a href="/wiki/Peter_Robinson_%28politician%29" title="Peter Robinson (politician)">Peter Robinson</a><br />
-<a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">Deputy First Minister</a>: <a href="/wiki/Martin_McGuinness" title="Martin McGuinness">Martin McGuinness</a><br />
-<a href="/wiki/List_of_government_departments%2C_their_agencies_and_their_ministers_in_Northern_Ireland" title="List of government departments, their agencies and their ministers in Northern Ireland">Departments</a><br />
-Executives: <a href="/wiki/Executive_of_the_1st_Northern_Ireland_Assembly" title="Executive of the 1st Northern Ireland Assembly">First</a> - <a href="/wiki/Executive_of_the_2nd_Northern_Ireland_Assembly" title="Executive of the 2nd Northern Ireland Assembly">Suspended</a> - <a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Second</a></p>
-<hr />
-<p><a href="/wiki/Northern_Ireland_Policing_Board" title="Northern Ireland Policing Board">Northern Ireland Policing Board</a><br />
-<a href="/wiki/Parades_Commission" title="Parades Commission">Parades Commission</a></p>
-</td>
-</tr>
-<tr>
-<th align="center" style="background:#ccccff" width="192px">In the <a href="/wiki/United_Kingdom" title="United Kingdom">United Kingdom</a></th>
-</tr>
-<tr>
-<td>
-<p><b><a href="/wiki/United_Kingdom_Parliament" class="mw-redirect" title="United Kingdom Parliament">United Kingdom Parliament</a></b></p>
-<p>Committees: <a href="/wiki/Northern_Ireland_Affairs_Committee" title="Northern Ireland Affairs Committee">Affairs</a> - <a href="/wiki/Northern_Ireland_Grand_Committee" title="Northern Ireland Grand Committee">Grand</a><br />
-Members: <a href="/wiki/List_of_MPs_for_Northern_Irish_constituencies_2005-" title="List of MPs for Northern Irish constituencies 2005-">Commons</a> - <a href="/wiki/List_of_Northern_Ireland_Members_of_the_House_of_Lords" class="mw-redirect" title="List of Northern Ireland Members of the House of Lords">Lords</a> - <a href="/wiki/List_of_Northern_Ireland_members_of_the_Privy_Council" title="List of Northern Ireland members of the Privy Council">Privy Council</a><br />
-Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#Northern_Ireland" title="United Kingdom general election, 2005">2005</a></p>
-<hr />
-<p><b><a href="/wiki/United_Kingdom_Government" class="mw-redirect" title="United Kingdom Government">United Kingdom Government</a></b></p>
-<p><a href="/wiki/Northern_Ireland_Office" title="Northern Ireland Office">Northern Ireland Office</a><br />
-<a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of State for Northern Ireland">Secretary of State</a> • <a href="/wiki/Direct_Rule" class="mw-redirect" title="Direct Rule">Direct Rule</a></p>
-</td>
-</tr>
-<tr>
-<th align="center" style="background:#ccccff" width="192px">In the <a href="/wiki/European_Union" title="European Union">European Union</a></th>
-</tr>
-<tr>
-<td>
+<ul>
+<li><a href="/wiki/List_of_government_departments,_their_agencies_and_their_ministers_in_Northern_Ireland" title="List of government departments, their agencies and their ministers in Northern Ireland">Departments</a></li>
+<li>Executives: <a href="/wiki/Executive_of_the_1st_Northern_Ireland_Assembly" title="Executive of the 1st Northern Ireland Assembly">First</a> - <a href="/wiki/Executive_of_the_2nd_Northern_Ireland_Assembly" title="Executive of the 2nd Northern Ireland Assembly">Suspended</a> - <a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Second</a></li>
+</ul>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">National Assembly</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/List_of_committees_of_the_Northern_Ireland_Assembly" title="List of committees of the Northern Ireland Assembly">Committees</a></li>
+<li><a href="/wiki/List_of_Acts_of_the_Northern_Ireland_Assembly" title="List of Acts of the Northern Ireland Assembly">List of Acts</a></li>
+<li><a href="/wiki/List_of_Statutory_Rules_of_Northern_Ireland" title="List of Statutory Rules of Northern Ireland">Statutory Rules</a></li>
+<li><a href="/wiki/Speaker_of_the_Northern_Ireland_Assembly" title="Speaker of the Northern Ireland Assembly">Speaker</a>: <a href="/wiki/William_Hay_(politician)" title="William Hay (politician)">William Hay</a></li>
+<li><a href="/wiki/Member_of_the_Legislative_Assembly_(Northern_Ireland)" title="Member of the Legislative Assembly (Northern Ireland)">Members (MLA)</a>:
+<ul>
+<li><strong class="selflink">2007</strong> - <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2003" title="Members of the Northern Ireland Assembly elected in 2003">2003</a> - <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1998" title="Members of the Northern Ireland Assembly elected in 1998">1998</a></li>
+</ul>
+</li>
+<li><a href="/wiki/List_of_parliamentary_constituencies_in_Northern_Ireland" title="List of parliamentary constituencies in Northern Ireland">Constituencies</a></li>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>: <a href="/wiki/Northern_Ireland_Assembly_election,_2007" title="Northern Ireland Assembly election, 2007">2007</a> - <a href="/wiki/Northern_Ireland_Assembly_election,_2003" title="Northern Ireland Assembly election, 2003">2003</a> - <a href="/wiki/Northern_Ireland_Assembly_election,_1998" title="Northern Ireland Assembly election, 1998">1998</a></li>
+</ul>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b>Other Public Bodies</b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/Northern_Ireland_Policing_Board" title="Northern Ireland Policing Board">Northern Ireland Policing Board</a></li>
+<li><a href="/wiki/Parades_Commission" title="Parades Commission">Parades Commission</a></li>
+</ul>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b>in the <a href="/wiki/United_Kingdom" title="United Kingdom">UK</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<p><b><a href="/wiki/Her_Majesty%27s_Government" title="Her Majesty's Government">Her Majesty's Government</a></b></p>
+<ul>
+<li><a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of State for Northern Ireland">Secretary of State</a>: <a href="/wiki/Shaun_Woodward" title="Shaun Woodward">Shaun Woodward</a> <a href="/wiki/Member_of_Parliament" title="Member of Parliament">MP</a></li>
+<li><a href="/wiki/Northern_Ireland_Office" title="Northern Ireland Office">Northern Ireland Office</a></li>
+<li><a href="/wiki/Direct_Rule" title="Direct Rule" class="mw-redirect">Direct Rule</a></li>
+<li><a href="/wiki/Northern_Ireland_Grand_Committee" title="Northern Ireland Grand Committee">Grand Committee</a></li>
+<li><a href="/wiki/Northern_Ireland_Affairs_Committee" title="Northern Ireland Affairs Committee">Select Committee</a></li>
+<li><a href="/wiki/United_Kingdom_Parliament" title="United Kingdom Parliament" class="mw-redirect">UK Parliament</a>
+<ul>
+<li><a href="/wiki/List_of_MPs_for_Northern_Irish_constituencies_2005-" title="List of MPs for Northern Irish constituencies 2005-">Commons</a></li>
+<li><a href="/wiki/List_of_Northern_Ireland_Members_of_the_House_of_Lords" title="List of Northern Ireland Members of the House of Lords" class="mw-redirect">Lords</a></li>
+<li><a href="/wiki/List_of_Northern_Ireland_members_of_the_Privy_Council" title="List of Northern Ireland members of the Privy Council">Privy Council</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="/wiki/List_of_Parliamentary_constituencies_in_Northern_Ireland" title="List of Parliamentary constituencies in Northern Ireland" class="mw-redirect">Constituencies</a></p>
+<ul>
+<li><a href="/wiki/List_of_Acts_of_Parliament_in_the_United_Kingdom" title="List of Acts of Parliament in the United Kingdom">Acts</a></li>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>: <a href="/wiki/United_Kingdom_general_election,_1979" title="United Kingdom general election, 1979">1979</a>, <a href="/wiki/United_Kingdom_general_election,_1983" title="United Kingdom general election, 1983">1983</a>, <a href="/wiki/United_Kingdom_general_election,_1987" title="United Kingdom general election, 1987">1987</a>, <a href="/wiki/United_Kingdom_general_election,_1992" title="United Kingdom general election, 1992">1992</a>,</li>
+</ul>
+<p>&#160; <span class="Unicode"> </span> &#160; <span class="Unicode"> </span><a href="/wiki/United_Kingdom_general_election,_1997" title="United Kingdom general election, 1997">1997</a>, <a href="/wiki/United_Kingdom_general_election,_2001" title="United Kingdom general election, 2001">2001</a>, <a href="/wiki/United_Kingdom_general_election,_2005" title="United Kingdom general election, 2005">2005</a>, <a href="/wiki/Next_United_Kingdom_general_election" title="Next United Kingdom general election">2009/10</a></p>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b>in the <a href="/wiki/European_Union" title="European Union">EU</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <p><b><a href="/wiki/European_Parliament" title="European Parliament">European Parliament</a></b></p>
-<p><a href="/wiki/Member_of_the_European_Parliament" title="Member of the European Parliament">MEP</a><br />
-Members: <a href="/wiki/Northern_Ireland_%28European_Parliament_constituency%29#Election_results" title="Northern Ireland (European Parliament constituency)">2004</a> - <a href="/wiki/Northern_Ireland_%28European_Parliament_constituency%29#1999" title="Northern Ireland (European Parliament constituency)">1999</a><br />
-Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom%29#Northern_Ireland" title="European Parliament election, 2004 (United Kingdom)">2004</a> - <a href="/wiki/European_Parliament_election%2C_1999_%28United_Kingdom%29#Northern_Ireland" title="European Parliament election, 1999 (United Kingdom)">1999</a></p>
-</td>
-</tr>
-<tr>
-<th align="center" style="background:#ccccff" width="192px">Related <a href="/wiki/Political_parties" class="mw-redirect" title="Political parties">political parties</a></th>
-</tr>
-<tr>
-<td>
-<p><b><a href="/wiki/Designated_Unionist" title="Designated Unionist">Designated Unionist</a></b><br />
-<a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a><br />
-<a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a><br />
-<a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a><br />
-<a href="/wiki/Conservatives_in_Northern_Ireland" title="Conservatives in Northern Ireland">Conservatives</a><br />
-<a href="/wiki/Traditional_Unionist_Voice" title="Traditional Unionist Voice">Traditional Unionist Voice</a></p>
-<p><b><a href="/wiki/Designated_Nationalist" title="Designated Nationalist">Designated Nationalist</a></b><br />
-<a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a><br />
-<a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a><br />
-<a href="/wiki/Fianna_F%C3%A1il" title="Fianna Fáil">Fianna Fáil</a></p>
-<p><b><a href="/wiki/Designated_Other" title="Designated Other">Designated Other</a></b><br />
-<a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party</a><br />
-<a href="/wiki/Green_Party_in_Northern_Ireland" title="Green Party in Northern Ireland">Green Party</a></p>
-</td>
-</tr>
-<tr>
-<th align="center" style="background:#ccccff" width="192px">Related bodies</th>
-</tr>
-<tr>
-<td>
-<p><a href="/wiki/North/South_Ministerial_Council" title="North/South Ministerial Council">North/South Ministerial Council</a><br />
-<a href="/wiki/British-Irish_Council" title="British-Irish Council">British-Irish Council</a><br />
-<a href="/wiki/British-Irish_Intergovernmental_Conference" title="British-Irish Intergovernmental Conference">British-Irish Intergovernmental Conference</a><br />
-<a href="/wiki/Civic_Forum_for_Northern_Ireland" title="Civic Forum for Northern Ireland">Civic Forum for Northern Ireland</a></p>
-</td>
-</tr>
-<tr>
-<th align="center" style="background:#ccccff" width="192px">See also</th>
-</tr>
-<tr>
-<td>
-<p><a href="/wiki/St_Andrews_Agreement" title="St Andrews Agreement">St Andrews Agreement</a> (2006)<br />
-<a href="/wiki/Belfast_Agreement" title="Belfast Agreement">Belfast Agreement</a> (1998)</p>
-<p><a href="/wiki/Segregation_in_Northern_Ireland" title="Segregation in Northern Ireland">Segregation in Northern Ireland</a><br />
-<a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections in Northern Ireland</a></p>
-<p><a href="/wiki/List_of_Parliamentary_constituencies_in_Northern_Ireland" class="mw-redirect" title="List of Parliamentary constituencies in Northern Ireland">Constituencies</a><br />
-<a href="/wiki/List_of_political_parties_in_Northern_Ireland" title="List of political parties in Northern Ireland">Political parties</a></p>
+<ul>
+<li><a href="/wiki/Northern_Ireland_(European_Parliament_constituency)" title="Northern Ireland (European Parliament constituency)">European Parliament constituency</a></li>
+<li><a href="/wiki/Member_of_the_European_Parliament" title="Member of the European Parliament">MEP</a></li>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>: <a href="/wiki/European_Parliament_election,_1979_(United_Kingdom)" title="European Parliament election, 1979 (United Kingdom)">1979</a>, <a href="/wiki/European_Parliament_election,_1984_(United_Kingdom)" title="European Parliament election, 1984 (United Kingdom)">1984</a>, <a href="/wiki/European_Parliament_election,_1989_(United_Kingdom)" title="European Parliament election, 1989 (United Kingdom)">1989</a>, <a href="/wiki/European_Parliament_election,_1994_(United_Kingdom)" title="European Parliament election, 1994 (United Kingdom)">1994</a>,</li>
+</ul>
+<p>&#160; <span class="Unicode"> </span> &#160; <span class="Unicode"> </span><a href="/wiki/European_Parliament_election,_1999_(United_Kingdom)" title="European Parliament election, 1999 (United Kingdom)">1999</a>, <a href="/wiki/European_Parliament_election,_2004_(United_Kingdom)" title="European Parliament election, 2004 (United Kingdom)">2004</a>, <a href="/wiki/European_Parliament_election,_2009" title="European Parliament election, 2009">2009</a></p>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/List_of_political_parties_in_Northern_Ireland" title="List of political parties in Northern Ireland">Political parties</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<p><b><a href="/wiki/Designated_Unionist" title="Designated Unionist">Designated Unionist</a></b></p>
+<ul>
+<li><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></li>
+<li><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></li>
+<li><a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a></li>
+<li><a href="/wiki/Conservatives_in_Northern_Ireland" title="Conservatives in Northern Ireland">Conservatives</a></li>
+<li><a href="/wiki/Traditional_Unionist_Voice" title="Traditional Unionist Voice">Traditional Unionist Voice</a></li>
+</ul>
+<p><b><a href="/wiki/Designated_Nationalist" title="Designated Nationalist">Designated Nationalist</a></b></p>
+<ul>
+<li><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></li>
+<li><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></li>
+<li><a href="/wiki/Fianna_F%C3%A1il" title="Fianna Fáil">Fianna Fáil</a></li>
+</ul>
+<p><b><a href="/wiki/Designated_Other" title="Designated Other">Designated Other</a></b></p>
+<ul>
+<li><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party</a></li>
+<li><a href="/wiki/Green_Party_in_Northern_Ireland" title="Green Party in Northern Ireland">Green Party</a></li>
+</ul>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b>Related bodies</b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/North/South_Ministerial_Council" title="North/South Ministerial Council">North/South Ministerial Council</a></li>
+<li><a href="/wiki/British-Irish_Council" title="British-Irish Council">British-Irish Council</a></li>
+<li><a href="/wiki/British-Irish_Intergovernmental_Conference" title="British-Irish Intergovernmental Conference">British-Irish Intergovernmental Conference</a></li>
+<li><a href="/wiki/Civic_Forum_for_Northern_Ireland" title="Civic Forum for Northern Ireland">Civic Forum for Northern Ireland</a></li>
+</ul>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b>Agreements</b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/St_Andrews_Agreement" title="St Andrews Agreement">St Andrews Agreement</a> (2006)</li>
+<li><a href="/wiki/Belfast_Agreement" title="Belfast Agreement">Belfast Agreement</a> (1998)</li>
+<li><a href="/wiki/Segregation_in_Northern_Ireland" title="Segregation in Northern Ireland">Segregation in Northern Ireland</a></li>
+</ul>
+</div>
+</div>
 </td>
 </tr>
 <tr>
@@ -196,7 +233,7 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 </td>
 </tr>
 </table>
-<p>This is a list of the 108 <b>members of the Northern Ireland Assembly elected in 2007</b>. All members elected at the <a href="/wiki/Northern_Ireland_Assembly_election%2C_2007" title="Northern Ireland Assembly election, 2007">assembly elections</a>, held on <a href="/wiki/March_7" title="March 7">7 March</a> <a href="/wiki/2007" title="2007">2007</a> are listed.</p>
+<p>This is a list of the 108 <b>members of the Northern Ireland Assembly elected in 2007</b>. All members elected at the <a href="/wiki/Northern_Ireland_Assembly_election,_2007" title="Northern Ireland Assembly election, 2007">assembly elections</a>, held on <a href="/wiki/March_7" title="March 7">7 March</a> <a href="/wiki/2007" title="2007">2007</a> are listed.</p>
 <table id="toc" class="toc" summary="Contents">
 <tr>
 <td>
@@ -359,7 +396,7 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 <th colspan="2">Party</th>
 <th>Designation</th>
 <th>March 2007<br />
-<a href="/wiki/Northern_Ireland_Assembly_election%2C_2007" title="Northern Ireland Assembly election, 2007">election</a></th>
+<a href="/wiki/Northern_Ireland_Assembly_election,_2007" title="Northern Ireland Assembly election, 2007">election</a></th>
 <th>Current</th>
 </tr>
 <tr>
@@ -413,21 +450,21 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 </tr>
 <tr>
 <th style="background-color: #DDDDDD"></th>
-<td><a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a></td>
+<td><a href="/wiki/Independent_(politician)" title="Independent (politician)">Independent</a></td>
 <td>Nationalist</td>
 <td align="right">0</td>
 <td align="right"><b>1</b></td>
 </tr>
 <tr>
 <th style="background-color: #DDDDDD"></th>
-<td><a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a></td>
+<td><a href="/wiki/Independent_(politician)" title="Independent (politician)">Independent</a></td>
 <td>Other</td>
 <td align="right">1</td>
 <td align="right"><b>1</b></td>
 </tr>
 <tr>
 <th style="background-color: #000000"></th>
-<td><a href="/wiki/Presiding_Officer_of_the_Northern_Ireland_Assembly" class="mw-redirect" title="Presiding Officer of the Northern Ireland Assembly">Presiding Officer</a></td>
+<td><a href="/wiki/Presiding_Officer_of_the_Northern_Ireland_Assembly" title="Presiding Officer of the Northern Ireland Assembly" class="mw-redirect">Presiding Officer</a></td>
 <td>Other</td>
 <td align="right">0</td>
 <td align="right"><b>1</b></td>
@@ -448,550 +485,550 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 </tr>
 <tr>
 <td><a href="/wiki/Allan_Bresland" title="Allan Bresland">Allan Bresland</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Wallace_Browne" class="mw-redirect" title="Wallace Browne">Wallace Browne</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Wallace_Browne" title="Wallace Browne" class="mw-redirect">Wallace Browne</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Thomas_Buchanan_%28Unionist_politician%29" class="mw-redirect" title="Thomas Buchanan (Unionist politician)">Thomas Buchanan</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/Thomas_Buchanan_(Unionist_politician)" title="Thomas Buchanan (Unionist politician)" class="mw-redirect">Thomas Buchanan</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Gregory_Campbell_%28politician%29" title="Gregory Campbell (politician)">Gregory Campbell</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/Gregory_Campbell_(politician)" title="Gregory Campbell (politician)">Gregory Campbell</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Trevor_Clarke" title="Trevor Clarke">Trevor Clarke</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jonathan_Craig" title="Jonathan Craig">Jonathan Craig</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/George_Dawson_%28politician%29" title="George Dawson (politician)">George Dawson</a> (deceased), replaced by <a href="/wiki/Alastair_Ian_Ross" class="mw-redirect" title="Alastair Ian Ross">Alastair Ian Ross</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/George_Dawson_(politician)" title="George Dawson (politician)">George Dawson</a> (deceased), replaced by <a href="/wiki/Alastair_Ian_Ross" title="Alastair Ian Ross" class="mw-redirect">Alastair Ian Ross</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alex_Easton" title="Alex Easton">Alex Easton</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Arlene_Foster" title="Arlene Foster">Arlene Foster</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Simon_Hamilton" title="Simon Hamilton">Simon Hamilton</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/William_Hay_%28politician%29" title="William Hay (politician)">William Hay</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/William_Hay_(politician)" title="William Hay (politician)">William Hay</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Hilditch" title="David Hilditch">David Hilditch</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/William_Irwin_%28Northern_Ireland_politician%29" class="mw-redirect" title="William Irwin (Northern Ireland politician)">William Irwin</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/William_Irwin_(Northern_Ireland_politician)" title="William Irwin (Northern Ireland politician)" class="mw-redirect">William Irwin</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nelson_McCausland" title="Nelson McCausland">Nelson McCausland</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_McCrea" title="Ian McCrea">Ian McCrea</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/William_McCrea_%28politician%29" title="William McCrea (politician)">William McCrea</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michelle_McIlveen" title="Michelle McIlveen">Michelle McIlveen</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Adrian_McQuillan" title="Adrian McQuillan">Adrian McQuillan</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Maurice_Morrow" class="mw-redirect" title="Maurice Morrow">Maurice Morrow</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Maurice_Morrow" title="Maurice Morrow" class="mw-redirect">Maurice Morrow</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Stephen_Moutray" title="Stephen Moutray">Stephen Moutray</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Newton" title="Robin Newton">Robin Newton</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_Paisley" title="Ian Paisley">Ian Paisley</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Ian_Paisley_Jr" class="mw-redirect" title="Ian Paisley Jr">Ian Paisley Jr</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/Ian_Paisley_Jr" title="Ian Paisley Jr" class="mw-redirect">Ian Paisley Jr</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edwin_Poots" title="Edwin Poots">Edwin Poots</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/George_Robinson_%28politician%29" title="George Robinson (politician)">George Robinson</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/George_Robinson_(politician)" title="George Robinson (politician)">George Robinson</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Iris_Robinson" title="Iris Robinson">Iris Robinson</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Robinson_%28politician%29" title="Peter Robinson (politician)">Peter Robinson</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Peter_Robinson_(politician)" title="Peter Robinson (politician)">Peter Robinson</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Simpson_%28UK_politician%29" title="David Simpson (UK politician)">David Simpson</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jimmy_Spratt" title="Jimmy Spratt">Jimmy Spratt</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mervyn_Storey" title="Mervyn Storey">Mervyn Storey</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Weir_%28politician%29" title="Peter Weir (politician)">Peter Weir</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/Peter_Weir_(politician)" title="Peter Weir (politician)">Peter Weir</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jim_Wells" title="Jim Wells">Jim Wells</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sammy_Wilson" title="Sammy Wilson">Sammy Wilson</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Gerry_Adams" title="Gerry Adams">Gerry Adams</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Martina_Anderson" title="Martina Anderson">Martina Anderson</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Cathal_Boylan" title="Cathal Boylan">Cathal Boylan</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mickey_Brady" title="Mickey Brady">Mickey Brady</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Francis_Brolly" title="Francis Brolly">Francis Brolly</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Paul_Butler_%28politician%29" title="Paul Butler (politician)">Paul Butler</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Paul_Butler_(politician)" title="Paul Butler (politician)">Paul Butler</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Car%C3%A1l_N%C3%AD_Chuil%C3%ADn" title="Carál Ní Chuilín">Carál Ní Chuilín</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Willie_Clarke" title="Willie Clarke">Willie Clarke</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pat_Doherty" title="Pat Doherty">Pat Doherty</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michelle_Gildernew" title="Michelle Gildernew">Michelle Gildernew</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Gerry_Kelly" title="Gerry Kelly">Gerry Kelly</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alex_Maskey" title="Alex Maskey">Alex Maskey</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Paul_Maskey" title="Paul Maskey">Paul Maskey</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Fra_McCann" title="Fra McCann">Fra McCann</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jennifer_McCann" title="Jennifer McCann">Jennifer McCann</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Raymond_McCartney" title="Raymond McCartney">Raymond McCartney</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Barry_McElduff" title="Barry McElduff">Barry McElduff</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Claire_McGill" title="Claire McGill">Claire McGill</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Martin_McGuinness" title="Martin McGuinness">Martin McGuinness</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Gerry_McHugh" title="Gerry McHugh">Gerry McHugh</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
-<td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a>, <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">independent</a> since <a href="/wiki/2007" title="2007">2007</a>-<a href="/wiki/December_3" title="December 3">12-03</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a>, <a href="/wiki/Independent_(politician)" title="Independent (politician)">independent</a> since <a href="/wiki/2007" title="2007">2007</a>-<a href="/wiki/December_3" title="December 3">12-03</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Daith%C3%AD_McKay" title="Daithí McKay">Daithí McKay</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mitchel_McLaughlin" title="Mitchel McLaughlin">Mitchel McLaughlin</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Francie_Molloy" title="Francie Molloy">Francie Molloy</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Conor_Murphy" title="Conor Murphy">Conor Murphy</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_O%27Dowd" title="John O'Dowd">John O'Dowd</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michelle_O%27Neill" title="Michelle O'Neill">Michelle O'Neill</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sue_Ramsey" title="Sue Ramsey">Sue Ramsey</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Caitriona_Ruane" class="mw-redirect" title="Caitriona Ruane">Caitriona Ruane</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/Caitriona_Ruane" title="Caitriona Ruane" class="mw-redirect">Caitriona Ruane</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alex_Attwood" title="Alex Attwood">Alex Attwood</a></td>
-<td><a href="/wiki/Belfast_West_%28Assembly_constituency%29" title="Belfast West (Assembly constituency)">Belfast West</a></td>
+<td><a href="/wiki/Belfast_West_(Assembly_constituency)" title="Belfast West (Assembly constituency)">Belfast West</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dominic_Bradley" title="Dominic Bradley">Dominic Bradley</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mary_Bradley" title="Mary Bradley">Mary Bradley</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/P._J._Bradley" title="P. J. Bradley">P. J. Bradley</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Thomas_Burns_%28politician%29" title="Thomas Burns (politician)">Thomas Burns</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/Thomas_Burns_(politician)" title="Thomas Burns (politician)">Thomas Burns</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Dallat" title="John Dallat">John Dallat</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mark_Durkan" title="Mark Durkan">Mark Durkan</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Tommy_Gallagher_%28politician%29" title="Tommy Gallagher (politician)">Tommy Gallagher</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Tommy_Gallagher_(politician)" title="Tommy Gallagher (politician)">Tommy Gallagher</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Carmel_Hanna" title="Carmel Hanna">Carmel Hanna</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dolores_Kelly" title="Dolores Kelly">Dolores Kelly</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alban_Maginness" title="Alban Maginness">Alban Maginness</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alasdair_McDonnell" title="Alasdair McDonnell">Alasdair McDonnell</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patsy_McGlone" title="Patsy McGlone">Patsy McGlone</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Declan_O%27Loan" title="Declan O'Loan">Declan O'Loan</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pat_Ramsey" title="Pat Ramsey">Pat Ramsey</a></td>
-<td><a href="/wiki/Foyle_%28Assembly_constituency%29" title="Foyle (Assembly constituency)">Foyle</a></td>
+<td><a href="/wiki/Foyle_(Assembly_constituency)" title="Foyle (Assembly constituency)">Foyle</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Margaret_Ritchie_%28politician%29" title="Margaret Ritchie (politician)">Margaret Ritchie</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/Margaret_Ritchie_(politician)" title="Margaret Ritchie (politician)">Margaret Ritchie</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">Social Democratic and Labour Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Billy_Armstrong" title="Billy Armstrong">Billy Armstrong</a></td>
-<td><a href="/wiki/Mid_Ulster_%28Assembly_constituency%29" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
+<td><a href="/wiki/Mid_Ulster_(Assembly_constituency)" title="Mid Ulster (Assembly constituency)">Mid Ulster</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Roy_Beggs_Jr" class="mw-redirect" title="Roy Beggs Jr">Roy Beggs Jr</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/Roy_Beggs_Jr" title="Roy Beggs Jr" class="mw-redirect">Roy Beggs Jr</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Burnside" title="David Burnside">David Burnside</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Fred_Cobain" title="Fred Cobain">Fred Cobain</a></td>
-<td><a href="/wiki/Belfast_North_%28Assembly_constituency%29" title="Belfast North (Assembly constituency)">Belfast North</a></td>
+<td><a href="/wiki/Belfast_North_(Assembly_constituency)" title="Belfast North (Assembly constituency)">Belfast North</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Coulter" title="Robert Coulter">Robert Coulter</a></td>
-<td><a href="/wiki/North_Antrim_%28Assembly_constituency%29" title="North Antrim (Assembly constituency)">North Antrim</a></td>
+<td><a href="/wiki/North_Antrim_(Assembly_constituency)" title="North Antrim (Assembly constituency)">North Antrim</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Leslie_Cree" title="Leslie Cree">Leslie Cree</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tom_Elliott" title="Tom Elliott">Tom Elliott</a></td>
-<td><a href="/wiki/Fermanagh_and_South_Tyrone_%28Assembly_constituency%29" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
+<td><a href="/wiki/Fermanagh_and_South_Tyrone_(Assembly_constituency)" title="Fermanagh and South Tyrone (Assembly constituency)">Fermanagh and South Tyrone</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Reg_Empey" title="Reg Empey">Reg Empey</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sam_Gardiner" title="Sam Gardiner">Sam Gardiner</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Danny_Kennedy" title="Danny Kennedy">Danny Kennedy</a></td>
-<td><a href="/wiki/Newry_and_Armagh_%28Assembly_constituency%29" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
+<td><a href="/wiki/Newry_and_Armagh_(Assembly_constituency)" title="Newry and Armagh (Assembly constituency)">Newry and Armagh</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_McCallister" title="John McCallister">John McCallister</a></td>
-<td><a href="/wiki/South_Down_%28Assembly_constituency%29" title="South Down (Assembly constituency)">South Down</a></td>
+<td><a href="/wiki/South_Down_(Assembly_constituency)" title="South Down (Assembly constituency)">South Down</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_McClarty" title="David McClarty">David McClarty</a></td>
-<td><a href="/wiki/East_Londonderry_%28Assembly_constituency%29" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
+<td><a href="/wiki/East_Londonderry_(Assembly_constituency)" title="East Londonderry (Assembly constituency)">East Londonderry</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Basil_McCrea" title="Basil McCrea">Basil McCrea</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alan_McFarland" title="Alan McFarland">Alan McFarland</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_McGimpsey" title="Michael McGimpsey">Michael McGimpsey</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_McNarry" title="David McNarry">David McNarry</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Ken_Robinson_%28politician%29" title="Ken Robinson (politician)">Ken Robinson</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/Ken_Robinson_(politician)" title="Ken Robinson (politician)">Ken Robinson</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/George_Savage_%28politician%29" title="George Savage (politician)">George Savage</a></td>
-<td><a href="/wiki/Upper_Bann_%28Assembly_constituency%29" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
+<td><a href="/wiki/George_Savage_(politician)" title="George Savage (politician)">George Savage</a></td>
+<td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Stephen_Farry" title="Stephen Farry">Stephen Farry</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Ford" title="David Ford">David Ford</a></td>
-<td><a href="/wiki/South_Antrim_%28Assembly_constituency%29" title="South Antrim (Assembly constituency)">South Antrim</a></td>
+<td><a href="/wiki/South_Antrim_(Assembly_constituency)" title="South Antrim (Assembly constituency)">South Antrim</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anna_Lo" title="Anna Lo">Anna Lo</a></td>
-<td><a href="/wiki/Belfast_South_%28Assembly_constituency%29" title="Belfast South (Assembly constituency)">Belfast South</a></td>
+<td><a href="/wiki/Belfast_South_(Assembly_constituency)" title="Belfast South (Assembly constituency)">Belfast South</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Trevor_Lunn" title="Trevor Lunn">Trevor Lunn</a></td>
-<td><a href="/wiki/Lagan_Valley_%28Assembly_constituency%29" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
+<td><a href="/wiki/Lagan_Valley_(Assembly_constituency)" title="Lagan Valley (Assembly constituency)">Lagan Valley</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kieran_McCarthy" title="Kieran McCarthy">Kieran McCarthy</a></td>
-<td><a href="/wiki/Strangford_%28Assembly_constituency%29" title="Strangford (Assembly constituency)">Strangford</a></td>
+<td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Sean_Neeson" class="mw-redirect" title="Sean Neeson">Sean Neeson</a></td>
-<td><a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a></td>
+<td><a href="/wiki/Sean_Neeson" title="Sean Neeson" class="mw-redirect">Sean Neeson</a></td>
+<td><a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a></td>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Brian_Wilson_%28Northern_Ireland_politician%29" title="Brian Wilson (Northern Ireland politician)">Brian Wilson</a></td>
-<td><a href="/wiki/North_Down_%28Assembly_constituency%29" title="North Down (Assembly constituency)">North Down</a></td>
+<td><a href="/wiki/Brian_Wilson_(Northern_Ireland_politician)" title="Brian Wilson (Northern Ireland politician)">Brian Wilson</a></td>
+<td><a href="/wiki/North_Down_(Assembly_constituency)" title="North Down (Assembly constituency)">North Down</a></td>
 <td><a href="/wiki/Green_Party_in_Northern_Ireland" title="Green Party in Northern Ireland">Green Party in Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dawn_Purvis" title="Dawn Purvis">Dawn Purvis</a></td>
-<td><a href="/wiki/Belfast_East_%28Assembly_constituency%29" title="Belfast East (Assembly constituency)">Belfast East</a></td>
+<td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kieran_Deeny" title="Kieran Deeny">Kieran Deeny</a></td>
-<td><a href="/wiki/West_Tyrone_%28Assembly_constituency%29" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
-<td><a href="/wiki/Independent_%28politician%29" title="Independent (politician)">Independent</a></td>
+<td><a href="/wiki/West_Tyrone_(Assembly_constituency)" title="West Tyrone (Assembly constituency)">West Tyrone</a></td>
+<td><a href="/wiki/Independent_(politician)" title="Independent (politician)">Independent</a></td>
 </tr>
 </table>
 <p><a name="Changes_since_the_election" id="Changes_since_the_election"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=4" title="Edit section: Changes since the election">edit</a>]</span> <span class="mw-headline">Changes since the election</span></h2>
 <ul>
-<li><a href="/wiki/George_Dawson_%28politician%29" title="George Dawson (politician)">George Dawson</a> (<a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">DUP</a>, <a href="/wiki/East_Antrim_%28Assembly_constituency%29" title="East Antrim (Assembly constituency)">East Antrim</a>) died on <a href="/wiki/May_7" title="May 7">7 May</a> <a href="/wiki/2007" title="2007">2007</a><sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup> and was replaced by <a href="/wiki/Alastair_Ian_Ross" class="mw-redirect" title="Alastair Ian Ross">Alastair Ian Ross</a>.</li>
-<li><a href="/wiki/Gerry_McHugh" title="Gerry McHugh">Gerry McHugh</a> resigned from <a href="/wiki/Sinn_Fein" class="mw-redirect" title="Sinn Fein">Sinn Fein</a> and became an <a href="/wiki/Independent_%28politician%29" title="Independent (politician)">independent</a> on <a href="/wiki/2007" title="2007">2007</a>-<a href="/wiki/December_3" title="December 3">12-03</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup></li>
+<li><a href="/wiki/George_Dawson_(politician)" title="George Dawson (politician)">George Dawson</a> (<a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">DUP</a>, <a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a>) died on <a href="/wiki/May_7" title="May 7">7 May</a> <a href="/wiki/2007" title="2007">2007</a><sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup> and was replaced by <a href="/wiki/Alastair_Ian_Ross" title="Alastair Ian Ross" class="mw-redirect">Alastair Ian Ross</a>.</li>
+<li><a href="/wiki/Gerry_McHugh" title="Gerry McHugh">Gerry McHugh</a> resigned from <a href="/wiki/Sinn_Fein" title="Sinn Fein" class="mw-redirect">Sinn Fein</a> and became an <a href="/wiki/Independent_(politician)" title="Independent (politician)">independent</a> on <a href="/wiki/2007" title="2007">2007</a>-<a href="/wiki/December_3" title="December 3">12-03</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup></li>
 </ul>
 <center>
 <table class="navbox" cellspacing="0" style=";">
@@ -1011,7 +1048,7 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 <tr>
 <td class="navbox-group" style=";background:#BFD7FF;;"><a href="/wiki/Parliament_of_Northern_Ireland" title="Parliament of Northern Ireland">Parliament of Northern Ireland</a></td>
 <td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
-<div style="padding:0em 0.25em"><a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1921" title="MPs elected in the Northern Ireland general election, 1921">1921</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1925" title="MPs elected in the Northern Ireland general election, 1925">1925</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1929" title="MPs elected in the Northern Ireland general election, 1929">1929</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1933" title="MPs elected in the Northern Ireland general election, 1933">1933</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1938" title="MPs elected in the Northern Ireland general election, 1938">1938</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1945" title="MPs elected in the Northern Ireland general election, 1945">1945</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1949" title="MPs elected in the Northern Ireland general election, 1949">1949</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1953" title="MPs elected in the Northern Ireland general election, 1953">1953</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1958" title="MPs elected in the Northern Ireland general election, 1958">1958</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1962" title="MPs elected in the Northern Ireland general election, 1962">1962</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1965" title="MPs elected in the Northern Ireland general election, 1965">1965</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election%2C_1969" title="MPs elected in the Northern Ireland general election, 1969">1969</a></div>
+<div style="padding:0em 0.25em"><a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1921" title="MPs elected in the Northern Ireland general election, 1921">1921</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1925" title="MPs elected in the Northern Ireland general election, 1925">1925</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1929" title="MPs elected in the Northern Ireland general election, 1929">1929</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1933" title="MPs elected in the Northern Ireland general election, 1933">1933</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1938" title="MPs elected in the Northern Ireland general election, 1938">1938</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1945" title="MPs elected in the Northern Ireland general election, 1945">1945</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1949" title="MPs elected in the Northern Ireland general election, 1949">1949</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1953" title="MPs elected in the Northern Ireland general election, 1953">1953</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1958" title="MPs elected in the Northern Ireland general election, 1958">1958</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1962" title="MPs elected in the Northern Ireland general election, 1962">1962</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1965" title="MPs elected in the Northern Ireland general election, 1965">1965</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1969" title="MPs elected in the Northern Ireland general election, 1969">1969</a></div>
 </td>
 </tr>
 <tr style="height:2px">
@@ -1049,13 +1086,13 @@ Elections: <a href="/wiki/European_Parliament_election%2C_2004_%28United_Kingdom
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1115/1000000
-Post-expand include size: 23155/2048000 bytes
-Template argument size: 10298/2048000 bytes
+Preprocessor node count: 1224/1000000
+Post-expand include size: 27045/2048000 bytes
+Template argument size: 10326/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20080808215918 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20080830204322 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></div></div>			<!-- end content -->
@@ -1071,8 +1108,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 	
 				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="View the content page [c]" accesskey="c">Article</a></li>
 				 <li id="ca-talk"><a href="/wiki/Talk:Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
-				 <li id="ca-edit"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit" title="You can edit this page.
-Please use the preview button before saving. [e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-edit"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit" title="You can edit this page.&#10;Please use the preview button before saving. [e]" accesskey="e">Edit this page</a></li>
 				 <li id="ca-history"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=history" title="Past versions of this page [h]" accesskey="h">History</a></li>			</ul>
 		</div>
 	</div>
@@ -1106,7 +1142,7 @@ Please use the preview button before saving. [e]" accesskey="e">Edit this page</
 			<form action="/wiki/Special:Search" id="searchform"><div>
 				<input id="searchInput" name="search" type="text" title="Search Wikipedia [f]" accesskey="f" value="" />
 				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if one exists" />&nbsp;
-				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the wiki for this text" />
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" />
 			</div></form>
 		</div>
 	</div>
@@ -1127,7 +1163,7 @@ Please use the preview button before saving. [e]" accesskey="e">Edit this page</
 		<h5>Toolbox</h5>
 		<div class="pBody">
 			<ul>
-				<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="List of all English Wikipedia pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
@@ -1150,4 +1186,4 @@ Please use the preview button before saving. [e]" accesskey="e">Edit this page</
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv140 in 0.080 secs. --></body></html>
+<!-- Served by srv160 in 0.984 secs. --></body></html>
