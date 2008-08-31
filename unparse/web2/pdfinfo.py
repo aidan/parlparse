@@ -45,8 +45,7 @@ class PdfInfo:
         self.time = None
         self.title = None
         self.agendascontained = [ ] # (gid, agnum, title)
-
-
+        
         if mgadoc:
             self.desc = "General Assembly Session %s document" % mgadoc.group(1)
             self.dtype = "Document"
@@ -112,6 +111,7 @@ class PdfInfo:
             self.bGA = True
         elif moscdoc:
             self.desc = "Security Council Document %s" % moscdoc.group(1)
+            self.dtype = "Document"
             self.nscyear = -1
             self.scmeeting = None
             self.document_number = moscdoc.group(1)

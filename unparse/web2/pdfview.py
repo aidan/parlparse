@@ -6,7 +6,7 @@ import datetime
 from basicbits import WriteGenHTMLhead, EncodeHref
 from basicbits import htmldir, pdfdir, pdfinfodir, pdfpreviewdir, pdfpreviewpagedir, nowdatetime, basehref
 from basicbits import LookupAgendaTitle, GenWDocLink
-
+from db import GetDBcursor
 
 def WritePDF(fpdf):
     print "Content-type: application/pdf\n"
@@ -120,58 +120,99 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
 
     print '<p style="clear:both">%s</p>' % "".join(lpages)
 
-def WritePDFpreview(docid, pdfinfo):
+
+def WritePDFpreview(docid, pdfinfo, rfr, bscrapedoc):
     parsed = (pdfinfo.mgapv or pdfinfo.mscpv)
 
     WriteGenHTMLhead('%s %s' % (pdfinfo.pdfc, pdfinfo.desc))
-    
     code = pdfinfo.pdfc
+    
+    if bscrapedoc:
+        sys.path.append("../scraper")
+        from unscrapedoc import ScrapePDFdoc
+        mess = ScrapePDFdoc(code, pdfinfo.pdffile)
+        print mess
 
     pdfpreviewf = os.path.join(pdfpreviewdir, code + ".jpg")
     if os.path.isfile(pdfpreviewf):
-        print '<img style="float:right" src="/pdfpreviewjpg/%s">' % code
+        pass #print '<img style="float:right" src="/pdfpreviewjpg/%s">' % code
 
     resurl, reswref = GenWDocLink(pdfinfo, None, None)
-    print '<div id="rightdoclinks">'
-    print '<p>URL: <input style="text" readonly value="%s"></p>' % resurl
-    print '<p><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a> '
-    print '<input style="text" readonly value="%s"></p>' % reswref
-    print '</div>'
+
+    if rfr == 'wikipedia':
+        print '<div id="rightdoclinks">'
+        print '<p>Links for wikipedians</p>'
+        print '<ul>'
+        print '<li><a href="http://en.wikipedia.org/wiki/Wikipedia:WikiProject_United_Nations">WikiProject United Nations</li>'
+        print '<li><a href="http://www.undemocracy.com/incoming">Other wikipedia articles</a> which link to undemocracy.com</li>'
+        print '<li><a href="/">Front page of undemocracy.com</a></li>'
+        print '<li><a href="http://www.guardian.co.uk/technology/2008/mar/13/internet.politics">Newspaper article about this project</a>.</li>'
+        print '</ul>'
+        print '</div>'
     
+
+    pdflink = os.path.exists(pdfinfo.pdffile) and EncodeHref({"pagefunc":"nativepdf", "docid":code})
+        
+    if pdflink:
+        print '<p style="text-align:center; padding-bottom: 2em; padding-top: 2em;"><a class="pdfview" href="%s">' % pdflink
+        print '<img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0">' 
+        print 'View PDF document' 
+        print '</a></p>'
     
+    print '<p>This is a holding page for the official document with <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">code</a> <i><b>%s</b></i>.' % code
+    print 'The United Nations does not enable direct links to most of their documents.'
+    print '</p>'
+   
+    print '<p style="padding-top:0.5em">Using this webpage, you can --</p>'
+    print '<ul class="d">'
     if pdfinfo.mgapv or pdfinfo.mscpv:
         pfile = os.path.join(htmldir, pdfinfo.pdfc + ".html")
         if os.path.isfile(pfile):
-            print '<h3>Go to <a href="%s">HTML version</a> of this transcript</h3>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
+            print '<li class="d">Go to <a href="%s">HTML version</a> of this transcript</li>' % (EncodeHref({"pagefunc":"meeting", "docid":code}))
         else:
-            print '<p>There is no parsed version for this verbatim report.</p>'
+            print '<li class="d">There is no parsed version for this verbatim report.</li>'
 
+    if pdflink:
+        print '<li class="d"><a href="%s">View as PDF</a></li>' % pdflink
 
-    pdflink = EncodeHref({"pagefunc":"nativepdf", "docid":code})
-    print '<p>View entire document as <a href="%s">PDF</a> <a href="%s"><img style="vertical-align: sub" src="/images/pdficon_large.gif" alt="(PDF)" border="0"></a></p>' % (pdflink, pdflink)
-
-    print '<p>Or click on individual pages:'
-    npages = pdfinfo.pages == -1 and 5 or pdfinfo.pages
-    for n in range(npages):
-        print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
-    if pdfinfo.pages == -1:
-        print '(We\'re not sure how many pages there actually are in this file, so click on them to see what you get.)'
-    print '</p>'
+        print '<li class="d">Or click on individual pages--</li>'
+        print '<li class="d">'
+        npages = pdfinfo.pages == -1 and 5 or pdfinfo.pages
+        for n in range(npages):
+            print '<a href="%s">Page %d</a>' % (EncodeHref({"pagefunc":"pdfpage", "docid":code, "page":(n+1)}), n + 1),
+        if pdfinfo.pages == -1:
+            print '(Accurate page-count unknown.)'
+        print '</li>'
+    undlink = "http://www.un.org/Docs/journal/asp/ws.asp?m=" + re.sub('[\-"]', "/", pdfinfo.pdfc)
+    print '<li class="d">Try linking directly to <a href="%s">%s</a></li>' % (undlink, undlink)
+    if not pdflink:
+        print '<li class="d">No document available on undemocracy.com server.',
+        if bscrapedoc:
+            print '<b>Document scraping attempt failed, unfortunately.</b></li>'
+        else:
+            print 'Click <a href="%s"><b>here</b></a> to try and request it. (new feature!)</li>' % EncodeHref({"pagefunc":"document", "docid":code, "scrapedoc":True})
+    print '<li class="d"><a href="http://www.un.org/documents/">UN Documentation Centre</a></li>'
 
     if pdfinfo.bGA:
-        print '<br><p>See all <a href="/generalassembly/documents">General Assembly documents</a>.</p>'
+        print '<li class="d">See all <a href="/generalassembly/documents">General Assembly documents</a>.</li>'
     if pdfinfo.bSC:
-        print '<br><p>See all <a href="/securitycouncil/documents">Security Council documents</a>.</p>'
+        print '<li class="d">See all <a href="/securitycouncil/documents">Security Council documents</a>.</li>'
+    print '<li class="d">Ready-made URL link: <input style="text" readonly value="%s"></li>' % resurl
+    print '<li class="d">Ready-made <a href="http://en.wikipedia.org/wiki/Help:Footnotes">wikipedia link</a> '
+    print 'using <a href="http://en.wikipedia.org/wiki/Template:UN_document">Template:UN_document</a>: '
+    print '<input style="text" readonly value="%s"></li>' % reswref
+    print '</ul>'
 
+    c = GetDBcursor()
     if pdfinfo.pvrefs:
         print '<h3>References to this document</h3>'
-        print '<p>List of all recent Security Council and General Assembly meetings where this document is mentioned.</p>'
+        print '<p>List of all post-1994 meetings of the Security Council or General Assembly where this document was specifically mentioned.</p>'
         print '<ul class="docrefs">'
         for pvrefk in sorted(pdfinfo.pvrefsing.keys()):
             mcode = pvrefk[1]
             hmap = { "pagefunc":"meeting", "docid":mcode, "highlightdoclink":code }
             hmap["gid"] = min(pdfinfo.pvrefsing[pvrefk])
-            agtitle, sdate = LookupAgendaTitle(mcode, hmap["gid"])
+            agtitle, sdate = LookupAgendaTitle(mcode, hmap["gid"], c)
             print '<li>%s <a href="%s">%s</a></li>' % (pvrefk[0], EncodeHref(hmap), (agtitle or mcode))
         print '</ul>'
 

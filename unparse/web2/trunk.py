@@ -29,9 +29,10 @@ from indextype import WriteIndexStuff, WriteIndexStuffGA, WriteIndexStuffSec, Wr
 from unpvmeeting import WriteHTML, WriteHTMLagnum
 from highlightimg import WritePNGpage
 from nationpage import WriteIndexStuffNation, WriteAllNations
-from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing
+from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing, WriteDocumentListingEarly
 
 from indexrecords import LoadAgendaNames
+from quickskins import WriteWebcastIndexPage
 
 # the main section that interprets the fields
 if __name__ == "__main__":
@@ -121,6 +122,9 @@ if __name__ == "__main__":
     elif pagefunc == "scyear":
         LogIncomingDB(pagefunc, hmap["scyear"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffSecYear(hmap["scyear"])
+    elif pagefunc == "scyearearly":
+        LogIncomingDB(pagefunc, "early", referrer, ipaddress, useragent, remadeurl)
+        WriteDocumentListingEarly("securitycouncil")
     elif pagefunc == "scdocuments":
         LogIncomingDB(pagefunc, hmap["docyearfile"], referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuffDocumentsYear(hmap["docyearfile"])
@@ -128,8 +132,8 @@ if __name__ == "__main__":
         LogIncomingDB(pagefunc, "pdf", referrer, ipaddress, useragent, remadeurl)
         WritePDF(hmap["pdffile"])
     elif pagefunc == "document":
-        LogIncomingDB(hmap["docid"], "0", referrer, ipaddress, useragent, remadeurl)
-        WritePDFpreview(hmap["docid"], hmap["pdfinfo"])
+        rfr = LogIncomingDB(hmap["docid"], "0", referrer, ipaddress, useragent, remadeurl)
+        WritePDFpreview(hmap["docid"], hmap["pdfinfo"], rfr, hmap.get("scrapedoc"))
     elif pagefunc == "documentlist":
         LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteDocumentListing(hmap["body"])
@@ -151,8 +155,13 @@ if __name__ == "__main__":
         #sys.exit(0)
         WritePNGpage(hmap["pdffile"], hmap["page"], hmap["width"], hmap["pngfile"], hmap["highlightrects"])
         sys.exit(0)
+
+    elif hmap["pagefunc"] == "webcastindex":
+        WriteWebcastIndexPage(hmap["body"], hmap["date"])
+
     else:
         WriteFrontPageError(pathpartstr, hmap)
 
     WriteGenHTMLfoot()
+
 

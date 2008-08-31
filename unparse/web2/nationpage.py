@@ -12,13 +12,14 @@ from db import GetDBcursor
 
 
 def WriteSpeechInstances(snation, person, nationdata):
+    c = GetDBcursor()
     print '<h3>Speeches by the ambassador whose name matches "%s"</h3>' % person
     print '<ul>'
     prevdocid = ""
     for mp in nationdata:
         if mp["lntype"] == "ambassador" and DownPersonName(mp["name"]) == person and mp["docid"] != prevdocid:
             href = EncodeHref({"pagefunc":"meeting", "docid":mp["docid"], "gid":mp["gid"]})
-            desc, sdate = LookupAgendaTitle(mp["docid"], mp["gid"])
+            desc, sdate = LookupAgendaTitle(mp["docid"], mp["gid"], c)
             print '<li>%s %s <a href="%s">%s</a></li>' % (mp["sdate"], mp["name"], href, desc or mp["sdate"])
             prevdocid = mp["docid"]
     print '</ul>'
@@ -36,7 +37,7 @@ def WriteSpeechInstances(snation, person, nationdata):
         gidspeech = srec[0]
         docid = srec[1]
         gidsubhead = srec[4]
-        agtitle, sdate = LookupAgendaTitle(docid, gidspeech)
+        agtitle, sdate = LookupAgendaTitle(docid, gidspeech, c)
         href = EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":gidspeech})
         print '<li>%s <a href="%s">%s</a></li>' % (sdate or "", href, agtitle or docid)
     print '</ul>'
@@ -112,7 +113,7 @@ def WriteMinorityVotes(nation, nationdata):
     c = GetDBcursor()
     qsel = "SELECT un_divisions.docid, un_divisions.href, ldate, motiontext, vote, favour, against, abstain, absent FROM un_divisions "
     qlj = "LEFT JOIN un_votes ON un_votes.docid=un_divisions.docid AND un_votes.href=un_divisions.href AND un_votes.nation=\"%s\"" % nation
-    c.execute("%s %s WHERE body='GA' ORDER BY minority_score LIMIT 20" % (qsel, qlj))
+    c.execute("%s %s WHERE body='GA' AND vote is not null ORDER BY minority_score LIMIT 20" % (qsel, qlj))
 
     minority = c.fetchall()
 
@@ -143,6 +144,8 @@ def WriteMinorityVotes(nation, nationdata):
             print 'voted %s to <b>abstain</b> on' % MinorityVoteWordsOutOf(abstain, mvotes)
         elif vote == "absent":
             print 'was <b>absent</b> with <b>%d</b> other nation%s when %d voted' % (absent - 1 or "zero", absent!=2 and "s" or "", mvotes)
+        else:
+            print ' error vote ', vote, ':::'
         print '</td>'
         print '<td class="col3"><a href="%s">%s</a></td>' % (EncodeHref({"pagefunc":"meeting", "docid":docid, "gid":href}), motiontext)
         print '<td class="col2"><i>%s</i></td>' % LongDate(ldate.strftime("%Y-%m-%d"))
@@ -232,8 +235,8 @@ def WriteAllNations():
             res.append((nation, href, flaghref))
     
     res.sort()
-    ncols = 4
-    colleng = len(res) / (ncols )
+    ncols = 4 
+    colleng = (len(res) + ncols - 1) / ncols
     print '<table><tr>'
     for j in range(ncols):
         print '<td style="vertical-align:top;"><table>'

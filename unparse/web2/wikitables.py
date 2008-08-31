@@ -95,16 +95,17 @@ def ShortWikipediaTable(nentries):
     return res
 
 def BigWikipediaTable():
-    wprefs = ReadLogReferrers("logpages_wikipedia.txt")
-    wprefs.extend(ReadLogReferrers("logpages_wikipedia_1.txt"))
-    wprefs.extend(ReadLogReferrers("logpages_wikipedia_2.txt"))
+    #wprefs = ReadLogReferrers("logpages_wikipedia.txt")
+    #wprefs.extend(ReadLogReferrers("logpages_wikipedia_1.txt"))
+    #wprefs.extend(ReadLogReferrers("logpages_wikipedia_2.txt"))
+    c = GetDBcursor()
+    c.execute("SELECT max(ltime) AS mtime, min(ltime), count(*), referrer, reftitle FROM unlog_incoming WHERE refdomain = 'en.wikipedia.org' GROUP BY reftitle ORDER BY reftitle;")
+    lres = c.fetchall()
     res = [ ] # wikiname, docid, page, date, wikifullurl
-    for wpref in wprefs:
-        mref = re.match("(http://en.wikipedia.org/wiki/)([^#/]*)(#.*)?$", wpref[1])
-        if not mref:
-            continue
-        wrefpage = Wikiredirect(mref.group(2))
-        wikifullurl = "%s%s%s" % (mref.group(1), wrefpage, mref.group(3) or "")
-        res.append((ConvertName(wrefpage), wpref[2], wpref[3], wpref[0], wikifullurl))
-    res.sort()
+    for wpref in lres:
+        res.append((wpref[0], wpref[1], wpref[2], wpref[3], ConvertName(wpref[4])))
+        #wrefpage = Wikiredirect(mref.group(2))
+        #wikifullurl = "%s%s%s" % (mref.group(1), wrefpage, mref.group(3) or "")
+        #res.append((ConvertName(wrefpage), wpref[2], wpref[3], wpref[0], wikifullurl))
+    #res.sort()
     return res

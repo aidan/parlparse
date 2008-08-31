@@ -132,12 +132,34 @@ p.nations a
 	font-size: 1.7em;
 	}
 #securitycouncil a, #generalassembly a
-{
-text-decoration:none;
-}
+    {
+    text-decoration:none;
+    }
 #securitycouncil a:hover, #generalassembly a:hover
+    {
+    text-decoration:underline;
+    }
+#securitycouncil p, #generalassembly p, #wpblogincoming p
+    {
+    padding-left:15px;
+    font-weight:bold;
+    padding-top:5px;
+    }
+#securitycouncil h2, #generalassembly h2
+    {
+    text-decoration:underline;
+    }
+
+
+a.pdfview
 {
-text-decoration:underline;
+background-color:#cfffcf;
+height:2em;
+font-size:22pt;
+}
+a.pdfview:hover
+{
+background-color:yellow;
 }
 
 
@@ -318,15 +340,20 @@ div#content
     font-style: italic;
     background-color:#ddefff;
 }
-#metainstructions ul
+#metainstructions ul, ul.d
 {
     margin:0.5em;
     list-style-type: disc;
 }
-#metainstructions li
+#metainstructions li, li.d
 {
     margin:0.5em;
 }
+ul.d
+{
+    padding-left:1em;
+}
+
 #metainstructions p.secline
 {
     margin-top:0.5em;
@@ -792,9 +819,21 @@ text-align: center;
 }
 div#rightdoclinks
 {
-margin: 1em;
+margin-left: 1em;
 float: right;
-width: 15em;
+width: 18em;
+background-color:#f9b5b5; 
+border: thin red solid; 
+padding:0.5em;
+}
+#rightdoclinks ul
+{
+    padding-left:0.5em;
+    list-style-type: disc;
+}
+#rightdoclinks li
+{
+    margin-left:1em;
 }
 
 ul em
@@ -807,5 +846,32 @@ ul.nationstats
     margin:0.5em;
     padding-left:2em;
     list-style-type: disc;
+}
+
+
+table#wclist
+{
+    border-collapse:collapse;
+    margin-top:1em;
+}
+
+table#wclist td
+{
+    border:1px black solid;
+    padding: 4px;
+}
+
+td.wcdate
+{
+    font-weight:bold;
+}
+
+td.wccont
+{
+    border-left:3.5em;
+}
+a.undlink
+{
+    color:green;
 }
 

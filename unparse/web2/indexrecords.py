@@ -7,11 +7,13 @@ from basicbits import EncodeHref
 
 # put back in for now
 from basicbits import indexstuffdir, htmldir
+from db import GetDBcursor
 
 class SecRecord:
     def __init__(self, stext):
         self.bGA, self.bSC = False, True
         self.bparsed = True
+        self.topic = "Not set"
         for sp, val in re.findall('<span class="([^"]*)">([^<]*)</span>', stext):
             if sp == "documentid":
                 self.docid = val

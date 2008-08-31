@@ -5,7 +5,6 @@ import cgi
 
 indexstuffdir = "/home/undemocracy/undata/indexstuff"
 
-
 from pdfinfo import PdfInfo
 from downascii import DownAscii
 import datetime
@@ -24,13 +23,15 @@ scelectedmembersyear = {
 2008:["Burkina Faso", "Libya", "South Africa", "Vietnam", "Indonesia", "Costa Rica", "Panama", "Belgium", "Italy", "Croatia"],
 }
 
-            
-
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 def LongDate(sdate):
     nmonth = int(sdate[5:7])
     return "%d %s %s" % (int(sdate[8:]), monthnames[nmonth - 1], sdate[:4])
+
+def LongDateNB(sdate):
+    nmonth = int(sdate[5:7])
+    return "%d&nbsp;%s&nbsp;%s" % (int(sdate[8:]), monthnames[nmonth - 1], sdate[:4])
 
 bodyid = None
 def SetBodyID(lbodyid):
@@ -84,6 +85,10 @@ def WriteGenHTMLhead(title, frontpage=False):
 
 def WriteGenHTMLfoot():
     print '</div>'
+    print '<div style="background-color:black;clear:both; color:white; text-align:center">'
+    print '<a href="http://project.knowledgeforge.net/ukparse/svn/trunk/unparse/" style="color:#55ffff">Source Code</a>'
+    print 'of undemocracy.com protected by <a href="http://www.fsf.org/licensing/licenses/agpl-3.0.html" style="color:#55ffff">AGPL</a>'
+    print '<a href="http://okd.okfn.org/"><img src="http://www.publicwhip.org.uk/images/ok_80x23_red_green.png" style="vertical-align:bottom" alt="Open Knowledge"></a></div>'
     print "</body>"
     print '</html>'
 
@@ -95,10 +100,17 @@ def GetPdfInfo(docid):
         res.htmlfile = os.path.join(htmldir, docid + ".html")
     else:
         res.htmlfile = ""
+    res.pdffile = os.path.join(pdfdir, docid + ".pdf")
     return res
 
 
-def LookupAgendaTitle(docid, gid):
+def LookupAgendaTitle(docid, gid, c):
+    if re.match("S", docid):
+        c.execute("SELECT shortheading, ldate FROM un_scheadings WHERE docid='%s'" % docid)
+        a = c.fetchone()
+        if a:
+            return a[0], a[1]
+
     pdfinfo = GetPdfInfo(docid)
     prevagc = None
     for agc in pdfinfo.agendascontained:
@@ -136,14 +148,19 @@ def LogIncomingDoc(docid, page, referrer, ipaddress, useragent):
     fout.close()
 
     # now log according to referrer
+    res = "unknown"
     if re.search("undemocracy", referrer):
         fout = open(os.path.join(logincomingdir, "logpages_interlink.txt"), "a")
         fout.write(logtxt)
         fout.close()
+        res = "internal"
     if re.search("wikipedia", referrer):
         fout = open(os.path.join(logincomingdir, "logpages_wikipedia.txt"), "a")
         fout.write(logtxt)
         fout.close()
+        res = "wikipedia"
+    return res
+
 
 def ReadLogReferrers(logpagen):
     flog = os.path.join(logincomingdir, logpagen)
@@ -210,7 +227,7 @@ def DecodeHref(pathparts, form):
     if pathparts[0] == "pdfpreviewjpg" and len(pathparts) == 2:
         return { "pagefunc":"pdfpreviewjpg", "docid":pathparts[1] }
     # case when someone has given a document reference with the slashes
-    if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+|HRC)", pathparts[1]):
+    if re.match("[AS]$", pathparts[0]) and len(pathparts) >=2 and re.match("(PV|RES|\d+|HRC|C\.\d)", pathparts[1]):
         while len(pathparts) > 1 and re.match("[ASREPRTVCLHNGO\d\.()]+$|(?:Rev|Add|Corr|Resu)\.\d+$|S-\d+$", pathparts[1]):
             pathparts[0] = "%s-%s" % (pathparts[0], pathparts[1])
             del pathparts[1]
@@ -234,6 +251,10 @@ def DecodeHref(pathparts, form):
         return { "pagefunc":"scyear", "scyear":int(pathparts[1]) }
     if pathparts[0] == 'members' and len(pathparts) == 2:
         return { "pagefunc":"nation", "nation":pathparts[1] }
+
+    if len(pathparts) >= 2 and pathparts[1] == "webcastindex" and re.match("generalassembly$|securitycouncil$", pathparts[0]):
+        wcdate = (len(pathparts) == 3 and pathparts[2] or "")
+        return { "pagefunc":"webcastindex", "body":pathparts[0], "date":wcdate }        
 
     mga = re.match("(?:generalassembly|ga)_?(\d+)?$", pathparts[0])
     if mga and len(pathparts) >= 2 and re.match("topic[nx]_(.*)$", pathparts[1]):
@@ -290,9 +311,12 @@ def DecodeHref(pathparts, form):
         #aglist = LoadAgendaNames(agnum) # if this is length 1 we can demote this to single list html
         return { "pagefunc":"agendanumexpanded", "agendanum":agnum } #, "aglist":aglist }
 
-    msc = re.match("(?:securitycouncil|sc)_?(\d+)?$", pathparts[0])
+
+    msc = re.match("(?:securitycouncil|sc)_?(\d+|early)?$", pathparts[0])
     if msc:
-        if msc.group(1):
+        if msc.group(1) == "early":
+            return { "pagefunc":"scyearearly" }
+        elif msc.group(1):
             nscyear = int(msc.group(1))
             if nscyear <= 1993:
                 if nscyear < 1946 or len(pathparts) == 1 or pathparts[1] != "documents":
@@ -358,6 +382,8 @@ def DecodeHref(pathparts, form):
             hmap["highlightedit"] = highlightedit
             return hmap
 
+        if re.match("scrape$", pathparts[1]) and not os.path.isfile(pdfinfo.pdffile):
+            return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo, "scrapedoc":True }
         return { "pagefunc":"document", "docid":docid, "pdfinfo":pdfinfo }
 
     mpngid = re.match("png(\d+)$", pathparts[0])
@@ -407,7 +433,8 @@ def EncodeHref(hmap):
     if hmap["pagefunc"] == "nationlist":
         return "/nations" 
     if hmap["pagefunc"] == "document":
-        return "/%s" % (hmap["docid"])
+        scrsuff = hmap.get("scrapedoc") and "/scrape" or ""
+        return "/%s%s" % (hmap["docid"], scrsuff)
     if hmap["pagefunc"] == "pdfpage":
         rl = [ "", hmap["docid"], ("page_%d" % hmap["page"]) ]
         if "highlightedit" in hmap and hmap["highlightedit"]:
@@ -432,6 +459,8 @@ def EncodeHref(hmap):
         return "/securitycouncil" 
     if hmap["pagefunc"] == "scyear":
         return "/securitycouncil_%d" % (hmap["scyear"])
+    if hmap["pagefunc"] == "scyearearly":
+        return "/securitycouncil_early"
     if hmap["pagefunc"] == "scdocuments":
         return "/securitycouncil_%d/documents" % (hmap["scyear"])
     if hmap["pagefunc"] == "agendanum" or hmap["pagefunc"] == "agendanumexpanded":
@@ -478,6 +507,13 @@ def EncodeHref(hmap):
         for highlightrect in hmap["highlightrects"]:
             rl.append("rect_%d,%d_%d,%d" % highlightrect)
         return "/".join(rl)
+
+    if hmap["pagefunc"] == "webcastindex":
+        if hmap["date"]:
+            wcdate = "/%s" % hmap["date"][:4] 
+            href = len(hmap["date"]) == 10 and ("#d%s" % hmap["date"]) or ""
+            return "/%s/webcastindex/%s%s" % (hmap["body"], hmap["date"][:4], href)
+        return "/%s/webcastindex" % (hmap["body"])
 
     return "/rubbish/%s" % (hmap["pagefunc"] + "__" + "|".join(hmap.keys()))
 

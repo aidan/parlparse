@@ -4,7 +4,7 @@ import sys, os, stat, re
 import datetime
 
 from basicbits import WriteGenHTMLhead
-from basicbits import indexstuffdir, currentgasession, currentscyear
+from basicbits import indexstuffdir, pdfdir, currentgasession, currentscyear
 from basicbits import EncodeHref
 from xapsearch import XapLookup
 from indexrecords import LoadSecRecords
@@ -110,6 +110,8 @@ def WriteDocumentListing(body):
     print 'of each kind sorted by year or session.  Click on the link to list the codes of all the documents '
     print 'for that year.</p>'
 
+    print '<h2><b>New:</b> Find some <a href="%s">pre-1994 Security Council Transcripts</a>.</h3>' % EncodeHref({"pagefunc":"scyearearly"})
+    
     print '<table class="doccounttable">'
     print '<tr><th>Year/Session</th>'
     print '<th>Verbatim<br>reports</th>'
@@ -139,6 +141,40 @@ def WriteDocumentListing(body):
             print '</tr>'
 
     print '</table>'
+
+
+def WriteDocumentListingEarly(body):
+    if body == "securitycouncil":
+        bSC, bGA = True, False
+        WriteGenHTMLhead("Security Council early Documents")
+    elif body == "generalassembly":
+        bSC, bGA = False, True
+        WriteGenHTMLhead("General Assembly early Documents")
+    else:
+        bSC, bGA = True, True
+        WriteGenHTMLhead("All early Documents")
+
+    PVlist = [ ]
+    for ldocid in os.listdir(pdfdir):
+        if bSC:
+            mpv = re.match("(S-PV-(\d+).*?)\.pdf$", ldocid)
+            if mpv:
+                PVlist.append((int(mpv.group(2)), mpv.group(1)))
+    PVlist.sort()
+
+    print '<p>Lists of early Security Council meeting transcripts of unknown vintage.'
+    nh = -1; 
+    for num, docid in PVlist:
+        if num >= (nh + 1) * 100:
+            nh = int(num / 100)
+            print "</p>\n\n<h2>%d00's</h2>\n<p>" % nh
+        print '<a href="%s">%s</a>' % (EncodeHref({"pagefunc":"document", "docid":docid}), docid)
+    print '</p>'
+
+        
+
+
+
 
 
 
