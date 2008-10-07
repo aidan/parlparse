@@ -78,6 +78,7 @@ govdepts = ["Department of Health",
 			"Privy Council Office",
                                 "Ministry of Defence",
                                 "Department for Environment, Food and Rural Affairs",
+                                "Department for Energy and Climate Change", # DEFECATE
                                 "Department for International Development",
                                 "Department for Culture, Media & Sport",
                                 "Department for Constitutional Affairs",
@@ -247,6 +248,9 @@ class protooffice:
 			assert not self.cons
 			self.cons = mbrackinfullname.group(2)
 
+		if re.match("Si.n Simon$", self.fullname):
+			self.fullname = "Sion Simon"
+
 		# special Gareth Thomas match
 		if self.fullname == "Gareth Thomas" and (
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
@@ -271,6 +275,8 @@ class protooffice:
                         self.fullname = 'Lord Jones of Birmingham'
                 if self.fullname == 'Professor Sir Ara Darzi':
                         self.fullname = 'Lord Darzi of Denham'
+                if self.fullname == 'Shriti Vadera':
+                        self.fullname = 'Baroness Vadera'
 
                 # Okay, name done, let's move on to position
 
@@ -991,7 +997,7 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 		fullname = cp.fullname
 		cons = cp.cons
                 if fullname == "Michael Foster" and not cons:
-                        if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11"]:
+                        if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11", "2008-10-06"]:
                                 cons = "Worcester"   # this Michael Foster had been a PPS
                         else:
                                 print cpsdates[0]; assert False  # double check we still have the right Michael Foster
@@ -1034,6 +1040,8 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 			date = '2001-07-03'
                 if (re.match('Baroness Warsi', cp.remadename) or cp.remadename == 'Dame Pauline Neville-Jones') and date < '2007-10-15':
                         date = '2007-10-15'
+                if cp.remadename == 'Baroness Vadera' and date<'2007-07-11':
+                        date = '2007-07-11'
 
 		if cp.remadename == 'Lord Davidson of Glen Cova':
 			cp.remadename = 'Lord Davidson of Glen Clova'
@@ -1204,7 +1212,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Shriti Vadera']:
+                if cp.fullname in ['Peter Mandelson']: # ignore until he's made a Lord
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
