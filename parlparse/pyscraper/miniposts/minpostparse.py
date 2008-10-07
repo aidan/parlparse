@@ -459,7 +459,7 @@ def ParseGovPostsPage(fr, gp):
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
-        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110):
+        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110) or num == 141:
                 return "SKIPTHIS", None # Reshuffling
         elif num == 39:
                 sdate = "2006-05-08" # Moved back to date of reshuffle
