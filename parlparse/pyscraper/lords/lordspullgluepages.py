@@ -113,6 +113,7 @@ def GlueByNext(fout, urla, urlx, sdate):
                 sr = re.sub('<a name="([^"]*)" />', r'<a name="\1"></a>', sr) # Should be WriteCleanText like for Commons?
                 sr = re.sub('(<a href="[^"]*&amp)(">.*?)(</a>)(;.*?)([ .,<])', r'\1\4\2\4\3\5', sr)
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
+                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<notus', '<hr> <notus', sr) # New 2008-10...
                 sr = re.sub('<div id="maincontent">(?:\s*<table.*?</table>)?(?s)', '', sr)
                 if url == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm':
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)

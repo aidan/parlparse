@@ -5770,7 +5770,7 @@ B - bishop
 	lordofname_full="Minginish"
 	county="Highland"
 	peeragetype="L" affiliation="LDem"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2008-07-27" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -6788,7 +6788,7 @@ B - bishop
 	lordofname_full="Chesterfield"
 	county="the County of Derbyshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2008-07-29" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -9442,7 +9442,7 @@ B - bishop
     lordofname_full="The Weald"
     county="the County of Kent"
     peeragetype="L" affiliation="Con"
-    fromdate="2006-07-11" todate="9999-12-31"
+    fromdate="2006-07-11" todate="2008-08-14" towhy="died"
 />
 <lord
     id="uk.org.publicwhip/lord/100928"
@@ -10009,6 +10009,17 @@ B - bishop
     county="the City of Glasgow"
     peeragetype="L" affiliation="XB"
     fromdate="2008-07-14" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100980"
+    house="lords"
+    forenames="Igor"
+    title="Lord" lordname="Judge" lordofname=""
+    lordofname_full="Draycote"
+    county="the County of Warwickshire"
+    peeragetype="A" affiliation="XB"
+    fromdate="2008-10-06" todate="9999-12-31"
 />
 
 </publicwhip>
