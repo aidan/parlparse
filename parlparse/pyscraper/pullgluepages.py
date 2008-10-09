@@ -199,14 +199,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<body>\s+<!--<hd>--><br>', '<body><hr><!--<hd>--><br>', sr)
                 
                 # To cope with post 2006-09; need a better way of doing this!
-                sr = re.sub('<div id="maincontent1">\s*<p>', '<hr><p>', sr)
-                sr = re.sub('<div id="maincontent1">\s*<br>', '<hr><br>', sr)
+                sr = re.sub('<div id="maincontent1">\s*<(p|br)>', r'<hr><\1>', sr)
                 sr = re.sub('<div id="maincontent1">\s*<h3', '<hr><h3', sr)
                 sr = re.sub('<div id="maincontent1">\s*<!--<hd>-->', '<hr>', sr)
-                sr = re.sub('<div id="maincontent1">\s*<notus', '<hr> <notus', sr) # 2006-05-09
-                sr = re.sub('<div id="maincontent1">\s*<meta', '<hr> <meta', sr) # 2006-10-20
-                sr = re.sub('<div id="maincontent1">\s*<a', '<hr> <a', sr)
-                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<br>', '<hr><br>', sr) # 2008-06-17
+                sr = re.sub('<div id="maincontent1">\s*<(notus|meta|a)', r'<hr> <\1', sr) # 2006-05-09 / 2006-10-20
+                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<(br|p|h3|notus|meta|a)', r'<hr><\1', sr) # 2008-06-17 / 2008-10...
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
                 sr = re.sub("</?mekon[^>]*>", "", sr)
