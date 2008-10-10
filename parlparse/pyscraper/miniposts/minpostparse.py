@@ -385,12 +385,19 @@ def SpecMins(regex, fr, sdate):
         a = re.findall(regex, fr)
         for i in a:
                 specpost = i[0]
-                specname = re.sub("^\s+", "", i[1])
+                if len(i)==3:
+                        specname = i[2]
+                        if i[1]:
+                                specpost = "%s; %s" % (specpost, i[1])
+                else:
+                        specname = i[1]
+                specname = re.sub("^\s+", "", specname)
                 specname = re.sub("\s+$", "", specname)
                 nremadename = specname
                 nremadename = re.sub("^Rt Hon ", "", nremadename)
                 if not re.search("Duke |Lord |Baroness ", specname):
                         nremadename = re.sub("\s+MP$", "", nremadename)
+                        nremadename = re.sub("^Mrs?\s+", "", nremadename)
                         nremadename = re.sub(" [GKDCOM]BE$", "", nremadename)
                 bigarray.setdefault(sdate, {})
                 if specpost == "Universitites":
@@ -491,9 +498,9 @@ def ParseGovPostsPage(fr, gp):
 
         # extract special Ministers of State and PUSes
         namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
-        alsobit = "(?:[-\s]+\(?also .*?\)?)?"
+        alsobit = "(?:[-\s]+\(?also .*?\)?|[;:] (Minister for .*?))?"
         SpecMins("<TR><td width='400'><b>Minister of State \((.*?)\)</b></td>%s" % namebit, fr, sdate)
-        SpecMins("<TR><td width='400'>- Mini?ster of State \((.*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
+        SpecMins("<TR><td width='400'>- Mini?ster of State \(([^)]*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<tr><td>- Minister of State \((.*?)\)?%s</td>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<TR><td width='400'>- Minister (?:of State )?for (.*?)%s</TD>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<tr><td>- Minister for (.*?)</td>%s" % namebit, fr, sdate)
