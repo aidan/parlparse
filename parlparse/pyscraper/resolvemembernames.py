@@ -306,6 +306,9 @@ class MemberList(xml.sax.handler.ContentHandler):
             for attr in matches:
                 if (date == None) or (date >= attr["fromdate"] and date <= attr["todate"]):
                     ids.add(attr["id"])
+                # Special case Mr MacDougall questions answered after he died
+                if attr["id"]=='uk.org.publicwhip/member/1992' and date >= '2008-09-01' and date <= '2008-09-30':
+                    ids.add(attr["id"])
         return ids
 
     # Returns id, name, corrected constituency
