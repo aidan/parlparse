@@ -40,6 +40,8 @@ A date range can also be specified, for which the alias is valid.
 <alias fullname="John Prescott" alternate="The Deputy Prime Minister" from="1997-05-01" to="2007-06-27"/>
 <alias fullname="John Prescott" alternate="The Deputy Prime Minister and First Secretary of State" from="1997-05-01" to="2007-06-27"/>
 
+<alias constituency="Worcester" alternate="The Parliamentary Under-Secretary of State for International Development" from="2008-10-06" />
+
 <!-- note this will be ignored until a John Major is added for a parliament
 before 1997 for which he was PM - date ranges will make the code ignore the
 1997 parliament John Major in all-members.xml in relation to this Prime
