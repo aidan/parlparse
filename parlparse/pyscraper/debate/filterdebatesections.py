@@ -234,7 +234,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 	# If this is labeled major, then it gets concatenated with the
 	# subsequent major heading.  It's kind of a procedural info about the
 	# running of things, so fair to have it as a minor heading alone.
-	elif re.match("\[.*? in the Chair\.?\]$(?i)", headingtxt):
+	elif re.match("\[.*? in\s*the\s*Chair\.?\]$(?i)", headingtxt):
 		bmajorheading = False
 
 	elif re.search("in\s*the\s*chair(?i)", headingtxt):
