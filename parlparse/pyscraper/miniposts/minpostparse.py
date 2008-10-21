@@ -1219,7 +1219,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Peter Mandelson', 'Stephen Carter', 'Paul Myners']: # ignore until they're made Lords
+                if cp.fullname in ['Stephen Carter', 'Paul Myners', 'Lord Myners']: # ignore until they're introduced as Lords
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
