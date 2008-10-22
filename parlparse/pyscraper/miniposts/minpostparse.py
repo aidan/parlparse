@@ -1148,10 +1148,10 @@ def CheckPPStoMinisterpromotions(mofficegroup):
 				ministerialdatesstart.append(rp[1].sdatestart)
 
 	# check we always go from PPS to ministerial position
-	if ppsdatesend and ministerialdatesstart:
-		if max(ppsdatesend) > min(ministerialdatesstart):
-			if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
-				print "New demotion to PPS for: ", mofficegroup[0][1].fullname
+	#if ppsdatesend and ministerialdatesstart:
+	#	if max(ppsdatesend) > min(ministerialdatesstart):
+	#		if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
+	#			print "New demotion to PPS for: ", mofficegroup[0][1].fullname
 
 	# check that goverment positions don't overlap committee positions
 	committeegovlist.sort()
