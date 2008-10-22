@@ -270,6 +270,8 @@ class protooffice:
                         self.fullname = 'Lord Carter of Barnes'
                 if self.fullname == 'Peter Mandelson':
                         self.fullname = 'Lord Mandelson'
+                if self.fullname == 'Paul Myners':
+                        self.fullname = 'Lord Myners'
 
                 if self.fullname == 'Admiral Sir Alan West':
                         self.fullname = 'Lord West of Spithead'
@@ -1033,6 +1035,8 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 
                 # People being made ministers before they're Lorded. Tsch.
 		# Manual fixes for old date stuff. Hmm.
+                if cp.remadename == 'Lord Myners' and date < '2008-10-21':
+                        date = '2008-10-21'
                 if cp.remadename == 'Lord Mandelson' and date<'2008-10-13':
                         date = '2008-10-13'
                 if cp.remadename == 'Lord Carter of Barnes' and date<'2008-10-16':
@@ -1227,7 +1231,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Paul Myners', 'Lord Myners']: # ignore until they're introduced as Lords
+                if cp.fullname in []: # ignore until they're introduced as Lords
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
