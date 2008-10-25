@@ -341,7 +341,7 @@ class ParseDay:
 					if match.group(1) == 'noon':
 						timestamp = '12:00'
 					else:
-						hour = match.group(2)
+						hour = int(match.group(2))
 						if hour<12 and match.group(4) == 'pm':
 							hour += 12
 						timestamp = "%s:%s" % (hour, match.group(3))
@@ -361,7 +361,7 @@ class ParseDay:
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
 				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon)', ptext)
-				hour = match.group(1)
+				hour = int(match.group(1))
 				if hour<12 and match.group(3) == 'pm':
 					hour += 12
 				timestamp = "%s:%s" % (hour, match.group(2))
