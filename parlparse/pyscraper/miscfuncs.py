@@ -334,7 +334,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z0-9]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
