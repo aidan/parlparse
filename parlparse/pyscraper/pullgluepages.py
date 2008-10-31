@@ -170,7 +170,20 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2007-11-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071128/text/71128w0001.htm':
                 urla = [urla[0]]
-        if sdate=='2008-07-07' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080707/debtext/80707-0001.htm':
+        if sdate=='2008-01-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080114/text/80114w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-16' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080116/text/80116w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080124/halltext/80124h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080128/text/80128w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-03-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080313/text/80313w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-04-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080421/text/80421w0001.htm':
+                urla = [urla[0]]
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2008-06-17' or sdate=='2008-07-07' or sdate=='2008-03-06' or sdate=='2008-01-14'):
                 urla = [urla[0]]
         #print "urla"
         #for aaa in urla:
