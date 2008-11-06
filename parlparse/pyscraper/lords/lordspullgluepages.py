@@ -89,6 +89,8 @@ def GlueByNext(fout, urla, urlx, sdate):
                 urla.insert(0, 'http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo041123/text/41123-01.htm')
         if urla[0] == 'http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80722-0001.htm':
                 urla = [urla[0]]
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/81104-0001.htm':
+                urla = [urla[0]]
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
