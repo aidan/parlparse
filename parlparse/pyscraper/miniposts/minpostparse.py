@@ -208,6 +208,8 @@ class protooffice:
 		self.fullname = re.sub("^Mrs? ", "", self.fullname)
 		if re.match("Si.n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
+		if re.match("Si.n C\. ?James$", self.fullname):
+			self.fullname = "Sian C James"
                 self.cons = None
                 if nameMatch.group(2):
 		        self.cons = re.sub("&amp;", "&", nameMatch.group(2))
