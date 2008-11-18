@@ -205,7 +205,7 @@ class protooffice:
                 name = re.sub('\s+', ' ', name)
 		nameMatch = re.match('(.*?)(?:\s*\(([^)]*)\))?\s*$', name)
 		self.fullname = nameMatch.group(1).strip()
-		self.fullname = re.sub("^Mrs? ", "", self.fullname)
+		self.fullname = re.sub("^Mr?s? ", "", self.fullname)
 		if re.match("Si.n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
 		if re.match("Si.n C\. ?James$", self.fullname):
@@ -639,6 +639,10 @@ def ParsePrivSecPage(fr, gp):
 
 		if re.search('vacant(?i)', nameMatch.group(2)) or re.match('&nbsp;$', nameMatch.group(2)):
 			continue
+
+                # Special case, though presumably lots of other PPSs are wrong too :-/
+                if re.match('Ms Barbara Keeley', nameMatch.group(2)) and num>=87:
+                        continue
 
 		if deptname in ppsdepts:
 			ec = protooffice()
