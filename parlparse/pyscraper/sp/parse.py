@@ -1485,6 +1485,7 @@ for d in dates:
 <!ENTITY ntilde  "&#241;">
 <!ENTITY ocirc   "&#244;">
 <!ENTITY oelig   "&#339;">
+<!ENTITY otilde  "&#245;">
 <!ENTITY Ograve  "&#210;">
 <!ENTITY Oslash  "&#216;">
 <!ENTITY oslash  "&#248;">

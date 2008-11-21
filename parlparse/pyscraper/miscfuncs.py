@@ -199,6 +199,7 @@ entitymap = {
         '&#214;':'&Ouml;',   # this is capital o-double-dot
         '&#243;':'&oacute;',   # this is o-acute
         '&#248;':'&oslash;',   # this is o-slash
+        '&#245;':'&otilde;', # this is o-tilde
 
         '&#237;':'&iacute;', # this is i-acute
         '&#238;':'&icirc;', # this is i-circumflex
