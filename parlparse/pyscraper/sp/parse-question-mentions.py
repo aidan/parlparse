@@ -75,7 +75,7 @@ elif modified:
         modified_after = datetime.datetime(1999,5,1,0,0,0)
 else:
     if filenames:
-        m = re.search('up-to-(\d{4}-\d{2}-\d{2})(.*)?.xml',filenames[-1])
+        m = re.search('up-to-(\d{4}-\d{2}-\d{2})(.*).xml',filenames[-1])
         if not m:
             raise Exception, "Couldn't find date from last mentions file: "+filenames[-1]
         all_after_date = datetime.date(*time.strptime(m.group(1),"%Y-%m-%d")[:3])
