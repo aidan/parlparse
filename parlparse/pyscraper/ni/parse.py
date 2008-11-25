@@ -324,6 +324,8 @@ class ParseDay:
 					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
+                                if not p.strong:
+                                        raise ContextException, 'No strong in p! %s' % p
 				speaker = p.strong.find(text=True)
 				speaker = re.sub('&nbsp;', '', speaker)
 				speaker = re.sub("\s+", " ", speaker).strip()
