@@ -101,6 +101,7 @@ class ParlPhrases:
 	"Secretary of State for the Environment, Food and Rural Affairs",
 	"Secretary of State for the Foreign and Commonwealth Office",
 	"Secretary of State for the Home Department",
+	"Secretary of State for Energy and Climate Change",
  	"Secretary of State",
 		]
 
