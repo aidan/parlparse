@@ -57,3 +57,6 @@ cd ~/undata/pdfxml
 svn -q add . --force
 svn -q commit -m "Auto commit from morningupdate"
 
+cd ~/undata/html
+svn -q add . --force
+svn -q commit -m "Auto commit from morningupdate"

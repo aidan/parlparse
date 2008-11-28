@@ -555,7 +555,7 @@ class TextPage:
                 ih = 1
             else:
                 #print txlines[0].ltext
-                assert re.match("General Assembly", txlines[0].ltext)
+                assert re.match("General Assembly", txlines[0].ltext), txlines[0].ltext
                 assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
                 assert re.match("\S+ [Ss]ession", txlines[2].ltext)
                 assert re.match("\d+ \w+ \d\d\d\d", txlines[3].ltext) or (lundocname in ["A-50-PV.38", "A-50-PV.40"])
@@ -752,6 +752,7 @@ class GlueUnfile:
 
             tlc.paratext = re.sub("-</i> <i>", "-", tlc.paratext)
             tlc.paratext = re.sub("-</b> <b>", "-", tlc.paratext)
+            tlc.paratext = re.sub("</b>\s*\.\s*<b>", ". ", tlc.paratext)
             tlc.paratext = re.sub("Secretary- General", "Secretary-General", tlc.paratext)
             tlc.paratext = re.sub("\s*(?:</i>\s*<i>|</b>\s*<b>|<b>\s*</b>|<i>\s*</i>|<b>\s*<i>\s*</b>\s*</i>)\s*", " ", tlc.paratext)
             tlc.paratext = tlc.paratext.strip()

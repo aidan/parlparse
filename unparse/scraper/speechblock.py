@@ -14,7 +14,7 @@ respek = """(?x)<b>([^<]*?)\s*</b>   # group 1  speaker name
             (?:.{0,150}(?:situation\sin\sAngola|\(1999\)))?
             (?:\s*(?:\(|<i>)+
                 (?:spoke\sin|interpretation\sfrom)\s(\w+)    # group 5  speaker language
-                (?:.{0,60}?(?:by|the)\sdelegation)?   # translated by [their] delegation
+                (?:.{0,60}?(?:by|the)\s(?:delegation|speaker))?   # translated by [their] delegation
             (?:\)|</i>)+)?
             \s*
             (?:<i>:</i>|<b>\s*:\s*</b>|:)    # make sure we get a colon
@@ -164,7 +164,7 @@ def DetectSpeaker(ptext, indents, paranum, speakerbeforetookchair):
             if IsNotQuiet(): # allow for less strict when done by cronjob
                 raise unexception("missing nation for %s" % speakr, paranum)
 
-        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Justice |Commodore |Metropolitan |Transcript", speakr):
+        if not re.match("Mr\.|Mrs\.|Miss |Ms\.|Pope |The |King |Sultan |Prince |Secretary|Arch|Dr\.|Sir |Sheikh?a? |President |Monsignor |Chairman |Crown |His |Dame |Senator |Cardinal |Chief |Captain |Acting |Begum |Major-General |Shaikh |Judge |Count |Emir |Baroness |General |Nana |Princess |U |Rev\. |Kofi |Sayyid |Sheika |Bishop |Sir. |Wilmot |Eliza |Jos|Lord |Justice |Father |Commodore |Metropolitan |Transcript|Madam ", speakr):
             print speakr
             raise unexception("improper title on speaker", paranum)
         if re.search("[\.,:;]$", speakr):
@@ -281,7 +281,7 @@ AgendaTypeMap = [ ("condolence", "(?:floods|flood in|tropical storm|earthquake|t
                   ("report", "(The situation in|action on the list|list of accredited civil society actors)(?i)"),
                   ("misc", "(?:UNICEF Executive Board|Observance of the Week of Solidarity|Date of the commemoration|Dates of the.*? Dialogue)(?i)"),
                   ("misc", "(?:Adoption of the draft resolution|continuation of statements|Agenda items(?: that remain| remaining) for consideration|Request for the inclusion of an additional|informal interactive hearings)(?i)"),
-                  ("misc", "(?:programme|high-level.*?meeting|high-level.*?dialogue|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
+                  ("misc", "(?:programme|high-level.*?meeting|meeting on the global|high-level.*?dialogue|organization of(?: the)? work|tribute|closure|announcement|postponement of(?: the)? date)(?i)"),
                   ("misc", "(?:statements? on the occasion|expression of welcome|expression of thanks|adoption of the agenda|Participation.*? in the work|extension of the work|apportionment of the expenses)(?i)"),
                   ("misc", "(?:Drawing of lots for the seating protocol)(?i)"),
                 ]
@@ -460,11 +460,13 @@ class SpeechBlock:
                     agendanum2 = DetectAgendaForm(ptext, self.genasssess, prevagendanum, self.paranum)
                     print "agendanum from second line", agendanum2
                     assert agendanum2, ptext # must detect it
-                    if re.search("misc|show", self.agendanum):
+                    if re.search("misc|show|address", self.agendanum):
                         self.agendanum = agendanum2   # a woolly agenda can be over-ridden
                     elif self.undocname == "A-62-PV.74":
                         self.agendanum = "%s,%s" % (self.agendanum, agendanum2)
                     else:
+                        print self.agendanum
+                        print ptext
                         raise unexception(" unknown extra agendanum case", self.paranum)
                     print "aaaa2aa  ", self.agendanum
                 self.paragraphs.append((tlc.lastindent and "boldline-indent" or "boldline-p", ptext))

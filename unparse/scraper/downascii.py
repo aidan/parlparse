@@ -11,6 +11,7 @@ def DownAscii(st):
     st = st.replace("ã", "a")
     st = st.replace("ä", "a")
     st = st.replace("å", "a")
+    st = st.replace("Ü", "A")
     st = st.replace("ç", "c")
     st = st.replace("é", "e")
     st = st.replace("ë", "e")
@@ -54,3 +55,5 @@ def DownAscii(st):
     st = st.replace("Í", "i")
 
     return st
+# Anal
+# Anal

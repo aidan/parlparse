@@ -97,7 +97,7 @@ def ScrapePDF(undocname, plenaryurl="http://www.un.org/ga/59/documentation/list0
         madoc = re.match("A-(\d\d)-((?:L\.|CRP\.)?\d+)([\w\.\-\(\)]*)$", undocname)
         msres = re.match("S-RES-(\d+)\((\d+)\)$", undocname)
         mapv  = re.match("A-(\d\d)-PV.(\d+)(-Corr.\d|)$", undocname)
-        macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d)$", undocname)
+        macdoc = re.match("A-AC.(\d+)-(\d\d\d\d)-(\d+)$", undocname)
         maodoc = re.match("A-(\d+)(-?[\w\.\-]*)$", undocname)
         mspv = re.match("S-PV.(\d+)(?:-Resu\.(\d+))?$", undocname)
         scdoc = re.match("S-(\d\d\d\d)-(\d+)(-Corr.\d|)(\(SUPP\)|)$", undocname)
@@ -268,7 +268,8 @@ def ScrapeSCContentsPage(year, contentsurl):
         #print sci[1]
         # communique for an embargoed verbatim recording
         if re.match("Communiqu.", sci[1]):
-            if sci[0] != pvlist[-1][2] and not re.search("PV.5794", sci[0]):
+            pvlm12 = re.sub("&amp;", "&", pvlist[-1][2])
+            if sci[0] != pvlm12 and sci[0] != pvlist[-1][2] and not re.search("PV.5794|PV.5906", sci[0]):
                 print "Communique doesn't have same link as it should:\n%s\n%s" % (sci[0], pvlist[-1][2])  # same link
             continue
 
@@ -296,7 +297,10 @@ def ScrapeSCContentsPage(year, contentsurl):
                     print "  --- known typo"
                 elif year == 1995 and re.search("PV\.3528", pvlist[-1][2]) and re.search("PV\.3611", urlwithoutcorr):
                     print "  --- known typo"
+                elif year == 2008 and re.search("PV\.5916", pvlist[-1][2]) and re.search("PV\.5916", urlwithoutcorr):
+                    print "  --- known unconsolidated typo"
                 else:
+                    print year, pvlist[-1], sci
                     assert False
             pvcorrlist.append((pvlist[-1][1], sccorr.group(1), sci[0]))
             continue

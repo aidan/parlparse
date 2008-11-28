@@ -7,6 +7,7 @@ import urllib2
 from nations import nationdates
 from unmisc import IsNotQuiet
 import datetime
+from db import GetDBcursor, escape_string
 
 def ScrapeSCSummaries(scsummariesdir):
     currentdate = datetime.date.today()
@@ -471,6 +472,11 @@ class SCrecord:
 
         # do this to over-ride the splitting and see the original files
         #self.topics = [ self.otopicrecstr ]
+    def InsertintoDB(self, c):
+        c.execute("SELECT docid FROM un_scheadings  WHERE docid = '%s'" % self.pvcode)
+        if not c.fetchone():
+            c.execute("REPLACE INTO un_scheadings (docid, heading, ldate, shortheading, veryshortheading, numvotes) VALUES ('%s', '%s', '%s', '', '', 0)" % (self.pvcode, escape_string(self.otopicrecstr), self.sdate))
+        c.execute("UPDATE un_scheadings SET shortheading='%s', veryshortheading='%s' WHERE docid='%s'" % (escape_string(self.otopicrecstr), escape_string(self.topics[0]), self.pvcode))
 
 def WriteTopicG(fout, topic, topicg):
     fout.write('\n<div class="dsctopic">\n')
@@ -493,6 +499,7 @@ def WriteTopicG(fout, topic, topicg):
     fout.write("</div>\n")
 
 def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
+    c = GetDBcursor()
     screcords = [ ]
     for lf in os.listdir(scsummariesdir):
         if re.match("\.svn", lf):
@@ -513,6 +520,7 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
             screcord = SCrecord(year, row, summarylink, htmldir)
             screcord.FindTopicCats(htmldir, pdfdir)
             screcords.append(screcord)
+            screcord.InsertintoDB(c)
 
     topicgroups = { }
     recentgroup = [ ]

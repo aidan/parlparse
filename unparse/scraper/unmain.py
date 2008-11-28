@@ -116,6 +116,7 @@ if not (bScrape or bConvertXML or bParse or bVoteDistances or bDBfill or bXapdex
 if bScrape:
     if not options.stem and not options.scrapedoc:  # default case
         ScrapeContentsPageFromStem("A-62-PV")
+        ScrapeContentsPageFromStem("A-63-PV")
         ScrapeContentsPageFromStem("S-2008-PV")
     if options.scrapedoc:
         ScrapePDF(options.scrapedoc, bforce=False)
@@ -124,8 +125,8 @@ if bScrape:
 
 if bConvertXML:
     if not stem:
-        ConvertXML("S-PV.5", pdfdir, pdfxmldir, False)
-        ConvertXML("A-62-PV", pdfdir, pdfxmldir, False)
+        ConvertXML("S-PV.[56]\d\d\d", pdfdir, pdfxmldir, False)
+        ConvertXML("A-6[23]-PV", pdfdir, pdfxmldir, False)
     elif re.match("A-(?:49|[56]\d)-PV", stem):  # year 48 is not parsable
         ConvertXML(stem, pdfdir, pdfxmldir, options.forcecxml)
     elif re.match("S-PV", stem):  # make sure it can't do too many at once
@@ -137,7 +138,7 @@ if bConvertXML:
 if bParse:
     if not stem:
         ParsetoHTML("A-62-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
-        ParsetoHTML("S-PV.5[6-9]", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
+        ParsetoHTML("S-PV.(?:5[6-9]|6\d\d\d)", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     else:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()

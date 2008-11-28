@@ -3,8 +3,9 @@
 import MySQLdb
 import re
 import sys
+from dbpasswords import *
 
-db = MySQLdb.connect(user="undemocracy", passwd="fgfg696", db="undemocracy")
+db = MySQLdb.connect(user=db_user, passwd=db_password, db=db_name)
 
 
 def GetDBcursor():
@@ -49,6 +50,8 @@ def MakeTableVotes(c):
 def AddWholeDivision(c):
     pass
 
+def escape_string(str):
+    return MySQLdb.escape_string(str)
 
 # handling the different command line improvements
 if __name__ == "__main__":

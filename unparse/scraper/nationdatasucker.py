@@ -48,6 +48,8 @@ def LoadSecurityCouncilNations(c):
 
 
 permmissionsurl = "http://www.un.int/index-en/webs.html"
+permmissionsurl = "http://www.un.int/wcm/content/site/portal/lang/en/home/websites"
+
 def ScrapePermMissions():
     fin = urllib2.urlopen(permmissionsurl)
     permmiss = fin.read()
