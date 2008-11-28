@@ -191,12 +191,14 @@ def WriteWikiPage():
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
 
-    print '''<div style="background-color:#f9b5b5; border: thin red solid; margin-top:0em; float:right; width:40%">Media: 
+    print '''<div style="background-color:#f9b5b5; border: thin red solid; margin-top:0em; float:right; width:260px">Media: 
              <a href="http://www.guardian.co.uk/technology/2008/mar/13/internet.politics">Newspaper article 13 March</a>, 
              <a href="http://video.google.com/videoplay?docid=5811193931753907681&hl=en-GB">4 minute video presentation</a>,
              <a href="http://citizenreporter.org/2008/01/bm241-making-better-use-of-the-united-nations/">Podcast interview</a>.
              <br/>
-             Some recent <a href="http://www.freesteel.co.uk/wpblog/2008/03/un-parsing-roundup/">blogging</a> is also available.</div>'''
+             Notes on the <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">creator's blog</a>.
+             <br/>
+             <b>New:</b> Links to <a href="http://www.undemocracy.com/generalassembly/webcastindex">webcasts</a>.</div>'''
 
     print '''<p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts (since 1994) of 
              two of the five principal 
@@ -218,13 +220,16 @@ def WriteFrontPage():
             <div style="width:200;  text-align:center; background-color:blue; color:white; border:thick black dashed; float:right">A proud member of the 
             <a href="http://en.wikipedia.org/wiki/Parliamentary_informatics" style="background-color:#cdffff">Parliamentary Informatics</a> web-ring</div>
 
-             <p style="margin-top:1em; margin-bottom:1em"><b style="background:#b3f1d7;">The third column</b> lists 
-             wikipedia articles on which incoming links have been clicked.
-             <i>This is the best way to begin exploring this resource, if you do not know what is available.
-             One in a hundred documents are very interesting to a new visitor, so if you pick them at random
-             you are unlikely to get lucky.</i>  
-             For further information, see <a href="#aboutfooter">about us</a>.</p>'''
+             <p style="margin-top:1em; margin-bottom:0.5em"><b style="background:#b3f1d7;">The third column</b> lists 
+             recent visits from Wikipedia readers.
+             <i>This is the best place to start browsing, 
+             because only some of documents are very interesting and you are unlikely to get lucky
+             if you click at random.</i></p>'''  
     
+    print '''<p style="margin-botton:1em"><b>Note</b>: While Security Council meetings are on-line within 
+             hours, General Assembly transcripts go on-line three months after
+             the meeting (although the videos are up immediately).  The start of the 63rd 
+             session is <a href="http://www.un.org/ga/63/meetings63.shtml"><b>here</b></a>.</p>'''
     
     print '<div id="sectors">'
     print '<div id="securitycouncil">'
@@ -309,6 +314,7 @@ def WriteFrontPage():
             print '<li>%s %s (%s) <a href="%s">%s</a></td> </li>' % (shortwikirow[0], shortwikirow[1], shortwikirow[2], shortwikirow[3], shortwikirow[4])
 
         print '</ul>'
+        print '<p><a href="/incoming" title="Wikipedia articles which link to documents available on this website">more...</a></p>'
         print '</div>'
 
     print '<div id="aboutfooter">'

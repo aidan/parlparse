@@ -13,7 +13,7 @@ sys.path.append("../pylib")
 from config import *  # this must bring in htmldir
 
 nowdatetime = datetime.datetime.now().strftime("%Y-%m-%d;%H:%M")
-currentgasession = 62
+currentgasession = 63
 currentscyear = datetime.datetime.now().year  #2007
 basehref = "http://www.undemocracy.com"
 
@@ -251,6 +251,8 @@ def DecodeHref(pathparts, form):
         return { "pagefunc":"scyear", "scyear":int(pathparts[1]) }
     if pathparts[0] == 'members' and len(pathparts) == 2:
         return { "pagefunc":"nation", "nation":pathparts[1] }
+    if pathparts[0] == 'special':
+        return { "pagefunc":"special" }
 
     if len(pathparts) >= 2 and pathparts[1] == "webcastindex" and re.match("generalassembly$|securitycouncil$", pathparts[0]):
         wcdate = (len(pathparts) == 3 and pathparts[2] or "")
@@ -402,7 +404,7 @@ def DecodeHref(pathparts, form):
         return hmap
 
     # detect nations by the presence of Flag_of
-    for flagfile in os.listdir("png100"):
+    for flagfile in os.listdir("/home/undemocracy/unparse-live/web2/png100"):
         if flagfile.lower() == ("Flag_of_%s.png" % pathparts[0]).lower():
             nation = flagfile.replace("Flag_of_", "").replace(".png", "").replace("_", " ")
             if len(pathparts) == 1:
@@ -428,6 +430,8 @@ def EncodeHref(hmap):
         return "/"
     if hmap["pagefunc"] == "about":
         return "/about"
+    if hmap["pagefunc"] == "special":
+        return "/special"
     if hmap["pagefunc"] == "search":
         return "/search/%s" % (hmap["searchvalue"])
     if hmap["pagefunc"] == "nationlist":

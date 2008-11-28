@@ -249,3 +249,21 @@ def WriteAllNations():
         print '</table></td>'
     print '</tr></table>'
 
+
+def WriteRochesterPage():
+    WriteGenHTMLhead('Uni Rochester Stuff')
+    c = GetDBcursor()
+    qsel = "SELECT ldate, nation, un_divisions.docid, un_divisions.href, motiontext, vote FROM un_divisions "
+    qlj = "LEFT JOIN un_votes ON un_votes.docid=un_divisions.docid AND un_votes.href=un_divisions.href"
+    c.execute("%s %s WHERE body='GA' AND vote is not null AND un_divisions.docid REGEXP 'A-49' ORDER BY nation LIMIT 20000" % (qsel, qlj))
+
+    rows = c.fetchall()
+    print '<table class="special">'
+    for row in rows:
+        lrow = [ str(r)  for r in row ]
+        lrow[4] = '<a href="%s#%s">%s</a>' % (EncodeHref({"pagefunc":"meeting", "docid":lrow[2]}), lrow[3], lrow[4])
+        print "<tr><td>", "</td><td>".join(lrow), "</td></tr>"
+    print "</table>"
+
+
+

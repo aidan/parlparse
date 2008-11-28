@@ -66,8 +66,10 @@ def WritePDFpreviewpage(pdfinfo, npage, highlightrects, highlightedit):
     print '</div>'
 
     print '<div id="highlightcontrols">'
-    print '<p><span class="linktabfleft">URL:</span> <input style="text" readonly value="%s">' % resurl
-    print '<span class="linktabfleft">wiki:</span> <input style="text" readonly value="%s"></p>' % reswref
+    #print '<p>' # <span class="linktabfleft">URL:</span> <input style="text" readonly value="%s">' % resurl
+    print '<textarea rows="2" cols="50" style="float:right;font-size:75%%" readonly>%s</textarea>' % reswref
+    print '<div class="linktabfleft">wiki<br/>templ:</div> '
+    #print '<input type="text" style="font-size:50%%" size="100" readonly value="%s"></p>' % reswref
 
     if highlightrects:
         hmap["highlightrects"] = [ ]
@@ -183,7 +185,12 @@ def WritePDFpreview(docid, pdfinfo, rfr, bscrapedoc):
         if pdfinfo.pages == -1:
             print '(Accurate page-count unknown.)'
         print '</li>'
-    undlink = "http://www.un.org/Docs/journal/asp/ws.asp?m=" + re.sub('[\-"]', "/", pdfinfo.pdfc)
+    
+    lundlink = re.sub('[\-"]', "/", pdfinfo.pdfc)
+    if re.match("S/PV/\d", lundlink):   # handle mistaken dash in these cases
+        lundlink = re.sub('PV/', 'PV.', lundlink)
+    undlink = "http://www.un.org/Docs/journal/asp/ws.asp?m=" + lundlink
+    
     print '<li class="d">Try linking directly to <a href="%s">%s</a></li>' % (undlink, undlink)
     if not pdflink:
         print '<li class="d">No document available on undemocracy.com server.',

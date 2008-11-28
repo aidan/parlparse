@@ -20,25 +20,35 @@ import datetime
 import urllib
 cgitb.enable()
 
+sys.path.append("/home/undemocracy/unparse-live")
+sys.path.append("/home/undemocracy/unparse-live/djweb")
+os.environ['PYTHONPATH'] = "/home/undemocracy/unparse-live"
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+
+from django.template import loader
+import djweb.settings as settings
+
+
 from basicbits import DecodeHref, EncodeHref, LogIncomingDoc, SetBodyID, WriteGenHTMLfoot
-from db import LogIncomingDB
+from db import LogIncomingDB, GetUnlogList
 
 from pdfview import WritePDF, WritePDFpreview, WritePDFpreviewpage, WritePdfPreviewJpg
 from indextype import WriteFrontPage, WriteFrontPageError, WriteAboutPage, WriteWikiPage
 from indextype import WriteIndexStuff, WriteIndexStuffGA, WriteIndexStuffSec, WriteIndexStuffSecYear, WriteIndexStuffAgnum, WriteIndexSearch
 from unpvmeeting import WriteHTML, WriteHTMLagnum
 from highlightimg import WritePNGpage
-from nationpage import WriteIndexStuffNation, WriteAllNations
+from nationpage import WriteIndexStuffNation, WriteAllNations, WriteRochesterPage
 from doclisting import WriteIndexStuffDocumentsYear, WriteDocumentListing, WriteDocumentListingEarly
 
-from indexrecords import LoadAgendaNames
+from indexrecords import LoadAgendaNames, LoadSecRecords
+from wikitables import ShortWikipediaTableM
 from quickskins import WriteWebcastIndexPage
 
 # the main section that interprets the fields
-if __name__ == "__main__":
+def maintrunk(pathpart):
 
     form = cgi.FieldStorage()
-    pathpartstr = (os.getenv("PATH_INFO") or '').strip('/')
+    pathpartstr = (pathpart or '').strip('/')
     pathparts = [ s  for s in pathpartstr.split('/')  if s ]
     referrer = os.getenv("HTTP_REFERER") or ''
     ipaddress = os.getenv("REMOTE_ADDR") or ''
@@ -81,7 +91,16 @@ if __name__ == "__main__":
         LogIncomingDB("front", "", referrer, ipaddress, useragent, remadeurl)
         WriteFrontPage()
     elif pagefunc == "about": # no longer exists
-        WriteAboutPage()
+        print "Content-type: text/html\n"
+        #WriteAboutPage()
+        recsc = LoadSecRecords("recent")[:12]
+        recag = LoadAgendaNames("recent")[:8]
+        wikirefs = ShortWikipediaTableM(12)
+        searchlist = GetUnlogList("search", 100)
+        x = loader.render_to_string('frontpage.html', {'searchlist':searchlist, 'trail':'locise', 'secrecords':recsc, 'garecords':recag, 'wikirefs':wikirefs, 'settings':settings})
+        print x
+        #print "<h1>ggggggg</h1>"
+        sys.exit(0)
     elif pagefunc == "incoming":
         LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteWikiPage()
@@ -91,7 +110,10 @@ if __name__ == "__main__":
     elif pagefunc == "nationlist":
         LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteAllNations()
-    
+    elif pagefunc == "special":
+        LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
+        WriteRochesterPage()
+
     elif pagefunc == "gasession":
         LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteIndexStuff(hmap["gasession"])
@@ -163,5 +185,29 @@ if __name__ == "__main__":
         WriteFrontPageError(pathpartstr, hmap)
 
     WriteGenHTMLfoot()
+
+
+
+
+
+if __name__ == "__main__":
+    pathpart = os.getenv("PATH_INFO")
+    maintrunk(pathpart)
+
+
+
+from StringIO import StringIO
+def maintrunkC(pathpart):
+    stdout = sys.stdout
+    capture = StringIO()
+    sys.stdout = capture
+    maintrunk(pathpart)
+    sys.stdout = stdout
+    capture.seek(0)
+    res = capture.read()
+    m = re.search("Content-Type: text/html\s*", res)
+    if m:
+        res = res[m.end(0):]
+    return res
 
 

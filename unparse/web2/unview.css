@@ -663,6 +663,7 @@ span.abstain,
 span.abstainul
 {
 	color:purple;
+    font-weight:bold;
 }
 span.absent,
 span.absentul
@@ -873,5 +874,11 @@ td.wccont
 a.undlink
 {
     color:green;
+}
+
+table.special td
+{
+    border: 1px black solid;
+    padding: 4px;
 }
 

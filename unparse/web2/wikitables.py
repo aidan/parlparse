@@ -94,6 +94,17 @@ def ShortWikipediaTable(nentries):
         res.append((TimeAgo(wpref[0]), "", wpref[1], wpref[2], ConvertName(wpref[3])))
     return res
 
+def ShortWikipediaTableM(nentries):
+    c = GetDBcursor()
+    c.execute("SELECT max(ltime) AS mtime, count(*), referrer, reftitle FROM unlog_incoming WHERE refdomain = 'en.wikipedia.org' GROUP BY reftitle ORDER BY mtime DESC LIMIT %d;" % nentries)
+    lres = c.fetchall()
+    res = [ ]
+    for wpref in lres:
+        dt = wpref[0].strftime("%Y-%m-%d;%H:%M")
+        #res.append((LongDate(dt[:10]), dt[11:], wpref[1], wpref[2], ConvertName(wpref[3])))
+        res.append({"timeago":TimeAgo(wpref[0]), "count":wpref[1], "referrer":wpref[2], "title":ConvertName(wpref[3])})
+    return res
+
 def BigWikipediaTable():
     #wprefs = ReadLogReferrers("logpages_wikipedia.txt")
     #wprefs.extend(ReadLogReferrers("logpages_wikipedia_1.txt"))

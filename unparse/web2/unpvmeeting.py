@@ -220,8 +220,8 @@ def WritePrevNext(pdfinfo, gadice):
     
     print '<ul>'
     if gadice:
-        currlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc})
-        print '<li><a href="%s" title="Full meeting">Full meeting</a></li>' % currlink
+        currlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.pdfc, "gid":gadice})
+        print '<li><a href="%s" title="Full meeting"><b>Full meeting</b></a></li>' % currlink
     if not gadice and pdfinfo.prevmeetingdetails:
         prevlink = EncodeHref({"pagefunc":"meeting", "docid":pdfinfo.prevmeetingdetails[0]})
         print '<li><a href="%s" title="Previous meeting: finished %s %s">Previous meeting</a></li>' % (prevlink, pdfinfo.prevmeetingdetails[1], pdfinfo.prevmeetingdetails[2])

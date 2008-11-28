@@ -148,14 +148,14 @@ function GetDocAttributesFromHeading(docattributes)
         docattributes["body"] = "General Assembly";
         docattributes["session"] = parseInt(mga[1]);
         docattributes["meeting"] = parseInt(mga[2]);
-        docattributes["type"] = "Verbotim Report";
+        docattributes["type"] = "Verbatim Report";
     }
 
     else if (msc)
     {
         docattributes["body"] = "Security Council";
         docattributes["meeting"] = msc[1];
-        docattributes["type"] = "Verbotim Report";
+        docattributes["type"] = "Verbatim Report";
     }
     else
     {
