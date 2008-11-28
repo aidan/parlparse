@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block css %}<link rel="stylesheet" type="text/css" href="clara.css" media="all" />{% endblock %}
+
+{% block title %}UNdemocracy Home{% endblock %}
+
+{% block content %}
+
+<div id="bigsearch">
+<form action="/" method="get">
+<input type="text" name="search">
+<button>Search</button>
+</form>
+</div>
+<div id="identity">
+<img src="/images/site/logobetaw.png" alt="UNdemocracy.com">
+</div>
+<div id="thinbar">
+<a href="/nations">Browse by nations</a>
+| <a href="/nations">Featured documents</a>
+| <a href="/nations">Latest wikipedia citations</a>
+</div>
+
+
+<div id="wikicolumn">
+<h2>Wikipedia referring articles</h2>
+<p>Listed below are some recent visits from Wikipedia readers.  
+Tip: this is the best place for discovery if you're not sure what you are looking for.
+
+{% for wikiref in wikirefs %}
+   <p><a href="{{wikiref.referrer}}">{{wikiref.title}}</a><br/>
+   {{wikiref.timeago}} ({{wikiref.count}})</p>
+{% endfor %}
+
+<p><a href="/incoming">more recently followed citations</a></p>
+
+<h2>What is this?</h2>
+<p>undemocracy.com is a volunteer project created to give access to 
+important official UN documents that feature in the news.  
+It is not affiliated to the United Nations, its website, 
+or any political organization or financial interest.</p>
+
+</div>
+
+<div id="leftsection">
+
+<p>This website gives access to the transcripts (since 1994) of two of the 
+five principle organs of the United Nations: the Security Council and 
+the General Assembly.</p>
+
+<table><tr><td>
+
+<div id="seccolumn">
+<h2>The Security Council</h2>
+<p><a href="/securitycouncil">Meetings by topic</a> or <a href="/securitycouncil/documents">Date</a> | 
+<a href="/securitycouncil/documents">All Documents</a></p>
+<table>
+<tr><td colspan="3">Recent Security Council Meetings (last few)</td></tr>
+<tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
+{% for secrecord in secrecords %}
+<tr><td><a href="/securitycouncil/meeting_{{secrecord.scmeeting}}">{{secrecord.topic}}</a></td>
+<td>{{secrecord.scmeeting}}</td><td>{{secrecord.sdate}}</td></tr>
+{% endfor %}
+</table>
+</div>
+
+</td><td>
+
+<div id="gacolumn">
+<h2>General Assembly</h2>
+<p><a href="/generalassembly">Meetings by topic</a> or <a href="/generalassembly/documents">Date</a> | 
+<a href="/generalassembly/documents">All Documents</a></p>
+<table>
+<tr><td colspan="3">Recent General Assembly Meetings (last few)</td></tr>
+<tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
+{% for garecord in garecords %}
+<tr><td><a href="/generalassembly_{{garecord.nsess}}//meeting_{{garecord.nmeeting}}">{{garecord.agtitle|truncatewords:8}}</a></td>
+<td>{{garecord.docid}}</td><td>{{garecord.sdate}}</td></tr>
+{% endfor %}
+</table>
+</div>
+
+</td></tr></table>
+
+<h2>Tips for using this site</h2>
+<p>There is a lof of information represented here, and it can be confusing.  It helps if you know what you are looking for!
+If you know the document code, you can enter it directly into the search box at the top of the page.</p>
+
+<p>To get an idea of the sets of documents available here, take a look at President Bush 
+of the United States, or President A of Iran, as well as all the speeches that refer to 
+Resolution 242.</p>
+
+</div>
+
+<div id="footer">
+<a href="/about">About</a>
+| <a href="/contact">Contact</a>
+| <a href="/press">Press room</a>
+| <a href="/other">Other projects</a>
+</div>
+
+<table>
+{% for searchterm in searchlist %}
+    <tr><td>{{searchterm.ltime}}</td><td>{{searchterm.page}}</td><td>{{searchterm.ipnumber}}</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+
