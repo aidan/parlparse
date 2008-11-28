@@ -1,0 +1,39 @@
+
+div#bigsearch
+{
+float: right;
+}
+div#thinbar
+{
+    background-color:#9090ff;
+}
+
+div#seccolumn
+{
+    border: thin black solid;
+}
+div#seccolumn th, div#gacolumn th
+{
+    background-color:#9090ff;
+}
+
+div#gacolumn
+{
+    border: thin blue solid;
+}
+div#wikicolumn
+{
+    float:right;
+    width:33%;
+    border:thin red solid;
+}
+div#leftsection td
+{
+    vertical-align:top;
+}
+div#footer
+{
+    background-color:black;
+    color:white;
+    clear:both;
+}
