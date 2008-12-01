@@ -1,0 +1,884 @@
+/* -------------------  Reset styles  ---------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	}
+/* remember to define focus styles! */
+:focus
+	{
+	outline: 0;
+	}
+body
+	{
+	line-height: 1;
+	color: black;
+	background: white;
+	}
+ol, ul
+	{
+	list-style: none;
+	}
+/* tables still need 'cellspacing="0"' in the markup */
+table
+	{
+	border-collapse: separate;
+	border-spacing: 0;
+	}
+caption, th, td
+	{
+	text-align: left;
+	font-weight: normal;
+	}
+blockquote:before, blockquote:after,
+q:before, q:after
+	{
+	content: "";
+	}
+blockquote, q
+	{
+	quotes: "" "";
+	}
+img
+	{
+	border: 0;
+	}
+
+div#aboutfooter 
+{
+    padding-top: 0.5em;
+    clear:left;
+    background-color: #e0e0ff;
+    color:#505050;
+}
+/* -------------------  Now do the proper stuff  ---------------- */
+body
+	{
+	background-color: #ffffff;
+	background-image: url(/images/site/background-strap.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50px;
+	text-align: center;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	font-family: Gill Sans, Helvetica, Arial, sans;
+	}
+
+p.nations a
+	{
+	display: block;
+	font-size: 1.0em;
+	color: #ffffff;
+	margin-top: 0.em;
+	margin-bottom: -0.em;
+    text-align: center;
+	}
+
+#sectors
+	{
+	float: left;
+	width: 100%;
+	}
+#sectors:after
+	{
+	clear: both;
+	content: '.';
+	text-indent: -3000px;
+	height: 0;
+	display: block;
+	visibility: hidden;
+	}
+
+#securitycouncil
+	{
+	float: left;
+	width: 33%;
+	}
+#generalassembly
+	{
+	float: left;
+	width: 33%;
+	padding-left: 1%;
+	}
+#wpblogincoming
+    {
+    float: left;
+    width: 33%;
+    background-color:#B3F1D7;
+    }
+
+#securitycouncil li, #generalassembly li, #wpblogincoming li
+	{
+	font-size: 0.6em;
+	}
+#securitycouncil li a, #generalassembly li a, #wpblogincoming li a
+	{
+	display: block;
+	font-size: 1.7em;
+	}
+#securitycouncil a, #generalassembly a
+    {
+    text-decoration:none;
+    }
+#securitycouncil a:hover, #generalassembly a:hover
+    {
+    text-decoration:underline;
+    }
+#securitycouncil p, #generalassembly p, #wpblogincoming p
+    {
+    padding-left:15px;
+    font-weight:bold;
+    padding-top:5px;
+    }
+#securitycouncil h2, #generalassembly h2
+    {
+    text-decoration:underline;
+    }
+
+
+a.pdfview
+{
+background-color:#cfffcf;
+height:2em;
+font-size:22pt;
+}
+a.pdfview:hover
+{
+background-color:yellow;
+}
+
+
+h3.browse
+	{
+	margin-bottom: 0.25em;
+	}
+
+#nations
+	{
+	float: right;
+	width: 32%;
+	}
+#nations li
+	{
+	font-size: 0.6em;
+	float: left;
+	width: 50%;
+	}
+
+#aboutus
+	{
+	float: right;
+	width: 32%;
+	background-color: #B3D7F1;
+	background-color: #B3F1D7;
+    }
+#aboutus h2, #aboutfooter h2
+	{
+	margin: 0.35em;
+	}
+#aboutus p, #aboutfooter p
+	{
+	margin: 0.5em;
+	}
+
+#about p
+{
+margin: 0.5em;
+}
+#about li
+{
+margin: 0.5em;
+}
+#about ul
+{
+margin-left: 1em;
+}
+#about blockquote
+{
+margin:2em;
+font-size: 0.6em;
+}
+#about h3
+{
+margin:0.5em;
+}
+
+ul.docrefs
+{
+    margin: 1em;
+
+}
+
+div#docpagespecs
+{
+    width:380px;
+    float:left;
+}
+
+div#highlightcontrols
+{
+    float:right;
+    width:380px;
+    background-color:#cceeff;
+}
+
+
+
+div#identity
+	{
+	max-width: 100%;
+	width: 48em;
+	margin: 15px auto 80px auto;
+	}
+#identity img
+	{
+	display: block;
+	margin: 0 auto;
+	}
+
+h2
+	{
+	font-size: 1.2em;
+	margin: 0.5em 0 0 0;
+	}
+h3
+	{
+	font-size: 1.1em;
+	margin: 0.5em 0;
+	}
+h4
+	{
+	font-size: 1em;
+	margin: 0.5em 0;
+	}
+
+h1
+	{
+	color: #ffffff;
+	background: #000000;
+	font-size: 1.6em;
+	padding: 0.25em;
+	/* text-transform: capitalize; */
+	margin: 0 auto;
+	margin-bottom: 0.5em;
+	ztext-align: left;
+	}
+
+#bigsearch
+	{
+	color: #ffffff;
+    background: #000000;
+    padding: 1.25em;
+    text-align:center;
+	}
+
+#bigsearch input, #bigsearch button
+	{
+	font-size: 1em;
+	}
+#bigsearch a
+{
+    float:center;
+    color: #ffffff;
+}
+#bigsearch form
+{
+    float:right;
+}
+
+h1 Zspan
+	{
+	width: 30em;
+	display: block;
+	margin: 0 auto;
+	}
+
+div#content
+	{
+	width: 48em;
+	zmax-width: 48em;
+	float:center;
+    margin: 0 auto;
+    text-align: left;
+    
+	}
+
+#documentwrap
+	{
+	width: 30em;
+	float: left;
+	padding-left:0.5em;
+    }
+#meta
+	{
+	width: 16em;
+	float: right;
+	}
+#metadoclinks
+{
+    margin-top: 4em;
+}
+
+#metainstructions
+{
+    margin-top: 5em;
+    font-style: italic;
+    background-color:#ddefff;
+}
+#metainstructions ul, ul.d
+{
+    margin:0.5em;
+    list-style-type: disc;
+}
+#metainstructions li, li.d
+{
+    margin:0.5em;
+}
+ul.d
+{
+    padding-left:1em;
+}
+
+#metainstructions p.secline
+{
+    margin-top:0.5em;
+}
+
+
+.assembly-chairs
+	{
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+
+.agendaitem
+	{
+	font-size: 1.3em;
+	font-weight: bold;
+	}
+.agendaitem a
+	{
+	font-size: 0.8em;
+	}
+
+div.otheraglink
+	{
+	float: left;
+	background-color: #cccccc;
+	border: solid 1px #000000;
+	zmargin-left: -4.5em;
+    width: 3.5em;
+	padding: 0.25em;
+	}
+div.otheraglink a
+	{
+	font-size: 0.5em;
+	}
+
+.discussion
+	{
+	margin-top: 1em;
+	border-top: solid 1px #000000;
+	padding-top: 0.5em;
+	}
+
+.speech
+	{
+	margin-top: 1em;
+	clear: both;
+	}
+.speech cite
+	{
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;
+	}
+.speech cite .nation
+	{
+	font-size: 0.75em;
+	}
+.speech p
+	{
+	margin-top: 0.5em;
+	}
+
+.act
+	{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-style: italic;
+	text-align: center;
+    }
+
+a.unparsed
+{ font-style: italic; 
+  color: green; }
+
+span.search-highlight
+	{
+	background-color: #ffcc00;
+	}
+
+
+
+
+td.maincol
+{
+    width:600px;
+}
+td.sidecol
+{
+    width:200px;
+    background-color:#e0e0e0;
+}
+
+
+div.italicline, 
+div.italicline-tookchair,
+div.italicline-spokein
+{
+ 	font-style: italic;
+ 	color: green;
+	text-align: center;
+    background-color: #cefece;
+    margin-top:5;
+    margin-bottom:5;
+    clear:both;
+}
+
+div.subheading, div.council-agenda
+{
+	padding-left:0px;
+	font-weight: bold;
+	text-align: center;
+	color: purple;
+    background-color: #feeeee;
+    margin-bottom:0;
+    border: thin #fecdcd solid;
+}
+
+img.smallflag
+{
+	margin-left: 0px;
+	width: 32px;
+    border: thin black solid;
+    float: left; 
+    clear: left;
+    margin-right:3px;
+    margin-bottom:3px;
+}
+img.smallflag_sca
+{
+    border: thin black solid;
+    width:50;
+}
+
+td.smallflag_lis
+{
+    vertical-align: top;
+    text-align: right;
+}
+img.smallflag_lis
+{
+    border: thin black solid;
+    height: 1em;
+    margin-right: 3px;
+}
+
+img.nationpageflag
+{
+    border: thick black solid;
+    float: right;
+    width: 300;
+}
+div.recvote
+{
+	border: thin black solid;
+    margin-top: 0; 
+    margin-bottom: 2;
+    margin-left: 0;
+    clear:both;
+}
+
+h3.speaker
+{
+	font-weight: bold;
+    margin:0px;
+}
+span.nation
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:green;
+}
+span.non-nation
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:blue;
+}
+a.nation
+{
+}
+
+span.language
+{
+ 	font-style: italic;
+	font-size: 80%;
+	color:purple;
+}
+div.spoken
+{
+	margin-top:3px;
+    margin-bottom:3px;
+    clear:both;
+}
+a.pdf
+{
+	color:green;
+}
+a.highlight
+{
+    background-color:#ffffbb;
+}
+a.aggroup
+{
+    font-weight:bold;
+}
+
+div.blockquote
+{
+	padding-left:30px;
+}
+
+p.votecount
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    display:none;
+}
+p.motiontext
+{
+	font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p.votelist
+{
+	font-size: 11;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    margin-left:5;
+    color:blue;
+}
+div.council-attendees
+{
+	text-align: right;
+	font-size: 12
+}
+div.cdocattr
+{
+    display:none;
+    margin:0;
+    background-color:red;
+}
+
+table.prevnextmeeting
+{
+    background-color: #b0cc99;
+    padding:4;
+    color: #020202;
+    font-size:18;
+}
+table.prevnextmeeting td
+{
+    width:33%;
+}
+a.nolink
+{
+	color:gray;
+}
+
+ul.minorityvote
+{
+    padding:1em;
+    background-color:#eeeeee;
+}
+
+table.minorityvote
+{
+    padding-left:1em;
+    background-color:#eeeeee;
+    font-size: 10pt;
+}
+table.minorityvote td.col1  { width:40% }
+table.minorityvote td.col2  { width:17% }
+table.minorityvote td.col3  { width:43% }
+
+ul.scminorityvote
+{
+    padding:1em;
+    background-color:#eeeeee;
+}
+
+table.nationambassadortable
+{
+    background-color: #cccccc;
+    padding:4;
+}
+table.nationambassadortable th
+{
+    text-align:center;
+    font-weight:bold;
+}
+span.absent-against,
+span.against,
+span.againstul
+{
+	color:red;
+}
+span.absent-favour,
+span.favour,
+span.favourul
+{
+	color:green;
+}
+span.abstain,
+span.abstainul
+{
+	color:purple;
+    font-weight:bold;
+}
+span.absent,
+span.absentul
+{
+	color:gray;
+}
+
+span.absentul,
+span.abstainul,
+span.favourul,
+span.againstul
+{
+    border:thin solid black;
+}
+
+#documentwrap
+	{
+	position: relative;
+	}
+div.unclickedlink 
+	{
+	float: right;
+	clear: right;
+    right: 0px;
+	display: inline;
+    background-color: #cccccc;
+	border: solid 1px #000000;
+    font-size:12;
+    cursor:pointer;
+    font-style:normal;
+    font-weight:normal;
+}
+
+span.unclickedlink
+{
+background-color: #cccccc;
+border: solid 1px #000000;
+font-size:12;
+font-style:normal;
+}
+
+div.clickedlink 
+{
+    font-size:16;
+    font-weight: normal;
+    font-style: normal;
+    background-color:#bbbbff;  
+    margin-left: 10px; 
+    margin-bottom: 10px; 
+    width: 200px; 
+    float: right; 
+    clear: right; 
+}
+span.linktabfleft
+{
+    width:35px;
+}
+span.linktabfright
+{
+    justify:right;
+}
+
+input.linkinputbox 
+{
+    color: #ff0000; 
+    width: 80%; 
+}
+.linktr 
+{ 
+    width: 100%; 
+}
+div.closebutt 
+{
+    font-size:20;
+    border: thin black solid; 
+    float: right; 
+    cursor: pointer;
+    background-color:#aaaaee;
+    padding-left:2;
+    padding-right:2;
+    padding-top:0;
+    padding-bottom:0;
+    margin-top:0;
+    margin-bottom:0;
+}
+table.votekey
+{
+    float: left;
+    clear: left; 
+    background-color: #e0e0ff;
+    margin-right:5;
+    font-size:14;
+    cursor:pointer;
+}
+
+
+div.spoken 
+{
+    background-color:#eeeefe; 
+}
+h3.speaker
+{
+    background-color:#ddddfe;
+}
+
+
+div.pdfpagediv
+{
+    float:left;
+    border: 3px black solid;
+}
+table.doccounttable
+{
+    background-color:#8fbfcf;
+}
+tr.gadocs
+{
+    background-color:#bebeff;
+}
+tr.scdocs
+{
+    background-color:#ffbebe;
+}
+
+table.wpreftab
+{
+    border: thin black solid;
+    border-collapse: collapse;
+}
+table.wpreftab td
+{
+    margin:1px;
+    border:solid lightgray;
+}
+table.wpreftab th
+{
+    margin:1px;
+    border:solid lightgray;
+    font-weight:bold;
+}
+td.wpreftabdate
+{
+    width:9em;
+}
+td.wikiarticle
+{
+    width:25em;
+}
+
+div#upperdoclinks
+{
+margin: 1em;
+text-align: center;
+}
+div#rightdoclinks
+{
+margin-left: 1em;
+float: right;
+width: 18em;
+background-color:#f9b5b5; 
+border: thin red solid; 
+padding:0.5em;
+}
+#rightdoclinks ul
+{
+    padding-left:0.5em;
+    list-style-type: disc;
+}
+#rightdoclinks li
+{
+    margin-left:1em;
+}
+
+ul em
+{
+    font-style:italic;
+}
+
+ul.nationstats
+{
+    margin:0.5em;
+    padding-left:2em;
+    list-style-type: disc;
+}
+
+
+table#wclist
+{
+    border-collapse:collapse;
+    margin-top:1em;
+}
+
+table#wclist td
+{
+    border:1px black solid;
+    padding: 4px;
+}
+
+td.wcdate
+{
+    font-weight:bold;
+}
+
+td.wccont
+{
+    border-left:3.5em;
+}
+a.undlink
+{
+    color:green;
+}
+
+table.special td
+{
+    border: 1px black solid;
+    padding: 4px;
+}
+
