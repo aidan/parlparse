@@ -646,6 +646,9 @@ def ParsePrivSecPage(fr, gp):
                 if re.match('Ms Barbara Keeley', nameMatch.group(2)) and num>=87:
                         continue
 
+		if deptname == "Law Officers Department":
+			deptname = "Law Officers' Department"
+
 		if deptname in ppsdepts:
 			ec = protooffice()
 			ec.PPSproto((sdate, stime), nameMatch.group(2), ministername, deptname)
