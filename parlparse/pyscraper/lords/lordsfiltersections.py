@@ -537,7 +537,15 @@ def LordsFilterSections(text, sdate):
 		# heading type
 		if not gdiv:
 			qbh = LordsHeadingPart(headingtxt, stampurl)
-			flatb.append(qbh)
+
+        		# ram together minor headings into previous ones which have no speeches
+        		if qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'minor-heading':
+        			flatb[-1].stext.append(" &mdash; ")
+        			flatb[-1].stext.extend(qbh.stext)
+
+        		# otherwise put out this heading
+        		else:
+        			flatb.append(qbh)
 
 		# division type
 		else:
