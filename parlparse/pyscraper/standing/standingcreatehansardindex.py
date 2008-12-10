@@ -188,7 +188,13 @@ def GetBillLinks(bforce):
 		billyears = billyears[0:1]   # if you don't do --force-index, you just get the current year
 		
 	for billyear in billyears:
-		year = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1]).group(1)
+		match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1])
+                if not match:
+                        if billyear[1] == 'General Committee debates':
+                               continue
+                        else:
+                               raise
+		year = match.group(1)
 		if miscfuncs.IsNotQuiet():
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
