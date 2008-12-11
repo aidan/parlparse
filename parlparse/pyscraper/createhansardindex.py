@@ -85,6 +85,8 @@ def CmIndexFromPage(urllinkpage):
 			odate = re.sub('\s', ' ', link1[0])
                         if odate == 'Wednesday 1 November' and urllinkpage == 'http://www.publications.parliament.uk/pa/cm/cmhn0611.htm':
                                 odate = 'Wednesday 1 November 2006'
+                        if odate == 'Tuesday 9 November 2008' and sdate=='':
+                                odate = 'Tuesday 9 December 2008'
                         if odate == 'Tuesday 8 June 2008' and sdate=='':
                                 odate = 'Tuesday 8 July 2008'
 			sdate = mx.DateTime.DateTimeFrom(odate).date
