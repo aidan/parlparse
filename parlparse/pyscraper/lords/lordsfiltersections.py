@@ -65,12 +65,8 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	else:
 		#<H4><center>Reassembling after the Christmas Recess, the House met at half-past two of the clock: The LORD CHANCELLOR on the Woolsack.</center></H4>
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
-		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', headspeak[ih][0])
-		if (not gstarttime) or headspeak[ih][2]:
-			print "headspeakheadspeakih", headspeak[ih][0]
-			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][0])
+                ih = StripDebateHeading('(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', ih, headspeak, True)
 		#print starttime. (we should use the "Half past two" business in house met to set it, unfortunately the filtercoltime has already happened
-		ih = ih + 1
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
 		ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)
