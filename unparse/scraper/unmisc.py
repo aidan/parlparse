@@ -44,7 +44,7 @@ def SetCallScrape(lsCallScrape):
     sCallScrape = lsCallScrape
 
 reressplit = """(?x)(
-                (?:[Dd]ocument\s)?A/(?:[A-Z][\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
+                (?:[Dd]ocument\s)?A/(?:[A-Z][\-\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
                 (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
                 draft\sresolution\sA/\d\d/L\.\d+(?:/Add.\d)?(?:/Rev.\d)?|
                 A/RES/\d+/\d+|
@@ -169,7 +169,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mresb = re.match("(?:the )?resolution \((\d+)/(\d+)\)$", st)
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
-        mdoc = re.match("(?:[Dd]ocument |draft resolution )?A/(?:(C\.\d|INF|HRC)/)?(\d+)/(\S*)", st)
+        mdoc = re.match("(?:[Dd]ocument |draft resolution )?A/(?:(C\.\d|INF|HRC|S-\d+)/)?(\d+)/(\S*)", st)
         mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?(?:/Add\.(\d))?(?:/Corr\.(\d))?$", st)
         mscprst = re.match("S/PRST/(\d+)/(\d+)", st)
         mscprst2 = re.match("S/(\d\d\d\d)/PRST/(\d+)", st)

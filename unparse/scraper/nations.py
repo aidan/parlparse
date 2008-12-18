@@ -497,3 +497,7 @@ nonnationscount["Special Envoy for the Implementation of Security Council Resolu
 nonnationscount["High Representative for Disarmament Affairs"] = 0
 nonnationscount["Department of Peacekeeping Operations"] = 0
 nonnationscount["International Maritime Organization"] = 0
+nonnationscount["International Criminal Tribunal for the Former Yugoslavia"] = 0
+nonnationscount["Eurasian Development Bank"] = 0
+nonnationscount["Organization for Security and Co-operation in Europe"] = 0
+nonnationscount["Department of General Assembly and Conference Management"] = 0

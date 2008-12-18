@@ -137,8 +137,8 @@ if bConvertXML:
 
 if bParse:
     if not stem:
-        ParsetoHTML("A-62-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
-        ParsetoHTML("S-PV.(?:5[6-9]|6\d\d\d)", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
+        ParsetoHTML("A-63-PV", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
+        ParsetoHTML("S-PV.6\d\d\d", pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     else:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()

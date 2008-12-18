@@ -10,7 +10,7 @@ pagebitmap = '<page number="(\d+)" position="absolute" top="0" left="0" height="
 footertext = '<i><b>\*\d+v?n?\*\s*</b></i>|\*\d+\*|<i><b>\*</b></i>|<i><b>\d</b></i>|(?:\d* )?\d*-\d*S? \(E\)|`````````'
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-twopageagendas = ["S-PV-5697", "S-PV-5796"]
+twopageagendas = ["S-PV-5697", "S-PV-5796", "S-PV-6041"]
 
 misnumberedpages = ["S-PV-3454-Resu.2", "S-PV-3536-Resu.1", "S-PV-4684-Resu.1", "S-PV-4999", "S-PV-4999-Resu.1", "S-PV-5016", "S-PV-5086", "S-PV-5199", "S-PV-5328", "S-PV-5453", "S-PV-5594"]
 def StripPageTags(xfil, undocname):
@@ -553,8 +553,10 @@ class TextPage:
         elif self.bGeneralAssembly:
             if re.match("<b>\w[/.]\d+/PV.\d+\s*</b>", txlines[0].ltext):
                 ih = 1
+            elif re.match("\d", txlines[0].ltext) and re.match("<b>\w[/.]\d+/PV.\d+\s*</b>", txlines[1].ltext):
+                ih = 2
             else:
-                #print txlines[0].ltext
+                #print "kkkkkk ", txlines[0].ltext, txlines[1].ltext, txlines[2].ltext
                 assert re.match("General Assembly", txlines[0].ltext), txlines[0].ltext
                 assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
                 assert re.match("\S+ [Ss]ession", txlines[2].ltext)
@@ -639,7 +641,7 @@ class TextPage:
                         if IsNotQuiet():
                             print txl.left, txl.width, txl.left + txl.width
                             print txl.ltext
-                            print "might have page no. 1 on first page"
+                            print "might have page no. 1 on first page (or add to twopageagendas)"
                         raise unexception("right-hand extension excessive", paranumC(txl.undocname, None, 0, -1, txl.textcountnumber))
                     if not (txl.left <= 165):
                         bc = -1
