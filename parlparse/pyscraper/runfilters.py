@@ -491,7 +491,7 @@ def RunLordsFilters(text, sdate):
         if fourstream[3]:
                 text = fourstream[3]
                 if sdate > '2008-12-01': # Can't see a better place for this...
-                        text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Question</i></h3>', '', text)
+                        text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Questions?</i></h3>', '', text)
                 si = cStringIO.StringIO()
                 FilterLordsColtime(si, text, sdate)
                 text = si.getvalue()

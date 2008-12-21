@@ -39,7 +39,9 @@ from resolvemembernames import memberList
 
 # This is solely here so that already existing links (which will only be correction links and links to deposited papers)
 # can get through this tokenising stage without being mangled to death
-rehreflink = re.compile('<a href="([^"]*)">(.*?)</a>')
+rehreflink = re.compile('(<small>)?<a href="([^"]*)">(.*?)</a>(</small>)?')
+# <small> is for 2008-09 Lords wrapping links in them, yuck. Plus this doesn't
+# work if more than one link is so wrapped. XXX
 
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
