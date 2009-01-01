@@ -604,7 +604,7 @@ def ParsePrivSecPage(fr, gp):
         if num < 96:
             start = '<font[^>]*><b>Attorney-General see </b>\s*Law\s+Officers Department</font>'
         else:
-            start = '<b><a name="Department"></a>HM Government</b>'
+            start = '<b>(?:<font[^>]*>)?(?:<a name="Department"></a>)?HM Government(?:</font>)?</b>'
         Mppstext = re.search('(?i)<tr>\s*<td[^>]*>%s</td>\s*</tr>([\s\S]*?)</table>' % start, fr)
 
         # skip over a holding page that says the PPSs are not sorted out right after the reshuffle
