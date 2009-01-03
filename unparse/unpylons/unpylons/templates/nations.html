@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">List of nations</py:def>
+
+<div py:match="content">
+
+<h1>List of all member nations</h1>
+
+<table>
+<tr>
+<td style="vertical-align:top" py:for="j in range(c.ncols)">
+  <table>
+  <tr py:for="nation in c.nations[j * c.colleng : (j + 1) * c.colleng]">
+    <td class="smallflag_sca"><a href="${h.url_for('nation', snation=nation.sname)}">
+      <img class="smallflag_lis" src="${h.url_for('flagof', entity=nation.name.replace(' ', '_').replace('\'', ''))}"/></a>
+    </td>
+    <td><a href="${h.url_for('nation', nation=nation.sname)}">${nation.name}</a></td>
+  </tr>
+  </table>
+</td>
+</tr>
+</table>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

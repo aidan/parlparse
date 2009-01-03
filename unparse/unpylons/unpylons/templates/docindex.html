@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+<py:def function="page_title">Document references</py:def>
+
+<div py:match="content">
+  <h1>Document references</h1>
+  <p>${c.sessions}GG</p>
+  <table>
+    <tr><th>Doc</th><th>refs</th><th>cites</th></tr>
+    <tr py:for="document in c.documents">
+      <td><a href="${h.url_for('documentspec', docid=document.docid)}">${document.docid}</a></td>
+      <td>${len(document.references)}</td>
+      <td>${len(document.citations)}</td>
+    </tr>
+  </table>
+</div>
+<xi:include href="layout.html" />
+</html>
+

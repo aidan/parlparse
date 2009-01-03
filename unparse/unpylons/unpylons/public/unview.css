@@ -424,6 +424,13 @@ div.otheraglink a
 	font-style: italic;
 	text-align: center;
     }
+.agendalink
+{
+    float:left; 
+    background-color:#c0c0c0; 
+    border:thin black solid; 
+    margin: 1px; 
+}
 
 a.unparsed
 { font-style: italic; 
@@ -470,6 +477,8 @@ div.subheading, div.council-agenda
     background-color: #feeeee;
     margin-bottom:0;
     border: thin #fecdcd solid;
+    margin-top:10px;
+    border-top: thin black dashed;
 }
 
 img.smallflag

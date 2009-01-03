@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+<py:def function="page_title">Document references</py:def>
+
+<div py:match="content">
+<h1>Holding Page for ${c.document.docid}</h1>
+
+<p style="text-align: center; padding-bottom: 2em; padding-top: 2em;">
+  <a class="pdfview" href="/pdf/${c.docidq}.pdf">
+    <img style="vertical-align: sub;" src="pdficon_large.png" alt="(PDF)" border="0"/>
+    View PDF document
+  </a></p>
+
+<p>This is a holding page for the official document with 
+  <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">code</a> 
+  <i><b>${c.document.docid}</b></i>.
+  The United Nations does not enable direct links to most of their documents.
+</p>
+
+<p style="padding-top: 0.5em;">Using this webpage, you can --</p>
+<ul class="d">
+  <li class="d"><a href="/pdf/${c.docidq}.pdf">View as PDF</a></li>
+  <li py:if="c.meeting" class="d">
+    <b>Go to 
+      <a href="${h.url_for('scmeeting', scmeetingnumber=c.meeting.docid[5:])}">parsed HTML</a> of meeting</b>: ${c.document.meetings[0].title}
+  </li>
+  <li class="d">Or click on one of the ${c.document.numpages} individual pages--</li>
+  <li class="d">
+    <a py:for="page in range(1, c.document.numpages+1)" href="${h.url_for('documentpage', docid=c.docid, page=page)}">Page ${page}</a>
+  </li>
+  <li class="d">Try linking directly to 
+    <a href="http://www.un.org/Docs/journal/asp/ws.asp?m=${c.docidq.replace('-', '/')}">
+      http://www.un.org/Docs/journal/asp/ws.asp?m=${c.docid.replace('-', '/')}
+    </a></li>
+  <li class="d"><a href="http://www.un.org/documents/">UN Documentation Centre</a></li>
+  <li class="d">See all <a href="http://www.undemocracy.com/securitycouncil/documents">Security Council documents</a>.</li>
+  <li class="d">Ready-made <a href="http://en.wikipedia.org/wiki/Help:Footnotes">wikipedia link</a> 
+    using <a href="http://en.wikipedia.org/wiki/Template:UN_document">Template:UN_document</a>: 
+
+    <input style="" readonly="readonly" value="&lt;ref name=&quot;UN_SRES17252006&quot;&gt;{{UN document |docid=S-RES-1725(2006) |type=Resolution |body=Security Council |year=2006 |resolution_number=1725 |accessdate=2008-12-13}}&lt;/ref&gt;"/>
+  </li>
+</ul>
+
+${c.message}
+<h2>References to this document</h2>
+<table class="docrefs">
+<tr py:for="meeting in c.document.meeting_citations">
+  <td>${meeting.document.date}</td>
+  <td><a href="${h.url_for_doc(meeting.docid)}#${meeting.href}">${h.truncate(meeting.title, 60)}</a></td>
+</tr>
+</table>
+
+
+</div>
+<xi:include href="layout.html" />
+</html>
+

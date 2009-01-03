@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+<py:def function="page_title">Document references</py:def>
+
+<div py:match="content">
+
+<h2>General Assembly documents</h2>
+<table>
+  <tr><th>Session</th><th>Agendas</th><th>Count</th></tr>
+  <tr py:for="session, count in c.gasessions">
+    <td><a href="${h.url_for('documentsgasession', session=session)}">${session}</a></td>
+    <td><a href="${h.url_for('gasessionagendas', session=session)}">agendas</a></td>
+    <td>${count}</td>
+  </tr>
+</table>
+
+<h2>Security Council documents</h2>
+<table>
+  <tr><th>Year</th><th>Count</th></tr>
+  <tr py:for="year, count in c.scyears">
+    <td><a href="${h.url_for('documentsscyear', year=year)}">${year}</a></td>
+    <td>${count}</td>
+  </tr>
+</table>
+
+</div>
+<xi:include href="layout.html" />
+</html>
+

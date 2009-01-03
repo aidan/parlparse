@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Nation page for ${c.nation.name}</py:def>
+
+<div py:match="content">
+
+<h1>Nation page for ${c.nation.name}</h1>
+${c.message}
+
+<img class="nationpageflag" src="${h.url_for('flagof', entity=c.nation.name.replace(' ', '_').replace('\'', ''))}"/>
+<ul class="nationstats">
+  <li>${c.nation.name} has been a member of the United Nations since <em>${c.nation.started}</em></li>
+  <li>${c.nation.name} has a <a href="${c.nation.url}">web-page for its permanent mission</a> at the UN.</li>
+  <li>Visit the <a href="http://en.wikipedia.org/wiki/${c.nation.wpname}">Wikipedia page for ${c.nation.name}</a></li>
+  <li>${c.nation.name} is part of the <i>${c.nation.group}</i> block</li>
+  <li>Ambassadors for ${c.nation.name} have spoken ${c.totalspeechcount} times since <em>26 October 1994</em>.</li>
+  <li>${c.nation.name} has participated in ${c.totalvotecount} votes since <em>26 October 1994</em>, most recently on <em>${c.lastvotedate}</em></li>
+</ul>
+
+<h2 style="clear:both">Minority votes in the General Assembly</h2>
+
+<p>Sometimes these votes highlight an issue where there is a difference from the majority of the international community.</p>
+
+<h3>General assembly votes</h3>
+
+<p><b>${c.nation.name}...</b></p>
+<table class="minorityvote">
+  <tr py:for="vote in c.gavotes">
+
+    <td py:choose="" class="col1">
+      <py:when test="vote.vote == 'favour'">voted with ${vote.division.favour-1} other nations <b>in favour</b> of </py:when>
+      <py:when test="vote.vote == 'against'">voted with ${vote.division.against-1} other nations <b>against</b></py:when>
+      <py:when test="vote.vote == 'abstain'">voted with ${vote.division.abstain-1} other nations to <b>abstain</b> on</py:when>
+      <py:when test="vote.vote == 'absent'">was <b>absent</b> with ${vote.division.absent-1} other nations for</py:when>
+      <py:otherwise>JUNK ${vote.vote}</py:otherwise>
+    </td>
+
+    <td class="col3"><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${vote.division.description}</a></td>
+    <td class="col2"><i py:if="vote.division.document">${vote.division.document.date}</i></td>
+  </tr>
+</table>
+
+<py:if test="c.scvotes">
+<h3>Security Council votes</h3>
+<table class="minorityvote">
+  <tr py:for="vote in c.scvotes">
+
+    <td py:choose="" class="col1">
+      <py:when test="vote.vote == 'favour'">voted with ${vote.division.favour-1} other nations <b>in favour</b> of </py:when>
+      <py:when test="vote.vote == 'against'">voted with ${vote.division.against-1} other nations <b>against</b></py:when>
+      <py:when test="vote.vote == 'abstain'">voted with ${vote.division.abstain-1} other nations to <b>abstain</b> on</py:when>
+      <py:when test="vote.vote == 'absent'">was <b>absent</b> with ${vote.division.absent-1} other nations for</py:when>
+      <py:otherwise>JUNK ${vote.vote}</py:otherwise>
+    </td>
+
+    <td class="col3"><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${h.strip_tags_in_subheading(vote.division.document.title)}</a></td>
+    <td class="col2"><i py:if="vote.division.document">${vote.division.document.date}</i></td>
+  </tr>
+</table>
+</py:if>
+
+<h2>List of speeches by ambassadors for ${c.nation.name}</h2>
+<table class="nationambassadortable" style="background-color:lightgray;">
+  <tr><th>Speaker</th><th>Debate</th><th>Date</th></tr>
+  <tr py:for="speech in c.nation.speeches">
+    <td>${speech.name}</td>
+    <td>
+      <a href="${h.url_for_doc(speech.docid)}#${speech.href}">
+        <py:for each="topic in speech.meeting.topics">${topic.name} </py:for>
+      </a>
+    </td>
+    <td>${speech.document.date}</td>
+  </tr>
+</table>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+  <py:def function="page_title">Security Council ordered list</py:def>
+
+  <div py:match="content">
+    <h1>Security Council ordered list for ${c.year} year(s)</h1>
+    <table>
+    <tr py:for="scmeeting in c.scmeetings">
+        <td>${scmeeting.datetime}</td>
+        <td><a href="${h.url_for('security_council_meeting', scmeetingnumber=scmeeting.id[5:])}">${scmeeting.title}</a></td>
+        <td>(${scmeeting.minutes})</td>
+    </tr>
+    </table>
+  </div>
+
+  <xi:include href="layout.html" />
+</html>
+

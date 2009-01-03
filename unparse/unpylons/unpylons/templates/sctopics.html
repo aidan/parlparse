@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Security Council Topics</py:def>
+
+<div py:match="content">
+
+<h1>Security Council Meetings by Topic</h1>
+<py:for each="topic in c.topics">
+  <h2><a href="${h.url_for('sctopic', topic=topic.name.replace(' ', '_'))}">${topic.name}</a></h2>
+  <p><py:for each="meeting in topic.meetings">
+      <a href="${h.url_for('scmeeting', scmeetingnumber=meeting.docid[5:])}">${meeting.datetime.date()} (${meeting.minutes})</a>
+  </py:for></p>
+</py:for>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

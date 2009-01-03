@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+<py:def function="page_title">Document references</py:def>
+
+<div py:match="content">
+<h1>Holding Page for ${c.docid} Page ${c.page}</h1>
+
+<div id="docpagespecs">
+<p>Message:${c.message}:</p>
+<p><i>This</i> is page <b>${c.page}</b>
+ of a <a href="${h.url_for('documentspec', docid=c.docid)}"><b>Document</b></a> with ${c.document.numpages} pages.</p>
+
+<p>Go to <a href="${h.url_for('documentpage', docid=c.docid, page=c.page-1)}">previous page</a> 
+  or <a href="${h.url_for('documentpage', docid=c.docid, page=c.page+1)}">next page</a></p>
+</div>
+
+<div id="highlightcontrols">
+  <textarea rows="2" cols="50" style="float: right; font-size: 75%;" readonly="readonly">&lt;ref
+    name="UN_SRES17252006_page2"&gt;{{UN document |docid=S-RES-1725(2006)
+    |type=Resolution |body=Security Council |year=2006
+    |resolution_number=1725 |page=2 |accessdate=2008-12-13}}&lt;/ref&gt;
+  </textarea>
+  <a href="${h.url_for('documentpage', docid=c.docid, page=c.page)}/highlightedit"><b>Add new highlight</b></a>
+</div>
+
+<div class="pdfpagediv"><img id="pdfpageid" src="${h.url_for('imagedocumentpage', docid=c.docid, page=c.page)}"/></div>
+
+</div>
+<xi:include href="layout.html" />
+</html>
+

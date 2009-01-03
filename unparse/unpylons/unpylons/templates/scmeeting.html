@@ -1,0 +1,154 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Single Security Council Meeting</py:def>
+
+<div py:match="content">
+<div class="cdocattr" id="${c.cdocattr.gid}">
+  <span class="docid">${c.cdocattr.docid}</span>
+  <span class="date">${c.cdocattr.date}</span>
+  <span class="time">${c.cdocattr.time}</span>
+  <span class="longdate">${c.cdocattr.longdate}</span>
+  <span class="wikidate">${c.cdocattr.wikidate}</span>
+  <span class="basehref">${c.cdocattr.basehref}</span>
+</div>
+<div style="display: none;"><img id="hrefimg" src="" alt=""/></div>
+<script type="text/javascript">document.getElementById("hrefimg").src = HrefImgReport(location.href);</script>
+
+<div id="meta">
+
+<table>
+  <tr class="meeting-date"><th>Date</th><td><b>${c.cdocattr.longdate}</b></td></tr>
+  <tr class="meeting-time"><th>Started</th><td>${c.cdocattr.time}</td></tr>
+  <tr class="meeting-rosetime"><th>Ended</th><td>${c.cdocattr.rosetime}</td></tr>
+</table>
+<ul>
+  <py:if test="c.body=='SC'">
+    <li py:if="c.prevmeetingid"><a href="${h.url_for('scmeeting', scmeetingnumber=c.prevmeetingid[5:])}">Previous meeting</a></li>
+    <li py:if="c.nextmeetingid"><a href="${h.url_for('scmeeting', scmeetingnumber=c.nextmeetingid[5:])}">Next meeting</a></li>
+  </py:if>
+  <li py:if="c.href"><a href="${h.url_for('gameeting', session=c.session, meeting=c.cdocattr.docid[8:])}#${c.href}">Whole meeting</a></li>
+  
+  <li py:if="c.cdocattr.webcastlink"><a href="${c.cdocattr.webcastlink}" title="Goto entry in list of webcasts">Webcast Video</a></li>
+  <li>&nbsp;</li>
+
+  <li py:if="c.body=='SC'"><a href="${h.url_for('sctopics')}">All SC topics</a></li>
+  <li py:if="c.body=='SC'"><a href="${h.url_for('documentsscyear', year=c.cdocattr.date[:4])}">$(cdocattr.year}</a></li>
+  <li py:if="c.body=='GA'"><a href="${h.url_for('documentsgasession', session=c.session)}">All GA session</a></li>
+</ul>
+
+<div id="metadoclinks">
+  <h3>Links for full page</h3>
+  <p><span class="linktabfleft">URL:</span> 
+  <input style="text" readonly="true" value="blog reference here"/></p>
+  <p><span class="linktabfleft"><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a></span>
+  <input style="text" readonly="true" value="wikidatehere"/></p>
+</div>
+
+<div id="metainstructions">
+  <h3>Instructions</h3>
+  <p><b>Click</b> the <span class="unclickedlink">Link to this</span> button beside the speech or paragraph to expand it to a panel containing: </p>
+  <ul>
+    <li>The date of the speech</li>
+    <li>A link to the original page of the PDF document</li>
+    <li>A URL that can be used in most blogs</li>
+    <li>A structured <a href="http://en.wikipedia.org/wiki/Template:UN_document#Usage">Citation template</a> suitable for use in a Wikipedia article.</li>
+  </ul>
+  <p><b>Those</b> last two rows ("URL" and "wiki") use textboxes to hide most of the text.</p>
+  <p class="secline"><b>To access</b> this text, right-click in the textbox with your mouse and choose "Select All", 
+    then right-click again and choose "Copy".  Now you can right-click into another window and choose "Paste" to get the text.</p>
+</div>
+
+</div>
+
+<div id="documentwrap">
+<py:if test="c.body=='SC'">
+  <h1>Security Council Meeting</h1>
+
+  <div class="council-agenda">
+    <py:for each="href, htext in h.split_links(c.councilagenda)">
+      <py:choose test="">
+      <py:when test="href"><a href="${h.url_for_doc(href)}">${htext}</a></py:when>
+      <py:otherwise test="">${htext}</py:otherwise>         
+      </py:choose>
+    </py:for>
+  </div>
+    
+  <div class="council-attendees" id="pg000-bk02">
+  <table>
+  <tr>
+    <th>President:</th>
+    <td><img class="smallflag_sca" src="/png100/Flag_of_${c.councilpresident.nation}.png"/></td> 
+    <td>${c.councilpresident.name}<br/>
+      <a class="nation" href="${h.url_for('nation', snation=c.councilpresident.nation)}">${c.councilpresident.nation}</a></td>
+    <td> </td>
+    <td colspan="3">(The Presidency changes each month to the next member in alphabetical order)</td>
+  </tr>
+  <tr py:for="row in range(0, len(c.councilattendees), 3)">
+    <th><py:if test="row == 0">Members:</py:if></th>
+    <py:for each="councilattendee in c.councilattendees[row:row+3]">
+      <td><img class="smallflag_sca" src="/png100/Flag_of_${councilattendee.nation}.png"/></td>
+      <td>${councilattendee.name}<br/>
+        <a class="nation" href="${h.url_for('nation', snation=councilattendee.nation)}">${councilattendee.nation}</a></td>
+    </py:for>
+  </tr>
+  </table>
+  </div>
+</py:if>
+
+<div py:for="bodyblock in c.bodytext" class="${bodyblock.divclass}" id="${bodyblock.gid}">
+
+<py:choose test="">
+
+<py:when test="bodyblock.divclass=='recvote'">
+<table class="votekey">
+  <py:choose test="">
+  <py:when test="c.body == 'GA'">
+    <tr><td><span class="favourul" onclick="chvotekey(this);">favour</span></td></tr>
+    <tr><td><span class="againstul" onclick="chvotekey(this);">against</span></td></tr>
+    <tr><td><span class="abstainul" onclick="chvotekey(this);">abstain</span></td></tr>
+    <tr><td><span class="absentul" onclick="chvotekey(this);">absent</span></td></tr>
+  </py:when>
+  <py:otherwise>
+    <tr><td><span class="favourul" onclick="chvotekey(this);">favour</span></td><td><span class="againstul" onclick="chvotekey(this);">against</span></td></tr>
+    <tr><td><span class="abstainul" onclick="chvotekey(this);">abstain</span></td><td><span class="absentul" onclick="chvotekey(this);">absent</span></td></tr>
+  </py:otherwise>
+  </py:choose>
+</table>
+<p class="votecount">${bodyblock.votecount}</p>
+<p class="votelist">
+  <py:for each="i in range(len(bodyblock.votes))"><py:if test="i">, </py:if><span class="${bodyblock.votes[i][0]}">${bodyblock.votes[i][1]}</span></py:for>
+</p>
+</py:when>
+
+<py:when test="bodyblock.divclass=='speech'">
+  <cite>
+    <img class="smallflag" src="/png100/Flag_of_${bodyblock.speakerflag.replace(' ', '_')}.png"/>
+    <span class="name">${bodyblock.speakername}</span>
+    <span py:if="bodyblock.speakernation" class="nation">(${bodyblock.speakernation})</span>
+  </cite>
+</py:when>
+
+<py:when test="bodyblock.divclass=='subheading' and bodyblock.agendanums">
+  <div class="agendalink">
+    <a py:for="agendanum in bodyblock.agendanums" href="${h.url_for('gaagenda', agendanum=agendanum)}">${agendanum}</a>
+  </div>
+</py:when>
+
+</py:choose>
+
+<p py:for="paragraph in bodyblock.paragraphs" id="${paragraph[0]}">
+  <py:for each="href, htext in h.split_links(paragraph[1])"><py:choose test=""><py:when test="href=='italics'"><i>${htext}</i></py:when><py:when test="href"><a href="${h.url_for_doc(href)}">${htext}</a></py:when><py:otherwise test="">${htext}</py:otherwise></py:choose></py:for>
+</p>
+
+</div>
+
+</div>
+
+</div>
+<xi:include href="layout.html" />
+</html>
+

@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Undemocracy Front page</py:def>
+<div py:match="content">
+
+<h1>Front page</h1>
+<div id="content">
+<table class="prevnextmeeting"><tr>
+
+<td><a py:if="c.year_before" href="${h.url_for('security_council', year=c.year_before)}">Year ${c.year_before}</a></td>
+<td><a py:if="c.year_after" href="${h.url_for('security_council', year=c.year_after)}">Year ${c.year_after}</a></td>
+</tr></table>
+</div>
+
+<div id="bigsearch">
+  <form action="/" method="get">
+    <input type="text" name="search"/>
+    <button>Search</button>
+  </form>
+</div>
+
+<div id="identity">
+  <img src="/images/site/logobetaw.png" alt="UNdemocracy.com"/>
+</div>
+<div id="thinbar">
+  <a href="/nations">Browse by nations</a>
+  | <a href="/nations">Featured documents</a>
+  | <a href="/nations">Latest wikipedia citations</a>
+</div>
+
+<h2>Test Links</h2>
+<ul>
+  <li><a href="${h.url_for('documentsall')}">${h.url_for("documentsall")}</a></li>
+</ul>
+
+<p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts (since 1994) of two of the five principal 
+  <a href="http://en.wikipedia.org/wiki/United_Nations_System"><b>United Nations bodies</b></a>.</p>  
+<p style="margin-top:0.5em">The 
+  <a href="http://en.wikipedia.org/wiki/United_Nations#Security_Council"><b>Security Council</b></a> 
+  can authorize war and international sanctions.</p>
+<p style="margin-top:0.5em">The 
+  <a href="http://en.wikipedia.org/wiki/United_Nations#General_Assembly"><b>General Assembly</b></a>
+  directs the business of the United Nations and recommends international treaties.</p>
+<p style="margin-top:0.5em">Find out what <a href="/nations" title="List all nations and their ambassadors who speak"><b>your nation</b></a> 
+  has been doing in this international forum.</p>
+             
+<div style="width:200;  text-align:center; background-color:blue; color:white; border:thick black dashed; float:right">A proud member of the 
+  <a href="http://en.wikipedia.org/wiki/Parliamentary_informatics" style="background-color:#cdffff">Parliamentary Informatics</a> web-ring</div>
+
+<p style="margin-top:1em; margin-bottom:0.5em"><b style="background:#b3f1d7;">The third column</b> lists 
+  recent visits from Wikipedia readers.  <i>This is the best place to start browsing, 
+  because only some of documents are very interesting and you are unlikely to get lucky
+  if you click at random.</i></p>
+<p style="margin-botton:1em"><b>Note</b>: While Security Council meetings are on-line within 
+  hours, General Assembly transcripts go on-line three months after
+  the meeting (although the videos are up immediately).  The start of the 63rd 
+  session is <a href="http://www.un.org/ga/63/meetings63.shtml"><b>here</b></a>.</p>
+
+<div id="sectors">
+
+<div id="securitycouncil">
+  <h2>The Security Council</h2>
+  <p><a href="${h.url_for('sctopics')}">Meetings by topic</a> or <a href="${h.url_for('documentsall')}">All</a></p>
+  <table>
+    <tr><td colspan="3">Recent Security Council Meetings (last few)</td></tr>
+    <tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
+    <tr py:for="scmeeting in c.scmeetings">
+      <td><a href="/securitycouncil/meeting_${scmeeting.docid[5:]}">${scmeeting.title}</a></td>
+      <td>${scmeeting.docid[5:]}</td>
+      <td>${scmeeting.datetime.date()}</td>
+    </tr>
+  </table>
+</div>
+
+<div id="generalassembly">
+  <h2>General Assembly</h2>
+  <p><a href="/generalassembly">Meetings by topic</a> or <a href="/generalassembly/documents">Date</a> | 
+    <a href="/generalassembly/documents">All Documents</a></p>
+  <table>
+    <tr><td colspan="3">Recent General Assembly Meetings (last few)</td></tr>
+    <tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
+    <tr py:for="garecord in garecords">
+      <td><a href="/generalassembly_${garecord.nsess}/meeting_${garecord.nmeeting}">${garecord.agtitle}</a></td>
+      <td>${garecord.docid}</td>
+      <td>${garecord.sdate}</td>
+    </tr>
+  </table>
+</div>
+
+<div id="wpblogincoming">
+  <h2>Wikipedia referring articles</h2>
+
+  <p py:for="wikiref in c.year_wikirefs"><a href="${wikiref.referrer}">${wikiref.title}</a><br/>
+    ${wikiref.timeago} (Use h.time_ago_in_words()) (${wikiref.count})</p>
+  <p><a href="/incoming">more recently followed citations</a></p>
+</div>
+
+</div>
+
+<h2>Tips for using this site</h2>
+<p>There is a lof of information represented here, and it can be confusing.  It helps if you know what you are looking for!
+  If you know the document code, you can enter it directly into the search box at the top of the page.</p>
+
+<p>To get an idea of the sets of documents available here, take a look at President Bush 
+  of the United States, or President A of Iran, as well as all the speeches that refer to 
+  Resolution 242.</p>
+
+</div>
+
+<div id="footer">
+  <a href="/about">About</a>
+  | <a href="/contact">Contact</a>
+  | <a href="/press">Press room</a>
+  | <a href="/other">Other projects</a>
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

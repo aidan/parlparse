@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Guide to the Web Interface</py:def>
+<div py:match="content">
+
+<h1>Security Council 2005 Documents</h1>
+<div id="content">
+<table class="prevnextmeeting"><tr>
+  <td><a py:if="c.year_before" href="${h.url_for('security_council', year=c.year_before)}">Year ${c.year_before}</a></td>
+  <td><a py:if="c.year_after" href="${h.url_for('security_council', year=c.year_after)}">Year ${c.year_after}</a></td>
+</tr></table>
+</div>
+
+</div>
+<xi:include href="layout.html" />
+</html>

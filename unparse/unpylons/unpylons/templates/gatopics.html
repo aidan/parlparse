@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">General Assembly Topics</py:def>
+
+<div py:match="content">
+
+<h1>General Assembly Topic for Session ${c.session}</h1>
+
+<div py:for="topic in c.topics">
+  <p><a href="${h.url_for('gaagenda', agendanum=topic.agendanum)}">${topic.name}</a></p>
+  <p style="margin-left:20px; font-size:80%">
+  <py:for each="meeting in topic.meetings">
+      <a href="${h.url_for_doc(docid)}#${meeting.href}">${meeting.datetime.date()}</a>
+  </py:for>
+  </p>
+</div>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+
