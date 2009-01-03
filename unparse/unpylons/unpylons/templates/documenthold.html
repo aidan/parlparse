@@ -16,7 +16,7 @@
 
 <p>This is a holding page for the official document with 
   <a href="http://en.wikipedia.org/wiki/United_Nations_Document_Codes">code</a> 
-  <i><b>${c.document.docid}</b></i>.
+  <i><b>${c.docid}</b></i>.
   The United Nations does not enable direct links to most of their documents.
 </p>
 
@@ -27,14 +27,19 @@
     <b>Go to 
       <a href="${h.url_for('scmeeting', scmeetingnumber=c.meeting.docid[5:])}">parsed HTML</a> of meeting</b>: ${c.document.meetings[0].title}
   </li>
+
+  <py:if test="c.document">
   <li class="d">Or click on one of the ${c.document.numpages} individual pages--</li>
   <li class="d">
     <a py:for="page in range(1, c.document.numpages+1)" href="${h.url_for('documentpage', docid=c.docid, page=page)}">Page ${page}</a>
   </li>
+  </py:if>
+  
   <li class="d">Try linking directly to 
     <a href="http://www.un.org/Docs/journal/asp/ws.asp?m=${c.docidq.replace('-', '/')}">
       http://www.un.org/Docs/journal/asp/ws.asp?m=${c.docid.replace('-', '/')}
-    </a></li>
+    </a>
+  </li>
   <li class="d"><a href="http://www.un.org/documents/">UN Documentation Centre</a></li>
   <li class="d">See all <a href="http://www.undemocracy.com/securitycouncil/documents">Security Council documents</a>.</li>
   <li class="d">Ready-made <a href="http://en.wikipedia.org/wiki/Help:Footnotes">wikipedia link</a> 
@@ -52,7 +57,6 @@ ${c.message}
   <td><a href="${h.url_for_doc(meeting.docid)}#${meeting.href}">${h.truncate(meeting.title, 60)}</a></td>
 </tr>
 </table>
-
 
 </div>
 <xi:include href="layout.html" />

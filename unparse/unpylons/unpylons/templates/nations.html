@@ -18,7 +18,7 @@
     <td class="smallflag_sca"><a href="${h.url_for('nation', snation=nation.sname)}">
       <img class="smallflag_lis" src="${h.url_for('flagof', entity=nation.name.replace(' ', '_').replace('\'', ''))}"/></a>
     </td>
-    <td><a href="${h.url_for('nation', nation=nation.sname)}">${nation.name}</a></td>
+    <td><a href="${h.url_for('nation', snation=nation.sname)}">${nation.name}</a></td>
   </tr>
   </table>
 </td>

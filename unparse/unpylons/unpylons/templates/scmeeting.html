@@ -120,7 +120,7 @@
 </table>
 <p class="votecount">${bodyblock.votecount}</p>
 <p class="votelist">
-  <py:for each="i in range(len(bodyblock.votes))"><py:if test="i">, </py:if><span class="${bodyblock.votes[i][0]}">${bodyblock.votes[i][1]}</span></py:for>
+  <py:for each="i, vote in enumerate(bodyblock.votes)"><py:if test="i">, </py:if><span class="${vote[0]}">${vote[1]}</span></py:for>
 </p>
 </py:when>
 

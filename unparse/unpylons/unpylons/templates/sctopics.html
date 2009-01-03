@@ -9,11 +9,14 @@
 <div py:match="content">
 
 <h1>Security Council Meetings by Topic</h1>
+
 <py:for each="topic in c.topics">
   <h2><a href="${h.url_for('sctopic', topic=topic.name.replace(' ', '_'))}">${topic.name}</a></h2>
-  <p><py:for each="meeting in topic.meetings">
+  <p>
+  <py:for each="meeting in topic.meetings">
       <a href="${h.url_for('scmeeting', scmeetingnumber=meeting.docid[5:])}">${meeting.datetime.date()} (${meeting.minutes})</a>
-  </py:for></p>
+  </py:for>
+  </p>
 </py:for>
 
 </div>

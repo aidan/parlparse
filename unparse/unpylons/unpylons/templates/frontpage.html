@@ -67,11 +67,9 @@
   <p><a href="${h.url_for('sctopics')}">Meetings by topic</a> or <a href="${h.url_for('documentsall')}">All</a></p>
   <table>
     <tr><td colspan="3">Recent Security Council Meetings (last few)</td></tr>
-    <tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
     <tr py:for="scmeeting in c.scmeetings">
-      <td><a href="/securitycouncil/meeting_${scmeeting.docid[5:]}">${scmeeting.title}</a></td>
-      <td>${scmeeting.docid[5:]}</td>
       <td>${scmeeting.datetime.date()}</td>
+      <td><a href="/securitycouncil/meeting_${scmeeting.docid[5:]}">${scmeeting.title}</a></td>
     </tr>
   </table>
 </div>
@@ -82,11 +80,9 @@
     <a href="/generalassembly/documents">All Documents</a></p>
   <table>
     <tr><td colspan="3">Recent General Assembly Meetings (last few)</td></tr>
-    <tr><th>Topic</th><th>Ref.</th><th>Date</th></tr>
-    <tr py:for="garecord in garecords">
-      <td><a href="/generalassembly_${garecord.nsess}/meeting_${garecord.nmeeting}">${garecord.agtitle}</a></td>
-      <td>${garecord.docid}</td>
+    <tr py:for="garecord in c.garecords">
       <td>${garecord.sdate}</td>
+      <td><a href="/generalassembly_${garecord.nsess}/meeting_${garecord.nmeeting}">${h.truncate(garecord.agtitle, 50)}</a></td>
     </tr>
   </table>
 </div>

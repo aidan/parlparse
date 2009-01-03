@@ -11,10 +11,10 @@
 <h1>Security Council Meeting on topic '${c.topic.name}'</h1>
 
 <table>
-<tr><th>Document</th><th>title</th><th>Minutes</th></tr>
+<tr><th>Date</th><th>Title</th><th>Minutes</th></tr>
 <tr py:for="meeting in c.topic.meetings">
-  <td><a href="${h.url_for('scmeeting', scmeetingnumber=meeting.docid[5:])}">${meeting.datetime.date()}</a></td>
-  <td>${meeting.title}</td>
+  <td>${meeting.datetime.date()}</td>
+  <td><a href="${h.url_for_doc(meeting.docid)}">${h.strip_tags_in_subheading(meeting.document and meeting.document.title or meeting.title)}</a></td>
   <td>${meeting.minutes}</td>
 </tr>
 </table>
