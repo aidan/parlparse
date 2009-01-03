@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: latin-1 -*-
 
 import sys
 import re
@@ -9,7 +10,13 @@ from unmisc import IsNotQuiet
 import datetime
 from db import GetDBcursor, escape_string
 
+import unpylons.model as model
+
+
 def ScrapeSCSummaries(scsummariesdir):
+    #print "Skipping ScrapeSCSummaries"
+    #return
+
     currentdate = datetime.date.today()
     currentyear = currentdate.year
     currentmonth = currentdate.month
@@ -433,7 +440,9 @@ class SCrecord:
         self.pressrecstr = pressrecstr
 
         self.otopicrecstr = InitialCleanupTopic(mrow.group(4), year)
-
+        self.minutes = -1
+        self.datetime = self.sdate
+        self.datetimeend = self.sdate
 
     # maybe this could pull out a longer summary from the agenda where possible
     def ScanHtmlMeet(self, htmlfile):
@@ -446,6 +455,21 @@ class SCrecord:
             self.numparagraphs =+ len(re.findall('<(?:p|blockquote)', mspoke.group(1)))
         self.numdocuments = len(set(re.findall('<a href="([^"]*)"', ftext)))  # only count unique entries, not multiple mentions
         self.numvotes = len(set(re.findall('<div class="recvote"', ftext)))
+
+        mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', ftext)
+        assert mdocument_date, "not found date in file %s" % htmlfile
+        document_date = mdocument_date.group(1)
+        mdocument_times = re.search('<span class="time">(\d\d:\d\d)</span><span class="rosetime">(\d\d:\d\d)</span>', ftext)
+        assert mdocument_times, "not found date in file %s" % htmlfile
+        document_time = mdocument_times.group(1)
+        self.datetime = "%s %s:00" % (document_date, document_time)
+        document_timeend = mdocument_times.group(2)
+        self.datetimeend = "%s %s:00" % (document_date, document_timeend)  # doesn't account for past midnight
+                
+        hourminutestart = map(int, document_time.split(":"))
+        hourminuteend = map(int, document_timeend.split(":"))
+        self.minutes = (hourminuteend[0] - hourminutestart[0]) * 60 + (hourminuteend[1] - hourminutestart[1])
+
 
     def FindTopicCats(self, htmldir, pdfdir):
         self.numspeeches, self.numparagraphs, self.numdocuments, self.numvotes = -1, -1, -1, -1
@@ -472,7 +496,13 @@ class SCrecord:
 
         # do this to over-ride the splitting and see the original files
         #self.topics = [ self.otopicrecstr ]
+
     def InsertintoDB(self, c):
+        model.load_sc_topics(self.pvcode, self.otopicrecstr, self.datetime, self.datetimeend, 
+                             self.topics, self.minutes, self.numspeeches, self.numparagraphs, self.numvotes, self.nextpvcode)
+        #return
+
+        # old addition to the database
         c.execute("SELECT docid FROM un_scheadings  WHERE docid = '%s'" % self.pvcode)
         if not c.fetchone():
             c.execute("REPLACE INTO un_scheadings (docid, heading, ldate, shortheading, veryshortheading, numvotes) VALUES ('%s', '%s', '%s', '', '', 0)" % (self.pvcode, escape_string(self.otopicrecstr), self.sdate))
@@ -498,18 +528,25 @@ def WriteTopicG(fout, topic, topicg):
     fout.write("\t</p>\n")
     fout.write("</div>\n")
 
-def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
+def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout):
     c = GetDBcursor()
     screcords = [ ]
-    for lf in os.listdir(scsummariesdir):
+    
+    # this is iterating through the pages of indexes, so will be in order    
+    for lf in sorted(os.listdir(scsummariesdir)):
         if re.match("\.svn", lf):
             continue
         summarylink = "scsummariesdir/%s" % lf
         myear = re.search("\d\d\d\d", lf)
         assert myear, lf
         year = myear.group(0)
+        if stem and not re.match(stem, year):
+            continue
         if IsNotQuiet():
             print "year", year
+        if year == "2009":
+            print "Skipping this year till there's data"
+            continue
         f = os.path.join(scsummariesdir, lf)
         fin = open(f)
         ftext = fin.read()
@@ -519,9 +556,11 @@ def WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout):
             row = mrow.group(1).strip()
             screcord = SCrecord(year, row, summarylink, htmldir)
             screcord.FindTopicCats(htmldir, pdfdir)
+            screcord.nextpvcode = screcords and screcords[-1].pvcode or None
             screcords.append(screcord)
             screcord.InsertintoDB(c)
-
+    
+    # not going to need this
     topicgroups = { }
     recentgroup = [ ]
     for screcord in screcords:

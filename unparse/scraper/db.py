@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     c = db.cursor()
     c1 = db.cursor()
-    #MakeTableHeadings(c)
+    MakeTableHeadings(c)
     MakeTableVotes(c)
 
 

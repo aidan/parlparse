@@ -556,7 +556,7 @@ class TextPage:
             elif re.match("\d", txlines[0].ltext) and re.match("<b>\w[/.]\d+/PV.\d+\s*</b>", txlines[1].ltext):
                 ih = 2
             else:
-                #print "kkkkkk ", txlines[0].ltext, txlines[1].ltext, txlines[2].ltext
+                #print txlines[0].ltext
                 assert re.match("General Assembly", txlines[0].ltext), txlines[0].ltext
                 assert re.match("\d+(?:th|st|nd|rd) (?:plenary )?meeting", txlines[1].ltext)
                 assert re.match("\S+ [Ss]ession", txlines[2].ltext)

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: latin1 -*-
 
 # unparse/bin/xapdex.py - Index Julian's UN HTML in Xapian. Run with --help
 # for command line options.

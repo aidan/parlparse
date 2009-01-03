@@ -8,6 +8,8 @@ import datetime
 from pdfinfo import PdfInfo
 from db import GetDBcursor
 
+import unpylons.model as model
+
 
 rdoc = '\((?:<a href[^>]*>[^<]*</a>|and|Add|L|para|Parts?|to|\([^\)]*\)|[IV\-\d\s,.:])+\)'
 rtraildoc = '\s*%s$' % rdoc
@@ -320,12 +322,14 @@ def WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdo
 #	<p class="boldline-p" id="pg001-bk02-pa02">General debate</p>
 #</div>
 def AddAgendaGroups(agendagroups, sdate, docid, ftext):
+    res = [ ] # the other result is the agendagroups map
     agheadings = re.finditer('(?s)<div class="subheading" id="([^"]*)" agendanum="([^"]*)">(.*?)</div>', ftext)
     agendaheading = None
     for magheading in agheadings:
         if agendaheading:
             agendaheading.SeeTextForHeading(ftext[agendaheadingE:magheading.start(0)])
         agendaheading = AgendaHeading(sdate, docid, magheading.group(1), magheading.group(2), magheading.group(3))
+        res.append(agendaheading)        
         for agendanum in agendaheading.agendanums:
             if agendanum not in agendagroups:
                 agendagroups[agendanum] = [ ]
@@ -334,18 +338,18 @@ def AddAgendaGroups(agendagroups, sdate, docid, ftext):
 
     if agendaheading:  # end of final heading
         agendaheading.SeeTextForHeading(ftext[agendaheadingE:])
+    return res
 
-
-def AddAgendasToDB(docid, htdoc):
-    fin = open(htdoc)
-    ftext = fin.read()
-    fin.close()
-    mdate = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', ftext)
-    sdate = mdate.group(1)
+#def AddAgendasToDB(docid, htdoc):
+#    fin = open(htdoc)
+#    ftext = fin.read()
+#    fin.close()
+#    mdate = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', ftext)
+#    sdate = mdate.group(1)
     # not complete
 
 
-def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
+def WriteAgendaSummaries(stem, htmldir, fout, agendaindexdir):
     rels = GetAllHtmlDocs("", False, False, htmldir)
 
     agendagroups = { }
@@ -359,8 +363,9 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
             continue
 
         docid = maga.group(1)
-        #if not re.match("A-49", docid):
-        #    continue
+        
+        if stem and not re.match(stem, docid):
+            continue
 
         fin = open(htdoc)
         ftext = fin.read()
@@ -371,22 +376,38 @@ def WriteAgendaSummaries(htmldir, fout, agendaindexdir):
 
         if IsNotQuiet():
             print docid,
-        AddAgendaGroups(agendagroups, sdate, docid, ftext)
-        #if len(agendagroups) > 1000:
+        agendasdoc = AddAgendaGroups(agendagroups, sdate, docid, ftext)
+        #if len(agendagroups) > 100:
+        #    print "preeeematureabort"        
         #    break
 
-    # the agendagroups are lists of agenda items, the values of a dict
+        # copy agenda data into database        
+        gaagindoc = [ ]
+        for ag in agendasdoc:
+            gaagindoc.append((ag.subheadingid, ag.agendanumstr, "||".join(ag.titlelines)))
+        model.load_ga_debate(docid, sdate, gaagindoc)
+
+    #return
+
+    # the agendagroups are lists of agenda items; call them topics
     allagendas = [ ]
     recentagendas = [ ]
     for agendanum, aggroup in agendagroups.iteritems():
         agsession = aggroup[0][1].nsession
         mctitle, mccategory = FindDelCommonTitle(agendanum, aggroup)
-        aggroup.sort()
+
+        model.load_ga_agendanum(agsession, agendanum, mctitle, mccategory, [ (ag.docid, ag.subheadingid)  for ag0, ag in aggroup ])
+
         allagendas.append((agsession, mccategory, mctitle, agendanum, aggroup))
         recentagendas.extend(aggroup)
 
+
     allagendas.sort()
     agendasperdoc = { }
+
+    #for r in allagendas:
+    #    print r[0], r[1], r[3], len(r[4])
+    #sys.exit(0)
 
     fout.write('<html><head>\n<style type="text/css">\n')
     fout.write('p { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')

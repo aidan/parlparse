@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: latin1 -*-
 
 # unparse/bin/xapdex.py - Index Julian's UN HTML in Xapian. Run with --help
 # for command line options.
@@ -13,6 +14,8 @@ from unmisc import GetAllHtmlDocs, IsNotQuiet, IsVeryNoisy
 from downascii import DownAscii
 from db import GetDBcursor, escape_string
 from nations import nonnationcatmap # this was why the need to moveall into same directory
+
+import unpylons.model as model
 
 def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
     div_class = mdiv.group(1)
@@ -166,7 +169,9 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
 def MakeTables(c):
     c.execute("DROP TABLE IF EXISTS un_scheadings")
     c.execute("CREATE TABLE un_scheadings (docid VARCHAR(30), ldate DATETIME, heading TEXT, shortheading TEXT, veryshortheading TEXT, numvotes INT, UNIQUE(docid))")
-
+    import unpylons.model as model
+    model.metadata.drop_all()
+    model.metadata.create_all()
 
 def ClearDatabaseValues(docid, c):
     pass
@@ -191,6 +196,8 @@ def process_file(pfnameunindexed, c):
     if IsNotQuiet():
         print "indexing %s %s" % (docid, document_date)
 
+    doccitations = { }
+
     mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
@@ -198,6 +205,14 @@ def process_file(pfnameunindexed, c):
         div_href = mdiv.group(2)
         div_data = (docid, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
         div_content = mdiv.group(4)
+
+        pgid = div_href
+        for mdoc in re.finditer('id="([^"]*)"|<a href="../(?:pdf|html)/([\w\-\.()]*?)\.(?:pdf|html)"[^>]*>', div_content):
+            if mdoc.group(1):
+                pgid = mdoc.group(1)
+            if mdoc.group(2):
+                doccitations.setdefault(mdoc.group(2), []).append(pgid)
+
         if div_class == "recvote":
             mvote = re.match('\s*<p class="motiontext"[^>]*>(.*?)</p>\s*<p class="votecount"[^>]*>(.*?)</p>\s*<p class="votelist"[^>]*>(.*?)</p>', div_content)
             assert mvote, div_content
@@ -232,58 +247,16 @@ def process_file(pfnameunindexed, c):
             if body == "SC":
                 t = DownAscii(div_content)
                 t = escape_string(t)
+                #model.load_sc_fromfile(docid, div_content, document_date)
                 c.execute("REPLACE INTO un_scheadings (docid, heading, ldate, shortheading, veryshortheading, numvotes) VALUES ('%s', '%s', '%s', '', '', 0)" % (docid, t, document_date))
-        
-        
-        continue
 
-        if True:
-            pass
-            
-
-        # the data put into a xapian object is: speech | document-id | offset | length | heading-id containing this speech | length of full section if this is a heading
-        elif div_class in ["subheading", "end-document"]:
-            assert xapian_doc_heading
-            if xapian_doc_subheading:
-                for hterm in headingtermsubheading:
-                    xapian_doc_subheading.add_term(hterm)
-                dsubheadingdata = "%s|%s|%d|%d|%s|%d" % (sdiv_subheadingdata[3], sdiv_subheadingdata[0], sdiv_subheadingdata[1], sdiv_subheadingdata[2], sdiv_headingdata[3], lastend - sdiv_subheadingdata[1])
-                xapian_doc_subheading.set_data(dsubheadingdata)
-                xapian_db.add_document(xapian_doc_subheading)
-
-            headingtermheading.update(headingtermsubheading)
-            if div_class == "subheading":
-                headingtermsubheading.clear()
-                xapian_doc_subheading = xapian_doc
-                sdiv_subheadingdata = div_data
-            else:
-                headingtermsubheading = None
-                xapian_doc_subheading = None
-                sdiv_subheadingdata = None
-
-            if div_class == "end-document":
-                for hterm in headingtermheading:
-                    xapian_doc_heading.add_term(hterm)
-                dheadingdata = "%s|%s|%d|%d|%s|%d" % (sdiv_headingdata[3], sdiv_headingdata[0], sdiv_headingdata[1], sdiv_headingdata[2], "", lastend - sdiv_headingdata[1])
-                xapian_doc_heading.set_data(dheadingdata)
-                xapian_db.add_document(xapian_doc_heading)
-                xapian_doc_heading = None
-
-        else:
-            assert div_class in ["assembly-chairs", "council-agenda", "council-attendees", "spoken", "italicline", "italicline-tookchair", "italicline-spokein", "recvote"], "unknown divclass:%s" % div_class
-            assert sdiv_subheadingdata or sdiv_headingdata
-            ddata = "%s|%s|%d|%d|%s|" % (div_data[3], div_data[0], div_data[1], div_data[2], (sdiv_subheadingdata or sdiv_headingdata)[3])
-            xapian_doc.set_data(ddata)
-            xapian_db.add_document(xapian_doc)
-
-        lastend = mdiv.end()
-
-    # the end-document tag helps us close these headings off
-    #assert not xapian_doc_subheading and not xapian_doc_heading
-
-    # Note that the document has been indexed
-
-
+    # add into the new pylons code using sqlalchemy
+    for m in model.DocumentRefDocument.query.filter_by(document1_docid=docid):
+        model.Session.delete(m)        
+    for docid2, lcount in doccitations.iteritems():
+        #print docid, docid2
+        doccite = model.DocumentRefDocument(document1_docid=docid, document2_docid=docid2, count=len(lcount))
+    model.Session.flush()
 
 # could move the table constructions to here; if it's a force case
 def DBfill(stem, bforcedbfill, nlimit, bcontinueonerror, htmldir):
@@ -292,6 +265,7 @@ def DBfill(stem, bforcedbfill, nlimit, bcontinueonerror, htmldir):
         MakeTables(c)
     
     
+    # does just the unindexed if not forced
     rels = GetAllHtmlDocs(stem, True, bforcedbfill, htmldir)
 
     # having gone through the list, now load each

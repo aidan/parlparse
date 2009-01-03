@@ -144,6 +144,7 @@ class PdfInfo:
         self.time = None
 
     def UpdatePages(self, pdfdir):
+        return
         fpdf = os.path.join(pdfdir, self.pdfcB + ".pdf")
         if not os.path.isfile(fpdf):
             return

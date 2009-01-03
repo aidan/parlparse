@@ -1,6 +1,7 @@
-import re
-from unmisc import unexception
+# -*- coding: utf8 -*-
 
+import re
+#from unmisc import unexception
 
 # list of nations and their dates as part of the General Assembly can be found at
 # http://www.un.org/Overview/unmember.html
@@ -36,7 +37,7 @@ fin.close()
 # includes typos, short names, and name changes
 nationmapping = {
         "United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
-        "Côte d'Ivoire":"Cote d'Ivoire",
+        u"C\xf4te d'Ivoire":"Cote d'Ivoire",
         "the former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
         "Federal Republic of Yugoslavia":"Yugoslavia",
         "Syrian Arab Republic":"Syria",

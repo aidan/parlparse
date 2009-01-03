@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import re
 from nations import FixNationName, GenerateNationsVoteList
 from unmisc import unexception, IsNotQuiet, MarkupLinks

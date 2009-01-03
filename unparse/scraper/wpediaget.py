@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import urllib2
 import cookielib
 import urlparse

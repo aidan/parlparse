@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: latin1 -*-
 
 import sys
 import os
@@ -9,6 +10,7 @@ import re
 from unmisc import indexstuffdir, IsNotQuiet
 from db import GetDBcursor
 
+import unpylons.model as model
 
 
 scpermanentmembers = ["China", "France", "Russia", "United Kingdom", "United States"]
@@ -28,6 +30,7 @@ scelectedmembersyear = {
 2006:["Ghana", "Congo", "Tanzania", "Qatar", "Japan", "Peru", "Argentina", "Denmark", "Greece", "Slovakia"],
 2007:["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"],
 2008:["Burkina Faso", "Libya", "South Africa", "Vietnam", "Indonesia", "Costa Rica", "Panama", "Belgium", "Italy", "Croatia"],
+2009:["Burkina Faso", "Libya", "Uganda", "Vietnam", "Japan", "Costa Rica", "Mexico", "Turkey", "Austria", "Croatia"],
 }
 
 
@@ -51,6 +54,9 @@ permmissionsurl = "http://www.un.int/index-en/webs.html"
 permmissionsurl = "http://www.un.int/wcm/content/site/portal/lang/en/home/websites"
 
 def ScrapePermMissions():
+    print "not for now scrapeing permanent missions from web", permmissionsurl
+    return
+
     fin = urllib2.urlopen(permmissionsurl)
     permmiss = fin.read()
     fin.close()
@@ -78,7 +84,7 @@ def ParsePermMissions():
 permmissmap = { "Congo":"Congo, Republic of",
                 "Democratic Republic of the Congo":"Congo, Democratic Republic of",
                 "China":"The People's Republic of China",
-                "Cote d'Ivoire":"Côte d'Ivoire",
+                "Cote d'Ivoire":"Cï¿½te d'Ivoire",
                 "Iran":"Islamic Republic of Iran",
                 "Republic of Korea":"The Republic of Korea",
                 "Russia":"The Russian Federation",
@@ -397,7 +403,19 @@ def NationDataSucker():
                      (nation, date_entered, date_left, countrycode2, countrycode3, continent, missionurl, wikilink, fname)
                      VALUES ("%s", '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                   """ % (unname, date_from, date_to, iso2, iso3, continent_name, permmiss, wikilink, fname))
-            
+	    
+        m = model.Member.query.filter_by(name=unicode(unname)).first()
+        if not m:
+            m = model.Member(name=unicode(unname))
+        m.sname = unname.lower().replace(" ", "_").replace("'", "")
+        m.isnation=True
+        m.started=date_from
+        m.finished=date_to
+        m.group=continent_name
+        m.url=permmiss
+        m.wpname=wname
+        model.Session.flush()
+        print len(model.Member.query.all())
 
 
         # Write out data

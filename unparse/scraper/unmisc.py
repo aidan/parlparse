@@ -294,7 +294,7 @@ def MarkupLinks(paratext, undocname, paranum):
                 #print re.split(reressplit, st)
                 jjst = re.sub("(?:[a-zA-Z<)\"]|G-7)/[a-zA-Z]|20/20|9/11|HIV/AIDS|[12][90]\d\d/[12][90]\d\d", "", st)
                 if re.search("/", jjst):
-                    print "Failed with "+st
+                    print "Failed with ", st
                     raise unexception("bad / in paratext", paranum)
             res.append(st)
         #print st,
@@ -353,6 +353,7 @@ def LinkTemplate(undocname, docdate, gid):
 
 
 def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
+
     # this has to be able to sift between the unindexed and indexed types
     relsm = {}
     relsum = {}
@@ -360,7 +361,7 @@ def GetAllHtmlDocs(stem, bunindexed, bforce, htmldir):
     filelist = os.listdir(htmldir)
     filelist.sort(reverse = True)
     for d in filelist:
-        if re.search("(?:\.css|\.svn|\.js)$", d):
+        if re.search("(?:\.css|\.svn|\.js|~)$", d):
             continue
         if stem and not re.match(stem, d):
             continue

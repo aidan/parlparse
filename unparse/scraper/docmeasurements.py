@@ -8,6 +8,9 @@ from unmisc import GetAllHtmlDocs, IsNotQuiet, RomanToDecimal
 from pdfinfo import PdfInfo
 import datetime
 
+# most of the code in this file will become redundant
+import unpylons.model as model   
+
 currentyear = datetime.date.today().year
 currentsession = currentyear - 1946
 if datetime.date.today().month >= 9:
@@ -23,8 +26,6 @@ def MakeMeetSeq():
     meetseq.sort()
     meetseq.reverse()
     return meetseq
-
-
 
 
 def SetValuesOnGA(nationcounts, gacode, ftext):
@@ -250,11 +251,27 @@ def UpdatePdfInfoFromPV(pdfinfos, pdfinfo, ftext):
             pdfinfos[pdfc].AddDocRef(pdfinfo.pdfc, gid, pdfinfo.sdate)
 
 
+
 # Main file
-def WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir):
+def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir):
+    for pdf in reversed(sorted(os.listdir(pdfdir))):
+        mdocid = re.match("([AS].*?)\.pdf$", pdf)
+        if not mdocid:
+            continue
+        docid = mdocid.group(1)
+        if stem and not re.match(stem, docid):
+            continue
+        if not bforcedocmeasurements and model.Document.query.filter_by(docid=docid).first():
+            continue
+        model.ProcessDocumentPylon(docid, pdfdir, htmldir)
+    print "Quitting after doing the pylons loading"
+    return
+
+
     rels = GetAllHtmlDocs("", False, False, htmldir)
     doccounts = DocCounts()
     pdfinfos = { }
+
 
     for pdf in os.listdir(pdfdir):
         if not re.search("\.pdf$", pdf):

@@ -77,6 +77,8 @@ parser.add_option("--doc",
                   help="Causes a single document to be scraped")
 parser.add_option("--force-dbfill", action="store_true", dest="forcedbfill", default=False,
                   help="Erases existing valies and adds them to table again")
+parser.add_option("--force-docmeasurements", action="store_true", dest="forcedocmeasurements", default=False,
+                  help="Causes all docmeasurements to be run again")
 parser.add_option("--force-xap", action="store_true", dest="forcexap", default=False,
                   help="Erases existing database, and indexes all .html files")
 parser.add_option("--limit", dest="limit", default=None, type="int",
@@ -151,7 +153,7 @@ if bXapdex:
 
 # makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
-    WriteDocMeasurements(htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
+    WriteDocMeasurements(stem, options.forcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
 
 if bAgendanames:
     f = os.path.join(indexstuffdir, "agendanames.html")
@@ -160,7 +162,7 @@ if bAgendanames:
     if IsNotQuiet():
         print "Writing agenda summaries to file:", lf
     fout = open(lf, "w")
-    WriteAgendaSummaries(htmldir, fout, agendaindexdir)  # number of documents in each year of each type
+    WriteAgendaSummaries(stem, htmldir, fout, agendaindexdir)  # number of documents in each year of each type
     fout.close()
     if sys.platform == "win32" and os.path.isfile(f):
         os.remove(f)
@@ -176,7 +178,7 @@ if bSCsummaries:
     if IsNotQuiet():
         print "Writing SC summaries to file:", lf
     fout = open(lf, "w")
-    WriteSCSummaries(scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
+    WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
     fout.close()
     if sys.platform == "win32" and os.path.isfile(f):
         os.remove(f)

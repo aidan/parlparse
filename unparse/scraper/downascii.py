@@ -1,6 +1,11 @@
 #!/usr/bin/python
+# -*- coding: latin1 -*-
 
 # !!!!!!  Shared with web2 !!!!!!!
+
+# something else which might do this:
+#import unicodedata
+#return unicodedata.normalize('NFKD', unicode(string)).encode('ASCII', 'ignore')
 
 # utility I wish was in the library
 # is there a more efficient char substitution system?
