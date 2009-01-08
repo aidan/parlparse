@@ -694,14 +694,17 @@ def ParseOffOppPage(fr, gp):
         elif num <= 75:
                 sdate = filedate
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
                 if not frdate:
                         print num, filedate
                         sys.exit()
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
 	# extract the alphabetical list
-        table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
+        if num <= 97:
+                table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
+        else:
+                table = re.search("(?s)>Her Majesty's Official Opposition<(.*?)</table>", fr)
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
@@ -745,13 +748,15 @@ def ParseOffOppPage(fr, gp):
                 if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
                         continue
 
-                # Don't care about non MP/Lord
-                if name == 'Michael Bates' or name == 'Kulveer Ranger':
-                        continue
-
                 name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
                 name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
+                name = re.sub('</?font[^>]*>', '', name)
                 name = re.sub('Rt Hon the |Professor the |The ', '', name)
+
+                # Don't care about non MP/Lord
+                if name == 'Michael Bates' or re.search('Kulveer Ranger', name):
+                        continue
+
                 names = re.split('\s*<br>\s*(?i)', name)
                 names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
 
@@ -894,7 +899,7 @@ def ParsePlaidSNPPage(fr, gp):
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                     sdate = "20%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
                 if not frdate:
                         print "A problem was found with", num, filedate
                         sys.exit()
