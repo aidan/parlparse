@@ -839,7 +839,9 @@ class ParseCommittee:
         plaintitle = ''.join(node(text=True))
         bill_link = soup.h3
       
-        if bill_link and bill_link.a: url = bill_link.a.get('href', None)
+        if bill_link and bill_link.a:
+            url = bill_link.a.get('href', None)
+            url = re.sub('\s+', '', url)
    
         bill_title.extract()
         bill_link.extract()
