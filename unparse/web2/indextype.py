@@ -191,16 +191,19 @@ def WriteWikiPage():
 def WriteFrontPage():
     WriteGenHTMLhead("Front page", frontpage=True)
 
-    print '''<div style="background-color:#f9b5b5; border: thin red solid; margin-top:0em; float:right; width:260px">Media: 
-             <a href="http://www.guardian.co.uk/technology/2008/mar/13/internet.politics">Newspaper article 13 March</a>, 
-             <a href="http://video.google.com/videoplay?docid=5811193931753907681&hl=en-GB">4 minute video presentation</a>,
-             <a href="http://citizenreporter.org/2008/01/bm241-making-better-use-of-the-united-nations/">Podcast interview</a>.
-             <br/>
-             Notes on the <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">creator's blog</a>.
-             <br/>
-             <b>New:</b> Links to <a href="http://www.undemocracy.com/generalassembly/webcastindex">webcasts</a>.</div>'''
+    print '''
+        <div style="padding: 1ex; margin: 3px; background-color:#f9b5b5; border: thin red solid; margin-top:0em; float:right; width:260px">
+                        <form method="post" action="http://www.theunsays.com/cgi-bin/emailnotify/singleform.cgi" id="singleform" name="singleform" >                           
+                        <strong>Email me when</strong> <input type="text" value="anything" size="9" onclick="this.value=''" name="keyword" /> appears in a press release.      
+                        <strong>Email:</strong> <input type="text" size="15" value="your address" onclick="this.value=''" name="email" />                                      
+                        <input type="hidden" name="source" value="undemocracy.com" />                                                                                          
+                        <input type="submit" onclick=" if ( document.singleform.keyword.value == 'anything' ) {document.singleform.keyword.value = ''; }                       
+                                                      if ( document.singleform.email.value == 'your address' ) {alert('email address missing'); return false; }                
+                                        " value="signup" />                                                                                                                    
+                        </form>  
+        </div>
 
-    print '''<p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts (since 1994) of 
+            <p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts (since 1994) of 
              two of the five principal 
              <a href="http://en.wikipedia.org/wiki/United_Nations_System" title="Wikipedia article about the United Nations System"><b>United Nations bodies</b></a>.</p>  
              
@@ -213,12 +216,17 @@ def WriteFrontPage():
              directs the business of the United Nations and 
              recommends international treaties.
              
-             <p style="margin-top:0.5em">Find out what <a href="/nations" title="List all nations and their ambassadors who speak"><b>your nation</b></a> 
-             has been doing
-             in this international forum.</p>
+
+             <div style="padding: 1ex; margin: 3px; background-color:#f9b5b5; border: thin red solid; margin-top:0em; float:right; width:260px">Media: 
+             <a href="http://www.guardian.co.uk/technology/2008/mar/13/internet.politics">Newspaper article 13 March</a>, 
+             <a href="http://video.google.com/videoplay?docid=5811193931753907681&hl=en-GB">4 minute video presentation</a>,
+             <a href="http://citizenreporter.org/2008/01/bm241-making-better-use-of-the-united-nations/">Podcast interview</a>.
+             <br/>
+             Notes on the <a href="http://www.freesteel.co.uk/wpblog/category/whipping/un/">creator's blog</a>.
+             <br/>
+             <b>New:</b> Links to <a href="http://www.undemocracy.com/generalassembly/webcastindex">webcasts</a>.</div>
              
-            <div style="width:200;  text-align:center; background-color:blue; color:white; border:thick black dashed; float:right">A proud member of the 
-            <a href="http://en.wikipedia.org/wiki/Parliamentary_informatics" style="background-color:#cdffff">Parliamentary Informatics</a> web-ring</div>
+         <p style="margin-top:0.5em">Find out what <a href="/nations" title="List all nations and their ambassadors who speak"><b>your nation</b></a> has been doing in this international forum.</p>
 
              <p style="margin-top:1em; margin-bottom:0.5em"><b style="background:#b3f1d7;">The third column</b> lists 
              recent visits from Wikipedia readers.
