@@ -725,7 +725,7 @@ def ParseOffOppPage(fr, gp):
                                 continue
                         j = re.sub('(?i) \((Lords|Commons)\)', '', j)
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
-                                dept = titleish(re.sub('</?(font|b)>', '', j))
+                                dept = titleish(re.sub('</?(font|b)[^>]*>', '', j))
                                 if re.match('Opposition Whip', dept):
                                         dept = 'Whips'
                                 inothermins = False
