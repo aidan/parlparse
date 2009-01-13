@@ -750,7 +750,7 @@ def ParseOffOppPage(fr, gp):
 
                 name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
                 name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
-                name = re.sub('</?font[^>]*>', '', name)
+                name = re.sub('</?font[^>]*>\s*', '', name)
                 name = re.sub('Rt Hon the |Professor the |The ', '', name)
 
                 # Don't care about non MP/Lord
@@ -793,6 +793,8 @@ def ParseLibDemPage(fr, gp):
                     sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
         elif num <= 54:
                 sdate = filedate
+        elif num > 82:
+                return "SKIPTHIS", None # Since 2009-01-09, LibDem page simply links to LibDem site, so we have no data without work
         else:
                 frdate = re.search(">Th(is|e) list (below )?was last updated\s+on\s+<b>\s*(.*?)\s+<", fr)
                 if not frdate:
