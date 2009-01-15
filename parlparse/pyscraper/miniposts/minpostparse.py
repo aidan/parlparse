@@ -773,6 +773,37 @@ def ParseOffOppPage(fr, gp):
 
 	return (sdate, stime), res
 
+def ParseNewLibDemPage(fr, gp):
+        m = re.search('libdem(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+        sdate = filedate
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+	# extract the alphabetical list
+        name = None
+        pos = None
+        res = []
+        rows = re.split('<br/>\s*', fr)
+        for row in rows:
+                m = re.match('Name: (.*)', row)
+                if m:
+                        if name and pos:
+		                ec = protooffice()
+        		        ec.OffOppproto((sdate, stime), name, pos, '', '', "chgpages/libdem") # Just pos should be enough
+        		        res.append(ec)
+                        name = m.group(1)
+                        pos = ''
+                        continue
+                m = re.match('Role: (.*)', row)
+                if m:
+                        pos = m.group(1)
+        if name and pos:
+	        ec = protooffice()
+                ec.OffOppproto((sdate, stime), name, pos, '', '', "chgpages/libdem") # Just pos should be enough
+                res.append(ec)
+	return (sdate, stime), res
+
 def ParseLibDemPage(fr, gp):
         m = re.search('libdem(\d+)_(\d+-\d+-\d+)', gp)
         (num, filedate) = m.groups()
@@ -794,7 +825,7 @@ def ParseLibDemPage(fr, gp):
         elif num <= 54:
                 sdate = filedate
         elif num > 82:
-                return "SKIPTHIS", None # Since 2009-01-09, LibDem page simply links to LibDem site, so we have no data without work
+                return ParseNewLibDemPage(fr, gp)
         else:
                 frdate = re.search(">Th(is|e) list (below )?was last updated\s+on\s+<b>\s*(.*?)\s+<", fr)
                 if not frdate:
@@ -1026,6 +1057,8 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 	# don't match names that are in the lords
         if cp.fullname == 'Dame Marion Roe DBE':
                 cp.fullname = 'Marion Roe'
+        if cp.fullname == 'Jamie, Earl of Mar and Kellie':
+                cp.fullname = 'Earl of Mar and Kellie'
 	if not re.search("Duke |Lord |Baroness |Dame |^Earl |Viscount ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
