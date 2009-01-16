@@ -112,7 +112,7 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, reg
 retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
-resectiont2val = re.compile('<h\d align="?center"?( style="text-transform:uppercase"| class="DebateType")?>\s*(.*?)\s*</h\d>(?i)')
+resectiont2val = re.compile('<h(\d) align="?center"?( style="text-transform:uppercase"| class="DebateType")?>\s*(.*?)\s*</h\d>(?i)')
 resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?(?:<br>)?<center>(?:<stamp[^>]*>)*<b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>(.*?)</center>\s*<(?:p|br|page[^>]*)>(?i)')
 
@@ -236,8 +236,8 @@ class SepHeadText:
 			if not gheadingMatch:
 				gheadingMatch = resectiont2val.match(fss)
 				if gheadingMatch:
-					gheading = gheadingMatch.group(2)
-					gmajor = gheadingMatch.group(1)
+					gheading = gheadingMatch.group(3)
+					gmajor = re.search('uppercase', gheadingMatch.group(2) or '') or gheadingMatch.group(1)=='2'
 			if not gheadingMatch:
 				gheadingMatch = resectiont3val.match(fss)
 				if gheadingMatch:

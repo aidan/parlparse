@@ -88,12 +88,11 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def LordsHeadingPart(headingtxt, stampurl):
-	bmajorheading = False
+def LordsHeadingPart(headingtxt, stampurl, major):
 
 	headingtxtfx = FixHTMLEntities(headingtxt)
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
-	if bmajorheading:
+        if major and stampurl.sdate > '2008-12-01':
 		qb.typ = 'major-heading'
 	else:
 		qb.typ = 'minor-heading'
@@ -524,6 +523,7 @@ def LordsFilterSections(text, sdate):
 		headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 		unspoketxt = sht[1]
 		speechestxt = sht[2]
+                headingmajor = sht[3]
 
 		# the heading detection, as a division or a heading speech object
 		# detect division headings
@@ -532,10 +532,15 @@ def LordsFilterSections(text, sdate):
 
 		# heading type
 		if not gdiv:
-			qbh = LordsHeadingPart(headingtxt, stampurl)
+			qbh = LordsHeadingPart(headingtxt, stampurl, headingmajor)
 
         		# ram together minor headings into previous ones which have no speeches
         		if qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'minor-heading':
+        			flatb[-1].stext.append(" &mdash; ")
+        			flatb[-1].stext.extend(qbh.stext)
+
+        		# ram together minor headings into previous ones which have no speeches
+        		elif sdate>'2008-12-01' and qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
         			flatb[-1].stext.append(" &mdash; ")
         			flatb[-1].stext.extend(qbh.stext)
 
