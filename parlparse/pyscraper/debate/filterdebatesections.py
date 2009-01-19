@@ -217,7 +217,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 		binsertedheading = True
 
 	# Oral question are really a major heading
-	elif re.match("Oral Answers to Questions", headingtxt):
+	elif re.match("Oral Answers to Questions(?i)", headingtxt):
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
