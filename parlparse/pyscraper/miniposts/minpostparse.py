@@ -194,6 +194,8 @@ class protooffice:
 			self.fullname = "Sion Simon"
 		if re.match("Si.n C\. James$", self.fullname):
 			self.fullname = "Sian C James"
+		if re.match("Lembit .pik$", self.fullname):
+			self.fullname = "Lembit Opik"
 #		if re.match("Anne Picking$", self.fullname):
 #			self.fullname = "Anne Moffat"
                 self.cons = re.sub("&amp;", "&", cons)
