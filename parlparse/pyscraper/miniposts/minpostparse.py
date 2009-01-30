@@ -582,8 +582,8 @@ def ParsePrivSecPage(fr, gp):
                 return "SKIPTHIS", None # Brown shuffle
         elif num == 64:
                 sdate = '2007-06-28' # Brown shuffle
-        elif num == 102:
-                return "SKIPTHIS", None # Unknown reason
+        elif num >= 102:
+                return "SKIPTHIS", None # Unknown reason, all gone
         elif num <= 48:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
