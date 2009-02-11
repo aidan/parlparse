@@ -520,6 +520,10 @@ def ParseGovPostsPage(fr, gp):
         SpecMins("<TR><td width='400'><B>Minister of (.*?)</B>%s" % namebit, fr, sdate)
         SpecMins("<TR><td width='400'>- Parliamentary Under-Secretary (?:of state )?(?:for )?\(?(.*?)\)?%s</TD>%s(?i)" % (alsobit, namebit), fr, sdate)
 
+        # Fix
+        if num==169:
+                fr = re.sub('Parliamentary Under-Secretary and Department for Culture, Media & Sport', 'Parliamentary Under-Secretary, Department for Culture, Media & Sport', fr)
+
 	# extract the alphabetical list
         Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
         if not Malphl:
