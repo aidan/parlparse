@@ -158,19 +158,7 @@ for year in range(1999,currentyear+1):
             page = m.group(1)
             section = m.group(2)
 
-            oral_question = False
-            todays_business = False
-
-            if section == 'a':
-                oral_question = True
-                todays_business = True
-            elif section == 'd':
-                oral_question = True
-                todays_business = False
-            elif section == 'e':
-                oral_question = False
-                todays_business = False
-            else:
+            if section not in ( 'a', 'd', 'e', 'f' )
                 continue
 
             day_filename = output_directory + "day-" + subdir + "_" + page
