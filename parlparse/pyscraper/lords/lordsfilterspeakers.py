@@ -32,6 +32,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 	officematches = {}
 
 	# setup for scanning through the file.
+        print text
 	for fss in respeaker.split(text):
 
 		# strip off the bolds tags

@@ -176,6 +176,10 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2008-01-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080124/halltext/80124h0001.htm':
                 urla = [urla[0]]
+        if sdate=='2009-02-12' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm090212/halltext/90212h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2009-02-12' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm090212/wmstext/90212m0001.htm':
+                urla = [urla[0]]
         if sdate=='2008-01-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080128/text/80128w0001.htm':
                 urla = [urla[0]]
         if sdate=='2008-03-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080313/text/80313w0001.htm':
