@@ -20,9 +20,10 @@ import datetime
 import urllib
 cgitb.enable()
 
-sys.path.append("/home/undemocracy/unparse-live")
-sys.path.append("/home/undemocracy/unparse-live/djweb")
-os.environ['PYTHONPATH'] = "/home/undemocracy/unparse-live"
+PYTHONPATH = "/home/goatchurch/undemocracy/unparse"
+sys.path.append(PYTHONPATH)
+sys.path.append(PYTHONPATH + "/djweb")
+os.environ['PYTHONPATH'] = PYTHONPATH
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 from django.template import loader
@@ -82,7 +83,7 @@ def maintrunk(pathpart):
         else:
             print "Status: 301 Moved Permanently"
         print "Location: %s\n" % remadeurl
-        sys.exit()
+        return 
 
     pagefunc = hmap["pagefunc"]
     SetBodyID(hmap["pagefunc"])
@@ -100,7 +101,7 @@ def maintrunk(pathpart):
         x = loader.render_to_string('frontpage.html', {'searchlist':searchlist, 'trail':'locise', 'secrecords':recsc, 'garecords':recag, 'wikirefs':wikirefs, 'settings':settings})
         print x
         #print "<h1>ggggggg</h1>"
-        sys.exit(0)
+        return 
     elif pagefunc == "incoming":
         LogIncomingDB(pagefunc, "", referrer, ipaddress, useragent, remadeurl)
         WriteWikiPage()

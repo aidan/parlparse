@@ -113,11 +113,50 @@ vote_table = Table('vote', metadata,
     Column('id', Integer, primary_key=True),
     Column('docidhref', String(100), ForeignKey('division.docidhref')), 
     Column('member_name', Unicode(100), ForeignKey('member.name')), 
-    Column('vote', String(10)), # favour, against, abstain, absent
-    Column('orgvote', String(10)), # when the vote was initially wrong
-    Column('isteller', Boolean),  # not used in UN
+    Column('vote', String(10)),     # favour, against, abstain, absent
+    Column('orgvote', String(10)),  # when the vote was initially wrong
+    Column('isteller', Boolean),    # not used in UN
     Column('minority_score', Numeric), 
     )
+    
+# this is user-generated use data
+incoming_links_table = Table('incoming_links', metadata, 
+    Column('id', Integer, primary_key=True),
+    Column('page', String(30)),
+    Column('referrer', Text),
+    Column('refdomain', String(30)),
+    Column('reftitle', Text),
+    Column('ltime', DateTime),
+    Column('ipnumber', String(20)),
+    Column('useragent', Text),
+    Column('url', Text),
+    )
+            
+            Text
+    tablecols = [ "docid VARCHAR(30)", "page VARCHAR(30)", "referrer TEXT", "refdomain VARCHAR(30)", "reftitle TEXT", 
+                  "ltime DATETIME", "ipnumber VARCHAR(20)", "useragent TEXT", "url TEXT" ]
+        LogIncomingDB(pagefunc, hmap["agendanum"], referrer, ipaddress, useragent, remadeurl)
+    def LogIncomingDB(docid, page, referrer, ipnumber, useragent, url):
+    
+    # not interested in bots
+    if re.search("google|picsearch|search.msnbot|search.msn.com/msnbot|cuill.*?robot|ysearch/slurp|door/crawler|crawler.archive.org", useragent):
+        return "searchengine"
+    
+    c = GetDBcursor()
+    nowdatetime = datetime.datetime.now().__str__()
+    refdomain, reftitle = ParseReferrer(referrer, c)
+        
+    paramlist = "docid, page, referrer, refdomain, reftitle, ltime, ipnumber, useragent, url"
+    paramvalues = "'%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % (docid, page, referrer, refdomain, reftitle, nowdatetime, ipnumber, useragent, url)
+    c.execute("INSERT INTO unlog_incoming (%s) VALUES (%s);" % (paramlist, paramvalues))
+
+    res = 'unknown'
+    if re.search("wikipedia", refdomain):
+        res = "wikipedia"
+    if re.search("undemocracy", refdomain):
+        res = "internal"
+    return res
+
             
 class Division(object):
     pass
@@ -155,6 +194,10 @@ class Topic(object):
 
 class Member(object):
     pass
+
+class IncomingLinks(object):
+    pass
+
 
 mapper = Session.mapper
 
@@ -219,6 +262,8 @@ mapper(Vote, vote_table, properties={
     })
 
 mapper(DocumentRefDocument, documentRefdocument)
+
+mapper(IncomingLinks, incoming_links_table)
 
 # probably some fancy mapper could do this
 def GetSessionsYears():

@@ -1,6 +1,7 @@
 import os
 import logging
 import sys
+import re
 
 from unpylons.lib.base import *
 
@@ -55,7 +56,8 @@ class IndexesController(BaseController):
         return render('documentsscyear')
 
     def sctopics(self):
-        c.topics = model.Topic.query.order_by(model.topic_table.c.name)
+        c.topics = model.Topic.query.filter_by(agendanum=None).order_by(model.topic_table.c.name)
+        #c.topics = [m  for m in topics  if not m.agendanum]
         return render('sctopics')
 
     def sctopic(self, topic):
@@ -79,4 +81,11 @@ class IndexesController(BaseController):
         return render('scindexordered')
 
 
-
+    # redirects
+    def meeting(self, docid):
+        mga = re.match("A.(\d+).PV.(\d+)$", docid)
+        if mga:
+            # check if meeting actually parsed
+            return redirect_to('gameeting', session=mga.group(1), meeting=mga.group(2))
+        return document.documentspec(docid)
+        # http://127.0.0.1:5000/meeting/A-51-PV.88#pg024-bk02

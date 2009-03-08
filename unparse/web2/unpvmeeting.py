@@ -309,7 +309,7 @@ def WriteHTML(fhtml, pdfinfo, gadice, highlightth):
             print '</table>'
 
     fin = open(fhtml)
-    ftext = fin.read()
+    ftext = fin.read().decode('latin-1')
     fin.close()
     councilpresidentnation = None  # gets set if we have a council-attendees
 

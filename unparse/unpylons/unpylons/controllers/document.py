@@ -23,9 +23,9 @@ class DocumentController(BaseController):
     # list for specific document
     def documentspec(self, docid):
         c.document = model.Document.query.filter_by(docid=docid).first()
-        c.docid = c.document.docid
-        c.docidq = urllib.quote(c.docid)
-        c.meeting = c.document.meetings and c.document.meetings[0]
+        c.docid = docid
+        c.docidq = urllib.quote(docid)
+        c.meeting = c.document and c.document.meetings and c.document.meetings[0]
         #c.message = str([m.meeting1_docidhref  for m in model.DocumentRefDocument.query.filter_by(document2_docid=docid)])
         #c.message = str([m.title  for m in model.Meeting.query.filter_by(docid="A-60-PV.56")])
         #c.message = str(dir(h.truncate))

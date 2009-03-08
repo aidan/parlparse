@@ -18,14 +18,15 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
-
+# next/previous session in case of general assembly meetings
+# links to nations from the speeches/flags
+# nice dates in the helper function
+# option to scrape documents we don't have
 # add non-existent documents that are referenced into the database (noting their non-loaded state)
 # parse all document codes (incl roman numeral ones)
-# fix the add comment here killing off (again)
 # fix the wiki-ref
 # get the wikipedia coding to work
 # make the search box work (with suggestions)
-# reload file data partially (not all files in database)
 # get rect areas working again
 
 
@@ -36,28 +37,28 @@ def make_map():
 #  docmeasurements list through the pdfs and call loader.ProcessParsedDocumentPylon on each document, setting its council-agenda, date, citations
 #    could be expanded so we have xmls of all the other documents to look for dates, citations and titles there too, in a light form of parsing
 
-    map.connect('nations', 'nations', controller='indexes', action='nations')
-    map.connect('nation', 'nation/:snation', controller='nation', action='nation')
-    map.connect('flagof', 'png100/Flag_of_:(entity).png', controller='nation', action='flagof')
+    map.connect('nations',  'nations',          controller='indexes', action='nations')
+    map.connect('nation',   'nation/:snation',  controller='nation', action='nation')
+    map.connect('flagof',   'png100/Flag_of_:(entity).png', controller='nation', action='flagof')
 
     map.connect('documentsall', 'document/all', controller='document', action='documentsall')
 
     # individual documents (missing highlight case)
-    map.connect('documentpage', 'document/:docid/page_:page', controller='document', action='documentpage')
-    map.connect('documentspec', 'document/:docid', controller='document', action='documentspec')
-    map.connect('imagedocumentpage', 'docpages/:(docid)_page_:(page).png', controller='document', action='imagedocumentpage')
+    map.connect('documentpage',     'document/:docid/page_:page', controller='document', action='documentpage')
+    map.connect('documentspec',     'document/:docid', controller='document', action='documentspec')
+    map.connect('imagedocumentpage','docpages/:(docid)_page_:(page).png', controller='document', action='imagedocumentpage')
     
     map.connect('gasessionagendas', 'generalassembly_:session/agendas', controller='indexes', action='gasessionagendas')
-    map.connect('gaagenda', 'generalassembly/agenda/:(agendanum)', controller='indexes', action='gaagenda')
-    map.connect('gacondolences', 'generalassembly/condolences', controller='indexes', action='gacondolences')
-    map.connect('gameetinghref', 'generalassembly_:session/meeting_:meeting/:href', controller='meeting', action='gameetinghref')
-    map.connect('gameeting', 'generalassembly_:session/meeting_:meeting', controller='meeting', action='gameeting')
-    map.connect('documentsgasession', 'generalassembly_:session', controller='indexes', action='documentsgasession')
+    map.connect('gaagenda',         'generalassembly/agenda/:(agendanum)', controller='indexes', action='gaagenda')
+    map.connect('gacondolences',    'generalassembly/condolences', controller='indexes', action='gacondolences')
+    map.connect('gameetinghref',    'generalassembly_:session/meeting_:meeting/:href', controller='meeting', action='gameetinghref')
+    map.connect('gameeting',        'generalassembly_:session/meeting_:meeting', controller='meeting', action='gameeting')
+    map.connect('documentsgasession','generalassembly_:session', controller='indexes', action='documentsgasession')
 
-    map.connect('documentsscyear', 'securitycouncil_:year', controller='indexes', action='documentsscyear')
-    map.connect('sctopics', 'securitycouncil/topics', controller='indexes', action='sctopics')
-    map.connect('sctopic', 'securitycouncil/topic/:topic', controller='indexes', action='sctopic')
-    map.connect('scmeeting', 'securitycouncil/meeting_:scmeetingnumber', controller='meeting', action='scmeeting')
+    map.connect('documentsscyear',  'securitycouncil_:year', controller='indexes', action='documentsscyear')
+    map.connect('sctopics',         'securitycouncil/topics', controller='indexes', action='sctopics')
+    map.connect('sctopic',          'securitycouncil/topic/:topic', controller='indexes', action='sctopic')
+    map.connect('scmeeting',        'securitycouncil/meeting_:scmeetingnumber', controller='meeting', action='scmeeting')
 
 # indexes not done.  we have a front page (sort of), but need lists of security council documents by year
     map.connect('security_council_topics_ordered', 'securitycouncil/:year', controller='indexes', action='scindexordered')
@@ -65,6 +66,8 @@ def make_map():
     map.connect('security_council_topics', 'securitycouncil', controller='indexes', action='scindex')
     map.connect('', controller='indexes', action='frontpage')
 
+    # conditions to redirect
+    map.connect('meeting/:docid', controller='indexes', action='meeting')
 
     map.connect('*url', controller='home', action='index')
     map.connect('', controller='home', action='index')

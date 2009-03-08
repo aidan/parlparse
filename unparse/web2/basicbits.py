@@ -57,7 +57,7 @@ def WriteGenHTMLhead(title, frontpage=False):
 
     if os.getenv("HTTP_HOST") != 'www.undemocracy.com':
         if os.getenv("HTTP_HOST") != 'local.undemocracy.com':
-            print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page.</p>'''
+            print '''<p style="color:red"><strong>This is a test site - the real site is <a href="http://www.undemocracy.com">over here</a>.</strong> Developers are busy making UNdemocracy better using this page. %s</p>''' % os.getenv("HTTP_HOST")
 
     print '<div id="identity">'
     if not frontpage:
@@ -404,7 +404,7 @@ def DecodeHref(pathparts, form):
         return hmap
 
     # detect nations by the presence of Flag_of
-    for flagfile in os.listdir("/home/undemocracy/unparse-live/web2/png100"):
+    for flagfile in os.listdir("/home/goatchurch/undemocracy/unparse/web2/png100"):
         if flagfile.lower() == ("Flag_of_%s.png" % pathparts[0]).lower():
             nation = flagfile.replace("Flag_of_", "").replace(".png", "").replace("_", " ")
             if len(pathparts) == 1:

@@ -29,13 +29,33 @@ class NationController(BaseController):
         # can't work out how to query this in sqlalchemy -- filter(model.Vote.descrition.c.body=="SC") doesn't work
         
         c.totalvotecount = model.Vote.query.filter_by(member_name=c.nation.name).count()
-        allvotes = model.Vote.query.filter_by(member_name=c.nation.name).order_by(model.Vote.c.minority_score)
-        allvotes = [m  for m in allvotes  if m.division]  # where's the bad stuff getting in?
-        c.scvotes = [m  for m in allvotes  if m.division.body=="SC"][:5]
-        c.gavotes = [m  for m in allvotes  if m.division.body=="GA"][:10]
-        c.lastvotedate = allvotes and allvotes[0].division.document.date
-        for m in allvotes:
-            c.lastvotedate = max(c.lastvotedate, m.division.document.date)
+    
+        #allvotes = model.Vote.query.filter_by(member_name=c.nation.name).order_by(model.Vote.c.minority_score)
+        #allvotes = [m  for m in allvotes  if m.division]  # where's the bad stuff getting in?
+        
+        c.scvotes = model.Vote.query.filter_by(member_name=c.nation.name).join('division').filter(model.Division.body=="SC").order_by(model.Vote.c.minority_score).limit(5)
+        c.scvotes = [m  for m in c.scvotes  if m.division]
+        #return str([m.division.body  for m in c.scvotes])
+    
+        #c.gavotes = [m  for m in allvotes  if m.division.body=="GA"][:10]
+        c.gavotes = model.Vote.query.filter_by(member_name=c.nation.name).join('division').filter(model.Division.body=="GA").order_by(model.Vote.c.minority_score).limit(10)
+        c.gavotes = [m  for m in c.gavotes  if m.division]
+        
+        #c.lastvotedate = allvotes and allvotes[0].division.document.date
+        #for m in allvotes:
+        #    c.lastvotedate = max(c.lastvotedate, m.division.document.date)
+        # a = model.select("SELECT max(document.date) FROM document")
+        # a = model.select(model.func.max(model.document_table.c.date))
+        #from sqlalchemy.sql import text
+        #a = text('Select max(date) from document')
+        #a = model.Session.connection().execute(a).fetchall()[0]
+#        a = model.Vote.query.from_statement("SELECT max(document.date) FROM vote LEFT JOIN division ON vote.docidhref = division.docidhref LEFT JOIN document ON division.docid = document.docid WHERE vote.member_name='United Kingdom'").params(name=c.nation).all()
+        
+        #print a
+        #return "hi there"
+    
+        #c.lastvotedate = model.Vote.query.filter_by(member_name=c.nation.name).join('division', 'document').group_by("*").max(model.Document.date)
+        
         sss = model.Division.query.first()
         #c.message = c.nation.name + "---- " + str(allvotes) # str([m.member_name  for m in sss.votes])
         #c.message += "  ******  "

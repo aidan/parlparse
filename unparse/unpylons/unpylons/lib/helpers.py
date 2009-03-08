@@ -7,6 +7,8 @@ from webhelpers import *
 import re  # also imported already in textile
 
 def strip_tags_in_subheading(text):
+    if not text:
+        return "NONE"
     lt = [re.sub("<[^>]*>", "", t).strip()  for t in re.split("</p>", text.decode("latin1"))]
     lt = [t  for t in lt  if t]
     return lt

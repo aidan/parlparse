@@ -29,7 +29,7 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
         t = Topic.by_name(unicode(tn))
         m.topics.append(t)
     Session.flush()
-    print 'Saved:', m.docid
+    print 'Saved:', m.docid, [t.id  for t in m.topics]
 
 # would like docid and href to be not rammed together, but docid is a primary key, unfortunately
 def load_ga_debate(docid, ldate, gaagindoc):
