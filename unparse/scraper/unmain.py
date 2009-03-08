@@ -170,19 +170,20 @@ if bAgendanames:
 
 if bSCsummaries:
     scsummariesdir = os.path.join(indexstuffdir, "scsummariesdir")
-    if not os.path.isdir(scsummariesdir):
-        os.mkdir(scsummariesdir)
+    #if not os.path.isdir(scsummariesdir):
+    #    os.mkdir(scsummariesdir)
     ScrapeSCSummaries(scsummariesdir)
     f = os.path.join(indexstuffdir, "scsummaries.html")
     lf = os.path.join(indexstuffdir, "scsummaries.temp.html")
     if IsNotQuiet():
         print "Writing SC summaries to file:", lf
-    fout = open(lf, "w")
+    fout = None # open(lf, "w")
     WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
-    fout.close()
-    if sys.platform == "win32" and os.path.isfile(f):
-        os.remove(f)
-    os.rename(lf, f)  # atomic in unix
+    if fout:
+        fout.close()
+        if sys.platform == "win32" and os.path.isfile(f):
+            os.remove(f)
+        os.rename(lf, f)  # atomic in unix
 
 if bGAsummaries:
     agsummariesdir = os.path.join(indexstuffdir, "gasummariesdir")

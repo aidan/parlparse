@@ -500,7 +500,7 @@ class SCrecord:
     def InsertintoDB(self, c):
         model.load_sc_topics(self.pvcode, self.otopicrecstr, self.datetime, self.datetimeend, 
                              self.topics, self.minutes, self.numspeeches, self.numparagraphs, self.numvotes, self.nextpvcode)
-        #return
+        return
 
         # old addition to the database
         c.execute("SELECT docid FROM un_scheadings  WHERE docid = '%s'" % self.pvcode)
@@ -544,9 +544,7 @@ def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout):
             continue
         if IsNotQuiet():
             print "year", year
-        if year == "2009":
-            print "Skipping this year till there's data"
-            continue
+        
         f = os.path.join(scsummariesdir, lf)
         fin = open(f)
         ftext = fin.read()
@@ -559,6 +557,9 @@ def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout):
             screcord.nextpvcode = screcords and screcords[-1].pvcode or None
             screcords.append(screcord)
             screcord.InsertintoDB(c)
+    
+    if not fout:
+        return
     
     # not going to need this
     topicgroups = { }
