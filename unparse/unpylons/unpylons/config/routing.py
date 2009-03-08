@@ -36,6 +36,13 @@ def make_map():
 #  agendanums to get the agenda meetings in place
 #  docmeasurements list through the pdfs and call loader.ProcessParsedDocumentPylon on each document, setting its council-agenda, date, citations
 #    could be expanded so we have xmls of all the other documents to look for dates, citations and titles there too, in a light form of parsing
+# eu1.okfn.org
+
+# paster serve development.ini --reload
+# look in loaders for the drop database
+
+
+
 
     map.connect('nations',  'nations',          controller='indexes', action='nations')
     map.connect('nation',   'nation/:snation',  controller='nation', action='nation')
