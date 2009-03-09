@@ -18,16 +18,18 @@ class unexception(Exception):
 undocpdflinks = "../pdf"
 undochtmllinks = "../html"
 
-undatadir = os.path.join("..", "..", "undata")
-pdfdir = os.path.join("..", "..", "undata", "pdf")
-pdfxmldir = os.path.join("..", "..", "undata", "pdfxml")
-htmldir = os.path.join("..", "..", "undata", "html")
-xapdir = os.path.join("..", "..", "undata", "xapdex.db")
-pdfpreviewdir = os.path.join("..", "..", "undata", "pdfpreview")
-pdfinfodir = os.path.join("..", "..", "undata", "pdfinfo")
-tmppdfpreviewdir = os.path.join("..", "..", "undata", "tmppdfpreview")
-commentsdir = os.path.join("..", "..", "undata", "comments")
-indexstuffdir = os.path.join("..", "..", "undata", "indexstuff")
+undatadir = "/home/goatchurch/undemocracy/undata"
+
+#undatadir = os.path.join("..", "..", "undata")
+pdfdir = os.path.join(undatadir, "pdf")
+pdfxmldir = os.path.join(undatadir, "pdfxml")
+htmldir = os.path.join(undatadir, "html")
+xapdir = os.path.join(undatadir, "xapdex.db")
+pdfpreviewdir = os.path.join(undatadir, "pdfpreview")
+pdfinfodir = os.path.join(undatadir, "pdfinfo")
+tmppdfpreviewdir = os.path.join(undatadir, "tmppdfpreview")
+commentsdir = os.path.join(undatadir, "comments")
+indexstuffdir = os.path.join(undatadir, "indexstuff")
 
 sCallScrape = None  # set by one of the
 

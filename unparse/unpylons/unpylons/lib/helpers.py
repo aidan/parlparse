@@ -5,6 +5,9 @@ available to Controllers. This module is available to both as 'h'.
 """
 from webhelpers import *
 import re  # also imported already in textile
+import os
+
+undatadir = "/home/goatchurch/undemocracy/undata"  # should come from config
 
 def strip_tags_in_subheading(text):
     if not text:
@@ -31,10 +34,12 @@ def split_links(text):
 def url_for_doc(docid):
     if not docid:
         return ""
-    mgameeting = re.match("A-(\d+)-PV.(\d+)$", docid)
-    mscmeeting = re.match("S-PV-(.*)$", docid)
-    if mgameeting and int(mgameeting.group(1)) >= 49:
+    mgameeting = re.match("A.(\d+).PV.(\d+)$", docid)
+    mscmeeting = re.match("S.PV.(\d.*)$", docid)
+    if mgameeting and int(mgameeting.group(1)) >= 49 and os.path.isfile(os.path.join(undatadir, "html", docid + ".html")):
         return url_for('gameeting', session=mgameeting.group(1), meeting=mgameeting.group(2))
     if mscmeeting:
         return url_for('scmeeting', scmeetingnumber=mscmeeting.group(1))
     return url_for('documentspec', docid=docid)
+
+

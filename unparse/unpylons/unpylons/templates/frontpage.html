@@ -27,15 +27,11 @@
   <img src="/images/site/logobetaw.png" alt="UNdemocracy.com"/>
 </div>
 <div id="thinbar">
-  <a href="/nations">Browse by nations</a>
-  | <a href="/nations">Featured documents</a>
-  | <a href="/nations">Latest wikipedia citations</a>
+  <a href="${h.url_for('nations')}">Browse by nations</a>
+  | <a href="${h.url_for('nations')}">Featured documents</a>
+  | <a href="${h.url_for('nations')}">Latest wikipedia citations</a>
 </div>
 
-<h2>Test Links</h2>
-<ul>
-  <li><a href="${h.url_for('documentsall')}">${h.url_for("documentsall")}</a></li>
-</ul>
 
 <p style="margin-top:1em"><b>This website</b> gives easy access to the transcripts (since 1994) of two of the five principal 
   <a href="http://en.wikipedia.org/wiki/United_Nations_System"><b>United Nations bodies</b></a>.</p>  
@@ -69,20 +65,21 @@
     <tr><td colspan="3">Recent Security Council Meetings (last few)</td></tr>
     <tr py:for="scmeeting in c.scmeetings">
       <td>${scmeeting.datetime.date()}</td>
-      <td><a href="/securitycouncil/meeting_${scmeeting.docid[5:]}">${scmeeting.title}</a></td>
+      <td><a href="${h.url_for('scmeeting', scmeetingnumber=scmeeting.meetingnumber)}">${scmeeting.title}</a></td>
+      <td>${scmeeting.minutes}</td>
     </tr>
   </table>
 </div>
 
 <div id="generalassembly">
   <h2>General Assembly</h2>
-  <p><a href="/generalassembly">Meetings by topic</a> or <a href="/generalassembly/documents">Date</a> | 
-    <a href="/generalassembly/documents">All Documents</a></p>
+  <p><a href="${h.url_for('gasessions')}">Meetings by year</a> or <a href="${h.url_for('gacondolences')}">Condolences</a> | 
+    <a href="${h.url_for('documentsall')}">All</a></p>
   <table>
-    <tr><td colspan="3">Recent General Assembly Meetings (last few)</td></tr>
+    <tr><td colspan="3">Recent General Assembly Meetings (last few)${len(c.garecords)}</td></tr>
     <tr py:for="garecord in c.garecords">
-      <td>${garecord.sdate}</td>
-      <td><a href="/generalassembly_${garecord.nsess}/meeting_${garecord.nmeeting}">${h.truncate(garecord.agtitle, 50)}</a></td>
+      <td>${garecord.datetime.date()}</td>
+      <td><a href="${h.url_for('gameeting', session=garecord.session, meeting=garecord.meetingnumber)}#${garecord.href}">${h.truncate(garecord.title, 50)}</a></td>
     </tr>
   </table>
 </div>

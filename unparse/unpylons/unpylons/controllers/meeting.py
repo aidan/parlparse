@@ -11,22 +11,17 @@ htmldir = os.path.join(model.undatadir, "html")
 
 log = logging.getLogger(__name__)
 
-PYTHONPATH = "/home/goatchurch/undemocracy/unparse"
-sys.path.append(PYTHONPATH)
-sys.path.append(PYTHONPATH + "/djweb")
-sys.path.append(PYTHONPATH + "/web2")
-sys.path.append(PYTHONPATH + "/pylib")
-os.environ['PYTHONPATH'] = PYTHONPATH
+def WebcastLink(body, wcdate):
+    #    elif hmap["pagefunc"] == "webcastindex":
+    #    WriteWebcastIndexPage(hmap["body"], hmap["date"])
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
-from django.template import loader
-import djweb.settings as settings
-import web2.trunk
-from web2.wikitables import ShortWikipediaTableM
-from web2.db import LogIncomingDB, GetUnlogList
-from web2.indexrecords import LoadAgendaNames, LoadSecRecords
+    if body == "securitycouncil" and wcdate >= "2003-01-09":
+        return "kkk"# return EncodeHref({"pagefunc":"webcastindex", "body":"securitycouncil", "date":wcdate})
+    if body == "generalassembly" and wcdate >= "2003-07-03":
+        return "kkk"# return EncodeHref({"pagefunc":"webcastindex", "body":"generalassembly", "date":wcdate})
+    return ""
 
-from quickskins import WebcastLink
+#from quickskins import WebcastLink
 
 rdivspl = '<div class="([^"]*)"(?: id="([^"]*)")?(?: agendanum="([^"]*)")?>(.*?)</div>(?s)'
 rcouncilattendee = '<p id="[^"]*"><span class="name">([^<]*)</span>(?:\s*<span class="name">([^<]*)</span>)?\s*<span class="nation">([^<]*)</span>\s*<span class="place">(president|member)</span></p>'

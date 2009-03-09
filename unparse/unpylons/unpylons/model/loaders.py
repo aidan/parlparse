@@ -11,6 +11,7 @@ def IsNotQuiet():
 #metadata.drop_all()  # clears the tables 
 #print "DDDDropped"
 metadata.create_all()
+
 def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches, numparagraphs, numvotes, nextdocid):
     numvotes = 0 
     m = Meeting.query.filter_by(docid=docid).first()
@@ -24,6 +25,7 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
     m.numspeeches, m.numparagraphs = numspeeches, numparagraphs
     m.numvotes = numvotes
     m.next_docid = nextdocid     # the list is scanned backwards
+    m.meetingnumber = re.match("S-PV-(\d.+)$", docid).group(1)
     del m.topics[:]  # clear the list
     for tn in topics:
         t = Topic.by_name(unicode(tn))
@@ -31,19 +33,22 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
     Session.flush()
     print 'Saved:', m.docid, [t.id  for t in m.topics]
 
+
 # would like docid and href to be not rammed together, but docid is a primary key, unfortunately
 def load_ga_debate(docid, ldate, gaagindoc):
     for m in Meeting.query.filter_by(docid=docid):
         Session.delete(m)        
+    session, meetingnumber = re.match("A-(\d+)-PV.(\d+)$", docid).groups()
     for (subheadingid, agendanumstr, agtitle) in gaagindoc:
         docidhref = docid + "#" + subheadingid
 
         m = Meeting.query.filter_by(docid=docidhref).first()
         if not m:
-            m = Meeting(docidhref=docidhref, docid=docid, href=subheadingid, body="GA")
+            m = Meeting(docidhref=docidhref, docid=docid, href=subheadingid, body="GA", session=session, meetingnumber=meetingnumber)
         m.title = agtitle.decode("latin1")
         m.datetime = ldate
         m.agendanumstr = agendanumstr
+        
         #print m.title
     Session.flush()
     
@@ -59,6 +64,7 @@ def load_ga_agendanum(session, agendanum, mctitle, mccategory, dochrefs):
         if m:
             t.meetings.append(m)
     Session.flush()
+    print 'Session', session, "Agenda", agendanum
 
 
 def ProcessParsedVotePylon(docid, href, div_content):

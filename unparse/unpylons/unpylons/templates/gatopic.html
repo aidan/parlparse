@@ -13,7 +13,7 @@
 <h2>${c.topic.name}</h2>
 <ul>
 <li py:for="meeting in c.topic.meetings">
-  ${meeting.datetime.date()} <a href="${h.url_for('gameeting', session=c.topic.agendanum[-2:], meeting=meeting.docid[8:])}#${meeting.href}">${meeting.title}</a>
+  ${meeting.datetime.date()} <a href="${h.url_for_doc(meeting.docid)}#${meeting.href}">${meeting.title}</a>
 </li>
 </ul>
 

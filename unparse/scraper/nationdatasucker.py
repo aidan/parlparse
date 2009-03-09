@@ -71,11 +71,15 @@ def ScrapePermMissions():
 
 def ParsePermMissions():
     fpermmiss = os.path.join(indexstuffdir, "permanentmissions.html")
+    res = { }
+    if not os.path.isfile(fpermmiss):
+        print "No permanent missions file"
+        return res
+            
     fin = open(fpermmiss)
     ftext = fin.read()
     fin.close()
 
-    res = { }
     for lurl, nation in re.findall('<OPTION value=([^>]+)>([^<]+)</OPTION>', ftext):
         res[nation] = urlparse.urljoin(permmissionsurl, lurl)
         #print "::", nation, res[nation]

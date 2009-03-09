@@ -146,14 +146,18 @@ class AgendaHeading:
         self.sortval = (self.nsession, self.nmeeting)
 
         self.subheadingid = subheadingid
-        self.agendanumstr = agendanumstr
-        self.agendanums = agendanumstr.split(",")
-
-
-        for agendanum in self.agendanums:
+        self.agendanumstr = re.sub("^condolence-.*$", "condolence", agendanumstr)
+        #if self.agendanumstr[0] == "c":
+        #    print self.agendanumstr, "kkkk"
+        self.agendanums = [ ]
+        for agendanum in agendanumstr.split(","):
             sa = agendanum.split("-")
             assert len(sa) == 2
             assert int(sa[1]) == self.nsession
+            if sa[0] == "condolence":
+                self.agendanums.append(sa[0])
+            else:
+                self.agendanums.append(agendanum)
 
         # break the agenda text up by paragraph
         self.titletext = titletext
@@ -349,7 +353,7 @@ def AddAgendaGroups(agendagroups, sdate, docid, ftext):
     # not complete
 
 
-def WriteAgendaSummaries(stem, htmldir, fout, agendaindexdir):
+def WriteAgendaSummaries(stem, htmldir):
     rels = GetAllHtmlDocs("", False, False, htmldir)
 
     agendagroups = { }
@@ -387,70 +391,13 @@ def WriteAgendaSummaries(stem, htmldir, fout, agendaindexdir):
             gaagindoc.append((ag.subheadingid, ag.agendanumstr, "||".join(ag.titlelines)))
         model.load_ga_debate(docid, sdate, gaagindoc)
 
-    #return
-
     # the agendagroups are lists of agenda items; call them topics
     allagendas = [ ]
     recentagendas = [ ]
     for agendanum, aggroup in agendagroups.iteritems():
         agsession = aggroup[0][1].nsession
         mctitle, mccategory = FindDelCommonTitle(agendanum, aggroup)
-
         model.load_ga_agendanum(agsession, agendanum, mctitle, mccategory, [ (ag.docid, ag.subheadingid)  for ag0, ag in aggroup ])
 
-        allagendas.append((agsession, mccategory, mctitle, agendanum, aggroup))
-        recentagendas.extend(aggroup)
-
-
-    allagendas.sort()
-    agendasperdoc = { }
-
-    #for r in allagendas:
-    #    print r[0], r[1], r[3], len(r[4])
-    #sys.exit(0)
-
-    fout.write('<html><head>\n<style type="text/css">\n')
-    fout.write('p { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
-    fout.write('.documentid, .date, .subheadingid, .aggrouptitle, .agcategory, .agendanum  { display: none; }\n')
-    fout.write('.numspeeches, .numparagraphs, .numdocuments, .numvotes { border: thin black solid; }\n')
-    fout.write('h2 { text-decoration: underline; text-align: center; }\n')
-    fout.write('</style>\n</head>')
-    fout.write('<body>\n')
-
-    prevagsession, prevmccategory = None, None
-    for (agsession, mccategory, mctitle, agendanum, aggroup) in allagendas:
-        if agsession != prevagsession:
-            fout.write('\n<h1>Session %s</h1>\n' % agsession)
-            prevagsession = agsession
-        if mccategory != prevmccategory:
-            fout.write('\n<h2>%s</h2>\n' % mccategory)
-            prevmccategory = mccategory
-        WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fout, agendasperdoc)
-
-        if agendaindexdir:
-            fagname = os.path.join(agendaindexdir, agendanum + ".html")
-            fagout = open(fagname, "w")
-            WriteAgendaGroup(mccategory, mctitle, agendanum, aggroup, fagout, None)
-            fagout.close()
-
-    recentagendas.sort()
-    recentagendas.reverse()
-    agnumrecent = "recent"
-    fagname = os.path.join(agendaindexdir, agnumrecent + ".html")
-    fagout = open(fagname, "w")
-    WriteAgendaGroup("Recent", "Recent", agnumrecent, recentagendas[:100], fagout, None)
-    fagout.close()
-
-    fout.write('</body>\n</html>\n')
-
-
-    # now make up the pdfinfo stuff so that every file has knowledge of what the agendas should be called
-    # has to be done after the agendas are put together and their names have been sorted out
-    for docid, agendascontained in agendasperdoc.iteritems():
-        pdfinfo = PdfInfo(docid)
-        pdfinfo.UpdateInfo(pdfinfodir)
-        agendascontained.sort()
-        pdfinfo.agendascontained = agendascontained # replace it
-        pdfinfo.WriteInfo(pdfinfodir)
 
 

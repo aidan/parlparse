@@ -14,7 +14,7 @@
   <p><a href="${h.url_for('gaagenda', agendanum=topic.agendanum)}">${topic.name}</a></p>
   <p style="margin-left:20px; font-size:80%">
   <py:for each="meeting in topic.meetings">
-      <a href="${h.url_for_doc(docid)}#${meeting.href}">${meeting.datetime.date()}</a>
+      <a href="${h.url_for_doc(meeting.docid)}#${meeting.href}">${meeting.datetime.date()}</a>
   </py:for>
   </p>
 </div>

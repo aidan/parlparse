@@ -415,8 +415,7 @@ def InitialCleanupTopic(st, year):
 
 rrow = re.compile('(?s)<td[^>]*>(.*?)\s*(?:</td>)?\s*<td[^>]*>(.*?)\s*</td>\s*<td[^>]*>(.*?)\s*</td>\s*<td[^>]*>(.*?)\s*</td>')
 class SCrecord:
-    def __init__(self, year, row, summarylink, htmldir):
-        self.summarylink = summarylink
+    def __init__(self, year, row, htmldir):
 
         mrow = rrow.match(row)
         assert mrow, row
@@ -474,6 +473,7 @@ class SCrecord:
     def FindTopicCats(self, htmldir, pdfdir):
         self.numspeeches, self.numparagraphs, self.numdocuments, self.numvotes = -1, -1, -1, -1
         htmlfile = os.path.join(htmldir, self.pvcode + ".html")
+        print htmlfile, "hhhh"
         pdffile = os.path.join(pdfdir, self.pvcode + ".pdf")
         if os.path.isfile(htmlfile):
             self.doclink = '"../html/%s.html" class="lkhtml"' % self.pvcode
@@ -497,46 +497,15 @@ class SCrecord:
         # do this to over-ride the splitting and see the original files
         #self.topics = [ self.otopicrecstr ]
 
-    def InsertintoDB(self, c):
-        model.load_sc_topics(self.pvcode, self.otopicrecstr, self.datetime, self.datetimeend, 
-                             self.topics, self.minutes, self.numspeeches, self.numparagraphs, self.numvotes, self.nextpvcode)
-        return
 
-        # old addition to the database
-        c.execute("SELECT docid FROM un_scheadings  WHERE docid = '%s'" % self.pvcode)
-        if not c.fetchone():
-            c.execute("REPLACE INTO un_scheadings (docid, heading, ldate, shortheading, veryshortheading, numvotes) VALUES ('%s', '%s', '%s', '', '', 0)" % (self.pvcode, escape_string(self.otopicrecstr), self.sdate))
-        c.execute("UPDATE un_scheadings SET shortheading='%s', veryshortheading='%s' WHERE docid='%s'" % (escape_string(self.otopicrecstr), escape_string(self.topics[0]), self.pvcode))
 
-def WriteTopicG(fout, topic, topicg):
-    fout.write('\n<div class="dsctopic">\n')
-    fout.write('<h3>%s</h3>\n' % topic)
-    fout.write("\t<p>\n")
-    sctopic = (topic != "Recent" and topic or "")
-    for (meetingorder, screcord) in topicg:
-        fout.write('\t\t<span class="scmeeting">')
-        fout.write(' <a href=%s>%s</a>' % (screcord.doclink, screcord.sdate))
-        fout.write(' <span class="documentid">%s</span>' % screcord.pvcode)
-        fout.write(' <span class="date">%s</span>' % screcord.sdate)
-        fout.write(' <span class="numspeeches">%d</span>' % screcord.numspeeches)
-        fout.write(' <span class="numparagraphs">%d</span>' % screcord.numparagraphs)
-        fout.write(' <span class="numdocuments">%d</span>' % screcord.numdocuments)
-        fout.write(' <span class="numvotes">%d</span>' % screcord.numvotes)
-        fout.write(' <span class="sctopic">%s</span>' % (sctopic or screcord.otopicrecstr))
-        fout.write(' <span class="parsed">%s</span>' % (screcord.bparsed and "1" or "0"))
-        fout.write('</span>\n')
-    fout.write("\t</p>\n")
-    fout.write("</div>\n")
-
-def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout):
-    c = GetDBcursor()
+def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir):
     screcords = [ ]
     
     # this is iterating through the pages of indexes, so will be in order    
-    for lf in sorted(os.listdir(scsummariesdir)):
+    for lf in reversed(sorted(os.listdir(scsummariesdir))):
         if re.match("\.svn", lf):
             continue
-        summarylink = "scsummariesdir/%s" % lf
         myear = re.search("\d\d\d\d", lf)
         assert myear, lf
         year = myear.group(0)
@@ -552,48 +521,13 @@ def WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout):
 
         for mrow in re.finditer('(?s)<tr valign="top">(.*?)</tr>', ftext):
             row = mrow.group(1).strip()
-            screcord = SCrecord(year, row, summarylink, htmldir)
+            screcord = SCrecord(year, row, htmldir)
             screcord.FindTopicCats(htmldir, pdfdir)
             screcord.nextpvcode = screcords and screcords[-1].pvcode or None
             screcords.append(screcord)
-            screcord.InsertintoDB(c)
+            model.load_sc_topics(screcord.pvcode, screcord.otopicrecstr, screcord.datetime, screcord.datetimeend, 
+                                 screcord.topics, screcord.minutes, screcord.numspeeches, screcord.numparagraphs, screcord.numvotes, screcord.nextpvcode)
     
-    if not fout:
-        return
-    
-    # not going to need this
-    topicgroups = { }
-    recentgroup = [ ]
-    for screcord in screcords:
-        for topic in screcord.topics:
-            topicgroups.setdefault(topic, [ ]).append((screcord.meetingorder, screcord))
-        recentgroup.append((screcord.meetingorder, screcord))
-
-    topics = topicgroups.keys()
-    topics.sort()
-
-    recentgroup.sort()
-    recentgroup.reverse()
-
-    fout.write('<html><head>\n<style type="text/css">\n')
-    fout.write('\tp { color: #7f007f; padding-left:20; margin-top:0; margin-bottom:0; }\n')
-    fout.write('\t.date, .documentid, .sctopic { display: none; }\n')
-    fout.write('\t.numspeeches, .numparagraphs, .numdocuments { display: none; }\n')
-    fout.write('\t.numvotes { border: thin black solid; }\n')
-    fout.write('\ta.lkmissing { color: #555555; }\n')
-    fout.write('\ta.lkpdf { color: #009900; }\n')
-    fout.write('</style>\n</head>')
-    fout.write('<body>\n')
-
-    WriteTopicG(fout, "Recent", recentgroup[:100])
-
-    for topic in topics:
-        topicg = topicgroups[topic]
-        topicg.sort()
-        topicg.reverse()
-        WriteTopicG(fout, topic, topicg)
-
-    fout.write('</body>\n</html>\n')
 
 
 

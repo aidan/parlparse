@@ -98,7 +98,7 @@ class AgRecord:
     def GetDesc(self, highlight = None, gid = None):
         return '%s <a href="%s">%s</a>' % (self.sdate, self.GetHref(highlight, gid), self.agtitle)
 
-
+# this probably goes
 def LoadAgendaNames(agendaname):
     agendanamesf = None
     lagendanamesf = [ ]

@@ -2,11 +2,11 @@ from sqlalchemy import *
 from sqlalchemy.orm import *
 import sys
 
-sys.path.append("/home/goatchurch/undemocracy/unparse/web2")
+#sys.path.append("/home/goatchurch/undemocracy/unparse/web2")
 import dbpasswords
 undatadir = "/home/goatchurch/undemocracy/undata"
-
 metadata = MetaData('mysql://%s:%s@localhost/%s' % (dbpasswords.db_user, dbpasswords.db_password, dbpasswords.db_name))
+
 Session = scoped_session(sessionmaker(
     autoflush=True,
     transactional=False,
@@ -23,6 +23,7 @@ meeting_table = Table('meeting', metadata,
     Column('datetimeend', DateTime), # SC
     Column('year', Integer), # SC
     Column('session', String(10)), # GA (can be S-27 special session)
+    Column('meetingnumber', String(20)), # GA and SC (for which it can be 6068-Rev.1)
     Column('agendanumstr', String(100)), # GA (will need another table of agendanums instead of topics)
     Column('notes', UnicodeText),
     Column('numspeeches', Integer),

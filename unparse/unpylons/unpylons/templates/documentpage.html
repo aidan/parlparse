@@ -6,10 +6,32 @@
 <py:def function="page_title">Document references</py:def>
 
 <div py:match="content">
+
+<script src="/cropper/lib/prototype.js" type="text/javascript"></script>' 
+<script src="/cropper/lib/scriptaculous.js?load=builder,dragdrop" type="text/javascript"></script>'
+<script src="/cropper/cropper.js" type="text/javascript"></script>'
+<script type="text/javascript">
+    Event.observe(window, 'load',
+                  function() { new Cropper.Img('pdfpageid', { onEndCrop: onEndCrop }); } );
+// this saves the link we will make when clicking on consolidate highlight
+function onEndCrop( coords, dimensions )
+{
+    var achl = document.getElementById('consdhighlight');
+    var imgl = document.getElementById('pdfpageid');
+    lhref = achl.href.substring(0, achl.href.lastIndexOf('/') + 1);
+    ix1 = Math.ceil(coords.x1 * 1000 / imgl.width);
+    iy1 = Math.ceil(coords.y1 * 1000 / imgl.width);
+    ix2 = Math.ceil(coords.x2 * 1000 / imgl.width); 
+    iy2 = Math.ceil(coords.y2 * 1000 / imgl.width);
+    rs = "rect_" + ix1 + "," + iy1 + "_" + ix2 + "," + iy2; 
+    achl.href = lhref + rs; 
+};
+</script>
+
 <h1>Holding Page for ${c.docid} Page ${c.page}</h1>
 
 <div id="docpagespecs">
-<p>Message:${c.message}:</p>
+<p>Message:${c.message}: ${c.highlightrects}</p>
 <p><i>This</i> is page <b>${c.page}</b>
  of a <a href="${h.url_for('documentspec', docid=c.docid)}"><b>Document</b></a> with ${c.document.numpages} pages.</p>
 
@@ -23,10 +45,11 @@
     |type=Resolution |body=Security Council |year=2006
     |resolution_number=1725 |page=2 |accessdate=2008-12-13}}&lt;/ref&gt;
   </textarea>
-  <a href="${h.url_for('documentpage', docid=c.docid, page=c.page)}/highlightedit"><b>Add new highlight</b></a>
+  <a id="consdhighlight" href="${h.url_for('documentpage', docid=c.docid, page=c.page)}/"><b>Consolidate highlight</b></a>
+
 </div>
 
-<div class="pdfpagediv"><img id="pdfpageid" src="${h.url_for('imagedocumentpage', docid=c.docid, page=c.page)}"/></div>
+<div class="pdfpagediv"><img id="pdfpageid" src="${h.url_for('imagedocumentpage', pngname=c.pngname + '_'.join(c.highlightrects))}"/></div>
 
 </div>
 <xi:include href="layout.html" />

@@ -18,6 +18,11 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
+# get rid of web2 in meeting.py and in all other places.  move out
+# deal with the nation data sucker which we hope doesn't need to do any scanning of the documents after the measurements
+# move quickskins into the pylons stuff
+
+
 # next/previous session in case of general assembly meetings
 # links to nations from the speeches/flags
 # nice dates in the helper function
@@ -31,17 +36,16 @@ def make_map():
 
 
 #instructions
-#  dbfill doesn't do anything (except when there's force)
-#  scmeetings to get the topics of meetings in place
-#  agendanums to get the agenda meetings in place
-#  docmeasurements list through the pdfs and call loader.ProcessParsedDocumentPylon on each document, setting its council-agenda, date, citations
+#  dbfill          doesn't do anything (except when there's force)
+#  scsummaries     to get the topics of meetings in place
+#  agendanames     to get the agenda meetings in place
+#  docmeasurements   list through the pdfs and call loader.ProcessParsedDocumentPylon on each document, setting its council-agenda, date, citations
+#  nation
 #    could be expanded so we have xmls of all the other documents to look for dates, citations and titles there too, in a light form of parsing
-# eu1.okfn.org
+# Rufus's machine at eu1.okfn.org with undemocracy partly deployed
 
 # paster serve development.ini --reload
 # look in loaders for the drop database
-
-
 
 
     map.connect('nations',  'nations',          controller='indexes', action='nations')
@@ -52,12 +56,15 @@ def make_map():
 
     # individual documents (missing highlight case)
     map.connect('documentpage',     'document/:docid/page_:page', controller='document', action='documentpage')
+    map.connect('documentpagehighlight','document/:docid/page_:page/:highlightrects', controller='document', action='documentpage')
     map.connect('documentspec',     'document/:docid', controller='document', action='documentspec')
-    map.connect('imagedocumentpage','docpages/:(docid)_page_:(page).png', controller='document', action='imagedocumentpage')
+    map.connect('imagedocumentpage','docpages/:(pngname).png', controller='document', action='imagedocumentpage')
     
+    map.connect('gasessions',       'generalassembly', controller='indexes', action='gasessions')
     map.connect('gasessionagendas', 'generalassembly_:session/agendas', controller='indexes', action='gasessionagendas')
     map.connect('gaagenda',         'generalassembly/agenda/:(agendanum)', controller='indexes', action='gaagenda')
     map.connect('gacondolences',    'generalassembly/condolences', controller='indexes', action='gacondolences')
+    
     map.connect('gameetinghref',    'generalassembly_:session/meeting_:meeting/:href', controller='meeting', action='gameetinghref')
     map.connect('gameeting',        'generalassembly_:session/meeting_:meeting', controller='meeting', action='gameeting')
     map.connect('documentsgasession','generalassembly_:session', controller='indexes', action='documentsgasession')
@@ -69,16 +76,16 @@ def make_map():
 
 # indexes not done.  we have a front page (sort of), but need lists of security council documents by year
     map.connect('security_council_topics_ordered', 'securitycouncil/:year', controller='indexes', action='scindexordered')
-    map.connect('security_council', 'sc_:year', controller='home', action='scyear', requirements={'year':'\d\d\d\d|early'})
+    #map.connect('security_council', 'sc_:year', controller='home', action='scyear', requirements={'year':'\d\d\d\d|early'})
     map.connect('security_council_topics', 'securitycouncil', controller='indexes', action='scindex')
     map.connect('', controller='indexes', action='frontpage')
 
     # conditions to redirect
-    map.connect('meeting/:docid', controller='indexes', action='meeting')
+    #map.connect('meeting/:docid', controller='indexes', action='meeting')
 
-    map.connect('*url', controller='home', action='index')
-    map.connect('', controller='home', action='index')
-    map.connect('about', controller='home', action='about')
+    #map.connect('*url', controller='home', action='index')
+    #map.connect('', controller='home', action='index')
+    #map.connect('about', controller='home', action='about')
     map.connect(':controller/:action/:id')
     map.connect('*url', controller='template', action='view')
 

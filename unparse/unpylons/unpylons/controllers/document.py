@@ -3,6 +3,7 @@ import urllib
 import logging
 import sys
 import re
+from cStringIO import StringIO
 
 from unpylons.lib.base import *
 
@@ -32,9 +33,6 @@ class DocumentController(BaseController):
         return render('documenthold')
         #return str(response.headers["content-type"]) + "ooo" + docid
 
-    def PngFile(self, docid, page):
-        pngname = "%s_page_%s.png" % (docid, page)
-        return os.path.join(pngdir, pngname)
 
     def RenderPage(self, docid, page, pngfile):
         pdffile = os.path.join(pdfdir, docid + ".pdf")
@@ -44,14 +42,43 @@ class DocumentController(BaseController):
         cmd = 'convert -quiet -density 192 %s[%d] -resize %d %s > /dev/null 2>&1' % (lpdffile, int(page)-1, imgpixwidth, lpngfile)
         os.system(cmd)
 
+    
+    def HighlightRects(self, pngfile, highlightrects):
+        # large libraries.  load only if necessary
+        import Image, ImageDraw, ImageEnhance, ImageChops
+
+        dkpercent = 70
+
+        p1 = Image.new("RGB", (500, 500))
+        ff = StringIO()
+
+        pfp = Image.open(pngfile)
+        swid, shig = pfp.getbbox()[2:]
+
+        dpfp = ImageEnhance.Brightness(pfp).enhance(dkpercent / 100.0)
+        ddpfp = ImageDraw.Draw(dpfp)
+        for highlightrect in highlightrects:
+            mrect = re.match("rect_(\d+),(\d+)_(\d+),(\d+)$", highlightrect)
+            if mrect:
+                rect = (int(mrect.group(1)), int(mrect.group(2)), int(mrect.group(3)), int(mrect.group(4)))
+                srect = (rect[0] * swid / 1000, rect[1] * swid / 1000, rect[2] * swid / 1000, rect[3] * swid / 1000)
+                ddpfp.rectangle(srect, (255, 255, 255))
+
+        cpfp = ImageChops.darker(pfp, dpfp)
+
+        ff = StringIO()
+        cpfp.save(ff, "png")
+        return ff.getvalue()
+
+    
     # list for specific document
-    def documentpage(self, docid, page):
+    def documentpage(self, docid, page, highlightrects=""):
         c.document = model.Document.query.filter_by(docid=docid).first()
         c.docid = docid
         c.page = int(page)
-
-        # this makes us render it before we make the image
-        pngfile = self.PngFile(docid, c.page)
+        c.highlightrects = [hr  for hr in highlightrects.split("/")  if hr]
+        c.pngname = "%s_page_%s" % (docid, page)
+        pngfile = os.path.join(pngdir, c.pngname) + ".png"
         if not os.path.exists(pngfile):
             #self.RenderPage(docid, c.page, pngfile)
             #c.message = "page rendered"        
@@ -61,14 +88,24 @@ class DocumentController(BaseController):
         return render('documentpage')
         #return str(response.headers["content-type"]) + "ooo" + docid
 
-    def imagedocumentpage(self, docid, page):
-        pngfile = self.PngFile(docid, page)
+    def imagedocumentpage(self, pngname):
+        print "mmmmm", pngname
+        midp = re.match("(.*?)_page_(\d+)(.*)$", pngname)
+        pngfile = os.path.join(pngdir, c.pngname) + ".png"
+        docid = midp.group(1)
+        c.page = int(midp.group(2))
+        highlightrects = re.findall("rect_\d+,\d+_\d+,\d+", midp.group(3))
         self.RenderPage(docid, c.page, pngfile)
+        bimgexists = os.path.isfile(pngfile)
         response.headers['Content-type'] = 'image/png'
-        fin = open(pngfile, "rb")
-        x = fin.read()
-        fin.close()
-        return x
+        if not highlightrects or not bimgexists:
+            fin = open(bimgexists and pngfile or "pngnotfound.png", "rb")
+            res = fin.read()
+            fin.close()
+            return res
+        
+        return self.HighlightRects(pngfile, highlightrects)
+
 
 
 

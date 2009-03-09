@@ -151,40 +151,21 @@ if bDBfill:
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
 
+
+if bSCsummaries:
+    scsummariesdir = os.path.join(indexstuffdir, "scsummariesdir")
+    #ScrapeSCSummaries(scsummariesdir)  # scrapes copies of the annual lists of security council meetings
+    WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir)  # number of documents in each year of each type
+
 # makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
     WriteDocMeasurements(stem, options.forcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
 
 if bAgendanames:
-    f = os.path.join(indexstuffdir, "agendanames.html")
-    lf = os.path.join(indexstuffdir, "agendanames.temp.html")
-    agendaindexdir = os.path.join(indexstuffdir, "agendaindexes")
-    if IsNotQuiet():
-        print "Writing agenda summaries to file:", lf
-    fout = open(lf, "w")
-    WriteAgendaSummaries(stem, htmldir, fout, agendaindexdir)  # number of documents in each year of each type
-    fout.close()
-    if sys.platform == "win32" and os.path.isfile(f):
-        os.remove(f)
-    os.rename(lf, f)  # atomic in unix
+    WriteAgendaSummaries(stem, htmldir)  # number of documents in each year of each type
 
-if bSCsummaries:
-    scsummariesdir = os.path.join(indexstuffdir, "scsummariesdir")
-    #if not os.path.isdir(scsummariesdir):
-    #    os.mkdir(scsummariesdir)
-    ScrapeSCSummaries(scsummariesdir)
-    f = os.path.join(indexstuffdir, "scsummaries.html")
-    lf = os.path.join(indexstuffdir, "scsummaries.temp.html")
-    if IsNotQuiet():
-        print "Writing SC summaries to file:", lf
-    fout = None # open(lf, "w")
-    WriteSCSummaries(stem, scsummariesdir, htmldir, pdfdir, fout)  # number of documents in each year of each type
-    if fout:
-        fout.close()
-        if sys.platform == "win32" and os.path.isfile(f):
-            os.remove(f)
-        os.rename(lf, f)  # atomic in unix
 
+# I think this is a new one just for early sessions where they list summary names for all the resolutions
 if bGAsummaries:
     agsummariesdir = os.path.join(indexstuffdir, "gasummariesdir")
     if not os.path.isdir(agsummariesdir):

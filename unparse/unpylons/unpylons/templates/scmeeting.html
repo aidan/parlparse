@@ -128,7 +128,7 @@
   <cite>
     <img class="smallflag" src="/png100/Flag_of_${bodyblock.speakerflag.replace(' ', '_')}.png"/>
     <span class="name">${bodyblock.speakername}</span>
-    <span py:if="bodyblock.speakernation" class="nation">(${bodyblock.speakernation})</span>
+    <span py:if="bodyblock.speakernation" class="nation">(<a href="${h.url_for('nation', snation=bodyblock.speakernation.replace(' ', '_'))}">${bodyblock.speakernation}</a>)</span>
   </cite>
 </py:when>
 
