@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg>
+<svg width="1200" height="600" viewBox="0 -300 1200 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <rect id="blue_stripe" fill="#008CCC" width="1200" height="600" y="-300"/>
+   <rect id="red_stripe" fill="#D12421" width="1200" height="200" y="-100"/>
+   <rect id="green_stripe" fill="#009645" width="1200" height="200" y="100"/>
+   <g id="white_crescent">
+      <circle id="white_circle" fill="white" cx="560" r="84"/>
+      <circle id="red_circle" fill="#D12421" cx="582" r="70"/>
+   </g>
+   <g id="star" fill="white" transform="translate(645,0) scale(45)">
+      <g id="4corners">
+         <g id="2corners">
+            <path id="corner" d="M 0,-1 v 1 h 0.5 v -0.5" transform="rotate(22.5,0,-1)"/>
+            <use xlink:href="#corner" transform="rotate(45)"/>
+         </g>
+         <use xlink:href="#2corners" transform="rotate(90)"/>
+      </g>
+      <use xlink:href="#4corners" transform="rotate(180)"/>
+   </g>
+</svg>
