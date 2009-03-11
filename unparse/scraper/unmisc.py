@@ -2,7 +2,9 @@ import re
 import os
 import datetime
 
-undatadir = "/home/undemocracy/svn-undata"
+
+from unpylons.dbpasswords import undata_path as undatadir
+#undatadir = "/home/undemocracy/svn-undata"
 
 class unexception(Exception):
     def __init__(self, description, lparanum):
