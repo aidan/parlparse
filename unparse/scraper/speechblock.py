@@ -342,7 +342,7 @@ def CleanupTags(ptext, typ, paranum):
         ptext = re.sub("<b>([.,]\s*)</b>", "\\1", ptext)
 
     # slipt in a cleaning substitution here (can't find a better place for now)
-    ptext = re.sub("[u'`\u017d']", "'", ptext)
+    #ptext = re.sub("[u'`\u017d']", "'", ptext)  # this one doesn't work
     ptext = re.sub(u'[\xad]', "-", ptext)  # some very invisibley different symbol
 
     # could have a special paragraph type for this
