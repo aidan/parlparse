@@ -8,7 +8,7 @@ import urllib2
 import urlparse
 import re
 from unmisc import indexstuffdir, IsNotQuiet
-from db import GetDBcursor
+#from db import GetDBcursor
 
 import unpylons.model as model
 
@@ -352,9 +352,9 @@ def NationDataSucker():
         ""   : "Unknown",
     }
 
-    c = GetDBcursor()
+    #c = GetDBcursor()
     
-    LoadSecurityCouncilNations(c)
+    #LoadSecurityCouncilNations(c)
     #sys.exit(0)
     
     permmissions = ParsePermMissions()
@@ -371,8 +371,8 @@ def NationDataSucker():
                         "continent VARCHAR(20)", "missionurl VARCHAR(80)",
                         "wikilink VARCHAR(80)", "fname VARCHAR(50)", 
                         "INDEX(nation)", "UNIQUE(nation)" ]
-    c.execute("DROP TABLE IF EXISTS un_nations;")
-    c.execute("CREATE TABLE un_nations (%s)" % ", ".join(tablenationcols))
+    #c.execute("DROP TABLE IF EXISTS un_nations;")
+    #c.execute("CREATE TABLE un_nations (%s)" % ", ".join(tablenationcols))
     
     for unname in sorted(unstates.keys()):
         # Get basic data
@@ -403,10 +403,10 @@ def NationDataSucker():
         fname = re.sub("'", "", wname)
         wname = re.sub("'", "%27", wname)
         wikilink = "http://en.wikipedia.org/wiki/" + wname
-        c.execute("""INSERT INTO un_nations 
-                     (nation, date_entered, date_left, countrycode2, countrycode3, continent, missionurl, wikilink, fname)
-                     VALUES ("%s", '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
-                  """ % (unname, date_from, date_to, iso2, iso3, continent_name, permmiss, wikilink, fname))
+        #c.execute("""INSERT INTO un_nations 
+        #             (nation, date_entered, date_left, countrycode2, countrycode3, continent, missionurl, wikilink, fname)
+        #             VALUES ("%s", '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+        #          """ % (unname, date_from, date_to, iso2, iso3, continent_name, permmiss, wikilink, fname))
 	    
         m = model.Member.query.filter_by(name=unicode(unname)).first()
         if not m:

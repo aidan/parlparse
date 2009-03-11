@@ -6,7 +6,6 @@ from nations import nationdates
 from unmisc import GetAllHtmlDocs, IsNotQuiet, pdfinfodir
 import datetime
 from pdfinfo import PdfInfo
-from db import GetDBcursor
 
 import unpylons.model as model
 

@@ -18,7 +18,7 @@ from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from gennatdata import GenerateNationData
 from nationdatasucker import ScrapePermMissions, NationDataSucker
-from dbfill import DBfill
+#from dbfill import DBfill
 
 parser = OptionParser()
 parser.set_usage("""

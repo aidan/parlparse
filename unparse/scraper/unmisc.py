@@ -2,6 +2,8 @@ import re
 import os
 import datetime
 
+undatadir = "/home/undemocracy/svn-undata"
+
 class unexception(Exception):
     def __init__(self, description, lparanum):
         self.description = description
@@ -18,7 +20,6 @@ class unexception(Exception):
 undocpdflinks = "../pdf"
 undochtmllinks = "../html"
 
-undatadir = "/home/goatchurch/undemocracy/undata"
 
 #undatadir = os.path.join("..", "..", "undata")
 pdfdir = os.path.join(undatadir, "pdf")
@@ -65,7 +66,7 @@ reressplit = """(?x)(
                 HIV/AIDS/CRP.\d(?:/Add.\d)?|
                 E/CN.\d+/\d+/(?:L\.)?\d+(?:/Add.\d)?|
                 A/AC.\d+/(?:L\.)?\d+(?:/(?:CRP\.|WP\.)?\d+)?(?:/Rev\.2)?|
-                A/C\.\d/\d+/INF/1|
+                A/C\.\d/\d+/INF/\d|
                 JIU/REP/\d+/\d+|
                 CS?D/\d+(?:/\d+)?|
                 ISBA/A/L.\d/Rev.\d|

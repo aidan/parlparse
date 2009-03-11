@@ -7,7 +7,7 @@ from nations import nationdates
 from unmisc import GetAllHtmlDocs, IsNotQuiet
 from pdfinfo import PdfInfo
 import datetime
-from db import GetDBcursor, AddWholeDivision
+#from db import GetDBcursor, AddWholeDivision
 
 
 
@@ -79,7 +79,7 @@ def GenerateNationData(nationactivitydir, htmldir):
     # collection nation speeches and votes
     # make this big mapping of votes
     # also collect the full names of the ambassadors
-    c = GetDBcursor()
+    #c = GetDBcursor()
 
     nationdict = { }  # used for measuring vote distances (maps from voteids to vote directions)
     for nation in nationdates:

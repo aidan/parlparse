@@ -8,7 +8,7 @@ import urllib2
 from nations import nationdates
 from unmisc import IsNotQuiet
 import datetime
-from db import GetDBcursor, escape_string
+#from db import GetDBcursor, escape_string
 
 import unpylons.model as model
 

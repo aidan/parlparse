@@ -12,7 +12,7 @@ import distutils.dir_util
 import traceback
 from unmisc import GetAllHtmlDocs, IsNotQuiet, IsVeryNoisy
 from downascii import DownAscii
-from db import GetDBcursor, escape_string
+#from db import GetDBcursor, escape_string
 from nations import nonnationcatmap # this was why the need to moveall into same directory
 
 import unpylons.model as model
