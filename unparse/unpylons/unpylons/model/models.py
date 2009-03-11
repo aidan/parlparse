@@ -2,11 +2,11 @@ from sqlalchemy import *
 from sqlalchemy.orm import *
 import sys
 
-#sys.path.append("/home/goatchurch/undemocracy/unparse/web2")
-import dbpasswords
-undatadir = "/home/goatchurch/undemocracy/undata"
-metadata = MetaData('mysql://%s:%s@localhost/%s' % (dbpasswords.db_user, dbpasswords.db_password, dbpasswords.db_name))
+import unpylons.dbpasswords as dbpasswords
+# sys.path.append("/home/goatchurch/undemocracy/unparse/web2")
+undatadir = dbpasswords.undata_path
 
+metadata = MetaData(dbpasswords.dburi)
 Session = scoped_session(sessionmaker(
     autoflush=True,
     transactional=False,
@@ -15,7 +15,8 @@ Session = scoped_session(sessionmaker(
 
 meeting_table = Table('meeting', metadata,
     Column('docidhref', String(100), primary_key=True), 
-    Column('docid', String(100), ForeignKey('document.docid')), 
+    # need unique to make next_docid fk to this table from itself work
+    Column('docid', String(100), ForeignKey('document.docid'), unique=True), 
     Column('href', String(100)), # used in GA
     Column('body', String(10)), # SC or GA
     Column('title', UnicodeText), 
@@ -23,7 +24,6 @@ meeting_table = Table('meeting', metadata,
     Column('datetimeend', DateTime), # SC
     Column('year', Integer), # SC
     Column('session', String(10)), # GA (can be S-27 special session)
-    Column('meetingnumber', String(20)), # GA and SC (for which it can be 6068-Rev.1)
     Column('agendanumstr', String(100)), # GA (will need another table of agendanums instead of topics)
     Column('notes', UnicodeText),
     Column('numspeeches', Integer),

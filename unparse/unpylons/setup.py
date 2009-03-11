@@ -7,12 +7,16 @@ except ImportError:
 
 setup(
     name='unpylons',
-    version="",
+    version="1.0",
     #description='',
     #author='',
     #author_email='',
     #url='',
-    install_requires=["Pylons>=0.9.6.2"],
+    install_requires=[
+    	"Pylons==0.9.6",
+	"SQLAlchemy<=0.4.99",
+	"Genshi>=0.4"
+	],
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
     test_suite='nose.collector',
