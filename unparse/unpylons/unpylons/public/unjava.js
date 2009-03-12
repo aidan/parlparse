@@ -3,29 +3,21 @@
 
 function initUNDemocracy()
 {
-   var getByClass = YAHOO.util.Dom.getElementsByClassName;
-   var addClass = YAHOO.util.Dom.addClass;
-
-   var linkheres = getByClass('agendaitem');
-   linkheres = linkheres.concat(getByClass('speech'));
-   linkheres = linkheres.concat(getByClass('recvote'));
-   linkheres = linkheres.concat(getByClass('subheading'));
-   linkheres = linkheres.concat(getByClass('italicline'));
-   
-    var linkhere = document.createElement('div');
-    addClass(linkhere, 'unclickedlink');
-    var linkheretext = document.createTextNode('Link to this');
-    linkhere.appendChild(linkheretext);
-    for (var i = 0; i < linkheres.length; i++)
-    {
-        var insertlink = linkhere.cloneNode(true);
-        insertlink.onclick = function() { linkere(this); }
-        linkheres[i].insertBefore(insertlink, linkheres[i].childNodes[0]);
-    }
+    $(".agendaitem").add(".subheading").add(".italicline").add(".recvote").add(".speech").each(function() 
+    {  
+        var linkhere = document.createElement('div');
+        $(linkhere).addClass('unclickedlink');
+        var linkheretext = document.createTextNode('Link to this');
+        linkhere.appendChild(linkheretext);
+        linkhere.onclick = function() { linkere(this); }
+        this.insertBefore(linkhere, this.childNodes[0]);
+    });
 }
 
-YAHOO.util.Event.onDOMReady(initUNDemocracy);
-
+//YAHOO.util.Event.onDOMReady(initUNDemocracy);
+$(document).ready(function() {
+   initUNDemocracy(); 
+ });
 
 
 function rowelinput(llvalue)
@@ -53,13 +45,11 @@ function rowelahref(lhref, ltarg)
 
 function rowof2nontab(llab, llel)
 {
-    var addClass = YAHOO.util.Dom.addClass;
-
     var eltd1 = document.createElement("span");
-    addClass(eltd1, "linktabfleft");
+    $(eltd1).addClass("linktabfleft");
     eltd1.innerText = eltd1.textContent = llab;
     var eltd2 = document.createElement("span");
-    addClass(eltd2, "linktabfright");
+    $(eltd2).addClass("linktabfright");
     eltd2.appendChild(llel);
     var eltr = document.createElement("div");
     eltr.appendChild(eltd1);
@@ -109,8 +99,7 @@ var monthlist = new Array("January", "February", "March", "April", "May", "June"
 
 function SetDocAttributePrez(docattributes, classname, vclassname, node)
 {
-    var hasClass = YAHOO.util.Dom.hasClass;
-    if (hasClass(node, classname))
+    if ($(node).hasClass(classname))
     {
         if (node.innerText)
             docattributes[vclassname] = node.innerText;
@@ -124,21 +113,15 @@ function GetDocAttributesFromHeading(docattributes)
 {
     //alert("hii theree");
     
-    var get = YAHOO.util.Dom.get;
-    var getChildren = YAHOO.util.Dom.getChildren;
-    var hasClass = YAHOO.util.Dom.hasClass;
-
-    var headsec = get("pg000-bk00");
-    var headvars = getChildren(headsec);
-    for (var i = 0; i < headvars.length; i++)
+    $("#pg000-bk00").children().each(function() 
     {
-        node = headvars[i];
+        node = this; 
         SetDocAttributePrez(docattributes, "docid", "docid", node);
         SetDocAttributePrez(docattributes, "longdate", "longdate", node);
         SetDocAttributePrez(docattributes, "wikidate", "wikidate", node);
         SetDocAttributePrez(docattributes, "meetingtime", "meetingtime", node);
         SetDocAttributePrez(docattributes, "basehref", "bbasehref", node);
-    }
+    })
 
     if (!docattributes["docid"])
         alert("missing docid");
@@ -183,9 +166,6 @@ function GetDocAttributesFromBlock(docattributes, me)
     docattributes["pageno"] = parseInt(/pg0*([0-9]+)/.exec(gid)[1]);
     docattributes["nhref"] = docattributes["basehref"] + "#" + gid;
 
-    var getFirstChild = YAHOO.util.Dom.getFirstChild;
-    var getNextSibling = YAHOO.util.Dom.getNextSibling;
-    
     
     // find the div for this object
     while (gidme && (gidme.tagName.toLowerCase() != "div"))
@@ -207,12 +187,14 @@ function GetDocAttributesFromBlock(docattributes, me)
                 break;
         }
         if (citetag)
-        for (var node = getFirstChild(citetag); node; node = getNextSibling(node))
+        $(citetag).children().each(function() 
+        //for (var node = getFirstChild(citetag); node; node = getNextSibling(node))
         {
+            node = this; 
             SetDocAttributePrez(docattributes, "name", "speakername", node);
             SetDocAttributePrez(docattributes, "nation", "speakernation", node);
             SetDocAttributePrez(docattributes, "language", "speakerlanguage", node);
-        }
+        }); 
         if (docattributes["speakernation"])
             docattributes["speakernation"] = docattributes["speakernation"].replace(/[()]/g, "");
     }
@@ -282,7 +264,6 @@ function wikival(docattributes)
 
 function addlinksonparas(divnode)
 {
-    var addClass = YAHOO.util.Dom.addClass;
     for (var node = divnode.firstChild; node; node = node.nextSibling)
     {
         if (node.tagName && ((node.tagName.toLowerCase() == "p") || (node.tagName.toLowerCase() == "blockquote")))
@@ -291,7 +272,7 @@ function addlinksonparas(divnode)
             {
                 //<div onclick="linkere(this);" class="unclickedlink">link to this</div>
                 var nnlink = document.createElement("div");
-                addClass(nnlink, "unclickedlink");
+                $(nnlink).addClass("unclickedlink");
                 nnlink.innerText = nnlink.textContent = "Link to this";
                 nnlink.onclick = function(){ return linkere(this); };
                 node.insertBefore(nnlink, node.firstChild);
@@ -304,13 +285,12 @@ function addlinksonparas(divnode)
 function closebuttclick(me)
 {
 // overwriting the div seems to allow for infinite loops or for the onclick button not to take hold
-    var addClass = YAHOO.util.Dom.addClass;
     //var replaceClass = YAHOO.util.Dom.replaceClass;
     //    replaceClass(me, "clickedlink", "unclickedlink");  
     //    me.onclick = function(){ alert("jijij"); return linkere(this); };
     //    me.innerText = me.textContent = "Link to this";  
     var nnlink = document.createElement("div");
-    addClass(nnlink, "unclickedlink");
+    $(nnlink).addClass("unclickedlink");
     nnlink.innerText = nnlink.textContent = "Link to this";
     nnlink.onclick = function(){ return linkere(this); };
     me.parentNode.insertBefore(nnlink, me);
@@ -320,12 +300,8 @@ function closebuttclick(me)
 
 function linkere(me)
 {
-    var hasClass = YAHOO.util.Dom.hasClass;
-    var addClass = YAHOO.util.Dom.addClass;
-    var replaceClass = YAHOO.util.Dom.replaceClass;
-
     // avoid coming in here if already open
-    if (hasClass(me, "clickedlink"))
+    if ($(me).hasClass("clickedlink"))
         return true;
     me.onclick = function(){ return true; } // the above stopped working 
 
@@ -342,7 +318,7 @@ function linkere(me)
 
     var closebutt = document.createElement("div");
     closebutt.innerText = closebutt.textContent = "x";
-    addClass(closebutt, "closebutt");
+    $(closebutt).addClass("closebutt");
     closebutt.onclick = function(){ return closebuttclick(this.parentNode); };
     me.appendChild(closebutt);
 
@@ -353,12 +329,12 @@ function linkere(me)
     eltable.appendChild(rowof2("pdf:", rowelahref(lhref, ltarg)));
     eltable.appendChild(rowof2("URL:", rowelinput(blogurl(docattributes))));
     eltable.appendChild(rowof2("wiki:", rowelinput(wikival(docattributes))));
-    addClass(eltable, "linktable");
+    $(eltable).addClass("linktable");
     me.appendChild(eltable);
 
     if (docattributes["blockclass"] == "speech")
         addlinksonparas(divnode);
-    replaceClass(me, "unclickedlink",  "clickedlink");
+    $(me).removeClass("unclickedlink").addClass("clickedlink");
 
     document.getElementById("hrefimg").src = HrefImgReport(location.href);  // this doesn't appear effective
     //document.getElementById("hrefimgi").value = HrefImgReport(location.href);
