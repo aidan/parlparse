@@ -31,5 +31,7 @@ setup(
 
     [paste.app_install]
     main = pylons.util:PylonsInstaller
+
+    [paste.paster_command]
     """,
 )

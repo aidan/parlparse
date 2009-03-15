@@ -3,7 +3,16 @@
 Consists of functions to typically be used within templates, but also
 available to Controllers. This module is available to both as 'h'.
 """
+# lots of stuff changed from webhelpers 0.3 to webhelpers 0.6.4
+# for < 0.6
 from webhelpers import *
+# for 0.6.4
+try:
+    from webhelpers.rails.wrapped import *
+    from routes import url_for, redirect_to
+except:
+    pass
+
 import re  # also imported already in textile
 import os
 
