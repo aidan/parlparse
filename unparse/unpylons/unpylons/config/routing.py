@@ -58,6 +58,7 @@ def make_map():
     map.connect('documentpage',     'document/:docid/page_:page', controller='document', action='documentpage')
     map.connect('documentpagehighlight','document/:docid/page_:page/:highlightrects', controller='document', action='documentpage')
     map.connect('documentspec',     'document/:docid', controller='document', action='documentspec')
+    map.connect('documentspecscrape','document/:docid/scrape', controller='document', action='documentspecscrape')
     map.connect('imagedocumentpage','docpages/:(pngname).png', controller='document', action='imagedocumentpage')
     
     map.connect('gasessions',       'generalassembly', controller='indexes', action='gasessions')

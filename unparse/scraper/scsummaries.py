@@ -473,7 +473,6 @@ class SCrecord:
     def FindTopicCats(self, htmldir, pdfdir):
         self.numspeeches, self.numparagraphs, self.numdocuments, self.numvotes = -1, -1, -1, -1
         htmlfile = os.path.join(htmldir, self.pvcode + ".html")
-        print htmlfile, "hhhh"
         pdffile = os.path.join(pdfdir, self.pvcode + ".pdf")
         if os.path.isfile(htmlfile):
             self.doclink = '"../html/%s.html" class="lkhtml"' % self.pvcode

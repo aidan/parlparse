@@ -16,7 +16,7 @@ Session = scoped_session(sessionmaker(
 meeting_table = Table('meeting', metadata,
     Column('docidhref', String(100), primary_key=True), 
     # need unique to make next_docid fk to this table from itself work
-    Column('docid', String(100), ForeignKey('document.docid'), unique=True), 
+    Column('docid', String(100), ForeignKey('document.docid')), 
     Column('href', String(100)), # used in GA
     Column('body', String(10)), # SC or GA
     Column('title', UnicodeText), 
@@ -30,7 +30,8 @@ meeting_table = Table('meeting', metadata,
     Column('numparagraphs', Integer), 
     Column('numvotes', Integer),
     Column('minutes', Integer),
-    Column('next_docid', String(100), ForeignKey('meeting.docid')),
+    Column('next_docid', String(100)), # , ForeignKey('meeting.docid')), used for Security Council links where the meetings and docids are the same
+    Column('meetingnumber', String(100)), # can contain Resu.1
     )
 
 topic_table = Table('topic', metadata,

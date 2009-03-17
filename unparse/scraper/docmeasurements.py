@@ -254,11 +254,16 @@ def UpdatePdfInfoFromPV(pdfinfos, pdfinfo, ftext):
 
 # Main file
 def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir):
-    for pdf in reversed(sorted(os.listdir(pdfdir))):
+    docids = set()
+    for pdf in os.listdir(pdfdir):
         mdocid = re.match("([AS].*?)\.pdf$", pdf)
-        if not mdocid:
-            continue
-        docid = mdocid.group(1)
+        if mdocid:
+            docids.add(mdocid.group(1))
+    for html in os.listdir(htmldir):
+        mdocid = re.match("([AS].*?)\.html", html)
+        if mdocid:
+            docids.add(mdocid.group(1))
+    for docid in reversed(sorted(list(docids))):
         if stem and not re.match(stem, docid):
             continue
         if not bforcedocmeasurements and model.Document.query.filter_by(docid=docid).first():

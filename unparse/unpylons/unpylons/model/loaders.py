@@ -12,8 +12,26 @@ def IsNotQuiet():
 #print "DDDDropped"
 metadata.create_all()
 
+def EnsureDocidsExist(docids):
+    res = [ ]
+    for docid in docids:
+        m = Document.query.filter_by(docid=docid).first()
+        if not m:
+            m = Document(docid=docid)
+        res.append(m)
+    return res
+        
+def EnsureDocidhrefExists(docidhref):
+    m = Meeting.query.filter_by(docidhref=docidhref).first()
+    if not m:
+        docid = re.sub("#.*", "", docidhref)
+        m = Meeting(docidhref=docidhref)
+        print "making ", docidhref
+    return m
+
 def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches, numparagraphs, numvotes, nextdocid):
     numvotes = 0 
+    EnsureDocidsExist([docid])
     m = Meeting.query.filter_by(docid=docid).first()
     if not m:
         m = Meeting(docid=docid, docidhref=docid, body="SC")
@@ -36,13 +54,14 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
 
 # would like docid and href to be not rammed together, but docid is a primary key, unfortunately
 def load_ga_debate(docid, ldate, gaagindoc):
+    EnsureDocidsExist([docid])
     for m in Meeting.query.filter_by(docid=docid):
         Session.delete(m)        
     session, meetingnumber = re.match("A-(\d+)-PV.(\d+)$", docid).groups()
     for (subheadingid, agendanumstr, agtitle) in gaagindoc:
         docidhref = docid + "#" + subheadingid
 
-        m = Meeting.query.filter_by(docid=docidhref).first()
+        m = Meeting.query.filter_by(docidhref=docidhref).first()
         if not m:
             m = Meeting(docidhref=docidhref, docid=docid, href=subheadingid, body="GA", session=session, meetingnumber=meetingnumber)
         m.title = agtitle.decode("latin1")
@@ -77,6 +96,7 @@ def ProcessParsedVotePylon(docid, href, div_content):
     resolution_docids = re.findall('<a href="../pdf/(.*?).pdf"', motiontext)
     resolution_docid = resolution_docids and resolution_docids[-1] or ""
     docidhref = docid + "#" + href
+    EnsureDocidsExist(resolution_docids)
 
     motiontext = re.sub('<a [^>]*>([^<]*)</a>', "\\1", motiontext)
     motiontext = re.sub("<[^>]*>", " ", motiontext)
@@ -84,7 +104,8 @@ def ProcessParsedVotePylon(docid, href, div_content):
     
     if not motiontext:
         motiontext = unicode("blank space for: " + docid)
-    
+   
+
     m = Division(docidhref=docidhref, docid=docid, href=href, description=motiontext, resolution_docid=resolution_docid)
     m.favour = vnum[0]
     m.against = vnum[1]
@@ -136,7 +157,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             ProcessParsedVotePylon(docid, div_href, div_content)
         elif div_class == "subheading":
             subheadinghref = div_href  # these are going to be collated into meetings in the agendas
-            #print "\n\n\n", div_content
+            print "\n\n\n", div_content
         elif div_class == "heading":
             m.date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', div_content).group(1)
             #print "sssssdate", m.date
@@ -155,6 +176,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             name = mm.group(1)
             member = mm.group(3) or ""
             meeting = docid + "#" + subheadinghref
+            EnsureDocidhrefExists(meeting)
             isnation = not mm.group(2)
             sname = unicodedata.normalize('NFKD', name).encode('ASCII', 'ignore').lower().strip()
             lastname = re.search("(\S+)$", sname).group(1)
@@ -185,8 +207,10 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
                 pgid = mdoc.group(1)
             if mdoc.group(2):
                 docid2 = mdoc.group(2)
+                meeting1_docidhref = docid + "#" + subheadinghref
+                EnsureDocidhrefExists(meeting1_docidhref)
                 doccite = DocumentRefDocument(document1_docid=docid, document2_docid=docid2, href1=pgid)
-                doccite.meeting1_docidhref = docid + "#" + subheadinghref
+                doccite.meeting1_docidhref = meeting1_docidhref
                 doccitations.append(doccite)
     
     #print " Added citations", len(doccitations)
