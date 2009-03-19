@@ -18,6 +18,7 @@ def EnsureDocidsExist(docids):
         m = Document.query.filter_by(docid=docid).first()
         if not m:
             m = Document(docid=docid)
+            print "NewDocid added", docid
         res.append(m)
     return res
         
@@ -35,7 +36,7 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
     m = Meeting.query.filter_by(docid=docid).first()
     if not m:
         m = Meeting(docid=docid, docidhref=docid, body="SC")
-    m.title = unicode(heading)
+    m.title = unicode(heading)[:499]   # shorten
     m.datetime = ldate
     m.year = int(ldate[:4])
     m.datetimeend = ldateend    
@@ -94,7 +95,7 @@ def ProcessParsedVotePylon(docid, href, div_content):
     motiontext = mvote.group(1)
     
     resolution_docids = re.findall('<a href="../pdf/(.*?).pdf"', motiontext)
-    resolution_docid = resolution_docids and resolution_docids[-1] or ""
+    resolution_docid = resolution_docids and resolution_docids[-1] or None
     docidhref = docid + "#" + href
     EnsureDocidsExist(resolution_docids)
 
@@ -145,6 +146,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
     doccitations = [ ]
     mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>\s*(.*?)^</div>', ftext, re.S + re.M)
     subheadinghref = ""
+    nslist = [ ]   # prevent objects from being deleted
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
         div_class = mdiv.group(1)
@@ -157,15 +159,15 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             ProcessParsedVotePylon(docid, div_href, div_content)
         elif div_class == "subheading":
             subheadinghref = div_href  # these are going to be collated into meetings in the agendas
-            print "\n\n\n", div_content
+            #print "\n\n\n", div_content
         elif div_class == "heading":
             m.date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', div_content).group(1)
             #print "sssssdate", m.date
         elif div_class == "council-agenda":
             ca = re.sub("<p[^>]*>", "", div_content)
             ca = re.sub("\s*</p>\s*", "\n", ca)
-            m.title = ca.strip()   # elsewhere there's work to collate the summaries into topics
-            m.title = unicode(ca)  # doesn't seem to be effective enough to make genshi happy
+            ca = re.sub("<[^>]*>", "", ca).strip()
+            m.title = unicode(ca)[:500]  # make short 
             #print "\n\n\n", m.title
         
         elif div_class == "spoken":
@@ -174,13 +176,17 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             pcontent = div_content[mm.end(0):]
             #print mm.groups()
             name = mm.group(1)
-            member = mm.group(3) or ""
+            member = mm.group(3) or None 
+            if member and not Member.query.filter_by(name=member).first():
+                print "Skipping member::", member
+                member = None
             meeting = docid + "#" + subheadinghref
             EnsureDocidhrefExists(meeting)
             isnation = not mm.group(2)
             sname = unicodedata.normalize('NFKD', name).encode('ASCII', 'ignore').lower().strip()
             lastname = re.search("(\S+)$", sname).group(1)
-            m = Speech(docidhref=docidhref, name=name, lastname=lastname, member_name=member, docid=docid, href=div_href, meeting_docidhref=meeting, numparagraphs=9, isnation=isnation)
+            m = Speech(docidhref=docidhref, name=name, lastname=lastname, member_name=member, 
+                       docid=docid, href=div_href, meeting_docidhref=meeting, numparagraphs=9, isnation=isnation)
             
         elif div_class == "italicline":
             pass
@@ -209,6 +215,8 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
                 docid2 = mdoc.group(2)
                 meeting1_docidhref = docid + "#" + subheadinghref
                 EnsureDocidhrefExists(meeting1_docidhref)
+                nslist.extend(EnsureDocidsExist([docid2]))
+                Session.flush()
                 doccite = DocumentRefDocument(document1_docid=docid, document2_docid=docid2, href1=pgid)
                 doccite.meeting1_docidhref = meeting1_docidhref
                 doccitations.append(doccite)
