@@ -1,8 +1,9 @@
 
-// it would be good to lose the dependency on the bloated YAHOO.util.Dom library
+// now depends on jQuery instead of bloated YAHOO.util.Dom
 
 function initUNDemocracy()
 {
+    // put link to this everywhere
     $(".agendaitem").add(".subheading").add(".italicline").add(".recvote").add(".speech").each(function() 
     {  
         var linkhere = document.createElement('div');
@@ -95,7 +96,6 @@ function HrefImgReport(lhref)
 }
 
 var monthlist = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-
 
 function SetDocAttributePrez(docattributes, classname, vclassname, node)
 {
@@ -209,7 +209,7 @@ function blogurl(docattributes)
         res += "said by " + docattributes["speakername"] + " ";
     if (docattributes["speakernation"])
         res += "of " + docattributes["speakernation"] + " ";
-    res += "on " + docattributes["date"] + " ";
+    res += "on " + docattributes["longdate"] + " ";
     res += "in the " + docattributes["body"];
     res += "</a>";
     return res;

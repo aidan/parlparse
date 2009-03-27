@@ -26,7 +26,7 @@ class NationController(BaseController):
     def nation(self, snation):
         c.nation = model.Member.query.filter_by(sname=snation).first()
         c.totalspeechcount = model.Speech.query.filter_by(member_name=c.nation.name).count()
-        # can't work out how to query this in sqlalchemy -- filter(model.Vote.descrition.c.body=="SC") doesn't work
+        # can't work out how to query this in sqlalchemy -- filter(model.Vote.description.c.body=="SC") doesn't work
         
         c.totalvotecount = model.Vote.query.filter_by(member_name=c.nation.name).count()
     
@@ -40,6 +40,14 @@ class NationController(BaseController):
         #c.gavotes = [m  for m in allvotes  if m.division.body=="GA"][:10]
         c.gavotes = model.Vote.query.filter_by(member_name=c.nation.name).join('division').filter(model.Division.body=="GA").order_by(model.Vote.c.minority_score).limit(10)
         c.gavotes = [m  for m in c.gavotes  if m.division]
+        
+        securitycouncildates = list(model.MemberCommittee.query.filter_by(member_name=c.nation.name).filter(model.MemberCommittee.body=="SC").order_by(model.MemberCommittee.started))
+        if securitycouncildates and str(securitycouncildates[0].finished) == "9999-12-31":
+            c.securitycouncimembership = "Permanent"
+        elif securitycouncildates:
+            c.securitycouncimembership = ", ".join(["%s-%s" % (scd.started.year, int(scd.started.year) + 1)  for scd in securitycouncildates])
+        else:
+            c.securitycouncimembership = "Never"
         
         #c.lastvotedate = allvotes and allvotes[0].division.document.date
         #for m in allvotes:

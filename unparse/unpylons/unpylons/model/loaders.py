@@ -2,6 +2,7 @@
 
 import os
 import re
+import datetime
 from models import *
 import unicodedata
 
@@ -9,7 +10,7 @@ def IsNotQuiet():
     return False
 
 #metadata.drop_all()  # clears the tables 
-#print "DDDDropped"
+#print "\n\nDDDDropped\n\n\n"
 metadata.create_all()
 
 def EnsureDocidsExist(docids):
@@ -18,6 +19,7 @@ def EnsureDocidsExist(docids):
         m = Document.query.filter_by(docid=docid).first()
         if not m:
             m = Document(docid=docid)
+            # (we could look up whether it is downloaded and record that)
             print "NewDocid added", docid
         res.append(m)
     return res
@@ -29,6 +31,9 @@ def EnsureDocidhrefExists(docidhref):
         m = Meeting(docidhref=docidhref)
         print "making ", docidhref
     return m
+
+
+
 
 def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches, numparagraphs, numvotes, nextdocid):
     numvotes = 0 
@@ -47,7 +52,9 @@ def load_sc_topics(docid, heading, ldate, ldateend, topics, minutes, numspeeches
     m.meetingnumber = re.match("S-PV-(\d.+)$", docid).group(1)
     del m.topics[:]  # clear the list
     for tn in topics:
-        t = Topic.by_name(unicode(tn))
+        t = Topic.query.filter_by(name=unicode(tn)).first()
+        if not t:
+            t = Topic(name=unicode(tn))
         m.topics.append(t)
     Session.flush()
     print 'Saved:', m.docid, [t.id  for t in m.topics]
@@ -73,7 +80,9 @@ def load_ga_debate(docid, ldate, gaagindoc):
     Session.flush()
     
 def load_ga_agendanum(session, agendanum, mctitle, mccategory, dochrefs):
-    t = Topic.by_agendanum(agendanum)
+    t = Topic.query.filter_by(agendanum=agendanum).first()
+    if not t:
+        t = Topic(agendanum=agendanum)
 
     t.name = unicode(mctitle.decode("latin1"))
     t.session = session
@@ -146,7 +155,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
     doccitations = [ ]
     mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>\s*(.*?)^</div>', ftext, re.S + re.M)
     subheadinghref = ""
-    nslist = [ ]   # prevent objects from being deleted
+    
     for mdiv in mdivs:
         # used to dereference the string as it is in the file
         div_class = mdiv.group(1)
@@ -178,8 +187,10 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             name = mm.group(1)
             member = mm.group(3) or None 
             if member and not Member.query.filter_by(name=member).first():
-                print "Skipping member::", member
-                member = None
+                print "Constructing member::", member
+                m = Member(name=unicode(member))
+                m.sname = member.lower().replace(" ", "_").replace("'", "")
+                m.isnation = False
             meeting = docid + "#" + subheadinghref
             EnsureDocidhrefExists(meeting)
             isnation = not mm.group(2)
@@ -206,7 +217,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
             print "UNKNOWNDIVCLASS", div_class
     
         
-    
+        # make all the citations in the speech
         pgid = div_href
         for mdoc in re.finditer('id="([^"]*)"|<a href="../(?:pdf|html)/([\w\-\.()]*?)\.(?:pdf|html)"[^>]*>', div_content):
             if mdoc.group(1):
@@ -215,7 +226,7 @@ def ProcessParsedDocumentPylon(m, docid, ftext):
                 docid2 = mdoc.group(2)
                 meeting1_docidhref = docid + "#" + subheadinghref
                 EnsureDocidhrefExists(meeting1_docidhref)
-                nslist.extend(EnsureDocidsExist([docid2]))
+                EnsureDocidsExist([docid2])
                 Session.flush()
                 doccite = DocumentRefDocument(document1_docid=docid, document2_docid=docid2, href1=pgid)
                 doccite.meeting1_docidhref = meeting1_docidhref
@@ -258,41 +269,29 @@ def ProcessDocumentPylon(docid, pdfdir, htmldir):
         print "  **** UNMATCHED", docid
     print docid
 
+    doctimestamp = 0
+    
     fpdf = os.path.join(pdfdir, docid + ".pdf")
-    cmd = 'pdfinfo "%s"' % fpdf
-    pdfinfo = os.popen(cmd).read()
-    mpages = re.search("Pages:\s*(\d+)", pdfinfo)
-    if mpages:
-        m.numpages = int(mpages.group(1))
+    if os.path.exists(fpdf):
+        doctimestamp = os.stat(fpdf).st_mtime
+        cmd = 'pdfinfo "%s"' % fpdf
+        pdfinfo = os.popen(cmd).read()
+        mpages = re.search("Pages:\s*(\d+)", pdfinfo)
+        if mpages:
+            m.numpages = int(mpages.group(1))
 
     # could set the date from m.meetings[0].datetime, but will do it in ProcessParsedDocument
     Session.flush()
 
     fhtml = os.path.join(htmldir, docid + ".html")
     if os.path.exists(fhtml):
+        doctimestamp = max(os.stat(fhtml).st_mtime, doctimestamp)
         fin = open(fhtml)
         ftext = fin.read().decode('latin1')
         fin.close()
         ProcessParsedDocumentPylon(m, docid, ftext)
 
-
-'''
-def 
-    doccitations = { }
-
-    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
-    for mdiv in mdivs:
-        # used to dereference the string as it is in the file
-        div_class = mdiv.group(1)
-        div_href = mdiv.group(2)
-        div_data = (docid, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
-        div_content = mdiv.group(4)
-
-        pgid = div_href
-        for mdoc in re.finditer('id="([^"]*)"|<a href="../(?:pdf|html)/([\w\-\.()]*?)\.(?:pdf|html)"[^>]*>', div_content):
-            if mdoc.group(1):
-                pgid = mdoc.group(1)
-            if mdoc.group(2):
-                doccitations.setdefault(mdoc.group(2), []).append(pgid)
-
-'''
+    if doctimestamp:
+        m.docmodifiedtime = datetime.datetime.fromtimestamp(doctimestamp)
+        Session.flush()
+        

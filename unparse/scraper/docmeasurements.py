@@ -254,6 +254,8 @@ def UpdatePdfInfoFromPV(pdfinfos, pdfinfo, ftext):
 
 # Main file
 def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir):
+    
+    # make full list of parsed and non-parsed documents (due to bad svn update on unparse)
     docids = set()
     for pdf in os.listdir(pdfdir):
         mdocid = re.match("([AS].*?)\.pdf$", pdf)
@@ -263,11 +265,17 @@ def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir, pdfinfodi
         mdocid = re.match("([AS].*?)\.html", html)
         if mdocid:
             docids.add(mdocid.group(1))
+    
+    # respect the stem and don't reprocess anything that has numpages already set
+    # (we could do it by last modified date on the file)
     for docid in reversed(sorted(list(docids))):
         if stem and not re.match(stem, docid):
             continue
-        if not bforcedocmeasurements and model.Document.query.filter_by(docid=docid).first():
-            continue
+        if not bforcedocmeasurements:
+            m = model.Document.query.filter_by(docid=docid).first()
+            if m:
+                if not m.numpages:
+                    continue
         model.ProcessDocumentPylon(docid, pdfdir, htmldir)
     print "Quitting after doing the pylons loading"
     return

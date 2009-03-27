@@ -12,20 +12,43 @@
 ${c.message}
 
 <img class="nationpageflag" src="${h.url_for('flagof', entity=c.nation.name.replace(' ', '_').replace('\'', ''))}"/>
-<ul class="nationstats">
-  <li>${c.nation.name} has been a member of the United Nations since <em>${c.nation.started}</em></li>
-  <li>${c.nation.name} has a <a href="${c.nation.url}">web-page for its permanent mission</a> at the UN.</li>
-  <li>Visit the <a href="http://en.wikipedia.org/wiki/${c.nation.wpname}">Wikipedia page for ${c.nation.name}</a></li>
-  <li>${c.nation.name} is part of the <i>${c.nation.group}</i> block</li>
-  <li>Ambassadors for ${c.nation.name} have spoken ${c.totalspeechcount} times since <em>26 October 1994</em>.</li>
-  <li>${c.nation.name} has participated in ${c.totalvotecount} votes since <em>26 October 1994</em>, most recently on <em>${c.lastvotedate}</em></li>
-</ul>
+<table class="nationstats">
+  <tr>
+    <td>Member since:</td>
+    <td>${c.nation.started}</td>
+  </tr>
+  <tr py:if="c.nation.url">
+    <td>Webpage at UN:</td>
+    <td><a href="${c.nation.url}">${c.nation.url}</a></td>
+  </tr>
+  <tr>
+    <td>Wikipedia page:</td>
+    <td><a href="http://en.wikipedia.org/wiki/${c.nation.wpname}">${c.nation.wpname}</a></td>
+  </tr>
+  <tr>
+    <td>Continent block:</td>
+    <td>${c.nation.countrycontinent}</td>
+  </tr>
+  <tr>
+    <td>Speeches on record</td>
+    <td>${c.totalspeechcount}</td>
+  </tr>
+  <tr>
+    <td>Votes on record</td>
+    <td>${c.totalvotecount}</td>
+  </tr>
+  <tr>
+    <td>Most recent vote</td>
+    <td>${c.lastvotedate}</td>
+  </tr>
+  <tr>
+    <td>Security Council membership</td>
+    <td>${c.securitycouncimembership}</td>
+  </tr>
+</table>
 
 <h2 style="clear:both">Minority votes in the General Assembly</h2>
-
 <p>Sometimes these votes highlight an issue where there is a difference from the majority of the international community.</p>
-
-<h3>General assembly votes</h3>
 
 <p><b>${c.nation.name}...</b></p>
 <table class="minorityvote">
@@ -45,7 +68,9 @@ ${c.message}
 </table>
 
 <py:if test="c.scvotes">
-<h3>Security Council votes</h3>
+<h2>Minority votes in the Security Council</h2>
+
+<p><b>${c.nation.name}...</b></p>
 <table class="minorityvote">
   <tr py:for="vote in c.scvotes">
 
@@ -65,12 +90,14 @@ ${c.message}
 
 <h2>List of speeches by ambassadors for ${c.nation.name}</h2>
 <table class="nationambassadortable" style="background-color:lightgray;">
-  <tr><th>Speaker</th><th>Debate</th><th>Date</th></tr>
+  <tr><th>Speaker</th><th>body</th><th>Debate</th><th>Date</th></tr>
   <tr py:for="speech in c.nation.speeches">
     <td>${speech.name}</td>
     <td>
-      <a href="${h.url_for_doc(speech.docid)}#${speech.href}">
-        <py:for each="topic in speech.meeting.topics">${topic.name} </py:for>
+      <a href="${h.url_for_doc(speech.docid)}#${speech.href}" py:choose="">
+        <py:when test="speech.document.body=='SC'">${h.truncate(speech.document.title, 50)}</py:when>
+        <py:when test="speech.document.body=='GA'">${h.truncate(speech.meeting.title, 50)}</py:when>
+        <py:otherwise>JUNK ${speech.docid}</py:otherwise>
       </a>
     </td>
     <td>${speech.document.date}</td>

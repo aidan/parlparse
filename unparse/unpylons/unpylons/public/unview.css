@@ -720,12 +720,18 @@ div.clickedlink
     font-weight: normal;
     font-style: normal;
     background-color:#bbbbff;  
+    color: black;
     margin-left: 10px; 
     margin-bottom: 10px; 
     width: 200px; 
     float: right; 
     clear: right; 
 }
+div.clickedlink input
+{
+    width:150px;
+}
+
 span.linktabfleft
 {
     width:35px;
@@ -851,11 +857,15 @@ ul em
     font-style:italic;
 }
 
-ul.nationstats
+table.nationstats
 {
-    margin:0.5em;
-    padding-left:2em;
-    list-style-type: disc;
+    border: thin black solid;
+    border-collapse: collapse;
+}
+table.nationstats td
+{
+    border: thin #666666 solid;
+    background-color:#eeeeee;
 }
 
 

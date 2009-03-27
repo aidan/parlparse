@@ -1,43 +1,26 @@
 # -*- coding: utf8 -*-
 
 import re
-#from unmisc import unexception
+import unpylons.model as model
+
+# this is used only in the parsed and used to pull from a CSV file.  Now takes from the database
 
 # list of nations and their dates as part of the General Assembly can be found at
 # http://www.un.org/Overview/unmember.html
 # The following list should be made consistent with it.
 
+# convert the mapping of nations into a local object for lookup (legacy code as it used to do it by loading a CSV)
+# we could upgrade it in due course to use m = Member.query.filter_by(name=name).first()
 nationdates = { }
-
-def ParseCSVLine(line):
-    return [a.strip()  for a in eval("[%s]" % line.strip(", \n\r")) ]
-
-fin = open("nationdata.csv", "r")
-fin.readline()
-cols = ParseCSVLine(fin.readline())
-assert cols[0] == "Name", cols  # second line lays out the fields
-pcols = cols[1:]
-for line in fin.readlines():
-    if not line:
-        continue
-    pline = ParseCSVLine(line)
-    i = 1
-    params = { }
-    while i < len(cols):
-        if i < len(pline):
-            params[cols[i]] = pline[i]
-        else:
-            params[cols[i]] = None
-        i += 1
-    nationdates[pline[0]] = params
-    #print cols
-fin.close()
+for nation in model.Member.query.filter_by(isnation=True).all():
+    nationdates[nation.name] = { "Date entered UN":nation.started, "Date left UN":nation.finished }
 
 
 # includes typos, short names, and name changes
 nationmapping = {
         "United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
         u"C\xf4te d'Ivoire":"Cote d'Ivoire",
+        "C\xf4te d'Ivoire":"Cote d'Ivoire",
         "the former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
         "Federal Republic of Yugoslavia":"Yugoslavia",
         "Syrian Arab Republic":"Syria",

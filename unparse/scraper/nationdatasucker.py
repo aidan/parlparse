@@ -8,7 +8,6 @@ import urllib2
 import urlparse
 import re
 from unmisc import indexstuffdir, IsNotQuiet
-#from db import GetDBcursor
 
 import unpylons.model as model
 
@@ -33,6 +32,26 @@ scelectedmembersyear = {
 2009:["Burkina Faso", "Libya", "Uganda", "Vietnam", "Japan", "Costa Rica", "Mexico", "Turkey", "Austria", "Croatia"],
 }
 
+def LoadSecurityCouncil():
+    for m in model.MemberCommittee.query.filter_by(body="SC"):
+        model.Session.delete(m)        
+    
+    for unname in scpermanentmembers:
+        m = model.MemberCommittee(member_name=unicode(unname), body="SC", started="1945-10-24", finished="9999-12-31")
+        model.Session.flush()
+
+    firstyear = min(scelectedmembersyear)
+    for year in scelectedmembersyear:
+        for unname in scelectedmembersyear[year]:
+            if year != firstyear:
+                if unname not in scelectedmembersyear[year - 1]:
+                    m = model.MemberCommittee(member_name=unicode(unname), body="SC", started="%d-01-01" % year, finished="%d-01-01" % (year + 2))
+                    model.Session.flush()
+            else:
+                syear = year
+                if unname not in scelectedmembersyear[year + 1]:
+                    syear -= 1
+                m = model.MemberCommittee(member_name=unicode(unname), body="SC", started="%d-01-01" % syear, finished="%d-01-01" % (syear + 2))
 
 def LoadSecurityCouncilNations(c):
     c.execute("DROP TABLE IF EXISTS un_scnations;")
@@ -50,11 +69,13 @@ def LoadSecurityCouncilNations(c):
 
 
 
+#    ScrapePermMissions()
+#    NationDataSucker()
 permmissionsurl = "http://www.un.int/index-en/webs.html"
 permmissionsurl = "http://www.un.int/wcm/content/site/portal/lang/en/home/websites"
 
 def ScrapePermMissions():
-    print "not for now scrapeing permanent missions from web", permmissionsurl
+    print "not for now scraping permanent missions from web", permmissionsurl
     return
 
     fin = urllib2.urlopen(permmissionsurl)
@@ -107,24 +128,8 @@ def GetPermanentMission(unname, permmissions):
         return ""
     return permmiss
 
-geonamemap = {'Tanzania':'Tanzania, United Republic of',
-              'Viet Nam':'Vietnam',
-              'Laos':"Lao People's Democratic Republic",
-              "Cote d'Ivoire":"Cote D'Ivoire",
-              "Republic of Korea":"Korea, Republic of",
-              "Democratic People's Republic of Korea":"Korea, Democratic People's Republic of",
-              "The former Yugoslav Republic of Macedonia":"Macedonia",
-              "Syria":"Syrian Arab Republic",
-              "Brunei":"Brunei Darussalam",
-              "Russia":"Russian Federation",
-              'Libya':"Libyan Arab Jamahiriya",
-              'Iran':"Iran, Islamic Republic of",
-              'Moldova':"Moldova, Republic of",
-              'Micronesia':"Micronesia, Federated States of",
-              'Timor-Leste':"East Timor",
-              'Democratic Republic of the Congo':'Congo, The Democratic Republic of the',
-             }
 
+# these 
 def NationDataSucker():
 
     # Member states and former member states taken from
@@ -328,6 +333,7 @@ def NationDataSucker():
 
 
     # Data from GeoIP, taken from the source code for Debian package libgeoip1 1.3.17
+    # lists are aligned
     GeoIP_country_code = [
     "--","AP","EU","AD","AE","AF","AG","AI","AL","AM","AN","AO","AQ","AR","AS","AT","AU","AW","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BM","BN","BO","BR","BS","BT","BV","BW","BY","BZ","CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CU","CV","CX","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","FI","FJ","FK","FM","FO","FR","FX","GA","GB","GD","GE","GF","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HM","HN","HR","HT","HU","ID","IE","IL","IN","IO","IQ","IR","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ","NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA","RE","RO","RU","RW","SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","ST","SV","SY","SZ","TC","TD","TF","TG","TH","TJ","TK","TM","TN","TO","TP","TR","TT","TV","TW","TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","CS","ZA","ZM","ZR","ZW","A1","A2","O1"
     ]
@@ -352,80 +358,62 @@ def NationDataSucker():
         ""   : "Unknown",
     }
 
-    #c = GetDBcursor()
+    geonamemap = {'Tanzania':'Tanzania, United Republic of',
+                'Viet Nam':'Vietnam',
+                'Laos':"Lao People's Democratic Republic",
+                "Cote d'Ivoire":"Cote D'Ivoire",
+                "Republic of Korea":"Korea, Republic of",
+                "Democratic People's Republic of Korea":"Korea, Democratic People's Republic of",
+                "The former Yugoslav Republic of Macedonia":"Macedonia",
+                "Syria":"Syrian Arab Republic",
+                "Brunei":"Brunei Darussalam",
+                "Russia":"Russian Federation",
+                'Libya':"Libyan Arab Jamahiriya",
+                'Iran':"Iran, Islamic Republic of",
+                'Moldova':"Moldova, Republic of",
+                'Micronesia':"Micronesia, Federated States of",
+                'Timor-Leste':"East Timor",
+                'Democratic Republic of the Congo':'Congo, The Democratic Republic of the',
+                }
     
-    #LoadSecurityCouncilNations(c)
-    #sys.exit(0)
     
     permmissions = ParsePermMissions()
-
-    fout = open("nationdata.csv", "w")
-    # Process it
-    writer = csv.writer(fout, quoting=csv.QUOTE_ALL)
-
-    fout.write("# THIS FILE IS AUTOGENERATED BY ./nationdatasucker.py EDIT THAT TO ALTER IT\n")
-    writer.writerow(["Name", "Date entered UN", "Date left UN", "Country code", "Country code (3 letter)", "Continent (GeoIP)", "missionURL" ])
     
-    tablenationcols = [ "nation VARCHAR(50)", "date_entered DATE", "date_left DATE", 
-                        "countrycode2 VARCHAR(2)", "countrycode3 VARCHAR(3)",
-                        "continent VARCHAR(20)", "missionurl VARCHAR(80)",
-                        "wikilink VARCHAR(80)", "fname VARCHAR(50)", 
-                        "INDEX(nation)", "UNIQUE(nation)" ]
-    #c.execute("DROP TABLE IF EXISTS un_nations;")
-    #c.execute("CREATE TABLE un_nations (%s)" % ", ".join(tablenationcols))
+    print "Nation count start:", len(model.Member.query.filter_by(isnation=True).all()), 
     
     for unname in sorted(unstates.keys()):
-        # Get basic data
-        date_from = unstates[unname][0]
-        date_to = unstates[unname][1]
-
-        # Look up more info in GeoIP list of countries
-        iso2 = "" 
-        iso3 = ""
-        continent = ""
-        geoip_name = geonamemap.get(unname, unname)
-
-        permmiss = GetPermanentMission(unname, permmissions)
-        #print permmiss, "lll"
-
-        if geoip_name in GeoIP_country_name:
-            geoip_id = GeoIP_country_name.index(geoip_name)
-            iso2 = GeoIP_country_code[geoip_id]
-            iso3 = GeoIP_country_code3[geoip_id]
-            continent = GeoIP_country_continent[geoip_id]
-        else:
-            if IsNotQuiet():
-                print "country %s not in GeoIP" % geoip_name
-            geoip_name = unname
-
-        continent_name = continent_names[continent]
-        wname = re.sub(" ", "_", geoip_name)
-        fname = re.sub("'", "", wname)
-        wname = re.sub("'", "%27", wname)
-        wikilink = "http://en.wikipedia.org/wiki/" + wname
-        #c.execute("""INSERT INTO un_nations 
-        #             (nation, date_entered, date_left, countrycode2, countrycode3, continent, missionurl, wikilink, fname)
-        #             VALUES ("%s", '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
-        #          """ % (unname, date_from, date_to, iso2, iso3, continent_name, permmiss, wikilink, fname))
-	    
+        #print "nation", unname
         m = model.Member.query.filter_by(name=unicode(unname)).first()
         if not m:
             m = model.Member(name=unicode(unname))
         m.sname = unname.lower().replace(" ", "_").replace("'", "")
-        m.isnation=True
-        m.started=date_from
-        m.finished=date_to
-        m.group=continent_name
-        m.url=permmiss
-        m.wpname=wname
+        m.isnation = True
+        m.url = GetPermanentMission(unname, permmissions)
+        
+        geoip_name = geonamemap.get(unname, unname)
+        
+        # Get basic data
+        m.started = unstates[unname][0]
+        m.finished = unstates[unname][1]
+        
+        wname = re.sub(" ", "_", geoip_name)
+        wname = re.sub("'", "%27", wname)
+        if wname in ["Georgia"]:
+            wname += "_(country)"
+        m.wpname = wname
+        
+        if geoip_name in GeoIP_country_name:
+            geoip_id = GeoIP_country_name.index(geoip_name)
+            m.countrycode2 = GeoIP_country_code[geoip_id]
+            m.countrycode3 = GeoIP_country_code3[geoip_id]
+            m.countrycontinent = GeoIP_country_continent[geoip_id]
+        else:
+            if IsNotQuiet():
+                print "country %s not in GeoIP" % geoip_name
+
         model.Session.flush()
-        print len(model.Member.query.all())
+    
+    print "end:", len(model.Member.query.filter_by(isnation=True).all())
 
-
-        # Write out data
-        writer.writerow([unname, date_from, date_to, iso2, iso3, continent_name, permmiss])
-
-    fout.close()
-    #sys.exit(0)
-
+    LoadSecurityCouncil()
 

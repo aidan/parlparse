@@ -4,7 +4,7 @@
       lang="en"
       py:strip="">
   
-<py:def function="page_title">Single Security Council Meeting</py:def>
+<py:def function="page_title">Single ${c.longbody} Meeting</py:def>
 
 <div py:match="content">
 <div class="cdocattr" id="${c.cdocattr.gid}">
@@ -42,10 +42,14 @@
 
 <div id="metadoclinks">
   <h3>Links for full page</h3>
-  <p><span class="linktabfleft">URL:</span> 
-  <input style="text" readonly="true" value="blog reference here"/></p>
-  <p><span class="linktabfleft"><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a></span>
-  <input style="text" readonly="true" value="wikidatehere"/></p>
+  <p>
+    <span class="linktabfleft">URL:</span> 
+    <input style="text" readonly="true" value="&lt;a href=&quot;${h.root_url}${h.url_for_doc(c.cdocattr.docid)}${c.cdocattr.basehref}&quot;&gt;${c.longbody} Meeting on ${c.cdocattr.longdate}&lt;/a&gt;"/>
+  </p>
+  <p>
+    <span class="linktabfleft"><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a></span>
+    <textarea style="text" readonly="true">&lt;ref name="${c.cdocattr.wikirefname}"&gt;{{ UN document |docid=${c.cdocattr.docid} |body=${c.longbody} |type=Verbatim Report <py:if test="c.session">|session=${c.session}</py:if> |meeting=${c.meeting} |date=${c.cdocattr.wikidate} |meetingtime=${c.cdocattr.meetingtime} |accessdate= ${h.todaydate()} }}&lt;/ref&gt;</textarea>
+  </p>
 </div>
 
 <div id="metainstructions">

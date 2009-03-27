@@ -15,6 +15,35 @@ log = logging.getLogger(__name__)
 
 class DocumentController(BaseController):
 
+    def setparamsfromdocid(self, docid):    
+        mga = re.match("A(-RES)?-(\d\d)(-L)?(?:-PV.(\d+))?", docid)
+        msc = re.match("S(?:-PV-(\d+.*))?(?:-RES-(\d+))?", docid)
+        if mga:
+            c.body, c.longbody = "GA", "General Assembly"
+            c.session, c.meeting = mga.group(2), mga.group(4)
+            if mga.group(1):
+                c.doctype = "Resolution"
+            elif mga.group(4):
+                c.doctype = "Verbatim Report"
+            elif mga.group(3):
+                c.doctype = "Document (limited release)"
+            else:
+                c.doctype = "Document"
+        elif msc:
+            c.body, c.longbody = "SC", "Security Council"
+            c.session, c.meeting = None, msc.group(1)
+            if msc.group(1):
+                c.doctype = "Verbatim Report"
+            elif msc.group(2):
+                c.doctype = "Resolution"
+                c.resolution_number = msc.group(2)
+            else:
+                c.doctype = "Document"
+                
+        else:
+            c.body, c.longbody = "UN", "Unknown"
+            c.session, c.meeting = None, None
+
     # list of documents by date
     def documentsall(self):
         c.gasessions, c.scyears = model.GetSessionsYears()
@@ -23,11 +52,17 @@ class DocumentController(BaseController):
 
     # list for specific document
     def documentspec(self, docid):
+        referrer = os.getenv("HTTP_REFERER") or ''
+        ipaddress = os.getenv("REMOTE_ADDR") or ''
+        useragent = os.getenv("HTTP_USER_AGENT") or ''
+        print (referrer, ipaddress, useragent)
+        
         c.document = model.Document.query.filter_by(docid=docid).first()
         c.docid = docid
         c.docidq = urllib.quote(docid)
+        self.setparamsfromdocid(docid)
+
         c.meeting = c.document and c.document.meetings and c.document.meetings[0]
-        c.message = ""
         return render('documenthold')
 
     # same as above but with the message set differently

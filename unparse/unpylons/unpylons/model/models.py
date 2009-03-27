@@ -14,31 +14,33 @@ Session = scoped_session(sessionmaker(
 ))
 
 meeting_table = Table('meeting', metadata,
-    Column('docidhref', String(100), primary_key=True), 
+    Column('docidhref',     String(100), primary_key=True), 
+    
     # need unique to make next_docid fk to this table from itself work
-    Column('docid', String(100), ForeignKey('document.docid')), 
-    Column('href', String(100)), # used in GA
-    Column('body', String(10)), # SC or GA
-    Column('title', UnicodeText), 
-    Column('datetime', DateTime),
-    Column('datetimeend', DateTime), # SC
-    Column('year', Integer), # SC
-    Column('session', String(10)), # GA (can be S-27 special session)
-    Column('agendanumstr', String(100)), # GA (will need another table of agendanums instead of topics)
-    Column('notes', UnicodeText),
-    Column('numspeeches', Integer),
+        # but this can't be unique as there are several meetings for one document.  The above (concattenated) key is unique
+    Column('docid',         String(100), ForeignKey('document.docid')), 
+    Column('href',          String(100)), # used in GA
+    Column('body',          String(10)), # SC or GA
+    Column('title',         UnicodeText), 
+    Column('datetime',      DateTime),
+    Column('datetimeend',   DateTime), # SC
+    Column('year',          Integer), # SC
+    Column('session',       String(10)), # GA (can be S-27 special session)
+    Column('agendanumstr',  String(100)), # GA (will need another table of agendanums instead of topics)
+    Column('notes',         UnicodeText),
+    Column('numspeeches',   Integer),
     Column('numparagraphs', Integer), 
-    Column('numvotes', Integer),
-    Column('minutes', Integer),
-    Column('next_docid', String(100)), # , ForeignKey('meeting.docid')), used for Security Council links where the meetings and docids are the same
+    Column('numvotes',      Integer),
+    Column('minutes',       Integer),
+    Column('next_docid',    String(100)), # , ForeignKey('meeting.docid')), used for Security Council links where the meetings and docids are the same
     Column('meetingnumber', String(100)), # can contain Resu.1
     )
 
 topic_table = Table('topic', metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', UnicodeText),
+    Column('id',        Integer, primary_key=True),
+    Column('name',      UnicodeText),
     Column('agendanum', String(50)),  # for GA case
-    Column('session', String(10)), # for GA case
+    Column('session',   String(10)), # for GA case
     )
 
 topic2meeting = Table('topic2meeting', metadata,
@@ -46,18 +48,23 @@ topic2meeting = Table('topic2meeting', metadata,
     Column('topic_id', Integer, ForeignKey('topic.id'), primary_key=True)
     )
 
+
+# to add document on disc boolean (obvious if numpages not null)
+# bool pdffileexists
 document_table = Table('document', metadata, 
-    Column('docid', String(100), primary_key=True),
-    Column('numpages', Integer), 
-    Column('body', String(10)), # SC,GA,C-1
-    Column('type', String(10)), # PV,RES,PRST,REPORT
-    Column('author', String(50)), # Secretary General, Blix, nation, etc
-    Column('year', Integer), 
-    Column('session', Integer), 
-    Column('date', Date), 
+    Column('docid',     String(100), primary_key=True),
+    Column('numpages',  Integer), 
+    Column('body',      String(10)), # SC,GA,C-1
+    Column('type',      String(10)), # PV,RES,PRST,REPORT
+    Column('author',    String(50)), # Secretary General, Blix, nation, etc
+    Column('year',      Integer), 
+    Column('session',   Integer), 
+    Column('date',      Date), 
     Column('date_made', Date), # GA resolutions have a date of the vote as well
-    Column('title', String(500)),
-    # needs some column to help with when we are to update everything?
+    Column('title',     String(500)),
+    
+    # tells when the document (pdf or html) was last modified so we can rescan (eg for search) just the new ones
+    Column('docmodifiedtime', DateTime),
     )
 
 documentRefdocument = Table('documentRefdocument', metadata, 
@@ -72,43 +79,60 @@ documentRefdocument = Table('documentRefdocument', metadata,
     Column('count', Integer),
     )
 
+# these are the vested entities (nations for UN, or MPs for Parliament)
 member_table = Table('member', metadata, 
-    Column('name', Unicode(100), primary_key=True),
-    Column('sname', String(100)), # simplified name
-    Column('isnation', Boolean),
-    Column('started', Date),
-    Column('finished', Date),
-	Column('group', String(100)), # eg continent
-	#Column('representing', String(100), ForeignKey to constituencies)
-	Column('url', String(200)), # to the permanent mission 
-	Column('wpname', String(100)) # this will also be a primary_key
-	
-	# this would be done with groupings
-	#Column('successor_member', String(100), ForeignKey('member.name'),  # Foreign key to self
-    )
+    Column('name',      Unicode(100), primary_key=True),
+    Column('sname',     String(100)), # simplified name (used in the URL -- should we use wpname instead?)
+    Column('isnation',  Boolean),
+    Column('countrycode2',  String(10)), # two letter country code
+    Column('countrycode3',  String(10)), # three letter country code
+    Column('countrycontinent',  String(10)), # 2 letter continent code AF, AS, EU, NA, OC, SA
     
+    Column('started',   Date),  # date entered
+    Column('finished',  Date),  # date left
+    Column('url',       String(200)), # to the permanent mission 
+    Column('wpname',    String(100)), # this will also be a primary_key
+
+    Column('successor_member', Unicode(100), ForeignKey('member.name')),  # Foreign key to self
+    
+    # publicwhip things
+    #Column('representing', String(100), ForeignKey to constituencies), 
+    #Column('party', String(100), ForeignKey to constituencies), 
+     )
+
+# using this to mark the SC Security Council committee
+membercommittee_table = Table('membercommittee', metadata, 
+    Column('id',    Integer, primary_key=True),
+    Column('body',  String(10)),  # SC or GA (or standing committee) (should be a Foreign Key)
+    Column('member_name', Unicode(100), ForeignKey('member.name')), 
+    Column('started',   Date),  # date entered
+    Column('finished',  Date),  # date left (one past the date)
+    )
+
 speech_table = Table('speech', metadata, 
-    Column('docidhref', String(100), primary_key=True),  
-    Column('docid', String(100), ForeignKey('document.docid')),  
-    Column('href', String(100)), 
-    Column('name', Unicode(100)),
-    Column('lastname', String(100)), # last name lower case
-    Column('member_name', Unicode(100), ForeignKey('member.name')),  # the nation
+    Column('docidhref',     String(100), primary_key=True),  
+    Column('docid',         String(100), ForeignKey('document.docid')),  
+    Column('href',          String(100)), 
+    Column('name',          Unicode(100)),
+    Column('lastname',      String(100)), # last name lower case
+    Column('member_name',   Unicode(100), ForeignKey('member.name')),  # the nation
     Column('meeting_docidhref', String(100), ForeignKey('meeting.docidhref')),  # to the heading part of the meeting
     Column('numparagraphs', Integer),
     )
     
 division_table = Table('division', metadata, 
-    Column('docidhref', String(100), primary_key=True), 
-    Column('docid', String(100), ForeignKey('document.docid')), 
-    Column('href', String(100)), 
-    Column('description', UnicodeText), 
+    Column('docidhref',     String(100), primary_key=True), 
+    Column('docid',         String(100), ForeignKey('document.docid')), 
+    Column('href',          String(100)), 
+    Column('description',   UnicodeText), 
     Column('resolution_docid', String(100), ForeignKey('document.docid')), 
-    Column('body', String(10)), # it should be possible to drill through the document to get this, but I can't filter it.  help 
-    Column('favour', Integer), 
-    Column('against', Integer), 
-    Column('abstain', Integer), 
-    Column('absent', Integer), 
+    Column('body',          String(10)), # it should be possible to drill through the document to get this, but I can't filter it.  help 
+    
+    # these values could be summed up at runtime, but are better cached so they can be sorted accordingly
+    Column('favour',        Integer), 
+    Column('against',       Integer), 
+    Column('abstain',       Integer), 
+    Column('absent',        Integer), 
     )
     
 vote_table = Table('vote', metadata, 
@@ -121,17 +145,17 @@ vote_table = Table('vote', metadata,
     Column('minority_score', Numeric), 
     )
     
-# this is user-generated use data
+# this is user-generated use data (might want to back it up in a logfile which gets reparsed)
 incoming_links_table = Table('incoming_links', metadata, 
-    Column('id', Integer, primary_key=True),
-    Column('page', String(30)),
-    Column('referrer', Text),
+    Column('id',        Integer, primary_key=True),
+    Column('page',      String(30)),
+    Column('referrer',  Text),
     Column('refdomain', String(30)),
-    Column('reftitle', Text),
-    Column('ltime', DateTime),
-    Column('ipnumber', String(20)),
+    Column('reftitle',  Text),
+    Column('ltime',     DateTime),
+    Column('ipnumber',  String(20)),
     Column('useragent', Text),
-    Column('url', Text),
+    Column('url',       Text),
     )
 
             
@@ -154,20 +178,11 @@ class Document(object):
 class DocumentRefDocument(object):
     pass
 
-class Topic(object):
-    @classmethod
-    def by_name(klass, name):
-        t = klass.query.filter_by(name=name).first()
-        if not t:
-            t = klass(name=name)
-        return t
+class MemberCommittee(object):
+    pass
 
-    @classmethod
-    def by_agendanum(klass, agendanum):        
-        t = klass.query.filter_by(agendanum=agendanum).first()
-        if not t:
-            t = klass(agendanum=agendanum)
-        return t
+class Topic(object):
+    pass
 
 class Member(object):
     pass
@@ -225,9 +240,9 @@ mapper(Document, document_table, properties={
     })
 
 mapper(Member, member_table, properties={
-    'speeches':relation(Speech, primaryjoin=member_table.c.name==speech_table.c.member_name,
-        viewonly=True),
+    'speeches':relation(Speech, primaryjoin=member_table.c.name==speech_table.c.member_name, viewonly=True),
     'votes':relation(Vote, primaryjoin=member_table.c.name==vote_table.c.member_name),
+    'committees':relation(MemberCommittee, primaryjoin=member_table.c.name==membercommittee_table.c.member_name),
     })
 
 mapper(Speech, speech_table, properties={
@@ -244,6 +259,8 @@ mapper(Vote, vote_table, properties={
     'division':relation(Division, primaryjoin=vote_table.c.docidhref==division_table.c.docidhref), 
     'member':relation(Member, primaryjoin=vote_table.c.member_name==member_table.c.name), 
     })
+
+mapper(MemberCommittee, membercommittee_table)
 
 mapper(DocumentRefDocument, documentRefdocument)
 

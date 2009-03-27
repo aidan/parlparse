@@ -16,9 +16,8 @@ from agendanames import WriteAgendaSummaries
 from scsummaries import ScrapeSCSummaries, WriteSCSummaries
 from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
-from gennatdata import GenerateNationData
 from nationdatasucker import ScrapePermMissions, NationDataSucker
-#from dbfill import DBfill
+from unpylons.model import metadata
 
 parser = OptionParser()
 parser.set_usage("""
@@ -27,7 +26,7 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
   parse   do the parsing
-  dbfill  upload the parsed headings etc into database
+  cleardb clear the whole database
   xapdex  call the xapian indexing system
   votedistances generate voting distances table for java applet
   docmeasurements generate measurements of quantities of documents;
@@ -75,8 +74,6 @@ parser.add_option("--scrape-links",
 parser.add_option("--doc",
                   dest="scrapedoc", metavar="scrapedoc", default="",
                   help="Causes a single document to be scraped")
-parser.add_option("--force-dbfill", action="store_true", dest="forcedbfill", default=False,
-                  help="Erases existing valies and adds them to table again")
 parser.add_option("--force-docmeasurements", action="store_true", dest="forcedocmeasurements", default=False,
                   help="Causes all docmeasurements to be run again")
 parser.add_option("--force-xap", action="store_true", dest="forcexap", default=False,
@@ -99,7 +96,7 @@ bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
 bXapdex = "xapdex" in args
-bDBfill = "dbfill" in args
+bClearDB = "cleardb" in args
 bDocMeasurements = "docmeasurements" in args
 bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
@@ -110,7 +107,7 @@ bGAsummaries = "gasummaries" in args
 bNationData = "nationdata" in args
 bVoteDistances = "votedistances" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bDBfill or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bClearDB or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
     parser.print_help()
     sys.exit(1)
 
@@ -145,8 +142,10 @@ if bParse:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()
 
-if bDBfill:
-    DBfill(stem, options.forcedbfill, options.limit, options.continueonerror, htmldir)
+if bClearDB:
+    print "Dropping and recreating all tables"
+    metadata.drop_all()  # clears the tables 
+    metadata.create_all()
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)
@@ -177,10 +176,6 @@ if bGAsummaries:
 if bNationData:
     ScrapePermMissions()
     NationDataSucker()
-    nationactivitydir = os.path.join(indexstuffdir, "nationactivity")
-    if not os.path.isdir(nationactivitydir):
-        os.mkdir(nationactivitydir)
-    GenerateNationData(nationactivitydir, htmldir)
 
 if bVoteDistances:
     f = os.path.join(indexstuffdir, "votetable.txt")

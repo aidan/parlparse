@@ -15,8 +15,13 @@ except:
 
 import re  # also imported already in textile
 import os
+import datetime
 
 undatadir = "/home/goatchurch/undemocracy/undata"  # should come from config
+root_url = "http://www.undemocracy.com" # should come from config
+
+def todaydate():
+    return str(datetime.date.today())
 
 def strip_tags_in_subheading(text):
     if not text:

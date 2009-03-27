@@ -1,8 +1,7 @@
 #!/usr/bin/python
 # -*- coding: latin1 -*-
 
-# unparse/bin/xapdex.py - Index Julian's UN HTML in Xapian. Run with --help
-# for command line options.
+# this is archiving the xapian indexing code
 
 import sys
 import re
@@ -15,7 +14,6 @@ from downascii import DownAscii
 #from db import GetDBcursor, escape_string
 from nations import nonnationcatmap # this was why the need to moveall into same directory
 
-import unpylons.model as model
 
 def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
     div_class = mdiv.group(1)
@@ -94,7 +92,7 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
             for wtxt in re.split(wsplit, paratext):
                 if re.match("\s*$|</?[ib]>$|'$", wtxt):
                     continue
-                if re.match("&\w{1,5};|[:;.,?!£¥*%@_\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
+                if re.match("&\w{1,5};|[:;.,?!ï¿½ï¿½*%@_\"()\[\]/+]+$|<i>.*?</i>$", wtxt):
                     textspl.append("")  # leave a gap at the end of a sentence, to avoid word grouping
                     continue
                 if re.match("(?:20/20|9/11|[12][90]\d\d/[12][90]\d\d|HIV/AIDS)$", wtxt):
@@ -164,128 +162,6 @@ def MakeBaseXapianDoc(mdiv, tdocument_id, document_date, headingterms):
         nspl += 1
 
     return xapian_doc  # still need to set the data
-
-
-def MakeTables(c):
-    c.execute("DROP TABLE IF EXISTS un_scheadings")
-    c.execute("CREATE TABLE un_scheadings (docid VARCHAR(30), ldate DATETIME, heading TEXT, shortheading TEXT, veryshortheading TEXT, numvotes INT, UNIQUE(docid))")
-    import unpylons.model as model
-    model.metadata.drop_all()
-    model.metadata.create_all()
-
-def ClearDatabaseValues(docid, c):
-    pass
-
- 
-
-# Reindex one file
-def process_file(pfnameunindexed, c):
-    mdocid = re.match(r".*?(html[\\/])([\-\d\w\.]+?)(\.unindexed)?(\.html)$", pfnameunindexed)
-    assert mdocid, "unable to match: %s" % pfnameunindexed
-    docid = mdocid.group(2)
-
-    fin = open(pfnameunindexed)
-    doccontent = fin.read()
-    fin.close()
-
-    body = (docid[0] == "A" and "GA" or "SC")
-    mdocument_date = re.search('<span class="date">(\d\d\d\d-\d\d-\d\d)</span>', doccontent)
-    assert mdocument_date, "not found date in file %s" % pfnameunindexed
-    document_date = mdocument_date.group(1)
-
-    if IsNotQuiet():
-        print "indexing %s %s" % (docid, document_date)
-
-    doccitations = { }
-
-    mdivs = re.finditer('^<div class="([^"]*)" id="([^"]*)"(?: agendanum="([^"]*)")?[^>]*>(.*?)^</div>', doccontent, re.S + re.M)
-    for mdiv in mdivs:
-        # used to dereference the string as it is in the file
-        div_class = mdiv.group(1)
-        div_href = mdiv.group(2)
-        div_data = (docid, mdiv.start(), mdiv.end() - mdiv.start(), mdiv.group(2))
-        div_content = mdiv.group(4)
-
-        pgid = div_href
-        for mdoc in re.finditer('id="([^"]*)"|<a href="../(?:pdf|html)/([\w\-\.()]*?)\.(?:pdf|html)"[^>]*>', div_content):
-            if mdoc.group(1):
-                pgid = mdoc.group(1)
-            if mdoc.group(2):
-                doccitations.setdefault(mdoc.group(2), []).append(pgid)
-
-        if div_class == "recvote":
-            mvote = re.match('\s*<p class="motiontext"[^>]*>(.*?)</p>\s*<p class="votecount"[^>]*>(.*?)</p>\s*<p class="votelist"[^>]*>(.*?)</p>', div_content)
-            assert mvote, div_content
-            mvnum = re.match("favour=(\d+)\s+against=(\d+)\s+abstain=(\d+)\s+absent=(\d+)", mvote.group(2))
-            vnum = [int(mvnum.group(1)), int(mvnum.group(2)), int(mvnum.group(3)), int(mvnum.group(4))]
-            motiontext = mvote.group(1)
-            motiontext = re.sub('<a [^>]*>([^<]*)</a>', "\\1", motiontext)
-            motiontext = re.sub("<[^>]*>", " ", motiontext)
-            motiontext = re.sub(" (?:was|were) (?:retained|adopted|rejected) by (?:.*? abstentions?|\d+ votes to \d+)", "", motiontext)
-            #print "adding to database", mvote.group(2)
-            c.execute("""REPLACE INTO un_divisions (docid, href, body, motiontext, ldate, favour, against, abstain, absent)
-                         VALUES ('%s', '%s', '%s', '%s', '%s', %d, %d, %d, %d);
-                      """ % (docid, div_href, body, motiontext, document_date, vnum[0], vnum[1], vnum[2], vnum[3]))
-            totalv = float(vnum[0] + vnum[1] + vnum[2] + vnum[3])
-            minorityscores = { 'favour':vnum[0]/totalv, 'against':vnum[1]/float(vnum[0]+vnum[1]),
-                               'abstain':vnum[2]/totalv, 'absent':vnum[3]/totalv }
-
-            for mvoten in re.finditer('<span class="([^"\-]*)-?([^"]*)">([^<]*)</span>', mvote.group(3)):
-                nation = mvoten.group(3)
-                vote = mvoten.group(1)
-                intendedvote = mvoten.group(2) or vote
-                if mvoten.group(2):
-                    print "mmm", mvoten.group(0)
-                c.execute("""REPLACE INTO un_votes (docid, href, nation, vote, intended_vote, minority_score)
-                             VALUES ('%s', '%s', "%s", '%s', '%s', '%s')
-                          """ % (docid, div_href, nation, vote, intendedvote, minorityscores[intendedvote]))
-
-        if div_class == "heading":
-            pass
-
-        if div_class == "council-agenda":
-            if body == "SC":
-                t = DownAscii(div_content)
-                t = escape_string(t)
-                #model.load_sc_fromfile(docid, div_content, document_date)
-                c.execute("REPLACE INTO un_scheadings (docid, heading, ldate, shortheading, veryshortheading, numvotes) VALUES ('%s', '%s', '%s', '', '', 0)" % (docid, t, document_date))
-
-    # add into the new pylons code using sqlalchemy
-    for m in model.DocumentRefDocument.query.filter_by(document1_docid=docid):
-        model.Session.delete(m)        
-    for docid2, lcount in doccitations.iteritems():
-        #print docid, docid2
-        doccite = model.DocumentRefDocument(document1_docid=docid, document2_docid=docid2, count=len(lcount))
-    model.Session.flush()
-
-# could move the table constructions to here; if it's a force case
-def DBfill(stem, bforcedbfill, nlimit, bcontinueonerror, htmldir):
-    c = GetDBcursor()
-    if bforcedbfill:  # and not stem
-        MakeTables(c)
-    
-    
-    # does just the unindexed if not forced
-    rels = GetAllHtmlDocs(stem, True, bforcedbfill, htmldir)
-
-    # having gone through the list, now load each
-    if nlimit and len(rels) > nlimit:
-        rels = rels[:options.limit]
-    for rel in rels:
-        try:
-            process_file(rel, c)
-        except KeyboardInterrupt, e:
-            print "  ** Keyboard interrupt"
-            traceback.print_exc()
-            sys.exit(1)
-        except Exception, e:
-            print e
-            if bcontinueonerror:
-                traceback.print_exc()
-            else:
-                traceback.print_exc()
-                sys.exit(1)
-
 
 
 

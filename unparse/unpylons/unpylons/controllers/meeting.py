@@ -53,10 +53,11 @@ class MeetingController(BaseController):
         webcastlink = WebcastLink("securitycouncil", sdate)
         docid = mdata.group(1)
         meetingnumber = docid[5:]
+        wikirefname = "UN_" + re.sub("[\(\-\)\.]", "", docid).upper()
 
         return { "gid":"pg000-bk00", "docid":docid, "meetingnumber":meetingnumber, 
                  "date":sdate, "time":mdata.group(3), "rosetime":mdata.group(4), 
-                 "longdate":longdate, "wikidate":wikidate, "webcastlink":webcastlink, "basehref":"/" }
+                 "longdate":longdate, "wikidate":wikidate, "wikirefname":wikirefname, "webcastlink":webcastlink, "basehref":"/" }
         
 
     # this pulls out just the ids.  we need properties and meeting numbers
@@ -144,6 +145,9 @@ class MeetingController(BaseController):
             return ftext
 
         c.body = "SC"
+        c.longbody = "Security Council"
+        c.session, c.meeting = None, scmeetingnumber
+
         c.councilattendees = [ ]
         c.councilagenda = None
         c.councilpresident = None
@@ -165,6 +169,9 @@ class MeetingController(BaseController):
             return ftext
 
         c.body = "GA"
+        c.longbody = "General Assembly"
+        c.session, c.meeting = session, meeting
+        
         c.cdocattr = self.GetCdocattr(ftext)
         c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
         c.href = ""
@@ -181,6 +188,9 @@ class MeetingController(BaseController):
             return ftext
 
         c.body = "GA"
+        c.longbody = "General Assembly"
+        c.session, c.meeting = session, meeting
+        
         c.cdocattr = self.GetCdocattr(ftext)
         c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
         c.href = href

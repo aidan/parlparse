@@ -18,33 +18,48 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
-# get rid of web2 in meeting.py and in all other places.  move out
-# deal with the nation data sucker which we hope doesn't need to do any scanning of the documents after the measurements
-# move quickskins into the pylons stuff
+# meeting should be to document for security council meetings (so we don't need py:choose to get title)
 
+# wikilinks [[Georgia_(country)]] -- made in the ref not the template
+
+# docmodifiedtime    to be used for documentmeasurements to reload only the new ones  (if null then no document)
+
+# start monitoring and recording incoming links for wikipedia lookups (test this with a static page)
+
+# lists of documents by year and type and number of pages and whether it exists
+
+# experimental loading of MPs and debates into the data-set
+
+
+# highlight should disappear if there is a single click encompassing hardly any pixels
+# partial scanning only new documents so not everything is reloaded (done, but we could use last modified date)
+# list meeting topics per day for the general assembly
+# and for the security council (consecutively)
+# list of meeting topics at the top
+
+# check-in or rsync the document directories.
+
+# get rid of web2 in meeting.py and in all other places.  move out
+# move quickskins into the pylons stuff
 
 # next/previous session in case of general assembly meetings
 # links to nations from the speeches/flags
 # nice dates in the helper function
 # option to scrape documents we don't have
-# add non-existent documents that are referenced into the database (noting their non-loaded state)
 # parse all document codes (incl roman numeral ones)
-# fix the wiki-ref
-# get the wikipedia coding to work
 # make the search box work (with suggestions)
-# get rect areas working again
-
 
 #instructions
-#  dbfill          doesn't do anything (except when there's force)
+#  nationdata
 #  scsummaries     to get the topics of meetings in place
 #  agendanames     to get the agenda meetings in place
 #  docmeasurements   list through the pdfs and call loader.ProcessParsedDocumentPylon on each document, setting its council-agenda, date, citations
-#  nation
 #    could be expanded so we have xmls of all the other documents to look for dates, citations and titles there too, in a light form of parsing
+
 # Rufus's machine at eu1.okfn.org with undemocracy partly deployed
 
 # paster serve development.ini --reload
+
 # look in loaders for the drop database
 
 
@@ -59,7 +74,7 @@ def make_map():
     map.connect('documentpagehighlight','document/:docid/page_:page/:highlightrects', controller='document', action='documentpage')
     map.connect('documentspec',     'document/:docid', controller='document', action='documentspec')
     map.connect('documentspecscrape','document/:docid/scrape', controller='document', action='documentspecscrape')
-    map.connect('imagedocumentpage','docpages/:(pngname).png', controller='document', action='imagedocumentpage')
+    map.connect('imagedocumentpage','docpages/*(pngname).png', controller='document', action='imagedocumentpage')  # needs to use * instead of : because sometimes pngname contains a .
     
     map.connect('gasessions',       'generalassembly', controller='indexes', action='gasessions')
     map.connect('gasessionagendas', 'generalassembly_:session/agendas', controller='indexes', action='gasessionagendas')

@@ -19,9 +19,14 @@ class IndexesController(BaseController):
         return render('frontpage')
 
     def nations(self):
-        c.nations = list(model.Member.query.filter_by(finished="9999-12-31"))
+        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
         c.ncols = 4
         c.colleng = int((len(c.nations) + c.ncols - 1) / c.ncols)
+        
+        c.defunctnations = list(model.Member.query.filter_by(isnation=True).filter(model.Member.finished!="9999-12-31"))
+        
+        c.nonnations = list(model.Member.query.filter_by(isnation=False))
+
         return render('nations')
 
     def documentsgasession(self, session):

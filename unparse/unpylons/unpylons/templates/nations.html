@@ -25,6 +25,27 @@
 </tr>
 </table>
 
+<h1>List of defunct nations</h1>
+<table>
+<tr py:for="nation in c.defunctnations">
+  <td class="smallflag_sca"><a href="${h.url_for('nation', snation=nation.sname)}">
+    <img class="smallflag_lis" src="${h.url_for('flagof', entity=nation.name.replace(' ', '_').replace('\'', ''))}"/></a>
+  </td>
+  <td><a href="${h.url_for('nation', snation=nation.sname)}">${nation.name}</a></td>
+  <td>${nation.started} - ${nation.finished}</td>
+  <td>Successor state</td>
+</tr>
+</table>
+
+<h1>List of non-nations</h1>
+<table>
+<tr py:for="nonnation in c.nonnations">
+  <td><a href="${h.url_for('nation', snation=nonnation.sname)}">${nonnation.name}</a></td>
+  <td>${len(nonnation.speeches)}</td>
+  <td py:with="speech=max(nonnation.speeches)"><a href="${h.url_for_doc(speech.docid)}#${speech.href}">${speech.docid}</a></td>
+</tr>
+</table>
+
 </div>
 
 <xi:include href="layout.html" />
