@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+<py:def function="page_title">General Assembly Sessions</py:def>
+
+<div py:match="content">
+
+<h2>General Assembly Sessions</h2>
+<p><a href="${h.url_for('gacondolences')}">Condolences</a></p>
+<table>
+  <tr><th>Session</th><th>Count</th></tr>
+  <tr py:for="session, count in c.gasessions">
+    <td><a href="${h.url_for('gasessionagendas', session=session)}">Session ${session} agendas</a></td>
+    <td>${count}</td>
+  </tr>
+</table>
+
+</div>
+<xi:include href="layout.html" />
+</html>
+
