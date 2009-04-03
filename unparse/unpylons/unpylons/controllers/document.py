@@ -52,10 +52,7 @@ class DocumentController(BaseController):
 
     # list for specific document
     def documentspec(self, docid):
-        referrer = os.getenv("HTTP_REFERER") or ''
-        ipaddress = os.getenv("REMOTE_ADDR") or ''
-        useragent = os.getenv("HTTP_USER_AGENT") or ''
-        print (referrer, ipaddress, useragent)
+        DLogPrintReferrer()
         
         c.document = model.Document.query.filter_by(docid=docid).first()
         c.docid = docid

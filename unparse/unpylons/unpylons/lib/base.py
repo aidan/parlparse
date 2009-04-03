@@ -13,6 +13,14 @@ from pylons.templating import render
 import unpylons.lib.helpers as h
 import unpylons.model as model
 
+def DLogPrintReferrer():
+    referrer = request.environ["HTTP_REFERER"]
+    ipaddress = request.environ["REMOTE_ADDR"]
+    useragent = request.environ["HTTP_USER_AGENT"]
+    print (referrer, ipaddress, useragent)
+    print request.environ
+
+
 class BaseController(WSGIController):
 
     def __call__(self, environ, start_response):
