@@ -28,8 +28,8 @@ scelectedmembersyear = {
 2005:["Algeria", "Benin", "Tanzania", "Philippines", "Japan", "Brazil", "Argentina", "Denmark", "Greece", "Romania"],
 2006:["Ghana", "Congo", "Tanzania", "Qatar", "Japan", "Peru", "Argentina", "Denmark", "Greece", "Slovakia"],
 2007:["Belgium", "Congo", "Ghana", "Indonesia", "Italy", "Panama", "Peru", "Qatar", "Slovakia", "South Africa"],
-2008:["Burkina Faso", "Libya", "South Africa", "Vietnam", "Indonesia", "Costa Rica", "Panama", "Belgium", "Italy", "Croatia"],
-2009:["Burkina Faso", "Libya", "Uganda", "Vietnam", "Japan", "Costa Rica", "Mexico", "Turkey", "Austria", "Croatia"],
+2008:["Burkina Faso", "Libya", "South Africa", "Viet Nam", "Indonesia", "Costa Rica", "Panama", "Belgium", "Italy", "Croatia"],
+2009:["Burkina Faso", "Libya", "Uganda", "Viet Nam", "Japan", "Costa Rica", "Mexico", "Turkey", "Austria", "Croatia"],
 }
 
 def LoadSecurityCouncil():

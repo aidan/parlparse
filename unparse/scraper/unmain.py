@@ -2,6 +2,14 @@ import os
 import re
 import sys
 sys.path.append("../pylib")
+
+bClearDB = "cleardb" in sys.argv
+from unpylons.model import metadata
+if bClearDB:
+    print "Dropping and recreating all tables"
+    metadata.drop_all()  # clears the tables 
+    metadata.create_all()
+
 from unparse import ParsetoHTML
 from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
@@ -17,7 +25,6 @@ from scsummaries import ScrapeSCSummaries, WriteSCSummaries
 from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from nationdatasucker import ScrapePermMissions, NationDataSucker
-from unpylons.model import metadata
 
 parser = OptionParser()
 parser.set_usage("""
@@ -142,10 +149,11 @@ if bParse:
         ParsetoHTML(stem, pdfxmldir, htmldir, options.forceparse, options.editparse, options.continueonerror)
     PrintNonnationOccurrances()
 
-if bClearDB:
-    print "Dropping and recreating all tables"
-    metadata.drop_all()  # clears the tables 
-    metadata.create_all()
+# done at the top
+#if bClearDB:
+#    print "Dropping and recreating all tables"
+#    metadata.drop_all()  # clears the tables 
+#    metadata.create_all()
 
 if bXapdex:
     GoXapdex(stem, options.forcexap, options.limit, options.continueonerror, htmldir, xapdir)

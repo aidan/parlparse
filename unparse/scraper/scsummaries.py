@@ -468,6 +468,13 @@ class SCrecord:
         hourminutestart = map(int, document_time.split(":"))
         hourminuteend = map(int, document_timeend.split(":"))
         self.minutes = (hourminuteend[0] - hourminutestart[0]) * 60 + (hourminuteend[1] - hourminutestart[1])
+        
+        # fix the overflow on time
+        if int(document_timeend[:2]) >= 24:
+            print "      \nreplacing dayrotate:", self.datetimeend,
+            self.datetimeend = "%s %02d:%s:00" % ((datetime.date(int(document_date[:4]), int(document_date[5:7]), int(document_date[8:])) + datetime.timedelta(days=1)).isoformat(), 
+                    int(document_timeend[:2])-24, document_timeend[3:])
+            print self.datetimeend
 
 
     def FindTopicCats(self, htmldir, pdfdir):
