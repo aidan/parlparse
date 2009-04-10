@@ -6,6 +6,8 @@ import datetime
 from unpylons.dbpasswords import undata_path as undatadir
 #undatadir = "/home/undemocracy/svn-undata"
 
+from unpylons.model import currentyear, currentsession
+
 class unexception(Exception):
     def __init__(self, description, lparanum):
         self.description = description
@@ -50,7 +52,7 @@ def SetCallScrape(lsCallScrape):
 
 reressplit = """(?x)(
                 (?:[Dd]ocument\s)?A/(?:[A-Z][\-\.\d]*/)?\d+/[\w\d\.]*?[l\d]+(?:/(?:Add|Rev)\.[l\d]+)?(?:/(?:Add|Rev)\.[l\d]+)?(?:/Corr.\d)?|
-                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s\d+/[\dCLXVI]+[A-Y]?|
+                (?:General\sAssembly\s|Economic\sand\sSocial\sCouncil\s)?[Rr]esolutions?\s(?:S-)?\d+/[\dCLXVI]+[A-Y]?|
                 draft\sresolution\sA/\d\d/L\.\d+(?:/Add.\d)?(?:/Rev.\d)?|
                 A/RES/\d+/\d+|
                 S/PRST/\d+/\d+|
@@ -173,6 +175,7 @@ def MarkupLinks(paratext, undocname, paranum):
         mres = re.match("(?:(?:General Assembly )?[Rr]esolutions? |[Dd]ecision |A/RES/)(\d+)/(\d+)(?:\s*(\w))?", st)
         mresb = re.match("(?:the )?resolution \((\d+)/(\d+)\)$", st)
         mresc = re.match("([3-6]\d)/(\d{1,3})$", st)
+        mress = re.match("(?:(?:General Assembly )?[Rr]esolutions? )?S-(\d|[12]\d?)/(\d+)(?:\s*(\w))?", st)
         meres = re.match("Economic and Social Council (?:resolution|decision) (\d+)/([\dCLXVI]+)(?:\s*(\w))?", st)
         mdoc = re.match("(?:[Dd]ocument |draft resolution )?A/(?:(C\.\d|INF|HRC|S-\d+)/)?(\d+)/(\S*)", st)
         mscdoc = re.match("(?:[Dd]ocument )?S/(\d+)(?:/(\d+))?(?:/Add\.(\d+))?(?:/Rev\.(\d+))?(?:/Add\.(\d))?(?:/Corr\.(\d))?$", st)
@@ -219,6 +222,10 @@ def MarkupLinks(paratext, undocname, paranum):
         elif mresc:
             link = "A-RES-%s-%s" % (mresc.group(1), mresc.group(2))
             res.append(MakeCheckLink(link, st, undocname))
+        elif mress:  # special session
+            link = "A-RES-S-%s-%s" % (mress.group(1), mress.group(2))
+            res.append(MakeCheckLink(link, st, undocname))
+        
         elif msecpress:
             res.append(msecpress.group(1))
             link = "SC/%s" % msecpress.group(2)
@@ -269,7 +276,7 @@ def MarkupLinks(paratext, undocname, paranum):
             link = "S-PV-%s" % (mscpv.group(1))
             res.append(MakeCheckLink(link, st, undocname))
         elif msecres:
-            if not (1945 < int(msecres.group(2)) < 2009):  # should use current document year
+            if not (1945 < int(msecres.group(2)) <= currentyear):  # should use current document year
                 print st
                 raise unexception("year on resolution not possible", paranum)
             link = "S-RES-%s(%s)" % (msecres.group(1), msecres.group(2))

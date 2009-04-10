@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Nation page for ${c.nation.name}</py:def>
+
+<div py:match="content">
+
+<h1>All speeches by ambassadors for ${c.nation.name}</h1>
+
+<p>Link back to <a href="${h.url_for('nation', snation=c.nation.sname)}">${c.nation.name}</a></p>
+
+<table class="nationambassadortable" style="background-color:lightgray;">
+  <tr><th>Speaker</th><th>body</th><th>Debate</th><th>Date</th></tr>
+  <tr py:for="speech in c.nation.speeches">
+    <td><a href="${h.url_for('nationambassador', snation=c.nation.sname, sambassador=speech.ambassador.lastname)}">${speech.name}-</a></td>
+    <td>${speech.meeting.body}</td>
+    <td>
+      <a href="${h.url_for_doc(speech.docid)}#${speech.href}">${h.truncateN(speech.meeting.title, 50)}</a>
+    </td>
+    <td>${speech.document.date}</td>
+  </tr>
+</table>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

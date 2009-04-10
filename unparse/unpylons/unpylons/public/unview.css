@@ -301,6 +301,32 @@ h1
     float:right;
 }
 
+form#searchform
+{
+    float:right;
+}
+#thinbar
+{
+    background:#cccccc; 
+    text-align:center;
+}
+
+div#defofun
+{
+    margin:1em;
+}
+div#defofun ul
+{
+    margin:0.5em;
+    padding-left:0.5em;
+    list-style-type: disc;
+}
+td.nationcolumn
+{
+    vertical-align:top;
+    width:300px;
+}
+
 h1 Zspan
 	{
 	width: 30em;
@@ -656,24 +682,29 @@ table.nationambassadortable th
     text-align:center;
     font-weight:bold;
 }
+
+td.against,
 span.absent-against,
 span.against,
 span.againstul
 {
 	color:red;
 }
+td.favour,
 span.absent-favour,
 span.favour,
 span.favourul
 {
 	color:green;
 }
+td.abstain,
 span.abstain,
 span.abstainul
 {
 	color:purple;
     font-weight:bold;
 }
+td.absent,
 span.absent,
 span.absentul
 {
@@ -686,6 +717,15 @@ span.favourul,
 span.againstul
 {
     border:thin solid black;
+}
+
+td.absent,
+td.abstain,
+td.favour,
+td.against
+{
+    border:thin solid gray;
+    text-align:center;
 }
 
 #documentwrap

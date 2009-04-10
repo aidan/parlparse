@@ -12,14 +12,11 @@ from pylons.templating import render
 
 import unpylons.lib.helpers as h
 import unpylons.model as model
+from unpylons.lib.referrerlogging import logreferrer
 
+# this is going to fill in the third column for wikipedia references
 def DLogPrintReferrer():
-    referrer = request.environ["HTTP_REFERER"]
-    ipaddress = request.environ["REMOTE_ADDR"]
-    useragent = request.environ["HTTP_USER_AGENT"]
-    print (referrer, ipaddress, useragent)
-    print request.environ
-
+    logreferrer(referrer = request.environ.get("HTTP_REFERER") or "", ipaddress = request.environ["REMOTE_ADDR"], useragent = request.environ["HTTP_USER_AGENT"], pathinfo = request.environ["PATH_INFO"]) 
 
 class BaseController(WSGIController):
 

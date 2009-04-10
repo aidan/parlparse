@@ -18,13 +18,7 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
-# meeting should be to document for security council meetings (so we don't need py:choose to get title)
-
-# wikilinks [[Georgia_(country)]] -- made in the ref not the template
-
-# docmodifiedtime    to be used for documentmeasurements to reload only the new ones  (if null then no document)
-
-# start monitoring and recording incoming links for wikipedia lookups (test this with a static page)
+# wikilinks [[Georgia_(country)]] -- made in the ref not the template (do it with if-statement in javascript)
 
 # lists of documents by year and type and number of pages and whether it exists
 
@@ -49,6 +43,8 @@ def make_map():
 # parse all document codes (incl roman numeral ones)
 # make the search box work (with suggestions)
 
+
+
 #instructions
 #  nationdata
 #  scsummaries     to get the topics of meetings in place
@@ -63,9 +59,12 @@ def make_map():
 # look in loaders for the drop database
 
 
-    map.connect('nations',  'nations',          controller='indexes', action='nations')
-    map.connect('nation',   'nation/:snation',  controller='nation', action='nation')
+    map.connect('nationscontinent',  'nations/bycontinent',controller='nation', action='nationscontinent')
+    map.connect('nations',  'nations',          controller='nation', action='nations')
     map.connect('flagof',   'png100/Flag_of_:(entity).png', controller='nation', action='flagof')
+    map.connect('nationambassador','nation/:snation/:sambassador',  controller='nation', action='nationambassador')
+    map.connect('nation',   'nation/:snation',  controller='nation', action='nation')
+    map.connect('votesnation','votes/:snation', controller='nation', action='nationvotes')
 
     map.connect('documentsall', 'document/all', controller='document', action='documentsall')
 
@@ -75,6 +74,7 @@ def make_map():
     map.connect('documentspec',     'document/:docid', controller='document', action='documentspec')
     map.connect('documentspecscrape','document/:docid/scrape', controller='document', action='documentspecscrape')
     map.connect('imagedocumentpage','docpages/*(pngname).png', controller='document', action='imagedocumentpage')  # needs to use * instead of : because sometimes pngname contains a .
+    map.connect('meetingmonth',     'meeting/:year/:month', controller='indexes', action='meetingmonth')
     
     map.connect('gasessions',       'generalassembly', controller='indexes', action='gasessions')
     map.connect('gasessionagendas', 'generalassembly_:session/agendas', controller='indexes', action='gasessionagendas')
@@ -89,6 +89,9 @@ def make_map():
     map.connect('sctopics',         'securitycouncil/topics', controller='indexes', action='sctopics')
     map.connect('sctopic',          'securitycouncil/topic/:topic', controller='indexes', action='sctopic')
     map.connect('scmeeting',        'securitycouncil/meeting_:scmeetingnumber', controller='meeting', action='scmeeting')
+    map.connect('documentsscyear',  'securitycouncil_:year', controller='indexes', action='documentsscyear')
+    
+    map.connect('incoming',         'incoming', controller='indexes', action='incoming')
 
 # indexes not done.  we have a front page (sort of), but need lists of security council documents by year
     map.connect('security_council_topics_ordered', 'securitycouncil/:year', controller='indexes', action='scindexordered')

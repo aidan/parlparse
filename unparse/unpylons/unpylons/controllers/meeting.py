@@ -91,7 +91,7 @@ class MeetingController(BaseController):
                     name = mscmember.group(1)
                     if mscmember.group(2):
                         name = name + ", " + mscmember.group(2)
-                    nation = re.sub("\s", "_", mscmember.group(3))
+                    nation = model.Member.query.filter_by(name=mscmember.group(3)).first()
                     m = { "name":name, 'nation':nation }
                     if mscmember.group(4) == "president":
                         c.councilpresident = m
@@ -107,19 +107,16 @@ class MeetingController(BaseController):
                 spoketext = fblock[mspek.end(0):]
                 paragraphs = re.findall('<(?:blockquote.*?|p) id="([^"]*)">(.*?)</(blockquote|p)>', spoketext)
                 speakername, nationtype, speakernation = mspek.group(1), mspek.group(2), mspek.group(3)
-                if nationtype == "nation" and speakernation:
-                    speakerflag = speakernation
-                elif speakername == "The President":
-                    if c.body == "SC":
-                        speakerflag = c.councilpresident["nation"]
-                    else:
-                        speakerflag = "United Nations"
-                elif re.match("The Acting President|The Secretary-General", speakername):
-                    speakerflag = "United Nations"
+                
+                if speakernation:
+                    nation = model.Member.query.filter_by(name=speakernation).first()
+                elif c.body == "SC" and speakername == "The President":
+                    nation = c.councilpresident["nation"]
                 else:
-                    speakerflag = "Unknown"
-                c.bodytext.append({"divclass":"speech", "gid":fgid, "speakername":speakername, 
-                                   "nationtype":mspek.group(2), "speakernation":speakernation, "speakerflag":speakerflag, 
+                    nation =  None
+                
+                c.bodytext.append({"divclass":"speech", "gid":fgid, "speakername":speakername, "nation":nation, 
+                                   "nationtype":mspek.group(2), "speakernation":speakernation, 
                                    "language":mspek.group(4), "paragraphs":paragraphs, "spoketext":spoketext })
                 
             elif fclass == "italicline":
@@ -138,65 +135,51 @@ class MeetingController(BaseController):
             else:
                 pass
 
-    def scmeeting(self, scmeetingnumber):
-        docid = "S-PV-" + scmeetingnumber
+    
+    def documentmeeting(self, docid, href):
+        document = model.Document.query.filter_by(docid=docid).first()
+        if not document:
+            return "No document " + docid
+        if not document.docmodifiedtime:
+            response.status_int = 302
+            response.headers['location'] = h.url_for('documentspec', docid=docid)
+            return 'Moved temporarily: <a href="%s">%s</a>' % (response.headers['location'], response.headers['location'])
+        
         ftext = self.GetHtml(docid)
         if re.match("Exception:", ftext):
             return ftext
 
-        c.body = "SC"
-        c.longbody = "Security Council"
-        c.session, c.meeting = None, scmeetingnumber
-
-        c.councilattendees = [ ]
-        c.councilagenda = None
-        c.councilpresident = None
-        c.href = ""
-
-        c.cdocattr = self.GetCdocattr(ftext)
-        c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
-
-        self.ParseBodyText(ftext, "")
-
-        x = render('scmeeting')
-        return x
-
-
-    def gameeting(self, session, meeting):
-        docid = "A-%s-PV.%s" % (session, meeting)
-        ftext = self.GetHtml(docid)
-        if re.match("Exception:", ftext):
-            return ftext
-
-        c.body = "GA"
-        c.longbody = "General Assembly"
-        c.session, c.meeting = session, meeting
+        c.body = document.body
+        if document.body == "SC":
+            c.longbody = "Security Council"
+            c.session, c.meeting = None, document.meetings[0].meetingnumber
+    
+            c.councilattendees = [ ]
+            c.councilagenda = None
+            c.councilpresident = None
+            c.href = ""
+            c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
+    
+        else:
+            c.longbody = "General Assembly"
+            c.session, c.meeting = document.session, document.meetings[0].meetingnumber
+            c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
+            c.href = href
         
         c.cdocattr = self.GetCdocattr(ftext)
-        c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
-        c.href = ""
+        self.ParseBodyText(ftext, href)
+        return render('scmeeting')
+    
 
-        self.ParseBodyText(ftext, "")
-
-        x = render('scmeeting')
-        return x
+    def scmeeting(self, scmeetingnumber):
+        docid = "S-PV-" + scmeetingnumber
+        return self.documentmeeting(docid, "")
+    
+    def gameeting(self, session, meeting):
+        docid = "A-%s-PV.%s" % (session, meeting)
+        return self.documentmeeting(docid, "")
 
     def gameetinghref(self, session, meeting, href):
         docid = "A-%s-PV.%s" % (session, meeting)
-        ftext = self.GetHtml(docid)
-        if re.match("Exception:", ftext):
-            return ftext
-
-        c.body = "GA"
-        c.longbody = "General Assembly"
-        c.session, c.meeting = session, meeting
-        
-        c.cdocattr = self.GetCdocattr(ftext)
-        c.prevmeetingid, c.nextmeetingid = self.GetPrevNextLinks(docid)  # fix
-        c.href = href
-
-        self.ParseBodyText(ftext, href)
-
-        x = render('scmeeting')
-        return x
+        return self.documentmeeting(docid, href)
 

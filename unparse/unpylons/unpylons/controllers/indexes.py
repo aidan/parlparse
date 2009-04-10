@@ -16,20 +16,16 @@ class IndexesController(BaseController):
         c.scmeetings = list(model.Meeting.query.filter_by(body="SC").order_by(model.meeting_table.c.datetime.desc()).limit(12))
         c.garecords = list(model.Meeting.query.filter_by(body="GA").order_by(model.meeting_table.c.datetime.desc()).limit(12))
         c.wikirefs = []#ShortWikipediaTableM(12)
+        c.incomingrefs = list(model.IncomingLinks.query.order_by(model.IncomingLinks.c.ltime.desc()).limit(12))
         return render('frontpage')
 
-    def nations(self):
-        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
-        c.ncols = 4
-        c.colleng = int((len(c.nations) + c.ncols - 1) / c.ncols)
-        
-        c.defunctnations = list(model.Member.query.filter_by(isnation=True).filter(model.Member.finished!="9999-12-31"))
-        
-        c.nonnations = list(model.Member.query.filter_by(isnation=False))
-
-        return render('nations')
+    def incoming(self):
+        c.incomingrefs = list(model.IncomingLinks.query.group_by(model.IncomingLinks.c.reftitle).order_by(model.IncomingLinks.c.reftitle).all())
+        return render('incoming')
+    
 
     def documentsgasession(self, session):
+        DLogPrintReferrer()
         c.session = session
         c.documents = model.Document.query.filter_by(body="GA", session=session).filter('type!="PV"')
         c.pvdocuments = model.Document.query.filter_by(body="GA", session=session).filter('type="PV"')
@@ -44,7 +40,6 @@ class IndexesController(BaseController):
     def gasessions(self):
         c.gasessions, c.scyears = model.GetSessionsYears()
         return render('gasessions')
-    
     
     def sctopics(self):
         c.topics = model.Topic.query.filter_by(agendanum=None).order_by(model.topic_table.c.name)
@@ -75,7 +70,14 @@ class IndexesController(BaseController):
             c.scmeetings = model.Meeting.query.filter_by(body="SC", year=year).order_by(model.meeting_table.c.datetime)
         return render('scindexordered')
 
-
+    def meetingmonth(self, year, month):
+        c.year = int(year)
+        c.month = int(month)
+        yeamon = "%04d-%02d" % (c.year, c.month)
+        yeamone = "%04d-%02d" % ((c.month == 12) and (c.year + 1, 1) or (c.year, c.month + 1))
+        c.meetings = model.Meeting.query.filter(model.meeting_table.c.datetime>=yeamon).filter(model.meeting_table.c.datetime<yeamone)
+        return render('meetingmonth')
+        
     # redirects from wikipedia constructs to either the parsed or the document type, whichever is better
     def meeting(self, docid):
         # check if meeting actually parsed

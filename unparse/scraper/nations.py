@@ -67,7 +67,7 @@ prenations = ["Switzerland"]
 def IsPrenation(lnation, sdate):
     lnation = nationmapping.get(lnation, lnation)
     dr = nationdates.get(lnation)
-    if dr and sdate < dr["Date entered UN"]:
+    if dr and sdate < dr["Date entered UN"].isoformat():
         assert lnation in prenations
         return lnation
     return None
@@ -89,7 +89,7 @@ def FixNationName(lnation, sdate):
             return None
         lnation = llnation
 
-    if not dr["Date entered UN"] <= sdate < dr["Date left UN"]:
+    if not dr["Date entered UN"].isoformat() <= sdate < dr["Date left UN"].isoformat():
         print lnation, dr, sdate
         print "nation out of date range"
         assert False
@@ -485,3 +485,5 @@ nonnationscount["International Criminal Tribunal for the Former Yugoslavia"] = 0
 nonnationscount["Eurasian Development Bank"] = 0
 nonnationscount["Organization for Security and Co-operation in Europe"] = 0
 nonnationscount["Department of General Assembly and Conference Management"] = 0
+nonnationscount["Dushirehamwe Association"] = 0
+nonnationscount["Rede Feto"] = 0

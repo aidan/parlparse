@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Incoming links</py:def>
+
+<div py:match="content">
+
+<h1>Wikipedia incoming links</h1>
+
+<table>
+<tr><th>Title</th><th>time ago</th><th>count</th></tr>
+<tr py:for="incomingref in c.incomingrefs">
+  <td><a href="${incomingref.referrer}">${incomingref.reftitle}</a></td>
+  <td>${h.time_ago_in_words(incomingref.ltime)}</td>
+  <td>${incomingref.count}</td>
+</tr>
+</table>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+

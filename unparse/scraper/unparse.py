@@ -62,7 +62,7 @@ def GroupParas(tlcall, undocname, sdate, seccouncilmembers):
     return res
 
 
-
+# we should lose the .unindexed stuff because it'll be done with the timestamp
 def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse, bcontinueonerror):
     undocnames = [ ]
     for undoc in os.listdir(pdfxmldir):
@@ -86,7 +86,7 @@ def ParsetoHTML(stem, pdfxmldir, htmldir, bforceparse, beditparse, bcontinueoner
 
     for undocname in undocnames:
         undocpdfxml = os.path.join(pdfxmldir, undocname + ".xml")
-        undochtml = os.path.join(htmldir, undocname + ".unindexed.html")
+        undochtml = os.path.join(htmldir, undocname + ".html")  # used to be ".unindexed.html"
 
         gparas = None
         lbeditparse = beditparse

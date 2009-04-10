@@ -26,9 +26,14 @@ def todaydate():
 def strip_tags_in_subheading(text):
     if not text:
         return "NONE"
-    lt = [re.sub("<[^>]*>", "", t).strip()  for t in re.split("</p>", text.decode("latin1"))]
+    lt = [re.sub("<[^>]*>", "", t).strip()  for t in re.split("</p>", text)]
     lt = [t  for t in lt  if t]
     return lt
+
+def truncateN(text, n):
+    if not text:
+        return "BLANK"
+    return truncate(text, n)
 
 def split_links(text):
     lt = re.split('(<a[^>]*>.*?</a>|<i>[^<]*</i>)', text)

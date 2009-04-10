@@ -48,7 +48,7 @@
   </p>
   <p>
     <span class="linktabfleft"><a href="http://en.wikipedia.org/wiki/Help:Footnotes">wiki:</a></span>
-    <textarea style="text" readonly="true">&lt;ref name="${c.cdocattr.wikirefname}"&gt;{{ UN document |docid=${c.cdocattr.docid} |body=${c.longbody} |type=Verbatim Report <py:if test="c.session">|session=${c.session}</py:if> |meeting=${c.meeting} |date=${c.cdocattr.wikidate} |meetingtime=${c.cdocattr.meetingtime} |accessdate= ${h.todaydate()} }}&lt;/ref&gt;</textarea>
+    <textarea style="text" readonly="true">&lt;ref name="${c.cdocattr.wikirefname}"&gt;{{ UN document |docid=${c.cdocattr.docid} |body=${c.longbody} |type=Verbatim Report <py:if test="c.session">|session=${c.session}</py:if> |meeting=${c.meeting} |date=${c.cdocattr.wikidate} |meetingtime=${c.cdocattr.time} |accessdate= ${h.todaydate()} }}&lt;/ref&gt;</textarea>
   </p>
 </div>
 
@@ -73,30 +73,25 @@
   <h1>Security Council Meeting</h1>
 
   <div class="council-agenda">
-    <py:for each="href, htext in h.split_links(c.councilagenda)">
-      <py:choose test="">
-      <py:when test="href"><a href="${h.url_for_doc(href)}">${htext}</a></py:when>
-      <py:otherwise test="">${htext}</py:otherwise>         
-      </py:choose>
-    </py:for>
+    <py:for each="href, htext in h.split_links(c.councilagenda)"><py:choose test=""><py:when test="href"><a href="${h.url_for_doc(href)}">${htext}</a></py:when><py:otherwise test="">${htext}</py:otherwise></py:choose></py:for>
   </div>
     
   <div class="council-attendees" id="pg000-bk02">
   <table>
   <tr>
     <th>President:</th>
-    <td><img class="smallflag_sca" src="/png100/Flag_of_${c.councilpresident.nation}.png"/></td> 
+    <td><img class="smallflag_sca" src="/png100/${c.councilpresident.nation.flagof}"/></td> 
     <td>${c.councilpresident.name}<br/>
-      <a class="nation" href="${h.url_for('nation', snation=c.councilpresident.nation)}">${c.councilpresident.nation}</a></td>
+      <a class="nation" href="${h.url_for('nation', snation=c.councilpresident.nation.sname)}">${c.councilpresident.nation.name}</a></td>
     <td> </td>
     <td colspan="3">(The Presidency changes each month to the next member in alphabetical order)</td>
   </tr>
   <tr py:for="row in range(0, len(c.councilattendees), 3)">
     <th><py:if test="row == 0">Members:</py:if></th>
     <py:for each="councilattendee in c.councilattendees[row:row+3]">
-      <td><img class="smallflag_sca" src="/png100/Flag_of_${councilattendee.nation}.png"/></td>
+      <td><img class="smallflag_sca" src="/png100/${councilattendee.nation.flagof}"/></td>
       <td>${councilattendee.name}<br/>
-        <a class="nation" href="${h.url_for('nation', snation=councilattendee.nation)}">${councilattendee.nation}</a></td>
+        <a class="nation" href="${h.url_for('nation', snation=councilattendee.nation.sname)}">${councilattendee.nation.name}</a></td>
     </py:for>
   </tr>
   </table>
@@ -130,9 +125,10 @@
 
 <py:when test="bodyblock.divclass=='speech'">
   <cite>
-    <img class="smallflag" src="/png100/Flag_of_${bodyblock.speakerflag.replace(' ', '_')}.png"/>
+    <img class="smallflag" src="/png100/${bodyblock.nation.flagof}"/>
     <span class="name">${bodyblock.speakername}</span>
-    <span py:if="bodyblock.speakernation" class="nation">(<a href="${h.url_for('nation', snation=bodyblock.speakernation.replace(' ', '_'))}">${bodyblock.speakernation}</a>)</span>
+
+    <span py:if="bodyblock.speakernation" class="nation">(<a href="${h.url_for('nation', snation=bodyblock.nation.sname)}">${bodyblock.speakernation}</a>)</span>
   </cite>
 </py:when>
 

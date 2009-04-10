@@ -389,6 +389,9 @@ def NationDataSucker():
         m.sname = unname.lower().replace(" ", "_").replace("'", "")
         m.isnation = True
         m.url = GetPermanentMission(unname, permmissions)
+        m.flagof = "Flag_of_" + unname.replace(' ', '_') + ".png"
+        
+        unname.lower().replace(" ", "_").replace("'", "")
         
         geoip_name = geonamemap.get(unname, unname)
         

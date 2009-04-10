@@ -1,10 +1,18 @@
 from sqlalchemy import *
 from sqlalchemy.orm import *
 import sys
+import datetime
 
 import unpylons.dbpasswords as dbpasswords
 # sys.path.append("/home/goatchurch/undemocracy/unparse/web2")
 undatadir = dbpasswords.undata_path
+
+# useful to have these parameters
+currentyear = datetime.date.today().year
+currentsession = currentyear - 1946
+if datetime.date.today().month >= 9:
+    currentsession += 1
+
 
 metadata = MetaData(dbpasswords.dburi)
 Session = scoped_session(sessionmaker(
@@ -26,7 +34,7 @@ meeting_table = Table('meeting', metadata,
     Column('datetimeend',   DateTime), # SC
     Column('year',          Integer), # SC
     Column('session',       String(10)), # GA (can be S-27 special session)
-    Column('agendanumstr',  String(100)), # GA (will need another table of agendanums instead of topics)
+    Column('agendanumstr',  String(200)), # GA (will need another table of agendanums instead of topics)
     Column('notes',         UnicodeText),
     Column('numspeeches',   Integer),
     Column('numparagraphs', Integer), 
@@ -58,10 +66,10 @@ document_table = Table('document', metadata,
     Column('type',      String(10)), # PV,RES,PRST,REPORT
     Column('author',    String(50)), # Secretary General, Blix, nation, etc
     Column('year',      Integer), 
-    Column('session',   Integer), 
+    Column('session',   String(10)), # GA (can be S-27 special session)
     Column('date',      Date), 
     Column('date_made', Date), # GA resolutions have a date of the vote as well
-    Column('title',     String(500)),
+    Column('title',     UnicodeText),
     
     # tells when the document (pdf or html) was last modified so we can rescan (eg for search) just the new ones
     Column('docmodifiedtime', DateTime),
@@ -81,8 +89,10 @@ documentRefdocument = Table('documentRefdocument', metadata,
 
 # these are the vested entities (nations for UN, or MPs for Parliament)
 member_table = Table('member', metadata, 
-    Column('name',      Unicode(100), primary_key=True),
+    #Column('id', Integer, primary_key=True), # get rid of name as non-duplicating so we can match by date (eg for Switzerland)
+    Column('name',      Unicode(200), primary_key=True),
     Column('sname',     String(100)), # simplified name (used in the URL -- should we use wpname instead?)
+    Column('flagof',    String(200)), # links to the flag we use here
     Column('isnation',  Boolean),
     Column('countrycode2',  String(10)), # two letter country code
     Column('countrycode3',  String(10)), # three letter country code
@@ -90,7 +100,7 @@ member_table = Table('member', metadata,
     
     Column('started',   Date),  # date entered
     Column('finished',  Date),  # date left
-    Column('url',       String(200)), # to the permanent mission 
+    Column('url',       Text), # to the permanent mission 
     Column('wpname',    String(100)), # this will also be a primary_key
 
     Column('successor_member', Unicode(100), ForeignKey('member.name')),  # Foreign key to self
@@ -100,11 +110,17 @@ member_table = Table('member', metadata,
     #Column('party', String(100), ForeignKey to constituencies), 
      )
 
+ambassador_table = Table('ambassador', metadata, 
+    Column('id', Integer, primary_key=True), 
+    Column('lastname', String(100)), 
+    Column('member_name', Unicode(100), ForeignKey('member.name')), 
+    )
+
 # using this to mark the SC Security Council committee
 membercommittee_table = Table('membercommittee', metadata, 
     Column('id',    Integer, primary_key=True),
     Column('body',  String(10)),  # SC or GA (or standing committee) (should be a Foreign Key)
-    Column('member_name', Unicode(100), ForeignKey('member.name')), 
+    Column('member_name', Unicode(100), ForeignKey('member.name')), # needs conv
     Column('started',   Date),  # date entered
     Column('finished',  Date),  # date left (one past the date)
     )
@@ -114,7 +130,7 @@ speech_table = Table('speech', metadata,
     Column('docid',         String(100), ForeignKey('document.docid')),  
     Column('href',          String(100)), 
     Column('name',          Unicode(100)),
-    Column('lastname',      String(100)), # last name lower case
+    Column('ambassador_id', Integer, ForeignKey('ambassador.id')), 
     Column('member_name',   Unicode(100), ForeignKey('member.name')),  # the nation
     Column('meeting_docidhref', String(100), ForeignKey('meeting.docidhref')),  # to the heading part of the meeting
     Column('numparagraphs', Integer),
@@ -127,6 +143,7 @@ division_table = Table('division', metadata,
     Column('description',   UnicodeText), 
     Column('resolution_docid', String(100), ForeignKey('document.docid')), 
     Column('body',          String(10)), # it should be possible to drill through the document to get this, but I can't filter it.  help 
+    Column('meeting_docidhref', String(100), ForeignKey('meeting.docidhref')),  # to the heading part of the meeting
     
     # these values could be summed up at runtime, but are better cached so they can be sorted accordingly
     Column('favour',        Integer), 
@@ -141,6 +158,7 @@ vote_table = Table('vote', metadata,
     Column('member_name', Unicode(100), ForeignKey('member.name')), 
     Column('vote', String(10)),     # favour, against, abstain, absent
     Column('orgvote', String(10)),  # when the vote was initially wrong
+    
     Column('isteller', Boolean),    # not used in UN
     Column('minority_score', Numeric), 
     )
@@ -185,6 +203,9 @@ class Topic(object):
     pass
 
 class Member(object):
+    pass
+
+class Ambassador(object):
     pass
 
 class IncomingLinks(object):
@@ -243,16 +264,24 @@ mapper(Member, member_table, properties={
     'speeches':relation(Speech, primaryjoin=member_table.c.name==speech_table.c.member_name, viewonly=True),
     'votes':relation(Vote, primaryjoin=member_table.c.name==vote_table.c.member_name),
     'committees':relation(MemberCommittee, primaryjoin=member_table.c.name==membercommittee_table.c.member_name),
+    'ambassadors':relation(Ambassador, primaryjoin=member_table.c.name==ambassador_table.c.member_name, viewonly=True, order_by=[ambassador_table.c.lastname]),
     })
 
 mapper(Speech, speech_table, properties={
     'document':relation(Document, primaryjoin=speech_table.c.docid==document_table.c.docid), 
     'meeting':relation(Meeting, primaryjoin=speech_table.c.meeting_docidhref==meeting_table.c.docidhref), 
+    'ambassador':relation(Ambassador, primaryjoin=speech_table.c.ambassador_id==ambassador_table.c.id), 
+    })
+
+mapper(Ambassador, ambassador_table, properties={
+    'member':relation(Member, primaryjoin=ambassador_table.c.member_name==member_table.c.name), 
+    'speeches':relation(Speech, primaryjoin=ambassador_table.c.id==speech_table.c.ambassador_id, viewonly=True),
     })
 
 mapper(Division, division_table, properties={
     'document':relation(Document, primaryjoin=division_table.c.docid==document_table.c.docid), 
     'votes':relation(Vote, primaryjoin=vote_table.c.docidhref==division_table.c.docidhref), 
+    'meeting':relation(Meeting, primaryjoin=division_table.c.meeting_docidhref==meeting_table.c.docidhref), 
     })
 
 mapper(Vote, vote_table, properties={
@@ -265,6 +294,7 @@ mapper(MemberCommittee, membercommittee_table)
 mapper(DocumentRefDocument, documentRefdocument)
 
 mapper(IncomingLinks, incoming_links_table)
+
 
 # probably some fancy mapper could do this
 def GetSessionsYears():

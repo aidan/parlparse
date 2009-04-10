@@ -48,6 +48,8 @@ ${c.message}
 </table>
 
 <h2 style="clear:both">Minority votes in the General Assembly</h2>
+<p>Link to <a href="${h.url_for('votesnation', snation=c.nation.sname)}">all votes</a>.</p>
+
 <p>Sometimes these votes highlight an issue where there is a difference from the majority of the international community.</p>
 
 <p><b>${c.nation.name}...</b></p>
@@ -63,6 +65,7 @@ ${c.message}
     </td>
 
     <td class="col3"><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${vote.division.description}</a></td>
+    <td>${h.truncateN(vote.division.meeting.title, 50)}</td>
     <td class="col2"><i py:if="vote.division.document">${vote.division.document.date}</i></td>
   </tr>
 </table>
@@ -82,25 +85,21 @@ ${c.message}
       <py:otherwise>JUNK ${vote.vote}</py:otherwise>
     </td>
 
-    <td class="col3"><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${h.strip_tags_in_subheading(vote.division.document.title)}</a></td>
+    <td class="col3"><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${vote.division.meeting.title}</a></td>
     <td class="col2"><i py:if="vote.division.document">${vote.division.document.date}</i></td>
   </tr>
 </table>
 </py:if>
 
-<h2>List of speeches by ambassadors for ${c.nation.name}</h2>
+<h2>List of ambassadors who have spoken for ${c.nation.name}</h2>
+<p>Link to <a href="${h.url_for('nationambassador', snation=c.nation.sname, sambassador='all')}">all</a></p>
 <table class="nationambassadortable" style="background-color:lightgray;">
-  <tr><th>Speaker</th><th>body</th><th>Debate</th><th>Date</th></tr>
-  <tr py:for="speech in c.nation.speeches">
-    <td>${speech.name}</td>
-    <td>
-      <a href="${h.url_for_doc(speech.docid)}#${speech.href}" py:choose="">
-        <py:when test="speech.document.body=='SC'">${h.truncate(speech.document.title, 50)}</py:when>
-        <py:when test="speech.document.body=='GA'">${h.truncate(speech.meeting.title, 50)}</py:when>
-        <py:otherwise>JUNK ${speech.docid}</py:otherwise>
-      </a>
-    </td>
-    <td>${speech.document.date}</td>
+  <tr><th>Speaker last name</th><th>number of speeches</th><th>first date</th><th>last date</th></tr>
+  <tr py:for="ambassador in c.nation.ambassadors">
+    <td><a href="${h.url_for('nationambassador', snation=c.nation.sname, sambassador=ambassador.lastname)}">${ambassador.lastname}</a></td>
+    <td>${len(ambassador.speeches)}</td>
+    <td>${min([speech.document.date  for speech in ambassador.speeches])}</td>
+    <td>${max([speech.document.date  for speech in ambassador.speeches])}</td>
   </tr>
 </table>
 

@@ -7,11 +7,26 @@ log = logging.getLogger(__name__)
 
 class NationController(BaseController):
 
-    def index(self):
-        # Return a rendered template
-        #   return render('/some/template.mako')
-        # or, Return a response
-        return 'List of nations ...'
+    def nations(self):
+        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
+        c.ncols = 4
+        c.colleng = int((len(c.nations) + c.ncols - 1) / c.ncols)
+        
+        c.defunctnations = list(model.Member.query.filter_by(isnation=True).filter(model.Member.finished!="9999-12-31"))
+        
+        c.nonnations = list(model.Member.query.filter_by(isnation=False))
+
+        return render('nations')
+    
+    def nationscontinent(self):
+        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
+        c.ncols = 3
+        c.nationscontinent = [ ]
+        for continentcode, continent in [("AF", "Africa"), ("AS", "Asia"), ("EU", "European Union"), ("NA", "North America"), ("OC", "Oceania"), ("SA", "South America")]:
+            lnationscontinent = [ nation  for nation in c.nations  if nation.countrycontinent == continentcode ]
+            c.nationscontinent.append({"continent":continent, "nations":lnationscontinent, "colleng":int((len(lnationscontinent) + c.ncols - 1) / c.ncols) })
+        return render('nationscontinent')
+        
     
     def info(self, id=None):
         return 'Nation is called: %s' % id
@@ -25,9 +40,11 @@ class NationController(BaseController):
 
     def nation(self, snation):
         c.nation = model.Member.query.filter_by(sname=snation).first()
-        c.totalspeechcount = model.Speech.query.filter_by(member_name=c.nation.name).count()
-        # can't work out how to query this in sqlalchemy -- filter(model.Vote.description.c.body=="SC") doesn't work
         
+        # could be efficient sql things to get these things
+        c.totalspeechcount = model.Speech.query.filter_by(member_name=c.nation.name).count()
+        
+        # can't work out how to query this in sqlalchemy -- filter(model.Vote.description.c.body=="SC") doesn't work
         c.totalvotecount = model.Vote.query.filter_by(member_name=c.nation.name).count()
     
         #allvotes = model.Vote.query.filter_by(member_name=c.nation.name).order_by(model.Vote.c.minority_score)
@@ -49,26 +66,17 @@ class NationController(BaseController):
         else:
             c.securitycouncimembership = "Never"
         
-        #c.lastvotedate = allvotes and allvotes[0].division.document.date
-        #for m in allvotes:
-        #    c.lastvotedate = max(c.lastvotedate, m.division.document.date)
-        # a = model.select("SELECT max(document.date) FROM document")
-        # a = model.select(model.func.max(model.document_table.c.date))
-        #from sqlalchemy.sql import text
-        #a = text('Select max(date) from document')
-        #a = model.Session.connection().execute(a).fetchall()[0]
-#        a = model.Vote.query.from_statement("SELECT max(document.date) FROM vote LEFT JOIN division ON vote.docidhref = division.docidhref LEFT JOIN document ON division.docid = document.docid WHERE vote.member_name='United Kingdom'").params(name=c.nation).all()
-        
-        #print a
-        #return "hi there"
-    
-        #c.lastvotedate = model.Vote.query.filter_by(member_name=c.nation.name).join('division', 'document').group_by("*").max(model.Document.date)
-        
-        sss = model.Division.query.first()
-        #c.message = c.nation.name + "---- " + str(allvotes) # str([m.member_name  for m in sss.votes])
-        #c.message += "  ******  "
-        #c.message += str([m.division  for m in model.Vote.query.filter_by(member_name="El Salvador").limit(20).all()])
         return render('nation')
     
 
+    def nationambassador(self, snation, sambassador):
+        c.nation = model.Member.query.filter_by(sname=snation).first()
+        if sambassador == "all":
+            return render('nationambassadorall')
+        c.ambassador = model.Ambassador.query.filter_by(member=c.nation).filter_by(lastname=sambassador).first()
+        return render('nationambassador')
+        
+    def nationvotes(self, snation):
+        c.nation = model.Member.query.filter_by(sname=snation).first()
+        return render('votesnation')
 
