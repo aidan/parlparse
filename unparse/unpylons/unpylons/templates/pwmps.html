@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">List of mps</py:def>
+
+<div py:match="content">
+
+<div id="publicwhip">
+
+<table>
+<tr py:for="mp in c.mps">
+  <td>${mp.pwperson_fullname}</td>
+  <td>${mp.started}</td>
+  <td>${mp.pwparty}</td>
+  <td>${mp.pwrepresenting.name}</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<xi:include href="pwlayout.html" />
+</html>
+

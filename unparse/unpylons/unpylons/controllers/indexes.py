@@ -70,11 +70,15 @@ class IndexesController(BaseController):
             c.scmeetings = model.Meeting.query.filter_by(body="SC", year=year).order_by(model.meeting_table.c.datetime)
         return render('scindexordered')
 
+    def search(self):
+        return "Sorry, search is not implemented"
+    
     def meetingmonth(self, year, month):
-        c.year = int(year)
-        c.month = int(month)
+        c.year, c.month = int(year), int(month)
+        c.yearnext, c.monthnext = ((c.month == 12) and (c.year + 1, 1) or (c.year, c.month + 1))
+        c.yearprev, c.monthprev = ((c.month == 1) and (c.year - 1, 12) or (c.year, c.month - 1))
         yeamon = "%04d-%02d" % (c.year, c.month)
-        yeamone = "%04d-%02d" % ((c.month == 12) and (c.year + 1, 1) or (c.year, c.month + 1))
+        yeamone = "%04d-%02d" % (c.yearnext, c.monthnext)
         c.meetings = model.Meeting.query.filter(model.meeting_table.c.datetime>=yeamon).filter(model.meeting_table.c.datetime<yeamone)
         return render('meetingmonth')
         

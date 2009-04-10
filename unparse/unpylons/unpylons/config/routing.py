@@ -18,17 +18,10 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
-# wikilinks [[Georgia_(country)]] -- made in the ref not the template (do it with if-statement in javascript)
-
-# lists of documents by year and type and number of pages and whether it exists
-
 # experimental loading of MPs and debates into the data-set
 
 
 # highlight should disappear if there is a single click encompassing hardly any pixels
-# partial scanning only new documents so not everything is reloaded (done, but we could use last modified date)
-# list meeting topics per day for the general assembly
-# and for the security council (consecutively)
 # list of meeting topics at the top
 
 # check-in or rsync the document directories.
@@ -37,12 +30,10 @@ def make_map():
 # move quickskins into the pylons stuff
 
 # next/previous session in case of general assembly meetings
-# links to nations from the speeches/flags
 # nice dates in the helper function
 # option to scrape documents we don't have
-# parse all document codes (incl roman numeral ones)
 # make the search box work (with suggestions)
-
+# database of all official general assembly members
 
 
 #instructions
@@ -58,8 +49,9 @@ def make_map():
 
 # look in loaders for the drop database
 
+    map.connect('mps',      'mps', controller='publicwhip', action='mps')
 
-    map.connect('nationscontinent',  'nations/bycontinent',controller='nation', action='nationscontinent')
+    map.connect('nationscontinent',  'nations/bycontinent', controller='nation', action='nationscontinent')
     map.connect('nations',  'nations',          controller='nation', action='nations')
     map.connect('flagof',   'png100/Flag_of_:(entity).png', controller='nation', action='flagof')
     map.connect('nationambassador','nation/:snation/:sambassador',  controller='nation', action='nationambassador')
@@ -97,6 +89,7 @@ def make_map():
     map.connect('security_council_topics_ordered', 'securitycouncil/:year', controller='indexes', action='scindexordered')
     #map.connect('security_council', 'sc_:year', controller='home', action='scyear', requirements={'year':'\d\d\d\d|early'})
     map.connect('security_council_topics', 'securitycouncil', controller='indexes', action='scindex')
+    map.connect('search',  '/search', controller='indexes', action='search')
     map.connect('', controller='indexes', action='frontpage')
 
     # conditions to redirect

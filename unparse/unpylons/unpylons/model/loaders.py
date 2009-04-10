@@ -103,7 +103,7 @@ def EnsureDocidhrefExists(docid, href):
     docidhref = docid + "#" + href
     m = Meeting.query.filter_by(docidhref=docidhref).first()
     if not m:
-        print "making ", docidhref
+        #print "making ", docidhref
         d = EnsureDocidExists(docid)
         assert d.type == "PV", d
         m = Meeting(docidhref=docidhref, docid=docid, href=href)
@@ -283,7 +283,8 @@ def ProcessParsedDocumentPylon(document, ftext):
             if membername:
                 member = EnsureMemberExists(membername, document.date)
                 if member.isnation != (not mm.group(2)):
-                    print "\n\n\n\n ***  Disagreed member " + membername + "\n\n" + mm.group(0)
+                    # we'll allow Switzerland to exist outside of its membership status (when it couldn't vote, but was an observer)
+                    assert membername == "Switzerland", "\n\n\n\n ***  Disagreed member " + membername + "\n\n" + mm.group(0)
                 
                 ambassador = Ambassador.query.filter_by(lastname=lastname).filter_by(member=member).first()
                 if not ambassador:

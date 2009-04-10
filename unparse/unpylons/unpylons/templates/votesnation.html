@@ -16,8 +16,19 @@
 <table class="minorityvote">
   <tr py:for="vote in c.nation.votes">
     <td>${vote.division.document.date}</td>
-    <td><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${h.truncateN(vote.division.description, 50)}</a></td>
-    <td>${h.truncateN(vote.division.meeting.title, 50)}</td>
+    <td>${vote.division.body}</td>
+
+    <py:choose test="">
+    <py:when test="vote.division.body == 'GA'">
+      <td><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${h.truncateN(vote.division.description, 50)}</a></td>
+      <td>${h.truncateN(vote.division.meeting.title, 50)}</td>
+    </py:when>
+    <py:when test="vote.division.body == 'SC'">
+      <td><a href="${h.url_for_doc(vote.division.docid)}#${vote.division.href}">${h.truncateN(vote.division.meeting.document.title, 50)}</a></td>
+      <td>${h.truncateN(vote.division.meeting.title, 50)}</td>
+    </py:when>
+    </py:choose>
+
     <td class="favour">${vote.division.favour}</td>
     <td class="abstain">${vote.division.abstain}</td>
     <td class="absent">${vote.division.absent}</td>

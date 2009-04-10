@@ -8,9 +8,11 @@ import unpylons.dbpasswords as dbpasswords
 undatadir = dbpasswords.undata_path
 
 # useful to have these parameters
-currentyear = datetime.date.today().year
+currentdate = datetime.date.today()
+currentyear = currentdate.year
+currentmonth = currentdate.month
 currentsession = currentyear - 1946
-if datetime.date.today().month >= 9:
+if currentmonth >= 9:
     currentsession += 1
 
 
@@ -87,10 +89,19 @@ documentRefdocument = Table('documentRefdocument', metadata,
     Column('count', Integer),
     )
 
+
+pwconstituency_table = Table('pwconstituency', metadata, 
+    Column('name', Unicode(100), primary_key=True), 
+    )
+pwperson_table = Table('pwperson', metadata, 
+    Column('id', String(100), primary_key=True), 
+    Column('name', Unicode(100)), 
+    )
+
 # these are the vested entities (nations for UN, or MPs for Parliament)
 member_table = Table('member', metadata, 
     #Column('id', Integer, primary_key=True), # get rid of name as non-duplicating so we can match by date (eg for Switzerland)
-    Column('name',      Unicode(200), primary_key=True),
+    Column('name',      Unicode(300), primary_key=True), 
     Column('sname',     String(100)), # simplified name (used in the URL -- should we use wpname instead?)
     Column('flagof',    String(200)), # links to the flag we use here
     Column('isnation',  Boolean),
@@ -101,14 +112,17 @@ member_table = Table('member', metadata,
     Column('started',   Date),  # date entered
     Column('finished',  Date),  # date left
     Column('url',       Text), # to the permanent mission 
-    Column('wpname',    String(100)), # this will also be a primary_key
+    Column('wpname',    String(100)), # this could instead be a primary_key
 
     Column('successor_member', Unicode(100), ForeignKey('member.name')),  # Foreign key to self
     
     # publicwhip things
-    #Column('representing', String(100), ForeignKey to constituencies), 
-    #Column('party', String(100), ForeignKey to constituencies), 
-     )
+    Column('pwrepresenting', Unicode(100), ForeignKey('pwconstituency.name')), 
+    Column('pwparty', Unicode(100)), 
+    Column('pwperson_fullname', Unicode(100)), 
+    Column('pwperson_id', Unicode(100), ForeignKey('pwperson.id')), 
+    )
+
 
 ambassador_table = Table('ambassador', metadata, 
     Column('id', Integer, primary_key=True), 
@@ -211,6 +225,12 @@ class Ambassador(object):
 class IncomingLinks(object):
     pass
 
+class PWConstituency(object):
+    pass
+
+class PWPerson(object):
+    pass
+
 
 mapper = Session.mapper
 
@@ -294,6 +314,14 @@ mapper(MemberCommittee, membercommittee_table)
 mapper(DocumentRefDocument, documentRefdocument)
 
 mapper(IncomingLinks, incoming_links_table)
+
+mapper(PWConstituency, pwconstituency_table, properties={
+    'mps':relation(Member, primaryjoin=pwconstituency_table.c.name==member_table.c.pwrepresenting), 
+    })
+
+mapper(PWPerson, pwperson_table, properties={
+    'seats':relation(Member, primaryjoin=pwperson_table.c.id==member_table.c.pwperson_id), 
+    })
 
 
 # probably some fancy mapper could do this

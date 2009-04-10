@@ -113,10 +113,20 @@ class MeetingController(BaseController):
                 elif c.body == "SC" and speakername == "The President":
                     nation = c.councilpresident["nation"]
                 else:
-                    nation =  None
+                    nation = None
+                
+                if nation:
+                    flagof = nation.flagof
+                elif re.match("The Secretary-General", speakername):
+                    flagof = "Flag_of_United_Nations.png"
+                elif c.body == "GA" and re.match("The (?:Acting |Temporary )?President|The Secretary-General", speakername):
+                    flagof = "Flag_of_United_Nations.png"
+                else:
+                    flagof = "Flag_of_Unknown.png"
+                
                 
                 c.bodytext.append({"divclass":"speech", "gid":fgid, "speakername":speakername, "nation":nation, 
-                                   "nationtype":mspek.group(2), "speakernation":speakernation, 
+                                   "nationtype":mspek.group(2), "speakernation":speakernation, "flagof":flagof, 
                                    "language":mspek.group(4), "paragraphs":paragraphs, "spoketext":spoketext })
                 
             elif fclass == "italicline":
@@ -149,6 +159,7 @@ class MeetingController(BaseController):
         if re.match("Exception:", ftext):
             return ftext
 
+        c.document = document
         c.body = document.body
         if document.body == "SC":
             c.longbody = "Security Council"

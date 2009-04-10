@@ -35,10 +35,18 @@
   <li py:if="c.cdocattr.webcastlink"><a href="${c.cdocattr.webcastlink}" title="Goto entry in list of webcasts">Webcast Video</a></li>
   <li>&nbsp;</li>
 
+  <li><a href="${h.url_for('meetingmonth', year=c.cdocattr.date[:4], month=c.cdocattr.date[5:7])}">Meetings for entire month</a></li>
   <li py:if="c.body=='SC'"><a href="${h.url_for('sctopics')}">All SC topics</a></li>
-  <li py:if="c.body=='SC'"><a href="${h.url_for('documentsscyear', year=c.cdocattr.date[:4])}">$(cdocattr.year}</a></li>
+  <li py:if="c.body=='SC'"><a href="${h.url_for('documentsscyear', year=c.cdocattr.date[:4])}">Documents of ${c.cdocattr.date[:4]}</a></li>
   <li py:if="c.body=='GA'"><a href="${h.url_for('documentsgasession', session=c.session)}">All GA session</a></li>
 </ul>
+
+<div py:if="c.body=='GA' and not c.href" class="meetingsindoc">
+  <h3>Topics in this meeting</h3>
+  <ul>
+    <li py:for="meeting in c.document.meetings"><a href="#${meeting.href}">${h.truncate(meeting.title, 50)}</a></li>
+  </ul>
+</div>
 
 <div id="metadoclinks">
   <h3>Links for full page</h3>
@@ -125,10 +133,10 @@
 
 <py:when test="bodyblock.divclass=='speech'">
   <cite>
-    <img class="smallflag" src="/png100/${bodyblock.nation.flagof}"/>
+    <img class="smallflag" src="/png100/${bodyblock.flagof}"/>
     <span class="name">${bodyblock.speakername}</span>
-
     <span py:if="bodyblock.speakernation" class="nation">(<a href="${h.url_for('nation', snation=bodyblock.nation.sname)}">${bodyblock.speakernation}</a>)</span>
+    <span py:if="bodyblock.nation.wpname" class="wikination">${bodyblock.nation.wpname}</span>
   </cite>
 </py:when>
 

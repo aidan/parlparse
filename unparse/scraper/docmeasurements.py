@@ -12,7 +12,7 @@ import datetime
 import unpylons.model as model   
 
 # Main file
-def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir):
+def WriteDocMeasurements(stem, bforcedocmeasurements, htmldir, pdfdir):
     
     # make full list of parsed and non-parsed documents (due to bad svn update on unparse)
     docids = set()

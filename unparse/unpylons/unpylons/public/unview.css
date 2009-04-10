@@ -438,6 +438,11 @@ div.otheraglink a
 	{
 	font-size: 0.75em;
 	}
+.speech cite .wikination
+    {
+    visibility:hide;
+    background-color:black;
+    }
 .speech p
 	{
 	margin-top: 0.5em;
@@ -941,3 +946,32 @@ table.special td
     padding: 4px;
 }
 
+
+table.monthyear
+{
+    margin-top:1em;
+    border-collapse: collapse;
+}
+table.monthyear th
+{
+    color:white;
+    background-color:#555;
+}
+table.monthyear td
+{
+    border:thin black solid;
+}
+table.monthyear td.referencescol
+{
+    font-size:50%;
+}
+
+div.meetingsindoc ul
+{
+    margin:1em;
+    list-style-type: disc;
+}
+div.meetingsindoc li
+{
+    margin:10px;
+}

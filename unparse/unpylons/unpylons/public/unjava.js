@@ -194,6 +194,7 @@ function GetDocAttributesFromBlock(docattributes, me)
             SetDocAttributePrez(docattributes, "name", "speakername", node);
             SetDocAttributePrez(docattributes, "nation", "speakernation", node);
             SetDocAttributePrez(docattributes, "language", "speakerlanguage", node);
+            SetDocAttributePrez(docattributes, "wikination", "wikination", node);
         }); 
         if (docattributes["speakernation"])
             docattributes["speakernation"] = docattributes["speakernation"].replace(/[()]/g, "");
@@ -242,8 +243,8 @@ function wikival(docattributes)
 
     if (docattributes["speakername"])
         res += " |speakername=" + docattributes["speakername"];
-    if (docattributes["speakernation"])
-        res += " | speakernation=" + docattributes["speakernation"]; 
+    if (docattributes["wikination"])
+        res += " | speakernation=[[" + docattributes["wikination"] + "]]"; 
 
     
     tday = new Date();

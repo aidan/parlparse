@@ -15,7 +15,6 @@ from optparse import OptionParser
 from unscrape import ScrapeContentsPageFromStem, ScrapePDF, ConvertXML
 from unmisc import unexception, IsNotQuiet, SetQuiet, SetCallScrape, undatadir, pdfdir, pdfxmldir, htmldir, xapdir, commentsdir, pdfpreviewdir, pdfinfodir, indexstuffdir, tmppdfpreviewdir
 from nations import PrintNonnationOccurrances
-from unindex import MiscIndexFiles
 from xapdex import GoXapdex
 from pdfimgmake import GenerateDocimages
 from votedistances import WriteVoteDistances
@@ -26,6 +25,8 @@ from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from nationdatasucker import ScrapePermMissions, NationDataSucker
 
+from parliamentloader import LoadMPs
+
 parser = OptionParser()
 parser.set_usage("""
 
@@ -33,20 +34,21 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   scrape  do the downloads
   cxml    do the pdf conversion
   parse   do the parsing
-  cleardb clear the whole database
-  xapdex  call the xapian indexing system
-  votedistances generate voting distances table for java applet
-  docmeasurements generate measurements of quantities of documents;
-            created as a set of tables in docmeasurements.html in undata
-            used for inserting into the webpage
-  agendanames generate page containing agenda summaries
-  scsummaries scrape and generate summary index for security council
-  nationdata generates speeches/urls about nations
-  docimages generate document images in undata/pdfpreview
+  cleardb         clear the whole database
+  nationdata      generates speeches/urls about nations
+  docmeasurements scan pdf and html documents for data
+  agendanames     generate page containing agenda summaries
+  scsummaries     scrape and generate summary index for security council
 
+  loadmps   load wesminster mps into same database
+  
 --stem selects what is processed.
   scrape --stem=S-[YEAR]-PV
 """)
+
+#  docimages       generate document images in undata/pdfpreview
+#  votedistances   generate voting distances table for java applet
+#  xapdex  call the xapian indexing system
 
 #  index   generate miscellaneous index files
 #  wpscrape  scrape for UN translocutions from wikipedia
@@ -99,6 +101,7 @@ stem = re.sub("\.", "\.", options.stem)
 #print options, args
 SetQuiet(options.quiet)
 SetCallScrape(options.scrapelinks)
+
 bScrape = "scrape" in args
 bConvertXML = "cxml" in args
 bParse = "parse" in args
@@ -107,23 +110,23 @@ bClearDB = "cleardb" in args
 bDocMeasurements = "docmeasurements" in args
 bAgendanames = "agendanames" in args
 bDocimages = "docimages" in args
-bIndexfiles = "index" in args
 bScrapewp = "wpscrape" in args
 bSCsummaries = "scsummaries" in args
 bGAsummaries = "gasummaries" in args
 bNationData = "nationdata" in args
 bVoteDistances = "votedistances" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bClearDB or bXapdex or bIndexfiles or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries):
+bLoadMPs = "loadmps" in args
+
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bClearDB or bXapdex or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries or bLoadMPs):
     parser.print_help()
     sys.exit(1)
 
 # lack of stem means we do special daily update
 if bScrape:
     if not options.stem and not options.scrapedoc:  # default case
-        ScrapeContentsPageFromStem("A-62-PV")
         ScrapeContentsPageFromStem("A-63-PV")
-        ScrapeContentsPageFromStem("S-2008-PV")
+        ScrapeContentsPageFromStem("S-2009-PV")
     if options.scrapedoc:
         ScrapePDF(options.scrapedoc, bforce=False)
     if options.stem:
@@ -166,13 +169,14 @@ if bSCsummaries:
 
 # makes docmeasurements.html, docyears/ and backpointers in pdfinfo/
 if bDocMeasurements:
-    WriteDocMeasurements(stem, options.forcedocmeasurements, htmldir, pdfdir, pdfinfodir, indexstuffdir)  # number of documents in each year of each type
+    WriteDocMeasurements(stem, options.forcedocmeasurements, htmldir, pdfdir)  # number of documents in each year of each type
 
 if bAgendanames:
     WriteAgendaSummaries(stem, htmldir)  # number of documents in each year of each type
 
 
 # I think this is a new one just for early sessions where they list summary names for all the resolutions
+# in capital letters.  Not currently incorporated into the system.
 if bGAsummaries:
     agsummariesdir = os.path.join(indexstuffdir, "gasummariesdir")
     if not os.path.isdir(agsummariesdir):
@@ -200,6 +204,6 @@ if bDocimages:
 if bScrapewp:
     FetchWikiBacklinks(commentsdir)
 
-if bIndexfiles:  # just for making the big index.html pages used in preview
-    MiscIndexFiles(htmldir)
+if bLoadMPs:
+    LoadMPs()
 

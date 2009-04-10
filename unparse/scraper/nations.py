@@ -102,7 +102,7 @@ def GenerateNationsVoteList(vlfavour, vlagainst, vlabstain, sdate, paranum, secc
             nationvotes[nation] = "absent"
     else:  # general assembly case
         for nation, dr in nationdates.iteritems():
-            if dr["Date entered UN"] <= sdate < dr["Date left UN"]:
+            if dr["Date entered UN"].isoformat() <= sdate < dr["Date left UN"].isoformat():
                 nationvotes[nation] = "absent"
 
     #print "\n\n\n"
@@ -487,3 +487,6 @@ nonnationscount["Organization for Security and Co-operation in Europe"] = 0
 nonnationscount["Department of General Assembly and Conference Management"] = 0
 nonnationscount["Dushirehamwe Association"] = 0
 nonnationscount["Rede Feto"] = 0
+nonnationscount["Women for Women International"] = 0
+nonnationscount["Network of African Women for Peace"] = 0
+nonnationscount["Joint United nations Programme on HIV-AIDS"] = 0

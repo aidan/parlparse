@@ -10,12 +10,7 @@ import datetime
 from unscrape import ScrapePDF
 from pdfinfo import PdfInfo
 
-currentdate = datetime.date.today()
-currentyear = currentdate.year
-currentmonth = currentdate.month
-currentsess = currentyear - 1946
-if currentmonth >= 9:
-    currentsess += 1
+from unpylons.model import currentyear, currentmonth, currentsession
 
 monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -27,11 +22,11 @@ def GASummariesURL(sess):
     return "http://www.un.org/documents/ga/res/%d/ares%d.htm" % (sess, sess)
 
 def ScrapeGASummaries(gasummariesdir):
-    for sess in range(1, currentsess + 1):
+    for sess in range(1, currentsession + 1):
         f = os.path.join(gasummariesdir, "gaact%d.html" % sess)
         url = GASummariesURL(sess)
 
-        if sess == currentsess or (sess == currentsess - 1 and currentmonth == 9) or not os.path.isfile(f):
+        if sess == currentsession or (sess == currentsession - 1 and currentmonth == 9) or not os.path.isfile(f):
             if IsNotQuiet():
                 print "Scraping", url
             fin = urllib2.urlopen(url)
