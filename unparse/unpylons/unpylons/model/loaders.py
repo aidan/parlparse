@@ -122,7 +122,7 @@ def EnsureMemberExists(membername, date):
     if not m:
         print "Constructing member::", membername
         m = Member(name=unicode(membername))
-        m.sname = membername.lower().replace(" ", "_").replace("'", "")
+        m.sname = membername.lower().replace(" ", "_").replace("'", "")[:99]
         m.isnation = False
         Session.flush()
     return m
@@ -281,6 +281,7 @@ def ProcessParsedDocumentPylon(document, ftext):
             
             membername = mm.group(3) or None 
             if membername:
+                membername = membername[:99]
                 member = EnsureMemberExists(membername, document.date)
                 if member.isnation != (not mm.group(2)):
                     # we'll allow Switzerland to exist outside of its membership status (when it couldn't vote, but was an observer)
