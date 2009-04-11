@@ -16,6 +16,7 @@ except:
 import re  # also imported already in textile
 import os
 import datetime
+import unpylons.model as model
 
 undatadir = "/home/goatchurch/undemocracy/undata"  # should come from config
 root_url = "http://www.undemocracy.com" # should come from config
@@ -55,7 +56,8 @@ def url_for_doc(docid):
         return ""
     mgameeting = re.match("A.(\d+).PV.(\d+)$", docid)
     mscmeeting = re.match("S.PV.(\d.*)$", docid)
-    if mgameeting and int(mgameeting.group(1)) >= 49 and os.path.isfile(os.path.join(undatadir, "html", docid + ".html")):
+    if mgameeting and list(model.Meeting.query.filter_by(docid=docid)):
+    #int(mgameeting.group(1)) >= 49 and os.path.isfile(os.path.join(undatadir, "html", docid + ".html")):
         return url_for('gameeting', session=mgameeting.group(1), meeting=mgameeting.group(2))
     if mscmeeting:
         return url_for('scmeeting', scmeetingnumber=mscmeeting.group(1))
