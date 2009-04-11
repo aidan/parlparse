@@ -136,7 +136,7 @@
     <img class="smallflag" src="/png100/${bodyblock.flagof}"/>
     <span class="name">${bodyblock.speakername}</span>
     <span py:if="bodyblock.speakernation" class="nation">(<a href="${h.url_for('nation', snation=bodyblock.nation.sname)}">${bodyblock.speakernation}</a>)</span>
-    <span py:if="bodyblock.nation.wpname" class="wikination">${bodyblock.nation.wpname}</span>
+    <span py:if="bodyblock.nation and bodyblock.nation.wpname" class="wikination">${bodyblock.nation.wpname}</span>
   </cite>
 </py:when>
 
