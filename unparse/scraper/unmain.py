@@ -25,7 +25,7 @@ from gasummaries import ScrapeGASummaries, ParseScrapeGASummaries
 from wpediaget import FetchWikiBacklinks
 from nationdatasucker import ScrapePermMissions, NationDataSucker
 
-from parliamentloader import LoadMPs
+from parliamentloader import LoadMPs, LoadParliamentaryDebates
 
 parser = OptionParser()
 parser.set_usage("""
@@ -40,7 +40,8 @@ Parses and scrapes UN verbatim reports of General Assembly and Security Council
   agendanames     generate page containing agenda summaries
   scsummaries     scrape and generate summary index for security council
 
-  loadmps   load wesminster mps into same database
+  loadmps   load westminster mps into same database
+  loadparl  load westminster parliamentary debates
   
 --stem selects what is processed.
   scrape --stem=S-[YEAR]-PV
@@ -117,8 +118,9 @@ bNationData = "nationdata" in args
 bVoteDistances = "votedistances" in args
 
 bLoadMPs = "loadmps" in args
+bLoadParliamentaryDebates = "loadparl" in args
 
-if not (bScrape or bConvertXML or bParse or bVoteDistances or bClearDB or bXapdex or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries or bLoadMPs):
+if not (bScrape or bConvertXML or bParse or bVoteDistances or bClearDB or bXapdex or bDocMeasurements or bDocimages or bScrapewp or bAgendanames or bSCsummaries or bNationData or bGAsummaries or bLoadMPs or bLoadParliamentaryDebates):
     parser.print_help()
     sys.exit(1)
 
@@ -207,3 +209,7 @@ if bScrapewp:
 if bLoadMPs:
     LoadMPs()
 
+if bLoadParliamentaryDebates:
+    LoadParliamentaryDebates(stem, options.forceparse)
+    
+    

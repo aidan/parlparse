@@ -49,7 +49,11 @@ def make_map():
 
 # look in loaders for the drop database
 
-    map.connect('mps',      'mps', controller='publicwhip', action='mps')
+    map.connect('members',      'members/:term', controller='publicwhip', action='members', term="2005")
+    map.connect('member',       'member/:sname', controller='publicwhip', action='member')
+    map.connect('divisions',    'divisions/:term',controller='publicwhip',action='divisions', term="2005")
+    map.connect('division',     'division/:date/:house/:number',   controller='publicwhip',    action='division', house="commons", number="0")
+    map.connect('pwdebate',     'debate/:date/:house/:meetinghref',controller='publicwhip',    action='meeting',  house="commons", meetinghref="")
 
     map.connect('nationscontinent',  'nations/bycontinent', controller='nation', action='nationscontinent')
     map.connect('nations',  'nations',          controller='nation', action='nations')

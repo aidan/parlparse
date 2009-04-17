@@ -93,9 +93,11 @@ documentRefdocument = Table('documentRefdocument', metadata,
 pwconstituency_table = Table('pwconstituency', metadata, 
     Column('name', Unicode(100), primary_key=True), 
     )
+    
 pwperson_table = Table('pwperson', metadata, 
     Column('id', String(100), primary_key=True), 
     Column('name', Unicode(100)), 
+    Column('sname', Unicode(100)), 
     )
 
 # these are the vested entities (nations for UN, or MPs for Parliament)
@@ -104,9 +106,13 @@ member_table = Table('member', metadata,
     Column('name',      Unicode(300), primary_key=True), 
     Column('sname',     String(100)), # simplified name (used in the URL -- should we use wpname instead?)
     Column('flagof',    String(200)), # links to the flag we use here
-    Column('isnation',  Boolean),
+    Column('house',     String(20)),  # UNunknown, UNmember, UNobserver, PWcommons, PWlords -- should this be body?
+    
+# get rid of these
     Column('countrycode2',  String(10)), # two letter country code
     Column('countrycode3',  String(10)), # three letter country code
+    
+# party    
     Column('countrycontinent',  String(10)), # 2 letter continent code AF, AS, EU, NA, OC, SA
     
     Column('started',   Date),  # date entered
@@ -116,11 +122,14 @@ member_table = Table('member', metadata,
 
     Column('successor_member', Unicode(100), ForeignKey('member.name')),  # Foreign key to self
     
-    # publicwhip things
-    Column('pwrepresenting', Unicode(100), ForeignKey('pwconstituency.name')), 
-    Column('pwparty', Unicode(100)), 
+# publicwhip things
+    Column('pwtitle',       Unicode(100)), 
+    Column('pwfirstname',   Unicode(100)), 
+    Column('pwlastname',    Unicode(100)), 
+    Column('pwrepresenting',Unicode(100), ForeignKey('pwconstituency.name')), 
+    Column('pwparty',       Unicode(100)), 
     Column('pwperson_fullname', Unicode(100)), 
-    Column('pwperson_id', Unicode(100), ForeignKey('pwperson.id')), 
+    Column('pwperson_id',   Unicode(100), ForeignKey('pwperson.id')), 
     )
 
 
@@ -164,6 +173,8 @@ division_table = Table('division', metadata,
     Column('against',       Integer), 
     Column('abstain',       Integer), 
     Column('absent',        Integer), 
+    
+    Column('datetime',      DateTime),  # added for publicwhip
     )
     
 vote_table = Table('vote', metadata, 
@@ -174,7 +185,7 @@ vote_table = Table('vote', metadata,
     Column('orgvote', String(10)),  # when the vote was initially wrong
     
     Column('isteller', Boolean),    # not used in UN
-    Column('minority_score', Numeric), 
+    Column('minority_score', Float), 
     )
     
 # this is user-generated use data (might want to back it up in a logfile which gets reparsed)
@@ -251,6 +262,11 @@ mapper(Meeting, meeting_table, properties={
             (documentRefdocument.c.document1_docid,document_table.c.docid)
             ],
         viewonly=True),
+    
+    'divisions':relation(Division, primaryjoin=meeting_table.c.docidhref==division_table.c.meeting_docidhref,
+        viewonly=True),
+    'speeches':relation(Speech, primaryjoin=meeting_table.c.docidhref==speech_table.c.meeting_docidhref,
+        viewonly=True),
     }, order_by=meeting_table.c.datetime)
 
 mapper(Topic, topic_table, properties={
@@ -278,6 +294,11 @@ mapper(Document, document_table, properties={
         foreign_keys=[documentRefdocument.c.document2_docid,
             documentRefdocument.c.meeting1_docidhref], 
         viewonly=True),
+    
+    'divisions':relation(Division, primaryjoin=document_table.c.docid==division_table.c.docid,
+        viewonly=True),
+    'speeches':relation(Speech, primaryjoin=document_table.c.docid==speech_table.c.docid,
+        viewonly=True),
     })
 
 mapper(Member, member_table, properties={
@@ -285,11 +306,15 @@ mapper(Member, member_table, properties={
     'votes':relation(Vote, primaryjoin=member_table.c.name==vote_table.c.member_name),
     'committees':relation(MemberCommittee, primaryjoin=member_table.c.name==membercommittee_table.c.member_name),
     'ambassadors':relation(Ambassador, primaryjoin=member_table.c.name==ambassador_table.c.member_name, viewonly=True, order_by=[ambassador_table.c.lastname]),
+    
+    'constituency':relation(PWConstituency, primaryjoin=member_table.c.pwrepresenting==pwconstituency_table.c.name), 
+    'pwperson':relation(PWPerson, primaryjoin=member_table.c.pwperson_id==pwperson_table.c.id), 
     })
 
 mapper(Speech, speech_table, properties={
     'document':relation(Document, primaryjoin=speech_table.c.docid==document_table.c.docid), 
     'meeting':relation(Meeting, primaryjoin=speech_table.c.meeting_docidhref==meeting_table.c.docidhref), 
+    'member':relation(Member, primaryjoin=speech_table.c.member_name==member_table.c.name), 
     'ambassador':relation(Ambassador, primaryjoin=speech_table.c.ambassador_id==ambassador_table.c.id), 
     })
 
@@ -300,8 +325,8 @@ mapper(Ambassador, ambassador_table, properties={
 
 mapper(Division, division_table, properties={
     'document':relation(Document, primaryjoin=division_table.c.docid==document_table.c.docid), 
-    'votes':relation(Vote, primaryjoin=vote_table.c.docidhref==division_table.c.docidhref), 
     'meeting':relation(Meeting, primaryjoin=division_table.c.meeting_docidhref==meeting_table.c.docidhref), 
+    'votes':relation(Vote, primaryjoin=vote_table.c.docidhref==division_table.c.docidhref), 
     })
 
 mapper(Vote, vote_table, properties={
@@ -320,7 +345,7 @@ mapper(PWConstituency, pwconstituency_table, properties={
     })
 
 mapper(PWPerson, pwperson_table, properties={
-    'seats':relation(Member, primaryjoin=pwperson_table.c.id==member_table.c.pwperson_id), 
+    'seats':relation(Member, primaryjoin=pwperson_table.c.id==member_table.c.pwperson_id, order_by=[member_table.c.finished]) , 
     })
 
 

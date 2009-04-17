@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Meeting page</py:def>
+
+<div py:match="content">
+<div id="publicwhip">
+<div id="identity" py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+
+<div py:for="block in c.blocks" class="block-${rowcls.next()} ${block.divclass}">
+<py:choose test="">
+
+<h2 py:when="block.divclass=='heading'"  class="${block.divclass}">
+  ${block.meeting.title}
+</h2>
+
+<py:when test="block.divclass">
+  <div class="memberpic">
+    Member: <a py:if="block.member" href="${h.url_for('member', sname=block.member.pwperson.sname)}">${block.member.pwperson_fullname}</a>
+  </div>
+  <p py:for="paragraph in block.paragraphs">
+    ${paragraph}
+  </p>
+</py:when>
+
+<py:when test="block.divclass=='division'">
+  <p>DIVISION</p>
+</py:when>
+
+</py:choose>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<xi:include href="pwlayout.html" />
+</html>
+

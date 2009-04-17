@@ -12,7 +12,7 @@ import unpylons.model as model
 # convert the mapping of nations into a local object for lookup (legacy code as it used to do it by loading a CSV)
 # we could upgrade it in due course to use m = Member.query.filter_by(name=name).first()
 nationdates = { }
-for nation in model.Member.query.filter_by(isnation=True).all():
+for nation in model.Member.query.filter_by(house="UNmember").all():
     nationdates[nation.name] = { "Date entered UN":nation.started, "Date left UN":nation.finished }
 
 
@@ -20,7 +20,7 @@ for nation in model.Member.query.filter_by(isnation=True).all():
 nationmapping = {
         "United Kingdom of Great Britain and Northern Ireland":"United Kingdom",
         u"C\xf4te d'Ivoire":"Cote d'Ivoire",
-        "C\xf4te d'Ivoire":"Cote d'Ivoire",
+        #"C\xf4te d'Ivoire":"Cote d'Ivoire",
         "the former Yugoslav Republic of Macedonia":"The former Yugoslav Republic of Macedonia",
         "Federal Republic of Yugoslavia":"Yugoslavia",
         "Syrian Arab Republic":"Syria",

@@ -17,6 +17,7 @@ import re  # also imported already in textile
 import os
 import datetime
 import unpylons.model as model
+import itertools
 
 undatadir = "/home/goatchurch/undemocracy/undata"  # should come from config
 root_url = "http://www.undemocracy.com" # should come from config

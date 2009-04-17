@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Division page</py:def>
+
+<div py:match="content">
+
+<div id="publicwhip">
+
+<div id="identity">
+  <h1>${c.division.description}</h1>
+  <h2>${c.division.meeting.title}</h2>
+</div>
+
+<table py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+<tr py:for="vote in c.votes" class="${rowcls.next()}">
+  <td><a href="${h.url_for('member', sname=vote.member.pwperson.sname)}">${vote.member.pwperson_fullname}</a></td>
+  <td>${vote.member.pwperson_fullname}</td>
+  <td>${vote.member.constituency.name}</td>
+  <td>${vote.member.pwparty}</td>
+  <td>${vote.vote}</td>
+  <td class="${vote.minority_score &lt; 0.5 and 'rebel' or ''}">${vote.minority_score}</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<xi:include href="pwlayout.html" />
+</html>
+

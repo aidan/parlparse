@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">List of mps</py:def>
+
+<div py:match="content">
+
+<div id="publicwhip">
+
+<div id="identity">
+  <h1>page for ${c.person.name}</h1>
+</div>
+
+<h2>Seats held</h2>
+
+<table>
+<tr py:for="seat in c.person.seats">
+  <td>${seat.started}</td>
+  <td>${seat.finished}</td>
+  <td>${seat.pwperson_fullname}</td>
+  <td>${seat.constituency.name}</td>
+  <td>${seat.pwparty}</td>
+</tr>
+</table>
+
+<h2>Votes cast</h2>
+
+<table py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+<tr py:for="vote in c.votes" py:if="vote.vote != 'absent'" class="${rowcls.next()}">
+  <td>${vote.division.datetime}</td>
+  <td><a href="${h.url_for('division', date=vote.division.datetime.date().isoformat(), house='commons', number=vote.division.description[44:])}">${vote.division.meeting.title}</a></td>
+  <td>${c.VoteMajority(vote)}</td>
+  <td class="${vote.minority_score &lt; 0.5 and 'rebel' or ''}">${vote.minority_score}</td>
+</tr>
+</table>
+
+<h2>Speeches made</h2>
+
+<table py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+<tr py:for="meeting in c.meetingsspoken" class="${rowcls.next()}">
+  <td>${meeting.datetime}</td>
+  <td><a href="${h.url_for('pwdebate', date=meeting.document.date, house='commons', meetinghref=meeting.href)}">${meeting.title}</a></td>
+  <td>${meeting.docid}</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<xi:include href="pwlayout.html" />
+</html>
+

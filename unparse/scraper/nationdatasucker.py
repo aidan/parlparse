@@ -379,7 +379,7 @@ def NationDataSucker():
     
     permmissions = ParsePermMissions()
     
-    print "Nation count start:", len(model.Member.query.filter_by(isnation=True).all()), 
+    print "Nation count start:", len(model.Member.query.filter_by(house="UNmember").all()), 
     
     for unname in sorted(unstates.keys()):
         #print "nation", unname
@@ -387,7 +387,7 @@ def NationDataSucker():
         if not m:
             m = model.Member(name=unicode(unname))
         m.sname = unname.lower().replace(" ", "_").replace("'", "")
-        m.isnation = True
+        m.house = "UNmember"
         m.url = GetPermanentMission(unname, permmissions)
         m.flagof = "Flag_of_" + unname.replace(' ', '_') + ".png"
         
@@ -416,7 +416,7 @@ def NationDataSucker():
 
         model.Session.flush()
     
-    print "end:", len(model.Member.query.filter_by(isnation=True).all())
+    print "end:", len(model.Member.query.filter_by(house="UNmember").all())
 
     LoadSecurityCouncil()
 

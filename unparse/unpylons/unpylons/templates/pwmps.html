@@ -10,12 +10,19 @@
 
 <div id="publicwhip">
 
-<table>
-<tr py:for="mp in c.mps">
-  <td>${mp.pwperson_fullname}</td>
-  <td>${mp.started}</td>
-  <td>${mp.pwparty}</td>
-  <td>${mp.pwrepresenting.name}</td>
+<div id="identity">
+  <h1>All MPs for ${c.termfrom} - ${c.termto}</h1>
+</div>
+
+<p>Terms: <py:for each="term in ['1997', '2001', '2005']"><a href="${h.url_for('members', term=term)}">${term}</a> </py:for></p>
+
+<table py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+<tr py:for="person in c.persons" py:with="currentseat=person.seats[-1]" class="${rowcls.next()}">
+  <td><a href="${h.url_for('member', sname=person.sname)}">${person.name}</a></td>
+  <td py:if="currentseat.house == 'PWcommons'">${currentseat.constituency.name}</td>
+  <td py:if="currentseat.house == 'PWlords'"><i>Lord</i></td>
+  <td>${currentseat.pwparty}</td>
+  <td>${currentseat.started} - ${currentseat.finished}</td>
 </tr>
 </table>
 

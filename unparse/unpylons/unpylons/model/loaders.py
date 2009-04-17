@@ -123,7 +123,7 @@ def EnsureMemberExists(membername, date):
         print "Constructing member::", membername
         m = Member(name=unicode(membername))
         m.sname = membername.lower().replace(" ", "_").replace("'", "")[:99]
-        m.isnation = False
+        m.house = "UNunknown"
         Session.flush()
     return m
 
@@ -283,9 +283,9 @@ def ProcessParsedDocumentPylon(document, ftext):
             if membername:
                 membername = membername[:99]
                 member = EnsureMemberExists(membername, document.date)
-                if member.isnation != (not mm.group(2)):
+                #if member.house == "UNunknown":
                     # we'll allow Switzerland to exist outside of its membership status (when it couldn't vote, but was an observer)
-                    assert membername == "Switzerland", "\n\n\n\n ***  Disagreed member " + membername + "\n\n" + mm.group(0)
+                #    assert membername == "Switzerland", "\n\n\n\n ***  Disagreed member " + membername + "\n\n" + mm.group(0)
                 
                 ambassador = Ambassador.query.filter_by(lastname=lastname).filter_by(member=member).first()
                 if not ambassador:

@@ -8,18 +8,18 @@ log = logging.getLogger(__name__)
 class NationController(BaseController):
 
     def nations(self):
-        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
+        c.nations = list(model.Member.query.filter_by(house="UNmember").filter_by(finished="9999-12-31"))
         c.ncols = 4
         c.colleng = int((len(c.nations) + c.ncols - 1) / c.ncols)
         
-        c.defunctnations = list(model.Member.query.filter_by(isnation=True).filter(model.Member.finished!="9999-12-31"))
+        c.defunctnations = list(model.Member.query.filter_by(house="UNmember").filter(model.Member.finished!="9999-12-31"))
         
-        c.nonnations = list(model.Member.query.filter_by(isnation=False))
+        c.nonnations = list(model.Member.query.filter_by(house="UNunknown"))
 
         return render('nations')
     
     def nationscontinent(self):
-        c.nations = list(model.Member.query.filter_by(isnation=True).filter_by(finished="9999-12-31"))
+        c.nations = list(model.Member.query.filter_by(house="UNmember").filter_by(finished="9999-12-31"))
         c.ncols = 3
         c.nationscontinent = [ ]
         for continentcode, continent in [("AF", "Africa"), ("AS", "Asia"), ("EU", "European Union"), ("NA", "North America"), ("OC", "Oceania"), ("SA", "South America")]:

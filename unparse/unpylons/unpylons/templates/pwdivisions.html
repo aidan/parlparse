@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">List of mps</py:def>
+
+<div py:match="content">
+
+<div id="publicwhip">
+
+<div id="identity">
+  <h1>All Divisions for ${c.termfrom} - ${c.termto}</h1>
+</div>
+
+<p>Terms: <py:for each="term in ['1997', '2001', '2005']"><a href="${h.url_for('divisions', term=term)}">${term}</a> </py:for></p>
+
+<table py:with="rowcls=h.itertools.cycle(('bright', 'dark'))">
+<tr py:for="division in c.divisions" class="${rowcls.next()}">
+  <td>${division.body}</td>
+  <td>${division.datetime}</td>
+  <td><a href="${h.url_for('division', date=division.datetime.date().isoformat(), house='commons', number=division.description[44:])}">${division.meeting.title}</a></td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<xi:include href="pwlayout.html" />
+</html>
+
