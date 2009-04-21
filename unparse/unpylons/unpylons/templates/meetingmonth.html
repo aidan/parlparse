@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="en"
+      py:strip="">
+  
+<py:def function="page_title">Meetings for year: ${c.year}  month: ${c.month}</py:def>
+
+<div py:match="content">
+
+<h1>Meetings for year: ${c.year}  month: ${c.month}</h1>
+
+<p>
+  <a href="${h.url_for('meetingmonth', year=c.yearprev, month=c.monthprev)}">Previous month</a> | 
+  <a href="${h.url_for('meetingmonth', year=c.yearnext, month=c.monthnext)}">Next month</a>
+</p>
+
+<table class="monthyear">
+<tr>
+  <th>Date</th>
+  <th>Body</th>
+  <th>Meeting title</th>
+  <th>Referenced documents</th>
+</tr>
+<tr py:for="meeting in c.meetings">
+  <td>${meeting.datetime}</td>
+
+  <py:choose test="">
+  <py:when test="meeting.body == 'GA'">
+    <td><b>GA</b></td>
+    <td><a href="${h.url_for('gameeting', session=meeting.session, meeting=meeting.meetingnumber)}#${meeting.href}">${h.truncate(meeting.title, 50)}</a></td>
+  </py:when>
+  <py:when test="meeting.body == 'SC'">
+    <td><b>SC</b></td>
+    <td><a href="${h.url_for('scmeeting', scmeetingnumber=meeting.meetingnumber)}">${meeting.title}</a></td>
+  </py:when>
+  <py:otherwise>
+    <td>WHAT?</td>
+  </py:otherwise>
+  </py:choose>
+
+  <td class="referencescol">
+    <py:for each="reference in meeting.references"><a href="h.url_for_doc(reference.docid)">${reference.docid}</a></py:for>
+  </td>
+</tr>
+</table>
+
+<div py:for="topic in c.topics">
+  <p><a href="${h.url_for('gaagenda', agendanum=topic.agendanum)}">${topic.name}</a></p>
+  <p style="margin-left:20px; font-size:80%">
+  <py:for each="meeting in topic.meetings">
+      <a href="${h.url_for_doc(meeting.docid)}#${meeting.href}">${meeting.datetime.date()}</a>
+  </py:for>
+  </p>
+</div>
+
+</div>
+
+<xi:include href="layout.html" />
+</html>
+
