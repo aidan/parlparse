@@ -28,7 +28,7 @@
 <p style="padding-top: 0.5em;">Using this webpage, you can --</p>
 <ul class="d">
   <li py:if="c.document" class="d"><a href="/pdf/${c.docidq}.pdf">View as PDF</a></li>
-  <li py:if="c.document.docmodifiedtime" class="d">Document modified: ${c.document.docmodifiedtime}.</li>
+  <li py:if="c.document and c.document.docmodifiedtime" class="d">Document modified: ${c.document.docmodifiedtime}.</li>
   <li py:if="c.meeting and c.body == 'SC'" class="d">
     <b>Go to 
       <a href="${h.url_for('scmeeting', scmeetingnumber=c.meeting.meetingnumber)}">parsed HTML</a> of meeting</b>: ${c.document.meetings[0].title}
@@ -38,7 +38,7 @@
       <a href="${h.url_for('gameeting', session=c.meeting.session, meeting=c.meeting.meetingnumber)}">parsed HTML</a> of meeting</b>: ${c.document.meetings[0].title}
   </li>
 
-  <py:if test="c.document.numpages">
+  <py:if test="c.document and c.document.numpages">
   <li class="d">Or click on one of the ${c.document.numpages} individual pages--</li>
   <li class="d">
     <py:for each="page in range(1, min(c.document.numpages, 20))">
