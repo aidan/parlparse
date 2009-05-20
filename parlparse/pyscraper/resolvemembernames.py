@@ -99,13 +99,11 @@ class MemberList(xml.sax.handler.ContentHandler):
             consid = None
             # find the constituency id for this MP
             for consattr in consids:
-                cons_fromdate = len(consattr['fromdate'])==4 and ('%s-01-01' % consattr['fromdate']) or consattr['fromdate']
-                cons_todate = len(consattr['todate'])==4 and ('%s-12-31' % consattr['todate']) or consattr['todate']
                 attr_fromdate = len(attr['fromdate'])==4 and ('%s-01-01' % attr['fromdate']) or attr['fromdate']
                 attr_todate = len(attr['todate'])==4 and ('%s-12-31' % attr['todate']) or attr['todate']
-                if (cons_fromdate <= attr_fromdate and
+                if (consattr['fromdate'] <= attr_fromdate and
                     attr_fromdate <= attr_todate and
-                    attr_todate <= cons_todate):
+                    attr_todate <= consattr['todate']):
                     if consid and consid != consattr['id']:
                         raise Exception, "Two constituency ids %s %s overlap with MP %s" % (consid, consattr['id'], attr['id'])
                     consid = consattr['id']
@@ -180,9 +178,18 @@ class MemberList(xml.sax.handler.ContentHandler):
         elif name == "constituency":
             if attr.has_key('parliament') and attr['parliament'] == "edinburgh":
                 # Then this is a Scottish Parliament constituency...
-                self.loadspconsattr = attr
+                self.loadspconsattr = attr.copy()
             else:
-                self.loadconsattr = attr
+                self.loadconsattr = {
+                    'hansard_id': attr['hansard_id'],
+                    'id': attr['id'],
+                    'fromdate': attr['fromdate'],
+                    'todate': attr['todate'],
+                }
+                if len(self.loadconsattr['fromdate']) == 4:
+                    self.loadconsattr['fromdate'] = '%s-01-01' % self.loadconsattr['fromdate']
+                if len(self.loadconsattr['todate']) == 4:
+                    self.loadconsattr['todate'] = '%s-12-31' % self.loadconsattr['todate']
             pass
         elif name == "name":
             if self.loadconsattr: # name tag within constituency tag
@@ -848,11 +855,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             raise Exception, "Unknown constituency %s" % cons
         consid = None
         for consattr in consids:
-            fromdate = consattr['fromdate']
-            todate = consattr['todate']
-            if len(fromdate)==4: fromdate = '%s-01-01' % fromdate
-            if len(todate)==4: todate = '%s-12-31' % todate
-            if fromdate <= date and date <= todate:
+            if consattr['fromdate'] <= date and date <= consattr['todate']:
                 if consid:
                     raise Exception, "Two like-named constituency ids %s %s overlap with date %s" % (consid, consattr['id'], date)
                 consid = consattr['id']
