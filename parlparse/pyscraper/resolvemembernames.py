@@ -39,6 +39,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.considtomembermap = {} # cons ID --> MPs
         self.considtonamemap = {} # cons ID --> name
         self.conshansardtoid = {} # Historic Hansard cons ID -> our cons ID
+        self.historichansard = {} # Historic Hansard commons membership ID -> MPs
         self.parties = {} # party --> MPs
         self.officetopersonmap = {} # member ID --> person ID
         self.persontoofficemap = {} # person ID --> office
@@ -127,6 +128,9 @@ class MemberList(xml.sax.handler.ContentHandler):
             # ... and by party
             party = attr["party"]
             self.parties.setdefault(party, []).append(attr)
+
+            if 'hansard_id' in attr:
+                self.historichansard.setdefault(int(attr['hansard_id']), []).append(attr)
 
         # member-aliases.xml loading
         elif name == "alias":
@@ -902,6 +906,18 @@ class MemberList(xml.sax.handler.ContentHandler):
     def membertoperson(self, memberid):
         return self.officetopersonmap[memberid]
 
+    # Historic ID -> ID
+    def matchhistoric(self, hansard_id, date):
+        ids = []
+        for attr in self.historichansard[hansard_id]:
+            if attr["fromdate"] <= date and date <= attr["todate"]:
+                ids.append(attr["id"])
+
+        if len(ids) == 0:
+            raise Exception, 'Could not find ID for Historic ID %s, date %s' % (hansard_id, date)
+        if len(ids) > 1:
+            raise Exception, 'Multiple results for Historic ID %s, date %s: %s' % (hansard_id, date, ','.join(ids))
+        return ids[0]
 
 # Construct the global singleton of class which people will actually use
 memberList = MemberList()
