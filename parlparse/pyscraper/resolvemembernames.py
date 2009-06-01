@@ -73,7 +73,9 @@ class MemberList(xml.sax.handler.ContentHandler):
         # all-members.xml loading
         if name == "member":
 
-			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
+            # MAKE A COPY.  (The xml documentation warns that the attr object
+            # can be reused, so shouldn't be put into your structures if it's
+            # not a copy).
             attr = attr.copy()
 
             if self.members.get(attr["id"]):
@@ -129,7 +131,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             party = attr["party"]
             self.parties.setdefault(party, []).append(attr)
 
-            if 'hansard_id' in attr:
+            if attr.has_key("hansard_id"):
                 self.historichansard.setdefault(int(attr['hansard_id']), []).append(attr)
 
         # member-aliases.xml loading
