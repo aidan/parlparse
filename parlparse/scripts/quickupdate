@@ -14,11 +14,13 @@ tue_dirs = mon_dirs.copy()
 tue_dirs['westminhall'] = 'westminhall/westminster'
 
 def run_command(dir, cmd):
-    print 'Running', cmd
-    os.chdir(base_scraper + dir)
-    status, output = commands.getstatusoutput(cmd)
-    print 'Exit status =', status
-    print 'Output', output
+    #print 'Running', cmd
+    print 'cd %s%s' % (base_scraper, dir)
+    #os.chdir(base_scraper + dir)
+    print cmd
+    #status, output = commands.getstatusoutput(cmd)
+    #print 'Exit status =', status
+    #print 'Output', output
 
 today = datetime.date.today()
 wday = today.weekday()
@@ -40,7 +42,8 @@ for type, dir in dirs.items():
         rescrape.append(type)
 
 # Scrape
-run_command('', 'lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
+if rescrape:
+    run_command('', 'lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
 run_command('ni/', './scrape.py')
 
 # Parse
