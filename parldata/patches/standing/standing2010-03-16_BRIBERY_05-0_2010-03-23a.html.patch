@@ -1,13 +1,5 @@
 --- /home/parlparse/parldata/cmpages/standing/standing2010-03-16_BRIBERY_05-0_2010-03-23a.html	2010-05-18 17:14:20.000000000 +0100
-+++ /home/parlparse/parldata/tmp/patchtmp-standing2010-03-16_BRIBERY_05-0_2010-03-23a-_91pyh.html	2010-05-18 17:33:43.000000000 +0100
-@@ -1,5 +1,5 @@
--<pagex url="http://www.publications.parliament.uk/pa/cm200910/cmpublic/bribery/100323/am/100323s01.htm" scrapedate="2010-05-18" scrapetime="15:17:38" billtitle="Bribery Bill"/>
--<page url="http://www.publications.parliament.uk/pa/cm200910/cmpublic/bribery/100323/am/100323s01.htm"/>
-+<divagex url="http://www.publications.parliament.uk/pa/cm200910/cmpublic/bribery/100323/am/100323s01.htm" scrapedate="2010-05-18" scrapetime="15:17:38" billtitle="Bribery Bill"/>
-+<divage url="http://www.publications.parliament.uk/pa/cm200910/cmpublic/bribery/100323/am/100323s01.htm"/>
- 
-          <table width="90%">
-             <tr valign="top">
++++ /home/parlparse/parldata/tmp/patchtmp-standing2010-03-16_BRIBERY_05-0_2010-03-23a-vZ2IVi.html	2010-05-19 16:47:43.000000000 +0100
 @@ -16,7 +16,7 @@
           <table border="0" width="90%">
              <tr>
@@ -17,216 +9,279 @@
                    <hr size="3"/>
                    <br/>
                 </td>
-@@ -27,118 +27,118 @@
+@@ -27,162 +27,159 @@
                       <h4 class="hs_CLHeading">The
  Committee consisted of the following
  Members:</h4>
 -                     <p class="hs_CLChairman">
 -                        <em>Chairs:
 -</em>&#134;<span class="hs_CLMember">Sir
-+                     <div class="hs_CLChairman">
-+                        <i class="I">Chairs:
-+</i>&#134;<span class="hs_CLMember">Sir
- Nicholas Winterton<a class="bkMark" name="10032361000156">&#160;</a>
-                         </span>,
- <span class="hs_CLMember">Joan
- Walley<a class="bkMark" name="10032361000157">&#160;</a>
-                         </span>
+-Nicholas Winterton<a class="bkMark" name="10032361000156">&#160;</a>
+-                        </span>,
+-<span class="hs_CLMember">Joan
+-Walley<a class="bkMark" name="10032361000157">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Bain,
+-<span class="hs_CLMember">Bain,
 -Mr. William <em>(Glasgow, North-East)</em>
-+Mr. William <i class="I">(Glasgow, North-East)</i>
- (Lab)<a class="bkMark" name="10032361000158">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000158">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Cryer,
+-<span class="hs_CLMember">Cryer,
 -Mrs. Ann <em>(Keighley)</em>
-+Mrs. Ann <i class="I">(Keighley)</i>
- (Lab)<a class="bkMark" name="10032361000159">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000159">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Djanogly,
+-<span class="hs_CLMember">Djanogly,
 -Mr. Jonathan <em>(Huntingdon)</em>
-+Mr. Jonathan <i class="I">(Huntingdon)</i>
- (Con)<a class="bkMark" name="10032361000160">&#160;</a>
-                         </span>
+-(Con)<a class="bkMark" name="10032361000160">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">
-+                     </div>
-+                     <div class="hs_CLMember">
-                         <span class="hs_CLMember">Harris,
+-                        <span class="hs_CLMember">Harris,
 -Dr. Evan <em>(Oxford, West and Abingdon)</em>
-+Dr. Evan <i class="I">(Oxford, West and Abingdon)</i>
- (LD)<a class="bkMark" name="10032361000161">&#160;</a>
-                         </span>
+-(LD)<a class="bkMark" name="10032361000161">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Heald,
+-<span class="hs_CLMember">Heald,
 -Mr. Oliver <em>(North-East Hertfordshire)</em>
-+Mr. Oliver <i class="I">(North-East Hertfordshire)</i>
- (Con)<a class="bkMark" name="10032361000162">&#160;</a>
-                         </span>
+-(Con)<a class="bkMark" name="10032361000162">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Hill,
+-<span class="hs_CLMember">Hill,
 -Keith <em>(Streatham)</em>
-+Keith <i class="I">(Streatham)</i>
- (Lab)<a class="bkMark" name="10032361000163">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000163">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Howarth,
+-<span class="hs_CLMember">Howarth,
 -David <em>(Cambridge)</em>
-+David <i class="I">(Cambridge)</i>
- (LD)<a class="bkMark" name="10032361000164">&#160;</a>
-                         </span>
+-(LD)<a class="bkMark" name="10032361000164">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Howell,
+-<span class="hs_CLMember">Howell,
 -John <em>(Henley)</em> (Con)<a class="bkMark" name="10032361000165">&#160;</a>
-+John <i class="I">(Henley)</i> (Con)<a class="bkMark" name="10032361000165">&#160;</a>
-                         </span>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Jones,
+-<span class="hs_CLMember">Jones,
 -Helen <em>(Vice-Chamberlain of Her Majesty's
 -Household)</em>
-+Helen <i class="I">(Vice-Chamberlain of Her Majesty's
-+Household)</i>
-                            <a class="bkMark" name="10032361000166">&#160;</a>
-                         </span>
+-                           <a class="bkMark" name="10032361000166">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">
-+                     </div>
-+                     <div class="hs_CLMember">
-                         <span class="hs_CLMember">Kilfoyle,
+-                        <span class="hs_CLMember">Kilfoyle,
 -Mr. Peter <em>(Liverpool, Walton)</em>
-+Mr. Peter <i class="I">(Liverpool, Walton)</i>
- (Lab)<a class="bkMark" name="10032361000167">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000167">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Levitt,
+-<span class="hs_CLMember">Levitt,
 -Tom <em>(High Peak)</em>
-+Tom <i class="I">(High Peak)</i>
- (Lab)<a class="bkMark" name="10032361000168">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000168">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Syms,
+-<span class="hs_CLMember">Syms,
 -Mr. Robert <em>(Poole)</em>
-+Mr. Robert <i class="I">(Poole)</i>
- (Con)<a class="bkMark" name="10032361000169">&#160;</a>
-                         </span>
+-(Con)<a class="bkMark" name="10032361000169">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">
-+                     </div>
-+                     <div class="hs_CLMember">
-                         <span class="hs_CLMember">Ussher,
+-                        <span class="hs_CLMember">Ussher,
 -Kitty <em>(Burnley)</em>
-+Kitty <i class="I">(Burnley)</i>
- (Lab)<a class="bkMark" name="10032361000170">&#160;</a>
-                         </span>
+-(Lab)<a class="bkMark" name="10032361000170">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Ward,
+-<span class="hs_CLMember">Ward,
 -Claire <em>(Parliamentary Under-Secretary of State for
 -Justice)</em>
-+Claire <i class="I">(Parliamentary Under-Secretary of State for
-+Justice)</i>
-                            <a class="bkMark" name="10032361000171">&#160;</a>
-                         </span>
+-                           <a class="bkMark" name="10032361000171">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Wills,
+-<span class="hs_CLMember">Wills,
 -Mr. Michael <em>(Minister of State, Ministry of
 -Justice)</em>
-+Mr. Michael <i class="I">(Minister of State, Ministry of
-+Justice)</i>
-                            <a class="bkMark" name="10032361000172">&#160;</a>
-                         </span>
+-                           <a class="bkMark" name="10032361000172">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLMember">&#134;
-+                     </div>
-+                     <div class="hs_CLMember">&#134;
- <span class="hs_CLMember">Wright,
+-<span class="hs_CLMember">Wright,
 -Jeremy <em>(Rugby and Kenilworth)</em>
-+Jeremy <i class="I">(Rugby and Kenilworth)</i>
- (Con)<a class="bkMark" name="10032361000173">&#160;</a>
-                         </span>
+-(Con)<a class="bkMark" name="10032361000173">&#160;</a>
+-                        </span>
 -                     </p>
 -                     <p class="hs_CLClerks">Eliot Wilson, <em>Committee
 -Clerk</em>
 -                     </p>
 -                     <p class="hs_CLAttended">&#134; attended the
 -Committee</p>
+-                     <div class="columnNumber">
+-			Column number: 181<a class="bkMark" name="Column181">&#160;</a>
+-                     </div>
+-                     <h2 class="hs_3MainHdg">Public
+-Bill Committee<a class="bkMark" name="10032361000002">&#160;</a>
+-                     </h2>
+-                     <h3 class="hs_6fDate">
+-                        <em>Tuesday
++                     <div class="hs_CLChairman">
++                        <i class="I">Chairs:
++</i>&#134;<a name="10032361000156"></a>Sir
++Nicholas Winterton,
++<a name="10032361000157"></a>Joan
++Walley
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Bain,
++Mr. William <i class="I">(Glasgow, North-East)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Cryer,
++Mrs. Ann <i class="I">(Keighley)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Djanogly,
++Mr. Jonathan <i class="I">(Huntingdon)</i>
++(Con)
++                        
++                     </div>
++                     <div class="hs_CLMember">
++                        Harris,
++Dr. Evan <i class="I">(Oxford, West and Abingdon)</i>
++(LD)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Heald,
++Mr. Oliver <i class="I">(North-East Hertfordshire)</i>
++(Con)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Hill,
++Keith <i class="I">(Streatham)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Howarth,
++David <i class="I">(Cambridge)</i>
++(LD)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Howell,
++John <i class="I">(Henley)</i> (Con)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Jones,
++Helen <i class="I">(Vice-Chamberlain of Her Majesty's
++Household)</i>
++                           
++                        
++                     </div>
++                     <div class="hs_CLMember">
++                        Kilfoyle,
++Mr. Peter <i class="I">(Liverpool, Walton)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Levitt,
++Tom <i class="I">(High Peak)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Syms,
++Mr. Robert <i class="I">(Poole)</i>
++(Con)
++                        
++                     </div>
++                     <div class="hs_CLMember">
++                        Ussher,
++Kitty <i class="I">(Burnley)</i>
++(Lab)
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Ward,
++Claire <i class="I">(Parliamentary Under-Secretary of State for
++Justice)</i>
++                           
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Wills,
++Mr. Michael <i class="I">(Minister of State, Ministry of
++Justice)</i>
++                           
++                        
++                     </div>
++                     <div class="hs_CLMember">&#134;
++Wright,
++Jeremy <i class="I">(Rugby and Kenilworth)</i>
++(Con)
++                        
 +                     </div>
 +                     <div class="hs_CLClerks">Eliot Wilson, <i class="I">Committee
 +Clerk</i>
 +                     </div>
 +                     <div class="hs_CLAttended">&#134; attended the
 +Committee</div>
-                      <div class="columnNumber">
- 			Column number: 181<a class="bkMark" name="Column181">&#160;</a>
-                      </div>
-@@ -146,40 +146,40 @@
- Bill Committee<a class="bkMark" name="10032361000002">&#160;</a>
-                      </h2>
-                      <h3 class="hs_6fDate">
--                        <em>Tuesday
++                     <div class="Column">
++			<a name="Column181" />Column number: 181
++                     </div>
++                     <h1 class="hs_3MainHdg">Public
++Bill Committee
++                     </h1>
++                     <h4 class="hs_6fDate">
 +                        <i class="I">Tuesday
  23 March
 -2010</em>
 +2010</i>
                          <a class="bkMark" name="10032361000003">&#160;</a>
-                      </h3>
-                      <h3 class="hs_76fChair">[<span class="smallcaps">Sir
- Nicholas Winterton</span>
+-                     </h3>
+-                     <h3 class="hs_76fChair">[<span class="smallcaps">Sir
+-Nicholas Winterton</span>
 -                        <em> in the
 -Chair</em>]<a class="bkMark" name="10032361000006">&#160;</a>
+-                     </h3>Bribery
++                     </h4>
++                     <h4 class="hs_76fChair">[Sir
++Nicholas Winterton
 +                        <i class="I"> in the
 +Chair</i>]<a class="bkMark" name="10032361000006">&#160;</a>
-                      </h3>Bribery
++                     </h4><h3><a href="http://services.parliament.uk/bills/2009-10/bribery.html">Bribery
  Bill
 -[<em>Lords</em>]<h4 class="hs_Timeline">10.30
-+[<i class="I">Lords</i>]<h4 class="hs_Timeline">10.30
++[<i class="I">Lords</i>]</a></h3><h4 class="hs_Timeline">10.30
  am<a class="bkMark" name="10032361000150">&#160;</a>
                       </h4>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">The
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">The
++                           The
  Chair:<a class="bkMark" name="10032361000174">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I bid good morning to all members of the Committee
++                           
 +                        </b> I bid good morning to all members of the Committee
  who are here; no doubt we shall greet those who are not here a little
  later. Excellent progress has been made, and I commend the Committee on
@@ -235,22 +290,27 @@
  formally.<a class="bkMark" name="10032361000009">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
-+                     </div>
-+                     <div class="hs_Para">
-                         <span class="hs_CLMember">
+-                        <span class="hs_CLMember">
 -                           <strong>Mr.
 -Jonathan Djanogly</strong> (Huntingdon) (Con):<a class="bkMark" name="10032361000175">&#160;</a>
+-                        </span> I do not wish to
++                     </div>
++                     <div class="hs_Para">
 +                           <b class="B">Mr.
 +Jonathan Djanogly</b> (Huntingdon) (Con):<a class="bkMark" name="10032361000175">&#160;</a>
-                         </span> I do not wish to
++                        I do not wish to
  move new clause 3, Sir
  Nicholas.<a class="bkMark" name="10032361000010">&#160;</a>
 -                     </p>
 +                     </div>
                       <h4 class="hs_8Clause">New
  Clause
- 4<a class="bkMark" name="10032361000007">&#160;</a>
-@@ -200,49 +200,49 @@
+-4<a class="bkMark" name="10032361000007">&#160;</a>
++4
+                      </h4>
+                      <h5 class="hs_7SmCapsHdg">Facilitation
+ payments<a class="bkMark" name="10032361000004">&#160;</a>
+@@ -200,49 +197,48 @@
  government action, and(e) the
  person has no other reasonable alternative in the circumstances to
  expedite the action referred to in paragraph
@@ -269,31 +329,34 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000176">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I beg to move, That the clause be read a Second
++                           
 +                        </b> I beg to move, That the clause be read a Second
  time.<a class="bkMark" name="10032361000012">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
-+                     </div>
-+                     <div class="hs_Para">
-                         <span class="hs_CLMember">
+-                        <span class="hs_CLMember">
 -                           <strong>The
 -Chair</strong>
 -                           <strong>:</strong>
++                     </div>
++                     <div class="hs_Para">
 +                           <b class="B">The
 +Chair</b>
 +                           <b class="B">:</b>
                             <a class="bkMark" name="10032361000177">&#160;</a>
-                         </span> With this it will be convenient to discuss
+-                        </span> With this it will be convenient to discuss
 -the following: new clause 5&#151;<em>Hospitality
 -payments</em>&#151;<a class="bkMark" name="10032361000013">&#160;</a>
 -                     </p>&#145;A person is
++                        With this it will be convenient to discuss
 +the following: new clause 5&#151;<i class="I">Hospitality
 +payments</i>&#151;<a class="bkMark" name="10032361000013">&#160;</a>
 +                     </div>&#145;A person is
@@ -314,17 +377,26 @@
  section
 -9.&#146;.<p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +9.&#146;.<div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000178">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Bribery is, of course, a crime that undercuts
++                           
 +                        </b> Bribery is, of course, a crime that undercuts
  competitiveness, derails honest companies and distorts the marketplace.
  Those who bribe and those who are bribed, whether in commercial
  organisations or governmental institutions, are thereby diminished by
-@@ -255,8 +255,8 @@
+@@ -250,13 +246,13 @@
+ the confidence of consumers and the public is weakened. Bribery also
+ undermines the societies in which the bribes are made. Under the Bill,
+ Parliament is no longer accepting the excuse of local practice, but 
+-<div class="columnNumber">
+-			Column number: 182<a class="bkMark" name="Column182">&#160;</a>
++<div class="Column">
++			<a name="Column182" />Column number: 182
                          </div>tying our flag to the highest levels of international
  probity&#151;action that is welcomed by the Conservative
  party.<a class="bkMark" name="10032361000015">&#160;</a>
@@ -335,7 +407,7 @@
  of corruption and bribery&#146;s inherent problem is that it covers a
  staggering breadth of behaviour and a multitude of different actions
  that might be dependent on the circumstances for their criminality. We
-@@ -274,8 +274,8 @@
+@@ -274,8 +270,8 @@
  bribery and corruption practices worldwide, let alone on a
  country-by-country
  basis.<a class="bkMark" name="10032361000016">&#160;</a>
@@ -346,7 +418,7 @@
  now come to the issue of facilitation and promotional payments, which
  was considered to some degree in the pre-legislative process in the
  other place. I also touched on it when debating my amendments to
-@@ -295,8 +295,8 @@
+@@ -295,8 +291,8 @@
  Under-Secretary explained why she does not like the idea of an advisory
  service, but after our debate it might have to be
  reconsidered.<a class="bkMark" name="10032361000017">&#160;</a>
@@ -357,7 +429,7 @@
  argue that, without spelling out a defence for legitimate promotional
  expenditure, it is not sufficient to leave companies to the hope that
  prosecutors may take a reasonable view. The ICC does not agree that
-@@ -308,8 +308,8 @@
+@@ -308,8 +304,8 @@
  disadvantage to the UK of allowing the Bill to remain unamended or
  unexplained in that context outweighs any such
  considerations.<a class="bkMark" name="10032361000018">&#160;</a>
@@ -368,7 +440,18 @@
  real point is about proportionality, which goes to the very issue of
  whether there needs to be an element of dishonesty or corruption in the
  individual&#146;s mindset. We have shown in earlier debates that we
-@@ -328,8 +328,8 @@
+@@ -318,8 +314,8 @@
+ Bill, and I shall not reopen that discussion. It is certainly arguable
+ that facilitation payments should be outlawed altogether, as a matter
+ of policy. We accept 
+-<div class="columnNumber">
+-			Column number: 183<a class="bkMark" name="Column183">&#160;</a>
++<div class="Column">
++			<a name="Column183" />Column number: 183
+                         </div>that: such payments invariably violate the law where they are made, and
+ creating a defence under English law for actions that are criminal in
+ the jurisdiction in which they are committed is questionable. Those
+@@ -328,8 +324,8 @@
  they would be liable to prosecution in the country in which the bribe
  was
  made.<a class="bkMark" name="10032361000019">&#160;</a>
@@ -379,7 +462,7 @@
  inclusion of a facilitation defence is also seen by some as an
  invitation to books and records violations, as employees rarely record
  grease payments accurately in company records. Such payments, it is
-@@ -346,8 +346,8 @@
+@@ -346,8 +342,8 @@
  tend to secure for their maker the services to which they are entitled
  in any event, and no
  more.<a class="bkMark" name="10032361000020">&#160;</a>
@@ -390,7 +473,7 @@
  an outright prohibition on facilitation payments might be considered
  impractical at this time. Such a ban is unrealistic in those countries
  in which payment of such bribes is endemic. Other countries will not
-@@ -360,8 +360,8 @@
+@@ -360,8 +356,8 @@
  other states have criminalised facilitation payments: Belgium, Finland,
  Italy, Luxembourg, the Netherlands, Norway, Slovenia and
  Spain.<a class="bkMark" name="10032361000021">&#160;</a>
@@ -401,33 +484,36 @@
  an exemption would not exempt a company making payments from being
  prosecuted under the laws of the state in which they were made, if they
  were illegal. The company would not be prosecuted in the UK, but such a
-@@ -372,34 +372,34 @@
+@@ -372,34 +368,33 @@
  goes&#151;is there really a need for Parliament to act in such a
  sanctimonious fashion and decree that British business cannot
  adapt?<a class="bkMark" name="10032361000022">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
-+                     </div>
-+                     <div class="hs_Para">
-                         <span class="hs_CLMember">
+-                        <span class="hs_CLMember">
 -                           <strong>David
 -Howarth</strong> (Cambridge) (LD):<a class="bkMark" name="10032361000179">&#160;</a>
+-                        </span> Will the hon. Gentleman concede
++                     </div>
++                     <div class="hs_Para">
 +                           <b class="B">David
 +Howarth</b> (Cambridge) (LD):<a class="bkMark" name="10032361000179">&#160;</a>
-                         </span> Will the hon. Gentleman concede
++                         Will the hon. Gentleman concede
  that, according to the written law of the countries that he is talking
  about, facilitation payments are not
  allowed?<a class="bkMark" name="10032361000023">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000180">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Yes, I accept that, but I am saying that there
++                           
 +                        </b> Yes, I accept that, but I am saying that there
  are two sides to the
  argument.<a class="bkMark" name="10032361000024">&#160;</a>
@@ -439,16 +525,18 @@
  which was borrowed from Lord Robertson&#146;s evidence to the Joint
  Committee:<a class="bkMark" name="10032361000025">&#160;</a>
 -                     </p> 
+-                     <div class="columnNumber">
+-			Column number: 184<a class="bkMark" name="Column184">&#160;</a>
 +                     </div> 
-                      <div class="columnNumber">
- 			Column number: 184<a class="bkMark" name="Column184">&#160;</a>
++                     <div class="Column">
++			<a name="Column184" />Column number: 184
                       </div>
 -                     <p class="hs_brev">&#147;He
 +                     <div class="hs_brev">&#147;He
  referred to the captain of a ship who, when seeking to have its cargo
  unloaded, was told by the stevedores at the port that it would be
  unloaded only on the condition that a payment was made to someone
-@@ -411,19 +411,19 @@
+@@ -411,19 +406,19 @@
  order to board the aeroplane at the airport, has to get a boarding
  pass. He is asked by the official issuing the boarding pass for money,
  not to pay airport taxes but as a payment to the man
@@ -473,7 +561,7 @@
  Henley gave an example on Report in the other place that drew on the
  overlap between clause 6 and the issue of facilitation payments. He
  showed that facilitation payment scenarios are not limited to
-@@ -432,8 +432,8 @@
+@@ -432,8 +427,8 @@
  designed to improve the provision of health care or living standards.
  Lord Henley
  said:<a class="bkMark" name="10032361000027">&#160;</a>
@@ -484,7 +572,7 @@
  an illustration&#133;in the pharmaceuticals sector, to the extent
  permitted by local laws in each relevant country, companies operate in
  line with strict internal codes which usually observe global industry
-@@ -441,12 +441,12 @@
+@@ -441,12 +436,12 @@
  countries, healthcare practitioners would come within the definition of
  a foreign public
  official,&#148;<a class="bkMark" name="10032361000130">&#160;</a>
@@ -501,7 +589,7 @@
  Bill could therefore criminalise what is currently the honest, lawful,
  well intentioned promotional detailing of products to doctors in
  countries such as China, where healthcare practitioners will, for the
-@@ -454,11 +454,11 @@
+@@ -454,11 +449,11 @@
  circumstances, a United Kingdom company could, therefore, not only
  commit a technical offence under this legislation but also be placed at
  a disadvantage as against foreign
@@ -516,7 +604,7 @@
  Government will no doubt respond that it will be for prosecutors to
  distinguish between legitimate and illegitimate corporate hospitality,
  and to decide whether it would be in the public interest to bring a
-@@ -474,8 +474,8 @@
+@@ -474,49 +469,49 @@
  a certain degree of hospitality is allowed, will a certain level of
  facilitation payments be ignored? To allow one but not the other could
  be called inconsistent.<a class="bkMark" name="10032361000029">&#160;</a>
@@ -527,7 +615,16 @@
  Australia became party to the OECD convention on combating bribery of
  foreign public officials in international business transactions. The
  Australian Government subsequently introduced changes to the relevant
-@@ -490,33 +490,33 @@
+ tax and criminal legislation. The Commonwealth Criminal Code Act 1995
+ makes it a criminal offence to bribe a foreign public official, whether
+ in Australia or 
+-<div class="columnNumber">
+-			Column number: 185<a class="bkMark" name="Column185">&#160;</a>
++<div class="Column">
++			<a name="Column185" />Column number: 185
+                         </div>elsewhere. That means that Australian citizens and corporations can be
+ prosecuted for actions undertaken overseas. The penalties for bribery
+ include up to 10 years imprisonment and substantial fines.
  Division 70.4 of that Act provides a defence for facilitation payments,
  stating that a person is not guilty of an offence if:
  first,<a class="bkMark" name="10032361000030">&#160;</a>
@@ -577,7 +674,7 @@
  Department of Justice explains that that would include such action as
  the payment of bribes for loading and unloading cargo, as well as
  similar activities, just as Lord Mackay pointed out in the other place.
-@@ -526,8 +526,8 @@
+@@ -526,8 +521,8 @@
  have made it a criminal offence, under the Foreign Corrupt Practices
  Act, for its citizens or corporations to pay bribes abroad to foreign
  public officials.<a class="bkMark" name="10032361000034">&#160;</a>
@@ -588,7 +685,7 @@
  a response to the involvement of some of America&#146;s largest
  companies in massive bribery scandals domestically and abroad. US
  businesses protested against the restrictive and unclear provisions of
-@@ -542,11 +542,11 @@
+@@ -542,11 +537,11 @@
  the US. It took the United States 11 years to realise that a blanket
  prohibition on bribery was impractical in a globalised corporate
  world.<a class="bkMark" name="10032361000035">&#160;</a>
@@ -602,7 +699,7 @@
  Nicholas, I should like to turn briefly to the Joint Committee&#146;s
  findings on facilitation payments, as I suspect that the
  Under-Secretary will want to address them. We accept that the Joint
-@@ -555,8 +555,8 @@
+@@ -555,8 +550,8 @@
  it recognised, the Committee referred to various pieces of evidence,
  and its report
  states:<a class="bkMark" name="10032361000036">&#160;</a>
@@ -613,7 +710,7 @@
  law firm, Reynolds Porter Chamberlain, expressed &#145;grave
  concerns&#146; that UK business would be put at a competitive
  disadvantage compared to businesses from states - such as the US -
-@@ -566,12 +566,12 @@
+@@ -566,26 +561,26 @@
  organisations with reporting obligations under the Proceeds of Crime
  Act
  2002&#148;&#151;<a class="bkMark" name="10032361000136">&#160;</a>
@@ -630,7 +727,10 @@
  are undoubtedly difficult and unanswered dilemmas facing business, as
  Lord Robertson illustrated: &#145;stevedores on the docks of a
  country say they will not unload your ship unless a 
-@@ -580,12 +580,12 @@
+-<div class="columnNumber">
+-			Column number: 186<a class="bkMark" name="Column186">&#160;</a>
++<div class="Column">
++			<a name="Column186" />Column number: 186
                          </div>payment is made to their union or to their corporate organisation, what
  do you do? You say, &#145;No. We will just let our ships lie
  there&#146;.&#146;&#148;<a class="bkMark" name="10032361000137">&#160;</a>
@@ -647,7 +747,7 @@
  dilemmas were manifest in the fact that the UK Anti-Corruption Forum's
  members were unable to reach consensus on the approach that should be
  taken. While the Forum is strongly in favour of treating facilitation
-@@ -599,21 +599,21 @@
+@@ -599,21 +594,21 @@
  quite difficult situations with traffic police or immigration officers,
  or whatever it may
  be.&#146;&#148;<a class="bkMark" name="10032361000138">&#160;</a>
@@ -675,7 +775,7 @@
  new clauses that I have tabled on hospitality and extortion payments
  pick up some of the ideas that came through in the evidence and the
  debates in the other place, and represent an attempt to consider the
-@@ -622,26 +622,26 @@
+@@ -622,26 +617,26 @@
  as a result of extortion, the payer, far from being a criminal, is
  actually the
  victim.<a class="bkMark" name="10032361000040">&#160;</a>
@@ -710,7 +810,7 @@
  offences impose an appropriate limit on this activity under the
  &#145;improper&#146; performance test. However, the main limit
  under clause 4 is based on prosecutorial discretion. We are content
-@@ -649,25 +649,25 @@
+@@ -649,49 +644,49 @@
  that it does not risk facing prosecution for providing proportionate
  levels of hospitality as part of competing fairly in the international
  arena.&#148;<a class="bkMark" name="10032361000141">&#160;</a>
@@ -744,20 +844,29 @@
  Bill effectively suggests that the answer to the facilitation payment
  problem lies in the reasonable exercise of discretion by prosecutors,
  and that there will be prosecutions only if large payments are made to
-@@ -680,18 +680,18 @@
+ foreign officials to secure major contracts at the expense of 
+-<div class="columnNumber">
+-			Column number: 187<a class="bkMark" name="Column187">&#160;</a>
++<div class="Column">
++			<a name="Column187" />Column number: 187
+                         </div>competitors. However, we need to recognise that many companies and their
+ officers are wary of relying on prosecutorial discretion without
+ guidance and without knowing where they stand, which is why it is right
  that I raise these concerns today. I would be grateful if the
  Under-Secretary gave such companies some
  reassurance.<a class="bkMark" name="10032361000045">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">David
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">David
++                           David
  Howarth:<a class="bkMark" name="10032361000181">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> The arguments have been rehearsed not only during
++                           
 +                        </b> The arguments have been rehearsed not only during
  the Bill&#146;s passage through the other place, but during our
  previous debates in this Committee, so I will be
@@ -769,7 +878,7 @@
  hon. Gentleman was right to concentrate solely on clause 6, because all
  his points applied only to clause 6, although his new
  clauses also apply to clauses 1 and 2. Under clauses 1 and
-@@ -703,8 +703,8 @@
+@@ -703,8 +698,8 @@
  effect on good government in those countries. For that reason, we
  should not be tolerant of any form of bribery of foreign officials
  at all.<a class="bkMark" name="10032361000047">&#160;</a>
@@ -780,7 +889,7 @@
  straightforward fact about facilitation payments is that they are
  bribes. They are a slightly different type of bribe, in that they get
  someone to do something that they should have done anyway, as opposed
-@@ -716,8 +716,8 @@
+@@ -716,8 +711,8 @@
  payments&#151;he readily concedes this&#151;are illegal according
  to the law of the countries that he
  cited.<a class="bkMark" name="10032361000048">&#160;</a>
@@ -791,7 +900,7 @@
  leads me to the point that the hon. Gentleman tried to make about
  custom and practice in other countries. The only authoritative guide
  that we in this country can apply to the public policy of another
-@@ -727,16 +727,16 @@
+@@ -727,16 +722,16 @@
  that the payments are illegal, that is what our law says as well. That
  is why clause 6(3)(b) deals with whether action by a foreign official
  is<a class="bkMark" name="10032361000049">&#160;</a>
@@ -814,7 +923,7 @@
  Gentleman says that it is all about prosecutorial discretion, but it is
  not. It is also about the burden of proof, because under that clause
  the burden of proof of showing that whatever was done was contrary to
-@@ -747,8 +747,8 @@
+@@ -747,42 +742,42 @@
  whether there is proof that what was done was contrary to the written
  law of the other
  state.<a class="bkMark" name="10032361000051">&#160;</a>
@@ -825,9 +934,11 @@
  is not a crime in England&#151;it was abolished under the Theft Act
  1968&#151;but it is a crime in Scotland, so it is interesting that
  the hon. Gentleman is using Scottish criminal concepts in a British
-@@ -756,33 +756,33 @@
- <div class="columnNumber">
- 			Column number: 188<a class="bkMark" name="Column188">&#160;</a>
+ statute&#151;  
+-<div class="columnNumber">
+-			Column number: 188<a class="bkMark" name="Column188">&#160;</a>
++<div class="Column">
++			<a name="Column188" />Column number: 188
                          </div>
 -                        <em>[</em>
 -                        <em>Interruption.</em>
@@ -842,26 +953,30 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000182">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I went further than that. I gave the hon.
++                           
 +                        </b> I went further than that. I gave the hon.
  Gentleman some useful Australian and American law as
  well.<a class="bkMark" name="10032361000053">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">David
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">David
++                           David
  Howarth:<a class="bkMark" name="10032361000183">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> The point is that English law has the concept of
++                           
 +                        </b> The point is that English law has the concept of
  blackmail, which replaced extortion in
  1968.<a class="bkMark" name="10032361000054">&#160;</a>
@@ -872,21 +987,23 @@
  debate raises a more serious issue: should people be excused a breach
  of the criminal law because of circumstances in which they are
  threatened by criminal acts carried out by other people? We in this
-@@ -795,17 +795,17 @@
+@@ -795,17 +790,17 @@
  demands that they commit criminal acts except in the most dire
  circumstances. For that reason, I oppose new clauses 4 to
  6.<a class="bkMark" name="10032361000055">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">The
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">The
++                           The
  Parliamentary Under-Secretary of State for Justice (Claire
  Ward):<a class="bkMark" name="10032361000184">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> It is good to have you back in the Chair, Sir
++                           
 +                        </b> It is good to have you back in the Chair, Sir
  Nicholas.<a class="bkMark" name="10032361000056">&#160;</a>
 -                     </p>
@@ -896,7 +1013,7 @@
  listening to speech made by the hon. Member for Huntingdon, I was at
  first rather hopeful because it seemed that he understood the policy
  objectives of the Bill and that he was setting them out clearly.
-@@ -815,8 +815,8 @@
+@@ -815,8 +810,8 @@
  organisations that would be not only unnecessary but undesirable if we
  are to uphold the Bill&#146;s clear policy objective that bribery is
  unacceptable.<a class="bkMark" name="10032361000057">&#160;</a>
@@ -907,7 +1024,7 @@
  relates to small-scale bribes that are paid to expedite action by
  Government officials or to prevent damage to an important
  interest&#151;effectively facilitation payments. The new
-@@ -830,12 +830,12 @@
+@@ -830,12 +825,12 @@
  terms and ideas such as &#147;reasonable in amount&#148;,
  &#147;customary in the situation&#148; or the
  only<a class="bkMark" name="10032361000058">&#160;</a>
@@ -924,7 +1041,16 @@
  new clause would have an adverse impact on the effectiveness of the
  Bill. In particular, it would jeopardise one of its key policy
  objectives of supporting national and international efforts to bring
-@@ -854,8 +854,8 @@
+@@ -847,15 +842,15 @@
+ extortion&#151;if we are using the Scottish term. The answer,
+ however, is not to create exemptions such as those in the US Foreign
+ Corrupt Practices Act, which have created 
+-<div class="columnNumber">
+-			Column number: 189<a class="bkMark" name="Column189">&#160;</a>
++<div class="Column">
++			<a name="Column189" />Column number: 189
+                         </div>artificial distinctions. The answer is to face the challenges head on.
+ That is the approach of the OECD, which recently issued a
  recommendation calling on member countries to review their policies and
  approaches to small facilitation payments periodically to combat the
  phenomenon effectively.<a class="bkMark" name="10032361000059">&#160;</a>
@@ -935,7 +1061,7 @@
  want to be in the situation in which the Americans will no doubt find
  themselves over the coming years of playing catch-up to raise
  standards. We need to take the opportunity to legislate to set the
-@@ -868,8 +868,8 @@
+@@ -868,8 +863,8 @@
  official&#146;s functions to secure an advantage in the conduct of
  business will be an offence under clause 6, unless the local written
  law permits the official to be influenced by the payment.<a class="bkMark" name="10032361000060">&#160;</a>
@@ -946,7 +1072,7 @@
  prosecutions in the UK are, however, subject to review under the
  principles set out in the code for Crown prosecutors. If a case
  involving such payments came to the attention of prosecutors, it would
-@@ -885,11 +885,11 @@
+@@ -885,11 +880,11 @@
  independent prosecuting authorities, and I believe that that is the
  right way to
  proceed.<a class="bkMark" name="10032361000061">&#160;</a>
@@ -960,7 +1086,7 @@
  clause 5 seeks to create an exception for corporate hospitality that
  would apply both to the recipient of hospitality and the provider. I
  want to make it clear to the Committee and to businesses taking an
-@@ -899,8 +899,8 @@
+@@ -899,8 +894,8 @@
  however the hon. Gentleman describes it and whatever the motivation
  behind it, will introduce ambiguity and
  uncertainty.<a class="bkMark" name="10032361000062">&#160;</a>
@@ -971,7 +1097,7 @@
  is important to make clear the way in which different offences in the
  Bill engage with corporate hospitality. Under the general offences in
  clauses 1 and 2, the hospitality would have to be given and received
-@@ -911,8 +911,8 @@
+@@ -911,13 +906,13 @@
  would act impartially, in good faith or in accordance with a position
  of
  trust.<a class="bkMark" name="10032361000063">&#160;</a>
@@ -982,7 +1108,14 @@
  some cases, the receipt of hospitality itself may amount to an improper
  performance of a relevant function, and in those circumstances the
  provider of the 
-@@ -926,8 +926,8 @@
+-<div class="columnNumber">
+-			Column number: 190<a class="bkMark" name="Column190">&#160;</a>
++<div class="Column">
++			<a name="Column190" />Column number: 190
+                         </div>hospitality would need to be aware of that fact. Hospitality that is
+ commensurate with the prevailing norms is very unlikely to give rise
+ even to a suspicion of either of those sets of circumstances. The
+@@ -926,8 +921,8 @@
  where the hospitality is wholly excessive could any question of
  impropriety possibly
  arise.<a class="bkMark" name="10032361000064">&#160;</a>
@@ -993,7 +1126,7 @@
  situation under clause 6 relating to bribery of a foreign public
  official is different, as the focus would be on hospitality provided to
  a foreign public official with the intention of influencing that person
-@@ -941,8 +941,8 @@
+@@ -941,8 +936,8 @@
  reasonable hospitality is a normal part of business, we are not seeking
  to discourage such
  practices.<a class="bkMark" name="10032361000065">&#160;</a>
@@ -1004,7 +1137,7 @@
  us be clear, however, about this. Where the facts disclose that
  excessive hospitality provided for a foreign public official was
  significantly instrumental in securing business, we consider it right
-@@ -956,16 +956,16 @@
+@@ -956,16 +951,16 @@
  a prosecution unless, as I have already said, the hospitality was
  excessive or
  unreasonable.<a class="bkMark" name="10032361000066">&#160;</a>
@@ -1027,7 +1160,7 @@
  assume that that references is intended to inject an element of
  certainty, but it misconceived. As I have already stated, the guidance
  to be issued under clause 9 relates to procedures that commercial
-@@ -974,8 +974,8 @@
+@@ -974,8 +969,8 @@
  been any intention on our part to specify what may amount to reasonable
  hospitality and we have never given any contrary
  indications.<a class="bkMark" name="10032361000068">&#160;</a>
@@ -1038,7 +1171,7 @@
  new clause 6 seeks to create an exception for any bribe paid under
  circumstances that amount to an act of extortion. Curiously, it would
  also provide a defence to the recipient of the bribe who presumably is
-@@ -984,8 +984,8 @@
+@@ -984,21 +979,21 @@
  exception would serve no useful purpose and would introduce a new
  subjective element to the definition of the offences that could be
  exploited by the unscrupulous.<a class="bkMark" name="10032361000069">&#160;</a>
@@ -1049,7 +1182,13 @@
  considering any case of bribery, prosecutors would be under a duty to
  consider all factors relevant to the question of whether the public
  interest demanded a prosecution. The hon. Gentleman asked whether we
-@@ -997,8 +997,8 @@
+ would issue guidance to the Crown Prosecution Service or to other
+ prosecuting authorities. As I am sure he is 
+-<div class="columnNumber">
+-			Column number: 191<a class="bkMark" name="Column191">&#160;</a>
++<div class="Column">
++			<a name="Column191" />Column number: 191
+                         </div>aware, it is a matter for the directors of each of the prosecuting
  authorities to determine the appropriate guidance required by their
  prosecutors. It is not for the Government to issue such detailed
  guidance.<a class="bkMark" name="10032361000070">&#160;</a>
@@ -1060,7 +1199,7 @@
  the presence of facts that could amount to extortion on the part of the
  payee is a factor&#151;as I have already mentioned when addressing
  facilitation payments&#151;that would weigh quite heavily against the
-@@ -1008,16 +1008,16 @@
+@@ -1008,16 +1003,16 @@
  already given other reasons why there may be an issue with it. Finally,
  new clause 6, like new clause 5, includes the
  phrase,<a class="bkMark" name="10032361000071">&#160;</a>
@@ -1083,7 +1222,7 @@
  hope I have persuaded the hon. Member for Huntingdon that this is not
  the way to proceed with the legislation. I do not think that his view
  is widely shared, even by those in other parts of the Conservative
-@@ -1025,33 +1025,33 @@
+@@ -1025,33 +1020,33 @@
  group on responsible business produced a report, which it hopes will
  provide a basis for a future Conservative Government&#151;it can
  dream on. The report recommended that<a class="bkMark" name="10032361000073">&#160;</a>
@@ -1108,13 +1247,15 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000185">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I should start by saying that I was the only MP
++                           
 +                        </b> I should start by saying that I was the only MP
  on that Conservative group for responsible business, so the
  Under-Secretary can see where my personal opinions lie&#151;I endorse
@@ -1127,20 +1268,22 @@
  me run through a few points that came up in a helpful debate. I shall
  begin with the remarks of the hon. Member for Cambridge, who said that
  the proposed new clauses did not apply to clauses 1 and 2. I am not
-@@ -1060,36 +1060,36 @@
+@@ -1060,36 +1055,36 @@
  think he implied that the provisions were not relevant and therefore
  should be stripped
  out.<a class="bkMark" name="10032361000076">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">David
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">David
++                           David
  Howarth:<a class="bkMark" name="10032361000186">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I simply said that all the hon.
++                           
 +                        </b> I simply said that all the hon.
  Gentleman&#146;s arguments would fall under clause 1, and that it
  would be impossible to prove the necessary intent. Obviously, his new
@@ -1150,13 +1293,15 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000187">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I thank the hon. Gentleman for his
++                           
 +                        </b> I thank the hon. Gentleman for his
  clarification. I accept that the issue mainly relates to clause 6. I
  think the hon. Gentleman&#146;s main point is that the proposed new
@@ -1165,16 +1310,18 @@
  looking at anything other than the law of the country
  concerned.<a class="bkMark" name="10032361000078">&#160;</a>
 -                     </p> 
+-                     <div class="columnNumber">
+-			Column number: 192<a class="bkMark" name="Column192">&#160;</a>
 +                     </div> 
-                      <div class="columnNumber">
- 			Column number: 192<a class="bkMark" name="Column192">&#160;</a>
++                     <div class="Column">
++			<a name="Column192" />Column number: 192
                       </div>
 -                     <p class="tabbed">The question
 +                     <div class="hs_Para">The question
  posed by the new clauses is whether there should be a de minimis
  carve-out. It is not a question of the principle; it is the question of
  the carve-out. Clearly, in the hon. Gentleman&#146;s black and white
-@@ -1098,8 +1098,8 @@
+@@ -1098,8 +1093,8 @@
  debates that relate to having a definite way forward. On the use of
  blackmail rather than extortion, I am open to his
  suggestions.<a class="bkMark" name="10032361000079">&#160;</a>
@@ -1185,7 +1332,7 @@
  to the Under-Secretary&#146;s points, the new clauses tabled on a
  probing basis. They were designed to elicit a response to concerns that
  the Bill will be applied in a way that is realistic to the demands of
-@@ -1113,14 +1113,14 @@
+@@ -1113,17 +1108,17 @@
  debated the new clauses and, on that basis, I beg to ask leave to
  withdraw the
  clause.<a class="bkMark" name="10032361000080">&#160;</a>
@@ -1205,8 +1352,12 @@
 +                     </div>
                       <h4 class="hs_8Clause">New
  Clause
- 7<a class="bkMark" name="10032361000008">&#160;</a>
-@@ -1133,23 +1133,23 @@
+-7<a class="bkMark" name="10032361000008">&#160;</a>
++7
+                      </h4>
+                      <h5 class="hs_7SmCapsHdg">Exclusion
+ from prosecution under other
+@@ -1133,23 +1128,23 @@
  subject to proceedings under the provisions of the Proceeds of Crime
  Act 2002 or other statute by virtue of the acts or omissions which gave
  rise to the proceedings under this
@@ -1225,13 +1376,15 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000188">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I beg to move, That the clause be read a Second
++                           
 +                        </b> I beg to move, That the clause be read a Second
  time.<a class="bkMark" name="10032361000083">&#160;</a>
 -                     </p>
@@ -1241,7 +1394,7 @@
  new clause follows on from our earlier debates on the Proceeds of Crime
  Act 2002 and its interplay with the penalties under the Bill. As well
  as being subject to an unlimited fine if successfully convicted,
-@@ -1164,8 +1164,8 @@
+@@ -1164,8 +1159,8 @@
  issue, so I ask the Under-Secretary whether the Government have indeed
  looked at it. I look forward to hearing her
  response.<a class="bkMark" name="10032361000084">&#160;</a>
@@ -1252,7 +1405,18 @@
  we accept that there is a morally defensible position that those
  convicted of a criminal offence and who have received proceeds in a
  criminal way should pay those proceeds back, we are not entirely
-@@ -1183,22 +1183,22 @@
+@@ -1174,8 +1169,8 @@
+ particularly drug dealers and organised criminals, of the benefits of
+ their criminal conduct. However, there has been no acknowledgement or
+ recognition that there could be serious implications for 
+-<div class="columnNumber">
+-			Column number: 193<a class="bkMark" name="Column193">&#160;</a>
++<div class="Column">
++			<a name="Column193" />Column number: 193
+                         </div>companies caught by the legislation, which in some cases could see them
+ being put out of business if the full weight of the law were applied.
+ The fact that businesses wish to draw POCA to the attention of
+@@ -1183,22 +1178,22 @@
  are by the introduction of a strict liability offence to which the
  defence is vaguely
  worded.<a class="bkMark" name="10032361000085">&#160;</a>
@@ -1282,7 +1446,7 @@
  fear, however, is that that misses the main thrust of
  businesses&#146; concerns. The International Chamber of Commerce drew
  parallels with the situation in the USA. The original purpose of POCA
-@@ -1210,8 +1210,8 @@
+@@ -1210,8 +1205,8 @@
  further their policies. The ICC fears that POCA may have the same
  potential in the
  UK.<a class="bkMark" name="10032361000087">&#160;</a>
@@ -1293,7 +1457,7 @@
  Gerrard, head of the litigation and regulatory group for DLA Piper,
  published an article at the end of last year addressing the issue and
  the potential deterrent effect on companies considering self-reporting
-@@ -1220,11 +1220,11 @@
+@@ -1220,11 +1215,11 @@
  civil penalties wherever possible instead of criminal sanctions, but
  will not give guarantees or further
  guidance.<a class="bkMark" name="10032361000088">&#160;</a>
@@ -1307,7 +1471,7 @@
  Committee may wish to consider as a model the recent corruption case
  involving Mabey and Johnson, in which the company engaged
  constructively with the SFO in return for a plea agreement in both
-@@ -1242,8 +1242,8 @@
+@@ -1242,21 +1237,21 @@
  confiscated, with the calculation of benefit from criminal conduct
  determined by
  statute.<a class="bkMark" name="10032361000089">&#160;</a>
@@ -1318,7 +1482,13 @@
  those restrictions, according to Mr. Gerrard&#146;s
  article, I understand that a judge cannot simply ratify the plea
  agreement and the agreed sums as was done in the Mabey and Johnson
-@@ -1255,8 +1255,8 @@
+ case. Therefore, while under the CJA regime, Mabey and Johnson paid
+ &#163;1.1 million in confiscation, the sum at risk of confiscation
+ under POCA would have been as high as &#163;60 million. That 
+-<div class="columnNumber">
+-			Column number: 194<a class="bkMark" name="Column194">&#160;</a>
++<div class="Column">
++			<a name="Column194" />Column number: 194
                          </div>sum represents the strict statutory application of the benefit or value
  of the contracts, rather than any profit obtained from the offences
  committed.<a class="bkMark" name="10032361000090">&#160;</a>
@@ -1329,25 +1499,27 @@
  the effect of the overlap between POCA and the Bill be to drive
  companies out of business altogether? If that is not the intention,
  will the Under-Secretary explain how such a drastic scenario can be
-@@ -1266,13 +1266,13 @@
+@@ -1266,13 +1261,13 @@
  responsibility could be brought into doubt, which is not in
  anyone&#146;s
  interests.<a class="bkMark" name="10032361000091">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">David
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">David
++                           David
  Howarth:<a class="bkMark" name="10032361000189">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Again, the new clause concerns a matter that we
++                           
 +                        </b> Again, the new clause concerns a matter that we
  have discussed before, so I will only add one point to what I have
  said. I oppose the idea of separating the POCA powers and making them
  inapplicable in such cases, for the simple reason that what lies behind
-@@ -1281,8 +1281,8 @@
+@@ -1281,8 +1276,8 @@
  a way of ensuring that people think twice before going into such
  activity in the first place, as they would obtain no gain from
  it.<a class="bkMark" name="10032361000092">&#160;</a>
@@ -1358,7 +1530,7 @@
  Gentleman is right about rigidity of calculations under POCA compared
  with previous regimes, and he described the procedure in which that
  would happen. Normally, a prosecutor would threaten to use POCA to
-@@ -1290,8 +1290,8 @@
+@@ -1290,8 +1285,8 @@
  would be the case under the new clause, and I do not want to undermine
  the powers of the prosecutor in any way at
  all.<a class="bkMark" name="10032361000093">&#160;</a>
@@ -1369,20 +1541,22 @@
  hon. Gentleman&#146;s only point is that a judge has the discretion
  to start the whole process on their own motion. That is the only risk
  here&#151;a judge might upset the whole arrangement agreed between
-@@ -1301,20 +1301,20 @@
+@@ -1301,20 +1296,20 @@
  repeat. There is a technical point in his favour, but it is not strong
  enough to support his new
  clause.<a class="bkMark" name="10032361000094">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Claire
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Claire
++                           Claire
  Ward:<a class="bkMark" name="10032361000190">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> As the hon. Member for Huntingdon has explained, the
++                           
 +                        </b> As the hon. Member for Huntingdon has explained, the
  new clause would confer protection on individuals or other persons
  prosecuted for an offence under the Bill from any other proceedings,
@@ -1396,7 +1570,7 @@
  hon. Gentleman is particularly concerned about the application of the
  confiscation provisions under POCA. He mentioned on Second Reading that
  many businesses to which he had spoken have expressed concern that
-@@ -1322,8 +1322,8 @@
+@@ -1322,8 +1317,8 @@
  proceeds of crime legislation, and that the financial penalties that
  would be imposed could threaten their
  businesses.<a class="bkMark" name="10032361000096">&#160;</a>
@@ -1407,7 +1581,15 @@
  I wish to clarify the fact that the matter is not about companies
  convicted of an offence under the Bill being exposed to double
  jeopardy. The confiscation regime under POCA is designed to deprive the
-@@ -1338,8 +1338,8 @@
+@@ -1332,14 +1327,14 @@
+ drug dealers and armed robbers&#151;useful though they are in those
+ respects. The powers exist in respect of any offence if offenders
+ secure a  
+-<div class="columnNumber">
+-			Column number: 195<a class="bkMark" name="Column195">&#160;</a>
++<div class="Column">
++			<a name="Column195" />Column number: 195
+                         </div>financial advantage from their crimes. The Act does not just apply to
  individuals; it also applies to companies and other legal persons
  convicted of any such
  offence.<a class="bkMark" name="10032361000097">&#160;</a>
@@ -1418,7 +1600,7 @@
  provide immunity of the sort proposed by the new clause would be
  unprecedented. I do not see why individuals or commercial organisations
  convicted of offences under the Bill should be singled out for immunity
-@@ -1350,8 +1350,8 @@
+@@ -1350,8 +1345,8 @@
  benefits from their crime&#151;I hope that is not what he thinks
  should
  happen.<a class="bkMark" name="10032361000098">&#160;</a>
@@ -1429,7 +1611,7 @@
  far as the Proceeds of Crime Act is concerned, it is for the court to
  determine the benefit derived from an offence in any individual case.
  The court&#146;s decision will be informed by a statement of
-@@ -1366,8 +1366,8 @@
+@@ -1366,8 +1361,8 @@
  their powers of confiscation on the basis of accurate information and
  in a just and appropriate
  manner.<a class="bkMark" name="10032361000099">&#160;</a>
@@ -1440,7 +1622,7 @@
  hon. Gentleman was concerned on Second Reading that the existence of
  confiscation powers would make it less likely that companies would
  self-report allegations of bribery. I do not accept that that would be
-@@ -1377,8 +1377,8 @@
+@@ -1377,8 +1372,8 @@
  have not got the policy objectives across in all the time we have spent
  in Committee and in the previous
  work.<a class="bkMark" name="10032361000100">&#160;</a>
@@ -1451,7 +1633,7 @@
  the Serious Fraud Office has indicated in guidance on self-reporting
  bribery that, in appropriate cases in which the commercial organisation
  demonstrates that it is prepared to act responsibly, there is the
-@@ -1386,8 +1386,8 @@
+@@ -1386,8 +1381,8 @@
  criminal prosecution. Such examples ensure it is the right way to deal
  with the facts of the
  case.<a class="bkMark" name="10032361000101">&#160;</a>
@@ -1462,7 +1644,7 @@
  proposition of total immunity, however, goes wider than POCA, to cover
  proceedings under any other statute arising from the same facts. That
  would potentially encompass many other types of proceedings, such as
-@@ -1399,36 +1399,36 @@
+@@ -1399,36 +1394,36 @@
  immunity to such proceedings for someone convicted of a serious
  offence&#151;bribery. That is contrary to what Parliament
  intended.<a class="bkMark" name="10032361000102">&#160;</a>
@@ -1482,9 +1664,11 @@
 +                     <div class="hs_brev">&#147;the
  Bill must have teeth&#148;.<a class="bkMark" name="10032361000148">&#160;</a>
 -                     </p> 
+-                     <div class="columnNumber">
+-			Column number: 196<a class="bkMark" name="Column196">&#160;</a>
 +                     </div> 
-                      <div class="columnNumber">
- 			Column number: 196<a class="bkMark" name="Column196">&#160;</a>
++                     <div class="Column">
++			<a name="Column196" />Column number: 196
                       </div>
 -                     <p>The new clause would
 +                     <div>The new clause would
@@ -1494,13 +1678,15 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000191">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Let me first say in reply to the hon. Member for
++                           
 +                        </b> Let me first say in reply to the hon. Member for
  Cambridge that I have every confidence in our
  judiciary.<a class="bkMark" name="10032361000105">&#160;</a>
@@ -1511,33 +1697,37 @@
  was pleased to move the new clause, which gave us an opportunity to
  probe the interaction of different legislation. Of course financial
  advantage should be repaid&#151;I totally agree with the
-@@ -1439,52 +1439,52 @@
+@@ -1439,52 +1434,52 @@
  view is that that will not be the case, and I am certainly happy to
  hear
  that.<a class="bkMark" name="10032361000106">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
-+                     </div>
-+                     <div class="hs_Para">
-                         <span class="hs_CLMember">
+-                        <span class="hs_CLMember">
 -                           <strong>Mr.
 -Oliver Heald</strong> (North-East Hertfordshire) (Con):<a class="bkMark" name="10032361000192">&#160;</a>
+-                        </span> I am in
++                     </div>
++                     <div class="hs_Para">
++                        
 +                           <b class="B">Mr.
 +Oliver Heald</b> (North-East Hertfordshire) (Con):<a class="bkMark" name="10032361000192">&#160;</a>
-                         </span> I am in
++                         I am in
  favour of self-cleaning as well, but self-cleansing was what I
  said.<a class="bkMark" name="10032361000107">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000193">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong>
 -                        <strong> </strong>The approach to the matter taken by
++                           
 +                        </b>
 +                        <b class="B"> </b>The approach to the matter taken by
  prosecutors&#151;and indeed judges&#151;in the initial cases will
@@ -1579,18 +1769,20 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">The
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">The
++                           The
  Chair:<a class="bkMark" name="10032361000194">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Before I put the last Question to the Committee,
++                           
 +                        </b> Before I put the last Question to the Committee,
  may I say that this is the last Bill I shall chair during my
  parliamentary career in the House of Commons? I have served on the
  Chairmen&#146;s Panel for just under 25 years. It has been a
-@@ -1496,8 +1496,8 @@
+@@ -1496,8 +1491,8 @@
  structure will be used increasingly, because it is good for the House
  to have Members who are committed to the service of this magnificent
  Parliament.<a class="bkMark" name="10032361000112">&#160;</a>
@@ -1601,7 +1793,7 @@
  congratulate the hon. Member for Watford on the job she has done as the
  Government Minister on the Bill, and the hon. Member for Huntingdon on
  the way in which he has represented Her Majesty&#146;s Opposition. It
-@@ -1510,8 +1510,8 @@
+@@ -1510,32 +1505,32 @@
  if we forget what we are supposed to be doing, quickly bring us back to
  reality and give us the advice we
  need.<a class="bkMark" name="10032361000113">&#160;</a>
@@ -1612,7 +1804,14 @@
  is always impeccable. The police and the doorkeepers who ensure that we
  run an effective and efficient Committee are to be thanked for their
  service. The agreeable Whips on this Bill should also be congratulated.
-@@ -1524,18 +1524,18 @@
+ Looking round the Committee, I see three hon. Members who will not be
+ standing for Parliament again. I thank them personally for the service
+ they have 
+-<div class="columnNumber">
+-			Column number: 197<a class="bkMark" name="Column197">&#160;</a>
++<div class="Column">
++			<a name="Column197" />Column number: 197
+                         </div>given not only to the House, but to their constituents and to the
  country, in the role they have fulfilled. It has been a pleasure to get
  to know many such Members
  well.<a class="bkMark" name="10032361000114">&#160;</a>
@@ -1628,18 +1827,20 @@
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Claire
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Claire
++                           Claire
  Ward:<a class="bkMark" name="10032361000195">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> I thank you, Sir Nicholas, for your chairmanship of
++                           
 +                        </b> I thank you, Sir Nicholas, for your chairmanship of
  the Committee, and your co-Chair, Ms Walley. I know that you are off to
  new pastures&#151;wherever that may be&#151;and to a new life
  outside Parliament. We wish you well in what you choose to do. It is
-@@ -1548,8 +1548,8 @@
+@@ -1548,8 +1543,8 @@
  chairing a Committee such as this, which you have done very agreeably.
  You have ensured that, even in moments of difficulty and disagreement,
  we have got through this important legislation.<a class="bkMark" name="10032361000116">&#160;</a>
@@ -1650,7 +1851,7 @@
  Sir Nicholas, in thanking those who have enabled us to get through the
  Bill. I thank the hon. Members for Huntingdon and for Rugby and
  Kenilworth for their, at times, constructive and interesting debate;
-@@ -1563,16 +1563,16 @@
+@@ -1563,16 +1558,16 @@
  has been both an enjoyable and relatively easy task. I thank you, Sir
  Nicholas, and take this opportunity to wish you well in the
  future.<a class="bkMark" name="10032361000117">&#160;</a>
@@ -1661,35 +1862,49 @@
                       </h4>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">Mr.
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">Mr.
++                           Mr.
  Djanogly:<a class="bkMark" name="10032361000196">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> May I join the Under-Secretary in congratulating
++                           
 +                        </b> May I join the Under-Secretary in congratulating
  to you, Sir Nicholas, on the way in which, with your normal fairness
  and good humour, you have guided us through the Bill, and in wishing
  you well in your retirement? I am certainly very sorry that this is the
-@@ -1584,13 +1584,13 @@
+@@ -1584,21 +1579,21 @@
  his return to academia, and I thank all members of the Committee for
  giving up their time to consider this important
  legislation.<a class="bkMark" name="10032361000118">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">David
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">David
++                           David
  Howarth:<a class="bkMark" name="10032361000197">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> May I add my thanks to you, Sir
++                           
 +                        </b> May I add my thanks to you, Sir
  Nicholas, and my appreciation for the way in which you have chaired
  Bill Committees in the few years that I have been here? In every case,
  you have enabled the debate to flow and ensured that important points
-@@ -1606,8 +1606,8 @@
+ were made, but that in the end, the work was done. Your principle, that
+ that should be possible without recourse to procedural interruptions
+ such as knives, is a model of 
+-<div class="columnNumber">
+-			Column number: 198<a class="bkMark" name="Column198">&#160;</a>
++<div class="Column">
++			<a name="Column198" />Column number: 198
+                         </div>how such things should be done. I, too, wish you well in your future
+ outside the House. I also thank the Clerks and the Bill team, who
+ seemed very much engaged with the Bill&#151;it is a tribute to them
+@@ -1606,8 +1601,8 @@
  the other members of staff who helped the Committee to get its work
  done in
  time.<a class="bkMark" name="10032361000119">&#160;</a>
@@ -1700,23 +1915,25 @@
  hon. Members have mentioned, this is not just your final Bill
  Committee, Sir Nicholas: it is also mine, unless something very odd
  happens that we do not expect in the next few days and weeks. The way
-@@ -1620,11 +1620,11 @@
+@@ -1620,20 +1615,20 @@
  things now, Sir Nicholas, you do it better than anybody else. Thank you
  very
  much.<a class="bkMark" name="10032361000120">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
-+                     </div>
-+                     <div class="hs_Para">
-                         <span class="hs_CLMember">
+-                        <span class="hs_CLMember">
 -                           <strong>Tom
 -Levitt</strong> (High Peak) (Lab):<a class="bkMark" name="10032361000198">&#160;</a>
+-                        </span> Unusually, I rise from the
++                     </div>
++                     <div class="hs_Para">
++                        
 +                           <b class="B">Tom
 +Levitt</b> (High Peak) (Lab):<a class="bkMark" name="10032361000198">&#160;</a>
-                         </span> Unusually, I rise from the
++                         Unusually, I rise from the
  Parliamentary Private Secretary Bench, but then I am not a PPS&#151;I
  just happen to be sitting here. I want to add my thanks to all those
-@@ -1632,8 +1632,8 @@
+ who have already been mentioned: to members of the Committee; and to
  all who have helped make this Committee effective, especially you, Sir
  Nicholas. We share a boundary and a love of the Peak district; the
  second will continue, if not the first.<a class="bkMark" name="10032361000121">&#160;</a>
@@ -1727,20 +1944,22 @@
  want to sound one note of reminiscence and nostalgia. In 2002, I
  represented the House at a conference in Canada&#151;I was then a
  member of the Standards and Privileges Committee&#151;at the
-@@ -1646,53 +1646,53 @@
+@@ -1646,53 +1641,53 @@
  should be bringing that commitment to the OECD principles into effect.
  It is therefore a slightly nostalgic moment&#151;a nice
  nuance.<a class="bkMark" name="10032361000122">&#160;</a>
 -                     </p>
 -                     <p class="tabbed">
 -                        <strong>
+-                           <span class="hs_CLMember">The
 +                     </div>
 +                     <div class="hs_Para">
 +                        <b class="B">
-                            <span class="hs_CLMember">The
++                           The
  Chair:<a class="bkMark" name="10032361000199">&#160;</a>
-                            </span>
+-                           </span>
 -                        </strong> Indeed it is&#151;a nostalgic moment for a number
++                           
 +                        </b> Indeed it is&#151;a nostalgic moment for a number
  of us. I thank members of the Committee for their generous remarks. I
  have allowed Members&#146; comments to range widely; we had time, and
