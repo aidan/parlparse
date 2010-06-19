@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!DOCTYPE publicwhip
+[
+<!ENTITY ndash   "&#8211;">
+<!ENTITY mdash   "&#8212;">
+<!ENTITY iexcl   "&#161;">
+<!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
+
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY szlig  "&#223;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
+<!ENTITY iacute "&#237;" >
+<!ENTITY icirc  "&#238;" >
+<!ENTITY iuml	"&#239;" >
+<!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
+
+<!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
+<!ENTITY frac14 "&#188;" >
+<!ENTITY frac12 "&#189;" >
+<!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
+
+]>
+
+<publicwhip scrapeversion="c" latest="no">
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.325.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.325.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1911.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1911.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2172.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.2172.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1770.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1770.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1319.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1319.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1999.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1999.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1124.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1124.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1420.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1420.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1977.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1977.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1063.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1063.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1255.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1255.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1443.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1443.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1439.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1439.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1746.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1746.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.109.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.109.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1583.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1583.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1619.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1619.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1910.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1910.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1031.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1031.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1922.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.1922.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2159.mh" newgid="uk.org.publicwhip/wrans/2010-06-15d.2159.mh" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.325.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.325.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.325.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.325.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.325.q1" newgid="uk.org.publicwhip/wrans/2010-06-15d.325.q1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.325.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.325.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.362.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.325.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2175.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2175.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2175.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2175.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2175.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2175.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2382.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2382.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2382.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2382.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2382.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2382.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2018.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2018.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2018.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2018.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2018.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2018.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2019.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2019.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2019.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2019.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2019.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2019.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2020.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2020.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2020.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2020.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2020.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2020.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2021.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2021.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2021.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2021.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2021.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2021.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1911.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1911.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1911.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1911.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1911.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1911.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2131.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2131.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2131.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2131.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2131.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2131.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2335.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2335.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2335.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2335.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2335.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2335.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2172.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2172.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2172.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2172.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2172.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2172.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2578.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2578.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2578.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2578.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2578.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2578.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1822.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1822.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1822.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1822.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1822.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1822.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.500.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.500.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.500.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.500.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.500.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.500.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.543.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.543.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.543.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.543.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.543.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.543.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2399.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2399.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2399.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2399.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2399.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2399.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1794.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1794.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1794.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1794.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1794.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1794.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1770.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1770.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1770.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1770.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1770.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1770.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2132.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2132.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2132.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2132.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2132.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2132.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2517.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2517.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2517.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2517.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2517.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2517.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2639.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2639.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2639.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2639.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2639.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2639.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2082.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2082.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2082.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2082.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2082.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2082.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2150.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2150.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2150.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2150.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2150.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2150.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2377.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2377.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2377.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2377.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2377.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2377.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2056.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2056.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2056.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2056.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2056.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2056.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2060.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2060.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2060.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2060.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2060.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2060.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2637.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2637.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2637.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2637.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2637.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2637.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2057.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2057.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2057.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2057.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2057.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2057.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2058.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2057.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2642.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2642.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2642.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2642.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2642.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2642.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2644.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2644.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2644.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2644.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2644.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2644.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2647.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2647.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2647.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2647.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2647.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2647.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2636.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2636.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2636.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2636.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2636.q1" newgid="uk.org.publicwhip/wrans/2010-06-15d.2636.q1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2636.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2636.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2648.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2636.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2035.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2035.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2035.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2035.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2035.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2035.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2520.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2520.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2520.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2520.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2520.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2520.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2543.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2543.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2543.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2543.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2543.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2543.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2516.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2516.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2516.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2516.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2516.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2516.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2521.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2521.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2521.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2521.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2521.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2521.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2539.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2539.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2539.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2539.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2539.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2539.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2036.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2036.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2036.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2036.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2036.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2036.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2649.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2649.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2649.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2649.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2649.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2649.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1319.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1319.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1319.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1319.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1319.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1319.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2083.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2083.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2083.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2083.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2083.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2083.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2638.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2638.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2638.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2638.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2638.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2638.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2640.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2638.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2205.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2205.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2205.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2205.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2205.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2205.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2206.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2206.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2206.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2206.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2206.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2206.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2518.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2518.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2518.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2518.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2518.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2518.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2519.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2519.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2519.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2519.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2519.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2519.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2542.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2542.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2542.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2542.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2542.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2542.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2541.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2541.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2541.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2541.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2541.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2541.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2514.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2514.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2514.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2514.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2514.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2514.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1901.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1901.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1901.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1901.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1901.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1901.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2037.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2037.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2037.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2037.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2037.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2037.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2041.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2041.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2041.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2041.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2041.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2041.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2042.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2042.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2042.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2042.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2042.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2042.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2047.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2047.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2047.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2047.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2047.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2047.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2048.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2048.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2048.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2048.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2048.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2048.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1999.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1999.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1999.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1999.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1999.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1999.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1949.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1949.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1949.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1949.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1949.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1949.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2002.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2002.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2002.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2002.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2002.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2002.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2112.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2112.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2112.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2112.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2112.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2112.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2114.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2114.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2114.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2114.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2114.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2114.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2115.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2115.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2115.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2115.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2115.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2115.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.276.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.276.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.276.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.276.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.276.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.276.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2107.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2107.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2107.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2107.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2107.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2107.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1887.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1887.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1887.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1887.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1887.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1887.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1723.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1723.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1723.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1723.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1723.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1723.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2336.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2336.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2336.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2336.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2336.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2336.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2337.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2337.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2337.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2337.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2337.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2337.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1732.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1732.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1732.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1732.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1732.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1732.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1727.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1727.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1727.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1727.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1727.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1727.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1726.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1726.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1726.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1726.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1726.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1726.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1761.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1761.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1761.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1761.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1761.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1761.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1942.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1942.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1942.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1942.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1942.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1942.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2490.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2490.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2490.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2490.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2490.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2490.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1990.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1990.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1990.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1990.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1990.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1990.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1992.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1992.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1992.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1992.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1992.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1992.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2515.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2515.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2515.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2515.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2515.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2515.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1124.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1124.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1124.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1124.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1124.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1124.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1728.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1728.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1728.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1728.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1728.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1728.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2109.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2109.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2109.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2109.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2109.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2109.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2110.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2110.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2110.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2110.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2110.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2110.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1948.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1948.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1948.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1948.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1948.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1948.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2388.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2388.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2388.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2388.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2388.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2388.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2545.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2545.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2545.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2545.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2545.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2545.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2359.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2359.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2359.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2359.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2359.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2359.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1420.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1420.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1420.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1420.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1420.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1420.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.305.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.305.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.305.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.305.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.305.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.305.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2400.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2400.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2400.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2400.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2400.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2400.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.314.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.314.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.314.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.314.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.314.q1" newgid="uk.org.publicwhip/wrans/2010-06-15d.314.q1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.314.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.314.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.361.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.314.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1904.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1904.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1904.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1904.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1904.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1904.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1969.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1969.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1969.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1969.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1969.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1969.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2122.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2122.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2122.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2122.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2122.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2122.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1970.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1970.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1970.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1970.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1970.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1970.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1720.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1720.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1720.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1720.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1720.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1720.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2544.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2544.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2544.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2544.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2544.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2544.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2210.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2210.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2210.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2210.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2210.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2210.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2212.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2212.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2212.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2212.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2212.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2212.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2213.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2213.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2213.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2213.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2213.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2213.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2163.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2163.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2163.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2163.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2163.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2163.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1977.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1977.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1977.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1977.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1977.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1977.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1978.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1978.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1978.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1978.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1978.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1978.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2342.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2342.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2342.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2342.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2342.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2342.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2345.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2345.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2345.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2345.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2345.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2345.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2546.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2546.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2546.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2546.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2546.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2546.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2401.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2401.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2401.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2401.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2401.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2401.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1587.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1587.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1587.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1587.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1587.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1587.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1574.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1574.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1574.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1574.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1574.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1574.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1820.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1820.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1820.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1820.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1820.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1820.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1791.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1791.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1791.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1791.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1791.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1791.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.630.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.630.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.630.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.630.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.630.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.630.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1803.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1803.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1803.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1803.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1803.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1803.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1063.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1063.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1063.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1063.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1063.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1063.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1575.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1575.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1575.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1575.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1575.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1575.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2566.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2566.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2566.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2566.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2566.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2566.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2567.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2567.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2567.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2567.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2567.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2567.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2568.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2568.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2568.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2568.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2568.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2568.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1687.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1687.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1687.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1687.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1687.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1687.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1733.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1733.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1733.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1733.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1733.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1733.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1734.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1734.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1734.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1734.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1734.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1734.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2660.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2660.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2660.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2660.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2660.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2660.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2426.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2426.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2426.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2426.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2426.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2426.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1630.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1630.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1630.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1630.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1630.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1630.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2403.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2403.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2403.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2403.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2403.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2403.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1627.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1627.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1627.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1627.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1627.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1627.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2262.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2262.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2262.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2262.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2262.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2262.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2052.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2052.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2052.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2052.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2052.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2052.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2428.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2428.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2428.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2428.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2428.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2428.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2321.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2321.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2321.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2321.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2321.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2321.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2322.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2321.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2323.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2323.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2323.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2323.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2323.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2323.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1629.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1629.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1629.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1629.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1629.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1629.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1632.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1632.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1632.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1632.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1632.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1632.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1998.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1998.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1998.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1998.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1998.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1998.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1573.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1573.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1573.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1573.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1573.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1573.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1626.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1626.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1626.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1626.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1626.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1626.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1588.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1588.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1588.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1588.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1588.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1588.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1623.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1623.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1623.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1623.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1623.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1623.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1808.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1808.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1808.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1808.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1808.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1808.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1793.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1793.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1793.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1793.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1793.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1793.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1255.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1255.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1255.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1255.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1255.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1255.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1367.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1367.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1367.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1367.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1367.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1367.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1748.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1748.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1748.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1748.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1748.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1748.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1751.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1751.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1751.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1751.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1751.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1751.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1496.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1496.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1496.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1496.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1496.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1496.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1497.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1497.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1497.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1497.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1497.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1497.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1749.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1749.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1749.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1749.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1749.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1749.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1750.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1750.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1750.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1750.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1750.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1750.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2391.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2391.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2391.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2391.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2391.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2391.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2369.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2369.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2369.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2369.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2369.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2369.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2013.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2013.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2013.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2013.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2013.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2013.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2283.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2283.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2283.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2283.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2283.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2283.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2284.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2284.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2284.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2284.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2284.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2284.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2285.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2285.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2285.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2285.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2285.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2285.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1443.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1443.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1443.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1443.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1443.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1443.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2376.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2376.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2376.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2376.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2376.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2376.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.340.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.340.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.340.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.340.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.340.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.340.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2204.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2204.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2204.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2204.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2204.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2204.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2286.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2286.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2286.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2286.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2286.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2286.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2287.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2287.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2287.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2287.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2287.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2287.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2407.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2407.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2407.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2407.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2407.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2407.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2218.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2218.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2218.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2218.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2218.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2218.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1601.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1601.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1601.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1601.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1601.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1601.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1692.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1692.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1692.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1692.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1692.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1692.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1645.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1645.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1645.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1645.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1645.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1645.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1646.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1645.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1647.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1645.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2189.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2189.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2189.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2189.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2189.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2189.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2666.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2666.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2666.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2666.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2666.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2666.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1943.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1943.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1943.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1943.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1943.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1943.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2435.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2435.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2435.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2435.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2435.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2435.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1439.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1439.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1439.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1439.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1439.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1439.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1667.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1667.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1667.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1667.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1667.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1667.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1641.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1641.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1641.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1641.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1641.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1641.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1704.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1704.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1704.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1704.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1704.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1704.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2427.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2427.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2427.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2427.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2427.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2427.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2429.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2429.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2429.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2429.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2429.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2429.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1446.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1446.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1446.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1446.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1446.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1446.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1967.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1967.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1967.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1967.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1967.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1967.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1576.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1576.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1576.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1576.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1576.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1576.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1519.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1519.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1519.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1519.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1519.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1519.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1810.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1810.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1810.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1810.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1810.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1810.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1747.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1747.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1747.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1747.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1747.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1747.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2211.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2211.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2211.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2211.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2211.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2211.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1746.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1746.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1746.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1746.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1746.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1746.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1764.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1764.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1764.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1764.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1764.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1764.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2208.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2208.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2208.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2208.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2208.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2208.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1410.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1410.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1410.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1410.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1410.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1410.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.386.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.386.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.386.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.386.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.386.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.386.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.271.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.271.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.271.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.271.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.271.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.271.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.633.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.633.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.633.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.633.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.633.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.633.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.109.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.109.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.109.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.109.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.109.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.109.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.528.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.528.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.528.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.528.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.528.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.528.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.879.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.879.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.879.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.879.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.879.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.879.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1211.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1211.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1211.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1211.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1211.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1211.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2231.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2231.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2231.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2231.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2231.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2231.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2235.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2235.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2235.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2235.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2235.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2235.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2237.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2237.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2237.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2237.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2237.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2237.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2239.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2239.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2239.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2239.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2239.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2239.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1676.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1676.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1676.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1676.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1676.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1676.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2165.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2165.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2165.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2165.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2165.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2165.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2166.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2165.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.317.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.317.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.317.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.317.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.317.q1" newgid="uk.org.publicwhip/wrans/2010-06-15d.317.q1" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.317.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.317.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.366.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.317.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1800.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1800.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1800.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1800.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1800.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1800.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1677.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1677.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1677.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1677.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1677.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1677.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2547.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2547.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2547.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2547.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2547.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2547.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2550.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2550.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2550.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2550.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2550.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2550.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1583.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1583.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1583.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1583.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1583.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1583.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1585.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1583.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1693.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1693.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1693.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1693.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1693.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1693.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2548.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2548.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2548.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2548.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2548.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2548.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2549.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2548.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1691.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1691.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1691.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1691.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1691.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1691.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1763.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1763.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1763.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1763.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1763.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1763.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1655.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1655.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1655.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1655.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1655.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1655.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2450.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2450.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2450.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2450.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2450.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2450.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2451.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2450.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2452.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2450.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2453.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2450.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2277.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2277.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2277.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2277.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2277.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2277.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2278.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2277.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2279.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2277.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2252.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2252.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2252.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2252.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2252.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2252.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2152.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2152.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2152.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2152.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2152.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2152.r0" matchtype="perfectmatch"/>
+
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2368.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2368.h" matchtype="changes"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2368.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2368.q0" matchtype="changes"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2368.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2368.r0" matchtype="changes"/>
+<minor-heading id="uk.org.publicwhip/wrans/2010-06-15c.2368.h" oldstyleid="uk.org.publicwhip/wrans/2010-06-15c.404W.3" nospeaker="true" colnum="404W"  url="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100615/text/100615w0014.htm#10061567000579">
+	Departmental Internet
+</minor-heading>
+
+<ques id="uk.org.publicwhip/wrans/2010-06-15c.2368.q0" oldstyleid="uk.org.publicwhip/wrans/2010-06-15c.404W.4" speakerid="uk.org.publicwhip/member/40646" speakername="Tom Watson" colnum="404W"  url="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100615/text/100615w0014.htm#10061567000579">
+	<p pid="c.404W.4/1" qnum="2368">To ask the Secretary of State for Health what the URL is of each website managed by <i> (a)</i> his Department and <i> (b)</i> each non-departmental public body and agency for which his Department is responsible.</p>
+</ques>
+
+<reply id="uk.org.publicwhip/wrans/2010-06-15c.2368.r0" oldstyleid="uk.org.publicwhip/wrans/2010-06-15c.404W.5" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" colnum="404W"  url="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100615/text/100615w0014.htm#10061567000580">
+	<p pid="c.404W.5/1">The Department is responsible for the following websites:</p>
+	<p pid="c.404W.5/2" class="indent"><a href="http://www.dh.gov.uk">www.dh.gov.uk</a></p>
+	<p pid="c.404W.5/3" class="indent"><a href="http://www.nhs.uk">www.nhs.uk</a></p>
+	<p pid="c.404W.5/4">Non-departmental bodies and agencies for which the Department is responsible, have the following URLs that are in line with Cabinet Office guidance:</p>
+	<p pid="c.404W.5/5" class="indent"><a href="http://www.aerc.org.uk">www.aerc.org.uk</a></p>
+	<p pid="c.404W.5/6" class="indent"><a href="http://www.appointments.org.uk">www.appointments.org.uk</a></p>
+	<p pid="c.404W.5/7" class="indent"><a href="http://www.cqc.org.uk">www.cqc.org.uk</a></p>
+	<p pid="c.404W.5/8" class="indent"><a href="http://www.chre.org.uk">www.chre.org.uk</a></p>
+	<p pid="c.404W.5/9" class="indent"><a href="http://www.gscc.org.uk">www.gscc.org.uk</a></p>
+	<p pid="c.404W.5/10" class="indent"><a href="http://www.hpa.org.uk">www.hpa.org.uk</a></p>
+	<p pid="c.404W.5/11" class="indent"><a href="http://www.hfea.gov.uk">www.hfea.gov.uk</a></p>
+	<p pid="c.404W.5/12"><a href="http://www.hta.gov.uk">www.hta.gov.uk</a></p>
+	<p pid="c.404W.5/13" class="indent"><a href="http://www.mhra.gov.uk">www.mhra.gov.uk</a></p>
+	<p pid="c.404W.5/14" class="indent"><a href="http://www.monitor-nhsft.gov.uk">www.monitor-nhsft.gov.uk</a></p>
+	<p pid="c.404W.5/15">In addition the Department is also responsible for reviewing, converging and closing the following websites as part of its commitment to Cabinet Office under Transformational Government:</p>
+	<p pid="c.404W.5/16" class="indent"><a href="http://www.18weeks.nhs.uk/">www.18weeks.nhs.uk/</a></p>
+	<p pid="c.404W.5/17" class="indent"><a href="http://www.adb.dh.gov.uk/">www.adb.dh.gov.uk/</a></p>
+	<p pid="c.404W.5/18" class="indent"><a href="http://www.arsac.org.uk/">www.arsac.org.uk/</a></p>
+	<p pid="c.404W.5/19" class="indent"><a href="http://www.asthmar-d.org.uk/">www.asthmar-d.org.uk/</a></p>
+	<p pid="c.404W.5/20" class="indent"><a href="http://www.breastfeeding.nhs.uk/">www.breastfeeding.nhs.uk/</a></p>
+	<p pid="c.404W.5/21" class="indent"><a href="http://www.pharmacopoeia.co.uk/">www.pharmacopoeia.co.uk/</a></p>
+	<p pid="c.404W.5/22" class="indent"><a href="http://www.buginvestigators.co.uk/">www.buginvestigators.co.uk/</a></p>
+	<p pid="c.404W.5/23" class="indent"><a href="http://www.clean-safe-care.nhs.uk">www.clean-safe-care.nhs.uk</a></p>
+	<p pid="c.404W.5/24" class="indent"><a href="http://www.comare.org.uk/">www.comare.org.uk/</a></p>
+	<p pid="c.404W.5/25" class="indent"><a href="http://www.connectingforhealth.nhs.uk">www.connectingforhealth.nhs.uk</a></p>
+	<p pid="c.404W.5/26" class="indent"><a href="http://www.ct-toolkit.ac.uk/">www.ct-toolkit.ac.uk/</a></p>
+	<p pid="c.404W.5/27" class="indent"><a href="http://www.east-of-england-rdsu.org.uk/">www.east-of-england-rdsu.org.uk/</a></p>
+	<p pid="c.404W.5/28" class="indent"><a href="http://www.health4work.nhs.uk">www.health4work.nhs.uk</a></p>
+	<p pid="c.404W.5/29" class="indent"><a href="http://www.healthystart.nhs.uk/">www.healthystart.nhs.uk/</a></p>
+	<p pid="c.404W.5/30" class="indent"><a href="http://www.hsru.co.uk/">www.hsru.co.uk/</a></p>
+	<p pid="c.404W.5/31" class="indent"><a href="http://www.hgc.gov.uk/">www.hgc.gov.uk/</a></p>
+	<p pid="c.404W.5/32" class="indent"><a href="http://www.immunisation.nhs.uk/">www.immunisation.nhs.uk/</a></p>
+	<p pid="c.404W.5/33" class="indent"><a href="http://www.info.doh.gov.uk/doh/iar.nsf">www.info.doh.gov.uk/doh/iar.nsf</a>?open</p>
+	<p pid="c.404W.5/34" class="indent"><a href="http://www.dh.gov.uk/">www.dh.gov.uk/</a></p>
+	<p pid="c.404W.5/35" class="indent"><a href="http://www.invo.org.uk/">www.invo.org.uk/</a></p>
+	<p pid="c.404W.5/36" class="indent"><a href="http://www.nhsidentity.nhs.uk/">www.nhsidentity.nhs.uk/</a></p>
+	<p pid="c.404W.5/37" class="indent"><a href="http://www.nhsplus.nhs.uk/">www.nhsplus.nhs.uk/</a></p>
+	<p pid="c.404W.5/38" class="indent"><a href="http://www.nhs-procure21.gov.uk/">www.nhs-procure21.gov.uk/</a></p>
+	<p pid="c.404W.5/39" class="indent"><a href="http://www.nibsc.ac.uk/">www.nibsc.ac.uk/</a></p>
+	<p pid="c.404W.5/40" class="indent"><a href="http://www.photolibrary.nhs.uk/">www.photolibrary.nhs.uk/</a></p>
+	<p pid="c.404W.5/41" class="indent"><a href="http://www.rdinfo.org.uk/">www.rdinfo.org.uk/</a></p>
+	<p pid="c.404W.5/42" class="indent"><a href="http://www.rdlearning.org.uk/">www.rdlearning.org.uk/</a></p>
+	<p pid="c.404W.5/43" class="indent"><a href="http://www.rddirect.org.uk/">www.rddirect.org.uk/</a></p>
+	<p pid="c.404W.5/44" class="indent"><a href="http://www.rdsu.org.uk/">www.rdsu.org.uk/</a></p>
+	<p pid="c.404W.5/45" class="indent"><a href="http://www.nhsft-regulator.gov.uk/">www.nhsft-regulator.gov.uk/</a></p>
+	<p pid="c.404W.5/46" class="indent"><a href="http://www.shape.dh.gov.uk/">www.shape.dh.gov.uk/</a></p>
+	<p pid="c.404W.5/47" class="indent"><a href="http://www.smokefreeengland.co.uk/">www.smokefreeengland.co.uk/</a></p>
+	<p pid="c.404W.5/48" class="indent"><a href="http://www.socialworkandcare.co.uk/">www.socialworkandcare.co.uk/</a></p>
+	<p pid="c.404W.5/49" class="indent"><a href="http://www.valuingpeople.gov.uk/">www.valuingpeople.gov.uk/</a></p>
+</reply>
+
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1824.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1824.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1824.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1824.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1824.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1824.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2123.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2123.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2123.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2123.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2123.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2123.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2124.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2124.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2124.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2124.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2124.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2124.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1752.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1752.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1752.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1752.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1752.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1752.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2599.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2599.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2599.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2599.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2599.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2599.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2600.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2599.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.884.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.884.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.884.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.884.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.884.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.884.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1894.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1894.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1894.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1894.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1894.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1894.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2081.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2081.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2081.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2081.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2081.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2081.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1619.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1619.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1619.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1619.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1619.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1619.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1620.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1619.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1684.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1684.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1684.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1684.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1684.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1684.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2270.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2270.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2270.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2270.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2270.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2270.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2271.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2270.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2320.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2320.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2320.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2320.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2320.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2320.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2130.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2130.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2130.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2130.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2130.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2130.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2120.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2120.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2120.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2120.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2120.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2120.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2121.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2120.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1910.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1910.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1910.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1910.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1910.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1910.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1971.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1971.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1971.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1971.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1971.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1971.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2363.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2363.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2363.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2363.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2363.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2363.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.485.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.485.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.485.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.485.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.485.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.485.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.631.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.485.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2185.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2185.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2185.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2185.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2185.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2185.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2483.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2483.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2483.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2483.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2483.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2483.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2570.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2570.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2570.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2570.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2570.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2570.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2574.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2574.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2574.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2574.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2574.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2574.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2575.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.2574.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1031.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1031.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1031.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1031.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1031.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1031.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1696.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1696.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1696.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1696.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1696.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1696.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1697.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1696.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1923.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1923.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1923.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1923.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1923.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1923.r0" matchtype="perfectmatch"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1924.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1923.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1925.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1923.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1927.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1923.h" matchtype="altques"/>
+	<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1928.h" newgid="uk.org.publicwhip/wrans/2010-06-15c.1923.h" matchtype="altques"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2254.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2254.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2254.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2254.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2254.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2254.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2326.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2326.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2326.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2326.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2326.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2326.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2174.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2174.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2174.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2174.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2174.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2174.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1926.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1926.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1926.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1926.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1926.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1926.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.267.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.267.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.267.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.267.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.267.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.267.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.557.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.557.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.557.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.557.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.557.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.557.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1922.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1922.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1922.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1922.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1922.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1922.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1933.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1933.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1933.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1933.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1933.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1933.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1935.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1935.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1935.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1935.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1935.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1935.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2127.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2127.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2127.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2127.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2127.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2127.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2386.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2386.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2386.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2386.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2386.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2386.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2634.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2634.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2634.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2634.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2634.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2634.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1997.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.1997.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1997.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1997.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.1997.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.1997.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2159.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2159.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2159.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2159.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2159.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2159.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2289.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2289.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2289.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2289.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2289.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2289.r0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2290.h" newgid="uk.org.publicwhip/wrans/2010-06-15d.2290.h" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2290.q0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2290.q0" matchtype="perfectmatch"/>
+<gidredirect oldgid="uk.org.publicwhip/wrans/2010-06-15c.2290.r0" newgid="uk.org.publicwhip/wrans/2010-06-15d.2290.r0" matchtype="perfectmatch"/>
+</publicwhip>
+
