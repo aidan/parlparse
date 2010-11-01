@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Parliament UK: Parliamentary Calendar </title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="en-gb" />
+		<meta name="title" content="Parliament UK: What's On" />
+		<meta name="description" content="United Kingdom Parliament: Calendar of forthcoming and past events." />
+		<meta name="keywords" content="Parliament, politics, Houses of Parliament, House of Commons, House of Lords" />
+		<meta name="version" content="3.1.3.12293" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" type="text/css" media="projection,screen" href="/calendar/assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="projection,screen" href="/calendar/assets/css/grid.css" />
+		<link rel="stylesheet" type="text/css" media="projection,screen" href="/calendar/assets/css/main.css" />
+		<!--[if lte IE 6]>
+			<link rel="stylesheet" type="text/css" media="projection,screen" href="/calendar/assets/css/ie/header-and-footer-standalone/ie6.css" />
+		<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="/calendar/assets/css/calendar/calendar.css" media="screen, projection" />
+
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events in both Houses of Parliament" 
+			href="/calendar/all.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events in the House of Commons" 
+			href="/calendar/commons.rss" />
+
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Commons Main Chamber" 
+			href="/calendar/commons_main_chamber.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Commons Westminster Hall" 
+			href="/calendar/commons_westminster_hall.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Commons Select Committees" 
+			href="/calendar/commons_select_committee.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Commons General Committee" 
+			href="/calendar/commons_general_committee.rss" />
+
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events in the House of Lords" 
+			href="/calendar/lords.rss" />
+
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Lords Main Chamber" 
+			href="/calendar/lords_main_chamber.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Lords Grand Committee" 
+			href="/calendar/lords_grand_committee.rss" />
+		<link rel="alternate" 
+			type="application/rss+xml" 
+			title="Upcoming events: Lords Select and Joint Committes" 
+			href="/calendar/lords_select_committee.rss" />
+
+    <script src="/calendar/content/js/JQuery/jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/calendar/assets/scripts/jquery.equalheights.js"></script>
+		<script type="text/javascript" src="http://www.parliament.uk/assets/scripts/parliament-uk.js"></script>
+		<script type="text/javascript">
+			/*<![CDATA[*/
+			$(document).ready(function() {
+				var settings = {};
+				parliamentUK.init(settings);
+			});
+			/*]]>*/
+		</script>
+
+		
+    <script src="/calendar/content/js/Pict/jquery.pict.extend.jquery.js" type="text/javascript"></script>
+    <script src="/calendar/content/js/Pict/jquery.pict.extend.events.js" type="text/javascript"></script>
+    <script src="/calendar/content/js/calendar.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        parlycal.appPath   = '/calendar';
+        parlycal.sDate     = new Date(2010, 10, 1);
+        parlycal.sWeekly   = false;
+        parlycal.sHouse    = "Commons";
+        parlycal.sCategory = "GeneralCommittee";
+    </script>
+    <script src="/calendar/content/js/jquery.pict.mobile.calendar.js" type="text/javascript"></script>
+
+
+	</head>
+
+	<body class="main">
+		<div id="wrapper">
+			<div id="header">
+				<a href="http://www.parliament.uk/"><img src="/calendar/assets/images/parliament-uk-logo.gif" alt="Parliament UK" /></a>
+				<form id="search-form" action="http://www.parliament.uk/search/results" method="get">
+					<fieldset class="site-search">
+						<ul>
+							<li><a href="http://www.parliament.uk/site-information/accessibility/">Accessibility</a></li>
+							<li><a href="http://www.parliament.uk/site-information/email-alerts/">Email alerts</a></li>
+							<li><a href="http://www.parliament.uk/site-information/rss-feeds/">RSS feeds</a></li>
+							<li class="last"><a href="http://www.parliament.uk/site-information/contact-us/">Contact us</a></li>
+						</ul>
+						<h4 class="marker">Site search</h4>
+						<legend>Site search</legend>
+						<ol>
+							<li>
+								<label for="search">Search</label>
+								<input id="q" type="text" name="q" />
+							</li>
+						</ol>
+						<input type="submit" value="Search" />
+					</fieldset>
+				</form>
+				<h4 class="marker">Primary navigation</h4>
+				<div id="navigation">
+					<ul id="level-1">
+						<li><a href="http://www.parliament.uk/">Home</a></li>
+						<li class="over"><a href="http://www.parliament.uk/business/">Parliamentary business</a></li>
+						<li><a href="http://www.parliament.uk/mps-lords-and-offices/">MPs, Lords & offices</a></li>
+						<li><a href="http://www.parliament.uk/about/">About Parliament</a></li>
+						<li><a href="http://www.parliament.uk/get-involved/">Get involved</a></li>
+						<li><a href="http://www.parliament.uk/visiting/">Visiting</a></li>
+						<li class="last"><a href="http://www.parliament.uk/education/">Education</a></li>
+					</ul>
+					<ul id="level-2">
+						<li><a href="http://www.parliament.uk/business/commons/">House of Commons</a></li>
+						<li><a href="http://www.parliament.uk/business/lords/">House of Lords</a></li>
+						<li class="first over"><a href="http://services.parliament.uk/calendar/">What's on</a></li>
+						<li><a href="http://www.parliament.uk/business/bills-and-legislation/">Bills & legislation</a></li>
+						<li><a href="http://www.parliament.uk/business/committees/">Committees</a></li>
+						<li><a href="http://www.parliament.uk/business/publications/">Publications & records</a></li>
+						<li><a href="http://www.parliamentlive.tv/Main/Home.aspx">Parliament TV</a></li>
+						<li><a href="http://www.parliament.uk/business/news/">News</a></li>	
+						<li><a href="http://www.parliament.uk/topics/topical-issues.htm">Topics</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="content" class="wide">
+				<div id="content-small">
+					<div id="breadcrumbArea">You are here:
+						<a href="http://www.parliament.uk/">Parliament Home Page</a>
+						&gt;
+						<a href="http://www.parliament.uk/business/">Business</a>
+						&gt;
+						<a href="http://services.parliament.uk/calendar/">What's on</a>
+						
+					</div>
+
+					
+
+    
+
+    
+
+
+    <div id="calendar-header">
+        <div id="calendar-widget">
+            
+ <table border="0" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr id="calendar-heading">
+            <th class="week-selector"></th>
+            <th id="prev-month"><a href="/calendar/Commons/GeneralCommittee/2010/10/01/events.html">&lt;</a></th>
+            <th colspan="5">Nov 2010</th>
+            <th id="next-month"><a href="/calendar/Commons/GeneralCommittee/2010/12/01/events.html">&gt;</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="calendar-day-headings">
+            <td class="week-selector"></td>
+            <td>Mon</td> 
+            <td>Tue</td> 
+            <td>Wed</td> 
+            <td>Thu</td> 
+            <td>Fri</td> 
+            <td>Sat</td> 
+            <td>Sun</td> 
+        </tr>
+        
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/10/25/week.html"><img alt="Week beginning 25 October" src="/calendar/content/images/select_week.gif" title="Week beginning 25 October" /></a>
+            </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/25/events.html">25</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/26/events.html">26</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/27/events.html">27</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/28/events.html">28</a>
+                </td>
+            
+                <td class="other nonsitting">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/29/events.html">29</a>
+                </td>
+            
+                <td class="other weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/30/events.html">30</a>
+                </td>
+            
+                <td class="other weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/10/31/events.html">31</a>
+                </td>
+            
+        </tr>
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/1/week.html"><img alt="Week beginning 1 November" src="/calendar/content/images/select_week.gif" title="Week beginning 1 November" /></a>
+            </td>
+            
+                <td class="selected">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/01/events.html">1</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/02/events.html">2</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/03/events.html">3</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/04/events.html">4</a>
+                </td>
+            
+                <td class="nonsitting">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/05/events.html">5</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/06/events.html">6</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/07/events.html">7</a>
+                </td>
+            
+        </tr>
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/8/week.html"><img alt="Week beginning 8 November" src="/calendar/content/images/select_week.gif" title="Week beginning 8 November" /></a>
+            </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/08/events.html">8</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/09/events.html">9</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/10/events.html">10</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/11/events.html">11</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/12/events.html">12</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/13/events.html">13</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/14/events.html">14</a>
+                </td>
+            
+        </tr>
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/15/week.html"><img alt="Week beginning 15 November" src="/calendar/content/images/select_week.gif" title="Week beginning 15 November" /></a>
+            </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/15/events.html">15</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/16/events.html">16</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/17/events.html">17</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/18/events.html">18</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/19/events.html">19</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/20/events.html">20</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/21/events.html">21</a>
+                </td>
+            
+        </tr>
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/22/week.html"><img alt="Week beginning 22 November" src="/calendar/content/images/select_week.gif" title="Week beginning 22 November" /></a>
+            </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/22/events.html">22</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/23/events.html">23</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/24/events.html">24</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/25/events.html">25</a>
+                </td>
+            
+                <td class="nonsitting">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/26/events.html">26</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/27/events.html">27</a>
+                </td>
+            
+                <td class="weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/28/events.html">28</a>
+                </td>
+            
+        </tr>
+        
+        <tr class="week">
+            <td class="week-selector">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/29/week.html"><img alt="Week beginning 29 November" src="/calendar/content/images/select_week.gif" title="Week beginning 29 November" /></a>
+            </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/29/events.html">29</a>
+                </td>
+            
+                <td class="">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/11/30/events.html">30</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/12/01/events.html">1</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/12/02/events.html">2</a>
+                </td>
+            
+                <td class="other">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/12/03/events.html">3</a>
+                </td>
+            
+                <td class="other weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/12/04/events.html">4</a>
+                </td>
+            
+                <td class="other weekend">
+                    <a href="/calendar/Commons/GeneralCommittee/2010/12/05/events.html">5</a>
+                </td>
+            
+        </tr>
+        
+        </tbody>
+    </table>
+    <div>Click on the 
+        <img align="absmiddle" alt="Right arrow" src="/calendar/content/images/select_week.gif" title="Right arrow" /> to select a week.
+    </div>
+
+        </div>
+        <div id="calendar-image">
+            <img alt="Central Lobby" src="/calendar/content/images/sidebar-placeholder03.jpg" title="Central Lobby" />
+        </div>
+        <div id="calendar-intro">
+            <h2>Parliamentary Calendar</h2>
+            <p>
+                Parliamentary Calendar is a new service that allows you to find out what's on
+                in Parliament.
+            </p>
+            <ul>
+                <li><a href="http://www.parliament.uk/about/visiting/debates.cfm">Sitting times for debates</a></li>
+                <li><a href="http://www.parliament.uk/what_s_on/recess.cfm">Recess dates</a></li>
+                <li><a href="http://www.parliament.uk/about/visiting/tour.cfm">Tour dates</a></li>
+                <li><a href="http://www.parliamentlive.tv/Main/">Video and audio</a></li>
+                <li><a href="http://www.publications.parliament.uk/pa/pabuspap.htm">Business Papers</a></li>
+            </ul>
+            <p>
+                If you have any feedback about the calendar, send it to
+                <a href="mailto:webmaster@parliament.uk">webmaster@parliament.uk</a>.
+            </p>
+        </div>
+    </div>
+
+
+    
+
+    <ul id="date-selector">
+        <li class="first">
+            <a href="/calendar/Commons/GeneralCommittee/2010/11/01/today.html">Today</a>
+        </li>
+        <li>
+            <a href="/calendar/Commons/GeneralCommittee/2010/11/01/thisweek.html">This week</a>
+        </li>
+        <li>
+            <a href="/calendar/Commons/GeneralCommittee/2010/11/01/future.html">Future Business</a>
+        </li>
+    </ul>
+
+    
+
+    <div id="selected-date">
+        <p>
+        Monday 1 November 2010
+        </p>
+    </div>
+    
+    
+    
+    
+    
+    <ul id="houses">
+        
+        <li class="commons selected">
+            <a href="/calendar/2010/11/01/events.html">House of Commons</a>
+        </li>
+        <li class="lords">
+            <a href="/calendar/Lords/MainChamber/2010/11/01/events.html">House of Lords</a>
+        </li>
+        
+    </ul>
+    
+    <div id="house-container">
+
+        
+
+    
+
+        <ul id="location-selector">
+            <li class="">
+                <a href="/calendar/2010/11/01/events.html">Main Chamber</a>
+            </li>
+            
+            <li class="commons">
+                <a href="/calendar/Commons/WestminsterHall/2010/11/01/events.html">Westminster Hall</a>
+            </li>
+            <li class="commons selected">
+                <a href="/calendar/Commons/GeneralCommittee/2010/11/01/events.html">General Committee</a>
+            </li>
+            
+            <li class="">
+                <a href="/calendar/Commons/SelectCommittee/2010/11/01/events.html">Select Committee</a>
+            </li>
+        </ul>
+
+
+        <div class="navbreak line">
+        </div>
+
+    
+
+        <div id="events-output"><div class="calendar-daily-summary"><table class="order-of-business" border="0" cellpadding="0" cellspacing="0"><tr class="th"><th class="time" nowrap="nowrap">Time</th><th width="100%">Business</th></tr><tr><td class="time" valign="top" nowrap="nowrap">4.30pm</td><td width="100%" valign="top"><strong>First Delegated Legislation Committee</strong><div><em>Subject:</em> Draft Immigration and Nationality (Fees) (No. 2) Regulations 2010</div><div class="location"><em>Location:</em> Committee Room 9, Palace of Westminster</div></td></tr><tr class="alt"><td class="time" valign="top" nowrap="nowrap">4.30pm</td><td width="100%" valign="top"><strong>Second Delegated Legislation Committee</strong><div><em>Subject:</em> Draft International Tax Enforcement (Turks and Caicos Islands) Order 2010, the draft International Tax Enforcement (Liechtenstein) Order 2010, the draft International Tax Enforcement (Gibraltar) Order 2010, the draft International Tax Enforcement (Bahamas) Order 2010 and the draft International Tax Enforcement (Anguilla) Order 2010</div><div class="location"><em>Location:</em> Committee Room 12, Palace of Westminster</div></td></tr></table><div class="&#xA;          usefulLinks&#xA;          grey"><strong>Further information</strong><ul /></div></div></div>
+
+    </div>
+    
+    
+        <p id="future">
+            Future Parliamentary business is provisional and is subject to change.
+        </p>
+    
+
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+			<div id="footer">
+				<h4 class="marker">Footer links</h4>
+				<ul>
+					<li><a href="http://www.parliament.uk/site-information/azindex/">A-Z index</a></li>
+					<li><a href="http://www.parliament.uk/site-information/glossary/">Glossary</a></li>
+					<li><a href="http://www.parliament.uk/site-information/contact-us/">Contact us</a></li>
+					<li><a href="http://www.parliament.uk/site-information/foi/">Freedom of Information</a></li>
+					<li><a href="http://www.parliament.uk/about/working/jobs/">Jobs</a></li>
+					<li><a href="http://www.parliament.uk/site-information/using-this-website/">Using this website</a></li>
+					<li class="last"><a href="http://www.parliament.uk/site-information/copyright/">Copyright</a></li>
+				</ul>
+			</div>
+		</div>
+
+		
+
+		<script type="text/javascript">
+			/*<![CDATA[*/
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			/*]]>*/
+		</script> 
+		<script type="text/javascript">
+			/*<![CDATA[*/
+			try {
+				var pageTracker = _gat._getTracker('UA-15845045-1');
+				pageTracker._setDomainName('.parliament.uk');
+				pageTracker._trackPageview();
+			}
+			catch (err) { }
+			/*]]>*/
+		</script> 
+		<script type="text/javascript" src="http://www.parliament.uk/assets/scripts/lbi_ga.js"></script>
+	</body>
+</html>
