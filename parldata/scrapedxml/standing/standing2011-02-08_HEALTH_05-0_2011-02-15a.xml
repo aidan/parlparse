@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!DOCTYPE publicwhip
+[
+<!ENTITY ndash   "&#8211;">
+<!ENTITY mdash   "&#8212;">
+<!ENTITY iexcl   "&#161;">
+<!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
+
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY szlig  "&#223;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
+<!ENTITY iacute "&#237;" >
+<!ENTITY icirc  "&#238;" >
+<!ENTITY iuml	"&#239;" >
+<!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
+
+<!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
+<!ENTITY frac14 "&#188;" >
+<!ENTITY frac12 "&#189;" >
+<!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
+
+]>
+
+<publicwhip><bill url="http://services.parliament.uk/bills/2010-11/healthandsocialcare.html" title="Health and Social Care Bill">Health and Social Care Bill</bill>
+<committee>
+<chairmen>
+<mpname memberid="uk.org.publicwhip/member/40351" membername="Jimmy Hood" attending="false">Mr Jim Hood</mpname>
+<mpname memberid="uk.org.publicwhip/member/40486" membername="Mike Hancock" attending="true">Mr Mike Hancock</mpname>
+</chairmen>
+<mpname memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams" attending="true"> Abrahams, Debbie <span class="italic">(Oldham East and Saddleworth)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron" attending="true"> Barron, Mr Kevin <span class="italic">(Rother Valley)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop" attending="true"> Blenkinsop, Tom <span class="italic">(Middlesbrough South and East Cleveland)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40660" membername="Steve Brine" attending="true"> Brine, Mr Steve <span class="italic">(Winchester)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40161" membername="Simon Burns" attending="true"> Burns, Mr Simon (Minister of State, Department of Health)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow" attending="true"> Burstow, Paul (Minister of State, Department of Health)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40449" membername="Dan Byles" attending="true"> Byles, Dan <span class="italic">(North Warwickshire)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb" attending="true"> Crabb, Stephen <span class="italic">(Preseli Pembrokeshire)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois" attending="true"> de Bois, Nick <span class="italic">(Enfield North)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40585" membername="Margot James" attending="true"> James, Margot <span class="italic">(Stourbridge)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall" attending="true"> Kendall, Liz <span class="italic">(Leicester West)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy" attending="true"> Lefroy, Jeremy <span class="italic">(Stafford)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan" attending="true"> Morgan, Nicky <span class="italic">(Loughborough)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris" attending="true"> Morris, Grahame M. <span class="italic">(Easington)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter" attending="true"> Poulter, Dr Daniel <span class="italic">(Central Suffolk and North Ipswich)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40566" membername="John Pugh" attending="true"> Pugh, John <span class="italic">(Southport)</span> (LD)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40586" membername="Jim Shannon" attending="true"> Shannon, Jim <span class="italic">(Strangford)</span> (DUP)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40482" membername="Owen Smith" attending="true"> Smith, Owen <span class="italic">(Pontypridd)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry" attending="true"> Soubry, Anna <span class="italic">(Broxtowe)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy" attending="true"> Sturdy, Julian <span class="italic">(York Outer)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry" attending="true"> Thornberry, Emily <span class="italic">(Islington South and Finsbury)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40344" membername="Karl Turner" attending="true"> Turner, Karl <span class="italic">(Kingston upon Hull East)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg" attending="true"> Twigg, Derek <span class="italic">(Halton)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson" attending="true"> Wilson, Phil <span class="italic">(Sedgefield)</span> (Lab)</mpname>
+<clerk>Chris Stanton</clerk>
+<clerk>Mark Etherton</clerk>
+</committee>
+<major-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.1.0" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column171">Public Bill Committee </major-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.1.1" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000005" colnum="171">
+<p>[Mr Mike Hancock in the Chair]</p>
+<p class="indent">Written evidence to be reported to the House</p>
+<p>HS 30 TreeHouse</p>
+<p>HS 32 Malcolm Alexander and others</p>
+<p>HS 33 National Association of LINk Members</p>
+<p>HS 34 Asthma UK</p>
+<p>HS 35 Dr A Talbot-Smith</p>
+<p>HS 36 Devon Health and Social Care Forum</p>
+<p>HS 37 London Health Forum</p>
+<p>HS 38 Network Europe Group</p>
+<p>HS 39 Patients Association</p>
+<p>HS 40 Michele Bohan</p>
+<p>HS 41 Royal College of Midwives</p>
+<p>HS 42 Royal College of Surgeons</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.1.2" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000447" colnum="171">
+<p> Welcome to the first official sitting of the Committee on the Health and Social Care Bill. I welcome back Derek Twigg—nice to see you fit and well, or on the way to being so. The whole Committee was concerned about your health last week, and it was a talking point in most of the sittings. It is nice to have you with us.</p>
+<p>For those of you who have not served before on a Public Bill Committee, the normal procedures apply. Members who wish to be called to speak should stand to be identified, and as always I will do my best to fit in everyone. I call Mr Twigg.</p>
+</speech>
+<minor-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.0" time="10:30" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000022">Clause 1 </minor-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.1" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000006" colnum="171">
+<p> I beg to move amendment 31, in clause 1, page 1, line 9, after ‘has’, insert</p>
+<p class="indent">‘and is accountable to Parliament for’.</p>
+<p>It is a pleasure to serve under your chairmanship, Mr Hancock, and to serve on the Committee on this Bill, which is probably the most important Bill going through Parliament. I also look forward to working with Opposition colleagues. I know that the Minister, whom I shadow, is a courteous and helpful man—I do not know how helpful he will be during the rest of the Committee, but we will see. I am also grateful for the support of my hon. Friends, who are all passionate about the health service.</p>
+<p>We want to spend some time today considering clause 1. We have tabled a number of amendments, not least because we think that the clause is fundamental in terms of the scope of the Government’s changes to the national health service, and the accountability issues &nbsp;around both the Secretary of State and transparency. Accountability to Parliament is absolutely essential for a health service that is publicly funded—it is probably the biggest service that the Government provide. For that reason, we will spend some time on the clause, and my colleagues will speak later.</p>
+<p>At this stage, I am not saying whether we will press the amendment to a Division, which will depend on what the Minister says in his response, but we are concerned about accountability throughout the Bill, and one of the first instances concerns parameters. We would like the Secretary of State at least to be directly accountable to Parliament on most of his new role. It will be interesting to see how the Minister explains that in his response to the clause stand part debate. We want him to be up front, and to confirm to what extent the Secretary of State will be accountable to Parliament.</p>
+<p>The amendment is specifically related to public health, and although that carries on throughout the clause, I am limited to speaking on the amendment. It is a fairly straightforward amendment, so the Minister can reject it and explain his reasons for doing so, if he believes that the Secretary of State is accountable to Parliament. That will be interesting to hear, and if we are not satisfied, we might press the amendment to a vote. I know that he will do his best to try to reassure us as to the accountability of the Secretary of State, and that he very much favours being accountable, as he has said in the past. We may dig up one or two interesting quotes on that for later in the debate.</p>
+<p>On public health functions, it is important that the lead is taken from the top. Much has been said about the Government’s proposals, and we welcome the focus on public health and the involvement of many more organisations. With your permission, Mr Hancock, in the clause stand part debate I will explore in more detail our concerns on accountability and the role of the Secretary of State.</p>
+<p>The amendment arises from concerns that the Secretary of State will reduce accountability on his role in the delivery of health services. We support the greater role for health authorities, with the director of public health being given a role within the local authority, and for local partners. We welcome the fact that there will be local leadership in public health and, as the Minister and the Secretary of State have said, that there should be greater co-operation and focus on local improvements in our communities. Of course, collaborative working will be an important part of that and one of our concerns about the Bill is about fragmentation, lack of co-operation and the possible boundaries being put up around the involvement of much greater private health care and competition, which will impact on public health in different ways. That is another part of the Bill that we will explore in later clauses. It is important to raise the issue of how collaboration and fragmentation, which we are concerned about in the Bill as a whole, impact on the public health function. That will lead me a bit later in my speech to the Secretary of State’s role and function.</p>
+<p>We accept and want to see public health improvements being driven locally, but that cannot be done without commitment and drive from the Government and the Secretary of State and the financial support which is part of that. One of our concerns is funding for the public health function. Will it be better if the Secretary &nbsp;of State is more directly involved, or will it be more of a problem in committing funding and making sure that funding is sufficient to drive through the public health care functions? The Secretary of State’s role in that will be particularly important, and I hope that the Minister will explain not only the technical details around the amendment, but the Secretary of State’s role. The improvements that we all want to see will not be possible, as far as we can see, without the clear involvement of the Secretary of State and the Department of Health. Central leadership is exceptionally important here, which is what the amendment is about. If the Secretary of State is going to be in leadership, what powers will he retain? We will discuss that later. What will be his functions in terms of accountability, and how will that relate to Parliament? I shall come to that shortly.</p>
+<p>We have seen massive improvements in public health over the past 20 or so years, but more needs to be done, as the Bill recognises. My assumption—the Minister may or may not correct me—is that the Secretary of State thinks that by giving much greater local accountability, it will improve indicators around public health, with which we all agree. To what extent will he be hands-off and how far will he work with local authorities, the Health Protection Agency, the Health and Safety Executive and all those other bodies that have an important function in public health? We have seen that progress is much slower in deprived areas. What will the Secretary of State’s role be in central direction and central involvement in deprived communities? We have seen a general improvement and an improvement in deprived communities, but deprived communities are still struggling to make the sorts of strides that we have seen elsewhere. Will that be part of the Secretary of State’s remit, accountability and reporting back to Parliament, which are important, too?</p>
+<p>We cannot underestimate—this is the crux of our amendment—the importance of the Secretary of State’s accountability to this House on health in general, which we will explore later in the clause, and on public health, which is crucial to the health improvement of our population and improving people’s lives. Parliamentary scrutiny is going to be very important, so the Minister will have to explain—if he does not mind, of course—how that will be done under the Bill.</p>
+<p>Will the Secretary of State, for instance, provide an annual report to Parliament? Will he be reporting regularly on various issues that occur in public health? Will we be having debates about this and, importantly, will he be answering questions, as he does now, on public health? We need to be clear about that, because later, when we talk about Monitor and other bodies, we will explore who will deal with questions. Will the statistics and data, which are important now, which we get through Parliament and which members of the public can access, still be available and not be changed in any way? Will the Secretary of State try to push responsibility for certain information on to local bodies, which is an important question? What responsibilities will local bodies have in providing information to MPs, which the Secretary of State and the Department of Health currently do in response to parliamentary questions and debates? That relates to our concern about accountability and openness in the Bill. A lot of people—not only the Opposition, but people outside this place—are still concerned about what the details of the Bill will mean. I &nbsp;do not wish to be repetitive on that point, but I want re-emphasise it in the strongest possible terms, because if the Minister had not got the gist of our concerns on the clause, which I am sure he had, he should have by now.</p>
+<p>There is a parliamentary focus on continuous improvement, which will be important for scrutiny. Ensuring that the Secretary of State will be as accountable to Parliament as he is now would send a strong message to those who are delivering, or have the responsibility to deliver, improvements to public health in the country, and give them a sense that Parliament is involved in the matter, that we want to see it driven forward and that the same emphasis and importance is placed on it. Maximum benefit in this case can be achieved only if the Secretary of State is fully accountable.</p>
+<p>I want to listen to what the Minister has to say. It is important and helpful that he sets out any differences between the Bill’s proposals and the current arrangements that we may not have spotted. Through the debate, we are trying to get on the record the Government’s view on such issues—I am sure the Minister will understand this, because there is great uncertainty about large parts of the Bill—so that we can make a well-informed decision about which way we should vote in this important matter.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.2" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" speakeroffice="The Minister of State, Department of Health"  time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000035" colnum="174">
+<p> It will not make any difference.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.3" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000036" colnum="174">
+<p> The Minister says that, but anyone who knows me knows that I am open-minded. If the Government do something that we agree with, we will support it. However, we have to be clear on what the Bill means for the Secretary of State’s responsibility and accountability to Parliament.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.4" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000037" colnum="174">
+<p> It is a pleasure to serve under your chairmanship, Mr Hancock, and I am grateful that you have given me the opportunity to make a contribution to this important legislation.</p>
+<p>The clause sets out the establishment of the national health service commissioning board and the commissioning consortia. As well as passing responsibilities to local authorities for public health, the important changes set out in the clause relate to what we can expect the Secretary of State to be responsible for. Under the Bill, the Secretary of State will lose his current duty to provide or secure the provision of services for the purposes of the health service. Instead, the new duty on the Secretary of State is the simple promotion of the comprehensive health service, which is an important and fundamental difference of approach.</p>
+<p>The Secretary of State’s first task in the NHS will be to carry out public health functions that he does not pass down to local authorities, the commissioning consortia or the NHS commissioning board through regulations set out elsewhere in the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.5" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000040" colnum="174">
+<p> Order. Mr Morris, I refer you to the Bill and say that you are drifting off the point that is being debated at the present time.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.6" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000041" colnum="174">
+<p> I am trying to set the scene, Mr Hancock, and I will return to the clause.</p>
+<p>The Secretary of State’s second task will be to</p>
+<p class="indent">“act with a view to securing the provision of services”.</p>
+<p>However, as we know, he has no role in securing the provision of services. That task refers only to acting with a view to securing those services when exercising his other limited functions in the NHS commissioning board, the commissioning consortia and local authorities.</p>
+<p>Those limited functions relate to the annual mandate that the Secretary of State will set for the board under clause 19, or the standing rules that will be made for it and the commissioning consortia under clause 16, which is set out in the explanatory notes.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.7" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000045" colnum="175">
+<p> Order. I think, Mr Morris, you are drifting much too far from the amendment. There will be an opportunity in the clause stand part debate for you to make such a speech, but that is not so during the debate on the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.8" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000046" colnum="175">
+<p> I shall return to the amendment, Mr Hancock.</p>
+<p>One of the fundamental principles of the national health service under the current arrangements is that at its head is an elected custodian who takes responsibility for the provision of high quality health care nationwide. Indeed, the Secretary of State is currently directly responsible for securing the provision of all health services as set out in the National Health Service Act 2006. Those functions are largely delegated to bodies such as the strategic health authorities and the primary care trusts, the abolition of which I shall come to, because that relates directly to the establishment of bodies in clause 1. Despite that delegation, the bodies remain under the duty of the Secretary of State, who, most importantly, remains accountable to Parliament for the provision of services.</p>
+<p>Under the new commissioning structure in clause 1, which is set out throughout the Bill, that duty will no longer be delegated and that direct responsibility will be taken away from the Secretary of State. The Secretary of State will have duties, which have been described, but the direct responsibility for securing the provision of health services will be conferred on the NHS commissioning board and the general practice-led commissioning consortia. Such provision is set out in clauses 5 and 6, which insert proposed new sections 1D and 1E into the 2006 Act. I shall confine my remarks to clause 1 and the amendment, but it is important to consider the fundamental changes to the Secretary of State’s responsibilities when we consider the new structure of the comprehensive health service.</p>
+<p>I have studied the new structure for some time and have read the explanatory notes, the House of Commons Library research papers and many other related documents that have been submitted in evidence from a variety of sources, such as academics, interest groups, trade unions and professional bodies. I was surprised, therefore, to hear in the previous evidence sitting the Secretary of State dismissing the fundamental changes that he was making to his own responsibilities. When he was questioned by my hon. Friend the Member for Oldham East and &nbsp;Saddleworth about his decision to repeal the Secretary of State’s duty to provide the comprehensive health service, he rather surprisingly replied that the 1948 duty on the Secretary of State remained, and that clause 1 and other provisions in the Bill applied to the other organisations. It is important to address my hon. Friend’s specific question about such a duty.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.9" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000050" colnum="176">
+<p> Order. The amendment is about public health services, which are distinctly different. We have a long list of amendments, many of which will cover the points that you make. To be fair, we must stick to the matter before us—the amendment that Mr Twigg has moved—and that alone. There will be lots of opportunities to widen the debate when we discuss other clauses.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.10" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000051" colnum="176">
+<p> Shall I continue?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.11" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000052" colnum="176">
+<p> Please do, as long as you stick to the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.12" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000053" colnum="176">
+<p> Thank you, Mr Hancock. I accept your criticism, but I am setting the scene. The implications are so wide-ranging that it is important to put some of those issues on the record.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.13" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000054" colnum="176">
+<p> The issue for the Minister—my hon. Friend is getting to this point—is that public health has been given a high profile, and rightly so. We have not, however, been able to find out about the accountability and the responsibilities that the Secretary of State will retain, and we hope that the Minister will tell us about them. How will that fit in with the rest of the people with responsibility?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.14" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000055" colnum="176">
+<p> I am addressing the changes in the duties and powers of the Secretary of State. The clause removes the current duty on the Secretary of State, which is set out in section 1(2) of the 2006 Act,</p>
+<p class="indent">“to provide or secure the provision of services”</p>
+<p>for the purposes of the health service. Instead, proposed new subsection (2) imposes new duties on the Secretary of State for the purposes of promotion of the comprehensive service. As I have indicated, that is a far-reaching and fundamental deviation from the original text and founding principles of the NHS.</p>
+<p>Again referring to the House of Commons Library briefing note, part 1 of the Bill sets out a framework in which functions in relation to the health service, including public health—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.15" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000058" colnum="176">
+<p> Order. Mr Morris, I must be fair to the Committee. This is far too broad. You may have that debate on clause stand part of the Bill, when the whole principle of the clause is open to debate. This debate is simply about the change to the functions requested in the amendment, on the accountability of the Secretary of State to Parliament. That is what the amendment is about. We really have to stick to that. I am sorry if it is boring, but that is the way it is.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.16" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000059" colnum="176">
+<p> I will return to the broader debate at a later opportunity, if we are to adhere to that principle.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.17" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column177" colnum="177">
+<p> I will confine my remarks, specifically, to the amendment.</p>
+<p>I have a lot of sympathy for the principle behind the amendment, but it might be dangerous. First, I welcome public health being given such priority in the Bill, which is vital. However, by inserting</p>
+<p class="indent">“and is accountable to Parliament for”,</p>
+<p>the amendment implies that the Secretary of State is not accountable for every other thing in the Bill unless we use those very words. In my view, the Secretary of State is accountable to Parliament for each and every action that they undertake. Therefore, accountability to Parliament by the Secretary of State would be diminished by including the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.18" speakerid="uk.org.publicwhip/member/40684" speakername="Debbie Abrahams" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000063" colnum="177">
+<p> I wish to refer to a point that I made last Thursday in the evidence-taking sitting, when I asked the Secretary of State to explain to the Committee why he had decided to repeal the duty on the Secretary of State to provide a comprehensive health service. He replied: “I have not.” However, I refer the Committee to the explanatory notes, in particular paragraphs 63 and 64, which make it clear that the duty to provide a comprehensive health service is abolished, and the duty to promote a comprehensive health service—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.19" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000064" colnum="177">
+<p> Order. You must keep to the point.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.20" speakerid="uk.org.publicwhip/member/40684" speakername="Debbie Abrahams" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000065" colnum="177">
+<p> I will, Mr Hancock.</p>
+<p>The original duty is fundamental to the protection of the provision of a universal, comprehensive health service. It is the foundation of our national health service. Without it, on behalf of all the constituents who have us elected us, Parliament is unable to hold the Secretary of State to account for providing a comprehensive national health service.</p>
+<p>The second duty is limited to the exercise of the Secretary of State’s functions on consortia and the NHS commissioning board. There is a derogation of duty there. The exercise of such functions is discretionary, so there is no requirement to provide comprehensive health services. That is an important point, because under the amended duties, securing a comprehensive health service is not necessary in order to comply with the Secretary of State’s primary duty. All duties derive from the Secretary of State’s duty, and it therefore seems that under the clause no organisation will have the duty to provide a comprehensive health service for the whole of England.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.21" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000068" colnum="177">
+<p> Order. These are points to be made in the debate on the clause standing part of the Bill. The amendment is about inserting words to state that the Secretary of State is accountable to Parliament—that is what the debate is on, and not the general principle to which you are referring.</p>
+<p>In the absence of anyone else, I invite the Minister to talk.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.22" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000070" colnum="178">
+<p> May I add my best wishes to you, Mr Hancock, for chairing this Committee with your colleague, Mr Hood? I look forward to an interesting, informative and friendly Committee. I can give one assurance at this early stage to the hon. Member for Halton, who I am delighted to see in his place and &nbsp;mostly recovered from his illness: we will make a very compelling and convincing case and, in the spirit of his assurance that he is prepared to listen and might change his mind—which, in my experience, would be a first—we look forward to him, by the end of our proceedings, fully appreciating the merits of the legislation that we will consider over the next few weeks.</p>
+<p>May I also begin by saying that amendment 31, tabled by the hon. Gentleman and his hon. Friends, relates to the power of the Secretary of State’s role in relation to the comprehensive health service? Let me take this opportunity at the beginning—you can rest assured that I will be returning to this throughout our proceedings, Mr Hancock—to emphasise that the Bill absolutely preserves the founding principles of a comprehensive health service. Clause 1 retains the overarching responsibility on the Secretary of State to promote the comprehensive health service, a key duty which dates from the original 1946 Act. We are committed to a national health service that is free at the point of use and that is based on clinical need.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.23" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000072" colnum="178">
+<p> Order. I am going to have to call you to concentrate on what is before us, Mr Burns. It is very flattering to get your kind comments about the Chair, which I will pass on to Mr Hood, but that does not give you licence to get away with things that other hon. Members have been called to book on. Can I ask you to stick to the amendments before us?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.24" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000073" colnum="178">
+<p> I am sorry, Mr. Hancock. I just thought that, given how interested Opposition Members are in the matter, I would put it in context, but I will certainly move on.</p>
+<p>Clause 1 distinguishes between health care and public health functions, laying the way for the new Public Health England. In answer to, I think, the hon. Member for Easington and, possibly, the hon. Member for Halton, the Secretary of State would remain directly responsible, in conjunction with local authorities, for the provision of public health services. It places a clear responsibility for the protection and promotion of the nation’s public health at the heart of national Government, where it belongs.</p>
+<p>Amendment 31 proposes to make explicit the Secretary of State’s accountability for the comprehensive health service on the face of the Bill. To my mind, this addition is unnecessary. One of the core purposes of the Bill is to strengthen accountability to Parliament, and I welcome the opportunity to highlight how we intend to do that. The Bill will reduce political interference by removing Ministers’ discretion to intervene in day-to-day decisions in the NHS. Instead, Ministers will take responsibility for the things that they can and should be responsible for.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.25" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000076" colnum="178">
+<p> If accountability to Parliament is on the face of the Bill, the Minister surely will not mind it being reiterated again.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.26" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000077" colnum="178">
+<p> I would be grateful if the hon. Gentleman were to wait a minute, because he has anticipated what I am going to say. I am going to explain in greater detail—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.27" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000078" colnum="178">
+<p> Accept it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.28" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column179" colnum="179">
+<p> No, I am not going to accept the amendment. I am going to explain in greater detail how clause 1 strengthens the accountability to Parliament of the NHS. If the hon. Gentleman will bear with me, all will be revealed and he will understand the greater accountability.</p>
+<p>Of course, one of the key ways in which that will be done is through the annual mandate that the Secretary of State will give to the national commissioning board. That will lay down what we expect to be delivered from the taxpayers’ money that we are giving to the board to pass on to the consortia for the consortia’s commissioning and the national commissioning boards. That mandate will be transparent, published, open to be examined and laid before Parliament. It could be debated in Parliament, if hon. Members from all parties wished it to be done.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.29" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000081" colnum="179">
+<p> Will the Minister be clear about whether the national commissioning board will direct what happens in public health?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.30" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000082" colnum="179">
+<p> Public health will be dealt with through the Secretary of State. He will have responsibility for public health and will therefore be held accountable to Parliament. If we are talking about the whole comprehensive health service—</p>
+<p> Derek Twigg  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.31" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000084" colnum="179">
+<p> One minute. Let me just finish these points. For the first time, the Secretary of State will be required to publish an annual report on the performance of the comprehensive health service. That will be laid before Parliament to increase accountability and improve scrutiny. Again, the report that is laid before Parliament on the comprehensive health service will be open to debate in the Commons whenever hon. Members, the Government or the Opposition wish to initiate a debate. I shall move on to another area of accountability.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.32" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000085" colnum="179">
+<p> Will the Minister explain for Labour Members and for Government Members—a number of them have raised the issue—about unit reconfigurations and hospital closures? If, as the Minister indicates, in relation to a fundamental principle of the Bill—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.33" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000086" colnum="179">
+<p> Order. Do not be tempted to reply to that, Mr Burns.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.34" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000087" colnum="179">
+<p> Mr Hancock, you are as always absolutely right. I am afraid that the hon. Member for Easington is trying to tempt me down a path where I would be slapped down, no doubt in the nicest way possible, by the Chair.</p>
+<p> Several hon. Members  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.35" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column180" colnum="180">
+<p> May I finish answering the hon. Member for Easington? I am not prepared to put myself in that invidious position. He will have more than an opportunity to discuss that aspect of the Bill and his potential concerns on it when we reach the relevant clauses. As I am sure Mr Hancock does, I beg him to be patient because his wishes will be granted.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.36" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000090" colnum="180">
+<p> To bring the debate more alive, the Minister is speaking about accountability of the Secretary of State to Parliament in relation to public health, but I suppose that ultimate accountability occurs when something has gone so badly wrong that a Secretary of State needs to resign. Will he give an example of something that could go sufficiently wrong with public health for which the Secretary of State would feel responsible and have to resign?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.37" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000091" colnum="180">
+<p> I will not be tempted by the hon. Lady because she is posing a highly hypothetical question, which I have no doubt is totally non-applicable to my right hon. Friend the Secretary of State, who is doing such an excellent job on behalf of all of us. It is not worth being tempted. I also have to tell the hon. Lady that the hon. Member for Halton, who is a very open and straightforward man, said that he and his hon. Friends will listen carefully to what we are saying and study the record very carefully so that researchers can trawl Committee proceedings to try to find quotes that they anticipate will cause difficulties or embarrassment. I do not want to disappoint the hon. Gentleman, but we will be extremely careful, factually correct and politically wise in what we say.</p>
+<p>May I now get back to parliamentary accountability?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.38" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000093" colnum="180">
+<p> I wish you would.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.39" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000094" colnum="180">
+<p> Will the right hon. Gentleman give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.40" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000095" colnum="180">
+<p> No, because hon. Members want to hear about political accountability and should listen to the answers before they queue up to try to trip me up.</p>
+<p>The other issue that has been raised is on hon. Members asking questions and having debates in Parliament. Of course hon. Members will be able to table written and oral questions, and to raise their constituents’ concerns in Parliament. They will be able to have Adjournment debates. If the Opposition are unwise enough, they may want to have Supply day debates. That will not be stopped. I assure Opposition Members that we will be as helpful as we can in responding to those questions and debates. In addition to that—this is equally important—there will be ways in which members of the public and patients can hold the health service to account locally, through different mechanisms, such as the health and well-being boards and healthwatch, which we will discuss later. We will be able to go into in the greatest detail. I assure hon. Members that there will be increased accountability under this legislation, compared with the present.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.41" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000097" colnum="180">
+<p> I welcome the right hon. Gentleman’s helpful language. The question remains as to who would be accountable to Parliament in respect of the questions that would arise from questions and debates in Parliament.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.42" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column181" colnum="181">
+<p> It will be the Secretary of State and Ministers in the Department of Health. It is a no-brainer.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.43" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000099" colnum="181">
+<p> Will the right hon. Gentleman give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.44" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000100" colnum="181">
+<p> I will give the hon. Gentleman a chance, and then I will make progress.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.45" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000101" colnum="181">
+<p> I am grateful to the Minister for the chance, and I hope he will be even more helpful than he has been hitherto. My question is specifically on amendment 31. We do not need our researchers to trawl through the notes to discover some inconsistencies because there are already are some. The amendment relates to the insertion of responsibility and accountability to Parliament, in respect of public health. Forgive me if I am mistaken, but I am sure I heard the Minister say earlier that one of the things that he was insisting should be in the Bill and which would increase the accountability of the Secretary of State and the Department, was the report that he would make to Parliament on the comprehensive provision of the health service. Will that enfold his new responsibilities, split out under the new Bill for public health, which, as I understand it, will be delivered through local authorities? That is where we see something novel in the Bill, and that is where we seek reassurance that the Secretary of State will still be responsible to Parliament on public health, as has been the case—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.46" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000102" colnum="181">
+<p> Order. You can make that point in speeches, but not in interventions.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.47" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000103" colnum="181">
+<p> It is a very important point.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.48" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000104" colnum="181">
+<p> It is, but you could have made it in a speech, rather than in a lengthy intervention. You could have risen to speak.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.49" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000105" colnum="181">
+<p> Let us hope that I can reassure the hon. Gentleman on this. I am sure that he is aware that this Government are—this is unheard of in recent years within the health service—giving local authorities more involvement in the provision of public health. That is a crucial and important role. It adds an element of democratic accountability by having local authority involvement.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.50" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000106" colnum="181">
+<p> Will the right hon. Gentleman give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.51" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000107" colnum="181">
+<p> No, because I want to make some progress. If the hon. Gentleman asks a question, I am sure that he, even if not the hon. Lady, wants to know the answer.</p>
+<p>The annual report covers both the NHS and public health. The hon. Gentleman will be aware, from his research, that we are developing a new public health service, Public Health England, which will be directly accountable to the Secretary of State, to integrate and streamline existing health improvement and protection bodies, policies and functions, with an increased emphasis on research, analysis and evaluation. I hope that that clears that up.</p>
+<p>The Bill hands back powers to Parliament, as I have explained, setting out in statute many functions that have previously been exercised at the whim of the Minister of the day. Functions such as the commissioning and price regulation that are integral to the way that the NHS operates will now be clearly defined. In the same &nbsp;way, in future, the Government will not be able to impose new types of requirements on commissioners without the approval of Parliament.</p>
+<p>I hope that my hon. Friends and Opposition Members, having heard that explanation, will feel that they have fully probed the clause with amendment 31 and withdraw it. If they feel that they must continue and press it to a Division, I will invite my hon. Friends to join me in opposing the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.52" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000111" colnum="182">
+<p> The Minister might be disappointed by what I have to say. There was some material in his response that was helpful and I thank him for that. However, we come back to the principle behind the amendment. I did not hear from the Minister why he has a problem making the amendment to the Bill. I did not actually hear an argument against making the amendment. I am not a suspicious person but my suspicions could be raised by the fact that he will not accept this amendment but seems to have said, “Don’t worry about it, the Secretary of State is just as accountable.”</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.53" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000112" colnum="182">
+<p> In what ways is a Secretary of State not accountable to Parliament?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.54" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000113" colnum="182">
+<p> I was coming to that. As I mentioned in my opening speech on clause 1, the problem is that it is not only Labour Members but lots of people out there, including health bodies and patients’ associations, who have concerns about the changes, particularly in clause 1, with regard to the Secretary of State’s responsibilities. Our amendments seek to tease out what responsibilities will remain with the Secretary of State. So far I have not been fully reassured about that point and I want to explore it further with the Minister.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.55" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000114" colnum="182">
+<p> May I try to reassure the hon. Gentleman by saying that the amendment would have no practical effect? The Secretary of State’s accountability to Parliament is already integral to the Bill. Including it explicitly in this clause would do nothing to add to the powers, responsibilities and the duties that the Secretary of State has. For that reason, it is unnecessary and will not achieve what the hon. Gentleman wants it to achieve, because it is already an integral part of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.56" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000115" colnum="182">
+<p> Because of our general concerns about the clause, we would feel reassured if the Minister accepted this amendment, for the reasons that I outlined. However, given what he has said, let us take matters a little further. He has said before that the clause will be used to reduce political interference in day-to-day decisions. On the face of it, that sounds okay, but what does it mean? Can he give us examples of where political interference will be reduced?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.57" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000116" colnum="182">
+<p> Yes, I can. The most glaring example is the day-to-day micro-management of the NHS by Ministers imposing political targets that distort clinical decisions, rather than having targets that are based on clinical evidence.</p>
+<p> Derek Twigg  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.58" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000118" colnum="182">
+<p> Will my hon. Friend give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.59" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column183" colnum="183">
+<p> He does not want to hear the answer first.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.60" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000120" colnum="183">
+<p> My point is on that same issue, relating to targets in public health. How will we judge the performance of the Minister who is responsible? Does my hon. Friend agree that, if health inequalities worsen during this coalition Government’s period in office and the performance of the responsible Minister is unsatisfactory, then in those circumstances some punitive action should be taken or the Minister should resign? Would that be a reasonable solution?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.61" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000121" colnum="183">
+<p> My hon. Friend makes a very important point, which goes to the nub of things. The Minister makes the point about targets, which I know, Mr Hancock, you will not let me go into too much in this debate, because we will have that debate when we discuss the next clause. These sorts of statements are made, but again they raise suspicions about the Government’s real intent. They talk about targets, but we have seen the lowest recorded waiting times in living memory and massive improvements in cancer and coronary heart disease care. That is why we are suspicious. We wonder why the Government want the Bill, but that would mean delving into other matters—I realise that I cannot speak on them now—such as competition and Monitor. It is a real concern.</p>
+<p>On public health, we are most concerned to maintain accountability to Parliament. Our suspicions may be proved wrong, but we are not convinced. We do not see why the Minister should not accept the amendment. If he says, “We’re doing that anyway,” what is the problem in accepting it? I do not understand that.</p>
+<p>In response to my comment on information given to parliamentarians, the Minister mentioned parliamentary questions and healthwatch. Again, this comes back to the direct responsibility of the Secretary of State for public health information and statistics. Given the greater discretion and the greater devolvement of powers to local health bodies, will the information currently provided to the centre on public health improvement and statistics—perhaps through healthwatch—be maintained at the current level under the Bill? We cannot see it at this stage, and I hope that the Minister will comment on that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.62" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000124" colnum="183">
+<p> I cannot help thinking that the hon. Gentleman is making heavy weather of this. I thought that the Minister was saying that the Secretary of State would henceforth not be involved in day-to-day decisions on such matters as whether to have homeopathy or how to pursue an alcohol strategy. However, he is clearly responsible for the framework that is set for commissioners. That will include guidelines and targets, and the budgets provided for them. We can still ask about that. Health questions should therefore proceed as normal. I just wonder whether health questions will be asked also at community and local government questions.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.63" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000125" colnum="184">
+<p> I understand that, but we have seen it happen in other Departments, including Transport, when responsibility for delivery lies with a particular body. &nbsp;We now have to ask those bodies; the Secretary of State does not answer such questions directly. We often do not get a national picture in response to our questions. As a former Minister, I know that we sometimes do not have such information; we cannot always give a national picture because the information is not collected centrally. I wonder whether the changes made under the Bill will it make it easier, and that is what raises suspicions.</p>
+<p>We still have serious reservations about accountability and transparency. With your permission, Mr Hancock, we shall explore the matter further on clause stand part, as there are serious matters to consider and questions that I cannot ask now that can be asked later. We shall certainly press the amendment to a Division.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.64" nospeaker="true" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000127" colnum="184">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.65" nospeaker="true" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000128" colnum="184">
+<p>The Committee divided: Ayes 10, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.66" divnumber="1" ayes="10" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000129">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.67" nospeaker="true" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000153" colnum="184">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.68" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000154" colnum="184">
+<p> I beg to move amendment 32, in clause 1, page 2, leave out lines 1 to 4 and insert—</p>
+<p>I hope that the Minister will give the amendment serious consideration. I am not sure whether he will accept it at this stage, but we shall see. It is an important amendment that will explore some of the Government’s thinking on the Bill. We have already discussed some of the issues, but others need fleshing out.</p>
+<p>The basic aim is to ensure that legislation reflects the rights and duties of the health service to patients in guaranteeing excellence in care under the NHS constitution. As the Minister knows, we published the first NHS constitution to form the basis of a new relationship between staff and patients based on partnership, feedback, respect and assured commitment, so that everyone knows what they can expect from the NHS and what is expected of them. It has been an important moment in the NHS’s history.</p>
+<p>The 1946 Act has been mentioned. It is worth reminding the Committee that the Act said:</p>
+<p class="indent">“It shall be the duty of the Minister of Health (hereafter in this Act referred to as ‘the Minister’) to promote the establishment in England and Wales of a comprehensive health service designed to secure improvement in the physical and mental health of the &nbsp;people of England and Wales and the prevention, diagnosis and treatment of illness, and for that purpose to provide or secure the effective provision of services in accordance with the following provisions of the Act”.</p>
+<p>The fundamental principle of the health service is clear in the Act that set it up. We are building on that by giving people more rights and promoting partnership, feedback and respect. Everyone wants assured commitment to the health service, which is truly loved by the British people. It has evolved over the years. Obviously, it is always a matter of great concern, as we have heard today in the news, and we must always consider how we can continue to improve the health service and reform it so as to provide an even better service to the people of this country.</p>
+<p>The NHS constitution guarantees standards of care and ensures that patients know what they can expect from the health service. It is a change from the old system in which patients were basically told what to do and did not have much say in treatments or what went on in hospitals or the health community. In a sense, the constitution was an important part of the progression. People are now consulted much more and have a much greater say in what health care is like, instead of being told to get on with it and accept things. It is an important and valued part of the development of the health service. It is a modernisation of the health service that was originally set up.</p>
+<p>It is right that we should enshrine the primacy of the NHS constitution up front and ensure that the Bill makes it explicit that its commitments shall be upheld in new legislation. Again, I will wait to hear what the Minister says. I will be surprised if he has a problem with the amendment, but we shall hear later. Like the previous amendment, it would strengthen the legislation on issues in the health service that we feel strongly about and that the Bill should take account of. The NHS constitution included an important public-facing target of a maximum of 18 weeks from GP referral to elective surgery and the target of two weeks for cancer. Those were important pledges that we made in government, and which we achieved.</p>
+<p>The Minister talked of not deciding top-down targets and I want to tease out his understanding of that and of what he has said previously about targets as part of the NHS constitution. He might want to tell us whether it is still the Government’s view that they do not want the 18-week target to continue. I understand that they are committed to the two-week target for cancer, and he might want to say why it would be a problem to have it enshrined in the Act. He has already said that they do not want top-down targets because they interfere with clinicians’ decision making, and we wait to hear what he has to say on that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.69" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000162" colnum="185">
+<p> Would it help if I clarified that point now? We believe in targets that are clinically justified, such as the cancer one, but do not accept targets that are politically imposed for political reasons.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.70" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000163" colnum="186">
+<p> That is interesting. As we are talking specifically about constitutional targets, I am keeping within the parameters of the debate, but I am sure that you will tell me, Mr Hancock, if I stray. When I was elected Member for Halton in 1997, it was a common occurrence to get complaints about people waiting not &nbsp;just 18 months but two years and longer for an operation or, in some cases, to even get past the first stage—the consultation. I am concerned, therefore, that the Minister thinks there is no clinical reason for a target about waiting times, when people were dying because they could not get hospital care in time. It is amazing that he should say that the 18-week target has no clinical position whatsoever.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.71" speakerid="uk.org.publicwhip/member/40156" speakername="Daniel Poulter" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000164" colnum="186">
+<p> Does the hon. Gentleman accept that the point about the 18-week target is that often it involves non-urgent cases, perhaps an orthopaedic case of someone who has had a lump on their arm for three or four years? Such cases were often prioritised ahead of some of the urgent cases that he has just described, which meant that targets got in the way of good clinical care.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.72" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000165" colnum="186">
+<p> It depends whom we speak to. I was talking to a very senior—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.73" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000166" colnum="186">
+<p> My hon. Friend is a medical practitioner.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.74" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000167" colnum="186">
+<p> I know that, but I was talking to a very senior consultant who said that, without the 18-week target, they would never have got down to the standard wait for treatment that they have today. I am not going to argue that the system was perfect—it was not—but much quicker treatment time, with people receiving their operations, has had a massive impact on people’s lives, often for the right clinical reasons. The impact of the target on people’s lives has been immense, and Members just have to go back to their postbags to see that. Back in 1997, the Minister, like every MP, no doubt had many people writing to him about hospital waiting times. If he did not, he was one of the few. That has completely changed, and we rarely get such letters now. There has been a massive improvement in the health service and in care generally, because of the targets.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.75" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000168" colnum="186">
+<p> If the thrust of the proposals is that the service will be patient-led, with the patient at the centre of decision making, surely that could not be construed as a political target? Waiting for a cataract removal or a knee or hip replacement are quality-of-life issues. What does my hon. Friend think about “removing politically driven targets”? Is that removing the “national” from the national health service?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.76" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000169" colnum="186">
+<p> My hon. Friend makes an important point. When I last looked, the waiting time for cataracts was two to four weeks. Going back 10 or 15 years, the wait was anything up to a year or even two. The target has made, and continues to make, a massive difference to the quality of life for those people. I do not accept the argument about targets being politically driven; they are about improving people’s health and access to health care, and making a difference to their lives.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.77" speakerid="uk.org.publicwhip/member/40585" speakername="Margot James" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000451" colnum="187">
+<p> In addition to my hon. Friend’s point about the potential for targets to distort clinical priorities, does the hon. Gentleman accept that professional morale has been hugely sapped by all &nbsp;the targets? One might be able to point to this target or that target and see some good that has emerged, but the cumulative effect and sheer volume of targets undermined the professional’s capacity for decision making in the best interests of his or her patients. That has been tremendously damaging.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.78" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000171" colnum="187">
+<p> I will say two things to the hon. Lady. First, I have not recently heard any complaint from a clinician claiming that targets are causing a drop in morale. In fact, I have seen the opposite and operations that took place more quickly and were better planned with the necessary resources. We are now starting to hear stories of a drop in morale as a result of the changes that are being proposed to the health service and the cuts that are being imposed.</p>
+<p>Secondly, I will make a bet with the hon. Lady. I am not a betting man, but I wager that in a year or two she will find that her postbag is growing because of the number of people complaining about difficulties in accessing hospitals and operations. Time will tell, but I suggest that that will happen as a result of the Government’s changes, not just in the Bill but in terms of funding and other procedures.</p>
+<p>The Minister’s argument that targets are politically driven is nonsense. Because of the funding issues in the health service, we are concerned that the Government are using that argument as a sort of cloak to cover an increase in waiting times. We are starting to see that a little bit now, and I suspect that in a year or so we will see it more. The NHS constitution has been important in that respect.</p>
+<p>The Committee should be bold and make it clear that there will be no return to the NHS waiting list quagmire of the 1990s. We should celebrate the fact that the health service has moved on, and enshrine the principles that have helped us get there in the first clause of the Bill. The Government should leave no doubt about their intentions and commitment to quality. I will be disappointed if the Minister does not accept the amendment. It is perfectly reasonable, and most people in the country would support it as part of the Bill.</p>
+<p>Finally, I have a couple of questions. Do the Government plan to change the constitution? How will the commissioning proposals in the Bill impact on the constitution? Will that involve any changes? Are there any plans to review the constitution? Finally, why was such a measure not included as part of the original proposals in the Bill?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.79" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000176" colnum="187">
+<p> I listened carefully to the hon. Member for Halton and I hope it will be helpful if I explain the drafting of clause 1, which amends section 1 of the National Health Service Act 2006. Subsection (2) of the clause is divided into two parts. New section 1(2)(a) of the 2006 Act is about conferring public health functions separately from functions in relation to health care for the first time. The Secretary of State’s functions in relation to public health are described in more detail later in the Bill, and include the power to both commission and provide services. No doubt when we get to that section of the Bill, there will be a more appropriate opportunity to discuss the provision in detail.</p>
+<p>Meanwhile, new subsection (2)(b) covers the areas where other organisations will be responsible for particular activities. This includes all NHS care—that is, the services commissioned by the NHS commissioning board and consortia—and the local public health responsibilities of local authorities. In those cases, the functions of commissioning and providing services are given explicitly to front-line organisations, not the Department of Health, in line with our strategy for liberating the NHS, which says that commissioners and providers should be free from political interference and micro-management.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.80" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000178" colnum="188">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.81" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000179" colnum="188">
+<p> I will in one second.</p>
+<p>The clause therefore removes the current duty to</p>
+<p class="indent">“provide, or secure the provision of, services”</p>
+<p>and replaces it with a more appropriate, indirect duty to</p>
+<p class="indent">“act with a view to securing the provision of services”.</p>
+<p>Before I give way to the hon. Member for Easington, I would like to point out a side-effect of the amendment that I suspect the hon. Member for Halton has not fully understood. The amendment would make the Secretary of State responsible for commissioning or providing services, but only by acting through the NHS commissioning board and consortia, or local authorities in their public health functions. That would be a contradiction in terms: the Secretary of State would have a direct duty but no direct levers to deliver it. That is why the Bill instead makes the Secretary of State responsible for acting</p>
+<p class="indent">“with a view to securing the provision of services”.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.82" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000445" colnum="188">
+<p> In the circumstances of the abolition of primary care trusts and strategic health authorities—the levers of influence, as it were—would it be fair, if a constituent asked about the role of Ministers in the NHS, to liken it to running a mobile phone company or a gas supply company, in that the health service will be independent and market-oriented, and politicians will have no control over it?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.83" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000184" colnum="188">
+<p> I am sorry, but I do not think the hon. Gentleman has quite got the plot behind the philosophy of our vision of liberating the NHS. It is none of those things. I shall keep this brief, Mr Hancock, so I do not trespass beyond the remit of the amendment. The vision is to free the NHS to get on with day-to-day delivery of the finest health care of the highest quality for our constituents, freed from the micro-management of politicians. However, outside the public health arena we will be accountable to Parliament, for the reasons and with the explanation that I gave when we were discussing amendment 31.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.84" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000185" colnum="188">
+<p> The Minister keeps referring to freeing up the NHS from political interference. Does he have a list of decisions in which Ministers will no longer be involved?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.85" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000186" colnum="189">
+<p> The hon. Gentleman is trying to tempt me down a path that it would be unwise of me to go down. By definition, political interference cannot simply be categorised on a list like a shopping list. We all know &nbsp;from our experiences as constituency MPs and as people who are interested in the health service and health policy how the NHS has suffered from too much interference from politicians. [ Interruption. ] If he would just listen for a second, it was the boast of Nye Bevan—I apologise for having to mention him in front of Labour Members—in 1946 or 1948 that he wanted to hear the clanging of a bedpan on the floor of Tredegar hospital, which is the ultimate in political control and micro-management. Fortunately life moved on from there.</p>
+<p> Several hon. Members  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.86" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000188" colnum="189">
+<p> Order. I ask Mr Burns to please stop being unnecessarily provocative, and urge colleagues on the Opposition Benches not to be so eager to respond to the provocation.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.87" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000189" colnum="189">
+<p> I apologise, Mr Hancock. I did not mean to be provocative in mentioning one of the greatest icons for Labour Members. I thought that they would be flattered, but I shall move on.</p>
+<p> Owen Smith  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.88" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000191" colnum="189">
+<p> I give way to the hon. Gentleman as long as he does not try to tempt me down a path where I will get into trouble.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.89" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000192" colnum="189">
+<p> Heaven forefend that I should tempt the Minister down any path. I quote back to him some of the wisdom of Nye Bevan, who also said that he wanted to banish once and for all from the NHS the “patchwork quilt” of paternalism and private interest that I fear will return under the Bill. However, on the specific point that I wanted to make, the Minister isolated the other effect of the amendment we were discussing, which was to reinsert the direct duty on the Secretary of State to secure and provide health services, which has existed since Nye Bevan wrote it into the National Health Service Act 1946. Can he not see that there is value in bringing that back?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.90" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000193" colnum="189">
+<p> We will come back to that at another stage.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.91" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000194" colnum="189">
+<p> As you say, Mr Hancock, we shall discuss that on another amendment. I shall not anticipate that debate now, as I should be out of order.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.92" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000195" colnum="189">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.93" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000196" colnum="189">
+<p> I will, because I am interested to know what question the hon. Member for Halton has asked the hon. Lady to ask me.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.94" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000197" colnum="189">
+<p> The right hon. Gentleman will learn in the next few weeks that I am independent-minded. I am very happy to listen to any advice given to me by my hon. Friend the Member for Halton, but many of us girls have our own minds.</p>
+<p>The Minister says that he does not want to give us an entire shopping list of all the different political decisions and interference. Given that we are dealing with such &nbsp;important and integral provisions of the Bill, and such a crucial part of his approach, with the purpose of stopping political interference, will he give three examples of such interference that the Bill will stop?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.95" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000199" colnum="190">
+<p> I give the hon. Lady full marks for trying, but the answer remains the same as the one I gave to the hon. Member for Halton. She knows as well as I and my hon. Friends do—particularly my hon. Friend the Member for Central Suffolk and North Ipswich—what goes on and has gone on in the health service because of politicians micro-managing, either over a long period or in the short term, to make a quick fix because something was causing a problem that was an embarrassment to Ministers.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.96" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000200" colnum="190">
+<p> Does my right hon. Friend agree that there is a slight problem, because if the Secretary of State has the responsibility for direct provision or securing of services there could be a problem in relation to the current independence for foundation trusts? Perhaps I may briefly mention my local case, that of Stafford hospital. Patients were concerned, and although, on the one hand, they knew the governors had responsibility for the foundation trust, on the other hand, they felt that the Secretary of State had responsibility. They wrote to the Secretary of State, who said it was none of his business and referred them back—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.97" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000201" colnum="190">
+<p> Order. I think, Mr Lefroy, that that is where the intervention must end. If you want to speak, indicate that and make a speech, but interventions should be short, sharp and to the point that is under debate. I understand your concerns and I think everyone has sympathy for the situation in your constituency, but we must keep the debate in the context of the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.98" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000202" colnum="190">
+<p> I am grateful to my hon. Friend and fully appreciate his commitment and passion and his involvement in his local hospital, but, as he will appreciate, there are special circumstances there, and it is subject to the second part of a review process. We shall have to wait until the review report to see what lessons there are and what improvements we can make. I think it would be tempting your patience, Mr Hancock, if I were to go down that path at the moment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.99" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000452" colnum="190">
+<p> Will the right hon. Gentleman give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.100" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000204" colnum="190">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.101" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000205" colnum="190">
+<p> No, I am going to make progress. I would like to deal with two specific points that the hon. Member for Halton made with regard to the NHS constitution. The first answer to the first question he asked is: yes, we are committed to the NHS constitution. I hope that reassures him. Secondly, he asked whether we would amend the NHS constitution. Let me explain: the mandate, which we discussed in the debate on the previous amendment, will set out what the Government expect from the NHS over what is likely to be a three-year period, and it will be updated annually. The Secretary of State will once again be able to alter the mandate in-year if the board agrees to the change, or there are exceptional circumstances that make it necessary.</p>
+<p>On the NHS constitution, I will give the hon. Gentleman a straightforward answer, which is, in effect, the status quo. Just as it was under his party’s Government, it is always under review. We have no direct plans to alter it at the moment, but like any wise Government, we will keep it under review, because who knows what may happen in the future? It would be extremely foolish to say never—politicians are extremely foolish if they use that word. Although I do not anticipate dramatic changes, we will keep it under review in case the circumstances change. For those reasons, I urge my hon. Friends to reject the amendment if it is pressed to a Division.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.102" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000207" colnum="191">
+<p> I apologise for extending my previous intervention, but I feel that I need to go into more detail on this point, which is drawn from my experience. If the general public understand that the Secretary of State has a direct responsibility for the provision of services, rather than acting</p>
+<p class="indent">“with a view to securing the provision of services”,</p>
+<p>as the clause states, and if they have a problem with the provision of those services, they will feel it is vital go to the Secretary of State himself or herself.</p>
+<p>In my constituency, before I was elected, when constituents wrote to the Department of Health raising specific problems with their hospital, they were shrugged off. They were told that they should talk to Monitor, or some other body. It is extremely important that we get this right. If we are to go down the route, which I firmly believe is right, of local accountability for health services, it is vital that we do not create confusion by having a clause that makes it clear—as I believe clause 1 will, if the amendment is made—the Secretary of State is directly responsible for provision or securing of health services.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.103" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000210" colnum="191">
+<p> Is the hon. Gentleman saying that that flaw he is highlighting has been in existence in every health Bill since 1946, because that duty to secure and provide has been placed on successive Secretaries of State from then until this Bill?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.104" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000211" colnum="191">
+<p> The hon. Gentleman makes a good point, but in the previous Parliament we had the move towards foundation trusts, which deliberately delegated—in fact, gave—responsibility to local boards, and therefore we have that conflict. That is what led my constituents to write to the Secretary of State. They felt that the Secretary of State had ultimate responsibility under the original Act, but were told that because they were dealing with a foundation trust, which bodies were introduced by his colleagues in the previous Parliament, the Secretary of State and his Ministers said that that was no longer their responsibility.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.105" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000212" colnum="191">
+<p> On that theme, the hon. Gentleman talks about problems with the hospital in his constituency, but in relation to hospital closures and unit reconfigurations, does he think that taking away the power of the Minister, through a local Member of Parliament, to restrict or prevent such actions is a welcome change?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.106" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column192" colnum="192">
+<p> That is something that we will have to discuss at greater length. It is perhaps not directly relevant here, but I take the hon. Gentleman’s point, which is well made.</p>
+<p>We have had a contradiction in legislation, certainly in recent years. On the one hand, the Secretary of State has had quite clear direct responsibility for procuring health services; on the other hand, there has been a quite clear delegation—more than a delegation; a giving away—of power to foundation trusts. I believe that the clause is designed to deal with the tension between those two.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.107" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000215" colnum="192">
+<p> Is not the risk that we run with the Bill as drafted that we will augment the risk of people not knowing where to go when there is a problem? We will spread responsibility through all the different trusts and build in the national commissioning board, but the Secretary of State will still be responsible and accountable at some level.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.108" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000216" colnum="192">
+<p> The hon. Gentleman makes a serious point. Yes, there is a risk that people will write to the Secretary of State, as they have until now, thinking that he has direct responsibility for the detailed provision of every service, but we have to get away from that, because it is no longer feasible in this age.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.109" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000217" colnum="192">
+<p> I thank the Minister for his answer. I am afraid I am still not convinced—entirely, anyway—by what he has said. The point that has been made about the provision of services is important, and we will discuss it in the stand part debate.</p>
+<p>What we are having difficulty with is the fact that the constitution sets out our rights and the services that we should be given. It also sets out targets, which are important. The Minister says he does not think that it achieves what it should, because of the commissioning issue, but we oppose the proposals on commissioning. He seems to be assuming that we have already passed them, and I am sure that he would never do that and pre-empt a democratic vote. However, we do not really accept his argument about commissioning.</p>
+<p>I want to press the right hon. Gentleman on a point that I made earlier—I am sure I will not get very far on it today, but I can assure him we will return to it. He keeps talking about politically driven targets and mandates from Ministers. As I recall, he has so far cited only one target—the 18-week target—but the Committee needs to be fully aware of the implications of the proposals. There are people outside who have been involved in the health service for many decades, but who, because of the Bill’s complexities, still cannot get a grip on some of the detail or what the implications of some of the clauses will be down the line. I stress that point, because if passing the Bill will mean that certain decisions will no longer be taken by Ministers, Parliament should be aware of that. He could argue that it is our job to scrutinise the Bill, which of course it is, but we are unconvinced at the moment, and we are asking him for more evidence. If he cannot provide that evidence today, perhaps he could write to us, setting out which decisions would no longer be taken by Ministers.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.110" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000220" colnum="193">
+<p> May I help the hon. Gentleman on the question of political interference by Ministers? I mentioned political, top-down targets, but I could mention direct &nbsp;interference by Ministers with individual providers, and interference by Ministers with the day-to-day operations of commissioners.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.111" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000221" colnum="193">
+<p> I thank the Minister, although that was more of an answer to one of my hon. Friends.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.112" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000222" colnum="193">
+<p> Exactly. I was being helpful.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.113" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000223" colnum="193">
+<p> Actually, that was very helpful because it allows us to explore that issue further. We probably do not have the time to do that today—I could explore it, but I am sure the Minister would not answer me. However, I will write to him and ask him to be a bit more detailed about what he actually means when he mentions those areas.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.114" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000224" colnum="193">
+<p> Most of us would agree that we are not talking about a general argument for or against targets. The hon. Member for Central Suffolk and North Ipswich said that what we really need are targets with some clinical basis. If the hon. Member for Halton writes to the Minister, he will suggest that there are additional targets, apart from clinical targets set in consultation with clinicians, that politicians alone should set. It will help the Committee enormously in its deliberations if the hon. Gentleman spells out in that letter exactly what targets he thinks politicians should be setting, which are different from the ones that politicians would set in consultation with clinicians.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.115" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000225" colnum="193">
+<p> The hon. Gentleman makes an interesting point. Let me be clear. We were in Government in May. The present Government have now taken over and have made a big case about targets and about reducing political interference. We are somewhat suspicious of that—perhaps we are wrong, but I do not think so—and think that it may be a cover for hiding, for example, a deterioration in waiting times for patients. Only time will prove that—if we can get the information, which is the other question. Will all that information continue to be centrally provided? We keep hearing the Minister say that the average wait is still about eight or nine weeks, but within that there are some more interesting figures, and we shall be scrutinising them very carefully. That is why we want to pursue this issue further than we are talking about here. I say to the hon. Gentleman: we are not in government now; you are.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.116" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000226" colnum="193">
+<p> The raw data are collated by the Department of Health or the Office for National Statistics. Whatever target one wishes the Government to set, one will be able to find out how far one is behind it or in front of it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.117" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000227" colnum="193">
+<p> We keep being told that the Government are reducing political interference. We want to know what that actually means and to what extent the Government are talking about. That is not an unreasonable question. So far, the Minister has gone from saying he cannot give us any examples to giving us three, so we have got an improvement there. We shall explore those three areas.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.118" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000228" colnum="193">
+<p> In relation to the specific targets does my hon. Friend see Ministers’ responsibility extending to targets on expenditure? For example, will Ministers be held to account if the GP commissioning consortia or the other devolved bodies overspend?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.119" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column194" colnum="194">
+<p> My hon. Friend makes a point that he and others will make again later in our debates. We will listen carefully to what Ministers say on this important point. I would probably be ruled out of order if I tried to pursue it now, but we will certainly pursue it later.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.120" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000230" colnum="194">
+<p> Does my hon. Friend not agree that it is equally reasonable to ask the Minister to clarify the difference between offering a mandate to the NHS commissioning board at the beginning of each year and political interference; or will the mandate be so thin that it will not be deemed to be interference?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.121" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000231" colnum="194">
+<p> Order. I think we are going down another avenue.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.122" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000232" colnum="194">
+<p> My hon. Friend makes an important point, but I do not want to be ruled out of order for responding to it. As the Minister knows we will return to that matter, because it is a crucial part of our discussions on the Bill.</p>
+<p>It is important that we flesh out Ministers’ statements about political interference, what targets they will continue with and what decisions they will no longer take. Although we will return to this matter, I am not convinced by the Minister’s argument, so we will press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.123" nospeaker="true" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000234" colnum="194">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.124" nospeaker="true" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000235" colnum="194">
+<p>The Committee divided: Ayes 10, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.125" divnumber="2" ayes="10" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000236">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.126" nospeaker="true" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000260" colnum="194">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.127" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000453" colnum="194">
+<p> I beg to move amendment 33, in clause 1, page 2, line 6, leave out ‘Commissioning’.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.128" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000262" colnum="194">
+<p> With this it will be convenient to discuss the following: amendment 41, in clause 5, page 3, line 22, leave out ‘Commissioning’.</p>
+<p>Amendment 42, in clause 5, page 3, line 25, leave out ‘Commissioning’.</p>
+<p>Amendment 30, page 221, line 5 [Schedule 1], leave out ‘Commissioning’.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.129" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000265" colnum="195">
+<p> The amendments relate to commissioning, which is the crucial issue in the Bill, and I wish to use them to explore some issues with the Minister. I do not know how wide-ranging a debate on commissioning &nbsp;you will allow, Mr Hancock, but I am sure you will provide guidance, if needed. Our concerns, which also relate to the next group of amendments, concern the changes that will hand responsibility for commissioning from primary care trusts to a national body and commissioning consortia. Concerns have been raised not only by us, but by a coalition of organisations about the commissioning changes.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.130" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000266" colnum="195">
+<p> Order. We have to consider two issues. We cannot have the same debate twice, and this issue is covered mainly in clause 5, while amendment 34, which is in the next group of amendments, relates to clause 6. We can have the debate only once. If we have the debate now, we cannot have the same debate on clause 5—it is not allowed under Standing Orders—so I will rule it out, as I am sure will Mr Hood, if he is in the Chair at the relevant time. I hope that hon. Members are clear about that. I do not want to stifle debate, but the amendment is about the word “Commissioning”, while the issue of commissioning relates mainly to clause 5.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.131" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000267" colnum="195">
+<p> Obviously, I will take your advice, Mr Hancock. I will speak directly about taking out the word “Commissioning” without addressing the wider issue of commissioning. Clearly, we have difficulty with the Government’s commissioning proposals, and this is a straightforward amendment that takes out the word “Commissioning”. We are not necessarily against having a board that could be more transparent in relation to health service or management issues. That is why, at this stage, we just want to remove the word “Commissioning”.</p>
+<p>There is a lot of uncertainty about responsibilities in relation to the proposed national commissioning board. The Department of Health has a permanent secretary and the health service has a chief executive, and we will have a national commissioning board, if Parliament approves the Bill. We are opposed to the way in which the Bill sets up commissioning, and I will refer to the PCTs and so on when we debate the next group of amendments.</p>
+<p>There is an argument about how we can have more transparent management in the national health service, and we will discuss some other amendments later. We might be able to consider a board that meets in public, produces minutes and has much more financial transparency, but we do not think that it should be a commissioning board. We want to explore the issue further.</p>
+<p>The key issue is how the NHS will be managed. The Minister may want to leave that until we debate clause 5, or he may want to say something about it now. We have a permanent secretary, the commissioning board and the civil service management structure, which is an internal board within the Department of Health. How will that all work as a result of the proposal to set up a national commissioning board? We are concerned about that and would like to explore the issue a bit more when discussing clause 5. At this stage, that is what the amendment is about.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.132" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000271" colnum="195">
+<p> I am somewhat confused about the ruling that we have just had, Mr Hancock. You have said that we can only debate the issues covered by the amendments when we reach clause 5, but the amendments relate to clause 1.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.133" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column196" colnum="196">
+<p> Order. I did not say that. What I said was that you cannot have the debate twice. You can have the debate now, if you choose, but you cannot have the same debate on clause 5, which is particular to commissioning. If you want the debate now, you can have it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.134" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000273" colnum="196">
+<p> There is an issue about the principle of whether we have a national commissioning board. I do not wish to challenge the Chair, but clause 5 refers to what a national commissioning board would do, if we had one. I thought that the amendment was about the former and not the latter.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.135" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000274" colnum="196">
+<p> No. I am sticking to the ruling I have made, Mr Barron. It is up to you if you want to discuss the amendment before us or leave it until clause 5.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.136" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000275" colnum="196">
+<p> The amendment before us does not relate to clause 5.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.137" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000276" colnum="196">
+<p> No, but clause 5 deals with the matter.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.138" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000277" colnum="196">
+<p> Mr Hancock, it is right and sensible to have the debate that the right hon. Gentleman has mentioned when we reach clause 5, because there will be far greater opportunity to go into detail. The amendment that his hon. Friends have tabled is narrow and deals with the name of the national commissioning board. Basically, it would remove the word “commissioning” from the title, so that if the amendment were passed, the body would be known as “the NHS board”, rather than “the NHS commissioning board”. I know that from the perspective of Opposition Members a lot of important things flow from that, but the discussion on clause 5 is a better time to have that debate, and we should keep this debate to the narrow issue of the amendments before us.</p>
+<p>I assume that the intention of the amendments is to alter the function of the NHS commissioning board, so that it would have a general system management role in relation to the NHS, rather than being limited simply to commissioning. Of course, changing the name of the board would not in itself serve to alter its functions, but changing the functions would fundamentally undermine the strategy set out in the White Paper. As the hon. Member for Halton knows, the Government want to create clarity of function between commissioning and providing, although I will not go into that in great detail in considering the amendment for the reasons that we have discussed.</p>
+<p>I urge that the amendment is not pressed to a Division because, frankly, if it were successful but other amendments—for example, those relating to clause 5—were not, the change in the name of the NHS commissioning board would have no practical effect whatsoever in terms of the board’s effect, duties or function. However, what would happen—perhaps the hon. Member for Halton will say that this is fine with him—is that perceptions of the role of the board would be changed within the health service and among the public. The suggestion would be that its functions are not principally to do with commissioning. From my point of view and that of my hon. Friends, we would not like to see that happen. Having probed that narrow point and been &nbsp;given a comprehensive answer on why such a change would not be satisfactory, I urge the hon. Gentleman to withdraw his amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.139" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000280" colnum="197">
+<p> Before I call Mr Twigg, I say to Mr Barron that there is nothing worse for a Chair than to have a disgruntled Member who feels he has been hard done by as a result of a ruling from the Chair sitting at the back of the room. I offer Mr Barron a chance to have a chat with the Chair and the Clerk at the end of the meeting to clarify that point because it is seemingly unfair to hon. Members who want to make a point when they do not like a ruling. We must have an opportunity to explain it to you properly, rather than your sitting on the Back Bench scowling at me.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.140" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000281" colnum="197">
+<p> I am not scowling.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.141" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000282" colnum="197">
+<p> He always looks like that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.142" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000283" colnum="197">
+<p> The Chair is being made distinctly nervous by the menacing look on your face, Mr Barron. I would much rather we had a chat about it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.143" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000284" colnum="197">
+<p> I accept the Government position that the Minister set out, but he will understand that we have a problem with the proposals, which is entirely consistent with our position on commissioning and the national commissioning board. I made the point in my opening speech that our concern should be highlighted and debated here, although it is a narrow point, as we now know. We will return to wider discussion in clause 5, which I am sure will be a somewhat longer debate than this one. However, I feel that it is a point of principle for us, so we will press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.144" nospeaker="true" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000285" colnum="197">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.145" nospeaker="true" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000286" colnum="197">
+<p>The Committee divided: Ayes 11, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.146" divnumber="3" ayes="11" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000287">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40586" membername="Jim Shannon"  vote="aye">Shannon, Jim</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.147" nospeaker="true" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000312" colnum="197">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.148" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000313" colnum="197">
+<p> We now move to amendment 34. I urge caution once again about confusing the amendments with clause 6, which is the substantial element of the Bill dealing with these matters.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.149" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000314" colnum="197">
+<p> I beg to move amendment 34, in clause 1, page 2, line 7, leave out ‘commissioning consortia’ and insert ‘primary care trusts’.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.150" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column198" colnum="198">
+<p> With this it will be convenient to discuss the following: amendment 62, in clause 6, page 4, line 3, leave out ‘commissioning consortia’ and insert ‘primary care trusts’.</p>
+<p>Amendment 63, in clause 6, page 4, line 4, leave out ‘commissioning consortia’ and insert ‘primary care trusts’.</p>
+<p>Amendment 64, in clause 6, page 4, line 5, leave out ‘commissioning consortia’ and insert ‘primary care trusts’.</p>
+<p>Amendment 65, in clause 6, page 4, line 7, leave out ‘commissioning consortium’ and insert ‘primary care trust’.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.151" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000319" colnum="198">
+<p> Thank you again for your advice, Mr Hancock. If you will permit me, I will make a few introductory remarks about PCTs, because I cannot establish the context without doing so. However, I am mindful of your advice. May I also ask your advice on the clause stand part debate? Will that apply equally? Will too much reference have to be included in the debate on clause 5?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.152" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000320" colnum="198">
+<p> It depends on the tone of the clause stand part debate.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.153" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000321" colnum="198">
+<p> Okay. Again, the amendments are straightforward. We believe that the primary care trust should do commissioning. I will give a brief introduction to the thinking behind our amendment, rather than straying too far into the clause.</p>
+<p>Having read the coalition agreement about PCTs—again, we will refer to this later—we see that the Bill and the White Paper propose removing PCTs and handing commissioning over to consortia and to the national commissioning board. We were surprised by such a fundamental change to the health service. What we thought would be the logical progression would be to put clinicians and local authorities in charge of the PCT boards, and they could carry out commissioning via that route rather than going through this huge upheaval in the NHS, which we have obviously discussed in previous debates and on Second Reading. So we were most surprised at that, following what the coalition had said and the publication of the health White Paper.</p>
+<p>This is entirely consistent with our view that PCTs should remain. We will doubtless talk a lot about PCTs in subsequent debates, but we need to say now that we accept that they were not perfect and that things could have been done better. However, PCTs did a lot of good things and we felt that the framework or structure was there to improve commissioning by having clinicians much more involved than before.</p>
+<p>The amendment is consistent with our view that we should return to the best approach of using PCTs, with greater involvement clinicians, to drive forward changes in commissioning. I know that what the Minister can say will be limited, but I will be interested to hear why there was a sudden change, because that is obviously fundamental to this particular aspect of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.154" speakerid="uk.org.publicwhip/member/40156" speakername="Daniel Poulter" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000325" colnum="199">
+<p> The hon. Gentleman clearly accepts that PCTs had the problem of insufficient clinical direction, given that he said that the Opposition would have liked &nbsp;clinicians to run PCT boards. However, is not the fundamental problem with PCTs that they lack clinical experience throughout the whole organisation, not just at the top?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.155" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000326" colnum="199">
+<p> Again, I must be careful not to be drawn on to other points, but I said that PCTs were not perfect and that some were better than others. However, they achieved a lot of good things. People can read our manifesto. The Minister keeps drawing attention to his party’s manifesto, but while I keep trying to find the justification for this change in it, that somehow passes me by—I cannot think why. I have read that document constantly but I must say to the Minister that I have a somewhat different interpretation from his.</p>
+<p>Our manifesto made it very clear that there would be greater clinician involvement, which is something about which I think we all would agree. However, we have the problem that we were faced with the coalition agreement, which was written in May or June—I cannot remember when—but a few months later the policy completely changed. We have still not been convinced of the arguments for that, and we do not know why such a sudden change was made in such a short space of time. Our proposal fits with our view about how things should proceed, and of course it is opposed to the Conservative and Liberal Democrat policy on commissioning. PCTs have a lot of experience of commissioning. Indeed, we will find that a lot of the GP consortia will employ commissioners from the PCTs, so why could not the Government keep the PCTs in the first place?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.156" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000328" colnum="199">
+<p> Does my hon. Friend concede that there is an equal risk of causing instability to the system through moves to abolish the PCTs prematurely? That risk was identified by a colleague who is respected in all parts of the House: the hon. Member for Totnes (Dr Wollaston). She likened the process to throwing a hand grenade into the PCTs.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.157" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000329" colnum="199">
+<p> My hon. Friend is absolutely right—I am trying to keep on the right side of you, Mr Hancock—but the issue is that although this change is happening, there was a way of making the improvements that we all want through the PCTs.</p>
+<p>I have made my point about the coalition agreement and asked why the coalition changed its position in a very short period of time. In addition, what justification does the coalition have for moving so quickly, and what is the evidence that this change will improve commissioning?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.158" speakerid="uk.org.publicwhip/member/40660" speakername="Steve Brine" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000331" colnum="200">
+<p> When I first read amendment 34, I thought that it might not be serious, but having listened to the hon. Gentleman’s argument, I realise that he is serious. I appreciate that he says that he is being persistent, but following the debate on Second Reading, when the House’s decision was pretty clear, does he really want to go down the road of waving a “Save the PCTs” banner and arguing to save the unnecessary bureaucracy of the PCTs? Yes, there will be good people in PCTs who will be re-employed in consortia, but that will not be everyone and the savings will be ploughed back into the national health service. Does the hon. &nbsp;Gentleman really want to be walking around with a banner saying “Save the PCTs”, because I do not think that that is a great place to be?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.159" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000332" colnum="200">
+<p> The hon. Gentleman is missing the point, although I apologise if I have not made myself clear. We could achieve greater clinician involvement in commissioning by having clinicians basically running the PCT board with, say, the local authority, although they would be in charge. Obviously, we would have to work out the mechanics and the details, but that could have happened. Instead, we are getting rid of the PCTs and employing, in many cases, the same staff in what might be many more consortia than there are PCTs. The cost might be greater in the long run.</p>
+<p> Mr Burns  indicated dissent.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.160" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000334" colnum="200">
+<p> The Minister shakes his head— Mr Hancock, I am trying not to get too much into another debate—but the Government have no evidence. They cannot prove or disprove that the costs would be greater or less if the change did not take place. We have already been told by independent sources that the changes will cost £3 billion. The Government have never been able to justify their figure—[Interruption.] I have looked at the impact assessments.</p>
+<p>Our justification for this narrow amendment is that we oppose the change because we think that it is the wrong way to take the health service, given the cost, the reorganisation and the upheaval. Let us not forget that even the chief executive of the national health service said that the reorganisation could be seen from space. This is a massive reorganisation—[Interruption.] Does the Minister want to intervene; he seems to be getting a bit agitated.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.161" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000336" colnum="200">
+<p> No. What the hon. Gentleman is saying is just so wrong.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.162" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000337" colnum="200">
+<p> In that case, I look forward to the Minister’s reply proving that I am so wrong. The problem, of course, is that no one will know what the real consequences will be until everything is in place, if the Bill gets through Parliament. However, many organisations outside the House, many of which have greater experience of the health service than the Minister or I, raise serious questions about setting up the commissioning consortia and the national commissioning board, so we have to listen to them. All I have been trying to do is to express our concerns, which I think are reasonable, and to express the concerns of many experienced people outside the House. I would not accuse the Minister of being arrogant, but the Government seem to want to dismiss those views as totally insignificant. That does not do the Government justice, so I look forward to hearing the Minister’s response.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.163" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000338" colnum="201">
+<p> I shall keep my remarks brief and address amendment 34 specifically. During the debate, the hon. Members for Winchester and for Central Suffolk and North Ipswich asked whether there was an alternative and whether Labour Members were serious about wishing to retain PCTs. If I may, I refer hon. Members to a contribution from the hon. Member for &nbsp;Southport, who suggested quite a sensible alternative when the Secretary of State gave evidence to the Committee on Thursday.</p>
+<p>The hon. Gentleman said that there is another option on the table: take the existing PCT structures; slim down their management costs by 30%—I believe the chief executive of the NHS indicated in his evidence that that was the intention—bring in clinicians, and perhaps not just from primary care, to take note of the evidence that we have received as a Committee; and bring in more clinical expertise, including from the secondary sector, and clinicians from other areas, such as nursing in particular, and let those people dominate the board. We might also want to bolt on additional democratic accountability and some outcome measures, although I am aware that the Conservative party does not like targets, but that was what was outlined by the hon. Member for Southport. If we followed that path instead of abolition, we could keep the institutional memory—there is a risk that that will be lost—of the PCTs, the acquired skills that they have been built up, and their coterminosity with their local authority boundaries. That would have the advantage of producing less upheaval and risk, and we would save money while creating very few new organisations. We still do not know exactly how many new organisations will be created by the new commissioning arrangements, but that option seems to make eminently good sense.</p>
+<p>The shake-up is huge, and the costs of abolishing primary care trusts are considerable, even without taking account of the risks of organisational disruption. The Minister has calculated that the redundancy costs of abolishing the PCTs and strategic health authorities will be £852 million, and that figure rises to more than £1 billion when one includes redundancies from arm’s length bodies and the Department of Health due to responsibilities being transferred to other Departments.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.164" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000341" colnum="201">
+<p> I am grateful to the hon. Gentleman for making half my speech for me—that will save us a bit of time.</p>
+<p>Amendment 34 would provide for only a change of wording—substituting “primary care trusts” for “commissioning consortia”—but I cannot help noticing that there is no reason why a primary care trust cannot be a commissioning consortium, or why a commissioning consortium could not be referred to as a primary care trust. The amendment therefore goes no place, but it does raise a substantive issue on to which I shall try not to stray too far.</p>
+<p>It seems that what unites the Committee is that commissioning should be an administratively lean process. I hate to talk about cutting “bureaucracy” because bureaucrats get such a bad time of it these days from all of us. Some 80% of the people in this country work behind desks and we think that there should be fewer bureaucrats. The people in the back office must have been doing something before we decided to get rid of them. We want administrative leanness, with informed and democratically accountable commissioners, and with the organisations in the commission dominated by clinicians. The dividing line is whether we think that the best way of achieving that outcome, which is accepted among the parties, is via GP consortia, as specified in the Bill, or through a revamped, slimmed down PCT.</p>
+<p>I do not like to use the term “PCT”; very few people know what it means anyway. “Primary care trust” means nothing to the general public, and those who do know what PCTs are do not like them because they have been associated with configuration battles or with demands for services that have been rationed. I much prefer a phrase such as “clinical care trust,” which gives the sense that an organisation is dominated by clinicians. That would have all the advantages that the hon. Member for Easington has spelled out and that I have put to the Minister.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.165" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000345" colnum="202">
+<p> The hon. Gentleman makes some interesting points. He says that nothing in the Bill says that PCTs cannot become consortia and that consortia cannot become PCTs. Is that correct?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.166" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000346" colnum="202">
+<p> I am saying that I am pretty indifferent to labels, and all the amendment does is to change the labels.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.167" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000347" colnum="202">
+<p> My question is important, because the Government’s intention is that they will not allow that to happen. They want to get rid of PCTs and form new consortia. We argue that we do not need to go through that upheaval because the Government can do what they want to do via the PCTs, whether they are called clinician trusts or whatever. Does the hon. Gentleman disagree with that?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.168" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000455" colnum="202">
+<p> I accept that the Government want to get rid of one structure and replace it with another. I am under no misapprehension about that, but the debate is about whether they will do so in the most efficient, deficit-reducing way possible. Although I am committed to the Government’s policy on reducing the deficit and not adding to expenditure, my concern is whether we can be assured that the figures will fan out exactly as expected if we have the £1.4 billion reorganisation costs—which will probably increase—that the Government have agreed.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.169" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000349" colnum="202">
+<p> I remind the Committee that the chief executive of the NHS said in evidence that he could not guarantee that the process would not cost more than £1.4 billion. He said that that would depend on whether GPs took on PCT commissioners and that he hoped that that would happen. The costs could increase. The PCT in my area is keeping that group of people in the hope that the GPs will take them on, but if they do not, the redundancy costs will be far greater.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.170" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000350" colnum="202">
+<p> To be fair, when talking about slimming down the PCTs, which was the plan prior to the Bill, the Minister gave some assurance that appreciable savings would be made—a figure of £5.3 billion was mentioned. This is not an ideological argument, but it could turn into a substantive debate, which I am anxious to avoid. I merely point out that the amendment simply switches labels. We need a debate on the substance, but that will come when we consider later clauses.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.171" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column203" colnum="203">
+<p> I wonder whether the hon. Gentleman, as a leading member of the Liberal Democrats, can enlighten us. In the coalition agreement, the two parties came together on the idea of elected primary care trusts. At what stage did people change their minds, and who suggested that we should get rid of PCTs first?</p>
+<p> Mr Burns  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.172" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000353" colnum="203">
+<p> I want know the hon. Gentleman’s view rather than the Minister’s.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.173" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000354" colnum="203">
+<p> The hon. Lady has studied Parliament in sufficient depth to know that I brought in a private Member’s Bill that would have introduced democratic accountability. That proposal had the distinct advantage that it not only did not create further organisations, but achieved many of the objectives that are now being sought. It would have not have produced a parallel elected body to the council, and it still seems to be the more elegant solution to the problem.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.174" speakerid="uk.org.publicwhip/member/40449" speakername="Dan Byles" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000355" colnum="203">
+<p> I shall be brief. I genuinely believe that all hon. Members are entirely united in wanting to achieve the same thing, which is the best possible outcome for patients. We disagree only on how to go about it. It is worth repeating that, because debates on the NHS can sometimes be heated, and people can throw accusations—that would not happen here, but accusations were thrown by both sides on Second Reading.</p>
+<p>I believe that Opposition Members are sincere in what they wish to achieve, but once again, albeit with the best of intentions, they are going down the path of defending structures rather than considering what would produce the best outcomes for patients. I refer to a meeting that I attended about eight weeks ago with a group of senior clinical consultants at the George Eliot hospital in my constituency. I wrote the observations of two senior secondary consultants in my notebook at the time. One consultant said, “At the end of the day, this is not about the hospital or the PCT. It’s about the pathways to services for local people.” Another consultant said, “Please can you just remove the PCT as quickly as possible, and devolve the clinical pathways as close to the patients as you can?” Those comments were made at a crisis meeting between secondary care consultants, me and the hon. Member for Nuneaton (Mr Jones) about concerns at the way in which the PCT and NHS Warwickshire were commissioning health care.</p>
+<p>In summary, the issue is about pathways for patient care. Those pathways should not be designed in a room on the other side of the county by an unaccountable bureaucratic body; they should be designed as close to patients as possible—in this case, by general practitioners.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.175" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000358" colnum="203">
+<p> It is good that the hon. Gentleman is taking the time to meet clinicians and seek their views, but in the interests of consensus I remind him of the evidence that we received from the Royal College of Physicians and the Royal College of Surgeons? They felt strongly—it is also documented in their written evidence—that they should have a role in designing integrated care pathways. Does the hon. Gentleman not accept that the model in the Bill completely excludes their expertise in the commissioning process?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.176" speakerid="uk.org.publicwhip/member/40486" speakername="Mike Hancock" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column204" colnum="204">
+<p> If you answer that as the hon. Gentleman would like, Mr Byles, you will be ruled out of order. That is a debate for later.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.177" speakerid="uk.org.publicwhip/member/40449" speakername="Dan Byles" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000360" colnum="204">
+<p> I accept your judgment, Mr Hancock, and I shall leave it for another day. I had reached the end of my comments when the hon. Gentleman intervened.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.178" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000361" colnum="204">
+<p> The amendment suggests that instead of including the “commissioning consortia” of GPs in the Bill, we should maintain the status quo by substituting “primary care trusts”.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.179" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000362" colnum="204">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.180" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000363" colnum="204">
+<p> No, I have only just started; please give me a break.</p>
+<p>What the Opposition suggest is clearly unacceptable. It goes to the heart of the Bill, but I will not go down the path of opening it up to a larger debate, Mr Hancock, for the reasons that you gave in your ruling. However, it will be helpful if I answer the point made by the hon. Member for Islington South and Finsbury and, I think, in part, the hon. Member for Halton, about why we got to not keeping PCTs within the commissioning regime, although I will not breach your ruling on discussing why we should have consortia, Mr Hancock. I will give way to the hon. Gentleman first.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.181" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000365" colnum="204">
+<p> The Minister referred to “GP commissioning consortia”. The amendment actually refers to leaving out “commissioning consortia”, which is the term used in the Bill. The Bill does not refer to “GP commissioning consortia”.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.182" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000366" colnum="204">
+<p> I am grateful for that extremely helpful intervention. I was using the colloquial term, because it is the one which is being used out there. I did not want to confuse the wider audience beyond this sophisticated Committee room.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.183" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000367" colnum="204">
+<p> I point out that I thought of the question that the Minister is about to answer all by myself.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.184" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000368" colnum="204">
+<p> I really do not want the hon. Lady to start feeling sensitive. I am sure that she thought of the question herself, because she has that capability. The only thing is that the hon. Member for Halton was about three weeks ahead of her, since he asked me the same question, which I answered about three or four weeks ago.</p>
+<p>The answer to the question is as follows. Opposition Members will have read the Conservative party manifesto for the last election, and I am sure that they or their researchers will have read the excellent speeches by my right hon. Friend the Secretary of State when he was the shadow Secretary of State, plus the White Paper that we published in 2007 outlining our vision for the NHS, if we came to power, which dovetails with the commitments on pages 45 and 46 of our election manifesto. I have probably read the document far more often than the hon. Member for Halton, and it is abundantly clear what we were saying. That was backed up by our &nbsp;shadow health team in opposition, who spoke frequently inside and outside the House of Commons on our vision of liberating the NHS.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.185" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000370" colnum="205">
+<p> We have had this debate on a few occasions. The manifesto refers to commissioning, but will the Minister quote where it said that PCTs would be abolished, commissioning consortia would be set up and the wholesale changes that are now proposed for the health service would be implemented? And why were those changes such a shock to nearly everybody in the health service?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.186" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000371" colnum="205">
+<p> The hon. Gentleman knows the answer to that question, because I answered it when he first asked it three or four weeks ago. If he is patient now, I will answer it again, so that it is on the record in Hansard and that he fully understands it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.187" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000372" colnum="205">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.188" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000373" colnum="205">
+<p> No. I do not want to delay this debate unnecessarily, and I know that the shadow Minister is most anxious to find out what happened so that Opposition Members can share his knowledge.</p>
+<p>When this Government were formed with a coalition between the two parties, we signed up to a vision for the health service—because it had also been mentioned prior to the general election—that PCTs would be retained with a democratic element to them by including on their boards some elected councillors or others elected to them, to give them a democratic accountability. When we came into power, we started to flesh out the vision as outlined by the Secretary of State and the Liberal Democrats. In their election manifesto they wanted to save money and cut excessive management and bureaucracy by abolishing the strategic health authorities. When we fleshed it out and saw that the public health role was to move towards local authorities and that the commissioning was to go to GP consortia, it suddenly became clear that there was virtually nothing for PCTs in their current state to do. There is little point in keeping an organisation with all the costs involved simply for the sake of it.</p>
+<p>Having fleshed out the details and looked at all the opportunities and the way in which the system would work, the decision was taken by the Government and Ministers in the Department of Health that it was pointless and an utter waste of money to keep a structure that would not have anything to do, given the cost involved. We decided that in the interests of the NHS and patients, it was better to abolish PCTs and reinvest the money saved into front-line services to improve and enhance the quality of care and outcomes.</p>
+<p>I would have thought that anyone who is committed to improving outcomes and quality of care would welcome any saving of money from a redundant, or almost redundant, structure. I cannot see the problem. I hope that that reassures the hon. Member for Halton—I am sure it will not—and that it reinvigorates his understanding of how the decision was taken.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.189" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000377" colnum="205">
+<p> To complete the answer to my question, who first suggested getting rid of PCTs?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.190" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column206" colnum="206">
+<p> I am sorry, but I am not quite sure of the point behind the hon. Lady’s question, and whether it is a conspiracy theory or just obtuseness. The idea emerged following ongoing discussions about the way forward. It is as simple as that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.191" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000379" colnum="206">
+<p> Did the Minister not realise before the coalition agreement was signed that having an elected PCT would cause these problems? Did he not already know that that would cause a problem in terms of his agenda?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.192" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000380" colnum="206">
+<p> If, when the hon. Lady says, “Why didn’t he know”, she means me personally, there is a straightforward answer. From December 2005 until 13 May 2010, I was a Whip, not a shadow Health Minister.</p>
+<p> Liz Kendall  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.193" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000382" colnum="206">
+<p> The hon. Lady has had her chance. I will give way to my hon. Friend.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.194" speakerid="uk.org.publicwhip/member/40156" speakername="Daniel Poulter" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000383" colnum="206">
+<p> Does the Minister agree that much of this discussion about PCTs is largely irrelevant? The shadow Minister admitted just now in a statement that the quality of care provided by PCTs was hugely variable. Much of the reason behind doing this is to invest in patients. PCTs often put short-term financial considerations in front of patients and ignored clinical judgment. We want to put clinicians and local authorities at the centre of the process.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.195" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000384" colnum="206">
+<p> My hon. Friend is absolutely right.</p>
+<p> Grahame M. Morris  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.196" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000386" colnum="206">
+<p> No. I am sorry. Let me return to why we took our decision in advance of publishing the White Paper which, as hon. Members will know, was the outline and fleshing-out of the vision that led to the legislation. People had an opportunity to consult on that and to feed in their views.</p>
+<p>The cost of commissioning by the PCTs and SHAs is currently between £3.2 billion and £3.9 billion. In future, the costs of commissioning will be £1.3 billion per annum less. That is crucial, because that is valuable money which can be reinvested in front-line services for all of our constituents.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.197" speakerid="uk.org.publicwhip/member/40660" speakername="Steve Brine" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000456" colnum="206">
+<p> I am not sure where the Minister is going, but I will be brief. The decision was taken and put in the “Equity and excellence” White Paper. I know that, as a diligent Minister, my right hon. Friend will have looked through all those responses—of which there were many, including on how GP consortia would be drawn up, their functions and accountability—and many changes were made when the Bill was published. Will the Minister tell the Committee how many people wrote to him and, on their knees, begged him to keep the PCTs?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.198" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000389" colnum="206">
+<p> That is an extremely pertinent intervention by my hon. Friend. From memory, off the top of my head, the only people I have come across who seem wedded to the PCTs and want to keep them are Opposition Members.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.199" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#Column207" colnum="207">
+<p> There might be devilment in my question, but I had a look at the consultation. Was that one of the questions people were asked?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.200" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000391" colnum="207">
+<p> It was not directly. [ Laughter. ] Opposition Members laugh, but the consultation process was on the contents of the White Paper and five documents flowing from it. We would not, therefore, necessarily expect the question to be asked. We were asking for views on what the Government were proposing and, of course, because of the processes leading to the White Paper, what the Government were proposing by that point was the abolition of the PCTs, hand in glove with the Liberal Democrat policy commitment to abolish the SHAs, so that we could save money and reinvest it in patient care for the health service.</p>
+<p>I will give way to the hon. Member for Easington and then complete my comments.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.201" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000393" colnum="207">
+<p> The Minister is kind.</p>
+<p>On the point about fundholder commissioning and the partial justification of saving money from the administration of the PCTs, may I remind the Minister of the evidence of Dr Jennifer Dixon from the Nuffield Trust? She cited a case study in north America involving 3,000 groups of fundholder commissioners in the late 1980s and early 1990s—only 300 are left. The reasons she gave for the failure of 90% of those commissioners were that: they were unable to sustain the financial risk; they were torpedoed; they were too small, in part; and they had invested badly in management and administration.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.202" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000395" colnum="207">
+<p> I find it slightly odd that the hon. Gentleman should in any shape or form want to compare the national health service—the British provision of health care and system of primary and secondary care—with the American system, because they are so different in so many ways. To compare them and to draw conclusions such as the one he quoted—I thought that the analogy was odd when I heard it—is like comparing chalk and cheese.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.203" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000396" colnum="207">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.204" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000397" colnum="207">
+<p> No, I will not, because it is time to finish.</p>
+<p>At the time, I thought that it was most odd to compare America with this country—it is not that relevant. I do not, therefore, feel tempted or attracted by the amendment, and I urge my hon. Friends to join me in voting against it if pressed to a Division.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.205" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000399" colnum="207">
+<p> The Minister will not be surprised that we remain unconvinced by his arguments.</p>
+<p>May I make two or three brief points? The other side might have misunderstood our position, but I am conscious of your rulings, Mr Hancock, and we will explore the issues in much more detail, with your permission, under later clauses.</p>
+<p>The hon. Member for North Warwickshire made a point earlier about the commissioning structure. The question, which we will explore later, is whether the commissioning improvements—which we all want—could not have been done via the PCT structure, without getting rid of the PCTs and setting up a new structure involving consortia, which there may or may not be more of than there are PCTs. We want to explore that, and shall do so later. We are not wedded to any structure per se. We are asking a serious question about why we needed this fundamental change.</p>
+<p>An important point was made about pathways and patient care being delivered close to the patient. Of course, what we are proposing and will discuss later in other amendments is that GP surgeries will still be close to patients—they are in the communities. There is no change to GP surgeries under any of the proposals, whether what we did or what the Minister suggests doing. The service will still be delivered.</p>
+<p>The issue is that the consortia will have a central body. They will have some office—some building, I assume—and staff, many of whom will have been PCT staff. So why go through all of this when commissioning could have been done through the PCT structure? It is not an issue of removing care from patients—frankly, that remains the same. It is about the people who take the decisions about the delivery of services.</p>
+<p>I am not saying that the hon. Member for Central Suffolk and North Ipswich misquoted me, but he should not put a different gloss on what I said. Many PCTs have been successful and have done a good job, but there have been problems in some, which, of course, continually need to be looked at and improved. We have always said that. That is why we said that we should have much greater clinical and local government involvement in commissioning. I put the same argument to the Minister: some doctors are better than others and some hospitals are better than others—there are always differing standards. How do we get the standards up to the best, which is, of course, what we all want to achieve? Again, we will pursue that point in later clauses.</p>
+<p>I feel strongly that this change is completely unnecessary. The improvements could have been made via the PCT structure, with some innovative and imaginative thinking and determination to see it through. We should oppose the upheaval that the Government are causing to the health service with this unnecessary change. We oppose it in principle, and that is why I wish to press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.206" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000406" colnum="208">
+<p>Question put, That the amendment be made:—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.207" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000407" colnum="208">
+<p>The Committee divided: Ayes 11, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.208" divnumber="4" ayes="11" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000408">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40586" membername="Jim Shannon"  vote="aye">Shannon, Jim</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.209" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000433" colnum="208">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.210" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000434" colnum="208">
+<p>Ordered, That further consideration be now adjourned. —(Stephen Crabb.)</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_05-0_2011-02-15a.2.211" nospeaker="true" time="12:54" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110215/am/110215s01.htm#11021560000457" colnum="208">
+<p>Adjourned till this day at Four o’clock.</p>
+</speech>
+</publicwhip>
