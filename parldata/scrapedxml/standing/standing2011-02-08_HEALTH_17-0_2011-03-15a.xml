@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!DOCTYPE publicwhip
+[
+<!ENTITY ndash   "&#8211;">
+<!ENTITY mdash   "&#8212;">
+<!ENTITY iexcl   "&#161;">
+<!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
+
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY szlig  "&#223;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
+<!ENTITY iacute "&#237;" >
+<!ENTITY icirc  "&#238;" >
+<!ENTITY iuml	"&#239;" >
+<!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
+
+<!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
+<!ENTITY frac14 "&#188;" >
+<!ENTITY frac12 "&#189;" >
+<!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
+
+]>
+
+<publicwhip><bill url="http://services.parliament.uk/bills/2010-11/healthandsocialcare.html" title="Health and Social Care Bill">Health and Social Care Bill</bill>
+<committee>
+<chairmen>
+<mpname memberid="uk.org.publicwhip/member/40351" membername="Jimmy Hood" attending="true">Mr Jim Hood</mpname>
+<mpname memberid="uk.org.publicwhip/member/40486" membername="Mike Hancock" attending="false">Mr Mike Hancock</mpname>
+</chairmen>
+<mpname memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams" attending="true"> Abrahams, Debbie <span class="italic">(Oldham East and Saddleworth)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron" attending="true"> Barron, Mr Kevin <span class="italic">(Rother Valley)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop" attending="true"> Blenkinsop, Tom <span class="italic">(Middlesbrough South and East Cleveland)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40660" membername="Steve Brine" attending="true"> Brine, Mr Steve <span class="italic">(Winchester)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40161" membername="Simon Burns" attending="true"> Burns, Mr Simon (Minister of State, Department of Health)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow" attending="true"> Burstow, Paul (Minister of State, Department of Health)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40449" membername="Dan Byles" attending="true"> Byles, Dan <span class="italic">(North Warwickshire)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb" attending="true"> Crabb, Stephen <span class="italic">(Preseli Pembrokeshire)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois" attending="true"> de Bois, Nick <span class="italic">(Enfield North)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40585" membername="Margot James" attending="true"> James, Margot <span class="italic">(Stourbridge)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall" attending="true"> Kendall, Liz <span class="italic">(Leicester West)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy" attending="true"> Lefroy, Jeremy <span class="italic">(Stafford)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan" attending="true"> Morgan, Nicky <span class="italic">(Loughborough)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris" attending="true"> Morris, Grahame M. <span class="italic">(Easington)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter" attending="true"> Poulter, Dr Daniel <span class="italic">(Central Suffolk and North Ipswich)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40566" membername="John Pugh" attending="true"> Pugh, John <span class="italic">(Southport)</span> (LD)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40586" membername="Jim Shannon" attending="false">Shannon, Jim <span class="italic">(Strangford)</span> (DUP)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40482" membername="Owen Smith" attending="true"> Smith, Owen <span class="italic">(Pontypridd)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry" attending="true"> Soubry, Anna <span class="italic">(Broxtowe)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy" attending="true"> Sturdy, Julian <span class="italic">(York Outer)</span> (Con)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry" attending="true"> Thornberry, Emily <span class="italic">(Islington South and Finsbury)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40344" membername="Karl Turner" attending="true"> Turner, Karl <span class="italic">(Kingston upon Hull East)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg" attending="true"> Twigg, Derek <span class="italic">(Halton)</span> (Lab)</mpname>
+<mpname memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson" attending="true"> Wilson, Phil <span class="italic">(Sedgefield)</span> (Lab)</mpname>
+<clerk>Chris Stanton</clerk>
+<clerk>Mark Etherton</clerk>
+</committee>
+<major-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.1.0" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column689">Public Bill Committee </major-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.1.1" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000005" colnum="689">
+<p>[Mr Jim Hood in the Chair]</p>
+<p class="indent">Written evidence to be reported to the House</p>
+<p>HS 92 Dr Elisabeth Paul</p>
+<p>HS 93 Dr Claire Royston</p>
+<p>HS 94 Bradford People First</p>
+<p>HS 95 National Centre for Independent Living and Radar</p>
+<p>HS 96 Lloydspharmacy</p>
+<p>HS 97 Help the Hospices</p>
+<p>HS 98 York LINk</p>
+<p>HS 99 Association of British Healthcare Industries</p>
+<p>HS 100 The King’s Fund</p>
+</speech>
+<minor-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.0" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000021">Clause 51 </minor-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.1" nospeaker="true" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000507" colnum="689">
+<p>Question proposed, That the clause stand part of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.2" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000022" colnum="689">
+<p> Clause 51 and the subsequent clauses in this chapter remove Monitor’s responsibility for regulating foundation trusts and turn it into an economic regulator. Labour Members oppose that change for reasons that I will set out in our consideration of subsequent amendments and clauses. In this clause stand part debate, I want to highlight one crucial issue, which is the risk associated with removing Monitor’s responsibility for foundation trusts.</p>
+<p>The Committee will be aware that currently Monitor has to agree that a hospital, ambulance service or other NHS provider has effective governance arrangements before it may become a foundation trust. Once an FT is established, it is up to the board of directors, backed up by the board of governors, to ensure the FT is effectively governed. If a trust has problems and does not have effective governance arrangements in place to deal with those problems, Monitor may, and on many occasions does, step in. It has the power to direct a trust to do or to stop doing something and it has the power to add or remove individuals from the leadership of the trust. It often works in close collaboration with the Care Quality Commission. Strategic health authorities also play an important role, for example, by putting in teams to provide support or drive improvements within a hospital, which they often do to prevent a hospital from beginning to fail in the first place.</p>
+<p>The hon. Member for Stafford will know from his experience of the Mid Staffordshire trust’s terrible problems that that do not always happen. Under the existing arrangements, or at least the arrangements at the time of the Mid Staffordshire trust’s problems, the working &nbsp;between Monitor and the CQC did not put in place the sort of infrastructure that might have helped the trust to stop some of those terrible failings. Monitor and the CQC have taken a real look at what happened in that trust, and I am sure they will do more when the findings of the independent review come out.</p>
+<p>Let us be clear about what the Government’s proposals, by which Monitor will lose its responsibility for foundation trusts, will mean. I think that by 2016, when all NHS providers have become foundation trusts, they will be entirely on their own. The safety net currently provided by Monitor and the SHAs will no longer be there and FT governors alone will act as the back-stop in dealing with problems if and when they arise.</p>
+<p>The Minister shakes his head at that, but the new chairman of Monitor, David Bennett, recently told a meeting of the Westminster health forum that that is a major change to the system. He said that there are concerns about whether the governors of FTs in every hospital in every part of the country will be ready to take on that responsibility or capable of doing so with no external help and support and without any checks or balances in the system. What assessment have the Government made of the ability of every remaining trust to achieve foundation trust status? Can the Minister guarantee that they will all be ready to achieve foundation trust status within the time frame? Why have the Government refused to publish the list of some 20 trusts that David Nicholson told the Public Accounts Committee will not be able to achieve foundation trust status? Could the Minister give a firm guarantee that every foundation trust will have governors with the necessary quality and experience to ensure that there are no serious problems within their organisation? Who will make sure that they do, and how?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.3" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" speakeroffice="The Minister of State, Department of Health"  time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000027" colnum="690">
+<p> As the hon. Lady rightly identifies, clause 51 deals with the establishment of Monitor. It provides for Monitor to continue to exist as a body corporate and changes its legal title. The Government believe that for providers to be able to exercise their freedoms to improve services, the environment within which they operate must be fair, stable and transparent. The policy aims to liberate providers from hierarchical management and to create a consistent framework of regulation across all types of providers. Monitor will become an economic regulator for health services for the purposes of the NHS, which is, as the hon. Lady has suggested, a fundamental change from its current role as the regulator of NHS FTs. Monitor will license all providers of NHS-funded services in a similar way to other economic regulators in other sectors. Monitor has been successful as the independent regulator of foundation trusts and is extremely well placed to take on the broader responsibilities of an economic regulator. That avoids the need to establish a new arm’s length body, in line with the Department’s arm’s length body review, and results in substantial administrative savings.</p>
+<p>The clause also introduces schedule 7, which sets out the organisational infrastructure and governance arrangements that Monitor will need to become the economic regulator for the NHS-funded health sector. We will be able to discuss that in greater detail when we reach that schedule. A common approach has been taken across other arm’s length bodies, including the National Institute for Health and Clinical Excellence, &nbsp;the NHS commissioning board and the NHS Information Centre. The schedule makes provision concerning Monitor’s members, including their tenure and remuneration. It details how Monitor will carry out its functions and go about its business; allows Monitor to borrow money, with the Secretary of State’s permission; obliges Monitor to prepare annual accounts, consolidating the annual accounts of all foundation trusts; sets out provisions concerning Monitor’s own accounts and reports; and details how Monitor will report and account to Parliament.</p>
+<p>Monitor will be a key part of the new system and it will protect and promote the interests of people who use health care services, by promoting competition in quality where appropriate, and through regulation where necessary. The hon. Lady posed several questions about the role of Monitor, starting with Monitor’s regulatory regime for foundation trusts and asking whether that would not be rather risky in the context of giving foundation trusts greater freedoms. I believe that the removal of Monitor’s foundation trust-specific compliance framework should be seen in the context of Monitor’s changing role from an FT-specific regulator to one that is responsible for all types of provider as the sector-wide economic regulator.</p>
+<p>The purpose of the current compliance framework is to ensure that each foundation trust complies with its terms of authorisation, which include ensuring the effective governance and the continuing financial viability of individual FTs; however, no equivalent regulation exists for other types of provider. Under our reforms, all types of provider will be licensed by Monitor. Regulation will be focused on protecting the services that are important for the NHS, wherever they are provided, rather than on any one type of organisation. In turn, the Bill significantly strengthens the internal governance of foundation trusts and makes them more directly accountable for the results that they achieve by strengthening the role of local governors and members and placing clear duties on foundation trust directors. To my mind, that will reduce the need for external oversight from Monitor and free foundation trusts to innovate and respond to the needs of patients.</p>
+<p>The Government recognise, however, that completing our reforms to providers will be challenging. In the light of consultation, we decided to create a longer and more phased transition period, to which the hon. Member for Leicester West alluded. As a result, Monitor will retain some of its current controls over some foundation trusts while the new system of economic regulation is being introduced.</p>
+<p>We will be able to discuss the hon. Lady’s question about the quality and experience of the trusts’ directors in greater detail as we go through the amendments to schedule 7, but at this point, before our detailed discussion of the system’s governance and its operations, I will say as a generalisation that I am confident that we will have people of quality and experience, who will be fit to carry out their duties to ensure that the system runs well.</p>
+<p>The hon. Lady asked whether all the trusts will be ready and in place to receive foundation trust status within the time scale required. I assure her that the NHS is working hard to achieve that aim. Between now and, potentially, 2016 we will ensure that all the necessary actions are taken to sort that matter out, so that trusts have foundation trust status.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.4" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column692" colnum="692">
+<p> The Minister started to set out the fundamental change in Monitor’s role from being the regulator of foundation trusts to being an economic regulator. As I said, Labour Members fundamentally disagree with that change. We will discuss that under clause 52, which sets out Monitor’s main duties, including promoting competition. Although I will make our main arguments then, I want to say now that the Minister has assured the Committee that every district general hospital, ambulance service, or community service that becomes an FT will have governors of the quality and experience needed to make sure that they can handle all the real challenges that such services will face, the financial consequences of working in a genuinely competitive market and the consequences of all the changes in health care. I would like more detail and reassurance, however. Will he set out the process by which he will ensure that the governors of FTs have the quality and experience necessary? I am not the only person to have raised that question. David Bennett, the new chairman of Monitor, said that there is a “very real challenge”. Members of this Committee and across the House, who have hospitals and providers in our constituencies, need some detail on how that will be achieved.</p>
+<p>The Minister did not answer my question about what the chief executive of the NHS said about there being 20 hospitals that will not achieve foundation trust status. They will have to merge, be taken over, or indeed close. I have asked parliamentary questions to require the chief executive to publish that information. He knows it, as does the Department; unfortunately, however, the people elected to represent those who use the services do not know which hospitals are involved. I hope that the Minister will now agree to publish that information.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.5" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000036" colnum="692">
+<p> To clarify that specific point about some trusts that face significant challenges and are unlikely to achieve foundation trust status in their current organisational form: for NHS trusts that are unable to do that on their own, other innovative options will be considered—for example, acquisition by an existing foundation trust, merger with another organisation, or franchise arrangements to help to deal with those issues. In the event that a few organisations fail to deliver on their plans to become a foundation trust, and where the NHS trust is unsustainable, we may use the trust administration regime introduced by the Health Act 2006—a regime with which the hon. Lady will be familiar, through her work as a special adviser to Patricia Hewitt.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.6" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000037" colnum="692">
+<p> Unfortunately, the Minister did not answer my question. It is all very well for him to say that the Department and the chief executive are working through the plans, but which are those trusts? The chief executive has clearly said that there are around 20—he told the Public Accounts Committee that. He must have the list. Why can the Committee and the House as a whole not know which bodies might be merged, franchised or taken over?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.7" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000508" colnum="693">
+<p> I am afraid that the hon. Lady will not find this intervention as helpful as some of my earlier ones, because I am, as the saying goes, once bitten, &nbsp;twice shy. Having become accustomed to the way that Labour Members interpret what is being said by Government Members and so that there is no doubt or ability to misinterpret, I will say that it is not sensible to speculate at this stage on what solutions would be required in individual cases. That is all that the hon. Lady will get. She will have to be patient and wait. I certainly do not think that it is helpful for her to speculate—possibly inaccurately—when we are seeking real solutions to such situations.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.8" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000039" colnum="693">
+<p> I have not asked the Minister to publish what the solutions would be. I said that the chief executive of the NHS has said that there are around 20 such institutions. Patients, the public and their elected representatives would like to know which those 20 are. That is all I am asking. It is simple question. Will he publish those names?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.9" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000040" colnum="693">
+<p> Given the Minister’s reluctance to clarify the situation, may I ask whether there anything in the Bill that would prevent a private provider stepping in to provide services in the case of failure?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.10" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000041" colnum="693">
+<p> There is nothing in the Bill that would prevent that. My point is not that we do not have to find a solution for those services; those solutions are difficult and that there are no easy answers. My point is that patients, the public and MPs do not know which trusts are among the 20 mentioned by the chief executive of the NHS.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.11" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000042" colnum="693">
+<p> The hon. Lady may recall that in the evidence session with Sir David Nicholson, I raised that very point. I mentioned that one trust had brought to my attention its inability to become a foundation trust, because it could not meet the financial targets that resulted from an over-expensive private finance initiative project. I believe that that is, in fact, one of the reasons why the Department of Health is perhaps looking at trusts that have such PFIs, where the annual costs result in returns on capital that are below what foundation trusts require.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.12" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000043" colnum="693">
+<p> I am grateful to the hon. Gentleman for providing a clearer explanation than the Minister of why the names of those trusts may not be published.</p>
+<p>I am disappointed that the Minister has not set out how he intends to ensure that, in future, every foundation trust, which will cover not only hospitals, but ambulance and community services, will have governors with the strength and expertise required to manage those complicated organisations. I am also disappointed that the Minister will not publish the names of the trusts that the chief executive of the NHS has told us are struggling to achieve foundation status.</p>
+<p>Labour Members, for reasons that I shall set out in the debate on clause 52, fundamentally oppose the changes in part 3 of the Bill, and, as starch to our firm commitment to opposing those changes, we will vote against clause 51 stand part.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.13" nospeaker="true" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000046" colnum="693">
+<p>Question put, That the clause stand part of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.14" nospeaker="true" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column694" colnum="694">
+<p>The Committee divided: Ayes 13, Noes 10.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.15" divnumber="37" ayes="13" noes="10" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000048">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="aye">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="aye">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="aye">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="aye">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="aye">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="aye">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="aye">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="aye">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="aye">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="aye">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="aye">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="aye">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="aye">Sturdy, Julian</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="no">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="no">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="no">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="no">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="no">Morris, Grahame M.  (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="no">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="no">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="no">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="no">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="no">Wilson, Phil</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.16" nospeaker="true" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000072" colnum="694">
+<p>Question accordingly agreed to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.2.17" nospeaker="true" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000073" colnum="694">
+<p>Clause 51 ordered to stand part of the Bill</p>
+</speech>
+<minor-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.0" time="10:45" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000074">Schedule 7 </minor-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.1" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000007" colnum="694">
+<p> I beg to move amendment 483, page 276, line 35, at end insert—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.2" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000075" colnum="694">
+<p> With this it will be convenient to discuss the following:</p>
+<p>Amendment 484, page 276, line 37, at end insert—</p>
+<p>Amendment 488, page 279, line 30, at end insert—</p>
+<p>Amendment 480, in clause 52, page 63, line 2, at end insert—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.3" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000079" colnum="695">
+<p> The amendments are designed to ensure that Monitor, which as the new economic regulator will be a hugely powerful organisation, has a degree of accountability to patients and the public. At the moment that is completely lacking. Let us be clear what its powers will be. Monitor will be the economic regulator based on the same model that is used in the privatised utilities, railways and telecoms sectors. It will have powers to promote competition throughout the NHS. It will use the powers that the Office of Fair Trading has under UK and EU competition law. Monitor will be able to make serious demands of both the commissioners &nbsp;and the providers of services, yet patients and the public are not required to be involved and it has virtually no accountability to the public.</p>
+<p>Amendment 483 would ensure that Monitor consists of not only a chair, chief executive, non-executive members and directors, as schedule 7 states, but a patient representative appointed by HealthWatch England. Amendment 484 would ensure that Monitor’s management board meets in public. It would require Monitor to have an annual board meeting that is open the public; at least one member of the management board would have to attend the meeting and present Monitor’s annual accounts and annual report. That arrangement specifically mirrors clause 142, which places the same requirements on foundation trusts.</p>
+<p>Amendment 480, which relates to clause 52, would ensure that when performing its functions, Monitor must involve and engage patients and the public. That is crucial. I find it astonishing that a Government who claim that they want a health service where patients are at the heart and where there is “no decision about me without me” want Monitor to have powers to require both the new national NHS commissioning board and commissioning consortia to put services out to tender. As we will discuss under the clauses on competition, forcing services to be put out to tender will have a real effect on which services patients use, but Monitor is not required to involve or engage patients in any way, shape or form.</p>
+<p>We do not agree with the Government’s proposals to turn Monitor into an economic regulator based on the model of the utilities, rail and telecoms, but in those sectors quite strong bodies that been set up to represent consumers and ensure that regulators take their preferences into account. The Government will claim that that is what HealthWatch England does—that it is the NHS equivalent to those consumer bodies—but we have said that setting HealthWatch England up as a sub-committee of the CQC creates nothing like as strong and independent a consumer body as other regulators are. The King’s Fund issued a briefing on part 3 of the Bill yesterday because it is so concerned about the provisions, in which it says:</p>
+<p class="indent">“it is hard to see it”—</p>
+<p>that is, HealthWatch England—</p>
+<p class="indent">“having much influence on a regulator as powerful as Monitor.”</p>
+<p>In the spirit of helping the Minister—I shall be far less helpful later—and to try to ensure that Monitor has a strong voice for users and the public, I urge him to accept amendment 480. I cannot see how he could object to Monitor being required to involve and engage patients and the public. If foundation trusts, which are very important and provide services in a local area, are required to have an annual board meeting and to meet in public, why should a huge and powerful organisation such as Monitor not be required to do the same? If HealthWatch England is as powerful as he believes, why would he not agree to have one of its members appointed to the board of Monitor? That is the purpose that underlies the amendments. I am trying to help the Government to achieve what they want to with Monitor. We will oppose the overall approach later on, but I would be grateful if the Minister answered my questions.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.4" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column696" colnum="696">
+<p> The amendments relate to Monitor’s duties to involve and engage with patients and the public, which includes the appointment of a patient representative to its board. They also relate to public transparency of Monitor’s meetings. The Government commitment to public involvement in the design and delivery of health services has already been discussed by the Committee, so I will address the amendments in turn, rather than repeat what has been said.</p>
+<p>Amendments 484 and 488 are designed to ensure that Monitor’s management board meets in public and that Monitor holds an annual open meeting. I reassure the Committee and the hon. Lady that, like the NHS commissioning board, Monitor will be subject to the Public Bodies (Admission to Meetings) Act 1960, meaning that it must hold board meetings in public. I hope that reassures her. I assume she accepts that there will be times when it is inappropriate for the board meetings to be held in public—for example, when discussing issues of confidentiality—but the 1960 Act makes provision for such cases. I hope that that reassures hon. Members.</p>
+<p>Amendment 480 would place a general duty on Monitor to involve and engage patients and the public. We have previously discussed the range of measures in the Bill that increase the involvement of patients and the public in running the health service; none the less, I feel that amendment 480 is unnecessary. To deliver its general duties to protect and promote the interests of people who use health services, Monitor will be expected to take into account the views of patients and the public. It will also have duties to engage with HealthWatch on its functions relating to designated services and licensing.</p>
+<p>I must tell the hon. Lady that I think it is a little unfair to refer to HeathWatch in a derogatory way as a sub-committee of the CQC. Anyone who has read the Bill and listened to the debates led by my hon. Friend the Minister of State will know that HealthWatch will have a very important role under its own auspices to represent the interests of patients and the public in local communities across the country under the umbrella of HealthWatch England.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.5" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000089" colnum="696">
+<p> Can the Minister confirm that HealthWatch is not a sub-committee of the CQC?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.6" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="10:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000090" colnum="696">
+<p> I can certainly do that in the context of the hon. Lady’s point. Within the architecture of reforms, HealthWatch England is placed in the CQC, but it is not—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.7" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000509" colnum="696">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.8" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000092" colnum="696">
+<p> The hon. Lady should at least have the courtesy to let me finish answering her hon. Friend’s point before getting up to try again.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.9" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000093" colnum="696">
+<p> I am attempting to assist the Minister.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.10" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000094" colnum="696">
+<p> No—[ Interruption. ] I am very grateful—[ Interruption. ]</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.11" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000095" colnum="696">
+<p> Order. This is an interesting start to the day. I hope it is not going to continue. Only one Member on their feet at a time, please.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.12" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column697" colnum="697">
+<p> Thank you for your protection, Mr Hood. I am extremely grateful.</p>
+<p>The hon. Member for Leicester West—this may save the hon. Member for Islington South and Finsbury from getting to her feet again—describes HealthWatch England as a sub-committee of the CQC. HealthWatch England is not a mere sub-committee of the CQC; it is a statutory committee within the architecture. [Laughter.]The hon. Ladies laugh, but I cannot work out whether it is from nervousness, because their fox has been shot, or to hide their ignorance of the situation. I attach far more importance to that placing, background and statutory committee designation than the hon. Ladies do.</p>
+<p>Amendment 480 would place a general duty on Monitor to involve and engage patients and the public. The amendment is unnecessary for Monitor to deliver its general duties. To protect and promote the interests of people who use health services, Monitor will be expected to take into account the views of patients and the public.</p>
+<p>The Secretary of State, of course, has the ability to confer on Monitor a power to direct commissioners to put services out to tender, which is an answer to a point raised by the hon. Member for Leicester West. Government amendment 502 would remove that ability.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.13" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000100" colnum="697">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.14" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000101" colnum="697">
+<p> No.</p>
+<p>Monitor also has a duty to engage with HealthWatch England on its functions related to designated services and licensing. I want to set out four of those aspects, because they relate both to amendment 480 and amendment 483.</p>
+<p>First, clause 69 details a requirement on Monitor to give notice of designation of services to</p>
+<p class="indent">“every local Healthwatch organisation in whose area the service is provided”.</p>
+<p>Giving notice is appropriate because commissioners will already have consulted locally. Monitor will need, however, to satisfy itself that commissioners have carried out the required consultation.</p>
+<p>Secondly, clause 73(3)(b) establishes a duty on Monitor to consult HealthWatch England before publishing guidance on designated services. Thirdly, clause 76 requires Monitor to give notice to HealthWatch England before making exemption regulations in respect of licensing and to consult with HealthWatch England before proposing to revoke exemption regulations.</p>
+<p>Finally, HealthWatch England has, as one of its functions, the ability to advise other bodies, including Monitor. As we discussed last week, on receiving advice Monitor would have to respond and HealthWatch England could make public the nature of the exchange in its annual report. That is stated in proposed new section 45A(3)(a) of the Health and Social Care Act 2008, as set out in clause 166.</p>
+<p>On issues relating to service provision, it is the role of commissioning consortia and the NHS commissioning board, not the regulator, to engage and consult. Clause 69, for example, states that, before applying to designate services, commissioners must consult</p>
+<p class="indent">“every local Healthwatch organisation in whose area the service is provided for those purposes”.</p>
+<p>Again, I do not believe that amendment 483 is necessary for the reasons I have described. HealthWatch England is already involved where necessary. It will be the role of the non-executive directors appointed to the board to act as independent experts to ensure that Monitor’s primary duties to protect and promote the interests of people who use health care services are fulfilled. The expertise of non-executive directors will enable meaningful independent scrutiny and challenge at board level. A patient representative from HealthWatch is unlikely to have the required level of expertise in economic regulation to provide scrutiny and challenge in a way that adds value. For those reasons, I urge the hon. Lady to withdraw the amendment. If she presses it to a vote, I invite my hon. Friends to join me in opposing it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.15" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000109" colnum="698">
+<p> Eloquent though the Minister is, the Opposition and many organisations are simply not convinced that HealthWatch will be a strong, powerful and independent body. We can have arguments about committees within the overall architecture, but people want a strong and independent voice for patients and the public. HealthWatch does not deliver that. Its structure does not deliver it. Its resources do not deliver it. That is why we are so concerned to include a requirement to involve and engage with patients and the public in Monitor’s general duties, not through consultations, which will be very complicated, but as a primary duty of that organisation. Just as commissioning consortia, albeit weak, have a requirement to involve and engage the public, if this economic regulator will drive the future of health service provision in this country, which the Opposition believe, it needs a primary and central duty to involve and engage members of the public.</p>
+<p>The Minister’s final point was that someone from HealthWatch England appointed to the board of Monitor would not have the knowledge needed to understand economic regulation. That really is the heart of the problem. Having competition law and economic regulation driving our system of health care will not deliver the best outcomes for patients and the public. If it is something that they cannot understand, why is the Minister putting it in law? If a member of the public cannot understand what implications competition law will have for their NHS and care, why is he introducing it into the system? That is why I wish to press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.16" nospeaker="true" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000111" colnum="698">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.17" nospeaker="true" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000112" colnum="698">
+<p>The Committee divided: Ayes 10, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.18" divnumber="38" ayes="10" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000113">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.19" nospeaker="true" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000137" colnum="699">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.20" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000138" colnum="699">
+<p> I beg to move amendment 485, page 280, leave out lines 19 to 23.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.21" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000139" colnum="699">
+<p> With this it will be convenient to discuss amendment 487, page 281, leave out lines 1 to 6.</p>
+<p class="indent">“Monitor may, with the consent of the Secretary of State, borrow money temporarily by way of overdraft.”</p>
+<p>Amendment 487 would delete paragraph 16 of the schedule, which allows the Secretary of State to</p>
+<p class="indent">“make payments to Monitor out of money provided by Parliament of such amounts as the Secretary of State considers appropriate…at such times…as the Secretary of State considers appropriate.”</p>
+<p>We must remember the context. The NHS faces the tightest ever period of funding since its creation, and it is expected to make unprecedented efficiency savings of more than 4.4% during each of the next four years. It has never achieved such savings in one year, let alone in four. Hospitals are already starting to set out plans for millions of pounds of savings, jobs are already being cut and waiting times for treatment are already starting to rise.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.22" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000142" colnum="699">
+<p> The hon. Lady talks about the £20 billion-worth of savings. Will she confirm that the previous Labour Government introduced that £20 billion of savings, but this Government have given the NHS an extra year to achieve them?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.23" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000143" colnum="699">
+<p> I think we will see that the Government’s plans will pile costs on the NHS, as a result of not only its reorganisation but the introduction of the market and competition law. The Foundation Trust Network has said that the savings that will be required are even greater—[ Interruption. ]</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.24" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000144" colnum="699">
+<p> Order. I have to say to the hon. Gentlemen that if they must have a conversation, they can do that in the corridor, not in the Committee.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.25" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000145" colnum="700">
+<p> Primary care trusts and the clusters of PCTs have been given strict limits for the amount of money that they can spend, not only on patient care but on administration, and the same is true for commissioning consortia. I remember the Minister telling me last week—or it may have been even longer ago—that they will not be allowed to overspend. He did not explain how consortia will be prevented from overspending; primary care trusts &nbsp;are currently told that they must not overspend, but they sometimes do. Despite that, the Government will allow Monitor to live beyond its means. They will allow it to have an overdraft. Do GP commissioning consortia get such overdrafts? The Bill allows the Secretary of State to make any payment to Monitor, at any time, as he or she sees fit.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.26" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000146" colnum="700">
+<p> May I now have an answer to my original question? Is it yes or no?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.27" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000147" colnum="700">
+<p> I really enjoy it when the Minister asks me questions. Perhaps one day Opposition Members will be on the other side of the Committee. The purpose of this Committee is to scrutinise the Government’s policy, however, and I am sure that the Minister will understand if I continue.</p>
+<p>There is an issue at the heart of the schedule, which we will also discuss during the clause 52 stand part debate. I do not believe that the Government have any idea of how much money Monitor will have to spend in regulating the new NHS market. They have no idea how many lawyers Monitor will have to employ to negotiate its way around the competition courts in this country and in Luxembourg, and no idea how many managers it will need to assess whether each individual GP commissioning consortium is putting services out to tender and what the impact will be on local providers.</p>
+<p>If that is not the case, will the Minister tell me what Monitor’s budget will be for the financial year 2010-11? What will its budget be for each of the next five years? Have the Government made an assessment of Monitor’s budget from the year 2016-17 onwards, when it will have lost its responsibility for foundation trusts and become solely an economic regulator? If the Minister has conducted such an assessment about Monitor’s likely future budget, will he publish that assessment, so that the Committee and the House will have some idea of how expensive the new market and competition-based system will be?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.28" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000510" colnum="700">
+<p> As you may have guessed, Mr Hood, I will not be urging my hon. Friends to accept the amendments, because they would not improve the Bill.</p>
+<p>Amendment 485 would remove Monitor’s powers to,</p>
+<p class="indent">“with the consent of the Secretary of State, borrow money temporarily by way of overdraft.”</p>
+<p>As the hon. Lady rightly pointed out, that provision appears in paragraph 13(1) of schedule 7 to the Bill.</p>
+<p>This may perplex hon. Members, but I want to turn to the National Health Service Act 2006, which was passed by the previous Labour Government. To add the icing to the top of the cake, the hon. Lady was Patricia Hewitt’s special adviser at the time. She must, therefore, have been fairly intimately involved in putting that legislation together. I want to read paragraph 9(1) of schedule 8 to the 2006 Act, which, with regard to Monitor, states:</p>
+<p class="indent">“The regulator may with the consent of the Secretary of State borrow money temporarily by way of overdraft”.</p>
+<p>It does not take a brain surgeon to appreciate that the wording in the hon. Lady’s Act is exactly the same as the wording in our Bill. It seems strange, therefore, that a mere five years later, it is utterly wrong to put it in our Bill, given that it was totally right to put it in her Government’s Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.29" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column701" colnum="701">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.30" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000156" colnum="701">
+<p> No, not yet. Before getting up, the hon. Member for Islington South and Finsbury should reflect on what I just said, because there is not much to make of that. It is a slam dunk. Mr Hood, I must say that I am somewhat surprised by the amendment, because, as I said, the provision simply replicates an existing power that Monitor has, which was legislated for by the hon. Lady’s Government. She was a Member of the House at the time, so I presume that she voted for it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.31" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000157" colnum="701">
+<p> Does the right hon. Gentleman remember that five years ago, when that legislation was passed, there were no doctors standing outside an emergency meeting of the BMA shouting, “Kill, kill, kill the Bill. It will make you very ill”?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.32" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000158" colnum="701">
+<p> As I listened to the hon. Lady, I had a sinking feeling in the pit of my stomach, because I actually thought that we were going to hear a constructive contribution. If that is the best that she can do, I strongly advise her, in the nicest possible way, to leave things to her hon. Friend the Member for Leicester West.</p>
+<p>The provision is to be used in rare, but important, cases. Monitor might, for example, need to borrow money when there were delays in its being able to collect its licence fees. Monitor, as the economic regulator for NHS-funded care, needs to be able to respond to its sector’s needs. It needs the option of some financial flexibility to be able to manage any cash-flow problems that it may encounter.</p>
+<p>The power does not enable Monitor to take on loans for that purpose. It is only able to borrow money temporarily, by way of an overdraft, with the Secretary of State’s consent. I have said this before, but let us have it on the record, so that there is no misunderstanding. The provision replicates an existing power that Monitor has under paragraph 9(1) of schedule 8 to the 2006 Act.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.33" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000161" colnum="701">
+<p> Will the Minister state for the record what his estimate is of the running costs of Monitor?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.34" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000162" colnum="701">
+<p> If the hon. Gentleman waits until I have made progress, I will address both his concerns and those of his hon. Friend the Member for Leicester West. We believe that the provision continues so as to enable Monitor to be able to carry out its functions effectively. We also believe that the power includes sufficient safeguards and controls—accountable to the Secretary of State—to ensure that any risk is minimised as far as possible, which strikes the right balance.</p>
+<p>Amendment 487 would in effect cut any funding the Government would need to provide to Monitor to enable it to exist and carry out its duties and functions. Were the amendment to be accepted, Monitor’s only source of revenue would be what it collected through licence fees. It is good regulatory practice that revenue raised from regulated bodies should be proportionate to the service that the regulator is providing to the regulated body.</p>
+<p>The revenue raised from licensing—the joint licence provisions that would be put in place between the CQC and Monitor—will be used to fund the licensing regime &nbsp;only, in line with that practice. The Bill would be in line with the current arrangements for Monitor, which were put in place by the previous Government.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.35" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000165" colnum="702">
+<p> Will the Minister confirm that Monitor will cost £50 million to £70 million a year?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.36" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000166" colnum="702">
+<p> As I said to the hon. Member for Easington, I will respond to that when I finish discussing these two amendments. The hon. Gentleman can rest assured that before I sit down he will get some figures.</p>
+<p>The grant-in-aid funding from the Government funds Monitor’s activities in regard to, for example, its competition function and other non-licence activities such as designating services. The amendment would result in Monitor’s being unable to carry out the full extent of its functions. For the economic regulator to be effective in ensuring that the social market for provision of NHS services operates in the public interest, it is necessary to fund all its functions—promoting competition on quality where necessary, setting and regulating prices, and supporting continuity of service. Other economic regulators are funded in that way. The amendment would prevent Monitor from delivering all its important functions.</p>
+<p>The hon. Members for Leicester West, for Easington and for Middlesbrough South and East Cleveland asked about Monitor’s budget. That has been set out publicly in the impact assessment; we are not trying to hide it. I am sure that all three Members will have read the impact assessment from cover to cover and will know what the future running costs are likely to be.</p>
+<p>Let us not misinterpret what I am about to say; Opposition Members like to interpret what they hear as they wish it had been said rather than as it was actually said. Future running costs are likely to be somewhere between £40 million and £130 million. It is currently £21 million. Before the hon. Member for Leicester West goes into synthetic shock-horror—she is not too convincing, but she goes through the motions—she will know and she should accept, as the reasonable person I have reason to believe she is, that the role of the new Monitor is significantly greater than the current one, so one would expect a difference in the level of costs.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.37" speakerid="uk.org.publicwhip/member/40401" speakername="Tom Blenkinsop" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000170" colnum="702">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.38" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000171" colnum="702">
+<p> No, I will not, because I just want to answer another point. Hon. Members have argued that Monitor has no constraints on its spending, unlike other ALBs. Monitor has a clear duty to act efficiently and provisions in the Bill are standard and the same as for other ALBs. They already exist for Monitor.</p>
+<p>I trust that that has answered the hon. Lady’s concerns and points, and that she will now consider it inevitable that she should withdraw her amendment. It would seem rather silly for the Opposition to vote against provisions identical to those in her Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.39" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000173" colnum="703">
+<p> The Minister looks very pleased with himself, but I gently suggest to him that repeating part of a Bill from 2006 in respect of a fundamentally different organisation, with fundamentally different powers—Monitor will not do the same job in future—was not a slam dunk, but some kind of dribble. [ Laughter. ] &nbsp;I suddenly could not think of the correct basketball analogy. This is a fundamentally different body with different aims, objectives and functions; that is why I question this part of schedule 7.</p>
+<p>I am glad that we now have it on the record that the costs of Monitor will not be those in the Minister’s written answer to my hon. Friend the Member for Easington, in which he wrote:</p>
+<p class="indent">“The costs of the new economic regulator are expected to be around £50-£70 million per year.”—[Official Report, 8 February 2011; Vol. 523, c. 167W.]</p>
+<p>The impact assessment says that they will be between £40 million and £130 million a year. The Minister has confirmed today that Monitor’s costs are going to go up from about £20 million to £130 million.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.40" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000176" colnum="703">
+<p> There the hon. Lady goes again—misinterpreting what we have said. At no time during this debate have I said that the costs of Monitor will rise from £21 million a year to £130 million a year. Let us make this clear before this little hare starts running wildly through the Opposition’s press releases: I said that the impact assessment showed that the cost would be somewhere between £40 million and £130 million. That is very different from immediately plucking the upper-end figure and establishing that it will cost that much as a fact.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.41" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000177" colnum="703">
+<p> I am not plucking any figure from anywhere; I am repeating the words of the Minister—[ Interruption. ]</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.42" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000178" colnum="703">
+<p> Order. While the hon. Lady is or is not plucking figures, I hope that Members will give her order so that we can hear what she is saying.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.43" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000179" colnum="703">
+<p> Thank you, Mr Hood. My comments are based on the Minister’s own words, and those of his hard-working civil servants who conducted an impact assessment on the Bill. The Government’s figures say that the costs of bringing an economic regulator into the system will at least double, and possibly rise by 600%. That does not take into consideration the costs to the commissioners and providers of services of attempting to manage the Government’s new NHS market.</p>
+<p>The Minister says that the Bill is based on “good regulatory practice”, in terms of how regulators are funded. We do not believe in changing Monitor into an economic regulator for the reasons that I set out under clause 52. We want to delete the powers in schedule 7 because of the cost of the new system to patients—and, crucially, to taxpayers.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.44" speakerid="uk.org.publicwhip/member/40156" speakername="Daniel Poulter" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000181" colnum="703">
+<p> I am very interested in the hon. Lady’s point, given that the previous Government invested heavily in bureaucracy; thanks to them, the cost of NHS bureaucracy is now £5 billion. Can she explain why she is now so concerned about just a few million pounds spent in beefing up a regulator?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.45" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000182" colnum="704">
+<p> I am sure that the hon. Gentleman would not say to his constituents that £130 million is just a few pounds. We are making the point that, by the &nbsp;Government’s own figures, the costs of this new system are a real issue, without taking into account the costs that commissioners and providers will also have to find.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.46" speakerid="uk.org.publicwhip/member/40247" speakername="Nick de Bois" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000183" colnum="704">
+<p> Perhaps the hon. Lady would like to consider what she is saying in the context of the overall savings for the NHS projected by this budget, which run to several billion pounds?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.47" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000184" colnum="704">
+<p> I thank the hon. Gentleman for his intervention. I know he will always be rightly concerned about the good use of taxpayers’ money. I do not believe that this new system will save money; there are additional costs that the Government have not taken into account, in both the reorganisation and introduction of this market-based system. As I think David Nicholson said to this Committee and the Public Accounts Committee, we are yet to see what the final costs of the reorganisation will be.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.48" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000186" colnum="704">
+<p> Will the hon. Lady give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.49" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000187" colnum="704">
+<p> Please let me finish with one intervention before I take another.</p>
+<p>We are not yet clear what the cost of the reorganisation will be; it depends on whether GP commissions take on people currently employed by primary care trusts, and whether we end up with double the number of GP commissioning groups compared with primary care trusts. There are a whole range of issues relating to that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.50" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000189" colnum="704">
+<p> Can I help the hon. Lady on that point?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.51" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000190" colnum="704">
+<p> I am not sure whether I require the Minister’s help, but I will take an intervention.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.52" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000191" colnum="704">
+<p> Let me explain this for the hon. Lady and for the record. The impact assessment shows that the cost of NHS modernisation is £1.4 billion, but the savings through greater efficiency, the abolition of SHAs and PCTs, and the driving out of excessive management, will bring savings of £1.7 billion by 2012-13. By the end of the lifetime of this Parliament, that figure will be £5.1 billion, and by the end of the decade—because it is £1.7 billion a year—that amount will be £13.6 billion. Every single penny of that will be reinvested in front-line services.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.53" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000192" colnum="704">
+<p> I am surprised by the Minister’s confidence, because my experience of working in health and health policy is that projected savings from cutting red tape and bureaucracy are very hard to deliver. I urge him to take heed of the more cautious approach taken by David Nicholson in his comments to the Public Accounts Committee. He was clear that the final costs of the reorganisation are far from certain, as are the final savings. The point I am raising in this debate is not about the costs of reorganisation, but about the costs of introducing the new system.</p>
+<p> Mr Burns  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.54" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000194" colnum="704">
+<p> I will take a final intervention.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.55" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column705" colnum="705">
+<p> I thank the hon. Lady very much. May I say that I love Labour’s new-found conversion to frugality and its concern about costs to the taxpayer? In 2002-03, the previous Labour Government allowed the costs of SHAs and PCTs to increase by more than £1 billion—120%. There was no concern about saving money for the taxpayer, or about saving money to reinvest in vital front-line services for patients and our constituents.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.56" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000196" colnum="705">
+<p> I am so glad that I took that intervention. I stand second to none in my determination to ensure that, in the NHS and in all public services, every penny of taxpayers’ money possible goes to the front line. Of course, there should be changes, as we said earlier in this debate. What the Minister fails to address is whether it is worth spending up to £130 million a year on Monitor, for introducing a new market-based system. As I will go on to suggest, it is not clear whether that will improve either quality or patient care, which is the subject of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.57" speakerid="uk.org.publicwhip/member/40222" speakername="Grahame Morris" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000197" colnum="705">
+<p> For the record, will my hon. Friend state what Labour’s plans were about taking costs out at the level of PCTs and SHAs? The mistaken impression has been given that we would not have done anything about that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.58" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000198" colnum="705">
+<p> My hon. Friend rightly says that significant savings were going to be made on management costs when the previous Government were in power, as hon. Members will know. I only wish that Government Members would acknowledge that, although I do not expect them to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.59" speakerid="uk.org.publicwhip/member/40156" speakername="Daniel Poulter" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000199" colnum="705">
+<p> Will the hon. Lady give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.60" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000200" colnum="705">
+<p> I shall bring my remarks to a close at this stage. There are clearly extra costs in introducing Monitor as an economic regulator. The Minister has said that those costs will range—and that is only for Monitor. I argue that there will be costs for a whole range of other bodies, which is why we do not believe that Monitor should have the power to have an overdraft, or that the Secretary of State should be able to give it any money that he or she sees fit. I am not convinced by the Minister’s arguments, and I would like to press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.61" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000201" colnum="705">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.62" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000202" colnum="705">
+<p>The Committee divided: Ayes 10, Noes 13.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.63" divnumber="39" ayes="10" noes="13" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000203">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.64" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000227" colnum="705">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.65" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column706" colnum="706">
+<p> I beg to move amendment 486, page 280, leave out lines 34 and 35.</p>
+<p>I will not spend long discussing the amendment, as it is important that we should progress to the heart of part 3 of the Bill. Amendment 486 would delete paragraph 15 of schedule 7, which states that</p>
+<p class="indent">“Monitor may do anything which appears to it to be necessary or expedient for the purposes of, or in connection with, the exercise of its functions.”</p>
+<p>Turning Monitor into an economic regulator, and explicitly adding UK and EU competition law to the NHS in primary legislation for the first time, already represents a sweeping set of powers. It is astonishing that the Government should be proposing to give Monitor an even more unfettered remit to use its powers for any purposes that appear to be necessary.</p>
+<p>I humbly suggest that the clue may be in the word “appears.” Have the Government thought through all the implications of Monitor’s role? Have they taken any advice on the consequences of applying that competition law to the NHS for the first time and on what that would mean for an economic regulator? The Government have probably thought through those implications, because they want to open up the market to the NHS as part of their ideological conviction, but we will move on to that debate later.</p>
+<p>Members of the Committee and the House should not accept a provision that allows Monitor to do:</p>
+<p class="indent">“anything which appears to it to be necessary or expedient…for the exercise of its functions.”</p>
+<p>We may be getting into technical legal detail here, but I wanted to put that on the record.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.66" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000234" colnum="706">
+<p> The hon. Lady says, quite validly, that she does not want to dwell on the amendment at length, and I will reciprocate. I could start by saying that this is another provision that has been carried across from the previous Government’s legislation. The wording of paragraph 15 is identical to paragraph 8(1) of schedule 8 to the National Health Service Act 2006. It is totally, word for word, identical.</p>
+<p>Let me return to setting out what Monitor, as the economic regulator, is there to do. The economic regulator is being developed to promote efficient, financially sustainable service provision. We want to create a stable, rules-based system for economic regulation in areas such as price setting and avoiding anti-competitive behaviour, without the risk of political interference.</p>
+<p>Monitor needs to be independent to be able to deliver that. It needs the flexibility to act in the way that it considers necessary to exercise its duties and functions. This general power enables Monitor to do that; it enables Monitor to do anything that is necessary or expedient in respect of exercising its functions when there is not express provision for it to do so. This standard provision for statutory bodies would enable Monitor to pursue routine business matters such as the acquisition and disposal of property and entering contracts. Without that power, Monitor’s exercise of its functions would be hindered, which would undermine the effectiveness of economic regulation.</p>
+<p>This paragraph does not give Monitor free rein to do as it pleases. Monitor would be accountable for ensuring that regulatory intervention was proportionate and only undertaken when necessary. The Bill places a duty on &nbsp;Monitor to review its regulatory burdens and to conduct and consult on impact assessments on any significant proposals. That supports the cross-Government principles on better regulation adopted by the previous Administration. The general power is necessary, and, for the reasons I have outlined, I ask my hon. Friends to join me in opposing the amendment if it is pressed to a Division.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.67" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000238" colnum="707">
+<p> I simply repeat my response to the Minister’s previous comments. This is not the same organisation. Monitor was responsible for regulating foundation trusts, but now it is going to be an economic regulator. Simply cutting and pasting one bit of legislation and applying it to another indicates the Government’s lack of attention to detail in thinking through the implications of their proposals.</p>
+<p>I will press the amendment to a Division as an indication of my real concerns about the Minister’s response. Given the degree to which Monitor will be independent of the Government, it will need to set its own policies and roles. At the heart of people’s concerns about Monitor is who is going to take decisions about where competition does and does not apply in the NHS. That is currently the responsibility of Ministers, but under the Bill will it be Monitor or lawyers in the courts, both in this country and in Europe?</p>
+<p>The concern is that the NHS will be driven not by Government policy, but by competition law, lawyers and Monitor’s roles and responsibilities. That is why Opposition Members are so keen to delete this paragraph of schedule 7, which allows Monitor to do anything it sees fit to pursue its functions and roles. Later, we will come back to a more fundamental debate about Monitor. As I have said, I would like to press the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.68" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000241" colnum="707">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.69" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000242" colnum="707">
+<p>The Committee divided: Ayes 10, Noes 12.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.70" divnumber="40" ayes="10" noes="12" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000243">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="no">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.71" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000266" colnum="707">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.72" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000267" colnum="707">
+<p>Question put, That the schedule be the Seventh schedule to the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.73" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000268" colnum="707">
+<p>The Committee divided: Ayes 13, Noes 10.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.74" divnumber="41" ayes="13" noes="10" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000269">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="aye">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="aye">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="aye">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="aye">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="aye">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="aye">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="aye">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="aye">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="aye">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="aye">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="aye">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="aye">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="aye">Sturdy, Julian</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="no">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="no">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="no">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="no">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="no">Morris, Grahame M.  (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="no">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="no">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="no">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="no">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="no">Wilson, Phil</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.75" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000293" colnum="708">
+<p>Question accordingly agreed to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.3.76" nospeaker="true" time="11:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000294" colnum="708">
+<p>Schedule 7 agreed to.</p>
+</speech>
+<minor-heading id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.0" time="11:30" nospeaker="true" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000295">Clause 52 </minor-heading>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.1" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000511" colnum="708">
+<p> I beg to move amendment 479, in clause 52, page 62, leave out lines 34 and 35.</p>
+<p>Clause 52 sets out the general duties of Monitor. As I have said, we do not agree with the overall approach of turning Monitor into an economic regulator. The clause states that Monitor’s main duty will be</p>
+<p class="indent">“to protect and promote the interests of”</p>
+<p>patients</p>
+<p class="indent">“by promoting competition where appropriate”</p>
+<p>and “through regulation where necessary.”</p>
+<p>Amendment 479 would delete those references to competition and regulation. With the amendment, we are trying to remove the worst aspects of Monitor’s new role. Even if we did support the goal, the Government’s policy seems completely unclear. As the King’s Fund briefing on part 3 of the Bill rightly argues, competition and regulation are means, not ends. As the duty currently stands, it appears that competition and regulation are viewed as alternatives, with the inference that regulation should somehow be used where competition is not deemed appropriate.</p>
+<p>Experience in other sectors shows that regulation is a necessary prerequisite if competition is to be beneficial to service users. It is striking, and members of the Committee should be aware, that the way in which Monitor’s duty is framed is similar to the original duty of Ofgem, as set out in the Utilities Act 2000, in that it has a duty to promote competition and that is linked to protecting and promoting the interests of users.</p>
+<p>Hon. Members may recall that, during the previous Parliament, Ofgem was widely criticised for interpreting its functions too narrowly and for placing too much emphasis on promoting competition. Its principal duty was actually amended by the Energy Act 2010 to make it clear that its main objective should be to promote the interests of consumers and that competition should be used only to achieve that goal.</p>
+<p>I hope—perhaps it is not a great hope—that the Committee will agree to vote against clause 52, which is fundamental to establishing Monitor’s new role. If Monitor becomes an economic regulator, the definition of its duty, particularly the definition of “promoting competition where appropriate”, will be critical.</p>
+<p>Who will decide where competition is appropriate in the new system? Will it be the Secretary of State? Will it be the NHS commissioning board? Will it be the commissioning consortia, Monitor, or, when health care &nbsp;services are made subject to UK and EU competition law under clauses 60, 61 and 62, the EU Commission in Brussels or the European Court in Luxembourg? [Interruption.] The Minister gives me one of his trademark quizzical looks; I think that is what it was.</p>
+<p>It is clear that once competition law is explicitly added and applied to the NHS, it will not be GPs—let alone patients—who make decisions about which services are put out to tender. Whether competition is appropriate will not be up to health policy and the Secretary of State or the national commissioning board. The evidence is clear about where competition is and is not appropriate. It will be up to competition law and to lawyers.</p>
+<p>Not being a lawyer myself, I have looked into this and taken advice from lawyers. Once UK competition law, which is modelled on EU competition law—the explanatory notes explicitly state that this is built on articles 101 and 102 of the treaty of the European Union—has specifically been added, the full force of competition law could apply across the NHS. It will not be up to GPs or the national commissioning board, based on the evidence of what improves care for patients, to decide where that competition happens; that will be based on what lawyers decide in our courts or in Europe. I will explain that in far greater detail during our discussions about later clauses. But it is important at this early stage, when we discuss the fundamental purpose of Monitor, that the Committee should be aware of what the changes might entail.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.2" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000306" colnum="709">
+<p> Does my hon. Friend agree that its concerns about Monitor may be one of the reasons why the BMA has overwhelmingly voted for the Secretary of State to withdraw the Bill in its entirety?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.3" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000307" colnum="709">
+<p> My hon. Friend is quick off the mark and has her finger on the pulse of developments across the country. As people increasingly understand what is at the heart of the Bill, they are concerned about its implications. In a moment, I will ask the Minister specific questions about the advice that he has sought and received on the implications of these changes. At this stage, I have given the reasons why the amendment should delete that primary duty on Monitor to promote competition.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.4" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="11:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000308" colnum="709">
+<p> The issue goes to the fundamentals of the Bill. As I understand it, the clause is designed to give Monitor a role in ensuring competition. That does not mean ensuring competition in the health service because there already is competition in the health service; there is Bupa and so on. We have a market in health services. Nor is the clause necessarily about allowing private providers to put in for NHS services, because they do that quite extensively already.</p>
+<p>While reading a written question to which the Minister replied the other day, I noticed that PCTs have dramatically increased their use of non-NHS providers. The out-of-hours service in my area is provided not by the NHS or GPs, as it once was, but by a social enterprise. Hon. Members from the previous Government will know that Mr Blair suggested that space should be created for the private sector to flourish, in order to challenge NHS provision. He presumably took the view, which seems quite common, that certain cosy cartels occur and need to be addressed.</p>
+<p>The real objective of the clause and the change to the role of Monitor, as I understand it, is to ensure competition for taxpayer-funded health care—either from charities or providers, or between NHS providers. It is believed that that is the way to get better value for the public pound. That is what I understand the objective to be. It is not necessarily the most natural way to achieve that objective, but that is what I understand to be the thrust of the substantial change to the role of Monitor. Monitor is being employed to achieve an objective. We must question whether it is employed in the right way and whether it is the best vehicle for achieving that objective.</p>
+<p>There are arguments against, and I am sure that hon. Members will be fairly familiar with them. One is that there is also a drive afoot to get health services to collaborate for a range of purposes, most of them wholly good, and there are arguments of efficiency against encouraging too much competition, as it precludes the efficient use of scarce health resources; I am thinking of manpower resources, buildings and so on.</p>
+<p>There are also objections on the grounds that fragmentation might result if patients are looked after by a variety of institutions as opposed to relatively few. That is not necessarily a fatal objection to the objective. I am aware that at the moment, people can duck back and forth between Specsavers and the ophthalmic department of their local hospital without obvious detriment to the services that they receive, which co-operate relatively well. They need not always co-operate well, but sometimes they can.</p>
+<p>However—this is where the cherry-picking argument comes to the fore—there is an argument about service collapse. When an element of a service is competed for and a local hospital loses it, the net effect may be that the local hospital can no longer sustain its specialist service, which the competitor does not provide. That is a genuine issue, and I think that Ministers are aware of it. They have certainly been reminded of it by many people during this debate. It is a difficulty in a constituency such as mine, where many people have chronic ailments—poor hearing, poor limb movement or something similar—and need sustained health care over a long period. We do not want to end up in a situation where providers do what they must, rather than what the patients want them to do, to survive.</p>
+<p>I do not think that there is any disagreement in the Committee about what I have said. I genuinely think that Ministers and the Government are mindful of the concerns that I have raised and have made some effort to get the balance right in the Bill to ensure that we get the advantages of both collaboration and competition. We can clearly see the effort being made in clauses 52, 54 and 55. However, the key question is whether the current drafting will produce the wanted outcome, and it is not clear whether creating an economic regulator is necessary to achieve those objectives. That is the key point.</p>
+<p>There are always concerns about regulators, particularly the leadership of the regulator at particular times. We have seen different regulators take different stances. Royal Mail was assisted by a recent change of regulator, and the impact of the previous regulator was partly a product of the personality and interpretation of the legislation of which it was master.</p>
+<p>The hon. Member for Leicester West voiced concerns about the responsibility of Monitor. Through its decision-making powers, Monitor will have the capacity fundamentally to reshape local services without giving people much of a say. Essentially, everybody else will have to deal with Monitor’s decision. If Monitor opens a service to competition but people say that they do not want to open it to competition, that will be the end of the matter. All the organisations can perform as much scrutiny as they want, or do whatever consultation they like, but Monitor will have made its decision. As the Minister has said, that decision will be independent, and I assume that it will also be irrevocable.</p>
+<p>I cannot help wondering why Monitor has been chosen for this role. After all, we have other feasts in existence as a result of the legislation; there are the health and well-being boards, for example. Surely, those boards are interested in good access, the efficient use of scarce local resources—they are, in fact, very interested in that—as well as collaboration, which the legislation stresses. Therefore, the health and well-being boards are interested in all the same things that Monitor is supposed to be interested in, and they are more publicly accessible, too. There are lots of drivers that lead in precisely the direction that the Government want to take us, and provide the sort of challenges to what we might call the cosy cartels of care.</p>
+<p>If people do not believe me, and they think that the democratic pressures, the transparency, and the clinical engagement that the legislation will provide will not have some effects, they should look at what happened in social care. At one stage, that was provided in a relatively efficient way, almost exclusively by councils. My first experience of Richmond house was coming down as a council leader at the start of the Labour Government, when I, along with my Labour and Conservative colleagues, was soundly told off by the Minister—then Mr Boateng—because we were not using our resources as efficiently as he thought we could. We did not realise that we were being set up, but as soon as we left the building, a press release went out which said that Mr Boateng had just told a lot of us off.</p>
+<p>I am well aware, therefore, that there has been a similar debate in social care, but look at how it was resolved. After Mr Boateng had given us all a dressing down, we then had to look at our costs and see what was the most efficient way to operate. Now, in the same borough, there is not an absence of a mixed economy in social care; there is a mixed economy in social care where that is efficient, because there are the drivers within the local council to make that happen. I suggest that this is a well-trodden path, which can help to achieve some of the Government’s objectives without the innovation or novelty of an economic regulator.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.5" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000320" colnum="711">
+<p> I am listening with great interest to the hon. Gentleman, who is making a good speech, and I would like to take him a little further along that line. I will not go over this point, but he knows about the concern expressed over the weekend during his party’s conference, and the hon. Gentleman has raised concerns about such issues as cherry-picking and competition. Given the concerns that he has outlined, why does he think that the Government are moving down that road, if it is not about cherry-picking, competition and price competition?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.6" speakerid="uk.org.publicwhip/member/40566" speakername="John Pugh" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column712" colnum="712">
+<p> To be honest, there are probably differences of opinion, as in all coalitions. There are some people, and I will not attach this to any particular party, who may be very comfortable with a market-driven health service. There may be others, however, who are more comfortable with the concept of challenge to existing provision, so that it will sharpen up existing provision. I will not speak, however, for anybody other than myself.</p>
+<p>The Minister can put my mind at rest on this matter very easily, because there is a straightforward way of doing so. We are introducing a novel way of increasing efficiency within a public service and there are well-trodden paths that we could take. If best-value legislation is imposed on health authorities in the same way that it is on councils, we will see some of the effects that the Ministers and Government want. I would, however, be comforted if they can show me an instance somewhere—anywhere in the world—where there is a health market, public provision, and a regulator for that public provision, so that we can see the effects that the Government anticipate will flow from the proposals. We would then be working on the basis of evidence, rather than faith.</p>
+<p>I do not think that the experience of other regulators is actually very helpful. Other regulators, by and large, deal with consumers, but patients are not consumers. If I get knocked over outside this building and end up in an ambulance, I am not consuming anything. I am not making any choices. The nature of the service is different. I think that the Minister would put a lot of people at ease by simply saying that this is an interesting innovation in public policy that is untried in the United Kingdom, but that there is evidence somewhere that shows clearly that it is the sort of thing that works and that will have the effects for which we hope, which are similar to those that we already have in, for example, local authority and social care, where we have used remedies and methods that have proven themselves over time.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.7" speakerid="uk.org.publicwhip/member/40573" speakername="Jeremy Lefroy" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000324" colnum="712">
+<p> I congratulate my hon. Friend the Member for Southport on that excellent speech highlighting many of the issues that arise from Monitor. I should like to make two points. The first centres on my concern about how competition law will be applied within the NHS, and I should like to address it from the point of view of the individuals who work in the NHS, particularly those who are responsible for the treatment of patients. They commonly discuss among themselves in many different forums—perhaps privately—their concerns about individual patients. They meet socially and in work contexts. My concern about the introduction of a more strict, competitive regime is that those kinds of discussions will be overshadowed by the concerns of individual health practitioners that they might, in some way, be in breach of competition laws. For instance, a general practitioner might talk privately in a social context to a consultant about a particular patient about whom they are both concerned, but they might feel that, because they work for two different providers—one for a general practice, the other for a hospital—and because there is another provider on the scene who could provide the same service, that might be seen to be anti-competitive behaviour. I would like reassurance about that from the Minister.</p>
+<p>Co-operation is an essential part of the health service in this country, as is competition. As my hon. Friend the Member for Southport has mentioned, there are &nbsp;many examples of competition in the health service as it stands, but co-operation is also fundamental. I want an assurance from the Minister that the normal co-operation between clinicians of all kinds within the health service—that is the oil that lubricates health services in this country—will not be affected by people being afraid to talk because they might be accused of being anti-competitive.</p>
+<p>My other point relates almost to the other side of the argument and derives from my personal experience of undergoing a reasonably serious procedure a couple of years ago. I was offered it within the NHS, where it would have been a very long wait—in fact, there did not appear to be any hurry to do it at all—but at the same time, the same consultant indicated to me that it would be extremely swift if I underwent it privately. For me, that is an example of precisely why we need a level playing field in the operation of the health service. It seems fundamentally wrong that the person responsible for a service within an NHS institution that seems unable to offer it quickly—as happened in my case—is also able to offer the same service, at a price, outside the NHS. Will the Minister comment on how the clause might address that problem? I am sure that I am not the only one to have faced it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.8" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000327" colnum="713">
+<p> Before I speak to the amendment, Mr Hood, would you mind if I began by doing a deal with the hon. Member for Leicester West?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.9" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000328" colnum="713">
+<p> Before the Minister seeks to do deals with hon. Members, he should make a deal with the Chair to keep in order. If he keeps to that deal, he can do what he likes.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.10" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000329" colnum="713">
+<p> I hope that this is in order, although it refers partly to the previous debate. If the hon. Lady wants to tweet from this Committee, will she please tweet accurately? She has fallen into the pit of misrepresenting what has been said.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.11" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000330" colnum="713">
+<p> Order. First, it is out of order to return to what we have already discussed, so we cannot do that. Secondly, it is quite a hazard for Members to tweet in Committee, and this is not the first time it has happened. When I chaired the Postal Services Bill Committee, a Minister tweeted about how boring the sitting was but, unfortunately, one of the Opposition Members was following his tweets. He was considerably embarrassed by that, so I recommend that all Members be very careful about who they tweet to and when. I deprecate hon. Members tweeting while they are in Committee. I thought they would be addressing the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.12" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000331" colnum="713">
+<p> I am extremely grateful to you, Mr Hood, as that is what I was hoping you would say. Maybe that will be an example to this Committee, and perhaps the hon. Lady and I can discuss the inaccuracies of her tweets after this sitting.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.13" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000332" colnum="713">
+<p> Order. I ask the Minister to get on to the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.14" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column714" colnum="714">
+<p> Mr Hood, you are absolutely right, as always. I now move on to the amendment. We have had an interesting debate, including interesting contributions from not only the hon. Member for Leicester West, but the hon. Member for Southport and my hon. Friend the Member for Stafford as well.</p>
+<p>The clause defines Monitor’s overarching duty to protect and promote the interests of people who use health care services. I hope that all parties agree on this, and note that Members have not sought to amend this part of the legislation. Indeed, the focus of amendment 479 is not on what Monitor’s duty should be, but rather on how it should discharge that duty. However, I do not agree with the amendment, and will explain why.</p>
+<p>I will spell out very carefully and slowly the effect of the amendment so that Opposition Members cannot misunderstand me. [Interruption.] The hon. Member for Leicester West gives a painful sigh, but my hon. Friend the Minister of State and I have become so used to the misrepresentation of what we have said, and its meaning being turned, that we must be very cautious. Even the tweet has suffered from that. So I say that the effect of this amendment—not of what the Government want to do—would be that the Bill would say nothing about how Monitor would be expected to pursue its overarching objectives to protect and promote the interests of people who use health care services. As a result, Monitor would be free to use regulation wherever it considered it appropriate, even where this would be at the expense of promoting patient choice and competition. I do not feel that this is the intention of the Opposition, but it is a point worth being aware of. To put it into context so that there can be no misunderstanding, I have just been discussing the effect of the amendment tabled by the Opposition, not the Government’s proposals.</p>
+<p>Our aim is to improve outcomes for patients while making the best use of NHS resources. This can be achieved only by freeing providers from top-down controls wherever possible, strengthening incentives, and encouraging innovation. There is a risk that over-regulation could undermine these aims; we need to have appropriate checks and balances in place.</p>
+<p>We support the cross-government principles on better regulation adopted by the previous Administration, including the principle that regulatory intervention should be necessary and proportionate. It is important to embed these principles in the description of Monitor’s general duties and in the Bill. In this way, Monitor would be accountable for ensuring that regulatory intervention is only undertaken where necessary. This is an important principle for avoiding unnecessary regulatory burdens and the associated costs and constraints on innovation, which would not be in the best interests of patients and taxpayers.</p>
+<p>By promoting competition on quality, not on price—I repeat: competition on quality, not on price—that is driven by patient choice, Monitor would strengthen incentives for providers to innovate and improve services to reflect patients’ needs and individual preferences.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.15" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="12:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000339" colnum="715">
+<p> The Minister said again this morning, as he has on several occasions, that this is about competition on quality, not on price. If that is so, why is Monitor set up as an economic regulator under competition law, and why is the CQC &nbsp;not the principal body in this new architecture? The CQC is the body with the clinical expertise to determine whether quality is improving, not Monitor.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.16" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000513" colnum="715">
+<p> That gets to the heart of the issue because CQC has a critical and vital role in monitoring quality, which it has been doing since it was set up by the previous Government. We fully accept that role and it will continue. Monitor has a crucial role to play as the economic regulator within the architecture and vision of NHS modernisation. Without that role, it would not work in a viable way.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.17" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000341" colnum="715">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.18" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000342" colnum="715">
+<p> No, not at the moment. I want to make some progress and respond to a number of points.</p>
+<p> Grahame M. Morris  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.19" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000344" colnum="715">
+<p> Order. The Minister is not giving way.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.20" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000345" colnum="715">
+<p> I will give way to the hon. Member for Easington at a later date, but if I may, I will answer his question beforehand so that he need not intervene. Commissioning for several providers to compete on quality would not always be appropriate, such as in highly specialised surgery, for example, where concentrating services in specialist centres may be necessary to ensure patient safety, or where additional regulation may be needed to secure access to essential hospital services where there is no alternative provider. Our proposed approach would ensure that Monitor is under an express obligation to strike a balance between promoting competition on quality, where appropriate, and intervening through regulation only where necessary.</p>
+<p>Hon. Members have raised a number of points and I will start with those raised by the hon. Member for Southport. I hope to provide reassuring answers to some of the issues he raised in what was an interesting contribution. He made a point about cherry-picking and asked whether Ministers would strengthen the rules to prevent non-NHS providers from targeting profitable procedures while leaving the less lucrative work to the NHS. The answer is yes. We are establishing the economic regulator to ensure that NHS-funded health care works in the best interests of patients and taxpayers. That will include ensuring that prices are set fairly and do not allow any one type of provider a particular advantage. The key to avoiding cherry-picking is to set accurate prices that fairly reflect costs, and clear and transparent rules that require providers to accept any patient who has chosen to be referred to them, unless there are clear and justifiable clinical grounds to do otherwise. We expect Monitor to do both and for the national commissioning board to enforce the rules through contracts.</p>
+<p>The hon. Gentleman asked about the benefits of establishing Monitor as the economic regulator, and why it had been chosen for that role. Monitor has been successful as the independent regulator of foundation trusts. It is extremely well placed to take on the broader responsibilities of an economic regulator, thus avoiding the establishment of a new organisation. As I have said, we propose to develop Monitor into the economic regulator for all providers, rather than establish a new &nbsp;body. That will be done in the context of making substantial administrative savings by reducing bureaucracy and reviewing the Department’s arm’s-length bodies.</p>
+<p>The hon. Gentleman mentioned Ofgem, as did the hon. Member for Leicester West whose reference, I thought, over-egged the pudding a little and tried to create a conspiracy that does not exist. However, when looking at modernisation and the best way to achieve things we believe are important to enhance quality and raise outcomes, we have tried to learn lessons from other regulated industries. As the hon. Lady will accept, lessons can always be learned and, as I said, Monitor will need to strike a balance between competition and regulation. Clause 55 will ensure that that balance is kept under review by placing a duty on Monitor to set out how competing considerations are balanced.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.21" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000349" colnum="716">
+<p> On the point about competition and quality. The White Paper published last July stated that Monitor’s scope and powers were to</p>
+<p class="indent">“conduct market studies and refer potential structural problems to the Competition Commission for investigation.”</p>
+<p>Does the Competition Commission have experience of improving patients’ qualities?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.22" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000351" colnum="716">
+<p> Sorry, I did not hear the last bit of the right hon. Gentleman’s point.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.23" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000352" colnum="716">
+<p> Does the Competition Commission have any experience of improving the quality of patients’ care?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.24" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000353" colnum="716">
+<p> No, but it has considerable experience of competition policy. It would be for Monitor to deal with the role of improving and enhancing quality, and it would be for the Competition Commission to deal with competition.</p>
+<p> Liz Kendall  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.25" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000355" colnum="716">
+<p> Order. I assume that the Minister has given way.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.26" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000356" colnum="716">
+<p> The Minister sat down, so I thought it was my turn.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.27" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000357" colnum="716">
+<p> The hon. Lady can be excused for thinking it was her turn. I thought that the right hon. Member for Rother Valley had asked the Minister to give way and that the Minister was giving way to him. Did the Minister sit down because he has finished?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.28" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000358" colnum="716">
+<p> No, I have not finished. I thought the right hon. Gentleman was coming back to me, so I was waiting for him.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.29" speakerid="uk.org.publicwhip/member/40508" speakername="Kevin Barron" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000359" colnum="717">
+<p> I am not convinced by the Minister’s answer. It seems that the Competition Commission does not look at things from the point of view of quality, rather than, as the White Paper states, the private sector’s potential for getting into the services provided by the national health service. My reading of the White Paper, and, indeed, my reading of the Bill, is that what is envisaged is completely different from the way that the previous Government encouraged the independent sector to come in to help with some of the workloads and to better the quality of patient care. &nbsp;I am not convinced that the Competition Commission can do that. The Minister needs to convince Opposition Members of that before the Bill finishes its passage through the House.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.30" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000360" colnum="717">
+<p> I would be thrilled if I could convince the right hon. Gentleman, but I have a feeling that, on this Committee, the mindset of Opposition Members is firmly set. Whatever we do and however beneficial it might be to patient care and the NHS, Opposition Members are not going to accept it because of political considerations.</p>
+<p>I want to answer some further points. The hon. Member for Pontypridd asked why the CQC does not oversee competition. That is not the CQC’s role. The CQC’s role is to oversee essential standards of quality and safety, and it is right that it focuses on that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.31" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000362" colnum="717">
+<p> The simple question, then, is why do we need Monitor?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.32" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000363" colnum="717">
+<p> There is no secret; it is all laid out in the Bill. As I keep saying, and as the Bill keeps saying, Monitor is moving from being the regulator of foundation trusts to being the economic regulator within the modernisation of the NHS. That is quite clear and there is no secret. I am slightly surprised that the hon. Gentleman has even raised it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.33" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000364" colnum="717">
+<p> It is a surprise to most members of the Committee. I will put it another way. The Minister is saying that it is all about competition on quality. So, for the record, could he say that at no time will Monitor take account of price? I will give an example. Two organisations are competing for a service. Both offer good quality, but one might cost a bit more and, therefore, offers additions to that service. So, just for the record, is he saying that at no time will Monitor take account of price and that it will be quality first and first alone?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.34" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000365" colnum="717">
+<p> Monitor is there. On the question of competition, the issue is quality—enhancing and improving provision—and ensuring that there is a level playing field so that we do not see an unfair advantage given to the private sector. Let me give the hon. Gentleman an example, which we have had cited before during our debates. With the independent sector treatment centres established in the previous decade, there was an unfair and, many would argue, anti-competitive situation in favour of the private sector. Not only could ISTCs cherry-pick which medical conditions they would treat, but they were paid more for that than NNS providers. It is as simple as that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.35" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000366" colnum="717">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.36" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000367" colnum="717">
+<p> No, I am not going to give way for the moment, simply because I want to make some progress on answering some of the points that hon. Members have raised.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.37" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000368" colnum="717">
+<p> On the issue of equality.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.38" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000369" colnum="717">
+<p> The hon. Lady can shout from a sedentary position as often as she wants, but I am going to make some progress.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.39" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column718" colnum="718">
+<p> Will the right hon. Gentleman give way later?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.40" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000371" colnum="718">
+<p> Let us make some progress.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.41" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000372" colnum="718">
+<p> Order. The Minister will give way when he decides to give way. I am sure that he will give way later, given the opportunity, but he has indicated that he is not giving way now. There will be a stand part debate on the clause, so right hon. and hon. Members can make contributions on points they feel have been missed.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.42" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000373" colnum="718">
+<p> To return to another point, the hon. Member for Southport asked where the evidence base is for the approach taken in the Bill. There are established models of economic deregulation in other UK public services and in health systems in the Netherlands, Germany and parts of the USA. Evidence of the benefits of competition in the NHS includes increased evening and weekend openings in primary care and the use of minimally invasive procedures in elective treatment centres, which I hope goes some way to answering the hon. Gentleman’s point.</p>
+<p>EU and British competition law was also raised in the debate. All the Bill does is add Monitor as an enforcement body. The Office of Fair Trading already has the relevant powers in respect of the health care sector. The Bill does not introduce any new competition law or extend the applicability of current UK and EU competition legislation.</p>
+<p> Liz Kendall  rose—</p>
+<p> Owen Smith  rose—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.43" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:15" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000377" colnum="718">
+<p> May I just explain this first? As NHS providers develop and begin to compete actively with other NHS providers and with private and voluntary providers, UK and EU competition laws will increasingly become applicable. The safeguards offered by those laws will therefore apply equally to all providers. In the health care sector, 90% of health care provision has been delivered by public providers fulfilling a largely social function. Organisations fulfilling a purely social function are not for profit and are not considered to fall within the definition of undertakings, so they are not subject to EU competition rules. Markets have been developing only in certain limited sectors over the past decade, as, for example, in elective care. However, in a future where the majority of providers are likely to be classed as undertakings for the purposes of EU competition law, that law and the protections it offers against anti-competitive behaviour will apply.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.44" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000514" colnum="718">
+<p> We are in many ways straying beyond—[ Interruption. ]</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.45" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000379" colnum="718">
+<p> Order.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.46" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000380" colnum="719">
+<p> We are in many ways straying beyond the scope of this clause on to clauses 60, 61 and 62. We will debate what clauses 60 and 61 mean, and the consequences of explicitly putting competition law into primary legislation for the first time; as David Bennett has said to the Committee, that has not been done before. On this point, however, as the Minister knows, commissioners &nbsp;and providers are concerned that they will be considered as an undertaking. If the Minister says that that is not the case, will he tell me whether he has taken legal advice on the compatibility of the Bill with EU competition law? Has he taken advice on what it would mean for commissioners and providers? If so, will he publish that evidence to the Committee?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.47" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000381" colnum="719">
+<p> The straightforward answer is yes.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.48" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000382" colnum="719">
+<p> Publish it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.49" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000383" colnum="719">
+<p> I would like to think about that, because whenever one is put on the spot by either of the hon. Ladies opposite, one has to look very carefully at what they are asking in order fully to consider the implications. What might seem terribly innocent from the hon. Member for Islington South and Finsbury in a sedentary position does not always turn out, in the cold light of day, to be quite as innocent as she thinks.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.50" speakerid="uk.org.publicwhip/member/40482" speakername="Owen Smith" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000384" colnum="719">
+<p> Will the Minister give way?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.51" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000385" colnum="719">
+<p> No; I am going to make some progress now, because a number of hon. Members have raised a number of questions that I think they would like me to answer.</p>
+<p>It was suggested that this clause implies that competition is an end not a means, and I do not agree with that. It is clear that the end is to protect and promote the interests of people who use health care services. Competition and regulation are the means of achieving that end. I hope that that clears up that point.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.52" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000387" colnum="719">
+<p> No it does not.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.53" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000388" colnum="719">
+<p> The hon. Gentleman says that it does not, but I suspect that it is inevitable that he will say so. I hope on reflection when he reads it again, he will be reassured, although he may not be.</p>
+<p>Another question was asked about who would decide when competition does and does not apply. We want patients to have a choice of treatment and provider wherever possible. Monitor’s duty will be to protect and promote patients’ interests, and promoting competition will be a means to that end.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.54" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000390" colnum="719">
+<p> Will the Minister allow me to intervene?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.55" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000391" colnum="719">
+<p> I think I am going to have to, for the last time.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.56" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000392" colnum="719">
+<p> I have been seeking an answer to this for some time, and I do not believe that I have received one. Perhaps I have, and I have not understood it. If the Minister is promoting a new system under the legislation where decisions will be made on the basis of competition on quality, not on price, given that the role of CQC is simply to maintain a basic standard and Monitor is there to ensure that there is proper competition on something other than quality, who will decide what is quality and what is not? Who will make sure that competition is taking place on the basis of quality and not of money?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.57" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column720" colnum="720">
+<p> There will be a range of ways of determining what quality is. First, it will be determined by patient choice. That will be a driver, because patients, having the choice of which provider to go to, or which consultant to use—or, on another level, which GP they want to have—will be a driver of quality. That is one way in which quality will be driven. Secondly, any willing provider, with which the hon. Lady will be familiar because it was in the Labour party’s election manifesto last year, will also drive up quality and improve outcomes. Thirdly, CQC has a clear role to inspect and to ensure that standards and quality are maintained—whether that be in the social care area, through residential homes, through dental practices or through the hospital trusts—and Monitor is there as the new economic regulator.</p>
+<p>I hope that that will help to answer the question, but I suspect that somehow it will not, because I am not certain that the hon. Member for Islington South and Finsbury wants to be convinced by the argument.</p>
+<p>I urge the hon. Member for Leicester West to withdraw the amendment for the reasons I have given. If she is not prepared to do that, I will certainly urge my hon. Friends to join me in opposing it.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.58" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000396" colnum="720">
+<p> We will come back to many of the points that have been raised in the clause stand part debate, but I wish briefly to address some of them now in response to the comments made by the Minister and other members of the Committee. The Minister began by saying that we have a mindset that is opposed to everything. We are not opposed for the sake of pure opposition. We believe that health and health care is not the same as gas, electricity, a need for a railway, an internet provider or anything that might enable one to tweet. Health and health care is fundamentally different. The Government propose to bring in economic regulation and we do not believe that that is the right way forward to improve health and health care. That belief is not based on opposition for opposition’s sake, but from a belief that those sectors are very different. That is what I will address in more detail in the clause stand part debate.</p>
+<p>The hon. Member for Southport raised the issue about the aims and objectives of giving patients more choice, clinicians a greater role and allowing competition where the evidence shows that it works. I am sure that there will debates about that. Evidence from the King’s Fund and the Nuffield Trust shows that that may work in particular and very selective areas, such as elective operations in each market, but that that does not work in areas where co-operation and collaboration needs to improve. My answer to the hon. Gentleman is that, yes, they could be achieved without introducing an economic regulator, which would be both hugely costly and, I will argue in the clause stand part debate, damaging. In fact, it will not improve patient choice, but decrease it. It will not improve the quality of care, but actually harm it.</p>
+<p>That leads me to the second point, which was raised by the hon. Member for Stafford, about which many doctors are concerned. Doctors will be really nervous about all sorts of things. Hospital doctors will be nervous about talking to their primary care colleagues or doctors in other hospitals about how they might reorganise services, because that might be considered as providers collaborating with one another, and because they could &nbsp;be subject to competition law. That issue has been raised by the BMA and the Royal College of General Practitioners, and I know many doctors who have talked to me about that concern.</p>
+<p>They are also concerned that GP commissioners will be worried about working together. Opposition Members have raised real concerns about the abolition of strategic health authorities. Who will do the big service reconfigurations if they go? The Minister has said that the GPs could do that—the GP commissioners working together. If, however, commissioners are considered to be an undertaking under EU law—many are concerned that they will be, because they are corporate bodies—would sharing information between those commissioners be allowed, or would that be challenged? I hope the Minister will publish the legal advice, because hon. Members need to see the legal implications and consequences of the Bill. I have been in discussions with several groups of lawyers who are rubbing their hands looking at the Bill and thinking about what it will mean for both commissioners and providers of care. I know that that is moving on to issues covered by clauses 60 and 61 onwards, but since hon. Members raised those issues I wanted to talk about them.</p>
+<p>Other concerns will arise about the consequences for care, particularly the fragmentation of services and where responsibility lies. That is a big issue at the heart of the Bill. As always, I listened attentively to the Minister’s explanation about who is responsible for promoting the quality of care. Patients are doing it, because they know that information. GPs are doing it, the CQCs are doing it, and the national commissioning board is doing it. When we come on to pricing, we will no doubt hear that the national commissioning board will set the structure or possibly, in the Minister’s new tone, the architecture. Monitor will then decide the price, but it must consult with commissioners, who may object. It is as clear as mud. That is the real concern. Where does responsibility lie? In this section of the Bill, where is it appropriate to apply competition?</p>
+<p>The evidence for all of this is open to questioning and debate, but, as we will argue, if competition law is applied to the NHS across the board, as the Bill proposes, it will not be GPs who take that decision, and it will certainly not be patients; it will be Monitor. If it is not Monitor, it could end up in the courts. That is why the amendment would remove that function from Monitor. The Minister said that he does not understand that that is what the amendment would do, and he said that Monitor would have no role. We do not want Monitor to take on the role that the Minister is suggesting. As I said, we shall return to those arguments in the clause stand part debate. This is the start of an extremely important debate for the Committee, and I want to put the amendment to a vote.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.59" nospeaker="true" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000402" colnum="721">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.60" nospeaker="true" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000403" colnum="721">
+<p>The Committee divided: Ayes 10, Noes 12.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.61" divnumber="42" ayes="10" noes="12" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000404">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="aye">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40508" membername="Kevin Barron"  vote="aye">Barron, rh Mr Kevin</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="aye">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="aye">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="aye">Morris, Grahame M. (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="aye">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="aye">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="aye">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="aye">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="aye">Wilson, Phil</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="no">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="no">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="no">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="no">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="no">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="no">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="no">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="no">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="no">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="no">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="no">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="no">Sturdy, Julian</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.62" nospeaker="true" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000427" colnum="722">
+<p>Question accordingly negatived.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.63" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000428" colnum="722">
+<p> I beg to move amendment 373, in clause 52, page 62, line 36, leave out ‘in particular’.</p>
+<p>This is a minor amendment, which clarifies an aspect of the Bill’s drafting. The amendment makes clear the Government’s intention that Monitor should pay no more or less regard to the future demand for health services than it would to the current demand for health services. The use of the phrase “in particular” could give rise to confusion, so we propose that it should be removed.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.64" nospeaker="true" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000430" colnum="722">
+<p>Amendment 373 agreed to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.65" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000431" colnum="722">
+<p> I beg to move amendment 374, in clause 52, page 63, line 9, leave out subsection (6).</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.66" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000432" colnum="722">
+<p> With this it will be convenient to discuss Government amendment 375.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.67" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:30" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000433" colnum="722">
+<p> Again, these are technical amendments that clarify that Monitor’s remit extends to health care services that could also be included in packages of adult social care. The Bill already provides that adult social care services would generally be outwith Monitor’s remit and that secondary legislation would be required to extend Monitor’s functions to adult social care. The effect of the amendment is to clarify that a health care service should not be outside Monitor’s remit just because its services could also form part of social care. Such services should not be excluded from Monitor’s remit through a technicality. For example, specialist nursing for frail elderly people and health services for people with learning disabilities, which could form part of social care and may be commissioned by local authorities, would fall within Monitor’s remit.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.68" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000515" colnum="722">
+<p> I am certain that we will come to the issue during debate on clause 53 stand part, but will the Minister confirm that the Bill will bring the entire adult social care system under Monitor’s remit? Monitor is not even up and running for health services; there is no evidence yet whether it will work or what the implications will be—and now, as we will see in clause 53, all social care will be brought into the system. Will he confirm that that is what the Bill does?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.69" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000435" colnum="722">
+<p> The way in which the hon. Lady puts it suggests something sinister and outrageous, which of course it is not. The amendment will simply tidy up a technicality so that a health care service that could also form part of social care should not, just for that reason, be outside Monitor’s remit. In that respect, the answer to her question is yes. Such services should not be excluded from Monitor’s remit. I then gave two examples to illustrate. That is the purpose of the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.70" speakerid="uk.org.publicwhip/member/40360" speakername="Liz Kendall" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column723" colnum="723">
+<p> As I said, I am sure that we will return to this matter during debate on clause 53, but as we are debating the amendment, will the Minister tell us what discussions he has had with providers of adult social care and local councils? Has he had a consultation with local councils about what it will mean if Monitor extends its remit and EU and UK competition law drives competition in adult social care? Has he talked to users of adult social care services and their carers? What public discussion has there been? Why, for example, was none of this mentioned on Second Reading? Has he assessed any costs involved? I realise that this is a series of interventions, but I thought that I would take the opportunity.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.71" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000437" colnum="723">
+<p> Order. Interventions should be a bit shorter, and I ask the hon. Member for Leicester West to remember that. I call Simon Hughes—sorry, Simon Burns.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.72" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000438" colnum="723">
+<p> Oh, please, Mr Hood. How cruel.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.73" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000439" colnum="723">
+<p> I can see the lawyers’ letters on the way.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.74" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000440" colnum="723">
+<p> I think that I can reassure the hon. Lady on this technical amendment. The Bill, the White Paper and last summer’s consultation make it clear that any future extension of Monitor’s functions to adult social care will be subject to consultations. The answer to her question within a question about what consultations we have had is that that is premature, but if we did decide to move forward, we would hold a full consultation process. Obviously, the Government would consider the responses to that consultation. Then, through secondary legislation subject to the affirmative procedure, we would or would not move forward, depending on the results of any consultation process. As she will agree, that is a normal procedure.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.75" speakerid="uk.org.publicwhip/member/40335" speakername="Emily Thornberry" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000441" colnum="723">
+<p> Does the Minister think that something as radical as how social care is provided should be decided through secondary legislation with as little discussion as we have heard? It seems to me, having listened to how he puts it, that the situation is quite extraordinary. Are local authorities aware that Monitor might in future regulate how they provide social care?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.76" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000442" colnum="723">
+<p> Order. Again, interventions should be short. I do not want to cut off hon. Members in midstream, but I will do so if they carry on making longer interventions.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.77" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000443" colnum="723">
+<p> The answer to the hon. Lady’s last question is that of course local authorities are aware of it, because it was in the White Paper, to which many local authorities and social services departments responded. It may come as a disappointment to the hon. Lady, but they responded generally in a positive way.</p>
+<p>The hon. Lady also asked whether this was the right way forward. The answer is yes, provided that there is a proper consultation process as and when the situation arises—there will be—and that whatever decision the Government of the day take is subject to the proper parliamentary scrutiny and procedures that should apply to issues such as this. The answer is yes. It will be done, if it is ever done, subject to consultation and so on, and &nbsp;through the affirmative procedure, which is an infinitely superior way to deal with something of this nature than the negative procedure because it reflects its importance. I therefore urge the Committee to accept the amendment.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.78" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000445" colnum="724">
+<p>Question put, That the amendment be made.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.79" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000446" colnum="724">
+<p>The Committee divided: Ayes 13, Noes 9.</p>
+</speech>
+<divisioncount id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.80" divnumber="43" ayes="13" noes="9" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000447">
+<mplist vote="aye">
+	<mpname  memberid="uk.org.publicwhip/member/40660" membername="Steve Brine"  vote="aye">Brine, Mr Steve</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40161" membername="Simon Burns"  vote="aye">Burns, rh Mr Simon</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40594" membername="Paul Burstow"  vote="aye">Burstow, Paul</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40449" membername="Dan Byles"  vote="aye">Byles, Dan</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40487" membername="Stephen Crabb"  vote="aye">Crabb, Stephen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40247" membername="Nick de Bois"  vote="aye">de Bois, Nick</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40585" membername="Margot James"  vote="aye">James, Margot</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40573" membername="Jeremy Lefroy"  vote="aye">Lefroy, Jeremy</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40376" membername="Nicky Morgan"  vote="aye">Morgan, Nicky</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40156" membername="Daniel Poulter"  vote="aye">Poulter, Dr Daniel</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40566" membername="John Pugh"  vote="aye">Pugh, John</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40130" membername="Anna Soubry"  vote="aye">Soubry, Anna</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40683" membername="Julian Sturdy"  vote="aye">Sturdy, Julian</mpname>
+</mplist>
+<mplist vote="no">
+	<mpname  memberid="uk.org.publicwhip/member/40684" membername="Debbie Abrahams"  vote="no">Abrahams, Debbie</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40401" membername="Tom Blenkinsop"  vote="no">Blenkinsop, Tom</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40360" membername="Liz Kendall"  vote="no">Kendall, Liz</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40222" membername="Grahame Morris"  vote="no">Morris, Grahame M.  (Easington)</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40482" membername="Owen Smith"  vote="no">Smith, Owen</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40335" membername="Emily Thornberry"  vote="no">Thornberry, Emily</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40344" membername="Karl Turner"  vote="no">Turner, Karl</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40294" membername="Derek Twigg"  vote="no">Twigg, Derek</mpname>
+	<mpname  memberid="uk.org.publicwhip/member/40521" membername="Phil Wilson"  vote="no">Wilson, Phil</mpname>
+</mplist>
+</divisioncount>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.81" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000470" colnum="724">
+<p>Question accordingly agreed to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.82" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000471" colnum="724">
+<p>Amendment 374 agreed to.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.83" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000472" colnum="724">
+<p>Amendment made: 375, in clause 52, page 63, line 12, at end insert</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.84" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000473" colnum="724">
+<p> On a point of order, Mr Hood. I beg your indulgence because I seek clarification. In the debate on amendment 479, the Minister said that he would consider whether to publish the legal advice about Monitor and the effects in terms of competition. Can we be clear? If a Minister offers to go away and consider such an issue, does he then have to write to the Committee with the legal advice or with the reasons why he cannot provide the legal advice? I understand that there are always issues about confidentiality in relation to legal advice, but given the real concern and the discussion that we have had, does the Minister have to write to the Committee to say either yes or no and, if it is no, his reasons for saying no?</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.85" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000474" colnum="724">
+<p> I thank the hon. Gentleman for his point of order. The answer to his question is that it is up to the Minister to publish advice if he wishes to do so. That is a matter for the Minister, and the hon. Gentleman should take it up with the Minister.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.86" speakerid="uk.org.publicwhip/member/40161" speakername="Simon Burns" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000475" colnum="724">
+<p> Further to that point of order, Mr Hood. It may be helpful to you if I put it on the record that all I said was that I would consider the request made by the hon. Member for Leicester West. She asked whether I would consider publishing the legal advice. I have given no commitment in any way, shape or form to do anything, apart from considering whether to do that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.87" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000476" colnum="724">
+<p> Order. In answer to the point of order, I did say that this was a matter for the Minister. Unless the hon. Member for Halton has a point other than that, I suggest that he leaves the matter there.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.88" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column725" colnum="725">
+<p> As always, I take your advice, Mr Hood. Perhaps the Minister misunderstood. I did not say that he had committed to doing it but that he would consider it. It was debated and therefore recorded in Hansard. The point I am trying to make, Mr Hood—I apologise if I did not make myself clear in my first point of order—is, if the Minister decides that he does not want to publish the information, could the Committee expect to have a reply from him about why he would not publish it? This is a crucial part of the Bill in which there is massive interest. The Committee should be aware of that when making its deliberations.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.89" speakerid="uk.org.publicwhip/member/40351" speakername="Jimmy Hood" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000478" colnum="725">
+<p> I congratulate the hon. Member on raising the same point of order twice. I will make the same ruling twice. It is a matter for the Minister what he publishes, not the Chair.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.90" nospeaker="true" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000479" colnum="725">
+<p>Question proposed, That the clause, as amended, stand part of the Bill.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.91" speakerid="uk.org.publicwhip/member/40344" speakername="Karl Turner" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000480" colnum="725">
+<p> The clause outlines the Government’s intention to reorganise Monitor into the economic regulator of the whole health sector. As I understand it, it would have three core functions: to promote competition; to set or regulate price; and to support the continuation of services. Clause 52 and chapter 1 more widely embody the key change that is at the heart of our resistance to the Bill—resistance that Baroness Williams and many more principled Lib Dem colleagues loudly voiced at their spring conference last weekend.</p>
+<p>Giving Monitor new powers to enforce competition is what worries the public and concerns numerous professional bodies and experts. It is fitting that today the BMA is holding its first emergency meeting for 19 years. The coalition has lost any support from professional bodies and will soon lose the support of the public as well. Two general meetings in the last 19 years, both under Tory Governments: it is the same old Tory story. They cannot be trusted with the NHS. The removal of the clause would relieve Monitor of the statutory duty placed on it to enforce competition law.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.92" speakerid="uk.org.publicwhip/member/40294" speakername="Derek Twigg" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#Column726" colnum="726">
+<p> My hon. Friend makes an important point about the support for the Bill. Does he recall the Government’s making a big play about the number of organisations that support the Bill? In fact the BMA was part of that.</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.93" speakerid="uk.org.publicwhip/member/40344" speakername="Karl Turner" time="12:45" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000483" colnum="726">
+<p> Absolutely. My hon. Friend is right. The Government did indeed make great play of the support that they had received from professional bodies like the BMA and suggest that GPs were clambering to get involved and show their support. The reality is that the ship has been sunk and a dinghy has pulled alongside it and GPs have to clamber on. That is the analogy that I would use to describe what is happening. I speak to GPs in my constituency and to professional bodies. The other day a pharmacist told me that these provisions are wrong for the health service and are being implemented at the wrong time.</p>
+<p>Despite the Secretary of State’s continued attempts to use GP commissioners as a smokescreen to divert attention from this most damaging aspect of the Government’s proposals, Professor Ham from the King’s Fund correctly asserts that the Government’s commissioning reforms</p>
+<p class="indent">“are of secondary importance compared with the radical extension of competition in healthcare.”</p>
+<p>These continued tactics of political misdirection highlight exactly what Baroness Williams rightly calls “privatisation by stealth”.</p>
+<p>Economic regulation is both controversial and complex. There are many criticisms and I will focus on four areas: enforcing competition; a shift of focus from quality to competition; the negative effects of co-operation and integration; and the impact of these issues—</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.94" nospeaker="true" time="13:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000516" colnum="726">
+<p>The Chairman adjourned the Committee without Question put (Standing Order No. 88).</p>
+</speech>
+<speech id="uk.org.publicwhip/standing/standing2011-02-08_HEALTH_17-0_2011-03-15a.4.95" nospeaker="true" time="13:00" url="http://www.publications.parliament.uk/pa/cm201011/cmpublic/health/110315/am/110315s01.htm#11031564000488" colnum="726">
+<p>Adjourned till this day at Four o’clock.</p>
+</speech>
+</publicwhip>
